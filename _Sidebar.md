@@ -1,4 +1,4 @@
-  * **[Introduction](G__Overview.md)**
+**[Introduction](G__Overview.md)**
 ---
 
   * **[Platform](G__Platform.md)**
