@@ -34,7 +34,7 @@ For more details, you can refer to [Graphic model introduction](G__GamlEditor#Cr
 
 You should obtain a skeleton diagram similar to the following one.
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/01_Skeleton.png' />
+<img src='images/Tutorials/Graphic_modelling1/01_Skeleton.png' />
 <br />
 ### species
 A [species](G__DefiningSpecies.md) represents a «prototype» of agents: it defines their common properties.
@@ -68,17 +68,17 @@ In the block of an aspect, it is possible to draw :
 To create any element in a GAMA diagram, you can use the palette (shown below). In the present case, we want to create a new species which is part of the 'world'. Thus, we use the tool "is composed of a species" then click on the "world" element and then outside of it and finally you name it.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/02_Palette.png' />
+<img src='images/Tutorials/Graphic_modelling1/02_Palette.png' />
 <br />
 
 To make our agent visible in the display, we need to edit the species, you do so by double clicking on the species element you just created. You will see a dialog similar to the following one.
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/05_Empty_Species.png' />
+<img src='images/Tutorials/Graphic_modelling1/05_Empty_Species.png' />
 <br />
 
 Instead of adding two variables (size and color) as in the [tutorial prey-predator](Tutorial__PredatorPreyTutorial_step1.md), we will use the built-in definition of the aspect. To do so, click on _has the aspect_ in the palette and add it to your _prey_ species. Then, double click on it and **add** a _layer_. In the opened dialog, make sure that the _Shape_ is a circle, _radius_ is 1.0 and the _color_ is blue as show in the image below.
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/06_Aspect_definition.png' />
+<img src='images/Tutorials/Graphic_modelling1/06_Aspect_definition.png' />
 <br />
 
 ### World element
@@ -106,7 +106,7 @@ Definition of the init block actually require to type a bit of code but it is pr
 ```
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/03_world_definition.png' />
+<img src='images/Tutorials/Graphic_modelling1/03_world_definition.png' />
 <br />
 
 ### experiment
@@ -130,7 +130,7 @@ Note that the init, min and max values can be defined in the global variable def
 To define a parameter, double click on the _my\_GUI\_xp_, add a parameter and fill in the fields as follows:
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/04_GUI_experiment.png' />
+<img src='images/Tutorials/Graphic_modelling1/04_GUI_experiment.png' />
 <br />
 In the experiment, definition of a parameter from the the global variable _nb\_preys\_init_ :
 
@@ -150,7 +150,7 @@ Note that it is possible to define a [opengl display](G__3DSpecificInstructions.
 The last part we need to do now is to add a display to visualise our _prey_ agents. Select "has the display" from the palette and add it to _my\_GUI\_xp_. Double click on it to edit, then add a layer. In the opened dialog (shown below), select _type_ to be species, _Species_ as prey and _aspect_ as default.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/07_Display_Layer_definition.png' />
+<img src='images/Tutorials/Graphic_modelling1/07_Display_Layer_definition.png' />
 <br />
 
 You can now start the simulation by clicking on the _Experiment my\_GUI\_xp_ on the top left corner of your graphical model.
@@ -162,5 +162,5 @@ You can now start the simulation by clicking on the _Experiment my\_GUI\_xp_ on 
 ## Complete Model
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/08_Step1_complete_model.png' />
+<img src='images/Tutorials/Graphic_modelling1/08_Step1_complete_model.png' />
 <br />

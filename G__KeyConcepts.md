@@ -23,11 +23,11 @@ The vocabulary of GAML is described in the following sentences, in which the mea
   1. Given that all **agents** are specified by a **species**, **simulations** and **experiments** are then instances of two species which are, respectively, called **model** and **experiment plan**. Think of them as "specialized" categories of species.
   1. The relationships between **species**, **models** and **experiment plans** are codified in the meta-model of GAML in the form of a framework composed of three abstract species respectively called **agent** (direct or indirect parent of all **species**), **model** (parent of all **species** that define a model) and **experiment** (parent of all **species** that define an experiment plan). In this meta-model, instances of the children of **agent** know the instance of the child of **model** in which they are hosted as their **world**, while the instance of **experiment plan** identifies the same agent as one of the **simulations** it is in charge of. The following diagram summarizes this framework:
 
-<br /> <img src='https://gama-platform.googlecode.com/svn/wiki/images/meta_model/framework.png' /> <br />
+<br /> <img src='images/meta_model/framework.png' /> <br />
 
 Putting this all together, writing a model in GAML then consists in defining a species which inherits from **model**, in which other **species**, inheriting (directly or not) from **agent** and representing the entities that populate this model, will be nested, and which is itself nested in one or several **experiment plans** among which a user will be able to choose which **experiment** he/she wants to execute.
 
-<br /> <img src='https://gama-platform.googlecode.com/svn/wiki/images/meta_model/user_model.png' /> <br />
+<br /> <img src='images/meta_model/user_model.png' /> <br />
 <br />
 
 At the operational level, i.e. when _running_ an experiment in GAMA,

@@ -82,7 +82,7 @@
         function ()
         {
          // Setup the ajax indicator
- 		 $('body').append('<div id="ajaxBusy"><p><img src="https://gama-platform.googlecode.com/svn/wiki/images/ajax-loader.gif"></p></div>');
+ 		 $('body').append('<div id="ajaxBusy"><p><img src="images/ajax-loader.gif"></p></div>');
 
 		  $('#ajaxBusy').css({
 		    display:"none",
@@ -254,7 +254,7 @@ tr.border_bottom td {
 				<table cellspacing=10 >
 					<tr >
 						<td width="90">
-							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/user.png" height="64" alt="User"/>
+							<img src="images/os/user.png" height="64" alt="User"/>
 						</td>
 						<td colspan=2>
 							<p>
@@ -267,7 +267,7 @@ tr.border_bottom td {
 					<tr height=40 colspan=3/>
 					<tr >
 						<td width="90">
-							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/institution.png" height="64" alt="Institution"/>
+							<img src="images/os/institution.png" height="64" alt="Institution"/>
 						</td>
 						<td colspan= 2><p>
 							<label for="entry_1344892905">Institution</label><br />
@@ -278,7 +278,7 @@ tr.border_bottom td {
 					<tr height=40 colspan=3/>
 					<tr >
 						<td width="90">
-							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/mail.png" height="64" alt="Mail"/>
+							<img src="images/os/mail.png" height="64" alt="Mail"/>
 						</td>
 						<td ><p>
 								<label style="width:120px" for="entry_795865460">Email</label><br />
@@ -293,10 +293,10 @@ tr.border_bottom td {
 					<tr height=40 colspan=3/>
 					<tr >
 						<td width="90">
-							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/Library.png" height="64" alt="Documentation"/>
+							<img src="images/os/Library.png" height="64" alt="Documentation"/>
 						</td>
 						<td >
-							<a class="googl" href="https://gama-platform.googlecode.com/svn/wiki/pdf/GAMA 1.6.1 Documentation.pdf" id="Doc">Documentation</a><br/><span class='down'>PDF Documentation</span>
+							<a class="googl" href="pdf/GAMA 1.6.1 Documentation.pdf" id="Doc">Documentation</a><br/><span class='down'>PDF Documentation</span>
 						</td>
 						<td>
 						</td>
@@ -322,7 +322,7 @@ tr.border_bottom td {
 				<table cellspacing=10 >
 					<tr >
 						<td width="90">
-							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/Linux.png" height="64" alt="Linux"/>
+							<img src="images/os/Linux.png" height="64" alt="Linux"/>
 						</td>
 						<td align="center">
 							<a class="googl" href="https://goo.gl/5QvoAS" id="Linux">Linux 64 Bit</a>
@@ -334,7 +334,7 @@ tr.border_bottom td {
 					<tr height=40 colspan=3/>
 					<tr >
 						<td width="90">
-							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/MacOSX.png" height="64" alt="MacOSX"/>
+							<img src="images/os/MacOSX.png" height="64" alt="MacOSX"/>
 						</td>
 						<td align="center">
 							<a class="googl" href="https://goo.gl/HC2gsH" id="MacOSX">MacOS X 64 Bit</a>
@@ -346,7 +346,7 @@ tr.border_bottom td {
 					<tr height=40 colspan=3/>
 					<tr >
 						<td width="90">
-							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/Windows.png" height="64" alt="Windows"/>
+							<img src="images/os/Windows.png" height="64" alt="Windows"/>
 						</td>
 						<td align="center">
 							<a class="googl" href="https://goo.gl/8i23Z1" id="Windows">Windows 64 Bit</a>
@@ -358,10 +358,10 @@ tr.border_bottom td {
 					<tr height=40 colspan=3/>
 					<tr >
 						<td width="90">
-							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/Library.png" height="64" alt="Documentation"/>
+							<img src="images/os/Library.png" height="64" alt="Documentation"/>
 						</td>
 						<td align="center">
-							<a class="googl" href="https://gama-platform.googlecode.com/svn/wiki/pdf/GAMA 1.6.1 Documentation.pdf" id="Doc">Documentation</a><br/><span class='down'>PDF Documentation</span>
+							<a class="googl" href="pdf/GAMA 1.6.1 Documentation.pdf" id="Doc">Documentation</a><br/><span class='down'>PDF Documentation</span>
 						</td>
 						<td>
 						</td>

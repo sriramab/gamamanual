@@ -14,7 +14,7 @@ This step Illustrates how to define a 3D display
   * define a new aspect (sphere3D) for people to display them as sphere.
   * modify the display to use this new aspect.
 
-![https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Incremental_model/Incremental_model5.jpg](https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Incremental_model/Incremental_model5.jpg)
+![images/Tutorials/Incremental_model/Incremental_model5.jpg](images/Tutorials/Incremental_model/Incremental_model5.jpg)
 
 <br />
 

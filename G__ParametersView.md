@@ -17,7 +17,7 @@ Every [GUI experiment](G__DefiningExperiments.md) displays a pane named "Paramet
   * the Random Seed
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/experiments/parameters_built_in.png' /> <br />
+<img src='images/experiments/parameters_built_in.png' /> <br />
 
 <br />
 
@@ -27,7 +27,7 @@ Every [GUI experiment](G__DefiningExperiments.md) displays a pane named "Paramet
 The modeler can [define himself parameters](G__DefiningParameters.md) that can be displayed in the GUI and that are sorted by categories. Note that the interface will depend on the data type of the parameter: for example, for integer or float parameters, a simple text box will be displayed whereas a color selector will be available for color parameters. The parameters value displayed are the initial value provided to the variables associated to the parameters in the model.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/experiments/parameters.png' /> <br />
+<img src='images/experiments/parameters.png' /> <br />
 
 The above parameters view is generated from the following code:
 ```
@@ -58,4 +58,4 @@ If he wants to come back to the initial value of parameters, he can click on the
 
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/experiments/parameters_modifications.png' /> <br />
+<img src='images/experiments/parameters_modifications.png' /> <br />

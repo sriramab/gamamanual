@@ -15,7 +15,7 @@ We are interested by the spreading of the disease inside the buildings. In order
   * define differential equations for disease spreading inside buildings
   * add a behavior for buildings for the spreading of the disease.
 
-![https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Incremental_model/incremental_model.jpg](https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Incremental_model/incremental_model.jpg)
+![images/Tutorials/Incremental_model/incremental_model.jpg](images/Tutorials/Incremental_model/incremental_model.jpg)
 
 <br />
 

@@ -38,7 +38,7 @@ Documentation:
   * Available [online](G__Overview.md)
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/splash/GAMA161.png' />
+<img src='images/splash/GAMA161.png' />
 
 <br />
 
@@ -58,7 +58,7 @@ This version introduced many features over 1.5.1 :
 Documentation:
   * [Documentation in PDF](http://gama-platform.googlecode.com/files/docGAMAv16.pdf)
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/splash/GAMA16.png' />
+<img src='images/splash/GAMA16.png' />
 
 <br />
 
@@ -104,7 +104,7 @@ Key points :
   * Many more novelties/improvements/enrichments…
 
 Documentation:
-  * <a href='https://gama-platform.googlecode.com/svn/wiki/pdf/GAMAv14.pdf'>Documentation of GAMA 1.4 </a>
+  * <a href='pdf/GAMAv14.pdf'>Documentation of GAMA 1.4 </a>
 
 <br />
 ![http://gama-platform.googlecode.com/files/splash1.4.png](http://gama-platform.googlecode.com/files/splash1.4.png)"
@@ -124,7 +124,7 @@ Key points :
   * Integration of decision-making algorithms
 
 Documentation:
-  * <a href='https://gama-platform.googlecode.com/svn/wiki/pdf/GAMAv13.pdf'> Documentation of GAMA 1.3 </a>
+  * <a href='pdf/GAMAv13.pdf'> Documentation of GAMA 1.3 </a>
 
 <br />
 ![http://gama-platform.googlecode.com/files/splash1-3.png](http://gama-platform.googlecode.com/files/splash1-3.png)"

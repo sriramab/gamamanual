@@ -13,7 +13,7 @@ This step Illustrates how define monitors and charts in GAMA. In addition, it il
   * Definition of a series chart to follow the number of people infected and not infected
   * Definition of a stopping condition (when infected rate = 1)
 
-![https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Incremental_model/Incremental_model2.jpg](https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Incremental_model/Incremental_model2.jpg)
+![images/Tutorials/Incremental_model/Incremental_model2.jpg](images/Tutorials/Incremental_model/Incremental_model2.jpg)
 
 <br />
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
   <ModulePrefs title="GAMA Download Form" />
-  <Content type="html" href="https://gama-platform.googlecode.com/svn/wiki/gadgets/download_form.html"/>
+  <Content type="html" href="gadgets/download_form.html"/>
 </Module>

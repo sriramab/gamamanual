@@ -16,7 +16,7 @@ Initialize a 3D world with a population of cells placed randomly in a 3D 100x100
   * Creation of **nb\_cells** **cells** agents randomly located in the 3D environment size: 100x100x100.
 
 
-![https://gama-platform.googlecode.com/svn/wiki/images/3D_model_LQ.png](https://gama-platform.googlecode.com/svn/wiki/images/3D_model_LQ.png)
+![images/3D_model_LQ.png](images/3D_model_LQ.png)
 
 <br />
 

@@ -26,13 +26,13 @@ To define a behavior for the prey agents we add them three new parameters:
 
 Similarly to the definition of _nb\_preys\_init_ (cf. [step1](Tutorial__GraphicModel_step1.md)), you will have to add these parameters as global variables to the _World_. Double click on the _World_ item to edit it, click on _add variable_ and add the following definitions:
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/13_Prey_global_variables.png' />
+<img src='images/Tutorials/Graphic_modelling1/13_Prey_global_variables.png' />
 <br />
 
 
 Yet we may allow the user to change it from an experiment to another through the user interface. To do so we refer to these global parameters in _my\_GUI\_xp_ as follows :
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/14_Prey_global_parameters.png' />
+<img src='images/Tutorials/Graphic_modelling1/14_Prey_global_parameters.png' />
 <br />
 
 
@@ -40,7 +40,7 @@ Yet we may allow the user to change it from an experiment to another through the
 ### vegetation\_cell grid
 We add a new variable for the vegetation\_cell grid called **neighbours**, that contains for each vegetation cell the list of the neighbor vegetation cells (distance of 2 - Von Neumann neighborhood). We will use these list of vegetation\_cell neighbours for the movement of the prey.
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/15_vegetation_neighbours.png' />
+<img src='images/Tutorials/Graphic_modelling1/15_vegetation_neighbours.png' />
 <br />
 
 
@@ -54,7 +54,7 @@ Also note the use of the [self](G__PseudoVariables#self.md) pseudo variable whic
 
 We copy the values of the three global parameters into the prey species in order for it to be available for each agent and possibly modified locally. To do so, you simply create 3 new variables in the prey species. We also add a variable representing the energy used by each prey at each timestep as a randomly computed initially number (within ]0;max\_energy]).
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/16_prey_energy_variables.png' />
+<img src='images/Tutorials/Graphic_modelling1/16_prey_energy_variables.png' />
 <br />
 
 
@@ -68,7 +68,7 @@ In order to define the movement behaviour of a prey we will add a **reflex**. A 
 
 The **when** facet is optional: when it is omitted, the reflex is activated at each time step. Note that if several reflexes are defined for a species. This first reflex allows the prey agents to choose (randomly) a new vegetation\_cell in the neighborhood of my\_cell and to move to this cell.
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/17_Prey_basic_move.png' />
+<img src='images/Tutorials/Graphic_modelling1/17_Prey_basic_move.png' />
 <br />
 
 
@@ -83,7 +83,7 @@ Similarly, We define a second reflex called **eat** that will only be activated 
 ```
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/18_Prey_eat.png' />
+<img src='images/Tutorials/Graphic_modelling1/18_Prey_eat.png' />
 <br />
 
 
@@ -92,7 +92,7 @@ Similarly, We define a second reflex called **eat** that will only be activated 
 We define a third reflex for the prey agent: when the agent has no more energy, it dies (application of the built-in **die** action). In this case the condition is `energy <= 0`and the gaml code is `do die ;`.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/19_Prey_die.png' />
+<img src='images/Tutorials/Graphic_modelling1/19_Prey_die.png' />
 <br />
 
 
@@ -117,5 +117,5 @@ my_var <- self action_name (arg1:v1, arg2:v2);
 
 ## Complete Model
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/20_Step3_complete_model.png' />
+<img src='images/Tutorials/Graphic_modelling1/20_Step3_complete_model.png' />
 <br />

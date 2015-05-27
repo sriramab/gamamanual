@@ -81,7 +81,7 @@
         {
 
           // Setup the ajax indicator
- 		 $('body').append('<div id="ajaxBusy"><p><img src="https://gama-platform.googlecode.com/svn/wiki/images/ajax-loader.gif"></p></div>');
+ 		 $('body').append('<div id="ajaxBusy"><p><img src="images/ajax-loader.gif"></p></div>');
 
 		  $('#ajaxBusy').css({
 		    display:"none",
@@ -185,7 +185,7 @@ tr.border_bottom td {
 				<table cellspacing=10 >
 					<tr class="border_bottom">
 						<td width="90">
-							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/Linux.png" height="64" alt="Linux"/>
+							<img src="images/os/Linux.png" height="64" alt="Linux"/>
 						</td>
 						<td align="center">
 							<a class="googl" href="https://goo.gl/5QvoAS" id="Linux">Linux 64 Bit</a>
@@ -197,7 +197,7 @@ tr.border_bottom td {
 					<tr height=40 colspan=3/>
 					<tr class="border_bottom">
 						<td width="90">
-							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/MacOSX.png" height="64" alt="MacOSX"/>
+							<img src="images/os/MacOSX.png" height="64" alt="MacOSX"/>
 						</td>
 						<td align="center">
 							<a class="googl" href="https://goo.gl/HC2gsH" id="MacOSX">MacOS X 64 Bit</a>
@@ -209,7 +209,7 @@ tr.border_bottom td {
 					<tr height=40 colspan=3/>
 					<tr class="border_bottom">
 						<td width="90">
-							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/Windows.png" height="64" alt="Windows"/>
+							<img src="images/os/Windows.png" height="64" alt="Windows"/>
 						</td>
 						<td align="center">
 							<a class="googl" href="https://goo.gl/8i23Z1" id="Windows">Windows 64 Bit</a>
@@ -221,7 +221,7 @@ tr.border_bottom td {
 					<tr height=40 colspan=3/>
 					<tr class="border_bottom">
 						<td width="90">
-							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/Library.png" height="64" alt="Documentation"/>
+							<img src="images/os/Library.png" height="64" alt="Documentation"/>
 						</td>
 						<td align="center">
 							<a class="googl" href="https://goo.gl/XXXXX" id="Doc">Documentation</a><br/><span class='down'>Not available yet</span>

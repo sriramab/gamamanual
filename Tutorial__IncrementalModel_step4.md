@@ -14,7 +14,7 @@ This step Illustrates how load and agentry GIS data.
   * definition of a new reflex for people agents: **stay**
   * modification of the **move** reflex of the people agents
 
-![https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Incremental_model/Incremental_model4.jpg](https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Incremental_model/Incremental_model4.jpg)
+![images/Tutorials/Incremental_model/Incremental_model4.jpg](images/Tutorials/Incremental_model/Incremental_model4.jpg)
 
 <br />
 

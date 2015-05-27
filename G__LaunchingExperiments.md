@@ -13,17 +13,17 @@ GAMA supports multiple ways of launching experiments from within the Modeling Pe
 As already mentioned on [this page](G__GamlEditor.md), GAML editors will provide the easiest way to launch experiments. Whenever a model that contains the definition of experiments is validated, these experiments will appear as distinct buttons, in the order in which they are defined in the file, in the header ribbon above the text. Simply clicking one of these buttons launches the corresponding experiment.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/launch_experiments/editor_launch.png' /> <br />
+<img src='images/launch_experiments/editor_launch.png' /> <br />
 
 In case the currently edited file  does not define any experiment, but if other files _in the same project_ define some, it is possible to access them directly from the editor using the small "In project:" drop-down arrow on the upper-right corner of the editor.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/launch_experiments/editor_in_project.png' /> <br />
+<img src='images/launch_experiments/editor_in_project.png' /> <br />
 
 This menu gives access to all the model files currently defined with experiments in the project and, for each, to its different experiments. Selecting one will have the same effect as clicking on the button in the editor of this file.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/launch_experiments/menu_in_project.png' /> <br />
+<img src='images/launch_experiments/menu_in_project.png' /> <br />
 
 ---
 
@@ -34,7 +34,7 @@ A same mechanism is implemented in the [Navigator](G__NavigatingWorkspace.md). R
   1. The experiments defined in the model file(s) present in the category(s), project(s) or folder(s) selected.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/launch_experiments/navigator_launch.png' /> <br />
+<img src='images/launch_experiments/navigator_launch.png' /> <br />
 
 
 <br />
@@ -47,4 +47,4 @@ Once an experiment has been launched (unless it is run in [headless](G__Headless
 It is however possible to make experiments run directly once launched, without requiring any intervention from the user.  To install this feature, [open the preferences of GAMA](G__Preferences.md). On the first tab, simply check "Auto-run experiments when they are launched" (which is unchecked by default) and hit "OK" to dismiss the dialog. Next time you'll launch an experiment, it will run automatically (this option also applies to experiments launched from the command line).
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/launch_experiments/prefs_auto_run.png' /> <br />
+<img src='images/launch_experiments/prefs_auto_run.png' /> <br />

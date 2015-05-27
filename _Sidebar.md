@@ -1,6 +1,6 @@
 **[Introduction](G__Overview)**
 ---
-  * [Platform](G__Platform)
+  * [Platform](G__Platform) *
     * 1. Installation and Launching
       * 1.1 [Installation](G__Installation)
       * 1.2 [Launching GAMA](G__Launching)

@@ -22,7 +22,7 @@ The classical displays displaying any kind of content can be manipulated via the
   * the **wheel** allows the modeler to zoom in or out.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/experiments/display-java2D.png' />
+<img src='images/experiments/display-java2D.png' />
 <br />
 
 Each display provides several buttons to manipulate the display:
@@ -47,7 +47,7 @@ The bottom overlay bar displays information about the way it is displayed:
   * the scale of the display (depending on the zoom).
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/experiments/display-sidebar-overlay.png' />
+<img src='images/experiments/display-sidebar-overlay.png' />
 <br />
 
 <br />
@@ -65,7 +65,7 @@ The OpenGL display has an additional button **3D Options** providing 3D features
   * **Inertia mode** (only with Arcball camera): in inertia mode, when the modeler stops moving the camera, there is no straight halt but a kind of inertia.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/experiments/display-OpenGL.png' />
+<img src='images/experiments/display-OpenGL.png' />
 <br />
 
 In addition, the bottom overlay bar provides the Camera position in 3D.

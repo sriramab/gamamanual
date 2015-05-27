@@ -15,12 +15,12 @@ The first one will only check if the existing plugins have any updates available
 
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/auto_update/menu_install.png' /> <br />
+<img src='images/auto_update/menu_install.png' /> <br />
 
 In general, it is preferable to use the second command, as more options (including that of _desinstalling_ some plugins) are provided. Once invoked, it makes the following dialog appear:
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/auto_update/dialog_install.png' /> <br />
+<img src='images/auto_update/dialog_install.png' /> <br />
 
 GAMA expects the user to enter a so-called _update site_. You can copy and paste the following line (or choose it from the drop-down menu as this address is built inside GAMA):
 ```
@@ -29,19 +29,19 @@ https://gama-platform.googlecode.com/svn/update_site/
 GAMA will then scan the entire update site, looking both for new plugins (the example below) and updates to existing plugins. The list available in your installation will of course be different from the one displayed here.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/auto_update/dialog_install_2.png' /> <br />
+<img src='images/auto_update/dialog_install_2.png' /> <br />
 
 Choose the ones you want to install (or update) and click "Next…". A summary page will appear, indicating which plugins will actually be installed (since some plugins might require additional plugins to run properly), followed by a license page that you have to accept. GAMA will then proceed to the installation (that can be cancelled any time) of the plugins chosen.
 
 During the course of the installation, you might receive the following warning, that you can dismiss by clicking "OK".
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/auto_update/warning_install.png' /> <br />
+<img src='images/auto_update/warning_install.png' /> <br />
 
 Once the plugins are installed, GAMA will ask you whether you want to restart or not. It is always safer to do so, so select "Yes" and let it close by itself, register the new plugins and restart.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/auto_update/install_restart.png' /> <br />
+<img src='images/auto_update/install_restart.png' /> <br />
 
 
 ---
@@ -50,12 +50,12 @@ Once the plugins are installed, GAMA will ask you whether you want to restart or
 GAMA offers a mechanism to monitor the availability of updates to the plugins already installed. To install this feature, [open the preferences of GAMA](G__Preferences.md) and choose the button "Advanced…", which gives access to additional preferences.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/auto_update/open_advanced.png' /> <br />
+<img src='images/auto_update/open_advanced.png' /> <br />
 
 In the dialog that appears, navigate to "Install/Update > Automatic Updates". Then, enable the option using the check-box on the top of the dialog and choose the best settings for your workflow. Clicking on "OK" will save these preferences and dismiss the dialog.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/auto_update/prefs_update.png' />
+<img src='images/auto_update/prefs_update.png' />
 <br />
 
 From now on, GAMA will continuously support you in having an up-to-date version of the platform, provided you accept the updates.

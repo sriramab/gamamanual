@@ -13,12 +13,12 @@ It is possible, and actually common, to store different projects/models in diffe
 This process is similar to the [choice of the workspace location](G__Launching#Choosing_a_Workspace.md) when GAMA is launched for the first time. The only preliminary step is to invoke the appropriate command ("Switch Workspace") from the "File" menu.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/first_launch/menu_switch.png' /> <br />
+<img src='images/first_launch/menu_switch.png' /> <br />
 
 In the dialog that appears, the current workspace location should already be entered. Changing it to a new location (or choosing one in the file selector invoked by clicking on "Browse…") and pressing "OK" will then either create a new workspace if none existed at that location or switch to this new workspace. Both operations will restart GAMA and set the new workspace location. To come back to the previous location, just repeat this step (the previous location is normally now accessible from the combo box).
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/first_launch/dialog_switch_ok.png' />
+<img src='images/first_launch/dialog_switch_ok.png' />
 <br />
 
 ---
@@ -31,29 +31,29 @@ Another possibility, if you have models in your current workspace that you would
 This can be done by entering the new workspace location and choosing "Clone current workspace" in the previous dialog instead of "Ok".
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/first_launch/dialog_switch_clone.png' />
+<img src='images/first_launch/dialog_switch_clone.png' />
 <br />
 
 If the new location does not exist, GAMA will ask you to confirm the creation and cloning using a specific dialog box. Dismissing it will cancel the operation.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/first_launch/clone_confirm_new.png' />
+<img src='images/first_launch/clone_confirm_new.png' />
 <br />
 
 If the new location is already the location of an existing workspace, another confirmation dialog is produced. **It is important to note that all projects in the target workspace will be erased and replaced by the projects in the current workspace if you proceed**. Dismissing it will cancel the operation.
 
 > <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/first_launch/clone_confirm_existing.png' />
+<img src='images/first_launch/clone_confirm_existing.png' />
 <br />
 
 There are two cases where cloning is not accepted. The first one is when the user tries to clone the current workspace into itself (i.e. the new location is the same as the current location).
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/first_launch/close_error_same.png' />
+<img src='images/first_launch/close_error_same.png' />
 <br />
 
 The second case is when the user tries to clone the current workspace into one of its subdirectories (which is not feasible).
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/first_launch/close_error_subdir.png' />
+<img src='images/first_launch/close_error_subdir.png' />
 <br />

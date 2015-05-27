@@ -22,7 +22,7 @@ We made the following modeling choice:
   * The staying time depends on the current hour (lower at 9h - go to work - at 12h go to lunch - at 18h - go back home)
   * Infected people are never cured
 
-![https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Incremental_model/incremental_model.jpg](https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Incremental_model/incremental_model.jpg)
+![images/Tutorials/Incremental_model/incremental_model.jpg](images/Tutorials/Incremental_model/incremental_model.jpg)
 
 <br />
 

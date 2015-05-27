@@ -28,7 +28,7 @@ We add four new global variables (i.e. edit the _World_  item) related to predat
   * The energy consumed by a predator agent at each time step  :_predator\_energy\_consum_of type float and initial value of 0.02_
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/24_Predator_variables.png' />
+<img src='images/Tutorials/Graphic_modelling1/24_Predator_variables.png' />
 <br />
 
 
@@ -37,7 +37,7 @@ We define then the four corresponding parameters, all of them regrouped in the "
 **predator\_energy\_transfer, text: "Predator energy transfer"** predator\_energy\_consum, text: "Predator energy consumption"
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/25_Predator_parameters.png' />
+<img src='images/Tutorials/Graphic_modelling1/25_Predator_parameters.png' />
 <br />
 
 
@@ -65,7 +65,7 @@ We specialize the **prey** species from the **generic\_species** species:
 
 As we have deleted the **eat** reflex of our _generic\_species_, we need to recreate it for the _prey_ species (as we need did in [Tutorial\_\_GraphicModel\_step3](step3.md)):
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/18_Prey_eat.png' />
+<img src='images/Tutorials/Graphic_modelling1/18_Prey_eat.png' />
 <br />
 
 
@@ -93,7 +93,7 @@ As done for the **prey** species, we specialize the **predator** species from th
 And the following **condition**: ` ! empty(reachable_preys) `
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/26_Predator_eat.png' />
+<img src='images/Tutorials/Graphic_modelling1/26_Predator_eat.png' />
 <br />
 
 
@@ -110,7 +110,7 @@ We used as well the **species/agent list inside geometry/agent** operator. This 
 Like in the previous model, in the init block of the model (in the _World_ item), we create nb\_predators\_init.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/27_Init_prey_predator.png' />
+<img src='images/Tutorials/Graphic_modelling1/27_Init_prey_predator.png' />
 <br />
 
 
@@ -123,7 +123,7 @@ Definition of a global variable **nb\_predator** that returns the current number
 
 Definition of the corresponding monitor:
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/28_Monitor_predators.png' />
+<img src='images/Tutorials/Graphic_modelling1/28_Monitor_predators.png' />
 <br />
 
 
@@ -133,5 +133,5 @@ Definition of the corresponding monitor:
 
 ## Complete Model
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/29_Step5_complete_model.png' />
+<img src='images/Tutorials/Graphic_modelling1/29_Step5_complete_model.png' />
 <br />

@@ -16,19 +16,19 @@ Since model files need to reside in a project to be managed by GAMA, it is usual
 ## The "Import…" Menu Command
 The simplest, safest and most secure way to import a project into the workspace is to use the built-in "Import…" menu command, available in the "File" menu or in the contextual menu of the _Navigator_.
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/model_import/menu_file_import.png' /> <br />
+<img src='images/model_import/menu_file_import.png' /> <br />
 <br />
 
 When invoked, this command will open a dialog asking the user to choose the source of the importation. It can be a directory in the filesystem (in which GAMA will look for existing projects), a zip file, a SVN site, etc. It is safer in any case to choose "Existing Projects into Workspace".
 
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/model_import/dialog_import.png' /> <br />
+<img src='images/model_import/dialog_import.png' /> <br />
 
 Note that when invoked from the contextual menu, "Import…" will directly give access to a shortcut of this source in a submenu.
 
 <br />
-> <img src='https://gama-platform.googlecode.com/svn/wiki/images/model_import/menu_navigator_import.png' /> <br />
+> <img src='images/model_import/menu_navigator_import.png' /> <br />
 <br />
 
 Both options will lead the user to a last dialog where he/she will be asked to:
@@ -38,7 +38,7 @@ Both options will lead the user to a last dialog where he/she will be asked to:
 
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/model_import/dialog_import_2.png' /> <br />
+<img src='images/model_import/dialog_import_2.png' /> <br />
 <br />
 
 ---
@@ -47,7 +47,7 @@ Both options will lead the user to a last dialog where he/she will be asked to:
 If the user has access to a SVN repository containing GAMA projects, he/she can import them (i.e. _check them out_ in SVN jargon) into the current workspace without problem. The option to choose in the previous dialog is "Projects from SVN".
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/model_import/dialog_import_svn.png' /> <br />
+<img src='images/model_import/dialog_import_svn.png' /> <br />
 <br />
 
 The user is then asked for a SVN repository location, which may have been entered previously or not (in which case, he/she can create it from this dialog). GAMA, once the location is validated and accessible, will scan the repository for GAMA projects and propose them in a way similar to the previous one.
@@ -56,7 +56,7 @@ Once imported from SVN, projects will remain "linked" with the repository they h
 
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/model_import/label_project_svn.png' /> <br />
+<img src='images/model_import/label_project_svn.png' /> <br />
 <br />
 
 Note that if the workspace is [cloned](G__ChangingWorkspace.md), these "links" to SVN repositories will remain untouched, allowing to have different workspaces pointing to the same SVN project.

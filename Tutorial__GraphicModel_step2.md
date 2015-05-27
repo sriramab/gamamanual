@@ -53,7 +53,7 @@ Defining the 3 rgb components of a color is not the only way to define a color i
 
 You should obtain the following definition of the **vegetation\_cell** :
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/09_VegetationCell.png' />
+<img src='images/Tutorials/Graphic_modelling1/09_VegetationCell.png' />
 <br />
 
 ### prey agents
@@ -64,14 +64,14 @@ Using the name of a species as a keyword returns the list of all agent of this s
 We linked each prey agent to a vegetation\_cell but we need to locate them onto the cell initially. To do so, we edit the init block in the prey species with _"location <- myCell.location;"_ . It sets the prey location as equals to the location of the vegetation cell (i.e. its centroid **location**),  the **<-** statement that allows to modify the value of a variable.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/10_Prey_init_location.png' />
+<img src='images/Tutorials/Graphic_modelling1/10_Prey_init_location.png' />
 <br />
 
 ### display
 Finally, we need to update our display to show the vegetation. Logically, we need to edit the _my\_display_ element and add it a new layer. This layer is of type _grid_ and the _grid_ being called _vegetation\_cell_. To make it clearer, we also check the _Show Lines_ option. You should obtain a display similar to the following one:
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/11_Display_grid.png' />
+<img src='images/Tutorials/Graphic_modelling1/11_Display_grid.png' />
 <br />
 Note that the layers in a display work like layers in a GIS; the drawing order will be respected. In our model, the prey agents will be drawn above the vegetation\_cell grid thus they need to be declared afterward.
 <br />
@@ -81,4 +81,4 @@ Note that the layers in a display work like layers in a GIS; the drawing order w
 ## Complete Model
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/12_Step2_complete_model.png' />
+<img src='images/Tutorials/Graphic_modelling1/12_Step2_complete_model.png' />

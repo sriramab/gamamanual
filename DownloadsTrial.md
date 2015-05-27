@@ -18,7 +18,7 @@ Once the download is over, proceed to <a href='G__Installation.md'>this page</a>
 The documentation of GAMA is not (yet) bundled with the application; however, it can be downloaded in PDF format (from the table beside) or <a href='G__Overview.md'>browsed online</a>. <i>Please note that the contents of the  documentation for this version is not complete yet.</i>
 </td>
 <td valign='top'>
-<wiki:gadget url="https://gama-platform.googlecode.com/svn/wiki/gadgets/download_gadget.xml" border=0 width="100%" height="500"/><br>
+<wiki:gadget url="gadgets/download_gadget.xml" border=0 width="100%" height="500"/><br>
 </td>
 </tr></table>
 

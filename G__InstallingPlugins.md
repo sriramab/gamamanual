@@ -25,29 +25,29 @@ An excerpt from the page reads that :
 So we just have to follow these instructions, which leads us to the following dialog, in which we select "RSS view" and click "Next".
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/auto_update/dialog_install_plugins.png' /> <br />
+<img src='images/auto_update/dialog_install_plugins.png' /> <br />
 
 The initial dialog is followed by two other ones, a first to report that the plugin satisfies all the dependencies, a second to ask the user to accept the license agreement.
 
 <br />
-<table><tr><td><img src='https://gama-platform.googlecode.com/svn/wiki/images/auto_update/dialog_install_plugins_2.png' /></td><td><img src='https://gama-platform.googlecode.com/svn/wiki/images/auto_update/dialog_install_plugins_3.png' /></td></tr></table> <br />
+<table><tr><td><img src='images/auto_update/dialog_install_plugins_2.png' /></td><td><img src='images/auto_update/dialog_install_plugins_3.png' /></td></tr></table> <br />
 
 Once we dismiss the warning that the plugin is not signed and accept to restart GAMA, we can test the new plugin by going to the "Views" menu.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/auto_update/menu_other_views.png' />
+<img src='images/auto_update/menu_other_views.png' />
 <br />
 
 The new RSS view is available in the list of views that can be displayed in GAMA.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/auto_update/dialog_show_view.png' />
+<img src='images/auto_update/dialog_show_view.png' />
 <br />
 
 And we can enjoy (after setting some preferences available in its local menu) monitoring the Issues of GAMA from within GAMA itself !
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/auto_update/feed_working.png' />
+<img src='images/auto_update/feed_working.png' />
 <br />
 
 
@@ -73,7 +73,7 @@ In addition to the RSS reader described above, below is a list of plugins that h
   * Update site: http://basti1302.github.com/startexplorer/update/
 
 <br />
-<img width='400' src='https://gama-platform.googlecode.com/svn/wiki/images/auto_update/start_explorer.png' />
+<img width='400' src='images/auto_update/start_explorer.png' />
 <br />
 
 ### Pathtools
@@ -87,7 +87,7 @@ In addition to the RSS reader described above, below is a list of plugins that h
   * Update site: http://csvedit.googlecode.com/svn/trunk/csvedit.update
 
 <br />
-<img width='400' src='https://gama-platform.googlecode.com/svn/wiki/images/auto_update/csv_edit.png' />
+<img width='400' src='images/auto_update/csv_edit.png' />
 <br />
 
 ### Quickimage
@@ -96,5 +96,5 @@ In addition to the RSS reader described above, below is a list of plugins that h
   * Update site: http://psnet.nu/eclipse/updates
 
 <br />
-<img width='400' src='https://gama-platform.googlecode.com/svn/wiki/images/auto_update/quick_image.png' />
+<img width='400' src='images/auto_update/quick_image.png' />
 <br />

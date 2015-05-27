@@ -11,7 +11,7 @@ This step Illustrates how load and agentry GIS data.
   * Load, agentify and display two layers of GIS data (building and road)
   * Modify the initialization of the people agents to put them inside buildings
 
-![https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Incremental_model/Incremental_model3.jpg](https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Incremental_model/Incremental_model3.jpg)
+![images/Tutorials/Incremental_model/Incremental_model3.jpg](images/Tutorials/Incremental_model/Incremental_model3.jpg)
 
 <br />
 

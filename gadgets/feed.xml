@@ -3,7 +3,7 @@
 <UserPref name="feedurl" display_name="Feed" default_value=""/>
 <Content type="html">
 <![CDATA[
-<script type="text/javascript" src="https://gama-platform.googlecode.com/svn/wiki/gadgets/spin.js"></script>
+<script type="text/javascript" src="gadgets/spin.js"></script>
 <div id="refresh" style="padding:10px;font-size: small;" ><button onclick="javascript:initialize()">Refresh</button></div>
 <div style="padding:10px"> <div id="feed" style="font-size: small;"></div> </div>
 <style type=text/css>

@@ -37,7 +37,7 @@ display city_display type: opengl{
 }
 ```
 
-![https://gama-platform.googlecode.com/svn/wiki/images/species_layer.png](https://gama-platform.googlecode.com/svn/wiki/images/species_layer.png)
+![images/species_layer.png](images/species_layer.png)
 
 
 

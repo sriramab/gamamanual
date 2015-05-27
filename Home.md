@@ -1,7 +1,7 @@
 <table border="0" width="100%" cellspacing="20">
 <tr>
 <td align="right" width="521px" valign="top">
-<img width="521px" src="https://gama-platform.googlecode.com/svn/wiki/images/splash/gama_front3.jpg"/> 
+<img width="521px" src="images/splash/gama_front3.jpg"/> 
 </td>
 <td align="justify" valign="top">
 <font size="3" color="#42618F">G A M A </font><font face="verdana" size="2" > is a modeling and simulation development environment for building spatially explicit agent-based simulations. Its latest version, 1.6.1, can be freely [G__Downloads downloaded] or [https://code.google.com/p/gama-platform/source/checkout built from source], and comes pre-loaded with several models, [G__Tutorials tutorials] and a complete [G__Overview on-line documentation].</font>
@@ -33,4 +33,4 @@
 
 ------
 ==Recent activity==
-<wiki:gadget url="https://gama-platform.googlecode.com/svn/wiki/gadgets/feed.xml" width="80%"  height="600px" border="0"/>
+<wiki:gadget url="gadgets/feed.xml" width="80%"  height="600px" border="0"/>

@@ -24,7 +24,7 @@ We use as well the operator **length** that returns the number of elements in a 
 
 Thus, In the _World_, we add the **nb\_preys** global variable as follows:
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/21_Nb_preys.png' />
+<img src='images/Tutorials/Graphic_modelling1/21_Nb_preys.png' />
 <br />
 ### monitor
 A monitor allows to follow the value of an arbitrary expression in GAML. It has the following facets:
@@ -33,7 +33,7 @@ A monitor allows to follow the value of an arbitrary expression in GAML. It has 
 
 To define a monitor double click on your _GUI experiment_ item  then _Add monitor_. Our monitor will be called **Number of preys** (text field) and its value **nb\_preys** .
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/22_monitor.png' />
+<img src='images/Tutorials/Graphic_modelling1/22_monitor.png' />
 <br />
 
 
@@ -57,5 +57,5 @@ Inspectors allow to obtain informations about a species or an agent. There are t
 Please note that visually the 4th step complete model is very similar to the 3rd as monitors are not shown, only the new variable _nb\_preys_ is visible.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Graphic_modelling1/23_Step4_complete_model.png' />
+<img src='images/Tutorials/Graphic_modelling1/23_Step4_complete_model.png' />
 <br />

@@ -17,7 +17,7 @@ In batch mode, the top information bar displays 3 distinct information (instead 
   * **Cycle**: the cycle number in the current simulation.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/experiments/batch_Information_bar.png' />
+<img src='images/experiments/batch_Information_bar.png' />
 <br />
 
 
@@ -37,7 +37,7 @@ experiment Batch type: batch repeat: 2 keep_seed: true until: (food_gathered = f
 ```
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/experiments/batch_Parameters_pane.png' />
+<img src='images/experiments/batch_Parameters_pane.png' />
 <br />
 
 The interface summarizes all model parameters and the parameters given to the exploration method:

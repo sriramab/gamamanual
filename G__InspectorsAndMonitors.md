@@ -18,16 +18,16 @@ The species browser provides informations about all or a selection of agents of 
 
 The agent browser is available through the **Agents** menu or by right clicking on a by right\_clicking on a display.
 
-<br /> <img src='https://gama-platform.googlecode.com/svn/wiki/images/inspector/browse-menu.png' /> <br />
+<br /> <img src='images/inspector/browse-menu.png' /> <br />
 <br />
 
-<br /> <img src='https://gama-platform.googlecode.com/svn/wiki/images/inspector/browse_right_clicking.png' /> <br />
+<br /> <img src='images/inspector/browse_right_clicking.png' /> <br />
 <br />
 
 It displays in a table all the values of the agent variables of the considered species; each line corresponding to an agent.
 
 
-<br /> <img src='https://gama-platform.googlecode.com/svn/wiki/images/inspector/browse_result.png' /> <br />
+<br /> <img src='images/inspector/browse_result.png' /> <br />
 <br />
 
 
@@ -55,17 +55,17 @@ It is possible to «highlight» the selected agent.
 ## Monitor
 Monitors allow to follow the value of a GAML expression. For instance the following monitor allow to follow the number of infected people agents during the simulation. The monitor is updated at each simulation step.
 
-<br /> <img src='https://gama-platform.googlecode.com/svn/wiki/images/inspector/monitor.png' /> <br />
+<br /> <img src='images/inspector/monitor.png' /> <br />
 <br />
 
 It is possible to define a monitor inside a model (see [this page](G__DefiningMonitorsAndInspectors.md)). It is also possible to define a monitor through the graphical interface.
 
 To define a monitor, first choose **Add Monitor** in the **Views** menu. then define the display legend and the expression to monitor.
-<br /> <img src='https://gama-platform.googlecode.com/svn/wiki/images/inspector/add_monitor.png' /> <br />
+<br /> <img src='images/inspector/add_monitor.png' /> <br />
 <br />
 
 In the following example, we defined a monitor with the legend "nb of infected people" and that has for value the number of infected people.
-<br /> <img src='https://gama-platform.googlecode.com/svn/wiki/images/inspector/monitor_definition.png' /> <br />
+<br /> <img src='images/inspector/monitor_definition.png' /> <br />
 <br />
 
 The expression should be written with the GAML language. See [this page](G__GamlReference.md) for more details about the GAML language.

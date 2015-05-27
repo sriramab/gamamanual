@@ -58,7 +58,7 @@ This tutorial introduces the use of 3D in GAMA. In particular, it offers a quick
 ## [Incremental Model](Tutorial__IncrementalTutorial.md)
 <a></a>
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Incremental_model/incremental_model.jpg' width='200' />
+<img src='images/Tutorials/Incremental_model/incremental_model.jpg' width='200' />
 <br />
 
 This tutorial proposes a complete overview of many features of GAMA. It concerns a model of disease spreading in a small city. In particular, it presents how to integrate GIS data and use GIS, to use a road shapefile for the movement of agents, to define a 3D display, to define a multi-level model and use differential equations.

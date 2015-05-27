@@ -14,7 +14,7 @@ Please note that the preferences specific to GAMA will be shared, on a same mach
 To open the preferences dialog of GAMA, either click on the small "form" button on the top-left corner of the window or select "Preferences…" from the Gama, "Help" or "Views" menu depending on your OS.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/auto_update/open_prefs.png' /> <br />
+<img src='images/auto_update/open_prefs.png' /> <br />
 
 <br />
 
@@ -22,7 +22,7 @@ To open the preferences dialog of GAMA, either click on the small "form" button 
 
 ## General
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/preferences/general.png' /> <br />
+<img src='images/preferences/general.png' /> <br />
   * **Random Number Generation**: all the options pertaining to generating random numbers in simulations
     * Random Number Generator: the name of the generator to use by default (if none is specified in the model).
     * Define a default seed: whether or not a default seed should be used if none is specified in the model  (otherwise it is chosen randomly by GAMA)
@@ -48,7 +48,7 @@ To open the preferences dialog of GAMA, either click on the small "form" button 
 
 ## Display
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/preferences/display.png' /> <br />
+<img src='images/preferences/display.png' /> <br />
 
   * **Properties**: various properties of displays
     * Default display method: use either 'Java2D' or 'OpenGL' if nothing is specified in the [declaration of a display](G__DefiningDisplays.md).
@@ -75,7 +75,7 @@ To open the preferences dialog of GAMA, either click on the small "form" button 
 
 ## Editor
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/preferences/editor.png' /> <br />
+<img src='images/preferences/editor.png' /> <br />
 <br />
 
 Most of the settings and preferences regarding editors can be found in the [advanced preferences](#Advanced_Preferences.md).
@@ -89,7 +89,7 @@ Most of the settings and preferences regarding editors can be found in the [adva
 
 ## External
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/preferences/external.png' /> <br />
+<img src='images/preferences/external.png' /> <br />
 <br />
 
 These preferences pertain to the use of external libraries or data with GAMA.
@@ -115,11 +115,11 @@ The set of preferences described above are specific to GAMA. But there are other
 These "advanced" preferences are accessible by clicking on the "Advanced…" button in the Preferences view.
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/preferences/advanced.png' /> <br />
+<img src='images/preferences/advanced.png' /> <br />
 <br />
 
 Depending on what is installed, the second view that appears will contain a tree of options on the left and preference pages on the right. **Contrary to the first set of preferences, please note that these preferences will be saved in the current workspace**, which means that changing workspace will revert them to their default values. It is however possible to import them in the new workspace using of the wizards provided in the standard "Import…" command (see [here](G__ImportingModels.md)).
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/preferences/advanced_2.png' /> <br />
+<img src='images/preferences/advanced_2.png' /> <br />
 <br />

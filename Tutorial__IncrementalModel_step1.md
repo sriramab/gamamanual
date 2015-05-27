@@ -12,7 +12,7 @@ This first step Illustrates how to write a model in GAMA. In particular, it desc
   * Creation of **500** **people** agents randomly located in the environment (size: 500x500)
   * Definition a display to visualize the people agents.
 
-![https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Incremental_model/Incremental_model1.jpg](https://gama-platform.googlecode.com/svn/wiki/images/Tutorials/Incremental_model/Incremental_model1.jpg)
+![images/Tutorials/Incremental_model/Incremental_model1.jpg](images/Tutorials/Incremental_model/Incremental_model1.jpg)
 
 <br />
 
