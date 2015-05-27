@@ -28,7 +28,6 @@
         * 4.2.5 [Batch Specific UI](G__BatchSpecific.md)
         * 4.2.6 [Errors View](G__ErrorsView.md)
     * 5. [Preferences](G__Preferences.md)
-  * 
 ---
 
   * **[GAML (GAMA Modeling Language)](G__GamlLanguage.md)**
@@ -93,7 +92,6 @@
       * 7.8 [Defining User Interaction](G__DefininUserInteraction.md)
       * 7.9 [Using BDI Architecture](G__UsingBDI.md)
     * 8. [Index](G__Index.md)
-  * 
 ---
 
   * **[Tutorials](G__Tutorials.md)**
@@ -103,7 +101,6 @@
     * 4. [3D Tutorial](Tutorial__ThreeDTutorial.md)
     * 5. [Incremental Model](Tutorial__IncrementalTutorial.md)
     * 6. [Graphical modelling](Tutorial__GraphicModelling.md)
-  * 
 ---
 
   * **[Developing Extensions](G__DevelopingExtensions.md)**
@@ -118,19 +115,15 @@
     * 9. [Developing a Control Architecture](G__DevelopingControlArchitectures.md)
     * 10. [Index of annotations](G__DevelopingIndexAnnotations.md)
     * 11. [IScope](G__DevelopingIScope.md)
-  * 
 ---
 
   * **[References](G__References.md)**
-  * 
 ---
 
   * **[Events](G__Events.md)**
-  * 
 ---
 
   * **[Older versions](G__OlderVersions.md)**
-  * 
 ---
 
   * Coding Camp
