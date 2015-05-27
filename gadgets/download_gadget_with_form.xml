@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+  <ModulePrefs title="GAMA Download Gadget" />
+  <Content type="html">
+  <![CDATA[
+	<script type="text/javascript" async="" src="https://www.google-analytics.com/ga.js"></script>
+	<script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript">
+	(function($){$.InFieldLabels=function(b,c,d){var f=this;f.$label=$(b);f.label=b;f.$field=$(c);f.field=c;f.$label.data("InFieldLabels",f);f.showing=true;f.init=function(){f.options=$.extend({},$.InFieldLabels.defaultOptions,d);if(f.$field.val()!=""){f.$label.hide();f.showing=false};f.$field.focus(function(){f.fadeOnFocus()}).blur(function(){f.checkForEmpty(true)}).bind('keydown.infieldlabel',function(e){f.hideOnChange(e)}).change(function(e){f.checkForEmpty()}).bind('onPropertyChange',function(){f.checkForEmpty()})};f.fadeOnFocus=function(){if(f.showing){f.setOpacity(f.options.fadeOpacity)}};f.setOpacity=function(a){f.$label.stop().animate({opacity:a},f.options.fadeDuration);f.showing=(a>0.0)};f.checkForEmpty=function(a){if(f.$field.val()==""){f.prepForShow();f.setOpacity(a?1.0:f.options.fadeOpacity)}else{f.setOpacity(0.0)}};f.prepForShow=function(e){if(!f.showing){f.$label.css({opacity:0.0}).show();f.$field.bind('keydown.infieldlabel',function(e){f.hideOnChange(e)})}};f.hideOnChange=function(e){if((e.keyCode==16)||(e.keyCode==9))return;if(f.showing){f.$label.hide();f.showing=false};f.$field.unbind('keydown.infieldlabel')};f.init()};$.InFieldLabels.defaultOptions={fadeOpacity:0.5,fadeDuration:300};$.fn.inFieldLabels=function(c){return this.each(function(){var a=$(this).attr('for');if(!a)return;var b=$("input#"+a+"[type='text'],"+"input#"+a+"[type='password'],"+"textarea#"+a);if(b.length==0)return;(new $.InFieldLabels(this,b[0],c))})}})(jQuery);
+	</script>
+	<script type="text/javascript">
+	(function (window) {
+    {
+        var unknown = '-';
+        var nAgt = navigator.userAgent;
+        // system
+        var os = unknown;
+        var clientStrings = [
+            {s:'Windows 98', r:/(Windows 98|Win98)/},
+            {s:'Windows 2000', r:/(Windows NT 5.0|Windows 2000)/},
+            {s:'Windows XP', r:/(Windows NT 5.1|Windows XP)/},
+            {s:'Windows Server 2003', r:/Windows NT 5.2/},
+            {s:'Windows Vista', r:/Windows NT 6.0/},
+            {s:'Windows 7', r:/(Windows 7|Windows NT 6.1)/},
+            {s:'Windows 8.1', r:/(Windows 8.1|Windows NT 6.3)/},
+            {s:'Windows 8', r:/(Windows 8|Windows NT 6.2)/},
+            {s:'Windows NT 4.0', r:/(Windows NT 4.0|WinNT4.0|WinNT|Windows NT)/},
+            {s:'Linux', r:/(Linux|X11)/},
+            {s:'MacOSX', r:/Mac OS X/},
+        ];
+        for (var id in clientStrings) {
+            var cs = clientStrings[id];
+            if (cs.r.test(nAgt)) {
+                os = cs.s;
+                break;
+            }
+        }
+
+        var osVersion = unknown;
+
+        if (/Windows/.test(os)) {
+            osVersion = /Windows (.*)/.exec(os)[1];
+            os = 'Windows';
+        }
+
+        switch (os) {
+            case 'MacOSX':
+                osVersion = /Mac OS X (10[\.\_\d]+)/.exec(nAgt)[1];
+                break;
+        }
+    }
+
+    window.jscd = {
+         os: os,
+        osVersion: osVersion,
+    };
+}(this));
+	</script>
+	<script>
+	function DisplayRecommended()
+      {
+        $("#" + jscd.os).toggleClass("recommended");
+      }
+   function QueryAndAppendGooglClickCount(index)
+      {
+        var link = $(this);
+        $.getJSON('https://www.googleapis.com/urlshortener/v1/url',
+          {
+            shortUrl: link.attr('href'),
+            projection: "FULL"
+          },
+          function (data)
+          {
+          var downl = " downloads";
+          //if ((index % 2) == 1) {downl = "";}
+          link.after("<br/><span class='down'>&nbsp;" + data.analytics.allTime.longUrlClicks + downl + "&nbsp;</span>");
+          }
+        );
+      }
+
+      $(document).ready(
+        function ()
+        {
+         // Setup the ajax indicator
+ 		 $('body').append('<div id="ajaxBusy"><p><img src="https://gama-platform.googlecode.com/svn/wiki/images/ajax-loader.gif"></p></div>');
+
+		  $('#ajaxBusy').css({
+		    display:"none",
+		    margin:"0px",
+		    paddingLeft:"0px",
+		    paddingRight:"0px",
+		    paddingTop:"0px",
+		    paddingBottom:"0px",
+		    position:"absolute",
+		    right:"3px",
+		    top:"3px",
+		     width:"auto"
+		  });
+
+ 			$('#ajaxBusy').show();
+
+        	$('#DownloadList').hide();
+        	DisplayRecommended();
+        	$("label").inFieldLabels();
+        	$("a.googl").each(QueryAndAppendGooglClickCount);
+        	//Windows 64 Bits: https://goo.gl/8i23Z1
+			//Windows 32 Bits: https://goo.gl/WGJdC8
+			//Mac OSX 64 Bits: https://goo.gl/HC2gsH
+			//Mac OSX 32 Bits: https://goo.gl/r84ifQ
+			//Linux 64 Bits: https://goo.gl/5QvoAS
+			//Linux 32 Bits: https://goo.gl/0UW1rE
+        	//GetUserAgent();
+
+        	$('#ss-form').submit(function(e){
+    			$('#UserForm').hide();
+    			$('#DownloadList').show();
+			});
+        }
+      );
+
+
+      $(document).ajaxStart(function(){
+  			//$('#ajaxBusy').show();
+			}).ajaxStop(function(){
+  			$('#ajaxBusy').hide();
+	   });
+
+
+	</script>
+<style type="text/css">
+
+form {
+	border-style: none;
+}
+
+form fieldset {
+	border-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+form p { position: relative; margin: 10px 0;}
+form p label { position: absolute; top: 0; left: 0;}
+form p br {display: none;}
+
+
+form fieldset p input {
+	border: solid 1px #ccc;
+	display: block;
+	padding: 0px;
+	margin: 0;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size:14px;
+	width: 220px;
+	line-height:26px;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+form fieldset p label {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size:14px;
+	width: 200px;
+	display: block;
+	margin: 5px 5px 5px 6px;
+	padding: 0;
+	color: #777;
+	font-weight:bold;
+}
+
+form fieldset table tr {
+	vertical-align:middle;
+}
+
+.down {font-family:Verdana, Geneva, sans-serif;
+	font-size:12px; color:#9F9F9F; text-align:center; line-height:25px;}
+.bits {font-family:Verdana, Geneva, sans-serif;
+	font-size:12px; font-weight:bold;}
+.googl {
+	background-color:#4F6EA4;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size:14px;
+	width: 140px;
+	line-height:30px;
+	text-decoration:none;
+	text-align: center;
+	text-shadow:0px 1px 0px #528ecc;
+	font-weight:bold;
+}
+.googl:hover {
+	background-color: #378de5;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr.border_bottom td {
+  padding-bottom:10px;
+  border-bottom:1pt solid #515151;
+}
+
+.btn_small {
+	width: 70px;
+	background-color: #9F9F9F;
+}
+
+.btn_small:hover {
+	background-color: #666666;
+}
+
+.btn_larger {
+	width: 100px;
+	background-color: #9F9F9F;
+}
+
+.btn_larger:hover {
+	background-color: #666666;
+}
+
+.recommended {
+	color:#ffffff;
+	background-color: #256839;
+}
+.recommended:hover {
+	background-color: #34CE48;
+}
+.googl:active {
+	position:relative;
+	top:1px;
+}
+</style>
+<noscript><div class= "down">In some browsers, the download may fail with JavaScript disabled. Here are <a href="https://www.enable-javascript.com/" target="_blank">instructions how to enable it</a>.</div></noscript>
+
+<iframe style="display:none" name="hidden_frame"></iframe>
+
+<div id="UserForm" onload=" $('#ajaxBusy').show();">
+	<form action="https://docs.google.com/forms/d/1M-SNRTGc3Q7t62SAYb_o-JefkCtRY8ZlAruHUZ8naas/formResponse" method="POST" id="ss-form" target="hidden_frame">
+	<fieldset>
+
+
+	<table border="0" width="100%" cellspacing="20">
+	<tr>
+		<td align="center">
+				<table cellspacing=10 >
+					<tr >
+						<td width="90">
+							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/user.png" height="64" alt="User"/>
+						</td>
+						<td colspan=2>
+							<p>
+								<label for="entry_1679004580">Name</label><br />
+								<input type="text" name="entry.1679004580" value="" id="entry_1679004580" dir="auto" aria-label="Name  " aria-required="true" required="true" title="">
+								<br/><span class='down'>Last Name, First Name</span>
+							</p>
+						</td>
+					</tr>
+					<tr height=40 colspan=3/>
+					<tr >
+						<td width="90">
+							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/institution.png" height="64" alt="Institution"/>
+						</td>
+						<td colspan= 2><p>
+							<label for="entry_1344892905">Institution</label><br />
+							<input type="text" name="entry.1344892905" value="" id="entry_1344892905" dir="auto" aria-label="Institution  " title="">
+							<br/><span class='down'>(e.g. Lab, University, Company)</span>
+						</p></td>
+					</tr>
+					<tr height=40 colspan=3/>
+					<tr >
+						<td width="90">
+							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/mail.png" height="64" alt="Mail"/>
+						</td>
+						<td ><p>
+								<label style="width:120px" for="entry_795865460">Email</label><br />
+								<input style="width:140px" type="text" name="entry.795865460" value="" id="entry_795865460" dir="auto">
+								<br/><span class='down'>&nbsp;</span>
+						</p></td>
+						<td align="center">
+							<p><input class="recommended btn_small" type="submit" name="submit" value="OK &rarr;" id="ss-submit">
+							<br /><span class='down'>&nbsp;</span></p>
+						</td>
+					</tr>
+					<tr height=40 colspan=3/>
+					<tr >
+						<td width="90">
+							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/Library.png" height="64" alt="Documentation"/>
+						</td>
+						<td >
+							<a class="googl" href="https://gama-platform.googlecode.com/svn/wiki/pdf/GAMA 1.6.1 Documentation.pdf" id="Doc">Documentation</a><br/><span class='down'>PDF Documentation</span>
+						</td>
+						<td>
+						</td>
+					</tr>
+
+				</table>
+		</td>
+	</tr>
+</table>
+	</fieldset>
+
+<input type="hidden" name="draftResponse" value="[,,&quot;-6731897135747629667&quot;]
+">
+<input type="hidden" name="pageHistory" value="0">
+<input type="hidden" name="fbzx" value="-6731897135747629667">
+</form>
+</div>
+
+<div id="DownloadList">
+<table border="0" width="100%" cellspacing="20">
+	<tr style="vertical-align:middle">
+		<td align="center">
+				<table cellspacing=10 >
+					<tr >
+						<td width="90">
+							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/Linux.png" height="64" alt="Linux"/>
+						</td>
+						<td align="center">
+							<a class="googl" href="https://goo.gl/5QvoAS" id="Linux">Linux 64 Bit</a>
+						</td>
+						<td align="center">
+							<a class="googl btn_small" href="https://goo.gl/0UW1rE">32 Bit</a>
+						</td>
+					</tr>
+					<tr height=40 colspan=3/>
+					<tr >
+						<td width="90">
+							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/MacOSX.png" height="64" alt="MacOSX"/>
+						</td>
+						<td align="center">
+							<a class="googl" href="https://goo.gl/HC2gsH" id="MacOSX">MacOS X 64 Bit</a>
+						</td>
+						<td align="center">
+							<a class="googl btn_small" href="https://goo.gl/r84ifQ">32 Bit</a>
+						</td>
+					</tr>
+					<tr height=40 colspan=3/>
+					<tr >
+						<td width="90">
+							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/Windows.png" height="64" alt="Windows"/>
+						</td>
+						<td align="center">
+							<a class="googl" href="https://goo.gl/8i23Z1" id="Windows">Windows 64 Bit</a>
+						</td>
+						<td align="center">
+							<a class="googl btn_small" href="https://goo.gl/WGJdC8">32 Bit</a>
+						</td>
+					</tr>
+					<tr height=40 colspan=3/>
+					<tr >
+						<td width="90">
+							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/Library.png" height="64" alt="Documentation"/>
+						</td>
+						<td align="center">
+							<a class="googl" href="https://gama-platform.googlecode.com/svn/wiki/pdf/GAMA 1.6.1 Documentation.pdf" id="Doc">Documentation</a><br/><span class='down'>PDF Documentation</span>
+						</td>
+						<td>
+						</td>
+					</tr>
+				</table>
+		</td>
+	</tr>
+</table>
+</div>
+  ]]>
+  </Content>
+</Module>

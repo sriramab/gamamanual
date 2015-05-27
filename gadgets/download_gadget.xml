@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+  <ModulePrefs title="GAMA Download Gadget" />
+  <Content type="html">
+  <![CDATA[
+	<script type="text/javascript" async="" src="https://www.google-analytics.com/ga.js"></script>
+	<script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript">
+	(function (window) {
+    {
+        var unknown = '-';
+		var nAgt = navigator.userAgent;
+        // system
+        var os = unknown;
+        var clientStrings = [
+            {s:'Windows 98', r:/(Windows 98|Win98)/},
+            {s:'Windows 2000', r:/(Windows NT 5.0|Windows 2000)/},
+            {s:'Windows XP', r:/(Windows NT 5.1|Windows XP)/},
+            {s:'Windows Server 2003', r:/Windows NT 5.2/},
+            {s:'Windows Vista', r:/Windows NT 6.0/},
+            {s:'Windows 7', r:/(Windows 7|Windows NT 6.1)/},
+            {s:'Windows 8.1', r:/(Windows 8.1|Windows NT 6.3)/},
+            {s:'Windows 8', r:/(Windows 8|Windows NT 6.2)/},
+            {s:'Windows NT 4.0', r:/(Windows NT 4.0|WinNT4.0|WinNT|Windows NT)/},
+            {s:'Linux', r:/(Linux|X11)/},
+            {s:'MacOSX', r:/Mac OS X/},
+        ];
+        for (var id in clientStrings) {
+            var cs = clientStrings[id];
+            if (cs.r.test(nAgt)) {
+                os = cs.s;
+                break;
+            }
+        }
+
+        var osVersion = unknown;
+
+        if (/Windows/.test(os)) {
+            osVersion = /Windows (.*)/.exec(os)[1];
+            os = 'Windows';
+        }
+
+        switch (os) {
+            case 'MacOSX':
+                osVersion = /Mac OS X (10[\.\_\d]+)/.exec(nAgt)[1];
+                break;
+        }
+    }
+
+    window.jscd = {
+         os: os,
+        osVersion: osVersion,
+    };
+
+}(this));
+	</script>
+	<script>
+	function DisplayRecommended()
+      {
+        $("#" + jscd.os).toggleClass("recommended");
+      }
+   function QueryAndAppendGooglClickCount(index)
+      {
+        var link = $(this);
+        $.getJSON('https://www.googleapis.com/urlshortener/v1/url',
+          {
+            shortUrl: link.attr('href'),
+            projection: "FULL"
+          },
+          function (data)
+          {
+          var downl = " downloads";
+          //if ((index % 2) == 1) {downl = "";}
+          link.after("<br/><span class='down'>" + data.analytics.allTime.longUrlClicks + downl + "</span>");
+          }
+        );
+      }
+
+      $(document).ready(
+        function ()
+        {
+
+          // Setup the ajax indicator
+ 		 $('body').append('<div id="ajaxBusy"><p><img src="https://gama-platform.googlecode.com/svn/wiki/images/ajax-loader.gif"></p></div>');
+
+		  $('#ajaxBusy').css({
+		    display:"none",
+		    margin:"0px",
+		    paddingLeft:"0px",
+		    paddingRight:"0px",
+		    paddingTop:"0px",
+		    paddingBottom:"0px",
+		    position:"absolute",
+		    right:"3px",
+		    top:"3px",
+		     width:"auto"
+		  });
+
+ 			$('#ajaxBusy').show();
+
+        //Windows 64 Bits: https://goo.gl/8i23Z1
+		//Windows 32 Bits: https://goo.gl/WGJdC8
+		//Mac OSX 64 Bits: https://goo.gl/HC2gsH
+		//Mac OSX 32 Bits: https://goo.gl/r84ifQ
+		//Linux 64 Bits: https://goo.gl/5QvoAS
+		//Linux 32 Bits: https://goo.gl/0UW1rE
+        	//GetUserAgent();
+        	DisplayRecommended();
+        	$("a.googl").each(QueryAndAppendGooglClickCount);
+        }
+      );
+
+      $(document).ajaxStart(function(){
+  			//$('#ajaxBusy').show();
+			}).ajaxStop(function(){
+  			$('#ajaxBusy').hide();
+	   });
+
+
+	</script>
+<style type="text/css">
+.down {font-family:Verdana, Geneva, sans-serif;
+	font-size:12px; color:#9F9F9F; text-align:center; line-height:25px;}
+.bits {font-family:Verdana, Geneva, sans-serif;
+	font-size:12px; font-weight:bold;}
+.googl {
+	background-color:#4F6EA4;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size:14px;
+	width: 140px;
+	line-height:30px;
+	text-decoration:none;
+	text-align: center;
+	text-shadow:0px 1px 0px #528ecc;
+	font-weight:bold;
+}
+.googl:hover {
+	background-color: #378de5;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr.border_bottom td {
+  padding-bottom:10px;
+  border-bottom:1pt solid #515151;
+}
+
+.btn_small {
+	width: 70px;
+	background-color: #9F9F9F;
+}
+
+.btn_small:hover {
+	background-color: #666666;
+}
+
+.recommended {
+	background-color: #256839;
+}
+.recommended:hover {
+	background-color: #34CE48;
+}
+.googl:active {
+	position:relative;
+	top:1px;
+}
+</style>
+<noscript>
+ <div class= "down">In some browsers, the download may fail with JavaScript disabled.
+ Here are <a href="https://www.enable-javascript.com/" target="_blank">
+ instructions how to enable it</a>.</div>
+</noscript>
+<table border="0" width="100%" cellspacing="20">
+	<tr height=2 colspan=1/>
+	<tr style="vertical-align:middle">
+		<td align="center">
+				<table cellspacing=10 >
+					<tr class="border_bottom">
+						<td width="90">
+							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/Linux.png" height="64" alt="Linux"/>
+						</td>
+						<td align="center">
+							<a class="googl" href="https://goo.gl/5QvoAS" id="Linux">Linux 64 Bit</a>
+						</td>
+						<td align="center">
+							<a class="googl btn_small" href="https://goo.gl/0UW1rE">32 Bit</a>
+						</td>
+					</tr>
+					<tr height=40 colspan=3/>
+					<tr class="border_bottom">
+						<td width="90">
+							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/MacOSX.png" height="64" alt="MacOSX"/>
+						</td>
+						<td align="center">
+							<a class="googl" href="https://goo.gl/HC2gsH" id="MacOSX">MacOS X 64 Bit</a>
+						</td>
+						<td align="center">
+							<a class="googl btn_small" href="https://goo.gl/r84ifQ">32 Bit</a>
+						</td>
+					</tr>
+					<tr height=40 colspan=3/>
+					<tr class="border_bottom">
+						<td width="90">
+							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/Windows.png" height="64" alt="Windows"/>
+						</td>
+						<td align="center">
+							<a class="googl" href="https://goo.gl/8i23Z1" id="Windows">Windows 64 Bit</a>
+						</td>
+						<td align="center">
+							<a class="googl btn_small" href="https://goo.gl/WGJdC8">32 Bit</a>
+						</td>
+					</tr>
+					<tr height=40 colspan=3/>
+					<tr class="border_bottom">
+						<td width="90">
+							<img src="https://gama-platform.googlecode.com/svn/wiki/images/os/Library.png" height="64" alt="Documentation"/>
+						</td>
+						<td align="center">
+							<a class="googl" href="https://goo.gl/XXXXX" id="Doc">Documentation</a><br/><span class='down'>Not available yet</span>
+						</td>
+						<td>
+						</td>
+					</tr>
+				</table>
+		</td>
+	</tr>
+</table>
+  ]]>
+  </Content>
+</Module>
