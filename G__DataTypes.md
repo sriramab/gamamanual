@@ -12,7 +12,7 @@ There are 4 categories of types:
 The hierarchy of types in GAML (only primitive and complex types are displayed here, of course, as the other ones are model-dependant) is the following:
 
 <br />
-<img src='https://gama-platform.googlecode.com/svn/wiki/images/types/types_hierarchy.png' />
+<img src='images/types/types_hierarchy.png' />
 <br />
 
 
