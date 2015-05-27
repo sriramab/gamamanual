@@ -1,1 +1,0 @@
-The contents of this page has been moved to [G\_\_Installation](G__Installation.md)
