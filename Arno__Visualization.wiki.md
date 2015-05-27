@@ -1,5 +1,0 @@
-  * [ToDo](Arno__VisualizationToDo.md)
-  * [Offline Visualization Tool](Arno__OfflineVisualization.md)
-  * [AugmentedSIR](Arno__AugmentedSIR.md)
-  * [Tuto3D](Arno__Tuto3D.md)
-  * [Collada](Arno__Collada.md)
