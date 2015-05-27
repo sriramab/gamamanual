@@ -1,0 +1,1 @@
+&lt;wiki:gadget url="https://gama-platform.googlecode.com/svn/wiki/gadgets/download\_form.xml" width="100%" height="900" /&gt;

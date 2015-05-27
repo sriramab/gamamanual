@@ -1,0 +1,134 @@
+
+<br />
+# <font color='blue'>Introduction</font>
+A grid is a particular species of agents. Indeed, a grid is a set of agents that share a grid [topology](Species16#Topology_description.md). As other agents, a grid species can have [variables](Variables16.md), init, [actions](ActionGAMA16.md), [behaviors](Behaviors16.md) and [aspects](Aspect16.md).
+
+However, contrary to regular species, grid agents are created automatically at the beginning of the simulation. It is thus not necessary to use the [create](Commands16#create.md) statement to create them.
+
+Moreover, in addition to classic [built-in variables](BuiltInVariables16.md), grid a provided with a set of additional built-in variables
+
+
+# <font color='blue'>Declaration</font>
+## basis
+There are several ways to declare a grid species:
+  * by defining the number of rows and columns:
+```
+   grid grid_name width: nb_cols height: nb_rows neighbors: 4/6/8 {
+      ...
+   }
+```
+  * by using an _asc_ grid file:
+```
+   grid file:file("../includes/dem.asc") neighbors: 4/6/8 {
+      ...
+   }
+```
+With:
+  * width : number of cells along x-axis (number of columns)
+  * height : number of cells along y-axis (number of rows)
+  * file: file used to initialized the grid
+  * neighbours : neighborhood type (4 - Von Neumann, 6 - hexagon or 8 - Moore)
+
+![http://gama-platform.googlecode.com/files/neighbours_types.png](http://gama-platform.googlecode.com/files/neighbours_types.png)
+
+If a file is used to declare the grid, the number of rows and columns is automatically computed from the file. In the same way, the value of the cell read in the file is stored in the **grid\_value** built-in variable.
+
+## optimization facets
+A grid can be provided with specific facets that allows to optimized the computation time and the memory space.
+
+### use\_regular\_agents
+```
+      use_regular_agents: true/false,
+```
+If **false**, the grid will be composed of "minimal" agents, that uses less computer memory, but have some limitations: they cannot inherit from "normal" species, they cannot have sub-populations, their name is fixed and cannot be changed,...
+By default, this facet is set to **true** when declaring a grid without this facet.
+
+### use\_individual\_shapes
+```
+      use_individual_shapes: true/false,
+```
+If **false**, then just one geometry is used for all agents (that can be translated). The goal is limit the memory used by the geometries.
+By default, this facet is set to **true** when declaring a grid without this facet.
+
+
+### use\_neighbours\_cache
+```
+      use_neighbours_cache: true/false,
+```
+If **false**, no neighbours computation result are stored in the cache.
+By default, this facet is set to **true** when declaring a grid without this facet.
+
+
+# <font color='blue'>Built-in variables</font>
+Grid agents are provides with several specific built-in variables.
+
+## grid\_x
+This variable stores the column index of a cell.
+```
+   grid cell width: 10 height: 10 neighbors: 4 {
+        init {
+             write "my column index is:" + grid_x;
+        }
+   }
+```
+
+## grid\_y
+This variable stores the row index of a cell.
+```
+   grid cell width: 10 height: 10 neighbors: 4 {
+        init {
+             write "my row index is:" + grid_y;
+        }
+   }
+```
+## agents
+return the set of agents located inside the cell. Note the use of this variable is deprecated.
+It is preferable to use the **inside** operator:
+
+```
+ grid cell width: 10 height: 10 neighbors: 4 { 
+        list<bug> bugs_inside -> {bug inside self};
+   }
+```
+
+## color
+The **color** built-in variable is used by the optimized grid display. Indeed, it is possible to use for grid agents an optimized aspect by using in a display the **grid** keyword. In this case, the grid will be displayed using the color defined by the **color** variable. The border of the cells can be displayed with a specific color by using the **lines** facet.
+Here an example of the display of a grid species named **cell** with black border.
+
+```
+experiment main_xp type: gui{
+	output {
+		display map {
+			grid cell lines: rgb("black") ;
+		}
+	}
+}
+```
+
+## grid\_value
+The **grid\_value** built-in variable is used when initializing a grid from grid file (see later). It is also used for the 3D representation of [DEM](http://code.google.com/p/gama-platform/wiki/DEM).
+
+
+# <font color='blue'>Access to cells</font>
+there are several ways to access to a specific cell:
+  * by a location: by casting a location to a cell
+```
+   global {
+         init {
+             write "cell at {57.5, 45} :" + cell({57.5, 45});
+         }
+   }
+
+   grid cell width: 10 height: 10 neighbors: 4 {
+   }
+```
+  * by the row and column indexes: like matrix, it is possible to directly access to a cell from its indexes
+```
+   global {
+         init {
+             write "cell [20,10] :" + cell[20,20];
+         }
+   }
+   grid cell width: 10 height: 10 neighbors: 4 {
+   }
+```

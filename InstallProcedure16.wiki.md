@@ -1,0 +1,1 @@
+The contents of this page has been moved to [G\_\_InstallingSvnVersion](G__InstallingSvnVersion.md)

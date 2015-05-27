@@ -1,0 +1,1 @@
+The contents of this page has been moved to [G\_DataTypes](G_DataTypes.md)
