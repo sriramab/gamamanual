@@ -1,5 +1,4 @@
 ## [Introduction](G__Overview)
----
 ## [Platform](G__Platform)
 1. Installation and Launching
   1. [Installation](G__Installation)
@@ -28,7 +27,6 @@
     6. [Errors View](G__ErrorsView)
 5. [Preferences](G__Preferences)
 
----
 ## [GAML (GAMA Modeling Language)](G__GamlLanguage)
 1. [Key Concepts](G__KeyConcepts)
   1. [Runtime Concepts](G__RuntimeConcepts)
@@ -92,7 +90,6 @@
   9. [Using BDI Architecture](G__UsingBDI)
 8. [Index](G__Index)
 
----
 ## [Tutorials](G__Tutorials)
 1. [Predator Prey](Tutorial__PredatorPreyTutorial)
 2. [Stupid Model](Tutorial__StupidModelTutorial)
@@ -101,7 +98,6 @@
 5. [Incremental Model](Tutorial__IncrementalTutorial)
 6. [Graphical modelling](Tutorial__GraphicModelling)
 
----
 ## [Developing Extensions](G__DevelopingExtensions)
 1. [Installing the SVN version](G__InstallingSvnVersion)
 2. [Architecture of GAMA](G__GamaArchitecture)
@@ -115,12 +111,11 @@
 10. [Index of annotations](G__DevelopingIndexAnnotations)
 11. [IScope](G__DevelopingIScope)
 
----
-[References](G__References)
----
-[Events](G__Events)
----
-[Older versions](G__OlderVersions)
----
-* Coding Camp
-  * [Reorganization](Event__CC15_Reorganization)
+## [References](G__References)
+
+## [Events](G__Events)
+
+## [Older versions](G__OlderVersions)
+
+## Coding Camp
+* [Reorganization](Event__CC15_Reorganization)
