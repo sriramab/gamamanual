@@ -1,35 +1,36 @@
 **[Introduction](G__Overview)**
 ---
-  * [Platform](G__Platform) *
-    * 1. Installation and Launching
-      * 1.1 [Installation](G__Installation)
-      * 1.2 [Launching GAMA](G__Launching)
-      * 1.3 [Headless Mode](G__Headless)
-      * 1.4 [Updating GAMA](G__Updating)
-      * 1.5 [Installing Plugins](G__InstallingPlugins)
-      * 1.6 [Troubleshooting](G__Troubleshooting)
-    * 2. [Workspace, Projects and Models](G__Workspace)
-      * 2.1 [Navigating in the Workspace](G__NavigatingWorkspace)
-      * 2.2 [Changing Workspace](G__ChangingWorkspace)
-      * 2.3 [Importing Models](G__ImportingModels)
-      * 2.4 [Sharing Models](G__SharingModels)
-    * 3. [Editing Models](G__EditingModels)
-      * 3.1 [GAML Editor](G__GamlEditor)
-      * 3.2 [Validation of Models](G__ValidationOfModels)
-      * 3.3 [Graphical Editor](G__GraphicalEditor)
-    * 4. [Running Experiments](G__RunningExperiments)
-      * 4.1 [Launching Experiments](G__LaunchingExperiments)
-      * 4.2 [Experiments User interface](G__ExperimentsUserInterface)
-        * 4.2.1 [Menus and commands](G__MenusAndCommands)
-        * 4.2.2 [Parameters view](G__ParametersView)
-        * 4.2.3 [Inspectors and monitors](G__InspectorsAndMonitors)
-        * 4.2.4 [Displays](G__Displays)
-        * 4.2.5 [Batch Specific UI](G__BatchSpecific)
-        * 4.2.6 [Errors View](G__ErrorsView)
-    * 5. [Preferences](G__Preferences)
----
+**[Platform](G__Platform)**
 
-  * **[GAML (GAMA Modeling Language)](G__GamlLanguage)**
+1. Installation and Launching
+  1. [Installation](G__Installation)
+  2. [Launching GAMA](G__Launching)
+  3. [Headless Mode](G__Headless)
+  4. [Updating GAMA](G__Updating)
+  5. [Installing Plugins](G__InstallingPlugins)
+  6. [Troubleshooting](G__Troubleshooting)
+2. [Workspace, Projects and Models](G__Workspace)
+  1. [Navigating in the Workspace](G__NavigatingWorkspace)
+  2. [Changing Workspace](G__ChangingWorkspace)
+  3. [Importing Models](G__ImportingModels)
+  4. [Sharing Models](G__SharingModels)
+3. [Editing Models](G__EditingModels)
+  1. [GAML Editor](G__GamlEditor)
+  2. [Validation of Models](G__ValidationOfModels)
+  3. [Graphical Editor](G__GraphicalEditor)
+4. [Running Experiments](G__RunningExperiments)
+  1. [Launching Experiments](G__LaunchingExperiments)
+  2. [Experiments User interface](G__ExperimentsUserInterface)
+    1. [Menus and commands](G__MenusAndCommands)
+    2. [Parameters view](G__ParametersView)
+    3. [Inspectors and monitors](G__InspectorsAndMonitors)
+    4. [Displays](G__Displays)
+    5. [Batch Specific UI](G__BatchSpecific)
+    6. [Errors View](G__ErrorsView)
+5. [Preferences](G__Preferences)
+---
+**[GAML (GAMA Modeling Language)](G__GamlLanguage)**
+
     * 1. [Key Concepts](G__KeyConcepts)
       * 1.1 [Runtime Concepts](G__RuntimeConcepts)
     * 2. [Organization of a Model](G__OrganizationModel)
