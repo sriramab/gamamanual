@@ -21,11 +21,11 @@
 <p/>
 <font size="3" color="#42618F">G A M A </font><font face="verdana" size="2" > is developed by several teams under the umbrella of the IRD/UPMC international research unit [http://www.ummisco.ird.fr/ UMMISCO]:
 
-  * [http://www.ifi.auf.org/site/content/view/35/46/lang,french/ MSI Research Team], Vietnam National University, Hanoi, Vietnam (2007 − 2014)
-  * [http://www.umr-idees.fr/ UMR 6228 IDEES], CNRS/University of Rouen, France (2010 − 2014)
-  * [http://www.irit.fr UMR 5505 IRIT], CNRS/University of Toulouse 1, France (2010 − 2014)
-  * [http://www.cit.ctu.edu.vn DREAM Research Team], University of Can Tho, Vietnam (2011 − 2014)
-  * [http://www.lri.fr/ UMR 8623 LRI], CNRS/University Paris-Sud, France (2011 - 2014)</font>
+* [http://www.ifi.auf.org/site/content/view/35/46/lang,french/ MSI Research Team], Vietnam National University, Hanoi, Vietnam (2007 − 2014)
+* [http://www.umr-idees.fr/ UMR 6228 IDEES], CNRS/University of Rouen, France (2010 − 2014)
+* [http://www.irit.fr UMR 5505 IRIT], CNRS/University of Toulouse 1, France (2010 − 2014)
+* [http://www.cit.ctu.edu.vn DREAM Research Team], University of Can Tho, Vietnam (2011 − 2014)
+* [http://www.lri.fr/ UMR 8623 LRI], CNRS/University Paris-Sud, France (2011 - 2014)</font>
 </td>
 </tr>
 </table>
