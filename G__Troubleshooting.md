@@ -33,7 +33,7 @@ No common trouble...
 ---
 
 ## On MacOS X
-The only problems reported so far on MacOS X (from Lion to Yosemite) concern visual glitches in the UI and problems with displays, either not showing or crashing the JVM. Most (all ?) of these problems are usually related to the fact that GAMA does not run under the correct version of Java Virtual Machine. In that case, follow [these instructions](G__Installation#On_MacOS_X_(Lion,_Mountain_Lion,_Mavericks).md) to install the correct version.
+The only problems reported so far on MacOS X (from Lion to Yosemite) concern visual glitches in the UI and problems with displays, either not showing or crashing the JVM. Most (all ?) of these problems are usually related to the fact that GAMA does not run under the correct version of Java Virtual Machine. In that case, follow [these instructions](G__Installation#On_MacOS_X_(Lion,_Mountain_Lion,_Mavericks)) to install the correct version.
 <br />
 
 ---
@@ -45,7 +45,7 @@ Memory problems are easy to detect: on the bottom right corner of its window, GA
 <br />
 <img src='images/model_menus/memory_status.png' />
 
-There are two ways to circumvent this problem: the first one is to increase the memory allocated to GAMA by the Java Virtual Machine. The second, detailed [on this page](G__OptimizingModels.md) is to try to optimize your models to reduce their memory footprint at runtime.
+There are two ways to circumvent this problem: the first one is to increase the memory allocated to GAMA by the Java Virtual Machine. The second, detailed [on this page](G__OptimizingModels) is to try to optimize your models to reduce their memory footprint at runtime.
 To increase the memory allocated, first locate the file called `Gama.ini`. On Windows and Ubuntu, it is located next to the executable. On MacOS X, you have to right-click on `Gama.app`, choose "Display Package Contents…", and you will find `Gama.ini` in `Contents/MacOS`.
 This file typically looks like the following (some options/keywords may vary depending on the system), and we are interested in two JVM arguments:
 <br />

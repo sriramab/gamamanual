@@ -2,7 +2,7 @@
 
 ---
 
-These installation procedures have been tested on MacOS X 10.6 to 10.9, and Windows 8. On Mac OS X 10.10 (Yosemite), please have a look here: [install Java on Yosemite](G__Installation.md) for details about the Java version to use. **Eclipse 3.8.2 is the recommended Eclipse version to install GAMA**. Kepler install is still experimental.
+These installation procedures have been tested on MacOS X 10.6 to 10.9, and Windows 8. On Mac OS X 10.10 (Yosemite), please have a look here: [install Java on Yosemite](G__Installation) for details about the Java version to use. **Eclipse 3.8.2 is the recommended Eclipse version to install GAMA**. Kepler install is still experimental.
 
 **Important note: the current SVN version is no more compatible with the GAMA 1.6.1 release.**
   * If you plan to create plugin that should be compatible with the release, please download the GAMA code source at revision r11988 (on Google Code).
@@ -99,7 +99,7 @@ To compile and run GAMA properly, you will need to configure your Eclipse IDE an
   1. By default, Eclipse uses Java 7 when it is installed whereas GAMA only needs Java 6. On MacOS X in particular, we may have to change the version of the JDK to ensure that GAMA will run smoothly.
     * Window->Preferences
     * In: Java / Compiler: set "Compiler compliance level" to 1.6
-    * In: Java / Installed JREs -> Add -> Standard VM -> JRE home -> Directory and choose the directory of a Java 6 JDK (preferable) or a Java 7 JDK (except for MacOS X, see [Installation](Installation.md)).
+    * In: Java / Installed JREs -> Add -> Standard VM -> JRE home -> Directory and choose the directory of a Java 6 JDK (preferable) or a Java 7 JDK (except for MacOS X, see [Installation](Installation)).
       * Download the JDK 6 (for Windows & Linux) [here](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html#jdk-6u45-oth-JPR)
       * Download the JDK 7 (for Windows & Linux) [here](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
       * Download the JDK 6 (for Mac OS X) [here](http://support.apple.com/kb/DL1572). To switch between 1.7 and 1.6 (if both are installed), look at the use of `java-home` on this [page](http://docs.oracle.com/javase/7/docs/webnotes/install/mac/mac-jdk.html).

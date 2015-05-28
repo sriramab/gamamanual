@@ -9,7 +9,7 @@ Using a <b>graph</b> species enables to easily shows interaction between agent o
 
 To instantiate this **graph** species, several step must be followed. First the graph species must inherit from the abstract species **graph\_node**, then the method **related\_to** must be redefined and finally an auxiliary species that inherits from **base\_edge** used to represent the edges of the generated graph must be declared.
 
-A **graph node** is an abstract species that must redefine one method called **related\_to**. This method returns true or false according to a given condition that will express the distance between two agents. This distance can be of course the euclidean distance (but in this case it is recommenced to use the operator [as\_distance\_graph](G__OperatorsAK#as_distance_graph.md) but also any other distance define by the user.
+A **graph node** is an abstract species that must redefine one method called **related\_to**. This method returns true or false according to a given condition that will express the distance between two agents. This distance can be of course the euclidean distance (but in this case it is recommenced to use the operator [as\_distance\_graph](G__OperatorsAK#as_distance_graph) but also any other distance define by the user.
 
 
 <br />

@@ -3,9 +3,9 @@
 ---
 
 GAMA provides tools to define user interactions during the simulation to give more flexibility to the user in controlling the agents, creating agents, killing agents, running specific actions, etc:
-  * [Event](#Event.md): allows to define specific user interaction actions for a display through a specific layer
-  * [User command](#user_command.md): allows to let the user call specific action through the user interface.
-  * [User control architecture](#user_control_architecture.md): allows to give the user the control on an agent.
+  * [Event](#Event): allows to define specific user interaction actions for a display through a specific layer
+  * [User command](#user_command): allows to let the user call specific action through the user interface.
+  * [User control architecture](#user_control_architecture): allows to give the user the control on an agent.
 
 
 <br />

@@ -63,7 +63,7 @@ We specialize the **prey** species from the **generic\_species** species:
     * max\_transfer, type float, initial value: prey\_max\_transfer ;
     * energy\_consum, type float, initial value : prey\_energy\_consum ;
 
-As we have deleted the **eat** reflex of our _generic\_species_, we need to recreate it for the _prey_ species (as we need did in [Tutorial\_\_GraphicModel\_step3](step3.md)):
+As we have deleted the **eat** reflex of our _generic\_species_, we need to recreate it for the _prey_ species (as we need did in [Tutorial\_\_GraphicModel\_step3](step3)):
 <br />
 <img src='images/Tutorials/Graphic_modelling1/18_Prey_eat.png' />
 <br />

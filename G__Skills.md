@@ -46,7 +46,7 @@ if speed = 5 {
 }
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 # <font color='blue'> advanced_driving </font>
 
@@ -121,7 +121,7 @@ action to choose a speed
   * returns: float
   * **new\_road** (agent): the road on which to choose the speed
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 # <font color='blue'> communicating </font>
 The communicating skill offers some primitives and built-in variables which enable agent to communicate with each other using the FIPA interaction protocol.
@@ -247,7 +247,7 @@ Replies a message with a 'subscribe' performative message.
   * **message** (message): The message to be replied
   * **content** (list): The content of the replying message
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 # <font color='blue'> driving </font>
 
@@ -285,7 +285,7 @@ moves the agent towards the target passed in the arguments while considering the
   * **tolerance** (float): tolerance distance used for the computation (replaces the current value of tolerance)
   * **lanes\_attribute** (string): the name of the attribut of the road agent that determine the number of road lanes (replaces the current value of lanes\_attribute)
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 # <font color='blue'> fsm </font>
 
@@ -297,7 +297,7 @@ moves the agent towards the target passed in the arguments while considering the
 ## Actions
 
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 # <font color='blue'> graph_user </font>
 
@@ -307,7 +307,7 @@ moves the agent towards the target passed in the arguments while considering the
 ## Actions
 
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 # <font color='blue'> graphic </font>
 The graphic skill is intended to define the minimal set of behaviours required from a graphical agent
@@ -335,7 +335,7 @@ The graphic skill is intended to define the minimal set of behaviours required f
   * returns: void
   * **period** (int): make the agent twinkle with a given period
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 # <font color='blue'> grid </font>
 
@@ -349,7 +349,7 @@ The graphic skill is intended to define the minimal set of behaviours required f
 ## Actions
 
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 # <font color='blue'> MDXSKILL </font>
 
@@ -382,7 +382,7 @@ The graphic skill is intended to define the minimal set of behaviours required f
 
   * returns: float
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 # <font color='blue'> moving </font>
 The moving skill is intended to define the minimal set of behaviours required for agents that are able to move on different topologies
@@ -436,7 +436,7 @@ Moves the agent towards a random location (3D point) at the maximum distance (wi
   * **z\_max** (int): the maximum alltitude (z) the geometry can reach
   * **bounds** (agent,geometry): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 # <font color='blue'> moving3D </font>
 The moving skill 3D is intended to define the minimal set of behaviours required for agents that are able to move on different topologies
@@ -460,7 +460,7 @@ moves the agent forward, the distance being computed with respect to its speed a
   * **heading** (int): int, optional, the direction to take for this move (replaces the current value of roll)
   * **bounds** (geometry,agent): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 # <font color='blue'> physical3D </font>
 
@@ -476,7 +476,7 @@ moves the agent forward, the distance being computed with respect to its speed a
 ## Actions
 
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 # <font color='blue'> probabilistic_tasks </font>
 
@@ -486,7 +486,7 @@ moves the agent forward, the distance being computed with respect to its speed a
 ## Actions
 
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 # <font color='blue'> reflex </font>
 
@@ -496,7 +496,7 @@ moves the agent forward, the distance being computed with respect to its speed a
 ## Actions
 
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 # <font color='blue'> skill_road </font>
 
@@ -524,7 +524,7 @@ unregister the agent on the road
   * returns: void
   * **agent** (agent): the agent to unregister on the road.
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 # <font color='blue'> skill_road_node </font>
 
@@ -538,7 +538,7 @@ unregister the agent on the road
 ## Actions
 
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 # <font color='blue'> sorted_tasks </font>
 
@@ -548,7 +548,7 @@ unregister the agent on the road
 ## Actions
 
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 # <font color='blue'> SQLSKILL </font>
 
@@ -600,7 +600,7 @@ unregister the agent on the road
 
   * returns: float
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 # <font color='blue'> user_first </font>
 
@@ -610,7 +610,7 @@ unregister the agent on the road
 ## Actions
 
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 # <font color='blue'> user_last </font>
 
@@ -620,7 +620,7 @@ unregister the agent on the road
 ## Actions
 
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 # <font color='blue'> user_only </font>
 
@@ -630,7 +630,7 @@ unregister the agent on the road
 ## Actions
 
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 # <font color='blue'> weighted_tasks </font>
 
@@ -640,4 +640,4 @@ unregister the agent on the road
 ## Actions
 
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)

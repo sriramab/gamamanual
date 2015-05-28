@@ -51,7 +51,7 @@ create species (self) number: 10 {
 ---
 
 ## each
-`each` is available only in the right-hand argument of [iterators](G__OperatorsAK#Containers-related_operators.md).  It is a pseudo-variable that represents, in turn, each of the elements of the left-hand container. It can then take any type depending on the context.
+`each` is available only in the right-hand argument of [iterators](G__OperatorsAK#Containers-related_operators).  It is a pseudo-variable that represents, in turn, each of the elements of the left-hand container. It can then take any type depending on the context.
 
   * Example:
 

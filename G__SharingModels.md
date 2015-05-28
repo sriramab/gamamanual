@@ -4,9 +4,9 @@
 
 Thanks to its native integration of the SVN versioning system, GAMA offers users the possibility to share their projects (provided they have access to a SVN repository), without any further need to install add-ons or plugins.
 
-This section provides some basic information on how to share a project and manage it once it has been shared. For more specific documentation about SVN or other ways to use the built-in sharing facilities with other versioning systems, please refer to this [Eclipse documentation on SVN](http://www.eclipse.org/subversive/) and [this one on Git](http://projects.eclipse.org/projects/technology.egit) (go to [this page](G__InstallingPlugins.md) to learn how to install Git).
+This section provides some basic information on how to share a project and manage it once it has been shared. For more specific documentation about SVN or other ways to use the built-in sharing facilities with other versioning systems, please refer to this [Eclipse documentation on SVN](http://www.eclipse.org/subversive/) and [this one on Git](http://projects.eclipse.org/projects/technology.egit) (go to [this page](G__InstallingPlugins) to learn how to install Git).
 
-Note that projects [imported](G__ImportingModels.md) from a repository are automatically considered as "shared" between the workspace used by GAMA and the repository they have been imported from.
+Note that projects [imported](G__ImportingModels) from a repository are automatically considered as "shared" between the workspace used by GAMA and the repository they have been imported from.
 
 
 <br />
@@ -16,7 +16,7 @@ Note that projects [imported](G__ImportingModels.md) from a repository are autom
 ## Project Sharing
 The initial sharing of contents between the GAMA platform and a remote repository can only be made at the level of a project. Once a project has been shared, however, its components are manageable on an individual basis (i.e. they can be moved, deleted, changed, and even removed from the sharing).
 
-All the commands related to sharing are grouped under a sub-menu ("Team") of the contextual menu of the [navigator](G__NavigatingWorkspace.md). From there, it is possible to initiate sharing, stop it, but also manage the incoming and outgoing changes to a project.
+All the commands related to sharing are grouped under a sub-menu ("Team") of the contextual menu of the [navigator](G__NavigatingWorkspace). From there, it is possible to initiate sharing, stop it, but also manage the incoming and outgoing changes to a project.
 
 To initiate sharing, select the project you want to share and select "Team", then "Share Project…".
 

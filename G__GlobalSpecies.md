@@ -34,7 +34,7 @@ species a_name {
 }
 ```
 
-In the same way, user can through facets attach skills, a control architecture, define scheduling rules like for other species. See [this page](G__DefiningSpecies.md) for more details.
+In the same way, user can through facets attach skills, a control architecture, define scheduling rules like for other species. See [this page](G__DefiningSpecies) for more details.
 
 A facet that is specific to the global species is the **torus: true/false** one that defines the toroidal properties of the environment.  By default (if this facet is not used) the environment is not torus.
 

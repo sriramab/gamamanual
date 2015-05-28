@@ -2,7 +2,7 @@
 
 ---
 
-GAMA allows modelers to [define several and several kinds of displays](G__DefiningDisplays.md) in a [GUI experiment](G__DefiningExperiments.md):
+GAMA allows modelers to [define several and several kinds of displays](G__DefiningDisplays) in a [GUI experiment](G__DefiningExperiments):
   * java 2D displays
   * OpenGL displays
 

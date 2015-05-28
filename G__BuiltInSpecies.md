@@ -24,7 +24,7 @@ The list of available built-in agents in GAMA is:
   * cluster\_builder: allows to use clustering techniques on a set of agents.
   * multicriteria\_analyzer: allows to use multi-criteria analysis methods.
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 ## Table of Contents
 
@@ -46,7 +46,7 @@ The list of available built-in agents in GAMA is:
 
   * returns: unknown
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -111,7 +111,7 @@ The list of available built-in agents in GAMA is:
 
   * returns: float
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -122,7 +122,7 @@ The list of available built-in agents in GAMA is:
 ### Actions
 
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -133,7 +133,7 @@ The list of available built-in agents in GAMA is:
 ### Actions
 
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -144,7 +144,7 @@ The list of available built-in agents in GAMA is:
 ### Actions
 
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -160,7 +160,7 @@ The list of available built-in agents in GAMA is:
   * returns: bool
   * → **other** (agent):
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -179,7 +179,7 @@ Allows to stop the current simulation so that cannot be continued after. All the
 Allows to pause the current simulation ACTUALLY EXPERIMENT FOR THE MOMENT. It can be set to continue with the manual intervention of the user.
   * returns: unknown
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -206,7 +206,7 @@ Allows to pause the current simulation ACTUALLY EXPERIMENT FOR THE MOMENT. It ca
 
   * returns: int
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -221,4 +221,4 @@ Allows to pause the current simulation ACTUALLY EXPERIMENT FOR THE MOMENT. It ca
 
   * returns: unknown
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)

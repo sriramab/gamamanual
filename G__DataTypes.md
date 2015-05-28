@@ -33,7 +33,7 @@ The hierarchy of types in GAML (only primitive and complex types are displayed h
 ```
 bool (0) -> false
 ```
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 ### float
   * **Definition:** primitive datatype holding floating point values comprised between -(2-252)`*`21023 and -(2-252)`*`21023.
@@ -44,7 +44,7 @@ bool (0) -> false
 ```
 float (12) -> 12.0
 ```
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 ### int
   * **Definition:** primitive datatype holding integer values comprised between -231 and 231 - 1
@@ -55,16 +55,16 @@ float (12) -> 12.0
 ```
 int (234.5) -> 234.
 ```
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 ### string
   * **Definition:** a datatype holding a sequence of characters.
   * **Comments:** this datatype is internally backed up by the Java String class. However, contrary to Java, strings are considered as a primitive type, which means they do not contain character objects. This can be seen when casting a string to a list using the list operator: the result is a list of one-character strings, not a list of characters.
   * **Litteral declaration:** a sequence of characters enclosed in quotes, like 'this is a string' . If one wants to literally declare strings that contain quotes, one has to double these quotes in the declaration. Strings accept escape characters like `\n` (newline), `\r` (carriage return), `\t` (tabulation), as well as any Unicode character (\uXXXX`).
   * **Other declarations:** see string
-  * **Example:** see [string operators](Operators_14.md).
+  * **Example:** see [string operators](Operators_14).
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -88,13 +88,13 @@ bool fileTextReadable <- fileText.readable;
   * **Comments:** This datatype is barely used, since species can be directly used as datatypes themselves.
   * **Declaration:** the agent casting operator can be applied to an int (to get the agent with this unique index), a string (to get the agent with this name).
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 
 ### container
   * **Definition:** a generic datatype that represents a collection of data.
   * **Comments:**  a container variable can be a list, a matrix, a map... Conversely each list, matrix and map is a kind of container. In consequence every container can be used in container-related operators.
-  * **See also:** [Container operators](Operators_14.md)
+  * **See also:** [Container operators](Operators_14)
   * **Declaration:**
 ```
 container c  <- [1,2,3];
@@ -102,7 +102,7 @@ container c  <- matrix [[1,2,3],[4,5,6]];
 container c  <- map ["x"::5, "y"::12];
 container c  <- list species1;
 ```
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 ### file
   * **Definition:** a datatype that represents a file.
@@ -122,7 +122,7 @@ container c  <- list species1;
     * properties files: files with the extension .properties. The `content` is by default a map of string::string.
     * folders. The `content` is by default a list of string.
   * **Remark:** Files are also a particular kind of container and can thus be read, written or iterated using the container operators and commands.
-  * **See also:** [File operators](Operators_14.md)
+  * **See also:** [File operators](Operators_14)
   * **Declaration:** a file can be created using the generic `file` (that opens a file in read only mode and tries to determine its contents), `folder` or the `new_folder` (to open an existing folder or create a new one) unary operators. But things can be specialized with the combination of the `read`/`write` and `image`/`text`/`shapefile`/`properties` unary operators.
 ```
 folder(a_string)  // returns a file managing a existing folder
@@ -134,7 +134,7 @@ write(properties(a_string)) // returns a property file which is available for wr
                             // using the standard container operations).
 
 ```
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 
 ### geometry
@@ -153,13 +153,13 @@ write(properties(a_string)) // returns a property file which is available for wr
     * If this Geometry is the empty geometry, it is an empty point.
     * If the Geometry is a point, it is a non-empty point.
     * Otherwise, it is a Polygon whose points are (minx, miny), (maxx, miny), (maxx, maxy), (minx, maxy), (minx, miny).
-  * **See also:** [Spatial operators](Operators_14.md)
+  * **See also:** [Spatial operators](Operators_14)
   * **Declaration:** geometries can be built from a point, a list of points or by using specific operators (circle, square, triangle...).
 ```
 geometry varGeom <- circle(5);
 geometry polygonGeom <- polygon([{3,5}, {5,6},{1,4}]);
 ```
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 
 ### graph
@@ -174,7 +174,7 @@ geometry polygonGeom <- polygon([{3,5}, {5,6},{1,4}]);
     * graphs are also a particular kind of container and can thus be manipulated using the container operators and commands.
     * This algorithm used to compute the circuit requires that the graph be complete and the triangle inequality exists (if x,y,z are vertices then d(x,y)+d(y,z)<d(x,z) for all x,y,z) then this algorithm will guarantee a hamiltonian cycle such that the total weight of the cycle is less than or equal to double the total weight of the optimal hamiltonian cycle.
     * The computation of the spanning tree uses an implementation of  the Kruskal's minimum spanning tree algorithm. If the given graph is connected it computes the minimum spanning tree, otherwise it computes the minimum spanning forest.
-  * **See also:** [Graph operators](Operators_14.md)
+  * **See also:** [Graph operators](Operators_14)
   * **Declaration:** graphs can be built from a list of vertices (agents or geometries) or from a list of edges (agents or geometries) by using specific operators. They are often used to deal with a road network and are built from a shapefile.
 ```
 create road from: shape_file_road;
@@ -186,14 +186,14 @@ graph(['a'::345, 'b'::13])  --:  ([b: in[] + out[b::13], a: in[] + out[a::345], 
 graph(a_graph)  --: a_graph
 graph(node1)    --: null
 ```
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 
 ### list
   * **Definition:** a composite datatype holding an ordered collection of values.
   * **Comments:** lists are more or less equivalent to instances of ArrayList in Java (although they are backed up by a specific class). They grow and shrink as needed, can be accessed via an index (see @ or index\_of), support set operations (like union and difference), and provide the modeller with a number of utilities that make it easy to deal with collections of agents (see, for instance, shuffle, reverse,where,sort\_by,...).
   * **Remark:** lists can contain values of any datatypes, including other lists. Note, however, that due to limitations in the current parser, lists of lists cannot be declared litteraly; they have to be built using assignments. Lists are also a particular kind of container and can thus be manipulated using the container operators and commands.
-  * **Litteral declaration:** a set of expressions separated by commas, enclosed in square brackets, like [12, 14, 'abc', self]. An empty list is noted [.md](.md).
+  * **Litteral declaration:** a set of expressions separated by commas, enclosed in square brackets, like [12, 14, 'abc', self]. An empty list is noted []().
   * **Other declarations:** lists can be build litteraly from a point, or a string, or any other element by using the list casting operator.
 
 ```
@@ -203,7 +203,7 @@ list (1) -> [1]
 list<int> myList <-list [1,2,3,4]; 
 myList[2] => 3
 ```
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 
 ### map
@@ -214,7 +214,7 @@ myList[2] => 3
     * pairs (type = list of pairs): the list of all pairs key::value
   * **Comments:** maps are more or less equivalent to instances of Hashtable in Java (although they are backed up by a specific class).
   * **Remark:** maps can contain values of any datatypes, including other maps or lists. Maps are also a particular kind of container and can thus be manipulated using the container operators and commands.
-  * **Litteral declaration:** a set of pair expressions separated by commas, enclosed in square brackets; each pair is represented by a key and a value sperarated by '::'. An example of map is [agentA::'big', agentB::'small', agentC::'big']. An empty map is noted [.md](.md).
+  * **Litteral declaration:** a set of pair expressions separated by commas, enclosed in square brackets; each pair is represented by a key and a value sperarated by '::'. An example of map is [agentA::'big', agentB::'small', agentC::'big']. An empty map is noted []().
   * **Other declarations:** lists can be built litteraly from a point, or a string, or any other element by using the map casting operator.
 
 ```
@@ -222,7 +222,7 @@ map (1) -> [1::1]
 map ({1,5}) -> [x::1, y::5]
 []   // empty map 
 ```
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 
 ### matrix
@@ -241,7 +241,7 @@ matrix mat3 <- matrix([["c11","c12","c13"],["c21","c22","c23"]]);
        c12;c22
        c13;c23
 ```
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 
 ### pair
@@ -261,7 +261,7 @@ pair testPairPoint <- {3,5};             // 3::5
 pair testPairList2 <- [6,7,8];           // 6::7
 pair testPairMap <- [2::6,5::8,12::45];  // [12,5,2]::[45,8,6]
 ```
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 
 ### path
@@ -295,7 +295,7 @@ path_between (a_graph, a_source, a_target) // idem with a the given graph as top
 
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 
 ### point
@@ -312,7 +312,7 @@ path_between (a_graph, a_source, a_target) // idem with a the given graph as top
 point ([12,123.45]) -> {12.0, 123.45} 
 point (2) -> {2.0, 2.0}
 ```
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 
 ### rgb
@@ -338,7 +338,7 @@ rgb test <- rgb(3,5,67);                     // rgb [3,5,67]
 rgb te <- rgb(340);                            // rgb [0,1,84]
 rgb tete <- rgb(["r"::34, "g"::56, "b"::345]); // rgb [34,56,255]
 ```
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 
 ### species
@@ -349,7 +349,7 @@ rgb tete <- rgb(["r"::34, "g"::56, "b"::345]); // rgb [34,56,255]
   * Litteral declaration: the name of a declared species is already a litteral declaration of species.
   * Other declarations: the species casting operator, or its variant called species\_of can be applied to an agent in order to get its species.
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 
 ### Species names as types
@@ -377,7 +377,7 @@ entities {
 }
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 
 ### topology
@@ -387,7 +387,7 @@ entities {
     * environment(type = geometry): the environment of this topology (i.e. the geometry that defines its boundaries)
   * **Comments:** the attributes `places` depends on the kind of the considered topolopy.  For continuous topologies, it is a list with their environment. For discrete topologies, it can be any of the container supporting the inclusion of geometries (list, graph, map, matrix)
   * **Remark:** There exist various kinds of topology: continous topology and discrete topology (e.g. grid, graph...)
-  * **See also:** [Topology operators](Operators_14.md)
+  * **See also:** [Topology operators](Operators_14)
   * **Declaration:** To create a topology, we can use the `topology` unary casting operator applied to:
     * an agent: returns a continuous topology built from the agent's geometry
     * a species name: returns the topology defined for this species population
@@ -397,7 +397,7 @@ entities {
     * a geometry graph: returns a graph topology which computes specifically neighbourhood and distances
 More complex topologies can also be built using dedicated operators, e.g. to decompose a geometry...
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -459,4 +459,4 @@ species drinker {
     }
 }
 ```
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)

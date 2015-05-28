@@ -25,19 +25,19 @@ A GAMA model is composed of three type of sections:
   * **species** and **grid**: these sections define the species of agents composing the model. Grid are defined in the following model step "vegetation dynamic";
   * **experiment** : these sections define a context of execution of the simulations. In particular, it defines the input (parameters) and output (displays, files...) of a model.
 
-More details about the different sections of a GAMA model can be found [here](G__OrganizationModel.md).
+More details about the different sections of a GAMA model can be found [here](G__OrganizationModel).
 
 
 ### Graphical modelling
 First, you need to create a new project (File > New Gama Project). Then, you can create your first diagram ( Right click on your project > New > Other > Model Diagram).
-For more details, you can refer to [Graphic model introduction](G__GamlEditor#Creating_a_first_model.md).
+For more details, you can refer to [Graphic model introduction](G__GamlEditor#Creating_a_first_model).
 
 You should obtain a skeleton diagram similar to the following one.
 <br />
 <img src='images/Tutorials/Graphic_modelling1/01_Skeleton.png' />
 <br />
 ### species
-A [species](G__DefiningSpecies.md) represents a «prototype» of agents: it defines their common properties.
+A [species](G__DefiningSpecies) represents a «prototype» of agents: it defines their common properties.
 
 A species definition requires the definition of three different elements :
   * the internal state of its agents (attributes)
@@ -45,7 +45,7 @@ A species definition requires the definition of three different elements :
   * how they are displayed (aspects)
 
 #### Internal state
-An [attribute](G__DefiningAttributes.md) is defined as follows: type of the attribute  and name. Numerous types of attributes are available: _int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path..._
+An [attribute](G__DefiningAttributes) is defined as follows: type of the attribute  and name. Numerous types of attributes are available: _int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path..._
   * Optional facets: <- (initial value), update (value recomputed at each step of the simulation), function:{..} (value computed each time the variable is used), min, max
 
 In addition to the attributes the modeler explicitly defines, species "inherits" other attributes called "built-in" variables:
@@ -57,7 +57,7 @@ In addition to the attributes the modeler explicitly defines, species "inherits"
 In this first model, we define one species of agents: the **prey** agents. For the moment, these agents will not have a particular behavior, they will just exist and be displayed.
 
 #### Display
-An agent [aspects](G__DefiningAspects.md) have to be defined. An aspect is a way to display the agents of a species : aspect aspect\_name {…}
+An agent [aspects](G__DefiningAspects) have to be defined. An aspect is a way to display the agents of a species : aspect aspect\_name {…}
 In the block of an aspect, it is possible to draw :
   * A geometry :  for instance, the shape of the agent (but it may be a different one, for instance a disk instead of a complex polygon)
   * An image : to draw icons
@@ -76,7 +76,7 @@ To make our agent visible in the display, we need to edit the species, you do so
 <img src='images/Tutorials/Graphic_modelling1/05_Empty_Species.png' />
 <br />
 
-Instead of adding two variables (size and color) as in the [tutorial prey-predator](Tutorial__PredatorPreyTutorial_step1.md), we will use the built-in definition of the aspect. To do so, click on _has the aspect_ in the palette and add it to your _prey_ species. Then, double click on it and **add** a _layer_. In the opened dialog, make sure that the _Shape_ is a circle, _radius_ is 1.0 and the _color_ is blue as show in the image below.
+Instead of adding two variables (size and color) as in the [tutorial prey-predator](Tutorial__PredatorPreyTutorial_step1), we will use the built-in definition of the aspect. To do so, click on _has the aspect_ in the palette and add it to your _prey_ species. Then, double click on it and **add** a _layer_. In the opened dialog, make sure that the _Shape_ is a circle, _radius_ is 1.0 and the _color_ is blue as show in the image below.
 <br />
 <img src='images/Tutorials/Graphic_modelling1/06_Aspect_definition.png' />
 <br />
@@ -84,7 +84,7 @@ Instead of adding two variables (size and color) as in the [tutorial prey-predat
 ### World element
 In a GAMA model, we have a global agent, called the **World**, that includes all the other ones.
 The world agent represents everything that is global to the model : dynamics, variables…
-It allows to initialize simulations (init block): the world is always created and initialized first when a simulation is launched (before any other agents). The geometry (shape) of the world agent is by default a square with 100m for side size, but can be redefined if necessary (see the [Road traffic tutorial](Tutorial__RoadTrafficTutorial.md)).
+It allows to initialize simulations (init block): the world is always created and initialized first when a simulation is launched (before any other agents). The geometry (shape) of the world agent is by default a square with 100m for side size, but can be redefined if necessary (see the [Road traffic tutorial](Tutorial__RoadTrafficTutorial)).
 
 #### global variable
 
@@ -144,7 +144,7 @@ Each display can include different layers (like in a GIS) :
   * Texts : **texte** layer\_name value: my\_text;
   * Charts : see later.
 
-Note that it is possible to define a [opengl display](G__3DSpecificInstructions.md) (for 3D display) by using the facet **type: opengl**.
+Note that it is possible to define a [opengl display](G__3DSpecificInstructions) (for 3D display) by using the facet **type: opengl**.
 
 
 The last part we need to do now is to add a display to visualise our _prey_ agents. Select "has the display" from the palette and add it to _my\_GUI\_xp_. Double click on it to edit, then add a layer. In the opened dialog (shown below), select _type_ to be species, _Species_ as prey and _aspect_ as default.

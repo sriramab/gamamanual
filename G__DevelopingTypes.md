@@ -18,7 +18,7 @@ Developing a new type requiers the implementation of 2 Java files:
 ## The data structure file
 
 The class representing the data structure is a Java class annotated by:
-  * a [@vars](G__DevelopingIndexAnnotations#@vars.md) annotation to describe the attributes of a complex type. The `@vars` annotation contains a set of `@var` elements.
+  * a [@vars](G__DevelopingIndexAnnotations#@vars) annotation to describe the attributes of a complex type. The `@vars` annotation contains a set of `@var` elements.
 ```
 @vars({ @var(name = IKeyword.COLOR_RED, type = IType.INT), @var(name = IKeyword.COLOR_GREEN, type = IType.INT),
 	@var(name = IKeyword.COLOR_BLUE, type = IType.INT), @var(name = IKeyword.ALPHA, type = IType.INT),
@@ -26,7 +26,7 @@ The class representing the data structure is a Java class annotated by:
 public class GamaColor extends Color implements IValue {
 ```
 
-It can contain setter and/or getter for each of its attributes. Setters and getters are methods annotated by the [@getter](G__DevelopingIndexAnnotations#@getter.md) or [@setter](G__DevelopingIndexAnnotations#@setter.md) annotations.
+It can contain setter and/or getter for each of its attributes. Setters and getters are methods annotated by the [@getter](G__DevelopingIndexAnnotations#@getter) or [@setter](G__DevelopingIndexAnnotations#@setter) annotations.
 ```
 @getter(IKeyword.COLOR_RED)
 public Integer red() {
@@ -43,7 +43,7 @@ public abstract String stringValue(IScope scope) throws GamaRuntimeException;
 ## The type file
 
 The class representing the type is a Java class such that:
-  * the class should be annotated by the [@type](G__DevelopingIndexAnnotations#@type.md) annotation,
+  * the class should be annotated by the [@type](G__DevelopingIndexAnnotations#@type) annotation,
   * the class should extend the class `GamaType<DataStructureFile>` (and thus implement its 3 methods),
 
 

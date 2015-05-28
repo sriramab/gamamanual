@@ -38,7 +38,7 @@ species Maths {
 diff keyword, for instant, is a place-holder for a syntax more Mathematically. Its first parameter is the variable, the second (variable t) will not change during solve process.
 
 ### Optional mode
-#### simultaneously : [list of agents ](.md)
+#### simultaneously : [list of agents ]()
   * simultaneously mode which accept a list of agent contains equations. The Solve statement will compute simultaneously at same time all the equations
 
 Example of declaration:

@@ -43,7 +43,7 @@ With:
 There are 3 possible types :
   * ‘txt’ (text) : in that case, my\_data is treated as a string, which is written directly in the file
   * ‘csv’ : in that case, my\_data is treated as a list of values : [val1, val2, val3].
-  * ‘shp’ (shapefile - GIS data) : in that case, my\_data is treated as a list of agents : all their geometries are saved in the file (with some variables as attributes). You may refer to [Road traffic tutorial](Tutorial__RoadTrafficTutorial.md) for more information about shapefiles.
+  * ‘shp’ (shapefile - GIS data) : in that case, my\_data is treated as a list of agents : all their geometries are saved in the file (with some variables as attributes). You may refer to [Road traffic tutorial](Tutorial__RoadTrafficTutorial) for more information about shapefiles.
 
 We use this statement (in a global, or world, reflex called **save\_result**) to write:
   * The cycle step: use of the **cycle** keyword that returns the current simulation step.

@@ -17,7 +17,7 @@ output {
   }
 ```
 
-The opengl display share most of the feature that the java2D offers and that are described [here](G__DefiningDisplays.md)
+The opengl display share most of the feature that the java2D offers and that are described [here](G__DefiningDisplays)
 
 Using 3D display offers many way to represent a simulation. A layer can be positioned and scaled in a 3D world. It is possible to superpose layer on different z value and display different information on the model at different position on the screen.
 
@@ -50,9 +50,9 @@ display city_display type: opengl{
 
 <a href='http://www.youtube.com/watch?feature=player_embedded&v=rMIVQlul1Ag' target='_blank'><img src='http://img.youtube.com/vi/rMIVQlul1Ag/0.jpg' width='425' height=344 /></a>
 
-[Arcball Camera](G__ArcBallCamera.md)
+[Arcball Camera](G__ArcBallCamera)
 
-[FreeFly Camera](G__FreeFlyCamera.md)
+[FreeFly Camera](G__FreeFlyCamera)
 
 
 ## Dynamic camera

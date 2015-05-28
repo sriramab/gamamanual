@@ -538,8 +538,8 @@ R is a free software environment for statistical computing and graphics. GAMA al
 More details about R can be found [here](http://www.r-project.org/).
 
 Note that GAMA also integrates some operators to manage R scripts:
-  * [R\_compute](G__OperatorsAK#R_compute.md)
-  * [R\_compute\_param](G__OperatorsAK#R_compute_param.md)
+  * [R\_compute](G__OperatorsAK#R_compute)
+  * [R\_compute\_param](G__OperatorsAK#R_compute_param)
 
 ### Extensions
 Here the list of possible extensions for R file:

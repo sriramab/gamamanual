@@ -7,7 +7,7 @@ GAMA allows to attach skills and a control architecture to agents through the fa
 
 Skills are built-in modules that provide a set of related built-in variables and built-in actions (in addition to those already provided by GAMA) to the species that declare them.
 
-Control are agent control architectures that can be used in addition to the [common behavior structure](G__DefiningBehaviors.md).
+Control are agent control architectures that can be used in addition to the [common behavior structure](G__DefiningBehaviors).
 
 
 <br />
@@ -56,7 +56,7 @@ if speed = 5 {
 }
 ```
 
-A complete description of existing skills is available [here](G__BuiltInSkills.md).
+A complete description of existing skills is available [here](G__BuiltInSkills).
 <br />
 
 ---
@@ -80,4 +80,4 @@ species ant control: fsm {
 }
 ```
 
-A description of all existing control architectures is available [here](G__BuiltInControlArchitectures.md).
+A description of all existing control architectures is available [here](G__BuiltInControlArchitectures).

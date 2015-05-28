@@ -23,9 +23,9 @@ Beyond these features, GAMA also offers:
 ---
 
 ## Documentation
-The documentation of GAMA is available online on the wiki of the project. It is organized around a few central activities ([installing GAMA](G__Installation.md), [writing models](G__WritingModels.md), [running experiments](G__LaunchingExperiments.md), [developing new extensions to the platform](G__DevelopingExtensions.md)) and provides complete references on both the [GAML language](G__GamlLanguage.md), the [platform](G__Platform.md) itself, and the scientific aspects of our work (with a complete [bibliography](G__References.md)). Several [tutorials](G__Tutorials.md) are also provided in the documentation in order to minimize the learning curve, allowing users to build, step by step, the models corresponding to these tutorials, which are of course shipped with the platform.
+The documentation of GAMA is available online on the wiki of the project. It is organized around a few central activities ([installing GAMA](G__Installation), [writing models](G__WritingModels), [running experiments](G__LaunchingExperiments), [developing new extensions to the platform](G__DevelopingExtensions)) and provides complete references on both the [GAML language](G__GamlLanguage), the [platform](G__Platform) itself, and the scientific aspects of our work (with a complete [bibliography](G__References)). Several [tutorials](G__Tutorials) are also provided in the documentation in order to minimize the learning curve, allowing users to build, step by step, the models corresponding to these tutorials, which are of course shipped with the platform.
 
-The documentation can be accessed from the side bar of this page. A good starting point for new users is [the installation page](G__Installation.md).
+The documentation can be accessed from the side bar of this page. A good starting point for new users is [the installation page](G__Installation).
 
 A standalone version of the documentation, in PDF format, can be directly downloaded from [here](pdf/GAMA%201.6.1%20Documentation.pdf)
 <br />
@@ -33,13 +33,13 @@ A standalone version of the documentation, in PDF format, can be directly downlo
 ---
 
 ## Source Code
-GAMA can be [downloaded](G__Downloads.md) as a regular application or [built from source](https://code.google.com/p/gama-platform/source/checkout), which is necessary if you want to contribute to the platform.
+GAMA can be [downloaded](G__Downloads) as a regular application or [built from source](https://code.google.com/p/gama-platform/source/checkout), which is necessary if you want to contribute to the platform.
 The source code is available from this read-only SVN repository:
 
 `svn checkout http://gama-platform.googlecode.com/svn/branches/current `
 
 Which you can also browse from the web [here](http://code.google.com/p/gama-platform/source/browse/).
-It is, in any case, recommended to follow the instructions on [this page](G__InstallingSvnVersion.md) in order to build GAMA from source.
+It is, in any case, recommended to follow the instructions on [this page](G__InstallingSvnVersion) in order to build GAMA from source.
 <br />
 
 ---
@@ -76,11 +76,11 @@ If you use GAMA in your research and want to cite it (in a paper, presentation, 
 or you can choose to cite the website instead:
 > GAMA Platform website, http://gama-platform.org
 
-A complete list of references (papers and PhD theses on or using GAMA) is available on the [references](G__References.md) page.
+A complete list of references (papers and PhD theses on or using GAMA) is available on the [references](G__References) page.
 
 ---
 
 ## Contact Us
 The best way to get in touch with the developers of GAMA is to sign in for the [gama-platform@googlegroups.com mailing list](http://groups.google.com/group/gama-platform). If you wish to contribute to the platform, you might want, instead or in addition, to sign in for the [gama-dev@googlegroups.com mailing list](http://groups.google.com/group/gama-dev). On both lists, we generally answer quite quickly to requests.
 
-Finally, if you think you have found a bug in GAMA, or if you absolutely need a feature that does not exist yet, it is much more efficient and time-saving for everyone (including current and future users) to create a new issue report. Please refer to [these instructions](G__Troubleshooting#Submitting_an_Issue.md) to do so.
+Finally, if you think you have found a bug in GAMA, or if you absolutely need a feature that does not exist yet, it is much more efficient and time-saving for everyone (including current and future users) to create a new issue report. Please refer to [these instructions](G__Troubleshooting#Submitting_an_Issue) to do so.

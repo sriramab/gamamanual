@@ -17,23 +17,23 @@
 ## Statements by kinds
 
   * **Batch method**
-    * [annealing](#annealing.md),  [exhaustive](#exhaustive.md),  [genetic](#genetic.md),  [hill\_climbing](#hill_climbing.md),  [reactive\_tabu](#reactive_tabu.md),  [save\_batch](#save_batch.md),  [tabu](#tabu.md),
+    * [annealing](#annealing),  [exhaustive](#exhaustive),  [genetic](#genetic),  [hill\_climbing](#hill_climbing),  [reactive\_tabu](#reactive_tabu),  [save\_batch](#save_batch),  [tabu](#tabu),
   * **Behavior**
-    * [aspect](#aspect.md),  [plan](#plan.md),  [reflex](#reflex.md),  [state](#state.md),  [task](#task.md),  [test](#test.md),  [user\_init](#user_init.md),  [user\_panel](#user_panel.md),
+    * [aspect](#aspect),  [plan](#plan),  [reflex](#reflex),  [state](#state),  [task](#task),  [test](#test),  [user\_init](#user_init),  [user\_panel](#user_panel),
   * **Experiment**
-    * [experiment](#experiment.md),
+    * [experiment](#experiment),
   * **Layer**
-    * [agents](#agents.md),  [chart](#chart.md),  [display\_grid](#display_grid.md),  [display\_population](#display_population.md),  [event](#event.md),  [graphics](#graphics.md),  [image](#image.md),  [overlay](#overlay.md),  [quadtree](#quadtree.md),  [text](#text.md),
+    * [agents](#agents),  [chart](#chart),  [display\_grid](#display_grid),  [display\_population](#display_population),  [event](#event),  [graphics](#graphics),  [image](#image),  [overlay](#overlay),  [quadtree](#quadtree),  [text](#text),
   * **Output**
-    * [display](#display.md),  [inspect](#inspect.md),  [monitor](#monitor.md),  [output](#output.md),  [output\_file](#output_file.md),  [permanent](#permanent.md),
+    * [display](#display),  [inspect](#inspect),  [monitor](#monitor),  [output](#output),  [output\_file](#output_file),  [permanent](#permanent),
   * **Parameter**
-    * [parameter](#parameter.md),
+    * [parameter](#parameter),
   * **Sequence of statements or action**
-    * [action](#action.md),  [ask](#ask.md),  [capture](#capture.md),  [create](#create.md),  [default](#default.md),  [else](#else.md),  [enter](#enter.md),  [equation](#equation.md),  [exit](#exit.md),  [if](#if.md),  [loop](#loop.md),  [match](#match.md),  [migrate](#migrate.md),  [pause\_sound](#pause_sound.md),  [release](#release.md),  [resume\_sound](#resume_sound.md),  [run](#run.md),  [setup](#setup.md),  [start\_sound](#start_sound.md),  [stop\_sound](#stop_sound.md),  [switch](#switch.md),  [trace](#trace.md),  [transition](#transition.md),  [user\_command](#user_command.md),  [using](#using.md),
+    * [action](#action),  [ask](#ask),  [capture](#capture),  [create](#create),  [default](#default),  [else](#else),  [enter](#enter),  [equation](#equation),  [exit](#exit),  [if](#if),  [loop](#loop),  [match](#match),  [migrate](#migrate),  [pause\_sound](#pause_sound),  [release](#release),  [resume\_sound](#resume_sound),  [run](#run),  [setup](#setup),  [start\_sound](#start_sound),  [stop\_sound](#stop_sound),  [switch](#switch),  [trace](#trace),  [transition](#transition),  [user\_command](#user_command),  [using](#using),
   * **Single statement**
-    * [=](#=.md),  [add](#add.md),  [assert](#assert.md),  [break](#break.md),  [data](#data.md),  [datalist](#datalist.md),  [diffusion](#diffusion.md),  [do](#do.md),  [draw](#draw.md),  [error](#error.md),  [export](#export.md),  [let](#let.md),  [put](#put.md),  [remove](#remove.md),  [return](#return.md),  [save](#save.md),  [set](#set.md),  [simulate](#simulate.md),  [solve](#solve.md),  [user\_input](#user_input.md),  [warn](#warn.md),  [write](#write.md),
+    * [=](#=),  [add](#add),  [assert](#assert),  [break](#break),  [data](#data),  [datalist](#datalist),  [diffusion](#diffusion),  [do](#do),  [draw](#draw),  [error](#error),  [export](#export),  [let](#let),  [put](#put),  [remove](#remove),  [return](#return),  [save](#save),  [set](#set),  [simulate](#simulate),  [solve](#solve),  [user\_input](#user_input),  [warn](#warn),  [write](#write),
   * **Species**
-    * [species](#species.md),
+    * [species](#species),
   * **Variable (container)**
     * [# ],
   * **Variable (number)**
@@ -41,7 +41,7 @@
   * **Variable (regular)**
     * [# ],
   * **Variable (signal)**
-    * [signal](#signal.md),
+    * [signal](#signal),
 
 <br />
 
@@ -50,53 +50,53 @@
 ## Statements by embedment
 
   * **Behavior**
-    * [add](#add.md),  [ask](#ask.md),  [capture](#capture.md),  [create](#create.md),  [diffusion](#diffusion.md),  [do](#do.md),  [error](#error.md),  [if](#if.md),  [let](#let.md),  [loop](#loop.md),  [migrate](#migrate.md),  [pause\_sound](#pause_sound.md),  [put](#put.md),  [release](#release.md),  [remove](#remove.md),  [resume\_sound](#resume_sound.md),  [return](#return.md),  [run](#run.md),  [save](#save.md),  [set](#set.md),  [simulate](#simulate.md),  [solve](#solve.md),  [start\_sound](#start_sound.md),  [stop\_sound](#stop_sound.md),  [switch](#switch.md),  [trace](#trace.md),  [transition](#transition.md),  [using](#using.md),  [warn](#warn.md),  [write](#write.md),
+    * [add](#add),  [ask](#ask),  [capture](#capture),  [create](#create),  [diffusion](#diffusion),  [do](#do),  [error](#error),  [if](#if),  [let](#let),  [loop](#loop),  [migrate](#migrate),  [pause\_sound](#pause_sound),  [put](#put),  [release](#release),  [remove](#remove),  [resume\_sound](#resume_sound),  [return](#return),  [run](#run),  [save](#save),  [set](#set),  [simulate](#simulate),  [solve](#solve),  [start\_sound](#start_sound),  [stop\_sound](#stop_sound),  [switch](#switch),  [trace](#trace),  [transition](#transition),  [using](#using),  [warn](#warn),  [write](#write),
   * **Environment**
-    * [species](#species.md),
+    * [species](#species),
   * **Experiment**
-    * [# ],  [# ],  [# ],  [action](#action.md),  [annealing](#annealing.md),  [exhaustive](#exhaustive.md),  [export](#export.md),  [genetic](#genetic.md),  [hill\_climbing](#hill_climbing.md),  [output](#output.md),  [parameter](#parameter.md),  [permanent](#permanent.md),  [reactive\_tabu](#reactive_tabu.md),  [reflex](#reflex.md),  [save\_batch](#save_batch.md),  [setup](#setup.md),  [simulate](#simulate.md),  [state](#state.md),  [tabu](#tabu.md),  [task](#task.md),  [test](#test.md),  [user\_command](#user_command.md),  [user\_init](#user_init.md),  [user\_panel](#user_panel.md),
+    * [# ],  [# ],  [# ],  [action](#action),  [annealing](#annealing),  [exhaustive](#exhaustive),  [export](#export),  [genetic](#genetic),  [hill\_climbing](#hill_climbing),  [output](#output),  [parameter](#parameter),  [permanent](#permanent),  [reactive\_tabu](#reactive_tabu),  [reflex](#reflex),  [save\_batch](#save_batch),  [setup](#setup),  [simulate](#simulate),  [state](#state),  [tabu](#tabu),  [task](#task),  [test](#test),  [user\_command](#user_command),  [user\_init](#user_init),  [user\_panel](#user_panel),
   * **Layer**
-    * [draw](#draw.md),  [error](#error.md),  [if](#if.md),  [let](#let.md),  [loop](#loop.md),  [switch](#switch.md),  [trace](#trace.md),  [warn](#warn.md),  [write](#write.md),
+    * [draw](#draw),  [error](#error),  [if](#if),  [let](#let),  [loop](#loop),  [switch](#switch),  [trace](#trace),  [warn](#warn),  [write](#write),
   * **Model**
-    * [# ],  [# ],  [# ],  [action](#action.md),  [aspect](#aspect.md),  [equation](#equation.md),  [experiment](#experiment.md),  [output](#output.md),  [reflex](#reflex.md),  [run](#run.md),  [setup](#setup.md),  [species](#species.md),  [state](#state.md),  [task](#task.md),  [test](#test.md),  [user\_command](#user_command.md),  [user\_init](#user_init.md),  [user\_panel](#user_panel.md),
+    * [# ],  [# ],  [# ],  [action](#action),  [aspect](#aspect),  [equation](#equation),  [experiment](#experiment),  [output](#output),  [reflex](#reflex),  [run](#run),  [setup](#setup),  [species](#species),  [state](#state),  [task](#task),  [test](#test),  [user\_command](#user_command),  [user\_init](#user_init),  [user\_panel](#user_panel),
   * **Sequence of statements or action**
-    * [add](#add.md),  [ask](#ask.md),  [break](#break.md),  [capture](#capture.md),  [create](#create.md),  [data](#data.md),  [datalist](#datalist.md),  [diffusion](#diffusion.md),  [do](#do.md),  [draw](#draw.md),  [error](#error.md),  [if](#if.md),  [let](#let.md),  [loop](#loop.md),  [migrate](#migrate.md),  [pause\_sound](#pause_sound.md),  [put](#put.md),  [release](#release.md),  [remove](#remove.md),  [resume\_sound](#resume_sound.md),  [return](#return.md),  [save](#save.md),  [set](#set.md),  [simulate](#simulate.md),  [solve](#solve.md),  [start\_sound](#start_sound.md),  [stop\_sound](#stop_sound.md),  [switch](#switch.md),  [trace](#trace.md),  [transition](#transition.md),  [using](#using.md),  [warn](#warn.md),  [write](#write.md),
+    * [add](#add),  [ask](#ask),  [break](#break),  [capture](#capture),  [create](#create),  [data](#data),  [datalist](#datalist),  [diffusion](#diffusion),  [do](#do),  [draw](#draw),  [error](#error),  [if](#if),  [let](#let),  [loop](#loop),  [migrate](#migrate),  [pause\_sound](#pause_sound),  [put](#put),  [release](#release),  [remove](#remove),  [resume\_sound](#resume_sound),  [return](#return),  [save](#save),  [set](#set),  [simulate](#simulate),  [solve](#solve),  [start\_sound](#start_sound),  [stop\_sound](#stop_sound),  [switch](#switch),  [trace](#trace),  [transition](#transition),  [using](#using),  [warn](#warn),  [write](#write),
   * **Single statement**
-    * [run](#run.md),
+    * [run](#run),
   * **Species**
-    * [# ],  [# ],  [# ],  [action](#action.md),  [aspect](#aspect.md),  [equation](#equation.md),  [plan](#plan.md),  [reflex](#reflex.md),  [run](#run.md),  [setup](#setup.md),  [signal](#signal.md),  [simulate](#simulate.md),  [species](#species.md),  [state](#state.md),  [task](#task.md),  [test](#test.md),  [user\_command](#user_command.md),  [user\_init](#user_init.md),  [user\_panel](#user_panel.md),
+    * [# ],  [# ],  [# ],  [action](#action),  [aspect](#aspect),  [equation](#equation),  [plan](#plan),  [reflex](#reflex),  [run](#run),  [setup](#setup),  [signal](#signal),  [simulate](#simulate),  [species](#species),  [state](#state),  [task](#task),  [test](#test),  [user\_command](#user_command),  [user\_init](#user_init),  [user\_panel](#user_panel),
   * **action**
-    * [return](#return.md),
+    * [return](#return),
   * **aspect**
-    * [draw](#draw.md),
+    * [draw](#draw),
   * **chart**
-    * [add](#add.md),  [ask](#ask.md),  [data](#data.md),  [datalist](#datalist.md),  [do](#do.md),  [put](#put.md),  [remove](#remove.md),  [set](#set.md),  [simulate](#simulate.md),  [using](#using.md),
+    * [add](#add),  [ask](#ask),  [data](#data),  [datalist](#datalist),  [do](#do),  [put](#put),  [remove](#remove),  [set](#set),  [simulate](#simulate),  [using](#using),
   * **display**
-    * [agents](#agents.md),  [chart](#chart.md),  [display\_grid](#display_grid.md),  [display\_population](#display_population.md),  [event](#event.md),  [graphics](#graphics.md),  [image](#image.md),  [overlay](#overlay.md),  [quadtree](#quadtree.md),  [text](#text.md),
+    * [agents](#agents),  [chart](#chart),  [display\_grid](#display_grid),  [display\_population](#display_population),  [event](#event),  [graphics](#graphics),  [image](#image),  [overlay](#overlay),  [quadtree](#quadtree),  [text](#text),
   * **display\_population**
-    * [display\_population](#display_population.md),
+    * [display\_population](#display_population),
   * **equation**
-    * [=](#=.md),
+    * [=](#=),
   * **fsm**
-    * [state](#state.md),  [user\_panel](#user_panel.md),
+    * [state](#state),  [user\_panel](#user_panel),
   * **if**
-    * [else](#else.md),
+    * [else](#else),
   * **output**
-    * [display](#display.md),  [inspect](#inspect.md),  [monitor](#monitor.md),  [output\_file](#output_file.md),
+    * [display](#display),  [inspect](#inspect),  [monitor](#monitor),  [output\_file](#output_file),
   * **permanent**
-    * [display](#display.md),  [inspect](#inspect.md),  [monitor](#monitor.md),  [output\_file](#output_file.md),
+    * [display](#display),  [inspect](#inspect),  [monitor](#monitor),  [output\_file](#output_file),
   * **state**
-    * [enter](#enter.md),  [exit](#exit.md),
+    * [enter](#enter),  [exit](#exit),
   * **switch**
-    * [default](#default.md),  [match](#match.md),
+    * [default](#default),  [match](#match),
   * **test**
-    * [assert](#assert.md),
+    * [assert](#assert),
   * **user\_command**
-    * [user\_input](#user_input.md),
+    * [user\_input](#user_input),
   * **user\_panel**
-    * [user\_command](#user_command.md),
+    * [user\_command](#user_command),
   * **weighted\_tasks**
-    * [task](#task.md),
+    * [task](#task),
 
 <br />
 
@@ -121,7 +121,7 @@ statement_keyword1 expression1 facet2: expression2... { // a sequence statement
 }
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 
 <br />
@@ -149,7 +149,7 @@ statement_keyword1 expression1 facet2: expression2... { // a sequence statement
   * The  statement is of type: **Variable (number)**
   * The  statement can be embedded into: Species, Experiment, Model,
   * The  statement embeds statements:
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -175,7 +175,7 @@ statement_keyword1 expression1 facet2: expression2... { // a sequence statement
   * The  statement is of type: **Variable (regular)**
   * The  statement can be embedded into: Species, Experiment, Model,
   * The  statement embeds statements:
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -202,7 +202,7 @@ statement_keyword1 expression1 facet2: expression2... { // a sequence statement
   * The  statement is of type: **Variable (container)**
   * The  statement can be embedded into: Species, Experiment, Model,
   * The  statement embeds statements:
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -237,8 +237,8 @@ equation SI {
  
 ```
 
-  * See also: [equation](#equation.md), [solve](#solve.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [equation](#equation), [solve](#solve),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -256,7 +256,7 @@ equation SI {
 #### Embedments
   * The action statement is of type: **Sequence of statements or action**
   * The action statement can be embedded into: Species, Experiment, Model,
-  * The action statement embeds statements: [return](#return.md),
+  * The action statement embeds statements: [return](#return),
 
 #### Definition
 
@@ -303,8 +303,8 @@ species children parent: parent_species {
  
 ```
 
-  * See also: [do](#do.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [do](#do),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -390,8 +390,8 @@ list var <- g.edges; 	// var equals [polyline({1.0,5.0}::{12.0,45.0}),polyline({
 ```
 
   * Case of a matrix: this statement can not be used on matrix. Please refer to the statement put.
-  * See also: [put](#put.md), [remove](#remove.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [put](#put), [remove](#remove),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -438,8 +438,8 @@ display Segregation {
  
 ```
 
-  * See also: [display](#display.md), [chart](#chart.md), [event](#event.md), [graphics](#graphics.md), [display\_grid](#display_grid.md), [image](#image.md), [overlay](#overlay.md), [quadtree](#quadtree.md), [display\_population](#display_population.md), [text](#text.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [display](#display), [chart](#chart), [event](#event), [graphics](#graphics), [display\_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display\_population](#display_population), [text](#text),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -464,7 +464,7 @@ display Segregation {
 
 #### Definition
 
-This algorithm is an implementation of the Simulated Annealing algorithm. See the wikipedia article and [the batch dedicated page](batch161.md).
+This algorithm is an implementation of the Simulated Annealing algorithm. See the wikipedia article and [the batch dedicated page](batch161).
 
 #### Usages
 
@@ -480,7 +480,7 @@ method annealing temp_init: 100  temp_end: 1 temp_decrease: 0.5 nb_iter_cst_temp
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -499,7 +499,7 @@ method annealing temp_init: 100  temp_end: 1 temp_decrease: 0.5 nb_iter_cst_temp
 
 #### Definition
 
-Allows an agent, the sender agent (that can be the [world agent](Sections161#global.md)), to ask another (or other) agent(s) to perform a set of statements. If the value of the target facet is nil or empty, the statement is ignored.
+Allows an agent, the sender agent (that can be the [world agent](Sections161#global)), to ask another (or other) agent(s) to perform a set of statements. If the value of the target facet is nil or empty, the statement is ignored.
 
 #### Usages
 
@@ -553,7 +553,7 @@ species animal {
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -567,7 +567,7 @@ species animal {
 #### Embedments
   * The aspect statement is of type: **Behavior**
   * The aspect statement can be embedded into: Species, Model,
-  * The aspect statement embeds statements: [draw](#draw.md),
+  * The aspect statement embeds statements: [draw](#draw),
 
 #### Definition
 
@@ -588,7 +588,7 @@ species one_species {
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -632,8 +632,8 @@ assert (3/z) raises: "error";
  
 ```
 
-  * See also: [test](#test.md), [setup](#setup.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [test](#test), [setup](#setup),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -654,7 +654,7 @@ assert (3/z) raises: "error";
 
 #### Usages
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -678,7 +678,7 @@ Allows an agent to capture other agent(s) as its micro-agent(s).
 
 #### Usages
 
-  * The preliminary for an agent A to capture an agent B as its micro-agent is that the A's species must defined a micro-species which is a sub-species of B's species (cf. [Nesting species](Species161#Nesting_species.md)).
+  * The preliminary for an agent A to capture an agent B as its micro-agent is that the A's species must defined a micro-species which is a sub-species of B's species (cf. [Nesting species](Species161#Nesting_species)).
 ```
 species A {
 ...
@@ -705,8 +705,8 @@ capture target: list (B) as: C;
  
 ```
 
-  * See also: [release](#release.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [release](#release),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -734,7 +734,7 @@ capture target: list (B) as: C;
 #### Embedments
   * The chart statement is of type: **Layer**
   * The chart statement can be embedded into: display,
-  * The chart statement embeds statements: [add](#add.md),  [ask](#ask.md),  [data](#data.md),  [datalist](#datalist.md),  [do](#do.md),  [put](#put.md),  [remove](#remove.md),  [set](#set.md),  [simulate](#simulate.md),  [using](#using.md),
+  * The chart statement embeds statements: [add](#add),  [ask](#ask),  [data](#data),  [datalist](#datalist),  [do](#do),  [put](#put),  [remove](#remove),  [set](#set),  [simulate](#simulate),  [using](#using),
 
 #### Definition
 
@@ -752,8 +752,8 @@ display chart_display {
  
 ```
 
-  * See also: [display](#display.md), [agents](#agents.md), [event](#event.md), [graphics](#graphics.md), [display\_grid](#display_grid.md), [image](#image.md), [overlay](#overlay.md), [quadtree](#quadtree.md), [display\_population](#display_population.md), [text](#text.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [display](#display), [agents](#agents), [event](#event), [graphics](#graphics), [display\_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display\_population](#display_population), [text](#text),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -844,7 +844,7 @@ create species: a_species number: an_int;
 ```
 
   * If `number` equals 0 or species is not a species, the statement is ignored.
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -867,7 +867,7 @@ create species: a_species number: an_int;
   * The data statement is of type: **Single statement**
   * The data statement can be embedded into: chart, Sequence of statements or action,
   * The data statement embeds statements:
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -890,7 +890,7 @@ create species: a_species number: an_int;
   * The datalist statement is of type: **Single statement**
   * The datalist statement can be embedded into: chart, Sequence of statements or action,
   * The datalist statement embeds statements:
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -911,8 +911,8 @@ Used in a switch match structure, the block prefixed by default is executed only
 
 #### Usages
 
-  * See also: [switch](#switch.md), [match](#match.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [switch](#switch), [match](#match),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -960,7 +960,7 @@ diffusion var: phero on: cells proportion: 1/9 radius: 1;
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -997,7 +997,7 @@ diffusion var: phero on: cells proportion: 1/9 radius: 1;
 #### Embedments
   * The display statement is of type: **Output**
   * The display statement can be embedded into: output, permanent,
-  * The display statement embeds statements: [agents](#agents.md),  [chart](#chart.md),  [display\_grid](#display_grid.md),  [display\_population](#display_population.md),  [event](#event.md),  [graphics](#graphics.md),  [image](#image.md),  [overlay](#overlay.md),  [quadtree](#quadtree.md),  [text](#text.md),
+  * The display statement embeds statements: [agents](#agents),  [chart](#chart),  [display\_grid](#display_grid),  [display\_population](#display_population),  [event](#event),  [graphics](#graphics),  [image](#image),  [overlay](#overlay),  [quadtree](#quadtree),  [text](#text),
 
 #### Definition
 
@@ -1020,7 +1020,7 @@ display gridWithElevationTriangulated type: opengl ambient_light: 100 {
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1070,8 +1070,8 @@ display my_display {
  
 ```
 
-  * See also: [display](#display.md), [agents](#agents.md), [chart](#chart.md), [event](#event.md), [graphics](#graphics.md), [image](#image.md), [overlay](#overlay.md), [quadtree](#quadtree.md), [display\_population](#display_population.md), [text](#text.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display\_population](#display_population), [text](#text),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1092,7 +1092,7 @@ display my_display {
 #### Embedments
   * The display\_population statement is of type: **Layer**
   * The display\_population statement can be embedded into: display, display\_population,
-  * The display\_population statement embeds statements: [display\_population](#display_population.md),
+  * The display\_population statement embeds statements: [display\_population](#display_population),
 
 #### Definition
 
@@ -1128,8 +1128,8 @@ display my_display type: opengl{
  
 ```
 
-  * See also: [display](#display.md), [agents](#agents.md), [chart](#chart.md), [event](#event.md), [graphics](#graphics.md), [display\_grid](#display_grid.md), [image](#image.md), [overlay](#overlay.md), [quadtree](#quadtree.md), [text](#text.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display\_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [text](#text),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1150,7 +1150,7 @@ display my_display type: opengl{
 
 #### Definition
 
-Allows the agent to execute an action or a primitive.  For a list of primitives available in every species, see this [page](BuiltIn161.md); for the list of primitives defined by the different skills, see this [page](Skills161.md). Finally, see this [page](Species161.md) to know how to declare custom actions.
+Allows the agent to execute an action or a primitive.  For a list of primitives available in every species, see this [page](BuiltIn161); for the list of primitives defined by the different skills, see this [page](Skills161). Finally, see this [page](Species161) to know how to declare custom actions.
 
 #### Usages
 
@@ -1204,7 +1204,7 @@ do name_of_action_or_primitive {
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1272,7 +1272,7 @@ aspect arrowAspect {
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1293,8 +1293,8 @@ This statement cannot be used alone
 
 #### Usages
 
-  * See also: [if](#if.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [if](#if),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1326,8 +1326,8 @@ In an FSM architecture, `enter` introduces a sequence of statements to execute u
  
 ```
 
-  * See also: [state](#state.md), [exit](#exit.md), [transition](#transition.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [state](#state), [exit](#exit), [transition](#transition),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1345,7 +1345,7 @@ In an FSM architecture, `enter` introduces a sequence of statements to execute u
 #### Embedments
   * The equation statement is of type: **Sequence of statements or action**
   * The equation statement can be embedded into: Species, Model,
-  * The equation statement embeds statements: [=](#=.md),
+  * The equation statement embeds statements: [=](#=),
 
 #### Definition
 
@@ -1365,7 +1365,7 @@ equation SI {
  
 ```
 
-  * If the type: facet is used, a predefined equation system is defined using variables vars: and parameters params: in the right order. All possible predefined equation systems are the following ones (see [EquationPresentation161](EquationPresentation161.md) for precise definition of each classical equation system):
+  * If the type: facet is used, a predefined equation system is defined using variables vars: and parameters params: in the right order. All possible predefined equation systems are the following ones (see [EquationPresentation161](EquationPresentation161) for precise definition of each classical equation system):
 ```
 equation eqSI type: SI vars: [S,I,t] params: [N,beta];
 equation eqSIS type: SIS vars: [S,I,t] params: [N,beta,gamma];
@@ -1377,8 +1377,8 @@ equation eqLV type: LV vars: [x,y,t] params: [alpha,beta,delta,gamma] ;
 ```
 
   * If the simultaneously: facet is used, system of all the agents will be solved simultaneously.
-  * See also: [=](#=.md), [solve](#solve.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [=](#=), [solve](#solve),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1405,7 +1405,7 @@ The statement makes the agent output an error dialog (if the simulation contains
 error 'This is an error raised by ' + self;
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1456,8 +1456,8 @@ experiment Simple type:gui {
  
 ```
 
-  * See also: [display](#display.md), [agents](#agents.md), [chart](#chart.md), [graphics](#graphics.md), [display\_grid](#display_grid.md), [image](#image.md), [overlay](#overlay.md), [quadtree](#quadtree.md), [display\_population](#display_population.md), [text](#text.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [display](#display), [agents](#agents), [chart](#chart), [graphics](#graphics), [display\_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display\_population](#display_population), [text](#text),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1478,7 +1478,7 @@ experiment Simple type:gui {
 
 #### Definition
 
-This is the standard batch method. The exhaustive mode is defined by default when there is no method element present in the batch section. It explores all the combination of parameter values in a sequential way. See [the batch dedicated page](batch161.md).
+This is the standard batch method. The exhaustive mode is defined by default when there is no method element present in the batch section. It explores all the combination of parameter values in a sequential way. See [the batch dedicated page](batch161).
 
 #### Usages
 
@@ -1494,7 +1494,7 @@ method exhaustive maximize: food_gathered;
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1529,8 +1529,8 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
  
 ```
 
-  * See also: [enter](#enter.md), [state](#state.md), [transition](#transition.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [enter](#enter), [state](#state), [transition](#transition),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1556,7 +1556,7 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
   * The experiment statement is of type: **Experiment**
   * The experiment statement can be embedded into: Model,
   * The experiment statement embeds statements:
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1573,7 +1573,7 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
   * The export statement is of type: **Single statement**
   * The export statement can be embedded into: Experiment,
   * The export statement embeds statements:
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1599,7 +1599,7 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 
 #### Definition
 
-This is a simple implementation of Genetic Algorithms (GA). See the wikipedia article and [the batch dedicated page](batch161.md). The principle of the GA is to search an optimal solution by applying evolution operators on an initial population of solutions. There are three types of evolution operators: crossover, mutation and selection. Different techniques can be applied for this selection. Most of them are based on the solution quality (fitness).
+This is a simple implementation of Genetic Algorithms (GA). See the wikipedia article and [the batch dedicated page](batch161). The principle of the GA is to search an optimal solution by applying evolution operators on an initial population of solutions. There are three types of evolution operators: crossover, mutation and selection. Different techniques can be applied for this selection. Most of them are based on the solution quality (fitness).
 
 #### Usages
 
@@ -1615,7 +1615,7 @@ method genetic maximize: food_gathered pop_dim: 5 crossover_prob: 0.7 mutation_p
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1639,7 +1639,7 @@ method genetic maximize: food_gathered pop_dim: 5 crossover_prob: 0.7 mutation_p
 
 #### Definition
 
-`graphics` allows the modeler to freely draw shapes/geometries/texts without having to define a species. It works exactly like a species [aspect](Aspect161.md): the draw statement can be used in the same way.
+`graphics` allows the modeler to freely draw shapes/geometries/texts without having to define a species. It works exactly like a species [aspect](Aspect161): the draw statement can be used in the same way.
 
 #### Usages
 
@@ -1654,8 +1654,8 @@ display my_display {
  
 ```
 
-  * See also: [display](#display.md), [agents](#agents.md), [chart](#chart.md), [event](#event.md), [graphics](#graphics.md), [display\_grid](#display_grid.md), [image](#image.md), [overlay](#overlay.md), [quadtree](#quadtree.md), [display\_population](#display_population.md), [text](#text.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display\_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display\_population](#display_population), [text](#text),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1677,7 +1677,7 @@ display my_display {
 
 #### Definition
 
-This algorithm is an implementation of the Hill Climbing algorithm. See the wikipedia article and [the batch dedicated page](batch161.md).
+This algorithm is an implementation of the Hill Climbing algorithm. See the wikipedia article and [the batch dedicated page](batch161).
 
 #### Usages
 
@@ -1693,7 +1693,7 @@ method hill_climbing iter_max: 50 maximize : food_gathered;
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1707,7 +1707,7 @@ method hill_climbing iter_max: 50 maximize : food_gathered;
 #### Embedments
   * The if statement is of type: **Sequence of statements or action**
   * The if statement can be embedded into: Behavior, Sequence of statements or action, Layer,
-  * The if statement embeds statements: [else](#else.md),
+  * The if statement embeds statements: [else](#else),
 
 #### Definition
 
@@ -1764,7 +1764,7 @@ else {
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1827,8 +1827,8 @@ display my_display {
  
 ```
 
-  * See also: [display](#display.md), [agents](#agents.md), [chart](#chart.md), [event](#event.md), [graphics](#graphics.md), [display\_grid](#display_grid.md), [overlay](#overlay.md), [quadtree](#quadtree.md), [display\_population](#display_population.md), [text](#text.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display\_grid](#display_grid), [overlay](#overlay), [quadtree](#quadtree), [display\_population](#display_population), [text](#text),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1861,7 +1861,7 @@ inspect "my_inspector" value: ant attributes: ["name", "location"];
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1880,7 +1880,7 @@ inspect "my_inspector" value: ant attributes: ["name", "location"];
   * The let statement is of type: **Single statement**
   * The let statement can be embedded into: Behavior, Sequence of statements or action, Layer,
   * The let statement embeds statements:
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1968,7 +1968,7 @@ loop i from: 0 to: length (the_list) - 1 {
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2017,8 +2017,8 @@ switch 3 {
  
 ```
 
-  * See also: [switch](#switch.md), [default](#default.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [switch](#switch), [default](#default),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2048,8 +2048,8 @@ migrate ball_in_group target: ball_in_cloud;
  
 ```
 
-  * See also: [capture](#capture.md), [release](#release.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [capture](#capture), [release](#release),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2080,7 +2080,7 @@ monitor "nb preys" value: length(prey as list) refresh_every: 5;
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2093,7 +2093,7 @@ monitor "nb preys" value: length(prey as list) refresh_every: 5;
 #### Embedments
   * The output statement is of type: **Output**
   * The output statement can be embedded into: Model, Experiment,
-  * The output statement embeds statements: [display](#display.md),  [inspect](#inspect.md),  [monitor](#monitor.md),  [output\_file](#output_file.md),
+  * The output statement embeds statements: [display](#display),  [inspect](#inspect),  [monitor](#monitor),  [output\_file](#output_file),
 
 #### Definition
 
@@ -2112,8 +2112,8 @@ experiment exp_name type: gui {
  
 ```
 
-  * See also: [display](#display.md), [monitor](#monitor.md), [inspect](#inspect.md), [output\_file](#output_file.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [display](#display), [monitor](#monitor), [inspect](#inspect), [output\_file](#output_file),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2135,7 +2135,7 @@ experiment exp_name type: gui {
   * The output\_file statement is of type: **Output**
   * The output\_file statement can be embedded into: output, permanent,
   * The output\_file statement embeds statements:
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2166,8 +2166,8 @@ overlay "Cycle: " + (cycle) center: "Duration: " + total_duration + "ms" right: 
  
 ```
 
-  * See also: [display](#display.md), [agents](#agents.md), [chart](#chart.md), [event](#event.md), [graphics](#graphics.md), [display\_grid](#display_grid.md), [image](#image.md), [quadtree](#quadtree.md), [display\_population](#display_population.md), [text](#text.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display\_grid](#display_grid), [image](#image), [quadtree](#quadtree), [display\_population](#display_population), [text](#text),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2211,7 +2211,7 @@ parameter 'Value of titi:' var: titi min: 1 max: 100 step: 2;
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2225,7 +2225,7 @@ parameter 'Value of titi:' var: titi min: 1 max: 100 step: 2;
   * The pause\_sound statement is of type: **Sequence of statements or action**
   * The pause\_sound statement can be embedded into: Behavior, Sequence of statements or action,
   * The pause\_sound statement embeds statements:
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2238,7 +2238,7 @@ parameter 'Value of titi:' var: titi min: 1 max: 100 step: 2;
 #### Embedments
   * The permanent statement is of type: **Output**
   * The permanent statement can be embedded into: Experiment,
-  * The permanent statement embeds statements: [display](#display.md),  [inspect](#inspect.md),  [monitor](#monitor.md),  [output\_file](#output_file.md),
+  * The permanent statement embeds statements: [display](#display),  [inspect](#inspect),  [monitor](#monitor),  [output\_file](#output_file),
 
 #### Definition
 
@@ -2258,7 +2258,7 @@ permanent {
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2276,7 +2276,7 @@ permanent {
   * The plan statement is of type: **Behavior**
   * The plan statement can be embedded into: Species,
   * The plan statement embeds statements:
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2336,7 +2336,7 @@ put -30 all: true in: putMap; 	// putMap equals ["x"::-30,"y"::-30, "z"::-30]
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2370,8 +2370,8 @@ display my_display {
  
 ```
 
-  * See also: [display](#display.md), [agents](#agents.md), [chart](#chart.md), [event](#event.md), [graphics](#graphics.md), [display\_grid](#display_grid.md), [image](#image.md), [overlay](#overlay.md), [quadtree](#quadtree.md), [display\_population](#display_population.md), [text](#text.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display\_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display\_population](#display_population), [text](#text),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2399,7 +2399,7 @@ display my_display {
 
 #### Definition
 
-This algorithm is a simple implementation of the Reactive Tabu Search algorithm ((Battiti et al., 1993)). This Reactive Tabu Search is an enhance version of the Tabu search. It adds two new elements to the classic Tabu Search. The first one concerns the size of the tabu list: in the Reactive Tabu Search, this one is not constant anymore but it dynamically evolves according to the context. Thus, when the exploration process visits too often the same solutions, the tabu list is extended in order to favor the diversification of the search process. On the other hand, when the process has not visited an already known solution for a high number of iterations, the tabu list is shortened in order to favor the intensification of the search process. The second new element concerns the adding of cycle detection capacities. Thus, when a cycle is detected, the process applies random movements in order to break the cycle. See [the batch dedicated page](batch161.md).
+This algorithm is a simple implementation of the Reactive Tabu Search algorithm ((Battiti et al., 1993)). This Reactive Tabu Search is an enhance version of the Tabu search. It adds two new elements to the classic Tabu Search. The first one concerns the size of the tabu list: in the Reactive Tabu Search, this one is not constant anymore but it dynamically evolves according to the context. Thus, when the exploration process visits too often the same solutions, the tabu list is extended in order to favor the diversification of the search process. On the other hand, when the process has not visited an already known solution for a high number of iterations, the tabu list is shortened in order to favor the intensification of the search process. The second new element concerns the adding of cycle detection capacities. Thus, when a cycle is detected, the process applies random movements in order to break the cycle. See [the batch dedicated page](batch161).
 
 #### Usages
 
@@ -2415,7 +2415,7 @@ method reactive_tabu iter_max: 50 tabu_list_size_init: 5 tabu_list_size_min: 2 t
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2446,7 +2446,7 @@ reflex my_reflex when: flip (0.5){ 		//Only executed when flip returns true
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2467,7 +2467,7 @@ reflex my_reflex when: flip (0.5){ 		//Only executed when flip returns true
 
 #### Definition
 
-Allows an agent to release its micro-agent(s). The preliminary for an agent to release its micro-agents is that species of these micro-agents are sub-species of other species (cf. [Nesting species](Species161#Nesting_species.md)). The released agents won't be micro-agents of the calling agent anymore. Being released from a macro-agent, the micro-agents will change their species and host (macro-agent).
+Allows an agent to release its micro-agent(s). The preliminary for an agent to release its micro-agents is that species of these micro-agents are sub-species of other species (cf. [Nesting species](Species161#Nesting_species)). The released agents won't be micro-agents of the calling agent anymore. Being released from a macro-agent, the micro-agents will change their species and host (macro-agent).
 
 #### Usages
 
@@ -2501,8 +2501,8 @@ release list (C) as: new_species in: new host;
  
 ```
 
-  * See also: [capture](#capture.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [capture](#capture),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2597,8 +2597,8 @@ species speciesRemove {
 ```
 
   * This statement can not be used on **matrix**.
-  * See also: [add](#add.md), [put](#put.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [add](#add), [put](#put),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2612,7 +2612,7 @@ species speciesRemove {
   * The resume\_sound statement is of type: **Sequence of statements or action**
   * The resume\_sound statement can be embedded into: Behavior, Sequence of statements or action,
   * The resume\_sound statement embeds statements:
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2630,7 +2630,7 @@ species speciesRemove {
 
 #### Definition
 
-Allows to specify which value to return from the evaluation of the surrounding statement. Usually used within the declaration of an action. For more details about actions, see the following [section](Section161.md).
+Allows to specify which value to return from the evaluation of the surrounding statement. Usually used within the declaration of an action. For more details about actions, see the following [section](Section161).
 
 #### Usages
 
@@ -2660,7 +2660,7 @@ reflex writing {
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2681,7 +2681,7 @@ reflex writing {
   * The run statement is of type: **Sequence of statements or action**
   * The run statement can be embedded into: Behavior, Single statement, Species, Model,
   * The run statement embeds statements:
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2733,7 +2733,7 @@ save species_of(self) to: "save_shapefile.shp" type: "shp" with: [name::"nameAge
 ```
 
   * The save statement can be use in an init block, a reflex, an action or in a user command. Do not use it in experiments.
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2750,7 +2750,7 @@ save species_of(self) to: "save_shapefile.shp" type: "shp" with: [name::"nameAge
   * The save\_batch statement is of type: **Batch method**
   * The save\_batch statement can be embedded into: Experiment,
   * The save\_batch statement embeds statements:
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2778,7 +2778,7 @@ Allows to assign a value to the variable or attribute specified
 
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2795,7 +2795,7 @@ Allows to assign a value to the variable or attribute specified
 
 #### Definition
 
-The setup statement is used to define the set of instructions that will be executed before every [test](#test.md).
+The setup statement is used to define the set of instructions that will be executed before every [test](#test).
 
 #### Usages
 
@@ -2815,8 +2815,8 @@ species Tester {
  
 ```
 
-  * See also: [test](#test.md), [assert](#assert.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [test](#test), [assert](#assert),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2842,7 +2842,7 @@ species Tester {
   * The signal statement is of type: **Variable (signal)**
   * The signal statement can be embedded into: Species,
   * The signal statement embeds statements:
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2867,7 +2867,7 @@ species Tester {
 
 #### Definition
 
-Allows an agent, the sender agent (that can be the [world agent](Sections161#global.md)), to ask another (or other) agent(s) to perform a set of statements. It obeys the following syntax, where the target attribute denotes the receiver agent(s):
+Allows an agent, the sender agent (that can be the [world agent](Sections161#global)), to ask another (or other) agent(s) to perform a set of statements. It obeys the following syntax, where the target attribute denotes the receiver agent(s):
 
 #### Usages
 
@@ -2878,7 +2878,7 @@ ask receiver_agent(s) {
 }
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2917,7 +2917,7 @@ Solves all equations which matched the given name, with all systems of agents th
 solve SIR method: "rk4" step:0.001;
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2937,7 +2937,7 @@ solve SIR method: "rk4" step:0.001;
   * mirrors (any type in [list, species]): The species this species is mirroring. The population of this current species will be dependent of that of the species mirrored (i.e. agents creation and death are entirely taken in charge by GAMA with respect to the demographics of the species mirrored). In addition, this species is provided with an attribute called 'target', which allows each agent to know which agent of the mirrored species it is representing.
   * neighbours (int): (grid only), the chosen neighbourhood (4, 6 or 8)
   * parent (an identifier): the parent class (inheritance)
-  * schedules (container): A container of agents (a species, a dynamic list, or a combination of species and containers) , which represents which agents will be actually scheduled when the population is scheduled for execution. For instance, 'species a schedules: (10 among a)' will result in a population that schedules only 10 of its own agents every cycle. 'species b schedules: [.md](.md)' will prevent the agents of 'b' to be scheduled. Note that the scope of agents covered here can be larger than the population, which allows to build complex scheduling controls; for instance, defining 'global schedules: [.md](.md) {...} species b schedules: [.md](.md); species c schedules: b + world; ' allows to simulate a model where the agents of b are scheduled first, followed by the world, without even having to create an instance of c.
+  * schedules (container): A container of agents (a species, a dynamic list, or a combination of species and containers) , which represents which agents will be actually scheduled when the population is scheduled for execution. For instance, 'species a schedules: (10 among a)' will result in a population that schedules only 10 of its own agents every cycle. 'species b schedules: []()' will prevent the agents of 'b' to be scheduled. Note that the scope of agents covered here can be larger than the population, which allows to build complex scheduling controls; for instance, defining 'global schedules: []() {...} species b schedules: [](); species c schedules: b + world; ' allows to simulate a model where the agents of b are scheduled first, followed by the world, without even having to create an instance of c.
   * skills (list): The list of skills that will be made available to the instances of this species. Each new skill provides attributes and actions that will be added to the ones defined in this species
   * topology (topology): The topology of the population of agents defined by this species. In case of nested species, it can for example be the shape of the macro-agent. In case of grid or graph species, the topology is automatically computed and cannot be redefined
   * torus (boolean): is the topology toric (defaut: false). Needs to be defined on the global species.
@@ -2980,7 +2980,7 @@ grid ant_grid file: grid_file neighbours: 8 use_regular_agents: false {
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -2997,7 +2997,7 @@ grid ant_grid file: grid_file neighbours: 8 use_regular_agents: false {
   * The start\_sound statement is of type: **Sequence of statements or action**
   * The start\_sound statement can be embedded into: Behavior, Sequence of statements or action,
   * The start\_sound statement embeds statements:
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -3013,7 +3013,7 @@ grid ant_grid file: grid_file neighbours: 8 use_regular_agents: false {
 #### Embedments
   * The state statement is of type: **Behavior**
   * The state statement can be embedded into: fsm, Species, Experiment, Model,
-  * The state statement embeds statements: [enter](#enter.md),  [exit](#exit.md),
+  * The state statement embeds statements: [enter](#enter),  [exit](#exit),
 
 #### Definition
 
@@ -3049,8 +3049,8 @@ A state, like a reflex, can contains several statements that can be executed at 
  
 ```
 
-  * See also: [enter](#enter.md), [exit](#exit.md), [transition](#transition.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [enter](#enter), [exit](#exit), [transition](#transition),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -3064,7 +3064,7 @@ A state, like a reflex, can contains several statements that can be executed at 
   * The stop\_sound statement is of type: **Sequence of statements or action**
   * The stop\_sound statement can be embedded into: Behavior, Sequence of statements or action,
   * The stop\_sound statement embeds statements:
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -3078,7 +3078,7 @@ A state, like a reflex, can contains several statements that can be executed at 
 #### Embedments
   * The switch statement is of type: **Sequence of statements or action**
   * The switch statement can be embedded into: Behavior, Sequence of statements or action, Layer,
-  * The switch statement embeds statements: [default](#default.md),  [match](#match.md),
+  * The switch statement embeds statements: [default](#default),  [match](#match),
 
 #### Definition
 
@@ -3110,8 +3110,8 @@ switch 3 {
  
 ```
 
-  * See also: [match](#match.md), [default](#default.md), [if](#if.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [match](#match), [default](#default), [if](#if),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -3134,7 +3134,7 @@ switch 3 {
 
 #### Definition
 
-This algorithm is an implementation of the Tabu Search algorithm. See the wikipedia article and [the batch dedicated page](batch161.md).
+This algorithm is an implementation of the Tabu Search algorithm. See the wikipedia article and [the batch dedicated page](batch161).
 
 #### Usages
 
@@ -3150,7 +3150,7 @@ method tabu iter_max: 50 tabu_list_size: 5 maximize: food_gathered;
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -3173,7 +3173,7 @@ As reflex, a task is a sequence of statements that can be executed, at each time
 
 #### Usages
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -3187,7 +3187,7 @@ As reflex, a task is a sequence of statements that can be executed, at each time
 #### Embedments
   * The test statement is of type: **Behavior**
   * The test statement can be embedded into: Species, Experiment, Model,
-  * The test statement embeds statements: [assert](#assert.md),
+  * The test statement embeds statements: [assert](#assert),
 
 #### Definition
 
@@ -3211,8 +3211,8 @@ species Tester {
  
 ```
 
-  * See also: [setup](#setup.md), [assert](#assert.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [setup](#setup), [assert](#assert),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -3258,8 +3258,8 @@ display Segregation {
  
 ```
 
-  * See also: [display](#display.md), [agents](#agents.md), [chart](#chart.md), [event](#event.md), [graphics](#graphics.md), [display\_grid](#display_grid.md), [image](#image.md), [overlay](#overlay.md), [quadtree](#quadtree.md), [display\_population](#display_population.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display\_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display\_population](#display_population),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -3280,7 +3280,7 @@ All the statements executed in the trace statement are displayed in the console.
 
 #### Usages
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -3314,8 +3314,8 @@ In an FSM architecture, `transition` specifies the next state of the life cycle.
  
 ```
 
-  * See also: [enter](#enter.md), [state](#state.md), [exit](#exit.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [enter](#enter), [state](#state), [exit](#exit),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -3332,7 +3332,7 @@ In an FSM architecture, `transition` specifies the next state of the life cycle.
 #### Embedments
   * The user\_command statement is of type: **Sequence of statements or action**
   * The user\_command statement can be embedded into: user\_panel, Species, Experiment, Model,
-  * The user\_command statement embeds statements: [user\_input](#user_input.md),
+  * The user\_command statement embeds statements: [user\_input](#user_input),
 
 #### Definition
 
@@ -3346,8 +3346,8 @@ user_command kill_myself action: some_action with: [arg1::val1, arg2::val2, ...]
  
 ```
 
-  * See also: [user\_init](#user_init.md), [user\_panel](#user_panel.md), [user\_input](#user_input.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [user\_init](#user_init), [user\_panel](#user_panel), [user\_input](#user_input),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -3368,8 +3368,8 @@ Used in the user control architecture, user\_init is executed only once when the
 
 #### Usages
 
-  * See also: [user\_command](#user_command.md), [user\_init](#user_init.md), [user\_input](#user_input.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [user\_command](#user_command), [user\_init](#user_init), [user\_input](#user_input),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -3405,8 +3405,8 @@ user_panel "Advanced Control" {
 }
 ```
 
-  * See also: [user\_command](#user_command.md), [user\_init](#user_init.md), [user\_panel](#user_panel.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [user\_command](#user_command), [user\_init](#user_init), [user\_panel](#user_panel),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -3421,7 +3421,7 @@ user_panel "Advanced Control" {
 #### Embedments
   * The user\_panel statement is of type: **Behavior**
   * The user\_panel statement can be embedded into: fsm, Species, Experiment, Model,
-  * The user\_panel statement embeds statements: [user\_command](#user_command.md),
+  * The user\_panel statement embeds statements: [user\_command](#user_command),
 
 #### Definition
 
@@ -3444,8 +3444,8 @@ user_panel "Advanced Control" {
  
 ```
 
-  * See also: [user\_command](#user_command.md), [user\_init](#user_init.md), [user\_input](#user_input.md),
-[Top of the page](#Table_of_Contents.md)
+  * See also: [user\_command](#user_command), [user\_init](#user_init), [user\_input](#user_input),
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -3476,7 +3476,7 @@ using topology(grid_ant) {
  
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -3503,7 +3503,7 @@ The statement makes the agent output an arbitrary message in the error view as a
 warn 'This is a warning from ' + self;
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -3530,4 +3530,4 @@ The statement makes the agent output an arbitrary message in the console.
 write 'This is a message from ' + self;
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)

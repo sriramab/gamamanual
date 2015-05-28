@@ -34,4 +34,4 @@ This has been implemented as a new skill.
 species myPhysicsAgent skills: [physical3D]
 ```
 
-More details: [3D Physics Engine](Event__CodingCampFall2012_models.md)
+More details: [3D Physics Engine](Event__CodingCampFall2012_models)

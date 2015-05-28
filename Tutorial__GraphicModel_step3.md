@@ -24,7 +24,7 @@ To define a behavior for the prey agents we add them three new parameters:
   * The maximum energy that can a prey agent consume from vegetation per tick (init equals to 0.1)
   * The energy used by a prey agent at each time step (init equals to 0.05)
 
-Similarly to the definition of _nb\_preys\_init_ (cf. [step1](Tutorial__GraphicModel_step1.md)), you will have to add these parameters as global variables to the _World_. Double click on the _World_ item to edit it, click on _add variable_ and add the following definitions:
+Similarly to the definition of _nb\_preys\_init_ (cf. [step1](Tutorial__GraphicModel_step1)), you will have to add these parameters as global variables to the _World_. Double click on the _World_ item to edit it, click on _add variable_ and add the following definitions:
 <br />
 <img src='images/Tutorials/Graphic_modelling1/13_Prey_global_variables.png' />
 <br />
@@ -48,7 +48,7 @@ Note that the result of the operator **neighbours\_at dist** depends on the type
   * For a grid topology (grid species), the operator returns the neighbor cells (with a Von Neumann or Moore neighborhood).
   * For a continuous topology, the operator returns the list of agents of which the shape is located at a distance equals or inferior _dist_ meters to the agent shape.
 
-Also note the use of the [self](G__PseudoVariables#self.md) pseudo variable which is a reference to the agent currently executing the statement
+Also note the use of the [self](G__PseudoVariables#self) pseudo variable which is a reference to the agent currently executing the statement
 
 ## Prey agents
 

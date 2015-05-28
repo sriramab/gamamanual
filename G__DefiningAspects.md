@@ -60,7 +60,7 @@ GAMA provides several shape primitives to display agents.
 http://gama-platform.googlecode.com/files/shape_2D3D.PNG
 
 
-Examples of GAMA Shape Primitives with on [opengl display](Gama3D16.md):
+Examples of GAMA Shape Primitives with on [opengl display](Gama3D16):
 ```
 draw circle(10) color: rgb('red') at: {0,0,0};
 draw cylinder(10,5) color: rgb('red') at: {25,0,0};  

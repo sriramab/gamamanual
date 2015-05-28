@@ -50,7 +50,7 @@ species bug schedules: bug sort_by ( - each.size){
 }
 ```
 
-Note that other operators exist to represent other random distribution (e.g. [Poisson distribution](G__OperatorsLZ#poisson.md))
+Note that other operators exist to represent other random distribution (e.g. [Poisson distribution](G__OperatorsLZ#poisson))
 
 <br />
 

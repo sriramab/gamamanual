@@ -2,7 +2,7 @@
 
 ---
 
-[Operators](G__OperatorsAK.md) in the GAML language are used to compose complex expressions. An operator performs a function on one, two, or n operands (which are other expressions and thus may be themselves composed of operators) and returns the result of this function. Developing a new operator allows, then, to add a new function to GAML.
+[Operators](G__OperatorsAK) in the GAML language are used to compose complex expressions. An operator performs a function on one, two, or n operands (which are other expressions and thus may be themselves composed of operators) and returns the result of this function. Developing a new operator allows, then, to add a new function to GAML.
 
 
 <br />
@@ -12,7 +12,7 @@
 ## Implementation
 
 A new operator can be **any Java method** that:
-  * begins by the [@operator](G__DevelopingIndexAnnotations#@operator.md) (other fields can be added to the annotation): `@operator(value = "name_of_the_operator_gaml")`,
+  * begins by the [@operator](G__DevelopingIndexAnnotations#@operator) (other fields can be added to the annotation): `@operator(value = "name_of_the_operator_gaml")`,
 ```
 @operator(value = "rgb")
 public static GamaColor rgb(final int r, final int g, final int b, final double alpha) {	

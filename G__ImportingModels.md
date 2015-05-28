@@ -2,9 +2,9 @@
 
 ---
 
-_Importing_ a model refers to making a model file (or a complete project) available for edition and experimentation in the **workspace**. With the exception of [headless](G__Headless.md) experiments, GAMA requires that models be manageable in the current workspace to be able to validate them and eventually experiment them.
+_Importing_ a model refers to making a model file (or a complete project) available for edition and experimentation in the **workspace**. With the exception of [headless](G__Headless) experiments, GAMA requires that models be manageable in the current workspace to be able to validate them and eventually experiment them.
 
-There are many situations where a model needs to be _imported_ by the user: someone sent it to him/her by mail, it has been attached to an [issue report](G__Troubleshooting.md), it has been shared on the web or an SVN server, or it belongs to a previous workspace after the user has [switched workspace](G__ChangingWorkspace.md). The instructions below apply equally to all these situations.
+There are many situations where a model needs to be _imported_ by the user: someone sent it to him/her by mail, it has been attached to an [issue report](G__Troubleshooting), it has been shared on the web or an SVN server, or it belongs to a previous workspace after the user has [switched workspace](G__ChangingWorkspace). The instructions below apply equally to all these situations.
 
 Since model files need to reside in a project to be managed by GAMA, it is usually preferable to import a whole project rather than individual files (unless, of course, the corresponding models are simple enough to not require any additional resources, in which case, the model file can be imported with no harm into an existing project). GAMA will then try to detect situations where a model file is imported alone and, if a corresponding project can be found (for instance, in the upper directories of this file), to import the project instead of the file. As the last resort, GAMA will import orphan model files into a _generic_ project called _"Unclassified Models"_ (which will be created if it does not exist yet).
 
@@ -59,13 +59,13 @@ Once imported from SVN, projects will remain "linked" with the repository they h
 <img src='images/model_import/label_project_svn.png' /> <br />
 <br />
 
-Note that if the workspace is [cloned](G__ChangingWorkspace.md), these "links" to SVN repositories will remain untouched, allowing to have different workspaces pointing to the same SVN project.
+Note that if the workspace is [cloned](G__ChangingWorkspace), these "links" to SVN repositories will remain untouched, allowing to have different workspaces pointing to the same SVN project.
 <br />
 
 ---
 
 ## Silent import
-Another (possibly simpler, but less controllable) way of importing projects and models is to either pass a path to a model when [launching](G__Launching.md) GAMA from the command line or to double-click on a model file (ending in _.gaml_) in the Explorer or Finder (depending on your OS).
+Another (possibly simpler, but less controllable) way of importing projects and models is to either pass a path to a model when [launching](G__Launching) GAMA from the command line or to double-click on a model file (ending in _.gaml_) in the Explorer or Finder (depending on your OS).
 
 If the file is not already part of an imported project in the current workspace, GAMA will:
 

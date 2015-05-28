@@ -39,7 +39,7 @@ To give these cells a dynamics, we need to provide them with **update\*s. The _f
 
 
 Defining the 3 rgb components of a color is not the only way to define a color in GAML:
-  * the simplest way consists in using the symbol _#_ + the color name (for a limited set of  [colors](G__Index#Constants_and_colors.md)):
+  * the simplest way consists in using the symbol _#_ + the color name (for a limited set of  [colors](G__Index#Constants_and_colors)):
 ```
    #blue
    #red

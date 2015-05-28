@@ -4,7 +4,7 @@
 
 This page details how to create a new plug-in in order to extend the GAML language with new skills, species, displays or operators.
 It also details how to create a plug-in that can be  uploaded on an update site and can be installed into the GAMA release.
-We consider here that the developper version of GAMA has been installed (as detailled in [this page](G__InstallingSvnVersion.md)).
+We consider here that the developper version of GAMA has been installed (as detailled in [this page](G__InstallingSvnVersion)).
 
 
 <br />
@@ -140,4 +140,4 @@ The sequel describes how to add a new feature to the update site.
     * Richt-click on the project, Team > Commit...
 
 The plug-in is now available as an extension from the GAMA release.
-More details about the update of the GAMA realease are available [on the dedicated page](G__Updating.md).
+More details about the update of the GAMA realease are available [on the dedicated page](G__Updating).

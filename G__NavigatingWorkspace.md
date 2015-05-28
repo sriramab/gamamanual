@@ -43,7 +43,7 @@ To look up for a particular model in the library, users can use the "Search for�
 
 ### User models
 
-This category regroups all the projects that have been [created](G__GamlEditor.md) or [imported](G__ImportingModels.md) in the workspace by the user. Each project is actually a folder that resides in the folder of the workspace (so they can be easily located from within the filesystem). Any modification (addition, removal of files…) made to them in the filesystem (or using another application) is immediately reflected in the _Navigator_ and vice-versa.
+This category regroups all the projects that have been [created](G__GamlEditor) or [imported](G__ImportingModels) in the workspace by the user. Each project is actually a folder that resides in the folder of the workspace (so they can be easily located from within the filesystem). Any modification (addition, removal of files…) made to them in the filesystem (or using another application) is immediately reflected in the _Navigator_ and vice-versa.
 
 Model files, although it is by no means mandatory, usually reside in a sub-folder of the project called "models".
 
@@ -51,7 +51,7 @@ Model files, although it is by no means mandatory, usually reside in a sub-folde
 
 ### Shared models
 
-Shared projects are projects that reside in the SVN repository of the site [gama-models.googlecode.com](https://gama-models.googlecode.com), which is intended to support GAMA users in easily sharing their models, as the access is built-in inside the platform. This category gives access to reading the models already contributed there (see [G\_\_SharingModels](G__SharingModels.md) to see how to contribute). It is initially empty, but invoking the "Update Shared Models" menu item will make GAMA retrieve the list of projects present on the site.
+Shared projects are projects that reside in the SVN repository of the site [gama-models.googlecode.com](https://gama-models.googlecode.com), which is intended to support GAMA users in easily sharing their models, as the access is built-in inside the platform. This category gives access to reading the models already contributed there (see [G\_\_SharingModels](G__SharingModels) to see how to contribute). It is initially empty, but invoking the "Update Shared Models" menu item will make GAMA retrieve the list of projects present on the site.
 
 <br />
 <img src='images/model_navigator/navigator_menu_update_shared.png' />
@@ -73,7 +73,7 @@ To retrieve a complete project, the user has to choose its corresponding descrip
 <td><img width='300' src='images/model_navigator/navigator_shared_project_imported.png' /> </td></tr>
 </table>
 
-If the user has a write access to the gama-models SVN repository, any modification he/she makes to the model can be committed back to the repository using the standard "Team…" submenu (see [G\_\_SharingModels](G__SharingModels.md)) and subsequently shared with all GAMA users.
+If the user has a write access to the gama-models SVN repository, any modification he/she makes to the model can be committed back to the repository using the standard "Team…" submenu (see [G\_\_SharingModels](G__SharingModels)) and subsequently shared with all GAMA users.
 
 <br />
 
@@ -100,7 +100,7 @@ Users can choose to get rid of old projects by either **closing** or **deleting*
 <td><img src='images/model_navigator/navigator_close_result.png' /> </td></tr>
 </table>
 
-**Deleting** a project must be invoked when the user wants this project to not appear in the workspace anymore (unless, that is, it is [imported](G__ImportingModels.md) again). Invoking this command will effectively make the workspace "forget" about this project, and this can be further doubled with a deletion of the projects resources and models from the filesystem.
+**Deleting** a project must be invoked when the user wants this project to not appear in the workspace anymore (unless, that is, it is [imported](G__ImportingModels) again). Invoking this command will effectively make the workspace "forget" about this project, and this can be further doubled with a deletion of the projects resources and models from the filesystem.
 
 <table>
 <tr> <td><img src='images/model_navigator/navigator_menu_delete.png' /> </td>

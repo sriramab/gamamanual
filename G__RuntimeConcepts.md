@@ -11,13 +11,13 @@ When a model is being simulated, a number of algorithms are applied, for instanc
 
 ## Simulation initialization
 Once the user launches an experiment, GAMA starts the initialization of the simulation.
-First it creates a [`world` agent](G__GlobalSpecies.md).
+First it creates a [`world` agent](G__GlobalSpecies).
 
 It initializes all its attributes with their init values. This includes its shape (that will be used as environment of the simulation).
 
-If a species of type [grid](G__GridSpecies.md) exists in the model, agents of species are created.
+If a species of type [grid](G__GridSpecies) exists in the model, agents of species are created.
 
-Finally the `init` statement is executed. It should include the creation of all the other agents of [regular species](G__RegularSpecies.md) of the simulation. After their creation and initialization, they are added in the list `members` the `world` (that contains all the micro-agent of the `world`).
+Finally the `init` statement is executed. It should include the creation of all the other agents of [regular species](G__RegularSpecies) of the simulation. After their creation and initialization, they are added in the list `members` the `world` (that contains all the micro-agent of the `world`).
 
 
 <br />
@@ -25,9 +25,9 @@ Finally the `init` statement is executed. It should include the creation of all 
 ---
 
 ## Agents Creation
-Except [`world`](G__GlobalSpecies.md) and [`grid`](G__GridSpecies.md) agents, other agents are created using the [`create` statement](G__Statements#create.md). It used to allocate memory memory for each agent and to initialize all its attributes.
+Except [`world`](G__GlobalSpecies) and [`grid`](G__GridSpecies) agents, other agents are created using the [`create` statement](G__Statements#create). It used to allocate memory memory for each agent and to initialize all its attributes.
 
-If no explicit initialization exists for an attribute, it will get the default value corresponding to its [type](G__DataTypes.md).
+If no explicit initialization exists for an attribute, it will get the default value corresponding to its [type](G__DataTypes).
 
 The initialization of an attribute can be located at several places in the code; they are executed in the following order (which means that, if several ways are used, the attribute will finally have the value of the last applied one):
   * using the `from:` facet of the `create` statement;

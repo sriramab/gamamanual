@@ -55,7 +55,7 @@ The **update** facet allows to give a behavior to the agents. Indeed, at each si
 ```
 
 There are several ways to define colors in GAML:
-  * the simplest way consists in using the symbol _#_ + the color name (for a limited set of  [colors](G__Index#Constants_and_colors.md)):
+  * the simplest way consists in using the symbol _#_ + the color name (for a limited set of  [colors](G__Index#Constants_and_colors)):
 ```
    #blue
    #red

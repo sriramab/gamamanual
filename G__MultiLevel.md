@@ -51,7 +51,7 @@ Let's imagine two scenarios of a "bird" entity. Firstly, when a "bird" entity fl
 The "bird" entity is represented as two species: "bird" and "bird\_in\_group". The special point to remember here is that "bird\_in\_group" must be a sub-species of "bird" species.
 
 ## Dynamic migration of agents
-In our example, a "group" entity is composed of nearby flying "bird" entities. When a "bird" entity approaches a "group" entity, this "bird" entity will become a member of the group. To represent this, the modeler lets the "bird" agent change its species to "bird\_in\_group" species. The "bird" agent hence becomes a "bird\_in\_group" agent. To change species of agent, we can use one of the following statements : [capture](G__Statements.md), [release](G__Statements.md), [migrate](G__Statements.md).
+In our example, a "group" entity is composed of nearby flying "bird" entities. When a "bird" entity approaches a "group" entity, this "bird" entity will become a member of the group. To represent this, the modeler lets the "bird" agent change its species to "bird\_in\_group" species. The "bird" agent hence becomes a "bird\_in\_group" agent. To change species of agent, we can use one of the following statements : [capture](G__Statements), [release](G__Statements), [migrate](G__Statements).
 
 For example, in this case, to model the fact that a "group" agent captures the nearby "bird" agents (within a 5 meters distance from the group) as "bird\_in\_group" agents. We can write something as follows:
 

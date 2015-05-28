@@ -1,6 +1,6 @@
 # 16. Predators
 So far we have considered only bugs agent wandering around an environment. Now, we add a new species called "predators" that will hunt bugs. It will allow us to present how agent of different species can interact.
-_Nota bene_: it would be possible to define a parent species that would consist of common behavior between the 2 species, please see [step 5](Tutorial__PredatorPreyTutorial_step5.md) of the prey-predator tutorial on how to do so.
+_Nota bene_: it would be possible to define a parent species that would consist of common behavior between the 2 species, please see [step 5](Tutorial__PredatorPreyTutorial_step5) of the prey-predator tutorial on how to do so.
 
 
 <br />

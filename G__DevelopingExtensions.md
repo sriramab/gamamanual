@@ -4,19 +4,19 @@
 
 GAMA accepts _extensions_ to the GAML language, defined by external programmers and dynamically loaded by the platform each time it is run. Extensions can represent new built-in species, types, file-types, skills, operators, statements, new control architectures or even types of displays. Other internal structures of GAML will be progressively "opened" to this mechanism in the future: display layers (hardwired for the moment), new types of outputs (hardwired for the moment), scheduling policies (hardwired for the moment), random number generators (hardwired for the moment).
 The extension mechanism relies on two complementary techniques:
-  * the first one consists in defining the GAML extensions [in a plug-in](G__DevelopingPlugins.md) (in the OSGI sense, see [here](http://www.eclipse.org/equinox/)) that will be loaded by GAMA at runtime and must "declare" that it is contributing to the platform.
+  * the first one consists in defining the GAML extensions [in a plug-in](G__DevelopingPlugins) (in the OSGI sense, see [here](http://www.eclipse.org/equinox/)) that will be loaded by GAMA at runtime and must "declare" that it is contributing to the platform.
   * the second one is to indicate to GAMA where to look for extensions, using Java annotations that are gathered at compile time (some being also used at runtime) and directly compiled into GAML structures.
 
 The following sections describe this extension process.
 
-  * 1. [Installing the SVN version](G__InstallingSvnVersion.md)
-  * 2. [Architecture of GAMA](G__GamaArchitecture.md)
-  * 3. [Developing a Plugin](G__DevelopingPlugins.md)
-  * 4. [Developing a Skill](G__DevelopingSkills.md)
-  * 5. [Developing a Statement](G__DevelopingStatements.md)
-  * 6. [Developing an Operator](G__DevelopingOperators.md)
-  * 7. [Developing a Type](G__DevelopingTypes.md)
-  * 8. [Developing a Species](G__DevelopingSpecies.md)
-  * 9. [Developing a Control Architecture](G__DevelopingControlArchitectures.md)
-  * 10. [Index of annotations](G__DevelopingIndexAnnotations.md)
-  * 11. [IScope](G__DevelopingIScope.md)
+  * 1. [Installing the SVN version](G__InstallingSvnVersion)
+  * 2. [Architecture of GAMA](G__GamaArchitecture)
+  * 3. [Developing a Plugin](G__DevelopingPlugins)
+  * 4. [Developing a Skill](G__DevelopingSkills)
+  * 5. [Developing a Statement](G__DevelopingStatements)
+  * 6. [Developing an Operator](G__DevelopingOperators)
+  * 7. [Developing a Type](G__DevelopingTypes)
+  * 8. [Developing a Species](G__DevelopingSpecies)
+  * 9. [Developing a Control Architecture](G__DevelopingControlArchitectures)
+  * 10. [Index of annotations](G__DevelopingIndexAnnotations)
+  * 11. [IScope](G__DevelopingIScope)

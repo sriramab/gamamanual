@@ -2,7 +2,7 @@
 
 ---
 
-In the case of an [experiment](G__DefiningExperiments.md), the modeler can [define the parameters](G__DefiningParameters.md) he wants to be able to modify to explore the simulation, and thus the ones he wants to be able to display and alter in the GUI interface.
+In the case of an [experiment](G__DefiningExperiments), the modeler can [define the parameters](G__DefiningParameters) he wants to be able to modify to explore the simulation, and thus the ones he wants to be able to display and alter in the GUI interface.
 
 **It important to notice that all modification made in the parameters are used for simulation reload only. Creation of a new simulation from the model will erase the modifications.**
 
@@ -12,7 +12,7 @@ In the case of an [experiment](G__DefiningExperiments.md), the modeler can [defi
 ---
 
 ## Built-in parameters
-Every [GUI experiment](G__DefiningExperiments.md) displays a pane named "Parameters" containing at least two built-in parameters related to the random generator:
+Every [GUI experiment](G__DefiningExperiments) displays a pane named "Parameters" containing at least two built-in parameters related to the random generator:
   * the Random Number Generator, with a choice between 4 RNG implementations,
   * the Random Seed
 
@@ -24,7 +24,7 @@ Every [GUI experiment](G__DefiningExperiments.md) displays a pane named "Paramet
 ---
 
 ## Parameters View
-The modeler can [define himself parameters](G__DefiningParameters.md) that can be displayed in the GUI and that are sorted by categories. Note that the interface will depend on the data type of the parameter: for example, for integer or float parameters, a simple text box will be displayed whereas a color selector will be available for color parameters. The parameters value displayed are the initial value provided to the variables associated to the parameters in the model.
+The modeler can [define himself parameters](G__DefiningParameters) that can be displayed in the GUI and that are sorted by categories. Note that the interface will depend on the data type of the parameter: for example, for integer or float parameters, a simple text box will be displayed whereas a color selector will be available for color parameters. The parameters value displayed are the initial value provided to the variables associated to the parameters in the model.
 
 <br />
 <img src='images/experiments/parameters.png' /> <br />

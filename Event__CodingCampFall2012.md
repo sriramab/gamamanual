@@ -4,15 +4,15 @@ The Fall GAMA Coding Camp 2012 will take place from the 17th to the 19th of Nove
 
 Departure will take place from Ninh Kieu 3 hotel in Can Tho at 3:30 PM, Friday the 16th of November, and we expect to arrive in Hon Trem resort at around 9:00 PM (dinner will be taken on the road).
 
-A summary of the Spring GAMA Coding Camp 2012 can be found [here](Event__CodingCamp2012.md).
+A summary of the Spring GAMA Coding Camp 2012 can be found [here](Event__CodingCamp2012).
 
 # Work
 
-**The use of the last version of GAMA will be necessary, the development version should thus be installed. [See the documentation for the Installation procedure](G__InstallingSvnVersion.md).**
+**The use of the last version of GAMA will be necessary, the development version should thus be installed. [See the documentation for the Installation procedure](G__InstallingSvnVersion).**
 
 Some ideas of tasks that could be investigated during the camp (feel free to add anything you think about)
 
-## [COUPLING GAMA WITH OTHER TOOLS](Event__CodingCampFall2012_coupling.md)
+## [COUPLING GAMA WITH OTHER TOOLS](Event__CodingCampFall2012_coupling)
   * **Coupling GAMA with hydrodynamics simulators (for water flows, etc.)**
     * Participants: Thanh, Tuu, Benoit, Nghi, Quang, M.Thai
   * **Integration of EDP solver into GAMA**
@@ -27,7 +27,7 @@ Some ideas of tasks that could be investigated during the camp (feel free to add
   * **Improving the physics engine**
     * Participants: Javier, Philippe, Arnaud, Patrick
     * Plug-in needed: simtools.gaml.extensions.physics
-## [IMPROVEMENTS / ENHANCEMENTS](Event__CodingCampFall2012_improvements.md)
+## [IMPROVEMENTS / ENHANCEMENTS](Event__CodingCampFall2012_improvements)
   * **Improving and simplifying the syntax of GAML**
     * Participants: Nicolas, Alexis, Nghi
   * **Documenting and enhancing the command line version**
@@ -48,14 +48,14 @@ Some ideas of tasks that could be investigated during the camp (feel free to add
     * Participants: Nicolas, Nhan, Nghi
   * **Driving skill in 2D (skill: driving2d)**
     * Participants: Minh
-## [BUG FIXES](Event__CodingCampFall2012_bug.md)
+## [BUG FIXES](Event__CodingCampFall2012_bug)
   * **Eliminating bugs found in the 1.5 version**
     * Participants: Benoit, Patrick (for spatial/geometry related bugs). Arnaud for Opengl bug
-## [MODELS](Event__CodingCampFall2012_models.md)
+## [MODELS](Event__CodingCampFall2012_models)
   * **Adding 3D to the models**
     * Participants: Arnaud, Patrick, Nghi
 ## OTHER
   * **Documentation**
     * Participants: (Benoit)
     * Plug-in needed: msi.gama.documentation
-    * Requirements: Python (CPython) and PyDev Eclipse plugin: [see this page](Documentation15.md) for details about the installation
+    * Requirements: Python (CPython) and PyDev Eclipse plugin: [see this page](Documentation15) for details about the installation

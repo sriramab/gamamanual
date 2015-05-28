@@ -58,7 +58,7 @@ Monitors allow to follow the value of a GAML expression. For instance the follow
 <br /> <img src='images/inspector/monitor.png' /> <br />
 <br />
 
-It is possible to define a monitor inside a model (see [this page](G__DefiningMonitorsAndInspectors.md)). It is also possible to define a monitor through the graphical interface.
+It is possible to define a monitor inside a model (see [this page](G__DefiningMonitorsAndInspectors)). It is also possible to define a monitor through the graphical interface.
 
 To define a monitor, first choose **Add Monitor** in the **Views** menu. then define the display legend and the expression to monitor.
 <br /> <img src='images/inspector/add_monitor.png' /> <br />
@@ -68,4 +68,4 @@ In the following example, we defined a monitor with the legend "nb of infected p
 <br /> <img src='images/inspector/monitor_definition.png' /> <br />
 <br />
 
-The expression should be written with the GAML language. See [this page](G__GamlReference.md) for more details about the GAML language.
+The expression should be written with the GAML language. See [this page](G__GamlReference) for more details about the GAML language.

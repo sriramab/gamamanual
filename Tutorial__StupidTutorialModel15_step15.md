@@ -1,7 +1,7 @@
 # 15. Initialization from a File
 Until now we used an environment of fixed size and for which each cell's food production was randomly computed during initialization. In the present model we will see how to use a file to build the environment from.
 
-You may also want to refer to [step 2](Tutorial__PredatorPreyTutorial_step2.md) of the prey-predator tutorial to have a more detailed presentation of a similar environment construction.
+You may also want to refer to [step 2](Tutorial__PredatorPreyTutorial_step2) of the prey-predator tutorial to have a more detailed presentation of a similar environment construction.
 
 
 <br />

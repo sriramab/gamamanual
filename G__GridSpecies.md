@@ -5,7 +5,7 @@
 </li><li>maybe a word about scheduling ?<br>
 </font>
 <hr />
-A grid is a particular species of agents. Indeed, a grid is a set of agents that share a grid topology. As other agents, a grid species can have <a href='G__DefiningAttributes.md'>attributes, [G__DefiningActions actions</a>, <a href='G__DefiningBehaviors.md'>behaviors</a>, <a href='G__DefiningAspects.md'>aspects</a>, <a href='G__DefiningEquations.md'>equations</a> and  <a href='G__MultiLevel.md'>micro-species</a>.</li></ul>
+A grid is a particular species of agents. Indeed, a grid is a set of agents that share a grid topology. As other agents, a grid species can have <a href='G__DefiningAttributes'>attributes, [G__DefiningActions actions</a>, <a href='G__DefiningBehaviors'>behaviors</a>, <a href='G__DefiningAspects'>aspects</a>, <a href='G__DefiningEquations'>equations</a> and  <a href='G__MultiLevel'>micro-species</a>.</li></ul>
 
 However, contrary to regular species, grid agents are created automatically at the beginning of the simulation. It is thus not necessary to use the create statement to create them.
 

@@ -2,9 +2,9 @@
 
 ---
 
-Additional [built-in species](G__BuiltInSpecies.md) can be defined in Java in order to be used in GAML models. Additional attributes and actions can be defined. It could be very useful in order to define its behavior thanks to external libraries (e.g. [mulit-criteria decision-making](G__OtherBuiltInSpecies.md), [database connection](G__OtherBuiltInSpecies.md)...).
+Additional [built-in species](G__BuiltInSpecies) can be defined in Java in order to be used in GAML models. Additional attributes and actions can be defined. It could be very useful in order to define its behavior thanks to external libraries (e.g. [mulit-criteria decision-making](G__OtherBuiltInSpecies), [database connection](G__OtherBuiltInSpecies)...).
 
-A new built-in species extends the `GamlAgent` class, which defines the basic GAML agents. As a consequence, new built-in species have all the attributes (`name`, `shape`, ...) and actions (`die`...) of [regular species](G__AgentBuiltInSpecies.md).
+A new built-in species extends the `GamlAgent` class, which defines the basic GAML agents. As a consequence, new built-in species have all the attributes (`name`, `shape`, ...) and actions (`die`...) of [regular species](G__AgentBuiltInSpecies).
 
 
 <br />
@@ -15,19 +15,19 @@ A new built-in species extends the `GamlAgent` class, which defines the basic GA
 
 A new species can be **any Java class** that:
   * extends the `GamlAgent` class,
-  * begins by the [@species](G__DevelopingIndexAnnotations#@species.md): `@species(name = "name_of_the_species_gaml")`,
+  * begins by the [@species](G__DevelopingIndexAnnotations#@species): `@species(name = "name_of_the_species_gaml")`,
 ```
 @species(name = "multicriteria_analyzer")
 public class MulticriteriaAnalyzer extends GamlAgent {
 ```
 
-[Similarly to skills](G__DevelopingSkills.md), a species can define additional attributes and actions.
+[Similarly to skills](G__DevelopingSkills), a species can define additional attributes and actions.
 
 ### Additional attributes
 
 Defining new attributes needs:
-  * to add [@vars](G__DevelopingIndexAnnotations#@vars.md) (and one embedded [@var](G__DevelopingIndexAnnotations#@var.md) per additional attribute) annotation on top of the class,
-  * to define [@setter](G__DevelopingIndexAnnotations#@setter.md) and [@getter](G__DevelopingIndexAnnotations#@getter.md) annotations to the accessors methods.
+  * to add [@vars](G__DevelopingIndexAnnotations#@vars) (and one embedded [@var](G__DevelopingIndexAnnotations#@var) per additional attribute) annotation on top of the class,
+  * to define [@setter](G__DevelopingIndexAnnotations#@setter) and [@getter](G__DevelopingIndexAnnotations#@getter) annotations to the accessors methods.
 
 For example, regular species are defined with the following annotation:
 ```
@@ -48,7 +48,7 @@ public abstract void setName(String name);
 
 ### Additional actions
 
-An additional action is a method annotated by the [@action](G__DevelopingIndexAnnotations#@action.md) annotation.
+An additional action is a method annotated by the [@action](G__DevelopingIndexAnnotations#@action) annotation.
 ```
 @action(name = ISpecies.stepActionName)
 public Object _step_(final IScope scope) {

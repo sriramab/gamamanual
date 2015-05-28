@@ -48,7 +48,7 @@ if speed = 5 {
 }
 ```
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -134,7 +134,7 @@ action to choose a speed
   * returns: float
   * **new\_road** (agent): the road on which to choose the speed
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -171,7 +171,7 @@ moves the agent towards the target passed in the arguments.
   * **on** (list,agent,graph,geometry): list, agent, graph, geometry that restrains this move (the agent moves inside this geometry)
   * **departureDate** (int): date of the departure
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -301,7 +301,7 @@ Replies a message with a 'subscribe' performative message.
   * **message** (message): The message to be replied
   * **content** (list): The content of the replying message
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -343,7 +343,7 @@ moves the agent towards the target passed in the arguments while considering the
   * **tolerance** (float): tolerance distance used for the computation (replaces the current value of tolerance)
   * **lanes\_attribute** (string): the name of the attribut of the road agent that determine the number of road lanes (replaces the current value of lanes\_attribute)
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -397,7 +397,7 @@ moves the agent towards the target passed in the arguments.
   * **background** (list,agent,graph,geometry): list, agent, graph, geometry on which the agent moves (the agent moves inside this geometry)
   * **on** (list,agent,graph,geometry): list, agent, graph, geometry that restrains this move (the agent moves inside this geometry)
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -429,7 +429,7 @@ The graphic skill is intended to define the minimal set of behaviours required f
   * returns: void
   * **period** (int): make the agent twinkle with a given period
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -447,7 +447,7 @@ The graphic skill is intended to define the minimal set of behaviours required f
 ### Actions
 
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -553,7 +553,7 @@ The graphic skill is intended to define the minimal set of behaviours required f
   * **background** ():
   * **ignore\_type** ():
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -571,7 +571,7 @@ The graphic skill is intended to define the minimal set of behaviours required f
 
   * returns: float
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -608,7 +608,7 @@ The graphic skill is intended to define the minimal set of behaviours required f
 
   * returns: float
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -666,7 +666,7 @@ Moves the agent towards a random location (3D point) at the maximum distance (wi
   * **z\_max** (int): the maximum alltitude (z) the geometry can reach
   * **bounds** (agent,geometry): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -694,7 +694,7 @@ moves the agent forward, the distance being computed with respect to its speed a
   * **heading** (int): int, optional, the direction to take for this move (replaces the current value of roll)
   * **bounds** (geometry,agent): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -730,7 +730,7 @@ Send a message to a destination.
   * **dest** (string): The network ID of the agent who receive the message
   * **content** (any type): The content of the message
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -760,7 +760,7 @@ Send a message to a destination.
 
   * returns: unknown
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -780,7 +780,7 @@ Send a message to a destination.
 ### Actions
 
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -796,7 +796,7 @@ Send a message to a destination.
 ### Actions
 
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -828,7 +828,7 @@ unregister the agent on the road
   * returns: void
   * **agent** (agent): the agent to unregister on the road.
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -846,7 +846,7 @@ unregister the agent on the road
 ### Actions
 
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -885,7 +885,7 @@ M.
   * returns: void
   * **msg** (string): td)
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -953,7 +953,7 @@ M.
 
   * returns: float
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -985,7 +985,7 @@ moves the agent towards the target passed in the arguments while considering the
   * **on** (list,agent,graph,geometry): list, agent, graph, geometry that restrains this move (the agent moves inside this geometry)
   * **max\_speed** (float): speedMoving
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)
 
 <br />
 
@@ -1017,4 +1017,4 @@ moves the agent towards the target passed in the arguments while considering the
   * **on** (list,agent,graph,geometry): list, agent, graph, geometry that restrains this move (the agent moves inside this geometry)
   * **max\_speed** (float): speedMoving
 
-[Top of the page](#Table_of_Contents.md)
+[Top of the page](#Table_of_Contents)

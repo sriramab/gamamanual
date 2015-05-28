@@ -38,9 +38,9 @@ chart options include:
   * **style** optional, expects an identifier, takes values in {stack, 3d, bar, exploded}. - No documentation yet
   * **timexseries** optional, expects a list - for series charts, change the default time serie (simulation cycle) for an other value.
   * **transparency** optional, expects a float - the style of the chart
-  * **x\_range**, optional, expects any type in [float, a int, a point](a.md) - range of the x-axis. Can be a number (which will set the axis total range) or a point (which will set the min and max of the axis).
+  * **x\_range**, optional, expects any type in [float, a int, a point](a) - range of the x-axis. Can be a number (which will set the axis total range) or a point (which will set the min and max of the axis).
   * **x\_tick\_unit**, optional, expects a float - the tick unit for the y-axis (distance between horyzontal lines and values on the left of the axis).
-  * **y\_range**, optional, expects any type in [float, a int, a point](a.md) - range of the y-axis. Can be a number (which will set the axis total range) or a point (which will set the min and max of the axis).
+  * **y\_range**, optional, expects any type in [float, a int, a point](a) - range of the y-axis. Can be a number (which will set the axis total range) or a point (which will set the min and max of the axis).
   * **y\_tick\_unit**, optional, expects a float - the tick unit for the x-axis (distance between vertical lines and values bellow the axis).
 
 ## Data definition
