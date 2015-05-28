@@ -126,5 +126,4 @@
 ---
 
   * Coding Camp
-    * [Coding Camp 2015](CodingCamp2015)
-      * [Reorganization](Reorganization)
+    * [Reorganization](Event__CC15_Reorganization)
