@@ -1,7 +1,7 @@
 
-| ![Download GAMA release](https://github.com/gama-platform/gama/wiki/icons/save-file.png) | ![Youtube Channel](https://github.com/gama-platform/gama/wiki/icons/youtube.png)  | ![Download PDF of the documentation](https://github.com/gama-platform/gama/wiki/icons/pdf.png) | ![GAML keywords dictionary](https://github.com/gama-platform/gama/wiki/icons/dictionary.png) | ![Facebook](https://github.com/gama-platform/gama/wiki/icons/facebook.png)
-| :------------: |:---------------:| :-----:|:---------------:| :-----:|
-| Download GAMA      | YouTube Channel | Download GAMA doc| GAML index | Facebook
+| [![Download GAMA release](https://github.com/gama-platform/gama/wiki/icons/save-file.png)](https://code.google.com/p/gama-platform/wiki/G__Downloads) | [![Youtube Channel](https://github.com/gama-platform/gama/wiki/icons/youtube.png)](http://www.youtube.com/channel/UCWJ1kWGDDI-9u2f2uD0gcaQ) | ![Download PDF of the documentation](https://github.com/gama-platform/gama/wiki/icons/pdf.png) | ![GAML keywords dictionary](https://github.com/gama-platform/gama/wiki/icons/dictionary.png) | ![Facebook](https://github.com/gama-platform/gama/wiki/icons/facebook.png)
+| :-----------: |:---------------:| :---------------:|:----------:| :------: |
+| Download GAMA | YouTube Channel | Download GAMA doc| GAML index | Facebook |
 
 
 
