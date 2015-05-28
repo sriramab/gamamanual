@@ -68,4 +68,4 @@ You can then switch between java version using:
 sudo update-alternatives --config java
 ```
 
-see [the troubleshooting page](G__Troubleshooting#Ubuntu) for more information on workaround for problems on Unbuntu.
+See [the troubleshooting page](G__Troubleshooting#Ubuntu) for more information on workaround for problems on Unbuntu.
