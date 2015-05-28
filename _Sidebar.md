@@ -1,3 +1,4 @@
+## [Home](Home)
 ## [Introduction](G__Overview)
 ## [Platform](G__Platform)
 1. Installation and Launching
