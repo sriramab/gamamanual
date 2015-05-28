@@ -1,15 +1,15 @@
 # Introduction
 
----
+
 
 R language is one of powerful data mining tools, and its community is very large in the world (See the website: http://www.r-project.org/). Adding the R language into GAMA is our strong endeavors to accelerate many statistical, data mining tools into GAMA.
 
 RCaller 2.0 package (Website: http://code.google.com/p/rcaller/) is used for GAMA 1.6.1.
 
 
-<br />
 
----
+
+
 
 ## Configuration in GAMA
 1) Install R language into your computer.
@@ -20,9 +20,9 @@ RCaller 2.0 package (Website: http://code.google.com/p/rcaller/) is used for GAM
 
 **Notes**: Ensure that install.packages("Runiversal") is already applied in R environment.
 
-<br />
 
----
+
+
 
 ## Calling R from GAML
 

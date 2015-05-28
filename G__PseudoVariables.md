@@ -1,12 +1,12 @@
 # Pseudo-variables
 
----
+
 
 The expressions known as **pseudo-variables** are special read-only variables that are not declared anywhere (at least not in a species), and which represent a value that changes depending on the context of execution.
 
-<br />
 
----
+
+
 
 ## self
 The pseudo-variable `self` always holds a reference to the agent executing the current statement.
@@ -20,9 +20,9 @@ if potential_friend != nil {
     friend <- potential_friend;
 }
 ```
-<br />
 
----
+
+
 
 ## myself
 `myself` plays the same role as `self` but in remotely-executed code (`ask`, `create`, `capture` and `release` statements), where it represents the _calling_ agent when the code is executed by the _remote_ agent.
@@ -46,9 +46,9 @@ create species (self) number: 10 {
    }
 }
 ```
-<br />
 
----
+
+
 
 ## each
 `each` is available only in the right-hand argument of [iterators](G__OperatorsAK#Containers-related_operators).  It is a pseudo-variable that represents, in turn, each of the elements of the left-hand container. It can then take any type depending on the context.

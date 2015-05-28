@@ -9,7 +9,7 @@
 The multi-level architecture offers the modeller the following possibilities : (1) the declaration of a species as a micro-species of another species, (2) the representation of an entity as different types of agent (i.e., GAML species), (3) the dynamic migration of agents between populations.</li></ul>
 
 
-<br />
+
 # Details
 ## Declaration of micro-species
 A species can have other species as micro-species. The micro-species of a species is declared inside the species' declaration.

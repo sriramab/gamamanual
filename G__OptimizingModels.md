@@ -1,15 +1,15 @@
 # Optimizing Models
 
----
+
 
 This page aims at presenting some tips to optimize the memory footprint or the execution time of a model in GAMA.
 
 _Note:  since GAMA 1.6.1, some optimizations have become obsolete because they have been included in the compiler. They have, then, been removed from this page. For instance, writing 'rgb(0,0,0)' is now compiled directly as '°black'._
 
 
-<br />
 
----
+
+
 
 ## machine\_time
 
@@ -22,9 +22,9 @@ loop times: 1000 {
 }
 write "duration of the last instructions: " + (machine_time - t);
 ```
-<br />
 
----
+
+
 
 ## Scheduling
 
@@ -54,9 +54,9 @@ species my_species frequency: 0
 }
 ```
 
-<br />
 
----
+
+
 
 ## Grid
 
@@ -75,9 +75,9 @@ If false, then only one geometry is used for all agents. This facet allows to ga
 ```
 grid cell width: 50 height: 50 use_individual_shapes: false ;	
 ```
-<br />
 
----
+
+
 
 ## Operators
 
@@ -149,9 +149,9 @@ if (closest_agent = nil) {closest_agent  <- predator1 closest_to self;}
 ```
 
 
-<br />
 
----
+
+
 
 ## Displays
 

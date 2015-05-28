@@ -1,12 +1,12 @@
 # 1. Basic Model
 
----
+
 
 In this first step, we will see how to define a 3D environment and populate it.
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -18,9 +18,9 @@ Initialize a 3D world with a population of cells placed randomly in a 3D 100x100
 
 ![images/3D_model_LQ.png](images/3D_model_LQ.png)
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -85,9 +85,9 @@ output {
 }
 ```
 
-<br />
 
----
+
+
 
 ## Complete Model
 

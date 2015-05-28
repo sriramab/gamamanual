@@ -3,9 +3,9 @@ This 5th step illustrates how to obtain a shortest path from a point to another 
 
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -13,9 +13,9 @@ This 5th step illustrates how to obtain a shortest path from a point to another 
   * Add a new parameter: the **destroy** parameter that represents the value of destruction when a people agent takes a road. By default, it is equal to 0.02.
   * When an people arrive at its destination (home or work), it updates the **destruction\_coeff** of the **road** agents it took to reach its destination:  "destruction\_coeff = destruction\_coeff - destroy". Then, the graph is updated.
 
-<br />
 
----
+
+
 
 ## Model Definition
 ### global section
@@ -67,9 +67,9 @@ At each time-step, after a **people** agent have moved over one or multiple segm
 ```
 
 
-<br />
 
----
+
+
 
 ## Complete Model
 

@@ -1,15 +1,15 @@
 # References
 
----
+
 
 This page references the events that are linked to GAMA.
 
 If you happen to participate to an event linked to GAMA, please let us know, so that we can include it in this list.
 
 
-<br />
 
----
+
+
 
 ## Events linked to GAMA
 

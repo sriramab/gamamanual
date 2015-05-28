@@ -1,6 +1,6 @@
 # Displays
 
----
+
 
 GAMA allows modelers to [define several and several kinds of displays](G__DefiningDisplays) in a [GUI experiment](G__DefiningExperiments):
   * java 2D displays
@@ -10,9 +10,9 @@ These 2 kinds of display allows the modeler to display the same objects (agents,
 The OpenGL displays offers in addition better performance when zooming in and out.
 
 
-<br />
 
----
+
+
 
 ## Classical displays (java2D)
 
@@ -21,9 +21,9 @@ The classical displays displaying any kind of content can be manipulated via the
   * the **mouse right** click opens a context menu allowing the modeler to inspect displayed agents,
   * the **wheel** allows the modeler to zoom in or out.
 
-<br />
+
 <img src='images/experiments/display-java2D.png' />
-<br />
+
 
 Each display provides several buttons to manipulate the display:
   * **Pause the-display**: when pressed, the display will not be displayed anymore, the simulation is still running,
@@ -46,13 +46,13 @@ The bottom overlay bar displays information about the way it is displayed:
   * the zoom ratio,
   * the scale of the display (depending on the zoom).
 
-<br />
+
 <img src='images/experiments/display-sidebar-overlay.png' />
-<br />
 
-<br />
 
----
+
+
+
 
 ## OpenGL displays
 
@@ -64,8 +64,8 @@ The OpenGL display has an additional button **3D Options** providing 3D features
   * **Arcball drag** (only with Arcball camera): the right press and hold and mouse move makes rotation on the scene
   * **Inertia mode** (only with Arcball camera): in inertia mode, when the modeler stops moving the camera, there is no straight halt but a kind of inertia.
 
-<br />
+
 <img src='images/experiments/display-OpenGL.png' />
-<br />
+
 
 In addition, the bottom overlay bar provides the Camera position in 3D.

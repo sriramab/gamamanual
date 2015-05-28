@@ -1,6 +1,6 @@
 # Expressions
 
----
+
 
 Expressions in GAML are the value part of the [statements](Statements161)' facets. They represent or compute data that will be used as the value of the facet when the statement will be executed.
 

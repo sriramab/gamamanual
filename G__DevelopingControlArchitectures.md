@@ -1,15 +1,15 @@
 # Developing architecture
 
----
+
 
 In addition to existing [control architectures](G__BuiltInControlArchitectures), developers can add new ones.
 
 Defining a new control architecture needs to [create new statements of type behavior](G__DevelopingStatements) and included in species statements and to define how to manage their execution.
 
 
-<br />
 
----
+
+
 
 ## Implementation
 

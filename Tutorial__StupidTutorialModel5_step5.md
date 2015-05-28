@@ -2,9 +2,9 @@
 In the present step we will make certain global variables available in the simulation UI as parameters (parameter settings tab).
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -12,9 +12,9 @@ Make these variables into parameters that can be accessed through the settings w
   * Initial number of bugs (a model parameter)
   * The maximum daily food consumption (a bug parameter)
   * The maximum food production (a cell parameter).
-<br />
 
----
+
+
 
 ## Model Definition
 ### parameter definition
@@ -71,9 +71,9 @@ experiment stupidModel type: gui {
 ### Nota Bene
   * It seems useless to declare a `maxFoodProdRate` variable, but in the case we want heterogeneous values of `maxFoodProdRate`, it will be very easily done.
 
-<br />
 
----
+
+
 
 ## Complete Model
 

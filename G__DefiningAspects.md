@@ -8,9 +8,9 @@
 The aspect statement allows to define how the agents will be displayed. It is possible to define different displays (i.e. different aspect sections) for a same species. In this context, the user will be able to change the display drawn during the simulation execution.</li></ul>
 
 
-<br />
 
----
+
+
 
 ## Draw Command
 
@@ -48,9 +48,9 @@ aspect default {
 }
 
 ```
-<br />
 
----
+
+
 
 
 ## Shape Primitive

@@ -3,9 +3,9 @@ So far, our bugs population was fixed, no agent were created or deleted during s
 
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -16,9 +16,9 @@ So far, our bugs population was fixed, no agent were created or deleted during s
   * The model stopping rule is changed: the model stops after 1000 time steps have been executed or when the number of bugs reaches zero.
 
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -89,9 +89,9 @@ global torus: true{
 }
 ```
 
-<br />
 
----
+
+
 
 ## Complete Model
 _Nota bene: we updated the histograms to show the 10 classes of size between 0 and 10 as once a bug reaches 10 it will be replaced by new smaller agents_

@@ -3,9 +3,9 @@
 This third step presents how to create a road system from GIS data. More precisely, it shows how to build a graph from a list of polylines and to constrain the movement of an agent according to this graph.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -17,9 +17,9 @@ This third step presents how to create a road system from GIS data. More precise
   * The **people** agents move along the road, taking the shortest path.
 
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -142,9 +142,9 @@ We randomly assign one working place and one house to each **people** agent. To 
   }
 ```
 
-<br />
 
----
+
+
 
 ## Complete Model
 

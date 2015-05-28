@@ -1,6 +1,6 @@
 # Defining User Interaction
 
----
+
 
 GAMA provides tools to define user interactions during the simulation to give more flexibility to the user in controlling the agents, creating agents, killing agents, running specific actions, etc:
   * [Event](#Event): allows to define specific user interaction actions for a display through a specific layer
@@ -8,9 +8,9 @@ GAMA provides tools to define user interactions during the simulation to give mo
   * [User control architecture](#user_control_architecture): allows to give the user the control on an agent.
 
 
-<br />
 
----
+
+
 
 ## Event
 Events allow to interact with the simulation by capturing mouse events and do an action. This action could apply a change on the environment or on agents, according to the goal.
@@ -56,9 +56,9 @@ experiment Displays type: gui {
 }
 ```
 
-<br />
 
----
+
+
 
 ## User Command
 
@@ -139,9 +139,9 @@ global {
 ```
 
 
-<br />
 
----
+
+
 
 ## User Control Architecture
 

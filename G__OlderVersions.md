@@ -1,15 +1,15 @@
 # Versions of GAMA
 
----
+
 
 GAMA exists since 2007 and has undergone a number of changes since its first release, materialized by different versions of the platform. Although we do not maintain these versions anymore, some are still used in lectures or specific projects. This page provides a list of these versions and, for each of them, a summary of its features and a link to its documentation in PDF format.
 
 
 
 
-<br />
 
----
+
+
 
 ## GAMA 1.6.1 (June 2014)
 
@@ -37,12 +37,12 @@ Version 1.6.1 is the current version of GAMA. It improves many features over ver
 Documentation:
   * Available [online](G__Overview)
 
-<br />
+
 <img src='images/splash/GAMA161.png' />
 
-<br />
 
----
+
+
 
 ## GAMA 1.6 (July 2013)
 This version introduced many features over 1.5.1 :
@@ -57,12 +57,12 @@ This version introduced many features over 1.5.1 :
 
 Documentation:
   * [Documentation in PDF](http://gama-platform.googlecode.com/files/docGAMAv16.pdf)
-<br />
+
 <img src='images/splash/GAMA16.png' />
 
-<br />
 
----
+
+
 
 ## GAMA 1.5 / 1.5.1 (July & November 2012)
 Key points :
@@ -83,12 +83,12 @@ Version 1.5.1 improved some features of 1.5 :
 Documentation:
   * [Documentation in PDF](http://code.google.com/p/gama-platform/downloads/detail?name=GAMAv151%20-%20doc.pdf)
 
-<br />
+
 ![http://gama-platform.googlecode.com/files/splash1.5.png](http://gama-platform.googlecode.com/files/splash1.5.png)
 
-<br />
 
----
+
+
 
 ## GAMA 1.4 (December 2011)
 This versions introduced the new integrated development environment based on XText, as well as a completely revamped modeling language, not based on XML anymore, and much easier to read and write. It also introduced new important types such as geometry, graph, path and topology in order to ease the spatial manipulation of agents.
@@ -106,11 +106,11 @@ Key points :
 Documentation:
   * <a href='pdf/GAMAv14.pdf'>Documentation of GAMA 1.4 </a>
 
-<br />
-![http://gama-platform.googlecode.com/files/splash1.4.png](http://gama-platform.googlecode.com/files/splash1.4.png)"
-<br />
 
----
+![http://gama-platform.googlecode.com/files/splash1.4.png](http://gama-platform.googlecode.com/files/splash1.4.png)"
+
+
+
 
 ## GAMA 1.3 (August 2010)
 Version 1.3 added numerous operators to manipulate GIS data. Moreover, it integrated new features like the possibility to define custom displays and to define multi-level models. It allowed to use clustering and decision-making methods. And it greatly improved the performances of the platform.
@@ -126,11 +126,11 @@ Key points :
 Documentation:
   * <a href='pdf/GAMAv13.pdf'> Documentation of GAMA 1.3 </a>
 
-<br />
-![http://gama-platform.googlecode.com/files/splash1-3.png](http://gama-platform.googlecode.com/files/splash1-3.png)"
-<br />
 
----
+![http://gama-platform.googlecode.com/files/splash1-3.png](http://gama-platform.googlecode.com/files/splash1-3.png)"
+
+
+
 
 ## GAMA 1.1 (October 2009)
 The first "real" release of GAMA, which incorporated several changes, including an XML editor coupled with the simulator, the possibility to take snapshots of every graphical window, save parameters and monitors for future reuse, save charts as CSV files, and definitely fixed the memory leaks observed in previous internal versions.
@@ -145,5 +145,5 @@ Documentation:
   * [Guidebook of GAMA 1.1](http://gama-platform.googlecode.com/files/Gama_guidebook_20_oct_2009.pdf)
   * [Training session on GAMA 1.1 (Hanoi)](TrainingSessionHanoi2009)
 
-<br />
+
 <img src='http://gama-platform.googlecode.com/files/Splash1.1.png' />

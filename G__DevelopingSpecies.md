@@ -1,15 +1,15 @@
 # Developing Species
 
----
+
 
 Additional [built-in species](G__BuiltInSpecies) can be defined in Java in order to be used in GAML models. Additional attributes and actions can be defined. It could be very useful in order to define its behavior thanks to external libraries (e.g. [mulit-criteria decision-making](G__OtherBuiltInSpecies), [database connection](G__OtherBuiltInSpecies)...).
 
 A new built-in species extends the `GamlAgent` class, which defines the basic GAML agents. As a consequence, new built-in species have all the attributes (`name`, `shape`, ...) and actions (`die`...) of [regular species](G__AgentBuiltInSpecies).
 
 
-<br />
 
----
+
+
 
 ## Implementation
 
@@ -55,9 +55,9 @@ public Object _step_(final IScope scope) {
 ```
 
 
-<br />
 
----
+
+
 
 ## Annotations
 ### @species

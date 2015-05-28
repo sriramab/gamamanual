@@ -2,17 +2,17 @@
 In this step we add a "growth" behavior to our bug agents, it allows us to present the agents' instance variables and methods.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
   * Add a second bug action: `grow`. Each time step, a bug grows by a fixed amount (0.1). So bugs need an instance variable for their size, which is initialized to 1.0. This action is scheduled after the `move` action.
   * The bug color on the display is shaded to reflect their size. Bug colors shade from white when `size` is zero to red when `size` is 10 or greater.
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -70,9 +70,9 @@ species bug {
   * As you can see, it is possible to declare a list by using the brackets and the comma as separator: [elt\_1, elt\_2, elt\_3, etc...]. Here, we have list of two float numbers _[1.0, size/10.0] ._
 
 
-<br />
 
----
+
+
 
 ## Complete Model
 

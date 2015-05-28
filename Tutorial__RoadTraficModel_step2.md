@@ -2,18 +2,18 @@
 This second step Illustrates how to obtain a random point inside a geometry. We will also define some moving agent called _people_.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
   * Define a new species of agents: the **people** agents. The **people** agents have a point for geometry and are represented by a yellow circle of radius 10m.
   * At initialization, 100 **people** agents are created. Each **people** agent is placed inside a building of type 'Residential' (randomly selected).
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -78,9 +78,9 @@ We add the **people** agent in the defined display.
       }
    }
 ```
-<br />
 
----
+
+
 
 ## Complete Model
 

@@ -9,9 +9,9 @@
 This extension of GAMA is some new statements that provides new way to write Math models (System of equations) and new action to solve them with provided method (RK4, Dormand,...). This extension is implemented in the ummisco.gaml.extensions.maths plug-in.
 
 
-<br />
 
----
+
+
 
 ## Equations
 
@@ -73,7 +73,7 @@ solve all equations which matched the name, in list of agent with given method a
 ```
 
 
----
+
 
 ## Classical Equations
 

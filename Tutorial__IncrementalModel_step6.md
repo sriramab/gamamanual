@@ -1,9 +1,9 @@
 # 6. Multi-Level
 This step Illustrates how to define a multi-level model
 
-<br />
 
----
+
+
 
 
 
@@ -19,9 +19,9 @@ We will need to:
 
 ![images/Tutorials/Incremental_model/Incremental_model6.jpg](images/Tutorials/Incremental_model/Incremental_model6.jpg)
 
-<br />
 
----
+
+
 
 ## Model Definition
 ### building
@@ -110,9 +110,9 @@ global  {
 }
 ```
 
-<br />
 
----
+
+
 
 ## Complete Model
 

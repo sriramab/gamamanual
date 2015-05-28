@@ -1,5 +1,5 @@
 
-<br />
+
 # 3D River morphology display
 
 Display the channel bed of a river in 3D from synthetic data and can be applied directly to real data.

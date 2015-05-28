@@ -1,12 +1,12 @@
 # Index of annotations
 
----
+
 
 Annotations are used to link Java methods and classes to GAML language.
 
-<br />
 
----
+
+
 
 ## @action
 This annotations is used to tag a method that will be considered as an action (or primitive) in GAML.
@@ -19,9 +19,9 @@ This annotation contains:
   * **args** (set of arg, empty by default): _the list of arguments passed to this action. Each argument is an instance of arg_.
   * **doc** (set of @doc, empty by default): _the documentation associated to the action_.
 
-<br />
 
----
+
+
 
 ## @arg
 This annotations describes an argument passed to an action.
@@ -32,9 +32,9 @@ This annotation contains:
   * **optional** (boolean, true by default): _whether this argument is optional or not_.
   * **doc** (set of @doc, empty by default): _the documentation associated to the argument._
 
-<br />
 
----
+
+
 
 ## @doc
 It provides a unified way of attaching documentation to the various GAML elements tagged by the other annotations. The documentation is automatically assembled at compile time and also used at runtime in GAML editors.
@@ -46,9 +46,9 @@ It provides a unified way of attaching documentation to the various GAML element
   * **examples** (set of Strings, empty by default): _an array of String representing some examples or use-cases about how to use this element_.
   * **see** (set of Strings, empty by default): _an array of String representing cross-references to other elements in GAML_.
 
-<br />
 
----
+
+
 
 ## @facet
 This facet describes a facet in a list of facets.
@@ -60,9 +60,9 @@ This annotation contains:
   * **optional** (boolean, false by default): _whether or not this facet is optional or mandatory_.
   * **doc** (set of @doc, empty by default): _the documentation associated to the facet_.
 
-<br />
 
----
+
+
 
 ## @facets
 This annotation describes a list of facets used by a statement in GAML.
@@ -71,9 +71,9 @@ This annotation contains:
   * **value** (set of @facet): array of @facet, each representing a facet name, type..
   * **ommissible** (string): _the facet that can be safely omitted by the modeler (provided its value is the first following the keyword of the statement)_.
 
-<br />
 
----
+
+
 
 ## @getter
 This annotations is used to indicate that a method is to be used as a getter for a variable defined in the class. The variable must be defined on its own (in vars).
@@ -82,9 +82,9 @@ This annotation contains:
   * **value** (String): the name of the variable for which the annotated method is to be considered as a getter.
   * **initializer** (boolean, false by default): returns whether or not this getter shoud also be used as an initializer
 
-<br />
 
----
+
+
 
 ## @inside
 This annotation is used in conjunction with symbol. Provides a way to tell where this symbol should be located in a model (i.e. what its parents should be). Either direct symbol names (in symbols) or generic symbol kinds can be used.
@@ -93,9 +93,9 @@ This annotation contains:
   * **symbols** (set of Strings, empty by default): _symbol names of the parents_.
   * **kinds** (set of int, empty by default): _generic symbol kinds of the parents (see [ISymbolKind.java](http://code.google.com/p/gama-platform/source/browse/branches/GAMA_CURRENT/msi.gama.processor/src/msi/gama/precompiler/ISymbolKind.java) for more details)_.
 
-<br />
 
----
+
+
 
 ## @operator
 This annotation represents an "operator" in GAML, and is used to define its name(s) as well as some meta-data that will be used during the validation process.
@@ -108,18 +108,18 @@ This annotation contains:
   * **doc** (set of @doc, empty by default): _the documentation attached to this operator._
 
 
-<br />
 
----
+
+
 
 ## @serializer
 It allows to declare a custom serializer for Symbols (statements, var declarations, species ,experiments, etc.). This serializer will be called instead of the standard serializer, superseding this last one. Serializers must be subclasses of the SymbolSerializer class.
   * **value** (Class): _the serializer class_.
 
 
-<br />
 
----
+
+
 
 ## @setter
 This annotations is used to indicate that a method is to be used as a setter for a variable defined in the class. The variable must be defined on its own (in vars).
@@ -128,9 +128,9 @@ This annotation contains:
   * **value** (String): the name of the variable for which the annotated method is to be considered as a setter.
 
 
-<br />
 
----
+
+
 
 ## @skill
 This annotations Allows to define a new skill (class grouping variables and actions that can be used by agents).
@@ -141,9 +141,9 @@ This annotation contains:
   * **internal** (boolean, false by default): _return whether this skill is for internal use only_.
   * **doc** (set of @doc, empty by default): _the documentation associated to the skill_.
 
-<br />
 
----
+
+
 
 ## @species
 This annotation represents a "species" in GAML. The class annotated with this annotation will be the support of a species of agents.
@@ -156,9 +156,9 @@ This annotation contains:
   * **doc** (set of @doc, empty by default): _the documentation attached to this operator._
 
 
-<br />
 
----
+
+
 
 ## @symbol
 This annotation represents a "statement" in GAML, and is used to define its name(s) as well as some meta-data that will be used during the validation process.
@@ -172,9 +172,9 @@ This annotation contains:
   * **remote\_context** (boolean, false by default): _indicates that the context of this statement is actually an hybrid context: although it will be executed in a remote context, any temporary variables declared in the enclosing scopes should be passed on as if the statement was executed in the current context_.
   * **doc** (set of @doc, empty by default): _the documentation attached to this symbol_.
 
-<br />
 
----
+
+
 
 ## @type
 It provides information necessary to the processor to identify a type.
@@ -188,17 +188,17 @@ This annotation contains:
   * **doc** (set of @doc, empty by default): _the documentation associated to the facet_.
 
 
-<br />
 
----
+
+
 
 ## @validator
 It allows to declare a custom validator for Symbols (statements, var declarations, species ,experiments, etc.). This validator, if declared on subclasses of Symbol, will be called after the standard validation is done. The validator must be subclass of IDescriptionValidator.
   * **value** (Class): _the validator class_.
 
-<br />
 
----
+
+
 
 ## @var
 This annotation is used to describe a single variable or field.
@@ -215,9 +215,9 @@ This annotation contains:
   * **doc** (set of @doc, empty by default): _the documentation associated to the variable_.
 
 
-<br />
 
----
+
+
 
 ## @vars
 This annotation is used to describe a set of variables or fields.

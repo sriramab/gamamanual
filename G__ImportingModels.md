@@ -1,6 +1,6 @@
 # Importing Models
 
----
+
 
 _Importing_ a model refers to making a model file (or a complete project) available for edition and experimentation in the **workspace**. With the exception of [headless](G__Headless) experiments, GAMA requires that models be manageable in the current workspace to be able to validate them and eventually experiment them.
 
@@ -9,27 +9,27 @@ There are many situations where a model needs to be _imported_ by the user: some
 Since model files need to reside in a project to be managed by GAMA, it is usually preferable to import a whole project rather than individual files (unless, of course, the corresponding models are simple enough to not require any additional resources, in which case, the model file can be imported with no harm into an existing project). GAMA will then try to detect situations where a model file is imported alone and, if a corresponding project can be found (for instance, in the upper directories of this file), to import the project instead of the file. As the last resort, GAMA will import orphan model files into a _generic_ project called _"Unclassified Models"_ (which will be created if it does not exist yet).
 
 
-<br />
 
----
+
+
 
 ## The "Import…" Menu Command
 The simplest, safest and most secure way to import a project into the workspace is to use the built-in "Import…" menu command, available in the "File" menu or in the contextual menu of the _Navigator_.
-<br />
-<img src='images/model_import/menu_file_import.png' /> <br />
-<br />
+
+<img src='images/model_import/menu_file_import.png' /> 
+
 
 When invoked, this command will open a dialog asking the user to choose the source of the importation. It can be a directory in the filesystem (in which GAMA will look for existing projects), a zip file, a SVN site, etc. It is safer in any case to choose "Existing Projects into Workspace".
 
 
-<br />
-<img src='images/model_import/dialog_import.png' /> <br />
+
+<img src='images/model_import/dialog_import.png' /> 
 
 Note that when invoked from the contextual menu, "Import…" will directly give access to a shortcut of this source in a submenu.
 
-<br />
-> <img src='images/model_import/menu_navigator_import.png' /> <br />
-<br />
+
+> <img src='images/model_import/menu_navigator_import.png' /> 
+
 
 Both options will lead the user to a last dialog where he/she will be asked to:
   1. Enter a location (or browse to a location) containing the GAMA project(s) to import
@@ -37,32 +37,32 @@ Both options will lead the user to a last dialog where he/she will be asked to:
   1. Indicate whether or not these projects need to be **copied to** or **linked from** the workspace (the latter is done by default)
 
 
-<br />
-<img src='images/model_import/dialog_import_2.png' /> <br />
-<br />
 
----
+<img src='images/model_import/dialog_import_2.png' /> 
+
+
+
 
 ## SVN import
 If the user has access to a SVN repository containing GAMA projects, he/she can import them (i.e. _check them out_ in SVN jargon) into the current workspace without problem. The option to choose in the previous dialog is "Projects from SVN".
 
-<br />
-<img src='images/model_import/dialog_import_svn.png' /> <br />
-<br />
+
+<img src='images/model_import/dialog_import_svn.png' /> 
+
 
 The user is then asked for a SVN repository location, which may have been entered previously or not (in which case, he/she can create it from this dialog). GAMA, once the location is validated and accessible, will scan the repository for GAMA projects and propose them in a way similar to the previous one.
 
 Once imported from SVN, projects will remain "linked" with the repository they have been imported from (which allows to update them if the repository changes, or commit them back if the SVN is accessible on writing by the user). This "link" can be easily spotted in the _Navigator_ because of the different label these projects will have:
 
 
-<br />
-<img src='images/model_import/label_project_svn.png' /> <br />
-<br />
+
+<img src='images/model_import/label_project_svn.png' /> 
+
 
 Note that if the workspace is [cloned](G__ChangingWorkspace), these "links" to SVN repositories will remain untouched, allowing to have different workspaces pointing to the same SVN project.
-<br />
 
----
+
+
 
 ## Silent import
 Another (possibly simpler, but less controllable) way of importing projects and models is to either pass a path to a model when [launching](G__Launching) GAMA from the command line or to double-click on a model file (ending in _.gaml_) in the Explorer or Finder (depending on your OS).
@@ -73,9 +73,9 @@ If the file is not already part of an imported project in the current workspace,
   1. open an editor on the file selected.
 
 This procedure may fail, however, if a project of the same name (but in a different location) already exists in the workspace, in which case GAMA will refuse to import the project (and hence, the file). The solution in this case is to rename the project to import (or to rename the existing project in the workspace).
-<br />
 
----
+
+
 
 ## Drag'n Drop / Copy-Paste Limitations
 Currently, **there is no way** to drag and drop an entire project into GAMA _Navigator_ (or to copy a project in the filesystem and paste it in the _Navigator_). Only individual model files, folders or resources can be moved this way (and they have to be dropped or pasted into existing projects).

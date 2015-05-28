@@ -8,9 +8,9 @@ An action is a capability available to the agents of a species (what they can do
 An action can accept arguments. An action can return a result (statement <b>return</b>).</li></ul>
 
 
-<br />
 
----
+
+
 
 ## Declaring Actions
 
@@ -41,9 +41,9 @@ int dummy_return (int a <- 100, int b) {
 
 Some actions, called primitives, are directly coded in Java : for instance, the write action defined for all the agents.
 
-<br />
 
----
+
+
 
 ## Calling Actions
 

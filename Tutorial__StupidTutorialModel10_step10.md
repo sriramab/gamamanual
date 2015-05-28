@@ -2,17 +2,17 @@
 The present model shows how to sort a list of agents, and cause an agent action to be executed in the order based on the bug's size.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
   * The bug execution is un-randomized so it is executed in descending size order.
 
-<br />
 
----
+
+
 
 ## Model Definition
 Generally, the schedule with respect to which agents execute their action is randomized by a shuffle each time step. However, GAMA offers the possibility for the modeler to specify the scheduling strategy. In our context, we just have to use the **`schedules`** of species in order to consider the agent size.
@@ -25,9 +25,9 @@ species bug schedules: bug sort_by ( - each.size){
 
 Note that we used the **list sort\_by expression** operator to sort the bug list according to their size (from the biggest to the smallest).
 
-<br />
 
----
+
+
 
 ## Complete Model
 

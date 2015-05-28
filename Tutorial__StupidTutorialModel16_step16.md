@@ -3,18 +3,18 @@ So far we have considered only bugs agent wandering around an environment. Now, 
 _Nota bene_: it would be possible to define a parent species that would consist of common behavior between the 2 species, please see [step 5](Tutorial__PredatorPreyTutorial_step5) of the prey-predator tutorial on how to do so.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
   * 200 predator objects are intialized and randomly distributed as the bugs are. A cell can contain a predator as well as a bug. Predators are created after bugs are.
   * Predators have one method: hunt. First, a predator looks through a shuffled list of its immediately neighboring cells (including its own cell). As soon as the predator finds a bug in one of these cells it kills the bug and moves into the cell. (However, if the cell already contains a predator, the hunting predator simply quits and remains at its current location.) If these cells contain no bugs, the predator moves randomly to one of them.
   * Predator hunting is scheduled after all the bug actions.
-<br />
 
----
+
+
 
 ## Model Definition
 ### defining predators
@@ -121,9 +121,9 @@ display series_display {
 ```
 
 
-<br />
 
----
+
+
 
 ## Complete Model
 

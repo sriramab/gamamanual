@@ -1,13 +1,13 @@
 # Developing Statements
 
----
+
 
 Statements are a fundamental part of GAML, as they represent both commands (imperative programming style) or declarations (declarative programming style). Developing a new statement allows, then, to add a new instruction to GAML.
 
 
-<br />
 
----
+
+
 
 ## Defining the class
 
@@ -25,9 +25,9 @@ In addition the 4 following optional annotations can be added:
 
 Note: GAMA annotations are classes defined into the `msi.gama.precompiler.GamlAnnotations` class.
 
-<br />
 
----
+
+
 
 ## Examples
 
@@ -76,9 +76,9 @@ public class ActionStatement extends AbstractStatementSequenceWithArgs {
 ```
 
 
-<br />
 
----
+
+
 
 ## Implementation
 
@@ -165,9 +165,9 @@ public String getTrace(final IScope scope) {
 ```
   * the `setChildren(final List<? extends ISymbol> commands)` is used to define which are the statement children to the sequence statement. By default, all the embedded statements are taken as children
 
-<br />
 
----
+
+
 
 ## Annotations
 ### @symbol

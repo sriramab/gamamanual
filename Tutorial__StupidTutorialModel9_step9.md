@@ -2,23 +2,23 @@
 Show how to randomize the order in which agents execute an action.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
 The bug move action is altered so that the order in which bugs execute the action is shuffled each time step.
 
-<br />
 
----
+
+
 
 ## Model Definition
 In GAMA, the order of execution of agents is already shuffled at every time step. So, we have nothing to do for this step. In the following step we will see how to determine the order of execution.
-<br />
 
----
+
+
 
 ## Complete Model
 

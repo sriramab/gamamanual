@@ -1,6 +1,6 @@
 # Platform
 
----
+
 
 GAMA consists of a single application that is based on the RCP architecture provided by [Eclipse](http://www.eclipse.org). Within this single application software, often referred to as a _**platform**_, users can undertake, without the need of additional third-parties softwares, most of the activities related to modeling and simulation, namely [editing models](G__EditingModels) and [simulating, visualizing and exploring them](G__RunningExperiments) using dedicated tools.
 

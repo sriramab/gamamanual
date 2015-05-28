@@ -10,9 +10,9 @@ The global species is a species like other and can be be manipulated as them. In
 
 
 
-<br />
 
----
+
+
 
 ## Declaration
 A GAMA model contains an unique **global** section that defines the global species.
@@ -56,9 +56,9 @@ global {
 
 In this case, the world agent will have only one attribute and will, when the user will run an experiment, create **number\_of\_bugs** bug agents.
 
-<br />
 
----
+
+
 
 ## Environment Size
 
@@ -89,9 +89,9 @@ global {
 }
 ```
 
-<br />
 
----
+
+
 
 ## Built-in Attributes
 
@@ -156,9 +156,9 @@ ask my_species {
 ```
 Note that any agent has the `agents` attribute, representing the agents it contains. So to get all the agents of the simulation, we need to access the `agents` of the world using: `world.agents`.
 
-<br />
 
----
+
+
 
 ## Built-in Actions
 The global species is provided with two specific actions.
@@ -187,9 +187,9 @@ global {
 }
 ```
 
-<br />
 
----
+
+
 
 ## Scheduling
 In terms of scheduling the world agent is activated first at each time step. It means that the world first acts (update of its attributes, execution of its reflexes), then the agents of the other species act (in random order by default).

@@ -1,6 +1,6 @@
 # Finite State Machine
 
----
+
 
 
 FSM (Finite State Machine) is a finite state machine based behavior model. During its life cycle, the agent can be in several states. At any given time step, it is in one single state. Such an agent needs to have one initial state (the state in which it will be at its initialization).
@@ -14,9 +14,9 @@ Note that an agent executes only one state at each step.
 
 
 
-<br />
 
----
+
+
 
 ## Declaration
 
@@ -31,9 +31,9 @@ species dummy control: fsm {
 
 
 
-<br />
 
----
+
+
 
 ## State
 

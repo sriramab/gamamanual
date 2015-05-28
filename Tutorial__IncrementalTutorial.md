@@ -1,13 +1,13 @@
 # Incremental Model
 
----
+
 
 This tutorial has for goal to give an overview all most of the capabilities of GAMA. In particular, it presents how to build a simple model and the use of GIS data, graphs, 3D visualization, multi-level modeling and differential equations. All the files related to this tutorial (images and models) are available in the Models Library (project Tutorials/Incremental Model).
 
 
-<br />
 
----
+
+
 
 ## Model Overview
 The model built in this tutorial concerns the study of the spreading of a disease in a small city.
@@ -24,9 +24,9 @@ We made the following modeling choice:
 
 ![images/Tutorials/Incremental_model/incremental_model.jpg](images/Tutorials/Incremental_model/incremental_model.jpg)
 
-<br />
 
----
+
+
 
 ## Step List
 

@@ -1,13 +1,13 @@
 # Runtime Concepts (Under Construction)
 
----
+
 
 When a model is being simulated, a number of algorithms are applied, for instance to determine the order in which to run the different agents, or the order in which the initialization of agents is performed, etc. This section details some of them, which can be important when building models and understanding how they will be effectively simulated.
 
 
-<br />
 
----
+
+
 
 ## Simulation initialization
 Once the user launches an experiment, GAMA starts the initialization of the simulation.
@@ -20,9 +20,9 @@ If a species of type [grid](G__GridSpecies) exists in the model, agents of speci
 Finally the `init` statement is executed. It should include the creation of all the other agents of [regular species](G__RegularSpecies) of the simulation. After their creation and initialization, they are added in the list `members` the `world` (that contains all the micro-agent of the `world`).
 
 
-<br />
 
----
+
+
 
 ## Agents Creation
 Except [`world`](G__GlobalSpecies) and [`grid`](G__GridSpecies) agents, other agents are created using the [`create` statement](G__Statements#create). It used to allocate memory memory for each agent and to initialize all its attributes.
@@ -35,9 +35,9 @@ The initialization of an attribute can be located at several places in the code;
   * in the attribute declaration, using the `init` facet;
   * in the `init` block of the species.
 
-<br />
 
----
+
+
 
 ## Agents Step
 When an agent is asked to _step_, it means that it is expected to update its variables, run its behaviors and then _step_ its micro-agents (if any).
@@ -60,9 +60,9 @@ step of agent agent_a
 
 ```
 
-<br />
 
----
+
+
 
 ## Scheduling of Agents
 The global scheduling of agents is then simply the application of this previous _step_ to the _experiment agent_, keeping in mind that this agent has only one micro-population (of simulation agents, each instance of the model species), and that the simulation(s) inside this population contain(s), in turn, all the "regular" populations of agents of the model.

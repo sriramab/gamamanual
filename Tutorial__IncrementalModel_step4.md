@@ -1,9 +1,9 @@
 # 4. Movement on Graph
 This step Illustrates how load and agentry GIS data.
 
-<br />
 
----
+
+
 
 
 
@@ -16,9 +16,9 @@ This step Illustrates how load and agentry GIS data.
 
 ![images/Tutorials/Incremental_model/Incremental_model4.jpg](images/Tutorials/Incremental_model/Incremental_model4.jpg)
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -85,9 +85,9 @@ species people skills:[moving]{
 	}
 }
 ```
-<br />
 
----
+
+
 
 ## Complete Model
 

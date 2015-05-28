@@ -1,6 +1,6 @@
 # File Types
 
----
+
 
 GAMA provides modelers with a generic type for files called **file**. It is possible to load a file using the _file_ operator:
 
@@ -71,9 +71,9 @@ In order to know how to load a file, GAMA analyzes its extension. For instance f
 Indeed, GAMA integrates specific operators corresponding to different types of files.
 
 
-<br />
 
----
+
+
 
 
 ## Text File
@@ -115,9 +115,9 @@ List of operators related to text files:
   * **text\_file(string path)**: load a file (with an authorized extension) as a text file.
   * **text\_file(string path, list content)**: load a file (with an authorized extension) as a text file and fill it with the given content.
   * **is\_text(op)**: tests whether the operand is a text file
-<br />
 
----
+
+
 
 ## CSV File
 ### Extensions
@@ -170,9 +170,9 @@ file my_file <- csv_file("../includes/data.csv", ";");
   * **csv\_file(string path, matrix content)**: load a file (with an authorized extension) as a csv file and fill it with the given content.
   * **is\_csv(op)**: tests whether the operand is a csv file
 
-<br />
 
----
+
+
 
 
 ## Shapefile
@@ -249,9 +249,9 @@ file my_file <- shape_file("../includes/data.shp", "EPSG:32601");
   * **shape\_file(string path, list content)**: load a file (with an authorized extension) as a shapefile and fill it with the given content.
   * **is\_shape(op)**: tests whether the operand is a shapefile
 
-<br />
 
----
+
+
 
 ## OSM File
 OSM (Open Street Map) is a collaborative project to create a free editable map of the world. The data produced in this project (OSM File)  represent physical features on the ground (e.g., roads or buildings) using tags attached to its basic data structures (its nodes, ways, and relations). Each tag describes a geographic attribute of the feature being shown by that specific node, way or relation (source: openstreetmap.org).
@@ -317,9 +317,9 @@ file<geometry> osmfile <-  file<geometry (osm_file("../includes/rouen.gz", filte
   * **osm\_file(string path, map filter, int EPSG\_ID)**: load a file (with an authorized extension) as a osm file with the given projection (GAMA will automatically decode the epsg code. For a list of the possible projections see: http://spatialreference.org/ref/). In this case, only the elements with the defined values are loaded from the file.
   * **is\_osm(op)**: tests whether the operand is a osm file
 
-<br />
 
----
+
+
 
 ## Grid File
 Esri ASCII Grid files are classic text raster GIS data.
@@ -387,9 +387,9 @@ file my_file <- grid_file("../includes/data.shp", "EPSG:32601");
   * **is\_grid(op)**: tests whether the operand is a grid file.
 
 
-<br />
 
----
+
+
 
 ## Image File
 ### Extensions
@@ -439,9 +439,9 @@ List of operators related to csv files:
   * **image\_file(string path, matrix content)**: load a file (with an authorized extension) as an image file and fill it with the given content.
   * **is\_image(op)**: tests whether the operand is an image file
 
-<br />
 
----
+
+
 
 ## SVG File
 
@@ -483,9 +483,9 @@ file my_file <- svg_file("../includes/data.svg", {5.0,5.0});
 
   * **is\_svg(op)**: tests whether the operand is a SVG file
 
-<br />
 
----
+
+
 
 ## Property File
 ### Extensions
@@ -528,9 +528,9 @@ List of operators related to text files:
   * **property\_file(string path)**: load a file (with an authorized extension) as a property file.
   * **is\_property(op)**: tests whether the operand is a property file
 
-<br />
 
----
+
+
 
 ## R File
 R is a free software environment for statistical computing and graphics. GAMA allows to execute R script (if R is installed on the computer).
@@ -569,9 +569,9 @@ will give:
 List of operators related to R files:
   * **R\_file(string path)**: load a file (with an authorized extension) as a R file.
   * **is\_R(op)**: tests whether the operand is a R file.
-<br />
 
----
+
+
 
 ## 3DS File
 
@@ -608,9 +608,9 @@ List of operators related to 3ds files:
   * **threeds\_file(string path)**: load a file (with an authorized extension) as a 3ds file.
   * **is\_threeds(op)**: tests whether the operand is a 3DS file
 
-<br />
 
----
+
+
 
 ## OBJ File
 OBJ file is a geometry definition file format first developed by Wavefront Technologies for its Advanced Visualizer animation package. The file format is open and has been adopted by other 3D graphics application vendors.

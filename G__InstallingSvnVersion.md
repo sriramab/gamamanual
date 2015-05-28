@@ -1,6 +1,6 @@
 # Installing the SVN version
 
----
+
 
 These installation procedures have been tested on MacOS X 10.6 to 10.9, and Windows 8. On Mac OS X 10.10 (Yosemite), please have a look here: [install Java on Yosemite](G__Installation) for details about the Java version to use. **Eclipse 3.8.2 is the recommended Eclipse version to install GAMA**. Kepler install is still experimental.
 
@@ -13,9 +13,9 @@ These installation procedures have been tested on MacOS X 10.6 to 10.9, and Wind
     * ummisco.gaml.editbox plugin is now mandatory.
 
 
-<br />
 
----
+
+
 
 ## Detailed Instructions for Eclipse 4.4.2 (Luna SR2)
 ### Get and configure Eclipse Luna
@@ -56,9 +56,9 @@ You have then to import projects:
 
 Go back to the Java perspective
 
-<br />
 
----
+
+
 
 ## Detailed Instructions for Eclipse 3.7.2 (Indigo)
 **PLEASE NOTE THAT SUPPORT FOR THIS INSTALLATION HAS BEEN STOPPED. IF YOU CANNOT RUN A NEWER VERSION OF ECLIPSE, THEN YOU HAVE TO CHECKOUT THE LATEST VERSION OF GAMA WORKING IN INDIGO (r11438 (on Google Code)).**
@@ -122,9 +122,9 @@ To compile and run GAMA properly, you will need to configure your Eclipse IDE an
   * Open Run configurations....
   * In Eclipse Application / gama1.6.1.feature\_based\_release.product configuration, open the plug-ins pane
   * After Launch with: , choose "all workspace and enable plug-ins".
-<br />
 
----
+
+
 
 ## Detailed Instructions for Eclipse 3.8.2
 
@@ -137,9 +137,9 @@ The same instructions (than for Eclipse 3.7.2) can then be applied to this insta
   * The name of the product to use is  `gama1.6.1.feature_based_Eclipse3_8_2_updatable_release.product`
   * The version of XText to use is 2.8.2 and it should be obtained from [here](http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/), as this site will also provide updates for EMF and other components necessary for XText to work (you may need to install these components first, notably EMF ones, if the installation of XText does not work).
 
-<br />
 
----
+
+
 
 ## Detailed Instructions for Eclipse 4.3.2 (Kepler)
   1. Download the Eclipse Modeling Tools version
@@ -195,9 +195,9 @@ The same instructions (than for Eclipse 3.7.2) can then be applied to this insta
         * click on the « Launch an Eclipse application » link. Note that a run configuration will be automatically created allowing to only click on the run button for future runs.
 Have fun!
 
-<br />
 
----
+
+
 
 ## Install additional plug-ins
 
@@ -243,9 +243,9 @@ If you have some errors on the META-INF/MANIFEST.MF file (in particular on the l
     * Save the file
     * Repeat Step 8 (clean, synchronize...)
 
-<br />
 
----
+
+
 
 ### Install additional plug-ins to generate the documentation
   1. A plug-in to use Python should be installed as additional plug-ins: « Help » -> « Install new software »

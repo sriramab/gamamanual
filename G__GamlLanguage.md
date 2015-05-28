@@ -1,6 +1,6 @@
 # GAML
 
----
+
 
 Models that users want to simulate in GAMA have to be written in a special language, called **GAML** (short for <strong>GA</strong>ma <strong>M</strong>odeling <strong>L</strong>anguage)
 

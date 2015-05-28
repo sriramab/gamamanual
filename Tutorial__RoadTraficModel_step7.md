@@ -2,18 +2,18 @@
 This 7th step illustrates how how to select in a list an element that optimize a given function.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
   * Add a new parameter, **repair\_time**, that is equal to 2.
   * Every **repair\_time**, the **road** with the highest **destruction\_coeff** value is repaired (set its **destruction\_coeff** to 1).
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -46,9 +46,9 @@ global {
 ```
 
 
-<br />
 
----
+
+
 
 ## Complete Model
 

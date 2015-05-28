@@ -1,9 +1,9 @@
 # FreeFly
 
----
+
 
 | **Key** | **Function** |
-|:--------|:-------------|
+|:--|:-|
 | **Double Click** | Zoom Fit     |
 | **+**   | Zoom In      |
 | **-**   | Zoom Out     |

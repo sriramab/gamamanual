@@ -1,7 +1,7 @@
 Improvements and Enhancements
 
 
-<br />
+
 
 # Possibility to directly create agents from a CSV file
 The create statement has been extended in order to let the possibility to create agents of specified species directly from a CSV file.

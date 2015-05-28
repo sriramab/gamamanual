@@ -1,6 +1,6 @@
 # Predator Prey
 
----
+
 
 This tutorial presents the structure of a GAMA model as well as the use of a grid topology. In particular, this tutorial shows how to define a basic model, to define "grid agents" which are able to move within the constraints. It also introduce the displays and agents' aspect.
 
@@ -8,9 +8,9 @@ This tutorial presents the structure of a GAMA model as well as the use of a gri
 All the files related to this tutorial (images and models) are available in the Models Library (project Tutorials/Predator Prey).
 ## Content
 
-<br />
 
----
+
+
 
 ## Model Overview
 In this model, three types of entities are considered: preys, predators and vegetation cells. Preys
@@ -18,9 +18,9 @@ eat grass on the vegetation cells and predators eat preys. At each simulation st
 
 ![http://gama-platform.googlecode.com/files/predator_prey.png](http://gama-platform.googlecode.com/files/predator_prey.png)
 
-<br />
 
----
+
+
 
 ## Step List
 

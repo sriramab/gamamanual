@@ -2,9 +2,9 @@
 
 
 This second step model adds the **moving3D** skills to the **cell** agents and simply makes move the **cells** agent by defining a reflex that will call the action **move**. We will also add additional visual information to the display.
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -15,9 +15,9 @@ This second step model adds the **moving3D** skills to the **cell** agents and s
 
 <a href='http://www.youtube.com/watch?feature=player_embedded&v=_QqUbC0MWRU' target='_blank'><img src='http://img.youtube.com/vi/_QqUbC0MWRU/0.jpg' width='425' height=344 /></a>
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -100,9 +100,9 @@ output {
 }
 ```
 
-<br />
 
----
+
+
 
 ## Complete Model
 
@@ -145,4 +145,4 @@ experiment Display  type: gui {
 }
 ```
 
-> <br />
+> 

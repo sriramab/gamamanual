@@ -3,9 +3,9 @@
 So far we created agents only during the initialisation of the simulation. In this sixth step we Illustrate how to create new agents during a simulation of a dynamic species.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -13,9 +13,9 @@ So far we created agents only during the initialisation of the simulation. In th
     * When a agent has energy enough, it has a certain probability to have a certain number of offspring
     * The energy of the offspring is equal to the parent energy divided by the number of offspring
     * The parent get the same energy as its offspring
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -123,9 +123,9 @@ As done for the **prey** species, we specialize the **predator** species from th
    }
 ```
 
-<br />
 
----
+
+
 
 ## Complete Model
 

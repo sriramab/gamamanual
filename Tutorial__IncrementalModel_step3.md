@@ -1,9 +1,9 @@
 # 3. Integration of GIS Data
 This step Illustrates how load and agentry GIS data.
 
-<br />
 
----
+
+
 
 
 
@@ -13,9 +13,9 @@ This step Illustrates how load and agentry GIS data.
 
 ![images/Tutorials/Incremental_model/Incremental_model3.jpg](images/Tutorials/Incremental_model/Incremental_model3.jpg)
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -108,9 +108,9 @@ output {
 ```
 
 
-<br />
 
----
+
+
 
 ## Complete Model
 

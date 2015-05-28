@@ -1,9 +1,9 @@
 # 5. 3D visualization
 This step Illustrates how to define a 3D display
 
-<br />
 
----
+
+
 
 
 
@@ -16,9 +16,9 @@ This step Illustrates how to define a 3D display
 
 ![images/Tutorials/Incremental_model/Incremental_model5.jpg](images/Tutorials/Incremental_model/Incremental_model5.jpg)
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -89,9 +89,9 @@ experiment main_experiment type:gui{
 }
 ```
 
-<br />
 
----
+
+
 
 ## Complete Model
 

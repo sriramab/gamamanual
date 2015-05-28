@@ -1,14 +1,14 @@
 # Developing Types
 
----
+
 
 GAML provides a given number of built-in simple types (int, bool...) and more complex ones (path, graph...).
 Developing a new type allows, then, to add a new data structure to GAML.
 
 
-<br />
 
----
+
+
 
 ## Implementation
 Developing a new type requiers the implementation of 2 Java files:
@@ -67,9 +67,9 @@ This class imposes to implement the three following methods (with the example of
 Remark: for each type, an unary operator is created with the exact name of the type. It can be used to cast any expression in the given type.
 This operator calls the previous `cast` method.
 
-<br />
 
----
+
+
 
 ## Annotations
 

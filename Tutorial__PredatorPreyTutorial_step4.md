@@ -1,17 +1,17 @@
 # 4. Inspectors and Monitors
 This fourth step Illustrates how to monitor more precisely the simulation. Practically, we will define monitors to follow the evolution of specific variables (or expression) whereas inspector allows to follow the state of a given agent (or a species).
 
-<br />
 
----
+
+
 
 
 ## Formulation
   * Adding of a monitor to follow the evolution of the number of prey agents
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -54,9 +54,9 @@ Inspectors allow to obtain informations about a species or an agent. There are t
 
 ![http://gama-platform.googlecode.com/files/inspector.png](http://gama-platform.googlecode.com/files/inspector.png)
 
-<br />
 
----
+
+
 
 ## Complete Model
 

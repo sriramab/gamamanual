@@ -1,6 +1,6 @@
 # The Graphical Editor
 
----
+
 
 
 The graphical editor that allow to build diagram (gadl files) is based on the [Graphiti](http://www.eclipse.org/graphiti/) Eclipse plugin. It allows to define a GAMA model through a graphical interface. It a allows as well to produce a graphical model (diagram) from a gaml model.
@@ -9,23 +9,23 @@ The graphical editor that allow to build diagram (gadl files) is based on the [G
 
 
 
-<br />
 
----
+
+
 
 ## Installing the graphical editor
 Using the graphical editor requires toinstall the graphical modeling plug-in. See [here](G__InstallingPlugins) for information about plug-ins and their installation.
 
 The graphical editor plug-in is called **Graphical\_modeling** and is directly available from GAMA update site **https://gama-platform.googlecode.com/svn/update_site/*.**
 
-<br />
-<img src='images/graphical_editor/installing_graphical_editor.JPG' /> <br />
-<br />
+
+<img src='images/graphical_editor/installing_graphical_editor.JPG' /> 
+
 
 Note that the graphical editor is still under development. Updates of the plug-in will be add to the GAMA website. After installing the plug-in (and periodically), check for updates for this plug-in: in the "Help" menu, choose "Check for Updates" and install the proposed updates for the graphical modeling plug-in.
 
 
----
+
 
 ## Creating a first model
 
@@ -35,13 +35,13 @@ In the New Wizard, select "GAMA -> Model Diagram", then "Next>"
 
 In the next Wizard dialog, select the type of diagram (Empty, Skeleton or Example) then the name of the file and the author.
 
-<br />![http://gama-platform.googlecode.com/files/modeldiagramNew.png](http://gama-platform.googlecode.com/files/modeldiagramNew.png) <br />
+![http://gama-platform.googlecode.com/files/modeldiagramNew.png](http://gama-platform.googlecode.com/files/modeldiagramNew.png) 
 
 Skeleton and Example diagram types allow to add to the diagram some basic features.
 
-<br />
 
----
+
+
 
 ## Status of models in editors
 
@@ -53,18 +53,18 @@ Reaching the **Experimentable** state requires that all errors are eliminated an
 
 Experiment buttons are updated in real-time to reflect what's in your code. If more than one experiment is defined, corresponding buttons will be displayed in addition to the first one.
 
-<br />
 
----
+
+
 
 ## Diagram definition framework
 
 The following figure presents the editing framework:
 ![http://gama-platform.googlecode.com/files/framework.png](http://gama-platform.googlecode.com/files/framework.png)
 
-<br />
 
----
+
+
 
 ## Features
 
@@ -178,17 +178,17 @@ The Batch Experiment feature allows to define a Batch experiment.
   * **source**: world species
   * **target**: -
 
-<br />
 
----
+
+
 
 ## Pictogram color modification
 It is possible to change the color of a pictogram.
   * Right click on a pictogram, then select the "Chance the color".
 
-<br />
 
----
+
+
 
 ## GAML Model generation
 It is possible to automatically generate a Gaml model from a diagram.

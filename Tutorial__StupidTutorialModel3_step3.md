@@ -2,9 +2,9 @@
 Here, we give a behavior to the grid cells. It also illustrates how agents and cells interact.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -12,9 +12,9 @@ Here, we give a behavior to the grid cells. It also illustrates how agents and c
   * Food availability is initialized to 0.0, and maximum food production rate is initialized to 0.01. At each time step, food availability is increased by a food production variable. This variable is a random floating point number  zero and the food production rate.
   * The bug growth corresponds to the food consumption. Food consumption is equal to the minimum of (a) the bug's maximum consumption rate (set to 1.0) and (b) the bug cell food availability.
   * The food consumed by each bug is subtracted from the food availability of its cell.
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -60,9 +60,9 @@ species bug {
 As you can see the executioner of this reflex is a bug but we could imagine that the cell do the work: it would check if there is an agent within it then transfer food (subtract to its food variable and add to the bug's size variable).
 Please check the data-type section for more explanation on this particular type.
 
-<br />
 
----
+
+
 
 ## Complete Model
 

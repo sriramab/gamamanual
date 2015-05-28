@@ -1,6 +1,6 @@
 # Introduction
 
----
+
 
 Editing models in GAMA is very similar to editing programs in a modern IDE like [Eclipse](http://www.eclipse.rog). After having successfully [launched](G__Launching) the program, the user has two fundamental concepts at its disposal: a **workspace**, which contains models or links to models organized like a hierarchy of files in a filesystem, and the **workbench** (aka, the _main window_), which contains the tools to create, modify and experiment these models.
 

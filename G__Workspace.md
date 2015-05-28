@@ -1,6 +1,6 @@
 # Workpace, Projects and Models
 
----
+
 
 The **workspace** is a directory in which GAMA stores all the current projects on which the user is working, links to other projects, as well as some meta-data like preference settings, current status of the different projects, [error markers](G__ValidationOfModels), and so on.
 

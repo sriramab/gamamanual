@@ -2,9 +2,9 @@
 In this seventh step we will focus on the display and more specifically the aspects of the agents: how they are represented. It can be a simple shape (circle, square, etc.), an icon, a polygon (see later GIS support).
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -14,9 +14,9 @@ In this seventh step we will focus on the display and more specifically the aspe
 
   * Use of the **icon** aspect as default aspect for the prey and predator agents.
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -97,9 +97,9 @@ We define a new display called info\_display that displays the prey and predator
       }
    }
 ```
-<br />
 
----
+
+
 
 ## Complete Model
 

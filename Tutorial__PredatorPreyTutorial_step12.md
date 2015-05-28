@@ -2,17 +2,17 @@
 This 12th step illustrates how to load an image file and to use it to initialize a grid.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
   * Building of the initial environment (food and foodProd of the cells) from a image file
 
-<br />
 
----
+
+
 
 ## Model Definition
 ### global variable
@@ -46,12 +46,12 @@ A  grid can be view as spatial matrix: each cell of a grid has two built-in vari
       }
    }
 ```
-<br />
+
 
 ## Conclusion
 Congratulations, you have complete your first GAMA models! Now, you know have enough knowledge to create many models that includes: dynamic grid-based environment, moving and interacting agents and the needed viusalization to make good use of your simulation. Feel free to use this knowledge to create your very own models! Or perhaps you want to continue your study with the more advanced [tutorials](G__Tutorials)?
 
----
+
 
 ## Complete Model
 

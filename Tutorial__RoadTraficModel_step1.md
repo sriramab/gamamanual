@@ -2,9 +2,9 @@
 This first step Illustrates how to load GIS data (shapefiles) and to read attributes from GIS data.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -12,9 +12,9 @@ This first step Illustrates how to load GIS data (shapefiles) and to read attrib
   * Load, agentify and display two layers of GIS data (building and road). Agentifying a GIS element will allow us to give it a behavior later on (thus not being simply a static/passive object).
   * Read the 'NATURE' attribute of the building data: the buildings of 'Residential' type will be colored in gray, the buildings of 'Industrial' type will be color in blue.
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -120,9 +120,9 @@ output {
 }
 ```
 
-<br />
 
----
+
+
 
 ## Complete Model
 

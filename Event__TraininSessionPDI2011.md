@@ -1,5 +1,5 @@
 
-<br />
+
 # <font color='blue'>Context</font>
 Training session on GAMA 1.4 at IRD Bondy (France) the 5th of December, 2011.
 

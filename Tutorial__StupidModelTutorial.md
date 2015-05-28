@@ -1,15 +1,15 @@
 # Stupid Model
 
----
+
 
 
 This tutorial serves two purposes : introduce how to build a simple model in GAMA and allow comparison to other well known platforms such as Mason, Netlogo, Swarm (java & objective-C): (see [here](http://condor.depaul.edu/~slytinen/abm/) for implementations). It is based on the article: [StupidModel and Extensions: A template and teaching tool for agent-based modeling platforms](http://condor.depaul.edu/~slytinen/abm/StupidModelFormulation.pdf) by Railsback, Lytinen and Grimm.
 
 This tutorial present all the steps to create your own model, yet if you are not familiar with agent-based models, we encourage you to have a look at the [prey-predator model](Tutorial__PredatorPreyTutorial) first. It presents similar features but in a more detailed way.
 
-<br />
 
----
+
+
 
 ## Model List
 Here the list of the different models that you will build while following the tutorial. This list is the same as in the original paper though some intermediary steps have been added in some cases. For each model we will present its purpose and an explicit formulation (from the original authors) and possibly some disambiguation.

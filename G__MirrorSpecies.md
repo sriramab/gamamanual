@@ -10,9 +10,9 @@ A <b>mirror</b> species is a species whose population is automatically managed w
 
 
 
-<br />
 
----
+
+
 
 ## Declaration
 

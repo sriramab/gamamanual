@@ -1,6 +1,6 @@
 # Attaching Skills and Control
 
----
+
 
 
 GAMA allows to attach skills and a control architecture to agents through the facets **skills** and **control**.
@@ -10,9 +10,9 @@ Skills are built-in modules that provide a set of related built-in variables and
 Control are agent control architectures that can be used in addition to the [common behavior structure](G__DefiningBehaviors).
 
 
-<br />
 
----
+
+
 
 
 ## Skills
@@ -57,9 +57,9 @@ if speed = 5 {
 ```
 
 A complete description of existing skills is available [here](G__BuiltInSkills).
-<br />
 
----
+
+
 
 
 ## Control Architecture

@@ -1,12 +1,12 @@
 # Exploration Methods
 
----
+
 
 
 Several batch methods are currently available. Each is described below.
 
 
-<br />
+
 
 
 
@@ -43,9 +43,9 @@ experiment Batch type: batch repeat: 2 keep_seed: true until: (food_gathered = f
 	method exhaustive maximize: food_gathered;
 }
 ```
-<br />
 
----
+
+
 
 
 ## Hill Climbing
@@ -85,9 +85,9 @@ experiment Batch type: batch repeat: 2 keep_seed: true until: (food_gathered = f
 }
 ```
 
-<br />
 
----
+
+
 
 ## Simulated Annealing
 Name: annealing
@@ -136,9 +136,9 @@ experiment Batch type: batch repeat: 2 keep_seed: true until: (food_gathered = f
 	method annealing temp_init: 100  temp_end: 1 temp_decrease: 0.5 nb_iter_cst_temp: 5 maximize: food_gathered;
 }
 ```
-<br />
 
----
+
+
 
 
 ## Tabu Search
@@ -179,9 +179,9 @@ experiment Batch type: batch repeat: 2 keep_seed: true until: (food_gathered = f
 	method tabu iter_max: 50 tabu_list_size: 5 maximize: food_gathered;
 }
 ```
-<br />
 
----
+
+
 
 ## Reactive Tabu Search
 
@@ -207,9 +207,9 @@ experiment Batch type: batch repeat: 2 keep_seed: true until: (food_gathered = f
 	method reactive_tabu iter_max: 50 tabu_list_size_init: 5 tabu_list_size_min: 2 tabu_list_size_max: 10 nb_tests_wthout_col_max: 20 cycle_size_min: 2 cycle_size_max: 20 maximize: food_gathered;
 }
 ```
-<br />
 
----
+
+
 
 
 ## Genetic Algorithm

@@ -2,17 +2,17 @@
 This 9th step Illustrates how to use the **halt** action to stop a simulation
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
   * Adding of a stopping condition for the simulation: when there is no more prey or predator agents, the simulation stops
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -29,9 +29,9 @@ global {
 
 Note that it would have been possible to use the **pause** action that pauses the simulation instead of the **halt** action that stops the simulation.
 
-<br />
 
----
+
+
 
 ## Complete Model
 

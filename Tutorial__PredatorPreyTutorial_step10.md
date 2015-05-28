@@ -2,18 +2,18 @@
 This 10th step Illustrates how to define charts.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
   * Adding a new display to visualize:
     * One chart representing the evolution of the quantity of prey and predator agents over the time
     * Two histograms representing the energy distribution of the prey and predator agents
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -80,9 +80,9 @@ display Population_information refresh_every: 5 {
 }
 ```
 
-<br />
 
----
+
+
 
 ## Complete Model
 

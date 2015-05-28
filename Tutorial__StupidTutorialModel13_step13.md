@@ -2,17 +2,17 @@
 Show how to add a simple time series graph to a model. This graph is important for understanding results now that reproduction and mortality change the abundance of bugs.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
 No change is made to the model formulation. A graph is added to display the number of bugs alive at each time step.
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -29,9 +29,9 @@ output {
     }
 }
 ```
-<br />
 
----
+
+
 
 ## Complete Model
 

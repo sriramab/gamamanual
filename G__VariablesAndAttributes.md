@@ -1,15 +1,15 @@
 # Variables and Attributes
 
----
+
 
 Variables and attributes represent named data that can be used in an expression. They can be accessed depending on their _scope_:
   * the scope of attributes declared in a species is itself, its child species and its micro-species.
   * the scope of temporary variables is the one in which they have been declared, and all its sub-scopes.
 Outside its _scope_ of validity, an expression cannot use a variable or an attribute directly. However, attributes can be used in a remote fashion by using a dotted notation on a given agent (see [here](#Remote_Access)).
 
-<br />
 
----
+
+
 
 ## Direct Access
 When an agent wants to use either one of the variables declared locally, one of the attributes declared in its species (or parent species), one of the attributes declared in the macro-species of its species, it can directly invoke its name and the compiler will do the rest (i.e. finding the variable or attribute in the right scope).
@@ -60,9 +60,9 @@ species animal {
     * `amount`, the argument of `eat` action,
     * `gain`, a local variable defined into the `eat` action.
 
-<br />
 
----
+
+
 
 ## Remote Access
 When an expression needs to get access to the attribute of an agent which does not belong to its scope of execution, a special notation (similar to that used in Java) has to be used:

@@ -3,9 +3,9 @@ This first step Illustrates how to write a model in GAMA. In particular, it desc
 ## Content
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -13,9 +13,9 @@ This first step Illustrates how to write a model in GAMA. In particular, it desc
   * Definition of a **nb\_prey\_init** parameter
   * Creation of **nb\_prey\_init** **prey** agents randomly located in the environment (size: 100x100)
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -33,9 +33,9 @@ First, you need to create a new project (File > New Gama Project). Then, you can
 For more details, you can refer to [Graphic model introduction](G__GamlEditor#Creating_a_first_model).
 
 You should obtain a skeleton diagram similar to the following one.
-<br />
+
 <img src='images/Tutorials/Graphic_modelling1/01_Skeleton.png' />
-<br />
+
 ### species
 A [species](G__DefiningSpecies) represents a «prototype» of agents: it defines their common properties.
 
@@ -67,19 +67,19 @@ In the block of an aspect, it is possible to draw :
 #### Graphical modelling
 To create any element in a GAMA diagram, you can use the palette (shown below). In the present case, we want to create a new species which is part of the 'world'. Thus, we use the tool "is composed of a species" then click on the "world" element and then outside of it and finally you name it.
 
-<br />
+
 <img src='images/Tutorials/Graphic_modelling1/02_Palette.png' />
-<br />
+
 
 To make our agent visible in the display, we need to edit the species, you do so by double clicking on the species element you just created. You will see a dialog similar to the following one.
-<br />
+
 <img src='images/Tutorials/Graphic_modelling1/05_Empty_Species.png' />
-<br />
+
 
 Instead of adding two variables (size and color) as in the [tutorial prey-predator](Tutorial__PredatorPreyTutorial_step1), we will use the built-in definition of the aspect. To do so, click on _has the aspect_ in the palette and add it to your _prey_ species. Then, double click on it and **add** a _layer_. In the opened dialog, make sure that the _Shape_ is a circle, _radius_ is 1.0 and the _color_ is blue as show in the image below.
-<br />
+
 <img src='images/Tutorials/Graphic_modelling1/06_Aspect_definition.png' />
-<br />
+
 
 ### World element
 In a GAMA model, we have a global agent, called the **World**, that includes all the other ones.
@@ -105,9 +105,9 @@ Definition of the init block actually require to type a bit of code but it is pr
       create prey number: nb_preys_init ;
 ```
 
-<br />
+
 <img src='images/Tutorials/Graphic_modelling1/03_world_definition.png' />
-<br />
+
 
 ### experiment
 An experiment defines how a model can be simulated (executed). Several experiments can be defined for a given model. As you have may have noticed, the graphical modelling editor already defined one by default, called  _my\_GUI\_xp,_ and attached to the _World_.
@@ -129,9 +129,9 @@ Note that the init, min and max values can be defined in the global variable def
 
 To define a parameter, double click on the _my\_GUI\_xp_, add a parameter and fill in the fields as follows:
 
-<br />
+
 <img src='images/Tutorials/Graphic_modelling1/04_GUI_experiment.png' />
-<br />
+
 In the experiment, definition of a parameter from the the global variable _nb\_preys\_init_ :
 
 #### output
@@ -149,18 +149,17 @@ Note that it is possible to define a [opengl display](G__3DSpecificInstructions)
 
 The last part we need to do now is to add a display to visualise our _prey_ agents. Select "has the display" from the palette and add it to _my\_GUI\_xp_. Double click on it to edit, then add a layer. In the opened dialog (shown below), select _type_ to be species, _Species_ as prey and _aspect_ as default.
 
-<br />
+
 <img src='images/Tutorials/Graphic_modelling1/07_Display_Layer_definition.png' />
-<br />
+
 
 You can now start the simulation by clicking on the _Experiment my\_GUI\_xp_ on the top left corner of your graphical model.
 
 
 
----
+
 
 ## Complete Model
 
-<br />
+
 <img src='images/Tutorials/Graphic_modelling1/08_Step1_complete_model.png' />
-<br />

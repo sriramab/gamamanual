@@ -1,24 +1,24 @@
 # Road Traffic
 
----
+
 
 This tutorial has for goal to present the use of GIS data and complex geometries. In particular, this tutorial shows how to load gis data, to agentify them and to use a network of polylines to constraint the movement of agents. All the files related to this tutorial (shapefiles and models) are available in the Models Library (project road\_traffic\_tutorial).
 
 If you are not familiar with agent-based models or GAMA we advice you to have a look at the [prey-predator](Tutorial__PredatorPreyTutorial) model first.
 
 
-<br />
 
----
+
+
 
 ## Model Overview
 The model built in this tutorial concerns the study of the road traffic in a small city. Two layers of GIS data are used: a road layer (polylines) and a building layer (polygons). The building GIS data contain an attribute: the 'NATURE' of each building: a building can be either 'Residential' or 'Industrial'. In this model, people agents are moving along the road network. Each morning, they are going to an industrial building to work, and each night they are coming back home. Each time a people agent takes a road, it wears it out. More a road is worn out, more a people agent takes time to go all over it. The town council is able to repair some roads.
 
 ![http://gama-platform.googlecode.com/files/road_traffic.png](http://gama-platform.googlecode.com/files/road_traffic.png)
 
-<br />
 
----
+
+
 
 ## Step List
 

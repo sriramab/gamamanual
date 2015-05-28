@@ -1,13 +1,13 @@
 # Defining User Commands
 
----
+
 
 Anywhere in the global block, in a species or in an (GUI) experiment, `user_command` statements can be implemented. They can either call directly an existing action (with or without arguments) or be followed by a block that describes what to do when this command is run.
 
 
-<br />
 
----
+
+
 
 ## Syntax
 
@@ -53,9 +53,9 @@ Remark: The execution of a command obeys the following rules:
   * when the command is called from right-click pop-menu, it is executed immediately,
   * when the command is called from panels, its execution is postponed until the end of the current step and then executed at that time.
 
-<br />
 
----
+
+
 
 
 ## user\_location
@@ -74,9 +74,9 @@ global {
 This will allow the user to click on a display, choose the world (always present now), and select the menu item "Create agents here".
 
 Note that if the world is inspected (this user\_command appears thus as a button) and the user chooses to push the button, the agent will be created at a random location.
-<br />
 
----
+
+
 
 
 ## user\_input operator

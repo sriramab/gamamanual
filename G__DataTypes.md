@@ -1,6 +1,6 @@
 # Types (Under Construction)
 
----
+
 
 A variable's or expression's _type_ (or _data type_) determines the values it can take, plus the operations that can be performed on or with it. GAML is a statically-typed language, which means that the type of an expression is always known at compile time, and is even enforced with casting operations.
 There are 4 categories of types:
@@ -11,17 +11,17 @@ There are 4 categories of types:
 
 The hierarchy of types in GAML (only primitive and complex types are displayed here, of course, as the other ones are model-dependant) is the following:
 
-<br />
+
 <img src='images/types/types_hierarchy.png' />
-<br />
 
 
----
 
 
-<br />
 
----
+
+
+
+
 
 ## Primitive built-in types
 
@@ -66,9 +66,9 @@ int (234.5) -> 234.
 
 [Top of the page](#Table_of_Contents)
 
-<br />
 
----
+
+
 
 ## Complex built-in types
 
@@ -399,9 +399,9 @@ More complex topologies can also be built using dedicated operators, e.g. to dec
 
 [Top of the page](#Table_of_Contents)
 
-<br />
 
----
+
+
 
 ## Defining custom types
 

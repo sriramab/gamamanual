@@ -1,6 +1,6 @@
 # Writing Models
 
----
+
 
 Models in GAMA play the same role as classes in Java or C++: they represent both the knowledge about a particular phenomenon a user wants to simulate and the way(s) to simulate it. A model is nothing more than a text file (or a collection of text files that refer to each other), which contains instructions in a [specific language](G__GamlLanguage) called GAML (for "GAMA Modeling Language").
 A model can then be theoretically edited using any text processor and later loaded into GAMA to [run experiments](G__RunningExperiments). However, because of the richness of the language, using a dedicated tool (with online help, live validation) is clearly the best way to write correct models.

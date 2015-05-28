@@ -2,9 +2,9 @@
 This 11th step Illustrates how to save data in a text file.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -13,9 +13,9 @@ This 11th step Illustrates how to save data in a text file.
     * The number of prey and predator agents
     * The min and max energy of the prey and predator agents
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -63,9 +63,9 @@ reflex save_result when: (nb_preys > 0) and (nb_predators > 0){
 	   	to: "results.txt" type: "text" ;
 }
 ```
-<br />
 
----
+
+
 
 ## Complete Model
 

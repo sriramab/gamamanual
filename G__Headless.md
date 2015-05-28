@@ -1,14 +1,14 @@
 # Headless Mode
 
----
+
 
 The aim of this feature is to be able to run one or multiple instances of GAMA without any user interface, so that models and experiments can be launched on a grid or a cluster. Without GUI, the memory footprint, as well as the speed of the simulations, are usually greatly improved.
 
 In this mode, GAMA can only be used to run experiments and that editing or managing models is not possible. In order to launch experiments and still benefit from a user interface (which can be used to prepare headless experiments), launch GAMA normally (see [here](G__Launching)) and refer to this [page](G__RunningExperiments) for instructions.
 
-<br />
 
----
+
+
 
 ## Command
 
@@ -44,9 +44,9 @@ java -cp $GAMA_CLASSPATH -Xms512m -Xmx2048m -Djava.awt.headless=true org.eclipse
     * $2 output directory path: a directory which contains simulation results (numerical data and simulation snapshot)
 
 Note that the output directory is created during the experiment and should not exist before.
-<br />
 
----
+
+
 
 ## Experiment Input File
 
@@ -104,9 +104,9 @@ One line per output value you want to retrieve. Outputs can be names of monitors
   * Note that :
     * the lower the framerate value the longer the experiment.
     * if the chosen output is a display, an image is produced and the output file contains the path to access this image
-<br />
 
----
+
+
 
 ## Output Directory
 During headless experiments, a directory is created with the following structure :
@@ -173,9 +173,9 @@ There is one Variable block per Output identified in the output experiment file.
     * **value**: the current value of model variable.
 
 Note that the value of an output is repeated according to the framerate defined in the input experiment file.
-<br />
 
----
+
+
 
 ## Snapshot files
 This directory contains images generated during the experiment. There is one image per displayed output per step (according to the framerate). File names follow a naming convention, e.g:

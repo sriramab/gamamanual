@@ -1,5 +1,5 @@
 
-<br />
+
 # <font color='blue'>Context</font>
 Training session on agent-based modeling and a tutorial on GAMA 1.1 organized at the IFI from the 26th to the 28th of October, 2009
 

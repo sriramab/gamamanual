@@ -1,6 +1,6 @@
 # Organization of a model (Under construction)
 
----
+
 
 As already extensively detailed in the [key concepts page](G__KeyConcepts), defining a model in GAML amounts to defining a _model species_, which later allows to instantiate a _model agent_ (aka a _simulation_), which may or may not contain micro-species, and which can be flanked by _experiment plans_ in order to be simulated.
 
@@ -12,9 +12,9 @@ This conceptual structure is respected in the definition of model files, which f
 
 
 
-<br />
 
----
+
+
 
 ## Model Header (_model species_)
 
@@ -51,9 +51,9 @@ global {
 
 Note that neither the imports nor the definition of `global` are mandatory. Only the `model` statement is.
 
-<br />
 
----
+
+
 
 ## Species declarations
 
@@ -78,8 +78,8 @@ global {
 }
 ```
 
-<br />
 
----
+
+
 
 ## Experiment declarations

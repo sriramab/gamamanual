@@ -1,9 +1,9 @@
 # 1. Simple SI Model
 This first step Illustrates how to write a model in GAMA. In particular, it describes how to structure a model and how to define species - that are the key components of GAMA models.
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -14,9 +14,9 @@ This first step Illustrates how to write a model in GAMA. In particular, it desc
 
 ![images/Tutorials/Incremental_model/Incremental_model1.jpg](images/Tutorials/Incremental_model/Incremental_model1.jpg)
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -226,9 +226,9 @@ experiment main_experiment type:gui{
 }
 ```
 
-<br />
 
----
+
+
 
 ## Complete Model
 

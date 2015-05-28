@@ -2,9 +2,9 @@
 In the present model, we introduce the use of random number distribution. A common use for them is to add variability among initial individuals.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -13,9 +13,9 @@ In the present model, we introduce the use of random number distribution. A comm
   * Negative values are very likely to be drawn from normal distributions such as the one used here. To avoid them, a check is introduced to limit initial bug size to a minimum of zero.
 
 
-<br />
 
----
+
+
 
 ## Model Definition
 ### adding new parameters
@@ -52,9 +52,9 @@ species bug schedules: bug sort_by ( - each.size){
 
 Note that other operators exist to represent other random distribution (e.g. [Poisson distribution](G__OperatorsLZ#poisson))
 
-<br />
 
----
+
+
 
 ## Complete Model
 

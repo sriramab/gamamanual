@@ -1,6 +1,6 @@
 # Task Based
 
----
+
 
 
 GAMA integrated several task-based control architectures. Species can define any number of tasks within their body. At any given time, only one or several tasks are executed according to the architecture chosen:
@@ -9,9 +9,9 @@ GAMA integrated several task-based control architectures. Species can define any
   * **probabilistic\_tasks**: this architecture uses the weights as a support for making a weighted probabilistic choice among the different tasks. If all tasks have the same weight, one is randomly chosen each step.
 
 
-<br />
 
----
+
+
 
 ## Declaration
 
@@ -38,9 +38,9 @@ species dummy control: probabilistic_tasks {
 }
 ```
 
-<br />
 
----
+
+
 
 ## Task
 

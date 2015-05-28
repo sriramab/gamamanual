@@ -1,10 +1,10 @@
 # Defining Displays
 
----
 
 
 
-<br />
+
+
 
 A display refers to a independent and mobile part of the interface that can display species, images, texts or charts.
 

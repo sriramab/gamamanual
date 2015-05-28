@@ -1,9 +1,9 @@
 # 7. Differential Equations
 This step Illustrates how to use differential equations
 
-<br />
 
----
+
+
 
 
 
@@ -17,9 +17,9 @@ We are interested by the spreading of the disease inside the buildings. In order
 
 ![images/Tutorials/Incremental_model/incremental_model.jpg](images/Tutorials/Incremental_model/incremental_model.jpg)
 
-<br />
 
----
+
+
 
 ## Model Definition
 ### global variables
@@ -89,9 +89,9 @@ species building {
 }
 ```
 
-<br />
 
----
+
+
 
 ## Complete Model
 

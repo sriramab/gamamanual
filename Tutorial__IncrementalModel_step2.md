@@ -2,9 +2,9 @@
 This step Illustrates how define monitors and charts in GAMA. In addition, it illustrates how to define a stopping condition for the simulation.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -15,9 +15,9 @@ This step Illustrates how define monitors and charts in GAMA. In addition, it il
 
 ![images/Tutorials/Incremental_model/Incremental_model2.jpg](images/Tutorials/Incremental_model/Incremental_model2.jpg)
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -118,9 +118,9 @@ experiment main_experiment type:gui{
 	}
 }
 ```
-<br />
 
----
+
+
 
 ## Complete Model
 

@@ -7,7 +7,7 @@
 <hr /></li></ul>
 
 
-<br />
+
 
 Output blocks define how to visualize a simulation (with one or more display blocks that define separate windows)
 ```

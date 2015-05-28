@@ -3,9 +3,9 @@
 This fifth step Illustrates how to use parent species. Indeed, prey and predators share a few common features thus we will define a generic species that will regroup all the common elements (variables, behaviors and aspects) between the prey and the predator species.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -13,9 +13,9 @@ This fifth step Illustrates how to use parent species. Indeed, prey and predator
   * Definition of a new species: predator
   * predator agents move randomly
   * At each simulation step, a predator agent can eat a prey that is localized at its grid cell
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -27,18 +27,18 @@ We add four new global variables (i.e. edit the _World_  item) related to predat
   * The energy gained by a predator agent while eating a prey agent  :_predator\_energy\_transger_of type float and initial value of 0.5
   * The energy consumed by a predator agent at each time step  :_predator\_energy\_consum_of type float and initial value of 0.02_
 
-<br />
+
 <img src='images/Tutorials/Graphic_modelling1/24_Predator_variables.png' />
-<br />
+
 
 
 We define then the four corresponding parameters, all of them regrouped in the "Predator" category, in the experiment as follows:
 **nb\_predators\_init, text: "Initial number of predators", min : 0, max:200** predator\_max\_energy, text: "Predator max energy"
 **predator\_energy\_transfer, text: "Predator energy transfer"** predator\_energy\_consum, text: "Predator energy consumption"
 
-<br />
+
 <img src='images/Tutorials/Graphic_modelling1/25_Predator_parameters.png' />
-<br />
+
 
 
 ### Parent species
@@ -64,9 +64,9 @@ We specialize the **prey** species from the **generic\_species** species:
     * energy\_consum, type float, initial value : prey\_energy\_consum ;
 
 As we have deleted the **eat** reflex of our _generic\_species_, we need to recreate it for the _prey_ species (as we need did in [Tutorial\_\_GraphicModel\_step3](step3)):
-<br />
+
 <img src='images/Tutorials/Graphic_modelling1/18_Prey_eat.png' />
-<br />
+
 
 
 
@@ -92,9 +92,9 @@ As done for the **prey** species, we specialize the **predator** species from th
 
 And the following **condition**: ` ! empty(reachable_preys) `
 
-<br />
+
 <img src='images/Tutorials/Graphic_modelling1/26_Predator_eat.png' />
-<br />
+
 
 
 Note that we used the **ask** statement. This statement allows to make a remote agent executes a list of statements.
@@ -109,9 +109,9 @@ We used as well the **species/agent list inside geometry/agent** operator. This 
 ### global init block
 Like in the previous model, in the init block of the model (in the _World_ item), we create nb\_predators\_init.
 
-<br />
+
 <img src='images/Tutorials/Graphic_modelling1/27_Init_prey_predator.png' />
-<br />
+
 
 
 ### monitor
@@ -122,16 +122,15 @@ Definition of a global variable **nb\_predator** that returns the current number
 
 
 Definition of the corresponding monitor:
-<br />
+
 <img src='images/Tutorials/Graphic_modelling1/28_Monitor_predators.png' />
-<br />
 
 
-<br />
 
----
+
+
+
 
 ## Complete Model
-<br />
+
 <img src='images/Tutorials/Graphic_modelling1/29_Step5_complete_model.png' />
-<br />

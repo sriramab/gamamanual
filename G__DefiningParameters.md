@@ -8,7 +8,7 @@
 <hr /></li></ul>
 
 
-<br />
+
 
 Experiments can define input, i.e. parameters.
 Defining parameters allows to make the value of a global variable definable by the user through the user graphic interface.

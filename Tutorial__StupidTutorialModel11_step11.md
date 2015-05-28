@@ -2,18 +2,18 @@
 In this step, we will improve bug agents' behavior. They will rank their neighboring cell according to their food level. We will also illustrate how to iterate over a list.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
   * In its move method, a bug identifies a list of all cells that are within a distance of 4 cells and free of other bugs (The bug current cell is included on this list).
   * The bug iterates over the list and identifies the cell with the highest food available. Then, the bug moves to that cell (and consume some food as previously).
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -32,9 +32,9 @@ species bug schedules: bug sort_by ( - each.size){
 	...
 ```
 
-<br />
 
----
+
+
 
 ## Complete Model
 

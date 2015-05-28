@@ -11,9 +11,9 @@ Attributes define the internal state of the agents of the species.</li></ul>
 
 
 
-<br />
 
----
+
+
 
 ## Attribute Declaration
 An attribute is declared using the following syntax:
@@ -33,7 +33,7 @@ my_species_name an_agent_of_my_species; // if my_species is declared in the mode
 These attributes are given default values at their creation, depending on their datatype:
 Default Value
 | **int** | **float** | **bool** | **string** | **list** | **matrix** | **point** | **rgb** | **graph** | **geometry** |
-|:--------|:----------|:---------|:-----------|:---------|:-----------|:----------|:--------|:----------|:-------------|
+|:--|:-|:|:--|:|:--|:-|:--|:-|:-|
 | 0       | 0.0       | false    | ''         | [ ]      | nil        | nil       | black   | nil       | nil          |
 
 
@@ -141,9 +141,9 @@ datatype temp_var1 <- an_expression;
 
 After it has been declared this way, a temporary variable can be used like regular variables (for instance, the `<-` statement should be used to assign it a new value within the same scope).
 
-<br />
 
----
+
+
 
 ## Naming variables
 

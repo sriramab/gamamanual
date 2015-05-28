@@ -1,6 +1,6 @@
 # Architecture of GAMA
 
----
+
 
 GAMA is made of a number of Eclipse Java projects, some representing the core projects without which the platform cannot be run, others additional plugins adding functionalities or concepts to the platform.
 

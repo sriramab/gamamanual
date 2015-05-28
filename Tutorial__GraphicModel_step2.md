@@ -3,9 +3,9 @@ This second steps present the idea of environment or topological space. Defining
 
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -14,9 +14,9 @@ This second steps present the idea of environment or topological space. Defining
   * Display of the cell color according to the quantity of food
   * Localization of the prey agents on the cells (at its center)
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -52,9 +52,9 @@ Defining the 3 rgb components of a color is not the only way to define a color i
 
 
 You should obtain the following definition of the **vegetation\_cell** :
-<br />
+
 <img src='images/Tutorials/Graphic_modelling1/09_VegetationCell.png' />
-<br />
+
 
 ### prey agents
 In order to relate our prey agents to the vegetation cell grid, we add them with one new variable : **my\_cell** of type vegetation\_cell and for init value one of the vegetation\_cell (chosen randomly).  Double click the _prey_ species and add it a variable called _myCell_ of type _vegetation\_cell_ and with _initial value_  equals to _one\_of (vegetation\_cell)_.
@@ -63,22 +63,22 @@ Using the name of a species as a keyword returns the list of all agent of this s
 
 We linked each prey agent to a vegetation\_cell but we need to locate them onto the cell initially. To do so, we edit the init block in the prey species with _"location <- myCell.location;"_ . It sets the prey location as equals to the location of the vegetation cell (i.e. its centroid **location**),  the **<-** statement that allows to modify the value of a variable.
 
-<br />
+
 <img src='images/Tutorials/Graphic_modelling1/10_Prey_init_location.png' />
-<br />
+
 
 ### display
 Finally, we need to update our display to show the vegetation. Logically, we need to edit the _my\_display_ element and add it a new layer. This layer is of type _grid_ and the _grid_ being called _vegetation\_cell_. To make it clearer, we also check the _Show Lines_ option. You should obtain a display similar to the following one:
 
-<br />
-<img src='images/Tutorials/Graphic_modelling1/11_Display_grid.png' />
-<br />
-Note that the layers in a display work like layers in a GIS; the drawing order will be respected. In our model, the prey agents will be drawn above the vegetation\_cell grid thus they need to be declared afterward.
-<br />
 
----
+<img src='images/Tutorials/Graphic_modelling1/11_Display_grid.png' />
+
+Note that the layers in a display work like layers in a GIS; the drawing order will be respected. In our model, the prey agents will be drawn above the vegetation\_cell grid thus they need to be declared afterward.
+
+
+
 
 ## Complete Model
 
-<br />
+
 <img src='images/Tutorials/Graphic_modelling1/12_Step2_complete_model.png' />

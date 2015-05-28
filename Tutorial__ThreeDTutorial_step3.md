@@ -1,11 +1,11 @@
 # 3. Connections
 
----
 
 
-<br />
 
----
+
+
+
 
 
 ## Formulation
@@ -13,9 +13,9 @@
 
 <a href='http://www.youtube.com/watch?feature=player_embedded&v=6ZlBU6xTcfw' target='_blank'><img src='http://img.youtube.com/vi/6ZlBU6xTcfw/0.jpg' width='425' height=344 /></a>
 
-<br />
 
----
+
+
 
 ## Model Definition
 In this final step we will display edges between cells that are within a given distance.
@@ -43,9 +43,9 @@ aspect default {
         }
 ```
 
-<br />
 
----
+
+
 
 ## Complete Model
 

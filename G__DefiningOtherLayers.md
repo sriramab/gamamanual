@@ -1,12 +1,12 @@
 # Defining Other Layers
 
----
 
 
 
-<br />
 
----
+
+
+
 
 
 ## agents layer
@@ -33,9 +33,9 @@ display Segregation {
    agents agentDisappear value : people as list where (each.is_happy = false) aspect: with_group_color;
 }
 ```
-<br />
 
----
+
+
 
 
 ## species layer
@@ -80,9 +80,9 @@ display my_display type: opengl{
   species agent3 aspect: base z:1;
 }
 ```
-<br />
 
----
+
+
 
 
 ## image layer
@@ -124,9 +124,9 @@ display my_display type:opengl{
 }
 ```
 
-<br />
 
----
+
+
 
 
 ## text layer
@@ -153,9 +153,9 @@ display my_display {
    text agents value : 'Carrying ants : ' + string ( int ( ant as list count (each . has_food ) ) + int ( ant as list count ( each . state =    'followingRoad' ) ) ) position : { 0.5 , 0.03 } color : rgb ( 'black' ) size: { 1 , 0.02 };  
 }
 ```
-<br />
 
----
+
+
 
 ## graphics layer
 `graphics` allows the modeler to freely draw shapes/geometries/texts without having to define a species.

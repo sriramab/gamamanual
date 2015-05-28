@@ -1,12 +1,12 @@
 # Developing a New Skill
 
----
+
 
 A skill adds new features (attributes) and new capabilities (actions) to the instances of the species that use it.
 
-<br />
 
----
+
+
 
 ## Defining the class
 
@@ -16,9 +16,9 @@ A Skill is basically a **singleton** and **stateless** Java class that:
 
 Note: GAMA annotations are classes defined into the `msi.gama.precompiler.GamlAnnotations` class.
 
-<br />
 
----
+
+
 
 ## Defining new attributes
 
@@ -48,9 +48,9 @@ public void setSpeed(final IAgent agent, final double s) {
 }
 ```
 
-<br />
 
----
+
+
 
 ## Defining new actions
 An action (also called `primitive`) is basically a Java method that can be called from the GAML language using the same syntax as the one used for calling actions defined in a model. The method should be annotated with `@action`, supplying the name of the action as it will be available in GAML.
@@ -72,18 +72,18 @@ or
 path path_followed <- self goto (target: the_target, on: the_graph, return_path: true);
 ```
 
-<br />
 
----
+
+
 
 ### Access to parameters in actions
 To get the value of the arguments passed in GAML to the Java code, two methods can be useful:
   * `scope.hasArg("name_of_argument")` returns a boolean value testing whether the argument "name\_of\_argument" has been defined by the modeler, since all the arguments to actions should be considered as optional.
   * `getArg(name_arg,IType)`, `getFloatArg(name_param_of_float)`, `getIntArg(name_param_of_int)` and their variants return the value of the given parameter using a given (or predefined) type to cast it.
 
-<br />
 
----
+
+
 
 ### Warnings
 Developers should notice that:
@@ -91,9 +91,9 @@ Developers should notice that:
   * the method should have only one parameter: the scope (type IScope).
   * the method can only throw `GamaRuntimeException`s. Other exceptions should be caught in the method and wrapped in a `GamaRuntimeException` before being thrown.
 
-<br />
 
----
+
+
 
 ## Annotations
 ### @skill

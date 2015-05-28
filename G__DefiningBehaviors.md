@@ -8,9 +8,9 @@ All agents (including the world and grid cells) are provided with a simple behav
 
 
 
-<br />
 
----
+
+
 
 ## reflex
 
@@ -28,9 +28,9 @@ reflex my_reflex when: flip (0.5){ //Only executed when flip returns true
 }
 ```
 
-<br />
 
----
+
+
 
 ## Init
 

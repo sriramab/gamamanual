@@ -2,9 +2,9 @@
 This eighth step Illustrates how to define and call actions and how to use conditional statements.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -12,9 +12,9 @@ This eighth step Illustrates how to define and call actions and how to use condi
     * The preys agents are moving to the cell containing the highest quantity of food
     * The predator agents are moving if possible to a cell that contains preys; otherwise random cell
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -118,9 +118,9 @@ Note there is ternary operator allowing to directly use a condition structure to
 ```
 if condition is true, then returns value1; otherwise, returns value2.
 
-<br />
 
----
+
+
 
 ## Complete Model
 

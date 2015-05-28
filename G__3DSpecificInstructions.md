@@ -1,11 +1,11 @@
 # 3D Specific Instructions (Under construction)
 
----
 
 
-<br />
 
----
+
+
+
 
 ## OpenGL display
 
@@ -42,9 +42,9 @@ display city_display type: opengl{
 
 
 
-<br />
 
----
+
+
 
 ## Camera
 
@@ -105,9 +105,9 @@ display ThirdPerson  type:opengl camera_pos:{boids(1).location.x,-boids(1).locat
 } 
 ```
 
-<br />
 
----
+
+
 
 
 ## Lighting
@@ -144,6 +144,6 @@ display View1  type:opengl draw_diffuse_light:true ambient_light:(0) diffuse_lig
 }
 ```
 
-<br />
 
----
+
+

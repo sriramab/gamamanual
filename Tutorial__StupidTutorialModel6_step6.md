@@ -2,16 +2,16 @@
 Here, we illustrate how to add graphs to the display. We will show the distribution of agent sizes.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
 Add a histogram reflecting the distribution of bugs' size.
-<br />
 
----
+
+
 
 ## Model Definition
 We will now add a histogram subsection to the output one. In order to have a useable view, we would define 10 size-classes within the `[0;100]` range.
@@ -52,9 +52,9 @@ Some comments:
 ### Nota Bene
   * When using this version, you may note that we see, most of the time, only one class representing almost 100% of agents. It would be much more interesting to use adaptive classes. It is possible by changing the value expression by taking into account mean, minimum and maximum value of bugs size. To do so, you have to define the needed variables in the **`global`** section.
 
-<br />
 
----
+
+
 
 ## Complete Model
 

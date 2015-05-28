@@ -3,17 +3,17 @@ In the present model, we will show how to write execution information of the sim
 
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
   * Each time step, write the minimum, mean, and maximum bug size on one line of an output file.
 
-<br />
 
----
+
+
 
 ## Model Definition
 ### writing files
@@ -60,9 +60,9 @@ global torus: true{
 ```
 
 Once the simulation is executed you will find the file _result.csv_ located in _model\_directory/models/results.csv_ (you may need to hit `refresh`to see it in the `Gama projects` tab).
-<br />
 
----
+
+
 
 ## Complete Model
 

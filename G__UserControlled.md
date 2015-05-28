@@ -1,15 +1,15 @@
 # User Controlled
 
----
+
 
 
 User controlled architecture has been introduced to allow users to take control over an agent during the course of the simulation. It can be invoked using three different keywords: `user_only`, `user_first`, `user_last`.
 
 
 
-<br />
 
----
+
+
 
 ## Declaration
 
@@ -38,9 +38,9 @@ species user control: user_last {
 If the control chosen is `user_first`, it means that the user controled panel is opened first, and then the agent has a chance to run its "own" behaviors (reflexes, essentially, or "init" in the case of a "user\_init" panel).
 If the control chosen is `user_last`, it is the contrary.
 
-<br />
 
----
+
+
 
 
 ## User Panel
@@ -94,9 +94,9 @@ The panel marked with the « initial: true » facet will be the one run first wh
 A special panel called user\_init will be invoked only once when initializing the agent if it is defined.
 If no panel is described or if all panels are empty (ie. no user\_commands), the control view is never invoked. If the control is said to be "user\_only", the agent will then not run any of its behaviors.
 
-<br />
 
----
+
+
 
 ## User Controlled
 

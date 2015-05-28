@@ -2,16 +2,16 @@
 In the present model we will show you how to stop automatically once a condition is met and how to _clean up_ once the model is stopped.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
   * The model stops when the largest bug reaches a size of 100.
-<br />
 
----
+
+
 
 ## Model Definition
 ### using a world reflex
@@ -51,9 +51,9 @@ entities {
   * Note that **`world`** represents the world agent.
 
 
-<br />
 
----
+
+
 
 ## Complete Model
 

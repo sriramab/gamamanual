@@ -1,9 +1,9 @@
 # 3. Prey Agent Behavior
 This third step Illustrates how to define the behaviors of prey agents and the concept of spatial topology.
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -12,9 +12,9 @@ This third step Illustrates how to define the behaviors of prey agents and the c
   * At each step, the prey agents eat food if there is food on the cell on which they are localized (with a max of max\_transfer) and gain energy
   * If a prey agent has no more energy, it dies
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -141,9 +141,9 @@ do action_name arg1: v1 arg2: v2;
 my_var <- self action_name (arg1:v1, arg2:v2);
 ```
 
-<br />
 
----
+
+
 
 ## Complete Model
 

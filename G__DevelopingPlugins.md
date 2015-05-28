@@ -1,15 +1,15 @@
 # Developing Plugins
 
----
+
 
 This page details how to create a new plug-in in order to extend the GAML language with new skills, species, displays or operators.
 It also details how to create a plug-in that can be  uploaded on an update site and can be installed into the GAMA release.
 We consider here that the developper version of GAMA has been installed (as detailled in [this page](G__InstallingSvnVersion)).
 
 
-<br />
 
----
+
+
 
 ## Creation of a plug-in
 
@@ -64,9 +64,9 @@ Do not forget to export the created packages that could be used by "clients", es
 To test the plug-in and use it into GAMA, developers have to define a new feature project containing your plugin and its dependencies, and adds this feature to the existing product (or a new .product file of your own).
 The use of feature is also mandatory to define a plug-in that can be uploaded on the update site and can be installed in the release of GAMA.
 
-<br />
 
----
+
+
 
 ## Creation of a feature
 
@@ -88,9 +88,9 @@ Here are detailled steps to create and configure a new feature.
     * In "Plug-ins and Fragments"
       * In the Plug-ins and Fragments, additional plug-ins can be added.
 
-<br />
 
----
+
+
 
 ## Addition of a feature to the product
 
@@ -103,9 +103,9 @@ In the product, e.g. `gama1.6.1.feature_based_Eclipse3_8_2_release.product` in t
 **Remark:** To check whether the new plug-in has been taken into account by GAMA, after GAMA launch, it should appear in the Eclipse console in a line beginning by ">> GAMA bundle loaded in ".
 
 
-<br />
 
----
+
+
 
 ## How to make a plug-in available as an extension for the GAMA release
 

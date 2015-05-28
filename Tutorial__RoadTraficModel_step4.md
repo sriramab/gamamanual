@@ -2,9 +2,9 @@
 The present model will introduce how to design a road system, or graph, based on the road GIS data and provide each edge a `weight`representing the destruction level of the road.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -12,9 +12,9 @@ The present model will introduce how to design a road system, or graph, based on
   * In the road network graph, more a road is worn out (destruction\_coeff high), more a **people** agent takes time to go all over it. Then the value of the arc representing the road in the graph is equal to "length of the road `*` destruction\_coeff".
   * The color of the road depends of the **destruction\_coeff**. If "destruction\_coeff = 1", the road is green, if "destruction\_coeff = 2", the road is red.
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -44,9 +44,9 @@ In GAMA, adding a weight for a graph is very simple, we use the **as\_edge\_grap
    }
 ```**
 
-<br />
 
----
+
+
 
 ## Complete Model
 

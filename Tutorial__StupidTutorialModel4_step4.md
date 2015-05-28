@@ -2,16 +2,16 @@
 In order to be able to investigate the state of the agent and habitat, we will make the model objects "probeable" from the display.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
   * Make the bugs, and the cells, so they can be probed via mouse clicks on the display.
-<br />
 
----
+
+
 
 ## Model Definition
 In GAMA, all agents are automatically probable through inspectors.
@@ -27,9 +27,9 @@ Inspectors allow to obtain informations about a species or an agent. There are t
 
 Note that GAMA interface is "tab-based". You can re-arrange them as you please.
 
-<br />
 
----
+
+
 
 ## Complete Model
 

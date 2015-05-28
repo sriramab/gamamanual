@@ -3,9 +3,9 @@ This first step Illustrates how to write a model in GAMA. In particular, it desc
 ## Content
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -13,9 +13,9 @@ This first step Illustrates how to write a model in GAMA. In particular, it desc
   * Definition of a **nb\_prey\_init** parameter
   * Creation of **nb\_prey\_init** **prey** agents randomly located in the environment (size: 100x100)
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -153,9 +153,9 @@ In our model, we define a display to draw the _prey_ agents.
    }
 ```
 
-<br />
 
----
+
+
 
 ## Complete Model
 

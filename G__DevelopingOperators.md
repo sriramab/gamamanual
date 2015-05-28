@@ -1,13 +1,13 @@
 # Developing Operators
 
----
+
 
 [Operators](G__OperatorsAK) in the GAML language are used to compose complex expressions. An operator performs a function on one, two, or n operands (which are other expressions and thus may be themselves composed of operators) and returns the result of this function. Developing a new operator allows, then, to add a new function to GAML.
 
 
-<br />
 
----
+
+
 
 ## Implementation
 
@@ -27,9 +27,9 @@ The method:
   * can have a IScope parameter, that will be taken into account as operand of the operator.
 
 
-<br />
 
----
+
+
 
 ## Annotations
 ### @operator

@@ -2,18 +2,18 @@
 This 6th step illustrates how to display charts.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
   * Add a chart to display the evolution of the road destruction: the mean value of the **destruction\_coeff** of the **road** agents, and its max value (refreshed every 10 simulation steps).
   * Add a chart to display the activity of the **people** agent (working or staying home, refreshed every 10 simulation steps).
 
-<br />
 
----
+
+
 
 ## Model Definition
 ### chart display
@@ -46,9 +46,9 @@ Second, we add a chart of type **pie** to display the activity of the **people**
    }
 ```
 
-<br />
 
----
+
+
 
 ## Complete Model
 

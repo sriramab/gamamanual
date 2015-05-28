@@ -16,20 +16,20 @@ SQLSKILL and AgentDB provide almost the same features (a same set of actions on 
   * With an inheritance agent of species AgentDB  or an agent of a species using SQLSKILL, we can query data from relational database for creating species, defining environment or analyzing or storing simulation results into RDBMS. On the other hand, an agent of species with MDXKILL supports the OLAP technology to query data from data marts (multidimensional database).
 The database features help us to have more flexibility in management of simulation models and analysis of simulation results.
 
----
 
 
-<br />
 
----
+
+
+
 
 ## Description
 
   * **Plug-in**: _irit.gaml.extensions.database_
   * **Author**: TRUONG Minh Thai, Frederic AMBLARD, Benoit GAUDOU, Christophe SIBERTIN-BLANC
-<br />
 
----
+
+
 
 ## Supported DBMS
 
@@ -43,9 +43,9 @@ The following DBMS are currently supported:
 
 Note that, other DBMSs require a dedicated server to work while SQLite on only needs a file to be accessed.
 All the actions can be used independently from the chosen DBMS. Only the connection parameters are DBMS-dependent.
-<br />
 
----
+
+
 
 ## SQLSKILL
 ### Define a species that uses the SQLSKILL skill
@@ -68,7 +68,7 @@ Agents with such a skill can use additional actions (defined in the skill)
 In the actions defined in the SQLSkill, a parameter containing the connection parameters is required. It is a map with the following _key::value_ pairs:
 
 | **Key** | **Optional** | **Description** |
-|:--------|:-------------|:----------------|
+|:--|:-|:-|
 | _dbtype_ | No           | DBMS type value. Its value is a string. We must use "mysql" when we want to connect to a MySQL. That is the same for "postgres", "sqlite" or "sqlserver" (ignore case sensitive) |
 | _host_  | Yes          | Host name or IP address of data server. It is absent when we work with SQlite. |
 | _port_  | Yes          | Port of connection. It is not required when we work with SQLite.|
@@ -246,9 +246,9 @@ int n <- executeUpdate (params: PARAMS,
 do executeUpdate (params: PARAMS, updateComm: "DROP TABLE registration");
 
 ```
-<br />
 
----
+
+
 
 ## MDXSKILL
 MDXSKILL plays the role of an OLAP tool using select to query data from OLAP server to GAMA environment and then species can use the queried data for any analysis purposes.
@@ -268,7 +268,7 @@ Agents with such a skill can use additional actions (defined in the skill)
 ### Map of connection parameters for MDX
 In the actions defined in the SQLSkill, a parameter containing the connection parameters is required. It is a map with following key::value pairs:
 | **Key** | **Optional** | **Description** |
-|:--------|:-------------|:----------------|
+|:--|:-|:-|
 | _olaptype_ | No           | OLAP Server type value. Its value is a string. We must use "SSAS/XMLA" when we want to connect to an SQL Server Analysis Services by using XML for Analysis. That is the same for "MONDRIAN/XML" or "MONDRIAN" (ignore case sensitive)|
 | _dbtype_ | No           | DBMS type value. Its value is a string. We must use "mysql" when we want to connect to a MySQL. That is the same for "postgres" or "sqlserver" (ignore case sensitive) |
 | _host_  | No           | Host name or IP address of data server. |
@@ -393,9 +393,9 @@ if (self testConnection(params:MONDRIANXMLA)){
 }
 
 ```
-<br />
 
----
+
+
 
 ## AgentDB
 
@@ -543,9 +543,9 @@ ask agentDB {
 }
 
 ```
-<br />
 
----
+
+
 
 ## Using database features to define environment or create species
 
@@ -555,7 +555,7 @@ In Gama, we can use results of select action of SQLSKILL or AgentDB to create sp
   * **Step 1**: specify select query by declaration a map object with keys as below:
 
 | **Key** |	**Optional** | **Description** |
-|:--------|:-------------|:----------------|
+|:--|:-|:-|
 | _dbtype_ | No           | DBMS type value. Its value is a string. We must use "mysql" when we want to connect to a MySQL. That is the same for "postgres", "sqlite" or "sqlserver" (ignore case sensitive) |
 | _host_  | Yes          | Host name or IP address of data server. It is absent when we work with SQlite. |
 | _port_  | Yes          | Port of connection. It is not required when we work with SQLite. |

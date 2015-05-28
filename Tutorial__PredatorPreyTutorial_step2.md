@@ -4,9 +4,9 @@ This second steps present the idea of environment or topological space. Defining
 
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -15,9 +15,9 @@ This second steps present the idea of environment or topological space. Defining
   * Display of the cell color according to the quantity of food
   * Localization of the prey agents on the cells (at its center)
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -101,9 +101,9 @@ In order to visualize the vegetation , we need to add it to the display. We use 
 ```
 
 Note that the layers in a display work like layers in a GIS; the drawing order will be respected. In our model, the prey agents will be drawn above the vegetation\_cell grid thus they need to be declared afterward.
-<br />
 
----
+
+
 
 ## Complete Model
 

@@ -2,7 +2,7 @@
 `[WORK IN PROGRESS]`
 
 
----
+
 
 GAMA offers two ways to construct a model : writing it directly in GAML or using the [graphical editor](G__GraphicalEditor). In this tutorial, we will show you how to use the latter option by re-using the [prey-predator tutorial](Tutorial__PredatorPreyTutorial). Thus, you may refer to it if some details are not clear.
 
@@ -10,9 +10,9 @@ Similarly to the original prey-predator model, this tutorial introduces all the 
 
 ## Content
 
-<br />
 
----
+
+
 
 ## Model Overview
 In this model, three types of entities are considered: preys, predators and vegetation cells. Preys
@@ -20,9 +20,9 @@ eat grass on the vegetation cells and predators eat preys. At each simulation st
 
 ![http://gama-platform.googlecode.com/files/predator_prey.png](http://gama-platform.googlecode.com/files/predator_prey.png)
 
-<br />
 
----
+
+
 
 ## Step List
 

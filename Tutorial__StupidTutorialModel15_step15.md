@@ -4,9 +4,9 @@ Until now we used an environment of fixed size and for which each cell's food pr
 You may also want to refer to [step 2](Tutorial__PredatorPreyTutorial_step2) of the prey-predator tutorial to have a more detailed presentation of a similar environment construction.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -19,9 +19,9 @@ You may also want to refer to [step 2](Tutorial__PredatorPreyTutorial_step2) of 
   * A change to the bug move method is required to avoid a very strong artifact now that cell food production is no longer random. Near the start of a simulation, many cells will have exactly the same food availability, so a bug simply would move to the first cell on its list of neighbor cells. This is always the top-left cell among the neighbors, so bugs move constantly up and left if all the cells available to them have the same food availability. This artifact is removed by randomly shuffling the list of available cells before the bug loops through it to identify the best.
 
 
-<br />
 
----
+
+
 
 ## Model Definition
 ### reading data from a file
@@ -95,9 +95,9 @@ species bug schedules: bug sort_by ( - each.size){
 ```
 
 
-<br />
 
----
+
+
 
 ## Complete Model
 

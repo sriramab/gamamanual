@@ -1,6 +1,6 @@
 # References
 
----
+
 
 This page contains a subset of the scientific papers that have been written either about GAMA or using the platform as an experimental/modeling support.
 
@@ -8,9 +8,9 @@ If you happen to publish a paper that uses or discusses GAMA, please let us know
 
 As stated in [the first page](G__Overview), if you need to cite GAMA in a paper, we kindly ask you to use this reference:
   * [A. Grignard, P. Taillandier, B. Gaudou, D-A. Vo, N-Q. Huynh, A. Drogoul (2013), GAMA 1.6: Advancing the Art of Complex Agent-Based Modeling and Simulation. In ‘PRIMA 2013: Principles and Practice of Multi-Agent Systems’, Lecture Notes in Computer Science, Vol. 8291, Springer, pp. 117-131.](http://link.springer.com/chapter/10.1007/978-3-642-44927-7_9)
-<br />
 
----
+
+
 
 ## Papers about GAMA
   * [Taillandier, Patrick, Arnaud Grignard, Benoit Gaudou, and Alexis Drogoul. "Des données géographiques à la simulation à base d’agents: application de la plate-forme GAMA." Cybergeo: European Journal of Geography (2014).](http://spi.cybergeo.revues.org/26263)
@@ -28,9 +28,9 @@ As stated in [the first page](G__Overview), if you need to cite GAMA in a paper,
   * Amouroux, E., Taillandier, P. &  Drogoul, A. (2010), Complex environment representation in epidemiology ABM: application on `H5N1` propagation. In ‘the 3rd International Conference on Theories and Applications of Computer Science’ (ICTACS'10).
 
   * [Amouroux, E., Chu, T.Q., Boucher, A. and Drogoul, A. (2007), GAMA: an environment for implementing and running spatially explicit multi-agent simulations. In ‘Pacific Rim International Workshop on Multi-Agents’, Bangkoku, Thailand, pp. 359--371.](http://www.springerlink.com/content/88006131542n1204/)
-<br />
 
----
+
+
 
 ## PhD theses
   * **Truong Xuan Viet**, ["Optimization by Simulation of an Environmental Surveillance Network: Application to the Fight against Rice Pests in the Mekong Delta (Vietnam)"](https://drive.google.com/a/ctu.edu.vn/file/d/0B7ArAu2_CEjCaTVzZURNUGlfWmc/edit?usp=sharing), University of Paris 6 & Ho Chi Minh University of Technology, defended June 24th, 2014.
@@ -44,9 +44,9 @@ As stated in [the first page](G__Overview), if you need to cite GAMA in a paper,
   * **Chu Thanh Quang**, ["Using agent-based models and machine learning to enhance spatial decision support systems: Application to resource allocation in situations of urban catastrophes"](https://www.dropbox.com/s/i5ifnigqv7qltc9/CHU-Thanh-Quang_manuscrit.pdf), University of Paris 6, defended July 1st, 2011.
 
   * **Nguyen Ngoc Doanh**, ["Coupling Equation-Based and Individual-Based Models in the Study of Complex Systems: A Case Study in Theoretical Population Ecology"](https://docs.google.com/file/d/0B5s1B4Qq19ycMDg4MTNhMmUtMDNlMC00NzQyLWFlZjEtMjZhOGY5YjRhNWU5/edit?hl=fr), University of Paris 6, defended Dec. 14th, 2010.
-<br />
 
----
+
+
 
 ## Research papers that use GAMA as modeling/simulation support
 **2014**

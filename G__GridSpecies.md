@@ -12,9 +12,9 @@ However, contrary to regular species, grid agents are created automatically at t
 Moreover, in addition to classic built-in variables, grid a provided with a set of additional built-in variables
 
 
-<br />
 
----
+
+
 
 ## Declaration
 ### basis
@@ -66,9 +66,9 @@ By default, this facet is set to **true** when declaring a grid without this fac
 If **false**, no neighbours computation result are stored in the cache.
 By default, this facet is set to **true** when declaring a grid without this facet.
 
-<br />
 
----
+
+
 
 ## Built-in variables
 Grid agents are provides with several specific built-in variables.
@@ -119,9 +119,9 @@ experiment main_xp type: gui{
 ### grid\_value
 The **grid\_value** built-in variable is used when initializing a grid from grid file (see later). It is also used for the 3D representation of [DEM](http://code.google.com/p/gama-platform/wiki/DEM).
 
-<br />
 
----
+
+
 
 ## Access to cells
 there are several ways to access to a specific cell:

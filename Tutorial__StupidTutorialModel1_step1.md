@@ -2,9 +2,9 @@
 This is the basic Stupid Model, an extremely simple agent-based model used as a starting point for learning GAMA (or other ABM platforms).
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -14,9 +14,9 @@ This is the basic Stupid Model, an extremely simple agent-based model used as a 
 
   * The bugs are displayed on the space. Bugs are drawn as red circles. The display is updated at the end of each time step.
 
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -119,9 +119,9 @@ experiment stupidModel type: gui {
 
 In GAMA we cannot choose when to draw the agent thus the "The display is updated at the end of each time step." statement is of no interest (though it is the case).
 
-<br />
 
----
+
+
 
 ## Complete Model
 

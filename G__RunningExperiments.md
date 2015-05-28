@@ -1,6 +1,6 @@
 # Running Experiments
 
----
+
 
 _Running an experiment_ is the only way, in GAMA, to execute simulations on a model. Experiments can be run in different ways.
   1. The first, and most common way, consists in [launching an experiment](G__LaunchingExperiments) from the Modeling perspective, using the [user interface](G__ExperimentsUserInterface) proposed by the simulation perspective to run simulations.

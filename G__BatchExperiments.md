@@ -1,6 +1,6 @@
 # Defining Batch Experiments
 
----
+
 
 Batch experiments allow to execute numerous successive simulation runs.They are used to explore the parameter space of a model or to optimize a set of model parameters.
 
@@ -16,9 +16,9 @@ experiment exp_title type: batch {
 ```
 
 
-<br />
 
----
+
+
 
 
 ## The batch experiment facets
@@ -34,9 +34,9 @@ experiment my_batch_experiment type: batch repeat: 5 keep_seed: true until: time
 }
 ```
 
-<br />
 
----
+
+
 
 
 ## Action _step
@@ -55,9 +55,9 @@ experiment 'Run 5 simulations' type: batch repeat: 5 keep_seed: true until: ( ti
 A second solution to achieve the same result is to use reflexes (see below).
 ```
 
-<br />
 
----
+
+
 
 
 ## Reflexes
@@ -69,9 +69,9 @@ reflex info_sim {
 }
 ```
 
-<br />
 
----
+
+
 
 
 ## Permanent

@@ -2,9 +2,9 @@
 This fifth step Illustrates how to use parent species. Indeed,prey and predators share a few common features thus we will define a generic species that will regroup all the common elements (variables, behaviors and aspects) between the prey and the predator species.
 
 
-<br />
 
----
+
+
 
 
 ## Formulation
@@ -12,9 +12,9 @@ This fifth step Illustrates how to use parent species. Indeed,prey and predators
   * Definition of a new species: predator
   * predator agents move randomly
   * At each simulation step, a predator agent can eat a prey that is localized at its grid cell
-<br />
 
----
+
+
 
 ## Model Definition
 
@@ -180,9 +180,9 @@ Definition of the corresponding monitor:
 monitor "number of predators" value: nb_predators ;
 ```
 
-<br />
 
----
+
+
 
 ## Complete Model
 
