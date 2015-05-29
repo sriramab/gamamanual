@@ -145,6 +145,7 @@ statement_keyword1 expression1 facet2: expression2... { // a sequence statement
 * The  statement is of type: **Variable (number)**
 * The  statement can be embedded into: Species, Experiment, Model, 
 * The  statement embeds statements: 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -168,6 +169,7 @@ statement_keyword1 expression1 facet2: expression2... { // a sequence statement
 * The  statement is of type: **Variable (regular)**
 * The  statement can be embedded into: Species, Experiment, Model, 
 * The  statement embeds statements: 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -192,6 +194,7 @@ statement_keyword1 expression1 facet2: expression2... { // a sequence statement
 * The  statement is of type: **Variable (container)**
 * The  statement can be embedded into: Species, Experiment, Model, 
 * The  statement embeds statements: 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -224,7 +227,8 @@ equation SI {
  
 ```
     
-* See also: [#equation equation], [#solve solve], 
+* See also: [equation](#equation), [solve](#solve), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -287,7 +291,8 @@ species children parent: parent_species {
  
 ```
     
-* See also: [#do do], 
+* See also: [do](#do), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -371,7 +376,8 @@ list var <- g.edges; 	// var equals [polyline({1.0,5.0}::{12.0,45.0}),polyline({
 ```
 
 * Case of a matrix: this statement can not be used on matrix. Please refer to the statement put.    
-* See also: [#put put], [#remove remove], 
+* See also: [put](#put), [remove](#remove), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -417,7 +423,8 @@ display Segregation {
  
 ```
     
-* See also: [#display display], [#chart chart], [#event event], [#graphics graphics], [#display_grid display_grid], [#image image], [#overlay overlay], [#quadtree quadtree], [#display_population display_population], [#text text], 
+* See also: [display](#display), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -455,6 +462,7 @@ method annealing [facet: value];
 method annealing temp_init: 100  temp_end: 1 temp_decrease: 0.5 nb_iter_cst_temp: 5 maximize: food_gathered;
  
 ```
+
 
 [Top of the page](#table-of-contents)
 	
@@ -527,6 +535,7 @@ species animal {
 ```
 
 * If the species of the receiver agent cannot be determined, it is possible to force it by casting the agent. Nothing happens if the agent cannot be casted to this species
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -559,6 +568,7 @@ species one_species {
  
 ```
 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -576,6 +586,7 @@ species one_species {
 `break` allows to interrupt the current sequence of statements.
 
 ### Usages
+
 
 [Top of the page](#table-of-contents)
 	
@@ -625,7 +636,8 @@ capture target: list (B) as: C;
  
 ```
     
-* See also: [#release release], 
+* See also: [release](#release), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -681,7 +693,8 @@ display chart_display {
  
 ```
     
-* See also: [#display display], [#agents agents], [#event event], [#graphics graphics], [#display_grid display_grid], [#image image], [#overlay overlay], [#quadtree quadtree], [#display_population display_population], [#text text], 
+* See also: [display](#display), [agents](#agents), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -770,6 +783,7 @@ create species: a_species number: an_int;
 ```
 
 * If `number` equals 0 or species is not a species, the statement is ignored.
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -790,6 +804,7 @@ create species: a_species number: an_int;
 * The data statement is of type: **Single statement**
 * The data statement can be embedded into: chart, Sequence of statements or action, 
 * The data statement embeds statements: 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -810,6 +825,7 @@ create species: a_species number: an_int;
 * The datalist statement is of type: **Single statement**
 * The datalist statement can be embedded into: chart, Sequence of statements or action, 
 * The datalist statement embeds statements: 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -829,7 +845,8 @@ Used in a switch match structure, the block prefixed by default is executed only
 
 ### Usages
     
-* See also: [#switch switch], [#match match], 
+* See also: [switch](#switch), [match](#match), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -874,6 +891,7 @@ diffusion var: phero on: cells mat_diffu: math_diff mask: mymask;
 diffusion var: phero on: cells proportion: 1/9 radius: 1;
  
 ```
+
 
 [Top of the page](#table-of-contents)
 	
@@ -932,6 +950,7 @@ display gridWithElevationTriangulated type: opengl ambient_light: 100 {
  
 ```
 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -980,7 +999,8 @@ display my_display {
  
 ```
     
-* See also: [#display display], [#agents agents], [#chart chart], [#event event], [#graphics graphics], [#image image], [#overlay overlay], [#quadtree quadtree], [#display_population display_population], [#text text], 
+* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1036,7 +1056,8 @@ display my_display type: opengl{
  
 ```
     
-* See also: [#display display], [#agents agents], [#chart chart], [#event event], [#graphics graphics], [#display_grid display_grid], [#image image], [#overlay overlay], [#quadtree quadtree], [#text text], 
+* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [text](#text), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1109,6 +1130,7 @@ do name_of_action_or_primitive {
  
 ```
 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1174,6 +1196,7 @@ aspect arrowAspect {
  
 ```
 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1192,7 +1215,8 @@ This statement cannot be used alone
 
 ### Usages
     
-* See also: [#if if], 
+* See also: [if](#if), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1222,7 +1246,8 @@ In an FSM architecture, `enter` introduces a sequence of statements to execute u
  
 ```
     
-* See also: [#state state], [#exit exit], [#transition transition], 
+* See also: [state](#state), [exit](#exit), [transition](#transition), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1270,7 +1295,8 @@ equation eqLV type: LV vars: [x,y,t] params: [alpha,beta,delta,gamma] ;
 ```
 
 * If the simultaneously: facet is used, system of all the agents will be solved simultaneously.    
-* See also: [#= =], [#solve solve], 
+* See also: [=](#=), [solve](#solve), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1295,6 +1321,7 @@ The statement makes the agent output an error dialog (if the simulation contains
 error 'This is an error raised by ' + self;
  
 ```
+
 
 [Top of the page](#table-of-contents)
 	
@@ -1344,7 +1371,8 @@ experiment Simple type:gui {
  
 ```
     
-* See also: [#display display], [#agents agents], [#chart chart], [#graphics graphics], [#display_grid display_grid], [#image image], [#overlay overlay], [#quadtree quadtree], [#display_population display_population], [#text text], 
+* See also: [display](#display), [agents](#agents), [chart](#chart), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1379,6 +1407,7 @@ method exhaustive maximize: food_gathered;
  
 ```
 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1411,7 +1440,8 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
  
 ```
     
-* See also: [#enter enter], [#state state], [#transition transition], 
+* See also: [enter](#enter), [state](#state), [transition](#transition), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1435,6 +1465,7 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 * The experiment statement is of type: **Experiment**
 * The experiment statement can be embedded into: Model, 
 * The experiment statement embeds statements: 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1449,6 +1480,7 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 * The export statement is of type: **Single statement**
 * The export statement can be embedded into: Experiment, 
 * The export statement embeds statements: 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1488,6 +1520,7 @@ method genetic maximize: food_gathered pop_dim: 5 crossover_prob: 0.7 mutation_p
  
 ```
 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1524,7 +1557,8 @@ display my_display {
  
 ```
     
-* See also: [#display display], [#agents agents], [#chart chart], [#event event], [#graphics graphics], [#display_grid display_grid], [#image image], [#overlay overlay], [#quadtree quadtree], [#display_population display_population], [#text text], 
+* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1559,6 +1593,7 @@ method hill_climbing [facet: value];
 method hill_climbing iter_max: 50 maximize : food_gathered; 
  
 ```
+
 
 [Top of the page](#table-of-contents)
 	
@@ -1628,6 +1663,7 @@ else {
  
 ```
 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1688,7 +1724,8 @@ display my_display {
  
 ```
     
-* See also: [#display display], [#agents agents], [#chart chart], [#event event], [#graphics graphics], [#display_grid display_grid], [#overlay overlay], [#quadtree quadtree], [#display_population display_population], [#text text], 
+* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1719,6 +1756,7 @@ inspect "my_inspector" value: ant attributes: ["name", "location"];
  
 ```
 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1745,6 +1783,7 @@ inspect "my_inspector" value: ant attributes: ["name", "location"];
 * The layout_forceatlas2 statement is of type: **Single statement**
 * The layout_forceatlas2 statement can be embedded into: Behavior, Sequence of statements or action, 
 * The layout_forceatlas2 statement embeds statements: 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1765,6 +1804,7 @@ inspect "my_inspector" value: ant attributes: ["name", "location"];
 * The layout_yifanhu statement is of type: **Single statement**
 * The layout_yifanhu statement can be embedded into: Behavior, Sequence of statements or action, 
 * The layout_yifanhu statement embeds statements: 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1781,6 +1821,7 @@ inspect "my_inspector" value: ant attributes: ["name", "location"];
 * The let statement is of type: **Single statement**
 * The let statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
 * The let statement embeds statements: 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1866,6 +1907,7 @@ loop i from: 0 to: length (the_list) - 1 {
  
 ```
 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1912,7 +1954,8 @@ switch 3 {
  
 ```
     
-* See also: [#switch switch], [#default default], 
+* See also: [switch](#switch), [default](#default), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1940,7 +1983,8 @@ migrate ball_in_group target: ball_in_cloud;
  
 ```
     
-* See also: [#capture capture], [#release release], 
+* See also: [capture](#capture), [release](#release), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -1968,6 +2012,7 @@ A monitor allows to follow the value of an arbitrary expression in GAML.
 monitor "nb preys" value: length(prey as list) refresh_every: 5;  
  
 ```
+
 
 [Top of the page](#table-of-contents)
 	
@@ -1998,7 +2043,8 @@ experiment exp_name type: gui {
  
 ```
     
-* See also: [#display display], [#monitor monitor], [#inspect inspect], [#output_file output_file], 
+* See also: [display](#display), [monitor](#monitor), [inspect](#inspect), [output_file](#output_file), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2018,6 +2064,7 @@ experiment exp_name type: gui {
 * The output_file statement is of type: **Output**
 * The output_file statement can be embedded into: output, permanent, 
 * The output_file statement embeds statements: 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2046,7 +2093,8 @@ overlay "Cycle: " + (cycle) center: "Duration: " + total_duration + "ms" right: 
  
 ```
     
-* See also: [#display display], [#agents agents], [#chart chart], [#event event], [#graphics graphics], [#display_grid display_grid], [#image image], [#quadtree quadtree], [#display_population display_population], [#text text], 
+* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2088,6 +2136,7 @@ parameter 'Value of titi:' var: titi min: 1 max: 100 step: 2;
  
 ```
 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2099,6 +2148,7 @@ parameter 'Value of titi:' var: titi min: 1 max: 100 step: 2;
 * The pause_sound statement is of type: **Sequence of statements or action**
 * The pause_sound statement can be embedded into: Behavior, Sequence of statements or action, 
 * The pause_sound statement embeds statements: 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2129,6 +2179,7 @@ permanent {
  
 ```
 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2146,6 +2197,7 @@ permanent {
 * The plan statement is of type: **Behavior**
 * The plan statement can be embedded into: Species, 
 * The plan statement embeds statements: 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2203,6 +2255,7 @@ put -30 all: true in: putMap; 	// putMap equals ["x"::-30,"y"::-30, "z"::-30]
  
 ```
 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2234,7 +2287,8 @@ display my_display {
  
 ```
     
-* See also: [#display display], [#agents agents], [#chart chart], [#event event], [#graphics graphics], [#display_grid display_grid], [#image image], [#overlay overlay], [#quadtree quadtree], [#display_population display_population], [#text text], 
+* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2276,6 +2330,7 @@ method reactive_tabu iter_max: 50 tabu_list_size_init: 5 tabu_list_size_min: 2 t
  
 ```
 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2303,6 +2358,7 @@ reflex my_reflex when: flip (0.5){ 		//Only executed when flip returns true
 }
  
 ```
+
 
 [Top of the page](#table-of-contents)
 	
@@ -2356,7 +2412,8 @@ release list (C) as: new_species in: new host;
  
 ```
     
-* See also: [#capture capture], 
+* See also: [capture](#capture), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2449,7 +2506,8 @@ species speciesRemove {
 ```
 
 * This statement can not be used on *matrix*.    
-* See also: [#add add], [#put put], 
+* See also: [add](#add), [put](#put), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2461,6 +2519,7 @@ species speciesRemove {
 * The resume_sound statement is of type: **Sequence of statements or action**
 * The resume_sound statement can be embedded into: Behavior, Sequence of statements or action, 
 * The resume_sound statement embeds statements: 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2506,6 +2565,7 @@ reflex writing {
  
 ```
 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2524,6 +2584,7 @@ reflex writing {
 * The run statement is of type: **Sequence of statements or action**
 * The run statement can be embedded into: Behavior, Single statement, Species, Model, 
 * The run statement embeds statements: 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2573,6 +2634,7 @@ save species_of(self) to: "save_shapefile.shp" type: "shp" with: [name::"nameAge
 ```
 
 * The save statement can be use in an init block, a reflex, an action or in a user command. Do not use it in experiments.
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2587,6 +2649,7 @@ save species_of(self) to: "save_shapefile.shp" type: "shp" with: [name::"nameAge
 * The save_batch statement is of type: **Batch method**
 * The save_batch statement can be embedded into: Experiment, 
 * The save_batch statement embeds statements: 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2612,6 +2675,7 @@ Allows to assign a value to the variable or attribute specified
 
 ``` 
   
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2646,7 +2710,8 @@ species Tester {
  
 ```
     
-* See also: [#test test], [#assert assert], 
+* See also: [test](#test), [assert](#assert), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2670,6 +2735,7 @@ species Tester {
 * The signal statement is of type: **Variable (signal)**
 * The signal statement can be embedded into: Species, 
 * The signal statement embeds statements: 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2703,6 +2769,7 @@ ask receiver_agent(s) {
 }
 ``` 
   
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2739,6 +2806,7 @@ Solves all equations which matched the given name, with all systems of agents th
 solve SIR method: "rk4" step:0.001;
 ``` 
   
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2801,6 +2869,7 @@ grid ant_grid file: grid_file neighbours: 8 use_regular_agents: false {
  
 ```
 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2815,6 +2884,7 @@ grid ant_grid file: grid_file neighbours: 8 use_regular_agents: false {
 * The start_sound statement is of type: **Sequence of statements or action**
 * The start_sound statement can be embedded into: Behavior, Sequence of statements or action, 
 * The start_sound statement embeds statements: 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2864,7 +2934,8 @@ A state, like a reflex, can contains several statements that can be executed at 
  
 ```
     
-* See also: [#enter enter], [#exit exit], [#transition transition], 
+* See also: [enter](#enter), [exit](#exit), [transition](#transition), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2891,6 +2962,7 @@ status ('This is my status ' + self) color: Â°yellow;
  
 ```
 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2902,6 +2974,7 @@ status ('This is my status ' + self) color: Â°yellow;
 * The stop_sound statement is of type: **Sequence of statements or action**
 * The stop_sound statement can be embedded into: Behavior, Sequence of statements or action, 
 * The stop_sound statement embeds statements: 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2945,7 +3018,8 @@ switch 3 {
  
 ```
     
-* See also: [#match match], [#default default], [#if if], 
+* See also: [match](#match), [default](#default), [if](#if), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -2982,6 +3056,7 @@ method tabu iter_max: 50 tabu_list_size: 5 maximize: food_gathered;
  
 ```
 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -3001,6 +3076,7 @@ method tabu iter_max: 50 tabu_list_size: 5 maximize: food_gathered;
 As reflex, a task is a sequence of statements that can be executed, at each time step, by the agent. If an agent owns several tasks, the scheduler chooses a task to execute based on its current priority weight value.
 
 ### Usages
+
 
 [Top of the page](#table-of-contents)
 	
@@ -3045,7 +3121,8 @@ display Segregation {
  
 ```
     
-* See also: [#display display], [#agents agents], [#chart chart], [#event event], [#graphics graphics], [#display_grid display_grid], [#image image], [#overlay overlay], [#quadtree quadtree], [#display_population display_population], 
+* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -3063,6 +3140,7 @@ display Segregation {
 All the statements executed in the trace statement are displayed in the console.
 
 ### Usages
+
 
 [Top of the page](#table-of-contents)
 	
@@ -3095,7 +3173,8 @@ In an FSM architecture, `transition` specifies the next state of the life cycle.
  
 ```
     
-* See also: [#enter enter], [#state state], [#exit exit], 
+* See also: [enter](#enter), [state](#state), [exit](#exit), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -3124,7 +3203,8 @@ user_command kill_myself action: some_action with: [arg1::val1, arg2::val2, ...]
  
 ```
     
-* See also: [#user_init user_init], [#user_panel user_panel], [#user_input user_input], 
+* See also: [user_init](#user_init), [user_panel](#user_panel), [user_input](#user_input), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -3145,7 +3225,8 @@ Used in the user control architecture, user_init is executed only once when the 
 
 ### Usages
     
-* See also: [#user_command user_command], [#user_init user_init], [#user_input user_input], 
+* See also: [user_command](#user_command), [user_init](#user_init), [user_input](#user_input), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -3179,7 +3260,8 @@ user_panel "Advanced Control" {
 }
 ``` 
       
-* See also: [#user_command user_command], [#user_init user_init], [#user_panel user_panel], 
+* See also: [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -3215,7 +3297,8 @@ user_panel "Advanced Control" {
  
 ```
     
-* See also: [#user_command user_command], [#user_init user_init], [#user_input user_input], 
+* See also: [user_command](#user_command), [user_init](#user_init), [user_input](#user_input), 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -3244,6 +3327,7 @@ using topology(grid_ant) {
  
 ```
 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -3269,6 +3353,7 @@ warn 'This is a warning from ' + self;
  
 ```
 
+
 [Top of the page](#table-of-contents)
 	
 <br/>
@@ -3293,6 +3378,7 @@ The statement makes the agent output an arbitrary message in the console.
 write 'This is a message from ' + self;
  
 ```
+
 
 [Top of the page](#table-of-contents)
 	
