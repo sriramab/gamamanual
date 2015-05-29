@@ -44,10 +44,12 @@ The GAMA source code should now be downloaded from the GIT repository (hosted by
   * In **Source Git repository** window: 
     * Fill in the URI label with: `https://github.com/gama-platform/gama.git`
     * Other fields will be automatically filled in.
+
 ![Source GIT repository](images/GIT_install/GIT_source_git_repository.png)    
   * In **Branch Selection** windows, 
     * check the master branch 
     * Next
+
 ![Git branch selection](images/GIT_install/GIT_branch_selection.png)
   * In **Local Destination** windows,
     * Choose a Directory (where the source files will be downloaded).
