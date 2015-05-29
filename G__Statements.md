@@ -128,23 +128,24 @@ statement_keyword1 expression1 facet2: expression2... { // a sequence statement
 ###  
 #### Facets 
 		  
-  * **name**  (a new identifier), (omissible) : The name of the attribute
-  * among (list): A list of constant values among which the attribute can take its value
-  * category (a label): Soon to be deprecated. Declare the parameter in an experiment instead
-  * const (boolean): Indicates whether this attribute can be subsequently modified or not
-  * function (any type in [int, float]): Used to specify an expression that will be evaluated each time the attribute is accessed. This facet is incompatible with both 'init:' and 'update:'
-  * init (any type in [int, float]): The initial value of the attribute
-  * max (any type in [int, float]): The maximum value this attribute can take.
-  * min (any type in [int, float]): The minimum value this attribute can take
-  * parameter (a label): Soon to be deprecated. Declare the parameter in an experiment instead
-  * step (int): 
-  * type (a datatype identifier): The type of the attribute, either 'int' or 'float'
-  * update (any type in [int, float]): An expression that will be evaluated each cycle to compute a new value for the attribute
-  * value (any type in [int, float]): 
+  * **`name`** (a new identifier), (omissible) : The name of the attribute
+  * `among` (list): A list of constant values among which the attribute can take its value
+  * `category` (a label): Soon to be deprecated. Declare the parameter in an experiment instead
+  * `const` (boolean): Indicates whether this attribute can be subsequently modified or not
+  * `function` (any type in [int, float]): Used to specify an expression that will be evaluated each time the attribute is accessed. This facet is incompatible with both 'init:' and 'update:'
+  * `init` (any type in [int, float]): The initial value of the attribute
+  * `max` (any type in [int, float]): The maximum value this attribute can take.
+  * `min` (any type in [int, float]): The minimum value this attribute can take
+  * `parameter` (a label): Soon to be deprecated. Declare the parameter in an experiment instead
+  * `step` (int): 
+  * `type` (a datatype identifier): The type of the attribute, either 'int' or 'float'
+  * `update` (any type in [int, float]): An expression that will be evaluated each cycle to compute a new value for the attribute
+  * `value` (any type in [int, float]): 
+
 #### Embedments
-* The  statement is of type: **Variable (number)**
-* The  statement can be embedded into: Species, Experiment, Model, 
-* The  statement embeds statements: 
+* The `` statement is of type: **Variable (number)**
+* The `` statement can be embedded into: Species, Experiment, Model, 
+* The `` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -153,22 +154,23 @@ statement_keyword1 expression1 facet2: expression2... { // a sequence statement
 ###  
 #### Facets 
 		  
-  * **name**  (a new identifier), (omissible) : The name of the attribute
-  * among (list): A list of constant values among which the attribute can take its value
-  * category (a label): Soon to be deprecated. Declare the parameter in an experiment instead
-  * const (boolean): Indicates whether this attribute can be subsequently modified or not
-  * function (any type): Used to specify an expression that will be evaluated each time the attribute is accessed. This facet is incompatible with both 'init:' and 'update:'
-  * index (a datatype identifier): 
-  * init (any type): The initial value of the attribute
-  * of (a datatype identifier): 
-  * parameter (a label): Soon to be deprecated. Declare the parameter in an experiment instead
-  * type (a datatype identifier): 
-  * update (any type): An expression that will be evaluated each cycle to compute a new value for the attribute
-  * value (any type): 
+  * **`name`** (a new identifier), (omissible) : The name of the attribute
+  * `among` (list): A list of constant values among which the attribute can take its value
+  * `category` (a label): Soon to be deprecated. Declare the parameter in an experiment instead
+  * `const` (boolean): Indicates whether this attribute can be subsequently modified or not
+  * `function` (any type): Used to specify an expression that will be evaluated each time the attribute is accessed. This facet is incompatible with both 'init:' and 'update:'
+  * `index` (a datatype identifier): 
+  * `init` (any type): The initial value of the attribute
+  * `of` (a datatype identifier): 
+  * `parameter` (a label): Soon to be deprecated. Declare the parameter in an experiment instead
+  * `type` (a datatype identifier): 
+  * `update` (any type): An expression that will be evaluated each cycle to compute a new value for the attribute
+  * `value` (any type): 
+
 #### Embedments
-* The  statement is of type: **Variable (regular)**
-* The  statement can be embedded into: Species, Experiment, Model, 
-* The  statement embeds statements: 
+* The `` statement is of type: **Variable (regular)**
+* The `` statement can be embedded into: Species, Experiment, Model, 
+* The `` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -177,23 +179,24 @@ statement_keyword1 expression1 facet2: expression2... { // a sequence statement
 ###  
 #### Facets 
 		  
-  * **name**  (a new identifier), (omissible) : The name of the attribute
-  * category (a label): Soon to be deprecated. Declare the parameter in an experiment instead
-  * const (boolean): Indicates whether this attribute can be subsequently modified or not
-  * fill_with (any type): 
-  * function (any type): Used to specify an expression that will be evaluated each time the attribute is accessed. This facet is incompatible with both 'init:' and 'update:'
-  * index (a datatype identifier): 
-  * init (any type): The initial value of the attribute
-  * of (a datatype identifier): 
-  * parameter (a label): Soon to be deprecated. Declare the parameter in an experiment instead
-  * size (any type in [int, point]): 
-  * type (a datatype identifier): 
-  * update (any type): An expression that will be evaluated each cycle to compute a new value for the attribute
-  * value (any type): 
+  * **`name`** (a new identifier), (omissible) : The name of the attribute
+  * `category` (a label): Soon to be deprecated. Declare the parameter in an experiment instead
+  * `const` (boolean): Indicates whether this attribute can be subsequently modified or not
+  * `fill_with` (any type): 
+  * `function` (any type): Used to specify an expression that will be evaluated each time the attribute is accessed. This facet is incompatible with both 'init:' and 'update:'
+  * `index` (a datatype identifier): 
+  * `init` (any type): The initial value of the attribute
+  * `of` (a datatype identifier): 
+  * `parameter` (a label): Soon to be deprecated. Declare the parameter in an experiment instead
+  * `size` (any type in [int, point]): 
+  * `type` (a datatype identifier): 
+  * `update` (any type): An expression that will be evaluated each cycle to compute a new value for the attribute
+  * `value` (any type): 
+
 #### Embedments
-* The  statement is of type: **Variable (container)**
-* The  statement can be embedded into: Species, Experiment, Model, 
-* The  statement embeds statements: 
+* The `` statement is of type: **Variable (container)**
+* The `` statement can be embedded into: Species, Experiment, Model, 
+* The `` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -202,12 +205,13 @@ statement_keyword1 expression1 facet2: expression2... { // a sequence statement
 ### = 
 #### Facets 
 		  
-  * **right**  (float), (omissible) : the right part of the equation (it is mandatory that it can be evaluate to a float  
-  * **left**  (any type): the left part of the equation (it should be a variable or a call to the diff() or diff2() operators)
+  * **`right`** (float), (omissible) : the right part of the equation (it is mandatory that it can be evaluate to a float  
+  * **`left`** (any type): the left part of the equation (it should be a variable or a call to the diff() or diff2() operators)
+
 #### Embedments
-* The = statement is of type: **Single statement**
-* The = statement can be embedded into: equation, 
-* The = statement embeds statements:  
+* The `=` statement is of type: **Single statement**
+* The `=` statement can be embedded into: equation, 
+* The `=` statement embeds statements:  
  	
 #### Definition
 
@@ -236,15 +240,16 @@ equation SI {
 ### action 
 #### Facets 
 		  
-  * **name**  (an identifier), (omissible) : identifier of the action
-  * index (a datatype identifier): if the action returns a map, the type of its keys
-  * of (a datatype identifier): if the action returns a container, the type of its elements
-  * type (a datatype identifier): the action returned type
-  * virtual (boolean): whether the action is virtual (defined without a set of instructions) (false by default)
+  * **`name`** (an identifier), (omissible) : identifier of the action
+  * `index` (a datatype identifier): if the action returns a map, the type of its keys
+  * `of` (a datatype identifier): if the action returns a container, the type of its elements
+  * `type` (a datatype identifier): the action returned type
+  * `virtual` (boolean): whether the action is virtual (defined without a set of instructions) (false by default)
+
 #### Embedments
-* The action statement is of type: **Sequence of statements or action**
-* The action statement can be embedded into: Species, Experiment, Model, 
-* The action statement embeds statements: [#return return],   
+* The `action` statement is of type: **Sequence of statements or action**
+* The `action` statement can be embedded into: Species, Experiment, Model, 
+* The `action` statement embeds statements: [#return return],   
  	
 #### Definition
 
@@ -300,18 +305,19 @@ species children parent: parent_species {
 ### add 
 #### Facets 
 		  
-  * **to**  (any type in [container, species, agent, geometry]): an expression that evaluates to a container
-  * item (any type), (omissible) : any expression to add in the container
-  * all (any type): Allows to either pass a container so as to add all its element, or 'true', if the item to add is already a container.
-  * at (any type): position in the container of added element
-  * edge (any type): a pair that will be added to a graph as an edge (if nodes do not exist, they are also added). Soon to be deprecated, please use 'add edge(..)' instead
-  * node (any type): an expression that will be added to a graph as a node. Soon to be deprecated, please use 'add node(...)' instead
-  * vertex (any type): 
-  * weight (float): 
+  * **`to`** (any type in [container, species, agent, geometry]): an expression that evaluates to a container
+  * `item` (any type), (omissible) : any expression to add in the container
+  * `all` (any type): Allows to either pass a container so as to add all its element, or 'true', if the item to add is already a container.
+  * `at` (any type): position in the container of added element
+  * `edge` (any type): a pair that will be added to a graph as an edge (if nodes do not exist, they are also added). Soon to be deprecated, please use 'add edge(..)' instead
+  * `node` (any type): an expression that will be added to a graph as a node. Soon to be deprecated, please use 'add node(...)' instead
+  * `vertex` (any type): 
+  * `weight` (float): 
+
 #### Embedments
-* The add statement is of type: **Single statement**
-* The add statement can be embedded into: chart, Behavior, Sequence of statements or action, 
-* The add statement embeds statements:  
+* The `add` statement is of type: **Single statement**
+* The `add` statement can be embedded into: chart, Behavior, Sequence of statements or action, 
+* The `add` statement embeds statements:  
  	
 #### Definition
 
@@ -385,21 +391,22 @@ list var <- g.edges; 	// var equals [polyline({1.0,5.0}::{12.0,45.0}),polyline({
 ### agents 
 #### Facets 
 		  
-  * **name**  (a label), (omissible) : identifier of the layer  
-  * **value**  (container): the set of agents to display
-  * aspect (an identifier): the name of the aspect that should be used to display the species
-  * fading (boolean): Used in conjunction with 'trace:', allows to apply a fading effect to the previous traces. Default is false
-  * focus (agent): the agent on with will be focus the camera (it is dynamically computed)
-  * position (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
-  * refresh (boolean): (openGL only) specify whether the display of the species is refreshed. (true by default, useful in case of agents that do not move)
-  * selectable (boolean): Indicates whether the agents present on this layer are selectable by the user. Default is true
-  * size (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
-  * trace (any type in [boolean, int]): Allows to aggregate the visualization of agents at each timestep on the display. Default is false. If set to an int value, only the last n-th steps will be visualized. If set to true, no limit of timesteps is applied.
-  * transparency (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency)
+  * **`name`** (a label), (omissible) : identifier of the layer  
+  * **`value`** (container): the set of agents to display
+  * `aspect` (an identifier): the name of the aspect that should be used to display the species
+  * `fading` (boolean): Used in conjunction with 'trace:', allows to apply a fading effect to the previous traces. Default is false
+  * `focus` (agent): the agent on with will be focus the camera (it is dynamically computed)
+  * `position` (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
+  * `refresh` (boolean): (openGL only) specify whether the display of the species is refreshed. (true by default, useful in case of agents that do not move)
+  * `selectable` (boolean): Indicates whether the agents present on this layer are selectable by the user. Default is true
+  * `size` (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
+  * `trace` (any type in [boolean, int]): Allows to aggregate the visualization of agents at each timestep on the display. Default is false. If set to an int value, only the last n-th steps will be visualized. If set to true, no limit of timesteps is applied.
+  * `transparency` (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency)
+
 #### Embedments
-* The agents statement is of type: **Layer**
-* The agents statement can be embedded into: display, 
-* The agents statement embeds statements:  
+* The `agents` statement is of type: **Layer**
+* The `agents` statement can be embedded into: display, 
+* The `agents` statement embeds statements:  
  	
 #### Definition
 
@@ -432,18 +439,19 @@ display Segregation {
 ### annealing 
 #### Facets 
 		  
-  * **name**  (an identifier), (omissible) : 
-  * aggregation (a label), takes values in: {min, max}: the agregation method
-  * maximize (float): the value the algorithm tries to maximize
-  * minimize (float): the value the algorithm tries to minimize
-  * nb_iter_cst_temp (int): number of iterations per level of temperature
-  * temp_decrease (float): temperature decrease coefficient
-  * temp_end (float): final temperature
-  * temp_init (float): initial temperature
+  * **`name`** (an identifier), (omissible) : 
+  * `aggregation` (a label), takes values in: {min, max}: the agregation method
+  * `maximize` (float): the value the algorithm tries to maximize
+  * `minimize` (float): the value the algorithm tries to minimize
+  * `nb_iter_cst_temp` (int): number of iterations per level of temperature
+  * `temp_decrease` (float): temperature decrease coefficient
+  * `temp_end` (float): final temperature
+  * `temp_init` (float): initial temperature
+
 #### Embedments
-* The annealing statement is of type: **Batch method**
-* The annealing statement can be embedded into: Experiment, 
-* The annealing statement embeds statements:  
+* The `annealing` statement is of type: **Batch method**
+* The `annealing` statement can be embedded into: Experiment, 
+* The `annealing` statement embeds statements:  
  	
 #### Definition
 
@@ -471,12 +479,13 @@ method annealing temp_init: 100  temp_end: 1 temp_decrease: 0.5 nb_iter_cst_temp
 ### ask 
 #### Facets 
 		  
-  * **target**  (any type in [container, agent]), (omissible) : an expression that evaluates to an agent or a list of agents
-  * as (species): an expression that evaluates to a species
+  * **`target`** (any type in [container, agent]), (omissible) : an expression that evaluates to an agent or a list of agents
+  * `as` (species): an expression that evaluates to a species
+
 #### Embedments
-* The ask statement is of type: **Sequence of statements or action**
-* The ask statement can be embedded into: chart, Behavior, Sequence of statements or action, 
-* The ask statement embeds statements:  
+* The `ask` statement is of type: **Sequence of statements or action**
+* The `ask` statement can be embedded into: chart, Behavior, Sequence of statements or action, 
+* The `ask` statement embeds statements:  
  	
 #### Definition
 
@@ -543,11 +552,12 @@ species animal {
 ### aspect 
 #### Facets 
 		
-  * name (an identifier), (omissible) : identifier of the aspect (it can be used in a display to identify which aspect should be used for the given species)
+  * `name` (an identifier), (omissible) : identifier of the aspect (it can be used in a display to identify which aspect should be used for the given species)
+
 #### Embedments
-* The aspect statement is of type: **Behavior**
-* The aspect statement can be embedded into: Species, Model, 
-* The aspect statement embeds statements: [#draw draw],   
+* The `aspect` statement is of type: **Behavior**
+* The `aspect` statement can be embedded into: Species, Model, 
+* The `aspect` statement embeds statements: [#draw draw],   
  	
 #### Definition
 
@@ -576,10 +586,11 @@ species one_species {
 ### break 
 #### Facets 
 		
+
 #### Embedments
-* The break statement is of type: **Single statement**
-* The break statement can be embedded into: Sequence of statements or action, 
-* The break statement embeds statements:  
+* The `break` statement is of type: **Single statement**
+* The `break` statement can be embedded into: Sequence of statements or action, 
+* The `break` statement embeds statements:  
  	
 #### Definition
 
@@ -595,13 +606,14 @@ species one_species {
 ### capture 
 #### Facets 
 		  
-  * **target**  (any type in [agent, container]), (omissible) : an expression that is evaluated as an agent or a list of the agent to be captured
-  * as (species): the species that the captured agent(s) will become, this is a micro-species of the calling agent's species
-  * returns (a new identifier): a list of the newly captured agent(s)
+  * **`target`** (any type in [agent, container]), (omissible) : an expression that is evaluated as an agent or a list of the agent to be captured
+  * `as` (species): the species that the captured agent(s) will become, this is a micro-species of the calling agent's species
+  * `returns` (a new identifier): a list of the newly captured agent(s)
+
 #### Embedments
-* The capture statement is of type: **Sequence of statements or action**
-* The capture statement can be embedded into: Behavior, Sequence of statements or action, 
-* The capture statement embeds statements:  
+* The `capture` statement is of type: **Sequence of statements or action**
+* The `capture` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `capture` statement embeds statements:  
  	
 #### Definition
 
@@ -645,37 +657,38 @@ capture target: list (B) as: C;
 ### chart 
 #### Facets 
 		  
-  * **name**  (a label), (omissible) : the identifier of the chart layer
-  * axes (rgb): the axis color
-  * background (rgb): the background color
-  * color (rgb): 
-  * gap (float): 
-  * label_font (string): 
-  * label_font_size (int): 
-  * label_font_style (an identifier), takes values in: {plain, bold, italic}: the style used to display labels
-  * legend_font (string): 
-  * legend_font_size (int): 
-  * legend_font_style (an identifier), takes values in: {plain, bold, italic}: the style used to display legend
-  * position (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
-  * size (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
-  * style (an identifier), takes values in: {exploded, 3d, stack, bar}: 
-  * tick_font (string): 
-  * tick_font_size (int): 
-  * tick_font_style (an identifier), takes values in: {plain, bold, italic}: the style used to display ticks
-  * timexseries (list): for series charts, change the default time serie (simulation cycle) for an other value.
-  * title_font (string): 
-  * title_font_size (int): 
-  * title_font_style (an identifier), takes values in: {plain, bold, italic}: the style used to display titles
-  * transparency (float): the style of the chart
-  * type (an identifier), takes values in: {xy, scatter, histogram, series, pie, box_whisker}: the type of chart. It could be histogram, series, xy, pie or box whisker. The difference between series and xy is that the former adds an implicit x-axis that refers to the numbers of cycles, while the latter considers the first declaration of data to be its x-axis.
-  * x_range (any type in [float, int, point]): range of the x-axis. Can be a number (which will set the axis total range) or a point (which will set the min and max of the axis).
-  * x_tick_unit (float): the tick unit for the y-axis (distance between horyzontal lines and values on the left of the axis).
-  * y_range (any type in [float, int, point]): range of the y-axis. Can be a number (which will set the axis total range) or a point (which will set the min and max of the axis).
-  * y_tick_unit (float): the tick unit for the x-axis (distance between vertical lines and values bellow the axis).
+  * **`name`** (a label), (omissible) : the identifier of the chart layer
+  * `axes` (rgb): the axis color
+  * `background` (rgb): the background color
+  * `color` (rgb): 
+  * `gap` (float): 
+  * `label_font` (string): 
+  * `label_font_size` (int): 
+  * `label_font_style` (an identifier), takes values in: {plain, bold, italic}: the style used to display labels
+  * `legend_font` (string): 
+  * `legend_font_size` (int): 
+  * `legend_font_style` (an identifier), takes values in: {plain, bold, italic}: the style used to display legend
+  * `position` (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
+  * `size` (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
+  * `style` (an identifier), takes values in: {exploded, 3d, stack, bar}: 
+  * `tick_font` (string): 
+  * `tick_font_size` (int): 
+  * `tick_font_style` (an identifier), takes values in: {plain, bold, italic}: the style used to display ticks
+  * `timexseries` (list): for series charts, change the default time serie (simulation cycle) for an other value.
+  * `title_font` (string): 
+  * `title_font_size` (int): 
+  * `title_font_style` (an identifier), takes values in: {plain, bold, italic}: the style used to display titles
+  * `transparency` (float): the style of the chart
+  * `type` (an identifier), takes values in: {xy, scatter, histogram, series, pie, box_whisker}: the type of chart. It could be histogram, series, xy, pie or box whisker. The difference between series and xy is that the former adds an implicit x-axis that refers to the numbers of cycles, while the latter considers the first declaration of data to be its x-axis.
+  * `x_range` (any type in [float, int, point]): range of the x-axis. Can be a number (which will set the axis total range) or a point (which will set the min and max of the axis).
+  * `x_tick_unit` (float): the tick unit for the y-axis (distance between horyzontal lines and values on the left of the axis).
+  * `y_range` (any type in [float, int, point]): range of the y-axis. Can be a number (which will set the axis total range) or a point (which will set the min and max of the axis).
+  * `y_tick_unit` (float): the tick unit for the x-axis (distance between vertical lines and values bellow the axis).
+
 #### Embedments
-* The chart statement is of type: **Layer**
-* The chart statement can be embedded into: display, 
-* The chart statement embeds statements: [#add add],  [#ask ask],  [#data data],  [#datalist datalist],  [#do do],  [#put put],  [#remove remove],  [#set set],  [#simulate simulate],  [#using using],   
+* The `chart` statement is of type: **Layer**
+* The `chart` statement can be embedded into: display, 
+* The `chart` statement embeds statements: [#add add],  [#ask ask],  [#data data],  [#datalist datalist],  [#do do],  [#put put],  [#remove remove],  [#set set],  [#simulate simulate],  [#using using],   
  	
 #### Definition
 
@@ -702,17 +715,18 @@ display chart_display {
 ### create 
 #### Facets 
 		
-  * species (species), (omissible) : an expression that evaluates to a species, the species of created agents
-  * as (species): 
-  * from (any type): an expression that evaluates to a localized entity, a list of localized entities, a string (the path of a shapefile, a .csv, a .asc or a OSM file) or a container returned by a request to a database
-  * header (boolean): an expression that evaluates to a boolean, when creating agents from csv file, specify whether the file header is loaded
-  * number (int): an expression that evaluates to an int, the number of created agents
-  * returns (a new identifier): a new temporary variable name containing the list of created agents (a lsit even if only one agent has been created)
-  * with (map): an expression that evaluates to a map, for each pair the key is a species attribute and the value the assigned value
+  * `species` (species), (omissible) : an expression that evaluates to a species, the species of created agents
+  * `as` (species): 
+  * `from` (any type): an expression that evaluates to a localized entity, a list of localized entities, a string (the path of a shapefile, a .csv, a .asc or a OSM file) or a container returned by a request to a database
+  * `header` (boolean): an expression that evaluates to a boolean, when creating agents from csv file, specify whether the file header is loaded
+  * `number` (int): an expression that evaluates to an int, the number of created agents
+  * `returns` (a new identifier): a new temporary variable name containing the list of created agents (a lsit even if only one agent has been created)
+  * `with` (map): an expression that evaluates to a map, for each pair the key is a species attribute and the value the assigned value
+
 #### Embedments
-* The create statement is of type: **Sequence of statements or action**
-* The create statement can be embedded into: Behavior, Sequence of statements or action, 
-* The create statement embeds statements:  
+* The `create` statement is of type: **Sequence of statements or action**
+* The `create` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `create` statement embeds statements:  
  	
 #### Definition
 
@@ -791,19 +805,20 @@ create species: a_species number: an_int;
 ### data 
 #### Facets 
 		  
-  * **value**  (any type in [float, point, list]): 
-  * legend (string), (omissible) : 
-  * color (rgb): 
-  * fill (boolean): 
-  * line_visible (boolean): 
-  * marker (boolean): 
-  * marker_shape (an identifier), takes values in: {marker_empty, marker_sqaure, marker_square, marker_up_triangle, marker_diamond, marker_hor_rectangle, marker_down_triangle, marker_hor_ellipse, marker_right_triangle, marker_vert_rectangle, marker_left_triangle}: 
-  * name (an identifier): 
-  * style (an identifier), takes values in: {line, whisker, area, bar, dot, step, spline, stack, 3d, ring, exploded}: 
+  * **`value`** (any type in [float, point, list]): 
+  * `legend` (string), (omissible) : 
+  * `color` (rgb): 
+  * `fill` (boolean): 
+  * `line_visible` (boolean): 
+  * `marker` (boolean): 
+  * `marker_shape` (an identifier), takes values in: {marker_empty, marker_sqaure, marker_square, marker_up_triangle, marker_diamond, marker_hor_rectangle, marker_down_triangle, marker_hor_ellipse, marker_right_triangle, marker_vert_rectangle, marker_left_triangle}: 
+  * `name` (an identifier): 
+  * `style` (an identifier), takes values in: {line, whisker, area, bar, dot, step, spline, stack, 3d, ring, exploded}: 
+
 #### Embedments
-* The data statement is of type: **Single statement**
-* The data statement can be embedded into: chart, Sequence of statements or action, 
-* The data statement embeds statements: 
+* The `data` statement is of type: **Single statement**
+* The `data` statement can be embedded into: chart, Sequence of statements or action, 
+* The `data` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -812,19 +827,20 @@ create species: a_species number: an_int;
 ### datalist 
 #### Facets 
 		  
-  * **value**  (list): the values to display. Has to be a List of List. Each element can be a number (series/histogram) or a list with two values (XY chart)
-  * legend (list), (omissible) : the name of the series: a list of strings (can be a variable with dynamic names)
-  * categoriesnames (list): the name of categories (can be a variable with dynamic names)
-  * color (list): list of colors
-  * fill (boolean): 
-  * inverse_series_categories (boolean): reverse the order of series/categories ([[1,2],[3,4],[5,6]] --> [[1,3,5],[2,4,6]]. May be useful when it is easier to construct one list over the other.
-  * line_visible (boolean): 
-  * marker (boolean): 
-  * style (an identifier), takes values in: {line, whisker, area, bar, dot, step, spline, stack, 3d, ring, exploded}: series style
+  * **`value`** (list): the values to display. Has to be a List of List. Each element can be a number (series/histogram) or a list with two values (XY chart)
+  * `legend` (list), (omissible) : the name of the series: a list of strings (can be a variable with dynamic names)
+  * `categoriesnames` (list): the name of categories (can be a variable with dynamic names)
+  * `color` (list): list of colors
+  * `fill` (boolean): 
+  * `inverse_series_categories` (boolean): reverse the order of series/categories ([[1,2],[3,4],[5,6]] --> [[1,3,5],[2,4,6]]. May be useful when it is easier to construct one list over the other.
+  * `line_visible` (boolean): 
+  * `marker` (boolean): 
+  * `style` (an identifier), takes values in: {line, whisker, area, bar, dot, step, spline, stack, 3d, ring, exploded}: series style
+
 #### Embedments
-* The datalist statement is of type: **Single statement**
-* The datalist statement can be embedded into: chart, Sequence of statements or action, 
-* The datalist statement embeds statements: 
+* The `datalist` statement is of type: **Single statement**
+* The `datalist` statement can be embedded into: chart, Sequence of statements or action, 
+* The `datalist` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -833,11 +849,12 @@ create species: a_species number: an_int;
 ### default 
 #### Facets 
 		
-  * value (any type), (omissible) : 
+  * `value` (any type), (omissible) : 
+
 #### Embedments
-* The default statement is of type: **Sequence of statements or action**
-* The default statement can be embedded into: switch, 
-* The default statement embeds statements:  
+* The `default` statement is of type: **Sequence of statements or action**
+* The `default` statement can be embedded into: switch, 
+* The `default` statement embeds statements:  
  	
 #### Definition
 
@@ -854,18 +871,19 @@ Used in a switch match structure, the block prefixed by default is executed only
 ### diffusion 
 #### Facets 
 		  
-  * **var**  (an identifier), (omissible) : the variable to be diffused  
-  * **on**  (an identifier): the species (in general a grid), on which the diffusion will occur
-  * cycle_length (int): the number of diffusion operation applied in one simulation step
-  * mask (matrix): a matrix masking the diffusion (matrix created from a image for example)
-  * mat_diffu (matrix): the diffusion matrix (can have any size)
-  * method (an identifier), takes values in: {convolution, dot_product}: the diffusion method
-  * proportion (float): a diffusion rate
-  * radius (int): a diffusion radius
+  * **`var`** (an identifier), (omissible) : the variable to be diffused  
+  * **`on`** (an identifier): the species (in general a grid), on which the diffusion will occur
+  * `cycle_length` (int): the number of diffusion operation applied in one simulation step
+  * `mask` (matrix): a matrix masking the diffusion (matrix created from a image for example)
+  * `mat_diffu` (matrix): the diffusion matrix (can have any size)
+  * `method` (an identifier), takes values in: {convolution, dot_product}: the diffusion method
+  * `proportion` (float): a diffusion rate
+  * `radius` (int): a diffusion radius
+
 #### Embedments
-* The diffusion statement is of type: **Single statement**
-* The diffusion statement can be embedded into: Behavior, Sequence of statements or action, 
-* The diffusion statement embeds statements:  
+* The `diffusion` statement is of type: **Single statement**
+* The `diffusion` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `diffusion` statement embeds statements:  
  	
 #### Definition
 
@@ -900,34 +918,35 @@ diffusion var: phero on: cells proportion: 1/9 radius: 1;
 ### display 
 #### Facets 
 		  
-  * **name**  (a label), (omissible) : the identifier of the display
-  * ambient_light (any type in [int, rgb]): Allows to define the value of the ambient light either using an int (ambient_light:(125)) or a rgb color ((ambient_light:rgb(255,255,255)). default is rgb(125,125,125)
-  * autosave (any type in [boolean, point]): Allows to save this display on disk. A value of true/false will save it at a resolution of 500x500. A point can be passed to personalize these dimensions
-  * background (rgb): Allows to fill the background of the display with a specific color
-  * camera_look_pos (point): Allows to define the direction of the camera
-  * camera_pos (any type in [point, agent]): Allows to define the position of the camera
-  * camera_up_vector (point): Allows to define the orientation of the camera
-  * diffuse_light (any type in [int, rgb]): Allows to define the value of the diffuse light either using an int (diffuse_light:(125)) or a rgb color ((diffuse_light:rgb(255,255,255)). default is rgb(125,125,125)
-  * diffuse_light_pos (point): Allows to define the position of the diffuse light either using an point (diffuse_light_pos:{x,y,z}). default is {world.shape.width/2,world.shape.height/2,world.shape.width`*`2}
-  * draw_diffuse_light (boolean): Allows to enable/disable the drawing of the diffuse light. Default is false
-  * draw_env (boolean): Allows to enable/disable the drawing of the world shape and the ordinate axes. Default can be configured in Preferences
-  * focus (geometry): the geometry (or agent) on which the displau will (dynamically) focus
-  * light (boolean): Allows to enable/disable the light. Default is true
-  * orthographic_projection (boolean): Allows to enable/disable the orthographic projection. Default can be configured in Preferences
-  * output3D (any type in [boolean, point]): 
-  * polygonmode (boolean): 
-  * refresh (boolean): Indicates the condition under which this output should be refreshed (default is true)
-  * refresh_every (int): Allows to refresh the display every n time steps (default is 1)
-  * scale (any type in [boolean, float]): Allows to display a scale bar in the overlay. Accepts true/false or an unit name
-  * show_fps (boolean): Allows to enable/disable the drawing of the number of frames per second
-  * tesselation (boolean): 
-  * trace (any type in [boolean, int]): Allows to aggregate the visualization of agents at each timestep on the display. Default is false. If set to an int value, only the last n-th steps will be visualized. If set to true, no limit of timesteps is applied. This facet can also be applied to individual layers
-  * type (a label): Allows to use either Java2D (for planar models) or OpenGL (for 3D models) as the rendering subsystem
-  * z_fighting (boolean): Allows to alleviate a problem where agents at the same z would overlap each other in random ways
+  * **`name`** (a label), (omissible) : the identifier of the display
+  * `ambient_light` (any type in [int, rgb]): Allows to define the value of the ambient light either using an int (ambient_light:(125)) or a rgb color ((ambient_light:rgb(255,255,255)). default is rgb(125,125,125)
+  * `autosave` (any type in [boolean, point]): Allows to save this display on disk. A value of true/false will save it at a resolution of 500x500. A point can be passed to personalize these dimensions
+  * `background` (rgb): Allows to fill the background of the display with a specific color
+  * `camera_look_pos` (point): Allows to define the direction of the camera
+  * `camera_pos` (any type in [point, agent]): Allows to define the position of the camera
+  * `camera_up_vector` (point): Allows to define the orientation of the camera
+  * `diffuse_light` (any type in [int, rgb]): Allows to define the value of the diffuse light either using an int (diffuse_light:(125)) or a rgb color ((diffuse_light:rgb(255,255,255)). default is rgb(125,125,125)
+  * `diffuse_light_pos` (point): Allows to define the position of the diffuse light either using an point (diffuse_light_pos:{x,y,z}). default is {world.shape.width/2,world.shape.height/2,world.shape.width`*`2}
+  * `draw_diffuse_light` (boolean): Allows to enable/disable the drawing of the diffuse light. Default is false
+  * `draw_env` (boolean): Allows to enable/disable the drawing of the world shape and the ordinate axes. Default can be configured in Preferences
+  * `focus` (geometry): the geometry (or agent) on which the displau will (dynamically) focus
+  * `light` (boolean): Allows to enable/disable the light. Default is true
+  * `orthographic_projection` (boolean): Allows to enable/disable the orthographic projection. Default can be configured in Preferences
+  * `output3D` (any type in [boolean, point]): 
+  * `polygonmode` (boolean): 
+  * `refresh` (boolean): Indicates the condition under which this output should be refreshed (default is true)
+  * `refresh_every` (int): Allows to refresh the display every n time steps (default is 1)
+  * `scale` (any type in [boolean, float]): Allows to display a scale bar in the overlay. Accepts true/false or an unit name
+  * `show_fps` (boolean): Allows to enable/disable the drawing of the number of frames per second
+  * `tesselation` (boolean): 
+  * `trace` (any type in [boolean, int]): Allows to aggregate the visualization of agents at each timestep on the display. Default is false. If set to an int value, only the last n-th steps will be visualized. If set to true, no limit of timesteps is applied. This facet can also be applied to individual layers
+  * `type` (a label): Allows to use either Java2D (for planar models) or OpenGL (for 3D models) as the rendering subsystem
+  * `z_fighting` (boolean): Allows to alleviate a problem where agents at the same z would overlap each other in random ways
+
 #### Embedments
-* The display statement is of type: **Output**
-* The display statement can be embedded into: output, permanent, 
-* The display statement embeds statements: [#agents agents],  [#chart chart],  [#display_grid display_grid],  [#display_population display_population],  [#event event],  [#graphics graphics],  [#image image],  [#overlay overlay],  [#quadtree quadtree],  [#text text],   
+* The `display` statement is of type: **Output**
+* The `display` statement can be embedded into: output, permanent, 
+* The `display` statement embeds statements: [#agents agents],  [#chart chart],  [#display_grid display_grid],  [#display_population display_population],  [#event event],  [#graphics graphics],  [#image image],  [#overlay overlay],  [#quadtree quadtree],  [#text text],   
  	
 #### Definition
 
@@ -958,24 +977,25 @@ display gridWithElevationTriangulated type: opengl ambient_light: 100 {
 ### display_grid 
 #### Facets 
 		  
-  * **species**  (species), (omissible) : the species of the agents in the grid
-  * dem (matrix): 
-  * draw_as_dem (boolean): 
-  * elevation (any type in [matrix, float, int, boolean]): Allows to specify the elevation of each cell, if any. Can be a matrix of float (provided it has the same size than the grid), an int or float variable of the grid species, or simply true (in which case, the variable called 'grid_value' is used to compute the elevation of each cell)
-  * grayscale (boolean): if true, givse a grey value to each polygon depending on its elevation (false by default)
-  * lines (rgb): the color to draw lines (borders of cells)
-  * position (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
-  * refresh (boolean): (openGL only) specify whether the display of the species is refreshed. (true by default, usefull in case of agents that do not move)
-  * selectable (boolean): Indicates whether the agents present on this layer are selectable by the user. Default is true
-  * size (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
-  * text (boolean): specify whether the attribute used to compute the elevation is displayed on each cells (false by default)
-  * texture (any type in [boolean, file]): the file object containing the texture image to be applied on the grid
-  * transparency (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency)
-  * triangulation (boolean): specifies whther the cells will be triangulated: if it is false, they will be displayed as horizontal squares at a given elevation, whereas if it is true, cells will be triangulated and linked to neighbors in order to have a continuous surface (false by default)
+  * **`species`** (species), (omissible) : the species of the agents in the grid
+  * `dem` (matrix): 
+  * `draw_as_dem` (boolean): 
+  * `elevation` (any type in [matrix, float, int, boolean]): Allows to specify the elevation of each cell, if any. Can be a matrix of float (provided it has the same size than the grid), an int or float variable of the grid species, or simply true (in which case, the variable called 'grid_value' is used to compute the elevation of each cell)
+  * `grayscale` (boolean): if true, givse a grey value to each polygon depending on its elevation (false by default)
+  * `lines` (rgb): the color to draw lines (borders of cells)
+  * `position` (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
+  * `refresh` (boolean): (openGL only) specify whether the display of the species is refreshed. (true by default, usefull in case of agents that do not move)
+  * `selectable` (boolean): Indicates whether the agents present on this layer are selectable by the user. Default is true
+  * `size` (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
+  * `text` (boolean): specify whether the attribute used to compute the elevation is displayed on each cells (false by default)
+  * `texture` (any type in [boolean, file]): the file object containing the texture image to be applied on the grid
+  * `transparency` (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency)
+  * `triangulation` (boolean): specifies whther the cells will be triangulated: if it is false, they will be displayed as horizontal squares at a given elevation, whereas if it is true, cells will be triangulated and linked to neighbors in order to have a continuous surface (false by default)
+
 #### Embedments
-* The display_grid statement is of type: **Layer**
-* The display_grid statement can be embedded into: display, 
-* The display_grid statement embeds statements:  
+* The `display_grid` statement is of type: **Layer**
+* The `display_grid` statement can be embedded into: display, 
+* The `display_grid` statement embeds statements:  
  	
 #### Definition
 
@@ -1008,19 +1028,20 @@ display my_display {
 ### display_population 
 #### Facets 
 		  
-  * **species**  (species), (omissible) : the species to be displayed
-  * aspect (an identifier): the name of the aspect that should be used to display the species
-  * fading (boolean): Used in conjunction with 'trace:', allows to apply a fading effect to the previous traces. Default is false
-  * position (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
-  * refresh (boolean): (openGL only) specify whether the display of the species is refreshed. (true by default, usefull in case of agents that do not move)
-  * selectable (boolean): Indicates whether the agents present on this layer are selectable by the user. Default is true
-  * size (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
-  * trace (any type in [boolean, int]): Allows to aggregate the visualization of agents at each timestep on the display. Default is false. If set to an int value, only the last n-th steps will be visualized. If set to true, no limit of timesteps is applied.
-  * transparency (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency)
+  * **`species`** (species), (omissible) : the species to be displayed
+  * `aspect` (an identifier): the name of the aspect that should be used to display the species
+  * `fading` (boolean): Used in conjunction with 'trace:', allows to apply a fading effect to the previous traces. Default is false
+  * `position` (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
+  * `refresh` (boolean): (openGL only) specify whether the display of the species is refreshed. (true by default, usefull in case of agents that do not move)
+  * `selectable` (boolean): Indicates whether the agents present on this layer are selectable by the user. Default is true
+  * `size` (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
+  * `trace` (any type in [boolean, int]): Allows to aggregate the visualization of agents at each timestep on the display. Default is false. If set to an int value, only the last n-th steps will be visualized. If set to true, no limit of timesteps is applied.
+  * `transparency` (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency)
+
 #### Embedments
-* The display_population statement is of type: **Layer**
-* The display_population statement can be embedded into: display, display_population, 
-* The display_population statement embeds statements: [#display_population display_population],   
+* The `display_population` statement is of type: **Layer**
+* The `display_population` statement can be embedded into: display, display_population, 
+* The `display_population` statement embeds statements: [#display_population display_population],   
  	
 #### Definition
 
@@ -1065,14 +1086,15 @@ display my_display type: opengl{
 ### do 
 #### Facets 
 		  
-  * **action**  (an identifier), (omissible) : the name of an action or a primitive
-  * internal_function (any type): 
-  * returns (a new identifier): create a new variable and assign to it the result of the action
-  * with (map): a map expression containing the parameters of the action
+  * **`action`** (an identifier), (omissible) : the name of an action or a primitive
+  * `internal_function` (any type): 
+  * `returns` (a new identifier): create a new variable and assign to it the result of the action
+  * `with` (map): a map expression containing the parameters of the action
+
 #### Embedments
-* The do statement is of type: **Single statement**
-* The do statement can be embedded into: chart, Behavior, Sequence of statements or action, 
-* The do statement embeds statements:  
+* The `do` statement is of type: **Single statement**
+* The `do` statement can be embedded into: chart, Behavior, Sequence of statements or action, 
+* The `do` statement embeds statements:  
  	
 #### Definition
 
@@ -1138,30 +1160,31 @@ do name_of_action_or_primitive {
 ### draw 
 #### Facets 
 		
-  * geometry (any type), (omissible) : any type of data (it can be geometry, image, text)
-  * at (point): location where the shape/text/icon is drawn
-  * begin_arrow (any type in [int, float]): the size of the arrow, located at the beginning of the drawn geometry
-  * bitmap (boolean): 
-  * border (any type in [rgb, boolean]): if used with a color, represents the color of the geometry border. If set to false, expresses that no border should be drawn. If not set, the borders will be drawn using the color of the geometry.
-  * color (rgb): the color to use to display the text/icon/geometry
-  * depth (float): (only if the display type is opengl) Add a depth to the geometry previously defined (a line becomes a plan, a circle becomes a cylinder, a square becomes a cube, a polygon becomes a polyhedron with height equal to the depth value). Note: This only works if a the agent has not a point geometry
-  * empty (boolean): a condition specifying whether the geometry is empty or full
-  * end_arrow (any type in [int, float]): the size of the arrow, located at the end of the drawn geometry
-  * font (any type in [19, string]): the font used to draw the text
-  * image (string): path of the icon to draw (JPEG, PNG, GIF)
-  * rotate (any type in [float, int]): orientation of the shape/text/icon
-  * rounded (boolean): specify whether the geometry have to be rounded (e.g. for squares)
-  * scale (float): 
-  * shape (any type): the shape to display
-  * size (float): size of the text/icon (not used in the context of the drawing of a geometry)
-  * style (an identifier), takes values in: {plain, bold, italic}: the style used to display text
-  * text (string): the text to draw
-  * texture (any type in [string, list]): the texture that should be applied to the geometry
-  * to (point): 
+  * `geometry` (any type), (omissible) : any type of data (it can be geometry, image, text)
+  * `at` (point): location where the shape/text/icon is drawn
+  * `begin_arrow` (any type in [int, float]): the size of the arrow, located at the beginning of the drawn geometry
+  * `bitmap` (boolean): 
+  * `border` (any type in [rgb, boolean]): if used with a color, represents the color of the geometry border. If set to false, expresses that no border should be drawn. If not set, the borders will be drawn using the color of the geometry.
+  * `color` (rgb): the color to use to display the text/icon/geometry
+  * `depth` (float): (only if the display type is opengl) Add a depth to the geometry previously defined (a line becomes a plan, a circle becomes a cylinder, a square becomes a cube, a polygon becomes a polyhedron with height equal to the depth value). Note: This only works if a the agent has not a point geometry
+  * `empty` (boolean): a condition specifying whether the geometry is empty or full
+  * `end_arrow` (any type in [int, float]): the size of the arrow, located at the end of the drawn geometry
+  * `font` (any type in [19, string]): the font used to draw the text
+  * `image` (string): path of the icon to draw (JPEG, PNG, GIF)
+  * `rotate` (any type in [float, int]): orientation of the shape/text/icon
+  * `rounded` (boolean): specify whether the geometry have to be rounded (e.g. for squares)
+  * `scale` (float): 
+  * `shape` (any type): the shape to display
+  * `size` (float): size of the text/icon (not used in the context of the drawing of a geometry)
+  * `style` (an identifier), takes values in: {plain, bold, italic}: the style used to display text
+  * `text` (string): the text to draw
+  * `texture` (any type in [string, list]): the texture that should be applied to the geometry
+  * `to` (point): 
+
 #### Embedments
-* The draw statement is of type: **Single statement**
-* The draw statement can be embedded into: aspect, Sequence of statements or action, Layer, 
-* The draw statement embeds statements:  
+* The `draw` statement is of type: **Single statement**
+* The `draw` statement can be embedded into: aspect, Sequence of statements or action, Layer, 
+* The `draw` statement embeds statements:  
  	
 #### Definition
 
@@ -1204,10 +1227,11 @@ aspect arrowAspect {
 ### else 
 #### Facets 
 		
+
 #### Embedments
-* The else statement is of type: **Sequence of statements or action**
-* The else statement can be embedded into: if, 
-* The else statement embeds statements:  
+* The `else` statement is of type: **Sequence of statements or action**
+* The `else` statement can be embedded into: if, 
+* The `else` statement embeds statements:  
  	
 #### Definition
 
@@ -1224,10 +1248,11 @@ This statement cannot be used alone
 ### enter 
 #### Facets 
 		
+
 #### Embedments
-* The enter statement is of type: **Sequence of statements or action**
-* The enter statement can be embedded into: state, 
-* The enter statement embeds statements:  
+* The `enter` statement is of type: **Sequence of statements or action**
+* The `enter` statement can be embedded into: state, 
+* The `enter` statement embeds statements:  
  	
 #### Definition
 
@@ -1255,15 +1280,16 @@ In an FSM architecture, `enter` introduces a sequence of statements to execute u
 ### equation 
 #### Facets 
 		  
-  * **name**  (an identifier), (omissible) : the equation identifier
-  * params (list): the list of pramameters used in predefined equation systems
-  * simultaneously (list): a list of agents containing a system of equations (all systems will be solved simultaneously)
-  * type (an identifier), takes values in: {SI, SIS, SIR, SIRS, SEIR, LV}: the choice of one among classical models (SI, SIS, SIR, SIRS, SEIR, LV)
-  * vars (list): the list of variables used in predefined equation systems
+  * **`name`** (an identifier), (omissible) : the equation identifier
+  * `params` (list): the list of pramameters used in predefined equation systems
+  * `simultaneously` (list): a list of agents containing a system of equations (all systems will be solved simultaneously)
+  * `type` (an identifier), takes values in: {SI, SIS, SIR, SIRS, SEIR, LV}: the choice of one among classical models (SI, SIS, SIR, SIRS, SEIR, LV)
+  * `vars` (list): the list of variables used in predefined equation systems
+
 #### Embedments
-* The equation statement is of type: **Sequence of statements or action**
-* The equation statement can be embedded into: Species, Model, 
-* The equation statement embeds statements: [#= =],   
+* The `equation` statement is of type: **Sequence of statements or action**
+* The `equation` statement can be embedded into: Species, Model, 
+* The `equation` statement embeds statements: [#= =],   
  	
 #### Definition
 
@@ -1304,11 +1330,12 @@ equation eqLV type: LV vars: [x,y,t] params: [alpha,beta,delta,gamma] ;
 ### error 
 #### Facets 
 		  
-  * **message**  (string), (omissible) : the message to display in the error.
+  * **`message`** (string), (omissible) : the message to display in the error.
+
 #### Embedments
-* The error statement is of type: **Single statement**
-* The error statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
-* The error statement embeds statements:  
+* The `error` statement is of type: **Single statement**
+* The `error` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
+* The `error` statement embeds statements:  
  	
 #### Definition
 
@@ -1330,14 +1357,15 @@ error 'This is an error raised by ' + self;
 ### event 
 #### Facets 
 		  
-  * **name**  (an identifier), (omissible) , takes values in: {mouse_up, mouse_down, mouse_drag}: the type of event captured  
-  * **action**  (string): the identifier of the action to be executed. It has to be an action written in the global block. This action have to follow the following specification: `action myAction (point location, list selected_agents)`
-  * mouse_location (string): 
-  * selected_agents (string): 
+  * **`name`** (an identifier), (omissible) , takes values in: {mouse_up, mouse_down, mouse_drag}: the type of event captured  
+  * **`action`** (string): the identifier of the action to be executed. It has to be an action written in the global block. This action have to follow the following specification: `action myAction (point location, list selected_agents)`
+  * `mouse_location` (string): 
+  * `selected_agents` (string): 
+
 #### Embedments
-* The event statement is of type: **Layer**
-* The event statement can be embedded into: display, 
-* The event statement embeds statements:  
+* The `event` statement is of type: **Layer**
+* The `event` statement can be embedded into: display, 
+* The `event` statement embeds statements:  
  	
 #### Definition
 
@@ -1380,14 +1408,15 @@ experiment Simple type:gui {
 ### exhaustive 
 #### Facets 
 		  
-  * **name**  (an identifier), (omissible) : 
-  * aggregation (a label), takes values in: {min, max}: the agregation method
-  * maximize (float): the value the algorithm tries to maximize
-  * minimize (float): the value the algorithm tries to minimize
+  * **`name`** (an identifier), (omissible) : 
+  * `aggregation` (a label), takes values in: {min, max}: the agregation method
+  * `maximize` (float): the value the algorithm tries to maximize
+  * `minimize` (float): the value the algorithm tries to minimize
+
 #### Embedments
-* The exhaustive statement is of type: **Batch method**
-* The exhaustive statement can be embedded into: Experiment, 
-* The exhaustive statement embeds statements:  
+* The `exhaustive` statement is of type: **Batch method**
+* The `exhaustive` statement can be embedded into: Experiment, 
+* The `exhaustive` statement embeds statements:  
  	
 #### Definition
 
@@ -1415,10 +1444,11 @@ method exhaustive maximize: food_gathered;
 ### exit 
 #### Facets 
 		
+
 #### Embedments
-* The exit statement is of type: **Sequence of statements or action**
-* The exit statement can be embedded into: state, 
-* The exit statement embeds statements:  
+* The `exit` statement is of type: **Sequence of statements or action**
+* The `exit` statement can be embedded into: state, 
+* The `exit` statement embeds statements:  
  	
 #### Definition
 
@@ -1449,22 +1479,23 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 ### experiment 
 #### Facets 
 		  
-  * **name**  (a label), (omissible) : identifier of the experiment  
-  * **title**  (a label):   
-  * **type**  (a label), takes values in: {batch, gui}: the type of the experiment (either 'gui' or 'batch'
-  * control (an identifier): 
-  * frequency (int): the execution frequence of the experiment (default value: 1). If frequency: 10, the experiment is executed only each 10 steps.
-  * keep_seed (boolean): 
-  * multicore (boolean): 
-  * parent (an identifier): the parent experiment (in case of inheritance between experiments)
-  * repeat (int): In case of a batch experiment, expresses hom many times the simulations must be repeated
-  * schedules (container): an ordered list of agents giving the order of their execution
-  * skills (list): 
-  * until (boolean): In case of a batch experiment, an expression that will be evaluated to know when a simulation should be terminated
+  * **`name`** (a label), (omissible) : identifier of the experiment  
+  * **`title`** (a label):   
+  * **`type`** (a label), takes values in: {batch, gui}: the type of the experiment (either 'gui' or 'batch'
+  * `control` (an identifier): 
+  * `frequency` (int): the execution frequence of the experiment (default value: 1). If frequency: 10, the experiment is executed only each 10 steps.
+  * `keep_seed` (boolean): 
+  * `multicore` (boolean): 
+  * `parent` (an identifier): the parent experiment (in case of inheritance between experiments)
+  * `repeat` (int): In case of a batch experiment, expresses hom many times the simulations must be repeated
+  * `schedules` (container): an ordered list of agents giving the order of their execution
+  * `skills` (list): 
+  * `until` (boolean): In case of a batch experiment, an expression that will be evaluated to know when a simulation should be terminated
+
 #### Embedments
-* The experiment statement is of type: **Experiment**
-* The experiment statement can be embedded into: Model, 
-* The experiment statement embeds statements: 
+* The `experiment` statement is of type: **Experiment**
+* The `experiment` statement can be embedded into: Model, 
+* The `experiment` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -1473,13 +1504,14 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 ### export 
 #### Facets 
 		  
-  * **var**  (an identifier), (omissible) : 
-  * framerate (int): 
-  * name (string): 
+  * **`var`** (an identifier), (omissible) : 
+  * `framerate` (int): 
+  * `name` (string): 
+
 #### Embedments
-* The export statement is of type: **Single statement**
-* The export statement can be embedded into: Experiment, 
-* The export statement embeds statements: 
+* The `export` statement is of type: **Single statement**
+* The `export` statement can be embedded into: Experiment, 
+* The `export` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -1488,19 +1520,20 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 ### genetic 
 #### Facets 
 		  
-  * **name**  (an identifier), (omissible) : 
-  * aggregation (a label), takes values in: {min, max}: the agregation method
-  * crossover_prob (float): crossover probability between two individual solutions
-  * max_gen (int): number of generations
-  * maximize (float): the value the algorithm tries to maximize
-  * minimize (float): the value the algorithm tries to minimize
-  * mutation_prob (float): mutation probability for an individual solution
-  * nb_prelim_gen (int): number of random populations used to build the initial population
-  * pop_dim (int): size of the population (number of individual solutions)
+  * **`name`** (an identifier), (omissible) : 
+  * `aggregation` (a label), takes values in: {min, max}: the agregation method
+  * `crossover_prob` (float): crossover probability between two individual solutions
+  * `max_gen` (int): number of generations
+  * `maximize` (float): the value the algorithm tries to maximize
+  * `minimize` (float): the value the algorithm tries to minimize
+  * `mutation_prob` (float): mutation probability for an individual solution
+  * `nb_prelim_gen` (int): number of random populations used to build the initial population
+  * `pop_dim` (int): size of the population (number of individual solutions)
+
 #### Embedments
-* The genetic statement is of type: **Batch method**
-* The genetic statement can be embedded into: Experiment, 
-* The genetic statement embeds statements:  
+* The `genetic` statement is of type: **Batch method**
+* The `genetic` statement can be embedded into: Experiment, 
+* The `genetic` statement embeds statements:  
  	
 #### Definition
 
@@ -1528,17 +1561,18 @@ method genetic maximize: food_gathered pop_dim: 5 crossover_prob: 0.7 mutation_p
 ### graphics 
 #### Facets 
 		  
-  * **name**  (a label), (omissible) : the identifier of the graphics
-  * fading (boolean): Used in conjunction with 'trace:', allows to apply a fading effect to the previous traces. Default is false
-  * position (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
-  * refresh (boolean): (openGL only) specify whether the display of the species is refreshed. (true by default, usefull in case of agents that do not move)
-  * size (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
-  * trace (any type in [boolean, int]): Allows to aggregate the visualization at each timestep on the display. Default is false. If set to an int value, only the last n-th steps will be visualized. If set to true, no limit of timesteps is applied.
-  * transparency (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency)
+  * **`name`** (a label), (omissible) : the identifier of the graphics
+  * `fading` (boolean): Used in conjunction with 'trace:', allows to apply a fading effect to the previous traces. Default is false
+  * `position` (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
+  * `refresh` (boolean): (openGL only) specify whether the display of the species is refreshed. (true by default, usefull in case of agents that do not move)
+  * `size` (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
+  * `trace` (any type in [boolean, int]): Allows to aggregate the visualization at each timestep on the display. Default is false. If set to an int value, only the last n-th steps will be visualized. If set to true, no limit of timesteps is applied.
+  * `transparency` (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency)
+
 #### Embedments
-* The graphics statement is of type: **Layer**
-* The graphics statement can be embedded into: display, 
-* The graphics statement embeds statements:  
+* The `graphics` statement is of type: **Layer**
+* The `graphics` statement can be embedded into: display, 
+* The `graphics` statement embeds statements:  
  	
 #### Definition
 
@@ -1566,15 +1600,16 @@ display my_display {
 ### hill_climbing 
 #### Facets 
 		  
-  * **name**  (an identifier), (omissible) : 
-  * aggregation (a label), takes values in: {min, max}: the agregation method
-  * iter_max (int): number of iterations
-  * maximize (float): the value the algorithm tries to maximize
-  * minimize (float): the value the algorithm tries to minimize
+  * **`name`** (an identifier), (omissible) : 
+  * `aggregation` (a label), takes values in: {min, max}: the agregation method
+  * `iter_max` (int): number of iterations
+  * `maximize` (float): the value the algorithm tries to maximize
+  * `minimize` (float): the value the algorithm tries to minimize
+
 #### Embedments
-* The hill_climbing statement is of type: **Batch method**
-* The hill_climbing statement can be embedded into: Experiment, 
-* The hill_climbing statement embeds statements:  
+* The `hill_climbing` statement is of type: **Batch method**
+* The `hill_climbing` statement can be embedded into: Experiment, 
+* The `hill_climbing` statement embeds statements:  
  	
 #### Definition
 
@@ -1602,11 +1637,12 @@ method hill_climbing iter_max: 50 maximize : food_gathered;
 ### if 
 #### Facets 
 		  
-  * **condition**  (boolean), (omissible) : A boolean expression: the condition that is evaluated.
+  * **`condition`** (boolean), (omissible) : A boolean expression: the condition that is evaluated.
+
 #### Embedments
-* The if statement is of type: **Sequence of statements or action**
-* The if statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
-* The if statement embeds statements: [#else else],   
+* The `if` statement is of type: **Sequence of statements or action**
+* The `if` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
+* The `if` statement embeds statements: [#else else],   
  	
 #### Definition
 
@@ -1671,18 +1707,19 @@ else {
 ### image 
 #### Facets 
 		
-  * name (string), (omissible) : the identifier of the image layer
-  * color (rgb): in the case of a shapefile, this the color used to fill in geometries of the shapefile
-  * file (any type in [string, file]): the name/path of the image (in the case of a raster image)
-  * gis (any type in [file, string]): the name/path of the shape file (to display a shapefile as background, without creating agents from it)
-  * position (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
-  * refresh (boolean): (openGL only) specify whether the image display is refreshed. (true by default, usefull in case of images that is not modified over the simulation)
-  * size (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
-  * transparency (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency)
+  * `name` (string), (omissible) : the identifier of the image layer
+  * `color` (rgb): in the case of a shapefile, this the color used to fill in geometries of the shapefile
+  * `file` (any type in [string, file]): the name/path of the image (in the case of a raster image)
+  * `gis` (any type in [file, string]): the name/path of the shape file (to display a shapefile as background, without creating agents from it)
+  * `position` (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
+  * `refresh` (boolean): (openGL only) specify whether the image display is refreshed. (true by default, usefull in case of images that is not modified over the simulation)
+  * `size` (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
+  * `transparency` (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency)
+
 #### Embedments
-* The image statement is of type: **Layer**
-* The image statement can be embedded into: display, 
-* The image statement embeds statements:  
+* The `image` statement is of type: **Layer**
+* The `image` statement can be embedded into: display, 
+* The `image` statement embeds statements:  
  	
 #### Definition
 
@@ -1733,16 +1770,17 @@ display my_display {
 ### inspect 
 #### Facets 
 		  
-  * **name**  (any type), (omissible) : the identifier of the inspector
-  * attributes (list): the list of attributes to inspect
-  * refresh (boolean): Indicates the condition under which this output should be refreshed (default is true)
-  * refresh_every (int): Allows to refresh the inspector every n time steps (default is 1)
-  * type (an identifier), takes values in: {agent, species, display_population, table}: the way to inspect agents: in a table, or a set of inspectors
-  * value (any type): the set of agents to inspect, could be a species, a list of agents or an agent
+  * **`name`** (any type), (omissible) : the identifier of the inspector
+  * `attributes` (list): the list of attributes to inspect
+  * `refresh` (boolean): Indicates the condition under which this output should be refreshed (default is true)
+  * `refresh_every` (int): Allows to refresh the inspector every n time steps (default is 1)
+  * `type` (an identifier), takes values in: {agent, species, display_population, table}: the way to inspect agents: in a table, or a set of inspectors
+  * `value` (any type): the set of agents to inspect, could be a species, a list of agents or an agent
+
 #### Embedments
-* The inspect statement is of type: **Output**
-* The inspect statement can be embedded into: output, permanent, 
-* The inspect statement embeds statements:  
+* The `inspect` statement is of type: **Output**
+* The `inspect` statement can be embedded into: output, permanent, 
+* The `inspect` statement embeds statements:  
  	
 #### Definition
 
@@ -1764,25 +1802,26 @@ inspect "my_inspector" value: ant attributes: ["name", "location"];
 ### layout_forceatlas2 
 #### Facets 
 		  
-  * **graph**  (graph), (omissible) : the graph to apply the layout.
-  * approximate_repulsion (boolean): Barnes Hut optimization: n2 complexity to n.ln(n); allows larger graphs. default: false
-  * approximation (float): Theta of the Barnes Hut optimization. default: 1.2
-  * bounded_point1 (point): The new nodes positions are bounded within the two bound points if both are not null. default: null
-  * bounded_point2 (point): The new nodes positions are bounded within the two bound points if both are not null. default: null
-  * dissuade_hubs (boolean): Distributes attraction along outbound edges. Hubs attract less and thus are pushed to the borders (default: false).
-  * edge_weight_influence (float): How much influence you give to the edges wight. 0 is no influence, 1 is normal. default: 1.0
-  * gravity (float): Attracts nodes to the center. Prevents islands from drifting away. default: 1.0
-  * linlog_mode (boolean): Switch model from lin-lin to lin-log. Makes clusters more tight (default: false).
-  * nb_steps (int): The number of steps of the algorithm to perform (default 1).
-  * prevent_overlap (boolean): Should not be used with approximate_repulsion default: false
-  * scaling (float): How much repulsion you want. More makes a more sparse graph. default: 2.0
-  * stronger_gravity (boolean): A stronger gravity law default: false
-  * thread_number (int): More threads means more speed (default: 1).
-  * tolerance (float): How much swinging you allow. Above 1 discouraged. Lower gives less speed and more precision. default: 0.1
+  * **`graph`** (graph), (omissible) : the graph to apply the layout.
+  * `approximate_repulsion` (boolean): Barnes Hut optimization: n2 complexity to n.ln(n); allows larger graphs. default: false
+  * `approximation` (float): Theta of the Barnes Hut optimization. default: 1.2
+  * `bounded_point1` (point): The new nodes positions are bounded within the two bound points if both are not null. default: null
+  * `bounded_point2` (point): The new nodes positions are bounded within the two bound points if both are not null. default: null
+  * `dissuade_hubs` (boolean): Distributes attraction along outbound edges. Hubs attract less and thus are pushed to the borders (default: false).
+  * `edge_weight_influence` (float): How much influence you give to the edges wight. 0 is no influence, 1 is normal. default: 1.0
+  * `gravity` (float): Attracts nodes to the center. Prevents islands from drifting away. default: 1.0
+  * `linlog_mode` (boolean): Switch model from lin-lin to lin-log. Makes clusters more tight (default: false).
+  * `nb_steps` (int): The number of steps of the algorithm to perform (default 1).
+  * `prevent_overlap` (boolean): Should not be used with approximate_repulsion default: false
+  * `scaling` (float): How much repulsion you want. More makes a more sparse graph. default: 2.0
+  * `stronger_gravity` (boolean): A stronger gravity law default: false
+  * `thread_number` (int): More threads means more speed (default: 1).
+  * `tolerance` (float): How much swinging you allow. Above 1 discouraged. Lower gives less speed and more precision. default: 0.1
+
 #### Embedments
-* The layout_forceatlas2 statement is of type: **Single statement**
-* The layout_forceatlas2 statement can be embedded into: Behavior, Sequence of statements or action, 
-* The layout_forceatlas2 statement embeds statements: 
+* The `layout_forceatlas2` statement is of type: **Single statement**
+* The `layout_forceatlas2` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `layout_forceatlas2` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -1791,19 +1830,20 @@ inspect "my_inspector" value: ant attributes: ["name", "location"];
 ### layout_yifanhu 
 #### Facets 
 		  
-  * **graph**  (graph), (omissible) : the graph to apply the layout.
-  * bounded_point1 (point): The new nodes positions are bounded within the two bound points if both are not null. default: null
-  * bounded_point2 (point): The new nodes positions are bounded within the two bound points if both are not null. default: null
-  * nb_steps (int): The number of steps of the algorithm to perform (default 1).
-  * optimal_distance (float): the natural length of the springs. Bigger values mean nodes will be farther apart (default: 100).
-  * quadtree_max_level (int): The maximum level to be used in the quadtree representation. Greater values mean more accuracy (default: 10).
-  * relative_strength (float): The relative strength between electrical force (repulsion) and spring force (attriaction). default: 0.2
-  * step_size (float): The step size used in the algorithm. It has to be a meaningful size compared to the optimal distance (e.g. 10%). default: 10
-  * theta (float): The theta parameter for Barnes-Hut opening criteria. Smaller values mean more accuracy (default: 1.2).
+  * **`graph`** (graph), (omissible) : the graph to apply the layout.
+  * `bounded_point1` (point): The new nodes positions are bounded within the two bound points if both are not null. default: null
+  * `bounded_point2` (point): The new nodes positions are bounded within the two bound points if both are not null. default: null
+  * `nb_steps` (int): The number of steps of the algorithm to perform (default 1).
+  * `optimal_distance` (float): the natural length of the springs. Bigger values mean nodes will be farther apart (default: 100).
+  * `quadtree_max_level` (int): The maximum level to be used in the quadtree representation. Greater values mean more accuracy (default: 10).
+  * `relative_strength` (float): The relative strength between electrical force (repulsion) and spring force (attriaction). default: 0.2
+  * `step_size` (float): The step size used in the algorithm. It has to be a meaningful size compared to the optimal distance (e.g. 10%). default: 10
+  * `theta` (float): The theta parameter for Barnes-Hut opening criteria. Smaller values mean more accuracy (default: 1.2).
+
 #### Embedments
-* The layout_yifanhu statement is of type: **Single statement**
-* The layout_yifanhu statement can be embedded into: Behavior, Sequence of statements or action, 
-* The layout_yifanhu statement embeds statements: 
+* The `layout_yifanhu` statement is of type: **Single statement**
+* The `layout_yifanhu` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `layout_yifanhu` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -1812,15 +1852,16 @@ inspect "my_inspector" value: ant attributes: ["name", "location"];
 ### let 
 #### Facets 
 		  
-  * **name**  (a new identifier), (omissible) : 
-  * index (a datatype identifier): 
-  * of (a datatype identifier): 
-  * type (a datatype identifier): 
-  * value (any type): 
+  * **`name`** (a new identifier), (omissible) : 
+  * `index` (a datatype identifier): 
+  * `of` (a datatype identifier): 
+  * `type` (a datatype identifier): 
+  * `value` (any type): 
+
 #### Embedments
-* The let statement is of type: **Single statement**
-* The let statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
-* The let statement embeds statements: 
+* The `let` statement is of type: **Single statement**
+* The `let` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
+* The `let` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -1829,17 +1870,18 @@ inspect "my_inspector" value: ant attributes: ["name", "location"];
 ### loop 
 #### Facets 
 		
-  * name (a new identifier), (omissible) : a temporary variable name
-  * from (int): an int expression
-  * over (any type in [container, point]): a list, point, matrix or map expression
-  * step (int): an int expression
-  * times (int): an int expression
-  * to (int): an int expression
-  * while (boolean): a boolean expression
+  * `name` (a new identifier), (omissible) : a temporary variable name
+  * `from` (int): an int expression
+  * `over` (any type in [container, point]): a list, point, matrix or map expression
+  * `step` (int): an int expression
+  * `times` (int): an int expression
+  * `to` (int): an int expression
+  * `while` (boolean): a boolean expression
+
 #### Embedments
-* The loop statement is of type: **Sequence of statements or action**
-* The loop statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
-* The loop statement embeds statements:  
+* The `loop` statement is of type: **Sequence of statements or action**
+* The `loop` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
+* The `loop` statement embeds statements:  
  	
 #### Definition
 
@@ -1915,11 +1957,12 @@ loop i from: 0 to: length (the_list) - 1 {
 ### match 
 #### Facets 
 		
-  * value (any type), (omissible) : 
+  * `value` (any type), (omissible) : 
+
 #### Embedments
-* The match statement is of type: **Sequence of statements or action**
-* The match statement can be embedded into: switch, 
-* The match statement embeds statements:  
+* The `match` statement is of type: **Sequence of statements or action**
+* The `match` statement can be embedded into: switch, 
+* The `match` statement embeds statements:  
  	
 #### Definition
 
@@ -1963,13 +2006,14 @@ switch 3 {
 ### migrate 
 #### Facets 
 		  
-  * **source**  (an identifier), (omissible) : can be an agent, a list of agents, a agent's population to be migrated  
-  * **target**  (an identifier): target species/population that source agent(s) migrate to.
-  * returns (a new identifier): the list of returned agents in a new local variable
+  * **`source`** (an identifier), (omissible) : can be an agent, a list of agents, a agent's population to be migrated  
+  * **`target`** (an identifier): target species/population that source agent(s) migrate to.
+  * `returns` (a new identifier): the list of returned agents in a new local variable
+
 #### Embedments
-* The migrate statement is of type: **Sequence of statements or action**
-* The migrate statement can be embedded into: Behavior, Sequence of statements or action, 
-* The migrate statement embeds statements:  
+* The `migrate` statement is of type: **Sequence of statements or action**
+* The `migrate` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `migrate` statement embeds statements:  
  	
 #### Definition
 
@@ -1992,14 +2036,15 @@ migrate ball_in_group target: ball_in_cloud;
 ### monitor 
 #### Facets 
 		  
-  * **name**  (a label), (omissible) : identifier of the monitor  
-  * **value**  (any type): expression that will be evaluated to be displayed in the monitor
-  * refresh (boolean): Indicates the condition under which this output should be refreshed (default is true)
-  * refresh_every (int): Allows to refresh the monitor every n time steps (default is 1)
+  * **`name`** (a label), (omissible) : identifier of the monitor  
+  * **`value`** (any type): expression that will be evaluated to be displayed in the monitor
+  * `refresh` (boolean): Indicates the condition under which this output should be refreshed (default is true)
+  * `refresh_every` (int): Allows to refresh the monitor every n time steps (default is 1)
+
 #### Embedments
-* The monitor statement is of type: **Output**
-* The monitor statement can be embedded into: output, permanent, 
-* The monitor statement embeds statements:  
+* The `monitor` statement is of type: **Output**
+* The `monitor` statement can be embedded into: output, permanent, 
+* The `monitor` statement embeds statements:  
  	
 #### Definition
 
@@ -2021,10 +2066,11 @@ monitor "nb preys" value: length(prey as list) refresh_every: 5;
 ### output 
 #### Facets 
 		
+
 #### Embedments
-* The output statement is of type: **Output**
-* The output statement can be embedded into: Model, Experiment, 
-* The output statement embeds statements: [#display display],  [#inspect inspect],  [#monitor monitor],  [#output_file output_file],   
+* The `output` statement is of type: **Output**
+* The `output` statement can be embedded into: Model, Experiment, 
+* The `output` statement embeds statements: [#display display],  [#inspect inspect],  [#monitor monitor],  [#output_file output_file],   
  	
 #### Definition
 
@@ -2052,18 +2098,19 @@ experiment exp_name type: gui {
 ### output_file 
 #### Facets 
 		  
-  * **name**  (an identifier), (omissible) :   
-  * **data**  (string): 
-  * footer (string): 
-  * header (string): 
-  * refresh (boolean): Indicates the condition under which this file should be saved (default is true)
-  * refresh_every (int): Allows to save the file every n time steps (default is 1)
-  * rewrite (boolean): 
-  * type (an identifier), takes values in: {csv, text, xml}: 
+  * **`name`** (an identifier), (omissible) :   
+  * **`data`** (string): 
+  * `footer` (string): 
+  * `header` (string): 
+  * `refresh` (boolean): Indicates the condition under which this file should be saved (default is true)
+  * `refresh_every` (int): Allows to save the file every n time steps (default is 1)
+  * `rewrite` (boolean): 
+  * `type` (an identifier), takes values in: {csv, text, xml}: 
+
 #### Embedments
-* The output_file statement is of type: **Output**
-* The output_file statement can be embedded into: output, permanent, 
-* The output_file statement embeds statements: 
+* The `output_file` statement is of type: **Output**
+* The `output_file` statement can be embedded into: output, permanent, 
+* The `output_file` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -2072,14 +2119,15 @@ experiment exp_name type: gui {
 ### overlay 
 #### Facets 
 		
-  * left (any type), (omissible) : an expression that will be evaluated and displayed in the left section of the overlay
-  * center (any type): an expression that will be evaluated and displayed in the center section of the overlay
-  * color (any type in [list, rgb]): the color(s) used to display the expressions given in other facets
-  * right (any type): an expression that will be evaluated and displayed in the right section of the overlay
+  * `left` (any type), (omissible) : an expression that will be evaluated and displayed in the left section of the overlay
+  * `center` (any type): an expression that will be evaluated and displayed in the center section of the overlay
+  * `color` (any type in [list, rgb]): the color(s) used to display the expressions given in other facets
+  * `right` (any type): an expression that will be evaluated and displayed in the right section of the overlay
+
 #### Embedments
-* The overlay statement is of type: **Layer**
-* The overlay statement can be embedded into: display, 
-* The overlay statement embeds statements:  
+* The `overlay` statement is of type: **Layer**
+* The `overlay` statement can be embedded into: display, 
+* The `overlay` statement embeds statements:  
  	
 #### Definition
 
@@ -2102,20 +2150,21 @@ overlay "Cycle: " + (cycle) center: "Duration: " + total_duration + "ms" right: 
 ### parameter 
 #### Facets 
 		  
-  * **var**  (an identifier): the name of the variable (that should be declared in the global)
-  * name (a label), (omissible) : The message displayed in the interface
-  * among (list): the list of possible values
-  * category (a label): a category label, used to group parameters in the interface
-  * init (any type): the init value
-  * max (any type): the maximum value
-  * min (any type): the minimum value
-  * step (float): the increment step (mainly used in batch mode to express the variation step between simulation)
-  * type (a datatype identifier): the variable type
-  * unit (a label): the variable unit
+  * **`var`** (an identifier): the name of the variable (that should be declared in the global)
+  * `name` (a label), (omissible) : The message displayed in the interface
+  * `among` (list): the list of possible values
+  * `category` (a label): a category label, used to group parameters in the interface
+  * `init` (any type): the init value
+  * `max` (any type): the maximum value
+  * `min` (any type): the minimum value
+  * `step` (float): the increment step (mainly used in batch mode to express the variation step between simulation)
+  * `type` (a datatype identifier): the variable type
+  * `unit` (a label): the variable unit
+
 #### Embedments
-* The parameter statement is of type: **Parameter**
-* The parameter statement can be embedded into: Experiment, 
-* The parameter statement embeds statements:  
+* The `parameter` statement is of type: **Parameter**
+* The `parameter` statement can be embedded into: Experiment, 
+* The `parameter` statement embeds statements:  
  	
 #### Definition
 
@@ -2144,10 +2193,11 @@ parameter 'Value of titi:' var: titi min: 1 max: 100 step: 2;
 ### pause_sound 
 #### Facets 
 		
+
 #### Embedments
-* The pause_sound statement is of type: **Sequence of statements or action**
-* The pause_sound statement can be embedded into: Behavior, Sequence of statements or action, 
-* The pause_sound statement embeds statements: 
+* The `pause_sound` statement is of type: **Sequence of statements or action**
+* The `pause_sound` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `pause_sound` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -2156,10 +2206,11 @@ parameter 'Value of titi:' var: titi min: 1 max: 100 step: 2;
 ### permanent 
 #### Facets 
 		
+
 #### Embedments
-* The permanent statement is of type: **Output**
-* The permanent statement can be embedded into: Experiment, 
-* The permanent statement embeds statements: [#display display],  [#inspect inspect],  [#monitor monitor],  [#output_file output_file],   
+* The `permanent` statement is of type: **Output**
+* The `permanent` statement can be embedded into: Experiment, 
+* The `permanent` statement embeds statements: [#display display],  [#inspect inspect],  [#monitor monitor],  [#output_file output_file],   
  	
 #### Definition
 
@@ -2187,16 +2238,17 @@ permanent {
 ### plan 
 #### Facets 
 		
-  * name (an identifier), (omissible) : 
-  * finished_when (boolean): 
-  * instantaneous (boolean): 
-  * intention (any type): 
-  * priority (float): 
-  * when (boolean): 
+  * `name` (an identifier), (omissible) : 
+  * `finished_when` (boolean): 
+  * `instantaneous` (boolean): 
+  * `intention` (any type): 
+  * `priority` (float): 
+  * `when` (boolean): 
+
 #### Embedments
-* The plan statement is of type: **Behavior**
-* The plan statement can be embedded into: Species, 
-* The plan statement embeds statements: 
+* The `plan` statement is of type: **Behavior**
+* The `plan` statement can be embedded into: Species, 
+* The `plan` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -2205,17 +2257,18 @@ permanent {
 ### put 
 #### Facets 
 		  
-  * **in**  (any type in [container, species, agent, geometry]): an expression that evaluates to a container
-  * item (any type), (omissible) : any expression
-  * all (any type): any expression
-  * at (any type): any expression
-  * edge (any type): Indicates that the item to put should be considered as an edge of the receiving graph. Soon to be deprecated, use 'put edge(item)...' instead
-  * key (any type): any expression
-  * weight (float): an expression that evaluates to a float
+  * **`in`** (any type in [container, species, agent, geometry]): an expression that evaluates to a container
+  * `item` (any type), (omissible) : any expression
+  * `all` (any type): any expression
+  * `at` (any type): any expression
+  * `edge` (any type): Indicates that the item to put should be considered as an edge of the receiving graph. Soon to be deprecated, use 'put edge(item)...' instead
+  * `key` (any type): any expression
+  * `weight` (float): an expression that evaluates to a float
+
 #### Embedments
-* The put statement is of type: **Single statement**
-* The put statement can be embedded into: chart, Behavior, Sequence of statements or action, 
-* The put statement embeds statements:  
+* The `put` statement is of type: **Single statement**
+* The `put` statement can be embedded into: chart, Behavior, Sequence of statements or action, 
+* The `put` statement embeds statements:  
  	
 #### Definition
 
@@ -2263,15 +2316,16 @@ put -30 all: true in: putMap; 	// putMap equals ["x"::-30,"y"::-30, "z"::-30]
 ### quadtree 
 #### Facets 
 		  
-  * **name**  (a label), (omissible) : identifier of the layer
-  * position (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
-  * refresh (boolean): (openGL only) specify whether the display of the species is refreshed. (true by default, usefull in case of agents that do not move)
-  * size (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
-  * transparency (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency)
+  * **`name`** (a label), (omissible) : identifier of the layer
+  * `position` (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
+  * `refresh` (boolean): (openGL only) specify whether the display of the species is refreshed. (true by default, usefull in case of agents that do not move)
+  * `size` (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
+  * `transparency` (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency)
+
 #### Embedments
-* The quadtree statement is of type: **Layer**
-* The quadtree statement can be embedded into: display, 
-* The quadtree statement embeds statements:  
+* The `quadtree` statement is of type: **Layer**
+* The `quadtree` statement can be embedded into: display, 
+* The `quadtree` statement embeds statements:  
  	
 #### Definition
 
@@ -2296,21 +2350,22 @@ display my_display {
 ### reactive_tabu 
 #### Facets 
 		  
-  * **name**  (an identifier), (omissible) : 
-  * aggregation (a label), takes values in: {min, max}: the agregation method
-  * cycle_size_max (int): minimal size of the considered cycles
-  * cycle_size_min (int): maximal size of the considered cycles
-  * iter_max (int): number of iterations
-  * maximize (float): the value the algorithm tries to maximize
-  * minimize (float): the value the algorithm tries to minimize
-  * nb_tests_wthout_col_max (int): number of movements without collision before shortening the tabu list
-  * tabu_list_size_init (int): initial size of the tabu list
-  * tabu_list_size_max (int): maximal size of the tabu list
-  * tabu_list_size_min (int): minimal size of the tabu list
+  * **`name`** (an identifier), (omissible) : 
+  * `aggregation` (a label), takes values in: {min, max}: the agregation method
+  * `cycle_size_max` (int): minimal size of the considered cycles
+  * `cycle_size_min` (int): maximal size of the considered cycles
+  * `iter_max` (int): number of iterations
+  * `maximize` (float): the value the algorithm tries to maximize
+  * `minimize` (float): the value the algorithm tries to minimize
+  * `nb_tests_wthout_col_max` (int): number of movements without collision before shortening the tabu list
+  * `tabu_list_size_init` (int): initial size of the tabu list
+  * `tabu_list_size_max` (int): maximal size of the tabu list
+  * `tabu_list_size_min` (int): minimal size of the tabu list
+
 #### Embedments
-* The reactive_tabu statement is of type: **Batch method**
-* The reactive_tabu statement can be embedded into: Experiment, 
-* The reactive_tabu statement embeds statements:  
+* The `reactive_tabu` statement is of type: **Batch method**
+* The `reactive_tabu` statement can be embedded into: Experiment, 
+* The `reactive_tabu` statement embeds statements:  
  	
 #### Definition
 
@@ -2338,12 +2393,13 @@ method reactive_tabu iter_max: 50 tabu_list_size_init: 5 tabu_list_size_min: 2 t
 ### reflex 
 #### Facets 
 		
-  * name (an identifier), (omissible) : the identifier of the reflex
-  * when (boolean): an expression that evaluates a boolean, the condition to fulfill in order to execute the statements embedded in the reflex.
+  * `name` (an identifier), (omissible) : the identifier of the reflex
+  * `when` (boolean): an expression that evaluates a boolean, the condition to fulfill in order to execute the statements embedded in the reflex.
+
 #### Embedments
-* The reflex statement is of type: **Behavior**
-* The reflex statement can be embedded into: Species, Experiment, Model, 
-* The reflex statement embeds statements:  
+* The `reflex` statement is of type: **Behavior**
+* The `reflex` statement can be embedded into: Species, Experiment, Model, 
+* The `reflex` statement embeds statements:  
  	
 #### Definition
 
@@ -2367,14 +2423,15 @@ reflex my_reflex when: flip (0.5){ 		//Only executed when flip returns true
 ### release 
 #### Facets 
 		  
-  * **target**  (any type in [agent, list]), (omissible) : an expression that is evaluated as an agent or a list of the agents to be released
-  * as (species): an expression that is evaluated as a species in which the micro-agent will be released
-  * in (agent): an expresion that is evaluated as an agent that will be the macro-agent in which micro-agent will be released, i.e. their new host
-  * returns (a new identifier): a new variable containing a list of the newly released agent(s)
+  * **`target`** (any type in [agent, list]), (omissible) : an expression that is evaluated as an agent or a list of the agents to be released
+  * `as` (species): an expression that is evaluated as a species in which the micro-agent will be released
+  * `in` (agent): an expresion that is evaluated as an agent that will be the macro-agent in which micro-agent will be released, i.e. their new host
+  * `returns` (a new identifier): a new variable containing a list of the newly released agent(s)
+
 #### Embedments
-* The release statement is of type: **Sequence of statements or action**
-* The release statement can be embedded into: Behavior, Sequence of statements or action, 
-* The release statement embeds statements:  
+* The `release` statement is of type: **Sequence of statements or action**
+* The `release` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `release` statement embeds statements:  
  	
 #### Definition
 
@@ -2421,18 +2478,19 @@ release list (C) as: new_species in: new host;
 ### remove 
 #### Facets 
 		  
-  * **from**  (any type in [container, species, agent, geometry]): an expression that evaluates to a container
-  * item (any type), (omissible) : any expression to remove from the container
-  * all (any type): an expression that evaluates to a container. If it is true and if the value a list, it removes the first instance of each element of the list. If it is true and the value is not a container, it will remove all instances of this value.
-  * edge (any type): Indicates that the item to remove should be considered as an edge of the receiving graph. Soon to be deprecated, use 'remove edge(item)...' instead
-  * index (any type): any expression, the key at which to remove the element from the container
-  * key (any type): any expression, the key at which to remove the element from the container
-  * node (any type): Indicates that the item to remove should be considered as a node of the receiving graph. Soon to be deprecated, use 'remove node(item)...' instead
-  * vertex (any type): 
+  * **`from`** (any type in [container, species, agent, geometry]): an expression that evaluates to a container
+  * `item` (any type), (omissible) : any expression to remove from the container
+  * `all` (any type): an expression that evaluates to a container. If it is true and if the value a list, it removes the first instance of each element of the list. If it is true and the value is not a container, it will remove all instances of this value.
+  * `edge` (any type): Indicates that the item to remove should be considered as an edge of the receiving graph. Soon to be deprecated, use 'remove edge(item)...' instead
+  * `index` (any type): any expression, the key at which to remove the element from the container
+  * `key` (any type): any expression, the key at which to remove the element from the container
+  * `node` (any type): Indicates that the item to remove should be considered as a node of the receiving graph. Soon to be deprecated, use 'remove node(item)...' instead
+  * `vertex` (any type): 
+
 #### Embedments
-* The remove statement is of type: **Single statement**
-* The remove statement can be embedded into: chart, Behavior, Sequence of statements or action, 
-* The remove statement embeds statements:  
+* The `remove` statement is of type: **Single statement**
+* The `remove` statement can be embedded into: chart, Behavior, Sequence of statements or action, 
+* The `remove` statement embeds statements:  
  	
 #### Definition
 
@@ -2515,10 +2573,11 @@ species speciesRemove {
 ### resume_sound 
 #### Facets 
 		
+
 #### Embedments
-* The resume_sound statement is of type: **Sequence of statements or action**
-* The resume_sound statement can be embedded into: Behavior, Sequence of statements or action, 
-* The resume_sound statement embeds statements: 
+* The `resume_sound` statement is of type: **Sequence of statements or action**
+* The `resume_sound` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `resume_sound` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -2527,11 +2586,12 @@ species speciesRemove {
 ### return 
 #### Facets 
 		
-  * value (any type), (omissible) : an expression that is returned
+  * `value` (any type), (omissible) : an expression that is returned
+
 #### Embedments
-* The return statement is of type: **Single statement**
-* The return statement can be embedded into: action, Behavior, Sequence of statements or action, 
-* The return statement embeds statements:  
+* The `return` statement is of type: **Single statement**
+* The `return` statement can be embedded into: action, Behavior, Sequence of statements or action, 
+* The `return` statement embeds statements:  
  	
 #### Definition
 
@@ -2573,17 +2633,18 @@ reflex writing {
 ### run 
 #### Facets 
 		  
-  * **experiment**  (string), (omissible) :   
-  * **of**  (string): 
-  * core (int): 
-  * end_cycle (int): 
-  * out (string): 
-  * with_output (map): 
-  * with_param (map): 
+  * **`experiment`** (string), (omissible) :   
+  * **`of`** (string): 
+  * `core` (int): 
+  * `end_cycle` (int): 
+  * `out` (string): 
+  * `with_output` (map): 
+  * `with_param` (map): 
+
 #### Embedments
-* The run statement is of type: **Sequence of statements or action**
-* The run statement can be embedded into: Behavior, Single statement, Species, Model, 
-* The run statement embeds statements: 
+* The `run` statement is of type: **Sequence of statements or action**
+* The `run` statement can be embedded into: Behavior, Single statement, Species, Model, 
+* The `run` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -2592,16 +2653,17 @@ reflex writing {
 ### save 
 #### Facets 
 		  
-  * **to**  (string): an expression that evaluates to an string, the path to the file
-  * data (any type), (omissible) : any expression, that will be saved in the file
-  * crs (any type): the name of the projectsion, e.g. crs:"EPSG:4326" or its EPSG id, e.g. crs:4326. Here a list of the CRS codes (and EPSG id): http://spatialreference.org
-  * rewrite (boolean): an expression that evaluates to a boolean, specifying whether the save will ecrase the file or append data at the end of it
-  * type (an identifier): an expression that evaluates to an string, the type of the output file (it can be only "shp", "text" or "csv")
-  * with (map): 
+  * **`to`** (string): an expression that evaluates to an string, the path to the file
+  * `data` (any type), (omissible) : any expression, that will be saved in the file
+  * `crs` (any type): the name of the projectsion, e.g. crs:"EPSG:4326" or its EPSG id, e.g. crs:4326. Here a list of the CRS codes (and EPSG id): http://spatialreference.org
+  * `rewrite` (boolean): an expression that evaluates to a boolean, specifying whether the save will ecrase the file or append data at the end of it
+  * `type` (an identifier): an expression that evaluates to an string, the type of the output file (it can be only "shp", "text" or "csv")
+  * `with` (map): 
+
 #### Embedments
-* The save statement is of type: **Single statement**
-* The save statement can be embedded into: Behavior, Sequence of statements or action, 
-* The save statement embeds statements:  
+* The `save` statement is of type: **Single statement**
+* The `save` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `save` statement embeds statements:  
  	
 #### Definition
 
@@ -2642,13 +2704,14 @@ save species_of(self) to: "save_shapefile.shp" type: "shp" with: [name::"nameAge
 ### save_batch 
 #### Facets 
 		  
-  * **to**  (a label): 
-  * data (any type), (omissible) : 
-  * rewrite (boolean): 
+  * **`to`** (a label): 
+  * `data` (any type), (omissible) : 
+  * `rewrite` (boolean): 
+
 #### Embedments
-* The save_batch statement is of type: **Batch method**
-* The save_batch statement can be embedded into: Experiment, 
-* The save_batch statement embeds statements: 
+* The `save_batch` statement is of type: **Batch method**
+* The `save_batch` statement can be embedded into: Experiment, 
+* The `save_batch` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -2657,12 +2720,13 @@ save species_of(self) to: "save_shapefile.shp" type: "shp" with: [name::"nameAge
 ### set 
 #### Facets 
 		  
-  * **name**  (any type), (omissible) : the name of an existin variable or attribute to be modified  
-  * **value**  (any type): the value to affect to the variable or attribute
+  * **`name`** (any type), (omissible) : the name of an existin variable or attribute to be modified  
+  * **`value`** (any type): the value to affect to the variable or attribute
+
 #### Embedments
-* The set statement is of type: **Single statement**
-* The set statement can be embedded into: chart, Behavior, Sequence of statements or action, 
-* The set statement embeds statements:  
+* The `set` statement is of type: **Single statement**
+* The `set` statement can be embedded into: chart, Behavior, Sequence of statements or action, 
+* The `set` statement embeds statements:  
  	
 #### Definition
 
@@ -2683,10 +2747,11 @@ Allows to assign a value to the variable or attribute specified
 ### setup 
 #### Facets 
 		
+
 #### Embedments
-* The setup statement is of type: **Sequence of statements or action**
-* The setup statement can be embedded into: Species, Experiment, Model, 
-* The setup statement embeds statements:  
+* The `setup` statement is of type: **Sequence of statements or action**
+* The `setup` statement can be embedded into: Species, Experiment, Model, 
+* The `setup` statement embeds statements:  
  	
 #### Definition
 
@@ -2719,22 +2784,23 @@ species Tester {
 ### signal 
 #### Facets 
 		  
-  * **name**  (a new identifier), (omissible) : The name of the variable that will be introduced to represent this signal on the specified grid  
-  * **decay**  (float): represents the amount to remove to the intensity of a signal, once dropped on a place, at each time step. It is a percentage between 0 and 1. If 'decay' is not defined, the signal will not be wiped from the places; otherwise, its intensity will be equal to (intensity `*` decay).
-  * among (list): 
-  * environment (species): The name of the grid species on which this signal will be propagated
-  * on (any type in [species, container]): Either the name of the grid species on which this signal will be propagated (equivalent to 'environment:'), or an expression that returns a subset of the cells of this grid species
-  * propagation (a label), takes values in: {diffusion, gradient}: represents both the way the signal is propagated and the way to treat multiple propagations of the same signal occuring at once from different places. If propagation equals 'diffusion', the intensity of a signal is shared between its neighbours with respect to 'proportion', 'variation' and the number of neighbours of the environment places (4, 6 or 8). I.e., for a given signal S propagated from place P, the value transmitted to its N neighbours is : S' = (S / N / proportion) - variation. The intensity of S is then diminished by S `*` proportion on P. In a diffusion, the different signals of the same name see their intensities added to each other on each place. If propagation equals 'gradient', the original intensity is not modified, and each neighbours receives the intensity : S / proportion - variation. If multiple propagations occur at once, only the maximum intensity is kept on each place. If 'propagation' is not defined, it is assumed that it is equal to 'diffusion'.
-  * proportion (float): a value between 0 and 1 that represents the percentage of the intensity which will be shared between the neighbours in the diffusion. For instance, for an intensity of 80, and  a proportion of 0.5, in a 4-neighbours environment, each of the neighbouring places will receive an intensity of (80 `*` 0.5) / 4 = 10. If no 'proportion' is defined, it is assumed that the propagation corresponds to a diffusion where 100% of the intensity is equally divided between the neighbours. I.e., for an intensity of 100, and 4 neighbours per place, each of them receives a signal with an intensity of 25.
-  * range (float): Indicates the distance (in meter) at which the signal stops propagating
-  * type (a datatype identifier): 
-  * update (any type): An expression that will be evaluated each cycle to update the value of the signal on each grid cell
-  * value (any type): 
-  * variation (float): an absolute decrease of intensity that occurs between each place. It should be a positive number. However, negative numbers are allowed (be aware, in this case, that if no range is defined, the signal will certainly propagate in the whole environment). If no 'variation' is defined, it defaults to 1 in the case of a gradient type and 0 in the case of a diffusion.
+  * **`name`** (a new identifier), (omissible) : The name of the variable that will be introduced to represent this signal on the specified grid  
+  * **`decay`** (float): represents the amount to remove to the intensity of a signal, once dropped on a place, at each time step. It is a percentage between 0 and 1. If 'decay' is not defined, the signal will not be wiped from the places; otherwise, its intensity will be equal to (intensity `*` decay).
+  * `among` (list): 
+  * `environment` (species): The name of the grid species on which this signal will be propagated
+  * `on` (any type in [species, container]): Either the name of the grid species on which this signal will be propagated (equivalent to 'environment:'), or an expression that returns a subset of the cells of this grid species
+  * `propagation` (a label), takes values in: {diffusion, gradient}: represents both the way the signal is propagated and the way to treat multiple propagations of the same signal occuring at once from different places. If propagation equals 'diffusion', the intensity of a signal is shared between its neighbours with respect to 'proportion', 'variation' and the number of neighbours of the environment places (4, 6 or 8). I.e., for a given signal S propagated from place P, the value transmitted to its N neighbours is : S' = (S / N / proportion) - variation. The intensity of S is then diminished by S `*` proportion on P. In a diffusion, the different signals of the same name see their intensities added to each other on each place. If propagation equals 'gradient', the original intensity is not modified, and each neighbours receives the intensity : S / proportion - variation. If multiple propagations occur at once, only the maximum intensity is kept on each place. If 'propagation' is not defined, it is assumed that it is equal to 'diffusion'.
+  * `proportion` (float): a value between 0 and 1 that represents the percentage of the intensity which will be shared between the neighbours in the diffusion. For instance, for an intensity of 80, and  a proportion of 0.5, in a 4-neighbours environment, each of the neighbouring places will receive an intensity of (80 `*` 0.5) / 4 = 10. If no 'proportion' is defined, it is assumed that the propagation corresponds to a diffusion where 100% of the intensity is equally divided between the neighbours. I.e., for an intensity of 100, and 4 neighbours per place, each of them receives a signal with an intensity of 25.
+  * `range` (float): Indicates the distance (in meter) at which the signal stops propagating
+  * `type` (a datatype identifier): 
+  * `update` (any type): An expression that will be evaluated each cycle to update the value of the signal on each grid cell
+  * `value` (any type): 
+  * `variation` (float): an absolute decrease of intensity that occurs between each place. It should be a positive number. However, negative numbers are allowed (be aware, in this case, that if no range is defined, the signal will certainly propagate in the whole environment). If no 'variation' is defined, it defaults to 1 in the case of a gradient type and 0 in the case of a diffusion.
+
 #### Embedments
-* The signal statement is of type: **Variable (signal)**
-* The signal statement can be embedded into: Species, 
-* The signal statement embeds statements: 
+* The `signal` statement is of type: **Variable (signal)**
+* The `signal` statement can be embedded into: Species, 
+* The `signal` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -2743,18 +2809,19 @@ species Tester {
 ### simulate 
 #### Facets 
 		  
-  * **comodel**  (file), (omissible) : 
-  * repeat (int): 
-  * reset (boolean): 
-  * share (list): 
-  * until (boolean): 
-  * with_experiment (string): 
-  * with_input (map): 
-  * with_output (map): 
+  * **`comodel`** (file), (omissible) : 
+  * `repeat` (int): 
+  * `reset` (boolean): 
+  * `share` (list): 
+  * `until` (boolean): 
+  * `with_experiment` (string): 
+  * `with_input` (map): 
+  * `with_output` (map): 
+
 #### Embedments
-* The simulate statement is of type: **Single statement**
-* The simulate statement can be embedded into: chart, Experiment, Species, Behavior, Sequence of statements or action, 
-* The simulate statement embeds statements:  
+* The `simulate` statement is of type: **Single statement**
+* The `simulate` statement can be embedded into: chart, Experiment, Species, Behavior, Sequence of statements or action, 
+* The `simulate` statement embeds statements:  
  	
 #### Definition
 
@@ -2777,23 +2844,24 @@ ask receiver_agent(s) {
 ### solve 
 #### Facets 
 		  
-  * **equation**  (an identifier), (omissible) : the equation system identifier to be numerically solved
-  * cycle_length (int): length of simulation cycle which will be synchronize with step of integrator (default value: 1)
-  * discretizing_step (int): number of discret beside 2 step of simulation (default value: 0)
-  * integrated_times (list): time interval inside integration process
-  * integrated_values (list): list of variables's value inside integration process
-  * max_step (float): maximal step, (used with dp853 method only), (sign is irrelevant, regardless of integration direction, forward or backward), the last step can be smaller than this value
-  * method (an identifier), takes values in: {rk4, dp853}: integrate method (can be only "rk4" or "dp853") (default value: "rk4")
-  * min_step (float): minimal step, (used with dp853 method only), (sign is irrelevant, regardless of integration direction, forward or backward), the last step can be smaller than this value
-  * scalAbsoluteTolerance (float): allowed absolute error (used with dp853 method only)
-  * scalRelativeTolerance (float): allowed relative error (used with dp853 method only)
-  * step (float): integration step, use with most integrator methods (default value: 1)
-  * time_final (float): target time for the integration (can be set to a value smaller than t0 for backward integration)
-  * time_initial (float): initial time
+  * **`equation`** (an identifier), (omissible) : the equation system identifier to be numerically solved
+  * `cycle_length` (int): length of simulation cycle which will be synchronize with step of integrator (default value: 1)
+  * `discretizing_step` (int): number of discret beside 2 step of simulation (default value: 0)
+  * `integrated_times` (list): time interval inside integration process
+  * `integrated_values` (list): list of variables's value inside integration process
+  * `max_step` (float): maximal step, (used with dp853 method only), (sign is irrelevant, regardless of integration direction, forward or backward), the last step can be smaller than this value
+  * `method` (an identifier), takes values in: {rk4, dp853}: integrate method (can be only "rk4" or "dp853") (default value: "rk4")
+  * `min_step` (float): minimal step, (used with dp853 method only), (sign is irrelevant, regardless of integration direction, forward or backward), the last step can be smaller than this value
+  * `scalAbsoluteTolerance` (float): allowed absolute error (used with dp853 method only)
+  * `scalRelativeTolerance` (float): allowed relative error (used with dp853 method only)
+  * `step` (float): integration step, use with most integrator methods (default value: 1)
+  * `time_final` (float): target time for the integration (can be set to a value smaller than t0 for backward integration)
+  * `time_initial` (float): initial time
+
 #### Embedments
-* The solve statement is of type: **Single statement**
-* The solve statement can be embedded into: Behavior, Sequence of statements or action, 
-* The solve statement embeds statements:  
+* The `solve` statement is of type: **Single statement**
+* The `solve` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `solve` statement embeds statements:  
  	
 #### Definition
 
@@ -2814,30 +2882,31 @@ solve SIR method: "rk4" step:0.001;
 ### species 
 #### Facets 
 		  
-  * **name**  (an identifier), (omissible) : the identifier of the species
-  * cell_height (float): (grid only), the height of the cells of the grid
-  * cell_width (float): (grid only), the width of the cells of the grid
-  * compile (boolean): 
-  * control (a label): defines the architecture of the species (e.g. fsm...)
-  * edge_species (an identifier): In the case of a species defining a graph topology for its instances (nodes of the graph), specifies the species to use for representing the edges
-  * file (file): (grid only), a bitmap file that will be loaded at runtime so that the value of each pixel  can be assigned to the attribute 'grid_value'
-  * frequency (int): The execution frequency of the species (default value: 1). For instance, if frequency is set to 10, the population of agents will be executed only every 10 cycles.
-  * height (int): (grid only),  the height of the grid (in terms of agent number)
-  * mirrors (any type in [list, species]): The species this species is mirroring. The population of this current species will be dependent of that of the species mirrored (i.e. agents creation and death are entirely taken in charge by GAMA with respect to the demographics of the species mirrored). In addition, this species is provided with an attribute called 'target', which allows each agent to know which agent of the mirrored species it is representing.
-  * neighbours (int): (grid only), the chosen neighbourhood (4, 6 or 8)
-  * parent (an identifier): the parent class (inheritance)
-  * schedules (container): A container of agents (a species, a dynamic list, or a combination of species and containers) , which represents which agents will be actually scheduled when the population is scheduled for execution. For instance, 'species a schedules: (10 among a)' will result in a population that schedules only 10 of its own agents every cycle. 'species b schedules: []' will prevent the agents of 'b' to be scheduled. Note that the scope of agents covered here can be larger than the population, which allows to build complex scheduling controls; for instance, defining 'global schedules: [] {...} species b schedules: []; species c schedules: b + world; ' allows to simulate a model where the agents of b are scheduled first, followed by the world, without even having to create an instance of c.
-  * skills (list): The list of skills that will be made available to the instances of this species. Each new skill provides attributes and actions that will be added to the ones defined in this species
-  * topology (topology): The topology of the population of agents defined by this species. In case of nested species, it can for example be the shape of the macro-agent. In case of grid or graph species, the topology is automatically computed and cannot be redefined
-  * torus (boolean): is the topology toric (defaut: false). Needs to be defined on the global species.
-  * use_individual_shapes (boolean): (grid only),(true by default). Allows to specify whether or not the agents of the grid will have distinct geometries. If set to false, they will all have simpler proxy geometries
-  * use_neighbours_cache (boolean): (grid only),(true by default). Allows to turn on or off the use of the neighbours cache used for grids. Note that if a diffusion of variable occurs, GAMA will emit a warning and automatically switch to a caching version
-  * use_regular_agents (boolean): (grid only),(true by default). Allows to specify if the agents of the grid are regular agents (like those of any other species) or minimal ones (which can't have sub-populations, can't inherit from a regular species, etc.)
-  * width (int): (grid only), the width of the grid (in terms of agent number)
+  * **`name`** (an identifier), (omissible) : the identifier of the species
+  * `cell_height` (float): (grid only), the height of the cells of the grid
+  * `cell_width` (float): (grid only), the width of the cells of the grid
+  * `compile` (boolean): 
+  * `control` (a label): defines the architecture of the species (e.g. fsm...)
+  * `edge_species` (an identifier): In the case of a species defining a graph topology for its instances (nodes of the graph), specifies the species to use for representing the edges
+  * `file` (file): (grid only), a bitmap file that will be loaded at runtime so that the value of each pixel  can be assigned to the attribute 'grid_value'
+  * `frequency` (int): The execution frequency of the species (default value: 1). For instance, if frequency is set to 10, the population of agents will be executed only every 10 cycles.
+  * `height` (int): (grid only),  the height of the grid (in terms of agent number)
+  * `mirrors` (any type in [list, species]): The species this species is mirroring. The population of this current species will be dependent of that of the species mirrored (i.e. agents creation and death are entirely taken in charge by GAMA with respect to the demographics of the species mirrored). In addition, this species is provided with an attribute called 'target', which allows each agent to know which agent of the mirrored species it is representing.
+  * `neighbours` (int): (grid only), the chosen neighbourhood (4, 6 or 8)
+  * `parent` (an identifier): the parent class (inheritance)
+  * `schedules` (container): A container of agents (a species, a dynamic list, or a combination of species and containers) , which represents which agents will be actually scheduled when the population is scheduled for execution. For instance, 'species a schedules: (10 among a)' will result in a population that schedules only 10 of its own agents every cycle. 'species b schedules: []' will prevent the agents of 'b' to be scheduled. Note that the scope of agents covered here can be larger than the population, which allows to build complex scheduling controls; for instance, defining 'global schedules: [] {...} species b schedules: []; species c schedules: b + world; ' allows to simulate a model where the agents of b are scheduled first, followed by the world, without even having to create an instance of c.
+  * `skills` (list): The list of skills that will be made available to the instances of this species. Each new skill provides attributes and actions that will be added to the ones defined in this species
+  * `topology` (topology): The topology of the population of agents defined by this species. In case of nested species, it can for example be the shape of the macro-agent. In case of grid or graph species, the topology is automatically computed and cannot be redefined
+  * `torus` (boolean): is the topology toric (defaut: false). Needs to be defined on the global species.
+  * `use_individual_shapes` (boolean): (grid only),(true by default). Allows to specify whether or not the agents of the grid will have distinct geometries. If set to false, they will all have simpler proxy geometries
+  * `use_neighbours_cache` (boolean): (grid only),(true by default). Allows to turn on or off the use of the neighbours cache used for grids. Note that if a diffusion of variable occurs, GAMA will emit a warning and automatically switch to a caching version
+  * `use_regular_agents` (boolean): (grid only),(true by default). Allows to specify if the agents of the grid are regular agents (like those of any other species) or minimal ones (which can't have sub-populations, can't inherit from a regular species, etc.)
+  * `width` (int): (grid only), the width of the grid (in terms of agent number)
+
 #### Embedments
-* The species statement is of type: **Species**
-* The species statement can be embedded into: Model, Environment, Species, 
-* The species statement embeds statements:  
+* The `species` statement is of type: **Species**
+* The `species` statement can be embedded into: Model, Environment, Species, 
+* The `species` statement embeds statements:  
  	
 #### Definition
 
@@ -2877,13 +2946,14 @@ grid ant_grid file: grid_file neighbours: 8 use_regular_agents: false {
 ### start_sound 
 #### Facets 
 		  
-  * **source**  (string): The path to music file. This path is relative to the path of the model.
-  * mode (an identifier), takes values in: {overwrite, ignore}: Mode of
-  * repeat (boolean): 
+  * **`source`** (string): The path to music file. This path is relative to the path of the model.
+  * `mode` (an identifier), takes values in: {overwrite, ignore}: Mode of
+  * `repeat` (boolean): 
+
 #### Embedments
-* The start_sound statement is of type: **Sequence of statements or action**
-* The start_sound statement can be embedded into: Behavior, Sequence of statements or action, 
-* The start_sound statement embeds statements: 
+* The `start_sound` statement is of type: **Sequence of statements or action**
+* The `start_sound` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `start_sound` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -2892,13 +2962,14 @@ grid ant_grid file: grid_file neighbours: 8 use_regular_agents: false {
 ### state 
 #### Facets 
 		  
-  * **name**  (an identifier), (omissible) : the identifier of the state
-  * final (boolean): specifies whether the state is a final one (i.e. there is no transition from this state to another state) (default value= false)
-  * initial (boolean): specifies whether the state is the initial one (default value = false)
+  * **`name`** (an identifier), (omissible) : the identifier of the state
+  * `final` (boolean): specifies whether the state is a final one (i.e. there is no transition from this state to another state) (default value= false)
+  * `initial` (boolean): specifies whether the state is the initial one (default value = false)
+
 #### Embedments
-* The state statement is of type: **Behavior**
-* The state statement can be embedded into: fsm, Species, Experiment, Model, 
-* The state statement embeds statements: [#enter enter],  [#exit exit],   
+* The `state` statement is of type: **Behavior**
+* The `state` statement can be embedded into: fsm, Species, Experiment, Model, 
+* The `state` statement embeds statements: [#enter enter],  [#exit exit],   
  	
 #### Definition
 
@@ -2943,12 +3014,13 @@ A state, like a reflex, can contains several statements that can be executed at 
 ### status 
 #### Facets 
 		  
-  * **message**  (any type), (omissible) : Allows to display a necessarily short message in the status box in the upper left corner. No formatting characters (carriage returns, tabs, or Unicode characters) should be used, but a background color can be specified. The message will remain in place until it is replaced by another one or by nil, in which case the standard status (number of cycles) will be displayed again
-  * color (rgb): 
+  * **`message`** (any type), (omissible) : Allows to display a necessarily short message in the status box in the upper left corner. No formatting characters (carriage returns, tabs, or Unicode characters) should be used, but a background color can be specified. The message will remain in place until it is replaced by another one or by nil, in which case the standard status (number of cycles) will be displayed again
+  * `color` (rgb): 
+
 #### Embedments
-* The status statement is of type: **Single statement**
-* The status statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
-* The status statement embeds statements:  
+* The `status` statement is of type: **Single statement**
+* The `status` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
+* The `status` statement embeds statements:  
  	
 #### Definition
 
@@ -2970,10 +3042,11 @@ status ('This is my status ' + self) color: Â°yellow;
 ### stop_sound 
 #### Facets 
 		
+
 #### Embedments
-* The stop_sound statement is of type: **Sequence of statements or action**
-* The stop_sound statement can be embedded into: Behavior, Sequence of statements or action, 
-* The stop_sound statement embeds statements: 
+* The `stop_sound` statement is of type: **Sequence of statements or action**
+* The `stop_sound` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `stop_sound` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -2982,11 +3055,12 @@ status ('This is my status ' + self) color: Â°yellow;
 ### switch 
 #### Facets 
 		  
-  * **value**  (any type), (omissible) : an expression
+  * **`value`** (any type), (omissible) : an expression
+
 #### Embedments
-* The switch statement is of type: **Sequence of statements or action**
-* The switch statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
-* The switch statement embeds statements: [#default default],  [#match match],   
+* The `switch` statement is of type: **Sequence of statements or action**
+* The `switch` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
+* The `switch` statement embeds statements: [#default default],  [#match match],   
  	
 #### Definition
 
@@ -3027,16 +3101,17 @@ switch 3 {
 ### tabu 
 #### Facets 
 		  
-  * **name**  (an identifier), (omissible) : 
-  * aggregation (a label), takes values in: {min, max}: the agregation method
-  * iter_max (int): number of iterations
-  * maximize (float): the value the algorithm tries to maximize
-  * minimize (float): the value the algorithm tries to minimize
-  * tabu_list_size (int): size of the tabu list
+  * **`name`** (an identifier), (omissible) : 
+  * `aggregation` (a label), takes values in: {min, max}: the agregation method
+  * `iter_max` (int): number of iterations
+  * `maximize` (float): the value the algorithm tries to maximize
+  * `minimize` (float): the value the algorithm tries to minimize
+  * `tabu_list_size` (int): size of the tabu list
+
 #### Embedments
-* The tabu statement is of type: **Batch method**
-* The tabu statement can be embedded into: Experiment, 
-* The tabu statement embeds statements:  
+* The `tabu` statement is of type: **Batch method**
+* The `tabu` statement can be embedded into: Experiment, 
+* The `tabu` statement embeds statements:  
  	
 #### Definition
 
@@ -3064,12 +3139,13 @@ method tabu iter_max: 50 tabu_list_size: 5 maximize: food_gathered;
 ### task 
 #### Facets 
 		  
-  * **name**  (an identifier), (omissible) : the identifier of the task  
-  * **weight**  (float): the priority level of the task
+  * **`name`** (an identifier), (omissible) : the identifier of the task  
+  * **`weight`** (float): the priority level of the task
+
 #### Embedments
-* The task statement is of type: **Behavior**
-* The task statement can be embedded into: weighted_tasks, sorted_tasks, probabilistic_tasks, Species, Experiment, Model, 
-* The task statement embeds statements:  
+* The `task` statement is of type: **Behavior**
+* The `task` statement can be embedded into: weighted_tasks, sorted_tasks, probabilistic_tasks, Species, Experiment, Model, 
+* The `task` statement embeds statements:  
  	
 #### Definition
 
@@ -3085,19 +3161,20 @@ As reflex, a task is a sequence of statements that can be executed, at each time
 ### text 
 #### Facets 
 		  
-  * **name**  (string), (omissible) : the string to display
-  * color (rgb): the color used to display the text
-  * font (any type in [19, string]): the font used for the text
-  * position (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
-  * refresh (boolean): (openGL only) specify whether the display of the text is refreshed. (true by default, usefull in case of text that is not been modified over simulation)
-  * size (any type in [int, float, point]): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides it by 2
-  * style (an identifier), takes values in: {plain, bold, italic}: the style (bold, italic...) udes to display the text
-  * transparency (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency)
-  * value (string): 
+  * **`name`** (string), (omissible) : the string to display
+  * `color` (rgb): the color used to display the text
+  * `font` (any type in [19, string]): the font used for the text
+  * `position` (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
+  * `refresh` (boolean): (openGL only) specify whether the display of the text is refreshed. (true by default, usefull in case of text that is not been modified over simulation)
+  * `size` (any type in [int, float, point]): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides it by 2
+  * `style` (an identifier), takes values in: {plain, bold, italic}: the style (bold, italic...) udes to display the text
+  * `transparency` (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency)
+  * `value` (string): 
+
 #### Embedments
-* The text statement is of type: **Layer**
-* The text statement can be embedded into: display, 
-* The text statement embeds statements:  
+* The `text` statement is of type: **Layer**
+* The `text` statement can be embedded into: display, 
+* The `text` statement embeds statements:  
  	
 #### Definition
 
@@ -3130,10 +3207,11 @@ display Segregation {
 ### trace 
 #### Facets 
 		
+
 #### Embedments
-* The trace statement is of type: **Sequence of statements or action**
-* The trace statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
-* The trace statement embeds statements:  
+* The `trace` statement is of type: **Sequence of statements or action**
+* The `trace` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
+* The `trace` statement embeds statements:  
  	
 #### Definition
 
@@ -3149,12 +3227,13 @@ All the statements executed in the trace statement are displayed in the console.
 ### transition 
 #### Facets 
 		  
-  * **to**  (an identifier): the identifier of the next state
-  * when (boolean), (omissible) : a condition to be fulfilled to have a transition to another given state
+  * **`to`** (an identifier): the identifier of the next state
+  * `when` (boolean), (omissible) : a condition to be fulfilled to have a transition to another given state
+
 #### Embedments
-* The transition statement is of type: **Sequence of statements or action**
-* The transition statement can be embedded into: Sequence of statements or action, Behavior, 
-* The transition statement embeds statements:  
+* The `transition` statement is of type: **Sequence of statements or action**
+* The `transition` statement can be embedded into: Sequence of statements or action, Behavior, 
+* The `transition` statement embeds statements:  
  	
 #### Definition
 
@@ -3182,14 +3261,15 @@ In an FSM architecture, `transition` specifies the next state of the life cycle.
 ### user_command 
 #### Facets 
 		  
-  * **name**  (a label), (omissible) : the identifier of the user_command
-  * action (an identifier): the identifier of the action to be executed
-  * when (boolean): the condition that should be fulfille in order that the action is executed
-  * with (map): the map of the parameters::values that requires the action
+  * **`name`** (a label), (omissible) : the identifier of the user_command
+  * `action` (an identifier): the identifier of the action to be executed
+  * `when` (boolean): the condition that should be fulfille in order that the action is executed
+  * `with` (map): the map of the parameters::values that requires the action
+
 #### Embedments
-* The user_command statement is of type: **Sequence of statements or action**
-* The user_command statement can be embedded into: user_panel, Species, Experiment, Model, 
-* The user_command statement embeds statements: [#user_input user_input],   
+* The `user_command` statement is of type: **Sequence of statements or action**
+* The `user_command` statement can be embedded into: user_panel, Species, Experiment, Model, 
+* The `user_command` statement embeds statements: [#user_input user_input],   
  	
 #### Definition
 
@@ -3212,12 +3292,13 @@ user_command kill_myself action: some_action with: [arg1::val1, arg2::val2, ...]
 ### user_init 
 #### Facets 
 		  
-  * **name**  (an identifier), (omissible) : 
-  * initial (boolean): 
+  * **`name`** (an identifier), (omissible) : 
+  * `initial` (boolean): 
+
 #### Embedments
-* The user_init statement is of type: **Behavior**
-* The user_init statement can be embedded into: Species, Experiment, Model, 
-* The user_init statement embeds statements: [#user_panel user_panel],   
+* The `user_init` statement is of type: **Behavior**
+* The `user_init` statement can be embedded into: Species, Experiment, Model, 
+* The `user_init` statement embeds statements: [#user_panel user_panel],   
  	
 #### Definition
 
@@ -3234,17 +3315,18 @@ Used in the user control architecture, user_init is executed only once when the 
 ### user_input 
 #### Facets 
 		  
-  * **returns**  (a new identifier): a new local variable containing the value given by the user
-  * name (a label), (omissible) : the displayed name
-  * among (list): the set of acceptable values for the variable
-  * init (any type): the init value
-  * max (float): the maximum value
-  * min (float): the minimum value
-  * type (a datatype identifier): the variable type
+  * **`returns`** (a new identifier): a new local variable containing the value given by the user
+  * `name` (a label), (omissible) : the displayed name
+  * `among` (list): the set of acceptable values for the variable
+  * `init` (any type): the init value
+  * `max` (float): the maximum value
+  * `min` (float): the minimum value
+  * `type` (a datatype identifier): the variable type
+
 #### Embedments
-* The user_input statement is of type: **Single statement**
-* The user_input statement can be embedded into: user_command, 
-* The user_input statement embeds statements:  
+* The `user_input` statement is of type: **Single statement**
+* The `user_input` statement can be embedded into: user_command, 
+* The `user_input` statement embeds statements:  
  	
 #### Definition
 
@@ -3269,12 +3351,13 @@ user_panel "Advanced Control" {
 ### user_panel 
 #### Facets 
 		  
-  * **name**  (an identifier), (omissible) : 
-  * initial (boolean): 
+  * **`name`** (an identifier), (omissible) : 
+  * `initial` (boolean): 
+
 #### Embedments
-* The user_panel statement is of type: **Behavior**
-* The user_panel statement can be embedded into: fsm, user_first, user_last, user_init, user_only, Species, Experiment, Model, 
-* The user_panel statement embeds statements: [#user_command user_command],   
+* The `user_panel` statement is of type: **Behavior**
+* The `user_panel` statement can be embedded into: fsm, user_first, user_last, user_init, user_only, Species, Experiment, Model, 
+* The `user_panel` statement embeds statements: [#user_command user_command],   
  	
 #### Definition
 
@@ -3306,11 +3389,12 @@ user_panel "Advanced Control" {
 ### using 
 #### Facets 
 		  
-  * **topology**  (topology), (omissible) : the topology
+  * **`topology`** (topology), (omissible) : the topology
+
 #### Embedments
-* The using statement is of type: **Sequence of statements or action**
-* The using statement can be embedded into: chart, Behavior, Sequence of statements or action, 
-* The using statement embeds statements:  
+* The `using` statement is of type: **Sequence of statements or action**
+* The `using` statement can be embedded into: chart, Behavior, Sequence of statements or action, 
+* The `using` statement embeds statements:  
  	
 #### Definition
 
@@ -3335,11 +3419,12 @@ using topology(grid_ant) {
 ### warn 
 #### Facets 
 		  
-  * **message**  (string), (omissible) : the message to display as a warning.
+  * **`message`** (string), (omissible) : the message to display as a warning.
+
 #### Embedments
-* The warn statement is of type: **Single statement**
-* The warn statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
-* The warn statement embeds statements:  
+* The `warn` statement is of type: **Single statement**
+* The `warn` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
+* The `warn` statement embeds statements:  
  	
 #### Definition
 
@@ -3361,11 +3446,12 @@ warn 'This is a warning from ' + self;
 ### write 
 #### Facets 
 		  
-  * **message**  (any type), (omissible) : the message to display. Modelers can add some formatting characters to the message (carriage returns, tabs, or Unicode characters), which will be used accordingly in the console.
+  * **`message`** (any type), (omissible) : the message to display. Modelers can add some formatting characters to the message (carriage returns, tabs, or Unicode characters), which will be used accordingly in the console.
+
 #### Embedments
-* The write statement is of type: **Single statement**
-* The write statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
-* The write statement embeds statements:  
+* The `write` statement is of type: **Single statement**
+* The `write` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
+* The `write` statement embeds statements:  
  	
 #### Definition
 
