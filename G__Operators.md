@@ -39,7 +39,6 @@ GAML follows in general the traditional priorities attributed to arithmetic, boo
 * next the access operators `.` and `[]` (e.g. `{1,2,3}.x > 20 + {4,5,6}.y` will return the result of the comparison between the x and y ordinates of the two points)
 * and finally the functional operators, which have the highest priority of all.
 
-<br/>
 ----
 
 ## Using actions as operators
@@ -72,142 +71,115 @@ Note that due to the fact that actions are written by modelers, the general func
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 
 ## Table of Contents
 
-<br/>
 ----
 
 ## Operators by categories
 	
-<br/>
 ----
 
 ### 3D
 [box](#box), [cone3D](#cone3D), [cube](#cube), [cylinder](#cylinder), [dem](#dem), [hexagon](#hexagon), [pyramid](#pyramid), [rgb_to_xyz](#rgb_to_xyz), [set_z](#set_z), [sphere](#sphere), [teapot](#teapot), 
-<br/>
 ----
 
 ### DescriptiveStatistics
 [auto_correlation](#auto_correlation), [correlation](#correlation), [covariance](#covariance), [durbin_watson](#durbin_watson), [kurtosis](#kurtosis), [moment](#moment), [quantile](#quantile), [quantile_inverse](#quantile_inverse), [rank_interpolated](#rank_interpolated), [rms](#rms), [skew](#skew), [variance](#variance), 
-<br/>
 ----
 
 ### Distributions
 [binomial_coeff](#binomial_coeff), [binomial_complemented](#binomial_complemented), [binomial_sum](#binomial_sum), [chi_square](#chi_square), [chi_square_complemented](#chi_square_complemented), [gamma_distribution](#gamma_distribution), [gamma_distribution_complemented](#gamma_distribution_complemented), [normal_area](#normal_area), [normal_density](#normal_density), [normal_inverse](#normal_inverse), [pValue_for_fStat](#pValue_for_fStat), [pValue_for_tStat](#pValue_for_tStat), [student_area](#student_area), [student_t_inverse](#student_t_inverse), 
-<br/>
 ----
 
 ### Driving operators
 [as_driving_graph](#as_driving_graph), 
-<br/>
 ----
 
 ### EDP-related operators
 [diff](#diff), [diff2](#diff2), [internal_zero_order_equation](#internal_zero_order_equation), 
-<br/>
 ----
 
 ### Files-related operators
 [crs](#crs), [is_obj](#is_obj), [is_threeds](#is_threeds), [obj_file](#obj_file), [threeds_file](#threeds_file), 
-<br/>
 ----
 
 ### GammaFunction
 [beta](#beta), [gamma](#gamma), [incomplete_beta](#incomplete_beta), [incomplete_gamma](#incomplete_gamma), [incomplete_gamma_complement](#incomplete_gamma_complement), [log_gamma](#log_gamma), 
-<br/>
 ----
 
 ### Graphs-related operators
 [CPU_path_between](#CPU_path_between), [GPU_path_between](#GPU_path_between), 
-<br/>
 ----
 
 ### Grid-related operators
 [as_4_grid](#as_4_grid), [as_grid](#as_grid), [as_hexagonal_grid](#as_hexagonal_grid), 
-<br/>
 ----
 
 ### Iterator operators
 
-<br/>
 ----
 
 ### Map comparaison operators
 [fuzzy_kappa](#fuzzy_kappa), [fuzzy_kappa_sim](#fuzzy_kappa_sim), [kappa](#kappa), [kappa_sim](#kappa_sim), [percent_absolute_deviation](#percent_absolute_deviation), 
-<br/>
 ----
 
 ### OpenGIS
 [gml_from_wfs](#gml_from_wfs), [image_from_direct_wms](#image_from_direct_wms), [image_from_wms](#image_from_wms), [read_json_rest](#read_json_rest), 
-<br/>
 ----
 
 ### Path-related operators
 [CPU_path_between](#CPU_path_between), [GPU_path_between](#GPU_path_between), [path_between](#path_between), [path_to](#path_to), 
-<br/>
 ----
 
 ### Points-related operators
 [add_point](#add_point), [angle_between](#angle_between), [any_location_in](#any_location_in), [closest_points_with](#closest_points_with), [farthest_point_to](#farthest_point_to), [points_at](#points_at), [points_on](#points_on), 
-<br/>
 ----
 
 ### Shape
 [antislice](#antislice), [arc](#arc), [box](#box), [circle](#circle), [cone](#cone), [cone3D](#cone3D), [cube](#cube), [curve](#curve), [cylinder](#cylinder), [ellipse](#ellipse), [envelope](#envelope), [geometry_collection](#geometry_collection), [hemisphere](#hemisphere), [hexagon](#hexagon), [line](#line), [link](#link), [pacman](#pacman), [plan](#plan), [polygon](#polygon), [polyhedron](#polyhedron), [pyramid](#pyramid), [rectangle](#rectangle), [rgbcube](#rgbcube), [rgbtriangle](#rgbtriangle), [slice](#slice), [sphere](#sphere), [spherical_pie](#spherical_pie), [square](#square), [squircle](#squircle), [teapot](#teapot), [triangle](#triangle), 
-<br/>
 ----
 
 ### Spatial operators
 [-](#-), [*](#*), [+](#+), [add_point](#add_point), [agent_closest_to](#agent_closest_to), [agents_at_distance](#agents_at_distance), [agents_inside](#agents_inside), [agents_overlapping](#agents_overlapping), [angle_between](#angle_between), [antislice](#antislice), [any_location_in](#any_location_in), [arc](#arc), [around](#around), [as_4_grid](#as_4_grid), [as_grid](#as_grid), [as_hexagonal_grid](#as_hexagonal_grid), [at_distance](#at_distance), [at_location](#at_location), [box](#box), [circle](#circle), [clean](#clean), [closest_points_with](#closest_points_with), [closest_to](#closest_to), [cone](#cone), [cone3D](#cone3D), [convex_hull](#convex_hull), [covers](#covers), [crosses](#crosses), [crs](#crs), [CRS_transform](#CRS_transform), [CRS_transform](#CRS_transform), [cube](#cube), [curve](#curve), [cylinder](#cylinder), [dem](#dem), [direction_between](#direction_between), [disjoint_from](#disjoint_from), [distance_between](#distance_between), [distance_to](#distance_to), [ellipse](#ellipse), [envelope](#envelope), [farthest_point_to](#farthest_point_to), [geometry_collection](#geometry_collection), [hemisphere](#hemisphere), [hexagon](#hexagon), [hierarchical_clustering](#hierarchical_clustering), [IDW](#IDW), [IDW](#IDW), [inside](#inside), [inter](#inter), [intersects](#intersects), [line](#line), [link](#link), [masked_by](#masked_by), [neighbours_at](#neighbours_at), [neighbours_of](#neighbours_of), [overlapping](#overlapping), [overlaps](#overlaps), [pacman](#pacman), [partially_overlaps](#partially_overlaps), [path_between](#path_between), [path_to](#path_to), [plan](#plan), [points_at](#points_at), [points_on](#points_on), [polygon](#polygon), [polyhedron](#polyhedron), [pyramid](#pyramid), [rectangle](#rectangle), [rgb_to_xyz](#rgb_to_xyz), [rgbcube](#rgbcube), [rgbtriangle](#rgbtriangle), [rotated_by](#rotated_by), [scaled_to](#scaled_to), [set_z](#set_z), [simple_clustering_by_distance](#simple_clustering_by_distance), [simplification](#simplification), [skeletonize](#skeletonize), [slice](#slice), [smooth](#smooth), [sphere](#sphere), [spherical_pie](#spherical_pie), [split_at](#split_at), [split_geometry](#split_geometry), [split_lines](#split_lines), [square](#square), [squircle](#squircle), [teapot](#teapot), [to_GAMA_CRS](#to_GAMA_CRS), [to_GAMA_CRS](#to_GAMA_CRS), [to_rectangles](#to_rectangles), [to_squares](#to_squares), [touches](#touches), [towards](#towards), [transformed_by](#transformed_by), [translated_by](#translated_by), [triangle](#triangle), [triangulate](#triangulate), [union](#union), [voronoi](#voronoi), [without_holes](#without_holes), 
-<br/>
 ----
 
 ### Spatial properties operators
 [covers](#covers), [crosses](#crosses), [intersects](#intersects), [partially_overlaps](#partially_overlaps), [touches](#touches), 
-<br/>
 ----
 
 ### Spatial queries operators
 [agent_closest_to](#agent_closest_to), [agents_at_distance](#agents_at_distance), [agents_inside](#agents_inside), [agents_overlapping](#agents_overlapping), [at_distance](#at_distance), [closest_to](#closest_to), [inside](#inside), [neighbours_at](#neighbours_at), [neighbours_of](#neighbours_of), [overlapping](#overlapping), 
-<br/>
 ----
 
 ### Spatial relations operators
 [direction_between](#direction_between), [distance_between](#distance_between), [distance_to](#distance_to), [path_between](#path_between), [path_to](#path_to), [towards](#towards), 
-<br/>
 ----
 
 ### Spatial statistical operators
 [hierarchical_clustering](#hierarchical_clustering), [simple_clustering_by_distance](#simple_clustering_by_distance), 
-<br/>
 ----
 
 ### Spatial transformations operators
 [-](#-), [*](#*), [+](#+), [as_4_grid](#as_4_grid), [as_grid](#as_grid), [as_hexagonal_grid](#as_hexagonal_grid), [at_location](#at_location), [clean](#clean), [convex_hull](#convex_hull), [CRS_transform](#CRS_transform), [CRS_transform](#CRS_transform), [rotated_by](#rotated_by), [scaled_to](#scaled_to), [simplification](#simplification), [skeletonize](#skeletonize), [smooth](#smooth), [split_geometry](#split_geometry), [split_lines](#split_lines), [to_GAMA_CRS](#to_GAMA_CRS), [to_GAMA_CRS](#to_GAMA_CRS), [to_rectangles](#to_rectangles), [to_squares](#to_squares), [transformed_by](#transformed_by), [translated_by](#translated_by), [triangulate](#triangulate), [voronoi](#voronoi), [without_holes](#without_holes), 
-<br/>
 ----
 
 ### Statistical operators
 [clustering_cobweb](#clustering_cobweb), [clustering_DBScan](#clustering_DBScan), [clustering_em](#clustering_em), [clustering_farthestFirst](#clustering_farthestFirst), [clustering_simple_kmeans](#clustering_simple_kmeans), [clustering_xmeans](#clustering_xmeans), [hierarchical_clustering](#hierarchical_clustering), [simple_clustering_by_distance](#simple_clustering_by_distance), 
-<br/>
 ----
 
 ### Types-related operators
 
-<br/>
 ----
 
 ### Water level operators
 [water_area_for](#water_area_for), [water_level_for](#water_level_for), [water_polylines_for](#water_polylines_for), 
-<br/>
 ----
 
 ## Operators
 	
-<br/>
 ----
 
 ### -
@@ -231,7 +203,6 @@ geometry var2 <- geom1 - geom2; 	// var2 equals a geometry corresponding to diff
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### `*`
@@ -250,7 +221,6 @@ geometry var1 <- shape * {0.5,0.5,2}; 	// var1 equals a geometry corresponding t
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### +
@@ -274,7 +244,6 @@ geometry var2 <- geom1 + geom2; 	// var2 equals a geometry corresponding to unio
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### add_point
@@ -289,7 +258,6 @@ geometry var0 <- polygon([{10,10},{10,20},{20,20}]) add_point {20,10}; 	// var0 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### agent_closest_to
@@ -306,7 +274,6 @@ agent var0 <- agent_closest_to(self); 	// var0 equals the closest agent to the a
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### agents_at_distance
@@ -322,7 +289,6 @@ list var0 <- agents_at_distance(20); 	// var0 equals all the agents (excluding t
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### agents_inside
@@ -338,7 +304,6 @@ list<agent> var0 <- agents_inside(self); 	// var0 equals the agents that are cov
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### agents_overlapping
@@ -354,7 +319,6 @@ list<agent> var0 <- agents_overlapping(self); 	// var0 equals the agents that ov
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### angle_between
@@ -369,7 +333,6 @@ int var0 <- angle_between({5,5},{10,5},{5,10}); 	// var0 equals 90
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### antislice
@@ -388,7 +351,6 @@ geometry var0 <- antislice(10,0.3); 	// var0 equals a circle geometry of radius 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### any_location_in
@@ -404,14 +366,13 @@ point var0 <- any_location_in(square(5)); 	// var0 equals a point in the square,
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
-### any_point_inSame signification as [any_location_in](#any_location_in)
+### any_point_in
+Same signification as [any_location_in](#any_location_in)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### arc
@@ -433,7 +394,6 @@ geometry var1 <- arc(4,45,90); 	// var1 equals a geometry as an arc of radius 4,
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### around
@@ -451,7 +411,6 @@ geometry var0 <- 10 around circle(5); 	// var0 equals the ring geometry between 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### as_4_grid
@@ -467,7 +426,6 @@ matrix var0 <- self as_4_grid {10, 5}; 	// var0 equals the matrix of square geom
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### as_driving_graph
@@ -483,7 +441,6 @@ as_driving_graph(road,node)  --:  build a graph while using the road agents as e
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### as_grid
@@ -499,7 +456,6 @@ matrix var0 <- self as_grid {10, 5}; 	// var0 equals a matrix of square geometri
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### as_hexagonal_grid
@@ -515,7 +471,6 @@ list<geometry> var0 <- self as_hexagonal_grid {10, 5}; 	// var0 equals list of g
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### at_distance
@@ -531,7 +486,6 @@ list<agent> var0 <- [ag1, ag2, ag3] at_distance 20; 	// var0 equals the agents o
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### at_location
@@ -546,7 +500,6 @@ geometry var0 <- self at_location {10, 20}; 	// var0 equals the geometry resulti
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### auto_correlation
@@ -556,7 +509,6 @@ geometry var0 <- self at_location {10, 20}; 	// var0 equals the geometry resulti
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### beta
@@ -566,7 +518,6 @@ geometry var0 <- self at_location {10, 20}; 	// var0 equals the geometry resulti
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### binomial_coeff
@@ -576,7 +527,6 @@ geometry var0 <- self at_location {10, 20}; 	// var0 equals the geometry resulti
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### binomial_complemented
@@ -586,7 +536,6 @@ geometry var0 <- self at_location {10, 20}; 	// var0 equals the geometry resulti
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### binomial_sum
@@ -596,7 +545,6 @@ geometry var0 <- self at_location {10, 20}; 	// var0 equals the geometry resulti
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### box
@@ -618,14 +566,13 @@ geometry var1 <- box(10, 5 , 5); 	// var1 equals a geometry as a rectangle with 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
-### bufferSame signification as [+](#+)
+### buffer
+Same signification as [+](#+)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### chi_square
@@ -635,7 +582,6 @@ geometry var1 <- box(10, 5 , 5); 	// var1 equals a geometry as a rectangle with 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### chi_square_complemented
@@ -645,7 +591,6 @@ geometry var1 <- box(10, 5 , 5); 	// var1 equals a geometry as a rectangle with 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### circle
@@ -664,7 +609,6 @@ geometry var0 <- circle(10); 	// var0 equals a geometry as a circle of radius 10
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### clean
@@ -680,7 +624,6 @@ geometry var0 <- clean(self); 	// var0 equals returns the geometry resulting fro
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### closest_points_with
@@ -696,7 +639,6 @@ list<point> var0 <- geom1 closest_points_with(geom2); 	// var0 equals [pt1, pt2]
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### closest_to
@@ -714,7 +656,6 @@ agent var0 <- [ag1, ag2, ag3] closest_to(self); 	// var0 equals return the close
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### clustering_cobweb
@@ -730,7 +671,6 @@ list<list<agent>> var0 <- clustering_cobweb([ag1, ag2, ag3, ag4, ag5],["size","a
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### clustering_DBScan
@@ -746,7 +686,6 @@ list<list<agent>> var0 <- clustering_DBScan([ag1, ag2, ag3, ag4, ag5],["size","a
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### clustering_em
@@ -762,7 +701,6 @@ list<list<agent>> var0 <- clustering_em([ag1, ag2, ag3, ag4, ag5],["size","age",
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### clustering_farthestFirst
@@ -778,7 +716,6 @@ list<list<agent>> var0 <- clustering_farthestFirst([ag1, ag2, ag3, ag4, ag5],["s
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### clustering_simple_kmeans
@@ -794,7 +731,6 @@ list<list<agent>> var0 <- clustering_simple_kmeans([ag1, ag2, ag3, ag4, ag5],["s
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### clustering_xmeans
@@ -810,7 +746,6 @@ list<list<agent>> var0 <- clustering_xmeans([ag1, ag2, ag3, ag4, ag5],["size","a
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### cone
@@ -832,7 +767,6 @@ geometry var1 <- cone(0, 45); 	// var1 equals a geometry as a cone with min angl
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### cone3D
@@ -851,7 +785,6 @@ geometry var0 <- cone3D(10.0,10.0); 	// var0 equals a geometry as a circle of ra
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### convex_hull
@@ -866,7 +799,6 @@ geometry var0 <- convex_hull(self); 	// var0 equals the convex hull of the geome
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### correlation
@@ -876,7 +808,6 @@ geometry var0 <- convex_hull(self); 	// var0 equals the convex hull of the geome
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### covariance
@@ -886,7 +817,6 @@ geometry var0 <- convex_hull(self); 	// var0 equals the convex hull of the geome
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### covers
@@ -904,7 +834,6 @@ bool var0 <- square(5) covers square(2); 	// var0 equals true
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### CPU_path_between
@@ -919,7 +848,6 @@ path var0 <- my_graph CPU_path_between (ag1:: ag2); 	// var0 equals A path betwe
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### crosses
@@ -940,7 +868,6 @@ bool var2 <- polyline([{0,0},{25,25}]) crosses polygon([{10,10},{10,20},{20,20},
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### crs
@@ -955,7 +882,6 @@ string var0 <- crs(my_shapefile); 	// var0 equals the crs of the shapefile
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### CRS_transform
@@ -974,7 +900,6 @@ geometry var1 <- shape CRS_transform("EPSG:4326"); 	// var1 equals a geometry co
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### CRS_transform
@@ -993,7 +918,6 @@ geometry var1 <- CRS_transform(shape); 	// var1 equals a geometry corresponding 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### cube
@@ -1012,7 +936,6 @@ geometry var0 <- cube(10); 	// var0 equals a geometry as a square of side size 1
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### curve
@@ -1041,7 +964,6 @@ geometry var3 <- curve({0,0}, {0,10}, {10,10}, 20); 	// var3 equals a quadratic 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### cylinder
@@ -1060,7 +982,6 @@ geometry var0 <- cylinder(10,10); 	// var0 equals a geometry as a circle of radi
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### dem
@@ -1083,7 +1004,6 @@ geometry var3 <- dem(dem,texture); 	// var3 equals a geometry as a rectangle of 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### diff
@@ -1092,7 +1012,6 @@ geometry var3 <- dem(dem,texture); 	// var3 equals a geometry as a rectangle of 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### diff2
@@ -1101,7 +1020,6 @@ geometry var3 <- dem(dem,texture); 	// var3 equals a geometry as a rectangle of 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### direction_between
@@ -1117,14 +1035,13 @@ int var0 <- my_topology direction_between [ag1, ag2]; 	// var0 equals the direct
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
-### direction_toSame signification as [towards](#towards)
+### direction_to
+Same signification as [towards](#towards)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### disjoint_from
@@ -1147,7 +1064,6 @@ bool var4 <- polygon([{10,10},{10,20},{20,20},{20,10}]) disjoint_from polygon([{
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### distance_between
@@ -1163,7 +1079,6 @@ float var0 <- my_topology distance_between [ag1, ag2, ag3]; 	// var0 equals the 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### distance_to
@@ -1180,14 +1095,13 @@ float var0 <- ag1 distance_to ag2; 	// var0 equals the distance between ag1 and 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
-### dnormSame signification as [normal_density](#normal_density)
+### dnorm
+Same signification as [normal_density](#normal_density)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### durbin_watson
@@ -1197,7 +1111,6 @@ float var0 <- ag1 distance_to ag2; 	// var0 equals the distance between ag1 and 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### ellipse
@@ -1216,14 +1129,13 @@ geometry var0 <- ellipse(10, 10); 	// var0 equals a geometry as an ellipse of wi
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
-### enlarged_bySame signification as [+](#+)
+### enlarged_by
+Same signification as [+](#+)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### envelope
@@ -1233,7 +1145,6 @@ geometry var0 <- ellipse(10, 10); 	// var0 equals a geometry as an ellipse of wi
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### farthest_point_to
@@ -1249,7 +1160,6 @@ point var0 <- geom farthest_point_to(pt); 	// var0 equals the closest point of g
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### fuzzy_kappa
@@ -1266,7 +1176,6 @@ fuzzy_kappa([ag1, ag2, ag3, ag4, ag5],[cat1,cat1,cat2,cat3,cat2],[cat2,cat1,cat2
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### fuzzy_kappa_sim
@@ -1283,7 +1192,6 @@ fuzzy_kappa_sim([ag1, ag2, ag3, ag4, ag5], [cat1,cat1,cat2,cat3,cat2],[cat2,cat1
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### gamma
@@ -1293,7 +1201,6 @@ fuzzy_kappa_sim([ag1, ag2, ag3, ag4, ag5], [cat1,cat1,cat2,cat3,cat2],[cat2,cat1
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### gamma_distribution
@@ -1304,7 +1211,6 @@ fuzzy_kappa_sim([ag1, ag2, ag3, ag4, ag5], [cat1,cat1,cat2,cat3,cat2],[cat2,cat1
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### gamma_distribution_complemented
@@ -1314,7 +1220,6 @@ fuzzy_kappa_sim([ag1, ag2, ag3, ag4, ag5], [cat1,cat1,cat2,cat3,cat2],[cat2,cat1
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### geometry_collection
@@ -1333,7 +1238,6 @@ geometry var0 <- geometry_collection([{0,0}, {0,10}, {10,10}, {10,0}]); 	// var0
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### gml_from_wfs
@@ -1343,7 +1247,6 @@ geometry var0 <- geometry_collection([{0,0}, {0,10}, {10,10}, {10,0}]); 	// var0
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### GPU_path_between
@@ -1358,7 +1261,6 @@ path var0 <- my_graph GPU_path_between (ag1:: ag2); 	// var0 equals A path betwe
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### hemisphere
@@ -1377,7 +1279,6 @@ geometry var0 <- hemisphere(10,0.5); 	// var0 equals a geometry as a circle of r
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### hexagon
@@ -1399,7 +1300,6 @@ geometry var1 <- hexagon(10); 	// var1 equals a geometry as a hexagon of width o
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### hierarchical_clustering
@@ -1416,7 +1316,6 @@ list var0 <- [ag1, ag2, ag3, ag4, ag5] hierarchical_clustering 20.0; 	// var0 eq
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### IDW
@@ -1431,7 +1330,6 @@ msi.gama.util.GamaMap<msi.gama.metamodel.shape.IShape,java.lang.Double> var0 <- 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### IDW
@@ -1446,7 +1344,6 @@ msi.gama.util.GamaMap<msi.gama.metamodel.shape.IShape,java.lang.Double> var0 <- 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### image_from_direct_wms
@@ -1456,7 +1353,6 @@ msi.gama.util.GamaMap<msi.gama.metamodel.shape.IShape,java.lang.Double> var0 <- 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### image_from_wms
@@ -1466,7 +1362,6 @@ msi.gama.util.GamaMap<msi.gama.metamodel.shape.IShape,java.lang.Double> var0 <- 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### incomplete_beta
@@ -1476,7 +1371,6 @@ msi.gama.util.GamaMap<msi.gama.metamodel.shape.IShape,java.lang.Double> var0 <- 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### incomplete_gamma
@@ -1486,7 +1380,6 @@ msi.gama.util.GamaMap<msi.gama.metamodel.shape.IShape,java.lang.Double> var0 <- 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### incomplete_gamma_complement
@@ -1496,7 +1389,6 @@ msi.gama.util.GamaMap<msi.gama.metamodel.shape.IShape,java.lang.Double> var0 <- 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### inside
@@ -1513,7 +1405,6 @@ list<agent> var1 <- (species1 + species2) inside (self); 	// var1 equals the age
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### inter
@@ -1531,7 +1422,6 @@ geometry var0 <- square(10) inter circle(5); 	// var0 equals circle(5)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### internal_zero_order_equation
@@ -1540,14 +1430,13 @@ geometry var0 <- square(10) inter circle(5); 	// var0 equals circle(5)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
-### intersectionSame signification as [inter](#inter)
+### intersection
+Same signification as [inter](#inter)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### intersects
@@ -1565,7 +1454,6 @@ bool var0 <- square(5) intersects {10,10}; 	// var0 equals false
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### is_obj
@@ -1575,7 +1463,6 @@ bool var0 <- square(5) intersects {10,10}; 	// var0 equals false
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### is_threeds
@@ -1585,7 +1472,6 @@ bool var0 <- square(5) intersects {10,10}; 	// var0 equals false
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### kappa
@@ -1604,7 +1490,6 @@ kappa([cat1,cat1,cat2,cat3,cat2],[cat2,cat1,cat2,cat1,cat2],[cat1,cat2,cat3], [1
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### kappa_sim
@@ -1621,7 +1506,6 @@ kappa([cat1,cat1,cat2,cat2,cat2],[cat2,cat1,cat2,cat1,cat3],[cat2,cat1,cat2,cat3
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### kurtosis
@@ -1632,14 +1516,13 @@ kappa([cat1,cat1,cat2,cat2,cat2],[cat2,cat1,cat2,cat1,cat3],[cat2,cat1,cat2,cat3
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
-### lgammaSame signification as [log_gamma](#log_gamma)
+### lgamma
+Same signification as [log_gamma](#log_gamma)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### line
@@ -1665,7 +1548,6 @@ geometry var0 <- polyline([{0,0}, {0,10}, {10,10}, {10,0}]); 	// var0 equals a p
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### link
@@ -1685,7 +1567,6 @@ geometry var0 <- link (geom1::geom2); 	// var0 equals a link geometry between ge
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### log_gamma
@@ -1695,7 +1576,6 @@ geometry var0 <- link (geom1::geom2); 	// var0 equals a link geometry between ge
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### masked_by
@@ -1711,7 +1591,6 @@ geometry var1 <- perception_geom masked_by obstacle_list; 	// var1 equals the ge
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### moment
@@ -1721,7 +1600,6 @@ geometry var1 <- perception_geom masked_by obstacle_list; 	// var1 equals the ge
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### neighbours_at
@@ -1738,7 +1616,6 @@ list var0 <- (self neighbours_at (10)); 	// var0 equals all the agents located a
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### neighbours_of
@@ -1760,7 +1637,6 @@ list var0 <- topology(self) neighbours_of self; 	// var0 equals returns all the 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### normal_area
@@ -1770,7 +1646,6 @@ list var0 <- topology(self) neighbours_of self; 	// var0 equals returns all the 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### normal_density
@@ -1780,7 +1655,6 @@ list var0 <- topology(self) neighbours_of self; 	// var0 equals returns all the 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### normal_inverse
@@ -1790,7 +1664,6 @@ list var0 <- topology(self) neighbours_of self; 	// var0 equals returns all the 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### obj_file
@@ -1800,7 +1673,6 @@ list var0 <- topology(self) neighbours_of self; 	// var0 equals returns all the 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### overlapping
@@ -1817,7 +1689,6 @@ list<agent> var0 <- [ag1, ag2, ag3] overlapping(self); 	// var0 equals return th
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### overlaps
@@ -1844,7 +1715,6 @@ bool var8 <- polygon([{10,10},{10,20},{20,20},{20,10}]) overlaps polygon([{10,20
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### pacman
@@ -1866,7 +1736,6 @@ geometry var1 <- pacman(1); 	// var1 equals a geometry as a circle of radius 10 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### partially_overlaps
@@ -1893,7 +1762,6 @@ bool var8 <- polygon([{10,10},{10,20},{20,20},{20,10}]) partially_overlaps polyg
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### path_between
@@ -1909,7 +1777,6 @@ path var0 <- my_topology path_between [ag1, ag2]; 	// var0 equals A path between
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### path_to
@@ -1926,21 +1793,20 @@ path var0 <- ag1 path_to ag2; 	// var0 equals the path between ag1 and ag2 consi
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
-### pbinomSame signification as [binomial_sum](#binomial_sum)
+### pbinom
+Same signification as [binomial_sum](#binomial_sum)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
-### pchisqSame signification as [chi_square](#chi_square)
+### pchisq
+Same signification as [chi_square](#chi_square)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### percent_absolute_deviation
@@ -1955,21 +1821,20 @@ percent_absolute_deviation([200,300,150,150,200],[250,250,100,200,200])
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
-### percentileSame signification as [quantile_inverse](#quantile_inverse)
+### percentile
+Same signification as [quantile_inverse](#quantile_inverse)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
-### pgammaSame signification as [gamma_distribution](#gamma_distribution)
+### pgamma
+Same signification as [gamma_distribution](#gamma_distribution)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### plan
@@ -1988,14 +1853,13 @@ geometry var0 <- polyplan([{0,0}, {0,10}, {10,10}, {10,0}],10); 	// var0 equals 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
-### pnormSame signification as [normal_area](#normal_area)
+### pnorm
+Same signification as [normal_area](#normal_area)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### points_at
@@ -2011,7 +1875,6 @@ list<point> var0 <- 3 points_at(20.0); 	// var0 equals returns [pt1, pt2, pt3] w
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### points_on
@@ -2027,7 +1890,6 @@ list var0 <-  square(5) points_on(2); 	// var0 equals a list of points belonging
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### polygon
@@ -2047,7 +1909,6 @@ geometry var0 <- polygon([{0,0}, {0,10}, {10,10}, {10,0}]); 	// var0 equals a po
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### polyhedron
@@ -2067,21 +1928,20 @@ geometry var0 <- polyhedron([{0,0}, {0,10}, {10,10}, {10,0}],10); 	// var0 equal
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
-### polylineSame signification as [line](#line)
+### polyline
+Same signification as [line](#line)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
-### polyplanSame signification as [plan](#plan)
+### polyplan
+Same signification as [plan](#plan)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### pValue_for_fStat
@@ -2091,7 +1951,6 @@ geometry var0 <- polyhedron([{0,0}, {0,10}, {10,10}, {10,0}],10); 	// var0 equal
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### pValue_for_tStat
@@ -2101,7 +1960,6 @@ geometry var0 <- polyhedron([{0,0}, {0,10}, {10,10}, {10,0}],10); 	// var0 equal
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### pyramid
@@ -2120,7 +1978,6 @@ geometry var0 <- pyramid(5); 	// var0 equals a geometry as a square with side_si
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### quantile
@@ -2130,7 +1987,6 @@ geometry var0 <- pyramid(5); 	// var0 equals a geometry as a square with side_si
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### quantile_inverse
@@ -2140,7 +1996,6 @@ geometry var0 <- pyramid(5); 	// var0 equals a geometry as a square with side_si
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### rank_interpolated
@@ -2150,7 +2005,6 @@ geometry var0 <- pyramid(5); 	// var0 equals a geometry as a square with side_si
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### read_json_rest
@@ -2160,7 +2014,6 @@ geometry var0 <- pyramid(5); 	// var0 equals a geometry as a square with side_si
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### rectangle
@@ -2182,14 +2035,13 @@ geometry var1 <- rectangle(10, 5); 	// var1 equals a geometry as a rectangle wit
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
-### reduced_bySame signification as [-](#-)
+### reduced_by
+Same signification as [-](#-)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### rgb_to_xyz
@@ -2204,7 +2056,6 @@ list<point> var0 <- rgb_to_xyz(texture); 	// var0 equals a list of points
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### rgbcube
@@ -2223,7 +2074,6 @@ geometry var0 <- cube(10); 	// var0 equals a geometry as a square of side size 1
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### rgbtriangle
@@ -2242,7 +2092,6 @@ geometry var0 <- triangle(5); 	// var0 equals a geometry as a triangle with side
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### rms
@@ -2252,7 +2101,6 @@ geometry var0 <- triangle(5); 	// var0 equals a geometry as a triangle with side
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### rotated_by
@@ -2272,14 +2120,13 @@ geometry var1 <- self rotated_by 45; 	// var1 equals the geometry resulting from
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
-### scaled_bySame signification as [*](#*)
+### scaled_by
+Same signification as [*](#*)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### scaled_to
@@ -2294,7 +2141,6 @@ geometry var0 <- shape scaled_to {10,10}; 	// var0 equals a geometry correspondi
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### set_z
@@ -2312,7 +2158,6 @@ shape <- triangle(3) set_z [5,10,14];
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### simple_clustering_by_distance
@@ -2328,14 +2173,13 @@ list<list<agent>> var0 <- [ag1, ag2, ag3, ag4, ag5] simpleClusteringByDistance 2
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
-### simple_clustering_by_envelope_distanceSame signification as [simple_clustering_by_distance](#simple_clustering_by_distance)
+### simple_clustering_by_envelope_distance
+Same signification as [simple_clustering_by_distance](#simple_clustering_by_distance)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### simplification
@@ -2351,7 +2195,6 @@ geometry var0 <- self simplification 0.1; 	// var0 equals the geometry resulting
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### skeletonize
@@ -2366,7 +2209,6 @@ list<geometry> var0 <- skeletonize(self); 	// var0 equals the list of geometries
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### skew
@@ -2377,7 +2219,6 @@ list<geometry> var0 <- skeletonize(self); 	// var0 equals the list of geometries
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### slice
@@ -2396,7 +2237,6 @@ geometry var0 <- slice(10,0.3); 	// var0 equals a circle geometry of radius 10, 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### smooth
@@ -2411,14 +2251,13 @@ geometry var0 <- smooth(square(10), 0.0); 	// var0 equals a 'rounded' square
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
-### solidSame signification as [without_holes](#without_holes)
+### solid
+Same signification as [without_holes](#without_holes)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### sphere
@@ -2437,7 +2276,6 @@ geometry var0 <- sphere(10); 	// var0 equals a geometry as a circle of radius 10
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### spherical_pie
@@ -2459,7 +2297,6 @@ geometry var1 <- spherical_pie(10/2,[0.1,0.9],[#red,#green]); 	// var1 equals a 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### split_at
@@ -2476,7 +2313,6 @@ list<geometry> var0 <- polyline([{1,2},{4,6}]) split_at {7,6}; 	// var0 equals [
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### split_geometry
@@ -2495,7 +2331,6 @@ list<geometry> var2 <- to_rectangles(self, {10.0, 15.0}); 	// var2 equals the li
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### split_lines
@@ -2510,7 +2345,6 @@ list<geometry> var0 <- split_lines([line([{0,10}, {20,10}]), line([{0,10}, {20,1
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### square
@@ -2529,7 +2363,6 @@ geometry var0 <- square(10); 	// var0 equals a geometry as a square of side size
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### squircle
@@ -2548,7 +2381,6 @@ geometry var0 <- squircle(4,4); 	// var0 equals a geometry as a squircle of side
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### student_area
@@ -2558,7 +2390,6 @@ geometry var0 <- squircle(4,4); 	// var0 equals a geometry as a squircle of side
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### student_t_inverse
@@ -2568,7 +2399,6 @@ geometry var0 <- squircle(4,4); 	// var0 equals a geometry as a squircle of side
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### teapot
@@ -2587,7 +2417,6 @@ geometry var0 <- teapot(10); 	// var0 equals a geometry as a circle of radius 10
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### threeds_file
@@ -2597,7 +2426,6 @@ geometry var0 <- teapot(10); 	// var0 equals a geometry as a circle of radius 10
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### to_GAMA_CRS
@@ -2616,7 +2444,6 @@ geometry var1 <- to_GAMA_CRS({121,14}, "EPSG:4326"); 	// var1 equals a geometry 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### to_GAMA_CRS
@@ -2635,10 +2462,10 @@ geometry var1 <- to_GAMA_CRS({121,14}); 	// var1 equals a geometry corresponding
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
-### to_rectanglesSame signification as [split_geometry](#split_geometry)
+### to_rectangles
+Same signification as [split_geometry](#split_geometry)
 * **Possible use:** 
     * geometry OP point --->  `list<geometry>`
     * geometry OP int --->  `list<geometry>` 
@@ -2652,7 +2479,6 @@ list<geometry> var1 <- to_rectangles(self, {10.0, 15.0}, true); 	// var1 equals 
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### to_squares
@@ -2671,14 +2497,13 @@ list<geometry> var2 <- to_squares(self, 10, true); 	// var2 equals the list of 1
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
-### to_trianglesSame signification as [triangulate](#triangulate)
+### to_triangles
+Same signification as [triangulate](#triangulate)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### touches
@@ -2707,7 +2532,6 @@ bool var10 <- polygon([{10,10},{10,20},{20,20},{20,10}]) touches {10,15}; 	// va
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### towards
@@ -2723,7 +2547,6 @@ int var0 <- ag1 towards ag2; 	// var0 equals the direction between ag1 and ag2 a
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### transformed_by
@@ -2739,7 +2562,6 @@ geometry var0 <- self transformed_by {45, 0.5}; 	// var0 equals the geometry res
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### translated_by
@@ -2755,14 +2577,13 @@ geometry var0 <- self translated_by {10,10,10}; 	// var0 equals the geometry res
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
-### translated_toSame signification as [at_location](#at_location)
+### translated_to
+Same signification as [at_location](#at_location)
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### triangle
@@ -2781,7 +2602,6 @@ geometry var0 <- triangle(5); 	// var0 equals a geometry as a triangle with side
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### triangulate
@@ -2798,7 +2618,6 @@ list<geometry> var1 <- triangulate(self); 	// var1 equals the list of geometries
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### union
@@ -2814,7 +2633,6 @@ geometry var0 <- union([geom1, geom2, geom3]); 	// var0 equals a geometry corres
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### variance
@@ -2825,7 +2643,6 @@ geometry var0 <- union([geom1, geom2, geom3]); 	// var0 equals a geometry corres
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### voronoi
@@ -2840,7 +2657,6 @@ list<geometry> var0 <- voronoi([{10,10},{50,50},{90,90},{10,90},{90,10}]); 	// v
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### water_area_for
@@ -2856,7 +2672,6 @@ waterarea <- my_river_polyline water_area_for my_height_value
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### water_level_for
@@ -2872,7 +2687,6 @@ waterlevel <- my_river_polyline water_level_for my_area_value
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### water_polylines_for
@@ -2888,7 +2702,6 @@ waterarea <- my_river_polyline water_area_for my_height_value
 
 [Top of the page](#table-of-contents)
   	
-<br/>
 ----
 
 ### without_holes
