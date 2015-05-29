@@ -9,7 +9,13 @@ This installation procedure has been tested on MacOS X 10.10 (Yosemite) and Wind
 
 
 ## Detailed Instructions for Eclipse 4.4.2 (Luna SR2)
-### Get and configure Eclipse Luna
+### Summary
+1. Download the Eclipse Modeling Tools version of Luna SR2 from: `https://eclipse.org/downloads/packages/eclipse-modeling-tools/lunasr2`
+2. In Eclipse, install Xtext (in Install new softwares with `http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/`). The version should be `Xtext Complete SDK	2.8.2.v201504100559` 
+3. Clone the GitHub repository from `https://github.com/gama-platform/gama.git`
+4. Import all the project.
+
+### Details: get and configure Eclipse Luna
 1. Download the Eclipse Modeling Tools version of Luna SR2
   * https://eclipse.org/downloads/packages/eclipse-modeling-tools/lunasr2
 2. Unpack it anywhere and run it
@@ -20,9 +26,9 @@ This installation procedure has been tested on MacOS X 10.10 (Yosemite) and Wind
     * In "Xtext", install the following one:
       * Xtext Complete SDK	2.8.2.v201504100559
 
-### Get code source from GitHub
+### Details: get code source from GitHub
 In Eclipse:
-1. Windows > Open Perspective > Other…
+1. Windows > Open Perspective > Other...
   * Git
 2. Click on "Clone a Git repository"
   * First window:
