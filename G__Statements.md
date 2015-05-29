@@ -220,16 +220,14 @@ Allows to implement an equation in the form function(n, t) = expression. The lef
 ### Usages
 
 * The syntax of the = statement is a bit different from the other statements. It hase to be used as follows (in an equation):
-``` 
-float t;
+```float t;
 float S;
 float I;
 equation SI { 
    diff(S,t) = (- 0.3 * S * I / 100);
    diff(I,t) = (0.3 * S * I / 100);
 } 
- 
-```
+ ```
     
 * See also: [equation](#equation), [solve](#solve), 
 
@@ -258,33 +256,26 @@ Allows to define in a species, model or experiment a new action that can be call
 ### Usages
 
 * The simplest syntax to define an action that does not take any parameter and does not return anything is:
-``` 
-action simple_action {
+```action simple_action {
    // [set of statements]
 }
- 
-```
+ ```
 
 * If the action needs some parameters, they can be specified betwee, braquets after the identifier of the action:
-``` 
-action action_parameters(int i, string s){
+```action action_parameters(int i, string s){
    // [set of statements using i and s]
 }
- 
-```
+ ```
 
 * If the action returns any value, the returned type should be used instead of the "action" keyword. A return statement inside the body of the action statement is mandatory.
-``` 
-int action_return_val(int i, string s){
+```int action_return_val(int i, string s){
    // [set of statements using i and s]
    return i + i;
 }
- 
-```
+ ```
 
 * If virtual: is true, then the action is abstract, which means that the action is defined without body. A species containing at least one abstract action is abstract. Agents of this species cannot be created. The common use of an abstract action is to define an action that can be used by all its sub-species, which should redefine all abstract actions and implements its body.
-``` 
-species parent_species {
+```species parent_species {
    int virtual_action(int i, string s);
 }
 
@@ -293,8 +284,7 @@ species children parent: parent_species {
       return i + i;
    }
 }
- 
-```
+ ```
     
 * See also: [do](#do), 
 
@@ -326,60 +316,46 @@ Allows to add, i.e. to insert, a new element in a container (a list, matrix, map
 ### Usages
 
 * The new element can be added either at the end of the container or at a particular position.
-``` 
-add expr to: expr_container;    // Add at the end
+```add expr to: expr_container;    // Add at the end
 add expr at: expr to: expr_container;   // Add at position expr
- 
-```
+ ```
 
 * Case of a list, the expression in the facet at: should be an integer.
-``` 
-list<int> workingList <- [];
+```list<int> workingList <- [];
 add 0 at: 0 to: workingList ; 	// workingList equals [0]
 add 10 at: 0 to: workingList ; 	// workingList equals [10,0]
 add 20 at: 2 to: workingList ; 	// workingList equals [10,0,20]
 add 50 to: workingList; 	// workingList equals [10,0,20,50]
 add [60,70] all: true to: workingList; 	// workingList equals [10,0,20,50,60,70]
- 
-```
+ ```
 
 * Case of a map: As a map is basically a list of pairs key::value, we can also use the add statement on it. It is important to note that the behavior of the statement is slightly different, in particular in the use of the at facet, which denotes the key of the pair.
-``` 
-map<string,string> workingMap <- [];
+```map<string,string> workingMap <- [];
 add "val1" at: "x" to: workingMap; 	// workingMap equals ["x"::"val1"]
- 
-```
+ ```
 
 * If the at facet is ommitted, a pair expr_item::expr_item will be added to the map. An important exception is the case where the expr_item is a pair: in this case the pair is added.
-``` 
-add "val2" to: workingMap; 	// workingMap equals ["x"::"val1", "val2"::"val2"]
+```add "val2" to: workingMap; 	// workingMap equals ["x"::"val1", "val2"::"val2"]
 add "5"::"val4" to: workingMap;  	// workingMap equals ["x"::"val1", "val2"::"val2", "5"::"val4"]
- 
-```
+ ```
 
 * Notice that, as the key should be unique, the addition of an item at an existing position (i.e. existing key) will only modify the value associated with the given key.
-``` 
-add "val3" at: "x" to: workingMap; 	// workingMap equals ["x"::"val3", "val2"::"val2", "5"::"val4"]
- 
-```
+```add "val3" at: "x" to: workingMap; 	// workingMap equals ["x"::"val3", "val2"::"val2", "5"::"val4"]
+ ```
 
 * On a map, the all facet will add all value of a container  in the map (so as pair val_cont::val_cont)
-``` 
-add ["val4","val5"] all: true at: "x" to: workingMap; 	// workingMap equals ["x"::"val3", "val2"::"val2", "5"::"val4","val4"::"val4","val5"::"val5"]
- 
-```
+```add ["val4","val5"] all: true at: "x" to: workingMap; 	// workingMap equals ["x"::"val3", "val2"::"val2", "5"::"val4","val4"::"val4","val5"::"val5"]
+ ```
 
 * In case of a graph, we can use the facets `node`, `edge` and `weight` to add a node, an edge or weights to the graph. However, these facets are now considered as deprecated, and it is advised to use the various edge(), node(), edges(), nodes() operators, which can build the correct objects to add to the graph 
-``` 
-graph g <- as_edge_graph([{1,5}::{12,45}]);
+```graph g <- as_edge_graph([{1,5}::{12,45}]);
 add edge: {1,5}::{2,3} to: g;
 list var <- g.vertices; 	// var equals [{1,5},{12,45},{2,3}]
 list var <- g.edges; 	// var equals [polyline({1.0,5.0}::{12.0,45.0}),polyline({1.0,5.0}::{2.0,3.0})]
 add node: {5,5} to: g;
 list var <- g.vertices; 	// var equals [{1.0,5.0},{12.0,45.0},{2.0,3.0},{5.0,5.0}]
 list var <- g.edges; 	// var equals [polyline({1.0,5.0}::{12.0,45.0}),polyline({1.0,5.0}::{2.0,3.0})]
- 
-```
+ ```
 
 * Case of a matrix: this statement can not be used on matrix. Please refer to the statement put.    
 * See also: [put](#put), [remove](#remove), 
@@ -415,20 +391,16 @@ list var <- g.edges; 	// var equals [polyline({1.0,5.0}::{12.0,45.0}),polyline({
 ### Usages
 
 * The general syntax is:
-``` 
-display my_display {
+```display my_display {
    agents layer_name value: expression [additional options];
 }
- 
-```
+ ```
 
 * For instance, in a segregation model, `agents` will only display unhappy agents:
-``` 
-display Segregation {
+```display Segregation {
    agents agentDisappear value: people as list where (each.is_happy = false) aspect: with_group_color;
 }
- 
-```
+ ```
     
 * See also: [display](#display), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
 
@@ -460,16 +432,12 @@ This algorithm is an implementation of the Simulated Annealing algorithm. See th
 ### Usages
 
 * As other batch methods, the basic syntax of the annealing statement uses `method annealing` instead of the expected `annealing name: id` : 
-``` 
-method annealing [facet: value];
- 
-```
+```method annealing [facet: value];
+ ```
 
 * For example: 
-``` 
-method annealing temp_init: 100  temp_end: 1 temp_decrease: 0.5 nb_iter_cst_temp: 5 maximize: food_gathered;
- 
-```
+```method annealing temp_init: 100  temp_end: 1 temp_decrease: 0.5 nb_iter_cst_temp: 5 maximize: food_gathered;
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -494,40 +462,31 @@ Allows an agent, the sender agent (that can be the [Sections161#global world age
 ### Usages
 
 * Ask  a set of receiver agents, stored in a container, to perform a block of statements. The block is evaluated in the context of the agents' species
-``` 
-ask ${receiver_agents} {
+```ask ${receiver_agents} {
      ${cursor}
 }
- 
-```
+ ```
 
 * Ask  one agent to perform a block of statements. The block is evaluated in the context of the agent's species
-``` 
-ask ${one_agent} {
+```ask ${one_agent} {
      ${cursor}
 }
- 
-```
+ ```
 
 * If the species of the receiver agent(s) cannot be determined, it is possible to force it using the `as` facet. An error is thrown if an agent is not a direct or undirect instance of this species
-``` 
-ask${receiver_agent(s)} as: ${a_species_expression} {
+```ask${receiver_agent(s)} as: ${a_species_expression} {
      ${cursor}
 }
- 
-```
+ ```
 
 * To ask a set of agents to do something only if they belong to a given species, the `of_species` operator can be used. If none of the agents belong to the species, nothing happens
-``` 
-ask ${receiver_agents} of_species ${species_name} {
+```ask ${receiver_agents} of_species ${species_name} {
      ${cursor}
 }
- 
-```
+ ```
 
 * Any statement can be declared in the block statements. All the statements will be evaluated in the context of the receiver agent(s), as if they were defined in their species, which means that an expression like `self` will represent the receiver agent and not the sender. If the sender needs to refer to itself, some of its own attributes (or temporary variables) within the block statements, it has to use the keyword `myself`.
-``` 
-species animal {
+```species animal {
     float energy <- rnd (1000) min: 0.0 {
     reflex when: energy > 500 { // executed when the energy is above the given threshold
          list<animal> others <- (animal at_distance 5); // find all the neighbouring animals in a radius of 5 meters
@@ -540,8 +499,7 @@ species animal {
          }
     }
 }
- 
-```
+ ```
 
 * If the species of the receiver agent cannot be determined, it is possible to force it by casting the agent. Nothing happens if the agent cannot be casted to this species
 
@@ -566,8 +524,7 @@ Aspect statement is used to define a way to draw the current agent. Several aspe
 ### Usages
 
 * An example of use of the aspect statement:
-``` 
-species one_species {
+```species one_species {
 	int a <- rnd(10);
 	aspect aspect1 {
 		if(a mod 2 = 0) { draw circle(a);}
@@ -575,8 +532,7 @@ species one_species {
 		draw text: "a= " + a color: #black size: 5;
 	}
 }
- 
-```
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -622,8 +578,7 @@ Allows an agent to capture other agent(s) as its micro-agent(s).
 ### Usages
 
 * The preliminary for an agent A to capture an agent B as its micro-agent is that the A's species must defined a micro-species which is a sub-species of B's species (cf. [Species161#Nesting_species Nesting species]).
-``` 
-species A {
+```species A {
 ...
 }
 species B {
@@ -633,20 +588,15 @@ species B {
    }
 ...
 }
- 
-```
+ ```
 
 * To capture all "A" agents as "C" agents, we can ask an "B" agent to execute the following statement:
-``` 
-capture list(B) as: C;
- 
-```
+```capture list(B) as: C;
+ ```
 
 * Deprecated writing:
-``` 
-capture target: list (B) as: C;
- 
-```
+```capture target: list (B) as: C;
+ ```
     
 * See also: [release](#release), 
 
@@ -697,14 +647,12 @@ capture target: list (B) as: C;
 ### Usages
 
 * The general syntax is:
-``` 
-display chart_display {
+```display chart_display {
    chart "chart name" type: series [additional options] {
       [Set of data, datalists statements]
    }
 }
- 
-```
+ ```
     
 * See also: [display](#display), [agents](#agents), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
 
@@ -735,66 +683,50 @@ Allows an agent to create `number` agents of species `species`, to create agents
 ### Usages
 
 * Its simple syntax to create `an_int` agents of species `a_species` is:
-``` 
-create a_species number: an_int;
+```create a_species number: an_int;
 create species_of(self) number: 5 returns: list5Agents;
 5
- 
-```
+ ```
 
 * In GAML modelers can create agents of species `a_species  (with two attributes `type` and `nature` with types corresponding to the types of the shapefile attributes) from a shapefile `the_shapefile` while reading attributes 'TYPE_OCC' and 'NATURE' of the shapefile. One agent will be created by object contained in the shapefile:
-``` 
-create a_species from: the_shapefile with: [type:: 'TYPE_OCC', nature::'NATURE'];
- 
-```
+```create a_species from: the_shapefile with: [type:: 'TYPE_OCC', nature::'NATURE'];
+ ```
 
 * In order to create agents from a .csv file, facet `header` can be used to specified whether we can use columns header:
-``` 
-create toto from: "toto.csv" header: true with:[att1::read("NAME"), att2::read("TYPE")];
+```create toto from: "toto.csv" header: true with:[att1::read("NAME"), att2::read("TYPE")];
 or
 create toto from: "toto.csv" with:[att1::read(0), att2::read(1)]; //with read(int), the index of the column
- 
-```
+ ```
 
 * Similarly to the creation from shapefile, modelers can create agents from a set of geometries. In this case, one agent per geometry will be created (with the geometry as shape)
-``` 
-create species_of(self) from: [square(4),circle(4)]; 	// 2 agents have been created, with shapes respectively square(4) and circle(4)
- 
-```
+```create species_of(self) from: [square(4),circle(4)]; 	// 2 agents have been created, with shapes respectively square(4) and circle(4)
+ ```
 
 * Created agents are initialized following the rules of their species. If one wants to refer to them after the statement is executed, the returns keyword has to be defined: the agents created will then be referred to by the temporary variable it declares. For instance, the following statement creates 0 to 4 agents of the same species as the sender, and puts them in the temporary variable children for later use.
-``` 
-create species (self) number: rnd (4) returns: children;
+```create species (self) number: rnd (4) returns: children;
 ask children {
         // ...
 }
- 
-```
+ ```
 
 * If one wants to specify a special initialization sequence for the agents created, create provides the same possibilities as ask. This extended syntax is:
-``` 
-create a_species number: an_int {
+```create a_species number: an_int {
      [statements]
 }
- 
-```
+ ```
 
 * The same rules as in ask apply. The only difference is that, for the agents created, the assignments of variables will bypass the initialization defined in species. For instance:
-``` 
-create species(self) number: rnd (4) returns: children {
+```create species(self) number: rnd (4) returns: children {
      set location <- myself.location + {rnd (2), rnd (2)}; // tells the children to be initially located close to me
      set parent <- myself; // tells the children that their parent is me (provided the variable parent is declared in this species) 
 }
- 
-```
+ ```
 
 * Desprecated uses: 
-``` 
-// Simple syntax
+```// Simple syntax
 create species: a_species number: an_int;
 
- 
-```
+ ```
 
 * If `number` equals 0 or species is not a species, the statement is ignored.
 
@@ -892,23 +824,17 @@ This statements allows a value to diffuse among a species on agents (generally o
 ### Usages
 
 * A basic example of diffusion of the variable phero defined in the species cells, given a diffusion matrix math_diff is:
-``` 
-matrix<float> math_diff <- matrix([[1/9,1/9,1/9],[1/9,1/9,1/9],[1/9,1/9,1/9]]);
+```matrix<float> math_diff <- matrix([[1/9,1/9,1/9],[1/9,1/9,1/9],[1/9,1/9,1/9]]);
 diffusion var: phero on: cells mat_diffu: math_diff;
- 
-```
+ ```
 
 * The diffusion can be masked by obstacles, created from a bitmap image:
-``` 
-diffusion var: phero on: cells mat_diffu: math_diff mask: mymask;
- 
-```
+```diffusion var: phero on: cells mat_diffu: math_diff mask: mymask;
+ ```
 
 * A convenient way to have an uniform diffusion in a given radius is (which is equivalent to the above diffusion):
-``` 
-diffusion var: phero on: cells proportion: 1/9 radius: 1;
- 
-```
+```diffusion var: phero on: cells proportion: 1/9 radius: 1;
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -955,19 +881,15 @@ A display refers to a independent and mobile part of the interface that can disp
 ### Usages
 
 * The general syntax is:
-``` 
-display my_display [additional options] { ... }
- 
-```
+```display my_display [additional options] { ... }
+ ```
 
 * Each display can include different layers (like in a GIS).
-``` 
-display gridWithElevationTriangulated type: opengl ambient_light: 100 {
+```display gridWithElevationTriangulated type: opengl ambient_light: 100 {
 	grid cell elevation: true triangulation: true;
 	species people aspect: base;
 }
- 
-```
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -1004,20 +926,16 @@ display gridWithElevationTriangulated type: opengl ambient_light: 100 {
 ### Usages
 
 * The general syntax is:
-``` 
-display my_display {
+```display my_display {
    grid ant_grid lines: #black position: { 0.5, 0 } size: {0.5,0.5};
 }
- 
-```
+ ```
 
 * To display a grid as a DEM:
-``` 
-display my_display {
+```display my_display {
     grid cell texture: texture_file text: false triangulation: true elevation: true;
 }
- 
-```
+ ```
     
 * See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
 
@@ -1050,32 +968,26 @@ The `display_population` statement is used using the `species keyword`. It allow
 ### Usages
 
 * The general syntax is:
-``` 
-display my_display {
+```display my_display {
    species species_name [additional options];
 }
- 
-```
+ ```
 
 * Species can be superposed on the same plan (be careful with the order, the last one will be above all the others):
-``` 
-display my_display {
+```display my_display {
    species agent1 aspect: base;
    species agent2 aspect: base;
    species agent3 aspect: base;
 }
- 
-```
+ ```
 
 * Each species layer can be placed at a different z value using the opengl display. position:{0,0,0} means the layer will be placed on the ground and position:{0,0,1} means it will be placed at an height equal to the maximum size of the environment.
-``` 
-display my_display type: opengl{
+```display my_display type: opengl{
    species agent1 aspect: base ;
    species agent2 aspect: base position:{0,0,0.5};
    species agent3 aspect: base position:{0,0,1};
 }
- 
-```
+ ```
     
 * See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [text](#text), 
 
@@ -1103,32 +1015,23 @@ Allows the agent to execute an action or a primitive.  For a list of primitives 
 ### Usages
 
 * The simple syntax (when the action does not expect any argument and the result is not to be kept) is:
-``` 
-do name_of_action_or_primitive;
- 
-```
+```do name_of_action_or_primitive;
+ ```
 
 * In case the action expects one or more arguments to be passed, they are defined by using facets (enclosed tags or a map are now deprecated):
-``` 
-do name_of_action_or_primitive arg1: expression1 arg2: expression2;
- 
-```
+```do name_of_action_or_primitive arg1: expression1 arg2: expression2;
+ ```
 
 * In case the result of the action needs to be made available to the agent, the action can be called with the agent calling the action (`self` when the agent itself calls the action) instead of `do`; the result should be assigned to a temporary variable:
-``` 
-type_returned_by_action result <- self name_of_action_or_primitive [];
- 
-```
+```type_returned_by_action result <- self name_of_action_or_primitive [];
+ ```
 
 * In case of an action expecting arguments and returning a value, the following syntax is used:
-``` 
-type_returned_by_action result <- self name_of_action_or_primitive [arg1::expression1, arg2::expression2];
- 
-```
+```type_returned_by_action result <- self name_of_action_or_primitive [arg1::expression1, arg2::expression2];
+ ```
 
 * Deprecated uses: following uses of the `do` statement (still accepted) are now deprecated:
-``` 
-// Simple syntax: 
+```// Simple syntax: 
 do action: name_of_action_or_primitive;
 
 // In case the result of the action needs to be made available to the agent, the `returns` keyword can be defined; the result will then be referred to by the temporary variable declared in this attribute:
@@ -1149,8 +1052,7 @@ do name_of_action_or_primitive {
      arg arg2 value: expression2;
      ...
 }
- 
-```
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -1193,31 +1095,25 @@ do name_of_action_or_primitive {
 ### Usages
 
 * Any kind of geometry as any location can be drawn when displaying an agent (independently of his shape)
-``` 
-aspect geometryAspect {
+```aspect geometryAspect {
 	draw circle(1.0) empty: !hasFood color: #orange ;
 }
- 
-```
+ ```
 
 * Image or text can also be drawn
-``` 
-aspect arrowAspect {
+```aspect arrowAspect {
 	draw "Current state= "+state at: location + {-3,1.5} color: #white font: font('Default', 12, #bold) ;
 	draw file(ant_shape_full) rotate: heading at: location size: 5
 }
- 
-```
+ ```
 
 * Arrows can be drawn with any kind of geometry, using begin_arrow and end_arrow facets, combined with the empty: facet to specify whether it is plain or empty
-``` 
-aspect arrowAspect {
+```aspect arrowAspect {
 	draw line([{20, 20}, {40, 40}]) color: #black begin_arrow:5;
 	draw line([{10, 10},{20, 50}, {40, 70}]) color: #green end_arrow: 2 begin_arrow: 2 empty: true;
 	draw square(10) at: {80,20} color: #purple begin_arrow: 2 empty: true;
 }
- 
-```
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -1261,15 +1157,13 @@ In an FSM architecture, `enter` introduces a sequence of statements to execute u
 ### Usages
 
 * In the following example, at the step it enters into the state s_init, the message 'Enter in s_init' is displayed followed by the display of the state name:
-``` 
-	state s_init {
+```	state s_init {
 		enter { write "Enter in" + state; }
 			write "Enter in" + state;
 		}
 		write state;
 	}
- 
-```
+ ```
     
 * See also: [state](#state), [exit](#exit), [transition](#transition), 
 
@@ -1298,27 +1192,23 @@ The equation statement is used to create an equation system from several single 
 ### Usages
 
 * The basic syntax to define an equation system is:
-``` 
-float t;
+```float t;
 float S;
 float I;
 equation SI { 
    diff(S,t) = (- 0.3 * S * I / 100);
    diff(I,t) = (0.3 * S * I / 100);
 } 
- 
-```
+ ```
 
 * If the type: facet is used, a predefined equation system is defined using variables vars: and parameters params: in the right order. All possible predefined equation systems are the following ones (see [EquationPresentation161 EquationPresentation161] for precise definition of each classical equation system): 
-``` 
-equation eqSI type: SI vars: [S,I,t] params: [N,beta];
+```equation eqSI type: SI vars: [S,I,t] params: [N,beta];
 equation eqSIS type: SIS vars: [S,I,t] params: [N,beta,gamma];
 equation eqSIR type:SIR vars:[S,I,R,t] params:[N,beta,gamma];
 equation eqSIRS type: SIRS vars: [S,I,R,t] params: [N,beta,gamma,omega,mu];
 equation eqSEIR type: SEIR vars: [S,E,I,R,t] params: [N,beta,gamma,sigma,mu];
 equation eqLV type: LV vars: [x,y,t] params: [alpha,beta,delta,gamma] ;
- 
-```
+ ```
 
 * If the simultaneously: facet is used, system of all the agents will be solved simultaneously.    
 * See also: [=](#=), [solve](#solve), 
@@ -1344,10 +1234,8 @@ The statement makes the agent output an error dialog (if the simulation contains
 ### Usages
 
 * Throwing an error
-``` 
-error 'This is an error raised by ' + self;
- 
-```
+```error 'This is an error raised by ' + self;
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -1374,14 +1262,11 @@ error 'This is an error raised by ' + self;
 ### Usages
 
 * The general syntax is:
-``` 
-event [event_type] action: myAction;
- 
-```
+```event [event_type] action: myAction;
+ ```
 
 * For instance:
-``` 
-global {
+```global {
    // ... 
    action myAction (point location, list selected_agents) {
       // location: contains le location of the click in the environment
@@ -1396,8 +1281,7 @@ experiment Simple type:gui {
       event mouse_up action: myAction;
    }
 }
- 
-```
+ ```
     
 * See also: [display](#display), [agents](#agents), [chart](#chart), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
 
@@ -1425,16 +1309,12 @@ This is the standard batch method. The exhaustive mode is defined by default whe
 ### Usages
 
 * As other batch methods, the basic syntax of the exhaustive statement uses `method exhaustive` instead of the expected `exhaustive name: id` : 
-``` 
-method exhaustive [facet: value];
- 
-```
+```method exhaustive [facet: value];
+ ```
 
 * For example: 
-``` 
-method exhaustive maximize: food_gathered;
- 
-```
+```method exhaustive maximize: food_gathered;
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -1457,8 +1337,7 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 ### Usages
 
 * In the following example, at the state it leaves the state s_init, he will display the message 'EXIT from s_init':
-``` 
-	state s_init initial: true {
+```	state s_init initial: true {
 		write state;
 		transition to: s1 when: (cycle > 2) {
 			write "transition s_init -> s1";
@@ -1467,8 +1346,7 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 			write "EXIT from "+state;
 		}
 	}
- 
-```
+ ```
     
 * See also: [enter](#enter), [state](#state), [transition](#transition), 
 
@@ -1542,16 +1420,12 @@ This is a simple implementation of Genetic Algorithms (GA). See the wikipedia ar
 ### Usages
 
 * As other batch methods, the basic syntax of the `genetic` statement uses `method genetic` instead of the expected `genetic name: id` : 
-``` 
-method genetic [facet: value];
- 
-```
+```method genetic [facet: value];
+ ```
 
 * For example: 
-``` 
-method genetic maximize: food_gathered pop_dim: 5 crossover_prob: 0.7 mutation_prob: 0.1 nb_prelim_gen: 1 max_gen: 20; 
- 
-```
+```method genetic maximize: food_gathered pop_dim: 5 crossover_prob: 0.7 mutation_prob: 0.1 nb_prelim_gen: 1 max_gen: 20; 
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -1581,15 +1455,13 @@ method genetic maximize: food_gathered pop_dim: 5 crossover_prob: 0.7 mutation_p
 ### Usages
 
 * The general syntax is:
-``` 
-display my_display {
+```display my_display {
    graphics "my new layer" {
       draw circle(5) at: {10,10} color: #red;
       draw "test" at: {10,10} size: 20 color: #black;
    }
 }
- 
-```
+ ```
     
 * See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
 
@@ -1618,16 +1490,12 @@ This algorithm is an implementation of the Hill Climbing algorithm. See the wiki
 ### Usages
 
 * As other batch methods, the basic syntax of the `hill_climbing` statement uses `method hill_climbing` instead of the expected `hill_climbing name: id` : 
-``` 
-method hill_climbing [facet: value];
- 
-```
+```method hill_climbing [facet: value];
+ ```
 
 * For example: 
-``` 
-method hill_climbing iter_max: 50 maximize : food_gathered; 
- 
-```
+```method hill_climbing iter_max: 50 maximize : food_gathered; 
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -1651,16 +1519,13 @@ Allows the agent to execute a sequence of statements if and only if the conditio
 ### Usages
 
 * The generic syntax is:
-``` 
-if bool_expr {
+```if bool_expr {
     [statements]
 }
- 
-```
+ ```
 
 * Optionally, the statements to execute when the condition evaluates to false can be defined in a following statement else. The syntax then becomes:
-``` 
-if bool_expr {
+```if bool_expr {
     [statements]
 }
 else {
@@ -1682,12 +1547,10 @@ else {
 	valFalse <- "false";
 }
  	// valFalse equals "false"
- 
-```
+ ```
 
 * ifs and elses can be imbricated as needed. For instance:
-``` 
-if bool_expr {
+```if bool_expr {
     [statements]
 }
 else if bool_expr2 {
@@ -1696,8 +1559,7 @@ else if bool_expr2 {
 else {
     [statements]
 }
- 
-```
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -1728,38 +1590,30 @@ else {
 ### Usages
 
 * The general syntax is:
-``` 
-display my_display {
+```display my_display {
    image layer_name file: image_file [additional options];
 }
- 
-```
+ ```
 
 * For instance, in the case of a bitmap image
-``` 
-display my_display {
+```display my_display {
    image background file:"../images/my_backgound.jpg";
 }
- 
-```
+ ```
 
 * Or in the case of a shapefile:
-``` 
-display my_display {
+```display my_display {
    image testGIS gis: "../includes/building.shp" color: rgb('blue');
 }
- 
-```
+ ```
 
 * It is also possible to superpose images on different layers in the same way as for species using opengl display:
-``` 
-display my_display {
+```display my_display {
   image image1 file:"../images/image1.jpg";
   image image2 file:"../images/image2.jpg";
   image image3 file:"../images/image3.jpg" position: {0,0,0.5};
 }
- 
-```
+ ```
     
 * See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
 
@@ -1789,10 +1643,8 @@ display my_display {
 ### Usages
 
 * An example of syntax is:
-``` 
-inspect "my_inspector" value: ant attributes: ["name", "location"];
- 
-```
+```inspect "my_inspector" value: ant attributes: ["name", "location"];
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -1890,64 +1742,50 @@ Allows the agent to perform the same set of statements either a fixed number of 
 ### Usages
 
 * The basic syntax for repeating a fixed number of times a set of statements is:
-``` 
-loop times: an_int_expression {
+```loop times: an_int_expression {
      // [statements]
 }
- 
-```
+ ```
 
 * The basic syntax for repeating a set of statements while a condition holds is:
-``` 
-loop while: a_bool_expression {
+```loop while: a_bool_expression {
      // [statements]
 }
- 
-```
+ ```
 
 * The basic syntax for repeating a set of statements by progressing over a container of a point is:
-``` 
-loop a_temp_var over: a_collection_expression {
+```loop a_temp_var over: a_collection_expression {
      // [statements]
 }
- 
-```
+ ```
 
 * The basic syntax for repeating a set of statements while an index iterates over a range of values with a fixed step of 1 is:
-``` 
-loop a_temp_var from: int_expression_1 to: int_expression_2 {
+```loop a_temp_var from: int_expression_1 to: int_expression_2 {
      // [statements]
 }
- 
-```
+ ```
 
 * The incrementation step of the index can also be chosen:
-``` 
-loop a_temp_var from: int_expression_1 to: int_expression_2 step: int_expression3 {
+```loop a_temp_var from: int_expression_1 to: int_expression_2 step: int_expression3 {
      // [statements]
 }
- 
-```
+ ```
 
 * In these latter three cases, the name facet designates the name of a temporary variable, whose scope is the loop, and that takes, in turn, the value of each of the element of the list (or each value in the interval). For example, in the first instance of the "loop over" syntax :
-``` 
-int a <- 0;
+```int a <- 0;
 loop i over: [10, 20, 30] {
      a <- a + i;
 } // a now equals 60
- 
-```
+ ```
 
 * The second (quite common) case of the loop syntax allows one to use an interval of integers. The from and to facets take an integer expression as arguments, with the first (resp. the last) specifying the beginning (resp. end) of the inclusive interval (i.e. [to, from]). If the step is not defined, it is assumed to be equal to 1.
-``` 
-list the_list <-list (species_of (self));
+```list the_list <-list (species_of (self));
 loop i from: 0 to: length (the_list) - 1 {
      ask the_list at i {
         // ...
      }
 } // every  agent of the list is asked to do something
- 
-```
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -1971,31 +1809,25 @@ In a switch...match structure, the value of each match block is compared to the 
 ### Usages
 
 * match block is executed if the switch value is equals to the value of the match:
-``` 
-switch 3 {
+```switch 3 {
    match 1 {write "Match 1"; }
    match 3 {write "Match 2"; }
 }
- 
-```
+ ```
 
 * match_between block is executed if the switch value is in the interval given in value of the match_between:
-``` 
-switch 3 {
+```switch 3 {
    match_between [1,2] {write "Match OK between [1,2]"; }
    match_between [2,5] {write "Match OK between [2,5]"; }
 }
- 
-```
+ ```
 
 * match_one block is executed if the switch value is equals to one of the values of the match_one:
-``` 
-switch 3 {
+```switch 3 {
    match_one [0,1,2] {write "Match OK with one of [0,1,2]"; }
    match_between [2,3,4,5] {write "Match OK with one of [2,3,4,5]"; }
 }
- 
-```
+ ```
     
 * See also: [switch](#switch), [default](#default), 
 
@@ -2022,10 +1854,8 @@ This command permits agents to migrate from one population/species to another po
 ### Usages
 
 * It can be used in a 3-levels model, in case where individual agents can be captured into group meso agents and groups into clouds macro agents. migrate is used to allows agents captured by groups to migrate into clouds. See the model 'Balls, Groups and Clouds.gaml' in the library.
-``` 
-migrate ball_in_group target: ball_in_cloud;
- 
-```
+```migrate ball_in_group target: ball_in_cloud;
+ ```
     
 * See also: [capture](#capture), [release](#release), 
 
@@ -2053,10 +1883,8 @@ A monitor allows to follow the value of an arbitrary expression in GAML.
 ### Usages
 
 * An example of use is:
-``` 
-monitor "nb preys" value: length(prey as list) refresh_every: 5;  
- 
-```
+```monitor "nb preys" value: length(prey as list) refresh_every: 5;  
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -2079,15 +1907,13 @@ monitor "nb preys" value: length(prey as list) refresh_every: 5;
 ### Usages
 
 * Its basic syntax is: 
-``` 
-experiment exp_name type: gui {
+```experiment exp_name type: gui {
    // [inputs]
    output {
       // [display, file or monitor statements]
    }
 }
- 
-```
+ ```
     
 * See also: [display](#display), [monitor](#monitor), [inspect](#inspect), [output_file](#output_file), 
 
@@ -2136,10 +1962,8 @@ experiment exp_name type: gui {
 ### Usages
 
 * The general syntax is:
-``` 
-overlay "Cycle: " + (cycle) center: "Duration: " + total_duration + "ms" right: "Model time: " + as_date(time,"") color: [#yellow, #orange, #yellow];
- 
-```
+```overlay "Cycle: " + (cycle) center: "Duration: " + total_duration + "ms" right: "Model time: " + as_date(time,"") color: [#yellow, #orange, #yellow];
+ ```
     
 * See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
 
@@ -2173,17 +1997,13 @@ The parameter statement specifies which global attributes (i) will change throug
 ### Usages
 
 * In gui experiment, the general syntax is the following:
-``` 
-parameter title var: global_var category: cat;
- 
-```
+```parameter title var: global_var category: cat;
+ ```
 
 * In batch experiment, the two following syntaxes can be used to describe the possible values of a parameter:
-``` 
-parameter 'Value of toto:' var: toto among: [1, 3, 7, 15, 100]; 
+```parameter 'Value of toto:' var: toto among: [1, 3, 7, 15, 100]; 
 parameter 'Value of titi:' var: titi min: 1 max: 100 step: 2; 
- 
-```
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -2219,16 +2039,14 @@ In a batch experiment, the permanent section allows to define an output block th
 ### Usages
 
 * For instance, this permanent section will allow to display for each simulation the end value of the food_gathered variable:
-``` 
-permanent {
+```permanent {
 	display Ants background: rgb('white') refresh_every: 1 {
 		chart "Food Gathered" type: series {
 			data "Food" value: food_gathered;
 		}
 	}
 }
- 
-```
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -2277,36 +2095,28 @@ Allows the agent to replace a value in a container at a given position (in a lis
 ### Usages
 
 * The allowed parameters configurations are the following ones:
-``` 
-put expr at: expr in: expr_container;
+```put expr at: expr in: expr_container;
 put all: expr in: expr_container;
- 
-```
+ ```
 
 * In the case of a list, the position should an integer in the bound of the list. The facet all: is used to replace all the elements of the list by the given value.
-``` 
-list<int> putList <- [1,2,3,4,5]; 	// putList equals [1,2,3,4,5]
+```list<int> putList <- [1,2,3,4,5]; 	// putList equals [1,2,3,4,5]
 put -10 at: 1 in: putList; 	// putList equals [1,-10,3,4,5]
 put 10 all: true in: putList; 	// putList equals [10,10,10,10,10]
- 
-```
+ ```
 
 * In the case of a matrix, the position should be a point in the bound of the matrix. The facet all: is used to replace all the elements of the matrix by the given value.
-``` 
-matrix<int> putMatrix <- matrix([[0,1],[2,3]]); 	// putMatrix equals matrix([[0,1],[2,3]])
+```matrix<int> putMatrix <- matrix([[0,1],[2,3]]); 	// putMatrix equals matrix([[0,1],[2,3]])
 put -10 at: {1,1} in: putMatrix; 	// putMatrix equals matrix([[0,1],[2,-10]])
 put 10 all: true in: putMatrix; 	// putMatrix equals matrix([[10,10],[10,10]])
- 
-```
+ ```
 
 * In the case of a map, the position should be one of the key values of the map. Notice that if the given key value does not exist in the map, the given pair key::value will be added to the map. The facet all is used to replace the value of all the pairs of the map.
-``` 
-map<string,int> putMap <- ["x"::4,"y"::7]; 	// putMap equals ["x"::4,"y"::7]
+```map<string,int> putMap <- ["x"::4,"y"::7]; 	// putMap equals ["x"::4,"y"::7]
 put -10 key: "y" in: putMap; 	// putMap equals ["x"::4,"y"::-10]
 put -20 key: "z" in: putMap; 	// putMap equals ["x"::4,"y"::-10, "z"::-20]
 put -30 all: true in: putMap; 	// putMap equals ["x"::-30,"y"::-30, "z"::-30]
- 
-```
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -2334,12 +2144,10 @@ put -30 all: true in: putMap; 	// putMap equals ["x"::-30,"y"::-30, "z"::-30]
 ### Usages
 
 * The general syntax is:
-``` 
-display my_display {
+```display my_display {
    quadtree 'qt' position: { 0, 0.5 } size: quadrant_size;
 }
- 
-```
+ ```
     
 * See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
 
@@ -2374,16 +2182,12 @@ This algorithm is a simple implementation of the Reactive Tabu Search algorithm 
 ### Usages
 
 * As other batch methods, the basic syntax of the reactive_tabu statement uses `method reactive_tabu` instead of the expected `reactive_tabu name: id` : 
-``` 
-method reactive_tabu [facet: value];
- 
-```
+```method reactive_tabu [facet: value];
+ ```
 
 * For example: 
-``` 
-method reactive_tabu iter_max: 50 tabu_list_size_init: 5 tabu_list_size_min: 2 tabu_list_size_max: 10 nb_tests_wthout_col_max: 20 cycle_size_min: 2 cycle_size_max: 20 maximize: food_gathered;
- 
-```
+```method reactive_tabu iter_max: 50 tabu_list_size_init: 5 tabu_list_size_min: 2 tabu_list_size_max: 10 nb_tests_wthout_col_max: 20 cycle_size_min: 2 cycle_size_max: 20 maximize: food_gathered;
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -2408,12 +2212,10 @@ A reflex is a sequence of statements that can be executed, at each time step, by
 ### Usages
 
 * Example:
-``` 
-reflex my_reflex when: flip (0.5){ 		//Only executed when flip returns true
+```reflex my_reflex when: flip (0.5){ 		//Only executed when flip returns true
     write "Executing the unconditional reflex";
 }
- 
-```
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -2440,8 +2242,7 @@ Allows an agent to release its micro-agent(s). The preliminary for an agent to r
 ### Usages
 
 * We consider the following species. Agents of "C" species can be released from a "B" agent to become agents of "A" species. Agents of "D" species cannot be released from the "A" agent because species "D" has no parent species.
-``` 
-species A {
+```species A {
 ...
 }
 species B {
@@ -2454,20 +2255,15 @@ species B {
    }
 ...
 }
- 
-```
+ ```
 
 * To release all "C" agents from a "B" agent, agent "C" has to execute the following statement. The "C" agent will change to "A" agent. The won't consider "B" agent as their macro-agent (host) anymore. Their host (macro-agent) will the be the host (macro-agent) of the "B" agent.
-``` 
-release list(C);
- 
-```
+```release list(C);
+ ```
 
 * The modeler can specify the new host and the new species of the released agents:
-``` 
-release list (C) as: new_species in: new host;
- 
-```
+```release list (C) as: new_species in: new host;
+ ```
     
 * See also: [capture](#capture), 
 
@@ -2499,43 +2295,34 @@ Allows the agent to remove an element from a container (a list, matrix, map...).
 ### Usages
 
 * This statement should be used in the following ways, depending on the kind of container used and the expected action on it:
-``` 
-remove expr from: expr_container;
+```remove expr from: expr_container;
 remove index: expr from: expr_container;
 remove key: expr from: expr_container;
 remove all: expr from: expr_container;
- 
-```
+ ```
 
 * In the case of list, the facet `item:` is used to remove the first occurence of a given expression, whereas `all` is used to remove all the occurences of the given expression.
-``` 
-list<int> removeList <- [3,2,1,2,3];
+```list<int> removeList <- [3,2,1,2,3];
 remove 2 from: removeList; 	// removeList equals [3,1,2,3]
 remove 3 all: true from: removeList; 	// removeList equals [1,2]
 remove index: 1 from: removeList; 	// removeList equals [1]
- 
-```
+ ```
 
 * In the case of map, the facet `key:` is used to remove the pair identified by the given key.
-``` 
-map<string,int> removeMap <- ["x"::5, "y"::7, "z"::7];
+```map<string,int> removeMap <- ["x"::5, "y"::7, "z"::7];
 remove key: "x" from: removeMap; 	// removeMap equals ["y"::7, "z"::7]
 remove 7 all: true from: removeMap; 	// removeMap equals map([])
- 
-```
+ ```
 
 * In addition, a map a be managed as a list with pair key as index. Given that, facets item:, all: and index: can be used in the same way:
-``` 
-map<string,int> removeMapList <- ["x"::5, "y"::7, "z"::7, "t"::5];
+```map<string,int> removeMapList <- ["x"::5, "y"::7, "z"::7, "t"::5];
 remove 7 from: removeMapList; 	// removeMapList equals ["x"::5, "z"::7, "t"::5]
 remove [5,7] all: true from: removeMapList; 	// removeMapList equals ["t"::5]
 remove index: "t" from: removeMapList; 	// removeMapList equals map([])
- 
-```
+ ```
 
 * In the case of a graph, both edges and nodes can be removes using node: and edge facets. If a node is removed, all edges to and from this node are also removed.
-``` 
-graph removeGraph <- as_edge_graph([{1,2}::{3,4},{3,4}::{5,6}]);
+```graph removeGraph <- as_edge_graph([{1,2}::{3,4},{3,4}::{5,6}]);
 remove node: {1,2} from: removeGraph;
 remove node(1,2) from: removeGraph;
 list var <- removeGraph.vertices; 	// var equals [{3,4},{5,6}]
@@ -2544,12 +2331,10 @@ remove edge: {3,4}::{5,6} from: removeGraph;
 remove edge({3,4},{5,6}) from: removeGraph;
 list var <- removeGraph.vertices; 	// var equals [{3,4},{5,6}]
 list var <- removeGraph.edges; 	// var equals []
- 
-```
+ ```
 
 * In the case of an agent or a shape, `remove` allows to remove an attribute from the attributes map of the receiver. However, for agents, it will only remove attributes that have been added dynamically, not the ones defined in the species or in its built-in parent.
-``` 
-global {
+```global {
    init {
       create speciesRemove;
       speciesRemove sR <- speciesRemove(0); 	// sR.a now equals 100
@@ -2560,8 +2345,7 @@ global {
 species speciesRemove {
    int a <- 100; 
 }
- 
-```
+ ```
 
 * This statement can not be used on *matrix*.    
 * See also: [add](#add), [put](#put), 
@@ -2600,20 +2384,17 @@ Allows to specify which value to return from the evaluation of the surrounding s
 ### Usages
 
 * Contrary to other languages, using return does not stop the evaluation of the surrounding statement (for instance, a loop). It simply indicates what value to return: if it is inside a loop, then, only the last evaluation of return will be returned. Example:
-``` 
-string foo {
+```string foo {
      return "foo";
 }
 
 reflex {
     string foo_result <- foo(); 	// foos_result is now equals to "foo"
 }
- 
-```
+ ```
 
 * In the specific case one wants an agent to ask another agent to execute a statement with a return, it can be done similarly to:
-``` 
-// In Species A:
+```// In Species A:
 string foo_different {
      return "foo_not_same";
 }
@@ -2622,8 +2403,7 @@ string foo_different {
 reflex writing {
     string temp <- some_agent_A.foo_different []; 	// temp is now equals to "foo_not_same" 
 }
- 
-```
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -2672,28 +2452,20 @@ Allows to save data in a file. The type of file can be "shp", "text" or "csv".
 ### Usages
 
 * Its simple syntax is:
-``` 
-save data to: output_file type: a_type_file;
- 
-```
+```save data to: output_file type: a_type_file;
+ ```
 
 * To save data in a text file:
-``` 
-save (string(cycle) + "->"  + name + ":" + location) to: "save_data.txt" type: "text";
- 
-```
+```save (string(cycle) + "->"  + name + ":" + location) to: "save_data.txt" type: "text";
+ ```
 
 * To save the values of some attributes of the current agent in csv file:
-``` 
-save [name, location, host] to: "save_data.csv" type: "csv";
- 
-```
+```save [name, location, host] to: "save_data.csv" type: "csv";
+ ```
 
 * To save the geometries of all the agents of a species into a shapefile (with optional attributes):
-``` 
-save species_of(self) to: "save_shapefile.shp" type: "shp" with: [name::"nameAgent", location::"locationAgent"] crs: "EPSG:4326";
- 
-```
+```save species_of(self) to: "save_shapefile.shp" type: "shp" with: [name::"nameAgent", location::"locationAgent"] crs: "EPSG:4326";
+ ```
 
 * The save statement can be use in an init block, a reflex, an action or in a user command. Do not use it in experiments.
 
@@ -2760,8 +2532,7 @@ The setup statement is used to define the set of instructions that will be execu
 ### Usages
 
 * As every test should be independant from the others, the setup will mainly contain initialization of variables that will be used in each test.
-``` 
-species Tester {
+```species Tester {
     int val_to_test;
 
     setup {
@@ -2772,8 +2543,7 @@ species Tester {
        // [set of instructions, including asserts]
     }
 }
- 
-```
+ ```
     
 * See also: [test](#test), [assert](#assert), 
 
@@ -2915,28 +2685,20 @@ The species statement allows modelers to define new species in the model. `globa
 ### Usages
 
 * Here is an example of a species definition with a FSM architecture and the additional skill moving:
-``` 
-species ant skills: [moving] control: fsm {
- 
-```
+```species ant skills: [moving] control: fsm {
+ ```
 
 * In the case of a species aiming at mirroring another one:
-``` 
-species node_agent mirrors: list(bug) parent: graph_node edge_species: edge_agent {
- 
-```
+```species node_agent mirrors: list(bug) parent: graph_node edge_species: edge_agent {
+ ```
 
 * The definition of the single grid of a model will automatically create gridwidth x gridheight agents:
-``` 
-grid ant_grid width: gridwidth height: gridheight file: grid_file neighbours: 8 use_regular_agents: false { 
- 
-```
+```grid ant_grid width: gridwidth height: gridheight file: grid_file neighbours: 8 use_regular_agents: false { 
+ ```
 
 * Using a file to initialize the grid can replace width/height facets:
-``` 
-grid ant_grid file: grid_file neighbours: 8 use_regular_agents: false { 
- 
-```
+```grid ant_grid file: grid_file neighbours: 8 use_regular_agents: false { 
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -2978,8 +2740,7 @@ A state, like a reflex, can contains several statements that can be executed at 
 ### Usages
 
 * Here is an exemple integrating 2 states and the statements in the FSM architecture:
-``` 
-	state s_init initial: true {
+```	state s_init initial: true {
 		enter { write "Enter in" + state; }
 			write "Enter in" + state;
 		}
@@ -3002,8 +2763,7 @@ A state, like a reflex, can contains several statements that can be executed at 
 
 	exit {write 'EXIT from '+state;}
 }
- 
-```
+ ```
     
 * See also: [enter](#enter), [exit](#exit), [transition](#transition), 
 
@@ -3029,10 +2789,8 @@ The statement makes the agent output an arbitrary message in the status box.
 ### Usages
 
 * Outputting a message
-``` 
-status ('This is my status ' + self) color: Â°yellow;
- 
-```
+```status ('This is my status ' + self) color: Â°yellow;
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -3069,19 +2827,16 @@ The "switch... match" statement is a powerful replacement for imbricated "if ...
 ### Usages
 
 * The prototypical syntax is as follows:
-``` 
-switch an_expression {
+```switch an_expression {
         match value1 {...}
         match_one [value1, value2, value3] {...}
         match_between [value1, value2] {...}
         default {...}
 }
- 
-```
+ ```
 
 * Example:
-``` 
-switch 3 {
+```switch 3 {
    match 1 {write "Match 1"; }
    match 2 {write "Match 2"; }
    match 3 {write "Match 3"; }
@@ -3089,8 +2844,7 @@ switch 3 {
    match_between [2, 4] {write "Match between"; }
    default {write "Match Default"; }
 }
- 
-```
+ ```
     
 * See also: [match](#match), [default](#default), [if](#if), 
 
@@ -3120,16 +2874,12 @@ This algorithm is an implementation of the Tabu Search algorithm. See the wikipe
 ### Usages
 
 * As other batch methods, the basic syntax of the tabu statement uses `method tabu` instead of the expected `tabu name: id` : 
-``` 
-method tabu [facet: value];
- 
-```
+```method tabu [facet: value];
+ ```
 
 * For example: 
-``` 
-method tabu iter_max: 50 tabu_list_size: 5 maximize: food_gathered;
- 
-```
+```method tabu iter_max: 50 tabu_list_size: 5 maximize: food_gathered;
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -3183,20 +2933,16 @@ As reflex, a task is a sequence of statements that can be executed, at each time
 ### Usages
 
 * The general syntax is:
-``` 
-display my_display {
+```display my_display {
    text expression [additional options];
 }
- 
-```
+ ```
 
 * For instance, in a segregation model, `agents` will only display unhappy agents:
-``` 
-display Segregation {
+```display Segregation {
    text 'Carrying ants : ' + (int(ant as list count(each.has_food)) + int(ant as list count(each.state = 'followingRoad'))) position: {0.5,0.03} color: rgb('black') size: {1,0.02};
 }
- 
-```
+ ```
     
 * See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), 
 
@@ -3242,15 +2988,13 @@ In an FSM architecture, `transition` specifies the next state of the life cycle.
 ### Usages
 
 * In the following example, the transition is executed when after 2 steps:
-``` 
-	state s_init initial: true {
+```	state s_init initial: true {
 		write state;
 		transition to: s1 when: (cycle > 2) {
 			write "transition s_init -> s1";
 		}
 	}
- 
-```
+ ```
     
 * See also: [enter](#enter), [state](#state), [exit](#exit), 
 
@@ -3278,10 +3022,8 @@ Anywhere in the global block, in a species or in an (GUI) experiment, user_comma
 ### Usages
 
 * The general syntax is for example:
-``` 
-user_command kill_myself action: some_action with: [arg1::val1, arg2::val2, ...];
- 
-```
+```user_command kill_myself action: some_action with: [arg1::val1, arg2::val2, ...];
+ ```
     
 * See also: [user_init](#user_init), [user_panel](#user_panel), [user_input](#user_input), 
 
@@ -3366,8 +3108,7 @@ It is the basic behavior of the user control architecture (it is similar to stat
 ### Usages
 
 * The general syntax is for example:
-``` 
-user_panel default initial: true {
+```user_panel default initial: true {
 	user_input 'Number' returns: number type: int <- 10;
 	ask (number among list(cells)){ do die; }
 	transition to: "Advanced Control" when: every (10);
@@ -3377,8 +3118,7 @@ user_panel "Advanced Control" {
 	user_input "Location" returns: loc type: point <- {0,0};
 	create cells number: 10 with: [location::loc];
 }
- 
-```
+ ```
     
 * See also: [user_command](#user_command), [user_init](#user_init), [user_input](#user_input), 
 
@@ -3403,13 +3143,11 @@ user_panel "Advanced Control" {
 ### Usages
 
 * All the spatial operations are topology-dependent (e.g. neighbors are not the same in a continuous and in a grid topology). So `using` statement allows modelers to specify the topology in which the spatial operation will be computed.
-``` 
-float dist <- 0.0;
+```float dist <- 0.0;
 using topology(grid_ant) {
 	d (self.location distance_to target.location);
 }
- 
-```
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -3433,10 +3171,8 @@ The statement makes the agent output an arbitrary message in the error view as a
 ### Usages
 
 * Emmitting a warning
-``` 
-warn 'This is a warning from ' + self;
- 
-```
+```warn 'This is a warning from ' + self;
+ ```
 
 
 [Top of the page](#table-of-contents)
@@ -3460,10 +3196,8 @@ The statement makes the agent output an arbitrary message in the console.
 ### Usages
 
 * Outputting a message
-``` 
-write 'This is a message from ' + self;
- 
-```
+```write 'This is a message from ' + self;
+ ```
 
 
 [Top of the page](#table-of-contents)
