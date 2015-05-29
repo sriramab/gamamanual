@@ -57,7 +57,7 @@ The GAMA source code should now be downloaded from the GIT repository (hosted by
 
 ### Import projects into workspace
 You have now to import projects into the workspace (notice that the folders downloaded during the clone will neither be copied nor moved).
-1. Right-Click on Working Directory > Import projects
+1. In the **Git perspective**, Right-Click on "Working Directory", and choose "Import projects"
   * Select a wizard to use for importing projects:
     * "Import existing projects" should be  checked
     * "Working Directory" should be selected
