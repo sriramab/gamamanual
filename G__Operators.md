@@ -211,7 +211,7 @@ Note that due to the fact that actions are written by modelers, the general func
 ----
 
 ### -
-  * Possible use: 
+* **Possible use:** 
     * geometry OP `container<geometry>` --->  geometry
     * geometry OP float --->  geometry
     * geometry OP geometry --->  geometry
@@ -235,7 +235,7 @@ geometry var2 <- geom1 - geom2; 	// var2 equals a geometry corresponding to diff
 ----
 
 ### `*`
-  * Possible use: 
+* **Possible use:** 
     * geometry OP float --->  geometry
     * geometry OP point --->  geometry
 * **Special cases:**     
@@ -254,7 +254,7 @@ geometry var1 <- shape * {0.5,0.5,2}; 	// var1 equals a geometry corresponding t
 ----
 
 ### +
-  * Possible use: 
+* **Possible use:** 
     * geometry OP map --->  geometry
     * geometry OP float --->  geometry
     * geometry OP geometry --->  geometry
@@ -278,7 +278,7 @@ geometry var2 <- geom1 + geom2; 	// var2 equals a geometry corresponding to unio
 ----
 
 ### add_point
-  * Possible use: 
+* **Possible use:** 
     * geometry OP point --->  geometry 
 * **Result:** A geometry resulting from the addition of the right point (coordinate) to the left-hand geometry
 * **Examples:** 
@@ -293,7 +293,7 @@ geometry var0 <- polygon([{10,10},{10,20},{20,20}]) add_point {20,10}; 	// var0 
 ----
 
 ### agent_closest_to
-  * Possible use: 
+* **Possible use:** 
     * OP(unknown) --->  agent 
 * **Result:** An agent, the closest to the operand (casted as a geometry).  
 * **Comment:** the distance is computed in the topology of the calling agent (the agent in which this operator is used), with the distance algorithm specific to the topology.
@@ -310,7 +310,7 @@ agent var0 <- agent_closest_to(self); 	// var0 equals the closest agent to the a
 ----
 
 ### agents_at_distance
-  * Possible use: 
+* **Possible use:** 
     * OP(float) --->  list 
 * **Result:** A list of agents situated at a distance lower than the right argument.
 * **Examples:** 
@@ -326,7 +326,7 @@ list var0 <- agents_at_distance(20); 	// var0 equals all the agents (excluding t
 ----
 
 ### agents_inside
-  * Possible use: 
+* **Possible use:** 
     * OP(unknown) --->  `list<agent>` 
 * **Result:** A list of agents covered by the operand (casted as a geometry).
 * **Examples:** 
@@ -342,7 +342,7 @@ list<agent> var0 <- agents_inside(self); 	// var0 equals the agents that are cov
 ----
 
 ### agents_overlapping
-  * Possible use: 
+* **Possible use:** 
     * OP(unknown) --->  `list<agent>` 
 * **Result:** A list of agents overlapping the operand (casted as a geometry).
 * **Examples:** 
@@ -358,7 +358,7 @@ list<agent> var0 <- agents_overlapping(self); 	// var0 equals the agents that ov
 ----
 
 ### angle_between
-  * Possible use: 
+* **Possible use:** 
     * point OP point --->  int 
 * **Result:** the angle between vectors P0P1 and P0P2 (P0, P1, P2 being the three point operands)
 * **Examples:** 
@@ -373,7 +373,7 @@ int var0 <- angle_between({5,5},{10,5},{5,10}); 	// var0 equals 90
 ----
 
 ### antislice
-  * Possible use: 
+* **Possible use:** 
     * float OP float --->  geometry 
 * **Result:** A sphere geometry which radius is equal to the operand made of 2 hemispheres.  
 * **Comment:** the centre of the sphere is by default the location of the current agent that is calling this operator.
@@ -392,7 +392,7 @@ geometry var0 <- antislice(10,0.3); 	// var0 equals a circle geometry of radius 
 ----
 
 ### any_location_in
-  * Possible use: 
+* **Possible use:** 
     * OP(geometry) --->  point 
 * **Result:** A point inside (or touching) the operand-geometry.
 * **Examples:** 
@@ -415,7 +415,7 @@ point var0 <- any_location_in(square(5)); 	// var0 equals a point in the square,
 ----
 
 ### arc
-  * Possible use: 
+* **Possible use:** 
     * float OP float --->  geometry
     * float OP float --->  geometry 
 * **Result:** An arc, which radius is equal to the first operand, heading to the second, amplitude to the third and a boolean indicating whether to return a linestring or a polygon to the fourthAn arc, which radius is equal to the first operand, heading to the second and amplitude the third  
@@ -437,7 +437,7 @@ geometry var1 <- arc(4,45,90); 	// var1 equals a geometry as an arc of radius 4,
 ----
 
 ### around
-  * Possible use: 
+* **Possible use:** 
     * float OP unknown --->  geometry 
 * **Result:** A geometry resulting from the difference between a buffer around the right-operand casted in geometry at a distance left-operand (right-operand buffer left-operand) and the right-operand casted as geometry.
 * **Special cases:**     
@@ -455,7 +455,7 @@ geometry var0 <- 10 around circle(5); 	// var0 equals the ring geometry between 
 ----
 
 ### as_4_grid
-  * Possible use: 
+* **Possible use:** 
     * geometry OP point --->  matrix 
 * **Result:** A matrix of square geometries (grid with 4-neighbourhood) with dimension given by the rigth-hand operand ({nb_cols, nb_lines}) corresponding to the square tessellation of the left-hand operand geometry (geometry, agent)
 * **Examples:** 
@@ -471,7 +471,7 @@ matrix var0 <- self as_4_grid {10, 5}; 	// var0 equals the matrix of square geom
 ----
 
 ### as_driving_graph
-  * Possible use: 
+* **Possible use:** 
     * container OP container --->  graph 
 * **Result:** creates a graph from the list/map of edges given as operand and connect the node to the edge
 * **Examples:** 
@@ -487,7 +487,7 @@ as_driving_graph(road,node)  --:  build a graph while using the road agents as e
 ----
 
 ### as_grid
-  * Possible use: 
+* **Possible use:** 
     * geometry OP point --->  matrix 
 * **Result:** A matrix of square geometries (grid with 8-neighbourhood) with dimension given by the rigth-hand operand ({nb_cols, nb_lines}) corresponding to the square tessellation of the left-hand operand geometry (geometry, agent)
 * **Examples:** 
@@ -503,7 +503,7 @@ matrix var0 <- self as_grid {10, 5}; 	// var0 equals a matrix of square geometri
 ----
 
 ### as_hexagonal_grid
-  * Possible use: 
+* **Possible use:** 
     * geometry OP point --->  `list<geometry>` 
 * **Result:** A list of geometries (hexagonal) corresponding to the hexagonal tesselation of the first operand geometry
 * **Examples:** 
@@ -519,7 +519,7 @@ list<geometry> var0 <- self as_hexagonal_grid {10, 5}; 	// var0 equals list of g
 ----
 
 ### at_distance
-  * Possible use: 
+* **Possible use:** 
     * msi.gama.util.IContainer<?,? extends msi.gama.metamodel.shape.IShape> OP float --->  `list<agent>` 
 * **Result:** A list of agents among the left-operand list that are located at a distance <= the right operand from the caller agent (in its topology)
 * **Examples:** 
@@ -535,7 +535,7 @@ list<agent> var0 <- [ag1, ag2, ag3] at_distance 20; 	// var0 equals the agents o
 ----
 
 ### at_location
-  * Possible use: 
+* **Possible use:** 
     * geometry OP point --->  geometry 
 * **Result:** A geometry resulting from the tran of a translation to the right-hand operand point of the left-hand operand (geometry, agent, point)
 * **Examples:** 
@@ -550,7 +550,7 @@ geometry var0 <- self at_location {10, 20}; 	// var0 equals the geometry resulti
 ----
 
 ### auto_correlation
-  * Possible use: 
+* **Possible use:** 
     * container OP int --->  float 
 * **Result:** Returns the auto-correlation of a data sequence
 
@@ -560,7 +560,7 @@ geometry var0 <- self at_location {10, 20}; 	// var0 equals the geometry resulti
 ----
 
 ### beta
-  * Possible use: 
+* **Possible use:** 
     * float OP float --->  float 
 * **Result:** Returns the beta function with arguments a, b.
 
@@ -570,7 +570,7 @@ geometry var0 <- self at_location {10, 20}; 	// var0 equals the geometry resulti
 ----
 
 ### binomial_coeff
-  * Possible use: 
+* **Possible use:** 
     * int OP int --->  float 
 * **Result:** Returns n choose k as a double. Note the integerization of the double return value.
 
@@ -580,7 +580,7 @@ geometry var0 <- self at_location {10, 20}; 	// var0 equals the geometry resulti
 ----
 
 ### binomial_complemented
-  * Possible use: 
+* **Possible use:** 
     * int OP int --->  float 
 * **Result:** Returns the sum of the terms k+1 through n of the Binomial probability density, where n is the number of trials and P is the probability of success in the range 0 to 1.
 
@@ -590,7 +590,7 @@ geometry var0 <- self at_location {10, 20}; 	// var0 equals the geometry resulti
 ----
 
 ### binomial_sum
-  * Possible use: 
+* **Possible use:** 
     * int OP int --->  float 
 * **Result:** Returns the sum of the terms 0 through k of the Binomial probability density, where n is the number of trials and p is the probability of success in the range 0 to 1.
 
@@ -600,7 +600,7 @@ geometry var0 <- self at_location {10, 20}; 	// var0 equals the geometry resulti
 ----
 
 ### box
-  * Possible use: 
+* **Possible use:** 
     * OP(point) --->  geometry
     * float OP float --->  geometry 
 * **Result:** A box geometry which side sizes are given by the operands.  
@@ -629,7 +629,7 @@ geometry var1 <- box(10, 5 , 5); 	// var1 equals a geometry as a rectangle with 
 ----
 
 ### chi_square
-  * Possible use: 
+* **Possible use:** 
     * float OP float --->  float 
 * **Result:** Returns the area under the left hand tail (from 0 to x) of the Chi square probability density function with df degrees of freedom.
 
@@ -639,7 +639,7 @@ geometry var1 <- box(10, 5 , 5); 	// var1 equals a geometry as a rectangle with 
 ----
 
 ### chi_square_complemented
-  * Possible use: 
+* **Possible use:** 
     * float OP float --->  float 
 * **Result:** Returns the area under the right hand tail (from x to infinity) of the Chi square probability density function with df degrees of freedom.
 
@@ -649,7 +649,7 @@ geometry var1 <- box(10, 5 , 5); 	// var1 equals a geometry as a rectangle with 
 ----
 
 ### circle
-  * Possible use: 
+* **Possible use:** 
     * OP(float) --->  geometry 
 * **Result:** A circle geometry which radius is equal to the operand.  
 * **Comment:** the centre of the circle is by default the location of the current agent in which has been called this operator.
@@ -668,7 +668,7 @@ geometry var0 <- circle(10); 	// var0 equals a geometry as a circle of radius 10
 ----
 
 ### clean
-  * Possible use: 
+* **Possible use:** 
     * OP(geometry) --->  geometry 
 * **Result:** A geometry corresponding to the cleaning of the operand (geometry, agent, point)  
 * **Comment:** The cleaning corresponds to a buffer with a distance of 0.0
@@ -684,7 +684,7 @@ geometry var0 <- clean(self); 	// var0 equals returns the geometry resulting fro
 ----
 
 ### closest_points_with
-  * Possible use: 
+* **Possible use:** 
     * geometry OP geometry --->  `list<point>` 
 * **Result:** A list of two closest points between the two geometries.
 * **Examples:** 
@@ -700,7 +700,7 @@ list<point> var0 <- geom1 closest_points_with(geom2); 	// var0 equals [pt1, pt2]
 ----
 
 ### closest_to
-  * Possible use: 
+* **Possible use:** 
     * msi.gama.util.IContainer<?,? extends msi.gama.metamodel.shape.IShape> OP unknown --->  agent 
 * **Result:** An agent among the left-operand list of agents, species or meta-population (addition of species), the closest to the operand (casted as a geometry).  
 * **Comment:** the distance is computed in the topology of the calling agent (the agent in which this operator is used), with the distance algorithm specific to the topology.
@@ -718,7 +718,7 @@ agent var0 <- [ag1, ag2, ag3] closest_to(self); 	// var0 equals return the close
 ----
 
 ### clustering_cobweb
-  * Possible use: 
+* **Possible use:** 
     * ??? OP msi.gama.util.IList<java.lang.String> --->  `list<list<agent>>` 
 * **Result:** A list of agent groups clusteredby CobWeb Algorithm based on the given attributes. Some paremeters can be defined: acuity: minimum standard deviation for numeric attributes; cutoff: category utility threshold by which to prune nodes seed
 * **Examples:** 
@@ -734,7 +734,7 @@ list<list<agent>> var0 <- clustering_cobweb([ag1, ag2, ag3, ag4, ag5],["size","a
 ----
 
 ### clustering_DBScan
-  * Possible use: 
+* **Possible use:** 
     * ??? OP msi.gama.util.IList<java.lang.String> --->  `list<list<agent>>` 
 * **Result:** A list of agent groups clustered by DBScan Algorithm based on the given attributes. Some paremeters can be defined: distance_f: The distance function to use for instances comparison (euclidean or manhattan); min_points: minimun number of DataObjects required in an epsilon-range-queryepsilon: epsilon -- radius of the epsilon-range-queries
 * **Examples:** 
@@ -750,7 +750,7 @@ list<list<agent>> var0 <- clustering_DBScan([ag1, ag2, ag3, ag4, ag5],["size","a
 ----
 
 ### clustering_em
-  * Possible use: 
+* **Possible use:** 
     * ??? OP msi.gama.util.IList<java.lang.String> --->  `list<list<agent>>` 
 * **Result:** A list of agent groups clustered by EM Algorithm based on the given attributes. Some paremeters can be defined: max_iterations: the maximum number of iterations to perform;num_clusters: the number of clusters; minStdDev: minimum allowable standard deviation
 * **Examples:** 
@@ -766,7 +766,7 @@ list<list<agent>> var0 <- clustering_em([ag1, ag2, ag3, ag4, ag5],["size","age",
 ----
 
 ### clustering_farthestFirst
-  * Possible use: 
+* **Possible use:** 
     * ??? OP msi.gama.util.IList<java.lang.String> --->  `list<list<agent>>` 
 * **Result:** A list of agent groups clustered by Farthest First Algorithm based on the given attributes. Some paremeters can be defined: num_clusters: the number of clusters
 * **Examples:** 
@@ -782,7 +782,7 @@ list<list<agent>> var0 <- clustering_farthestFirst([ag1, ag2, ag3, ag4, ag5],["s
 ----
 
 ### clustering_simple_kmeans
-  * Possible use: 
+* **Possible use:** 
     * ??? OP msi.gama.util.IList<java.lang.String> --->  `list<list<agent>>` 
 * **Result:** A list of agent groups clustered by K-Means Algorithm based on the given attributes. Some paremeters can be defined: distance_f: The distance function to use. 4 possible distance functions: euclidean (by default) ; 'chebyshev', 'manhattan' or 'levenshtein'; dont_replace_missing_values: if false, replace missing values globally with mean/mode; max_iterations: the maximum number of iterations to perform;num_clusters: the number of clusters
 * **Examples:** 
@@ -798,7 +798,7 @@ list<list<agent>> var0 <- clustering_simple_kmeans([ag1, ag2, ag3, ag4, ag5],["s
 ----
 
 ### clustering_xmeans
-  * Possible use: 
+* **Possible use:** 
     * ??? OP msi.gama.util.IList<java.lang.String> --->  `list<list<agent>>` 
 * **Result:** A list of agent groups clustered by X-Means Algorithm based on the given attributes. Some paremeters can be defined: bin_value: value given for true value of boolean attributes; cut_off_factor: the cut-off factor to use;distance_f: The distance function to use. 4 possible distance functions: euclidean (by default) ; 'chebyshev', 'manhattan' or 'levenshtein'; max_iterations: the maximum number of iterations to perform; max_kmeans: the maximum number of iterations to perform in KMeans; max_kmeans_for_children: the maximum number of iterations KMeans that is performed on the child centers;max_num_clusters: the maximum number of clusters; min_num_clusters: the minimal number of clusters
 * **Examples:** 
@@ -814,7 +814,7 @@ list<list<agent>> var0 <- clustering_xmeans([ag1, ag2, ag3, ag4, ag5],["size","a
 ----
 
 ### cone
-  * Possible use: 
+* **Possible use:** 
     * OP(point) --->  geometry
     * int OP int --->  geometry 
 * **Result:** A cone geometry which min and max angles are given by the operands.A cone geometry which min and max angles are given by the operands.  
@@ -836,7 +836,7 @@ geometry var1 <- cone(0, 45); 	// var1 equals a geometry as a cone with min angl
 ----
 
 ### cone3D
-  * Possible use: 
+* **Possible use:** 
     * float OP float --->  geometry 
 * **Result:** A cone geometry which radius is equal to the operand.  
 * **Comment:** the centre of the cone is by default the location of the current agent in which has been called this operator.
@@ -855,7 +855,7 @@ geometry var0 <- cone3D(10.0,10.0); 	// var0 equals a geometry as a circle of ra
 ----
 
 ### convex_hull
-  * Possible use: 
+* **Possible use:** 
     * OP(geometry) --->  geometry 
 * **Result:** A geometry corresponding to the convex hull of the operand.
 * **Examples:** 
@@ -870,7 +870,7 @@ geometry var0 <- convex_hull(self); 	// var0 equals the convex hull of the geome
 ----
 
 ### correlation
-  * Possible use: 
+* **Possible use:** 
     * container OP container --->  float 
 * **Result:** Returns the correlation of two data sequences
 
@@ -880,7 +880,7 @@ geometry var0 <- convex_hull(self); 	// var0 equals the convex hull of the geome
 ----
 
 ### covariance
-  * Possible use: 
+* **Possible use:** 
     * container OP container --->  float 
 * **Result:** Returns the covariance of two data sequences
 
@@ -890,7 +890,7 @@ geometry var0 <- convex_hull(self); 	// var0 equals the convex hull of the geome
 ----
 
 ### covers
-  * Possible use: 
+* **Possible use:** 
     * geometry OP geometry --->  bool 
 * **Result:** A boolean, equal to true if the left-geometry (or agent/point) covers the right-geometry (or agent/point).
 * **Special cases:**     
@@ -908,7 +908,7 @@ bool var0 <- square(5) covers square(2); 	// var0 equals true
 ----
 
 ### CPU_path_between
-  * Possible use: 
+* **Possible use:** 
     * graph OP geometry --->  path 
 * **Result:** The shortest path between a list of two objects in a graph computed with CPU
 * **Examples:** 
@@ -923,7 +923,7 @@ path var0 <- my_graph CPU_path_between (ag1:: ag2); 	// var0 equals A path betwe
 ----
 
 ### crosses
-  * Possible use: 
+* **Possible use:** 
     * geometry OP geometry --->  bool 
 * **Result:** A boolean, equal to true if the left-geometry (or agent/point) crosses the right-geometry (or agent/point).
 * **Special cases:**     
@@ -944,7 +944,7 @@ bool var2 <- polyline([{0,0},{25,25}]) crosses polygon([{10,10},{10,20},{20,20},
 ----
 
 ### crs
-  * Possible use: 
+* **Possible use:** 
     * OP(file) --->  string 
 * **Result:** the Coordinate Reference System (CRS) of the GIS file
 * **Examples:** 
@@ -959,7 +959,7 @@ string var0 <- crs(my_shapefile); 	// var0 equals the crs of the shapefile
 ----
 
 ### CRS_transform
-  * Possible use: 
+* **Possible use:** 
     * OP(geometry) --->  geometry
     * geometry OP string --->  geometry
 * **Special cases:**     
@@ -978,7 +978,7 @@ geometry var1 <- shape CRS_transform("EPSG:4326"); 	// var1 equals a geometry co
 ----
 
 ### CRS_transform
-  * Possible use: 
+* **Possible use:** 
     * OP(geometry) --->  geometry
     * geometry OP string --->  geometry
 * **Special cases:**     
@@ -997,7 +997,7 @@ geometry var1 <- CRS_transform(shape); 	// var1 equals a geometry corresponding 
 ----
 
 ### cube
-  * Possible use: 
+* **Possible use:** 
     * OP(float) --->  geometry 
 * **Result:** A cube geometry which side size is equal to the operand.  
 * **Comment:** the centre of the cube is by default the location of the current agent in which has been called this operator.
@@ -1016,7 +1016,7 @@ geometry var0 <- cube(10); 	// var0 equals a geometry as a square of side size 1
 ----
 
 ### curve
-  * Possible use: 
+* **Possible use:** 
     * point OP point --->  geometry
     * point OP point --->  geometry
     * point OP point --->  geometry
@@ -1045,7 +1045,7 @@ geometry var3 <- curve({0,0}, {0,10}, {10,10}, 20); 	// var3 equals a quadratic 
 ----
 
 ### cylinder
-  * Possible use: 
+* **Possible use:** 
     * float OP float --->  geometry 
 * **Result:** A cylinder geometry which radius is equal to the operand.  
 * **Comment:** the centre of the cylinder is by default the location of the current agent in which has been called this operator.
@@ -1064,7 +1064,7 @@ geometry var0 <- cylinder(10,10); 	// var0 equals a geometry as a circle of radi
 ----
 
 ### dem
-  * Possible use: 
+* **Possible use:** 
     * OP(file) --->  geometry
     * file OP float --->  geometry
     * file OP file --->  geometry
@@ -1087,7 +1087,7 @@ geometry var3 <- dem(dem,texture); 	// var3 equals a geometry as a rectangle of 
 ----
 
 ### diff
-  * Possible use: 
+* **Possible use:** 
     * float OP float --->  float
 
 [Top of the page](#table-of-contents)
@@ -1096,7 +1096,7 @@ geometry var3 <- dem(dem,texture); 	// var3 equals a geometry as a rectangle of 
 ----
 
 ### diff2
-  * Possible use: 
+* **Possible use:** 
     * float OP float --->  float
 
 [Top of the page](#table-of-contents)
@@ -1105,7 +1105,7 @@ geometry var3 <- dem(dem,texture); 	// var3 equals a geometry as a rectangle of 
 ----
 
 ### direction_between
-  * Possible use: 
+* **Possible use:** 
     * topology OP `container<geometry>` --->  int 
 * **Result:** A direction (in degree) between a list of two geometries (geometries, agents, points) considering a topology.
 * **Examples:** 
@@ -1128,7 +1128,7 @@ int var0 <- my_topology direction_between [ag1, ag2]; 	// var0 equals the direct
 ----
 
 ### disjoint_from
-  * Possible use: 
+* **Possible use:** 
     * geometry OP geometry --->  bool 
 * **Result:** A boolean, equal to true if the left-geometry (or agent/point) is disjoints from the right-geometry (or agent/point).
 * **Special cases:**     
@@ -1151,7 +1151,7 @@ bool var4 <- polygon([{10,10},{10,20},{20,20},{20,10}]) disjoint_from polygon([{
 ----
 
 ### distance_between
-  * Possible use: 
+* **Possible use:** 
     * topology OP `container<geometry>` --->  float 
 * **Result:** A distance between a list of geometries (geometries, agents, points) considering a topology.
 * **Examples:** 
@@ -1167,7 +1167,7 @@ float var0 <- my_topology distance_between [ag1, ag2, ag3]; 	// var0 equals the 
 ----
 
 ### distance_to
-  * Possible use: 
+* **Possible use:** 
     * point OP point --->  float
     * geometry OP geometry --->  float 
 * **Result:** A distance between two geometries (geometries, agents or points) considering the topology of the agent applying the operator.
@@ -1191,7 +1191,7 @@ float var0 <- ag1 distance_to ag2; 	// var0 equals the distance between ag1 and 
 ----
 
 ### durbin_watson
-  * Possible use: 
+* **Possible use:** 
     * OP(container) --->  float 
 * **Result:** Durbin-Watson computation
 
@@ -1201,7 +1201,7 @@ float var0 <- ag1 distance_to ag2; 	// var0 equals the distance between ag1 and 
 ----
 
 ### ellipse
-  * Possible use: 
+* **Possible use:** 
     * float OP float --->  geometry 
 * **Result:** An ellipse geometry which x-radius is equal to the first operand and y-radius is equal to the second operand  
 * **Comment:** the centre of the ellipse is by default the location of the current agent in which has been called this operator.
@@ -1227,7 +1227,7 @@ geometry var0 <- ellipse(10, 10); 	// var0 equals a geometry as an ellipse of wi
 ----
 
 ### envelope
-  * Possible use: 
+* **Possible use:** 
     * OP(unknown) --->  geometry 
 * **Result:** A 3D geometry that represents the box that surrounds the geometries or the surface described by the arguments. More general than geometry(arguments).envelope, as it allows to pass int, double, point, image files, shape files, asc files, or any list combining these arguments, in which case the envelope will be correctly expanded. If an envelope cannot be determined from the arguments, a default one of dimensions (0,100, 0, 100, 0, 100) is returned
 
@@ -1237,7 +1237,7 @@ geometry var0 <- ellipse(10, 10); 	// var0 equals a geometry as an ellipse of wi
 ----
 
 ### farthest_point_to
-  * Possible use: 
+* **Possible use:** 
     * geometry OP point --->  point 
 * **Result:** the farthest point of the left-operand to the left-point.
 * **Examples:** 
@@ -1253,7 +1253,7 @@ point var0 <- geom farthest_point_to(pt); 	// var0 equals the closest point of g
 ----
 
 ### fuzzy_kappa
-  * Possible use: 
+* **Possible use:** 
     * ??? OP list --->  float
     * ??? OP list --->  float 
 * **Result:** fuzzy kappa indicator for 2 map comparisons: fuzzy_kappa(agents_list,list_vals1,list_vals2, output_similarity_per_agents,categories,fuzzy_categories_matrix, fuzzy_distance, weights). Reference: Visser, H., and T. de Nijs, 2006. The map comparison kit, Environmental Modelling & Software, 21fuzzy kappa indicator for 2 map comparisons: fuzzy_kappa(agents_list,list_vals1,list_vals2, output_similarity_per_agents,categories,fuzzy_categories_matrix, fuzzy_distance). Reference: Visser, H., and T. de Nijs, 2006. The map comparison kit, Environmental Modelling & Software, 21
@@ -1270,7 +1270,7 @@ fuzzy_kappa([ag1, ag2, ag3, ag4, ag5],[cat1,cat1,cat2,cat3,cat2],[cat2,cat1,cat2
 ----
 
 ### fuzzy_kappa_sim
-  * Possible use: 
+* **Possible use:** 
     * ??? OP list --->  float
     * ??? OP list --->  float 
 * **Result:** fuzzy kappa simulation indicator for 2 map comparisons: fuzzy_kappa_sim(agents_list,list_vals1,list_vals2, output_similarity_per_agents,fuzzy_transitions_matrix, fuzzy_distance). Reference: Jasper van Vliet, Alex Hagen-Zanker, Jelle Hurkens, Hedwig van Delden, A fuzzy set approach to assess the predictive accuracy of land use simulations, Ecological Modelling, 24 July 2013, Pages 32-42, ISSN 0304-3800, fuzzy kappa simulation indicator for 2 map comparisons: fuzzy_kappa_sim(agents_list,list_vals1,list_vals2, output_similarity_per_agents,fuzzy_transitions_matrix, fuzzy_distance, weights). Reference: Jasper van Vliet, Alex Hagen-Zanker, Jelle Hurkens, Hedwig van Delden, A fuzzy set approach to assess the predictive accuracy of land use simulations, Ecological Modelling, 24 July 2013, Pages 32-42, ISSN 0304-3800,
@@ -1287,7 +1287,7 @@ fuzzy_kappa_sim([ag1, ag2, ag3, ag4, ag5], [cat1,cat1,cat2,cat3,cat2],[cat2,cat1
 ----
 
 ### gamma
-  * Possible use: 
+* **Possible use:** 
     * OP(float) --->  float 
 * **Result:** Returns the value of the Gamma function at x.
 
@@ -1297,7 +1297,7 @@ fuzzy_kappa_sim([ag1, ag2, ag3, ag4, ag5], [cat1,cat1,cat2,cat3,cat2],[cat2,cat1
 ----
 
 ### gamma_distribution
-  * Possible use: 
+* **Possible use:** 
     * float OP float --->  float 
 * **Result:** Returns the integral from zero to x of the gamma probability density function.  
 * **Comment:** incomplete_gamma(a,x) is equal to pgamma(a,1,x).
@@ -1308,7 +1308,7 @@ fuzzy_kappa_sim([ag1, ag2, ag3, ag4, ag5], [cat1,cat1,cat2,cat3,cat2],[cat2,cat1
 ----
 
 ### gamma_distribution_complemented
-  * Possible use: 
+* **Possible use:** 
     * float OP float --->  float 
 * **Result:** Returns the integral from x to infinity of the gamma probability density function.
 
@@ -1318,7 +1318,7 @@ fuzzy_kappa_sim([ag1, ag2, ag3, ag4, ag5], [cat1,cat1,cat2,cat3,cat2],[cat2,cat1
 ----
 
 ### geometry_collection
-  * Possible use: 
+* **Possible use:** 
     * OP(`container<geometry>`) --->  geometry 
 * **Result:** A geometry collection (multi-geometry) composed of the given list of geometries.
 * **Special cases:**     
@@ -1337,7 +1337,7 @@ geometry var0 <- geometry_collection([{0,0}, {0,10}, {10,10}, {10,0}]); 	// var0
 ----
 
 ### gml_from_wfs
-  * Possible use: 
+* **Possible use:** 
     * string OP string --->  msi.gama.util.IList<msi.gama.util.IList<java.lang.Object>> 
 * **Result:** WMS: A simple call to WFS/GML2
 
@@ -1347,7 +1347,7 @@ geometry var0 <- geometry_collection([{0,0}, {0,10}, {10,10}, {10,0}]); 	// var0
 ----
 
 ### GPU_path_between
-  * Possible use: 
+* **Possible use:** 
     * graph OP geometry --->  path 
 * **Result:** The shortest path between a list of two objects in a graph computed with GPU
 * **Examples:** 
@@ -1362,7 +1362,7 @@ path var0 <- my_graph GPU_path_between (ag1:: ag2); 	// var0 equals A path betwe
 ----
 
 ### hemisphere
-  * Possible use: 
+* **Possible use:** 
     * float OP float --->  geometry 
 * **Result:** An hemisphere geometry which radius is equal to the operand.  
 * **Comment:** the centre of the hemisphere is by default the location of the current agent in which has been called this operator.
@@ -1381,7 +1381,7 @@ geometry var0 <- hemisphere(10,0.5); 	// var0 equals a geometry as a circle of r
 ----
 
 ### hexagon
-  * Possible use: 
+* **Possible use:** 
     * OP(point) --->  geometry
     * OP(float) --->  geometry 
 * **Result:** A hexagon geometry which the given with and height  
@@ -1403,7 +1403,7 @@ geometry var1 <- hexagon(10); 	// var1 equals a geometry as a hexagon of width o
 ----
 
 ### hierarchical_clustering
-  * Possible use: 
+* **Possible use:** 
     * `container<agent>` OP float --->  list 
 * **Result:** A tree (list of list) contained groups of agents clustered by distance considering a distance min between two groups.  
 * **Comment:** use of hierarchical clustering with Minimum for linkage criterion between two groups of agents.
@@ -1420,7 +1420,7 @@ list var0 <- [ag1, ag2, ag3, ag4, ag5] hierarchical_clustering 20.0; 	// var0 eq
 ----
 
 ### IDW
-  * Possible use: 
+* **Possible use:** 
     * msi.gama.util.IContainer<?,? extends msi.gama.metamodel.shape.IShape> OP msi.gama.util.GamaMap<msi.gama.metamodel.shape.GamaPoint,java.lang.Double> --->  msi.gama.util.GamaMap<msi.gama.metamodel.shape.IShape,java.lang.Double> 
 * **Result:** Inverse Distance Weighting (IDW) is a type of deterministic method for multivariate interpolation with a known scattered set of points. The assigned values to each geometry are calculated with a weighted average of the values available at the known points. See: http://en.wikipedia.org/wiki/Inverse_distance_weighting Usage: IDW (list of geometries, map of points (key: point, value: value), power parameter)
 * **Examples:** 
@@ -1435,7 +1435,7 @@ msi.gama.util.GamaMap<msi.gama.metamodel.shape.IShape,java.lang.Double> var0 <- 
 ----
 
 ### IDW
-  * Possible use: 
+* **Possible use:** 
     * msi.gama.util.IContainer<?,? extends msi.gama.metamodel.shape.IShape> OP msi.gama.util.GamaMap<msi.gama.metamodel.shape.GamaPoint,java.lang.Double> --->  msi.gama.util.GamaMap<msi.gama.metamodel.shape.IShape,java.lang.Double> 
 * **Result:** Inverse Distance Weighting (IDW) is a type of deterministic method for multivariate interpolation with a known scattered set of points. The assigned values to each geometry are calculated with a weighted average of the values available at the known points. See: http://en.wikipedia.org/wiki/Inverse_distance_weighting Usage: IDW (list of geometries, map of points (key: point, value: value), power parameter)
 * **Examples:** 
@@ -1450,7 +1450,7 @@ msi.gama.util.GamaMap<msi.gama.metamodel.shape.IShape,java.lang.Double> var0 <- 
 ----
 
 ### image_from_direct_wms
-  * Possible use: 
+* **Possible use:** 
     * string OP string --->  file 
 * **Result:** WMS: A simple call to WMS
 
@@ -1460,7 +1460,7 @@ msi.gama.util.GamaMap<msi.gama.metamodel.shape.IShape,java.lang.Double> var0 <- 
 ----
 
 ### image_from_wms
-  * Possible use: 
+* **Possible use:** 
     * string OP string --->  file 
 * **Result:** WMS: A simple call to WMS
 
@@ -1470,7 +1470,7 @@ msi.gama.util.GamaMap<msi.gama.metamodel.shape.IShape,java.lang.Double> var0 <- 
 ----
 
 ### incomplete_beta
-  * Possible use: 
+* **Possible use:** 
     * float OP float --->  float 
 * **Result:** Returns the regularized integral of the beta function with arguments a and b, from zero to x.
 
@@ -1480,7 +1480,7 @@ msi.gama.util.GamaMap<msi.gama.metamodel.shape.IShape,java.lang.Double> var0 <- 
 ----
 
 ### incomplete_gamma
-  * Possible use: 
+* **Possible use:** 
     * float OP float --->  float 
 * **Result:** Returns the regularized integral of the Gamma function with argument a to the integration end point x.
 
@@ -1490,7 +1490,7 @@ msi.gama.util.GamaMap<msi.gama.metamodel.shape.IShape,java.lang.Double> var0 <- 
 ----
 
 ### incomplete_gamma_complement
-  * Possible use: 
+* **Possible use:** 
     * float OP float --->  float 
 * **Result:** Returns the complemented regularized incomplete Gamma function of the argument a and integration start point x.
 
@@ -1500,7 +1500,7 @@ msi.gama.util.GamaMap<msi.gama.metamodel.shape.IShape,java.lang.Double> var0 <- 
 ----
 
 ### inside
-  * Possible use: 
+* **Possible use:** 
     * msi.gama.util.IContainer<?,? extends msi.gama.metamodel.shape.IShape> OP unknown --->  `list<agent>` 
 * **Result:** A list of agents among the left-operand list, species or meta-population (addition of species), covered by the operand (casted as a geometry).
 * **Examples:** 
@@ -1517,7 +1517,7 @@ list<agent> var1 <- (species1 + species2) inside (self); 	// var1 equals the age
 ----
 
 ### inter
-  * Possible use: 
+* **Possible use:** 
     * geometry OP geometry --->  geometry 
 * **Result:** A geometry resulting from the intersection between the two geometries
 * **Special cases:**     
@@ -1535,7 +1535,7 @@ geometry var0 <- square(10) inter circle(5); 	// var0 equals circle(5)
 ----
 
 ### internal_zero_order_equation
-  * Possible use: 
+* **Possible use:** 
     * OP(any expression) --->  float
 
 [Top of the page](#table-of-contents)
@@ -1551,7 +1551,7 @@ geometry var0 <- square(10) inter circle(5); 	// var0 equals circle(5)
 ----
 
 ### intersects
-  * Possible use: 
+* **Possible use:** 
     * geometry OP geometry --->  bool 
 * **Result:** A boolean, equal to true if the left-geometry (or agent/point) intersects the right-geometry (or agent/point).
 * **Special cases:**     
@@ -1569,7 +1569,7 @@ bool var0 <- square(5) intersects {10,10}; 	// var0 equals false
 ----
 
 ### is_obj
-  * Possible use: 
+* **Possible use:** 
     * OP(any) --->  bool 
 * **Result:** Tests whether the operand is a obj file.
 
@@ -1579,7 +1579,7 @@ bool var0 <- square(5) intersects {10,10}; 	// var0 equals false
 ----
 
 ### is_threeds
-  * Possible use: 
+* **Possible use:** 
     * OP(any) --->  bool 
 * **Result:** Tests whether the operand is a threeds file.
 
@@ -1589,7 +1589,7 @@ bool var0 <- square(5) intersects {10,10}; 	// var0 equals false
 ----
 
 ### kappa
-  * Possible use: 
+* **Possible use:** 
     * list OP list --->  float
     * list OP list --->  float 
 * **Result:** kappa indicator for 2 map comparisons: kappa(list_vals1,list_vals2,categories). Reference: Cohen, J. A coefficient of agreement for nominal scales. Educ. Psychol. Meas. 1960, 20.kappa indicator for 2 map comparisons: kappa(list_vals1,list_vals2,categories, weights). Reference: Cohen, J. A coefficient of agreement for nominal scales. Educ. Psychol. Meas. 1960, 20.
@@ -1608,7 +1608,7 @@ kappa([cat1,cat1,cat2,cat3,cat2],[cat2,cat1,cat2,cat1,cat2],[cat1,cat2,cat3], [1
 ----
 
 ### kappa_sim
-  * Possible use: 
+* **Possible use:** 
     * list OP list --->  float
     * list OP list --->  float 
 * **Result:** kappa simulation indicator for 2 map comparisons: kappa(list_valsInits,list_valsObs,list_valsSim, categories). Reference: van Vliet, J., Bregt, A.K. & Hagen-Zanker, A. (2011). Revisiting Kappa to account for change in the accuracy assessment of land-use change models, Ecological Modelling 222(8).kappa simulation indicator for 2 map comparisons: kappa(list_valsInits,list_valsObs,list_valsSim, categories, weights). Reference: van Vliet, J., Bregt, A.K. & Hagen-Zanker, A. (2011). Revisiting Kappa to account for change in the accuracy assessment of land-use change models, Ecological Modelling 222(8)
@@ -1625,7 +1625,7 @@ kappa([cat1,cat1,cat2,cat2,cat2],[cat2,cat1,cat2,cat1,cat3],[cat2,cat1,cat2,cat3
 ----
 
 ### kurtosis
-  * Possible use: 
+* **Possible use:** 
     * OP(container) --->  float
     * float OP float --->  float 
 * **Result:** Returns the kurtosis (aka excess) of a data sequenceReturns the kurtosis (aka excess) of a data sequence
@@ -1643,7 +1643,7 @@ kappa([cat1,cat1,cat2,cat2,cat2],[cat2,cat1,cat2,cat1,cat3],[cat2,cat1,cat2,cat3
 ----
 
 ### line
-  * Possible use: 
+* **Possible use:** 
     * OP(`container<geometry>`) --->  geometry
     * `container<geometry>` OP float --->  geometry 
 * **Result:** A polyline geometry from the given list of points.A polyline geometry from the given list of points represented as a cylinder of radius r.
@@ -1669,7 +1669,7 @@ geometry var0 <- polyline([{0,0}, {0,10}, {10,10}, {10,0}]); 	// var0 equals a p
 ----
 
 ### link
-  * Possible use: 
+* **Possible use:** 
     * OP(pair) --->  geometry 
 * **Result:** A link between the 2 elements of the pair.  
 * **Comment:** The geometry of the link is the intersection of the two geometries when they intersect, and a line between their centroids when they do not.
@@ -1689,7 +1689,7 @@ geometry var0 <- link (geom1::geom2); 	// var0 equals a link geometry between ge
 ----
 
 ### log_gamma
-  * Possible use: 
+* **Possible use:** 
     * OP(float) --->  float 
 * **Result:** Returns the log of the value of the Gamma function at x.
 
@@ -1699,7 +1699,7 @@ geometry var0 <- link (geom1::geom2); 	// var0 equals a link geometry between ge
 ----
 
 ### masked_by
-  * Possible use: 
+* **Possible use:** 
     * geometry OP `container<geometry>` --->  geometry
     * geometry OP `container<geometry>` --->  geometry
 * **Examples:** 
@@ -1715,7 +1715,7 @@ geometry var1 <- perception_geom masked_by obstacle_list; 	// var1 equals the ge
 ----
 
 ### moment
-  * Possible use: 
+* **Possible use:** 
     * container OP int --->  float 
 * **Result:** Returns the moment of k-th order with constant c of a data sequence
 
@@ -1725,7 +1725,7 @@ geometry var1 <- perception_geom masked_by obstacle_list; 	// var1 equals the ge
 ----
 
 ### neighbours_at
-  * Possible use: 
+* **Possible use:** 
     * geometry OP float --->  list 
 * **Result:** a list, containing all the agents of the same species than the left argument (if it is an agent) located at a distance inferior or equal to the right-hand operand to the left-hand operand (geometry, agent, point).  
 * **Comment:** The topology used to compute the neighbourhood  is the one of the left-operand if this one is an agent; otherwise the one of the agent applying the operator.
@@ -1742,7 +1742,7 @@ list var0 <- (self neighbours_at (10)); 	// var0 equals all the agents located a
 ----
 
 ### neighbours_of
-  * Possible use: 
+* **Possible use:** 
     * topology OP agent --->  list
     * topology OP geometry --->  list 
 * **Result:** a list, containing all the agents of the same species than the argument (if it is an agent) located at a distance inferior or equal to 1 to the right-hand operand agent considering the left-hand operand topology.
@@ -1764,7 +1764,7 @@ list var0 <- topology(self) neighbours_of self; 	// var0 equals returns all the 
 ----
 
 ### normal_area
-  * Possible use: 
+* **Possible use:** 
     * float OP float --->  float 
 * **Result:** Returns the area to the left of x in the normal distribution with the given mean and standard deviation.
 
@@ -1774,7 +1774,7 @@ list var0 <- topology(self) neighbours_of self; 	// var0 equals returns all the 
 ----
 
 ### normal_density
-  * Possible use: 
+* **Possible use:** 
     * float OP float --->  float 
 * **Result:** Returns the probability of x in the normal distribution with the given mean and standard deviation.
 
@@ -1784,7 +1784,7 @@ list var0 <- topology(self) neighbours_of self; 	// var0 equals returns all the 
 ----
 
 ### normal_inverse
-  * Possible use: 
+* **Possible use:** 
     * float OP float --->  float 
 * **Result:** Returns the x in the normal distribution with the given mean and standard deviation, to the left of which lies the given area. normal.Inverse returns the value in terms of standard deviations from the mean, so we need to adjust it for the given mean and standard deviation.
 
@@ -1794,7 +1794,7 @@ list var0 <- topology(self) neighbours_of self; 	// var0 equals returns all the 
 ----
 
 ### obj_file
-  * Possible use: 
+* **Possible use:** 
     * OP(string) --->  file 
 * **Result:** Constructs a file of type obj. Allowed extensions are limited to obj
 
@@ -1804,7 +1804,7 @@ list var0 <- topology(self) neighbours_of self; 	// var0 equals returns all the 
 ----
 
 ### overlapping
-  * Possible use: 
+* **Possible use:** 
     * msi.gama.util.IContainer<?,? extends msi.gama.metamodel.shape.IShape> OP unknown --->  `list<agent>` 
 * **Result:** A list of agents among the left-operand list, species or meta-population (addition of species), overlapping the operand (casted as a geometry).
 * **Examples:** 
@@ -1821,7 +1821,7 @@ list<agent> var0 <- [ag1, ag2, ag3] overlapping(self); 	// var0 equals return th
 ----
 
 ### overlaps
-  * Possible use: 
+* **Possible use:** 
     * geometry OP geometry --->  bool 
 * **Result:** A boolean, equal to true if the left-geometry (or agent/point) overlaps the right-geometry (or agent/point).
 * **Special cases:**     
@@ -1848,7 +1848,7 @@ bool var8 <- polygon([{10,10},{10,20},{20,20},{20,10}]) overlaps polygon([{10,20
 ----
 
 ### pacman
-  * Possible use: 
+* **Possible use:** 
     * OP(float) --->  geometry
     * float OP float --->  geometry 
 * **Result:** An pacman geometry with a dynamic opening mouth which radius is equal to first argument.An pacman geometry which radius is equal to first argument.  
@@ -1870,7 +1870,7 @@ geometry var1 <- pacman(1); 	// var1 equals a geometry as a circle of radius 10 
 ----
 
 ### partially_overlaps
-  * Possible use: 
+* **Possible use:** 
     * geometry OP geometry --->  bool 
 * **Result:** A boolean, equal to true if the left-geometry (or agent/point) partially overlaps the right-geometry (or agent/point).  
 * **Comment:** if one geometry operand fully covers the other geometry operand, returns false (contrarily to the overlaps operator).
@@ -1897,7 +1897,7 @@ bool var8 <- polygon([{10,10},{10,20},{20,20},{20,10}]) partially_overlaps polyg
 ----
 
 ### path_between
-  * Possible use: 
+* **Possible use:** 
     * topology OP `container<geometry>` --->  path 
 * **Result:** A path between a list of two geometries (geometries, agents or points) considering a topology.
 * **Examples:** 
@@ -1913,7 +1913,7 @@ path var0 <- my_topology path_between [ag1, ag2]; 	// var0 equals A path between
 ----
 
 ### path_to
-  * Possible use: 
+* **Possible use:** 
     * geometry OP geometry --->  path
     * point OP point --->  path 
 * **Result:** A path between two geometries (geometries, agents or points) considering the topology of the agent applying the operator.
@@ -1944,7 +1944,7 @@ path var0 <- ag1 path_to ag2; 	// var0 equals the path between ag1 and ag2 consi
 ----
 
 ### percent_absolute_deviation
-  * Possible use: 
+* **Possible use:** 
     * `list<float>` OP `list<float>` --->  float 
 * **Result:** percent absolute deviation indicator for 2 series of values: percent_absolute_deviation(list_vals_observe,list_vals_sim)
 * **Examples:** 
@@ -1973,7 +1973,7 @@ percent_absolute_deviation([200,300,150,150,200],[250,250,100,200,200])
 ----
 
 ### plan
-  * Possible use: 
+* **Possible use:** 
     * `container<geometry>` OP float --->  geometry 
 * **Result:** A polyline geometry from the given list of points.
 * **Special cases:**     
@@ -1999,7 +1999,7 @@ geometry var0 <- polyplan([{0,0}, {0,10}, {10,10}, {10,0}],10); 	// var0 equals 
 ----
 
 ### points_at
-  * Possible use: 
+* **Possible use:** 
     * int OP float --->  `list<point>` 
 * **Result:** A list of left-operand number of points located at a the right-operand distance to the agent location.
 * **Examples:** 
@@ -2015,7 +2015,7 @@ list<point> var0 <- 3 points_at(20.0); 	// var0 equals returns [pt1, pt2, pt3] w
 ----
 
 ### points_on
-  * Possible use: 
+* **Possible use:** 
     * geometry OP float --->  list 
 * **Result:** A list of points of the operand-geometry distant from each other to the float right-operand .
 * **Examples:** 
@@ -2031,7 +2031,7 @@ list var0 <-  square(5) points_on(2); 	// var0 equals a list of points belonging
 ----
 
 ### polygon
-  * Possible use: 
+* **Possible use:** 
     * OP(msi.gama.util.IContainer<?,? extends msi.gama.metamodel.shape.IShape>) --->  geometry 
 * **Result:** A polygon geometry from the given list of points.
 * **Special cases:**     
@@ -2051,7 +2051,7 @@ geometry var0 <- polygon([{0,0}, {0,10}, {10,10}, {10,0}]); 	// var0 equals a po
 ----
 
 ### polyhedron
-  * Possible use: 
+* **Possible use:** 
     * `container<geometry>` OP float --->  geometry 
 * **Result:** A polyhedron geometry from the given list of points.
 * **Special cases:**     
@@ -2085,7 +2085,7 @@ geometry var0 <- polyhedron([{0,0}, {0,10}, {10,10}, {10,0}],10); 	// var0 equal
 ----
 
 ### pValue_for_fStat
-  * Possible use: 
+* **Possible use:** 
     * float OP int --->  float 
 * **Result:** Returns the P value of F statistic fstat with numerator degrees of freedom dfn and denominator degress of freedom dfd. Uses the incomplete Beta function.
 
@@ -2095,7 +2095,7 @@ geometry var0 <- polyhedron([{0,0}, {0,10}, {10,10}, {10,0}],10); 	// var0 equal
 ----
 
 ### pValue_for_tStat
-  * Possible use: 
+* **Possible use:** 
     * float OP int --->  float 
 * **Result:** Returns the P value of the T statistic tstat with df degrees of freedom. This is a two-tailed test so we just double the right tail which is given by studentT of -|tstat|.
 
@@ -2105,7 +2105,7 @@ geometry var0 <- polyhedron([{0,0}, {0,10}, {10,10}, {10,0}],10); 	// var0 equal
 ----
 
 ### pyramid
-  * Possible use: 
+* **Possible use:** 
     * OP(float) --->  geometry 
 * **Result:** A square geometry which side size is given by the operand.  
 * **Comment:** the centre of the pyramid is by default the location of the current agent in which has been called this operator.
@@ -2124,7 +2124,7 @@ geometry var0 <- pyramid(5); 	// var0 equals a geometry as a square with side_si
 ----
 
 ### quantile
-  * Possible use: 
+* **Possible use:** 
     * container OP float --->  float 
 * **Result:** Returns the phi-quantile; that is, an element elem for which holds that phi percent of data elements are less than elem. The quantile need not necessarily be contained in the data sequence, it can be a linear interpolation.
 
@@ -2134,7 +2134,7 @@ geometry var0 <- pyramid(5); 	// var0 equals a geometry as a square with side_si
 ----
 
 ### quantile_inverse
-  * Possible use: 
+* **Possible use:** 
     * container OP float --->  float 
 * **Result:** Returns how many percent of the elements contained in the receiver are <= element. Does linear interpolation if the element is not contained but lies in between two contained elements.
 
@@ -2144,7 +2144,7 @@ geometry var0 <- pyramid(5); 	// var0 equals a geometry as a square with side_si
 ----
 
 ### rank_interpolated
-  * Possible use: 
+* **Possible use:** 
     * container OP float --->  float 
 * **Result:** Returns the linearly interpolated number of elements in a list less or equal to a given element. The rank is the number of elements <= element. Ranks are of the form {0, 1, 2,..., sortedList.size()}. If no element is <= element, then the rank is zero. If the element lies in between two contained elements, then linear interpolation is used and a non integer value is returned.
 
@@ -2154,7 +2154,7 @@ geometry var0 <- pyramid(5); 	// var0 equals a geometry as a square with side_si
 ----
 
 ### read_json_rest
-  * Possible use: 
+* **Possible use:** 
     * string OP string --->  msi.gama.util.IList<msi.gama.util.IList<java.lang.Object>> 
 * **Result:** REST: Read data from RESTService
 
@@ -2164,7 +2164,7 @@ geometry var0 <- pyramid(5); 	// var0 equals a geometry as a square with side_si
 ----
 
 ### rectangle
-  * Possible use: 
+* **Possible use:** 
     * OP(point) --->  geometry
     * float OP float --->  geometry 
 * **Result:** A rectangle geometry which side sizes are given by the operands.  
@@ -2193,7 +2193,7 @@ geometry var1 <- rectangle(10, 5); 	// var1 equals a geometry as a rectangle wit
 ----
 
 ### rgb_to_xyz
-  * Possible use: 
+* **Possible use:** 
     * OP(file) --->  `list<point>` 
 * **Result:** A list of point corresponding to RGB value of an image (r:x , g:y, b:z)
 * **Examples:** 
@@ -2208,7 +2208,7 @@ list<point> var0 <- rgb_to_xyz(texture); 	// var0 equals a list of points
 ----
 
 ### rgbcube
-  * Possible use: 
+* **Possible use:** 
     * OP(float) --->  geometry 
 * **Result:** A cube geometry which side size is equal to the operand.  
 * **Comment:** the centre of the cube is by default the location of the current agent in which has been called this operator.
@@ -2227,7 +2227,7 @@ geometry var0 <- cube(10); 	// var0 equals a geometry as a square of side size 1
 ----
 
 ### rgbtriangle
-  * Possible use: 
+* **Possible use:** 
     * OP(float) --->  geometry 
 * **Result:** A triangle geometry which side size is given by the operand.  
 * **Comment:** the centre of the triangle is by default the location of the current agent in which has been called this operator.
@@ -2246,7 +2246,7 @@ geometry var0 <- triangle(5); 	// var0 equals a geometry as a triangle with side
 ----
 
 ### rms
-  * Possible use: 
+* **Possible use:** 
     * int OP float --->  float 
 * **Result:** Returns the RMS (Root-Mean-Square) of a data sequence. The RMS of data sequence is the square-root of the mean of the squares of the elements in the data sequence. It is a measure of the average size of the elements of a data sequence.
 
@@ -2256,7 +2256,7 @@ geometry var0 <- triangle(5); 	// var0 equals a geometry as a triangle with side
 ----
 
 ### rotated_by
-  * Possible use: 
+* **Possible use:** 
     * geometry OP int --->  geometry
     * geometry OP float --->  geometry
     * geometry OP float --->  geometry 
@@ -2283,7 +2283,7 @@ geometry var1 <- self rotated_by 45; 	// var1 equals the geometry resulting from
 ----
 
 ### scaled_to
-  * Possible use: 
+* **Possible use:** 
     * geometry OP point --->  geometry 
 * **Result:** allows to restrict the size of a geometry so that it fits in the envelope {width, height, depth} defined by the second operand
 * **Examples:** 
@@ -2298,7 +2298,7 @@ geometry var0 <- shape scaled_to {10,10}; 	// var0 equals a geometry correspondi
 ----
 
 ### set_z
-  * Possible use: 
+* **Possible use:** 
     * geometry OP msi.gama.util.IContainer<?,java.lang.Double> --->  geometry
     * geometry OP int --->  geometry 
 * **Result:** Sets the z ordinate of the n-th point of a geometry to the value provided by the third argument
@@ -2316,7 +2316,7 @@ shape <- triangle(3) set_z [5,10,14];
 ----
 
 ### simple_clustering_by_distance
-  * Possible use: 
+* **Possible use:** 
     * `container<agent>` OP float --->  `list<list<agent>>` 
 * **Result:** A list of agent groups clustered by distance considering a distance min between two groups.
 * **Examples:** 
@@ -2339,7 +2339,7 @@ list<list<agent>> var0 <- [ag1, ag2, ag3, ag4, ag5] simpleClusteringByDistance 2
 ----
 
 ### simplification
-  * Possible use: 
+* **Possible use:** 
     * geometry OP float --->  geometry 
 * **Result:** A geometry corresponding to the simplification of the operand (geometry, agent, point) considering a tolerance distance.  
 * **Comment:** The algorithm used for the simplification is Douglas-Peucker
@@ -2355,7 +2355,7 @@ geometry var0 <- self simplification 0.1; 	// var0 equals the geometry resulting
 ----
 
 ### skeletonize
-  * Possible use: 
+* **Possible use:** 
     * OP(geometry) --->  `list<geometry>` 
 * **Result:** A list of geometries (polylines) corresponding to the skeleton of the operand geometry (geometry, agent)
 * **Examples:** 
@@ -2370,7 +2370,7 @@ list<geometry> var0 <- skeletonize(self); 	// var0 equals the list of geometries
 ----
 
 ### skew
-  * Possible use: 
+* **Possible use:** 
     * OP(container) --->  float
     * float OP float --->  float 
 * **Result:** Returns the skew of a data sequence.Returns the skew of a data sequence, which is moment(data,3,mean) / standardDeviation3
@@ -2381,7 +2381,7 @@ list<geometry> var0 <- skeletonize(self); 	// var0 equals the list of geometries
 ----
 
 ### slice
-  * Possible use: 
+* **Possible use:** 
     * float OP float --->  geometry 
 * **Result:** An sphere geometry which radius is equal to the operand made of 2 hemisphere.  
 * **Comment:** the centre of the sphere is by default the location of the current agent in which has been called this operator.
@@ -2400,7 +2400,7 @@ geometry var0 <- slice(10,0.3); 	// var0 equals a circle geometry of radius 10, 
 ----
 
 ### smooth
-  * Possible use: 
+* **Possible use:** 
     * geometry OP float --->  geometry 
 * **Result:** Returns a 'smoothed' geometry, where straight lines are replaces by polynomial (bicubic) curves. The first parameter is the original geometry, the second is the 'fit' parameter which can be in the range 0 (loose fit) to 1 (tightest fit).
 * **Examples:** 
@@ -2422,7 +2422,7 @@ geometry var0 <- smooth(square(10), 0.0); 	// var0 equals a 'rounded' square
 ----
 
 ### sphere
-  * Possible use: 
+* **Possible use:** 
     * OP(float) --->  geometry 
 * **Result:** A sphere geometry which radius is equal to the operand.  
 * **Comment:** the centre of the sphere is by default the location of the current agent in which has been called this operator.
@@ -2441,7 +2441,7 @@ geometry var0 <- sphere(10); 	// var0 equals a geometry as a circle of radius 10
 ----
 
 ### spherical_pie
-  * Possible use: 
+* **Possible use:** 
     * float OP `list<float>` --->  geometry
     * float OP `list<float>` --->  geometry 
 * **Result:** An sphere geometry which radius is equal to the operand made of n pie.An sphere geometry which radius is equal to the operand made of n pie.  
@@ -2463,7 +2463,7 @@ geometry var1 <- spherical_pie(10/2,[0.1,0.9],[#red,#green]); 	// var1 equals a 
 ----
 
 ### split_at
-  * Possible use: 
+* **Possible use:** 
     * geometry OP point --->  `list<geometry>` 
 * **Result:** The two part of the left-operand lines split at the given right-operand point
 * **Special cases:**     
@@ -2480,7 +2480,7 @@ list<geometry> var0 <- polyline([{1,2},{4,6}]) split_at {7,6}; 	// var0 equals [
 ----
 
 ### split_geometry
-  * Possible use: 
+* **Possible use:** 
     * geometry OP float --->  `list<geometry>`
     * geometry OP point --->  `list<geometry>`
     * geometry OP int --->  `list<geometry>` 
@@ -2499,7 +2499,7 @@ list<geometry> var2 <- to_rectangles(self, {10.0, 15.0}); 	// var2 equals the li
 ----
 
 ### split_lines
-  * Possible use: 
+* **Possible use:** 
     * OP(`container<geometry>`) --->  `list<geometry>` 
 * **Result:** A list of geometries resulting after cutting the lines at their intersections.
 * **Examples:** 
@@ -2514,7 +2514,7 @@ list<geometry> var0 <- split_lines([line([{0,10}, {20,10}]), line([{0,10}, {20,1
 ----
 
 ### square
-  * Possible use: 
+* **Possible use:** 
     * OP(float) --->  geometry 
 * **Result:** A square geometry which side size is equal to the operand.  
 * **Comment:** the centre of the square is by default the location of the current agent in which has been called this operator.
@@ -2533,7 +2533,7 @@ geometry var0 <- square(10); 	// var0 equals a geometry as a square of side size
 ----
 
 ### squircle
-  * Possible use: 
+* **Possible use:** 
     * float OP float --->  geometry 
 * **Result:** A mix of square and circle geometry (see : http://en.wikipedia.org/wiki/Squircle), which side size is equal to the first operand and power is equal to the second operand  
 * **Comment:** the centre of the ellipse is by default the location of the current agent in which has been called this operator.
@@ -2552,7 +2552,7 @@ geometry var0 <- squircle(4,4); 	// var0 equals a geometry as a squircle of side
 ----
 
 ### student_area
-  * Possible use: 
+* **Possible use:** 
     * float OP int --->  float 
 * **Result:** Returns the area to the left of x in the Student T distribution with the given degrees of freedom.
 
@@ -2562,7 +2562,7 @@ geometry var0 <- squircle(4,4); 	// var0 equals a geometry as a squircle of side
 ----
 
 ### student_t_inverse
-  * Possible use: 
+* **Possible use:** 
     * float OP int --->  float 
 * **Result:** Returns the value, t, for which the area under the Student-t probability density function (integrated from minus infinity to t) is equal to x.
 
@@ -2572,7 +2572,7 @@ geometry var0 <- squircle(4,4); 	// var0 equals a geometry as a squircle of side
 ----
 
 ### teapot
-  * Possible use: 
+* **Possible use:** 
     * OP(float) --->  geometry 
 * **Result:** A teapot geometry which radius is equal to the operand.  
 * **Comment:** the centre of the teapot is by default the location of the current agent in which has been called this operator.
@@ -2591,7 +2591,7 @@ geometry var0 <- teapot(10); 	// var0 equals a geometry as a circle of radius 10
 ----
 
 ### threeds_file
-  * Possible use: 
+* **Possible use:** 
     * OP(string) --->  file 
 * **Result:** Constructs a file of type threeds. Allowed extensions are limited to 3ds, max
 
@@ -2601,7 +2601,7 @@ geometry var0 <- teapot(10); 	// var0 equals a geometry as a circle of radius 10
 ----
 
 ### to_GAMA_CRS
-  * Possible use: 
+* **Possible use:** 
     * OP(geometry) --->  geometry
     * geometry OP string --->  geometry
 * **Special cases:**     
@@ -2620,7 +2620,7 @@ geometry var1 <- to_GAMA_CRS({121,14}, "EPSG:4326"); 	// var1 equals a geometry 
 ----
 
 ### to_GAMA_CRS
-  * Possible use: 
+* **Possible use:** 
     * OP(geometry) --->  geometry
     * geometry OP string --->  geometry
 * **Special cases:**     
@@ -2639,7 +2639,7 @@ geometry var1 <- to_GAMA_CRS({121,14}); 	// var1 equals a geometry corresponding
 ----
 
 ### to_rectanglesSame signification as [split_geometry](#split_geometry)
-  * Possible use: 
+* **Possible use:** 
     * geometry OP point --->  `list<geometry>`
     * geometry OP int --->  `list<geometry>` 
 * **Result:** A list of rectangles corresponding to the given dimension that result from the decomposition of the geometry into rectangles (geometry, nb_cols, nb_rows, overlaps) by a grid composed of the given number of columns and rows, if overlaps = true, add the rectangles that overlap the border of the geometryA list of rectangles of the size corresponding to the given dimension that result from the decomposition of the geometry into rectangles (geometry, dimension, overlaps), if overlaps = true, add the rectangles that overlap the border of the geometry
@@ -2656,7 +2656,7 @@ list<geometry> var1 <- to_rectangles(self, {10.0, 15.0}, true); 	// var1 equals 
 ----
 
 ### to_squares
-  * Possible use: 
+* **Possible use:** 
     * geometry OP float --->  `list<geometry>`
     * geometry OP int --->  `list<geometry>`
     * geometry OP int --->  `list<geometry>` 
@@ -2682,7 +2682,7 @@ list<geometry> var2 <- to_squares(self, 10, true); 	// var2 equals the list of 1
 ----
 
 ### touches
-  * Possible use: 
+* **Possible use:** 
     * geometry OP geometry --->  bool 
 * **Result:** A boolean, equal to true if the left-geometry (or agent/point) touches the right-geometry (or agent/point).  
 * **Comment:** returns true when the left-operand only touches the right-operand. When one geometry covers partially (or fully) the other one, it returns false.
@@ -2711,7 +2711,7 @@ bool var10 <- polygon([{10,10},{10,20},{20,20},{20,10}]) touches {10,15}; 	// va
 ----
 
 ### towards
-  * Possible use: 
+* **Possible use:** 
     * geometry OP geometry --->  int 
 * **Result:** The direction (in degree) between the two geometries (geometries, agents, points) considering the topology of the agent applying the operator.
 * **Examples:** 
@@ -2727,7 +2727,7 @@ int var0 <- ag1 towards ag2; 	// var0 equals the direction between ag1 and ag2 a
 ----
 
 ### transformed_by
-  * Possible use: 
+* **Possible use:** 
     * geometry OP point --->  geometry 
 * **Result:** A geometry resulting from the application of a rotation and a scaling (rigth-operand : point {angle(degree), scale factor} of the left-hand operand (geometry, agent, point)
 * **Examples:** 
@@ -2743,7 +2743,7 @@ geometry var0 <- self transformed_by {45, 0.5}; 	// var0 equals the geometry res
 ----
 
 ### translated_by
-  * Possible use: 
+* **Possible use:** 
     * geometry OP point --->  geometry 
 * **Result:** A geometry resulting from the application of a translation by the right-hand operand distance to the left-hand operand (geometry, agent, point)
 * **Examples:** 
@@ -2766,7 +2766,7 @@ geometry var0 <- self translated_by {10,10,10}; 	// var0 equals the geometry res
 ----
 
 ### triangle
-  * Possible use: 
+* **Possible use:** 
     * OP(float) --->  geometry 
 * **Result:** A triangle geometry which side size is given by the operand.  
 * **Comment:** the centre of the triangle is by default the location of the current agent in which has been called this operator.
@@ -2785,7 +2785,7 @@ geometry var0 <- triangle(5); 	// var0 equals a geometry as a triangle with side
 ----
 
 ### triangulate
-  * Possible use: 
+* **Possible use:** 
     * OP(`list<geometry>`) --->  `list<geometry>`
     * OP(geometry) --->  `list<geometry>` 
 * **Result:** A list of geometries (triangles) corresponding to the Delaunay triangulation of the operand geometry (geometry, agent, point)
@@ -2802,7 +2802,7 @@ list<geometry> var1 <- triangulate(self); 	// var1 equals the list of geometries
 ----
 
 ### union
-  * Possible use: 
+* **Possible use:** 
     * OP(`container<geometry>`) --->  geometry
 * **Special cases:**     
   * if the right-operand is a container of points, geometries or agents, returns the geometry resulting from the union all the geometries
@@ -2818,7 +2818,7 @@ geometry var0 <- union([geom1, geom2, geom3]); 	// var0 equals a geometry corres
 ----
 
 ### variance
-  * Possible use: 
+* **Possible use:** 
     * OP(float) --->  float
     * int OP float --->  float 
 * **Result:** Returns the variance of a data sequence. That is (sumOfSquares - mean*sum) / size with mean = sum/size.Returns the variance from a standard deviation.
@@ -2829,7 +2829,7 @@ geometry var0 <- union([geom1, geom2, geom3]); 	// var0 equals a geometry corres
 ----
 
 ### voronoi
-  * Possible use: 
+* **Possible use:** 
     * OP(`list<point>`) --->  `list<geometry>` 
 * **Result:** A list of geometries corresponding to the Voronoi diagram built from the list of points
 * **Examples:** 
@@ -2844,7 +2844,7 @@ list<geometry> var0 <- voronoi([{10,10},{50,50},{90,90},{10,90},{90,10}]); 	// v
 ----
 
 ### water_area_for
-  * Possible use: 
+* **Possible use:** 
     * geometry OP float --->  float
 * **Special cases:**     
   * if the left operand is a polyline and the right operand a float for the water y coordinate, returrns the area of the water (water flow area)
@@ -2860,7 +2860,7 @@ waterarea <- my_river_polyline water_area_for my_height_value
 ----
 
 ### water_level_for
-  * Possible use: 
+* **Possible use:** 
     * geometry OP float --->  float
 * **Special cases:**     
   * if the left operand is a polyline and the right operand a float for the area, returrns the y coordinate of the water (water level)
@@ -2876,7 +2876,7 @@ waterlevel <- my_river_polyline water_level_for my_area_value
 ----
 
 ### water_polylines_for
-  * Possible use: 
+* **Possible use:** 
     * geometry OP float --->  msi.gama.util.IList<msi.gama.util.IList<msi.gama.metamodel.shape.GamaPoint>>
 * **Special cases:**     
   * if the left operand is a polyline and the right operand a float for the water y coordinate, returrns the shapes of the river sections (list of list of points)
@@ -2892,7 +2892,7 @@ waterarea <- my_river_polyline water_area_for my_height_value
 ----
 
 ### without_holes
-  * Possible use: 
+* **Possible use:** 
     * OP(geometry) --->  geometry 
 * **Result:** A geometry corresponding to the operand geometry (geometry, agent, point) without its holes
 * **Examples:** 
