@@ -1,5 +1,5 @@
-
-** Table of contents **
+-
+**Table of contents**
 
 * [Installation](#installation)
 	* [System Requirements](#system-requirements)
