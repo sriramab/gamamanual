@@ -1,14 +1,4 @@
--
-**Table of contents**
-
-* [Installation](#installation)
-	* [System Requirements](#system-requirements)
-	* [Installation of Java](#installation-of-java)
-		* [On MacOS X (Lion, Mountain Lion, Mavericks)](#on-macos-x-lion-mountain-lion-mavericks)
-		* [On MacOS X (Yosemite)](#on-macos-x-yosemite)
-		* [On Windows 7 & 8 64 bits](#on-windows-7--8-64-bits)
-		* [On Ubuntu & Linux](#on-ubuntu--linux)
-
+# 
 
 # Installation
 
