@@ -168,6 +168,132 @@ moves the agent towards the target passed in the arguments.
 [Top of the page](#table-of-contents)
 	
 ----
+## communicatingThe communicating skill offers some primitives and built-in variables which enable agent to communicate with each other using the FIPA interaction protocol. 
+### Variables
+	   
+  * **`accept_proposals`** (list): A list of 'accept_proposal' performative messages of the agent's mailbox having .   
+  * **`agrees`** (list): A list of 'accept_proposal' performative messages.   
+  * **`cancels`** (list): A list of 'cancel' performative messages.   
+  * **`cfps`** (list): A list of 'cfp' (call for proposal) performative messages.   
+  * **`conversations`** (list): A list containing the current conversations of agent. Ended conversations are automatically removed from this list.   
+  * **`failures`** (list): A list of 'failure' performative messages.   
+  * **`informs`** (list): A list of 'inform' performative messages.   
+  * **`messages`** (list): The mailbox of the agent, a list of messages of all types of performatives.   
+  * **`proposes`** (list): A list of 'propose' performative messages .   
+  * **`queries`** (list): A list of 'query' performative messages.   
+  * **`refuses`** (list): A list of 'propose' performative messages.   
+  * **`reject_proposals`** (list): A list of 'reject_proposals' performative messages.   
+  * **`requests`** (list): A list of 'request' performative messages.   
+  * **`requestWhens`** (list): A list of 'request-when' performative messages.   
+  * **`subscribes`** (list): A list of 'subscribe' performative messages. 
+ 	
+### Actions
+	  
+	 
+#### **`accept_proposal`**
+Replies a message with an 'accept_proposal' performative message.
+* returns: unknown 			
+* **`message`** (message): The message to be replied 			
+* **`content`** (list): The content of the replying message  
+	 
+#### **`agree`**
+Replies a message with an 'agree' performative message.
+* returns: unknown 			
+* **`message`** (message): The message to be replied 			
+* **`content`** (list): The content of the replying message  
+	 
+#### **`cancel`**
+Replies a message with a 'cancel' peformative message.
+* returns: unknown 			
+* **`message`** (message): The message to be replied 			
+* **`content`** (list): The content of the replying message  
+	 
+#### **`cfp`**
+Replies a message with a 'cfp' performative message.
+* returns: unknown 			
+* **`message`** (message): The message to be replied 			
+* **`content`** (list): The content of the replying message  
+	 
+#### **`end_conversation`**
+Reply a message with an 'end_conversation' peprformative message. This message marks the end of a conversation. In a 'no-protocol' conversation, it is the responsible of the modeler to explicitly send this message to mark the end of a conversation/interaction protocol.
+* returns: unknown 			
+* **`message`** (message): The message to be replied 			
+* **`content`** (list): The content of the replying message  
+	 
+#### **`failure`**
+Replies a message with a 'failure' performative message.
+* returns: unknown 			
+* **`message`** (message): The message to be replied 			
+* **`content`** (list): The content of the replying message  
+	 
+#### **`inform`**
+Replies a message with an 'inform' performative message.
+* returns: unknown 			
+* **`message`** (message): The message to be replied 			
+* **`content`** (list): The content of the replying message  
+	 
+#### **`propose`**
+Replies a message with a 'propose' performative message.
+* returns: unknown 			
+* **`message`** (message): The message to be replied 			
+* **`content`** (list): The content of the replying message  
+	 
+#### **`query`**
+Replies a message with a 'query' performative message.
+* returns: unknown 			
+* **`message`** (message): The message to be replied 			
+* **`content`** (list): The content of the replying message  
+	 
+#### **`refuse`**
+Replies a message with a 'refuse' performative message.
+* returns: unknown 			
+* **`message`** (message): The message to be replied 			
+* **`content`** (list): The content of the replying message  
+	 
+#### **`reject_proposal`**
+Replies a message with a 'reject_proposal' performative message.
+* returns: unknown 			
+* **`message`** (message): The message to be replied 			
+* **`content`** (list): The content of the replying message  
+	 
+#### **`reply`**
+Replies a message. This action should be only used to reply a message in a 'no-protocol' conversation and with a 'user defined performative'. For performatives supported by GAMA (i.e., standard FIPA performatives), please use the 'action' with the same name of 'performative'. For example, to reply a message with a 'request' performative message, the modeller should use the 'request' action.
+* returns: unknown 			
+* **`message`** (message): The message to be replied 			
+* **`performative`** (string): The performative of the replying message 			
+* **`content`** (list): The content of the replying message  
+	 
+#### **`request`**
+Replies a message with a 'request' performative message.
+* returns: unknown 			
+* **`message`** (message): The message to be replied 			
+* **`content`** (list): The content of the replying message  
+	 
+#### **`send`**
+Starts a conversation/interaction protocol.
+* returns: msi.gaml.extensions.fipa.Message 			
+* **`receivers`** (list): A list of receiver agents 			
+* **`content`** (list): The content of the message. A list of any GAML type 			
+* **`performative`** (string): A string, representing the message performative 			
+* **`protocol`** (string): A string representing the name of interaction protocol  
+	 
+#### **`start_conversation`**
+Starts a conversation/interaction protocol.
+* returns: msi.gaml.extensions.fipa.Message 			
+* **`receivers`** (list): A list of receiver agents 			
+* **`content`** (list): The content of the message. A list of any GAML type 			
+* **`performative`** (string): A string, representing the message performative 			
+* **`protocol`** (string): A string representing the name of interaction protocol  
+	 
+#### **`subscribe`**
+Replies a message with a 'subscribe' performative message.
+* returns: unknown 			
+* **`message`** (message): The message to be replied 			
+* **`content`** (list): The content of the replying message	
+
+[Top of the page](#table-of-contents)
+	
+----
 ## driving 
 ### Variables
 	   
@@ -252,6 +378,48 @@ moves the agent towards the target passed in the arguments.
 * **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
 * **`background`** (list,agent,graph,geometry): list, agent, graph, geometry on which the agent moves (the agent moves inside this geometry) 			
 * **`on`** (list,agent,graph,geometry): list, agent, graph, geometry that restrains this move (the agent moves inside this geometry)	
+
+[Top of the page](#table-of-contents)
+	
+----
+## graphicThe graphic skill is intended to define the minimal set of behaviours required from a graphical agent 
+### Variables
+	   
+  * **`transparency`** (float): the transparency of the agent (between 0.0 and 1.0) 
+ 	
+### Actions
+	  
+	 
+#### **`brewer_color`**
+
+* returns: rgb 			
+* **`type`** (string): Palette Type (Sequential, Diverging, Qualitative) 			
+* **`class`** (int): Number of class 			
+* **`index`** (int): index  
+	 
+#### **`brewer_palette`**
+
+* returns: msi.gama.util.IList<java.awt.Color> 			
+* **`type`** (string): Palette Type (Sequential, Diverging, Qualitative)  
+	 
+#### **`twinkle`**
+
+* returns: void 			
+* **`period`** (int): make the agent twinkle with a given period	
+
+[Top of the page](#table-of-contents)
+	
+----
+## grid 
+### Variables
+	   
+  * **`color`** (rgb):    
+  * **`grid_value`** (float):    
+  * **`grid_x`** (int):    
+  * **`grid_y`** (int):  
+ 	
+### Actions
+		
 
 [Top of the page](#table-of-contents)
 	
@@ -372,6 +540,117 @@ moves the agent towards the target passed in the arguments.
 [Top of the page](#table-of-contents)
 	
 ----
+## MDXSKILL 
+### Variables
+	 
+ 	
+### Actions
+	  
+	 
+#### **`helloWorld`**
+
+* returns: unknown  
+	 
+#### **`select`**
+
+* returns: list 			
+* **`params`** (map): Connection parameters 			
+* **`onColumns`** (string): select string with question marks 			
+* **`onRows`** (list): List of values that are used to replace question marks 			
+* **`from`** (list): List of values that are used to replace question marks 			
+* **`where`** (list): List of values that are used to replace question marks 			
+* **`values`** (list): List of values that are used to replace question marks  
+	 
+#### **`testConnection`**
+
+* returns: bool 			
+* **`params`** (map): Connection parameters  
+	 
+#### **`timeStamp`**
+
+* returns: float	
+
+[Top of the page](#table-of-contents)
+	
+----
+## movingThe moving skill is intended to define the minimal set of behaviours required for agents that are able to move on different topologies 
+### Variables
+	   
+  * **`destination`** (point): continuously updated destination of the agent with respect to its speed and heading (read-only)   
+  * **`heading`** (int): the absolute heading of the agent in degrees (in the range 0-359)   
+  * **`location`** (point):    
+  * **`speed`** (float): the speed of the agent (in meter/second) 
+ 	
+### Actions
+	  
+	 
+#### **`follow`**
+moves the agent along a given path passed in the arguments.
+* returns: path 			
+* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
+* **`path`** (path): a path to be followed. 			
+* **`move_weights`** (map): Weights used for the moving. 			
+* **`return_path`** (boolean): if true, return the path followed (by default: false)  
+	 
+#### **`goto`**
+moves the agent towards the target passed in the arguments.
+* returns: path 			
+* **`target`** (agent,point,geometry): the location or entity towards which to move. 			
+* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
+* **`on`** (graph): graph that restrains this move 			
+* **`recompute_path`** (boolean): if false, the path is not recompute even if the graph is modified (by default: true) 			
+* **`return_path`** (boolean): if true, return the path followed (by default: false) 			
+* **`move_weights`** (map): Weights used for the moving.  
+	 
+#### **`move`**
+moves the agent forward, the distance being computed with respect to its speed and heading. The value of the corresponding variables are used unless arguments are passed.
+* returns: path 			
+* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
+* **`heading`** (int): a restriction placed on the random heading choice. The new heading is chosen in the range (heading - amplitude/2, heading+amplitude/2) 			
+* **`bounds`** (geometry,agent): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry  
+	 
+#### **`wander`**
+Moves the agent towards a random location at the maximum distance (with respect to its speed). The heading of the agent is chosen randomly if no amplitude is specified. This action changes the value of heading.
+* returns: void 			
+* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
+* **`amplitude`** (int): a restriction placed on the random heading choice. The new heading is chosen in the range (heading - amplitude/2, heading+amplitude/2) 			
+* **`bounds`** (agent,geometry): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry  
+	 
+#### **`wander_3D`**
+Moves the agent towards a random location (3D point) at the maximum distance (with respect to its speed). The heading of the agent is chosen randomly if no amplitude is specified. This action changes the value of heading.
+* returns: path 			
+* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
+* **`amplitude`** (int): a restriction placed on the random heading choice. The new heading is chosen in the range (heading - amplitude/2, heading+amplitude/2) 			
+* **`z_max`** (int): the maximum alltitude (z) the geometry can reach 			
+* **`bounds`** (agent,geometry): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry	
+
+[Top of the page](#table-of-contents)
+	
+----
+## moving3DThe moving skill 3D is intended to define the minimal set of behaviours required for agents that are able to move on different topologies 
+### Variables
+	   
+  * **`destination`** (point): continuously updated destination of the agent with respect to its speed and heading (read-only)   
+  * **`heading`** (int): the absolute heading of the agent in degrees (in the range 0-359)   
+  * **`pitch`** (int): the absolute pitch of the agent in degrees (in the range 0-359)   
+  * **`roll`** (int): the absolute roll of the agent in degrees (in the range 0-359)   
+  * **`speed`** (float): the speed of the agent (in meter/second) 
+ 	
+### Actions
+	  
+	 
+#### **`move`**
+moves the agent forward, the distance being computed with respect to its speed and heading. The value of the corresponding variables are used unless arguments are passed.
+* returns: path 			
+* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
+* **`heading`** (int): int, optional, the direction to take for this move (replaces the current value of heading) 			
+* **`pitch`** (int): int, optional, the direction to take for this move (replaces the current value of pitch) 			
+* **`heading`** (int): int, optional, the direction to take for this move (replaces the current value of roll) 			
+* **`bounds`** (geometry,agent): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry	
+
+[Top of the page](#table-of-contents)
+	
+----
 ## network 
 ### Variables
 	   
@@ -426,6 +705,34 @@ Send a message to a destination.
 #### **`optimizeSigns`**
 
 * returns: unknown	
+
+[Top of the page](#table-of-contents)
+	
+----
+## physical3D 
+### Variables
+	   
+  * **`collisionBound`** (map):    
+  * **`density`** (float):    
+  * **`mass`** (float):    
+  * **`motor`** (point):    
+  * **`physical_3D_world`** (agent):    
+  * **`velocity`** (list):  
+ 	
+### Actions
+		
+
+[Top of the page](#table-of-contents)
+	
+----
+## roadTrafficManagement 
+### Variables
+	   
+  * **`nbVehicle`** (int):    
+  * **`speed`** (float):  
+ 	
+### Actions
+		
 
 [Top of the page](#table-of-contents)
 	
@@ -504,6 +811,70 @@ M.
 M.
 * returns: void 			
 * **`msg`** (string): td)	
+
+[Top of the page](#table-of-contents)
+	
+----
+## SQLSKILL 
+### Variables
+	 
+ 	
+### Actions
+	  
+	 
+#### **`executeUpdate`**
+
+* returns: int 			
+* **`params`** (map): Connection parameters 			
+* **`updateComm`** (string): SQL commands such as Create, Update, Delete, Drop with question mark 			
+* **`values`** (list): List of values that are used to replace question mark  
+	 
+#### **`getCurrentDateTime`**
+
+* returns: string 			
+* **`dateFormat`** (string): date format examples: 'yyyy-MM-dd' , 'yyyy-MM-dd HH:mm:ss'  
+	 
+#### **`getDateOffset`**
+
+* returns: string 			
+* **`dateFormat`** (string): date format examples: 'yyyy-MM-dd' , 'yyyy-MM-dd HH:mm:ss' 			
+* **`dateStr`** (string): Start date 			
+* **`offset`** (string): number on day to increase or decrease  
+	 
+#### **`helloWorld`**
+
+* returns: unknown  
+	 
+#### **`insert`**
+
+* returns: int 			
+* **`params`** (map): Connection parameters 			
+* **`into`** (string): Table name 			
+* **`columns`** (list): List of column name of table 			
+* **`values`** (list): List of values that are used to insert into table. Columns and values must have same size  
+	 
+#### **`list2Matrix`**
+
+* returns: matrix 			
+* **`param`** (list): Param: a list of records and metadata 			
+* **`getName`** (boolean): getType: a boolean value, optional parameter 			
+* **`getType`** (boolean): getType: a boolean value, optional parameter  
+	 
+#### **`select`**
+
+* returns: list 			
+* **`params`** (map): Connection parameters 			
+* **`select`** (string): select string with question marks 			
+* **`values`** (list): List of values that are used to replace question marks  
+	 
+#### **`testConnection`**
+
+* returns: bool 			
+* **`params`** (map): Connection parameters  
+	 
+#### **`timeStamp`**
+
+* returns: float	
 
 [Top of the page](#table-of-contents)
 	
