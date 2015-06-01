@@ -43,7 +43,9 @@ float one_cubic_inch <- 1 °sqin * 1 °inch;
 <wiki:toc max_depth="3" />
 
 	
+		
 ----
+
 ## Constants
 * **`#e`**, value= 2.718281828459045, Comment: The e constant
 * **`#infinity`**, value= Infinity, Comment: A constant holding the positive infinity of type (Java Double.POSITIVE_INFINITY)
@@ -55,7 +57,9 @@ float one_cubic_inch <- 1 °sqin * 1 °inch;
 * **`#pi`**, value= 3.141592653589793, Comment: The PI constant
 * **`#to_deg`**, value= 57.29577951308232, Comment: A constant holding the value to convert radians into degrees
 * **`#to_rad`**, value= 0.017453292519943295, Comment: A constant holding the value to convert degrees into radians
+		
 ----
+
 ## Graphics units
 * **`#bold`**, value= 1, Comment: This contant allows to build a font with a bold face. Can be combined with #italic
 * **`#display_height`**, value= 1.0, Comment: This constant is only accessible in a graphical context: display, graphics...
@@ -63,7 +67,9 @@ float one_cubic_inch <- 1 °sqin * 1 °inch;
 * **`#italic`**, value= 2, Comment: This contant allows to build a font with an italic face. Can be combined with #bold
 * **`#pixels`** (#px), value= 1.0, Comment: This unit, only available when running aspects or declaring displays, can be obtained using the same approach, but returns a dynamic value instead of a fixed one. px (or pixels), returns the value of one pixel on the current view in terms of model units.
 * **`#plain`**, value= 0, Comment: This contant allows to build a font with a plain face
+		
 ----
+
 ## Length units
 * **`#cm`** (#centimeter,#centimeters), value= 0.009999999776482582
 * **`#dm`** (#decimeter,#decimeters), value= 0.10000000149011612
@@ -74,13 +80,17 @@ float one_cubic_inch <- 1 °sqin * 1 °inch;
 * **`#mile`** (#miles), value= 1609.344
 * **`#mm`** (#milimeter,#milimeters), value= 9.999999776482583E-4
 * **`#yard`** (#yards), value= 0.9144
+		
 ----
+
 ## Surface units
 * **`#m2`**, value= 1.0, Comment: square meter: the basic unit for surfaces
 * **`#sqft`** (#square_foot,#square_feet), value= 0.09290303584691051
 * **`#sqin`** (#square_inch,#square_inches), value= 6.451599711591008E-4
 * **`#sqmi`** (#square_mile,#square_miles), value= 2589988.110336
+		
 ----
+
 ## Time units
 * **`#day`** (#days,#day), value= 86400.0
 * **`#h`** (#hour,#hours), value= 3600.0
@@ -89,20 +99,25 @@ float one_cubic_inch <- 1 °sqin * 1 °inch;
 * **`#msec`** (#millisecond,#milliseconds), value= 0.001
 * **`#sec`** (#second,#seconds,#s), value= 1.0, Comment: second: the time basic unit
 * **`#year`** (#years,#y), value= 3.1104E7, Comment: Note that 1 month equals 30 days and 1 year 360 days in these units
+		
 ----
+
 ## Volume units
 * **`#cl`** (#centiliter,#centiliters), value= 1.0E-5
 * **`#dl`** (#deciliter,#deciliters), value= 1.0E-4
 * **`#hl`** (#hectoliter,#hectoliters), value= 0.1
 * **`#l`** (#liter,#liters,#dm3), value= 0.001
 * **`#m3`**, value= 1.0, Comment: cube meter: the basic unit for volumes
+		
 ----
+
 ## Weight units
 * **`#gram`** (#grams), value= 0.001
 * **`#kg`** (#kilo,#kilogram,#kilos), value= 1.0, Comment: second: the basic unit for weights
 * **`#ounce`** (#oz,#ounces), value= 0.028349523125
 * **`#pound`** (#lb,#poudns,#lbm), value= 0.45359237
 * **`#ton`** (#tons), value= 1000.0
+
 
 ----
 
