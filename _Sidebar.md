@@ -79,6 +79,7 @@
     4. [Variables and attributes](G__VariablesAndAttributes)
     5. [Operators (A to K)](G__OperatorsAK)
     6. [Operators (L to Z)](G__OperatorsLZ)
+    7. [Operators](G__Operators)
 7. [Recipes](G__Recipes)
   1. [Optimizing Models](G__OptimizingModels)
   2. [Using Equations](G__UsingEquations)
