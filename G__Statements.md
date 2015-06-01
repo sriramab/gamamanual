@@ -6,7 +6,7 @@
 
 ## Table of Contents
 <wiki:toc max_depth="2" />
-[](#), [](#), [](#), [=](#=), [action](#action), [add](#add), [agents](#agents), [annealing](#annealing), [ask](#ask), [aspect](#aspect), [assert](#assert), [break](#break), [capture](#capture), [chart](#chart), [create](#create), [data](#data), [datalist](#datalist), [default](#default), [diffusion](#diffusion), [display](#display), [display_grid](#display_grid), [display_population](#display_population), [do](#do), [draw](#draw), [else](#else), [enter](#enter), [equation](#equation), [error](#error), [event](#event), [exhaustive](#exhaustive), [exit](#exit), [experiment](#experiment), [export](#export), [genetic](#genetic), [graphics](#graphics), [hill_climbing](#hill_climbing), [if](#if), [image](#image), [inspect](#inspect), [layout_forceatlas2](#layout_forceatlas2), [layout_yifanhu](#layout_yifanhu), [let](#let), [loop](#loop), [match](#match), [migrate](#migrate), [monitor](#monitor), [output](#output), [output_file](#output_file), [overlay](#overlay), [parameter](#parameter), [pause_sound](#pause_sound), [permanent](#permanent), [plan](#plan), [put](#put), [quadtree](#quadtree), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [release](#release), [remove](#remove), [resume_sound](#resume_sound), [return](#return), [run](#run), [save](#save), [save_batch](#save_batch), [set](#set), [setup](#setup), [signal](#signal), [simulate](#simulate), [solve](#solve), [species](#species), [start_sound](#start_sound), [state](#state), [status](#status), [stop_sound](#stop_sound), [switch](#switch), [tabu](#tabu), [task](#task), [test](#test), [text](#text), [trace](#trace), [transition](#transition), [user_command](#user_command), [user_init](#user_init), [user_input](#user_input), [user_panel](#user_panel), [using](#using), [warn](#warn), [write](#write), 
+[](#), [](#), [](#), [=](#=), [action](#action), [add](#add), [agents](#agents), [annealing](#annealing), [ask](#ask), [aspect](#aspect), [assert](#assert), [break](#break), [capture](#capture), [chart](#chart), [create](#create), [data](#data), [datalist](#datalist), [default](#default), [diffusion](#diffusion), [display](#display), [display_grid](#display_grid), [display_population](#display_population), [do](#do), [draw](#draw), [else](#else), [enter](#enter), [equation](#equation), [error](#error), [event](#event), [exhaustive](#exhaustive), [exit](#exit), [experiment](#experiment), [export](#export), [genetic](#genetic), [graphics](#graphics), [hill_climbing](#hill_climbing), [if](#if), [image](#image), [inspect](#inspect), [let](#let), [loop](#loop), [match](#match), [migrate](#migrate), [monitor](#monitor), [output](#output), [output_file](#output_file), [overlay](#overlay), [parameter](#parameter), [permanent](#permanent), [plan](#plan), [put](#put), [quadtree](#quadtree), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [release](#release), [remove](#remove), [return](#return), [run](#run), [save](#save), [save_batch](#save_batch), [set](#set), [setup](#setup), [signal](#signal), [simulate](#simulate), [solve](#solve), [species](#species), [state](#state), [status](#status), [switch](#switch), [tabu](#tabu), [task](#task), [test](#test), [text](#text), [trace](#trace), [transition](#transition), [user_command](#user_command), [user_init](#user_init), [user_input](#user_input), [user_panel](#user_panel), [using](#using), [warn](#warn), [write](#write), 
 
 
 ## Statements by kinds
@@ -24,9 +24,9 @@
 * **Parameter**
   * [parameter](#parameter),  
 * **Sequence of statements or action**
-  * [action](#action),  [ask](#ask),  [capture](#capture),  [create](#create),  [default](#default),  [else](#else),  [enter](#enter),  [equation](#equation),  [exit](#exit),  [if](#if),  [loop](#loop),  [match](#match),  [migrate](#migrate),  [pause_sound](#pause_sound),  [release](#release),  [resume_sound](#resume_sound),  [run](#run),  [setup](#setup),  [start_sound](#start_sound),  [stop_sound](#stop_sound),  [switch](#switch),  [trace](#trace),  [transition](#transition),  [user_command](#user_command),  [using](#using),  
+  * [action](#action),  [ask](#ask),  [capture](#capture),  [create](#create),  [default](#default),  [else](#else),  [enter](#enter),  [equation](#equation),  [exit](#exit),  [if](#if),  [loop](#loop),  [match](#match),  [migrate](#migrate),  [release](#release),  [run](#run),  [setup](#setup),  [switch](#switch),  [trace](#trace),  [transition](#transition),  [user_command](#user_command),  [using](#using),  
 * **Single statement**
-  * [=](#=),  [add](#add),  [assert](#assert),  [break](#break),  [data](#data),  [datalist](#datalist),  [diffusion](#diffusion),  [do](#do),  [draw](#draw),  [error](#error),  [export](#export),  [layout_forceatlas2](#layout_forceatlas2),  [layout_yifanhu](#layout_yifanhu),  [let](#let),  [put](#put),  [remove](#remove),  [return](#return),  [save](#save),  [set](#set),  [simulate](#simulate),  [solve](#solve),  [status](#status),  [user_input](#user_input),  [warn](#warn),  [write](#write),  
+  * [=](#=),  [add](#add),  [assert](#assert),  [break](#break),  [data](#data),  [datalist](#datalist),  [diffusion](#diffusion),  [do](#do),  [draw](#draw),  [error](#error),  [export](#export),  [let](#let),  [put](#put),  [remove](#remove),  [return](#return),  [save](#save),  [set](#set),  [simulate](#simulate),  [solve](#solve),  [status](#status),  [user_input](#user_input),  [warn](#warn),  [write](#write),  
 * **Species**
   * [species](#species),  
 * **Variable (container)**
@@ -42,7 +42,7 @@
 ## Statements by embedment
 
 * **Behavior**
-  * [add](#add), [ask](#ask), [capture](#capture), [create](#create), [diffusion](#diffusion), [do](#do), [error](#error), [if](#if), [layout_forceatlas2](#layout_forceatlas2), [layout_yifanhu](#layout_yifanhu), [let](#let), [loop](#loop), [migrate](#migrate), [pause_sound](#pause_sound), [put](#put), [release](#release), [remove](#remove), [resume_sound](#resume_sound), [return](#return), [run](#run), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [start_sound](#start_sound), [status](#status), [stop_sound](#stop_sound), [switch](#switch), [trace](#trace), [transition](#transition), [using](#using), [warn](#warn), [write](#write), 
+  * [add](#add), [ask](#ask), [capture](#capture), [create](#create), [diffusion](#diffusion), [do](#do), [error](#error), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [run](#run), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [using](#using), [warn](#warn), [write](#write), 
 * **Environment**
   * [species](#species), 
 * **Experiment**
@@ -52,7 +52,7 @@
 * **Model**
   * [](#), [](#), [](#), [action](#action), [aspect](#aspect), [equation](#equation), [experiment](#experiment), [output](#output), [reflex](#reflex), [run](#run), [setup](#setup), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), 
 * **Sequence of statements or action**
-  * [add](#add), [ask](#ask), [break](#break), [capture](#capture), [create](#create), [data](#data), [datalist](#datalist), [diffusion](#diffusion), [do](#do), [draw](#draw), [error](#error), [if](#if), [layout_forceatlas2](#layout_forceatlas2), [layout_yifanhu](#layout_yifanhu), [let](#let), [loop](#loop), [migrate](#migrate), [pause_sound](#pause_sound), [put](#put), [release](#release), [remove](#remove), [resume_sound](#resume_sound), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [start_sound](#start_sound), [status](#status), [stop_sound](#stop_sound), [switch](#switch), [trace](#trace), [transition](#transition), [using](#using), [warn](#warn), [write](#write), 
+  * [add](#add), [ask](#ask), [break](#break), [capture](#capture), [create](#create), [data](#data), [datalist](#datalist), [diffusion](#diffusion), [do](#do), [draw](#draw), [error](#error), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [using](#using), [warn](#warn), [write](#write), 
 * **Single statement**
   * [run](#run), 
 * **Species**
@@ -1692,56 +1692,6 @@ else {
 	
 <br/>
 ----
-### layout_forceatlas2 
-#### Facets 
-		  
-  * **`graph`** (graph), (omissible) : the graph to apply the layout.
-  * `approximate_repulsion` (boolean): Barnes Hut optimization: n2 complexity to n.ln(n); allows larger graphs. default: false
-  * `approximation` (float): Theta of the Barnes Hut optimization. default: 1.2
-  * `bounded_point1` (point): The new nodes positions are bounded within the two bound points if both are not null. default: null
-  * `bounded_point2` (point): The new nodes positions are bounded within the two bound points if both are not null. default: null
-  * `dissuade_hubs` (boolean): Distributes attraction along outbound edges. Hubs attract less and thus are pushed to the borders (default: false).
-  * `edge_weight_influence` (float): How much influence you give to the edges wight. 0 is no influence, 1 is normal. default: 1.0
-  * `gravity` (float): Attracts nodes to the center. Prevents islands from drifting away. default: 1.0
-  * `linlog_mode` (boolean): Switch model from lin-lin to lin-log. Makes clusters more tight (default: false).
-  * `nb_steps` (int): The number of steps of the algorithm to perform (default 1).
-  * `prevent_overlap` (boolean): Should not be used with approximate_repulsion default: false
-  * `scaling` (float): How much repulsion you want. More makes a more sparse graph. default: 2.0
-  * `stronger_gravity` (boolean): A stronger gravity law default: false
-  * `thread_number` (int): More threads means more speed (default: 1).
-  * `tolerance` (float): How much swinging you allow. Above 1 discouraged. Lower gives less speed and more precision. default: 0.1
-
-#### Embedments
-* The `layout_forceatlas2` statement is of type: **Single statement**
-* The `layout_forceatlas2` statement can be embedded into: Behavior, Sequence of statements or action, 
-* The `layout_forceatlas2` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-	
-<br/>
-----
-### layout_yifanhu 
-#### Facets 
-		  
-  * **`graph`** (graph), (omissible) : the graph to apply the layout.
-  * `bounded_point1` (point): The new nodes positions are bounded within the two bound points if both are not null. default: null
-  * `bounded_point2` (point): The new nodes positions are bounded within the two bound points if both are not null. default: null
-  * `nb_steps` (int): The number of steps of the algorithm to perform (default 1).
-  * `optimal_distance` (float): the natural length of the springs. Bigger values mean nodes will be farther apart (default: 100).
-  * `quadtree_max_level` (int): The maximum level to be used in the quadtree representation. Greater values mean more accuracy (default: 10).
-  * `relative_strength` (float): The relative strength between electrical force (repulsion) and spring force (attriaction). default: 0.2
-  * `step_size` (float): The step size used in the algorithm. It has to be a meaningful size compared to the optimal distance (e.g. 10%). default: 10
-  * `theta` (float): The theta parameter for Barnes-Hut opening criteria. Smaller values mean more accuracy (default: 1.2).
-
-#### Embedments
-* The `layout_yifanhu` statement is of type: **Single statement**
-* The `layout_yifanhu` statement can be embedded into: Behavior, Sequence of statements or action, 
-* The `layout_yifanhu` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-	
-<br/>
-----
 ### let 
 #### Facets 
 		  
@@ -2046,19 +1996,6 @@ The parameter statement specifies which global attributes (i) will change throug
 parameter 'Value of titi:' var: titi min: 1 max: 100 step: 2; 
  ```
 
-
-[Top of the page](#table-of-contents)
-	
-<br/>
-----
-### pause_sound 
-#### Facets 
-		
-
-#### Embedments
-* The `pause_sound` statement is of type: **Sequence of statements or action**
-* The `pause_sound` statement can be embedded into: Behavior, Sequence of statements or action, 
-* The `pause_sound` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -2390,19 +2327,6 @@ species speciesRemove {
 
 * This statement can not be used on *matrix*.    
 * See also: [add](#add), [put](#put), 
-
-[Top of the page](#table-of-contents)
-	
-<br/>
-----
-### resume_sound 
-#### Facets 
-		
-
-#### Embedments
-* The `resume_sound` statement is of type: **Sequence of statements or action**
-* The `resume_sound` statement can be embedded into: Behavior, Sequence of statements or action, 
-* The `resume_sound` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -2746,22 +2670,6 @@ The species statement allows modelers to define new species in the model. `globa
 	
 <br/>
 ----
-### start_sound 
-#### Facets 
-		  
-  * **`source`** (string): The path to music file. This path is relative to the path of the model.
-  * `mode` (an identifier), takes values in: {overwrite, ignore}: Mode of
-  * `repeat` (boolean): 
-
-#### Embedments
-* The `start_sound` statement is of type: **Sequence of statements or action**
-* The `start_sound` statement can be embedded into: Behavior, Sequence of statements or action, 
-* The `start_sound` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-	
-<br/>
-----
 ### state 
 #### Facets 
 		  
@@ -2833,19 +2741,6 @@ The statement makes the agent output an arbitrary message in the status box.
 ```status ('This is my status ' + self) color: Â°yellow;
  ```
 
-
-[Top of the page](#table-of-contents)
-	
-<br/>
-----
-### stop_sound 
-#### Facets 
-		
-
-#### Embedments
-* The `stop_sound` statement is of type: **Sequence of statements or action**
-* The `stop_sound` statement can be embedded into: Behavior, Sequence of statements or action, 
-* The `stop_sound` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	

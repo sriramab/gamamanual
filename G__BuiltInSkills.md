@@ -135,39 +135,6 @@ action to test if the driver can take the given road
 [Top of the page](#table-of-contents)
 	
 ----
-## busTransportation 
-### Variables
-	   
-  * **`filePath`** (string):    
-  * **`individualGraph`** (graph):    
-  * **`isTemporalGraph`** (boolean):    
-  * **`stationID`** (string): DB identificator of the station 
- 	
-### Actions
-	  
-	 
-#### **`loadFile`**
-moves the agent towards the target passed in the arguments.
-* returns: void 			
-* **`source`** (string): Path of the source file 			
-* **`datatype`** (string): determine file datatype: OD -> it is an Origin Destination Matrix; busline -> official timetable of the transportation service  
-	 
-#### **`loadVehicleGraph`**
-
-* returns: unknown 			
-* **`source`** (graph):   
-	 
-#### **`travel_arrival`**
-moves the agent towards the target passed in the arguments.
-* returns: map 			
-* **`from`** (string): departure station ID 			
-* **`to`** (string): arrival Station ID 			
-* **`on`** (list,agent,graph,geometry): list, agent, graph, geometry that restrains this move (the agent moves inside this geometry) 			
-* **`departureDate`** (int): date of the departure	
-
-[Top of the page](#table-of-contents)
-	
-----
 ## communicatingThe communicating skill offers some primitives and built-in variables which enable agent to communicate with each other using the FIPA interaction protocol. 
 ### Variables
 	   
@@ -332,52 +299,31 @@ moves the agent towards the target passed in the arguments while considering the
 [Top of the page](#table-of-contents)
 	
 ----
-## driving2d 
+## GAMASQL 
 ### Variables
-	   
-  * **`background_species`** (list):    
-  * **`considering_range`** (int):    
-  * **`currentDistance`** (float):    
-  * **`currentPerimeter`** (float):    
-  * **`isCalculatedPerimeter`** (boolean):    
-  * **`isPassedFalseTarget`** (boolean):    
-  * **`obstacle_species`** (list):    
-  * **`speed`** (float):  
+	 
  	
 ### Actions
 	  
 	 
-#### **`pedestrian_goto`**
-moves the agent towards the target passed in the arguments.
-* returns: int 			
-* **`target`** (point,geometry,agent): the location or entity towards which to move. 			
-* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
-* **`background`** (list,agent,graph,geometry): list, agent, graph, geometry on which the agent moves (the agent moves inside this geometry) 			
-* **`on`** (list,agent,graph,geometry): list, agent, graph, geometry that restrains this move (the agent moves inside this geometry)  
-	 
-#### **`read_replay`**
+#### **`read`**
 
-* returns: list 			
-* **`file_name`** (string): File name.  
+* returns: void 			
+* **`params`** (map): Connection parameters 			
+* **`table`** (string): select string with question marks 			
+* **`filter`** (list): List of values that are used to replace question marks  
 	 
-#### **`read_replay_file`**
+#### **`SqlObject`**
 
-* returns: list 			
-* **`file_name`** (string): File name.  
+* returns: msi.gama.database.geosql.GamaSqlConnection 			
+* **`params`** (map): Connection parameters 			
+* **`table`** (string): select string with question marks 			
+* **`filter`** (string): Filter for select  
 	 
-#### **`save_replay`**
+#### **`testConnection`**
 
-* returns: unknown 			
-* **`file_name`** (string): File name. 			
-* **`agent_information`** (list): list of position  
-	 
-#### **`vehicle_goto`**
-moves the agent towards the target passed in the arguments.
-* returns: int 			
-* **`target`** (point,geometry,agent): the location or entity towards which to move. 			
-* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
-* **`background`** (list,agent,graph,geometry): list, agent, graph, geometry on which the agent moves (the agent moves inside this geometry) 			
-* **`on`** (list,agent,graph,geometry): list, agent, graph, geometry that restrains this move (the agent moves inside this geometry)	
+* returns: bool 			
+* **`params`** (map): Connection parameters	
 
 [Top of the page](#table-of-contents)
 	
@@ -420,122 +366,6 @@ moves the agent towards the target passed in the arguments.
  	
 ### Actions
 		
-
-[Top of the page](#table-of-contents)
-	
-----
-## humanmoving 
-### Variables
-	 
- 	
-### Actions
-	  
-	 
-#### **`approach`**
-
-* returns: point 			
-* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
-* **`agent_size`** (int): specifiaction of size of the agent 			
-* **`background`** (agent):  			
-* **`target`** (agent):   
-	 
-#### **`approachAvoidPassedPosition`**
-
-* returns: point 			
-* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
-* **`agent_size`** (int): specifiaction of size of the agent 			
-* **`background`** (agent):  			
-* **`target`** (agent):  			
-* **`passedList`** (list):   
-	 
-#### **`approachAvoidPassedPosition2`**
-
-* returns: point 			
-* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
-* **`agent_size`** (int): specifiaction of size of the agent 			
-* **`background`** (agent):  			
-* **`target`** (agent):  			
-* **`passedList`** (list):   
-	 
-#### **`blindStraightWander`**
-
-* returns: point 			
-* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
-* **`agent_size`** (int): specifiaction of size of the agent 			
-* **`background`** (agent):  			
-* **`direction`** (int):  			
-* **`target`** (agent):   
-	 
-#### **`blindStraightWander2`**
-
-* returns: point 			
-* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
-* **`agent_size`** (int): specifiaction of size of the agent 			
-* **`background`** (agent):  			
-* **`direction`** (int):  			
-* **`target`** (agent):   
-	 
-#### **`blindWallTracking`**
-
-* returns: point 			
-* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
-* **`agent_size`** (int): specifiaction of size of the agent 			
-* **`background`** (agent):  			
-* **`passedList`** (list):  			
-* **`target`** (agent):   
-	 
-#### **`blindWallTracking2`**
-
-* returns: point 			
-* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
-* **`agent_size`** (int): specifiaction of size of the agent 			
-* **`background`** (agent):  			
-* **`passedList`** (list):  			
-* **`target`** (agent):   
-	 
-#### **`blindWander`**
-
-* returns: point 			
-* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
-* **`agent_size`** (int): specifiaction of size of the agent 			
-* **`background`** (agent):  			
-* **`target`** (agent):   
-	 
-#### **`blindWander2`**
-
-* returns: point 			
-* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
-* **`agent_size`** (int): specifiaction of size of the agent 			
-* **`background`** (agent):  			
-* **`target`** (agent):   
-	 
-#### **`wanderAbove`**
-
-* returns: point 			
-* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
-* **`agent_size`** (int): specifiaction of size of the agent  
-	 
-#### **`wanderAndAvoid`**
-
-* returns: point 			
-* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
-* **`agent_size`** (int): specifiaction of size of the agent 			
-* **`background`** ():  			
-* **`ignore_type`** (): 	
-
-[Top of the page](#table-of-contents)
-	
-----
-## MAELIA 
-### Variables
-	 
- 	
-### Actions
-	  
-	 
-#### **`maeliaTimeStamp`**
-
-* returns: float	
 
 [Top of the page](#table-of-contents)
 	
@@ -651,64 +481,6 @@ moves the agent forward, the distance being computed with respect to its speed a
 [Top of the page](#table-of-contents)
 	
 ----
-## network 
-### Variables
-	   
-  * **`netAgtName`** (string): Net ID of the agent 
- 	
-### Actions
-	  
-	 
-#### **`connectMessenger`**
-moves the agent towards the target passed in the arguments.
-* returns: void 			
-* **`to`** (string): server URL 			
-* **`at`** (string): server URL 			
-* **`withName`** (string): agent Name  
-	 
-#### **`emptyMessageBox`**
-moves the agent towards the target passed in the arguments.
-* returns: bool  
-	 
-#### **`fetchMessage`**
-moves the agent towards the target passed in the arguments.
-* returns: map<string,unknown>  
-	 
-#### **`sendMessage`**
-Send a message to a destination.
-* returns: void 			
-* **`dest`** (string): The network ID of the agent who receive the message 			
-* **`content`** (any type): The content of the message	
-
-[Top of the page](#table-of-contents)
-	
-----
-## optimizing 
-### Variables
-	 
- 	
-### Actions
-	  
-	 
-#### **`computeAverageEvacuationTime`**
-
-* returns: unknown  
-	 
-#### **`doTest`**
-
-* returns: unknown  
-	 
-#### **`optimizeDirection`**
-
-* returns: unknown  
-	 
-#### **`optimizeSigns`**
-
-* returns: unknown	
-
-[Top of the page](#table-of-contents)
-	
-----
 ## physical3D 
 ### Variables
 	   
@@ -718,18 +490,6 @@ Send a message to a destination.
   * **`motor`** (point):    
   * **`physical_3D_world`** (agent):    
   * **`velocity`** (list):  
- 	
-### Actions
-		
-
-[Top of the page](#table-of-contents)
-	
-----
-## roadTrafficManagement 
-### Variables
-	   
-  * **`nbVehicle`** (int):    
-  * **`speed`** (float):  
  	
 ### Actions
 		
@@ -776,41 +536,6 @@ unregister the agent on the road
  	
 ### Actions
 		
-
-[Top of the page](#table-of-contents)
-	
-----
-## socketk 
-### Variables
-	   
-  * **`ip`** (string): cs   
-  * **`msg`** (string):    
-  * **`port`** (int): t) 
- 	
-### Actions
-	  
-	 
-#### **`listen_client`**
-.
-* returns: void  
-	 
-#### **`listen_server`**
-.
-* returns: void  
-	 
-#### **`open_socket`**
-.
-* returns: void  
-	 
-#### **`send_to_client`**
-M.
-* returns: void 			
-* **`msg`** (string): td)  
-	 
-#### **`send_to_server`**
-M.
-* returns: void 			
-* **`msg`** (string): td)	
 
 [Top of the page](#table-of-contents)
 	
@@ -875,62 +600,6 @@ M.
 #### **`timeStamp`**
 
 * returns: float	
-
-[Top of the page](#table-of-contents)
-	
-----
-## trafficMoving 
-### Variables
-	 
- 	
-### Actions
-	  
-	 
-#### **`goto_traffic`**
-moves the agent towards the target passed in the arguments while considering the other agents in the network (only for graph topology)
-* returns: void 			
-* **`target`** (point,geometry,agent): the location or entity towards which to move. 			
-* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
-* **`on`** (list,agent,graph,geometry): list, agent, graph, geometry that restrains this move (the agent moves inside this geometry) 			
-* **`duration`** (float): duration of the moving 			
-* **`max_speed`** (float): speedMoving 			
-* **`return_path`** (boolean): if true, return the path followed (by default: false)  
-	 
-#### **`theorical_duration`**
-moves the agent towards the target passed in the arguments while considering the other agents in the network (only for graph topology)
-* returns: java.lang.Float 			
-* **`from`** (point,geometry,agent): the location or entity towards which to move. 			
-* **`to`** (point,geometry,agent): the location or entity towards which to move. 			
-* **`on`** (list,agent,graph,geometry): list, agent, graph, geometry that restrains this move (the agent moves inside this geometry) 			
-* **`max_speed`** (float): speedMoving	
-
-[Top of the page](#table-of-contents)
-	
-----
-## trafficMoving 
-### Variables
-	 
- 	
-### Actions
-	  
-	 
-#### **`goto_traffic`**
-moves the agent towards the target passed in the arguments while considering the other agents in the network (only for graph topology)
-* returns: void 			
-* **`target`** (point,geometry,agent): the location or entity towards which to move. 			
-* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
-* **`on`** (list,agent,graph,geometry): list, agent, graph, geometry that restrains this move (the agent moves inside this geometry) 			
-* **`duration`** (float): duration of the moving 			
-* **`max_speed`** (float): speedMoving 			
-* **`return_path`** (boolean): if true, return the path followed (by default: false)  
-	 
-#### **`theorical_duration`**
-moves the agent towards the target passed in the arguments while considering the other agents in the network (only for graph topology)
-* returns: java.lang.Float 			
-* **`from`** (point,geometry,agent): the location or entity towards which to move. 			
-* **`to`** (point,geometry,agent): the location or entity towards which to move. 			
-* **`on`** (list,agent,graph,geometry): list, agent, graph, geometry that restrains this move (the agent moves inside this geometry) 			
-* **`max_speed`** (float): speedMoving	
 
 [Top of the page](#table-of-contents)
 	
