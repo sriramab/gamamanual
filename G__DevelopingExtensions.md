@@ -9,7 +9,7 @@ The extension mechanism relies on two complementary techniques:
 
 The following sections describe this extension process.
 
-  * 1. [Installing the SVN version](G__InstallingSvnVersion)
+  * 1. [Installing the GIT version](G__InstallingGitVersion)
   * 2. [Architecture of GAMA](G__GamaArchitecture)
   * 3. [Developing a Plugin](G__DevelopingPlugins)
   * 4. [Developing a Skill](G__DevelopingSkills)
