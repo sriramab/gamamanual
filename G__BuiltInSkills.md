@@ -4,9 +4,6 @@
 
 ----
 
-## Table of Contents
-<wiki:toc max_depth="3" />
-
 ## Introduction
 
 Skills are built-in modules, written in Java, that provide a set of related built-in variables and built-in actions (in addition to those already provided by GAMA) to the species that declare them. A declaration of skill is done by filling the skills attribute in the species definition:
@@ -48,7 +45,12 @@ if speed = 5 {
 ----
 
 
+## Table of Contents
+<wiki:toc max_depth="3" />
+[advanced_driving](#advanced_driving), [communicating](#communicating), [driving](#driving), [GAMASQL](#GAMASQL), [graphic](#graphic), [grid](#grid), [MDXSKILL](#MDXSKILL), [moving](#moving), [moving3D](#moving3D), [physical3D](#physical3D), [skill_road](#skill_road), [skill_road_node](#skill_road_node), [SQLSKILL](#SQLSKILL), 
+    	
 ----
+
 ## advanced_driving 
 ### Variables
 	   
@@ -134,7 +136,9 @@ action to test if the driver can take the given road
 
 [Top of the page](#table-of-contents)
 	
+    	
 ----
+
 ## communicatingThe communicating skill offers some primitives and built-in variables which enable agent to communicate with each other using the FIPA interaction protocol. 
 ### Variables
 	   
@@ -260,7 +264,9 @@ Replies a message with a 'subscribe' performative message.
 
 [Top of the page](#table-of-contents)
 	
+    	
 ----
+
 ## driving 
 ### Variables
 	   
@@ -298,7 +304,9 @@ moves the agent towards the target passed in the arguments while considering the
 
 [Top of the page](#table-of-contents)
 	
+    	
 ----
+
 ## GAMASQL 
 ### Variables
 	 
@@ -327,7 +335,9 @@ moves the agent towards the target passed in the arguments while considering the
 
 [Top of the page](#table-of-contents)
 	
+    	
 ----
+
 ## graphicThe graphic skill is intended to define the minimal set of behaviours required from a graphical agent 
 ### Variables
 	   
@@ -355,7 +365,9 @@ moves the agent towards the target passed in the arguments while considering the
 
 [Top of the page](#table-of-contents)
 	
+    	
 ----
+
 ## grid 
 ### Variables
 	   
@@ -369,7 +381,9 @@ moves the agent towards the target passed in the arguments while considering the
 
 [Top of the page](#table-of-contents)
 	
+    	
 ----
+
 ## MDXSKILL 
 ### Variables
 	 
@@ -402,7 +416,9 @@ moves the agent towards the target passed in the arguments while considering the
 
 [Top of the page](#table-of-contents)
 	
+    	
 ----
+
 ## movingThe moving skill is intended to define the minimal set of behaviours required for agents that are able to move on different topologies 
 ### Variables
 	   
@@ -456,7 +472,9 @@ Moves the agent towards a random location (3D point) at the maximum distance (wi
 
 [Top of the page](#table-of-contents)
 	
+    	
 ----
+
 ## moving3DThe moving skill 3D is intended to define the minimal set of behaviours required for agents that are able to move on different topologies 
 ### Variables
 	   
@@ -480,7 +498,9 @@ moves the agent forward, the distance being computed with respect to its speed a
 
 [Top of the page](#table-of-contents)
 	
+    	
 ----
+
 ## physical3D 
 ### Variables
 	   
@@ -496,7 +516,9 @@ moves the agent forward, the distance being computed with respect to its speed a
 
 [Top of the page](#table-of-contents)
 	
+    	
 ----
+
 ## skill_road 
 ### Variables
 	   
@@ -524,7 +546,9 @@ unregister the agent on the road
 
 [Top of the page](#table-of-contents)
 	
+    	
 ----
+
 ## skill_road_node 
 ### Variables
 	   
@@ -539,7 +563,9 @@ unregister the agent on the road
 
 [Top of the page](#table-of-contents)
 	
+    	
 ----
+
 ## SQLSKILL 
 ### Variables
 	 
