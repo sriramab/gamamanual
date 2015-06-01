@@ -20,6 +20,22 @@ create cluster_builder returns: clusterer;```
 
 	
 ----
+## `agent`	
+
+### Actions
+	  
+	 
+#### **`_init_`**
+
+* returns: unknown  
+	 
+#### **`_step_`**
+
+* returns: unknown			
+
+[Top of the page](#table-of-contents) 
+	
+----
 ## `AgentDB`	
 
 ### Actions
@@ -78,6 +94,59 @@ create cluster_builder returns: clusterer;```
 #### **`timeStamp`**
 
 * returns: float			
+
+[Top of the page](#table-of-contents) 
+	
+----
+## `base_edge`	
+
+### Actions
+				
+
+[Top of the page](#table-of-contents) 
+	
+----
+## `experiment`	
+
+### Actions
+				
+
+[Top of the page](#table-of-contents) 
+	
+----
+## `graph_edge`	
+
+### Actions
+				
+
+[Top of the page](#table-of-contents) 
+	
+----
+## `graph_node`	
+
+### Actions
+	  
+	 
+#### **`related_to`**
+
+* returns: bool 			
+* → **`other`** (agent): 			
+
+[Top of the page](#table-of-contents) 
+	
+----
+## `model`	
+
+### Actions
+	  
+	 
+#### **`halt`**
+Allows to stop the current simulation so that cannot be continued after. All the behaviors and updates are stopped.
+* returns: unknown  
+	 
+#### **`pause`**
+Allows to pause the current simulation **ACTUALLY EXPERIMENT FOR THE MOMENT**. It can be set to continue with the manual intervention of the user.
+* returns: unknown			
 
 [Top of the page](#table-of-contents) 
 	

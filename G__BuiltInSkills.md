@@ -328,6 +328,48 @@ moves the agent towards the target passed in the arguments while considering the
 [Top of the page](#table-of-contents)
 	
 ----
+## graphicThe graphic skill is intended to define the minimal set of behaviours required from a graphical agent 
+### Variables
+	   
+  * **`transparency`** (float): the transparency of the agent (between 0.0 and 1.0) 
+ 	
+### Actions
+	  
+	 
+#### **`brewer_color`**
+
+* returns: rgb 			
+* **`type`** (string): Palette Type (Sequential, Diverging, Qualitative) 			
+* **`class`** (int): Number of class 			
+* **`index`** (int): index  
+	 
+#### **`brewer_palette`**
+
+* returns: msi.gama.util.IList<java.awt.Color> 			
+* **`type`** (string): Palette Type (Sequential, Diverging, Qualitative)  
+	 
+#### **`twinkle`**
+
+* returns: void 			
+* **`period`** (int): make the agent twinkle with a given period	
+
+[Top of the page](#table-of-contents)
+	
+----
+## grid 
+### Variables
+	   
+  * **`color`** (rgb):    
+  * **`grid_value`** (float):    
+  * **`grid_x`** (int):    
+  * **`grid_y`** (int):  
+ 	
+### Actions
+		
+
+[Top of the page](#table-of-contents)
+	
+----
 ## MDXSKILL 
 ### Variables
 	 
@@ -357,6 +399,84 @@ moves the agent towards the target passed in the arguments while considering the
 #### **`timeStamp`**
 
 * returns: float	
+
+[Top of the page](#table-of-contents)
+	
+----
+## movingThe moving skill is intended to define the minimal set of behaviours required for agents that are able to move on different topologies 
+### Variables
+	   
+  * **`destination`** (point): continuously updated destination of the agent with respect to its speed and heading (read-only)   
+  * **`heading`** (int): the absolute heading of the agent in degrees (in the range 0-359)   
+  * **`location`** (point):    
+  * **`speed`** (float): the speed of the agent (in meter/second) 
+ 	
+### Actions
+	  
+	 
+#### **`follow`**
+moves the agent along a given path passed in the arguments.
+* returns: path 			
+* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
+* **`path`** (path): a path to be followed. 			
+* **`move_weights`** (map): Weights used for the moving. 			
+* **`return_path`** (boolean): if true, return the path followed (by default: false)  
+	 
+#### **`goto`**
+moves the agent towards the target passed in the arguments.
+* returns: path 			
+* **`target`** (agent,point,geometry): the location or entity towards which to move. 			
+* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
+* **`on`** (graph): graph that restrains this move 			
+* **`recompute_path`** (boolean): if false, the path is not recompute even if the graph is modified (by default: true) 			
+* **`return_path`** (boolean): if true, return the path followed (by default: false) 			
+* **`move_weights`** (map): Weights used for the moving.  
+	 
+#### **`move`**
+moves the agent forward, the distance being computed with respect to its speed and heading. The value of the corresponding variables are used unless arguments are passed.
+* returns: path 			
+* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
+* **`heading`** (int): a restriction placed on the random heading choice. The new heading is chosen in the range (heading - amplitude/2, heading+amplitude/2) 			
+* **`bounds`** (geometry,agent): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry  
+	 
+#### **`wander`**
+Moves the agent towards a random location at the maximum distance (with respect to its speed). The heading of the agent is chosen randomly if no amplitude is specified. This action changes the value of heading.
+* returns: void 			
+* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
+* **`amplitude`** (int): a restriction placed on the random heading choice. The new heading is chosen in the range (heading - amplitude/2, heading+amplitude/2) 			
+* **`bounds`** (agent,geometry): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry  
+	 
+#### **`wander_3D`**
+Moves the agent towards a random location (3D point) at the maximum distance (with respect to its speed). The heading of the agent is chosen randomly if no amplitude is specified. This action changes the value of heading.
+* returns: path 			
+* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
+* **`amplitude`** (int): a restriction placed on the random heading choice. The new heading is chosen in the range (heading - amplitude/2, heading+amplitude/2) 			
+* **`z_max`** (int): the maximum alltitude (z) the geometry can reach 			
+* **`bounds`** (agent,geometry): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry	
+
+[Top of the page](#table-of-contents)
+	
+----
+## moving3DThe moving skill 3D is intended to define the minimal set of behaviours required for agents that are able to move on different topologies 
+### Variables
+	   
+  * **`destination`** (point): continuously updated destination of the agent with respect to its speed and heading (read-only)   
+  * **`heading`** (int): the absolute heading of the agent in degrees (in the range 0-359)   
+  * **`pitch`** (int): the absolute pitch of the agent in degrees (in the range 0-359)   
+  * **`roll`** (int): the absolute roll of the agent in degrees (in the range 0-359)   
+  * **`speed`** (float): the speed of the agent (in meter/second) 
+ 	
+### Actions
+	  
+	 
+#### **`move`**
+moves the agent forward, the distance being computed with respect to its speed and heading. The value of the corresponding variables are used unless arguments are passed.
+* returns: path 			
+* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
+* **`heading`** (int): int, optional, the direction to take for this move (replaces the current value of heading) 			
+* **`pitch`** (int): int, optional, the direction to take for this move (replaces the current value of pitch) 			
+* **`heading`** (int): int, optional, the direction to take for this move (replaces the current value of roll) 			
+* **`bounds`** (geometry,agent): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry	
 
 [Top of the page](#table-of-contents)
 	
