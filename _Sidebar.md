@@ -89,6 +89,7 @@
   8. [Defining User Interaction](G__DefininUserInteraction)
   9. [Using BDI Architecture](G__UsingBDI)
 8. [Index](G__Index)
+9. [Extensions](G__Extension)
 
 ## [Tutorials](G__Tutorials)
 1. [Predator Prey](Tutorial__PredatorPreyTutorial)
