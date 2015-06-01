@@ -2,7 +2,7 @@
 
 
 
-This page exposes some of the most common problems a user may encounter when running GAMA — and offers advices and workarounds for them. It will be regularly enriched with new contents. Note also that the [Issues section](https://code.google.com/p/gama-platform/issues/list) of the website might contain precious information on crashes and bugs encountered by other users. If neither the workarounds described here nor the solutions provided by other users allow to solve your particular problem, please submit a new issue report to the developers.
+This page exposes some of the most common problems a user may encounter when running GAMA — and offers advices and workarounds for them. It will be regularly enriched with new contents. Note also that the [Issues section](https://github.com/gama-platform/gama/issues) of the website might contain precious information on crashes and bugs encountered by other users. If neither the workarounds described here nor the solutions provided by other users allow to solve your particular problem, please submit a new issue report to the developers.
 
 
 
@@ -58,7 +58,7 @@ This file typically looks like the following (some options/keywords may vary dep
 
 
 ## Submitting an Issue
-If you think you have found a new bug/issue in GAMA, it is time to create an issue report [here](http://code.google.com/p/gama-platform/issues/entry) ! Alternatively, you can click the [Issues](https://code.google.com/p/gama-platform/issues/list) tab on the project site, search if a similar problem has already been reported (and, maybe, solved) and, if not, enter a new issue with as much information as possible:
+If you think you have found a new bug/issue in GAMA, it is time to create an issue report [here](https://github.com/gama-platform/gama/issues/new) ! Alternatively, you can click the [Issues](https://github.com/gama-platform/gama/issues) tab on the project site, search if a similar problem has already been reported (and, maybe, solved) and, if not, enter a new issue with as much information as possible:
   * A complete description of the problem and how it occurred.
   * The GAMA model or code you are having trouble with. If possible, attach a complete model.
   * Screenshots or other files that help describe the issue.
@@ -89,5 +89,3 @@ To provide a complete information about the status of your system at the time of
 
 
 <img src='images/model_menus/log_file.png' />
-
-Please also visit the [Issue Tracker Help](http://code.google.com/p/support/wiki/IssueTracker#Quick_start) for background information on how to write and compose issues.
