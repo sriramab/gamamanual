@@ -72,6 +72,14 @@ You have now to import projects into the workspace (notice that the folders down
 2. Go back to the Java perspective
 3. Clean project (Project menu > Clean ...)
 
+###GIT Tutorials
+For those who want learn more about Git and Egit, please consult the following tutorials/papers
+
+1. EGIT/User Guide http://wiki.eclipse.org/EGit/User_Guide
+2. Git version control with Eclipse (EGIT) - Tutorial http://www.vogella.com/tutorials/EclipseGit/article.html
+3. 10 things I hate about Git http://stevebennett.me/2012/02/24/10-things-i-hate-about-git/
+4. Learn Git and GitHub Tutorial https://www.youtube.com/playlist?list=PL1F56EA413018EEE1
+
 ### Run GAMA
 1. In the `msi.gama.application` plugin, open the `gama1.7.Eclipse3_8_2.product` file
 2. Click on Synchronize
