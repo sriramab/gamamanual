@@ -73,7 +73,7 @@ species foo frequency: 2 schedules: foo where (each.energy > 50)  {
 
 The topology describes the spatial organization of the species. This imposes constraint on the movement and perception (neighborhood) of the species' agents. GAMA supports three types of topology: continuous, grid and graph.
 
-![http://gama-platform.googlecode.com/files/topologies.png](http://gama-platform.googlecode.com/files/topologies.png)
+![images/topologies.png](images/topologies.png)
 
 ```
 species foo topology: (square (10)) at_location {50, 50}  {

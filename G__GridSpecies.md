@@ -37,7 +37,7 @@ With:
   * file: file used to initialized the grid
   * neighbours : neighborhood type (4 - Von Neumann, 6 - hexagon or 8 - Moore)
 
-![http://gama-platform.googlecode.com/files/neighbours_types.png](http://gama-platform.googlecode.com/files/neighbours_types.png)
+![images/neighbours_types.png](images/neighbours_types.png)
 
 If a file is used to declare the grid, the number of rows and columns is automatically computed from the file. In the same way, the value of the cell read in the file is stored in the **grid\_value** built-in variable.
 
