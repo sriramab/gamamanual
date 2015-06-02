@@ -22,7 +22,7 @@ create cluster_builder returns: clusterer;```
 
 ## Table of Contents
 <wiki:toc max_depth="3" />
-	[agent](#agent), [AgentDB](#AgentDB), [base_edge](#base_edge), [experiment](#experiment), [graph_edge](#graph_edge), [graph_node](#graph_node), [model](#model), [Physical3DWorld](#Physical3DWorld), 
+[agent](#agent), [AgentDB](#AgentDB), [base_edge](#base_edge), [experiment](#experiment), [graph_edge](#graph_edge), [graph_node](#graph_node), [model](#model), [Physical3DWorld](#Physical3DWorld), 
     	
 ----
 

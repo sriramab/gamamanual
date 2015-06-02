@@ -125,7 +125,7 @@ statement_keyword1 expression1 facet2: expression2... { // a sequence statement
 [Top of the page](#table-of-contents)
 
 	
-<br/>
+
 ----
 ###  
 #### Facets 
@@ -151,7 +151,7 @@ statement_keyword1 expression1 facet2: expression2... { // a sequence statement
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ###  
 #### Facets 
@@ -176,7 +176,7 @@ statement_keyword1 expression1 facet2: expression2... { // a sequence statement
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ###  
 #### Facets 
@@ -202,7 +202,7 @@ statement_keyword1 expression1 facet2: expression2... { // a sequence statement
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### = 
 #### Facets 
@@ -235,7 +235,7 @@ equation SI {
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### action 
 #### Facets 
@@ -292,7 +292,7 @@ species children parent: parent_species {
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### add 
 #### Facets 
@@ -364,7 +364,7 @@ list var <- g.edges; 	// var equals [polyline({1.0,5.0}::{12.0,45.0}),polyline({
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### agents 
 #### Facets 
@@ -408,7 +408,7 @@ list var <- g.edges; 	// var equals [polyline({1.0,5.0}::{12.0,45.0}),polyline({
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### annealing 
 #### Facets 
@@ -444,7 +444,7 @@ This algorithm is an implementation of the Simulated Annealing algorithm. See th
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### ask 
 #### Facets 
@@ -507,7 +507,7 @@ Allows an agent, the sender agent (that can be the [Sections161#global world age
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### aspect 
 #### Facets 
@@ -539,7 +539,7 @@ Aspect statement is used to define a way to draw the current agent. Several aspe
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### assert 
 #### Facets 
@@ -577,7 +577,7 @@ assert (3/z) raises: "error";
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### break 
 #### Facets 
@@ -597,7 +597,7 @@ assert (3/z) raises: "error";
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### capture 
 #### Facets 
@@ -642,7 +642,7 @@ species B {
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### chart 
 #### Facets 
@@ -698,7 +698,7 @@ species B {
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### create 
 #### Facets 
@@ -772,7 +772,7 @@ create species: a_species number: an_int;
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### data 
 #### Facets 
@@ -794,7 +794,7 @@ create species: a_species number: an_int;
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### datalist 
 #### Facets 
@@ -816,7 +816,7 @@ create species: a_species number: an_int;
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### default 
 #### Facets 
@@ -838,7 +838,7 @@ Used in a switch match structure, the block prefixed by default is executed only
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### diffusion 
 #### Facets 
@@ -879,7 +879,7 @@ diffusion var: phero on: cells mat_diffu: math_diff;
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### display 
 #### Facets 
@@ -934,7 +934,7 @@ A display refers to a independent and mobile part of the interface that can disp
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### display_grid 
 #### Facets 
@@ -981,7 +981,7 @@ A display refers to a independent and mobile part of the interface that can disp
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### display_population 
 #### Facets 
@@ -1033,7 +1033,7 @@ The `display_population` statement is used using the `species keyword`. It allow
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### do 
 #### Facets 
@@ -1097,7 +1097,7 @@ do name_of_action_or_primitive {
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### draw 
 #### Facets 
@@ -1159,7 +1159,7 @@ do name_of_action_or_primitive {
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### else 
 #### Facets 
@@ -1180,7 +1180,7 @@ This statement cannot be used alone
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### enter 
 #### Facets 
@@ -1210,7 +1210,7 @@ In an FSM architecture, `enter` introduces a sequence of statements to execute u
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### equation 
 #### Facets 
@@ -1256,7 +1256,7 @@ equation eqLV type: LV vars: [x,y,t] params: [alpha,beta,delta,gamma] ;
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### error 
 #### Facets 
@@ -1281,7 +1281,7 @@ The statement makes the agent output an error dialog (if the simulation contains
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### event 
 #### Facets 
@@ -1328,7 +1328,7 @@ experiment Simple type:gui {
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### exhaustive 
 #### Facets 
@@ -1360,7 +1360,7 @@ This is the standard batch method. The exhaustive mode is defined by default whe
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### exit 
 #### Facets 
@@ -1393,7 +1393,7 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### experiment 
 #### Facets 
@@ -1418,7 +1418,7 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### export 
 #### Facets 
@@ -1434,7 +1434,7 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### genetic 
 #### Facets 
@@ -1471,7 +1471,7 @@ This is a simple implementation of Genetic Algorithms (GA). See the wikipedia ar
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### graphics 
 #### Facets 
@@ -1508,7 +1508,7 @@ This is a simple implementation of Genetic Algorithms (GA). See the wikipedia ar
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### hill_climbing 
 #### Facets 
@@ -1541,7 +1541,7 @@ This algorithm is an implementation of the Hill Climbing algorithm. See the wiki
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### if 
 #### Facets 
@@ -1605,7 +1605,7 @@ else {
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### image 
 #### Facets 
@@ -1660,7 +1660,7 @@ else {
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### inspect 
 #### Facets 
@@ -1690,7 +1690,7 @@ else {
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### let 
 #### Facets 
@@ -1708,7 +1708,7 @@ else {
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### loop 
 #### Facets 
@@ -1781,7 +1781,7 @@ loop i from: 0 to: length (the_list) - 1 {
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### match 
 #### Facets 
@@ -1824,7 +1824,7 @@ In a switch...match structure, the value of each match block is compared to the 
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### migrate 
 #### Facets 
@@ -1852,7 +1852,7 @@ This command permits agents to migrate from one population/species to another po
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### monitor 
 #### Facets 
@@ -1880,7 +1880,7 @@ A monitor allows to follow the value of an arbitrary expression in GAML.
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### output 
 #### Facets 
@@ -1910,7 +1910,7 @@ A monitor allows to follow the value of an arbitrary expression in GAML.
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### output_file 
 #### Facets 
@@ -1931,7 +1931,7 @@ A monitor allows to follow the value of an arbitrary expression in GAML.
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### overlay 
 #### Facets 
@@ -1960,7 +1960,7 @@ A monitor allows to follow the value of an arbitrary expression in GAML.
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### parameter 
 #### Facets 
@@ -1999,7 +1999,7 @@ parameter 'Value of titi:' var: titi min: 1 max: 100 step: 2;
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### permanent 
 #### Facets 
@@ -2029,7 +2029,7 @@ In a batch experiment, the permanent section allows to define an output block th
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### plan 
 #### Facets 
@@ -2048,7 +2048,7 @@ In a batch experiment, the permanent section allows to define an output block th
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### put 
 #### Facets 
@@ -2099,7 +2099,7 @@ put -30 all: true in: putMap; 	// putMap equals ["x"::-30,"y"::-30, "z"::-30]
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### quadtree 
 #### Facets 
@@ -2131,7 +2131,7 @@ put -30 all: true in: putMap; 	// putMap equals ["x"::-30,"y"::-30, "z"::-30]
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### reactive_tabu 
 #### Facets 
@@ -2170,7 +2170,7 @@ This algorithm is a simple implementation of the Reactive Tabu Search algorithm 
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### reflex 
 #### Facets 
@@ -2198,7 +2198,7 @@ A reflex is a sequence of statements that can be executed, at each time step, by
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### release 
 #### Facets 
@@ -2247,7 +2247,7 @@ species B {
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### remove 
 #### Facets 
@@ -2330,7 +2330,7 @@ species speciesRemove {
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### return 
 #### Facets 
@@ -2373,7 +2373,7 @@ reflex writing {
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### run 
 #### Facets 
@@ -2393,7 +2393,7 @@ reflex writing {
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### save 
 #### Facets 
@@ -2436,7 +2436,7 @@ Allows to save data in a file. The type of file can be "shp", "text" or "csv".
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### save_batch 
 #### Facets 
@@ -2452,7 +2452,7 @@ Allows to save data in a file. The type of file can be "shp", "text" or "csv".
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### set 
 #### Facets 
@@ -2479,7 +2479,7 @@ Allows to assign a value to the variable or attribute specified
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### setup 
 #### Facets 
@@ -2514,7 +2514,7 @@ The setup statement is used to define the set of instructions that will be execu
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### signal 
 #### Facets 
@@ -2539,7 +2539,7 @@ The setup statement is used to define the set of instructions that will be execu
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### simulate 
 #### Facets 
@@ -2574,7 +2574,7 @@ ask receiver_agent(s) {
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### solve 
 #### Facets 
@@ -2612,7 +2612,7 @@ solve SIR method: "rk4" step:0.001;
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### species 
 #### Facets 
@@ -2668,7 +2668,7 @@ The species statement allows modelers to define new species in the model. `globa
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### state 
 #### Facets 
@@ -2718,7 +2718,7 @@ A state, like a reflex, can contains several statements that can be executed at 
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### status 
 #### Facets 
@@ -2744,7 +2744,7 @@ The statement makes the agent output an arbitrary message in the status box.
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### switch 
 #### Facets 
@@ -2786,7 +2786,7 @@ The "switch... match" statement is a powerful replacement for imbricated "if ...
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### tabu 
 #### Facets 
@@ -2820,7 +2820,7 @@ This algorithm is an implementation of the Tabu Search algorithm. See the wikipe
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### task 
 #### Facets 
@@ -2842,7 +2842,7 @@ As reflex, a task is a sequence of statements that can be executed, at each time
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### test 
 #### Facets 
@@ -2878,7 +2878,7 @@ The test statement allows modeler to define a set of assertions that will be tes
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### text 
 #### Facets 
@@ -2920,7 +2920,7 @@ The test statement allows modeler to define a set of assertions that will be tes
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### trace 
 #### Facets 
@@ -2940,7 +2940,7 @@ All the statements executed in the trace statement are displayed in the console.
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### transition 
 #### Facets 
@@ -2972,7 +2972,7 @@ In an FSM architecture, `transition` specifies the next state of the life cycle.
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### user_command 
 #### Facets 
@@ -3001,7 +3001,7 @@ Anywhere in the global block, in a species or in an (GUI) experiment, user_comma
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### user_init 
 #### Facets 
@@ -3024,7 +3024,7 @@ Used in the user control architecture, user_init is executed only once when the 
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### user_input 
 #### Facets 
@@ -3060,7 +3060,7 @@ user_panel "Advanced Control" {
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### user_panel 
 #### Facets 
@@ -3096,7 +3096,7 @@ user_panel "Advanced Control" {
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### using 
 #### Facets 
@@ -3124,7 +3124,7 @@ using topology(grid_ant) {
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### warn 
 #### Facets 
@@ -3149,7 +3149,7 @@ The statement makes the agent output an arbitrary message in the error view as a
 
 [Top of the page](#table-of-contents)
 	
-<br/>
+
 ----
 ### write 
 #### Facets 
