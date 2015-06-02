@@ -1,4 +1,7 @@
-# Extension ummisco.miro.extension
+# Extension
+
+----
+ ummisco.miro.extension
 
 ## Table of Contents
 ### Operators

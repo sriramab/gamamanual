@@ -1,4 +1,7 @@
-# Extension dream.gama.opengis
+# Extension
+
+----
+ dream.gama.opengis
 
 ## Table of Contents
 ### Operators

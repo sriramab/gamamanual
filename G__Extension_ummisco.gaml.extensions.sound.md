@@ -1,4 +1,7 @@
-# Extension ummisco.gaml.extensions.sound
+# Extension
+
+----
+ ummisco.gaml.extensions.sound
 
 ## Table of Contents
 ### Operators

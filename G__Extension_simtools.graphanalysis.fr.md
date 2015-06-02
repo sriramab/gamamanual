@@ -1,4 +1,7 @@
-# Extension simtools.graphanalysis.fr
+# Extension
+
+----
+ simtools.graphanalysis.fr
 
 ## Table of Contents
 ### Operators

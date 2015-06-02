@@ -1,4 +1,7 @@
-# Extension msi.gaml.extensions.cplex
+# Extension
+
+----
+ msi.gaml.extensions.cplex
 
 ## Table of Contents
 ### Operators

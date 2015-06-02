@@ -1,4 +1,7 @@
-# Extension idees.gama.weka
+# Extension
+
+----
+ idees.gama.weka
 
 ## Table of Contents
 ### Operators

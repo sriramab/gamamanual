@@ -1,4 +1,7 @@
-# Extension msi.gaml.extensions.humanmoving
+# Extension
+
+----
+ msi.gaml.extensions.humanmoving
 
 ## Table of Contents
 ### Operators

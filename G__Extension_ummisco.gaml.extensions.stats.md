@@ -1,4 +1,7 @@
-# Extension ummisco.gaml.extensions.stats
+# Extension
+
+----
+ ummisco.gaml.extensions.stats
 
 ## Table of Contents
 ### Operators

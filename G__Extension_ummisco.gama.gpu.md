@@ -1,4 +1,7 @@
-# Extension ummisco.gama.gpu
+# Extension
+
+----
+ ummisco.gama.gpu
 
 ## Table of Contents
 ### Operators

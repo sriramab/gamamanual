@@ -1,4 +1,7 @@
-# Extension irit.maelia.gaml.additions
+# Extension
+
+----
+ irit.maelia.gaml.additions
 
 ## Table of Contents
 ### Operators
