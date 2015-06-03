@@ -1,3 +1,4 @@
+
 # The 'model' built-in species (Under Construction)
 
 
@@ -6,17 +7,9 @@ As described in the [presentation of GAML](G__KeyConcepts), any model in GAMA is
 
 
 
-
-
-
 ## `model` attributes
 `model` defines several attributes, which, in addition to the attributes inherited from [`agent`](G__AgentBuiltInSpecies), form the minimal set of knowledge a model can manipulate.
   * 
-
-
-
-
-
 
 
 ## `model` actions
