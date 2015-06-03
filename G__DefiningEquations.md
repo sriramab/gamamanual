@@ -1,3 +1,4 @@
+
 # Defining equations (Under Construction)
 <font color='red'><i>todo</i>:<br>
 <ul><li>proofread the language (difficult to read sometime)<br>
@@ -9,6 +10,17 @@
 This extension of GAMA is some new statements that provides new way to write Math models (System of equations) and new action to solve them with provided method (RK4, Dormand,...). This extension is implemented in the ummisco.gaml.extensions.maths plug-in.
 
 
+## Table of contents 
+
+* [Defining equations (Under Construction)](#defining-equations-under-construction)
+	* [Equations](#equations)
+		* [Define equation(s)](#define-equations)
+		* [Optional mode](#optional-mode)
+			* [simultaneously : ](#simultaneously--)
+		* [action](#action)
+			* [solve](#solve)
+	* [Classical Equations](#classical-equations)
+		* [Model examples](#model-examples)
 
 
 
@@ -35,11 +47,11 @@ species Maths {
 }   
 ```
 
-diff keyword, for instant, is a place-holder for a syntax more Mathematically. Its first parameter is the variable, the second (variable t) will not change during solve process.
+`diff` keyword, for instant, is a place-holder for a syntax more Mathematically. Its first parameter is the variable, the second (variable t) will not change during solve process.
 
 ### Optional mode
 #### simultaneously : [list of agents ]()
-  * simultaneously mode which accept a list of agent contains equations. The Solve statement will compute simultaneously at same time all the equations
+* simultaneously mode which accept a list of agent contains equations. The Solve statement will compute simultaneously at same time all the equations
 
 Example of declaration:
 ```
@@ -56,13 +68,13 @@ This will take all equations in list of agents I and the first agent R, to make 
 
 ### action
 
-#### solve
-solve all equations which matched the name, in list of agent with given method and step. there are 3 optional variable could be declared inside
-  * **method**: string, mandatory, method of integration : "rk4" (only one, for instant).
-  * **step**: float, mandatory, step of integration.
-  * **t0**: float, optional, time initial of integration, default value: cycle-cycle\_length.
-  * **tf**: float, optional, time final, default value: cycle.
-  * **cycle\_length**: float, optional, length of simulation's cycle .
+#### `solve`
+`solve` all equations which matched the name, in list of agent with given method and step. there are 3 optional variable could be declared inside
+* **method**: string, mandatory, method of integration : "rk4" (only one, for instant).
+* **step**: float, mandatory, step of integration.
+* **t0**: float, optional, time initial of integration, default value: cycle-cycle\_length.
+* **tf**: float, optional, time final, default value: cycle.
+* **cycle\_length**: float, optional, length of simulation's cycle .
 
 ```
    solve SIR method: "rk4" step:0.001{ 
@@ -71,8 +83,6 @@ solve all equations which matched the name, in list of agent with given method a
       float tf<-cycle;    	
    }
 ```
-
-
 
 
 ## Classical Equations
