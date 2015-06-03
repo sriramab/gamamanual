@@ -61,14 +61,12 @@ Model files, although it is by no means mandatory, usually reside in a sub-folde
 
 Shared projects are projects that reside in the SVN repository of the site [gama-models.googlecode.com](https://gama-models.googlecode.com), which is intended to support GAMA users in easily sharing their models, as the access is built-in inside the platform. This category gives access to reading the models already contributed there (see [G\_\_SharingModels](G__SharingModels) to see how to contribute). It is initially empty, but invoking the "Update Shared Models" menu item will make GAMA retrieve the list of projects present on the site.
 
-
-<img src='images/model_navigator/navigator_menu_update_shared.png' />
+![images/model_navigator/navigator_menu_update_shared.png](images/model_navigator/navigator_menu_update_shared.png)
 
 
 This retrieval is implemented to be as light as possible so as not to lock up the platform for a long time while the SVN client is reading up the information. It happens in the background, and only retrieves the description of models (when it is available).
 
-
-<img src='images/model_navigator/navigator_updated_shared_background.png' />
+![images/model_navigator/navigator_updated_shared_background.png](images/model_navigator/navigator_updated_shared_background.png)
 
 
 When the process is done, the navigator will display the html descriptions of the different projects found in the repository (the list below is indicative of the state of the SVN server as of May 2014, but the actual list of projects will undergo several changes as most of them are not compatible with the latest version of GAMA).
@@ -80,6 +78,8 @@ To retrieve a complete project, the user has to choose its corresponding descrip
 <td><img width='300' src='images/model_navigator/navigator_menu_checkout.png' /> </td>
 <td><img width='300' src='images/model_navigator/navigator_shared_project_imported.png' /> </td></tr>
 </table>
+
+|![images/model_navigator/navigator_shared_expanded.png](images/model_navigator/navigator_shared_expanded.png)|![images/model_navigator/navigator_menu_checkout.png](images/model_navigator/navigator_menu_checkout.png)|![images/model_navigator/navigator_shared_project_imported.png](images/model_navigator/navigator_shared_project_imported.png)|
 
 If the user has a write access to the gama-models SVN repository, any modification he/she makes to the model can be committed back to the repository using the standard "Team…" submenu (see [G\_\_SharingModels](G__SharingModels)) and subsequently shared with all GAMA users.
 
@@ -96,7 +96,7 @@ Model files, as well as resources, or even complete projects, can be moved aroun
 <td><img width='300' src='images/model_navigator/navigator_paste_result.png' /> </td></tr>
 </table>
 
-
+|![images/model_navigator/navigator_menu_copy.png](images/model_navigator/navigator_menu_copy.png)|![images/model_navigator/navigator_menu_paste.png](images/model_navigator/navigator_menu_paste.png)|![images/model_navigator/navigator_paste_result.png](images/model_navigator/navigator_paste_result.png)|
 
 
 
@@ -108,9 +108,13 @@ Users can choose to get rid of old projects by either **closing** or **deleting*
 <td><img src='images/model_navigator/navigator_close_result.png' /> </td></tr>
 </table>
 
+|![images/model_navigator/navigator_menu_close.png](images/model_navigator/navigator_menu_close.png)|![images/model_navigator/navigator_close_result.png](images/model_navigator/navigator_close_result.png)|
+
 **Deleting** a project must be invoked when the user wants this project to not appear in the workspace anymore (unless, that is, it is [imported](G__ImportingModels) again). Invoking this command will effectively make the workspace "forget" about this project, and this can be further doubled with a deletion of the projects resources and models from the filesystem.
 
 <table>
 <tr> <td><img src='images/model_navigator/navigator_menu_delete.png' /> </td>
 <td><img src='images/model_navigator/navigator_delete_dialog.png' /> </td></tr>
 </table>
+
+|![images/model_navigator/navigator_menu_delete.png](images/model_navigator/navigator_menu_delete.png)|![images/model_navigator/navigator_delete_dialog.png](images/model_navigator/navigator_delete_dialog.png)|
