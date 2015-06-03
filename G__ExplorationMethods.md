@@ -1,13 +1,18 @@
+
 # Exploration Methods
-
-
-
 
 Several batch methods are currently available. Each is described below.
 
 
+## Table of contents 
 
-
+* [Exploration Methods](#exploration-methods)
+	* [Exhaustive exploration of the parameter space](#exhaustive-exploration-of-the-parameter-space)
+	* [Hill Climbing](#hill-climbing)
+	* [Simulated Annealing](#simulated-annealing)
+	* [Tabu Search](#tabu-search)
+	* [Reactive Tabu Search](#reactive-tabu-search)
+	* [Genetic Algorithm](#genetic-algorithm)
 
 
 ## Exhaustive exploration of the parameter space
@@ -17,7 +22,7 @@ Parameter type accepted: all.
 
 This is the standard batch method. The exhaustive mode is defined by default when there is no method element present in the batch section. It explores all the combination of parameter values in a sequential way.
 
-Example (models/ants/batch/ant\_exhaustive\_batch.xml)
+Example (models/ants/batch/ant\_exhaustive\_batch.xml):
 
 ```
 experiment Batch type: batch repeat: 2 keep_seed: true until: (food_gathered = food_placed ) or ( time > 400 ) {
@@ -27,12 +32,12 @@ experiment Batch type: batch repeat: 2 keep_seed: true until: (food_gathered = f
 ```
 
 The order of the simulations depends on the order of the param. In our example, the first combinations will be the followings:
-  * evaporation\_rate = 0.1, diffusion\_rate = 0.1, (2 times)
-  * evaporation\_rate = 0.1, diffusion\_rate = 0.4, (2 times)
-  * evaporation\_rate = 0.1, diffusion\_rate = 0.7, (2 times)
-  * evaporation\_rate = 0.1, diffusion\_rate = 1.0, (2 times)
-  * evaporation\_rate = 0.2, diffusion\_rate = 0.1, (2 times)
-  * ...
+* evaporation\_rate = 0.1, diffusion\_rate = 0.1, (2 times)
+* evaporation\_rate = 0.1, diffusion\_rate = 0.4, (2 times)
+* evaporation\_rate = 0.1, diffusion\_rate = 0.7, (2 times)
+* evaporation\_rate = 0.1, diffusion\_rate = 1.0, (2 times)
+* evaporation\_rate = 0.2, diffusion\_rate = 0.1, (2 times)
+* ...
 
 Note: this method can also be used for optimization by adding an method element with maximize or a minimize attribute:
 
@@ -43,9 +48,6 @@ experiment Batch type: batch repeat: 2 keep_seed: true until: (food_gathered = f
 	method exhaustive maximize: food_gathered;
 }
 ```
-
-
-
 
 
 ## Hill Climbing
@@ -73,7 +75,7 @@ Algorithm:
 ```
 
 Method parameters:
-  * iter\_max: number of iterations
+* iter\_max: number of iterations
 
 Example (models/ants/batch/ant\_hill\_climbing\_batch.xml):
 
@@ -84,9 +86,6 @@ experiment Batch type: batch repeat: 2 keep_seed: true until: (food_gathered = f
 	method hill_climbing iter_max: 50 maximize : food_gathered;
 }
 ```
-
-
-
 
 
 ## Simulated Annealing
@@ -121,10 +120,10 @@ Algorithm:
 ```
 
 Method parameters:
-  * temp\_init: Initial temperature
-  * temp\_end: Final temperature
-  * temp\_decrease: Temperature decrease coefficient
-  * nb\_iter\_cst\_temp: Number of iterations per level of temperature
+* temp\_init: Initial temperature
+* temp\_end: Final temperature
+* temp\_decrease: Temperature decrease coefficient
+* nb\_iter\_cst\_temp: Number of iterations per level of temperature
 
 Example (models/ants/batch/ant\_simulated\_annealing\_batch.xml):
 
@@ -136,9 +135,6 @@ experiment Batch type: batch repeat: 2 keep_seed: true until: (food_gathered = f
 	method annealing temp_init: 100  temp_end: 1 temp_decrease: 0.5 nb_iter_cst_temp: 5 maximize: food_gathered;
 }
 ```
-
-
-
 
 
 ## Tabu Search
@@ -168,8 +164,8 @@ Algorithm:
 ```
 
 Method parameters:
-  * iter\_max: number of iterations
-  * tabu\_list\_size: size of the tabu list
+* iter\_max: number of iterations
+* tabu\_list\_size: size of the tabu list
 
 
 ```
@@ -192,13 +188,13 @@ Parameter type accepted: all.
 This algorithm is a simple implementation of the Reactive Tabu Search algorithm ((Battiti et al., 1993)). This Reactive Tabu Search is an enhance version of the Tabu search. It adds two new elements to the classic Tabu Search. The first one concerns the size of the tabu list: in the Reactive Tabu Search, this one is not constant anymore but it dynamically evolves according to the context. Thus, when the exploration process visits too often the same solutions, the tabu list is extended in order to favor the diversification of the search process. On the other hand, when the process has not visited an already known solution for a high number of iterations, the tabu list is shortened in order to favor the intensification of the search process. The second new element concerns the adding of cycle detection capacities. Thus, when a cycle is detected, the process applies random movements in order to break the cycle.
 
 Method parameters:
-  * iter\_max: number of iterations
-  * tabu\_list\_size\_init: initial size of the tabu list
-  * tabu\_list\_size\_min: minimal size of the tabu list
-  * tabu\_list\_size\_max: maximal size of the tabu list
-  * nb\_tests\_wthout\_col\_max: number of movements without collision before shortening the tabu list
-  * cycle\_size\_min: minimal size of the considered cycles
-  * cycle\_size\_max: maximal size of the considered cycles
+* iter\_max: number of iterations
+* tabu\_list\_size\_init: initial size of the tabu list
+* tabu\_list\_size\_min: minimal size of the tabu list
+* tabu\_list\_size\_max: maximal size of the tabu list
+* nb\_tests\_wthout\_col\_max: number of movements without collision before shortening the tabu list
+* cycle\_size\_min: minimal size of the considered cycles
+* cycle\_size\_max: maximal size of the considered cycles
 
 ```
 experiment Batch type: batch repeat: 2 keep_seed: true until: (food_gathered = food_placed ) or ( time > 400 ) {
@@ -209,22 +205,19 @@ experiment Batch type: batch repeat: 2 keep_seed: true until: (food_gathered = f
 ```
 
 
-
-
-
 ## Genetic Algorithm
 Name: genetic
 Parameter definitions accepted: List with step and Explicit List.
 Parameter type accepted: all.
 
 This is a simple implementation of Genetic Algorithms (GA). See the wikipedia article. The principle of GA is to search an optimal solution by applying evolution operators on an initial population of solutions There are three types of evolution operators:
-  * Crossover: Two solutions are combined in order to produce new solutions
-  * Mutation: a solution is modified
-  * Selection: only a part of the population is kept. Different techniques can be applied for this selection. Most of them are based on the solution quality (fitness).
+* Crossover: Two solutions are combined in order to produce new solutions
+* Mutation: a solution is modified
+* Selection: only a part of the population is kept. Different techniques can be applied for this selection. Most of them are based on the solution quality (fitness).
 
 Representation of the solutions:
-  * Individual solution: {Param1 = val1; Param2 = val2; …}
-  * Gene: Parami = vali
+* Individual solution: {Param1 = val1; Param2 = val2; …}
+* Gene: Parami = vali
 
 Initial population building: the system builds nb\_prelim\_gen random initial populations composed of pop\_dim individual solutions. Then, the best pop\_dim solutions are selected to be part of the initial population.
 
@@ -235,11 +228,11 @@ Mutation operator: The value of one parameter is modified. Ex: The solution {Par
 Crossover operator: A cut point is randomly selected and two new solutions are built by taking the half of each parent solution. Ex: let {Param1 = 4; Param2 = 1} and {Param1 = 2; Param2 = 3} be two solutions. The crossover operator builds two new solutions: {Param1 = 2; Param2 = 1} and {Param1 = 4; Param2 = 3}.
 
 Method parameters:
-  * pop\_dim: size of the population (number of individual solutions)
-  * crossover\_prob: crossover probability between two individual solutions
-  * mutation\_prob: mutation probability for an individual solution
-  * nb\_prelim\_gen: number of random populations used to build the initial population
-  * max\_gen: number of generations
+* pop\_dim: size of the population (number of individual solutions)
+* crossover\_prob: crossover probability between two individual solutions
+* mutation\_prob: mutation probability for an individual solution
+* nb\_prelim\_gen: number of random populations used to build the initial population
+* max\_gen: number of generations
 
 ```
 experiment Batch type: batch repeat: 2 keep_seed: true until: (food_gathered = food_placed ) or ( time > 400 ) {
