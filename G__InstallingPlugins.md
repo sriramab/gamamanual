@@ -4,6 +4,7 @@
 Besides the plugins delivered by the developers of the GAMA platform, which can be installed and updated as explained [here](G__Updating), there are a number of additional plugins that can be installed to add new functionalities to GAMA or enhance the existing ones. GAMA being based on Eclipse, a number of plugins developed for Eclipse are then available (a complete listing of Eclipse plugins can be found in the so-called [Eclipse MarketPlace](http://marketplace.eclipse.org)).
 
 There are, however, three important restrictions:
+
 1. The current version of GAMA is based on Eclipse Juno (version number 3.8.2), which excludes de facto all the plugins targeting solely the 4.3 (Kepler) or 4.4 (Luna) versions of Eclipse. These will refuse to install anyway.
 2. The Eclipse foundations in GAMA are only a subset of the complete Eclipse platform, and a number of libraries or frameworks (for example the Java Development Toolkit) are not (and will never be) installed in GAMA. So plugins relying on their existence will refuse to install as well.
 3. Some components of GAMA rely on a specific version of other plugins and will refuse to work with other versions, essentially because their compatibility will not be ensured anymore. For instance, the parser and validator of the GAML language in GAMA 1.6.1 require [XText v. 2.4.1](http://www.eclipse.org/Xtext/) to be installed (and neither XText 2.5.4 nor XText 2.3 will satisfy this dependency).
@@ -36,7 +37,9 @@ So we just have to follow these instructions, which leads us to the following di
 The initial dialog is followed by two other ones, a first to report that the plugin satisfies all the dependencies, a second to ask the user to accept the license agreement.
 
 
-<table><tr><td><img src='images/auto_update/dialog_install_plugins_2.png' /></td><td><img src='images/auto_update/dialog_install_plugins_3.png' /></td></tr></table> 
+
+|![images/auto_update/dialog_install_plugins_2.png](images/auto_update/dialog_install_plugins_2.png)|![images/auto_update/dialog_install_plugins_3.png](images/auto_update/dialog_install_plugins_3.png)|
+|---|---|
 
 Once we dismiss the warning that the plugin is not signed and accept to restart GAMA, we can test the new plugin by going to the "Views" menu.
 
@@ -66,37 +69,34 @@ In addition to the RSS reader described above, below is a list of plugins that h
 
 ### Git
   * Git is a version control system (like CVS or SVN, extensively used in GAMA) http://git-scm.com/. Free sharing space are provided on website such as [GitHub](https://github.com/) or [Google Code](https://code.google.com/) among others. Installing Git allows to share or gather models that are available in Git repositories.
-  * Update site (general): http://download.eclipse.org/releases/juno/
+  * Update site (general): `http://download.eclipse.org/releases/juno/`
   * Select the two following plugins:
     * Eclipse EGit
     * Git Team Provider Core
 
 ### Startexplorer
   * A nice utility that allows the user to select files, folders or projects in the [Navigator](G__NavigatingWorkspace) and open them in the filesystem (either the UI Explorer, Finder, whatever, or in a terminal).
-  * Update site: http://basti1302.github.com/startexplorer/update/
+  * Update site: `http://basti1302.github.com/startexplorer/update/`
 
-
-<img width='400' src='images/auto_update/start_explorer.png' />
+![images/auto_update/start_explorer.png](images/auto_update/start_explorer.png)
 
 
 ### Pathtools
   * Same purpose as StartExplorer, but much more complete, and additionally offers the possibility to add new commands to handle files (open them in specific editors, execute external programs on them, etc.). Very nice and professional. Works flawlessly in GAMA except that contributions to the toolbar are not accepted (so you have to rely on the commands present in the [Navigator](G__NavigatingWorkspace) pop-up menu).
-  * Update site: http://pathtools.googlecode.com/svn/trunk/PathToolsUpdateSite/site.xml
-  * Website: https://pathtools.googlecode.com
+  * Update site: `http://pathtools.googlecode.com/svn/trunk/PathToolsUpdateSite/site.xml`
+  * Website: `https://pathtools.googlecode.com`
 
 ### CSV Edit
 
   * An editor for CSV files. Quite handy if you do not want to launch Excel every time you need to inspect or change the CSV data files used in models.
-  * Update site: http://csvedit.googlecode.com/svn/trunk/csvedit.update
+  * Update site: `http://csvedit.googlecode.com/svn/trunk/csvedit.update`
 
-
-<img width='400' src='images/auto_update/csv_edit.png' />
+![images/auto_update/csv_edit.png](images/auto_update/csv_edit.png)
 
 
 ### Quickimage
 
   * A lightweight viewer of images, which can be useful when several images are used in a model.
-  * Update site: http://psnet.nu/eclipse/updates
+  * Update site: `http://psnet.nu/eclipse/updates`
 
-
-<img width='400' src='images/auto_update/quick_image.png' />
+![images/auto_update/quick_image.png](images/auto_update/quick_image.png)

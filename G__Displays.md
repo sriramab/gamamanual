@@ -1,6 +1,5 @@
+
 # Displays
-
-
 
 GAMA allows modelers to [define several and several kinds of displays](G__DefiningDisplays) in a [GUI experiment](G__DefiningExperiments):
   * java 2D displays
@@ -9,20 +8,21 @@ GAMA allows modelers to [define several and several kinds of displays](G__Defini
 These 2 kinds of display allows the modeler to display the same objects (agents, charts, texts ...). The OpenGL display offers extended features in particular in terms of 3D visualisation.
 The OpenGL displays offers in addition better performance when zooming in and out.
 
+## Table of contents 
 
-
-
+* [Displays](#displays)
+	* [Classical displays (java2D)](#classical-displays-java2d)
+	* [OpenGL displays](#opengl-displays)
 
 
 ## Classical displays (java2D)
 
 The classical displays displaying any kind of content can be manipulated via the mouse (if no mouse event has been defined):
-  * the **mouse left** press and move allows to move the camera (in 2D),
-  * the **mouse right** click opens a context menu allowing the modeler to inspect displayed agents,
-  * the **wheel** allows the modeler to zoom in or out.
+* the **mouse left** press and move allows to move the camera (in 2D),
+* the **mouse right** click opens a context menu allowing the modeler to inspect displayed agents,
+* the **wheel** allows the modeler to zoom in or out.
 
-
-<img src='images/experiments/display-java2D.png' />
+![images/experiments/display-java2D.png](images/experiments/display-java2D.png)
 
 
 Each display provides several buttons to manipulate the display:
@@ -46,10 +46,7 @@ The bottom overlay bar displays information about the way it is displayed:
   * the zoom ratio,
   * the scale of the display (depending on the zoom).
 
-
-<img src='images/experiments/display-sidebar-overlay.png' />
-
-
+![images/experiments/display-sidebar-overlay.png](images/experiments/display-sidebar-overlay.png)
 
 
 
@@ -64,8 +61,7 @@ The OpenGL display has an additional button **3D Options** providing 3D features
   * **Arcball drag** (only with Arcball camera): the right press and hold and mouse move makes rotation on the scene
   * **Inertia mode** (only with Arcball camera): in inertia mode, when the modeler stops moving the camera, there is no straight halt but a kind of inertia.
 
-
-<img src='images/experiments/display-OpenGL.png' />
+![images/experiments/display-OpenGL.png](images/experiments/display-OpenGL.png)
 
 
 In addition, the bottom overlay bar provides the Camera position in 3D.
