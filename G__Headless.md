@@ -5,6 +5,21 @@ The aim of this feature is to be able to run one or multiple instances of GAMA w
 
 In this mode, GAMA can only be used to run experiments and that editing or managing models is not possible. In order to launch experiments and still benefit from a user interface (which can be used to prepare headless experiments), launch GAMA normally (see [here](G__Launching)) and refer to this [page](G__RunningExperiments) for instructions.
 
+## Table of contents 
+
+* [Headless Mode](#headless-mode)
+	* [Command](#command)
+		* [Shell Script](#shell-script)
+		* [Java Command](#java-command)
+	* [Experiment Input File](#experiment-input-file)
+		* [Heading](#heading)
+		* [Parameters](#parameters)
+		* [Outputs](#outputs)
+	* [Output Directory](#output-directory)
+	* [Simulation Output](#simulation-output)
+		* [Step](#step)
+		* [Variable](#variable)
+	* [Snapshot files](#snapshot-files)
 
 
 ## Command
