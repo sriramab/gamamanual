@@ -1,10 +1,19 @@
+
 # Troubleshooting
-
-
 
 This page exposes some of the most common problems a user may encounter when running GAMA — and offers advices and workarounds for them. It will be regularly enriched with new contents. Note also that the [Issues section](https://github.com/gama-platform/gama/issues) of the website might contain precious information on crashes and bugs encountered by other users. If neither the workarounds described here nor the solutions provided by other users allow to solve your particular problem, please submit a new issue report to the developers.
 
 
+## Table of contents 
+
+* [Troubleshooting](#troubleshooting)
+	* [On Ubuntu (& Linux Systems)](#on-ubuntu--linux-systems)
+		* [Workaround if GAMA crashes when displaying web contents](#workaround-if-gama-crashes-when-displaying-web-contents)
+		* [Workaround if GAMA does not display the menus (the 'Edit' menu is the only one working)](#workaround-if-gama-does-not-display-the-menus-the-edit-menu-is-the-only-one-working)
+	* [On Windows](#on-windows)
+	* [On MacOS X](#on-macos-x)
+	* [Memory problems](#memory-problems)
+	* [Submitting an Issue](#submitting-an-issue)
 
 
 
