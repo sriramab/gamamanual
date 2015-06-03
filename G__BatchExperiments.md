@@ -1,6 +1,5 @@
+
 # Defining Batch Experiments
-
-
 
 Batch experiments allow to execute numerous successive simulation runs.They are used to explore the parameter space of a model or to optimize a set of model parameters.
 
@@ -15,17 +14,21 @@ experiment exp_title type: batch {
 }
 ```
 
+## Table of contents 
 
-
-
+* [Defining Batch Experiments](#defining-batch-experiments)
+	* [The batch experiment facets](#the-batch-experiment-facets)
+	* [Action _step](#action-step)
+	* [Reflexes](#reflexes)
+	* [Permanent](#permanent)
 
 
 
 ## The batch experiment facets
 Batch experiment have the following three facets:
-  * until: (expression) Specifies when to stop each simulations. Its value is a condition on variables defined in the model. The run will stop when the condition is evaluated to true. If omitted, the first simulation run will go forever, preventing any subsequent run to take place (unless a halt command is used in the model itself).
-  * repeat: (integer) A parameter configuration corresponds to a set of values assigned to each parameter. The attribute repeat specifies the number of times each configuration will be repeated, meaning that as many simulations will be run with the same parameter values. Different random seeds are given to the pseudo-random number generator. This allows to get some statistical power from the experiments conducted. Default value is 1.
-  * keep\_seed: (boolean) If true, the same series of random seeds will be used from one parameter configuration to another. Default value is false.
+* until: (expression) Specifies when to stop each simulations. Its value is a condition on variables defined in the model. The run will stop when the condition is evaluated to true. If omitted, the first simulation run will go forever, preventing any subsequent run to take place (unless a halt command is used in the model itself).
+* repeat: (integer) A parameter configuration corresponds to a set of values assigned to each parameter. The attribute repeat specifies the number of times each configuration will be repeated, meaning that as many simulations will be run with the same parameter values. Different random seeds are given to the pseudo-random number generator. This allows to get some statistical power from the experiments conducted. Default value is 1.
+* keep\_seed: (boolean) If true, the same series of random seeds will be used from one parameter configuration to another. Default value is false.
 
 ```
 experiment my_batch_experiment type: batch repeat: 5 keep_seed: true until: time = 300 {
@@ -33,10 +36,6 @@ experiment my_batch_experiment type: batch repeat: 5 keep_seed: true until: time
    [exploration method]
 }
 ```
-
-
-
-
 
 
 ## Action _step
@@ -56,10 +55,6 @@ A second solution to achieve the same result is to use reflexes (see below).
 ```
 
 
-
-
-
-
 ## Reflexes
 It is possible to write reflexes inside a batch experiment. This reflex will be executed at the end of each simulation. For instance, the following reflex writes at the end of each simulation the value of the variable _food\_gathered_:
 
@@ -68,9 +63,6 @@ reflex info_sim {
 	write "Running a new simulation " + simulation + " -> " + food_gathered;
 }
 ```
-
-
-
 
 
 
