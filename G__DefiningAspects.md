@@ -1,3 +1,4 @@
+
 # Defining Aspects (Under Construction)
 <font color='red'><i>todo</i>:<br>
 <ul><li>Explain that aspect can contain any other statements (not just draw) and give an example of a complex aspect<br>
@@ -8,6 +9,11 @@
 The aspect statement allows to define how the agents will be displayed. It is possible to define different displays (i.e. different aspect sections) for a same species. In this context, the user will be able to change the display drawn during the simulation execution.</li></ul>
 
 
+## Table of contents 
+
+* [Defining Aspects (Under Construction)](#defining-aspects-under-construction)
+	* [Draw Command](#draw-command)
+	* [Shape Primitive](#shape-primitive)
 
 
 
@@ -15,17 +21,17 @@ The aspect statement allows to define how the agents will be displayed. It is po
 ## Draw Command
 
 The command **draw** allows to draw a geometry (line, circle, square, agent geometry...), a icon or a text:
-  * geometry: any arbitrary geometry, that will only be affected by the color facet.
-  * text: string, the text to draw.
-  * image: file, optional, path of the icon to draw (JPEG, PNG, GIF).
+* geometry: any arbitrary geometry, that will only be affected by the color facet.
+* text: string, the text to draw.
+* image: file, optional, path of the icon to draw (JPEG, PNG, GIF).
 
 Several facets can be added:
-  * **color**: rgb, optional, the color to use to display the text/icon/geometry.
-  * **size**: float, size of the text/icon (not use in the context of the drawing of a geometry).
-  * **at**: point, location where the shape/text/icon is drawn.
-  * **rotate**: int, orientation of the shape/text/icon.
-  * **depth**: float, optional (only works if the type of the display is opengl). Add a depth to the geometry previously defined (a point becomes a sphere, a line becomes a plan, a circle becomes a cylinder, a square becomes a cube,a polygon becomes a polyhedron with depth equal to the z value). Note: This only works if the agent geometry is not a point.
-  * **border**: rgb, optional, the color to use to display the envelope of the geometry.
+* **color**: rgb, optional, the color to use to display the text/icon/geometry.
+* **size**: float, size of the text/icon (not use in the context of the drawing of a geometry).
+* **at**: point, location where the shape/text/icon is drawn.
+* **rotate**: int, orientation of the shape/text/icon.
+* **depth**: float, optional (only works if the type of the display is opengl). Add a depth to the geometry previously defined (a point becomes a sphere, a line becomes a plan, a circle becomes a cylinder, a square becomes a cube,a polygon becomes a polyhedron with depth equal to the z value). Note: This only works if the agent geometry is not a point.
+* **border**: rgb, optional, the color to use to display the envelope of the geometry.
 
 For example, the following model defines three aspects for the agent: one named "info", another named "icon" and the last one named "default".
 
@@ -56,8 +62,7 @@ aspect default {
 ## Shape Primitive
 GAMA provides several shape primitives to display agents.
 
-
-http://gama-platform.googlecode.com/files/shape_2D3D.PNG
+![images/shape_2D3D.PNG](images/shape_2D3D.PNG)
 
 
 Examples of GAMA Shape Primitives with on [opengl display](Gama3D16):
