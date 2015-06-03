@@ -1,18 +1,21 @@
+
 # Organization of a model (Under construction)
-
-
 
 As already extensively detailed in the [key concepts page](G__KeyConcepts), defining a model in GAML amounts to defining a _model species_, which later allows to instantiate a _model agent_ (aka a _simulation_), which may or may not contain micro-species, and which can be flanked by _experiment plans_ in order to be simulated.
 
 This conceptual structure is respected in the definition of model files, which follows a similar pattern:
 
-  1. Definition of the _global species_, preceded by a _header_, in order to represent the _model species_
-  1. Definition of the different micro-species (either nested inside the _global species_ or at the same level)
-  1. Definition of the different _experiment plans_ that target this model
+1. Definition of the _global species_, preceded by a _header_, in order to represent the _model species_
+1. Definition of the different micro-species (either nested inside the _global species_ or at the same level)
+1. Definition of the different _experiment plans_ that target this model
 
 
+## Table of contents 
 
-
+* [Organization of a model (Under construction)](#organization-of-a-model-under-construction)
+	* [Model Header (model species)](#model-header-model-species)
+	* [Species declarations](#species-declarations)
+	* [Experiment declarations](#experiment-declarations)
 
 
 
@@ -53,8 +56,6 @@ Note that neither the imports nor the definition of `global` are mandatory. Only
 
 
 
-
-
 ## Species declarations
 
 The header is followed by the declaration of the different species of agents that populate the model. Note that the possibility to define the species _after_ the `global` definition is actually a convenience: these species are micro-species of the model species and, hence, could be perfectly defined as nested species of `global`. For instance:
@@ -77,9 +78,6 @@ global {
     species B {…}
 }
 ```
-
-
-
 
 
 ## Experiment declarations
