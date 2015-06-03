@@ -1,8 +1,9 @@
+
 # GAML
 
 
 
-Models that users want to simulate in GAMA have to be written in a special language, called **GAML** (short for <strong>GA</strong>ma <strong>M</strong>odeling <strong>L</strong>anguage)
+Models that users want to simulate in GAMA have to be written in a special language, called **GAML** (short for **GA**ma **M**odeling **L**anguage)
 
 GAML is born from the necessity to have a high-level declarative way of defining and reusing structures found in almost all agent-based models. See [here](G__KeyConcepts) for more information about its background.
 
