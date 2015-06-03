@@ -1,3 +1,4 @@
+
 # Pseudo-variables
 
 
@@ -5,6 +6,12 @@
 The expressions known as **pseudo-variables** are special read-only variables that are not declared anywhere (at least not in a species), and which represent a value that changes depending on the context of execution.
 
 
+## Table of contents 
+
+* [Pseudo-variables](#pseudo-variables)
+	* [self](#self)
+	* [myself](#myself)
+	* [each](#each)
 
 
 
