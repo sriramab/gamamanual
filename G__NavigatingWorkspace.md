@@ -1,7 +1,6 @@
 
 # Navigating in the Workspace
 
-
 All the models that you edit or run using GAMA are accessible from a central location: the _Navigator_, which is always on the left-hand side of the main window and cannot be closed. This view presents the models currently present in (or linked from) your **workspace**.
 
 ![images/model_navigator/navigator_first.png](images/model_navigator/navigator_first.png)
@@ -38,8 +37,7 @@ This category represents the models that are shipped with each version of GAMA. 
 
 It may happen, in some occasions, that the library of models is not synchronized with the version of GAMA that uses your workspace. This is the case if you use different versions of GAMA to work with the same workspace. In that case, it is required that the library be manually updated. This can be done using the "Update library" item in the contextual menu.
 
-
-<img src='images/model_navigator/navigator_update_library.png' />
+![images/model_navigator/navigator_update_library.png](images/model_navigator/navigator_update_library.png)
 
 
 To look up for a particular model in the library, users can use the "Search forâ€¦" menu item. A search dialog is then displayed, which allows to look for models by their title (for example, models containing "GIS" in the example below).
@@ -49,6 +47,7 @@ To look up for a particular model in the library, users can use the "Search forâ
 <img src='images/model_navigator/navigator_menu_search.png' />
 <img src='images/model_navigator/navigator_dialog_search.png' /></td></tr></table>
 
+|![images/model_navigator/navigator_menu_search.png](images/model_navigator/navigator_menu_search.png)|![images/model_navigator/navigator_dialog_search.png](images/model_navigator/navigator_dialog_search.png)|
 
 ### User models
 
@@ -56,7 +55,7 @@ This category regroups all the projects that have been [created](G__GamlEditor) 
 
 Model files, although it is by no means mandatory, usually reside in a sub-folder of the project called "models".
 
- <img src='images/model_navigator/navigator_user_expanded.png' /> 
+![images/model_navigator/navigator_user_expanded.png](images/model_navigator/navigator_user_expanded.png)
 
 ### Shared models
 
