@@ -1,3 +1,4 @@
+
 # Attaching Skills and Control
 
 
@@ -10,6 +11,11 @@ Skills are built-in modules that provide a set of related built-in variables and
 Control are agent control architectures that can be used in addition to the [common behavior structure](G__DefiningBehaviors).
 
 
+## Table of contents 
+
+* [Attaching Skills and Control](#attaching-skills-and-control)
+	* [Skills](#skills)
+	* [Control Architecture](#control-architecture)
 
 
 
@@ -26,7 +32,7 @@ species my_species skills: [skill1, skill2] {
 ```
 
 Skills have been designed to be mutually compatible so that any combination of them will result in a functional species. The list of available skills in GAMA is:
-  * moving: for agents that need to move.
+* moving: for agents that need to move.
 
 So, for instance, if a species is declared as:
 
@@ -65,13 +71,13 @@ A complete description of existing skills is available [here](G__BuiltInSkills).
 ## Control Architecture
 
 GAMA integrates several agent control architectures that can be used in addition to the common behavior structure:
-  * weighted\_tasks
-  * sorted\_tasks
-  * probabilistic\_tasks
-  * fsm
-  * user\_only
-  * user\_first
-  * user\_last
+* weighted\_tasks
+* sorted\_tasks
+* probabilistic\_tasks
+* fsm
+* user\_only
+* user\_first
+* user\_last
 
 The choice of an architecture (that is optional) is made through the **control** facet:
 ```
