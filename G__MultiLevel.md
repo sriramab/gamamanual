@@ -1,3 +1,4 @@
+
 # Multi-level Architecture (Under Construction)
 <font color='red'><i>todo</i>:<br>
 <ul><li>Explain a little bit more what the meaning of the "multi-level" architecture is.<br>
@@ -8,9 +9,15 @@
 <hr />
 The multi-level architecture offers the modeller the following possibilities : (1) the declaration of a species as a micro-species of another species, (2) the representation of an entity as different types of agent (i.e., GAML species), (3) the dynamic migration of agents between populations.</li></ul>
 
+## Table of contents 
+
+* [Multi-level Architecture (Under Construction)](#multi-level-architecture-under-construction)
+	* [Declaration of micro-species](#declaration-of-micro-species)
+	* [Representation of an entity as different types of agent](#representation-of-an-entity-as-different-types-of-agent)
+	* [Dynamic migration of agents](#dynamic-migration-of-agents)
+	* [Access to micro-agents, host agent](#access-to-micro-agents-host-agent)
 
 
-# Details
 ## Declaration of micro-species
 A species can have other species as micro-species. The micro-species of a species is declared inside the species' declaration.
 

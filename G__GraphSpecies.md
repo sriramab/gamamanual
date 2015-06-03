@@ -1,3 +1,4 @@
+
 # Graph Species (Under Construction)
 <font color='red'><i>todo</i>:<br>
 <ul><li>make references to the topology and maybe better explain the purpose of 'graph' species: build a graph using agents (and not — only — between agents).<br>
@@ -12,6 +13,11 @@ To instantiate this **graph** species, several step must be followed. First the 
 A **graph node** is an abstract species that must redefine one method called **related\_to**. This method returns true or false according to a given condition that will express the distance between two agents. This distance can be of course the euclidean distance (but in this case it is recommenced to use the operator [as\_distance\_graph](G__OperatorsAK#as_distance_graph) but also any other distance define by the user.
 
 
+## Table of contents 
+
+* [Graph Species (Under Construction)](#graph-species-under-construction)
+	* [Declaration](#declaration)
+	* [Example](#example)
 
 
 

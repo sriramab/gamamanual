@@ -1,3 +1,4 @@
+
 # Defining Actions (Under Construction)
 <font color='red'><i>todo</i>:<br>
 <ul><li>give more examples of various action calls and definitions<br>
@@ -8,6 +9,11 @@ An action is a capability available to the agents of a species (what they can do
 An action can accept arguments. An action can return a result (statement <b>return</b>).</li></ul>
 
 
+## Table of contents 
+
+* [Defining Actions (Under Construction)](#defining-actions-under-construction)
+	* [Declaring Actions](#declaring-actions)
+	* [Calling Actions](#calling-actions)
 
 
 

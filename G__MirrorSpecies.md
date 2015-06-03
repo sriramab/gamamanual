@@ -1,3 +1,4 @@
+
 # Mirror Species (Under Construction)
 <font color='red'><i>todo</i>:<br>
 <ul><li>explain the population management a little bit more in details<br>
@@ -9,6 +10,11 @@ A <b>mirror</b> species is a species whose population is automatically managed w
 **Mirror** species can be used in different situations but the one we describe here is more oriented towards visualization purposes.
 
 
+## Table of contents 
+
+* [Mirror Species (Under Construction)](#mirror-species-under-construction)
+	* [Declaration](#declaration)
+	* [Example](#example)
 
 
 

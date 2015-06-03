@@ -1,3 +1,4 @@
+
 # Defining Behaviors (Under Construction)
 <font color='red'><i>todo</i>:<br>
 <ul><li>give some insight on the execution order of reflexes<br>
@@ -8,7 +9,11 @@ All agents (including the world and grid cells) are provided with a simple behav
 
 
 
+## Table of contents 
 
+* [Defining Behaviors (Under Construction)](#defining-behaviors-under-construction)
+	* [reflex](#reflex)
+	* [Init](#init)
 
 
 
