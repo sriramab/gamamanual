@@ -1,10 +1,15 @@
+
 # Defining User Commands
-
-
 
 Anywhere in the global block, in a species or in an (GUI) experiment, `user_command` statements can be implemented. They can either call directly an existing action (with or without arguments) or be followed by a block that describes what to do when this command is run.
 
 
+## Table of contents 
+
+* [Defining User Commands](#defining-user-commands)
+	* [Syntax](#syntax)
+	* [user_location](#userlocation)
+	* [user_input operator](#userinput-operator)
 
 
 
@@ -44,17 +49,14 @@ user_command kill_myself {
 
 
 These commands (which belong to the "top-level" statements like actions, reflexes, etc.) are not executed when an agent runs. Instead, they are collected and used as follows:
-  * When defined in a GUI experiment, they appear as buttons above the parameters of the simulation;
-  * When defined in the global block or in any species,
-    * when the agent is inspected, they appear as buttons above the agents' attributes
-    * when the agent is selected by a right-click in a display, these command appear under the usual "Inspect", "Focus" and "Highlight" commands in the pop-up menu.
+* When defined in a GUI experiment, they appear as buttons above the parameters of the simulation;
+* When defined in the global block or in any species,
+  * when the agent is inspected, they appear as buttons above the agents' attributes
+  * when the agent is selected by a right-click in a display, these command appear under the usual "Inspect", "Focus" and "Highlight" commands in the pop-up menu.
 
 Remark: The execution of a command obeys the following rules:
-  * when the command is called from right-click pop-menu, it is executed immediately,
-  * when the command is called from panels, its execution is postponed until the end of the current step and then executed at that time.
-
-
-
+* when the command is called from right-click pop-menu, it is executed immediately,
+* when the command is called from panels, its execution is postponed until the end of the current step and then executed at that time.
 
 
 
@@ -62,7 +64,7 @@ Remark: The execution of a command obeys the following rules:
 
 In the special case when the user\_command is called from the pop-up menu (from a right-click on an agent in a display), the location chosen by the user (translated into the model coordinates) is passed to the execution scope under the name **`user_location`**.
 
-Example :
+Example:
 ```
 global {
    user_command "Create agents here" {
@@ -74,8 +76,6 @@ global {
 This will allow the user to click on a display, choose the world (always present now), and select the menu item "Create agents here".
 
 Note that if the world is inspected (this user\_command appears thus as a button) and the user chooses to push the button, the agent will be created at a random location.
-
-
 
 
 
