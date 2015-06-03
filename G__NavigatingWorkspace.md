@@ -16,8 +16,6 @@ All the models that you edit or run using GAMA are accessible from a central loc
 	* [Closing and Deleting Projects](#closing-and-deleting-projects)
 
 
-
-
 ## The Different Categories of Models
 
 In the _Navigator_, models are organized in three different categories: _Models library_, _Shared models_ and _User models_. This organization is purely logical and does not reflect where the models are actually stored in the workspace (or elsewhere). Whatever their actual location, model files need to be stored in **projects**, which may contain also other files (called _resources_) necessary for the models to function. A project may of course contain several model files, especially if they are importing each other, if they represent different models on the same topic, or if they share the same resources.
@@ -27,11 +25,6 @@ In the _Navigator_, models are organized in three different categories: _Models 
 ### Models library
 
 This category represents the models that are shipped with each version of GAMA. They do not reside in the workspace, but are considered as _linked_ from it. This link is established every time a new workspace is created. Their actual location is within a plugin (msi.gama.models) of the GAMA application. This category contains four main projects in GAMA 1.6.1, which are further refined in folders and sub-folders that contain model files and resources.
-
-<table>
-<tr> <td><img src='images/model_navigator/navigator_library_fully_expanded.png' /> </td>
-<td><img src='images/model_navigator/navigator_library_2_folders_expanded.png' /> </td></tr>
-</table>
 
 |![images/model_navigator/navigator_library_fully_expanded.png](images/model_navigator/navigator_library_fully_expanded.png)|[images/model_navigator/navigator_library_2_folders_expanded.png](images/model_navigator/navigator_library_2_folders_expanded.png)|
 |---|---|
@@ -43,10 +36,6 @@ It may happen, in some occasions, that the library of models is not synchronized
 
 To look up for a particular model in the library, users can use the "Search for…" menu item. A search dialog is then displayed, which allows to look for models by their title (for example, models containing "GIS" in the example below).
 
-<table>
-<tr> <td>
-<img src='images/model_navigator/navigator_menu_search.png' />
-<img src='images/model_navigator/navigator_dialog_search.png' /></td></tr></table>
 
 |![images/model_navigator/navigator_menu_search.png](images/model_navigator/navigator_menu_search.png)|![images/model_navigator/navigator_dialog_search.png](images/model_navigator/navigator_dialog_search.png)|
 |---|---|
@@ -75,11 +64,6 @@ When the process is done, the navigator will display the html descriptions of th
 
 To retrieve a complete project, the user has to choose its corresponding description file and invoke "Checkout Project from Repository" from the contextual menu. After the download is over, the project will appear in the "User Models" category, sporting information on its revision number and location to distinguish it from the "regular" models already present in this category.
 
-<table>
-<tr> <td><img width='300' src='images/model_navigator/navigator_shared_expanded.png' /> </td>
-<td><img width='300' src='images/model_navigator/navigator_menu_checkout.png' /> </td>
-<td><img width='300' src='images/model_navigator/navigator_shared_project_imported.png' /> </td></tr>
-</table>
 
 |![images/model_navigator/navigator_shared_expanded.png](images/model_navigator/navigator_shared_expanded.png)|![images/model_navigator/navigator_menu_checkout.png](images/model_navigator/navigator_menu_checkout.png)|![images/model_navigator/navigator_shared_project_imported.png](images/model_navigator/navigator_shared_project_imported.png)|
 |---|---|---|
@@ -90,12 +74,6 @@ If the user has a write access to the gama-models SVN repository, any modificati
 ## Moving Models Around
 Model files, as well as resources, or even complete projects, can be moved around between the "Models Library" and "Users Models" categories, or within them, directly in the _Navigator_. Drag'n drop operations are supported, as well as copy and paste. For example, the model "Life.gaml", present in the "Models Library", can perfectly be copied and then pasted in a project in the "Users Model". This local copy in the workspace can then be further edited by the user without altering the original one.
 
-<table>
-<tr> <td><img width='300' src='images/model_navigator/navigator_menu_copy.png' /> </td>
-<td><img width='300' src='images/model_navigator/navigator_menu_paste.png' /> </td>
-<td><img width='300' src='images/model_navigator/navigator_paste_result.png' /> </td></tr>
-</table>
-
 |![images/model_navigator/navigator_menu_copy.png](images/model_navigator/navigator_menu_copy.png)|![images/model_navigator/navigator_menu_paste.png](images/model_navigator/navigator_menu_paste.png)|![images/model_navigator/navigator_paste_result.png](images/model_navigator/navigator_paste_result.png)|
 |---|---|---|
 
@@ -103,20 +81,10 @@ Model files, as well as resources, or even complete projects, can be moved aroun
 ## Closing and Deleting Projects
 Users can choose to get rid of old projects by either **closing** or **deleting** them. Closing a project means that it will still reside in the workspace (and be still visible, although a bit differently, in the _Navigator_) but its model(s) won't participate to the build process and won't be displayable until the project is opened again.
 
-<table>
-<tr> <td><img src='images/model_navigator/navigator_menu_close.png' /> </td>
-<td><img src='images/model_navigator/navigator_close_result.png' /> </td></tr>
-</table>
-
 |![images/model_navigator/navigator_menu_close.png](images/model_navigator/navigator_menu_close.png)|![images/model_navigator/navigator_close_result.png](images/model_navigator/navigator_close_result.png)|
 |---|---|
 
 **Deleting** a project must be invoked when the user wants this project to not appear in the workspace anymore (unless, that is, it is [imported](G__ImportingModels) again). Invoking this command will effectively make the workspace "forget" about this project, and this can be further doubled with a deletion of the projects resources and models from the filesystem.
-
-<table>
-<tr> <td><img src='images/model_navigator/navigator_menu_delete.png' /> </td>
-<td><img src='images/model_navigator/navigator_delete_dialog.png' /> </td></tr>
-</table>
 
 | ![images/model_navigator/navigator_menu_delete.png](images/model_navigator/navigator_menu_delete.png) | ![images/model_navigator/navigator_delete_dialog.png](images/model_navigator/navigator_delete_dialog.png) |
 |---|---|
