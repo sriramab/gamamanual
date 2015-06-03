@@ -1,5 +1,5 @@
-# File Types
 
+# File Types
 
 
 GAMA provides modelers with a generic type for files called **file**. It is possible to load a file using the _file_ operator:
@@ -72,6 +72,53 @@ Indeed, GAMA integrates specific operators corresponding to different types of f
 
 
 
+## Table of contents 
+
+* [File Types](#file-types)
+	* [Text File](#text-file)
+		* [Extensions](#extensions)
+		* [Content](#content)
+		* [Operators](#operators)
+	* [CSV File](#csv-file)
+		* [Extensions](#extensions)
+		* [Content](#content)
+		* [Operators](#operators)
+	* [Shapefile](#shapefile)
+		* [Extensions](#extensions)
+		* [Content](#content)
+		* [Operators](#operators)
+	* [OSM File](#osm-file)
+		* [Extensions](#extensions)
+		* [Content](#content)
+		* [Operators](#operators)
+	* [Grid File](#grid-file)
+		* [Extensions](#extensions)
+		* [Content](#content)
+		* [Operators](#operators)
+	* [Image File](#image-file)
+		* [Extensions](#extensions)
+		* [Content](#content)
+		* [Operators](#operators)
+	* [SVG File](#svg-file)
+		* [Extensions](#extensions)
+		* [Content](#content)
+		* [Operators](#operators)
+	* [Property File](#property-file)
+		* [Extensions](#extensions)
+		* [Content](#content)
+		* [Operators](#operators)
+	* [R File](#r-file)
+		* [Extensions](#extensions)
+		* [Content](#content)
+		* [Operators](#operators)
+	* [3DS File](#3ds-file)
+		* [Extensions](#extensions)
+		* [Content](#content)
+		* [Operators](#operators)
+	* [OBJ File](#obj-file)
+		* [Extensions](#extensions)
+		* [Content](#content)
+		* [Operators](#operators)
 
 
 
