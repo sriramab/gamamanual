@@ -1,12 +1,5 @@
+
 # Defining Other Layers
-
-
-
-
-
-
-
-
 
 
 ## agents layer
