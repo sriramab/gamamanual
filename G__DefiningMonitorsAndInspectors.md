@@ -1,10 +1,11 @@
+
 # Defining Inspectors and Monitors (Under Construction)
 
+## Table of contents 
 
-
-
-
-
+* [Defining Inspectors and Monitors (Under Construction)](#defining-inspectors-and-monitors-under-construction)
+	* [Monitors](#monitors)
+	* [Inspectors](#inspectors)
 
 
 ## Monitors
@@ -14,15 +15,12 @@ Definition of a monitor:
 monitor monitor_name value: an_expression refresh_every: nb_steps;
 ```
 with:
-  * value: mandatory, the expression whose value will be displayed by the monitor.
-  * refresh\_every: int, optional : the number of simulation steps between two evaluations of the expression (default is 1).
+* value: mandatory, the expression whose value will be displayed by the monitor.
+* refresh\_every: int, optional : the number of simulation steps between two evaluations of the expression (default is 1).
 
 Example:
 ```
   monitor "nb preys" value: length(prey as list);  
 ```
-
-
-
 
 ## Inspectors
