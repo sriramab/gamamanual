@@ -29,7 +29,9 @@ A standalone version of the documentation, in PDF format, can be directly downlo
 GAMA can be [downloaded](G__Downloads) as a regular application or [built from source](https://github.com/gama-platform/gama), which is necessary if you want to contribute to the platform.
 The source code is available from this GITHub repository:
 
-```https://github.com/gama-platform/gama```
+```
+https://github.com/gama-platform/gama
+```
 
 Which you can also browse from the web [here](https://github.com/gama-platform/gama).
 It is, in any case, recommended to follow the instructions on [this page](G__InstallingGitVersion) in order to build GAMA from source.
