@@ -1,3 +1,4 @@
+
 # Built-in Control Architectures
 
 
@@ -5,9 +6,6 @@
 GAMA allows to attach built-in control architecture to agents.
 
 These control architectures will give the possibility to the modeler to use for a species a specific control architecture in addition to the [common behavior structure](G__DefiningBehaviors). Note that only one control architecture can be used per species.
-
-
-
 
 
 
@@ -19,8 +17,6 @@ For example, the given code allows to attach the _fsm_ control architecture to t
 species dummy control: fsm {
 }
 ```
-
-
 
 
 
