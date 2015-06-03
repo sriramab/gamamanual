@@ -1,13 +1,16 @@
+
 # Defining Species
-
-
 
 Species are key elements of GAMA models (see [here](G__KeyConcepts A species is an archetype of agents and specifies their properties. A model is itself a species that can contain any number of species.
 
 
+## Table of contents 
 
-
-
+* [Defining Species](#defining-species)
+	* [Species Declaration](#species-declaration)
+	* [Schedul Description](#schedul-description)
+	* [Topology Description](#topology-description)
+	* [Types of Species](#types-of-species)
 
 
 ## Species Declaration
@@ -44,8 +47,6 @@ Flly, some specific features concerning the interaction of users with agents can
 
 
 
-
-
 ## Schedul Description
 
 The modeler can specify the scheduling information of a species. This scheduling information is composed of the execution frequency and the list of agent to be scheduled.
@@ -64,9 +65,6 @@ species foo frequency: 2 schedules: foo where (each.energy > 50)  {
 * schedules: an expression that returns the list of agent to be scheduled, in that case all the foo agents having a level of energy greater than 50. Two things worth to be mentioned regarding this facet:
     1. The list of agents can contain any type of agents, not necessarily agents of the species, making it possible to define [custom scheduling rules](G__RuntimeConcepts#Scheduling_of_Agents).
     1. The contents of this facet **is not inherited*y children species.
-
-
-
 
 
 ## Topology Description

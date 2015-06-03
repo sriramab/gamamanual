@@ -1,10 +1,16 @@
+
 # Runtime Concepts (Under Construction)
-
-
 
 When a model is being simulated, a number of algorithms are applied, for instance to determine the order in which to run the different agents, or the order in which the initialization of agents is performed, etc. This section details some of them, which can be important when building models and understanding how they will be effectively simulated.
 
 
+## Table of contents 
+
+* [Runtime Concepts (Under Construction)](#runtime-concepts-under-construction)
+	* [Simulation initialization](#simulation-initialization)
+	* [Agents Creation](#agents-creation)
+	* [Agents Step](#agents-step)
+	* [Scheduling of Agents](#scheduling-of-agents)
 
 
 
@@ -20,23 +26,16 @@ If a species of type [grid](G__GridSpecies) exists in the model, agents of speci
 Finally the `init` statement is executed. It should include the creation of all the other agents of [regular species](G__RegularSpecies) of the simulation. After their creation and initialization, they are added in the list `members` the `world` (that contains all the micro-agent of the `world`).
 
 
-
-
-
-
 ## Agents Creation
 Except [`world`](G__GlobalSpecies) and [`grid`](G__GridSpecies) agents, other agents are created using the [`create` statement](G__Statements#create). It used to allocate memory memory for each agent and to initialize all its attributes.
 
 If no explicit initialization exists for an attribute, it will get the default value corresponding to its [type](G__DataTypes).
 
 The initialization of an attribute can be located at several places in the code; they are executed in the following order (which means that, if several ways are used, the attribute will finally have the value of the last applied one):
-  * using the `from:` facet of the `create` statement;
-  * in the embedded block of the `create` statement;
-  * in the attribute declaration, using the `init` facet;
-  * in the `init` block of the species.
-
-
-
+* using the `from:` facet of the `create` statement;
+* in the embedded block of the `create` statement;
+* in the attribute declaration, using the `init` facet;
+* in the `init` block of the species.
 
 
 ## Agents Step
@@ -59,10 +58,6 @@ step of agent agent_a
     }
 
 ```
-
-
-
-
 
 ## Scheduling of Agents
 The global scheduling of agents is then simply the application of this previous _step_ to the _experiment agent_, keeping in mind that this agent has only one micro-population (of simulation agents, each instance of the model species), and that the simulation(s) inside this population contain(s), in turn, all the "regular" populations of agents of the model.
@@ -125,4 +120,3 @@ global {} // The world is normally scheduled...
 
 species my_scheduler schedules: [world]; // … but schedules itself again as a consequence of scheduling the micro-species 'my_scheduler'
 ```
-
