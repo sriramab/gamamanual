@@ -1,7 +1,5 @@
+
 # Defining Files
-
-
-
 
 
 Saving data to a file during an experiment can be achieved in several ways, depending on the needs of the modeler. One way is provided by the ['save' statement](G__Statements#save), which can be used everywhere in a model or a species. The other way, described here, is to include a **file** (or [\*output\_file\*](G__Statements#output_file) statement in the output section.
