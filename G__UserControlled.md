@@ -1,3 +1,4 @@
+
 # User Controlled
 
 
@@ -7,6 +8,12 @@ User controlled architecture has been introduced to allow users to take control 
 
 
 
+## Table of contents 
+
+* [User Controlled](#user-controlled)
+	* [Declaration](#declaration)
+	* [User Panel](#user-panel)
+	* [User Controlled](#user-controlled)
 
 
 
