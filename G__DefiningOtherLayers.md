@@ -1,6 +1,14 @@
 
 # Defining Other Layers
 
+## Table of contents 
+
+* [Defining Other Layers](#defining-other-layers)
+	* [agents layer](#agents-layer)
+	* [species layer](#species-layer)
+	* [image layer](#image-layer)
+	* [text layer](#text-layer)
+	* [graphics layer](#graphics-layer)
 
 ## agents layer
 
@@ -11,14 +19,14 @@ display display_name {
 }
 ```
 Additional options include:
-  * **`value`** (type = container) the set of agents to display
-  * **`aspect`**: the name of the aspect that should be used to display the species.
-  * **`transparency`** (type = float, from 0 to 1): the transparency rate of the agents (1 means no transparancy)
-  * **`position`** (type = point, from {1,1} to {0,0}): position of the upper-left corner of the layer (note that {0.5,0.5} refers to the middle of the display)
-  * **`size`** (type = point, from {1,1} to {0,0}): size of the layer ({1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer)
-  * **`refresh`** (type = boolean, **opengl only**): specify whether the display of the species is refreshed. (usefull in case of agents that do not move)
-  * **`z`** (type = float, from 0 to 1, **opengl only**): altitude of the layer displaying agents
-  * **`focus`** (type = agent)
+* **`value`** (type = container) the set of agents to display
+* **`aspect`**: the name of the aspect that should be used to display the species.
+* **`transparency`** (type = float, from 0 to 1): the transparency rate of the agents (1 means no transparancy)
+* **`position`** (type = point, from {1,1} to {0,0}): position of the upper-left corner of the layer (note that {0.5,0.5} refers to the middle of the display)
+* **`size`** (type = point, from {1,1} to {0,0}): size of the layer ({1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer)
+* **`refresh`** (type = boolean, **opengl only**): specify whether the display of the species is refreshed. (usefull in case of agents that do not move)
+* **`z`** (type = float, from 0 to 1, **opengl only**): altitude of the layer displaying agents
+* **`focus`** (type = agent)
 
 For instance, in a segregation model, `agents` will only display happy agents:
 ```
@@ -26,9 +34,6 @@ display Segregation {
    agents agentDisappear value : people as list where (each.is_happy = false) aspect: with_group_color;
 }
 ```
-
-
-
 
 
 ## species layer
@@ -42,12 +47,12 @@ display display_name {
 }
 ```
 Additional options include:
-  * **`aspect`**: the name of the aspect that should be used to display the species.
-  * **`transparency`** (type = float, from 0 to 1): the transparency rate of the agents (1 means no transparancy)
-  * **`position`** (type = point, from {1,1} to {0,0}): position of the upper-left corner of the layer (note that {0.5,0.5} refers to the middle of the display)
-  * **`size`** (type = point, from {1,1} to {0,0}): size of the layer ({1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer)
-  * **`refresh`** (type = boolean, **opengl only**): specify whether the display of the species is refreshed. (usefull in case of agents that do not move)
-  * **`z`** (type = float, from 0 to 1, **opengl only**): altitude of the layer displaying agents
+* **`aspect`**: the name of the aspect that should be used to display the species.
+* **`transparency`** (type = float, from 0 to 1): the transparency rate of the agents (1 means no transparancy)
+* **`position`** (type = point, from {1,1} to {0,0}): position of the upper-left corner of the layer (note that {0.5,0.5} refers to the middle of the display)
+* **`size`** (type = point, from {1,1} to {0,0}): size of the layer ({1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer)
+* **`refresh`** (type = boolean, **opengl only**): specify whether the display of the species is refreshed. (usefull in case of agents that do not move)
+* **`z`** (type = float, from 0 to 1, **opengl only**): altitude of the layer displaying agents
 
 For instance it could be:
 ```
@@ -75,9 +80,6 @@ display my_display type: opengl{
 ```
 
 
-
-
-
 ## image layer
 `image` allows modeler to display an image (e.g. as background of a simulation).
 The general syntax is:
@@ -87,19 +89,19 @@ display display_name {
 }
 ```
 Additional options include:
-  * **`file`** (type = string): the name/path of the image (in the case of a raster image)
-  * **`gis`** (type = string): the name/path of the shape file (to display a shapefile as background, without creating agents from it)
-  * **`color`** (type = color): in the case of a shapefile, this the color used to fill in geometries of the shapefile
-  * **`transparency`** (type = float, from 0 to 1): the transparency rate (1 means no transparancy)
-  * **`position`** (type = point, from {1,1} to {0,0}): position of the upper-left corner of the layer (note that {0.5,0.5} refers to the middle of the display)
-  * **`size`** (type = point, from {1,1} to {0,0}): size of the layer ({1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer)
-  * **`refresh`** (type = boolean, **opengl only**): specify whether the display of the image is refreshed.
-  * **`z`** (type = float, from 0 to 1, **opengl only**): altitude of the layer displaying the image
+* **`file`** (type = string): the name/path of the image (in the case of a raster image)
+* **`gis`** (type = string): the name/path of the shape file (to display a shapefile as background, without creating agents from it)
+* **`color`** (type = color): in the case of a shapefile, this the color used to fill in geometries of the shapefile
+* **`transparency`** (type = float, from 0 to 1): the transparency rate (1 means no transparancy)
+* **`position`** (type = point, from {1,1} to {0,0}): position of the upper-left corner of the layer (note that {0.5,0.5} refers to the middle of the display)
+* **`size`** (type = point, from {1,1} to {0,0}): size of the layer ({1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer)
+* **`refresh`** (type = boolean, **opengl only**): specify whether the display of the image is refreshed.
+* **`z`** (type = float, from 0 to 1, **opengl only**): altitude of the layer displaying the image
 
 For instance:
 ```
 display my_display{
-  image background file:"../images/my_backgound.jpg"
+  image background file:"../images/my_backgound.jpg";
 }
 ```
 Or
@@ -118,10 +120,6 @@ display my_display type:opengl{
 ```
 
 
-
-
-
-
 ## text layer
 `text` allows the modeler to display a string (that can change at each step) in a given position of the display.
 The general syntax is:
@@ -131,14 +129,14 @@ display my_display {
 ```
 
 Additional options include:
-  * **`value`** (type = string) the string to display
-  * **`transparency`** (type = float, from 0 to 1): the transparency rate of the layer (1 means no transparancy)
-  * **`position`** (type = point, from {1,1} to {0,0}): position of the upper-left corner of the layer (note that {0.5,0.5} refers to the middle of the display)
-  * **`size`** (type = point, from {1,1} to {0,0}): size of the layer ({1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer)
-  * **`font`**: the font used for the text
-  * **`color`** (type = color): the color used to display the text
-  * **`refresh`** (type = boolean, **opengl only**): specify whether the layer is refreshed.
-  * **`z`** (type = float, from 0 to 1, **opengl only**): altitude of the layer displaying text
+* **`value`** (type = string) the string to display
+* **`transparency`** (type = float, from 0 to 1): the transparency rate of the layer (1 means no transparancy)
+* **`position`** (type = point, from {1,1} to {0,0}): position of the upper-left corner of the layer (note that {0.5,0.5} refers to the middle of the display)
+* **`size`** (type = point, from {1,1} to {0,0}): size of the layer ({1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer)
+* **`font`**: the font used for the text
+* **`color`** (type = color): the color used to display the text
+* **`refresh`** (type = boolean, **opengl only**): specify whether the layer is refreshed.
+* **`z`** (type = float, from 0 to 1, **opengl only**): altitude of the layer displaying text
 
 For instance:
 ```
@@ -146,9 +144,6 @@ display my_display {
    text agents value : 'Carrying ants : ' + string ( int ( ant as list count (each . has_food ) ) + int ( ant as list count ( each . state =    'followingRoad' ) ) ) position : { 0.5 , 0.03 } color : rgb ( 'black' ) size: { 1 , 0.02 };  
 }
 ```
-
-
-
 
 ## graphics layer
 `graphics` allows the modeler to freely draw shapes/geometries/texts without having to define a species.
