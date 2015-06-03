@@ -1,15 +1,26 @@
+
 # 3D Specific Instructions (Under construction)
 
+## Table of contents 
 
-
-
-
-
+* [3D Specific Instructions (Under construction)](#3d-specific-instructions-under-construction)
+	* [OpenGL display](#opengl-display)
+		* [Position](#position)
+		* [Size](#size)
+	* [Camera](#camera)
+	* [Dynamic camera](#dynamic-camera)
+		* [Camera position](#camera-position)
+		* [Camera direction (Look Position)](#camera-direction-look-position)
+		* [Camera orientation (Up Vector)](#camera-orientation-up-vector)
+			* [Default view](#default-view)
+			* [First person view](#first-person-view)
+			* [Third Person view](#third-person-view)
+	* [Lighting](#lighting)
 
 
 ## OpenGL display
 
-  * Define the attribute type of the display with `type:opengl` in the output of your model (or use the preferences->display windows to use it by default):
+* Define the attribute type of the display with `type:opengl` in the output of your model (or use the preferences->display windows to use it by default):
 ```
 output {
   display DisplayName type:opengl {
@@ -23,6 +34,7 @@ Using 3D display offers many way to represent a simulation. A layer can be posit
 
 ### Position
 Layer can be drawn on different position (x,y and z)  value using the _position_ facet
+
 ### Size
 Layer can be drawn with different size (x,y and z) using the _size_ facet
 
@@ -38,11 +50,6 @@ display city_display type: opengl{
 ```
 
 ![images/species_layer.png](images/species_layer.png)
-
-
-
-
-
 
 
 
@@ -107,9 +114,6 @@ display ThirdPerson  type:opengl camera_pos:{boids(1).location.x,-boids(1).locat
 
 
 
-
-
-
 ## Lighting
 
 In a 3D scene once can define light sources. The way how light sources and 3D object interact is called lighting. Lighting is an important factor to render realistic scenes.
@@ -120,18 +124,11 @@ Gama handle _ambient_ and _diffuse_ light.
 
 
 
-
-  * **ambient\_light**: Allows to define the value of the ambient light either using an int (ambient\_light:(125)) or a rgb color ((ambient\_light:rgb(255,255,255)). default is rgb(125,125,125).
-
-  * **diffuse\_light**: Allows to define the value of the diffuse light either using an int (diffuse\_light:(125)) or a rgb color ((diffuse\_light:rgb(255,255,255)). default is rgb(125,125,125).
-
-  * **diffuse\_light\_pos**: Allows to define the position of the diffuse light either using an point (diffuse\_light\_pos:{x,y,z}). default is {world.shape.width/2,world.shape.height/2,world.shape.width`*`2}.
-
-
-  * **is\_light\_on**: Allows to enable/disable the light. Default is true.
-
-
-  * **draw\_diffuse\_light**: Allows to enable/disable the drawing of the diffuse light. Default is false")),
+* **ambient\_light**: Allows to define the value of the ambient light either using an int (ambient\_light:(125)) or a rgb color ((ambient\_light:rgb(255,255,255)). default is rgb(125,125,125).
+* **diffuse\_light**: Allows to define the value of the diffuse light either using an int (diffuse\_light:(125)) or a rgb color ((diffuse\_light:rgb(255,255,255)). default is rgb(125,125,125).
+* **diffuse\_light\_pos**: Allows to define the position of the diffuse light either using an point (diffuse\_light\_pos:{x,y,z}). default is {world.shape.width/2,world.shape.height/2,world.shape.width`*`2}.
+* **is\_light\_on**: Allows to enable/disable the light. Default is true.
+* **draw\_diffuse\_light**: Allows to enable/disable the drawing of the diffuse light. Default is false")),
 
 
 Here is an example using all the available facet to define a diffuse light that rotate around the world.
@@ -143,7 +140,3 @@ display View1  type:opengl draw_diffuse_light:true ambient_light:(0) diffuse_lig
 ...
 }
 ```
-
-
-
-
