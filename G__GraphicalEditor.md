@@ -19,7 +19,7 @@ Using the graphical editor requires to install the graphical modeling plug-in. S
 The graphical editor plug-in is called **Graphical\_modeling** and is directly available from GAMA update site **https://gama-platform.googlecode.com/svn/update_site/*.**
 
 
-![images/graphical_editor/installing_graphical_editor.JPG](images/graphical_editor/installing_graphical_editor.JPG)
+![install](images/graphical_editor/installing_graphical_editor.JPG)
 
 
 Note that the graphical editor is still under development. Updates of the plug-in will be add to the GAMA website. After installing the plug-in (and periodically), check for updates for this plug-in: in the "Help" menu, choose "Check for Updates" and install the proposed updates for the graphical modeling plug-in.
