@@ -1,3 +1,4 @@
+
 # Literals
 
 
@@ -6,6 +7,12 @@ _(some literal expressions are also described in [data types](G__DataTypes))_
 
 A literal is a way to specify an unnamed constant value corresponding to a given data type. GAML supports various types of literals for often — or less often — used data types.
 
+## Table of contents 
+
+* [Literals](#literals)
+	* [Simple Types](#simple-types)
+	* [Literal Constructors](#literal-constructors)
+	* [Universal Literal](#universal-literal)
 
 
 
