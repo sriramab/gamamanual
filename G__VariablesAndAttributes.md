@@ -1,3 +1,4 @@
+
 # Variables and Attributes
 
 
@@ -8,6 +9,11 @@ Variables and attributes represent named data that can be used in an expression.
 Outside its _scope_ of validity, an expression cannot use a variable or an attribute directly. However, attributes can be used in a remote fashion by using a dotted notation on a given agent (see [here](#Remote_Access)).
 
 
+## Table of contents 
+
+* [Variables and Attributes](#variables-and-attributes)
+	* [Direct Access](#direct-access)
+	* [Remote Access](#remote-access)
 
 
 
