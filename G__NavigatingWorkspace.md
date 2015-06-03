@@ -1,12 +1,20 @@
+
 # Navigating in the Workspace
-
-
 
 
 All the models that you edit or run using GAMA are accessible from a central location: the _Navigator_, which is always on the left-hand side of the main window and cannot be closed. This view presents the models currently present in (or linked from) your **workspace**.
 
+![images/model_navigator/navigator_first.png](images/model_navigator/navigator_first.png)
 
-<img width='600' src='images/model_navigator/navigator_first.png' />
+## Table of contents 
+
+* [Navigating in the Workspace](#navigating-in-the-workspace)
+	* [The Different Categories of Models](#the-different-categories-of-models)
+		* [Models library](#models-library)
+		* [User models](#user-models)
+		* [Shared models](#shared-models)
+	* [Moving Models Around](#moving-models-around)
+	* [Closing and Deleting Projects](#closing-and-deleting-projects)
 
 
 
@@ -15,7 +23,7 @@ All the models that you edit or run using GAMA are accessible from a central loc
 
 In the _Navigator_, models are organized in three different categories: _Models library_, _Shared models_ and _User models_. This organization is purely logical and does not reflect where the models are actually stored in the workspace (or elsewhere). Whatever their actual location, model files need to be stored in **projects**, which may contain also other files (called _resources_) necessary for the models to function. A project may of course contain several model files, especially if they are importing each other, if they represent different models on the same topic, or if they share the same resources.
 
- <img src='images/model_navigator/navigator_3_categories.png' /> 
+![images/model_navigator/navigator_3_categories.png](images/model_navigator/navigator_3_categories.png)
 
 ### Models library
 
@@ -26,6 +34,7 @@ This category represents the models that are shipped with each version of GAMA. 
 <td><img src='images/model_navigator/navigator_library_2_folders_expanded.png' /> </td></tr>
 </table>
 
+|![images/model_navigator/navigator_library_fully_expanded.png](images/model_navigator/navigator_library_fully_expanded.png)|[images/model_navigator/navigator_library_2_folders_expanded.png](images/model_navigator/navigator_library_2_folders_expanded.png)|
 
 It may happen, in some occasions, that the library of models is not synchronized with the version of GAMA that uses your workspace. This is the case if you use different versions of GAMA to work with the same workspace. In that case, it is required that the library be manually updated. This can be done using the "Update library" item in the contextual menu.
 
