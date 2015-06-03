@@ -1,33 +1,25 @@
-# Table of contents 
-
-* [Installation](#installation)
-	* [System Requirements](#system-requirements)
-	* [Installation of Java](#installation-of-java)
-		* [On MacOS X (Lion, Mountain Lion, Mavericks)](#on-macos-x-lion-mountain-lion-mavericks)
-		* [On MacOS X (Yosemite)](#on-macos-x-yosemite)
-		* [On Windows 7 & 8 64 bits](#on-windows-7--8-64-bits)
-		* [On Ubuntu & Linux](#on-ubuntu--linux)
-
-
 
 # Installation
-
-
 
 GAMA comes in 6 different versions (32 & 64 bits for Windows, Linux and MacOS). You first need to determine which version you are going to use (it depends on your computer, which may, or not, support 64 bits instructions, but also on the version of Java already installed, as the number of bits of the two versions must match).
 
 You can then download the right version from the [Downloads page](G__Downloads), expand the zip file wherever you want on your machine, and [launch GAMA](G__Launching).
 
 
+## Table of contents 
 
-
-
+* [Installation](#installation)
+	* [System Requirements](#system-requirements)
+	* [Installation of Java](#installation-of-java)
+		* [On MacOS X (Lion, Mountain Lion, Mavericks)](#on-macos-x-lion-mountain-lion-mavericks)
+		* [On MacOS X (Yosemite)](#on-macos-x-yosemite)
+		* [On Windows 7 & 8 64 bits](#on-windows-7-&-8-64-bits)
+		* [On Ubuntu & Linux](#on-ubuntu-&-linux)
 
 
 ## System Requirements
 
 GAMA requires that Java 1.6 or 1.7 be installed on your machine, approximately 200MB of disk space is available and that a minimum of RAM (4GB is recommended) is installed (to increase the portion of memory usable by GAMA, please refer to [these instructions](G__Troubleshooting#Memory_problems)).
-
 
 
 

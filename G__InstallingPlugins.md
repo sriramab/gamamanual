@@ -1,3 +1,4 @@
+
 # Installing Plugins
 
 
@@ -5,15 +6,11 @@
 Besides the plugins delivered by the developers of the GAMA platform, which can be installed and updated as explained [here](G__Updating), there are a number of additional plugins that can be installed to add new functionalities to GAMA or enhance the existing ones. GAMA being based on Eclipse, a number of plugins developed for Eclipse are then available (a complete listing of Eclipse plugins can be found in the so-called [Eclipse MarketPlace](http://marketplace.eclipse.org)).
 
 There are, however, three important restrictions:
-  1. The current version of GAMA is based on Eclipse Juno (version number 3.8.2), which excludes de facto all the plugins targeting solely the 4.3 (Kepler) or 4.4 (Luna) versions of Eclipse. These will refuse to install anyway.
-  1. The Eclipse foundations in GAMA are only a subset of the complete Eclipse platform, and a number of libraries or frameworks (for example the Java Development Toolkit) are not (and will never be) installed in GAMA. So plugins relying on their existence will refuse to install as well.
-  1. Some components of GAMA rely on a specific version of other plugins and will refuse to work with other versions, essentially because their compatibility will not be ensured anymore. For instance, the parser and validator of the GAML language in GAMA 1.6.1 require [XText v. 2.4.1](http://www.eclipse.org/Xtext/) to be installed (and neither XText 2.5.4 nor XText 2.3 will satisfy this dependency).
+1. The current version of GAMA is based on Eclipse Juno (version number 3.8.2), which excludes de facto all the plugins targeting solely the 4.3 (Kepler) or 4.4 (Luna) versions of Eclipse. These will refuse to install anyway.
+2. The Eclipse foundations in GAMA are only a subset of the complete Eclipse platform, and a number of libraries or frameworks (for example the Java Development Toolkit) are not (and will never be) installed in GAMA. So plugins relying on their existence will refuse to install as well.
+3. Some components of GAMA rely on a specific version of other plugins and will refuse to work with other versions, essentially because their compatibility will not be ensured anymore. For instance, the parser and validator of the GAML language in GAMA 1.6.1 require [XText v. 2.4.1](http://www.eclipse.org/Xtext/) to be installed (and neither XText 2.5.4 nor XText 2.3 will satisfy this dependency).
 
 With these restrictions in mind, it is however possible to install interesting additional plugins. We propose here a list of some of these plugins (known to work with GAMA), but feel free to either add a comment if you have tested plugins not listed here or [create an issue](G__Troubleshooting) if a plugin does not work, in order for us to see what the requirements to make it work are and how we can satisfy them (or not) in GAMA.
-
-
-
-
 
 
 ## Installation
@@ -24,8 +21,7 @@ An excerpt from the page reads that :
 
 So we just have to follow these instructions, which leads us to the following dialog, in which we select "RSS view" and click "Next".
 
-
-<img src='images/auto_update/dialog_install_plugins.png' /> 
+![images/auto_update/dialog_install_plugins.png](images/auto_update/dialog_install_plugins.png)
 
 The initial dialog is followed by two other ones, a first to report that the plugin satisfies all the dependencies, a second to ask the user to accept the license agreement.
 
@@ -34,20 +30,17 @@ The initial dialog is followed by two other ones, a first to report that the plu
 
 Once we dismiss the warning that the plugin is not signed and accept to restart GAMA, we can test the new plugin by going to the "Views" menu.
 
-
-<img src='images/auto_update/menu_other_views.png' />
+![images/auto_update/menu_other_views.png](images/auto_update/menu_other_views.png)
 
 
 The new RSS view is available in the list of views that can be displayed in GAMA.
 
-
-<img src='images/auto_update/dialog_show_view.png' />
+![images/auto_update/dialog_show_view.png](images/auto_update/dialog_show_view.png)
 
 
 And we can enjoy (after setting some preferences available in its local menu) monitoring the Issues of GAMA from within GAMA itself !
 
-
-<img src='images/auto_update/feed_working.png' />
+![images/auto_update/feed_working.png](images/auto_update/feed_working.png)
 
 
 
