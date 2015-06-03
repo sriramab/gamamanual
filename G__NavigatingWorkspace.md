@@ -34,6 +34,7 @@ This category represents the models that are shipped with each version of GAMA. 
 </table>
 
 |![images/model_navigator/navigator_library_fully_expanded.png](images/model_navigator/navigator_library_fully_expanded.png)|[images/model_navigator/navigator_library_2_folders_expanded.png](images/model_navigator/navigator_library_2_folders_expanded.png)|
+|---|---|
 
 It may happen, in some occasions, that the library of models is not synchronized with the version of GAMA that uses your workspace. This is the case if you use different versions of GAMA to work with the same workspace. In that case, it is required that the library be manually updated. This can be done using the "Update library" item in the contextual menu.
 
@@ -48,6 +49,7 @@ To look up for a particular model in the library, users can use the "Search forâ
 <img src='images/model_navigator/navigator_dialog_search.png' /></td></tr></table>
 
 |![images/model_navigator/navigator_menu_search.png](images/model_navigator/navigator_menu_search.png)|![images/model_navigator/navigator_dialog_search.png](images/model_navigator/navigator_dialog_search.png)|
+|---|---|
 
 ### User models
 
@@ -80,11 +82,9 @@ To retrieve a complete project, the user has to choose its corresponding descrip
 </table>
 
 |![images/model_navigator/navigator_shared_expanded.png](images/model_navigator/navigator_shared_expanded.png)|![images/model_navigator/navigator_menu_checkout.png](images/model_navigator/navigator_menu_checkout.png)|![images/model_navigator/navigator_shared_project_imported.png](images/model_navigator/navigator_shared_project_imported.png)|
+|---|---|---|
 
 If the user has a write access to the gama-models SVN repository, any modification he/she makes to the model can be committed back to the repository using the standard "Teamâ€¦" submenu (see [G\_\_SharingModels](G__SharingModels)) and subsequently shared with all GAMA users.
-
-
-
 
 
 ## Moving Models Around
@@ -97,7 +97,7 @@ Model files, as well as resources, or even complete projects, can be moved aroun
 </table>
 
 |![images/model_navigator/navigator_menu_copy.png](images/model_navigator/navigator_menu_copy.png)|![images/model_navigator/navigator_menu_paste.png](images/model_navigator/navigator_menu_paste.png)|![images/model_navigator/navigator_paste_result.png](images/model_navigator/navigator_paste_result.png)|
-
+|---|---|---|
 
 
 ## Closing and Deleting Projects
@@ -109,6 +109,7 @@ Users can choose to get rid of old projects by either **closing** or **deleting*
 </table>
 
 |![images/model_navigator/navigator_menu_close.png](images/model_navigator/navigator_menu_close.png)|![images/model_navigator/navigator_close_result.png](images/model_navigator/navigator_close_result.png)|
+|---|---|
 
 **Deleting** a project must be invoked when the user wants this project to not appear in the workspace anymore (unless, that is, it is [imported](G__ImportingModels) again). Invoking this command will effectively make the workspace "forget" about this project, and this can be further doubled with a deletion of the projects resources and models from the filesystem.
 
@@ -117,4 +118,5 @@ Users can choose to get rid of old projects by either **closing** or **deleting*
 <td><img src='images/model_navigator/navigator_delete_dialog.png' /> </td></tr>
 </table>
 
-|![images/model_navigator/navigator_menu_delete.png](images/model_navigator/navigator_menu_delete.png)|![images/model_navigator/navigator_delete_dialog.png](images/model_navigator/navigator_delete_dialog.png)|
+| ![images/model_navigator/navigator_menu_delete.png](images/model_navigator/navigator_menu_delete.png) | ![images/model_navigator/navigator_delete_dialog.png](images/model_navigator/navigator_delete_dialog.png) |
+|---|---|
