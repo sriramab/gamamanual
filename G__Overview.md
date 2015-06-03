@@ -26,13 +26,13 @@ A standalone version of the documentation, in PDF format, can be directly downlo
 
 
 ## Source Code
-GAMA can be [downloaded](G__Downloads) as a regular application or [built from source](https://code.google.com/p/gama-platform/source/checkout), which is necessary if you want to contribute to the platform.
-The source code is available from this read-only SVN repository:
+GAMA can be [downloaded](G__Downloads) as a regular application or [built from source](https://github.com/gama-platform/gama), which is necessary if you want to contribute to the platform.
+The source code is available from this GITHub repository:
 
-`svn checkout http://gama-platform.googlecode.com/svn/branches/current `
+```https://github.com/gama-platform/gama```
 
-Which you can also browse from the web [here](http://code.google.com/p/gama-platform/source/browse/).
-It is, in any case, recommended to follow the instructions on [this page](G__InstallingSvnVersion) in order to build GAMA from source.
+Which you can also browse from the web [here](https://github.com/gama-platform/gama).
+It is, in any case, recommended to follow the instructions on [this page](G__InstallingGitVersion) in order to build GAMA from source.
 
 
 
