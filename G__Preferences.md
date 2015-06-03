@@ -1,28 +1,33 @@
+
 # Preferences
-
-
 
 Various preferences are accessible in GAMA to allow users and modelers to personalize their working environment. This section review the different preference tabs available in the current version of GAMA, as well as how to access the preferences and settings inherited by GAMA from Eclipse.
 
 Please note that the preferences specific to GAMA will be shared, on a same machine, and for a same user, among all the workspaces managed by GAMA. [Changing workspace](G__ChangingWorkspace) will not alter them. If you happen to run several instances of GAMA, they will also share these preferences.
 
 
+## Table of contents 
+
+* [Preferences](#preferences)
+	* [Opening Preferences](#opening-preferences)
+	* [General](#general)
+	* [Display](#display)
+	* [Editor](#editor)
+	* [External](#external)
+	* [Advanced Preferences](#advanced-preferences)
 
 
 
 ## Opening Preferences
 To open the preferences dialog of GAMA, either click on the small "form" button on the top-left corner of the window or select "Preferences…" from the Gama, "Help" or "Views" menu depending on your OS.
 
-
-<img src='images/auto_update/open_prefs.png' /> 
-
-
-
+![images/auto_update/open_prefs.png](images/auto_update/open_prefs.png)
 
 
 ## General
 
-<img src='images/preferences/general.png' /> 
+![images/preferences/general.png](images/preferences/general.png)
+
   * **Random Number Generation**: all the options pertaining to generating random numbers in simulations
     * Random Number Generator: the name of the generator to use by default (if none is specified in the model).
     * Define a default seed: whether or not a default seed should be used if none is specified in the model  (otherwise it is chosen randomly by GAMA)
@@ -48,7 +53,7 @@ To open the preferences dialog of GAMA, either click on the small "form" button 
 
 ## Display
 
-<img src='images/preferences/display.png' /> 
+![images/preferences/display.png](images/preferences/display.png)
 
   * **Properties**: various properties of displays
     * Default display method: use either 'Java2D' or 'OpenGL' if nothing is specified in the [declaration of a display](G__DefiningDisplays).
@@ -75,7 +80,7 @@ To open the preferences dialog of GAMA, either click on the small "form" button 
 
 ## Editor
 
-<img src='images/preferences/editor.png' /> 
+![images/preferences/editor.png](images/preferences/editor.png)
 
 
 Most of the settings and preferences regarding editors can be found in the [advanced preferences](#Advanced_Preferences).
@@ -89,7 +94,7 @@ Most of the settings and preferences regarding editors can be found in the [adva
 
 ## External
 
-<img src='images/preferences/external.png' /> 
+![images/preferences/external.png](images/preferences/external.png)
 
 
 These preferences pertain to the use of external libraries or data with GAMA.
@@ -114,11 +119,10 @@ The set of preferences described above are specific to GAMA. But there are other
 
 These "advanced" preferences are accessible by clicking on the "Advanced…" button in the Preferences view.
 
-
-<img src='images/preferences/advanced.png' /> 
+![images/preferences/advanced.png](images/preferences/advanced.png)
 
 
 Depending on what is installed, the second view that appears will contain a tree of options on the left and preference pages on the right. **Contrary to the first set of preferences, please note that these preferences will be saved in the current workspace**, which means that changing workspace will revert them to their default values. It is however possible to import them in the new workspace using of the wizards provided in the standard "Import…" command (see [here](G__ImportingModels)).
 
+![images/preferences/advanced_2.png](images/preferences/advanced_2.png)
 
-<img src='images/preferences/advanced_2.png' /> 
