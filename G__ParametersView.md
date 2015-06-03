@@ -1,3 +1,4 @@
+
 # Parameters View
 
 
@@ -8,6 +9,12 @@ In the case of an [experiment](G__DefiningExperiments), the modeler can [define 
 
 
 
+## Table of contents 
+
+* [Parameters View](#parameters-view)
+	* [Built-in parameters](#built-in-parameters)
+	* [Parameters View](#parameters-view)
+	* [Modification of parameters values](#modification-of-parameters-values)
 
 
 
@@ -16,18 +23,13 @@ Every [GUI experiment](G__DefiningExperiments) displays a pane named "Parameters
   * the Random Number Generator, with a choice between 4 RNG implementations,
   * the Random Seed
 
-
-<img src='images/experiments/parameters_built_in.png' /> 
-
-
-
+![images/experiments/parameters_built_in.png](images/experiments/parameters_built_in.png)
 
 
 ## Parameters View
 The modeler can [define himself parameters](G__DefiningParameters) that can be displayed in the GUI and that are sorted by categories. Note that the interface will depend on the data type of the parameter: for example, for integer or float parameters, a simple text box will be displayed whereas a color selector will be available for color parameters. The parameters value displayed are the initial value provided to the variables associated to the parameters in the model.
 
-
-<img src='images/experiments/parameters.png' /> 
+![images/experiments/parameters.png](images/experiments/parameters.png)
 
 The above parameters view is generated from the following code:
 ```
@@ -57,5 +59,4 @@ The modeler can modify the parameters value (1 in the image below). In order tha
 If he wants to come back to the initial value of parameters, he can click on the top-right curved arrow of the parameters view (cf. 3 in the image).
 
 
-
-<img src='images/experiments/parameters_modifications.png' /> 
+![images/experiments/parameters_modifications.png](images/experiments/parameters_modifications.png)
