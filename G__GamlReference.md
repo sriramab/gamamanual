@@ -1,8 +1,7 @@
+
 # Gaml Reference
 
-
-
-The following pages introduce the various constructs that are made available to the modelers in GAML. All these constructs are **built-in**, i.e. defined in Java, either in the core of GAMA or in its extensions. They include [species](G__BuiltInSpecies), [skills](G__BuiltInSkills), [control architectures](G__BuiltInControlArchitectures), [statements](G__Statements), [data types](G__DataTypes), and various types of [expressions](G__Expressions), including a long and quite exhaustive list of [operators](G__OperatorsAK).
+The following pages introduce the various constructs that are made available to the modelers in GAML. All these constructs are **built-in**, i.e. defined in Java, either in the core of GAMA or in its extensions. They include [species](G__BuiltInSpecies), [skills](G__BuiltInSkills), [control architectures](G__BuiltInControlArchitectures), [statements](G__Statements), [data types](G__DataTypes), and various types of [expressions](G__Expressions), including a long and quite exhaustive list of [operators](G__Operators).
 
 This set of pages is to be used as a _reference_, which means its role is not to explain _how_ to properly use these constructs but to detail their structures and components.
 
