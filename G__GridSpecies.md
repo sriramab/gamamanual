@@ -1,3 +1,4 @@
+
 # Grid Species
 <font color='red'><i>todo</i>:<br>
 <ul><li>constraints: grid are only micro-species of the world<br>
@@ -11,9 +12,22 @@ However, contrary to regular species, grid agents are created automatically at t
 
 Moreover, in addition to classic built-in variables, grid a provided with a set of additional built-in variables
 
+## Table of contents 
 
-
-
+* [Grid Species](#grid-species)
+	* [Declaration](#declaration)
+		* [basis](#basis)
+		* [optimization facets](#optimization-facets)
+			* [use_regular_agents](#useregularagents)
+			* [use_individual_shapes](#useindividualshapes)
+			* [use_neighbours_cache](#useneighbourscache)
+	* [Built-in variables](#built-in-variables)
+		* [grid_x](#gridx)
+		* [grid_y](#gridy)
+		* [agents](#agents)
+		* [color](#color)
+		* [grid_value](#gridvalue)
+	* [Access to cells](#access-to-cells)
 
 
 ## Declaration
@@ -32,10 +46,10 @@ There are several ways to declare a grid species:
    }
 ```
 With:
-  * width : number of cells along x-axis (number of columns)
-  * height : number of cells along y-axis (number of rows)
-  * file: file used to initialized the grid
-  * neighbours : neighborhood type (4 - Von Neumann, 6 - hexagon or 8 - Moore)
+* width : number of cells along x-axis (number of columns)
+* height : number of cells along y-axis (number of rows)
+* file: file used to initialized the grid
+* neighbours : neighborhood type (4 - Von Neumann, 6 - hexagon or 8 - Moore)
 
 ![images/neighbours_types.png](images/neighbours_types.png)
 
