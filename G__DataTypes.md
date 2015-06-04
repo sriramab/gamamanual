@@ -145,6 +145,7 @@ container c  <- list species1;
   * **Remark:** Files are also a particular kind of container and can thus be read, written or iterated using the container operators and commands.
   * **See also:** [File operators](Operators_14)
   * **Declaration:** a file can be created using the generic `file` (that opens a file in read only mode and tries to determine its contents), `folder` or the `new_folder` (to open an existing folder or create a new one) unary operators. But things can be specialized with the combination of the `read`/`write` and `image`/`text`/`shapefile`/`properties` unary operators.
+
 ```
 folder(a_string)  // returns a file managing a existing folder
 file(a_string) // returns any kind of file in read-only mode
@@ -155,6 +156,7 @@ write(properties(a_string)) // returns a property file which is available for wr
                             // using the standard container operations).
 
 ```
+
 [Top of the page](#table-of-contents)
 
 
@@ -176,10 +178,12 @@ write(properties(a_string)) // returns a property file which is available for wr
     * Otherwise, it is a Polygon whose points are (minx, miny), (maxx, miny), (maxx, maxy), (minx, maxy), (minx, miny).
   * **See also:** [Spatial operators](Operators_14)
   * **Declaration:** geometries can be built from a point, a list of points or by using specific operators (circle, square, triangle...).
+
 ```
 geometry varGeom <- circle(5);
 geometry polygonGeom <- polygon([{3,5}, {5,6},{1,4}]);
 ```
+
 [Top of the page](#table-of-contents)
 
 
@@ -197,6 +201,7 @@ geometry polygonGeom <- polygon([{3,5}, {5,6},{1,4}]);
     * The computation of the spanning tree uses an implementation of  the Kruskal's minimum spanning tree algorithm. If the given graph is connected it computes the minimum spanning tree, otherwise it computes the minimum spanning forest.
   * **See also:** [Graph operators](Operators_14)
   * **Declaration:** graphs can be built from a list of vertices (agents or geometries) or from a list of edges (agents or geometries) by using specific operators. They are often used to deal with a road network and are built from a shapefile.
+
 ```
 create road from: shape_file_road;
 graph the_graph <- as_edge_graph(road);
@@ -207,6 +212,7 @@ graph(['a'::345, 'b'::13])  --:  ([b: in[] + out[b::13], a: in[] + out[a::345], 
 graph(a_graph)  --: a_graph
 graph(node1)    --: null
 ```
+
 [Top of the page](#table-of-contents)
 
 
@@ -276,6 +282,7 @@ matrix mat3 <- matrix([["c11","c12","c13"],["c21","c22","c23"]]);
     * a point,
     * a map (in this case the first element of the pair is the list of all the keys of the map and the second element is the list of all the values of the map),
     * a list (in this case the two first element of the list are used to built the pair)
+
 ```
 pair testPair <- "key"::56;
 pair testPairPoint <- {3,5};             // 3::5
@@ -298,6 +305,7 @@ pair testPairMap <- [2::6,5::8,12::45];  // [12,5,2]::[45,8,6]
   * **Comments:** the path created between two agents/geometries or locations will strongly depends on the topology in which it is created.
   * **Remark:** a path is **immutable**, i.e. it can not be modified after it is created.
   * **Declaration:** paths are very barely defined litterally. We can nevertheless use the `path` unary operator on a list of points to build a path. Operators dedicated to the computation of paths (such as path\_to or path\_between) are often used to build a path.
+
 ```
 path([{1,5},{2,9},{5,8}]) // a path from {1,5} to {5,8} through {2,9}
        
@@ -352,6 +360,7 @@ point (2) -> {2.0, 2.0}
     * an integer <- the decimal integer is translated into a hexadecimal <- OxRRGGBB. The red (resp. green, blue) component of the color take the value RR (resp. GG, BB) translated in decimal.
     * Since GAMA 1.6.1, colors can be directly obtained like units, by using the ° or # symbol followed by the name in lowercase of one of the 147 CSS colors (see http://www.cssportal.com/css3-color-names/).
   * **Declaration:**
+
 ```
 rgb cssRed <- °red;   // Since 1.6.1
 rgb testColor <- rgb('white');                 // rgb [255,255,255]
