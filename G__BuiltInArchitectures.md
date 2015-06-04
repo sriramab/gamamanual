@@ -58,6 +58,7 @@
 * **`belief_base`** (list):    
 * **`current_plan`** (any type):    
 * **`desire_base`** (list):    
+* **`emotion_base`** (list):    
 * **`intention_base`** (list):    
 * **`intention_persistence`** (float): intention persistence   
 * **`plan_base`** (list):    
@@ -114,10 +115,6 @@ get the list of predicates is in the belief base with the given name.
 #### **`get_current_intention`**
 returns the current intention (last entry of intention base).
 * returns: msi.gaml.architecture.simplebdi.Predicate  
-	 
-#### **`get_plans`**
-get the list of plans.
-* returns: msi.gama.util.IList<msi.gaml.architecture.simplebdi.BDIPlan>  
 	 
 #### **`has_belief`**
 check if the predicates is in the belief base.
