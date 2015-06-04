@@ -1,5 +1,5 @@
-# Optimizing Models
 
+# Optimizing Models
 
 
 This page aims at presenting some tips to optimize the memory footprint or the execution time of a model in GAMA.
@@ -7,6 +7,26 @@ This page aims at presenting some tips to optimize the memory footprint or the e
 _Note:  since GAMA 1.6.1, some optimizations have become obsolete because they have been included in the compiler. They have, then, been removed from this page. For instance, writing 'rgb(0,0,0)' is now compiled directly as '°black'._
 
 
+## Table of contents 
+
+* [Optimizing Models](#optimizing-models)
+	* [machine_time](#machinetime)
+	* [Scheduling](#scheduling)
+	* [Grid](#grid)
+		* [Optimization Facets](#optimization-facets)
+			* [use_regular_agents](#useregularagents)
+			* [use_individual_shapes](#useindividualshapes)
+	* [Operators](#operators)
+		* [List operators](#list-operators)
+			* [first_with](#firstwith)
+			* [where / count](#where--count)
+		* [Spatial operators](#spatial-operators)
+			* [container of agents in closest_to, at_distance, overlapping, inside](#container-of-agents-in-closestto-atdistance-overlapping-inside)
+			* [Accelerate  with a first spatial filtering](#accelerate--with-a-first-spatial-filtering)
+	* [Displays](#displays)
+		* [shape](#shape)
+		* [circle vs square / sphere vs cube](#circle-vs-square--sphere-vs-cube)
+		* [OpenGL refresh facets](#opengl-refresh-facets)
 
 
 
