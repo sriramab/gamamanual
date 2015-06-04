@@ -3,9 +3,9 @@
 
 
 GAMA provides tools to define user interactions during the simulation to give more flexibility to the user in controlling the agents, creating agents, killing agents, running specific actions, etc:
-  * [Event](#Event): allows to define specific user interaction actions for a display through a specific layer
-  * [User command](#user_command): allows to let the user call specific action through the user interface.
-  * [User control architecture](#user_control_architecture): allows to give the user the control on an agent.
+  * [Event](#event): allows to define specific user interaction actions for a display through a specific layer
+  * [User command](#user-command): allows to let the user call specific action through the user interface.
+  * [User control architecture](#user-control-architecture): allows to give the user the control on an agent.
 
 
 
@@ -27,6 +27,7 @@ display my_display {
   * myAction is an action written in the global block. This action have to follow the specification below.
 
 Specification of the action to define:
+
 ```
 
  global
@@ -37,11 +38,14 @@ Specification of the action to define:
       // lot: contains the location of the click in the environment
       // selected_agents: contains agents clicked by the event
     
-    ... //code written by the authors ...
+   ...  //code written by the authors ...
    }
  }
+```
 
 For example:
+
+```
 experiment Displays type: gui {
 	output {
 		display View_change_color {
@@ -108,7 +112,7 @@ Remark: The execution of a command obeys the following rules:
   * when the command is called from panels, its execution is postponed until the end of the current step and then executed at that time.
 
 
-### user\_location
+### user_location
 
 In the special case when the user\_command is called from the pop-up menu (from a right-click on an agent in a display), the location chosen by the user (translated into the model coordinates) is passed to the execution scope under the name **`user_location`**.
 
@@ -142,7 +146,6 @@ global {
 
 
 
-
 ## User Control Architecture
 
 ### user\_only, user\_first, user\_last
@@ -164,13 +167,14 @@ This control architecture is a specialization of the Finite State Machine Archit
 
 user\_commands can also accept inputs, in order to create more interesting commands for the user. This uses the `user_input` statement (and not operator), which is basically the same as a temporary variable declaration whose value is asked to the user. Example:
 
-As `user_panel̀` is a specialization of `state`, the modeler has the possibility to describe several panels and choose the one to open depending on some condition, using the same syntax than for finite state machines :
+As `user_panel` is a specialization of `state`, the modeler has the possibility to describe several panels and choose the one to open depending on some condition, using the same syntax than for finite state machines :
   * either adding `transitions` to the user\_panels,
   * or setting the `state` attribute to a new value, from inside or from another agent.
 
-This ensures a great flexibility for the design of the user interface proposed to the user, as it can be adapted to the different stages of the simulation, etc..
+This ensures a great flexibility for the design of the user interface proposed to the user, as it can be adapted to the different stages of the simulation, etc...
 
-Follows a simple example, where, every 10 steps, and depending on the value of an attribute called « advanced », either the basic or the advanced panel is proposed.
+Follows a simple example, where, every 10 steps, and depending on the value of an attribute called "advanced", either the basic or the advanced panel is proposed.
+
 ```
 species user control:user_only {
    user_panel default initial: true {
@@ -205,9 +209,11 @@ species user control:user_only {
 }
 ```
 
+
 The panel marked with the « initial: true » facet will be the one run first when the agent is supposed to run. If none is marked, the first panel (in their definition order) is chosen.
+
 A special panel called user\_init will be invoked only once when initializing the agent if it is defined.
-If no panel is described or if all panels are empty (ie. no user\_commands), the control view is never invoked. If the control is said to be "user\_only", the agent will then not run any of its behaviors.
+If no panel is described or if all panels are empty (i.e. no user\_commands), the control view is never invoked. If the control is said to be "user\_only", the agent will then not run any of its behaviors.
 
 
 ### user\_controlled
