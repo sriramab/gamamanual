@@ -9,7 +9,7 @@ This installation procedure has been tested on MacOS X 10.10 (Yosemite) and Wind
 
 ## Summary
 1. Download the Eclipse Modeling Tools version of Luna SR2 from: `https://eclipse.org/downloads/packages/eclipse-modeling-tools/lunasr2`
-2. In Eclipse, install Xtext (in Install new softwares with `http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/`). The version should be `Xtext Complete SDK	2.8.2.v201504100559` 
+2. In Eclipse, install Xtext (in Install new softwares with `http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/`). The version should be `Xtext Complete SDK	2.8.3.v201506010551` 
 3. Clone the GitHub repository from `https://github.com/gama-platform/gama.git`
 4. Import all the project.
 
@@ -27,7 +27,7 @@ This installation procedure has been tested on MacOS X 10.10 (Yosemite) and Wind
   * In "work with", write "http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/", click on "Add" and choose a name (e.g. Xtext).
 ![Available software](images/GIT_install/Available_software.png)
 ![New repository](images/GIT_install/Xtext_new_repository.png)
-    * Choose "Xtext" and the following version:  `Xtext Complete SDK	2.8.2.v201504100559`
+    * Choose "Xtext" and the following version:  `Xtext Complete SDK	2.8.3.v201506010551`
 ![Choose Xtext](images/GIT_install/ChooseXtext.png)
     * Accept the licence and install.
     * Restart Eclipse
