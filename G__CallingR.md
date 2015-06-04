@@ -1,3 +1,4 @@
+
 # Introduction
 
 
@@ -7,6 +8,33 @@ R language is one of powerful data mining tools, and its community is very large
 RCaller 2.0 package (Website: http://code.google.com/p/rcaller/) is used for GAMA 1.6.1.
 
 
+## Table of contents 
+
+* [Introduction](#introduction)
+	* [Configuration in GAMA](#configuration-in-gama)
+	* [Calling R from GAML](#calling-r-from-gaml)
+		* [Calling the built-in operators](#calling-the-built-in-operators)
+			* [Example 1](#example-1)
+		* [Calling R codes from a text file (.txt) WITHOUT the parameters](#calling-r-codes-from-a-text-file-txt-without-the-parameters)
+			* [Example 2](#example-2)
+			* [Correlation.R file](#correlationr-file)
+		* [Output](#output)
+			* [Example 3](#example-3)
+			* [RandomForest.R file](#randomforestr-file)
+* [Load the package:](#load-the-package)
+* [Read data from iris:](#read-data-from-iris)
+* [Build the decision tree:](#build-the-decision-tree)
+* [Build the random forest of 50 decision trees:](#build-the-random-forest-of-50-decision-trees)
+* [Predict the acceptance of test set:](#predict-the-acceptance-of-test-set)
+* [Calculate the accuracy:](#calculate-the-accuracy)
+			* [Output](#output)
+		* [Calling R codes from a text file (.R, .txt) WITH the parameters](#calling-r-codes-from-a-text-file-r-txt-with-the-parameters)
+			* [Example 4](#example-4)
+			* [Mean.R file](#meanr-file)
+		* [Output](#output)
+			* [Example 5](#example-5)
+			* [AddParam.R file](#addparamr-file)
+			* [Output](#output)
 
 
 
