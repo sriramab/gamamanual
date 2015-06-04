@@ -1,14 +1,14 @@
 
 # Types (Under Construction)
 
-A variable's or expression's _type_ (or _data type_) determines the values it can take, plus the operations that can be performed on or with it. GAML is a statically-typed language, which means that the type of an expression is always known at compile time, and is even enforced with casting operations.
+A variable's or expression's *type* (or *data type*) determines the values it can take, plus the operations that can be performed on or with it. GAML is a statically-typed language, which means that the type of an expression is always known at compile time, and is even enforced with casting operations.
 There are 4 categories of types:
   * primitive types, declared as keyword in the language,
   * complex types, also declared as keyword in the language,
   * parametric types, a refinement of complex types (mainly children of container) that is dynamically constructed using an enclosing type, a contents type and a key type,
   * species types, dynamically constructed from the species declarations made by the modeler (and the built-in species present).
 
-The hierarchy of types in GAML (only primitive and complex types are displayed here, of course, as the other ones are model-dependant) is the following:
+The hierarchy of types in GAML (only primitive and complex types are displayed here, of course, as the other ones are model-dependent) is the following:
 
 ![images/types/types_hierarchy.png](images/types/types_hierarchy.png)
 
@@ -53,7 +53,7 @@ The hierarchy of types in GAML (only primitive and complex types are displayed h
 ```
 bool (0) -> false
 ```
-[Top of the page](#Table_of_Contents)
+[Top of the page](#table-of-contents)
 
 ### float
   * **Definition:** primitive datatype holding floating point values comprised between -(2-252)`*`21023 and -(2-252)`*`21023.
@@ -64,7 +64,7 @@ bool (0) -> false
 ```
 float (12) -> 12.0
 ```
-[Top of the page](#Table_of_Contents)
+[Top of the page](#table-of-contents)
 
 ### int
   * **Definition:** primitive datatype holding integer values comprised between -231 and 231 - 1
@@ -75,16 +75,16 @@ float (12) -> 12.0
 ```
 int (234.5) -> 234.
 ```
-[Top of the page](#Table_of_Contents)
+[Top of the page](#table-of-contents)
 
 ### string
   * **Definition:** a datatype holding a sequence of characters.
   * **Comments:** this datatype is internally backed up by the Java String class. However, contrary to Java, strings are considered as a primitive type, which means they do not contain character objects. This can be seen when casting a string to a list using the list operator: the result is a list of one-character strings, not a list of characters.
-  * **Litteral declaration:** a sequence of characters enclosed in quotes, like 'this is a string' . If one wants to literally declare strings that contain quotes, one has to double these quotes in the declaration. Strings accept escape characters like `\n` (newline), `\r` (carriage return), `\t` (tabulation), as well as any Unicode character (\uXXXX`).
+  * **Litteral declaration:** a sequence of characters enclosed in quotes, like 'this is a string' . If one wants to literally declare strings that contain quotes, one has to double these quotes in the declaration. Strings accept escape characters like `\n` (newline), `\r` (carriage return), `\t` (tabulation), as well as any Unicode character (`\uXXXX`).
   * **Other declarations:** see string
   * **Example:** see [string operators](Operators_14).
 
-[Top of the page](#Table_of_Contents)
+[Top of the page](#table-of-contents)
 
 
 
@@ -108,7 +108,7 @@ bool fileTextReadable <- fileText.readable;
   * **Comments:** This datatype is barely used, since species can be directly used as datatypes themselves.
   * **Declaration:** the agent casting operator can be applied to an int (to get the agent with this unique index), a string (to get the agent with this name).
 
-[Top of the page](#Table_of_Contents)
+[Top of the page](#table-of-contents)
 
 
 ### container
@@ -122,7 +122,7 @@ container c  <- matrix [[1,2,3],[4,5,6]];
 container c  <- map ["x"::5, "y"::12];
 container c  <- list species1;
 ```
-[Top of the page](#Table_of_Contents)
+[Top of the page](#table-of-contents)
 
 ### file
   * **Definition:** a datatype that represents a file.
@@ -154,7 +154,7 @@ write(properties(a_string)) // returns a property file which is available for wr
                             // using the standard container operations).
 
 ```
-[Top of the page](#Table_of_Contents)
+[Top of the page](#table-of-contents)
 
 
 ### geometry
@@ -179,7 +179,7 @@ write(properties(a_string)) // returns a property file which is available for wr
 geometry varGeom <- circle(5);
 geometry polygonGeom <- polygon([{3,5}, {5,6},{1,4}]);
 ```
-[Top of the page](#Table_of_Contents)
+[Top of the page](#table-of-contents)
 
 
 ### graph
@@ -206,7 +206,7 @@ graph(['a'::345, 'b'::13])  --:  ([b: in[] + out[b::13], a: in[] + out[a::345], 
 graph(a_graph)  --: a_graph
 graph(node1)    --: null
 ```
-[Top of the page](#Table_of_Contents)
+[Top of the page](#table-of-contents)
 
 
 ### list
@@ -223,7 +223,7 @@ list (1) -> [1]
 list<int> myList <-list [1,2,3,4]; 
 myList[2] => 3
 ```
-[Top of the page](#Table_of_Contents)
+[Top of the page](#table-of-contents)
 
 
 ### map
@@ -242,7 +242,7 @@ map (1) -> [1::1]
 map ({1,5}) -> [x::1, y::5]
 []   // empty map 
 ```
-[Top of the page](#Table_of_Contents)
+[Top of the page](#table-of-contents)
 
 
 ### matrix
@@ -261,7 +261,7 @@ matrix mat3 <- matrix([["c11","c12","c13"],["c21","c22","c23"]]);
        c12;c22
        c13;c23
 ```
-[Top of the page](#Table_of_Contents)
+[Top of the page](#table-of-contents)
 
 
 ### pair
@@ -281,7 +281,7 @@ pair testPairPoint <- {3,5};             // 3::5
 pair testPairList2 <- [6,7,8];           // 6::7
 pair testPairMap <- [2::6,5::8,12::45];  // [12,5,2]::[45,8,6]
 ```
-[Top of the page](#Table_of_Contents)
+[Top of the page](#table-of-contents)
 
 
 ### path
@@ -315,7 +315,7 @@ path_between (a_graph, a_source, a_target) // idem with a the given graph as top
 
 ```
 
-[Top of the page](#Table_of_Contents)
+[Top of the page](#table-of-contents)
 
 
 ### point
@@ -332,7 +332,7 @@ path_between (a_graph, a_source, a_target) // idem with a the given graph as top
 point ([12,123.45]) -> {12.0, 123.45} 
 point (2) -> {2.0, 2.0}
 ```
-[Top of the page](#Table_of_Contents)
+[Top of the page](#table-of-contents)
 
 
 ### rgb
@@ -358,7 +358,7 @@ rgb test <- rgb(3,5,67);                     // rgb [3,5,67]
 rgb te <- rgb(340);                            // rgb [0,1,84]
 rgb tete <- rgb(["r"::34, "g"::56, "b"::345]); // rgb [34,56,255]
 ```
-[Top of the page](#Table_of_Contents)
+[Top of the page](#table-of-contents)
 
 
 ### species
@@ -369,7 +369,7 @@ rgb tete <- rgb(["r"::34, "g"::56, "b"::345]); // rgb [34,56,255]
   * Litteral declaration: the name of a declared species is already a litteral declaration of species.
   * Other declarations: the species casting operator, or its variant called species\_of can be applied to an agent in order to get its species.
 
-[Top of the page](#Table_of_Contents)
+[Top of the page](#table-of-contents)
 
 
 ### Species names as types
@@ -397,7 +397,7 @@ entities {
 }
 ```
 
-[Top of the page](#Table_of_Contents)
+[Top of the page](#table-of-contents)
 
 
 ### topology
@@ -417,7 +417,7 @@ entities {
     * a geometry graph: returns a graph topology which computes specifically neighbourhood and distances
 More complex topologies can also be built using dedicated operators, e.g. to decompose a geometry...
 
-[Top of the page](#Table_of_Contents)
+[Top of the page](#table-of-contents)
 
 
 
@@ -479,4 +479,4 @@ species drinker {
     }
 }
 ```
-[Top of the page](#Table_of_Contents)
+[Top of the page](#table-of-contents)

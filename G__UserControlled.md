@@ -42,7 +42,7 @@ species user control: user_last {
 }
 ```
 
-If the control chosen is `user_first`, it means that the user controled panel is opened first, and then the agent has a chance to run its "own" behaviors (reflexes, essentially, or "init" in the case of a "user\_init" panel).
+If the control chosen is `user_first`, it means that the user controled panel is opened first, and then the agent has a chance to run its "own" behaviors (reflexes, essentially, or "init" in the case of a `user_init` panel).
 If the control chosen is `user_last`, it is the contrary.
 
 
@@ -54,10 +54,10 @@ If the control chosen is `user_last`, it is the contrary.
 
 This control architecture is a specialization of the [Finite State Machine Architecture](G__FiniteStateMachine) where the "behaviors" of agents can be defined by using new constructs called `user_panel` (and one `user_init`), mixed with "states" or "reflexes". This `user_panel` translates, in the interface, in a semi-modal view that awaits the user to choose action buttons, change attributes of the controlled agent, etc.  Each `user_panel`, like a `state` in FSM, can have a `enter` and `exit` sections, but it is only defined in terms of a set of `user_command`s which describe the different action buttons present in the panel.
 
-user\_commands can also accept inputs, in order to create more interesting commands for the user. This uses the `user_input` statement (and not operator), which is basically the same as a temporary variable declaration whose value is asked to the user. Example:
+`user_commands` can also accept inputs, in order to create more interesting commands for the user. This uses the `user_input` statement (and not operator), which is basically the same as a temporary variable declaration whose value is asked to the user. Example:
 
-As `user_panel̀` is a specialization of `state`, the modeler has the possibility to describe several panels and choose the one to open depending on some condition, using the same syntax than for finite state machines :
-  * either adding `transitions` to the user\_panels,
+As `user_panel` is a specialization of `state`, the modeler has the possibility to describe several panels and choose the one to open depending on some condition, using the same syntax than for finite state machines :
+  * either adding `transitions` to the `user_panels`,
   * or setting the `state` attribute to a new value, from inside or from another agent.
 
 This ensures a great flexibility for the design of the user interface proposed to the user, as it can be adapted to the different stages of the simulation, etc..
