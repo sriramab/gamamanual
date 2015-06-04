@@ -68,7 +68,7 @@ You have now to import projects into the workspace (notice that the folders down
     * **Uncheck « Search for nested project »**
     * Check the projects you want to import
     * Finish
-![Image TODO](images/GIT_install/TODO)
+![Choose Projects to import](images/GIT_install/GIT_ChooseProjectToImport.png)
 2. Go back to the Java perspective
 3. Clean project (Project menu > Clean ...)
 
