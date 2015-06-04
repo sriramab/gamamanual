@@ -3,10 +3,11 @@
 
 A variable's or expression's *type* (or *data type*) determines the values it can take, plus the operations that can be performed on or with it. GAML is a statically-typed language, which means that the type of an expression is always known at compile time, and is even enforced with casting operations.
 There are 4 categories of types:
-  * primitive types, declared as keyword in the language,
-  * complex types, also declared as keyword in the language,
-  * parametric types, a refinement of complex types (mainly children of container) that is dynamically constructed using an enclosing type, a contents type and a key type,
-  * species types, dynamically constructed from the species declarations made by the modeler (and the built-in species present).
+
+* primitive types, declared as keyword in the language,
+* complex types, also declared as keyword in the language,
+* parametric types, a refinement of complex types (mainly children of container) that is dynamically constructed using an enclosing type, a contents type and a key type,
+* species types, dynamically constructed from the species declarations made by the modeler (and the built-in species present).
 
 The hierarchy of types in GAML (only primitive and complex types are displayed here, of course, as the other ones are model-dependent) is the following:
 
