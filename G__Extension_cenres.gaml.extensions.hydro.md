@@ -33,9 +33,12 @@
 * **Special cases:**     
   * if the left operand is a polyline and the right operand a float for the water y coordinate, returrns the area of the water (water flow area)
 * **Examples:** 
+
 ```
 waterarea <- my_river_polyline water_area_for my_height_value
+
 ```
+
   
 
 [Top of the page](#table-of-contents)
@@ -48,9 +51,12 @@ waterarea <- my_river_polyline water_area_for my_height_value
 * **Special cases:**     
   * if the left operand is a polyline and the right operand a float for the area, returrns the y coordinate of the water (water level)
 * **Examples:** 
+
 ```
 waterlevel <- my_river_polyline water_level_for my_area_value
+
 ```
+
   
 
 [Top of the page](#table-of-contents)
@@ -63,9 +69,12 @@ waterlevel <- my_river_polyline water_level_for my_area_value
 * **Special cases:**     
   * if the left operand is a polyline and the right operand a float for the water y coordinate, returrns the shapes of the river sections (list of list of points)
 * **Examples:** 
+
 ```
 waterarea <- my_river_polyline water_area_for my_height_value
+
 ```
+
   
 
 [Top of the page](#table-of-contents)

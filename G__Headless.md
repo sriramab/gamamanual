@@ -32,9 +32,10 @@ It can be found in the `headless` directory located inside `Gama`. Its name is `
 ```
  sh gamaHeadless.sh $1 $2
 ```
+
 * with:
-  * $1 input parameter file : an xml file determining experiment parameters and attended outputs
-  * $2 output directory path : a directory which contains simulation results (numerical data and simulation snapshot)
+	* $1 input parameter file : an xml file determining experiment parameters and attended outputs
+	* $2 output directory path : a directory which contains simulation results (numerical data and simulation snapshot)
 * For example (using the provided sample), navigate in your terminal to the GAMA root folder and type :
 
 ```
@@ -47,13 +48,15 @@ As specified in **predatorPrey.xml**, this command runs the prey - predator mode
 Not that the current directory to run gamaHeadless command must be $GAMA\_PATH/headless
 
 ### Java Command
+
 ```
 java -cp $GAMA_CLASSPATH -Xms512m -Xmx2048m -Djava.awt.headless=true org.eclipse.core.launcher.Main -application msi.gama.headless.id4 $1 $2
 ```
+
 * with:
-  * $GAMA\_CLASSPATH gama classpath: contains relative or absolute path of jars inside the gama plugin directory and jars created by users
-  * $1 input parameter file: an xml file determining experiment parameters and attended outputs
-  * $2 output directory path: a directory which contains simulation results (numerical data and simulation snapshot)
+	* $GAMA\_CLASSPATH gama classpath: contains relative or absolute path of jars inside the gama plugin directory and jars created by users
+	* $1 input parameter file: an xml file determining experiment parameters and attended outputs
+	* $2 output directory path: a directory which contains simulation results (numerical data and simulation snapshot)
 
 Note that the output directory is created during the experiment and should not exist before.
 
@@ -63,6 +66,7 @@ Note that the output directory is created during the experiment and should not e
 ## Experiment Input File
 
 The XML input file contains for example:
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <Simulation id="2" sourcePath="./predatorPrey/predatorPrey.gaml" finalstep="1000" experiment="predPrey">
@@ -86,41 +90,46 @@ The XML input file contains for example:
 ```
 
 * with:
-  * **id**: permits to prefix output files for experiment plan with huge simulations.
-  * **sourcePath**: contains the relative or absolute path to read the gaml model.
-  * **finalstep**: determines the number of simulation step you want to run.
-  * **experiment**: determines which experiment should be run on the model. This experiment should exist, otherwise the headless mode will exit.
+	* `id`: permits to prefix output files for experiment plan with huge simulations.
+	* `sourcePath`: contains the relative or absolute path to read the gaml model.
+	* `finalstep`: determines the number of simulation step you want to run.
+	* `experiment`: determines which experiment should be run on the model. This experiment should exist, otherwise the headless mode will exit.
 
 ### Parameters
 One line per parameter you want to specify a value to:
+
 ```
 <Parameter name="nb_predator_init" type="INT" value="53" />
 ```
+
   * with:
-    * **name**:  name of the parameter in the gaml model
-    * **type**:  type of the parameter (INT, FLOAT, BOOLEAN, STRING)
-    * **value**: the chosen value
+    * `name`:  name of the parameter in the gaml model
+    * `type`:  type of the parameter (INT, FLOAT, BOOLEAN, STRING)
+    * `value`: the chosen value
 
 ### Outputs
 One line per output value you want to retrieve. Outputs can be names of monitors or displays defined in the 'output' section of experiments, or the names of attributes defined in the experiment or the model itself (in the 'global' section).
+
 ```
     ... with the name of a monitor defined in the 'output' section of the experiment...
     <Output id="2" name="number_of_preys" framerate="1" />
-    ... with the name of a (built-in) variable defined in the experiment itself…
+    ... with the name of a (built-in) variable defined in the experiment itself...
     <Output id="4" name="duration" framerate="1" />
 ```
+
 * with:
-  * **name** : name of the output in the 'output'/'permanent' section in the experiment or name of the experiment/model attribute to retrieve
-  * **framerate** : the frequency of the monitoring (each step, each 2 steps,  each 100 steps...).
+	* `name` : name of the output in the 'output'/'permanent' section in the experiment or name of the experiment/model attribute to retrieve
+	* `framerate` : the frequency of the monitoring (each step, each 2 steps,  each 100 steps...).
 
 * Note that :
-  * the lower the framerate value the longer the experiment.
-  * if the chosen output is a display, an image is produced and the output file contains the path to access this image
+	* the lower the framerate value the longer the experiment.
+	* if the chosen output is a display, an image is produced and the output file contains the path to access this image
 
 
 
 ## Output Directory
-During headless experiments, a directory is created with the following structure :
+During headless experiments, a directory is created with the following structure:
+
 ```
 Outputed-directory-path/
     |-simulation-output.xml
@@ -132,8 +141,8 @@ Outputed-directory-path/
 ```
 
 * with:
-  * **simulation-output.xml**: containing the results
-  * **snapshot**: containing the snapshots produced during the simulation
+	* `simulation-output.xml`: containing the results
+	* `snapshot`: containing the snapshots produced during the simulation
 
 ## Simulation Output
 A file named `simulation-output.xml` is created with the following contents when the experiment runs.
@@ -157,8 +166,10 @@ A file named `simulation-output.xml` is created with the following contents when
 
 ...
 ```
-  * `<Simulation id="2" >` : block containing results of the simulation 2 (this Id is identified in the Input Experiment File)
-  * `<Step id='1' > ... </Step>`: one block per step done. the id corresponds to the step number
+
+* With:
+	* `<Simulation id="2" >` : block containing results of the simulation 2 (this Id is identified in the Input Experiment File)
+	* `<Step id='1' > ... </Step>`: one block per step done. The id corresponds to the step number
 
 ### Step
 ```
@@ -178,9 +189,10 @@ There is one Variable block per Output identified in the output experiment file.
 ```
  <Variable name='main_display' value='main_display2-0.png'/>
 ```
+
 * with:
-  * **name**: name of the output, the model variable
-  * **value**: the current value of model variable.
+	* `name`: name of the output, the model variable
+	* `value`: the current value of model variable.
 
 Note that the value of an output is repeated according to the framerate defined in the input experiment file.
 
@@ -189,6 +201,7 @@ Note that the value of an output is repeated according to the framerate defined 
 
 ## Snapshot files
 This directory contains images generated during the experiment. There is one image per displayed output per step (according to the framerate). File names follow a naming convention, e.g:
+
 ```
    [outputName][SimulationID]_[stepID].png -> main_display2-20.png
 ```

@@ -30,11 +30,12 @@ On Windows and Linux the recommended Java Virtual Machine under which GAMA has b
 ### On MacOS X (Lion, Mountain Lion, Mavericks)
 The latest version of GAMA requires a JVM (or JDK) compatible with Java 1.6 to run. There are two of them available for MacOS X. JDK 1.7 is distributed by Oracle, while JDK 1.6 is distributed by Apple.
 Because of this bug in SWT (https://bugs.eclipse.org/bugs/show_bug.cgi?id=374199), GAMA will not run correctly under JDK 1.7 (all the displays will appear empty).
+
 If JDK 1.7 is already installed, it is then necessary to also install the JDK 1.6 distributed by Apple in order to run GAMA. The latest version, « Java for OS X 2014-001 », can be obtained here : http://support.apple.com/kb/DL1572. Alternatively, you might want to go to https://developer.apple.com/downloads and, after a free registration step if you're not an Apple Developer, get the complete JDK from the list of downloads.
 
 
 ### On MacOS X (Yosemite)
-If you upgrade your Mac OS X version to **Yosemite** (latest version, aka Mac OS X 10.10), some changes in the management of Java Virtual Machines might prevent the GAMA displays from working and it will make your models crash the platform. One fix for this behavior is, **after** having upgraded Mac OS X, to install (or reinstall in case you have already installed it) the same « Java for OS X 2014-001 », available here: http://support.apple.com/kb/DL1572
+If you upgrade your Mac OS X version to **Yosemite** (latest version, aka Mac OS X 10.10), some changes in the management of Java Virtual Machines might prevent the GAMA displays from working and it will make your models crash the platform. One fix for this behavior is, **after** having upgraded Mac OS X, to install (or reinstall in case you have already installed it) the same « Java for OS X 2014-001 », available here: http://support.apple.com/kb/DL1572.
 
 If you run the developer version of GAMA (i.e. under Eclipse), it is necessary, in that case, to reconfigure the "Installed JREs" (Preferences > Java > Installed JREs) so as to point JDK1.6 to the location where Yosemite now installs it (i.e. in `/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home`). See [here](http://stackoverflow.com/questions/26450420/osx-10-10-and-eclipse-luna-own-app-crashes-when-started-from-inside-eclipse) for related information.
 
@@ -47,6 +48,7 @@ Please notice that, by default, Internet Explorer and Chrome browsers will downl
   * You can check that a **Java\\jre7** folder has been installed at the location **C:\\Program Files\\**
 
 In order for Java to be found by Windows, you may have to modify environment variables:
+
   * Go to the **Control Panel**
   * In the new window, go to **System**
   * On the left, click on **Advanced System parameters**
@@ -56,7 +58,8 @@ In order for Java to be found by Windows, you may have to modify environment var
 
 ### On Ubuntu & Linux
 
-To have a complete overview of java management on Ubuntu, have a look at :
+To have a complete overview of java management on Ubuntu, have a look at:
+
   * [Ubuntu Java documentation](https://help.ubuntu.com/community/Java)
   * for French speaking users: http://doc.ubuntu-fr.org/java#installations_alternatives
 

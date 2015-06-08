@@ -2,6 +2,7 @@
 # Introduction
 
 | <a href='http://www.youtube.com/watch?feature=player_embedded&v=6m_-UY8UBuk' target='_blank'><img src='http://img.youtube.com/vi/6m_-UY8UBuk/0.jpg' width='425' height=344 /></a> | <a href='http://www.youtube.com/watch?feature=player_embedded&v=ycbeYxV2B7M' target='_blank'><img src='http://img.youtube.com/vi/ycbeYxV2B7M/0.jpg' width='425' height=344 /></a> |
+|---|---|
 
 
 **GAMA** is a simulation platform, which aims at providing field experts, modellers, and computer scientists with a complete modelling and simulation development environment for building spatially explicit multi-agent simulations. It has been first developed by the Vietnamese-French research team MSI (located at IFI, Hanoi, and part of the IRD/UPMC International Research Unit UMMISCO) from 2007 to 2010, and is now developed by a consortium of academic and industrial partners led by UMMISCO, among which the University of Rouen, France, the University of Toulouse 1, France, the University of Orsay, France, the University of Can Tho, Vietnam, the National University of Hanoi, EDF R&D, France, and CEA LISC, France.
@@ -9,6 +10,7 @@
 Some of the features of GAMA are illustrated in the videos above (more can be found [in our Youtube channel](http://www.youtube.com/channel/UCWJ1kWGDDI-9u2f2uD0gcaQ)).
 
 Beyond these features, GAMA also offers:
+
 * A complete modeling language, GAML, for modeling agents and environments
 * A large and extensible library of primitives (agent's movement, communication, mathematical functions, graphical features, ...)
 * A cross-platform reproducibility of experiments and simulations
