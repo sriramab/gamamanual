@@ -88,6 +88,7 @@
   7. [Using the Driving Skill](G__UsingDringSkill)
   8. [Defining User Interaction](G__DefininUserInteraction)
   9. [Using BDI Architecture](G__UsingBDI)
+  10. [Using GamAnayzer](G__GamAnalyzer)
 8. [Index](G__Index)
 9. [Extensions](G__Extension)
 
