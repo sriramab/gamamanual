@@ -10,7 +10,8 @@ The "agent_group_follower" goal is to monitor and analyze a group of agent durin
 # Storable Data
 **StorableData** store in matrices data extracted directly from agents, but also calculate statistics (minimum, maximum, average, ...). Matrices and maps that has a StorableData are:
 
-## public GamaObjectMatrix meta_data_history; 
+* public GamaObjectMatrix meta_data_history; **
+
 Matrix "metadata" of the simulation: with every step (line), gives the identifier, the number of agents, listing agents, etc. (column)
 
 
