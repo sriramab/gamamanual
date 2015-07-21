@@ -12,6 +12,6 @@ The "agent_group_follower" goal is to monitor and analyze a group of agent durin
 
 This example will be based on the Road Traffic model which is composed of roads, buildings and people. In this example we will use GamAnalyzer to follow the agent people. 
 
-{{{
+```
 list<people> my_people update: (people where (each.speed>35));
-}}}
+```
