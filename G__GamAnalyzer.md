@@ -16,3 +16,10 @@ This example will be based on the Road Traffic model which is composed of roads,
 ```
 agent_group_follower peoplefollower;
 ```
+```
+create agentfollower 
+{
+  do analyse_cluster species_to_analyse:"people";
+  peoplefollower<-self;
+}
+```
