@@ -10,9 +10,32 @@ The "agent_group_follower" goal is to monitor and analyze a group of agent durin
 # Storable Data
 **StorableData** store in matrices data extracted directly from agents, but also calculate statistics (minimum, maximum, average, ...). Matrices and maps that has a StorableData are:
 
-* public GamaObjectMatrix meta_data_history; **
+## meta_data_history
 
 Matrix "metadata" of the simulation: with every step (line), gives the identifier, the number of agents, listing agents, etc. (column)
+
+```
+updateMetaDataHistory(scope);
+```
+
+## last_detailed_var_values
+
+matrice des valeurs de toutes les variables (numériques ou non) (en colonne) pour chaque agent (ligne)
+
+## average_history
+matrice des moyennes : donne pour chaque variable numérique (colonne), à chaque pas (ligne), la moyenne correspondante
+
+## stdev_history
+matrices des écart-type 
+
+## min_history
+matrice des minimums public GamaFloatMatrix max_history; // matrice des maximums
+
+## distrib_history
+matrice de la distribution des variables des agents (colonne) à chaque pas (ligne), sur les intervalles donnés par « distrib_history_params »
+
+## GamaObjectMatrix distrib_history_params
+les valeurs des intervalles considérés par « distribhistory », pour chaque variable (colonne) à chaque pas (ligne)
 
 
 # Example on road traffic
