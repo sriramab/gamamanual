@@ -57,7 +57,7 @@ bool (0) -> false
 [Top of the page](#table-of-contents)
 
 ### float
-  * **Definition:** primitive datatype holding floating point values, its absolute value is comprised between 4.9E-324 and 1.7976931348623157E308.
+  * **Definition:** primitive datatype holding floating point values, its absolute value is comprised between 4.9E-324 and 1.8E308.
   * **Comments:** this datatype is internally backed up by the Java double datatype.
   * **Litteral declaration:** decimal notation 123.45 or exponential notation 123e45 are supported.
   * **Other declarations:** expressions that require an integer operand often directly apply a casting to float to their operand. Using it is a way to obtain a float constant.
