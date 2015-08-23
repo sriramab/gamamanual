@@ -87,6 +87,18 @@ adds the predicates is in the desire base.
 * **`subintentions`** (546704): the subintention to add to the predicate 			
 * **`add_as_desire`** (boolean): add the subintention as a desire as well (by default, false)  
 	 
+#### **`clear_beliefs`**
+clear the belief base
+* returns: bool  
+	 
+#### **`clear_desires`**
+clear the desire base
+* returns: bool  
+	 
+#### **`clear_intentions`**
+clear the intention base
+* returns: bool  
+	 
 #### **`current_intention_on_hold`**
 puts the current intention on hold until the specified condition is reached or all subintentions are reached (not in desire base anymore).
 * returns: bool 			
@@ -116,6 +128,10 @@ get the list of predicates is in the belief base with the given name.
 returns the current intention (last entry of intention base).
 * returns: msi.gaml.architecture.simplebdi.Predicate  
 	 
+#### **`get_plans`**
+get the list of plans.
+* returns: java.util.List<msi.gaml.architecture.simplebdi.BDIPlan>  
+	 
 #### **`has_belief`**
 check if the predicates is in the belief base.
 * returns: bool 			
@@ -131,8 +147,13 @@ check if the predicates is the current intention (last entry of intention base).
 * returns: bool 			
 * **`predicate`** (546704): predicate to check  
 	 
-#### **`remove_belief`**
+#### **`remove_all_beliefs`**
 removes the predicates from the belief base.
+* returns: bool 			
+* **`predicate`** (546704): predicate to remove  
+	 
+#### **`remove_belief`**
+removes the first predicate from the belief base.
 * returns: bool 			
 * **`predicate`** (546704): predicate to add  
 	 

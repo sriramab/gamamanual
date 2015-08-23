@@ -334,7 +334,7 @@ Same signification as [normal_area](#normal_area)
 * **Possible use:** 
   * OP(container) --->  float
   * float OP float --->  float 
-* **Result:** Returns the skew of a data sequence, which is moment(data,3,mean) / standardDeviation3Returns the skew of a data sequence.
+* **Result:** Returns the skew of a data sequence.Returns the skew of a data sequence, which is moment(data,3,mean) / standardDeviation3
 
 [Top of the page](#table-of-contents)
   	
@@ -362,7 +362,7 @@ Same signification as [normal_area](#normal_area)
 * **Possible use:** 
   * OP(float) --->  float
   * OP(int, float, float) --->  float 
-* **Result:** Returns the variance from a standard deviation.Returns the variance of a data sequence. That is (sumOfSquares - mean*sum) / size with mean = sum/size.
+* **Result:** Returns the variance of a data sequence. That is (sumOfSquares - mean*sum) / size with mean = sum/size.Returns the variance from a standard deviation.
 
 [Top of the page](#table-of-contents)
   	

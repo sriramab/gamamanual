@@ -7,9 +7,10 @@
 ## Introduction
 This page provides a link to each of the extension pages. Extensions are the additional GAMA plugins that exist in the GAMA GitHub repository but will not be packaged with the release. **These extensions are not maintained by GAMA core team but by their authors.**
 * [msi.gaml.extensions.humanmoving](G__Extension_msi.gaml.extensions.humanmoving)
-* [ummisco.gama.gpu](G__Extension_ummisco.gama.gpu)
 * [ummisco.gaml.extensions.stats](G__Extension_ummisco.gaml.extensions.stats)
+* [ummisco.gama.gpu](G__Extension_ummisco.gama.gpu)
 * [ummisco.gama.communicator](G__Extension_ummisco.gama.communicator)
+* [ummisco.gaml.extensions.rjava](G__Extension_ummisco.gaml.extensions.rjava)
 * [ummisco.gaml.extensions.sound](G__Extension_ummisco.gaml.extensions.sound)
 * [ummisco.miro.extension.traffic](G__Extension_ummisco.miro.extension.traffic)
 * [cenres.gaml.extensions.hydro](G__Extension_cenres.gaml.extensions.hydro)

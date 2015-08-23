@@ -7,7 +7,7 @@
 
 ## Table of Contents
 <wiki:toc max_depth="2" />
-[](#), [](#), [](#), [=](#=), [action](#action), [add](#add), [agents](#agents), [annealing](#annealing), [ask](#ask), [aspect](#aspect), [assert](#assert), [break](#break), [capture](#capture), [chart](#chart), [create](#create), [data](#data), [datalist](#datalist), [default](#default), [diffusion](#diffusion), [display](#display), [display_grid](#display_grid), [display_population](#display_population), [do](#do), [draw](#draw), [else](#else), [enter](#enter), [equation](#equation), [error](#error), [event](#event), [exhaustive](#exhaustive), [exit](#exit), [experiment](#experiment), [export](#export), [genetic](#genetic), [graphics](#graphics), [hill_climbing](#hill_climbing), [if](#if), [image](#image), [inspect](#inspect), [let](#let), [loop](#loop), [match](#match), [migrate](#migrate), [monitor](#monitor), [output](#output), [output_file](#output_file), [overlay](#overlay), [parameter](#parameter), [permanent](#permanent), [plan](#plan), [put](#put), [quadtree](#quadtree), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [release](#release), [remove](#remove), [return](#return), [run](#run), [save](#save), [save_batch](#save_batch), [set](#set), [setup](#setup), [signal](#signal), [simulate](#simulate), [solve](#solve), [species](#species), [state](#state), [status](#status), [switch](#switch), [tabu](#tabu), [task](#task), [test](#test), [text](#text), [trace](#trace), [transition](#transition), [user_command](#user_command), [user_init](#user_init), [user_input](#user_input), [user_panel](#user_panel), [using](#using), [warn](#warn), [write](#write), 
+[](#), [](#), [](#), [=](#=), [action](#action), [add](#add), [agents](#agents), [analyse](#analyse), [annealing](#annealing), [ask](#ask), [aspect](#aspect), [assert](#assert), [break](#break), [capture](#capture), [chart](#chart), [create](#create), [data](#data), [datalist](#datalist), [default](#default), [diffusion](#diffusion), [display](#display), [display_grid](#display_grid), [display_population](#display_population), [do](#do), [draw](#draw), [else](#else), [enter](#enter), [equation](#equation), [error](#error), [event](#event), [exhaustive](#exhaustive), [exit](#exit), [experiment](#experiment), [export](#export), [focus](#focus), [genetic](#genetic), [graphics](#graphics), [hill_climbing](#hill_climbing), [if](#if), [image](#image), [inspect](#inspect), [let](#let), [loop](#loop), [match](#match), [migrate](#migrate), [monitor](#monitor), [output](#output), [output_file](#output_file), [overlay](#overlay), [parameter](#parameter), [perceive](#perceive), [permanent](#permanent), [plan](#plan), [put](#put), [quadtree](#quadtree), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [release](#release), [remove](#remove), [return](#return), [rule](#rule), [run](#run), [save](#save), [save_batch](#save_batch), [set](#set), [setup](#setup), [signal](#signal), [simulate](#simulate), [solve](#solve), [species](#species), [state](#state), [status](#status), [switch](#switch), [tabu](#tabu), [task](#task), [test](#test), [text](#text), [trace](#trace), [transition](#transition), [user_command](#user_command), [user_init](#user_init), [user_input](#user_input), [user_panel](#user_panel), [using](#using), [warn](#warn), [write](#write), 
 
 
 ## Statements by kinds
@@ -25,9 +25,9 @@
 * **Parameter**
   * [parameter](#parameter),  
 * **Sequence of statements or action**
-  * [action](#action),  [ask](#ask),  [capture](#capture),  [create](#create),  [default](#default),  [else](#else),  [enter](#enter),  [equation](#equation),  [exit](#exit),  [if](#if),  [loop](#loop),  [match](#match),  [migrate](#migrate),  [release](#release),  [run](#run),  [setup](#setup),  [switch](#switch),  [trace](#trace),  [transition](#transition),  [user_command](#user_command),  [using](#using),  
+  * [action](#action),  [ask](#ask),  [capture](#capture),  [create](#create),  [default](#default),  [else](#else),  [enter](#enter),  [equation](#equation),  [exit](#exit),  [if](#if),  [loop](#loop),  [match](#match),  [migrate](#migrate),  [perceive](#perceive),  [release](#release),  [run](#run),  [setup](#setup),  [switch](#switch),  [trace](#trace),  [transition](#transition),  [user_command](#user_command),  [using](#using),  
 * **Single statement**
-  * [=](#=),  [add](#add),  [assert](#assert),  [break](#break),  [data](#data),  [datalist](#datalist),  [diffusion](#diffusion),  [do](#do),  [draw](#draw),  [error](#error),  [export](#export),  [let](#let),  [put](#put),  [remove](#remove),  [return](#return),  [save](#save),  [set](#set),  [simulate](#simulate),  [solve](#solve),  [status](#status),  [user_input](#user_input),  [warn](#warn),  [write](#write),  
+  * [=](#=),  [add](#add),  [analyse](#analyse),  [assert](#assert),  [break](#break),  [data](#data),  [datalist](#datalist),  [diffusion](#diffusion),  [do](#do),  [draw](#draw),  [error](#error),  [export](#export),  [focus](#focus),  [let](#let),  [put](#put),  [remove](#remove),  [return](#return),  [rule](#rule),  [save](#save),  [set](#set),  [simulate](#simulate),  [solve](#solve),  [status](#status),  [user_input](#user_input),  [warn](#warn),  [write](#write),  
 * **Species**
   * [species](#species),  
 * **Variable (container)**
@@ -43,7 +43,7 @@
 ## Statements by embedment
 
 * **Behavior**
-  * [add](#add), [ask](#ask), [capture](#capture), [create](#create), [diffusion](#diffusion), [do](#do), [error](#error), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [run](#run), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [using](#using), [warn](#warn), [write](#write), 
+  * [add](#add), [ask](#ask), [capture](#capture), [create](#create), [diffusion](#diffusion), [do](#do), [error](#error), [focus](#focus), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [run](#run), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [using](#using), [warn](#warn), [write](#write), 
 * **Environment**
   * [species](#species), 
 * **Experiment**
@@ -53,11 +53,11 @@
 * **Model**
   * [](#), [](#), [](#), [action](#action), [aspect](#aspect), [equation](#equation), [experiment](#experiment), [output](#output), [reflex](#reflex), [run](#run), [setup](#setup), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), 
 * **Sequence of statements or action**
-  * [add](#add), [ask](#ask), [break](#break), [capture](#capture), [create](#create), [data](#data), [datalist](#datalist), [diffusion](#diffusion), [do](#do), [draw](#draw), [error](#error), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [using](#using), [warn](#warn), [write](#write), 
+  * [add](#add), [ask](#ask), [break](#break), [capture](#capture), [create](#create), [data](#data), [datalist](#datalist), [diffusion](#diffusion), [do](#do), [draw](#draw), [error](#error), [focus](#focus), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [using](#using), [warn](#warn), [write](#write), 
 * **Single statement**
   * [run](#run), 
 * **Species**
-  * [](#), [](#), [](#), [action](#action), [aspect](#aspect), [equation](#equation), [plan](#plan), [reflex](#reflex), [run](#run), [setup](#setup), [signal](#signal), [simulate](#simulate), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), 
+  * [](#), [](#), [](#), [action](#action), [aspect](#aspect), [equation](#equation), [perceive](#perceive), [plan](#plan), [reflex](#reflex), [rule](#rule), [run](#run), [setup](#setup), [signal](#signal), [simulate](#simulate), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), 
 * **action**
   * [return](#return), 
 * **aspect**
@@ -70,6 +70,8 @@
   * [display_population](#display_population), 
 * **equation**
   * [=](#=), 
+* **experiment**
+  * [analyse](#analyse), 
 * **fsm**
   * [state](#state), [user_panel](#user_panel), 
 * **if**
@@ -406,6 +408,21 @@ list var <- g.edges; 	// var equals [polyline({1.0,5.0}::{12.0,45.0}),polyline({
  ```
     
 * See also: [display](#display), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
+
+[Top of the page](#table-of-contents)
+	
+
+----
+### analyse 
+#### Facets 
+		  
+  * **`species_to_analyse`** (any type in [string, string]), (omissible) :   
+  * **`with_constraint`** (any type in [string, string]): 
+
+#### Embedments
+* The `analyse` statement is of type: **Single statement**
+* The `analyse` statement can be embedded into: experiment, 
+* The `analyse` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 	
@@ -1415,7 +1432,7 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 #### Embedments
 * The `experiment` statement is of type: **Experiment**
 * The `experiment` statement can be embedded into: Model, 
-* The `experiment` statement embeds statements: 
+* The `experiment` statement embeds statements: [#analyse analyse],  
 
 [Top of the page](#table-of-contents)
 	
@@ -1432,6 +1449,33 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 * The `export` statement is of type: **Single statement**
 * The `export` statement can be embedded into: Experiment, 
 * The `export` statement embeds statements: 
+
+[Top of the page](#table-of-contents)
+	
+
+----
+### focus 
+#### Facets 
+		  
+  * **`var`** (any type), (omissible) : the variable of the perceived agent you want to add to your beliefs  
+  * **`agent`** (agent): the agent that will add the belief (use the myself pseudo-variable
+
+#### Embedments
+* The `focus` statement is of type: **Single statement**
+* The `focus` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `focus` statement embeds statements:  
+ 	
+#### Definition
+
+enables to directly add a belief from the variable of a perceived specie.
+
+### Usages
+
+* Other examples of use: 
+```
+focus var:speed /*where speed is a variable from a species that is being perceived*/ agent: myself
+``` 
+  
 
 [Top of the page](#table-of-contents)
 	
@@ -2002,6 +2046,38 @@ parameter 'Value of titi:' var: titi min: 1 max: 100 step: 2;
 	
 
 ----
+### perceive 
+#### Facets 
+		  
+  * **`target`** (any type in [container, point]), (omissible) : the list of the agent you want to perceive
+  * `as` (species): an expression that evaluates to a species
+  * `in` (any type in [float, geometry]): a float or a geometry. If it is a float, it's a radius of a detection area. If it is a geometry, it is the area of detection of others species.
+  * `name` (an identifier): the name of the perception
+  * `when` (boolean): a boolean to tell when does the perceive is active
+
+#### Embedments
+* The `perceive` statement is of type: **Sequence of statements or action**
+* The `perceive` statement can be embedded into: Species, 
+* The `perceive` statement embeds statements:  
+ 	
+#### Definition
+
+Allow the agent, with a bdi architecture, to perceive others agents
+
+### Usages
+
+* the basic syntax to perceive agents inside a circle of perception
+```perceive name_of-perception target: the_agents_you_want_to_perceive in: a_distance when: a_certain_condition {
+Here you are in the context of the perceived agents. To refer to the agent who does the perception, use myself.
+If you want to make an action (such as adding a belief for example), use ask myself{ do the_action}
+}
+ ```
+
+
+[Top of the page](#table-of-contents)
+	
+
+----
 ### permanent 
 #### Facets 
 		
@@ -2371,6 +2447,35 @@ reflex writing {
 }
  ```
 
+
+[Top of the page](#table-of-contents)
+	
+
+----
+### rule 
+#### Facets 
+		  
+  * **`belief`** (any type):   
+  * **`desire`** (agent): 
+  * `name` (an identifier), (omissible) : 
+  * `when` (boolean): 
+
+#### Embedments
+* The `rule` statement is of type: **Single statement**
+* The `rule` statement can be embedded into: Species, 
+* The `rule` statement embeds statements:  
+ 	
+#### Definition
+
+enables to directly add a belief from the variable of a perceived specie.
+
+### Usages
+
+* Other examples of use: 
+```
+focus var:speed /*where speed is a variable from a species that is being perceived*/ agent: myself
+``` 
+  
 
 [Top of the page](#table-of-contents)
 	

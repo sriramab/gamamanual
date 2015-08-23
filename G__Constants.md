@@ -95,7 +95,7 @@ float one_cubic_inch <- 1 °sqin * 1 °inch;
 
 In addition to the previous units, GAML provides a direct access to the 147 named colors defined in CSS (see http://www.cssportal.com/css3-color-names/). E.g,
 ```
-rgb my_color <- °teal;
+rgb my_color <- #teal;
 ```
 
   * **#aliceblue**, value= r=240, g=248, b=255, alpha=1
