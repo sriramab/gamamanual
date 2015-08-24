@@ -12,7 +12,8 @@ Skills are built-in modules, written in Java, that provide a set of related buil
 ```
 species my_species skills: [skill1, skill2] {
     ...
-}```
+}
+```
 
 Skills have been designed to be mutually compatible so that any combination of them will result in a functional species. An example of skill is the `moving` skill.
   
@@ -21,12 +22,14 @@ So, for instance, if a species is declared as:
 ```
 species foo skills: [moving]{
 ...
-}```
+}
+```
 
 Its agents will automatically be provided with the following variables : `speed`, `heading`, `destination` and the following actions: `move`, `goto`, `wander`, `follow` in addition to those built-in in species and declared by the modeller. Most of these variables, except the ones marked read-only, can be customized and modified like normal variables by the modeller. For instance, one could want to set a maximum for the speed; this would be done by redeclaring it like this:
 
 ```
-float speed max:100 min:0;```
+float speed max:100 min:0;
+```
 
 Or, to obtain a speed increasing at each simulation step:
 
@@ -39,7 +42,8 @@ Or, to change the speed in a behavior:
 ```
 if speed = 5 {
     speed <- 10;
-}```
+}
+```
 
 [Top of the page](#table-of-contents)
 
@@ -49,43 +53,46 @@ if speed = 5 {
 ## Table of Contents
 <wiki:toc max_depth="3" />
 
-[advanced_driving](#advanced_driving), [communicating](#communicating), [driving](#driving), [GAMASQL](#GAMASQL), [graphic](#graphic), [grid](#grid), [MDXSKILL](#MDXSKILL), [moving](#moving), [moving3D](#moving3D), [physical3D](#physical3D), [skill_road](#skill_road), [skill_road_node](#skill_road_node), [SQLSKILL](#SQLSKILL), 
+[advanced_driving](#advanced_driving), [communicating](#communicating), [driving](#driving), [GAMASQL](#gamasql), [graphic](#graphic), [grid](#grid), [MDXSKILL](#mdxskill), [moving](#moving), [moving3D](#moving3d), [physical3D](#physical3d), [skill_road](#skill_road), [skill_road_node](#skill_road_node), [SQLSKILL](#sqlskill), 
     	
 ----
 
-## advanced_driving 
+## advanced_driving
+
+ 
 ### Variables
 	   
-  * **`current_index`** (int): the current index of the agent target (according to the targets list)   
-  * **`current_lane`** (int): the current lane on which the agent is   
-  * **`current_path`** (path): the current path that tha agent follow   
-  * **`current_road`** (agent): current road on which the agent is   
-  * **`current_target`** (point): the current target of the agent   
-  * **`distance_to_goal`** (float): euclidean distance to the next point of the current segment   
-  * **`final_target`** (point): the final target of the agent   
-  * **`max_acceleration`** (float): maximum acceleration of the car for a cycle   
-  * **`max_speed`** (float): maximal speed of the vehicle   
-  * **`on_linked_road`** (boolean): is the agent on the linked road?   
-  * **`proba_block_node`** (float): probability to block a node (do not let other driver cross the crossroad)   
-  * **`proba_lane_change_down`** (float): probability to change lane to a lower lane (right lane if right side driving) if necessary   
-  * **`proba_lane_change_up`** (float): probability to change lane to a upper lane (left lane if right side driving) if necessary   
-  * **`proba_respect_priorities`** (float): probability to respect priority (right or left) laws   
-  * **`proba_respect_stops`** (list): probability to respect stop laws - one value for each type of stop   
-  * **`proba_use_linked_road`** (float): probability to change lane to a linked road lane if necessary   
-  * **`real_speed`** (float): real speed of the agent (in meter/second)   
-  * **`right_side_driving`** (boolean): are drivers driving on the right size of the road?   
-  * **`security_distance_coeff`** (float): the coefficient for the computation of the the min distance between two drivers (according to the vehicle speed - security_distance = 1#m + security_distance_coeff `*` real_speed )   
-  * **`segment_index_on_road`** (int): current segment index of the agent on the current road   
-  * **`speed`** (float): the speed of the agent (in meter/second)   
-  * **`speed_coeff`** (float): speed coefficient for the speed that the driver want to reach (according to the max speed of the road)   
-  * **`targets`** (list): the current list of points that the agent has to reach (path)   
-  * **`vehicle_length`** (float): the length of the vehicle (in meters) 
+  * **`current_index`** (`int`): the current index of the agent target (according to the targets list)   
+  * **`current_lane`** (`int`): the current lane on which the agent is   
+  * **`current_path`** (`path`): the current path that tha agent follow   
+  * **`current_road`** (`agent`): current road on which the agent is   
+  * **`current_target`** (`point`): the current target of the agent   
+  * **`distance_to_goal`** (`float`): euclidean distance to the next point of the current segment   
+  * **`final_target`** (`point`): the final target of the agent   
+  * **`max_acceleration`** (`float`): maximum acceleration of the car for a cycle   
+  * **`max_speed`** (`float`): maximal speed of the vehicle   
+  * **`on_linked_road`** (`boolean`): is the agent on the linked road?   
+  * **`proba_block_node`** (`float`): probability to block a node (do not let other driver cross the crossroad)   
+  * **`proba_lane_change_down`** (`float`): probability to change lane to a lower lane (right lane if right side driving) if necessary   
+  * **`proba_lane_change_up`** (`float`): probability to change lane to a upper lane (left lane if right side driving) if necessary   
+  * **`proba_respect_priorities`** (`float`): probability to respect priority (right or left) laws   
+  * **`proba_respect_stops`** (`list`): probability to respect stop laws - one value for each type of stop   
+  * **`proba_use_linked_road`** (`float`): probability to change lane to a linked road lane if necessary   
+  * **`real_speed`** (`float`): real speed of the agent (in meter/second)   
+  * **`right_side_driving`** (`boolean`): are drivers driving on the right size of the road?   
+  * **`security_distance_coeff`** (`float`): the coefficient for the computation of the the min distance between two drivers (according to the vehicle speed - security_distance = 1#m + security_distance_coeff `*` real_speed )   
+  * **`segment_index_on_road`** (`int`): current segment index of the agent on the current road   
+  * **`speed`** (`float`): the speed of the agent (in meter/second)   
+  * **`speed_coeff`** (`float`): speed coefficient for the speed that the driver want to reach (according to the max speed of the road)   
+  * **`targets`** (`list`): the current list of points that the agent has to reach (path)   
+  * **`vehicle_length`** (`float`): the length of the vehicle (in meters) 
  	
 ### Actions
 	  
 	 
 #### **`advanced_follow_driving`**
 moves the agent towards along the path passed in the arguments while considering the other agents in the network (only for graph topology)
+
 * returns: float 			
 * **`path`** (path): a path to be followed. 			
 * **`target`** (point): the target to reach 			
@@ -94,6 +101,7 @@ moves the agent towards along the path passed in the arguments while considering
 	 
 #### **`compute_path`**
 action to compute a path to a target location according to a given graph
+
 * returns: path 			
 * **`graph`** (graph): the graph on wich compute the path 			
 * **`target`** (agent): the target node to reach 			
@@ -101,38 +109,45 @@ action to compute a path to a target location according to a given graph
 	 
 #### **`drive`**
 action to drive toward the final target
+
 * returns: void  
 	 
 #### **`external_factor_impact`**
 action that allows to define how the remaining time is impacted by external factor
+
 * returns: float 			
 * **`new_road`** (agent): the road on which to the driver wants to go 			
 * **`remaining_time`** (float): the remaining time  
 	 
 #### **`is_ready_next_road`**
 action to test if the driver can take the given road at the given lane
+
 * returns: bool 			
 * **`new_road`** (agent): the road to test 			
 * **`lane`** (int): the lane to test  
 	 
 #### **`lane_choice`**
 action to choose a lane
+
 * returns: int 			
 * **`new_road`** (agent): the road on which to choose the lane  
 	 
 #### **`path_from_nodes`**
 action to compute a path from a list of nodes according to a given graph
+
 * returns: path 			
 * **`graph`** (graph): the graph on wich compute the path 			
 * **`nodes`** (list): the list of nodes composing the path  
 	 
 #### **`speed_choice`**
 action to choose a speed
+
 * returns: float 			
 * **`new_road`** (agent): the road on which to choose the speed  
 	 
 #### **`test_next_road`**
 action to test if the driver can take the given road
+
 * returns: bool 			
 * **`new_road`** (agent): the road to test	
 
@@ -141,96 +156,110 @@ action to test if the driver can take the given road
     	
 ----
 
-## communicatingThe communicating skill offers some primitives and built-in variables which enable agent to communicate with each other using the FIPA interaction protocol. 
+## communicating
+The communicating skill offers some primitives and built-in variables which enable agent to communicate with each other using the FIPA interaction protocol.
+ 
 ### Variables
 	   
-  * **`accept_proposals`** (list): A list of 'accept_proposal' performative messages of the agent's mailbox having .   
-  * **`agrees`** (list): A list of 'accept_proposal' performative messages.   
-  * **`cancels`** (list): A list of 'cancel' performative messages.   
-  * **`cfps`** (list): A list of 'cfp' (call for proposal) performative messages.   
-  * **`conversations`** (list): A list containing the current conversations of agent. Ended conversations are automatically removed from this list.   
-  * **`failures`** (list): A list of 'failure' performative messages.   
-  * **`informs`** (list): A list of 'inform' performative messages.   
-  * **`messages`** (list): The mailbox of the agent, a list of messages of all types of performatives.   
-  * **`proposes`** (list): A list of 'propose' performative messages .   
-  * **`queries`** (list): A list of 'query' performative messages.   
-  * **`refuses`** (list): A list of 'propose' performative messages.   
-  * **`reject_proposals`** (list): A list of 'reject_proposals' performative messages.   
-  * **`requests`** (list): A list of 'request' performative messages.   
-  * **`requestWhens`** (list): A list of 'request-when' performative messages.   
-  * **`subscribes`** (list): A list of 'subscribe' performative messages. 
+  * **`accept_proposals`** (`list`): A list of 'accept_proposal' performative messages of the agent's mailbox having .   
+  * **`agrees`** (`list`): A list of 'accept_proposal' performative messages.   
+  * **`cancels`** (`list`): A list of 'cancel' performative messages.   
+  * **`cfps`** (`list`): A list of 'cfp' (call for proposal) performative messages.   
+  * **`conversations`** (`list`): A list containing the current conversations of agent. Ended conversations are automatically removed from this list.   
+  * **`failures`** (`list`): A list of 'failure' performative messages.   
+  * **`informs`** (`list`): A list of 'inform' performative messages.   
+  * **`messages`** (`list`): The mailbox of the agent, a list of messages of all types of performatives.   
+  * **`proposes`** (`list`): A list of 'propose' performative messages .   
+  * **`queries`** (`list`): A list of 'query' performative messages.   
+  * **`refuses`** (`list`): A list of 'propose' performative messages.   
+  * **`reject_proposals`** (`list`): A list of 'reject_proposals' performative messages.   
+  * **`requests`** (`list`): A list of 'request' performative messages.   
+  * **`requestWhens`** (`list`): A list of 'request-when' performative messages.   
+  * **`subscribes`** (`list`): A list of 'subscribe' performative messages. 
  	
 ### Actions
 	  
 	 
 #### **`accept_proposal`**
 Replies a message with an 'accept_proposal' performative message.
+
 * returns: unknown 			
 * **`message`** (message): The message to be replied 			
 * **`content`** (list): The content of the replying message  
 	 
 #### **`agree`**
 Replies a message with an 'agree' performative message.
+
 * returns: unknown 			
 * **`message`** (message): The message to be replied 			
 * **`content`** (list): The content of the replying message  
 	 
 #### **`cancel`**
 Replies a message with a 'cancel' peformative message.
+
 * returns: unknown 			
 * **`message`** (message): The message to be replied 			
 * **`content`** (list): The content of the replying message  
 	 
 #### **`cfp`**
 Replies a message with a 'cfp' performative message.
+
 * returns: unknown 			
 * **`message`** (message): The message to be replied 			
 * **`content`** (list): The content of the replying message  
 	 
 #### **`end_conversation`**
 Reply a message with an 'end_conversation' peprformative message. This message marks the end of a conversation. In a 'no-protocol' conversation, it is the responsible of the modeler to explicitly send this message to mark the end of a conversation/interaction protocol.
+
 * returns: unknown 			
 * **`message`** (message): The message to be replied 			
 * **`content`** (list): The content of the replying message  
 	 
 #### **`failure`**
 Replies a message with a 'failure' performative message.
+
 * returns: unknown 			
 * **`message`** (message): The message to be replied 			
 * **`content`** (list): The content of the replying message  
 	 
 #### **`inform`**
 Replies a message with an 'inform' performative message.
+
 * returns: unknown 			
 * **`message`** (message): The message to be replied 			
 * **`content`** (list): The content of the replying message  
 	 
 #### **`propose`**
 Replies a message with a 'propose' performative message.
+
 * returns: unknown 			
 * **`message`** (message): The message to be replied 			
 * **`content`** (list): The content of the replying message  
 	 
 #### **`query`**
 Replies a message with a 'query' performative message.
+
 * returns: unknown 			
 * **`message`** (message): The message to be replied 			
 * **`content`** (list): The content of the replying message  
 	 
 #### **`refuse`**
 Replies a message with a 'refuse' performative message.
+
 * returns: unknown 			
 * **`message`** (message): The message to be replied 			
 * **`content`** (list): The content of the replying message  
 	 
 #### **`reject_proposal`**
 Replies a message with a 'reject_proposal' performative message.
+
 * returns: unknown 			
 * **`message`** (message): The message to be replied 			
 * **`content`** (list): The content of the replying message  
 	 
 #### **`reply`**
 Replies a message. This action should be only used to reply a message in a 'no-protocol' conversation and with a 'user defined performative'. For performatives supported by GAMA (i.e., standard FIPA performatives), please use the 'action' with the same name of 'performative'. For example, to reply a message with a 'request' performative message, the modeller should use the 'request' action.
+
 * returns: unknown 			
 * **`message`** (message): The message to be replied 			
 * **`performative`** (string): The performative of the replying message 			
@@ -238,12 +267,14 @@ Replies a message. This action should be only used to reply a message in a 'no-p
 	 
 #### **`request`**
 Replies a message with a 'request' performative message.
+
 * returns: unknown 			
 * **`message`** (message): The message to be replied 			
 * **`content`** (list): The content of the replying message  
 	 
 #### **`send`**
 Starts a conversation/interaction protocol.
+
 * returns: msi.gaml.extensions.fipa.Message 			
 * **`receivers`** (list): A list of receiver agents 			
 * **`content`** (list): The content of the message. A list of any GAML type 			
@@ -252,6 +283,7 @@ Starts a conversation/interaction protocol.
 	 
 #### **`start_conversation`**
 Starts a conversation/interaction protocol.
+
 * returns: msi.gaml.extensions.fipa.Message 			
 * **`receivers`** (list): A list of receiver agents 			
 * **`content`** (list): The content of the message. A list of any GAML type 			
@@ -260,6 +292,7 @@ Starts a conversation/interaction protocol.
 	 
 #### **`subscribe`**
 Replies a message with a 'subscribe' performative message.
+
 * returns: unknown 			
 * **`message`** (message): The message to be replied 			
 * **`content`** (list): The content of the replying message	
@@ -269,20 +302,23 @@ Replies a message with a 'subscribe' performative message.
     	
 ----
 
-## driving 
+## driving
+
+ 
 ### Variables
 	   
-  * **`lanes_attribute`** (string): the name of the attribut of the road agent that determine the number of road lanes   
-  * **`living_space`** (float): the min distance between the agent and an obstacle (in meter)   
-  * **`obstacle_species`** (list): the list of species that are considered as obstacles   
-  * **`speed`** (float): the speed of the agent (in meter/second)   
-  * **`tolerance`** (float): the tolerance distance used for the computation (in meter) 
+  * **`lanes_attribute`** (`string`): the name of the attribut of the road agent that determine the number of road lanes   
+  * **`living_space`** (`float`): the min distance between the agent and an obstacle (in meter)   
+  * **`obstacle_species`** (`list`): the list of species that are considered as obstacles   
+  * **`speed`** (`float`): the speed of the agent (in meter/second)   
+  * **`tolerance`** (`float`): the tolerance distance used for the computation (in meter) 
  	
 ### Actions
 	  
 	 
 #### **`follow_driving`**
 moves the agent along a given path passed in the arguments while considering the other agents in the network.
+
 * returns: path 			
 * **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
 * **`path`** (path): a path to be followed. 			
@@ -294,6 +330,7 @@ moves the agent along a given path passed in the arguments while considering the
 	 
 #### **`goto_driving`**
 moves the agent towards the target passed in the arguments while considering the other agents in the network (only for graph topology)
+
 * returns: path 			
 * **`target`** (point,geometry,agent): the location or entity towards which to move. 			
 * **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
@@ -309,7 +346,9 @@ moves the agent towards the target passed in the arguments while considering the
     	
 ----
 
-## GAMASQL 
+## GAMASQL
+
+ 
 ### Variables
 	 
  	
@@ -318,6 +357,7 @@ moves the agent towards the target passed in the arguments while considering the
 	 
 #### **`read`**
 
+
 * returns: void 			
 * **`params`** (map): Connection parameters 			
 * **`table`** (string): select string with question marks 			
@@ -325,12 +365,14 @@ moves the agent towards the target passed in the arguments while considering the
 	 
 #### **`SqlObject`**
 
+
 * returns: msi.gama.database.geosql.GamaSqlConnection 			
 * **`params`** (map): Connection parameters 			
 * **`table`** (string): select string with question marks 			
 * **`filter`** (string): Filter for select  
 	 
 #### **`testConnection`**
+
 
 * returns: bool 			
 * **`params`** (map): Connection parameters	
@@ -340,15 +382,18 @@ moves the agent towards the target passed in the arguments while considering the
     	
 ----
 
-## graphicThe graphic skill is intended to define the minimal set of behaviours required from a graphical agent 
+## graphic
+The graphic skill is intended to define the minimal set of behaviours required from a graphical agent
+ 
 ### Variables
 	   
-  * **`transparency`** (float): the transparency of the agent (between 0.0 and 1.0) 
+  * **`transparency`** (`float`): the transparency of the agent (between 0.0 and 1.0) 
  	
 ### Actions
 	  
 	 
 #### **`brewer_color`**
+
 
 * returns: rgb 			
 * **`type`** (string): Palette Type (Sequential, Diverging, Qualitative) 			
@@ -357,10 +402,12 @@ moves the agent towards the target passed in the arguments while considering the
 	 
 #### **`brewer_palette`**
 
+
 * returns: msi.gama.util.IList<java.awt.Color> 			
 * **`type`** (string): Palette Type (Sequential, Diverging, Qualitative)  
 	 
 #### **`twinkle`**
+
 
 * returns: void 			
 * **`period`** (int): make the agent twinkle with a given period	
@@ -370,13 +417,15 @@ moves the agent towards the target passed in the arguments while considering the
     	
 ----
 
-## grid 
+## grid
+
+ 
 ### Variables
 	   
-  * **`color`** (rgb):    
-  * **`grid_value`** (float):    
-  * **`grid_x`** (int):    
-  * **`grid_y`** (int):  
+  * **`color`** (`rgb`):    
+  * **`grid_value`** (`float`):    
+  * **`grid_x`** (`int`):    
+  * **`grid_y`** (`int`):  
  	
 ### Actions
 		
@@ -386,7 +435,9 @@ moves the agent towards the target passed in the arguments while considering the
     	
 ----
 
-## MDXSKILL 
+## MDXSKILL
+
+ 
 ### Variables
 	 
  	
@@ -395,9 +446,11 @@ moves the agent towards the target passed in the arguments while considering the
 	 
 #### **`helloWorld`**
 
+
 * returns: unknown  
 	 
 #### **`select`**
+
 
 * returns: list 			
 * **`params`** (map): Connection parameters 			
@@ -409,10 +462,12 @@ moves the agent towards the target passed in the arguments while considering the
 	 
 #### **`testConnection`**
 
+
 * returns: bool 			
 * **`params`** (map): Connection parameters  
 	 
 #### **`timeStamp`**
+
 
 * returns: float	
 
@@ -421,19 +476,22 @@ moves the agent towards the target passed in the arguments while considering the
     	
 ----
 
-## movingThe moving skill is intended to define the minimal set of behaviours required for agents that are able to move on different topologies 
+## moving
+The moving skill is intended to define the minimal set of behaviours required for agents that are able to move on different topologies
+ 
 ### Variables
 	   
-  * **`destination`** (point): continuously updated destination of the agent with respect to its speed and heading (read-only)   
-  * **`heading`** (int): the absolute heading of the agent in degrees (in the range 0-359)   
-  * **`location`** (point):    
-  * **`speed`** (float): the speed of the agent (in meter/second) 
+  * **`destination`** (`point`): continuously updated destination of the agent with respect to its speed and heading (read-only)   
+  * **`heading`** (`int`): the absolute heading of the agent in degrees (in the range 0-359)   
+  * **`location`** (`point`):    
+  * **`speed`** (`float`): the speed of the agent (in meter/second) 
  	
 ### Actions
 	  
 	 
 #### **`follow`**
 moves the agent along a given path passed in the arguments.
+
 * returns: path 			
 * **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
 * **`path`** (path): a path to be followed. 			
@@ -442,6 +500,7 @@ moves the agent along a given path passed in the arguments.
 	 
 #### **`goto`**
 moves the agent towards the target passed in the arguments.
+
 * returns: path 			
 * **`target`** (agent,point,geometry): the location or entity towards which to move. 			
 * **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
@@ -452,6 +511,7 @@ moves the agent towards the target passed in the arguments.
 	 
 #### **`move`**
 moves the agent forward, the distance being computed with respect to its speed and heading. The value of the corresponding variables are used unless arguments are passed.
+
 * returns: path 			
 * **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
 * **`heading`** (int): a restriction placed on the random heading choice. The new heading is chosen in the range (heading - amplitude/2, heading+amplitude/2) 			
@@ -459,6 +519,7 @@ moves the agent forward, the distance being computed with respect to its speed a
 	 
 #### **`wander`**
 Moves the agent towards a random location at the maximum distance (with respect to its speed). The heading of the agent is chosen randomly if no amplitude is specified. This action changes the value of heading.
+
 * returns: void 			
 * **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
 * **`amplitude`** (int): a restriction placed on the random heading choice. The new heading is chosen in the range (heading - amplitude/2, heading+amplitude/2) 			
@@ -466,6 +527,7 @@ Moves the agent towards a random location at the maximum distance (with respect 
 	 
 #### **`wander_3D`**
 Moves the agent towards a random location (3D point) at the maximum distance (with respect to its speed). The heading of the agent is chosen randomly if no amplitude is specified. This action changes the value of heading.
+
 * returns: path 			
 * **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
 * **`amplitude`** (int): a restriction placed on the random heading choice. The new heading is chosen in the range (heading - amplitude/2, heading+amplitude/2) 			
@@ -477,20 +539,23 @@ Moves the agent towards a random location (3D point) at the maximum distance (wi
     	
 ----
 
-## moving3DThe moving skill 3D is intended to define the minimal set of behaviours required for agents that are able to move on different topologies 
+## moving3D
+The moving skill 3D is intended to define the minimal set of behaviours required for agents that are able to move on different topologies
+ 
 ### Variables
 	   
-  * **`destination`** (point): continuously updated destination of the agent with respect to its speed and heading (read-only)   
-  * **`heading`** (int): the absolute heading of the agent in degrees (in the range 0-359)   
-  * **`pitch`** (int): the absolute pitch of the agent in degrees (in the range 0-359)   
-  * **`roll`** (int): the absolute roll of the agent in degrees (in the range 0-359)   
-  * **`speed`** (float): the speed of the agent (in meter/second) 
+  * **`destination`** (`point`): continuously updated destination of the agent with respect to its speed and heading (read-only)   
+  * **`heading`** (`int`): the absolute heading of the agent in degrees (in the range 0-359)   
+  * **`pitch`** (`int`): the absolute pitch of the agent in degrees (in the range 0-359)   
+  * **`roll`** (`int`): the absolute roll of the agent in degrees (in the range 0-359)   
+  * **`speed`** (`float`): the speed of the agent (in meter/second) 
  	
 ### Actions
 	  
 	 
 #### **`move`**
 moves the agent forward, the distance being computed with respect to its speed and heading. The value of the corresponding variables are used unless arguments are passed.
+
 * returns: path 			
 * **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
 * **`heading`** (int): int, optional, the direction to take for this move (replaces the current value of heading) 			
@@ -503,15 +568,17 @@ moves the agent forward, the distance being computed with respect to its speed a
     	
 ----
 
-## physical3D 
+## physical3D
+
+ 
 ### Variables
 	   
-  * **`collisionBound`** (map):    
-  * **`density`** (float):    
-  * **`mass`** (float):    
-  * **`motor`** (point):    
-  * **`physical_3D_world`** (agent):    
-  * **`velocity`** (list):  
+  * **`collisionBound`** (`map`):    
+  * **`density`** (`float`):    
+  * **`mass`** (`float`):    
+  * **`motor`** (`point`):    
+  * **`physical_3D_world`** (`agent`):    
+  * **`velocity`** (`list`):  
  	
 ### Actions
 		
@@ -521,28 +588,32 @@ moves the agent forward, the distance being computed with respect to its speed a
     	
 ----
 
-## skill_road 
+## skill_road
+
+ 
 ### Variables
 	   
-  * **`agents_on`** (list): for each lane of the road, the list of agents for each segment   
-  * **`all_agents`** (list): the list of agents on the road   
-  * **`lanes`** (int): the number of lanes   
-  * **`linked_road`** (agent): the linked road: the lanes of this linked road will be usable by drivers on the road   
-  * **`maxspeed`** (float): the maximal speed on the road   
-  * **`source_node`** (agent): the source node of the road   
-  * **`target_node`** (agent): the target node of the road 
+  * **`agents_on`** (`list`): for each lane of the road, the list of agents for each segment   
+  * **`all_agents`** (`list`): the list of agents on the road   
+  * **`lanes`** (`int`): the number of lanes   
+  * **`linked_road`** (`agent`): the linked road: the lanes of this linked road will be usable by drivers on the road   
+  * **`maxspeed`** (`float`): the maximal speed on the road   
+  * **`source_node`** (`agent`): the source node of the road   
+  * **`target_node`** (`agent`): the target node of the road 
  	
 ### Actions
 	  
 	 
 #### **`register`**
 register the agent on the road at the given lane
+
 * returns: void 			
 * **`agent`** (agent): the agent to register on the road. 			
 * **`lane`** (int): the lane index on which to register; if lane index >= number of lanes, then register on the linked road  
 	 
 #### **`unregister`**
 unregister the agent on the road
+
 * returns: void 			
 * **`agent`** (agent): the agent to unregister on the road.	
 
@@ -551,14 +622,16 @@ unregister the agent on the road
     	
 ----
 
-## skill_road_node 
+## skill_road_node
+
+ 
 ### Variables
 	   
-  * **`block`** (map): define the list of agents blocking the node, and for each agent, the list of concerned roads   
-  * **`priority_roads`** (list): the list of priority roads   
-  * **`roads_in`** (list): the list of input roads   
-  * **`roads_out`** (list): the list of output roads   
-  * **`stop`** (list): define for each type of stop, the list of concerned roads 
+  * **`block`** (`map`): define the list of agents blocking the node, and for each agent, the list of concerned roads   
+  * **`priority_roads`** (`list`): the list of priority roads   
+  * **`roads_in`** (`list`): the list of input roads   
+  * **`roads_out`** (`list`): the list of output roads   
+  * **`stop`** (`list`): define for each type of stop, the list of concerned roads 
  	
 ### Actions
 		
@@ -568,7 +641,9 @@ unregister the agent on the road
     	
 ----
 
-## SQLSKILL 
+## SQLSKILL
+
+ 
 ### Variables
 	 
  	
@@ -577,6 +652,7 @@ unregister the agent on the road
 	 
 #### **`executeUpdate`**
 
+
 * returns: int 			
 * **`params`** (map): Connection parameters 			
 * **`updateComm`** (string): SQL commands such as Create, Update, Delete, Drop with question mark 			
@@ -584,10 +660,12 @@ unregister the agent on the road
 	 
 #### **`getCurrentDateTime`**
 
+
 * returns: string 			
 * **`dateFormat`** (string): date format examples: 'yyyy-MM-dd' , 'yyyy-MM-dd HH:mm:ss'  
 	 
 #### **`getDateOffset`**
+
 
 * returns: string 			
 * **`dateFormat`** (string): date format examples: 'yyyy-MM-dd' , 'yyyy-MM-dd HH:mm:ss' 			
@@ -596,9 +674,11 @@ unregister the agent on the road
 	 
 #### **`helloWorld`**
 
+
 * returns: unknown  
 	 
 #### **`insert`**
+
 
 * returns: int 			
 * **`params`** (map): Connection parameters 			
@@ -608,12 +688,14 @@ unregister the agent on the road
 	 
 #### **`list2Matrix`**
 
+
 * returns: matrix 			
 * **`param`** (list): Param: a list of records and metadata 			
 * **`getName`** (boolean): getType: a boolean value, optional parameter 			
 * **`getType`** (boolean): getType: a boolean value, optional parameter  
 	 
 #### **`select`**
+
 
 * returns: list 			
 * **`params`** (map): Connection parameters 			
@@ -622,10 +704,12 @@ unregister the agent on the road
 	 
 #### **`testConnection`**
 
+
 * returns: bool 			
 * **`params`** (map): Connection parameters  
 	 
 #### **`timeStamp`**
+
 
 * returns: float	
 

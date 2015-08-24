@@ -22,6 +22,7 @@ species dummy control: fsm {
 
 ## List of Control Architectures
 GAMA integrates several agent control architectures that can be used in addition to the common behavior structure:
+
   * [fsm](G__FiniteStateMachine): finite state machine based behavior model. During its life cycle, the agent can be in several states. At any given time step, it is in one single state. Such an agent needs to have one initial state (the state in which it will be at its initialization)
   * [weighted\_tasks](G__TaskBased): task-based control architecture. At any given time, only the task only the task with the maximal weight is executed.
   * [sorted\_tasks](G__TaskBased): task-based control architecture. At any given time, the tasks are all executed in the order specified by their weights (highest first).
