@@ -34,3 +34,16 @@ aspect base {
 ```
 
 ## expSimGlobalNone 
+For each experiment launch the group follower corresponding to the current iteration and all the already launch experiments are displayed. 
+```
+aspect simglobal{
+  display_mode <-"simglobal";
+  clustering_mode <-"none";
+  draw shape color: #red;
+  int curColor <-0;
+  loop geom over: allSimShape{
+    draw geom color:SequentialColors[curColor] at:{location.x,location.y,curColor*10};
+    curColor <- curColor+1;
+  }
+}
+```
