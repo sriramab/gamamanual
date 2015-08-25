@@ -9,7 +9,7 @@ The "agent_group_follower" goal is to monitor and analyze a group of agent durin
 
 # Example 
 
-This example will be based on the Road Traffic model which is composed of roads, buildings and people. In this example we will use GamAnalyzer to follow the agent people. 
+This example is based on a toy model which is only composed of wandering people. In this example we will use GamAnalyzer to follow the agent people. 
 
 ## 
 ```
@@ -23,6 +23,13 @@ create agentfollower
 }
 ```
 
-## expGlobalNone 
+## expGlobalNone: No clustering only the current agent follower is displayed
+```
+aspect base {
+  display_mode <-"global";
+  clustering_mode <-"none";
+  draw shape color: #red;
+}
+```
 
 ## expSimGlobalNone 
