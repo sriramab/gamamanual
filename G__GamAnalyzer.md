@@ -23,7 +23,8 @@ create agentfollower
 }
 ```
 
-## expGlobalNone: No clustering only the current agent follower is displayed
+## expGlobalNone: 
+No clustering only the current agent follower is displayed
 ```
 aspect base {
   display_mode <-"global";
