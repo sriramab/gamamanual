@@ -2,6 +2,32 @@ GamAnalyzer is a tool to monitor several multi-agents simulation
 
 The "agent_group_follower" goal is to monitor and analyze a group of agent during several simulation. This group of agent can be chosen by the user according to criteria chosen by the user. The monitoring process and analysis of these agents involves the extraction, processing and visualization of their data at every step of the simulation.  The data for each simulation are pooled and treated commonly for their graphic representation or clusters.
 
+# Built-in Variable
+
+
+
+
+* varmap
+* numvarmap
+* qualivarmap
+* metadatahistory
+* lastdetailedvarvalues		
+* averagehistory
+* stdevhistory
+* minhistory
+* maxhistory
+* distribhistoryparams
+* distribhistory
+
+* multi_metadatahistory
+* multi_lastdetailedvarvalues	
+* multi_averagehistory
+* multi_stdevhistory
+* multi_minhistory
+* multi_maxhistory
+* multi_distribhistoryparams
+* multi_distribhistory
+
 # Example 
 
 This example is based on a toy model which is only composed of wandering people. In this example we will use GamAnalyzer to follow the agent people. 
