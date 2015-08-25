@@ -29,7 +29,7 @@ aspect base {
 ```
 
 ## expSimGlobalNone 
-For each experiment launch the group follower corresponding to the current iteration and all the already launch experiments are displayed. 
+The agent_group_follower corresponding to the current iteration and all the already launch experiments are displayed. 
 ```
 aspect simglobal{
   display_mode <-"simglobal";
@@ -43,6 +43,7 @@ aspect simglobal{
 }
 ```
 ## expCluster
+The agent group follower is divided in cluster computed thanks to a dbscan algorithm. Only the current agent_group_follower is displayed
 ```
 aspect cluster {
   display_mode <-"global";
@@ -51,6 +52,8 @@ aspect cluster {
 }
 ```
 ## expClusterSimGlobal
+The agent_group_follower (made of different cluster) corresponding to the current iteration and all the already launch experiments are displayed. 
+
 ```
 aspect clusterSimGlobal {
   display_mode <-"simglobal";
