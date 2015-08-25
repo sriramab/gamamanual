@@ -23,7 +23,7 @@ create agentfollower
 }
 ```
 
-## expGlobalNone: 
+## expGlobalNone
 No clustering only the current agent follower is displayed
 ```
 aspect base {
@@ -45,5 +45,26 @@ aspect simglobal{
     draw geom color:SequentialColors[curColor] at:{location.x,location.y,curColor*10};
     curColor <- curColor+1;
   }
+}
+```
+## expCluster
+```
+aspect cluster {
+  display_mode <-"global";
+  clustering_mode <-"dbscan";
+  draw shape color: #red;
+}
+```
+## expClusterSimGlobal
+```
+aspect clusterSimGlobal {
+  display_mode <-"simglobal";
+  clustering_mode <-"dbscan";
+  draw shape color: #red;
+  int curColor <-0;
+  loop geom over: allSimShape{
+    draw geom color:SequentialColors[curColor] at:{location.x,location.y,curColor*10};
+    curColor <- curColor+1;
+  } 
 }
 ```
