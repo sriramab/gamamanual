@@ -7,7 +7,7 @@ You need to run the SVN version.
 
 The "agent_group_follower" goal is to monitor and analyze a group of agent during several simulation. This group of agent can be chosen by the user according to criteria chosen by the user. The monitoring process and analysis of these agents involves the extraction, processing and visualization of their data at every step of the simulation.  The data for each simulation are pooled and treated commonly for their graphic representation or clusters.
 
-# Example on road traffic
+# Example 
 
 This example will be based on the Road Traffic model which is composed of roads, buildings and people. In this example we will use GamAnalyzer to follow the agent people. 
 
@@ -22,3 +22,7 @@ create agentfollower
   peoplefollower<-self;
 }
 ```
+
+## expGlobalNone 
+
+## expSimGlobalNone 
