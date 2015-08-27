@@ -10,7 +10,7 @@ The "agent_group_follower" goal is to monitor and analyze a group of agent durin
 * varmap: All variable that can be analyzed or displayed in a graph.
 * numvarmap: Numerical variable (on this variable all the aggregator numeric are computed). 
 * qualivarmap: All non numerical variable. Could be used for BDI to analyze beliefs
-* metadatahistory: 
+* metadatahistory: See updateMetaDataHistory. This matrice store all the metadata like getSimulationScope(), getClock().getCycle(), getUniqueSimName(scope), rule, scope.getAgentScope().getName(), this.getName(), this.agentsCourants.copy(scope), this.agentsCourants.size(), this.getGeometry()
 * lastdetailedvarvalues		
 * averagehistory
 * stdevhistory
