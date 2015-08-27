@@ -8,18 +8,26 @@ The "agent_group_follower" goal is to monitor and analyze a group of agent durin
 
 
 * varmap: All variable that can be analyzed or displayed in a graph.
-* numvarmap: Numerical variable (on this variable all the aggregator numeric are computed). 
-* qualivarmap: All non numerical variable. Could be used for BDI to analyze beliefs
-* metadatahistory: See updateMetaDataHistory. This matrice store all the metadata like getSimulationScope(), getClock().getCycle(), getUniqueSimName(scope), rule, scope.getAgentScope().getName(), this.getName(), this.agentsCourants.copy(scope), this.agentsCourants.size(), this.getGeometry()
-* lastdetailedvarvalues		
-* averagehistory
-* stdevhistory
-* minhistory
-* maxhistory
-* distribhistoryparams
-* distribhistory
 
-* multi_metadatahistory
+* numvarmap: Numerical variable (on this variable all the aggregator numeric are computed). 
+
+* qualivarmap: All non numerical variable. Could be used for BDI to analyze beliefs.
+
+* metadatahistory: See updateMetaDataHistory. This matrice store all the metadata like getSimulationScope(), getClock().getCycle(), getUniqueSimName(scope), rule, scope.getAgentScope().getName(), this.getName(), this.agentsCourants.copy(scope), this.agentsCourants.size(), this.getGeometry().
+
+
+* lastdetailedvarvalues: store all the value (in varmap) for all the followed agent for the last iteration.
+
+
+
+* averagehistory: Average value for each of the numvar 
+* stdevhistory: Std deviation value for each of the numvar 
+* minhistory: Min deviation value for each of the numvar 
+* maxhistory: Max deviation value for each of the numvar
+* distribhistoryparams: Gives the interval of the distribution described in distribhistory
+* distribhistory: Distribution of numvarmap
+
+* multi_metadatahistory: Aggregate each metadatahistory for each experiment 
 * multi_lastdetailedvarvalues	
 * multi_averagehistory
 * multi_stdevhistory
