@@ -74,8 +74,9 @@ You have now to import projects into the workspace (notice that the folders down
 
 ### Run GAMA
 1. In the `msi.gama.application` plugin, open the `gama1.7.Eclipse3_8_2.product` file
-2. Click on Synchronize
-3. Click on Launch an Eclipse Application
+2. Go to "Dependencies" tab and click on "Add required"
+3. Click on Synchronize
+4. Click on Launch an Eclipse Application
 
 ###GIT Tutorials
 For those who want learn more about Git and Egit, please consult the following tutorials/papers
