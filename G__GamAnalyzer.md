@@ -7,10 +7,10 @@ The "agent_group_follower" goal is to monitor and analyze a group of agent durin
 
 
 
-* varmap
-* numvarmap
-* qualivarmap
-* metadatahistory
+* varmap: All variable that can be analyzed or displayed in a graph.
+* numvarmap: Numerical variable (on this variable all the aggregator numeric are computed). 
+* qualivarmap: All non numerical variable. Could be used for BDI to analyze beliefs
+* metadatahistory: 
 * lastdetailedvarvalues		
 * averagehistory
 * stdevhistory
