@@ -27,14 +27,8 @@ The "agent_group_follower" goal is to monitor and analyze a group of agent durin
 * **distribhistoryparams**: Gives the interval of the distribution described in distribhistory
 * **distribhistory**: Distribution of numvarmap
 
-* multi_metadatahistory: Aggregate each metadatahistory for each experiment 
-* multi_lastdetailedvarvalues	
-* multi_averagehistory
-* multi_stdevhistory
-* multi_minhistory
-* multi_maxhistory
-* multi_distribhistoryparams
-* multi_distribhistory
+* **multi_metadatahistory**: Aggregate each metadatahistory for each experiment 
+
 
 # Example 
 
