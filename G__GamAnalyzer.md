@@ -1,3 +1,8 @@
+# Install
+
+Go to Git View -> Click on Import Projects
+Add the dependencies in ummisco.gama.feature.dependencies
+
 GamAnalyzer is a tool to monitor several multi-agents simulation
 
 The "agent_group_follower" goal is to monitor and analyze a group of agent during several simulation. This group of agent can be chosen by the user according to criteria chosen by the user. The monitoring process and analysis of these agents involves the extraction, processing and visualization of their data at every step of the simulation.  The data for each simulation are pooled and treated commonly for their graphic representation or clusters.
