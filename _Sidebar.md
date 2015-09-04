@@ -100,6 +100,8 @@
 5. [Incremental Model](Tutorial__IncrementalTutorial)
 6. [Graphical modelling](Tutorial__GraphicModelling)
 
+## [Pedagogical materials](Pedagogical-materials)
+
 ## [Developing Extensions](G__DevelopingExtensions)
 1. [Installing the GIT version](G__InstallingGitVersion)
 2. [Architecture of GAMA](G__GamaArchitecture)
