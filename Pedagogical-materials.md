@@ -11,6 +11,14 @@ From UML diagram, implement a GAMA model.
 * **UML diagrams:** [asta version](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/UML_Firefly_sync.asta?attredirects=0&d=1)
 * **A model:** [gaml file](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/luciole_on_grid.gaml?attredirects=0&d=1)
 
+# Exercice (*): Firefighter model
+Implement the model given in the model description file. The guide file helps you to separate the implementation of the structure of the model, its initialization, its dynamics and ways to visualize it.
+* **Keywords:** grid, inheritance, displays, plot, 3D.
+* **Model description**: [PDF](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/Firefighter%20-%20Model%20description.pdf?attredirects=0&d=1)
+* **Guide:** [PDF](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/Firefighter%20-%20Guide.pdf?attredirects=0&d=1), [Keynote](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/Firefighter%20-%20Guide.key?attredirects=0&d=1), [PPTX](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/Firefighter%20-%20Guide.pptx?attredirects=0&d=1)
+* **UML diagrams:** [asta version](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/UML_Pompiers_GAMA.asta?attredirects=0&d=1)
+* **A model:** [gaml file](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/Firefighter.zip?attredirects=0&d=1)
+
 # Exercice (**): Schelling model
 * **Keywords:** grid, GIS data, displays, plot, Graphical modeling, Schelling model.
 * **Subject:** [PDF](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/MISS%20ABMS%202014%20-%20Schelling.pdf?attredirects=0&d=1), [Keynote](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/MISS%20ABMS%202014%20-%20Schelling.key?attredirects=0&d=1), [PPTX](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/MISS%20ABMS%202014%20-%20Schelling.pptx?attredirects=0&d=1)
