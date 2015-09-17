@@ -19,6 +19,14 @@ Implement the model given in the model description file. The guide file helps yo
 * **UML diagrams:** [asta version](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/UML_Pompiers_GAMA.asta?attredirects=0&d=1)
 * **A model:** [gaml file](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/Firefighter.zip?attredirects=0&d=1)
 
+# Exercice (*): Wolves, Goats, Cabbages model
+Implement the model given in the model description file. The detailed subject divides the model in 3 steps and contains helps and advices to implement the model.
+* **Keywords:** grid, inheritance, displays, plot, prey-predator model.
+* **Model description**: [PDF](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/Firefighter%20-%20Model%20description.pdf?attredirects=0&d=1)
+* **Detailed subject:** [PDF](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/Coding%20Practice%20-%20subject%20with%20notes.pdf?attredirects=0&d=1), [Word](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/Coding%20Practice%20-%20subject%20with%20notes.docx?attredirects=0&d=1)
+* **Guide:** [PDF](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/Coding%20Practice.pptx.pdf?attredirects=0&d=1), [PPTX](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/Coding%20Practice.pptx.pptx?attredirects=0&d=1)
+* **A model:** [gaml file](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/Wolves-Goat-Cabbages.zip?attredirects=0&d=1)
+
 # Exercice (**): Schelling model
 * **Keywords:** grid, GIS data, displays, plot, Graphical modeling, Schelling model.
 * **Subject:** [PDF](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/MISS%20ABMS%202014%20-%20Schelling.pdf?attredirects=0&d=1), [Keynote](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/MISS%20ABMS%202014%20-%20Schelling.key?attredirects=0&d=1), [PPTX](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/MISS%20ABMS%202014%20-%20Schelling.pptx?attredirects=0&d=1)
