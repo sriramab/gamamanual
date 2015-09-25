@@ -1,19 +1,36 @@
 # Luneray's flu
 
 
-This tutorial has for goal to introduce how to build a model with GAMA and to use GIS data and graphs. In particular, this tutorial shows how to write a simple GAMA model (the structure of a model, the notion of species...) load gis data, to agentify them and to use a network of polylines to constraint the movement of agents. All the files related to this tutorial (shapefiles and models) are available [here](https://sites.google.com/site/gamatutotp/files/Lunerays%20flu.zip?attredirects=0&d=1).
+This tutorial has for goal to introduce how to build a model with GAMA and to use GIS data and graphs. In particular, this tutorial shows how to write a simple GAMA model (the structure of a model, the notion of species...) load gis data, to agentify them and to use a network of polylines to constraint the movement of agents. All the files related to this tutorial (shapefiles and models) are available [here](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/Luneray's flu.zip).
 
 The importation of models is described here: https://github.com/gama-platform/gama/wiki/G__ImportingModels
 
 
 ## Model Overview
-The model built in this tutorial concerns the spreading of a flu in a small city. Two layers of GIS data are used: a road layer (polylines) and a building layer (polygons). In this model, people agents are moving from building to building using the road network. Each infected people can infect the neighbor people.
+The model built in this tutorial concerns the spreading of a flu in the city of Luneray (Normandie, France).
 
-![http://gama-platform.googlecode.com/files/road_traffic.png](http://gama-platform.googlecode.com/files/road_traffic.png)
+![https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/Luneray model.png](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/Luneray model.png)
 
+Two layers of GIS data are used: a road layer (polylines) and a building layer (polygons). In this model, people agents are moving from building to building using the road network. Each infected people can infect the neighbor people.
 
+Some data collected concerning Luneray and the disease:
+* Number of inhabitants: 2147 (source : wikipedia)
+* Mean speed of the inhabitants (while moving on the road) : 2-5 km/h
+* The disease - non lethal - is spreading (by air) from people to people
+* Time to cure the disease: more than 100 days
+* Infection distance: 10 meters
+* Infection probability (when two people are at infection distance) : 0.05/minute
 
+From the data collected, we made some modeling choice:
+* Simulation step: 1 minute
+* People are moving on the roads from building to building 
+* Most of time people are moving to meet their friend then go back home
+* People use the shortest path to move between buildings
+* All people move at constant speed
+* Each time, people arrived at a building they are staying a certain time : they are staying longer in their home than in their friend houses
+* Infected people are never cured
 
+![https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/Luneray model.png](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/Luneray model.png)
 
 ## Step List
 
