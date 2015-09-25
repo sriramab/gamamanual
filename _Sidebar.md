@@ -98,7 +98,8 @@
 3. [Road Traffic](Tutorial__RoadTrafficTutorial)
 4. [3D Tutorial](Tutorial__ThreeDTutorial)
 5. [Incremental Model](Tutorial__IncrementalTutorial)
-6. [Graphical modelling](Tutorial__GraphicModelling)
+6. [Luneray's flu](Tutorial__LuneraysFlu)
+7. [Graphical modelling](Tutorial__GraphicModelling)
 
 ## [Pedagogical materials](Pedagogical-materials)
 
