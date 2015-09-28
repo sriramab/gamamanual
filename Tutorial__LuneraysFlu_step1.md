@@ -1,5 +1,5 @@
 # 1. Creation of a first basic disease spreading model
-This first step illustrates how to create simple agent and make them move in their environment.
+This first step illustrates how to create simple agents and make them move in their environment.
 
 
 ![https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/luneray1.tiff](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/luneray1.tiff)
