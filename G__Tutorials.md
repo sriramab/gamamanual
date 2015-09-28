@@ -10,8 +10,9 @@ We propose some tutorials that are designed to allow modelers to become progress
 <li>Stupid Model</li>
 <li>Road Traffic</li>
 <li>3D Tutorial</li>
-<li> Incremental Model</li>
-<li> Graphical modelling</li>
+<li>Incremental Model</li>
+<li>Luneray's flu</li>
+<li>Graphical modelling</li>
 </ul>
 
 
@@ -53,7 +54,11 @@ This tutorial introduces the use of GIS data. It is based on a mobility and dail
 This tutorial introduces the use of 3D in GAMA. In particular, it offers a quick overview of the 3D capabilities of the platform and how to integrate 3D features in models.
 
 
+## [Luneray's flu tutorial](Tutorial__LuneraysFlu)
+<a></a>
+<img src='https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/Luneray model.png' width='200/><br' />
 
+This tutorial dedicated to beginners introduces the basic concepts of GAMA and proposes a brief overview of many features.  It concerns a model of disease spreading in the small city of Luneray. In particular, it presents how to integrate GIS data and use GIS, to use a road shapefile for the movement of agents, and to define a 3D display.
 
 ## [Incremental Model](Tutorial__IncrementalTutorial)
 <a></a>
@@ -61,7 +66,7 @@ This tutorial introduces the use of 3D in GAMA. In particular, it offers a quick
 <img src='images/Tutorials/Incremental_model/incremental_model.jpg' width='200' />
 
 
-This tutorial proposes a complete overview of many features of GAMA. It concerns a model of disease spreading in a small city. In particular, it presents how to integrate GIS data and use GIS, to use a road shapefile for the movement of agents, to define a 3D display, to define a multi-level model and use differential equations.
+This tutorial proposes is an advance version of the Luneray's tutorial. It concerns a model of disease spreading in a small city. In particular, it presents how to integrate GIS data and use GIS, to use a road shapefile for the movement of agents, to define a 3D display, to define a multi-level model and use differential equations.
 
 
 ## [Graphical modelling](Tutorial__GraphicModelling)
