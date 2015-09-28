@@ -165,8 +165,7 @@ For our model, we define the init block in order to create _nb\_people_ _people_
 ```
 global {
 	// world variable definition
-
-        init{
+	init{
 		create people number:nb_people;
 		ask nb_infected_init among people {
 			is_infected <- true;
