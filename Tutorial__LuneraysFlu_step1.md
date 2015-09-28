@@ -134,6 +134,94 @@ species people {
 ```
 The **?** structure allows to return a different value (here red or green) according to a condition (here is_infected = true).
 
+### global section
+The global section represents a specific agent, called [world](G__GlobalSpecies). Defining this agent follows the same principle as any agent and is, thus, defined after a species.
+The world agent represents everything that is global to the model : dynamics, variables…
+It allows to initialize simulations (init block): the world is always created and initialized first when a simulation is launched (before any other agents). The geometry (shape) of the world agent is by default a square with 100m for side size, but can be redefined if necessary. The _step_ attribute of the world agent allows to specify the duration of one simulation step (by default, 1 step = 1 seconde).
+
+#### global variable
+In the current model, we define 4 global attributes:
+   * nb_people: the number of people that we want to create (init value: 2147)
+   * nb_infected_init: the number of people infected at the initialization of the simulation (init value: 5)
+   * step: redefine in order to set the duration of a simulation step to 1 minute.
+   * shape: redefine in order to set the geometry of the world to a square of 1500 meters side size. 
+```
+global {
+	int nb_people <- 2147;
+	int nb_infected_init <- 5;
+	float step <- 1 #mn;
+	geometry shape<-square(1500 #m);
+}
+```
+
+#### Model initialization
+
+The init section of the global block allows to initialize the define what will happen at the initialization of a simulation, for instance to create agents. We use the statement _create_  to create agents of a specific species: **create** species\_name + :
+  * number : number of agents to create (int, 1 by default)
+  * from : GIS file to use to create the agents (optional, string or file)
+  * returns: list of created agents (list)
+
+For our model, we define the init block in order to create _nb\_people_ _people_ agents and ask _nb\_infected\_init_ of them to be infected:
+```
+global {
+	// world variable definition
+
+        init{
+		create people number:nb_people;
+		ask nb_infected_init among people {
+			is_infected <- true;
+		}
+	}
+}
+```
+
+### experiment
+An experiment block defines how a model can be simulated (executed). Several experiments can be defined for a given model. They are defined using : **experiment** exp\_name type: gui/batch {`[input]` `[output]`}
+  * gui : experiment with a graphical interface, which displays its input parameters and outputs.
+  * batch : Allows to setup a series of simulations (w/o graphical interface).
+
+In our model, we define a gui experiment called _main\_experiment_  :
+```
+experiment main_experiment type: gui {
+}
+```
+
+#### input
+Experiments can define (input) parameters. A parameter definition allows to make the value of a global variable definable by the user through the graphic interface.
+
+A [parameter](__DefiningParameters) is defined as follows:
+**parameter** title var: global\_var category: cat;
+  * **title** : string to display
+  * **var** : reference to a global variable (defined in the global section)
+  * **category** : string used to «store» the operators on the UI - optional
+  * **<-** : init value - optional
+  * **min** : min value - optional
+  * **max** : min value - optional
+
+Note that the init, min and max values can be defined in the global variable definition.
+
+#### output
+[Output](G__DefiningOutputs) blocks are defined in an experiment and define how to visualize a simulation (with one or more [display](G__DefiningDisplays) blocks that define separate windows). Each display can be refreshed independently by defining the facet **refresh\_every:** nb (int) (the display will be refreshed every nb steps of the simulation).
+
+Each display can include different layers (like in a GIS) :
+  * Agents lists : **agents** layer\_name value: agents\_list aspect: my\_aspect;
+  * Agents species : **species**  my\_species aspect: my\_aspect
+  * Images: **image** layer\_name file: image\_file;
+  * Texts : **texte** layer\_name value: my\_text;
+  * Charts : see later.
+
+Note that it is possible to define a [opengl display](G__3DSpecificInstructions) (for 3D display or just to optimize the display) by using the facet **type: opengl**.
+
+In our model, we define an OpenGL display to draw the _people_ agents. 
+```
+output {
+	display map type: opengl{
+		species people aspect:circle;	
+	}
+}
+```
+
+
 ## Complete Model
 
 ```
