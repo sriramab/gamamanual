@@ -9,9 +9,10 @@ This first step illustrates how to create simple agent and make them move in the
 
 ## Formulation
   * Set the time duration of a time step to 1 minutes
-
-
-
+  * Define the people species with a moving skill
+  * Define the move and the infect behaviors of the people species
+  * Define the aspect of the people species
+  * Add the people species to a display
 
 
 
