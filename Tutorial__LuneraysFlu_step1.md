@@ -78,8 +78,40 @@ species people skills:[moving]{
 Note we use the [rnd](G__Operators#rnd) operator to define a random value between 2 and 5 for the speed. In addition, we precise a unit for the speed value by using the # symbol. For more details about units, see [here](G__UnitsAndConstants).
 
 #### Behavior
-GAMA proposes several ways of defining
+GAMA proposes several ways to define the behavior of a species: dynamic variables (update facet), reflexes....
 
+A [reflex](G__DefiningBehaviors#reflex) is a block of statements (that can be defined in global or any species) that will be automatically executed at each simulation step if its condition is true, it is defined as follows:
+```
+   reflex reflex_name when: condition {…}
+```
+
+The **when** facet is optional: when it is omitted, the reflex is activated at each time step. Note that if several reflexes are defined for a species, the reflexes will be activated following their definition order.
+
+We define a first reflex called **move** that is activated at each simulation step (no condition) and that makes the people move randomly using the wander action from the [moving](G__BuiltInSkills#moving) skill.
+```
+species people skills:[moving]{		
+	//variable definition
+	reflex move{
+		do wander;
+	}
+}
+```
+
+We define a second reflex called **infect** that is activated only when the agent is infected (is_infected = true) and that ask all the people at a distance of 10m to test a probability to be infected.
+```
+species people skills:[moving]{		
+	//variable definition and move reflex
+	
+	reflex infect when: is_infected{
+		ask people at_distance 10 #m {
+			if flip(0.05) {
+				is_infected <- true;
+			}
+		}
+	}
+}
+```
+The [ask](G__Statements#ask) allows an agent to ask another agents to do something (i.e. to execute a sequence of statements). The [at_distance](G__Operators#at_distance) operator allows to get the list of agents (here of people agents) that are located at a distance lower or equal to the given distance (here 10m). The [flip](G__Operators#flip) operator allows to test a probability.
 
 #### Display
 An agent [aspects](G__DefiningAspects) have to be defined. An aspect is a way to display the agents of a species : aspect aspect\_name {…}
@@ -88,16 +120,19 @@ In the block of an aspect, it is possible to draw :
   * An image : to draw icons
   * A text : to draw a text
 
-In order to display our prey agents we define two attributes:
-  * **size** of type float, with for initial value: 1.0
-  * **color** of type _rgb_, with for initial value: "blue". It is possible to get a color value by using the symbol _#_ + color name: e.g. #blue, #red, #white, #yellow, #magenta, #pink...
+In our model, we define an aspect for the people agent called **circle** that draw the agents as a circle of 10m radius with a color that depends on their **is_infected** attribute. If the people agent is infected, it will be draw in red, in green otherwise.
 
-### species
+```
+species people {
+	...//variable and reflex definition
 
-
-
-
-
+	aspect circle {
+			draw circle(10) color:is_infected ? #red : #green;
+		}
+	} 
+}
+```
+The **?** structure allows to return a different value (here red or green) according to a condition (here is_infected = true).
 
 ## Complete Model
 
