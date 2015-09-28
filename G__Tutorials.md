@@ -58,6 +58,7 @@ This tutorial introduces the use of 3D in GAMA. In particular, it offers a quick
 <a></a>
 ![https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/Luneray model.png](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/Luneray model.png)
 
+
 This tutorial dedicated to beginners introduces the basic concepts of GAMA and proposes a brief overview of many features.  It concerns a model of disease spreading in the small city of Luneray. In particular, it presents how to integrate GIS data and use GIS, to use a road shapefile for the movement of agents, and to define a 3D display.
 
 ## [Incremental Model](Tutorial__IncrementalTutorial)
