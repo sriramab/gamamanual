@@ -17,6 +17,16 @@ This first step illustrates how to create simple agent and make them move in the
 
 
 ## Model Definition
+
+### Project and model
+The first step of this tutorial consists after launching GAMA and choosing a workspace, to define a new project or to import the existing one.
+
+The concepts of workspace and projects are explained [G__Workspace](here).
+
+Concerning the creation of a new project, an workaround is proposed [G__GamlEditor](here).
+
+For people that do not want to re-write all the models but just to follow the model construction, they can just download the model project here and the follow this [G__ImportingModels](workaround) to import it into GAMA.
+
 ### model structure
 A GAMA model is composed of three type of sections:
   * **global** : this section, that is unique, defines the "world" agent, a special agent of a GAMA model. It represents all that is global to the model: dynamics, variables, actions. In addition, it allows to initialize the simulation (init block).
