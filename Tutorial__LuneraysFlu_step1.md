@@ -10,7 +10,7 @@ This first step illustrates how to create simple agent and make them move in the
 ## Formulation
   * Set the time duration of a time step to 1 minutes
   * Define the people species with a moving skill
-  * Define the move and the infect behaviors of the people species
+  * Define the move reflex that allow the people agent to move randomly and the infect reflex that allows them to infect other people agents.
   * Define the aspect of the people species
   * Add the people species to a display
 
@@ -24,9 +24,6 @@ The first step of this tutorial consists in launching GAMA and choosing a worksp
 Note that the concepts of workspace and projects are explained [here](G__Workspace).
 
 
-
-
-
 ### model structure
 A GAMA model is composed of three type of sections:
   * **global** : this section, that is unique, defines the "world" agent, a special agent of a GAMA model. It represents all that is global to the model: dynamics, variables, actions. In addition, it allows to initialize the simulation (init block).
@@ -38,10 +35,26 @@ More details about the different sections of a GAMA model can be found [here](G_
 ### species
 A [species](G__DefiningSpecies) represents a «prototype» of agents: it defines their common properties.
 
-A species definition requires the definition of three different elements :
+Three different elements can be defined in a species:
   * the internal state of its agents (attributes)
   * their behavior
   * how they are displayed (aspects)
+
+In our model, we define a people species:
+```
+species people {
+		 
+}
+```
+
+In addition, we want add a new capability to our agent: the possibility to move randomly. for that, we add a specific skill to our people agents. A [skill](G__Skills) is a built-in module that provide the modeler a self-contain and relevant set of actions and variables. The [moving](__BuiltInSkills#moving) provides the agents with several attributes and actions related to movement. 
+
+```
+   species people skills: [moving]{
+       ...
+   }
+```
+
 
 #### Internal state
 An [attribute](G__DefiningAttributes) is defined as follows: type of the attribute  and name. Numerous types of attributes are available: _int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path..._
@@ -52,8 +65,21 @@ In addition to the attributes the modeler explicitly defines, species "inherits"
   * A shape (_shape_): the default shape of the agents to be construct after the species. It can be _a point, a polygon, etc._
   * A location (_location_) : the centroid of its shape.
 
+In our model, we define 2 new attribute to our people agents: 
+  * **speed** of type float, with for initial value: a random value between 2 and 5 km/h
+  * **is_infected** of type bool, with for initial value: false
+
+```
+species people skills:[moving]{		
+	float speed <- (2 + rnd(3)) #km/#h;
+	bool is_infected <- false;
+}
+```
+Note we use the [rnd](G__Operators#rnd) operator to define a random value between 2 and 5 for the speed. In addition, we precise a unit for the speed value by using the # symbol. For more details about units, see [here](G__UnitsAndConstants).
+
 #### Behavior
-In this first model, we define one species of agents: the **prey** agents. For the moment, these agents will not have a particular behavior, they will just exist and be displayed.
+GAMA proposes several ways of defining
+
 
 #### Display
 An agent [aspects](G__DefiningAspects) have to be defined. An aspect is a way to display the agents of a species : aspect aspect\_name {…}
