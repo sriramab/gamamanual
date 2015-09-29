@@ -2,7 +2,7 @@
 This first step illustrates how to create simple agents and make them move in their environment.
 
 
-![https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/luneray2.tiff](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/luneray2.tiff)
+![https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/luneray3.tiff](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/luneray3.tiff)
 
 
 
