@@ -1,6 +1,5 @@
-# 1. Creation of a first basic disease spreading model
-This first step illustrates how to create simple agents and make them move in their environment.
-
+# 3. Importation of GIS data
+This third step illustrates how load GIS data and to agentify them.
 
 ![https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/luneray3.tiff](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/luneray3.tiff)
 
