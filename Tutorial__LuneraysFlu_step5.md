@@ -19,6 +19,8 @@ This fifth step illustrates how to define 3D displays
 
 First, we add a new variable called _display\_shape_ of type _geometry_ for road agent that is a tube of 2m radius built from its geometry. Note that it is possible to get the list of points composing a geometry by using the _points_ variable of the geometry. We define then an aspect called _geom3D_ that draws the previous geometry in black.
 
+![https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/road_display.tiff](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/road_display.tiff)
+
 ```
 species road {
 	geometry display_shape <- line(shape.points, 2.0);
@@ -33,6 +35,8 @@ species road {
 Concerning the building species, we add a new variable called _height_ of type _float_ that is initialized by a random value between 20 and 40 meters.
 We define then an aspect called _geom3D_ that draws the shape of the building with a depth of height and with using a texture ("texture.jpg" that is located inside the includes folder).
 
+![https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/building_display.tiff](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/building_display.tiff)
+
 ```
 species building {
 	float height <- 20#m + rnd(20) #m;
@@ -43,6 +47,8 @@ species building {
 }
 ```
 At last, we define a new aspect called _geom3D_ for the people species that draws first a pyramid of 5 meters size, then a sphere of radius 2 meters at a height of 5m (z = 5). Note that it is possible to access the coordinates of a point by using the _x_, _y_ and _z_ variables. In GAMA, a point can be defined by using the format _{x\_value,y\_value,z\_value}_.
+
+![https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/people_display.tiff](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/people_display.tiff)
 
 ```
 species people skills:[moving]{		
