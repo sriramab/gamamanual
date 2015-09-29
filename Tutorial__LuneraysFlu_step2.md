@@ -20,7 +20,41 @@ This first step illustrates how to create simple agents and make them move in th
 
 ### global section
 
+#### global variables
 
+GAMA offers the possibility to define dynamic variable that will be recomputed at each simulation step by using the _update_ facet when defining a variable. When an agent is activated, first, it recomputes each of its variables with a update facet (in their definition order), then it activates each of its reflexes (in their definition order).
+
+To better follow the evolution of sick people, we add three new global variables to the model:
+  * nb_people_infected of type _int_ with _nb\_infected\_init_ as init value and updated at each simulation step by the number of infected people
+  * nb_people_not_infected of type _int_ with _(nb\_people - nb\_infected\_init)_ as init value and updated at each simulation step by the number of not infected people
+  * infected_rate of type _float_ updated at each simulation step by the number of infected people divided by the number of people.
+
+```
+global{
+	//... other attributes
+	int nb_people_infected <- nb_infected_init update: people count (each.is_infected);
+	int nb_people_not_infected <- nb_people - nb_infected_init update: nb_people - nb_people_infected;
+	float infected_rate update: nb_people_infected/nb_people;
+	//... init
+}
+```
+
+We used the [count](G__Operators#count) operator that allows to count the number of elements of a list for which the left condition is true. The keyword _each_ represents each element of the list.
+
+#### ending condition
+
+The simplest way to add an ending condition to a model is to add a global reflex that is activated at the end of the simulation that will pause the simulation (use of the _pause_ global action).
+
+In our model, we add a new reflex called _end\_simulation_ that will be activated when the infected rate is 1.0 (i.e. all the people agents are infected) and that will apply the _pause_ action. 
+```
+global {
+	//.. variable and init definition
+	
+	reflex end_simulation when: infected_rate = 1.0 {
+		do pause;
+	}
+} 
+```
 ### experiment
 
 #### input
