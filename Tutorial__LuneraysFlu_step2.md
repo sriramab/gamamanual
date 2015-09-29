@@ -1,5 +1,5 @@
-# 1. Creation of a first basic disease spreading model
-This first step illustrates how to create simple agents and make them move in their environment.
+# 1. Definition of monitors and chart outputs
+This second step illustrates how to create monitors and charts to follows the evolution of variables and to add an ending condition to the simulation.
 
 
 ![https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/luneray2.tiff](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/luneray2.tiff)
