@@ -1,5 +1,5 @@
-# 1. Creation of a first basic disease spreading model
-This first step illustrates how to create simple agents and make them move in their environment.
+# 4. Use of a graph to constraint the movements of people]
+This fourth step illustrates how to use a graph to constraint the movements of agents
 
 
 ![https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/luneray4.tiff](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/luneray4.tiff)
@@ -138,3 +138,5 @@ experiment main_experiment type:gui{
 	}
 }
 ```
+
+[Next step: Definition of 3D displays](Tutorial__LuneraysFlu_step5)
