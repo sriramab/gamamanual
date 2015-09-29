@@ -36,3 +36,8 @@ Implement the model given in the model description file. The detailed subject di
 * **Keywords:** GIS data, graph, skills, moving skill, displays, plot, mobillity model.
 * **Subject:** [PDF](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/MISS%20ABMS%202014%20-%20Traffic.pdf?attredirects=0&d=1), [Keynote](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/MISS%20ABMS%202014%20-%20Traffic.key?attredirects=0&d=1), [PPTX](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/MISS%20ABMS%202014%20-%20Traffic.pptx?attredirects=0&d=1)
 * **A model:** [gaml file](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/traffic.zip?attredirects=0&d=1)
+
+# Exercice (***): Shortest path on grid by distance diffusion
+* **Keywords:** grid, move, displays, diffusion model, algorithm.
+* **Subject:** [PDF](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/Shortest%20Path%20on%20Grid%20by%20diffusion.pdf?attredirects=0&d=1), [Word](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/Shortest%20Path%20on%20Grid%20by%20diffusion.docx?attredirects=0&d=1)
+* **A model:** [gaml file](https://sites.google.com/site/benoitgaudou/teaching/gama-exercices/Exo-ShortestPathDiffusion.zip?attredirects=0&d=1)
