@@ -57,23 +57,56 @@ global {
 ```
 ### experiment
 
-#### input
-Experiments can define (input) parameters. A parameter definition allows to make the value of a global variable definable by the user through the graphic interface.
+#### monitor
+GAMA provides modelers with the possibility to define [monitors](G__DefiningMonitorsAndInspectors#monitors). A monitor allows to follow the value of an arbitrary expression in GAML. It will appear, in the User Interface, in a small window on its own and be recomputed every time step (or according to its 'refresh_every' facet). 
 
-A [parameter](__DefiningParameters) is defined as follows:
-**parameter** title var: global\_var category: cat;
-  * **title** : string to display
-  * **var** : reference to a global variable (defined in the global section)
-  * **category** : string used to «store» the operators on the UI - optional
-  * **<-** : init value - optional
-  * **min** : min value - optional
-  * **max** : min value - optional
+Definition of a monitor:
+   * _value_: mandatory, the expression whose value will be displayed by the monitor.
+   * _refresh\_every_: int, optional : the number of simulation steps between two evaluations of the expression (default is 1).
 
-Note that the init, min and max values can be defined in the global variable definition.
+For our model, we define a monitor to follow the value of the _infected\_rate_ variable:
+```
+experiment main_experiment type:gui{
+	//...parameters
+	output {
+		monitor "Infected people rate" value: infected_rate;
+		
+               //...display
+	}
+}
+```
 
-#### output
 
+#### Chart
 
+In GAMA, [charts](G__DefiningChartLayers) are considered as a display layer. 
+GAMA can display 3 main types of charts using the _type_ facet:
+
+  * histogram
+  * pie
+  * series/xy/scatter: both display series with lines or dots, with 3 subtypes :
+    * series: to display the evolution of one/several variable (vs time or not).
+    * xy: to specify both x and y value. To allow stacked plots, only one y value for each x value.
+    * scatter: free x and y values for each serie.
+
+In our model, we define a new display called _ chart\_display_ that will be refresh every 10 simulation steps. In this display, we add a series charts with 2 layers of data:
+   * susceptible: the number of people that are not infected (in green)
+   * infected: the number of people that are infected (in red)
+```
+experiment main_experiment type:gui{
+	//...parameters
+	output {
+		//...display and monitors
+		
+		display chart_display refresh_every: 10 {
+			chart "Disease spreading" type: series {
+				data "susceptible" value: nb_people_not_infected color: #green;
+				data "infected" value: nb_people_infected color: #red;
+			}
+		}
+	}
+}
+```
 ## Complete Model
 
 ```
