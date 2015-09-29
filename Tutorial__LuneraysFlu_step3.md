@@ -15,6 +15,8 @@ This third step illustrates how load GIS data and to agentify them.
 
 ## Model Definition
 
+For this step, you will need to add the shapefiles of the roads and buildings inside the _includes_ folder of the project. The shapefiles (and all the other files) can be found [here](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/Luneray's flu.zip). 
+ 
 ### species
 In this model, we have to define two species of agents: the **road** agents and the **building** ones. These agents will not have a particular behavior, they will just be displayed.
 For each of this species we define an aspect called _geom_. As we want to represent the geometry of the agent, we then use the keyword **draw** that allow to draw a given geometry. In order to draw the geometry of the agent we use the attribute **shape** (which is a built-in attribute of all agents). The road will be displayed in black and the building in gray.
