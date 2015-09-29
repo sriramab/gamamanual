@@ -199,6 +199,17 @@ A [parameter](__DefiningParameters) is defined as follows:
 
 Note that the init, min and max values can be defined in the global variable definition.
 
+In our model, we define one parameter:
+   * "Nb people infected at init" that will define the value of the global variable _nb\_infected\_init_ with a min value of 1 and a max value of 2147 (the number of people living in Luneray).
+
+```
+experiment main_experiment type:gui{
+	parameter "Nb people infected at init" var: nb_infected_init min: 1 max: 2147;
+	
+	output {
+	}
+}
+```
 #### output
 [Output](G__DefiningOutputs) blocks are defined in an experiment and define how to visualize a simulation (with one or more [display](G__DefiningDisplays) blocks that define separate windows). Each display can be refreshed independently by defining the facet **refresh\_every:** nb (int) (the display will be refreshed every nb steps of the simulation).
 
