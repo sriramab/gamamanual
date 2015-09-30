@@ -19,7 +19,7 @@ This fifth step illustrates how to define 3D displays
 
 First, we add a new variable called _display\_shape_ of type _geometry_ for road agent that is a tube of 2m radius built from its geometry. Note that it is possible to get the list of points composing a geometry by using the _points_ variable of the geometry. We define then an aspect called _geom3D_ that draws the previous geometry in black.
 
-![https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/road_display.tiff](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/road_display.tiff)
+![https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/roads_display.tiff](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/roads_display.tiff)
 
 ```
 species road {
@@ -35,7 +35,7 @@ species road {
 Concerning the building species, we add a new variable called _height_ of type _float_ that is initialized by a random value between 20 and 40 meters.
 We define then an aspect called _geom3D_ that draws the shape of the building with a depth of height and with using a texture ("texture.jpg" that is located inside the includes folder).
 
-![https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/building_display.tiff](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/building_display.tiff)
+![https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/buildings_display.tiff](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/buildings_display.tiff)
 
 ```
 species building {
