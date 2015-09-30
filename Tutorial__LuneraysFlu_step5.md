@@ -17,26 +17,66 @@ This fifth step illustrates how to define 3D displays
 
 ### species
 
+First, we add a new variable called _display\_shape_ of type _geometry_ for road agent that is a tube of 2m radius built from its geometry. Note that it is possible to get the list of points composing a geometry by using the _points_ variable of the geometry. We define then an aspect called _geom3D_ that draws the previous geometry in black.
+
+![https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/road_display.tiff](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/road_display.tiff)
+
 ```
 species road {
-	aspect geom {
-		draw shape color: #black;
+	geometry display_shape <- line(shape.points, 2.0);
+	
+	//....
+	aspect geom3D {
+		draw display_shape color: #black;
 	}
 }
-
-species building {
-	aspect geom {
-		draw shape color: #gray;
-	}
-}
-
 ```
 
+Concerning the building species, we add a new variable called _height_ of type _float_ that is initialized by a random value between 20 and 40 meters.
+We define then an aspect called _geom3D_ that draws the shape of the building with a depth of height and with using a texture ("texture.jpg" that is located inside the includes folder).
 
-### global section
+![https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/building_display.tiff](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/building_display.tiff)
 
-#### global variables
+```
+species building {
+	float height <- 20#m + rnd(20) #m;
+	//....
+	aspect geom3D {
+		draw shape depth: height texture:["../includes/texture.jpg"];
+	}
+}
+```
+At last, we define a new aspect called _geom3D_ for the people species that draws first a pyramid of 5 meters size, then a sphere of radius 2 meters at a height of 5m (z = 5). Note that it is possible to access the coordinates of a point by using the _x_, _y_ and _z_ variables. In GAMA, a point can be defined by using the format _{x\_value,y\_value,z\_value}_.
 
+![https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/people_display.tiff](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/people_display.tiff)
+
+```
+species people skills:[moving]{		
+	//....
+	aspect geom3D{
+		draw pyramid(5) color: is_infected ? #red : #green;
+		draw sphere(2) at: {location.x,location.y,5} color: is_infected ? #red : #green;	
+	}
+}
+```
+
+### output
+
+We define a new display called _map\_3D_ of type _opengl_ with an _ambient\_light_ of 120 that displays first a image ("soil.jpg"), then the road with the _geom3D_ aspect, then the building with the _geom3D_ aspect, and finally the people with the _geom3D_ aspect. All layers except the people's one will not be refreshed (refresh set to false).
+
+```
+experiment main_experiment type: gui {
+	output {
+	// monitor and other displays	
+		display map_3D type: opengl ambient_light: 120 {
+			image "../includes/soil.jpg" refresh: false;
+			species road aspect:geom3D refresh: false;
+			species building aspect:geom3D refresh: false;
+			species people aspect:geom3D;			
+		}
+	}
+}
+```
 ## Complete Model
 
 ```
