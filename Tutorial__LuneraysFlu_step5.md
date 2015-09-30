@@ -124,6 +124,7 @@ species people skills:[moving]{
 		if flip(in_my_house ? 0.01 : 0.1) {
 			building bd_target <- in_my_house ? one_of(building) : my_house;
 			target <- any_location_in (bd_target);
+			in_my_house <- not in_my_house;
 		}
 	}
 		
