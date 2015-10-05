@@ -1,7 +1,7 @@
 
 # Defining Species
 
-Species are key elements of GAMA models (see [here](G__KeyConcepts A species is an archetype of agents and specifies their properties. A model is itself a species that can contain any number of species.
+Species are key elements of GAMA models (see [here](G__KeyConcepts)) A species is an archetype of agents and specifies their properties. A model is itself a species that can contain any number of species.
 
 
 ## Table of contents 
