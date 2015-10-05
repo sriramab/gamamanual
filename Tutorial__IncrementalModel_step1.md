@@ -66,7 +66,7 @@ In the block of an aspect, it is possible to draw :
   * An image : to draw icons
   * A text : to draw a text
 
-We define an aspect for this species. In this model, we want to display for each prey agent a circle of radius 5 and red or green according to the value of is\_infected (if infected: red, green otherwise). We then use the keyword **draw** with a circle shape. To define the color that depends on is\_infected, we use the tertiary operator **condition ? val1 : val2**. If the condition is true, this operator will return **val1**, otherwise **val2**. Note that it is possible to get a color value by using the symbol _#_ + color name: e.g. #blue, #red, #white, #yellow, #magenta, #pink...
+We define an aspect for this species. In this model, we want to display for each people agent a circle of radius 5 and red or green according to the value of is\_infected (if infected: red, green otherwise). We then use the keyword **draw** with a circle shape. To define the color that depends on is\_infected, we use the tertiary operator **condition ? val1 : val2**. If the condition is true, this operator will return **val1**, otherwise **val2**. Note that it is possible to get a color value by using the symbol _#_ + color name: e.g. #blue, #red, #white, #yellow, #magenta, #pink...
 ```
 species people skills:[moving]{		
 	...
@@ -82,9 +82,9 @@ Concerning the behavior of agents, the simplest way to define it is through refl
 
 The **when** facet is optional: when it is omitted, the reflex is activated at each time step. Note that if several reflexes are defined for a species, the reflexes will be activated following their definition order.
 
-We define a first reflex called **move** that allows the prey agents to move using the **wander** action (provided by the **moving** skill) that allows to randomly move (with taking into account the agent **speed**)
+We define a first reflex called **move** that allows the people agents to move using the **wander** action (provided by the **moving** skill) that allows to randomly move (with taking into account the agent **speed**)
 ```
-species prey {
+species people {
         ...
         reflex move{
 		do wander;
@@ -171,9 +171,9 @@ An experiment block defines how a model can be simulated (executed). Several exp
   * gui : experiment with a graphical interface, which displays its input parameters and outputs.
   * batch : Allows to setup a series of simulations (w/o graphical interface).
 
-In our model, we define a gui experiment called _prey\_predator_ :
+In our model, we define a gui experiment called main_experiment :
 ```
-experiment prey_predator type: gui {
+experiment main_experiment type: gui {
 }
 ```
 
