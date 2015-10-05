@@ -28,15 +28,15 @@ for example:
 species foo {} //it is also possible to directly write: species foo;
 ```
 
-The agents that will belong to this species will only be provided with some built-in attributes and actions, a basic behavioral structure and nothing more. These elements are directly inherited from the default parent species called [`agent`](G__AgentBuiltInSpecies).  [this page](G__RegularSpecies) to sify a different parent for the species.
+The agents that will belong to this species will only be provided with some built-in attributes and actions, a basic behavioral structure and nothing more. These elements are directly inherited from the default parent species called [`agent`](G__AgentBuiltInSpecies).  [this page](G__RegularSpecies) to specify a different parent for the species.
 
 A species can contain several elements:
-* [Attributes](G__DefiningAttributes): define tstate of the agents.
-* [Actions](G__DefiningActions): define a capaity of the agents. An action is a block of instructions that are executed when the action is called.
-* [Inits and Reflexes](G__DefiningBehaviors): defines the defaulehavior of the agents. Both statements contain instructions that are executed, respectively, once when the agent is created for `init` statements, and at each simulation step (according to an optional condition) for `reflex` statements.
-* [Aspects](G__DefiningAspects): define how the agents cbe displayed.
-* [Equations](G__DefiningEquations): define a set of differentialuations that can be integrated when necessary.
-* [Micro-species](G__MultiLevel): nested species can be described ide a species. See [here](G__MultiLevelArchitecture) for more details on the relationshipstween macro- and micro-species.
+* [Attributes](G__DefiningAttributes): define the state of the agents.
+* [Actions](G__DefiningActions): define a capacity of the agents. An action is a block of instructions that are executed when the action is called.
+* [Inits and Reflexes](G__DefiningBehaviors): defines the default behavior of the agents. Both statements contain instructions that are executed, respectively, once when the agent is created for `init` statements, and at each simulation step (according to an optional condition) for `reflex` statements.
+* [Aspects](G__DefiningAspects): define how the agents can be displayed.
+* [Equations](G__DefiningEquations): define a set of differential equations that can be integrated when necessary.
+* [Micro-species](G__MultiLevel): nested species can be described inside a species. See [here](G__MultiLevelArchitecture) for more details on the relationships between macro- and micro-species.
 
 Note that all the elements previously defined are optional. It is totally possible to define an empty species without any attributes, actions, reflexes, aspects, equations or micro-species like in the example above.
 
