@@ -31,7 +31,7 @@ We use a new global variable called _environmentSize\_that to define the size of
 In the global section we define the new variable
 ```
 int environmentSize <-100;
-```_
+```
 
 Then we redefine the shape of the world (by default the shape of the world is a 100x100 square) as cube that will have the size defined by the _environment\_size_ variable. To do so we change the shape of the world in the **global** section:
 
