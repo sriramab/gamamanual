@@ -163,7 +163,6 @@ global{
 			is_infected <- true;
 		}
 	}
-	
 }
 ```
 
