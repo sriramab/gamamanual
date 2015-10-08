@@ -28,6 +28,7 @@ This installation procedure has been tested on MacOS X 10.10 (Yosemite) and Wind
 ![Available software](images/GIT_install/Available_software.png)
 ![New repository](images/GIT_install/Xtext_new_repository.png)
     * Choose "Xtext" and the following version:  `Xtext Complete SDK	2.8.3.v201506010551`
+Beware : the version 2.8.4 DOES NOT WORK, so be sure to select the 2.8.3 version, by unchecking "Show only the latest version". If automatic update are done, and the gaml editor during the runtime does not work, the wrong version of Xtext may be the reason of your trouble. Uninstall / Reinstall Xtext with the correct version.
 ![Choose Xtext](images/GIT_install/ChooseXtext.png)
     * Accept the licence and install.
     * Restart Eclipse
