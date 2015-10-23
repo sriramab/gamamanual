@@ -55,6 +55,7 @@ The GAMA source code should now be downloaded from the GIT repository (hosted by
     * Everything else should be unchecked 
     * Finish
 ![Local destination](images/GIT_install/GIT_local_destination.png)
+This can take a while...
 
 ### Import projects into workspace
 You have now to import projects into the workspace (notice that the folders downloaded during the clone will neither be copied nor moved).
