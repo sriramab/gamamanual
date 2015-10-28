@@ -1,6 +1,7 @@
 # Extension
 
 ----
+
  msi.gaml.extensions.humanmoving
 
 ## Table of Contents

@@ -1,6 +1,7 @@
 # Extension
 
 ----
+
  msi.gaml.extensions.traffic2d
 
 ## Table of Contents

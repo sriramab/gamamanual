@@ -1,6 +1,7 @@
 # Extension
 
 ----
+
  simtools.graphanalysis.fr
 
 ## Table of Contents
@@ -37,9 +38,10 @@
 	
 
 ----
+
 ### layout_forceatlas2 
 #### Facets 
-		  
+  
   * **`graph`** (graph), (omissible) : the graph to apply the layout.
   * `approximate_repulsion` (boolean): Barnes Hut optimization: n2 complexity to n.ln(n); allows larger graphs. default: false
   * `approximation` (float): Theta of the Barnes Hut optimization. default: 1.2
@@ -62,12 +64,14 @@
 * The `layout_forceatlas2` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
+		
 	
 
 ----
+
 ### layout_yifanhu 
 #### Facets 
-		  
+  
   * **`graph`** (graph), (omissible) : the graph to apply the layout.
   * `bounded_point1` (point): The new nodes positions are bounded within the two bound points if both are not null. default: null
   * `bounded_point2` (point): The new nodes positions are bounded within the two bound points if both are not null. default: null
@@ -84,6 +88,7 @@
 * The `layout_yifanhu` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
+		
 		
 	
 ----

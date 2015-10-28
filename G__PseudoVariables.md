@@ -18,7 +18,7 @@ The expressions known as **pseudo-variables** are special read-only variables th
 ## self
 The pseudo-variable `self` always holds a reference to the agent executing the current statement.
 
-  * Example (sets the `friend` attribute of another random agent of the same species to `self` and conversely) :
+  * Example (sets the `friend` attribute of another random agent of the same species to `self` and conversely):
 
 ```
 friend potential_friend <- one_of (species(self) - self);
@@ -34,7 +34,7 @@ if potential_friend != nil {
 ## myself
 `myself` plays the same role as `self` but in remotely-executed code (`ask`, `create`, `capture` and `release` statements), where it represents the _calling_ agent when the code is executed by the _remote_ agent.
 
-  * Example (asks the first agent of my species to set its color to my color) :
+  * Example (asks the first agent of my species to set its color to my color):
 
 ```
 ask first (species (self)){
@@ -42,7 +42,7 @@ ask first (species (self)){
 }
 ```
 
-  * Example (create 10 new agents of the species of my species, share the energy between them, turn them towards me, and make them move 4 times to get closer to me) :
+  * Example (create 10 new agents of the species of my species, share the energy between them, turn them towards me, and make them move 4 times to get closer to me):
 
 ```
 create species (self) number: 10 {
