@@ -1,6 +1,7 @@
 # Extension
 
 ----
+
  ummisco.gaml.extensions.sound
 
 ## Table of Contents
@@ -37,9 +38,10 @@
 	
 
 ----
+
 ### pause_sound 
 #### Facets 
-		
+
 
 #### Embedments
 * The `pause_sound` statement is of type: **Sequence of statements or action**
@@ -47,12 +49,14 @@
 * The `pause_sound` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
+		
 	
 
 ----
+
 ### resume_sound 
 #### Facets 
-		
+
 
 #### Embedments
 * The `resume_sound` statement is of type: **Sequence of statements or action**
@@ -60,12 +64,14 @@
 * The `resume_sound` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
+		
 	
 
 ----
+
 ### start_sound 
 #### Facets 
-		  
+  
   * **`source`** (string): The path to music file. This path is relative to the path of the model.
   * `mode` (an identifier), takes values in: {overwrite, ignore}: Mode of 
   * `repeat` (boolean): 
@@ -76,12 +82,14 @@
 * The `start_sound` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
+		
 	
 
 ----
+
 ### stop_sound 
 #### Facets 
-		
+
 
 #### Embedments
 * The `stop_sound` statement is of type: **Sequence of statements or action**
@@ -89,6 +97,7 @@
 * The `stop_sound` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
+		
 		
 	
 ----
