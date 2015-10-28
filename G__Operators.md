@@ -7867,6 +7867,7 @@ float var9 <- rnd (2.0, 4.0); 	// var9 equals a float number between 2.0 and 4.0
 ----
 
 ### `rnd_choice`
+<<<<<<< HEAD
 
 #### Possible use: 
   * OP(`list`) --->  `int` 
@@ -7875,6 +7876,13 @@ float var9 <- rnd (2.0, 4.0); 	// var9 equals a float number between 2.0 and 4.0
 returns an index of the given list with a probability following the (normalized) distribution described in the list (a form of lottery)
 
 #### Examples: 
+=======
+* **Possible use:** 
+  * OP(list) --->  int 
+* **Result:** returns an index of the given list with a probability following the (normalized) distribution described in the list (a form of lottery)
+* **Comment:** The given list doesn't have to be normalized beforehand, as the operator does the scaling.
+* **Examples:** 
+>>>>>>> branch 'master' of https://github.com/gama-platform/gama.wiki.git
 ```
 int var0 <- rnd_choice([0.2,0.5,0.3]); 	// var0 equals 2/10 chances to return 0, 5/10 chances to return 1, 3/10 chances to return 2
 ```
