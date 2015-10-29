@@ -90,7 +90,7 @@ By default, a species has a continuous topology. However, it is possible to defi
 ## Types of Species
 
 Several types of species exist in GAMA:
-* [global species](G__GlobalSpecies): The global species defines the model, i.e. the attributes,tions, behaviors and micro-species that describe the world agent.
+* [global species](G__GlobalSpecies): The global species defines the model, i.e. the attributes, actions, behaviors and micro-species that describe the world agent.
 * [regular species](G__RegularSpecies): species of agents with a continuous topology by default.
 * [grid species](G__GridSpecies): species of agents with a grid topology.
 * [graph species](G__GraphSpes): species of agents with a graph topology.
