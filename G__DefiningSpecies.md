@@ -42,7 +42,7 @@ Note that all the elements previously defined are optional. It is totally possib
 
 In addition to the regular inheritance mechanisms, modelers can attach skills and control architectures to species, which will provide their agents with new attributes, actions and behaviors. See [here](G__SkillsAndControl) for how to define these capabilities.
 
-Flly, some specific features concerning the interaction of users with agents can be added to any species. It is for example possible to define an action that will be executed by the user. See [here](G__DefiningUserCommands) for more details.
+Finally, some specific features concerning the interaction of users with agents can be added to any species. It is for example possible to define an action that will be executed by the user. See [here](G__DefiningUserCommands) for more details.
 
 
 
