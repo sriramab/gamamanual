@@ -11,15 +11,14 @@ Since model files need to reside in a project to be managed by GAMA, it is usual
 ## Table of contents 
 
 * [Importing Models](#importing-models)
-	* [The "Import…" Menu Command](#the-import-menu-command)
-	* [SVN import](#svn-import)
+	* [The "Import..." Menu Command](#the-import-menu-command)
 	* [Silent import](#silent-import)
 	* [Drag'n Drop / Copy-Paste Limitations](#dragn-drop--copy-paste-limitations)
 
 
 
-## The "Import…" Menu Command
-The simplest, safest and most secure way to import a project into the workspace is to use the built-in "Import…" menu command, available in the "File" menu or in the contextual menu of the _Navigator_.
+## The "Import..." Menu Command
+The simplest, safest and most secure way to import a project into the workspace is to use the built-in "Import..." menu command, available in the "File" menu or in the contextual menu of the _Navigator_.
 
 ![images/model_import/menu_file_import.png](images/model_import/menu_file_import.png)
 
@@ -29,7 +28,7 @@ When invoked, this command will open a dialog asking the user to choose the sour
 
 ![images/model_import/dialog_import.png](images/model_import/dialog_import.png)
 
-Note that when invoked from the contextual menu, "Import…" will directly give access to a shortcut of this source in a submenu.
+Note that when invoked from the contextual menu, "Import..." will directly give access to a shortcut of this source in a submenu.
 
 ![images/model_import/menu_navigator_import.png](images/model_import/menu_navigator_import.png)
 

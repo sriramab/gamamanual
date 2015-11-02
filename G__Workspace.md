@@ -13,9 +13,8 @@ The **projects** present in the **workspace** can be either directly _stored_ wi
 
 **GAMA models files** are stored in these **projects**, which may contain also other files (called _resources_) necessary for the **models** to function. A project may of course contain several **model files**, especially if they are importing each other, if they represent different views on the same topic, or if they share the same resources.
 
-Learning how to [navigate](G__NavigatingWorkspace) in the workspace, how to [switch](G__ChangingWorkspace) workspace, how to [import, export](G__ImportingModels) or [share](G__SharingModels) models is a necessity to use GAMA correctly. It is the purpose of the following sections.
+Learning how to [navigate](G__NavigatingWorkspace) in the workspace, how to [switch](G__ChangingWorkspace) workspace or how to [import, export](G__ImportingModels) is a necessity to use GAMA correctly. It is the purpose of the following sections.
 
 * 1. [Navigating in the Workspace](G__NavigatingWorkspace)
 * 2. [Changing Workspace](G__ChangingWorkspace)
 * 3. [Importing Models](G__ImportingModels)
-* 4. [Sharing Models](G__SharingModels)

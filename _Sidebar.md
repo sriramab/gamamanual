@@ -12,7 +12,6 @@
   1. [Navigating in the Workspace](G__NavigatingWorkspace)
   2. [Changing Workspace](G__ChangingWorkspace)
   3. [Importing Models](G__ImportingModels)
-  4. [Sharing Models](G__SharingModels)
 3. [Editing Models](G__EditingModels)
   1. [GAML Editor](G__GamlEditor)
   2. [Validation of Models](G__ValidationOfModels)

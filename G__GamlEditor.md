@@ -53,11 +53,11 @@ While the file is not saved, these errors remain displayed in the editor and now
 
 Reaching the _Experimentable_ state requires that all errors are eliminated and that at least one experiment is defined in the model, which is the case now in our toy model. The experiment is immediately displayed as a button in the toolbar, and clicking on it will allow to launch this experiment on your model. See [the section about running experiments](G__RunningExperiments) for more information on this point.
 
-![images/model_edition/9.view_model_with_experiment.png](images/model_edition/9.view_model_with_experiment.png)
+![images/model_edition/8.view_model_with_experiment.png](images/model_edition/8.view_model_with_experiment.png)
 
 Experiment buttons are updated in real-time to reflect what's in your code. If more than one experiment is defined, corresponding buttons will be displayed in addition to the first one.
 
-![images/model_edition/10.view_model_with_3_experiments.png](images/model_edition/10.view_model_with_3_experiments.png)
+![images/model_edition/9.view_model_with_3_experiments.png](images/model_edition/9.view_model_with_3_experiments.png)
 
 
 
@@ -66,18 +66,18 @@ Experiment buttons are updated in real-time to reflect what's in your code. If m
 
 Text editing in general, and especially in Eclipse-based editors, sports a number of options and preferences. You might want to turn off/on the numbering of the lines, change the fonts used, change the colors used to highlight the code, etc. All of these preferences are accessible from the "Preferences…" item of the editor contextual menu.
 
-![images/model_edition/10bis.view_model_with_preferences.png](images/model_edition/10bis.view_model_with_preferences.png)
+![images/model_edition/10.view_model_with_preferences.png](images/model_edition/10.view_model_with_preferences.png)
 
 Explore the different items present there, keeping in mind that these preferences will apply to all the editors of GAMA and will be stored in your workspace.
 
-![images/model_edition/10ter.editor_preferences.png](images/model_edition/10ter.editor_preferences.png)
+![images/model_edition/11.editor_preferences.png](images/model_edition/11.editor_preferences.png)
 
 
 ## Structural highlighting
 
 One particular option, shipped by default with GAMA, is the possibility to not only highlight the code of your model, but also its structure (complementing, in that sense, the _Outline_ view). It is a slightly modified version of a plugin called [EditBox](http://sourceforge.net/projects/editbox/), which can be activated by clicking on the "green square" icon in the toolbar.
 
-![images/model_edition/11_view_model_with_editbox_default.png](images/model_edition/11_view_model_with_editbox_default.png)
+![images/model_edition/12.view_model_with_editbox_default.png](images/model_edition/12.view_model_with_editbox_default.png)
 
 The Default theme of [EditBox](http://sourceforge.net/projects/editbox/) might not suit everyone's tastes, so the preferences allow to entirely customize how the "boxes" are displayed and how they can support the modeler in better understanding "where" it is in the code. The "themes" defined in this way are stored in the workspace, but can also be exported for reuse in other workspaces, or sharing them with other modelers.
 
@@ -101,10 +101,10 @@ Among the various options present to work with models, which you are invited to 
 
 This command invokes the opening of a new view, which you can see on the figure below, and which lists the different versions of your file so far. You can then choose one and, right-clicking on it, either open it in a new editor, or compare it to your current version.
 
-![images/model_edition/17.view_model_with_local_history_compare_menu.png](images/model_edition/17.view_model_with_local_history_compare_menu.png)
+![images/model_edition/16.view_model_with_local_history_compare_menu.png](images/model_edition/16.view_model_with_local_history_compare_menu.png)
 
 This allows you to precisely pinpoint the modifications brought to the file and, in case of problems, to revert them easily, or even revert the entire file to a previous version. Never lose your work again !
 
-![images/model_edition/18.view_model_with_local_history_side_by_side.png](images/model_edition/18.view_model_with_local_history_side_by_side.png)
+![images/model_edition/17.view_model_with_local_history_side_by_side.png](images/model_edition/17.view_model_with_local_history_side_by_side.png)
 
 This short introduction to GAML editors is now over. You might want to take a look, now, at [how the models you edit are parsed, validated and compiled](G__ValidationOfModels), and how this information is accessible to the modeler.
