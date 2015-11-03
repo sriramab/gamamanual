@@ -21,21 +21,13 @@ As already mentioned on [this page](G__GamlEditor), GAML editors will provide th
 
 ![images/launch_experiments/editor_launch.png](images/launch_experiments/editor_launch.png)
 
-In case the currently edited file  does not define any experiment, but if other files _in the same project_ define some, it is possible to access them directly from the editor using the small "In project:" drop-down arrow on the upper-right corner of the editor.
+For each of those launching buttons, you can see 2 different pictograms, showing the type of experiment. An experiment can either be a [GUI Experiment](G__DefiningExperiments) or a [Batch Experiment](G__BatchExperiments).
 
-![images/launch_experiments/editor_in_project.png](images/launch_experiments/editor_in_project.png)
-
-
-This menu gives access to all the model files currently defined with experiments in the project and, for each, to its different experiments. Selecting one will have the same effect as clicking on the button in the editor of this file.
-
-![images/launch_experiments/menu_in_project.png](images/launch_experiments/menu_in_project.png)
+![images/launch_experiments/editor_different_types_of_experiment.png](images/launch_experiments/editor_different_types_of_experiment.png)
 
 
 ## From the Navigator
-A same mechanism is implemented in the [Navigator](G__NavigatingWorkspace). Right-clicking on a category, on a project, on a sub-directory of a project, or on a model file will enable the command named "Run…" in the contextual menu. Depending on the object(s) being selected, this command will give you access to:
-
-1. The experiments defined in the model file(s) selected
-1. The experiments defined in the model file(s) present in the category(s), project(s) or folder(s) selected.
+You can also launch your experiments from the navigator, by expanding a model and double clicking on one of the experiments available (The number of experiments for each model is visible also in the navigator). As for the editor, the two types of experimentations (gui and batch) are differentiated by a pictogram.
 
 ![images/launch_experiments/navigator_launch.png](images/launch_experiments/navigator_launch.png)
 

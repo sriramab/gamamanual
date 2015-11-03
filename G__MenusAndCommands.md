@@ -17,7 +17,7 @@ The simulation perspective adds on the user interface a number of new menus and 
 
 
 ## Experiment Menu
-A menu, called "Experiment", allows to control the current experiment. It shares some of its commands with the general toolbar (see [below](#General_Toolbar)).
+A menu, called "Experiment", allows to control the current experiment. It shares some of its commands with the general toolbar (see [below](#general-toolbar)).
 
 ![images/experiments/menu_experiment.png](images/experiments/menu_experiment.png)
 
@@ -52,19 +52,21 @@ Each agent, when selected, will reveal a similar individual menu. This menu will
 
 ![images/experiments/menu_agents_3.png](images/experiments/menu_agents_3.png)
 
-
-On the contrary, if they host other agents (e.g. a population of "inside\_ant" in our example) and if their species is provided with user commands, their individual menu will look like the following:
-
-
-![images/experiments/menu_agents_4.png](images/experiments/menu_agents_4.png)
-
-
-The 4 actions that will be there most of the time, then, are:
+These are the 4 actions that will be there most of the time:
 
   * **Inspect**: open an [inspector](G__InspectorsAndMonitors) on this agent.
   * **Highlight**: makes this agent the current "highlighted" agent, forcing it to appear "highlighted" in all the displays that might have been defined.
   * **Focus**: this option is not accessible if no displays are defined. Makes the current display zoom on the selected agent (if it is displayed) so that it occupies the whole view.
   * **Kill**: destroys the selected agent and disposes of it. **Use this command with caution**, as it can have undesirable effects if the agent is currently executing its behavior.
+
+If an agent hosts other agents (it is the case in [multi-level architecture](G__MultiLevel)), you can access to the micro-population quite easily: 
+
+![images/experiments/menu_agents_multi_level.png](images/experiments/menu_agents_multi_level.png)
+
+If [user commands](G__UserControlled) are defined for a species (for example in the existing model Features/Driving Skill/Road Traffic simple (City)), their individual menu will look like the following:
+
+![images/experiments/menu_agents_user_command.png](images/experiments/menu_agents_user_command.png)
+
 
 
 
@@ -72,7 +74,7 @@ The 4 actions that will be there most of the time, then, are:
 
 The last piece of user interface specific to the Simulation Perspective is a toolbar, which contains controls and information displays related to the current experiment.
 
-This toolbar is voluntarily minimalist, with three buttons already present in the [experiment menu](#Experiment_Menu) (namely, "Play/Pause", "Step by Step" and "Reload"), which don't need to be detailed here, and two new controls ("Experiment status" and "Cycle Delay"), which are explained below.
+This toolbar is voluntarily minimalist, with three buttons already present in the [experiment menu](#experiment-menu) (namely, "Play/Pause", "Step by Step" and "Reload"), which don't need to be detailed here, and two new controls ("Experiment status" and "Cycle Delay"), which are explained below.
 
 ![images/experiments/toolbar.png](images/experiments/toolbar.png)
 

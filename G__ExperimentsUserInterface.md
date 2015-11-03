@@ -3,7 +3,7 @@
 
 
 
-As soon as an experiment is [launched](G__LaunchingExperiments), the modeler is facing a new environment (with different menus and views) called the _Simulation Perspective_). The _Navigator_ is still opened in this perspective, though, and it is still possible to [edit models](G__EditingModels) in it, but it is considered as good practice to use each perspective for what is has been designed for. Switching perspectives is easy. The small button in the top-left corner of the window, next to the [preferences](G__Preferences) button, allows to switch back and forth the two perspectives.
+As soon as an experiment is [launched](G__LaunchingExperiments), the modeler is facing a new environment (with different menus and views) called the _Simulation Perspective_). The _Navigator_ is still opened in this perspective, though, and it is still possible to [edit models](G__EditingModels) in it, but it is considered as good practice to use each perspective for what is has been designed for. Switching perspectives is easy. The small button in the top-left corner of the window allows to switch back and forth the two perspectives.
 
 ![images/experiments/button_switch.png](images/experiments/button_switch.png)
 

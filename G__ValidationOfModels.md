@@ -126,26 +126,6 @@ This process is described by the information marker next to the redefinition.
 ## Cleaning models
 It may happen that the metadata that GAMA maintains about the different projects (which includes the various **markers** on files in the workspace, etc.) becomes corrupted from time to time. This especially happens if you frequently switch workspaces, but not only. In those (hopefully rare) cases, GAMA may report incorrect errors for perfectly legible files.
 
-When such odd behaviors are detected, or if you want to regularly keep your metadata in a good shape, GAMA proposes a menu command called "Clean…", that can be found in the "Project" menu.
+When such odd behaviors are detected, or if you want to regularly keep your metadata in a good shape, you can clean all your project, by clicking on the button "Clear and validate all projects" (in the syntax errors view).
 
-![images/model_compilation/menu_clean.png](images/model_compilation/menu_clean.png)
-
-Invoking this command results in GAMA removing all the validation metadata associated with projects and provoking a complete "re-build" of all the projects (_building_ here meaning validating the models, essentially). This command can be invoked on the current selected project, or on all projects at once (it is recommended, if you suspect odd behaviors, to do the latter).
-
-![images/model_compilation/dialog_clean.png](images/model_compilation/dialog_clean.png)
-
-
-Depending on the size of your projects, the process can take more or less time (a few seconds for the stock version without user projects). Note that GAMA, from time to time, will invoke such complete "re-builds" if it estimates that you have modified too many models. But it doesn't remove the existing meta-data in this case.
-
-This process will display the following dialog, that you can later suppress by enabling it to run in the background.
-
-![images/model_compilation/building_dialog.png](images/model_compilation/building_dialog.png)
-
-
-When running in the background, GAMA will report the progress of the building process in the bottom right-hand corner of the window. The small icon next to it enables to follow it more accurately (while still running in background)
-
-![images/model_compilation/background_run.png](images/model_compilation/background_run.png)
-
-
-This will open a new view, called _Progress_ in which other background processes (workspace management, memory management) will also report their progresses. This view can be opened and closed at will without provoking any trouble.
-![images/model_compilation/background_run_view.png](images/model_compilation/background_run_view.png)
+![images/model_compilation/action_clean.png](images/model_compilation/action_clean.png)
