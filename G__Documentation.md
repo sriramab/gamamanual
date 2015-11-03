@@ -1,7 +1,7 @@
 
 # Documentation
 
-The GAMA documentation comes in 2 formats: a set of wiki files availaible from the wiki section of the GitHub website and a PDF file. The PDf file is produced from the wiki files.
+The GAMA documentation comes in 2 formats: a set of wiki files availaible from the wiki section of the GitHub website and a PDF file. The PDF file is produced from the wiki files.
 
 In the wiki files, some are hand-written by the GAMA community and some other are generated automatically from the Java code and the associated java annotations.
 
@@ -44,8 +44,8 @@ In addition, the folder containing the wiki files is required. In the GitHub arc
     * Finish
 2. Go back to the Java perspective: a `gama.wiki` plugin should have been added.
 
-In order to generate the PDF file from the wiki files, we use an external application named (Pandoc)[http://pandoc.org/].
-Follow the (Pandoc installation instructions to install it)[http://pandoc.org/installing.html]. Note that Latex should be installed in order to be able to generate PDF files.
+In order to generate the PDF file from the wiki files, we use an external application named [Pandoc](http://pandoc.org/).
+Follow the [Pandoc installation instructions to install it](http://pandoc.org/installing.html). Note that Latex should be installed in order to be able to generate PDF files.
 
 
 ### Configuration
