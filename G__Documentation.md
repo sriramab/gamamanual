@@ -119,3 +119,15 @@ The pdf generator uses the table of content (toc) file located in the `files/inp
 * `MainGenerateUnitTest.java` creates GAMA model files for each kind of keyword from the `docGAMAglobal.xml` file.
 
 ## How to document
+
+### How to document operators
+
+A GAML operator is defined by a Java method annoted by the `@operator` annotation (see [the list of all annotations](G__DevelopingIndexAnnotations) for more details about annotations).
+The documentation generator will use information from:
+* the `@operator` annotation:
+  * `value`: it provides the name(s) of the operator (if an operator has several names, the other names will be considered as alternative names)
+  * `category`: it is used to classified the operators in categories
+* the `@doc` annotation,
+* the method definition:
+  * the return value type
+  * parameters and their type (if the method is static, the IScope attribute is not taken into account)
