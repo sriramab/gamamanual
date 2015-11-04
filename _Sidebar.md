@@ -115,6 +115,7 @@
 9. [Developing a Control Architecture](G__DevelopingControlArchitectures)
 10. [Index of annotations](G__DevelopingIndexAnnotations)
 11. [IScope](G__DevelopingIScope)
+12. [Documentation generation](G__Documentation)
 
 ## [References](G__References)
 
