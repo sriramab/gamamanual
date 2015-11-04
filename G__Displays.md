@@ -25,17 +25,17 @@ The classical displays displaying any kind of content can be manipulated via the
 ![images/experiments/display-java2D.png](images/experiments/display-java2D.png)
 
 
-Each display provides several buttons to manipulate the display:
-  * **Pause the-display**: when pressed, the display will not be displayed anymore, the simulation is still running,
+Each display provides several buttons to manipulate the display (from left to right):
+  * **Show/hide side bar**,
+  * **Show/hide overlay**,
+  * **Browse through all displayed agents**: open a context menu to inspect agents,
   * **Update every X step**: configure the refresh frequence of the display,
+  * **Pause the-display**: when pressed, the display will not be displayed anymore, the simulation is still running,
   * **Synchronize the display and the execution of the model**,
-  * **Take a snapshot**: take a snapshot saved as a png image in the `snapshots` folder of the models folder,
   * **Zoom in**,
   * **Zoom to fit view**,
   * **Zoom out**,
-  * **Browse through all displayed agents**: open a context menu to inspect agents,
-  * **Show/hide side bar**,
-  * **Show/hide overlay**.
+  * **Take a snapshot**: take a snapshot saved as a png image in the `snapshots` folder of the models folder.
 
 The Show/Hide side bar button opens a side panel in the display allowing the modeler to configure:
   * **Properties** of the display: background and highlight color, display the scale bar
@@ -55,11 +55,11 @@ The bottom overlay bar displays information about the way it is displayed:
 
 The OpenGL display has an additional button **3D Options** providing 3D features:
   * **Use FreeFly camera**/**Use Arcball camera**: switch between cameras, the default camera is the Arcball one,
+  * **Use mouse to rotate**/**Use mouse to drag** (only with Arcball camera): use left click for one of the 2 actions, left click + Ctrl for the other of the 2 actions.
+  * **Apply inertia** (only with Arcball camera): in inertia mode, when the modeler stops moving the camera, there is no straight halt but a kind of inertia.
   * **Rotate scene**: rotate the scene around an axis orthogonal to the scene,
   * **Split layers**/**Merge layers**: display each layer at a distinct height,
-  * **Triangulate scene**
-  * **Arcball drag** (only with Arcball camera): the right press and hold and mouse move makes rotation on the scene
-  * **Inertia mode** (only with Arcball camera): in inertia mode, when the modeler stops moving the camera, there is no straight halt but a kind of inertia.
+  * **Triangulate scene**: display the polygon primitives.
 
 ![images/experiments/display-OpenGL.png](images/experiments/display-OpenGL.png)
 
