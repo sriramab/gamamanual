@@ -13,7 +13,7 @@ You can then download the right version from the [Downloads page](https://code.g
 	* [Installation of Java](#installation-of-java)
 		* [On MacOS X (Lion, Mountain Lion, Mavericks)](#on-macos-x-lion-mountain-lion-mavericks)
 		* [On MacOS X (Yosemite, El Capitan)](#on-macos-x-yosemite)
-		* [On Windows 7 & 8 64 bits](#on-windows-7--8-64-bits)
+		* [On Windows 64 bits](#on-windows-7--8-64-bits)
 		* [On Ubuntu & Linux](#on-ubuntu--linux)
 
 
@@ -40,7 +40,7 @@ If you upgrade your Mac OS X version to **Yosemite** (aka Mac OS X 10.10) or **E
 If you run the developer version of GAMA (i.e. under Eclipse), it is necessary, in that case, to reconfigure the "Installed JREs" (Preferences > Java > Installed JREs) so as to point JDK1.6 to the location where Yosemite or El Capitan now installs it (i.e. in `/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home`). See [here](http://stackoverflow.com/questions/26450420/osx-10-10-and-eclipse-luna-own-app-crashes-when-started-from-inside-eclipse) for related information.
 
 
-### On Windows 7 & 8 64 bits
+### On Windows 64 bits
 Please notice that, by default, Internet Explorer and Chrome browsers will download a 32 bits version of the JRE. Running GAMA 32 bits for Windows is ok, but you may want to download the latest JDK instead, in order to both improve the performances of the simulator and be able to run GAMA 64 bits.
 
   * To download the appropriate java version, follow this link: [Java download section](http://www.java.com/fr/download/manual.jsp)
