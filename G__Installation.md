@@ -12,7 +12,7 @@ You can then download the right version from the [Downloads page](https://code.g
 	* [System Requirements](#system-requirements)
 	* [Installation of Java](#installation-of-java)
 		* [On MacOS X (Lion, Mountain Lion, Mavericks)](#on-macos-x-lion-mountain-lion-mavericks)
-		* [On MacOS X (Yosemite)](#on-macos-x-yosemite)
+		* [On MacOS X (Yosemite, El Capitan)](#on-macos-x-yosemite)
 		* [On Windows 7 & 8 64 bits](#on-windows-7--8-64-bits)
 		* [On Ubuntu & Linux](#on-ubuntu--linux)
 
@@ -34,10 +34,10 @@ Because of this bug in SWT (https://bugs.eclipse.org/bugs/show_bug.cgi?id=374199
 If JDK 1.7 is already installed, it is then necessary to also install the JDK 1.6 distributed by Apple in order to run GAMA. The latest version, « Java for OS X 2014-001 », can be obtained here : http://support.apple.com/kb/DL1572. Alternatively, you might want to go to https://developer.apple.com/downloads and, after a free registration step if you're not an Apple Developer, get the complete JDK from the list of downloads.
 
 
-### On MacOS X (Yosemite)
-If you upgrade your Mac OS X version to **Yosemite** (latest version, aka Mac OS X 10.10), some changes in the management of Java Virtual Machines might prevent the GAMA displays from working and it will make your models crash the platform. One fix for this behavior is, **after** having upgraded Mac OS X, to install (or reinstall in case you have already installed it) the same « Java for OS X 2014-001 », available here: http://support.apple.com/kb/DL1572.
+### On MacOS X (Yosemite, El Capitan)
+If you upgrade your Mac OS X version to **Yosemite** (aka Mac OS X 10.10) or **El Capitan** (10.11), some changes in the management of Java Virtual Machines might prevent the GAMA displays from working and it will make your models crash the platform. One fix for this behavior is, **after** having upgraded Mac OS X, to install (or reinstall in case you have already installed it) the same « Java for OS X 2015-001 », available here: http://support.apple.com/kb/DL1572.
 
-If you run the developer version of GAMA (i.e. under Eclipse), it is necessary, in that case, to reconfigure the "Installed JREs" (Preferences > Java > Installed JREs) so as to point JDK1.6 to the location where Yosemite now installs it (i.e. in `/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home`). See [here](http://stackoverflow.com/questions/26450420/osx-10-10-and-eclipse-luna-own-app-crashes-when-started-from-inside-eclipse) for related information.
+If you run the developer version of GAMA (i.e. under Eclipse), it is necessary, in that case, to reconfigure the "Installed JREs" (Preferences > Java > Installed JREs) so as to point JDK1.6 to the location where Yosemite or El Capitan now installs it (i.e. in `/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home`). See [here](http://stackoverflow.com/questions/26450420/osx-10-10-and-eclipse-luna-own-app-crashes-when-started-from-inside-eclipse) for related information.
 
 
 ### On Windows 7 & 8 64 bits
