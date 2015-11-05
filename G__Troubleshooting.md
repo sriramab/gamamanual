@@ -36,13 +36,13 @@ No fix can be provided from the GAMA side for the moment.
 
 
 ## On Windows
-No common trouble...
+No problem so far...
 
 
 
 
 ## On MacOS X
-The only problems reported so far on MacOS X (from Lion to Yosemite) concern visual glitches in the UI and problems with displays, either not showing or crashing the JVM. Most (all ?) of these problems are usually related to the fact that GAMA does not run under the correct version of Java Virtual Machine. In that case, follow [these instructions](G__Installation#On_MacOS_X_(Lion,_Mountain_Lion,_Mavericks)) to install the correct version.
+The only problems reported so far on MacOS X (from Lion to El Capitan) concern visual glitches in the UI and problems with displays, either not showing or crashing the JVM. Most (all ?) of these problems are usually related to the fact that GAMA does not run under the correct version of Java Virtual Machine. In that case, follow [these instructions](G__Installation#On_MacOS_X_(Lion,_Mountain_Lion,_Mavericks)) to install the correct version.
 
 
 
