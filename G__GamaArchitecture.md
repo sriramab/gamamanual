@@ -11,6 +11,19 @@ Each project is either designed as a __plugin__ (containing an xml file "plugin.
 
 To see how to create a plugin and a feature, please read [this page](G__InstallingGitVersion).
 
+## Table of contents 
+
+* [Architecture of GAMA](#architecture-of-gama)
+	* [The minimal configuration](#the-minimal-configuration)
+	* [Optional Plugins](#optional-plugins)
+		* [Plugins present in the release version](#plugins-present-in-the-release-version)
+		* [Plugins not present by default in the release version](#plugins-not-present-by-default-in-the-release-version)
+		* [Plugins not designated to be in the release version](#plugins-not-designated-to-be-in-the-release-version)
+	* [Unmaintained projects](#unmaintained-projects)
+	* [Features](#features)
+	* [Models](#models)
+	* [Plugins overview](#plugins-overview)
+
 ## The minimal configuration
 
 Here is the list of projects which have to be imported in order to run the GAMA platform, and to execute a simple model in gaml language:
@@ -36,8 +49,7 @@ Minimal configuration projects dependencies:
 
 ![Minimal configuration projects dependencies](images/architecture/minimal_configuration.png)
 
-## Optional Plug-ins
- 
+## Optional Plugins
 
 ### Plugins present in the release version
 From this minimal configuration, it is possible to add some features. Here is the list of the features installed by default in the release version:
@@ -101,6 +113,7 @@ Some other projects are still in the git repository in case we need to work on i
 Beside those plugins and features, a project dedicated to gather a bunch of examples is also in the git repository. It contains gaml code:
   * `msi.gama.models`
 
+## Plugins overview
 
 Global architecture of GAMA (nb : the features graphlayout, core, dependencies, plugins, jogl2.product and product are not represented here)
 
