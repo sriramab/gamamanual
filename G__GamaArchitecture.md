@@ -18,7 +18,7 @@ Here is the list of projects which have to be imported in order to run the GAMA 
   * `msi.gama.core` : Encapsulates the core of the modeling and simulation facilities offered by the platform : runtime, simulation, meta-model, data structures, simulation kernel, scheduling, etc. It contains 2 main packages :
     * `msi.gama`
     * `msi.gaml`, wich defines the GAML modeling language: keywords, operators, statements, species, skills…
-  * `msi.gama.application` : Describes the graphical user interface (`msi.gama.gui` package), which contains the following sub-packages :
+  * `msi.gama.application` : Describes the graphical user interface (`msi.gama.gui` package). This project also contains the file gama1.7.Eclipse3_8_2.product, when you can configure the application (and also launch the application). It contains the following sub-packages :
     * `msi.gama.gui.displays`
     * `msi.gama.gui.navigator`
     * `msi.gama.gui.parameters`
@@ -26,7 +26,6 @@ Here is the list of projects which have to be imported in order to run the GAMA 
     * `msi.gama.gui.views`
     * `msi.gama.gui.wizards`
     * `msi.gama.gui.viewers`
-This project also contains the file gama1.7.Eclipse3_8_2.product, when you can configure the application (and also launch the application)
   * `msi.gama.ext` : Gathers all the external libraries upon which GAMA relies upon
     * `msi.gama.lang.gaml` : Contains the gaml.xtext file which defines the GAML grammar
     * `msi.gama.lang.gaml.ui` : Contains the GAML Editor (syntax highlighting, code completion…)
