@@ -82,19 +82,19 @@ global {
 
 ## Experiment declarations
 
-Experiments are usually declared at the end of the file. They start with the keyword "experiment". They contains the simulation parameters, and the definition of the output.
+Experiments are usually declared at the end of the file. They start with the keyword "experiment". They contains the simulation parameters, and the definition of the output. You can declare as much experiment as you want.
 
 ```
 experiment first_experiment {
-    // definition of parameters (not mandatory)
+    // definition of parameters
 
-    // definition of output (not mandatory)
+    // definition of output
     output {...}
 }
 
 experiment second_experiment {
-    // definition of parameters (not mandatory)
+    // definition of parameters
 
-    // definition of output (not mandatory)
+    // definition of output
 }
 ```
