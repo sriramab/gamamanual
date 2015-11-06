@@ -10,12 +10,11 @@ Please note that the preferences specific to GAMA will be shared, on a same mach
 
 * [Preferences](#preferences)
 	* [Opening Preferences](#opening-preferences)
-	* [General](#general)
+	* [Simulation](#simulation)
 	* [Display](#display)
 	* [Editor](#editor)
 	* [External](#external)
 	* [Advanced Preferences](#advanced-preferences)
-
 
 
 ## Opening Preferences
@@ -24,31 +23,53 @@ To open the preferences dialog of GAMA, either click on the small "form" button 
 ![images/auto_update/open_prefs.png](images/auto_update/open_prefs.png)
 
 
-## General
+## Simulation
 
-![images/preferences/general.png](images/preferences/general.png)
+![images/preferences/simulation.png](images/preferences/simulation.png)
 
   * **Random Number Generation**: all the options pertaining to generating random numbers in simulations
     * Random Number Generator: the name of the generator to use by default (if none is specified in the model).
     * Define a default seed: whether or not a default seed should be used if none is specified in the model  (otherwise it is chosen randomly by GAMA)
     * Default Seed value: the value of this default seed
     * Include in the parameters of models: whether the choice of generator and seed is included by default in the [parameters views](G__ParametersView) of experiments or not.
-  * **User Interface**
-    * Break down agents in menu every: when [inspecting](G__InspectorsAndMonitors) a large number of agents, how many should be displayed before the decision is made to separate the population in sub-menus.
-  * **Simulation Errors**: how to manage and consider simulation errors
+  * **Errors**: how to manage and consider simulation errors
     * Display Errors: whether errors should be displayed or not.
     * Number of errors to display: how many errors should be displayed at once
     * Display most recent first: errors will be sorted in the inverse chronological order if true.
     * Stop simulation at first error: if false, the simulations will display the errors and continue (or try to).
     * Treat warnings as errors: if true, no more distinction is made between warnings (which do not stop the simulation) and errors (which can potentially stop it.
-  * **Startup**
-    * Display welcome page at startup: if true, and if no editors are opened, the [welcome page](G__Launching#Welcome_Page) is displayed when opening GAMA.
   * **Runtime**: various settings regarding the execution of experiments.
     * Default Step for Delay Slider: the number of seconds that one step of the slider used to impose a delay between two cycles of a simulation lasts.
     * Auto-run experiments when they are launched: see [this page](G__LaunchingExperiments#Running_Experiments_Automatically).
     * Ask to close the previous simulation before launching a new one: if false, previous simulations (if any) will be closed without warning.
 
+    
+## UI
 
+![images/preferences/UI.png](images/preferences/UI.png)
+
+  * **Menus**
+    * Break down agents in menu every: when [inspecting](G__InspectorsAndMonitors) a large number of agents, how many should be displayed before the decision is made to separate the population in sub-menus.
+    * Sort colors menu by
+    * Sort operators menu by
+  * **Console**
+    * Max. number of characters to display in the console (-1 means no limit)
+    * Max. number of characters to keep in memory when console is paused (-1 means no limit)
+  * **Icons**
+    * Icons and buttons dark mode (restart to see the change): Change the highlight for the icons and the button.
+    * Size of icons in the UI (restart to see the change): Size of the icons in pixel
+  * **Viewers**
+    * Default shapefile viewer fill color:
+    * Default shapefile viewer line color:
+    * Default image viewer background color: Background color for the image viewer (when you select an image from the model explorer for example)
+
+
+## General
+
+![images/preferences/general.png](images/preferences/general.png)
+
+  * **Startup**
+    * Display welcome page at startup: if true, and if no editors are opened, the [welcome page](G__Launching#Welcome_Page) is displayed when opening GAMA.
 
 
 ## Display
@@ -68,6 +89,7 @@ To open the preferences dialog of GAMA, either click on the small "form" button 
     * Default shape: a choice between 'shape' (which represents the actual geometrical shape of the agent) and geometrical operators ('square', etc.).
     * Default size: what size to use. This expression must be a constant.
     * Default color: what color to use.
+    * Default font to use in text layers or draw statements when none is specified
   * **OpenGL**: various properties specific to OpenGL-based displays
     * Use improved z positioning: if true, two agents positioned at the same z value will be slightly shifted in z in order to draw them more accurately.
     * Draw 3D referential: if true, the shape of the world and the 3 axes are drawn
@@ -77,18 +99,32 @@ To open the preferences dialog of GAMA, either click on the small "form" button 
     * Display as a cube: if true, the scene is drawn on all the facets of a cube.
 
 
-
 ## Editor
 
 ![images/preferences/editor.png](images/preferences/editor.png)
 
 
-Most of the settings and preferences regarding editors can be found in the [advanced preferences](#Advanced_Preferences).
+Most of the settings and preferences regarding editors can be found in the [advanced preferences](#advanced-preferences).
 
   * **Options**
     * Automatically switch to Modeling Persepective: if true, if a model is edited in the Simulation Perspective, then the perspective is automatically switched to Modeling (_inactive for the moment_)
+    * Automatically close curly brackets ({)
+    * Automatically close square brackets (])
+    * Automatically close parenthesis
     * Mark occurrences of symbols in models: if true, when a symbol is selected in a model, all its occurrences are also highlighted.
     * Applying formatting to models on save: if true, every time a model file is saved, its code is formatted.
+    * Save all model files before launching an experiment
+    * Ask before saving each file
+  * **Validation**
+    * Show warning markers when editing a model
+    * Show information markers when editing a model
+  * **Presentation**
+    * Turn on colorization of code sections by default
+    * Font of editors
+    * Background color of editors
+  * **Toolbars**
+    * Show edition toolbar by default
+    * Show other models' experiments in toolbar: if true, you are able to launch other models' experiments from a particular model.
 
 
 
