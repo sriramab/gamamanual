@@ -11,7 +11,7 @@ Each project is either designed as a __plugin__ (containing an xml file "plugin.
 
 To see how to create a plugin and a feature, please read [this page](G__InstallingGitVersion).
 
-## The minimal configuration
+  ## The minimal configuration
 
 Here is the list of projects which have to be imported in order to run the GAMA platform, and to execute a simple model in gaml language:
 
@@ -36,9 +36,10 @@ Minimal configuration projects dependencies:
 
 ![Minimal configuration projects dependencies](images/architecture/minimal_configuration.png)
 
-## Optional Plug-ins
+  ## Optional Plug-ins
  
-  ### Plugins present in the release version
+
+   ### Plugins present in the release version
 From this minimal configuration, it is possible to add some features. Here is the list of the features installed by default in the release version:
   * `idees.gama.mapcomparison` : Contains some useful tools to do map comparaison
   * `msi.gaml.extensions.fipa` : Provides some operators for communication between agents, using the FIPA standards
@@ -53,7 +54,7 @@ From this minimal configuration, it is possible to add some features. Here is th
   * `dream.gama.opengis` : Used to load some geographic information datas from online GIS server.
   * `simtools.graphanalysis.fr` : Advanced graph operators
  
-  ### Plugins not present by default in the release version
+    ### Plugins not present by default in the release version
 Some other plugins are not present by default in the release version (because their use is very specific), but it's possible to install them through features.
 Here is the list of those plugins:
   * `idees.gama.weka` : Data-mining operators, using the library Weka.
@@ -63,11 +64,11 @@ Here is the list of those plugins:
   * `ummisco.gama.communicator` : Communication between several instances of GAMA
   * `ummisco.gaml.extensions.rjava` : Adding the R language into GAMA for data mining
  
-  ### Plugins not designated to be in the release version
+    ### Plugins not designated to be in the release version
 Other plugins will never be on the released version, and will never be loaded during the gama execution. They are just used in the "developer" version:
   * `msi.gama.documentation` : Generate automatically the documentation in the wiki form (and also a pdf file)
  
-  ### Unmaintained projects
+  ## Unmaintained projects
 
 Some other projects are still in the git repository in case we need to work on it one day, but they are either unfinished, obsolete, or used in very rare situations (They are not delivered in release versions, of course). Here is the list :
   * `cenres.gaml.extensions.hydro` : Provide some tools in order to create hydrology models
@@ -95,7 +96,7 @@ Some other projects are still in the git repository in case we need to work on i
   * `ummisco.gama.feature.jogl2.product` : gathering of the following features : core, dependencies, models, jogl2
   * `ummisco.gama.feature.product` : gathering of the following features : core, dependencies, models, jogl1
  
-  ### Models
+  ## Models
  
 Beside those plugins and features, a project dedicated to gather a bunch of examples is also in the git repository. It contains gaml code:
   * `msi.gama.models`
