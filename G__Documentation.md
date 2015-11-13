@@ -140,6 +140,40 @@ The pdf generator uses the table of content (toc) file located in the `files/inp
 
 The documentation is generate from the Java code thanks to the Java additional processor, using mainly information from Java classes or methods and from the Java annotations. (see [the list of all annotations](G__DevelopingIndexAnnotations) for more details about annotations).
 
+### The `@doc` annotation
+
+Most of the annotations can contain a [`@doc`](G__DevelopingIndexAnnotations#doc) annotation, that can contain the main part of the documentation.
+
+For example, the `inter` ([inter](G__Operators#inter)) operator is commented using: 
+```
+@doc(
+  value = "the intersection of the two operands",
+  comment = "both containers are transformed into sets (so without duplicated element, cf. remove_deplicates operator) before the set intersection is computed.",
+  usages = {
+    @usage(value = "if an operand is a graph, it will be transformed into the set of its nodes"),
+    @usage(value = "if an operand is a map, it will be transformed into the set of its values", examples = {
+      @example(value = "[1::2, 3::4, 5::6] inter [2,4]", equals = "[2,4]"),
+      @example(value = "[1::2, 3::4, 5::6] inter [1,3]", equals = "[]") }),
+    @usage(value = "if an operand is a matrix, it will be transformed into the set of the lines", examples =
+      @example(value = "matrix([[1,2,3],[4,5,4]]) inter [3,4]", equals = "[3,4]")) },
+  examples = { 
+    @example(value = "[1,2,3,4,5,6] inter [2,4]", equals = "[2,4]"),
+    @example(value = "[1,2,3,4,5,6] inter [0,8]", equals = "[]") },
+  see = { "remove_duplicates" })
+```
+This `@doc`annotation contains 5 parts: 
+* value: describes the documented element,  
+* comment: a general comment about the documented element,
+* usages: a set of ways to use the documented element, each of them being in a `@usage` annotation. The usage contains mainly a description and and set of examples,
+* examples: a set of examples that are not related to a particular usage, 
+* see: other related keywords.
+
+### the `@example` annotation
+
+This annotation contains a particular use example of the documented element. It is also used to generate unit test and patterns.
+
+
+
 ### How to document operators
 
 A GAML operator is defined by a Java method annoted by the `@operator` annotation (see [the list of all annotations](G__DevelopingIndexAnnotations) for more details about annotations).
