@@ -1,3 +1,19 @@
+## Table of contents 
+
+* [Documentation](#documentation)
+	* [Requirements](#requirements)
+		* [Configuration](#configuration)
+		* [Generated files location](#generated-files-location)
+	* [Workflow to generate wiki files](#workflow-to-generate-wiki-files)
+	* [Workflow to generate PDF files](#workflow-to-generate-pdf-files)
+	* [Workflow to generate unit tests](#workflow-to-generate-unit-tests)
+	* [Main internal steps](#main-internal-steps)
+		* [Generate wiki files](#generate-wiki-files)
+		* [Generate pdf files](#generate-pdf-files)
+		* [Generate unit test files](#generate-unit-test-files)
+	* [How to document](#how-to-document)
+		* [How to document operators](#how-to-document-operators)
+
 
 # Documentation
 
@@ -10,6 +26,8 @@ The section summarizes:
 * how to generate the PDF documentation,
 * how to generate the unit tests from the java annotations, 
 * how to add documentation in the java code.
+
+
 
 ## Requirements
 
