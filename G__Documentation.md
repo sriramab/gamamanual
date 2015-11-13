@@ -181,9 +181,11 @@ The simplest way to use it:
 ```
 @example(value = "[1::2, 3::4, 5::6] inter [2,4]", equals = "[2,4]")
 ```
+
 In this example:
 * `value` contains an example of use of the operator,
 * `equals` contains the expected results of expression in value.
+
 This will become in the documentation:
 ```
 list var3 <- [1::2, 3::4, 5::6] inter [2,4];    // var3 equals [2,4]
