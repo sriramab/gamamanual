@@ -23,7 +23,7 @@
 
 The GAMA documentation comes in 2 formats: a set of wiki files availaible from the wiki section of the GitHub website and a PDF file. The PDF file is produced from the wiki files.
 
-In the wiki files, some are hand-written by the GAMA community and some other are generated automatically from the Java code and the associated java annotations.
+In the wiki files, some are hand-written by the GAMA community and some others are generated automatically from the Java code and the associated java annotations.
 
 The section summarizes:
 * how to generate this wiki files,
