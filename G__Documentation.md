@@ -17,7 +17,6 @@
 		* [How to document operators](#how-to-document-operators)
 		* [How to document statements](#how-to-document-statements)
 		* [How to document skills](#how-to-document-skills)
-		* [How to document species](#how-to-document-species)
 
 
 # Documentation
