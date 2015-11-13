@@ -138,6 +138,8 @@ The pdf generator uses the table of content (toc) file located in the `files/inp
 
 ## How to document
 
+The documentation is generate from the Java code thanks to the Java additional processor, using mainly information from Java classes or methods and from the Java annotations. (see [the list of all annotations](G__DevelopingIndexAnnotations) for more details about annotations).
+
 ### How to document operators
 
 A GAML operator is defined by a Java method annoted by the `@operator` annotation (see [the list of all annotations](G__DevelopingIndexAnnotations) for more details about annotations).
@@ -149,3 +151,9 @@ The documentation generator will use information from:
 * the method definition:
   * the return value type
   * parameters and their type (if the method is static, the IScope attribute is not taken into account)
+
+### How to document statements
+
+### How to document skills
+
+### How to document species
