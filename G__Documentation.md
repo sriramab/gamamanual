@@ -12,7 +12,12 @@
 		* [Generate pdf files](#generate-pdf-files)
 		* [Generate unit test files](#generate-unit-test-files)
 	* [How to document](#how-to-document)
+		* [The @doc annotation](#the-doc-annotation)
+		* [the @example annotation](#the-example-annotation)
 		* [How to document operators](#how-to-document-operators)
+		* [How to document statements](#how-to-document-statements)
+		* [How to document skills](#how-to-document-skills)
+		* [How to document species](#how-to-document-species)
 
 
 # Documentation
@@ -172,11 +177,32 @@ This `@doc`annotation contains 5 parts:
 
 This annotation contains a particular use example of the documented element. It is also used to generate unit test and patterns.
 
+The simplest way to use it:
+```
+@example(value = "[1::2, 3::4, 5::6] inter [2,4]", equals = "[2,4]")
+```
+In this example:
+* `value` contains an example of use of the operator,
+* `equals` contains the expected results of expression in value.
+This will become in the documentation:
+```
+list var3 <- [1::2, 3::4, 5::6] inter [2,4];    // var3 equals [2,4]
+```
+When no variable is given in the annotation, an automatic name is generated. The type of the variable is determined thanks to the return type of the operator with these parameters.
+
+This example can also generate a unit test model. In this case, the value in the variable will be compared to the `equals` part.
+
+By default, the `@example` annotation has the following default values:
+* `isTestOnly` = `false`, meaning that the example will be added to the documentation too,
+* `isExecutable` = `true`, meaning that content of `value` can be added in a model and can be compiled (it can be useful to switch it to false, in a documentation example containing name of species that have not been defined),
+* `test` = `true`, meaning that the content of value will be tested to the content of equals,
+* `isPattern` = `false`.
 
 
 ### How to document operators
 
-A GAML operator is defined by a Java method annoted by the `@operator` annotation (see [the list of all annotations](G__DevelopingIndexAnnotations) for more details about annotations).
+A GAML operator is defined by a Java method annoted by the `@operator` annotation (see [the list of all annotations](G__DevelopingIndexAnnotations) for more details about annotations). In GAMA core, most of the operators are defined in the plugin `msi.gama.core` and in the package `msi.gaml.operators`.
+
 The documentation generator will use information from:
 * the `@operator` annotation:
   * `value`: it provides the name(s) of the operator (if an operator has several names, the other names will be considered as alternative names)
