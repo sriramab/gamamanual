@@ -7,17 +7,16 @@ Annotations are used to link Java methods and classes to GAML language.
 
 
 
-
 ## @action
 This annotations is used to tag a method that will be considered as an action (or primitive) in GAML.
 The method must have the following signature: ```
-Object methodName(IScope) throws GamaRuntimeException ``` and be contained in a class annotated with [@species](#species) or @skill (or a related class, like a subclass or an interface).
+Object methodName(IScope) throws GamaRuntimeException ``` and be contained in a class annotated with [@species](#species) or [@skill](#skill) (or a related class, like a subclass or an interface).
 
 This annotation contains:
   * **name** (String): _the name of the variable as it can be used in GAML_.
   * **virtual** (boolean, false by default): _if true the action is virtual, i.e. equivalent to abstract method in java_.
-  * **args** (set of @arg, empty by default): _the list of arguments passed to this action. Each argument is an instance of arg_.
-  * **doc** (set of @doc, empty by default): _the documentation associated to the action_.
+  * **args** (set of [@arg](#arg), empty by default): _the list of arguments passed to this action. Each argument is an instance of arg_.
+  * **doc** (set of [@doc](#doc), empty by default): _the documentation associated to the action_.
 
 
 
@@ -30,7 +29,7 @@ This annotation contains:
   * **name** (String, "" by default): _the name of the argument as it can be used in GAML_.
   * **type** (set of ints, empty by default): _An array containing the textual representation of the types that can be taken by the argument (see IType)_.
   * **optional** (boolean, true by default): _whether this argument is optional or not_.
-  * **doc** (set of @doc, empty by default): _the documentation associated to the argument._
+  * **doc** (set of [@doc](#doc), empty by default): _the documentation associated to the argument._
 
 ## @constant
 This annotation is used to annotate fields that are used as constants in GAML.
@@ -39,7 +38,7 @@ This annotation contains:
   * **category** (set of Strings, empty by default): _an array of strings, each representing a category in which this constant can be classified (for documentation indexes)_.
   * **value** (String): _a string representing the basic keyword for the constant. Does not need to be unique throughout GAML_.
   * **altNames** (set of Strings, empty by default): _an Array of strings, each representing a possible alternative name for the constant. Does not need to be unique throughout GAML_.
-  * **doc** (set of @doc, empty by default): _the documentation attached to this constant_.
+  * **doc** (set of [@doc](#doc), empty by default): _the documentation attached to this constant_.
 
 
 
@@ -53,8 +52,8 @@ This annotation contains:
   * **returns** (String, "" by default): _the documentation concerning the value(s) returned by this element (if any)._.
   * **comment** (String, "" by default): _an optional comment that will appear differently from the documentation itself_.
   * **special\_cases** (set of Strings, empty by default): _an array of String representing the documentation of the "special cases" in which the documented element takes part_.
-  * **examples** (set of @example, empty by default): _an array of String representing some examples or use-cases about how to use this element_.
-  * **usages** (set of @usage, empty by default): _An array of usages representing possible usage of the element in GAML_.
+  * **examples** (set of [@example](#example), empty by default): _an array of String representing some examples or use-cases about how to use this element_.
+  * **usages** (set of [@usage](#usage), empty by default): _An array of usages representing possible usage of the element in GAML_.
   * **see** (set of Strings, empty by default): _an array of String representing cross-references to other elements in GAML_.
 
 
@@ -82,7 +81,7 @@ This annotation contains:
   * **type** (set of int): _the string values of the different types that can be taken by this facet_.
   * **values** (set of Strings, empty by default): _the values that can be taken by this facet. The value of the facet expression will be chosen among the values described here_.
   * **optional** (boolean, false by default): _whether or not this facet is optional or mandatory_.
-  * **doc** (set of @doc, empty by default): _the documentation associated to the facet_.
+  * **doc** (set of [@doc](#doc), empty by default): _the documentation associated to the facet_.
 
 
 
@@ -92,7 +91,7 @@ This annotation contains:
 This annotation describes a list of facets used by a statement in GAML.
 
 This annotation contains:
-  * **value** (set of @facet): array of @facet, each representing a facet name, type..
+  * **value** (set of [@facet](#facet)): array of @facet, each representing a facet name, type..
   * **ommissible** (string): _the facet that can be safely omitted by the modeler (provided its value is the first following the keyword of the statement)_.
 
 
@@ -105,7 +104,7 @@ This annotation contains:
   * **buffer\_content** (int, ITypeProvider.NONE by default): _the type of the content of the buffer. Can be directly a type in IType or one of the constants declared in ITypeProvider (in which case, the content type is searched using this provider)_.
   * **buffer\_index** (int, ITypeProvider.NONE by default): _the type of the index of the buffer. Can be directly a type in IType or one of the constants declared in ITypeProvider (in which case, the index type is searched using this provider)_.
   * **buffer\_type** (int, ITypeProvider.NONE by default): _the type of the buffer. Can be directly a type in IType or one of the constants declared in ITypeProvider (in which case, the type is searched using this provider)_.
-  * **doc** (set of @doc, empty by default): _the documentation attached to this operator_.
+  * **doc** (set of [@doc](#doc), empty by default): _the documentation attached to this operator_.
 
 
 ## @getter
@@ -143,7 +142,7 @@ This annotation contains:
   * **expected\_content\_type** (set of int, empty by default): _if the argument is a container, returns the types expected for its contents. Should be an array of IType.XXX_.
   * **type** (int, ITypeProvider.NONE by default): _the type of the expression if it cannot be determined at compile time (i.e. when the return type is "Object"). Can be directly a type in IType or one of the constants declared in ITypeProvider (in which case, the type is searched using this provider)._.
   * **internal** (boolean, false by default): _returns whether this operator is for internal use only_. 
-  * **doc** (set of @doc, empty by default): _the documentation attached to this operator._
+  * **doc** (set of [@doc](#doc), empty by default): _the documentation attached to this operator._
 
 
 
@@ -177,7 +176,7 @@ This annotation contains:
   * **name** (String): _a String representing the skill name in GAML (must be unique throughout GAML)_.
   * **attach\_to** (set of strings): _an array of species names to which the skill will be automatically added (complements the "skills" parameter of species)_.
   * **internal** (boolean, false by default): _return whether this skill is for internal use only_.
-  * **doc** (set of @doc, empty by default): _the documentation associated to the skill_.
+  * **doc** (set of [@doc](#doc), empty by default): _the documentation associated to the skill_.
 
 
 
@@ -191,7 +190,7 @@ This annotation contains:
   * **skills** (set of strings, empty by default): _An array of skill names that will be automatically attached to this species._ Example: ```
  @species(value="animal" skills={"moving"}) ```
   * **internal** (boolean, false by default): _whether this species is for internal use only_.
-  * **doc** (set of @doc, empty by default): _the documentation attached to this operator._
+  * **doc** (set of [@doc](#doc), empty by default): _the documentation attached to this operator._
 
 
 
@@ -208,7 +207,7 @@ This annotation contains:
   * **with\_sequence** (boolean): _indicates wether or not a sequence can or should follow the symbol denoted by this class_.
   * **with\_args** (boolean, false by default): _indicates wether or not the symbol denoted by this class will accept arguments_.
   * **remote\_context** (boolean, false by default): _indicates that the context of this statement is actually an hybrid context: although it will be executed in a remote context, any temporary variables declared in the enclosing scopes should be passed on as if the statement was executed in the current context_.
-  * **doc** (set of @doc, empty by default): _the documentation attached to this symbol_.
+  * **doc** (set of [@doc](#doc), empty by default): _the documentation attached to this symbol_.
   * **internal** (boolean, false by default): _returns whether this symbol is for internal use only_.
   * **unique\_in\_context** (boolean, false by default): _Indicates that this statement must be unique in its super context (for example, only one return is allowed in the body of an action)._.
   * **unique\_name** (boolean, false by default): _Indicates that only one statement with the same name should be allowed in the same super context_.
@@ -223,7 +222,7 @@ This annotation contains:
   * **wraps** (tab of Class, null by default): _the list of Java Classes this type is "wrapping" (i.e. representing). The first one is the one that will be used preferentially throughout GAMA. The other ones are to ensure compatibility, in operators, with compatible Java classes (for instance, List and GamaList)_.
   * **kind** (int, ISymbolKind.Variable.REGULAR by default): _the kind of Variable used to store this type. See [ISymbolKind.Variable](http://code.google.com/p/gama-platform/source/browse/branches/GAMA_CURRENT/msi.gama.processor/src/msi/gama/precompiler/ISymbolKind.java)_.
   * **internal** (boolean, false by default): _whether this type is for internal use only_.
-  * **doc** (set of @doc, empty by default): _the documentation associated to the facet_.
+  * **doc** (set of [@doc](#doc), empty by default): _the documentation associated to the facet_.
 
 
 ## @usage
@@ -240,8 +239,8 @@ This annotation contains:
   * **menu** (String, "" by default): _Define the top-level menu where this template should appear. Users are free to use other names than the provided constants if necessary (i.e. "My templates"). When no menu is defined, GAMA tries to guess it from the context where the template is defined_.
   * **path** (set of Strings, empty be default): The path indicates where to put this template in the menu. For instance, the following annotation: " menu = STATEMENT; path = {"Control", "If"} will put the template in a menu called "If", within "Control", within the top menu "Statement". When no path is defined, GAMA will try to guess it from the context where the template is defined (i.e. keyword of the statement, etc.)
   * **name** (String, "" by default): _The name of the template should be both concise (as it will appear in a menu) and precise (to remove ambiguities between templates)_.
-  * **examples** (set of @example, empty by default): _An array of String representing some examples or use-cases about how to use this element, related to the particular usage above_.
-  * **pattern** (String, "" by default): _Alternatively, the contents of the usage can be descried using a @pattern (rather than an array of @example). The formatting of this string depends entirely on the user (e.g. including \n and \t for indentation, for instance)_.
+  * **examples** (set of [@example](#example), empty by default): _An array of String representing some examples or use-cases about how to use this element, related to the particular usage above_.
+  * **pattern** (String, "" by default): _Alternatively, the contents of the usage can be descried using a @pattern (rather than an array of [@example](#example)). The formatting of this string depends entirely on the user (e.g. including \n and \t for indentation, for instance)_.
 
 
 ## @validator
@@ -264,7 +263,7 @@ This annotation contains:
   * **init** (String, "" by default): _the initial value of this variable as a String that will be interpreted by GAML_.
   * **depend\_on** (set of Strings, empty by default): _an array of String representing the names of the variables on which this variable depends (so that they are computed before)_.
   * **internal** (boolean, false by default): _return whether this var is for internal use only_.
-  * **doc** (set of @doc, empty by default): _the documentation associated to the variable_.
+  * **doc** (set of [@doc](#doc), empty by default): _the documentation associated to the variable_.
 
 
 
