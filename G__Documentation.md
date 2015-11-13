@@ -203,7 +203,7 @@ By default, the `@example` annotation has the following default values:
 
 ### How to document operators
 
-A GAML operator is defined by a Java method annoted by the `@operator` annotation (see [the list of all annotations](G__DevelopingIndexAnnotations) for more details about annotations). In GAMA core, most of the operators are defined in the plugin `msi.gama.core` and in the package `msi.gaml.operators`.
+A GAML operator is defined by a Java method annoted by the `@operator` annotation (see [the list of all annotations](G__DevelopingIndexAnnotations) for more details about annotations). In the core of GAMA, most of the operators are defined in the plugin `msi.gama.core` and in the package `msi.gaml.operators`.
 
 The documentation generator will use information from:
 * the `@operator` annotation:
@@ -216,6 +216,19 @@ The documentation generator will use information from:
 
 ### How to document statements
 
+A GAML statement is defined by a Java class annoted by the `@symbol` annotation (see [the list of all annotations](G__DevelopingIndexAnnotations) for more details about annotations). In the core of GAMA, most of the statements are defined in the plugin `msi.gama.core` and in the package `msi.gaml.statements`.
+
+The documentation generator will use information from:
+* `@symbol` annotation,
+* `@facets` annotation (each facet can contain a documentation in a `@doc` annotation),
+* `@inside` annotation (where the statement can be used),
+* `@doc` annotation
+
 ### How to document skills
 
-### How to document species
+A GAML skill is defined by a Java class annoted by the `@skill` annotation (see [the list of all annotations](G__DevelopingIndexAnnotations) for more details about annotations). In the core of GAMA, most of the skills are defined in the plugin `msi.gama.core` and in the package `msi.gaml.skills`.
+
+The documentation generator will use information from:
+* `@skill` annotation,
+* `@vars` annotation (each var can contain a documentation in a `@doc` annotation),
+* `@doc` annotation
