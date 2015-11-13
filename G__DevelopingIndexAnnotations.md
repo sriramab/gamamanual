@@ -11,7 +11,7 @@ Annotations are used to link Java methods and classes to GAML language.
 ## @action
 This annotations is used to tag a method that will be considered as an action (or primitive) in GAML.
 The method must have the following signature: ```
-Object methodName(IScope) throws GamaRuntimeException ``` and be contained in a class annotated with @species or @skill (or a related class, like a subclass or an interface).
+Object methodName(IScope) throws GamaRuntimeException ``` and be contained in a class annotated with [@species](#species) or @skill (or a related class, like a subclass or an interface).
 
 This annotation contains:
   * **name** (String): _the name of the variable as it can be used in GAML_.
