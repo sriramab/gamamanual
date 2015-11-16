@@ -94,4 +94,5 @@ Several types of species exist in GAMA:
 * [regular species](G__RegularSpecies): species of agents with a continuous topology by default.
 * [grid species](G__GridSpecies): species of agents with a grid topology.
 * [graph species](G__GraphSpes): species of agents with a graph topology.
-* [Mirror species](G__MirrorSpec): species of agents that mirror the population of another species
+* [mirror species](G__MirrorSpec): species of agents that mirror the population of another species.
+* [multi-level species](G__MultiLevel): species of agents that contains other agents.
