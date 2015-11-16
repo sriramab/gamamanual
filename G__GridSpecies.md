@@ -6,7 +6,7 @@
 </li><li>maybe a word about scheduling ?<br>
 </font>
 <hr />
-A grid is a particular species of agents. Indeed, a grid is a set of agents that share a grid topology. As other agents, a grid species can have <a href='G__DefiningAttributes'>attributes, [G__DefiningActions actions</a>, <a href='G__DefiningBehaviors'>behaviors</a>, <a href='G__DefiningAspects'>aspects</a>, <a href='G__DefiningEquations'>equations</a> and  <a href='G__MultiLevel'>micro-species</a>.</li></ul>
+A grid is a particular species of agents. Indeed, a grid is a set of agents that share a grid topology. As other agents, a grid species can have <a href='G__DefiningAttributes'>attributes</a>, <a href='G__DefiningActions'>attributes</a>, <a href='G__DefiningBehaviors'>behaviors</a>, <a href='G__DefiningAspects'>aspects</a>, <a href='G__DefiningEquations'>equations</a> and  <a href='G__MultiLevel'>micro-species</a>.</li></ul>
 
 However, contrary to regular species, grid agents are created automatically at the beginning of the simulation. It is thus not necessary to use the create statement to create them.
 
@@ -54,6 +54,8 @@ With:
 ![images/neighbours_types.png](images/neighbours_types.png)
 
 If a file is used to declare the grid, the number of rows and columns is automatically computed from the file. In the same way, the value of the cell read in the file is stored in the **grid\_value** built-in variable.
+
+NB : the dimensions of the grid (in ```#m```, ```#cm``` etc...) are defined in the [global species](G__GlobalSpecies).
 
 ### optimization facets
 A grid can be provided with specific facets that allows to optimized the computation time and the memory space.
@@ -139,7 +141,7 @@ The **grid\_value** built-in variable is used when initializing a grid from grid
 
 ## Access to cells
 there are several ways to access to a specific cell:
-  * by a location: by casting a location to a cell
+  * by a location: by casting a location to a cell (the unity (```#m```, ```#cm```, etc...) is defined when you choose your environment size, in the [global species](G__GlobalSpecies).
 ```
    global {
          init {
