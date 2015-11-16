@@ -28,6 +28,7 @@ Moreover, in addition to classic built-in variables, grid a provided with a set 
 		* [color](#color)
 		* [grid_value](#gridvalue)
 	* [Access to cells](#access-to-cells)
+	* [Display grid](#display-grid)
 
 
 ## Declaration
@@ -162,3 +163,36 @@ there are several ways to access to a specific cell:
    grid cell width: 10 height: 10 neighbors: 4 {
    }
 ```
+
+## Display Grid
+You can easily display your grid in your experiment as followed :
+```
+experiment MyExperiment type: gui {
+    output {
+        display MyDisplay type: opengl {
+            grid MyGrid;
+        }
+    }
+}
+```
+The grid will be displayed with the color you defined before.
+An other way to display a grid will be to define an aspect in your grid agent (the same way as for a [regular species](G__RegularSpecies)), and define your grid as a regular species then in your experiment, choosing your aspect : 
+```
+grid MyGrid {
+    aspect firstAspect {
+        draw square(1);
+    }
+    aspect secondAspect {
+        draw circle(1);
+    }
+}
+
+experiment MyExperiment type: gui {
+    output {
+        display MyDisplay type: opengl {
+            species MyGrid aspect:firstAspect;
+        }
+    }
+}
+```
+Beware : don't use this second display when you have large grids : it's much slower.
