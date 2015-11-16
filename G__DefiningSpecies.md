@@ -36,7 +36,7 @@ A species can contain several elements:
 * [Inits and Reflexes](G__DefiningBehaviors): defines the default behavior of the agents. Both statements contain instructions that are executed, respectively, once when the agent is created for `init` statements, and at each simulation step (according to an optional condition) for `reflex` statements.
 * [Aspects](G__DefiningAspects): define how the agents can be displayed.
 * [Equations](G__DefiningEquations): define a set of differential equations that can be integrated when necessary.
-* [Micro-species](G__MultiLevel): nested species can be described inside a species. See [here](G__MultiLevelArchitecture) for more details on the relationships between macro- and micro-species.
+* [Micro-species](G__MultiLevel): nested species can be described inside a species. See [here](G__MultiLevel) for more details on the relationships between macro- and micro-species.
 
 Note that all the elements previously defined are optional. It is totally possible to define an empty species without any attributes, actions, reflexes, aspects, equations or micro-species like in the example above.
 
