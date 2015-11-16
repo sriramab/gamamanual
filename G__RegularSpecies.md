@@ -1,11 +1,11 @@
 
-# Regular Species
+# Regular Species (Under contruction)
 
 Regular species are composed of attributes, actions, reflex, aspect etc... They will describe the behaviour of our agents. You can instantiate as much as you want agents from a regular species. And you can define as much as you want different regular species.
 
 ## Table of contents 
 
-* [Regular Species](#regular-species)
+* [Regular Species (Under contruction)](#regular-species-(under-construction))
 	* [Declaration](#declaration)
 	* [Facets](#facets)
 		* [skills](#skills)
