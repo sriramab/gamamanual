@@ -63,7 +63,7 @@ TODO
 
 ### Schedules
 
-TODO
+See how to [schedule agents](G__RuntimeConcepts#scheduling-of-agents).
 
 ### Mirror
 
