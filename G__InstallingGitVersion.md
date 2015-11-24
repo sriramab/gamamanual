@@ -1,6 +1,6 @@
 # Installing the GIT version
 
-This installation procedure has been tested on MacOS X 10.10 (Yosemite), Windows 8 and Ubuntu 15.04 (Vivid). On MacOS x 10.10 (Yosemite), please have a look here: [install Java on Yosemite](G__Installation) for details about the Java version to use. 
+This installation procedure has been tested on MacOS X 10.10 (Yosemite), Windows 8 and Ubuntu 15.04 (Vivid). On MacOS X 10.10 (Yosemite) or MacOS X 10.11 (El Capitan), please have a look here: [install Java on MacOS X](G__Installation) for details about the Java version to use. 
 
 **Notice that GAMA is in a migration phase from Eclipse 3.8.2 to Eclipe Luna 4.4.2, and from SVN to Git. Other previous Eclipse versions are not supported anymore**.
 
