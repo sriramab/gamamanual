@@ -175,7 +175,10 @@ experiment MyExperiment type: gui {
     }
 }
 ```
-The grid will be displayed with the color you defined before.
+The grid will be displayed, using the color you defined for each cell (with the "color" built-in attribute). You can also show border of each cell by using the facet "line:" and choosing a rgb color:
+```
+grid MyGrid line:#black;
+```
 An other way to display a grid will be to define an aspect in your grid agent (the same way as for a [regular species](G__RegularSpecies)), and define your grid as a regular species then in your experiment, choosing your aspect : 
 ```
 grid MyGrid {
