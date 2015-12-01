@@ -39,7 +39,7 @@ You can enter its address or browse your filesystem using the appropriate button
 ## Welcome Page
 As soon as the workspace is created, GAMA will open and you will be presented with its **first window**. GAMA is based on [Eclipse](http://www.eclipse.org) and reuses most of its visual metaphors for organizing the work of the modeler. The main window is then composed of several **parts**, which can be **views** or **editors**, and are organized in a **perspective**. GAMA proposes 2 main perspectives: _Modeling_, dedicated to the creation of models, and _Simulation_, dedicated to their execution and exploration. Other perspectives are available if you use shared models.
 
-The default perspective in which GAMA opens is _Modeling_. It is composed of a central area where [GAML editors](G__GamlEditor) are displayed, which is surrounded by a [Navigator view](G__NavigatingWorkspace) on the left-hand side of the window, an Outline view (linked with the open editor) and the Problems view, which indicates errors and warnings present in the models stored in the workspace.
+The default perspective in which GAMA opens is _Modeling_. It is composed of a central area where [GAML editors](G__GamlEditorGeneralities) are displayed, which is surrounded by a [Navigator view](G__NavigatingWorkspace) on the left-hand side of the window, an Outline view (linked with the open editor) and the Problems view, which indicates errors and warnings present in the models stored in the workspace.
 
 ![GAMA after the first launch.](images/first_launch/3.workbench_window.png)
 

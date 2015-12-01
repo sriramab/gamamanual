@@ -1,15 +1,14 @@
 
-# The GAML Editor
+# The GAML Editor - Generalities
 
 The GAML Editor is a text editor that proposes several services to support the modeler in writing correct models: an integrated live validation system, a ribbon header that gives access to [experiments](G__LaunchingExperiments), information, warning and error markers.
 
 ## Table of contents 
 
-* [The GAML Editor](#the-gaml-editor)
+* [The GAML Editor - Generalities](#the-gaml-editor-generalities)
 	* [Creating a first model](#creating-a-first-model)
 	* [Status of models in editors](#status-of-models-in-editors)
 	* [Editor Preferences](#editor-preferences)
-	* [Structural highlighting](#structural-highlighting)
 	* [Multiple editors](#multiple-editors)
 	* [Local history](#local-history)
 
@@ -73,7 +72,11 @@ Explore the different items present there, keeping in mind that these preference
 ![images/model_edition/11.editor_preferences.png](images/model_edition/11.editor_preferences.png)
 
 
-## Structural highlighting
+## Additional informations in the Editor
+
+![images/model_edition/additional_informations_in_editor.png](images/model_edition/12.additional_informations_in_editor.png)
+
+You can choose to display or not some informations in your Editor
 
 One particular option, shipped by default with GAMA, is the possibility to not only highlight the code of your model, but also its structure (complementing, in that sense, the _Outline_ view). It is a slightly modified version of a plugin called [EditBox](http://sourceforge.net/projects/editbox/), which can be activated by clicking on the "green square" icon in the toolbar.
 

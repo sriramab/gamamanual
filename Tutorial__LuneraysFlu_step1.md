@@ -19,7 +19,7 @@ This first step illustrates how to create simple agents and make them move in th
 ## Model Definition
 
 ### Project and model
-The first step of this tutorial consists in launching GAMA and choosing a workspace, then to define a new project or to import the existing one. For people that do not want to re-write all the models but just to follow the model construction, they can just download the model project here and the follow this [procedure](G__ImportingModels) to import it into GAMA. For the other, the project and model creation procedures are detailed [here](G__GamlEditor). 
+The first step of this tutorial consists in launching GAMA and choosing a workspace, then to define a new project or to import the existing one. For people that do not want to re-write all the models but just to follow the model construction, they can just download the model project here and the follow this [procedure](G__ImportingModels) to import it into GAMA. For the other, the project and model creation procedures are detailed [here](G__GamlEditorGeneralities). 
 
 Note that the concepts of workspace and projects are explained [here](G__Workspace).
 

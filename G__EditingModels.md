@@ -9,6 +9,7 @@ Understanding how to navigate in the **workspace** is covered in [another sectio
 
 This section covers the following sub-sections :
 
-  * 1. [GAML Editor](G__GamlEditor)
-  * 2. [Validation of Models](G__ValidationOfModels)
-  * 3. [Graphical Editor](G__GraphicalEditor)
+  * 1. [GAML Editor Generalities](G__GamlEditorGeneralities)
+  * 2. [GAML Editor Toolbar](G__GamlEditorToolbar)
+  * 3. [Validation of Models](G__ValidationOfModels)
+  * 4. [Graphical Editor](G__GraphicalEditor)

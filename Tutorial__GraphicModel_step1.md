@@ -30,7 +30,7 @@ More details about the different sections of a GAMA model can be found [here](G_
 
 ### Graphical modelling
 First, you need to create a new project (File > New Gama Project). Then, you can create your first diagram ( Right click on your project > New > Other > Model Diagram).
-For more details, you can refer to [Graphic model introduction](G__GamlEditor#Creating_a_first_model).
+For more details, you can refer to [Graphic model introduction](G__GamlEditorGeneralities#Creating_a_first_model).
 
 You should obtain a skeleton diagram similar to the following one.
 

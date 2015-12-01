@@ -40,7 +40,7 @@ To look up for a particular model in the library, users can use the "Search for 
 
 ### User models
 
-This category regroups all the projects that have been [created](G__GamlEditor) or [imported](G__ImportingModels) in the workspace by the user. Each project is actually a folder that resides in the folder of the workspace (so they can be easily located from within the filesystem). Any modification (addition, removal of files…) made to them in the filesystem (or using another application) is immediately reflected in the _Navigator_ and vice-versa.
+This category regroups all the projects that have been [created](G__GamlEditorGeneralities) or [imported](G__ImportingModels) in the workspace by the user. Each project is actually a folder that resides in the folder of the workspace (so they can be easily located from within the filesystem). Any modification (addition, removal of files…) made to them in the filesystem (or using another application) is immediately reflected in the _Navigator_ and vice-versa.
 
 Model files, although it is by no means mandatory, usually reside in a sub-folder of the project called "models".
 

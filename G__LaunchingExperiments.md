@@ -17,7 +17,7 @@ GAMA supports multiple ways of launching experiments from within the Modeling Pe
 
 
 ## From an Editor
-As already mentioned on [this page](G__GamlEditor), GAML editors will provide the easiest way to launch experiments. Whenever a model that contains the definition of experiments is validated, these experiments will appear as distinct buttons, in the order in which they are defined in the file, in the header ribbon above the text. Simply clicking one of these buttons launches the corresponding experiment.
+As already mentioned on [this page](G__GamlEditorGeneralities), GAML editors will provide the easiest way to launch experiments. Whenever a model that contains the definition of experiments is validated, these experiments will appear as distinct buttons, in the order in which they are defined in the file, in the header ribbon above the text. Simply clicking one of these buttons launches the corresponding experiment.
 
 ![images/launch_experiments/editor_launch.png](images/launch_experiments/editor_launch.png)
 
