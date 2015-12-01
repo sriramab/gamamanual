@@ -43,7 +43,8 @@ list<list<agent>> var0 <- clustering_cobweb([ag1, ag2, ag3, ag4, ag5],["size","a
 ```
       
 
-#### See also: [clustering_xmeans](#clustering_xmeans), [clustering_em](#clustering_em), [clustering_farthestFirst](#clustering_farthestfirst), [clustering_simple_kmeans](#clustering_simple_kmeans), [clustering_cobweb](#clustering_cobweb), 
+#### See also: 
+[clustering_xmeans](#clustering_xmeans), [clustering_em](#clustering_em), [clustering_farthestFirst](#clustering_farthestfirst), [clustering_simple_kmeans](#clustering_simple_kmeans), [clustering_cobweb](#clustering_cobweb), 
 
 [Top of the page](#table-of-contents)
   	
@@ -64,7 +65,8 @@ list<list<agent>> var0 <- clustering_DBScan([ag1, ag2, ag3, ag4, ag5],["size","a
 ```
       
 
-#### See also: [clustering_xmeans](#clustering_xmeans), [clustering_em](#clustering_em), [clustering_farthestFirst](#clustering_farthestfirst), [clustering_simple_kmeans](#clustering_simple_kmeans), [clustering_cobweb](#clustering_cobweb), 
+#### See also: 
+[clustering_xmeans](#clustering_xmeans), [clustering_em](#clustering_em), [clustering_farthestFirst](#clustering_farthestfirst), [clustering_simple_kmeans](#clustering_simple_kmeans), [clustering_cobweb](#clustering_cobweb), 
 
 [Top of the page](#table-of-contents)
   	
@@ -85,7 +87,8 @@ list<list<agent>> var0 <- clustering_em([ag1, ag2, ag3, ag4, ag5],["size","age",
 ```
       
 
-#### See also: [clustering_xmeans](#clustering_xmeans), [clustering_simple_kmeans](#clustering_simple_kmeans), [clustering_farthestFirst](#clustering_farthestfirst), [clustering_DBScan](#clustering_dbscan), [clustering_cobweb](#clustering_cobweb), 
+#### See also: 
+[clustering_xmeans](#clustering_xmeans), [clustering_simple_kmeans](#clustering_simple_kmeans), [clustering_farthestFirst](#clustering_farthestfirst), [clustering_DBScan](#clustering_dbscan), [clustering_cobweb](#clustering_cobweb), 
 
 [Top of the page](#table-of-contents)
   	
@@ -106,7 +109,8 @@ list<list<agent>> var0 <- clustering_farthestFirst([ag1, ag2, ag3, ag4, ag5],["s
 ```
       
 
-#### See also: [clustering_xmeans](#clustering_xmeans), [clustering_simple_kmeans](#clustering_simple_kmeans), [clustering_em](#clustering_em), [clustering_DBScan](#clustering_dbscan), [clustering_cobweb](#clustering_cobweb), 
+#### See also: 
+[clustering_xmeans](#clustering_xmeans), [clustering_simple_kmeans](#clustering_simple_kmeans), [clustering_em](#clustering_em), [clustering_DBScan](#clustering_dbscan), [clustering_cobweb](#clustering_cobweb), 
 
 [Top of the page](#table-of-contents)
   	
@@ -127,7 +131,8 @@ list<list<agent>> var0 <- clustering_simple_kmeans([ag1, ag2, ag3, ag4, ag5],["s
 ```
       
 
-#### See also: [clustering_xmeans](#clustering_xmeans), [clustering_em](#clustering_em), [clustering_farthestFirst](#clustering_farthestfirst), [clustering_DBScan](#clustering_dbscan), [clustering_cobweb](#clustering_cobweb), 
+#### See also: 
+[clustering_xmeans](#clustering_xmeans), [clustering_em](#clustering_em), [clustering_farthestFirst](#clustering_farthestfirst), [clustering_DBScan](#clustering_dbscan), [clustering_cobweb](#clustering_cobweb), 
 
 [Top of the page](#table-of-contents)
   	
@@ -148,7 +153,8 @@ list<list<agent>> var0 <- clustering_xmeans([ag1, ag2, ag3, ag4, ag5],["size","a
 ```
       
 
-#### See also: [clustering_simple_kmeans](#clustering_simple_kmeans), [clustering_em](#clustering_em), [clustering_farthestFirst](#clustering_farthestfirst), [clustering_DBScan](#clustering_dbscan), [clustering_cobweb](#clustering_cobweb), 
+#### See also: 
+[clustering_simple_kmeans](#clustering_simple_kmeans), [clustering_em](#clustering_em), [clustering_farthestFirst](#clustering_farthestfirst), [clustering_DBScan](#clustering_dbscan), [clustering_cobweb](#clustering_cobweb), 
 
 [Top of the page](#table-of-contents)
   	
