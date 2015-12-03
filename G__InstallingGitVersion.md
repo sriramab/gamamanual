@@ -6,7 +6,7 @@ _Important note: the current Git version is **not** compatible with the GAMA 1.6
 
 ## Download Eclipse Mars SR1
 
-Download the ["Eclipse IDE for Java and DSL Developers" version](http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/mars1).
+Download the ["Eclipse IDE for Java and DSL Developers"](http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/mars1) version.
 
 Unpack it and launch it. Please refer to this [link](http://help.eclipse.org/mars/index.jsp?nav=%2F0) for more information on running Eclipse.
 
