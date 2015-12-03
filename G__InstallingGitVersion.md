@@ -8,12 +8,11 @@ _Important note: the current Git version is **not** compatible with the GAMA 1.6
 
 Download the "Eclipse IDE for Java and DSL Developers" version of Mars SR1 from: http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/mars1
 
-Unpack it anywhere and run it. At the first run, Eclipse will ask to choose a new workspace
-  * A workspace is a folder in which Eclipse stores all your projects.
+Unpack it and launch it. Please refer to this [link](http://help.eclipse.org/mars/index.jsp?nav=%2F0) for more information on running Eclipse.
 
 ## Install GAMA
 
-The GAMA source code should now be downloaded from the GIT repository (hosted by GitHub). A local clone of the remote repository will be created ; then the projects will be imported into the Eclipse workspace.
+The GAMA source code is to be downloaded from GitHub in two steps: by creating a local clone of the GitHub repository and importing the different projects that constitute GAMA into the Eclipse workspace.
 
 1. Open the Git perspective:
   * Windows > Open Perspective > Other...
