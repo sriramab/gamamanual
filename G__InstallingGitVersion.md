@@ -1,18 +1,18 @@
 # Installing the GIT version
 
-Tested on MacOS X (10.9 to 10.11), Windows (8 and 10) and Ubuntu 15.04 (Vivid)
+Tested on MacOS X (10.9 to 10.11), Windows (8 to 10) and Ubuntu 15.04 (Vivid)
 
 _Important note: the current Git version is **not** compatible with the GAMA 1.6.1 release: if you plan to create plugins for this release, please download the source at revision r11988 (on Google Code) and [Eclipse following this procedure](G__InstallingSvnOldVersions)_
 
-## Download Eclipse
+## Download Eclipse Mars SR1
 
-Download the "Eclipse IDE for Java and DSL Developers" version of Mars SR1 from: http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/mars1
+Download the ["Eclipse IDE for Java and DSL Developers" version](http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/mars1).
 
 Unpack it and launch it. Please refer to this [link](http://help.eclipse.org/mars/index.jsp?nav=%2F0) for more information on running Eclipse.
 
-## Install GAMA
+## Install GAMA source code
 
-The GAMA source code is to be downloaded from GitHub in two steps: by creating a local clone of the GitHub repository and importing the different projects that constitute GAMA into the Eclipse workspace.
+The source is to be downloaded from GitHub in two steps: by creating a local clone of the GitHub repository and then importing the different projects that constitute GAMA into the Eclipse workspace.
 
 1. Open the Git perspective:
   * Windows > Open Perspective > Other...
