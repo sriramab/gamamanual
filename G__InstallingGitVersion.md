@@ -1,9 +1,7 @@
 # Installing the GIT version
 
-This installation procedure has been tested on MacOS X (10.9 to 10.11), Windows (8 and 10) and Ubuntu 15.04 (Vivid). On MacOS X 10.10 (Yosemite) or MacOS X 10.11 (El Capitan), please have a look here: [install Java on MacOS X](G__Installation) for details about the Java version to use. 
-
-**Important note: the current Git version is no more compatible with the GAMA 1.6.1 release.**
-  * If you plan to create plugin that should be compatible with the release, please download the GAMA code source at revision r11988 (on Google Code) and [Eclipse following this procedure](G__InstallingSvnOldVersions)
+_Tested on MacOS X (10.9 to 10.11), Windows (8 and 10) and Ubuntu 15.04 (Vivid). _ 
+_Important note: the current Git version is not compatible with the GAMA 1.6.1 release: if you plan to create plugins for this release, please download the source at revision r11988 (on Google Code) and [Eclipse following this procedure](G__InstallingSvnOldVersions)_
 
 ## Download Eclipse
 
