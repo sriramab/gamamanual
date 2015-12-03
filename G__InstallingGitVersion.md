@@ -9,12 +9,12 @@ This installation procedure has been tested on MacOS X (10.9 to 10.11), Windows 
 
 Download the "Eclipse IDE for Java and DSL Developers" version of Mars SR1 from: `http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/mars1`
 
-Unpack it anywhere and run it. At the first run, Eclispe will ask to choose a new workspace
+Unpack it anywhere and run it. At the first run, Eclipse will ask to choose a new workspace
   * A workspace is a folder in which Eclipse stores all your projects.
 
 ## Install GAMA
 
-The GAMA source code should now be downloaded from the GIT repository (hosted by GitHub). A local clone of the remote repository will be created ; then the projects will be (logically) imported into the Eclipse workspace.
+The GAMA source code should now be downloaded from the GIT repository (hosted by GitHub). A local clone of the remote repository will be created ; then the projects will be imported into the Eclipse workspace.
 
 1. Open the Git perspective:
   * Windows > Open Perspective > Other...
