@@ -6,7 +6,7 @@ _Important note: the current Git version is **not** compatible with the GAMA 1.6
 
 ## Download Eclipse
 
-Download the "Eclipse IDE for Java and DSL Developers" version of Mars SR1 from: `http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/mars1`
+Download the "Eclipse IDE for Java and DSL Developers" version of Mars SR1 from: http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/mars1
 
 Unpack it anywhere and run it. At the first run, Eclipse will ask to choose a new workspace
   * A workspace is a folder in which Eclipse stores all your projects.
