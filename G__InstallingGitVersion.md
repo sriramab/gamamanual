@@ -15,7 +15,7 @@ Unpack it and launch it. Please refer to this [link](http://help.eclipse.org/mar
 The source is to be downloaded from GitHub in two steps: by creating a local clone of the GitHub repository and then importing the different projects that constitute GAMA into the Eclipse workspace.
 
 1. Open the Git perspective:
-  * Windows > Open Perspective > Other...
+  * Windows > Perspective > Open Perspective > Other...
   * Choose `Git`
 ![Open GIT perspective](images/GIT_install/GIT_open_perspective.png)
 2. Click on "Clone a Git repository"
