@@ -30,7 +30,16 @@ As a consequence, the GAML language has been increased by two main concepts (as 
 * an equation can be numerically integrated using the ``solve`` statement
 
 ## ``equation``
-### Defining an equation
-### Using a built-in equation
+### Defining an ODE system
+Defining a new ODE system needs to define a new ``equation`` block in a species. As example: 
+{{{
+equation eqSI {
+	diff(S,t) = -beta * S * I / N ;
+	diff(I,t) = beta * S * I / N ;
+}		
+}}}
+
+
+### Using a built-in ODE system
 
 ## ``solve`` an equation
