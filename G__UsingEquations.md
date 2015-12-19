@@ -17,4 +17,20 @@ This approach makes a lot of strong hypotheses. The model does not take into acc
 
 These hypotheses are very strong and cannot be fulfilled in agent-based models. 
 
-But 
+But in some multi-scale models, some entities can be close. For example if we want to implement a model describing the worldwide epidemic spread and the impact of air traffic on it, we cannot simulate the 7 billions people. But we can represent only cities with airports and airplanes as agents. In this case, cities are entities with a population of millions inhabitants, that will not been spatially located. As we are only interested in the disease spread, we are only interested in the number of infected people in the cities (and susceptibles and recovered too). As a consequence, it appears particularly relevant to describe the evolution of the disease in the city using a ODE system.
+
+In addition these models have the advantage to not be sensible to population size in the integration process. Dozens or billions peopls does not bring a computation time increase, contrarily to agent-based models.
+
+## Use of ODE in a GAML model
+
+A stereotypical use of ODE in a GAMA agent-base model is to describe species where some agents attributes evolution is described using an ODE system.
+
+As a consequence, the GAML language has been increased by two main concepts (as two statements):
+* equations can be written with the ``equation`` statement. An ``equation`` block is composed of a set of ``diff`` statement describing the evolution of species attributes.
+* an equation can be numerically integrated using the ``solve`` statement
+
+## ``equation``
+### Defining an equation
+### Using a built-in equation
+
+## ``solve`` an equation
