@@ -12,6 +12,9 @@ In general the ODE systems cannot be analytically solved, i.e. it is not possibl
 
 This approach makes a lot of strong hypotheses. The model does not take into account space. The population is considered has infinite and homogeneously mixed, so that any agent can interact with any other one.
 
+## Example of a SIR model 
+
+TODO : Compartment, equations, result series....
 
 ## Why and when can we use ODE in agent-based models ?
 
@@ -31,15 +34,17 @@ As a consequence, the GAML language has been increased by two main concepts (as 
 
 ## ``equation``
 ### Defining an ODE system
-Defining a new ODE system needs to define a new ``equation`` block in a species. As example: 
-{{{
+Defining a new ODE system needs to define a new ``equation`` block in a species. As example, the following eqSI system describes the evolution of a population with 2 compartments (S and I) and the flow from S to I compartment: 
+``` 
 equation eqSI {
 	diff(S,t) = -beta * S * I / N ;
 	diff(I,t) = beta * S * I / N ;
 }		
-}}}
-
+```
+This equation has to be defined in a species with ``t``, ``S`` and ``I`` attributes. ``beta`` (and other similar parameter) can be defined either in the specific species (if it is specific to each agents) or in the ``global`` if it is a constant.
 
 ### Using a built-in ODE system
+In order to ease the use of very classical ODE system, some built-in systems have been implemented in GAMA.
+
 
 ## ``solve`` an equation
