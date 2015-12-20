@@ -14,9 +14,24 @@ This approach makes a lot of strong hypotheses. The model does not take into acc
 
 ## Example of a SIR model 
 
-![todo](images/equations/SIR-compartments.png)
+In the SIR model, the population is split into 3 compartments: S (Susceptible), I (Infected), R (Recovered). This can be represented by the following Forrester diagram: boxes represent stocks (i.e. compartments) and arrows are flows. Arrows hold the rate of a compartment population flowing to another compartment.
 
-TODO : Compartment, equations, result series....
+![](images/equations/SIR-compartments.png)
+
+The corresponding ODE system contains one equation per stock. For example, the I compartment evolution is influenced by an inner (so positive) flow from the S compartment and an outer (so negative) flow to the R compartment.
+
+![](images/equations/SIR-equations.png)
+
+Integrating this system using the Runge-Kutta 4 method provides the following results. The initial values are:
+* S = 499
+* I = 1
+* R = 0
+* beta = 0.4
+* gamme = 0.1 
+* h = 0.1
+
+![](images/equations/SIR-result.png)
+
 
 ## Why and when can we use ODE in agent-based models ?
 
