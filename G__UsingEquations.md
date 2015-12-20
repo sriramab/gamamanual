@@ -22,12 +22,12 @@ The corresponding ODE system contains one equation per stock. For example, the I
 
 ![](images/equations/SIR-equations.png)
 
-Integrating this system using the Runge-Kutta 4 method provides the following results. The initial values are:
+Integrating this system using the Runge-Kutta 4 method provides the evolution of S, I and R over time. The initial values are:
 * S = 499
 * I = 1
 * R = 0
 * beta = 0.4
-* gamme = 0.1 
+* gamma = 0.1 
 * h = 0.1
 
 ![](images/equations/SIR-result.png)
