@@ -14,7 +14,8 @@ This approach makes a lot of strong hypotheses. The model does not take into acc
 
 ## Example of a SIR model 
 
-![](images/equations/SIR-compartments.jpg)
+![todo](images/equations/SIR-compartments.png)
+
 TODO : Compartment, equations, result series....
 
 ## Why and when can we use ODE in agent-based models ?
