@@ -85,7 +85,9 @@ reflex solving {
 	solve eqSI method:rk4 step:h;
 }
 ```
+With a smaller integration step, the integration will be faster but less accurate.
 
 ## More details
 ### Details about the `solve` statement
+### Example of the influence of the integration step
 ### List of built-in ODE systems
