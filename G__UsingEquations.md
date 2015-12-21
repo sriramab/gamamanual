@@ -1,4 +1,7 @@
 TO FINISH 
+Add references to : 
+* integration method
+* ODE system (LV)
 
 # Using Equations
 
