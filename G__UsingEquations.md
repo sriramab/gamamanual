@@ -79,7 +79,7 @@ equation eqBuiltInSI type: SI vars: [S,I,t] params: [N,beta] ;
 ```
 
 ## ``solve`` an equation
-The `solve` statement has been added in order to numerically integrate the equation system. It should be add into a reflex. At each simulation step, a step of the integration is executed, the length of the integration step is defined in the `step` facet. The `solve` statement will update the variables used in the equation system.
+The `solve` statement has been added in order to numerically integrate the equation system. It should be add into a reflex. At each simulation step, a step of the integration is executed, the length of the integration step is defined in the `step` facet. The `solve` statement will update the variables used in the equation system. The chosen integration method (defined in `method`) is Runge-Kutta 4 (which is very often a good choice of integration method in terms of accuracy).
 ```
 reflex solving {
 	solve eqSI method:rk4 step:h;
