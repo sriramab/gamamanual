@@ -42,7 +42,7 @@ These hypotheses are very strong and cannot be fulfilled in agent-based models.
 
 But in some multi-scale models, some entities can be close. For example if we want to implement a model describing the worldwide epidemic spread and the impact of air traffic on it, we cannot simulate the 7 billions people. But we can represent only cities with airports and airplanes as agents. In this case, cities are entities with a population of millions inhabitants, that will not been spatially located. As we are only interested in the disease spread, we are only interested in the number of infected people in the cities (and susceptibles and recovered too). As a consequence, it appears particularly relevant to describe the evolution of the disease in the city using a ODE system.
 
-In addition these models have the advantage to not be sensible to population size in the integration process. Dozens or billions peopls does not bring a computation time increase, contrarily to agent-based models.
+In addition these models have the advantage to not be sensible to population size in the integration process. Dozens or billions people does not bring a computation time increase, contrarily to agent-based models.
 
 ## Use of ODE in a GAML model
 
@@ -81,6 +81,10 @@ In order to ease the use of very classical ODE system, some built-in systems hav
 equation eqBuiltInSI type: SI vars: [S,I,t] params: [N,beta] ;
 ```
 
+### Split a system into several agents
+
+An equation system can be split into several species.
+
 ## ``solve`` an equation
 The `solve` statement has been added in order to numerically integrate the equation system. It should be add into a reflex. At each simulation step, a step of the integration is executed, the length of the integration step is defined in the `step` facet. The `solve` statement will update the variables used in the equation system. The chosen integration method (defined in `method`) is Runge-Kutta 4 (which is very often a good choice of integration method in terms of accuracy).
 ```
@@ -90,7 +94,22 @@ reflex solving {
 ```
 With a smaller integration step, the integration will be faster but less accurate.
 
+
+
 ## More details
+
 ### Details about the `solve` statement
+
 ### Example of the influence of the integration step
+
 ### List of built-in ODE systems
+Several built-in equations have been defined.
+* `equation eqBuiltInSI type: SI vars: [S,I,t] params: [N,beta];`
+![](images/equations/SI-compartments.png)
+![](images/equations/SI-equations.png)
+![](images/equations/SI-result.png)
+
+* `equation eqSIS type: SIS vars: [S,I,t] params: [N,beta,gamma];`
+![](images/equations/SIS-compartments.png)
+![](images/equations/SIS-equations.png)
+![](images/equations/SIS-result.png)
