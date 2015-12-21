@@ -105,6 +105,7 @@ With a smaller integration step, the integration will be faster but less accurat
 ### List of built-in ODE systems
 Several built-in equations have been defined.
 * `equation eqBuiltInSI type: SI vars: [S,I,t] params: [N,beta];`
+
 This system is equivalent to:
 ```
 equation eqSI {
@@ -126,6 +127,7 @@ The results are provided using the Runge-Kutta 4 method using following initial 
 ![](images/equations/SI-result.png)
 
 * `equation eqSIS type: SIS vars: [S,I,t] params: [N,beta,gamma];`
+
 This system is equivalent to:
 ```
 equation eqSIS {
@@ -145,3 +147,47 @@ The results are provided using the Runge-Kutta 4 method using following initial 
 * h = 0.1
 
 ![](images/equations/SIS-result.png)
+
+* `equation eqSIR type:SIR vars:[S,I,R,t] params:[N,beta,gamma] ;`
+
+This system is equivalent to:
+```
+equation eqSIR {
+	diff(S,t) = (- beta * S * I / N);
+	diff(I,t) = (beta * S * I / N) - (gamma * I);
+	diff(R,t) = (gamma * I);
+}
+```
+
+* `equation eqSIRS type: SIRS vars: [S,I,R,t] params: [N,beta,gamma,omega,mu] ;`
+
+This system is equivalent to:
+```
+equation eqSIRS {
+	 diff(S,t) = mu * N + omega * R + - beta * S * I / N - mu * S ;
+	 diff(I,t) = beta * S * I / N - gamma * I - mu * I ;
+	 diff(R,t) = gamma * I - omega * R - mu * R ;
+}
+```
+
+* `equation eqSEIR type: SEIR vars: [S,E,I,R,t] params: [N,beta,gamma,sigma,mu] ;`
+
+This system is equivalent to:
+```
+equation eqSEIR {
+	diff(S,t) = mu * N - beta * S * I / N - mu * S ;
+	diff(E,t) = beta * S * I / N - mu * E - sigma * E ;
+	diff(I,t) = sigma * E - mu * I - gamma * I;
+	diff(R,t) = gamma * I - mu * R ;
+}
+```
+
+* `equation eqLV type: LV vars: [x,y,t] params: [alpha,beta,delta,gamma] ;`
+
+This system is equivalent to:
+```
+equation eqLV { 
+	diff(x,t) =   x * (alpha - beta * y);
+	diff(y,t) = - y * (delta - gamma * x);
+}	
+```
