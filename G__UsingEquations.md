@@ -105,11 +105,17 @@ With a smaller integration step, the integration will be faster but less accurat
 ### List of built-in ODE systems
 Several built-in equations have been defined.
 * `equation eqBuiltInSI type: SI vars: [S,I,t] params: [N,beta];`
+
 ![](images/equations/SI-compartments.png)
+
 ![](images/equations/SI-equations.png)
+
 ![](images/equations/SI-result.png)
 
 * `equation eqSIS type: SIS vars: [S,I,t] params: [N,beta,gamma];`
+
 ![](images/equations/SIS-compartments.png)
+
 ![](images/equations/SIS-equations.png)
+
 ![](images/equations/SIS-result.png)
