@@ -106,7 +106,7 @@ With a smaller integration step, the integration will be faster but less accurat
 Several built-in equations have been defined.
 * `equation eqBuiltInSI type: SI vars: [S,I,t] params: [N,beta];`
 
-![](images/equations/SI-compartments.png)
+![](images/equations/SI-compartment.png)
 
 ![](images/equations/SI-equations.png)
 
@@ -114,7 +114,7 @@ Several built-in equations have been defined.
 
 * `equation eqSIS type: SIS vars: [S,I,t] params: [N,beta,gamma];`
 
-![](images/equations/SIS-compartments.png)
+![](images/equations/SIS-compartment.png)
 
 ![](images/equations/SIS-equations.png)
 
