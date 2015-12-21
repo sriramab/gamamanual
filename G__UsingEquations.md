@@ -43,7 +43,7 @@ In addition these models have the advantage to not be sensible to population siz
 
 ## Use of ODE in a GAML model
 
-A stereotypical use of ODE in a GAMA agent-base model is to describe species where some agents attributes evolution is described using an ODE system.
+A stereotypical use of ODE in a GAMA agent-based model is to describe species where some agents attributes evolution is described using an ODE system.
 
 As a consequence, the GAML language has been increased by two main concepts (as two statements):
 * equations can be written with the ``equation`` statement. An ``equation`` block is composed of a set of ``diff`` statement describing the evolution of species attributes.
@@ -53,15 +53,31 @@ As a consequence, the GAML language has been increased by two main concepts (as 
 ### Defining an ODE system
 Defining a new ODE system needs to define a new ``equation`` block in a species. As example, the following eqSI system describes the evolution of a population with 2 compartments (S and I) and the flow from S to I compartment: 
 ``` 
-equation eqSI {
-	diff(S,t) = -beta * S * I / N ;
-	diff(I,t) = beta * S * I / N ;
-}		
+species userSI {
+	float t ;
+	float I ; 
+	float S ; 
+	int N ;
+	float beta<-0.4 ;
+	float h ;
+	
+	equation eqSI {
+		diff(S,t) = -beta * S * I / N ;
+		diff(I,t) = beta * S * I / N ;
+	}
+}			
 ```
 This equation has to be defined in a species with ``t``, ``S`` and ``I`` attributes. ``beta`` (and other similar parameter) can be defined either in the specific species (if it is specific to each agents) or in the ``global`` if it is a constant.
 
 ### Using a built-in ODE system
-In order to ease the use of very classical ODE system, some built-in systems have been implemented in GAMA.
-
+In order to ease the use of very classical ODE system, some built-in systems have been implemented in GAMA. For example, the previous SI system can be written as follows. Three additional facets are used to define the system:
+* `type`: the identifier of the built-in system (here SI) (the list of all built-in systems are described below),
+* `vars`: this facet is expecting a list of variables of the species, that will be matched with the variables of the system,
+* `params`: this facet is expecting a list of variables of the species (of of the global), that will be matched with the parameters of the system.
+```
+equation eqBuiltInSI type: SI vars: [S,I,t] params: [N,beta] ;
+```
 
 ## ``solve`` an equation
+
+## List of built-in ODE systems
