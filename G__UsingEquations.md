@@ -105,17 +105,43 @@ With a smaller integration step, the integration will be faster but less accurat
 ### List of built-in ODE systems
 Several built-in equations have been defined.
 * `equation eqBuiltInSI type: SI vars: [S,I,t] params: [N,beta];`
+This system is equivalent to:
+```
+equation eqSI {
+	diff(S,t) = -beta * S * I / N ;
+	diff(I,t) = beta * S * I / N ;
+}
+```	
 
 ![](images/equations/SI-compartment.png)
 
 ![](images/equations/SI-equations.png)
 
+The results are provided using the Runge-Kutta 4 method using following initial values:
+* S = 499
+* I = 1
+* beta = 0.4
+* h = 0.1
+
 ![](images/equations/SI-result.png)
 
 * `equation eqSIS type: SIS vars: [S,I,t] params: [N,beta,gamma];`
-
+This system is equivalent to:
+```
+equation eqSIS {
+	diff(S,t) = -beta * S * I / N + gamma * I;
+	diff(I,t) = beta * S * I / N - gamma * I;
+}
+```
 ![](images/equations/SIS-compartment.png)
 
 ![](images/equations/SIS-equations.png)
+
+The results are provided using the Runge-Kutta 4 method using following initial values:
+* S = 499
+* I = 1
+* beta = 0.4
+* gamma = 0.1 
+* h = 0.1
 
 ![](images/equations/SIS-result.png)
