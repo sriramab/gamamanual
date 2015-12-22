@@ -1,4 +1,12 @@
-Title: BlaBla
+{% comment %}
+Title:       |
+Subtitle:    |  
+Project:     |  
+Author:      Hilton Lipschitz  
+Affiliation: Noverse LLC  
+Web:         http://www.noverse.com  
+Date:        June 18, 2012  
+{% comment %} 
 
 # Defining Files
 
