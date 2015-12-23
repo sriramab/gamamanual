@@ -159,6 +159,20 @@ equation eqSIR {
 }
 ```
 
+![](images/equations/SIR-compartment.png)
+
+![](images/equations/SIR-equations.png)
+
+The results are provided using the Runge-Kutta 4 method using following initial values:
+* S = 499
+* I = 1
+* R = 0
+* beta = 0.4
+* gamma = 0.1 
+* h = 0.1
+
+![](images/equations/SIR-result.png)
+
 * `equation eqSIRS type: SIRS vars: [S,I,R,t] params: [N,beta,gamma,omega,mu] ;`
 
 This system is equivalent to:
