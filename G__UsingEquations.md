@@ -1,7 +1,6 @@
 TO FINISH 
 Add references to : 
 * integration method
-* ODE system (LV)
 
 # Using Equations
 
@@ -19,7 +18,7 @@ This approach makes a lot of strong hypotheses. The model does not take into acc
 
 In the SIR model, the population is split into 3 compartments: S (Susceptible), I (Infected), R (Recovered). This can be represented by the following Forrester diagram: boxes represent stocks (i.e. compartments) and arrows are flows. Arrows hold the rate of a compartment population flowing to another compartment.
 
-![](images/equations/SIR-compartments.png)
+![](images/equations/SIR-compartment.png)
 
 The corresponding ODE system contains one equation per stock. For example, the I compartment evolution is influenced by an inner (so positive) flow from the S compartment and an outer (so negative) flow to the R compartment.
 
