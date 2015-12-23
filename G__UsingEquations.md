@@ -159,6 +159,21 @@ equation eqSIR {
 }
 ```
 
+![](images/equations/SIR-compartment.png)
+
+![](images/equations/SIR-equations.png)
+
+The results are provided using the Runge-Kutta 4 method using following initial values:
+* S = 499
+* I = 1
+* R = 0
+* beta = 0.4
+* gamma = 0.1 
+* h = 0.1
+
+![](images/equations/SIR-result.png)
+
+
 * `equation eqSIRS type: SIRS vars: [S,I,R,t] params: [N,beta,gamma,omega,mu] ;`
 
 This system is equivalent to:
@@ -169,6 +184,23 @@ equation eqSIRS {
 	 diff(R,t) = gamma * I - omega * R - mu * R ;
 }
 ```
+
+![](images/equations/SIRS-compartment.png)
+
+![](images/equations/SIRS-equations.png)
+
+The results are provided using the Runge-Kutta 4 method using following initial values:
+* S = 499
+* I = 1
+* R = 0
+* beta = 0.4
+* gamma = 0.01
+* omega = 0.05
+* mu = 0.01 
+* h = 0.1
+
+![](images/equations/SIRS-result.png)
+
 
 * `equation eqSEIR type: SEIR vars: [S,E,I,R,t] params: [N,beta,gamma,sigma,mu] ;`
 
@@ -182,6 +214,24 @@ equation eqSEIR {
 }
 ```
 
+![](images/equations/SEIR-compartment.png)
+
+![](images/equations/SEIR-equations.png)
+
+The results are provided using the Runge-Kutta 4 method using following initial values:
+* S = 499
+* E = 0
+* I = 1
+* R = 0
+* beta = 0.4
+* gamma = 0.01
+* sigma = 0.05
+* mu = 0.01 
+* h = 0.1
+
+![](images/equations/SEIR-result.png)
+
+
 * `equation eqLV type: LV vars: [x,y,t] params: [alpha,beta,delta,gamma] ;`
 
 This system is equivalent to:
@@ -191,3 +241,16 @@ equation eqLV {
 	diff(y,t) = - y * (delta - gamma * x);
 }	
 ```
+
+![](images/equations/LV-equations.png)
+
+The results are provided using the Runge-Kutta 4 method using following initial values:
+* x = 2
+* y = 2
+* alpha = 0.8
+* beta = 0.3
+* gamma = 0.2
+* delta = 0.85
+* h = 0.1
+
+![](images/equations/LV-result.png)
