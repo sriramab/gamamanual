@@ -104,7 +104,7 @@ With a smaller integration step, the integration will be faster but less accurat
 
 ### List of built-in ODE systems
 Several built-in equations have been defined.
-* `equation eqBuiltInSI type: SI vars: [S,I,t] params: [N,beta];`
+#### `equation eqBuiltInSI type: SI vars: [S,I,t] params: [N,beta];`
 
 This system is equivalent to:
 ```
@@ -126,7 +126,7 @@ The results are provided using the Runge-Kutta 4 method using following initial 
 
 ![](images/equations/SI-result.png)
 
-* `equation eqSIS type: SIS vars: [S,I,t] params: [N,beta,gamma];`
+#### `equation eqSIS type: SIS vars: [S,I,t] params: [N,beta,gamma];`
 
 This system is equivalent to:
 ```
@@ -148,7 +148,7 @@ The results are provided using the Runge-Kutta 4 method using following initial 
 
 ![](images/equations/SIS-result.png)
 
-* `equation eqSIR type:SIR vars:[S,I,R,t] params:[N,beta,gamma] ;`
+#### `equation eqSIR type:SIR vars:[S,I,R,t] params:[N,beta,gamma] ;`
 
 This system is equivalent to:
 ```
@@ -174,7 +174,7 @@ The results are provided using the Runge-Kutta 4 method using following initial 
 ![](images/equations/SIR-result.png)
 
 
-* `equation eqSIRS type: SIRS vars: [S,I,R,t] params: [N,beta,gamma,omega,mu] ;`
+#### `equation eqSIRS type: SIRS vars: [S,I,R,t] params: [N,beta,gamma,omega,mu] ;`
 
 This system is equivalent to:
 ```
@@ -202,7 +202,7 @@ The results are provided using the Runge-Kutta 4 method using following initial 
 ![](images/equations/SIRS-result.png)
 
 
-* `equation eqSEIR type: SEIR vars: [S,E,I,R,t] params: [N,beta,gamma,sigma,mu] ;`
+#### `equation eqSEIR type: SEIR vars: [S,E,I,R,t] params: [N,beta,gamma,sigma,mu] ;`
 
 This system is equivalent to:
 ```
@@ -232,7 +232,7 @@ The results are provided using the Runge-Kutta 4 method using following initial 
 ![](images/equations/SEIR-result.png)
 
 
-* `equation eqLV type: LV vars: [x,y,t] params: [alpha,beta,delta,gamma] ;`
+#### `equation eqLV type: LV vars: [x,y,t] params: [alpha,beta,delta,gamma] ;`
 
 This system is equivalent to:
 ```
