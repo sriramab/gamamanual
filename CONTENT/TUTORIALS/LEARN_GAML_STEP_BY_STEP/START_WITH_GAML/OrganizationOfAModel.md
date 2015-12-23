@@ -1,5 +1,10 @@
+[//]: # (Subsection:START_WITH_GAML)
+[//]: # (Previous:null)
+[//]: # (Next:BasicProgramingConceptsInGAML)
+[//]: # (Prerequisite:[])
 
-# Organization of a model (Under construction)
+
+# Organization of a model
 
 As already extensively detailed in the [key concepts page](G__KeyConcepts), defining a model in GAML amounts to defining a _model species_, which later allows to instantiate a _model agent_ (aka a _simulation_), which may or may not contain micro-species, and which can be flanked by _experiment plans_ in order to be simulated.
 
@@ -12,7 +17,7 @@ This conceptual structure is respected in the definition of model files, which f
 
 ## Table of contents 
 
-* [Organization of a model (Under construction)](#organization-of-a-model-under-construction)
+* [Organization of a model](#organization-of-a-model-under-construction)
 	* [Model Header (model species)](#model-header-model-species)
 	* [Species declarations](#species-declarations)
 	* [Experiment declarations](#experiment-declarations)
@@ -81,3 +86,20 @@ global {
 
 
 ## Experiment declarations
+
+Experiments are usually declared at the end of the file. They start with the keyword "experiment". They contains the simulation parameters, and the definition of the output. You can declare as much experiment as you want.
+
+```
+experiment first_experiment {
+    // definition of parameters
+
+    // definition of output
+    output {...}
+}
+
+experiment second_experiment {
+    // definition of parameters
+
+    // definition of output
+}
+```

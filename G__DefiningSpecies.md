@@ -36,13 +36,13 @@ A species can contain several elements:
 * [Inits and Reflexes](G__DefiningBehaviors): defines the default behavior of the agents. Both statements contain instructions that are executed, respectively, once when the agent is created for `init` statements, and at each simulation step (according to an optional condition) for `reflex` statements.
 * [Aspects](G__DefiningAspects): define how the agents can be displayed.
 * [Equations](G__DefiningEquations): define a set of differential equations that can be integrated when necessary.
-* [Micro-species](G__MultiLevel): nested species can be described inside a species. See [here](G__MultiLevelArchitecture) for more details on the relationships between macro- and micro-species.
+* [Micro-species](G__MultiLevel): nested species can be described inside a species. See [here](G__MultiLevel) for more details on the relationships between macro- and micro-species.
 
 Note that all the elements previously defined are optional. It is totally possible to define an empty species without any attributes, actions, reflexes, aspects, equations or micro-species like in the example above.
 
 In addition to the regular inheritance mechanisms, modelers can attach skills and control architectures to species, which will provide their agents with new attributes, actions and behaviors. See [here](G__SkillsAndControl) for how to define these capabilities.
 
-Finally, some specific features concerning the interaction of users with agents can be added to any species. It is for example possible to define an action that will be executed by the user. See [here](G__DefiningUserCommands) for more details.
+Flly, some specific features concerning the interaction of users with agents can be added to any species. It is for example possible to define an action that will be executed by the user. See [here](G__DefiningUserCommands) for more details.
 
 
 
@@ -90,8 +90,9 @@ By default, a species has a continuous topology. However, it is possible to defi
 ## Types of Species
 
 Several types of species exist in GAMA:
-* [global species](G__GlobalSpecies): The global species defines the model, i.e. the attributes, actions, behaviors and micro-species that describe the world agent.
+* [global species](G__GlobalSpecies): The global species defines the model, i.e. the attributes,tions, behaviors and micro-species that describe the world agent.
 * [regular species](G__RegularSpecies): species of agents with a continuous topology by default.
-* [grid species](G__GridSpecies): species of agents with a grid topology.
+* [gripecies](G__GridSpecies): species of agents with a grid topology.
 * [graph species](G__GraphSpes): species of agents with a graph topology.
-* [Mirror species](G__MirrorSpec): species of agents that mirror the population of another species
+* [mirror species](G__MirrorSpec): species of agents that mirror the population of another species.
+* [multi-level species](G__MultiLevel): species of agents that contains other agents.

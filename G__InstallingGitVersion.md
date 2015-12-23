@@ -1,43 +1,23 @@
 # Installing the GIT version
 
-This installation procedure has been tested on MacOS X 10.10 (Yosemite), Windows 8 and Ubuntu 15.04 (Vivid). On MacOS x 10.10 (Yosemite), please have a look here: [install Java on Yosemite](G__Installation) for details about the Java version to use. 
+Tested on MacOS X (10.9 to 10.11), Windows (8 to 10) and Ubuntu 15.04 (Vivid)
 
-**Notice that GAMA is in a migration phase from Eclipse 3.8.2 to Eclipe Luna 4.4.2, and from SVN to Git. Other previous Eclipse versions are not supported anymore**.
+_Important note: the current Git version is **not** compatible with the GAMA 1.6.1 release: if you plan to create plugins for this release, please download the source at revision r11988 (on Google Code) and [Eclipse following this procedure](G__InstallingSvnOldVersions)_
 
-**Important note: the current Git version is no more compatible with the GAMA 1.6.1 release.**
-  * If you plan to create plugin that should be compatible with the release, please download the GAMA code source at revision r11988 (on Google Code) and [Eclipse following this procedure](G__InstallingSvnOldVersions)
+## Install Eclipse Mars SR1
 
-## Summary
-1. Download the Eclipse Modeling Tools version of Luna SR2 from: `https://eclipse.org/downloads/packages/eclipse-modeling-tools/lunasr2`
-2. In Eclipse, install Xtext (in Install new softwares with `http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/`). The version should be `Xtext Complete SDK	2.8.3.v201506010551` 
-3. Clone the GitHub repository from `https://github.com/gama-platform/gama.git`
-4. Import all the project.
+Download the ["Eclipse IDE for Java and DSL Developers"](http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/mars1) version. 
 
-## Detailed Instructions for Eclipse 4.4.2 (Luna SR2)
+Unpack it and launch it. Please refer to this [link](http://help.eclipse.org/mars/index.jsp?nav=%2F0) for more information on running Eclipse.
 
-### Get and configure Eclipse Luna
-1. Download the Eclipse Modeling Tools version of Luna SR2 from:
-  * `https://eclipse.org/downloads/packages/eclipse-modeling-tools/lunasr2`
-2. Unpack it anywhere and run it
-3. At the first run, Eclispe will ask to choose a new workspace
-  * A workspace is a folder in which Eclipse stores all your projects.
-4. Install the required plugins. 
-  * Go to "Help" -> "Install new software"
-![Install new software](images/GIT_install/Install_new_Software.png)
-  * In "work with", write "http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/", click on "Add" and choose a name (e.g. Xtext).
-![Available software](images/GIT_install/Available_software.png)
-![New repository](images/GIT_install/Xtext_new_repository.png)
-    * Choose "Xtext" and the following version:  `Xtext Complete SDK	2.8.3.v201506010551`
-Beware : the version 2.8.4 DOES NOT WORK, so be sure to select the 2.8.3 version, by unchecking "Show only the latest version". If automatic update are done, and the gaml editor during the runtime does not work, the wrong version of Xtext may be the reason of your trouble. Uninstall / Reinstall Xtext with the correct version.
-![Choose Xtext](images/GIT_install/ChooseXtext.png)
-    * Accept the licence and install.
-    * Restart Eclipse
+**One important step** required for GAMA to correctly produce its supporting files once it will have been installed is to set the default encoding of the workspace to UTF-8. It can be done by selecting, in the Preferences, "General", then "Workspace", then "Text file encoding" and choosing "UTF-8" in the drop-down menu available in "Other:".
 
-### Get code source from GitHub
-The GAMA source code should now be downloaded from the GIT repository (hosted by GitHub). A local clone of the remote repository will be created ; then the projects will be (logically) imported into the Eclipse workspace.
+## Install GAMA source code
+
+The source is to be downloaded from GitHub in two steps: by creating a local clone of the GitHub repository and then importing the different projects that constitute GAMA into the Eclipse workspace.
 
 1. Open the Git perspective:
-  * Windows > Open Perspective > Other...
+  * Windows > Perspective > Open Perspective > Other...
   * Choose `Git`
 ![Open GIT perspective](images/GIT_install/GIT_open_perspective.png)
 2. Click on "Clone a Git repository"
@@ -76,8 +56,8 @@ You have now to import projects into the workspace (notice that the folders down
 
 ### Run GAMA
 1. In the `msi.gama.application` plugin, open the `gama1.7.Eclipse3_8_2.product` file
-2. Go to "Dependencies" tab and click on "Add required"
-3. Click on Synchronize
+2. Go to "Contents" tab and click on "Add required"
+3. Go to "Overview" tab and click on Synchronize
 4. Click on Launch an Eclipse Application
 
 ###GIT Tutorials

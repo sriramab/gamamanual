@@ -1,15 +1,37 @@
+## Table of contents 
+
+* [Documentation](#documentation)
+	* [Requirements](#requirements)
+		* [Configuration](#configuration)
+		* [Generated files location](#generated-files-location)
+	* [Workflow to generate wiki files](#workflow-to-generate-wiki-files)
+	* [Workflow to generate PDF files](#workflow-to-generate-pdf-files)
+	* [Workflow to generate unit tests](#workflow-to-generate-unit-tests)
+	* [Main internal steps](#main-internal-steps)
+		* [Generate wiki files](#generate-wiki-files)
+		* [Generate pdf files](#generate-pdf-files)
+		* [Generate unit test files](#generate-unit-test-files)
+	* [How to document](#how-to-document)
+		* [The @doc annotation](#the-doc-annotation)
+		* [the @example annotation](#the-example-annotation)
+		* [How to document operators](#how-to-document-operators)
+		* [How to document statements](#how-to-document-statements)
+		* [How to document skills](#how-to-document-skills)
+
 
 # Documentation
 
 The GAMA documentation comes in 2 formats: a set of wiki files availaible from the wiki section of the GitHub website and a PDF file. The PDF file is produced from the wiki files.
 
-In the wiki files, some are hand-written by the GAMA community and some other are generated automatically from the Java code and the associated java annotations.
+In the wiki files, some are hand-written by the GAMA community and some others are generated automatically from the Java code and the associated java annotations.
 
 The section summarizes:
 * how to generate this wiki files,
 * how to generate the PDF documentation,
 * how to generate the unit tests from the java annotations, 
 * how to add documentation in the java code.
+
+
 
 ## Requirements
 
@@ -120,9 +142,68 @@ The pdf generator uses the table of content (toc) file located in the `files/inp
 
 ## How to document
 
+The documentation is generate from the Java code thanks to the Java additional processor, using mainly information from Java classes or methods and from the Java annotations. (see [the list of all annotations](G__DevelopingIndexAnnotations) for more details about annotations).
+
+### The `@doc` annotation
+
+Most of the annotations can contain a [`@doc`](G__DevelopingIndexAnnotations#doc) annotation, that can contain the main part of the documentation.
+
+For example, the `inter` ([inter](G__Operators#inter)) operator is commented using: 
+```
+@doc(
+  value = "the intersection of the two operands",
+  comment = "both containers are transformed into sets (so without duplicated element, cf. remove_deplicates operator) before the set intersection is computed.",
+  usages = {
+    @usage(value = "if an operand is a graph, it will be transformed into the set of its nodes"),
+    @usage(value = "if an operand is a map, it will be transformed into the set of its values", examples = {
+      @example(value = "[1::2, 3::4, 5::6] inter [2,4]", equals = "[2,4]"),
+      @example(value = "[1::2, 3::4, 5::6] inter [1,3]", equals = "[]") }),
+    @usage(value = "if an operand is a matrix, it will be transformed into the set of the lines", examples =
+      @example(value = "matrix([[1,2,3],[4,5,4]]) inter [3,4]", equals = "[3,4]")) },
+  examples = { 
+    @example(value = "[1,2,3,4,5,6] inter [2,4]", equals = "[2,4]"),
+    @example(value = "[1,2,3,4,5,6] inter [0,8]", equals = "[]") },
+  see = { "remove_duplicates" })
+```
+This `@doc`annotation contains 5 parts: 
+* value: describes the documented element,  
+* comment: a general comment about the documented element,
+* usages: a set of ways to use the documented element, each of them being in a `@usage` annotation. The usage contains mainly a description and and set of examples,
+* examples: a set of examples that are not related to a particular usage, 
+* see: other related keywords.
+
+### the `@example` annotation
+
+This annotation contains a particular use example of the documented element. It is also used to generate unit test and patterns.
+
+The simplest way to use it:
+```
+@example(value = "[1::2, 3::4, 5::6] inter [2,4]", equals = "[2,4]")
+```
+
+In this example:
+* `value` contains an example of use of the operator,
+* `equals` contains the expected results of expression in value.
+
+This will become in the documentation:
+```
+list var3 <- [1::2, 3::4, 5::6] inter [2,4];    // var3 equals [2,4]
+```
+When no variable is given in the annotation, an automatic name is generated. The type of the variable is determined thanks to the return type of the operator with these parameters.
+
+This example can also generate a unit test model. In this case, the value in the variable will be compared to the `equals` part.
+
+By default, the `@example` annotation has the following default values:
+* `isTestOnly` = `false`, meaning that the example will be added to the documentation too,
+* `isExecutable` = `true`, meaning that content of `value` can be added in a model and can be compiled (it can be useful to switch it to false, in a documentation example containing name of species that have not been defined),
+* `test` = `true`, meaning that the content of value will be tested to the content of equals,
+* `isPattern` = `false`.
+
+
 ### How to document operators
 
-A GAML operator is defined by a Java method annoted by the `@operator` annotation (see [the list of all annotations](G__DevelopingIndexAnnotations) for more details about annotations).
+A GAML operator is defined by a Java method annoted by the `@operator` annotation (see [the list of all annotations](G__DevelopingIndexAnnotations) for more details about annotations). In the core of GAMA, most of the operators are defined in the plugin `msi.gama.core` and in the package `msi.gaml.operators`.
+
 The documentation generator will use information from:
 * the `@operator` annotation:
   * `value`: it provides the name(s) of the operator (if an operator has several names, the other names will be considered as alternative names)
@@ -131,3 +212,22 @@ The documentation generator will use information from:
 * the method definition:
   * the return value type
   * parameters and their type (if the method is static, the IScope attribute is not taken into account)
+
+### How to document statements
+
+A GAML statement is defined by a Java class annoted by the `@symbol` annotation (see [the list of all annotations](G__DevelopingIndexAnnotations) for more details about annotations). In the core of GAMA, most of the statements are defined in the plugin `msi.gama.core` and in the package `msi.gaml.statements`.
+
+The documentation generator will use information from:
+* `@symbol` annotation,
+* `@facets` annotation (each facet can contain a documentation in a `@doc` annotation),
+* `@inside` annotation (where the statement can be used),
+* `@doc` annotation
+
+### How to document skills
+
+A GAML skill is defined by a Java class annoted by the `@skill` annotation (see [the list of all annotations](G__DevelopingIndexAnnotations) for more details about annotations). In the core of GAMA, most of the skills are defined in the plugin `msi.gama.core` and in the package `msi.gaml.skills`.
+
+The documentation generator will use information from:
+* `@skill` annotation,
+* `@vars` annotation (each var can contain a documentation in a `@doc` annotation),
+* `@doc` annotation
