@@ -1,3 +1,5 @@
+
+
 TO FINISH 
 Add references to : 
 * integration method
@@ -83,7 +85,64 @@ equation eqBuiltInSI type: SI vars: [S,I,t] params: [N,beta] ;
 
 ### Split a system into several agents
 
-An equation system can be split into several species.
+An equation system can be split into several species and each part of the system are synchronized using the `simultaneously` facet of `equation`. The system split into several agents can be integrated using a single call to the `solve` statement. Notice that all the `equation` definition must have the same name.
+
+For example the SI system presented above can be defined in two different species `S_agt` (containing the equation defining the evolution of the S value) and `I_agt` (containing the equation defining the evolution of the I value). These two equations are linked using the `simultaneously` facet of the `equation` statement. This facet expects a set of agents. The integration is called only once in a simulation step, e.g. in the `S_agt` agent.
+```
+species S_agt {
+	float t ;		
+	float Ssize ;
+	
+	equation evol simultaneously: [ I_agt ] {
+		diff(Ssize, t) = (- sum(I_agt accumulate [each.beta * each.Isize]) * self.Ssize / N);
+	}
+	
+	reflex solving {solve evol method : rk4 step : hKR4 ;}	
+}
+
+species I_agt {
+	float t ;
+	float Isize ; // number of infected	
+	float beta ;
+
+	equation evol simultaneously : [ S_agt ] {
+		diff(Isize, t) = (beta * first(S_agt).Ssize * Isize / N);
+	}
+}
+```
+The interest is that the modeler can create several agents for each compartment, which different values. For example in the SI model, the modeler can choose to create 1 agent `S_agt` and 2 agents `I_agt`. The `beta` attribute will have different values in the two agents, in order to represent 2 different strains.
+
+```
+global {
+	int number_S <- 495 ; // The number of susceptible
+	int number_I <- 5   ; // The number of infected
+	int nb_I <- 2;
+	float gbeta  <- 0.3  ; // The parameter Beta
+	
+	int N <- number_S + nb_I * number_I ;
+	float hKR4 <- 0.1 ;
+
+	init {
+		create S_agt {
+			Ssize <- float(number_S) ;
+		}
+		create I_agt number: nb_I {
+			Isize <- float(number_I) ;
+			self.beta <- myself.gbeta + rnd(0.5) ;
+		}
+	}
+}
+``` 
+
+The results are computed using the RK4 method with:
+* number_S = 495 
+* number_I = 5  
+* nb_I = 2
+* gbeta = 0.3 
+* hKR4 = 0.1 
+
+![](images/equations/SI-split-results.png)
+
 
 ## ``solve`` an equation
 The `solve` statement has been added in order to integrate numerically the equation system. It should be add into a reflex. At each simulation step, a step of the integration is executed, the length of the integration step is defined in the `step` facet. The `solve` statement will update the variables used in the equation system. The chosen integration method (defined in `method`) is Runge-Kutta 4 (which is very often a good choice of integration method in terms of accuracy).
