@@ -1,9 +1,8 @@
 
-
 TO FINISH 
 Add references to : 
 * integration method
-* split = simultaneous
+
 
 # Using Equations
 
@@ -158,6 +157,30 @@ With a smaller integration step, the integration will be faster but less accurat
 ## More details
 
 ### Details about the `solve` statement
+
+The `solve` statement can have a huge set of facets (see [S_Statements#solve] for more details). The basic use of the `solve` statement requiers only the equation identifier. By default, the integration method is Runge-Kutta 4 with an integration step of `1`, which means that at each simulation step the equation integration is made over 1 unit of time (which is implicitly defined by the system parameter value).
+
+``` 
+solve eqSI ;
+```
+
+2 integration methods can be used: 
+* `method: rk4` will use [the Runge-Kutta 4 integration method](https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods)
+* `method: dp853` will use [the Dorman-Prince 8(5,3) integration method](https://en.wikipedia.org/wiki/Dormand%E2%80%93Prince_method). The advantage of this method compared to Runge-Kutta is that it has an evaluation of the error and can use it to adapt the integration step size.
+
+TO FINISH
+
+cycle_length (int): length of simulation cycle which will be synchronize with step of integrator (default value: 1)
+step (float): integration step, use with most integrator methods (default value: 1)
+
+time_final (float): target time for the integration (can be set to a value smaller than t0 for backward integration)
+time_initial (float): initial time
+discretizing_step (int): number of discret beside 2 step of simulation (default value: 0)
+integrated_times (list): time interval inside integration process
+integrated_values (list): list of variables's value inside integration process
+
+
+Some facets are specific to the DP853 integration methods: `max_step`, `min_step`, `scalAbsoluteTolerance` and `scalRelativeTolerance`.
 
 ### Example of the influence of the integration step
 
