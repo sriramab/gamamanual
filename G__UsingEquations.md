@@ -1,6 +1,7 @@
 TO FINISH 
 Add references to : 
 * integration method
+* split = simultaneous
 
 # Using Equations
 
@@ -85,7 +86,7 @@ equation eqBuiltInSI type: SI vars: [S,I,t] params: [N,beta] ;
 An equation system can be split into several species.
 
 ## ``solve`` an equation
-The `solve` statement has been added in order to numerically integrate the equation system. It should be add into a reflex. At each simulation step, a step of the integration is executed, the length of the integration step is defined in the `step` facet. The `solve` statement will update the variables used in the equation system. The chosen integration method (defined in `method`) is Runge-Kutta 4 (which is very often a good choice of integration method in terms of accuracy).
+The `solve` statement has been added in order to integrate numerically the equation system. It should be add into a reflex. At each simulation step, a step of the integration is executed, the length of the integration step is defined in the `step` facet. The `solve` statement will update the variables used in the equation system. The chosen integration method (defined in `method`) is Runge-Kutta 4 (which is very often a good choice of integration method in terms of accuracy).
 ```
 reflex solving {
 	solve eqSI method:rk4 step:h;
@@ -100,6 +101,17 @@ With a smaller integration step, the integration will be faster but less accurat
 ### Details about the `solve` statement
 
 ### Example of the influence of the integration step
+
+The `step` (coupled with the `cycle_length`) facets of the integration method has a huge influence on the results. In particular, it is possible to synchronize the step of the (agent-based) simulation and the (equation) integration step in various ways (depending on the modeler purpose).
+
+* `solve SIR method: "rk4" step: 1.0 cycle_length: 1.0 ; `
+![](images/equations/SIR-results-h1.png)
+
+* `solve SIR method: "rk4" step: 0.1 cycle_length: 10.0 ; `
+![](images/equations/SIR-results-h0.1.png)
+
+* `solve SIR method: "rk4" step: 0.01 cycle_length: 100.0 ; `
+![](images/equations/SIR-results-h0.01.png)
 
 ### List of built-in ODE systems
 Several built-in equations have been defined.
