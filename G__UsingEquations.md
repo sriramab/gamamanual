@@ -188,7 +188,7 @@ Some facets are specific to the DP853 integration methods: `max_step`, `min_step
 
 ### Example of the influence of the integration step
 
-The `step` (coupled with the `cycle_length`) facets of the integration method has a huge influence on the results. In particular, it is possible to synchronize the step of the (agent-based) simulation and the (equation) integration step in various ways (depending on the modeler purpose).
+The `step` and `cycle_length` facets of the integration method may have a huge influence on the results. `step` has an impact on the result accuracy. In addition, it is possible to synchronize the step of the (agent-based) simulation and the (equation) integration step in various ways (depending on the modeler purpose) using the `cycle_length` facet: e.g. `cycle_length: 10` means that 10 simulation steps are equivalent to 1 unit of time of the integration method.
 
 * `solve SIR method: "rk4" step: 1.0 cycle_length: 1.0 ; `
 ![](images/equations/SIR-results-h1.png)
