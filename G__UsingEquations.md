@@ -55,7 +55,7 @@ As a consequence, the GAML language has been increased by two main concepts (as 
 
 ## ``equation``
 ### Defining an ODE system
-Defining a new ODE system needs to define a new ``equation`` block in a species. As example, the following eqSI system describes the evolution of a population with 2 compartments (S and I) and the flow from S to I compartment: 
+Defining a new ODE system needs to define a new ``equation`` block in a species. As example, the following ``eqSI`` system describes the evolution of a population with 2 compartments (S and I) and the flow from S to I compartment: 
 ``` 
 species userSI {
 	float t ;
@@ -71,7 +71,9 @@ species userSI {
 	}
 }			
 ```
-This equation has to be defined in a species with ``t``, ``S`` and ``I`` attributes. ``beta`` (and other similar parameter) can be defined either in the specific species (if it is specific to each agents) or in the ``global`` if it is a constant.
+This equation has to be defined in a species with ``t``, ``S`` and ``I`` attributes. ``beta`` (and other similar parameters) can be defined either in the specific species (if it is specific to each agents) or in the ``global`` if it is a constant.
+
+Note: the ``t`` attribute will be automatically updated using the ``solve`` statement ; it contains the time elapsed in the equation integration.
 
 ### Using a built-in ODE system
 In order to ease the use of very classical ODE system, some built-in systems have been implemented in GAMA. For example, the previous SI system can be written as follows. Three additional facets are used to define the system:
@@ -153,7 +155,6 @@ reflex solving {
 With a smaller integration step, the integration will be faster but less accurate.
 
 
-
 ## More details
 
 ### Details about the `solve` statement
@@ -168,7 +169,10 @@ solve eqSI ;
 * `method: rk4` will use [the Runge-Kutta 4 integration method](https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods)
 * `method: dp853` will use [the Dorman-Prince 8(5,3) integration method](https://en.wikipedia.org/wiki/Dormand%E2%80%93Prince_method). The advantage of this method compared to Runge-Kutta is that it has an evaluation of the error and can use it to adapt the integration step size.
 
-TO FINISH
+In order to synchronize the simulation step and the equation integration step, 2 facets can be used:
+* `step: number`
+* `cycle_length: number` 
+
 
 cycle_length (int): length of simulation cycle which will be synchronize with step of integrator (default value: 1)
 step (float): integration step, use with most integrator methods (default value: 1)
