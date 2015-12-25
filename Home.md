@@ -17,3 +17,9 @@
 * [UMR 5505 IRIT](http://www.irit.fr), CNRS/University of Toulouse 1, France (2010 − 2015)
 * [DREAM Research Team](http://www.cit.ctu.edu.vn), University of Can Tho, Vietnam (2011 − 2015)
 * [UMR 8623 LRI](http://www.lri.fr), CNRS/University Paris-Sud, France (2011 - 2015)
+
+
+YourKit supports open source projects with its full-featured Java Profiler.
+YourKit, LLC is the creator of <a href="https://www.yourkit.com/java/profiler/index.jsp">YourKit Java Profiler</a>
+and <a href="https://www.yourkit.com/.net/profiler/index.jsp">YourKit .NET Profiler</a>,
+innovative and intelligent tools for profiling Java and .NET applications.
