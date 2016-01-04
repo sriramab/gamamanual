@@ -1,0 +1,12 @@
+BasicProgramming // pas de dépendance
+GlobalSpecies // une dépendance :
+-BasicProgramming // <- celle là !
+RegularSpecies
+-GlobalSpecies
+ActionAndBehaviors
+-RegularSpecies
+DefiningGUI
+-ActionAndBehaviors
+InteractionBetweenAgents
+-ActionsAndBehaviors
+[...]
