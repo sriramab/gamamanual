@@ -48,11 +48,11 @@ Inspectors allow to obtain informations about a species or an agent. There are t
   * Species browser: provides informations about all the agents of a species. Available in the Agents menu.
 
 ![http://gama-platform.googlecode.com/files/browser_table.png](http://gama-platform.googlecode.com/files/browser_table.png)
-
+(TODO when browser will work)
 
   * Agent inspector: provides information about one specific agent. Also allows to change the values of its variables during the simulation. Available from the Agents menu, by right\_clicking on a display, in the species inspector or when inspecting another agent. It provides also the possibility to «highlight» the inspected agent.
 
-![http://gama-platform.googlecode.com/files/inspector.png](http://gama-platform.googlecode.com/files/inspector.png)
+![images/inspector.png](images/inspector.png)
 
 
 
