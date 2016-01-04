@@ -31,8 +31,8 @@ global {
 [//]: # (keyword::torus)
 `global` can use facets, such as the `torus` facet, to make the environment a torus or not (if it is a torus, all the agents going out of the environment will appear in the other side. If it's not, the agents won't be able to go out of the environment). By default, the environment is not a torus.
 
-(TODO_IMAGE)
- 
+<img src='images/torus.png' /> 
+
 ```
 global torus:true {
 	// definition of global attributes, actions, behaviours

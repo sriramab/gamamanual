@@ -98,7 +98,7 @@ We can now build a model using the skill moving. Let's design 2 species, one is 
 Species_green agents are moving randomly with a certain speed and a certain heading.
 Species_red agents wait for a species_green agent to be in a certain range of distance. Once it is the case, the agent move toward the species_green agent. A line link the red_species agent and its target.
 
-(TODO_IMAGE)
+<img src='images/green_and_red_species.png' /> 
 
 Here is an example of implementation:
 

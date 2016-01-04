@@ -45,15 +45,16 @@ species my_specie {
 
 As for the global species, some attributes exist already by default in a regular species. Here is the list of built-in attributes:
 
-* **Name** (type: string) is used to name your agent. By default, the name is equal to the name of your species + an incremental number. This name is the one visible on the species inspector.
-* **Location** (type: point) is used to control the position of your agent. 
-* **Shape** (type: geometry) is used to describe the geometry of your agent. If you want to use some intersection operator between agents for instance, it is this geometry that is computed (nb : it can be totally different from the aspect you want to display for your agent !). By default, the shape is a point.
-* **Host** (type: agent) is used when your agent is part of another agent. We will see this concept a bit further, in the topic multi-level architecture.
+* **name** (type: string) is used to name your agent. By default, the name is equal to the name of your species + an incremental number. This name is the one visible on the species inspector.
+* **location** (type: point) is used to control the position of your agent. 
+* **shape** (type: geometry) is used to describe the geometry of your agent. If you want to use some intersection operator between agents for instance, it is this geometry that is computed (nb : it can be totally different from the aspect you want to display for your agent !). By default, the shape is a point.
+* **host** (type: agent) is used when your agent is part of another agent. We will see this concept a bit further, in the topic multi-level architecture (TODO_URL).
+TODO : ajouter "parent", "subspecies", et "attributes".
 
 All those 4 built-in attributes can be accessed in both reading and writing very easily:
 
 ```
-species my_specie {
+species my_species {
 	init {
 		name <- "custom_name";
 		location <- {0,1};
@@ -82,7 +83,7 @@ Here is the list of the other built-in actions which you can find in the documen
 After declaring all the attributes of your species, you can define an initial state (before launching the simulation). It can be seen as the "constructor of the class" in OOP.
 
 ```
-species my_specie {
+species my_species {
 	int variableA;
 	init {
 		variableA <- 5;
@@ -96,7 +97,7 @@ Inside each species, you can define one or several aspects. This scope allows yo
 Each aspect has a special name (so that they can be called from the experiment). Once again, you can name your aspect by using the facet `name:`, or simply by naming it just after the `aspect` keyword.
 
 ```
-species my_specie {
+species my_species {
 	aspect standard_aspect { // or "aspect name:standard_aspect"
 	}
 }
@@ -105,7 +106,7 @@ species my_specie {
 You can then define your aspect by using the statement `draw`. You can then choose a geometry for your aspect (facet `geometry`), a color (facet `color`), an image (facet `image`), a text (facet `text`)… We invite you to read the documentation about the draw statement to know more about.
 
 ```
-species name:my_specie {
+species name:my_species {
 	aspect name:standard_aspect {
 		draw geometry:circle(1) color:#blue;
 	}
@@ -119,7 +120,7 @@ experiment my_experiment type:gui
 {
 	output{
 		display my_display {
-			species my_specie aspect:standard_aspect;
+			species my_species aspect:standard_aspect;
 		}
 	}
 }
@@ -137,7 +138,7 @@ The facet with is used to specify some default values for some attributes of you
 ```
 global{
 	init{
-		create species:my_specie number:1 with:(location:{0,0},vA:8);
+		create species:my_species number:1 with:(location:{0,0},vA:8);
 	}
 }
 
@@ -157,11 +158,11 @@ global{
 	geometry shape <- square(worldDimension);
 	init{
 		point center <- {(worldDimension/2),(worldDimension/2)};
-		create species:my_specie number:1 with:(location:center);
+		create species:my_species number:1 with:(location:center);
 	}
 }
 
-species name:my_specie {
+species name:my_species {
 	aspect name:standard_aspect {
 		draw geometry:circle(1#m);
 	}
@@ -171,7 +172,7 @@ experiment my_experiment type:gui
 {
 	output{
 		display myDisplay {
-			species my_specie aspect:standard_aspect;
+			species my_species aspect:standard_aspect;
 		}
 	}
 }

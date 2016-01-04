@@ -17,7 +17,7 @@ We will need to:
   * modify the aspect of the building
   * modify some global variables for counting the number of infected people_
 
-![images/Tutorials/Incremental_model/Incremental_model6.jpg](images/Tutorials/Incremental_model/Incremental_model6.jpg)
+![images/Incremental_model6.jpg](images/Incremental_model6.jpg)
 
 
 
