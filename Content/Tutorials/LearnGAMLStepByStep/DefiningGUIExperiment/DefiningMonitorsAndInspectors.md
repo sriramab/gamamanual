@@ -35,4 +35,4 @@ During the simulation, the user interface of GAMA provides the user the possibil
 
 Use the statement inspect to define your inspector. The inspector has to be named (using the facet "name"), a value has to be specified (with the value facet)
 
-[TODO quand corrigé]
+[TODO quand corrigï¿½]

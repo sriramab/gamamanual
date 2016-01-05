@@ -97,7 +97,7 @@ species my_species {
 }
 ```
 
-You can then define your aspect by using the statement `draw`. You can then choose a geometry for your aspect (facet `geometry`), a color (facet `color`), an image (facet `image`), a text (facet `text`)… We invite you to read the documentation about the draw statement to know more about.
+You can then define your aspect by using the statement `draw`. You can then choose a geometry for your aspect (facet `geometry`), a color (facet `color`), an image (facet `image`), a text (facet `text`)ï¿½ We invite you to read the documentation about the draw statement to know more about.
 
 ```
 species name:my_species {

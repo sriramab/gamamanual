@@ -1,6 +1,6 @@
 # Organization of a model
 
-As already extensively detailed in the [key concepts page](G__KeyConcepts), defining a model in GAML amounts to defining a _model species_, which later allows to instantiate a _model agent_ (aka a _simulation_), which may or may not contain micro-species, and which can be flanked by _experiment plans_ in order to be simulated.
+As already extensively detailed in the [key concepts page](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\Introduction\KeyConcepts.md), defining a model in GAML amounts to defining a _model species_, which later allows to instantiate a _model agent_ (aka a _simulation_), which may or may not contain micro-species, and which can be flanked by _experiment plans_ in order to be simulated.
 
 This conceptual structure is respected in the definition of model files, which follows a similar pattern:
 

@@ -10,7 +10,7 @@ During the simulation, GAML provides you the possibility to define some function
 
 ## Catch Mouse Event
 
-[TODO quand corrigé]
+[TODO quand corrigï¿½]
 
 ## Define User command
 
@@ -88,4 +88,4 @@ global {
 
 ## User control architecture
 
-[TODO quand corrigé]
+[TODO quand corrigï¿½]

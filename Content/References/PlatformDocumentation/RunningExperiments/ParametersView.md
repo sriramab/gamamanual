@@ -3,7 +3,7 @@
 
 
 
-In the case of an [experiment](G__DefiningExperiments), the modeler can [define the parameters](G__DefiningParameters) he wants to be able to modify to explore the simulation, and thus the ones he wants to be able to display and alter in the GUI interface.
+In the case of an [experiment](G__DefiningExperiments), the modeler can [define the parameters](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningParameters.md) he wants to be able to modify to explore the simulation, and thus the ones he wants to be able to display and alter in the GUI interface.
 
 **It important to notice that all modification made in the parameters are used for simulation reload only. Creation of a new simulation from the model will erase the modifications.**
 
@@ -27,7 +27,7 @@ Every [GUI experiment](G__DefiningExperiments) displays a pane named "Parameters
 
 
 ## Parameters View
-The modeler can [define himself parameters](G__DefiningParameters) that can be displayed in the GUI and that are sorted by categories. Note that the interface will depend on the data type of the parameter: for example, for integer or float parameters, a simple text box will be displayed whereas a color selector will be available for color parameters. The parameters value displayed are the initial value provided to the variables associated to the parameters in the model.
+The modeler can [define himself parameters](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningParameters.md) that can be displayed in the GUI and that are sorted by categories. Note that the interface will depend on the data type of the parameter: for example, for integer or float parameters, a simple text box will be displayed whereas a color selector will be available for color parameters. The parameters value displayed are the initial value provided to the variables associated to the parameters in the model.
 
 ![images/parameters.png](images/parameters.png)
 

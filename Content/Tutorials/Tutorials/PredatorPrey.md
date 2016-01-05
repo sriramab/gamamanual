@@ -16,7 +16,7 @@ All the files related to this tutorial (images and models) are available in the 
 In this model, three types of entities are considered: preys, predators and vegetation cells. Preys
 eat grass on the vegetation cells and predators eat preys. At each simulation step, grass grows on the vegetation cells. Concerning the predators and preys, at each simulation step, they move (to a neighbor cell), eat, die if they do not have enough energy, and eventually reproduce.
 
-![http://gama-platform.googlecode.com/files/predator_prey.png](http://gama-platform.googlecode.com/files/predator_prey.png)
+![images/predator_prey.png](images/predator_prey.png)
 (TODO change url, ainsi que toutes les url du tuto)
 
 
@@ -26,15 +26,15 @@ eat grass on the vegetation cells and predators eat preys. At each simulation st
 
 This tutorial is composed of 12 incremental steps corresponding to 12 models. For each step we present its purpose, an explicit formulation and the corresponding GAML code of the model.
 
-  1. [Basic model (prey agents)](PredatorPrey_step1)
-  1. [Dynamic of the vegetation (grid)](PredatorPrey_step2)
-  1. [Behavior of the prey agent](PredatorPrey_step3)
-  1. [Use of Inspectors/monitors](PredatorPrey_step4)
-  1. [predator agents (parent species)](PredatorPrey_step5)
-  1. [Breeding of prey and predator agents](PredatorPrey_step6)
-  1. [Agent display (aspect)](PredatorPrey_step7)
-  1. [Complex behaviors for the preys and predators](PredatorPrey_step8)
-  1. [Adding of a stopping condition](PredatorPrey_step9)
-  1. [Definition of charts](PredatorPrey_step10)
-  1. [Writing files](PredatorPrey_step11)
-  1. [Image loading (raster data)](PredatorPrey_step12)
+  1. [Basic model (prey agents)](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\PredatorPrey\PredatorPrey_step1.md)
+  1. [Dynamic of the vegetation (grid)](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\PredatorPrey\PredatorPrey_step2.md)
+  1. [Behavior of the prey agent](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\PredatorPrey\PredatorPrey_step3.md)
+  1. [Use of Inspectors/monitors](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\PredatorPrey\PredatorPrey_step4.md)
+  1. [predator agents (parent species)](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\PredatorPrey\PredatorPrey_step5.md)
+  1. [Breeding of prey and predator agents](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\PredatorPrey\PredatorPrey_step6.md)
+  1. [Agent display (aspect)](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\PredatorPrey\PredatorPrey_step7.md)
+  1. [Complex behaviors for the preys and predators](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\PredatorPrey\PredatorPrey_step8.md)
+  1. [Adding of a stopping condition](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\PredatorPrey\PredatorPrey_step9.md)
+  1. [Definition of charts](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\PredatorPrey\PredatorPrey_step10.md)
+  1. [Writing files](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\PredatorPrey\PredatorPrey_step11.md)
+  1. [Image loading (raster data)](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\PredatorPrey\PredatorPrey_step12.md)

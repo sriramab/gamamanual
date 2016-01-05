@@ -40,7 +40,7 @@ To look up for a particular model in the library, users can use the "Search for 
 
 ### User models
 
-This category regroups all the projects that have been [created](G__GamlEditorGeneralities) or [imported](G__ImportingModels) in the workspace by the user. Each project is actually a folder that resides in the folder of the workspace (so they can be easily located from within the filesystem). Any modification (addition, removal of files…) made to them in the filesystem (or using another application) is immediately reflected in the _Navigator_ and vice-versa.
+This category regroups all the projects that have been [created](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\EditingModels\GamlEditorGeneralities.md) or [imported](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\WorkspaceProjectsAndModels\ImportingModels.md) in the workspace by the user. Each project is actually a folder that resides in the folder of the workspace (so they can be easily located from within the filesystem). Any modification (addition, removal of files…) made to them in the filesystem (or using another application) is immediately reflected in the _Navigator_ and vice-versa.
 
 Model files, although it is by no means mandatory, usually reside in a sub-folder of the project called "models".
 
@@ -58,7 +58,7 @@ Users can choose to get rid of old projects by either **closing** or **deleting*
 |![images/navigator_menu_close.png](images/navigator_menu_close.png)|![images/navigator_close_result.png](images/navigator_close_result.png)|
 |---|---|
 
-**Deleting** a project must be invoked when the user wants this project to not appear in the workspace anymore (unless, that is, it is [imported](G__ImportingModels) again). Invoking this command will effectively make the workspace "forget" about this project, and this can be further doubled with a deletion of the projects resources and models from the filesystem.
+**Deleting** a project must be invoked when the user wants this project to not appear in the workspace anymore (unless, that is, it is [imported](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\WorkspaceProjectsAndModels\ImportingModels.md) again). Invoking this command will effectively make the workspace "forget" about this project, and this can be further doubled with a deletion of the projects resources and models from the filesystem.
 
 | ![images/navigator_menu_delete.png](images/navigator_menu_delete.png) | ![images/navigator_delete_dialog.png](images/navigator_delete_dialog.png) |
 |---|---|

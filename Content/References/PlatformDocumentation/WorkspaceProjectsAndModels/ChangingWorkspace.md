@@ -1,7 +1,7 @@
 
 # Changing Workspace
 
-It is possible, and actually common, to store different projects/models in different workspaces and to tell GAMA to switch between these workspaces. Doing so involves being able to create one or several new workspace locations (even if GAMA has been told to [remember](G__Launching#Choosing_a_Workspace) the current one) and being able to easily switch between them.
+It is possible, and actually common, to store different projects/models in different workspaces and to tell GAMA to switch between these workspaces. Doing so involves being able to create one or several new workspace locations (even if GAMA has been told to [remember](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\InstallationAndLaunching\Launching.md#Choosing_a_Workspace) the current one) and being able to easily switch between them.
 
 ## Table of contents 
 
@@ -12,7 +12,7 @@ It is possible, and actually common, to store different projects/models in diffe
 
 
 ## Switching to another Workspace
-This process is similar to the [choice of the workspace location](G__Launching#Choosing_a_Workspace) when GAMA is launched for the first time. The only preliminary step is to invoke the appropriate command ("Switch Workspace") from the "File" menu.
+This process is similar to the [choice of the workspace location](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\InstallationAndLaunching\Launching.md#Choosing_a_Workspace) when GAMA is launched for the first time. The only preliminary step is to invoke the appropriate command ("Switch Workspace") from the "File" menu.
 
 ![images/menu_switch.png](images/menu_switch.png)
 
@@ -21,7 +21,7 @@ In the dialog that appears, the current workspace location should already be ent
 ![images/dialog_switch_ok.png](images/dialog_switch_ok.png)
 
 ## Cloning the Current Workspace
-Another possibility, if you have models in your current workspace that you would like to keep in the new one (and that you do not want to [import](G__ImportingModels) one by one after switching workspace), or if you change workspace because you suspect the current one is corrupted, or outdated, etc. but you still want to keep your models, is to **clone** the current workspace into a new (or existing) one.
+Another possibility, if you have models in your current workspace that you would like to keep in the new one (and that you do not want to [import](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\WorkspaceProjectsAndModels\ImportingModels.md) one by one after switching workspace), or if you change workspace because you suspect the current one is corrupted, or outdated, etc. but you still want to keep your models, is to **clone** the current workspace into a new (or existing) one.
 
 **Please note that cloning (as its name implies) is an operation that will make a _copy_ of the files into a new workspace. So, if projects are stored in the current workspace, this will result in two different instances of the same projets/models with the same name in the two workspaces. However, for projects that are simply linked from the current workspace, only the link will be copied (which allows to have different workspaces "containing" the same project)**
 

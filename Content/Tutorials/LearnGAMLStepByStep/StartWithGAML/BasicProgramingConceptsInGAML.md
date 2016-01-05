@@ -92,10 +92,10 @@ write p.y; // the output will be 3.4
 [//]: # (keyword::dimension)
 ### A world about dimension:
 
-When manipulating float values, you can specify the dimension of your value. Dimensions are preceded by # or ° (exactly the same).
+When manipulating float values, you can specify the dimension of your value. Dimensions are preceded by # or ï¿½ (exactly the same).
 
 ```
-float a <- 5°m;
+float a <- 5ï¿½m;
 float b <- 4#cm;
 float c <- a + b; // c is equal to 5.0399999 (it's not equal to 5.04 because it is a float value, not as precise as int)
 ```
@@ -124,7 +124,7 @@ You can use the facet `min` and `max` to constraint the value in a specific rang
 
 ```
 int integerVariable <- 3 min:0 max:10 update:integerVariable+1;
-// the result will be 3 – 4 – 5 – 6 – 7 – 8 – 9 – 10 – 10 – 10 - ...
+// the result will be 3 ï¿½ 4 ï¿½ 5 ï¿½ 6 ï¿½ 7 ï¿½ 8 ï¿½ 9 ï¿½ 10 ï¿½ 10 ï¿½ 10 - ...
 ```
 
 [//]: # (keyword::among)
@@ -156,7 +156,7 @@ FirstOperand Operator SecondOperand --> ex: 5 * 3; // return 15
 [//]: # (keyword::sqrt)
 [//]: # (keyword::power)
 [//]: # (keyword::round)
-Some other operators, such as `cos`(cosinus), `sin`(sinus), `tan`(tangent), `sqrt`(square root), `round`(rounding) etc… are used this way:
+Some other operators, such as `cos`(cosinus), `sin`(sinus), `tan`(tangent), `sqrt`(square root), `round`(rounding) etcï¿½ are used this way:
 
 ```
 Operator(Operand) --> ex: sqrt(49); // return 7
@@ -269,7 +269,7 @@ loop while: (true) {
 loop i from:0 to: 5 { // or loop name:i from:0 to:5 -> the name is also a facet
 	write i;
 }
-// the output will be 0 – 1 – 2 – 3 – 4 – 5
+// the output will be 0 ï¿½ 1 ï¿½ 2 ï¿½ 3 ï¿½ 4 ï¿½ 5
 ```
 
 -	The facet `from` / `to` combine with the facet `step` to choose the step:
@@ -278,7 +278,7 @@ loop i from:0 to: 5 { // or loop name:i from:0 to:5 -> the name is also a facet
 loop i from:0 to: 5 step: 2 {
 	write i;
 }
-// the output will be 0 – 2 – 4
+// the output will be 0 ï¿½ 2 ï¿½ 4
 ```
 
 -	The facet over to browse containers, as we will see in the next part.
@@ -290,7 +290,7 @@ Nb: you can interrupt a loop at any time by using the `break` statement.
 [//]: # (keyword::list)
 ## Manipulate containers
 
-We saw in the previous parts "simple" types of variable. You also have a multiple containers types, such as list, matrix, map, pair… In this section, we will only focus on the container `list` (you can learn the other by reading the section about datatypes [TODO_URL]).
+We saw in the previous parts "simple" types of variable. You also have a multiple containers types, such as list, matrix, map, pairï¿½ In this section, we will only focus on the container `list` (you can learn the other by reading the section about datatypes [TODO_URL]).
 
 **How to declare a list?**
 
@@ -359,7 +359,7 @@ list<int> exampleOfList <- [4,2,3,4,5,4];
 loop i over:exampleOfList {
 	write i;
 }
-// the output will be 4 – 2 – 3 – 4 – 5 – 4
+// the output will be 4 ï¿½ 2 ï¿½ 3 ï¿½ 4 ï¿½ 5 ï¿½ 4
 ```
 
 [//]: # (keyword::filter)

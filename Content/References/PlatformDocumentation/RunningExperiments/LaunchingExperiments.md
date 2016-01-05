@@ -3,7 +3,7 @@
 
 
 
-GAMA supports multiple ways of launching experiments from within the Modeling Perspective, in editors or in the [navigator](G__NavigatingWorkspace).
+GAMA supports multiple ways of launching experiments from within the Modeling Perspective, in editors or in the [navigator](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\WorkspaceProjectsAndModels\NavigatingWorkspace.md).
 
 
 ## Table of contents 
@@ -17,7 +17,7 @@ GAMA supports multiple ways of launching experiments from within the Modeling Pe
 
 
 ## From an Editor
-As already mentioned on [this page](G__GamlEditorGeneralities), GAML editors will provide the easiest way to launch experiments. Whenever a model that contains the definition of experiments is validated, these experiments will appear as distinct buttons, in the order in which they are defined in the file, in the header ribbon above the text. Simply clicking one of these buttons launches the corresponding experiment.
+As already mentioned on [this page](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\EditingModels\GamlEditorGeneralities.md), GAML editors will provide the easiest way to launch experiments. Whenever a model that contains the definition of experiments is validated, these experiments will appear as distinct buttons, in the order in which they are defined in the file, in the header ribbon above the text. Simply clicking one of these buttons launches the corresponding experiment.
 
 ![images/editor_launch.png](images/editor_launch.png)
 
@@ -33,9 +33,8 @@ You can also launch your experiments from the navigator, by expanding a model an
 
 
 ## Running Experiments Automatically
-Once an experiment has been launched (unless it is run in [headless](G__Headless) mode, of course), it normally displays its views and waits from an input from the user, usually a click on the "Run" or "Step" buttons (see [here](G__MenusAndCommands)).
+Once an experiment has been launched (unless it is run in [headless](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\InstallationAndLaunching\Headless.md) mode, of course), it normally displays its views and waits from an input from the user, usually a click on the "Run" or "Step" buttons (see [here](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\RunningExperiments\MenusAndCommands.md)).
 
-It is however possible to make experiments run directly once launched, without requiring any intervention from the user.  To install this feature, [open the preferences of GAMA](G__Preferences). On the first tab, simply check "Auto-run experiments when they are launched" (which is unchecked by default) and hit "OK" to dismiss the dialog. Next time you'll launch an experiment, it will run automatically (this option also applies to experiments launched from the command line).
+It is however possible to make experiments run directly once launched, without requiring any intervention from the user.  To install this feature, [open the preferences of GAMA](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\Preferences.md). On the first tab, simply check "Auto-run experiments when they are launched" (which is unchecked by default) and hit "OK" to dismiss the dialog. Next time you'll launch an experiment, it will run automatically (this option also applies to experiments launched from the command line).
 
 ![images/prefs_auto_run.png](images/prefs_auto_run.png)
-

@@ -44,7 +44,7 @@ Once the plugins are installed, GAMA will ask you whether you want to restart or
 
 
 ## Automatic Update
-GAMA offers a mechanism to monitor the availability of updates to the plugins already installed. To install this feature, [open the preferences of GAMA](G__Preferences) and choose the button "Advanced…", which gives access to additional preferences.
+GAMA offers a mechanism to monitor the availability of updates to the plugins already installed. To install this feature, [open the preferences of GAMA](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\Preferences.md) and choose the button "Advanced…", which gives access to additional preferences.
 
 ![Button to give access to additional preferences.](images/open_advanced.png)
 
