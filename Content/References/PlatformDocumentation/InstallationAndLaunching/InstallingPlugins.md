@@ -25,7 +25,7 @@ With these restrictions in mind, it is however possible to install interesting a
 
 
 ## Installation
-Installing new plugins is a process identical to the one described when [updating GAMA](G__UpdatingGama), with one exception: the _update site_ to enter is normally provided by the vendor of the additional plugin and must be entered instead of GAMA's one in the dialog. Let us suppose, for instance, that we want to install a RSS feed reader available on this [site](http://junginger.biz/eclipse/).
+Installing new plugins is a process identical to the one described when [updating GAMA](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\InstallationAndLaunching\Updating.md), with one exception: the _update site_ to enter is normally provided by the vendor of the additional plugin and must be entered instead of GAMA's one in the dialog. Let us suppose, for instance, that we want to install a RSS feed reader available on this [site](http://junginger.biz/eclipse/).
 An excerpt from the page reads that :
 
 > All plugins are installed with the standard update manager of Eclipse. It will guide you through the installation process and also eases keeping your plugins up-to-date. Just add the update site: http://www.junginger.biz/eclipse/

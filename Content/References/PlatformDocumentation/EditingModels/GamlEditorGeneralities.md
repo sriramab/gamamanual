@@ -74,7 +74,7 @@ Explore the different items present there, keeping in mind that these preference
 
 ## Additional informations in the Editor
 
-![images/additional_informations_in_editor.png](images/model_edition/additional_informations_in_editor.png)
+![images/additional_informations_in_editor.png](images/additional_informations_in_editor.png)
 
 You can choose to display or not some informations in your Editor
 

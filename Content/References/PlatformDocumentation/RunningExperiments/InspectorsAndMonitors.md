@@ -69,4 +69,4 @@ In the following example, we defined a monitor with the legend "Number initial o
 
 ![images/monitor_definition.png](images/monitor_definition.png)
 
-The expression should be written with the GAML language. See [this page](G__GamlReference) for more details about the GAML language.
+The expression should be written with the GAML language. See [this page](https://github.com/gama-platform/gama/wiki/Content\References\GamlReference.md) for more details about the GAML language.

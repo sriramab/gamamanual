@@ -3,7 +3,7 @@
 
 GAMA comes in 6 different versions (32 & 64 bits for Windows, Linux and MacOS). You first need to determine which version you are going to use (it depends on your computer, which may, or not, support 64 bits instructions, but also on the version of Java already installed, as the number of bits of the two versions must match).
 
-You can then download the right version from the [Downloads page](https://code.google.com/p/gama-platform/wiki/G__Downloads), expand the zip file wherever you want on your machine, and [launch GAMA](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\InstallationAndLaunching\Launching.md).
+You can then download the right version from the [Downloads page](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Download.md), expand the zip file wherever you want on your machine, and [launch GAMA](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\InstallationAndLaunching\Launching.md).
 
 
 ## Table of contents 
