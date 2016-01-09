@@ -163,7 +163,7 @@ list<list> t <- list<list> (self select(params:PARAMS,
 ```
 map <string, string>   PARAMS <- ['dbtype'::'sqlite', 'database'::'../includes/meteo.db'];
 list<list> t <- list<list> (self select(params: PARAMS, 
-                                           select: "SELECT temp_min FROM points where (day>? and day<?);"
+                                           select: "SELECT temp_min FROM points where (day>? and day<?);",
                                            values: [10,20] ));
 ```
 
