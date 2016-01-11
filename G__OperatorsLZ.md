@@ -74,7 +74,7 @@ If the action doesn't have any operands, the syntax to use is `my_agent the_acti
 
 Note that due to the fact that actions are written by modelers, the general functional contract is not respected in that case: actions might perfectly have side effects on their operands (including the agent).
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
 	
 
 ----
@@ -89,187 +89,187 @@ Note that due to the fact that actions are written by modelers, the general func
 ----
 
 ### 3D
-[box](#box), [cone3D](#cone3d), [cube](#cube), [cylinder](#cylinder), [dem](#dem), [hexagon](#hexagon), [pyramid](#pyramid), [rgb_to_xyz](#rgb_to_xyz), [set_z](#set_z), [sphere](#sphere), [teapot](#teapot), 
+[box](G__OperatorsAK#box), [cone3D](G__OperatorsAK#cone3d), [cube](G__OperatorsAK#cube), [cylinder](G__OperatorsAK#cylinder), [dem](G__OperatorsAK#dem), [hexagon](G__OperatorsAK#hexagon), [pyramid](G__OperatorsLZ#pyramid), [rgb_to_xyz](G__OperatorsLZ#rgb_to_xyz), [set_z](G__OperatorsLZ#set_z), [sphere](G__OperatorsLZ#sphere), [teapot](G__OperatorsLZ#teapot), 
 
 ----
 
 ### Arithmetic operators
-[-](#-), [/](#/), [^](#^), [*](#*), [+](#+), [abs](#abs), [acos](#acos), [asin](#asin), [atan](#atan), [atan2](#atan2), [ceil](#ceil), [cos](#cos), [cos_rad](#cos_rad), [div](#div), [even](#even), [exp](#exp), [fact](#fact), [floor](#floor), [hypot](#hypot), [is_finite](#is_finite), [is_number](#is_number), [ln](#ln), [log](#log), [mod](#mod), [round](#round), [signum](#signum), [sin](#sin), [sin_rad](#sin_rad), [sqrt](#sqrt), [tan](#tan), [tan_rad](#tan_rad), [tanh](#tanh), [with_precision](#with_precision), 
+[-](G__OperatorsAK#-), [/](G__OperatorsAK#/), [^](G__OperatorsAK#^), [*](G__OperatorsAK#*), [+](G__OperatorsAK#+), [abs](G__OperatorsAK#abs), [acos](G__OperatorsAK#acos), [asin](G__OperatorsAK#asin), [atan](G__OperatorsAK#atan), [atan2](G__OperatorsAK#atan2), [ceil](G__OperatorsAK#ceil), [cos](G__OperatorsAK#cos), [cos_rad](G__OperatorsAK#cos_rad), [div](G__OperatorsAK#div), [even](G__OperatorsAK#even), [exp](G__OperatorsAK#exp), [fact](G__OperatorsAK#fact), [floor](G__OperatorsAK#floor), [hypot](G__OperatorsAK#hypot), [is_finite](G__OperatorsAK#is_finite), [is_number](G__OperatorsAK#is_number), [ln](G__OperatorsLZ#ln), [log](G__OperatorsLZ#log), [mod](G__OperatorsLZ#mod), [round](G__OperatorsLZ#round), [signum](G__OperatorsLZ#signum), [sin](G__OperatorsLZ#sin), [sin_rad](G__OperatorsLZ#sin_rad), [sqrt](G__OperatorsLZ#sqrt), [tan](G__OperatorsLZ#tan), [tan_rad](G__OperatorsLZ#tan_rad), [tanh](G__OperatorsLZ#tanh), [with_precision](G__OperatorsLZ#with_precision), 
 
 ----
 
 ### BDI
-[and](#and), [eval_when](#eval_when), [get_priority](#get_priority), [get_super_intention](#get_super_intention), [new_predicate](#new_predicate), [or](#or), [set_truth](#set_truth), [with_priority](#with_priority), [with_values](#with_values), 
+[and](G__OperatorsAK#and), [eval_when](G__OperatorsAK#eval_when), [get_priority](G__OperatorsAK#get_priority), [get_super_intention](G__OperatorsAK#get_super_intention), [new_predicate](G__OperatorsLZ#new_predicate), [or](G__OperatorsLZ#or), [set_truth](G__OperatorsLZ#set_truth), [with_priority](G__OperatorsLZ#with_priority), [with_values](G__OperatorsLZ#with_values), 
 
 ----
 
 ### Casting operators
-[as](#as), [as_int](#as_int), [as_matrix](#as_matrix), [font](#font), [is](#is), [is_skill](#is_skill), [list_with](#list_with), [matrix_with](#matrix_with), [species](#species), [to_gaml](#to_gaml), [topology](#topology), 
+[as](G__OperatorsAK#as), [as_int](G__OperatorsAK#as_int), [as_matrix](G__OperatorsAK#as_matrix), [font](G__OperatorsAK#font), [is](G__OperatorsAK#is), [is_skill](G__OperatorsAK#is_skill), [list_with](G__OperatorsLZ#list_with), [matrix_with](G__OperatorsLZ#matrix_with), [species](G__OperatorsLZ#species), [to_gaml](G__OperatorsLZ#to_gaml), [topology](G__OperatorsLZ#topology), 
 
 ----
 
 ### Color-related operators
-[-](#-), [/](#/), [*](#*), [+](#+), [blend](#blend), [grayscale](#grayscale), [hsb](#hsb), [mean](#mean), [rgb](#rgb), [rnd_color](#rnd_color), [sum](#sum), 
+[-](G__OperatorsAK#-), [/](G__OperatorsAK#/), [*](G__OperatorsAK#*), [+](G__OperatorsAK#+), [blend](G__OperatorsAK#blend), [grayscale](G__OperatorsAK#grayscale), [hsb](G__OperatorsAK#hsb), [mean](G__OperatorsLZ#mean), [rgb](G__OperatorsLZ#rgb), [rnd_color](G__OperatorsLZ#rnd_color), [sum](G__OperatorsLZ#sum), 
 
 ----
 
 ### Comparison operators
-[!=](#!=), [<](#<), [<=](#<=), [=](#=), [>](#>), [>=](#>=), [between](#between), 
+[!=](G__OperatorsAK#!=), [<](G__OperatorsAK#<), [<=](G__OperatorsAK#<=), [=](G__OperatorsAK#=), [>](G__OperatorsAK#>), [>=](G__OperatorsAK#>=), [between](G__OperatorsAK#between), 
 
 ----
 
 ### Containers-related operators
-[-](#-), [::](#::), [+](#+), [accumulate](#accumulate), [among](#among), [at](#at), [collect](#collect), [contains](#contains), [contains_all](#contains_all), [contains_any](#contains_any), [count](#count), [empty](#empty), [first](#first), [first_with](#first_with), [group_by](#group_by), [in](#in), [index_by](#index_by), [inter](#inter), [interleave](#interleave), [internal_at](#internal_at), [last](#last), [last_with](#last_with), [length](#length), [max](#max), [max_of](#max_of), [mean](#mean), [min](#min), [min_of](#min_of), [mul](#mul), [one_of](#one_of), [remove_duplicates](#remove_duplicates), [reverse](#reverse), [shuffle](#shuffle), [sort_by](#sort_by), [sum](#sum), [union](#union), [where](#where), [with_max_of](#with_max_of), [with_min_of](#with_min_of), 
+[-](G__OperatorsAK#-), [::](G__OperatorsAK#::), [+](G__OperatorsAK#+), [accumulate](G__OperatorsAK#accumulate), [among](G__OperatorsAK#among), [at](G__OperatorsAK#at), [collect](G__OperatorsAK#collect), [contains](G__OperatorsAK#contains), [contains_all](G__OperatorsAK#contains_all), [contains_any](G__OperatorsAK#contains_any), [count](G__OperatorsAK#count), [empty](G__OperatorsAK#empty), [first](G__OperatorsAK#first), [first_with](G__OperatorsAK#first_with), [group_by](G__OperatorsAK#group_by), [in](G__OperatorsAK#in), [index_by](G__OperatorsAK#index_by), [inter](G__OperatorsAK#inter), [interleave](G__OperatorsAK#interleave), [internal_at](G__OperatorsAK#internal_at), [last](G__OperatorsLZ#last), [last_with](G__OperatorsLZ#last_with), [length](G__OperatorsLZ#length), [max](G__OperatorsLZ#max), [max_of](G__OperatorsLZ#max_of), [mean](G__OperatorsLZ#mean), [min](G__OperatorsLZ#min), [min_of](G__OperatorsLZ#min_of), [mul](G__OperatorsLZ#mul), [one_of](G__OperatorsLZ#one_of), [remove_duplicates](G__OperatorsLZ#remove_duplicates), [reverse](G__OperatorsLZ#reverse), [shuffle](G__OperatorsLZ#shuffle), [sort_by](G__OperatorsLZ#sort_by), [sum](G__OperatorsLZ#sum), [union](G__OperatorsLZ#union), [where](G__OperatorsLZ#where), [with_max_of](G__OperatorsLZ#with_max_of), [with_min_of](G__OperatorsLZ#with_min_of), 
 
 ----
 
 ### Driving operators
-[as_driving_graph](#as_driving_graph), 
+[as_driving_graph](G__OperatorsAK#as_driving_graph), 
 
 ----
 
 ### EDP-related operators
-[diff](#diff), [diff2](#diff2), [internal_zero_order_equation](#internal_zero_order_equation), 
+[diff](G__OperatorsAK#diff), [diff2](G__OperatorsAK#diff2), [internal_zero_order_equation](G__OperatorsAK#internal_zero_order_equation), 
 
 ----
 
 ### Files-related operators
-[crs](#crs), [csv_file](#csv_file), [dxf_file](#dxf_file), [file](#file), [file_exists](#file_exists), [folder](#folder), [gaml_file](#gaml_file), [get](#get), [grid_file](#grid_file), [image_file](#image_file), [is_csv](#is_csv), [is_dxf](#is_dxf), [is_gaml](#is_gaml), [is_grid](#is_grid), [is_image](#is_image), [is_obj](#is_obj), [is_osm](#is_osm), [is_pgm](#is_pgm), [is_property](#is_property), [is_R](#is_r), [is_shape](#is_shape), [is_svg](#is_svg), [is_text](#is_text), [is_threeds](#is_threeds), [is_URL](#is_url), [is_xml](#is_xml), [new_folder](#new_folder), [obj_file](#obj_file), [osm_file](#osm_file), [pgm_file](#pgm_file), [property_file](#property_file), [R_file](#r_file), [read](#read), [shape_file](#shape_file), [svg_file](#svg_file), [text_file](#text_file), [threeds_file](#threeds_file), [URL_file](#url_file), [writable](#writable), [xml_file](#xml_file), 
+[crs](G__OperatorsAK#crs), [csv_file](G__OperatorsAK#csv_file), [dxf_file](G__OperatorsAK#dxf_file), [file](G__OperatorsAK#file), [file_exists](G__OperatorsAK#file_exists), [folder](G__OperatorsAK#folder), [gaml_file](G__OperatorsAK#gaml_file), [get](G__OperatorsAK#get), [grid_file](G__OperatorsAK#grid_file), [image_file](G__OperatorsAK#image_file), [is_csv](G__OperatorsAK#is_csv), [is_dxf](G__OperatorsAK#is_dxf), [is_gaml](G__OperatorsAK#is_gaml), [is_grid](G__OperatorsAK#is_grid), [is_image](G__OperatorsAK#is_image), [is_obj](G__OperatorsAK#is_obj), [is_osm](G__OperatorsAK#is_osm), [is_pgm](G__OperatorsAK#is_pgm), [is_property](G__OperatorsAK#is_property), [is_R](G__OperatorsAK#is_r), [is_shape](G__OperatorsAK#is_shape), [is_svg](G__OperatorsAK#is_svg), [is_text](G__OperatorsAK#is_text), [is_threeds](G__OperatorsAK#is_threeds), [is_URL](G__OperatorsAK#is_url), [is_xml](G__OperatorsAK#is_xml), [new_folder](G__OperatorsLZ#new_folder), [obj_file](G__OperatorsLZ#obj_file), [osm_file](G__OperatorsLZ#osm_file), [pgm_file](G__OperatorsLZ#pgm_file), [property_file](G__OperatorsLZ#property_file), [R_file](G__OperatorsLZ#r_file), [read](G__OperatorsLZ#read), [shape_file](G__OperatorsLZ#shape_file), [svg_file](G__OperatorsLZ#svg_file), [text_file](G__OperatorsLZ#text_file), [threeds_file](G__OperatorsLZ#threeds_file), [URL_file](G__OperatorsLZ#url_file), [writable](G__OperatorsLZ#writable), [xml_file](G__OperatorsLZ#xml_file), 
 
 ----
 
 ### FIPA-related operators
-[conversation](#conversation), [message](#message), 
+[conversation](G__OperatorsAK#conversation), [message](G__OperatorsLZ#message), 
 
 ----
 
 ### Graphs-related operators
-[add_edge](#add_edge), [add_node](#add_node), [adjacency](#adjacency), [agent_from_geometry](#agent_from_geometry), [all_pairs_shortest_path](#all_pairs_shortest_path), [alpha_index](#alpha_index), [as_distance_graph](#as_distance_graph), [as_edge_graph](#as_edge_graph), [as_intersection_graph](#as_intersection_graph), [as_path](#as_path), [beta_index](#beta_index), [betweenness_centrality](#betweenness_centrality), [connected_components_of](#connected_components_of), [connectivity_index](#connectivity_index), [contains_edge](#contains_edge), [contains_vertex](#contains_vertex), [degree_of](#degree_of), [directed](#directed), [edge](#edge), [edge_between](#edge_between), [edges](#edges), [gamma_index](#gamma_index), [generate_barabasi_albert](#generate_barabasi_albert), [generate_complete_graph](#generate_complete_graph), [generate_watts_strogatz](#generate_watts_strogatz), [grid_cells_to_graph](#grid_cells_to_graph), [in_degree_of](#in_degree_of), [in_edges_of](#in_edges_of), [layout](#layout), [load_graph_from_file](#load_graph_from_file), [load_shortest_paths](#load_shortest_paths), [nb_cycles](#nb_cycles), [neighbors_of](#neighbors_of), [node](#node), [nodes](#nodes), [out_degree_of](#out_degree_of), [out_edges_of](#out_edges_of), [path_between](#path_between), [paths_between](#paths_between), [predecessors_of](#predecessors_of), [remove_node_from](#remove_node_from), [rewire_n](#rewire_n), [source_of](#source_of), [spatial_graph](#spatial_graph), [successors_of](#successors_of), [sum](#sum), [target_of](#target_of), [undirected](#undirected), [use_cache](#use_cache), [weight_of](#weight_of), [with_optimizer_type](#with_optimizer_type), [with_weights](#with_weights), 
+[add_edge](G__OperatorsAK#add_edge), [add_node](G__OperatorsAK#add_node), [adjacency](G__OperatorsAK#adjacency), [agent_from_geometry](G__OperatorsAK#agent_from_geometry), [all_pairs_shortest_path](G__OperatorsAK#all_pairs_shortest_path), [alpha_index](G__OperatorsAK#alpha_index), [as_distance_graph](G__OperatorsAK#as_distance_graph), [as_edge_graph](G__OperatorsAK#as_edge_graph), [as_intersection_graph](G__OperatorsAK#as_intersection_graph), [as_path](G__OperatorsAK#as_path), [beta_index](G__OperatorsAK#beta_index), [betweenness_centrality](G__OperatorsAK#betweenness_centrality), [connected_components_of](G__OperatorsAK#connected_components_of), [connectivity_index](G__OperatorsAK#connectivity_index), [contains_edge](G__OperatorsAK#contains_edge), [contains_vertex](G__OperatorsAK#contains_vertex), [degree_of](G__OperatorsAK#degree_of), [directed](G__OperatorsAK#directed), [edge](G__OperatorsAK#edge), [edge_between](G__OperatorsAK#edge_between), [edges](G__OperatorsAK#edges), [gamma_index](G__OperatorsAK#gamma_index), [generate_barabasi_albert](G__OperatorsAK#generate_barabasi_albert), [generate_complete_graph](G__OperatorsAK#generate_complete_graph), [generate_watts_strogatz](G__OperatorsAK#generate_watts_strogatz), [grid_cells_to_graph](G__OperatorsAK#grid_cells_to_graph), [in_degree_of](G__OperatorsAK#in_degree_of), [in_edges_of](G__OperatorsAK#in_edges_of), [layout](G__OperatorsLZ#layout), [load_graph_from_file](G__OperatorsLZ#load_graph_from_file), [load_shortest_paths](G__OperatorsLZ#load_shortest_paths), [nb_cycles](G__OperatorsLZ#nb_cycles), [neighbors_of](G__OperatorsLZ#neighbors_of), [node](G__OperatorsLZ#node), [nodes](G__OperatorsLZ#nodes), [out_degree_of](G__OperatorsLZ#out_degree_of), [out_edges_of](G__OperatorsLZ#out_edges_of), [path_between](G__OperatorsLZ#path_between), [paths_between](G__OperatorsLZ#paths_between), [predecessors_of](G__OperatorsLZ#predecessors_of), [remove_node_from](G__OperatorsLZ#remove_node_from), [rewire_n](G__OperatorsLZ#rewire_n), [source_of](G__OperatorsLZ#source_of), [spatial_graph](G__OperatorsLZ#spatial_graph), [successors_of](G__OperatorsLZ#successors_of), [sum](G__OperatorsLZ#sum), [target_of](G__OperatorsLZ#target_of), [undirected](G__OperatorsLZ#undirected), [use_cache](G__OperatorsLZ#use_cache), [weight_of](G__OperatorsLZ#weight_of), [with_optimizer_type](G__OperatorsLZ#with_optimizer_type), [with_weights](G__OperatorsLZ#with_weights), 
 
 ----
 
 ### Grid-related operators
-[as_4_grid](#as_4_grid), [as_grid](#as_grid), [as_hexagonal_grid](#as_hexagonal_grid), [grid_at](#grid_at), 
+[as_4_grid](G__OperatorsAK#as_4_grid), [as_grid](G__OperatorsAK#as_grid), [as_hexagonal_grid](G__OperatorsAK#as_hexagonal_grid), [grid_at](G__OperatorsAK#grid_at), 
 
 ----
 
 ### Iterator operators
-[accumulate](#accumulate), [as_map](#as_map), [collect](#collect), [count](#count), [first_with](#first_with), [frequency_of](#frequency_of), [group_by](#group_by), [index_by](#index_by), [last_with](#last_with), [max_of](#max_of), [min_of](#min_of), [sort_by](#sort_by), [where](#where), [with_max_of](#with_max_of), [with_min_of](#with_min_of), 
+[accumulate](G__OperatorsAK#accumulate), [as_map](G__OperatorsAK#as_map), [collect](G__OperatorsAK#collect), [count](G__OperatorsAK#count), [first_with](G__OperatorsAK#first_with), [frequency_of](G__OperatorsAK#frequency_of), [group_by](G__OperatorsAK#group_by), [index_by](G__OperatorsAK#index_by), [last_with](G__OperatorsLZ#last_with), [max_of](G__OperatorsLZ#max_of), [min_of](G__OperatorsLZ#min_of), [sort_by](G__OperatorsLZ#sort_by), [where](G__OperatorsLZ#where), [with_max_of](G__OperatorsLZ#with_max_of), [with_min_of](G__OperatorsLZ#with_min_of), 
 
 ----
 
 ### List-related operators
-[copy_between](#copy_between), [index_of](#index_of), [last_index_of](#last_index_of), 
+[copy_between](G__OperatorsAK#copy_between), [index_of](G__OperatorsAK#index_of), [last_index_of](G__OperatorsLZ#last_index_of), 
 
 ----
 
 ### Logical operators
-[:](#:), [!](#!), [?](#?), [and](#and), [or](#or), 
+[:](G__OperatorsAK#:), [!](G__OperatorsAK#!), [?](G__OperatorsAK#?), [and](G__OperatorsAK#and), [or](G__OperatorsLZ#or), 
 
 ----
 
 ### Map comparaison operators
-[fuzzy_kappa](#fuzzy_kappa), [fuzzy_kappa_sim](#fuzzy_kappa_sim), [kappa](#kappa), [kappa_sim](#kappa_sim), [percent_absolute_deviation](#percent_absolute_deviation), 
+[fuzzy_kappa](G__OperatorsAK#fuzzy_kappa), [fuzzy_kappa_sim](G__OperatorsAK#fuzzy_kappa_sim), [kappa](G__OperatorsAK#kappa), [kappa_sim](G__OperatorsAK#kappa_sim), [percent_absolute_deviation](G__OperatorsLZ#percent_absolute_deviation), 
 
 ----
 
 ### Map-related operators
-[as_map](#as_map), [index_of](#index_of), [last_index_of](#last_index_of), 
+[as_map](G__OperatorsAK#as_map), [index_of](G__OperatorsAK#index_of), [last_index_of](G__OperatorsLZ#last_index_of), 
 
 ----
 
 ### Matrix-related operators
-[-](#-), [/](#/), [.](#.), [*](#*), [+](#+), [append_horizontally](#append_horizontally), [append_vertically](#append_vertically), [column_at](#column_at), [columns_list](#columns_list), [determinant](#determinant), [eigenvalues](#eigenvalues), [index_of](#index_of), [inverse](#inverse), [last_index_of](#last_index_of), [row_at](#row_at), [rows_list](#rows_list), [shuffle](#shuffle), [trace](#trace), [transpose](#transpose), 
+[-](G__OperatorsAK#-), [/](G__OperatorsAK#/), [.](G__OperatorsAK#.), [*](G__OperatorsAK#*), [+](G__OperatorsAK#+), [append_horizontally](G__OperatorsAK#append_horizontally), [append_vertically](G__OperatorsAK#append_vertically), [column_at](G__OperatorsAK#column_at), [columns_list](G__OperatorsAK#columns_list), [determinant](G__OperatorsAK#determinant), [eigenvalues](G__OperatorsAK#eigenvalues), [index_of](G__OperatorsAK#index_of), [inverse](G__OperatorsAK#inverse), [last_index_of](G__OperatorsLZ#last_index_of), [row_at](G__OperatorsLZ#row_at), [rows_list](G__OperatorsLZ#rows_list), [shuffle](G__OperatorsLZ#shuffle), [trace](G__OperatorsLZ#trace), [transpose](G__OperatorsLZ#transpose), 
 
 ----
 
 ### multicriteria operators
-[electre_DM](#electre_dm), [evidence_theory_DM](#evidence_theory_dm), [promethee_DM](#promethee_dm), [weighted_means_DM](#weighted_means_dm), 
+[electre_DM](G__OperatorsAK#electre_dm), [evidence_theory_DM](G__OperatorsAK#evidence_theory_dm), [promethee_DM](G__OperatorsLZ#promethee_dm), [weighted_means_DM](G__OperatorsLZ#weighted_means_dm), 
 
 ----
 
 ### Path-related operators
-[agent_from_geometry](#agent_from_geometry), [all_pairs_shortest_path](#all_pairs_shortest_path), [as_path](#as_path), [load_shortest_paths](#load_shortest_paths), [path_between](#path_between), [path_to](#path_to), [paths_between](#paths_between), [use_cache](#use_cache), 
+[agent_from_geometry](G__OperatorsAK#agent_from_geometry), [all_pairs_shortest_path](G__OperatorsAK#all_pairs_shortest_path), [as_path](G__OperatorsAK#as_path), [load_shortest_paths](G__OperatorsLZ#load_shortest_paths), [path_between](G__OperatorsLZ#path_between), [path_to](G__OperatorsLZ#path_to), [paths_between](G__OperatorsLZ#paths_between), [use_cache](G__OperatorsLZ#use_cache), 
 
 ----
 
 ### Points-related operators
-[-](#-), [/](#/), [*](#*), [+](#+), [<](#<), [<=](#<=), [>](#>), [>=](#>=), [add_point](#add_point), [angle_between](#angle_between), [any_location_in](#any_location_in), [closest_points_with](#closest_points_with), [farthest_point_to](#farthest_point_to), [grid_at](#grid_at), [norm](#norm), [point](#point), [points_at](#points_at), [points_on](#points_on), 
+[-](G__OperatorsAK#-), [/](G__OperatorsAK#/), [*](G__OperatorsAK#*), [+](G__OperatorsAK#+), [<](G__OperatorsAK#<), [<=](G__OperatorsAK#<=), [>](G__OperatorsAK#>), [>=](G__OperatorsAK#>=), [add_point](G__OperatorsAK#add_point), [angle_between](G__OperatorsAK#angle_between), [any_location_in](G__OperatorsAK#any_location_in), [closest_points_with](G__OperatorsAK#closest_points_with), [farthest_point_to](G__OperatorsAK#farthest_point_to), [grid_at](G__OperatorsAK#grid_at), [norm](G__OperatorsLZ#norm), [point](G__OperatorsLZ#point), [points_at](G__OperatorsLZ#points_at), [points_on](G__OperatorsLZ#points_on), 
 
 ----
 
 ### Random operators
-[binomial](#binomial), [flip](#flip), [gauss](#gauss), [poisson](#poisson), [rnd](#rnd), [rnd_choice](#rnd_choice), [sample](#sample), [shuffle](#shuffle), [truncated_gauss](#truncated_gauss), 
+[binomial](G__OperatorsAK#binomial), [flip](G__OperatorsAK#flip), [gauss](G__OperatorsAK#gauss), [poisson](G__OperatorsLZ#poisson), [rnd](G__OperatorsLZ#rnd), [rnd_choice](G__OperatorsLZ#rnd_choice), [sample](G__OperatorsLZ#sample), [shuffle](G__OperatorsLZ#shuffle), [truncated_gauss](G__OperatorsLZ#truncated_gauss), 
 
 ----
 
 ### Shape
-[antislice](#antislice), [arc](#arc), [box](#box), [circle](#circle), [cone](#cone), [cone3D](#cone3d), [cube](#cube), [curve](#curve), [cylinder](#cylinder), [ellipse](#ellipse), [envelope](#envelope), [geometry_collection](#geometry_collection), [hemisphere](#hemisphere), [hexagon](#hexagon), [line](#line), [link](#link), [pacman](#pacman), [plan](#plan), [polygon](#polygon), [polyhedron](#polyhedron), [pyramid](#pyramid), [rectangle](#rectangle), [rgb_cube](#rgb_cube), [rgb_triangle](#rgb_triangle), [slice](#slice), [sphere](#sphere), [spherical_pie](#spherical_pie), [square](#square), [squircle](#squircle), [teapot](#teapot), [triangle](#triangle), 
+[antislice](G__OperatorsAK#antislice), [arc](G__OperatorsAK#arc), [box](G__OperatorsAK#box), [circle](G__OperatorsAK#circle), [cone](G__OperatorsAK#cone), [cone3D](G__OperatorsAK#cone3d), [cube](G__OperatorsAK#cube), [curve](G__OperatorsAK#curve), [cylinder](G__OperatorsAK#cylinder), [ellipse](G__OperatorsAK#ellipse), [envelope](G__OperatorsAK#envelope), [geometry_collection](G__OperatorsAK#geometry_collection), [hemisphere](G__OperatorsAK#hemisphere), [hexagon](G__OperatorsAK#hexagon), [line](G__OperatorsLZ#line), [link](G__OperatorsLZ#link), [pacman](G__OperatorsLZ#pacman), [plan](G__OperatorsLZ#plan), [polygon](G__OperatorsLZ#polygon), [polyhedron](G__OperatorsLZ#polyhedron), [pyramid](G__OperatorsLZ#pyramid), [rectangle](G__OperatorsLZ#rectangle), [rgb_cube](G__OperatorsLZ#rgb_cube), [rgb_triangle](G__OperatorsLZ#rgb_triangle), [slice](G__OperatorsLZ#slice), [sphere](G__OperatorsLZ#sphere), [spherical_pie](G__OperatorsLZ#spherical_pie), [square](G__OperatorsLZ#square), [squircle](G__OperatorsLZ#squircle), [teapot](G__OperatorsLZ#teapot), [triangle](G__OperatorsLZ#triangle), 
 
 ----
 
 ### Spatial operators
-[-](#-), [*](#*), [+](#+), [add_point](#add_point), [agent_closest_to](#agent_closest_to), [agents_at_distance](#agents_at_distance), [agents_inside](#agents_inside), [agents_overlapping](#agents_overlapping), [angle_between](#angle_between), [antislice](#antislice), [any_location_in](#any_location_in), [arc](#arc), [around](#around), [as_4_grid](#as_4_grid), [as_grid](#as_grid), [as_hexagonal_grid](#as_hexagonal_grid), [at_distance](#at_distance), [at_location](#at_location), [box](#box), [circle](#circle), [clean](#clean), [closest_points_with](#closest_points_with), [closest_to](#closest_to), [cone](#cone), [cone3D](#cone3d), [convex_hull](#convex_hull), [covers](#covers), [crosses](#crosses), [crs](#crs), [CRS_transform](#crs_transform), [cube](#cube), [curve](#curve), [cylinder](#cylinder), [dem](#dem), [direction_between](#direction_between), [disjoint_from](#disjoint_from), [distance_between](#distance_between), [distance_to](#distance_to), [ellipse](#ellipse), [envelope](#envelope), [farthest_point_to](#farthest_point_to), [geometry_collection](#geometry_collection), [hemisphere](#hemisphere), [hexagon](#hexagon), [hierarchical_clustering](#hierarchical_clustering), [IDW](#idw), [inside](#inside), [inter](#inter), [intersects](#intersects), [line](#line), [link](#link), [masked_by](#masked_by), [neighbors_at](#neighbors_at), [neighbors_of](#neighbors_of), [overlapping](#overlapping), [overlaps](#overlaps), [pacman](#pacman), [partially_overlaps](#partially_overlaps), [path_between](#path_between), [path_to](#path_to), [plan](#plan), [points_at](#points_at), [points_on](#points_on), [polygon](#polygon), [polyhedron](#polyhedron), [pyramid](#pyramid), [rectangle](#rectangle), [rgb_cube](#rgb_cube), [rgb_to_xyz](#rgb_to_xyz), [rgb_triangle](#rgb_triangle), [rotated_by](#rotated_by), [round](#round), [scaled_to](#scaled_to), [set_z](#set_z), [simple_clustering_by_distance](#simple_clustering_by_distance), [simplification](#simplification), [skeletonize](#skeletonize), [slice](#slice), [smooth](#smooth), [sphere](#sphere), [spherical_pie](#spherical_pie), [split_at](#split_at), [split_geometry](#split_geometry), [split_lines](#split_lines), [square](#square), [squircle](#squircle), [teapot](#teapot), [to_GAMA_CRS](#to_gama_crs), [to_rectangles](#to_rectangles), [to_squares](#to_squares), [touches](#touches), [towards](#towards), [transformed_by](#transformed_by), [translated_by](#translated_by), [triangle](#triangle), [triangulate](#triangulate), [union](#union), [voronoi](#voronoi), [with_precision](#with_precision), [without_holes](#without_holes), 
+[-](G__OperatorsAK#-), [*](G__OperatorsAK#*), [+](G__OperatorsAK#+), [add_point](G__OperatorsAK#add_point), [agent_closest_to](G__OperatorsAK#agent_closest_to), [agents_at_distance](G__OperatorsAK#agents_at_distance), [agents_inside](G__OperatorsAK#agents_inside), [agents_overlapping](G__OperatorsAK#agents_overlapping), [angle_between](G__OperatorsAK#angle_between), [antislice](G__OperatorsAK#antislice), [any_location_in](G__OperatorsAK#any_location_in), [arc](G__OperatorsAK#arc), [around](G__OperatorsAK#around), [as_4_grid](G__OperatorsAK#as_4_grid), [as_grid](G__OperatorsAK#as_grid), [as_hexagonal_grid](G__OperatorsAK#as_hexagonal_grid), [at_distance](G__OperatorsAK#at_distance), [at_location](G__OperatorsAK#at_location), [box](G__OperatorsAK#box), [circle](G__OperatorsAK#circle), [clean](G__OperatorsAK#clean), [closest_points_with](G__OperatorsAK#closest_points_with), [closest_to](G__OperatorsAK#closest_to), [cone](G__OperatorsAK#cone), [cone3D](G__OperatorsAK#cone3d), [convex_hull](G__OperatorsAK#convex_hull), [covers](G__OperatorsAK#covers), [crosses](G__OperatorsAK#crosses), [crs](G__OperatorsAK#crs), [CRS_transform](G__OperatorsAK#crs_transform), [cube](G__OperatorsAK#cube), [curve](G__OperatorsAK#curve), [cylinder](G__OperatorsAK#cylinder), [dem](G__OperatorsAK#dem), [direction_between](G__OperatorsAK#direction_between), [disjoint_from](G__OperatorsAK#disjoint_from), [distance_between](G__OperatorsAK#distance_between), [distance_to](G__OperatorsAK#distance_to), [ellipse](G__OperatorsAK#ellipse), [envelope](G__OperatorsAK#envelope), [farthest_point_to](G__OperatorsAK#farthest_point_to), [geometry_collection](G__OperatorsAK#geometry_collection), [hemisphere](G__OperatorsAK#hemisphere), [hexagon](G__OperatorsAK#hexagon), [hierarchical_clustering](G__OperatorsAK#hierarchical_clustering), [IDW](G__OperatorsAK#idw), [inside](G__OperatorsAK#inside), [inter](G__OperatorsAK#inter), [intersects](G__OperatorsAK#intersects), [line](G__OperatorsLZ#line), [link](G__OperatorsLZ#link), [masked_by](G__OperatorsLZ#masked_by), [neighbors_at](G__OperatorsLZ#neighbors_at), [neighbors_of](G__OperatorsLZ#neighbors_of), [overlapping](G__OperatorsLZ#overlapping), [overlaps](G__OperatorsLZ#overlaps), [pacman](G__OperatorsLZ#pacman), [partially_overlaps](G__OperatorsLZ#partially_overlaps), [path_between](G__OperatorsLZ#path_between), [path_to](G__OperatorsLZ#path_to), [plan](G__OperatorsLZ#plan), [points_at](G__OperatorsLZ#points_at), [points_on](G__OperatorsLZ#points_on), [polygon](G__OperatorsLZ#polygon), [polyhedron](G__OperatorsLZ#polyhedron), [pyramid](G__OperatorsLZ#pyramid), [rectangle](G__OperatorsLZ#rectangle), [rgb_cube](G__OperatorsLZ#rgb_cube), [rgb_to_xyz](G__OperatorsLZ#rgb_to_xyz), [rgb_triangle](G__OperatorsLZ#rgb_triangle), [rotated_by](G__OperatorsLZ#rotated_by), [round](G__OperatorsLZ#round), [scaled_to](G__OperatorsLZ#scaled_to), [set_z](G__OperatorsLZ#set_z), [simple_clustering_by_distance](G__OperatorsLZ#simple_clustering_by_distance), [simplification](G__OperatorsLZ#simplification), [skeletonize](G__OperatorsLZ#skeletonize), [slice](G__OperatorsLZ#slice), [smooth](G__OperatorsLZ#smooth), [sphere](G__OperatorsLZ#sphere), [spherical_pie](G__OperatorsLZ#spherical_pie), [split_at](G__OperatorsLZ#split_at), [split_geometry](G__OperatorsLZ#split_geometry), [split_lines](G__OperatorsLZ#split_lines), [square](G__OperatorsLZ#square), [squircle](G__OperatorsLZ#squircle), [teapot](G__OperatorsLZ#teapot), [to_GAMA_CRS](G__OperatorsLZ#to_gama_crs), [to_rectangles](G__OperatorsLZ#to_rectangles), [to_squares](G__OperatorsLZ#to_squares), [touches](G__OperatorsLZ#touches), [towards](G__OperatorsLZ#towards), [transformed_by](G__OperatorsLZ#transformed_by), [translated_by](G__OperatorsLZ#translated_by), [triangle](G__OperatorsLZ#triangle), [triangulate](G__OperatorsLZ#triangulate), [union](G__OperatorsLZ#union), [voronoi](G__OperatorsLZ#voronoi), [with_precision](G__OperatorsLZ#with_precision), [without_holes](G__OperatorsLZ#without_holes), 
 
 ----
 
 ### Spatial properties operators
-[covers](#covers), [crosses](#crosses), [intersects](#intersects), [partially_overlaps](#partially_overlaps), [touches](#touches), 
+[covers](G__OperatorsAK#covers), [crosses](G__OperatorsAK#crosses), [intersects](G__OperatorsAK#intersects), [partially_overlaps](G__OperatorsLZ#partially_overlaps), [touches](G__OperatorsLZ#touches), 
 
 ----
 
 ### Spatial queries operators
-[agent_closest_to](#agent_closest_to), [agents_at_distance](#agents_at_distance), [agents_inside](#agents_inside), [agents_overlapping](#agents_overlapping), [at_distance](#at_distance), [closest_to](#closest_to), [inside](#inside), [neighbors_at](#neighbors_at), [neighbors_of](#neighbors_of), [overlapping](#overlapping), 
+[agent_closest_to](G__OperatorsAK#agent_closest_to), [agents_at_distance](G__OperatorsAK#agents_at_distance), [agents_inside](G__OperatorsAK#agents_inside), [agents_overlapping](G__OperatorsAK#agents_overlapping), [at_distance](G__OperatorsAK#at_distance), [closest_to](G__OperatorsAK#closest_to), [inside](G__OperatorsAK#inside), [neighbors_at](G__OperatorsLZ#neighbors_at), [neighbors_of](G__OperatorsLZ#neighbors_of), [overlapping](G__OperatorsLZ#overlapping), 
 
 ----
 
 ### Spatial relations operators
-[direction_between](#direction_between), [distance_between](#distance_between), [distance_to](#distance_to), [path_between](#path_between), [path_to](#path_to), [towards](#towards), 
+[direction_between](G__OperatorsAK#direction_between), [distance_between](G__OperatorsAK#distance_between), [distance_to](G__OperatorsAK#distance_to), [path_between](G__OperatorsLZ#path_between), [path_to](G__OperatorsLZ#path_to), [towards](G__OperatorsLZ#towards), 
 
 ----
 
 ### Spatial statistical operators
-[hierarchical_clustering](#hierarchical_clustering), [simple_clustering_by_distance](#simple_clustering_by_distance), 
+[hierarchical_clustering](G__OperatorsAK#hierarchical_clustering), [simple_clustering_by_distance](G__OperatorsLZ#simple_clustering_by_distance), 
 
 ----
 
 ### Spatial transformations operators
-[-](#-), [*](#*), [+](#+), [as_4_grid](#as_4_grid), [as_grid](#as_grid), [as_hexagonal_grid](#as_hexagonal_grid), [at_location](#at_location), [clean](#clean), [convex_hull](#convex_hull), [CRS_transform](#crs_transform), [rotated_by](#rotated_by), [scaled_to](#scaled_to), [simplification](#simplification), [skeletonize](#skeletonize), [smooth](#smooth), [split_geometry](#split_geometry), [split_lines](#split_lines), [to_GAMA_CRS](#to_gama_crs), [to_rectangles](#to_rectangles), [to_squares](#to_squares), [transformed_by](#transformed_by), [translated_by](#translated_by), [triangulate](#triangulate), [voronoi](#voronoi), [without_holes](#without_holes), 
+[-](G__OperatorsAK#-), [*](G__OperatorsAK#*), [+](G__OperatorsAK#+), [as_4_grid](G__OperatorsAK#as_4_grid), [as_grid](G__OperatorsAK#as_grid), [as_hexagonal_grid](G__OperatorsAK#as_hexagonal_grid), [at_location](G__OperatorsAK#at_location), [clean](G__OperatorsAK#clean), [convex_hull](G__OperatorsAK#convex_hull), [CRS_transform](G__OperatorsAK#crs_transform), [rotated_by](G__OperatorsLZ#rotated_by), [scaled_to](G__OperatorsLZ#scaled_to), [simplification](G__OperatorsLZ#simplification), [skeletonize](G__OperatorsLZ#skeletonize), [smooth](G__OperatorsLZ#smooth), [split_geometry](G__OperatorsLZ#split_geometry), [split_lines](G__OperatorsLZ#split_lines), [to_GAMA_CRS](G__OperatorsLZ#to_gama_crs), [to_rectangles](G__OperatorsLZ#to_rectangles), [to_squares](G__OperatorsLZ#to_squares), [transformed_by](G__OperatorsLZ#transformed_by), [translated_by](G__OperatorsLZ#translated_by), [triangulate](G__OperatorsLZ#triangulate), [voronoi](G__OperatorsLZ#voronoi), [without_holes](G__OperatorsLZ#without_holes), 
 
 ----
 
 ### Species-related operators
-[index_of](#index_of), [last_index_of](#last_index_of), [of_generic_species](#of_generic_species), [of_species](#of_species), 
+[index_of](G__OperatorsAK#index_of), [last_index_of](G__OperatorsLZ#last_index_of), [of_generic_species](G__OperatorsLZ#of_generic_species), [of_species](G__OperatorsLZ#of_species), 
 
 ----
 
 ### Statistical operators
-[build](#build), [corR](#corr), [dbscan](#dbscan), [frequency_of](#frequency_of), [geometric_mean](#geometric_mean), [harmonic_mean](#harmonic_mean), [hierarchical_clustering](#hierarchical_clustering), [kmeans](#kmeans), [max](#max), [mean](#mean), [mean_deviation](#mean_deviation), [meanR](#meanr), [median](#median), [min](#min), [mul](#mul), [predict](#predict), [simple_clustering_by_distance](#simple_clustering_by_distance), [standard_deviation](#standard_deviation), [sum](#sum), [variance](#variance), 
+[build](G__OperatorsAK#build), [corR](G__OperatorsAK#corr), [dbscan](G__OperatorsAK#dbscan), [frequency_of](G__OperatorsAK#frequency_of), [geometric_mean](G__OperatorsAK#geometric_mean), [harmonic_mean](G__OperatorsAK#harmonic_mean), [hierarchical_clustering](G__OperatorsAK#hierarchical_clustering), [kmeans](G__OperatorsAK#kmeans), [max](G__OperatorsLZ#max), [mean](G__OperatorsLZ#mean), [mean_deviation](G__OperatorsLZ#mean_deviation), [meanR](G__OperatorsLZ#meanr), [median](G__OperatorsLZ#median), [min](G__OperatorsLZ#min), [mul](G__OperatorsLZ#mul), [predict](G__OperatorsLZ#predict), [simple_clustering_by_distance](G__OperatorsLZ#simple_clustering_by_distance), [standard_deviation](G__OperatorsLZ#standard_deviation), [sum](G__OperatorsLZ#sum), [variance](G__OperatorsLZ#variance), 
 
 ----
 
 ### Strings-related operators
-[+](#+), [<](#<), [<=](#<=), [>](#>), [>=](#>=), [as_date](#as_date), [as_system_date](#as_system_date), [as_system_time](#as_system_time), [as_time](#as_time), [at](#at), [char](#char), [contains](#contains), [contains_all](#contains_all), [contains_any](#contains_any), [copy_between](#copy_between), [empty](#empty), [first](#first), [in](#in), [indented_by](#indented_by), [index_of](#index_of), [is_number](#is_number), [last](#last), [last_index_of](#last_index_of), [length](#length), [replace](#replace), [reverse](#reverse), [sample](#sample), [shuffle](#shuffle), [split_with](#split_with), 
+[+](G__OperatorsAK#+), [<](G__OperatorsAK#<), [<=](G__OperatorsAK#<=), [>](G__OperatorsAK#>), [>=](G__OperatorsAK#>=), [as_date](G__OperatorsAK#as_date), [as_system_date](G__OperatorsAK#as_system_date), [as_system_time](G__OperatorsAK#as_system_time), [as_time](G__OperatorsAK#as_time), [at](G__OperatorsAK#at), [char](G__OperatorsAK#char), [contains](G__OperatorsAK#contains), [contains_all](G__OperatorsAK#contains_all), [contains_any](G__OperatorsAK#contains_any), [copy_between](G__OperatorsAK#copy_between), [empty](G__OperatorsAK#empty), [first](G__OperatorsAK#first), [in](G__OperatorsAK#in), [indented_by](G__OperatorsAK#indented_by), [index_of](G__OperatorsAK#index_of), [is_number](G__OperatorsAK#is_number), [last](G__OperatorsLZ#last), [last_index_of](G__OperatorsLZ#last_index_of), [length](G__OperatorsLZ#length), [replace](G__OperatorsLZ#replace), [reverse](G__OperatorsLZ#reverse), [sample](G__OperatorsLZ#sample), [shuffle](G__OperatorsLZ#shuffle), [split_with](G__OperatorsLZ#split_with), 
 
 ----
 
 ### System
-[.](#.), [copy](#copy), [dead](#dead), [eval_gaml](#eval_gaml), [every](#every), [user_input](#user_input), 
+[.](G__OperatorsAK#.), [copy](G__OperatorsAK#copy), [dead](G__OperatorsAK#dead), [eval_gaml](G__OperatorsAK#eval_gaml), [every](G__OperatorsAK#every), [user_input](G__OperatorsLZ#user_input), 
 
 ----
 
 ### Time-related operators
-[as_date](#as_date), [as_system_date](#as_system_date), [as_system_time](#as_system_time), [as_time](#as_time), 
+[as_date](G__OperatorsAK#as_date), [as_system_date](G__OperatorsAK#as_system_date), [as_system_time](G__OperatorsAK#as_system_time), [as_time](G__OperatorsAK#as_time), 
 
 ----
 
 ### Types-related operators
-[agent](#agent), [BDIPlan](#bdiplan), [bool](#bool), [container](#container), [float](#float), [geometry](#geometry), [graph](#graph), [int](#int), [list](#list), [map](#map), [matrix](#matrix), [pair](#pair), [path](#path), [predicate](#predicate), [regression](#regression), [string](#string), [unknown](#unknown), 
+[agent](G__OperatorsAK#agent), [BDIPlan](G__OperatorsAK#bdiplan), [bool](G__OperatorsAK#bool), [container](G__OperatorsAK#container), [float](G__OperatorsAK#float), [geometry](G__OperatorsAK#geometry), [graph](G__OperatorsAK#graph), [int](G__OperatorsAK#int), [list](G__OperatorsLZ#list), [map](G__OperatorsLZ#map), [matrix](G__OperatorsLZ#matrix), [pair](G__OperatorsLZ#pair), [path](G__OperatorsLZ#path), [predicate](G__OperatorsLZ#predicate), [regression](G__OperatorsLZ#regression), [string](G__OperatorsLZ#string), [unknown](G__OperatorsLZ#unknown), 
 
 ----
 
 ### User control operators
-[user_input](#user_input), 
+[user_input](G__OperatorsLZ#user_input), 
 	
 ----
 
@@ -317,9 +317,9 @@ int var1 <- last ([1, 2, 3]); 	// var1 equals 3
     
 
 #### See also: 
-[first](#first), 
+[first](G__OperatorsAK#first), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -376,9 +376,9 @@ unknown var4 <- [1::2, 3::4, 5::4] last_index_of 4; 	// var4 equals 5
     
 
 #### See also: 
-[at](#at), [index_of](#index_of), [last_index_of](#last_index_of), 
+[at](G__OperatorsAK#at), [index_of](G__OperatorsAK#index_of), [last_index_of](G__OperatorsLZ#last_index_of), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -416,9 +416,9 @@ unknown var3 <- (list(node) last_with (round(node(each).location.x) > 32); 	// v
       
 
 #### See also: 
-[group_by](#group_by), [first_with](#first_with), [where](#where), 
+[group_by](G__OperatorsAK#group_by), [first_with](G__OperatorsAK#first_with), [where](G__OperatorsLZ#where), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -433,7 +433,7 @@ unknown var3 <- (list(node) last_with (round(node(each).location.x) > 32); 	// v
 #### Result: 
 layouts a GAMA graph.
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -479,7 +479,7 @@ int var3 <- length ('I am an agent'); 	// var3 equals 13
 
 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -514,9 +514,9 @@ geometry var1 <- polyline([{0,0}, {0,10}, {10,10}, {10,0}]); 	// var1 equals a p
       
 
 #### See also: 
-[around](#around), [circle](#circle), [cone](#cone), [link](#link), [norm](#norm), [point](#point), [polygone](#polygone), [rectangle](#rectangle), [square](#square), [triangle](#triangle), 
+[around](G__OperatorsAK#around), [circle](G__OperatorsAK#circle), [cone](G__OperatorsAK#cone), [link](G__OperatorsLZ#link), [norm](G__OperatorsLZ#norm), [point](G__OperatorsLZ#point), [polygone](G__OperatorsLZ#polygone), [rectangle](G__OperatorsLZ#rectangle), [square](G__OperatorsLZ#square), [triangle](G__OperatorsLZ#triangle), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -543,9 +543,9 @@ geometry var0 <- link (geom1::geom2); 	// var0 equals a link geometry between ge
       
 
 #### See also: 
-[around](#around), [circle](#circle), [cone](#cone), [line](#line), [norm](#norm), [point](#point), [polygon](#polygon), [polyline](#polyline), [rectangle](#rectangle), [square](#square), [triangle](#triangle), 
+[around](G__OperatorsAK#around), [circle](G__OperatorsAK#circle), [cone](G__OperatorsAK#cone), [line](G__OperatorsLZ#line), [norm](G__OperatorsLZ#norm), [point](G__OperatorsLZ#point), [polygon](G__OperatorsLZ#polygon), [polyline](G__OperatorsLZ#polyline), [rectangle](G__OperatorsLZ#rectangle), [square](G__OperatorsLZ#square), [triangle](G__OperatorsLZ#triangle), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -558,7 +558,7 @@ geometry var0 <- link (geom1::geom2); 	// var0 equals a link geometry between ge
 #### Result: 
 Casts the operand into the type list
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -575,9 +575,9 @@ creates a list with a size provided by the first operand, and filled with the se
 Note that the right operand  should be positive, and that the second one is evaluated for each position  in the list.    
 
 #### See also: 
-[list](#list), 
+[list](G__OperatorsLZ#list), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -602,9 +602,9 @@ float var1 <- ln(1); 	// var1 equals 0.0
       
 
 #### See also: 
-[exp](#exp), 
+[exp](G__OperatorsAK#exp), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -705,7 +705,7 @@ graph<myVertexSpecy,myEdgeSpecy> myGraph <- load_graph_from_file(
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -724,7 +724,7 @@ graph var0 <- load_shortest_paths(shortest_paths_matrix); 	// var0 equals return
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -749,9 +749,9 @@ float var1 <- log(1); 	// var1 equals 0.0
       
 
 #### See also: 
-[ln](#ln), 
+[ln](G__OperatorsLZ#ln), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -764,7 +764,7 @@ float var1 <- log(1); 	// var1 equals 0.0
 #### Result: 
 Casts the operand into the type map
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -782,7 +782,7 @@ geometry var1 <- perception_geom masked_by obstacle_list; 	// var1 equals the ge
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -795,7 +795,7 @@ geometry var1 <- perception_geom masked_by obstacle_list; 	// var1 equals the ge
 #### Result: 
 Casts the operand into the type matrix
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -812,9 +812,9 @@ creates a matrix with a size provided by the first operand, and filled with the 
 Note that both components of the right operand point should be positive, otherwise an exception is raised.    
 
 #### See also: 
-[matrix](#matrix), [as_matrix](#as_matrix), 
+[matrix](G__OperatorsLZ#matrix), [as_matrix](G__OperatorsAK#as_matrix), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -856,9 +856,9 @@ unknown var1 <- max([{1.0,3.0},{3.0,5.0},{9.0,1.0},{7.0,8.0}]); 	// var1 equals 
     
 
 #### See also: 
-[min](#min), 
+[min](G__OperatorsLZ#min), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -895,9 +895,9 @@ unknown var4 <- (list(node) max_of (round(node(each).location.x)); 	// var4 equa
       
 
 #### See also: 
-[min_of](#min_of), 
+[min_of](G__OperatorsLZ#min_of), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -923,9 +923,9 @@ unknown var0 <- mean ([4.5, 3.5, 5.5, 7.0]); 	// var0 equals 5.125
       
 
 #### See also: 
-[sum](#sum), 
+[sum](G__OperatorsLZ#sum), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -948,9 +948,9 @@ float var0 <- mean_deviation ([4.5, 3.5, 5.5, 7.0]); 	// var0 equals 1.125
       
 
 #### See also: 
-[mean](#mean), [standard_deviation](#standard_deviation), 
+[mean](G__OperatorsLZ#mean), [standard_deviation](G__OperatorsLZ#standard_deviation), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -970,7 +970,7 @@ int var1 <- meanR(X); 	// var1 equals 2
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -993,9 +993,9 @@ float var0 <- median ([4.5, 3.5, 5.5, 7.0]); 	// var0 equals 5.0
       
 
 #### See also: 
-[mean](#mean), 
+[mean](G__OperatorsLZ#mean), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1008,7 +1008,7 @@ float var0 <- median ([4.5, 3.5, 5.5, 7.0]); 	// var0 equals 5.0
 #### Result: 
 to be added
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1043,9 +1043,9 @@ unknown var0 <- min ([100, 23.2, 34.5]); 	// var0 equals 23.2
     
 
 #### See also: 
-[max](#max), 
+[max](G__OperatorsLZ#max), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1082,9 +1082,9 @@ unknown var4 <- (list(node) min_of (round(node(each).location.x)); 	// var4 equa
       
 
 #### See also: 
-[max_of](#max_of), 
+[max_of](G__OperatorsLZ#max_of), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1108,9 +1108,9 @@ int var0 <- 40 mod 3; 	// var0 equals 1
       
 
 #### See also: 
-[div](#div), 
+[div](G__OperatorsAK#div), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1145,9 +1145,9 @@ unknown var0 <- mul ([100, 23.2, 34.5]); 	// var0 equals 80040.0
     
 
 #### See also: 
-[sum](#sum), 
+[sum](G__OperatorsLZ#sum), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1168,9 +1168,9 @@ int var1 <- nb_cycles(graphEpidemio); 	// var1 equals the number of cycles in th
       
 
 #### See also: 
-[alpha_index](#alpha_index), [beta_index](#beta_index), [gamma_index](#gamma_index), [connectivity_index](#connectivity_index), 
+[alpha_index](G__OperatorsAK#alpha_index), [beta_index](G__OperatorsAK#beta_index), [gamma_index](G__OperatorsAK#gamma_index), [connectivity_index](G__OperatorsAK#connectivity_index), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1193,9 +1193,9 @@ list var0 <- (self neighbors_at (10)); 	// var0 equals all the agents located at
       
 
 #### See also: 
-[neighbors_of](#neighbors_of), [closest_to](#closest_to), [overlapping](#overlapping), [agents_overlapping](#agents_overlapping), [agents_inside](#agents_inside), [agent_closest_to](#agent_closest_to), [at_distance](#at_distance), 
+[neighbors_of](G__OperatorsLZ#neighbors_of), [closest_to](G__OperatorsAK#closest_to), [overlapping](G__OperatorsLZ#overlapping), [agents_overlapping](G__OperatorsAK#agents_overlapping), [agents_inside](G__OperatorsAK#agents_inside), [agent_closest_to](G__OperatorsAK#agent_closest_to), [at_distance](G__OperatorsAK#at_distance), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1229,9 +1229,9 @@ list var3 <- graphFromMap neighbors_of node({12,45}); 	// var3 equals [{1.0,5.0}
       
 
 #### See also: 
-[neighbors_at](#neighbors_at), [closest_to](#closest_to), [overlapping](#overlapping), [agents_overlapping](#agents_overlapping), [agents_inside](#agents_inside), [agent_closest_to](#agent_closest_to), [predecessors_of](#predecessors_of), [successors_of](#successors_of), 
+[neighbors_at](G__OperatorsLZ#neighbors_at), [closest_to](G__OperatorsAK#closest_to), [overlapping](G__OperatorsLZ#overlapping), [agents_overlapping](G__OperatorsAK#agents_overlapping), [agents_inside](G__OperatorsAK#agents_inside), [agent_closest_to](G__OperatorsAK#agent_closest_to), [predecessors_of](G__OperatorsLZ#predecessors_of), [successors_of](G__OperatorsLZ#successors_of), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1256,9 +1256,9 @@ file dirNewT <- new_folder("incl/");   	// dirNewT represents the repository "..
       
 
 #### See also: 
-[folder](#folder), [file](#file), 
+[folder](G__OperatorsAK#folder), [file](G__OperatorsAK#file), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1285,7 +1285,7 @@ predicate("people to meet")
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1296,7 +1296,7 @@ predicate("people to meet")
   * OP(`unknown`) --->  `unknown`
   * `unknown` OP `float` --->  `unknown`
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1306,7 +1306,7 @@ predicate("people to meet")
 #### Possible use: 
   * OP(`container`) --->  `container`
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1325,15 +1325,15 @@ float var0 <- norm({3,4}); 	// var0 equals 5.0
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
 
 ### `not`
-Same signification as [!](#!)
+Same signification as [!](G__OperatorsAK#!)
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1346,15 +1346,15 @@ Same signification as [!](#!)
 #### Result: 
 Constructs a file of type obj. Allowed extensions are limited to obj
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
 
 ### `of`
-Same signification as [.](#.)
+Same signification as [.](G__OperatorsAK#.)
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1379,9 +1379,9 @@ list var5 <- [sous_test(0),sous_test(1),test(2),test(3)] of_species sous_test; 	
       
 
 #### See also: 
-[of_species](#of_species), 
+[of_species](G__OperatorsLZ#of_species), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1405,9 +1405,9 @@ list var1 <- [test(0),test(1),node(1),node(2)] of_species test; 	// var1 equals 
       
 
 #### See also: 
-[of_generic_species](#of_generic_species), 
+[of_generic_species](G__OperatorsLZ#of_generic_species), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1461,9 +1461,9 @@ bug b <- one_of(bug);  	// Given a previously defined species bug, b is one of t
     
 
 #### See also: 
-[contains](#contains), 
+[contains](G__OperatorsAK#contains), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1482,7 +1482,7 @@ predicate1 or predicate2
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1499,9 +1499,9 @@ a bool value, equal to the logical or between the left-hand operand and the rigt
 both operands are always casted to bool before applying the operator. Thus, an expression like 1 or 0 is accepted and returns true.    
 
 #### See also: 
-[bool](#bool), [and](#and), [!](#!), 
+[bool](G__OperatorsAK#bool), [and](G__OperatorsAK#and), [!](G__OperatorsAK#!), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1530,9 +1530,9 @@ file myOSMfile <- osm_file("../includes/rouen.osm", ["highway"::["primary","moto
       
 
 #### See also: 
-[file](#file), [properties](#properties), [image](#image), [text](#text), 
+[file](G__OperatorsAK#file), [properties](G__OperatorsLZ#properties), [image](G__OperatorsAK#image), [text](G__OperatorsLZ#text), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1552,9 +1552,9 @@ int var1 <- graphFromMap out_degree_of (node(3)); 	// var1 equals 4
       
 
 #### See also: 
-[in_degree_of](#in_degree_of), [degree_of](#degree_of), 
+[in_degree_of](G__OperatorsAK#in_degree_of), [degree_of](G__OperatorsAK#degree_of), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1574,9 +1574,9 @@ list var1 <- graphFromMap out_edges_of (node(3)); 	// var1 equals 3
       
 
 #### See also: 
-[in_edges_of](#in_edges_of), 
+[in_edges_of](G__OperatorsAK#in_edges_of), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1597,9 +1597,9 @@ list<agent> var0 <- [ag1, ag2, ag3] overlapping(self); 	// var0 equals return th
       
 
 #### See also: 
-[neighbours_at](#neighbours_at), [neighbours_of](#neighbours_of), [agent_closest_to](#agent_closest_to), [agents_inside](#agents_inside), [closest_to](#closest_to), [inside](#inside), [agents_overlapping](#agents_overlapping), 
+[neighbours_at](G__OperatorsLZ#neighbours_at), [neighbours_of](G__OperatorsLZ#neighbours_of), [agent_closest_to](G__OperatorsAK#agent_closest_to), [agents_inside](G__OperatorsAK#agents_inside), [closest_to](G__OperatorsAK#closest_to), [inside](G__OperatorsAK#inside), [agents_overlapping](G__OperatorsAK#agents_overlapping), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1631,9 +1631,9 @@ bool var8 <- polygon([{10,10},{10,20},{20,20},{20,10}]) overlaps polygon([{10,20
       
 
 #### See also: 
-[disjoint_from](#disjoint_from), [crosses](#crosses), [intersects](#intersects), [partially_overlaps](#partially_overlaps), [touches](#touches), 
+[disjoint_from](G__OperatorsAK#disjoint_from), [crosses](G__OperatorsAK#crosses), [intersects](G__OperatorsAK#intersects), [partially_overlaps](G__OperatorsLZ#partially_overlaps), [touches](G__OperatorsLZ#touches), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1662,9 +1662,9 @@ geometry var1 <- pacman(1,0.2); 	// var1 equals a geometry as a circle of radius
       
 
 #### See also: 
-[around](#around), [cone](#cone), [line](#line), [link](#link), [norm](#norm), [point](#point), [polygon](#polygon), [polyline](#polyline), [rectangle](#rectangle), [square](#square), [triangle](#triangle), [hemisphere](#hemisphere), [pie3D](#pie3d), 
+[around](G__OperatorsAK#around), [cone](G__OperatorsAK#cone), [line](G__OperatorsLZ#line), [link](G__OperatorsLZ#link), [norm](G__OperatorsLZ#norm), [point](G__OperatorsLZ#point), [polygon](G__OperatorsLZ#polygon), [polyline](G__OperatorsLZ#polyline), [rectangle](G__OperatorsLZ#rectangle), [square](G__OperatorsLZ#square), [triangle](G__OperatorsLZ#triangle), [hemisphere](G__OperatorsAK#hemisphere), [pie3D](G__OperatorsLZ#pie3d), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1677,7 +1677,7 @@ geometry var1 <- pacman(1,0.2); 	// var1 equals a geometry as a circle of radius
 #### Result: 
 Casts the operand into the type pair
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1711,9 +1711,9 @@ bool var8 <- polygon([{10,10},{10,20},{20,20},{20,10}]) partially_overlaps polyg
       
 
 #### See also: 
-[disjoint_from](#disjoint_from), [crosses](#crosses), [overlaps](#overlaps), [intersects](#intersects), [touches](#touches), 
+[disjoint_from](G__OperatorsAK#disjoint_from), [crosses](G__OperatorsAK#crosses), [overlaps](G__OperatorsLZ#overlaps), [intersects](G__OperatorsAK#intersects), [touches](G__OperatorsLZ#touches), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1726,7 +1726,7 @@ bool var8 <- polygon([{10,10},{10,20},{20,20},{20,10}]) partially_overlaps polyg
 #### Result: 
 Casts the operand into the type path
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1748,9 +1748,9 @@ path var1 <- path_between (my_graph, ag1, ag2); 	// var1 equals A path between a
       
 
 #### See also: 
-[towards](#towards), [direction_to](#direction_to), [distance_between](#distance_between), [direction_between](#direction_between), [path_to](#path_to), [distance_to](#distance_to), 
+[towards](G__OperatorsLZ#towards), [direction_to](G__OperatorsAK#direction_to), [distance_between](G__OperatorsAK#distance_between), [direction_between](G__OperatorsAK#direction_between), [path_to](G__OperatorsLZ#path_to), [distance_to](G__OperatorsAK#distance_to), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1771,9 +1771,9 @@ path var0 <- ag1 path_to ag2; 	// var0 equals the path between ag1 and ag2 consi
       
 
 #### See also: 
-[towards](#towards), [direction_to](#direction_to), [distance_between](#distance_between), [direction_between](#direction_between), [path_between](#path_between), [distance_to](#distance_to), 
+[towards](G__OperatorsLZ#towards), [direction_to](G__OperatorsAK#direction_to), [distance_between](G__OperatorsAK#distance_between), [direction_between](G__OperatorsAK#direction_between), [path_between](G__OperatorsLZ#path_between), [distance_to](G__OperatorsAK#distance_to), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1792,7 +1792,7 @@ list<path> var0 <- paths_between(my_graph, ag1:: ag2, 2); 	// var0 equals the 2 
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1811,7 +1811,7 @@ percent_absolute_deviation([200,300,150,150,200],[250,250,100,200,200])
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1824,7 +1824,7 @@ percent_absolute_deviation([200,300,150,150,200],[250,250,100,200,200])
 #### Result: 
 Constructs a file of type pgm. Allowed extensions are limited to pgm
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1848,9 +1848,9 @@ geometry var0 <- polyplan([{0,0}, {0,10}, {10,10}, {10,0}],10); 	// var0 equals 
       
 
 #### See also: 
-[around](#around), [circle](#circle), [cone](#cone), [link](#link), [norm](#norm), [point](#point), [polygone](#polygone), [rectangle](#rectangle), [square](#square), [triangle](#triangle), 
+[around](G__OperatorsAK#around), [circle](G__OperatorsAK#circle), [cone](G__OperatorsAK#cone), [link](G__OperatorsLZ#link), [norm](G__OperatorsLZ#norm), [point](G__OperatorsLZ#point), [polygone](G__OperatorsLZ#polygone), [rectangle](G__OperatorsLZ#rectangle), [square](G__OperatorsLZ#square), [triangle](G__OperatorsLZ#triangle), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1873,7 +1873,7 @@ geometry var0 <- polyplan([{0,0}, {0,10}, {10,10}, {10,0}],10); 	// var0 equals 
 #### Result: 
 internal use only. Use the standard construction {x,y} instead.internal use only. Use the standard construction {x,y} instead.internal use only. Use the standard construction {x,y} instead.internal use only. Use the standard construction {x,y} instead.
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1893,9 +1893,9 @@ list<point> var0 <- 3 points_at(20.0); 	// var0 equals returns [pt1, pt2, pt3] w
       
 
 #### See also: 
-[any_location_in](#any_location_in), [any_point_in](#any_point_in), [closest_points_with](#closest_points_with), [farthest_point_to](#farthest_point_to), 
+[any_location_in](G__OperatorsAK#any_location_in), [any_point_in](G__OperatorsAK#any_point_in), [closest_points_with](G__OperatorsAK#closest_points_with), [farthest_point_to](G__OperatorsAK#farthest_point_to), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1915,9 +1915,9 @@ list var0 <-  square(5) points_on(2); 	// var0 equals a list of points belonging
       
 
 #### See also: 
-[closest_points_with](#closest_points_with), [farthest_point_to](#farthest_point_to), [points_at](#points_at), 
+[closest_points_with](G__OperatorsAK#closest_points_with), [farthest_point_to](G__OperatorsAK#farthest_point_to), [points_at](G__OperatorsLZ#points_at), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1940,9 +1940,9 @@ int var0 <- poisson(3.5); 	// var0 equals a random positive integer
       
 
 #### See also: 
-[binomial](#binomial), [gauss](#gauss), 
+[binomial](G__OperatorsAK#binomial), [gauss](G__OperatorsAK#gauss), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1967,9 +1967,9 @@ geometry var0 <- polygon([{0,0}, {0,10}, {10,10}, {10,0}]); 	// var0 equals a po
       
 
 #### See also: 
-[around](#around), [circle](#circle), [cone](#cone), [line](#line), [link](#link), [norm](#norm), [point](#point), [polyline](#polyline), [rectangle](#rectangle), [square](#square), [triangle](#triangle), 
+[around](G__OperatorsAK#around), [circle](G__OperatorsAK#circle), [cone](G__OperatorsAK#cone), [line](G__OperatorsLZ#line), [link](G__OperatorsLZ#link), [norm](G__OperatorsLZ#norm), [point](G__OperatorsLZ#point), [polyline](G__OperatorsLZ#polyline), [rectangle](G__OperatorsLZ#rectangle), [square](G__OperatorsLZ#square), [triangle](G__OperatorsLZ#triangle), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -1994,25 +1994,25 @@ geometry var0 <- polyhedron([{0,0}, {0,10}, {10,10}, {10,0}],10); 	// var0 equal
       
 
 #### See also: 
-[around](#around), [circle](#circle), [cone](#cone), [line](#line), [link](#link), [norm](#norm), [point](#point), [polyline](#polyline), [rectangle](#rectangle), [square](#square), [triangle](#triangle), 
+[around](G__OperatorsAK#around), [circle](G__OperatorsAK#circle), [cone](G__OperatorsAK#cone), [line](G__OperatorsLZ#line), [link](G__OperatorsLZ#link), [norm](G__OperatorsLZ#norm), [point](G__OperatorsLZ#point), [polyline](G__OperatorsLZ#polyline), [rectangle](G__OperatorsLZ#rectangle), [square](G__OperatorsLZ#square), [triangle](G__OperatorsLZ#triangle), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
 
 ### `polyline`
-Same signification as [line](#line)
+Same signification as [line](G__OperatorsLZ#line)
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
 
 ### `polyplan`
-Same signification as [plan](#plan)
+Same signification as [plan](G__OperatorsLZ#plan)
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2033,9 +2033,9 @@ list var2 <- graphEpidemio predecessors_of node({34,56}); 	// var2 equals [{12;4
       
 
 #### See also: 
-[neighbours_of](#neighbours_of), [successors_of](#successors_of), 
+[neighbours_of](G__OperatorsLZ#neighbours_of), [successors_of](G__OperatorsLZ#successors_of), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2048,7 +2048,7 @@ list var2 <- graphEpidemio predecessors_of node({34,56}); 	// var2 equals [{12;4
 #### Result: 
 Casts the operand into the type predicate
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2067,15 +2067,15 @@ predict(my_regression, [1,2,3]
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
 
 ### `product`
-Same signification as [mul](#mul)
+Same signification as [mul](G__OperatorsLZ#mul)
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2098,9 +2098,9 @@ int var0 <- promethee_DM([[1.0, 7.0],[4.0,2.0],[3.0, 3.0]], [["name"::"utility",
       
 
 #### See also: 
-[weighted_means_DM](#weighted_means_dm), [electre_DM](#electre_dm), [evidence_theory_DM](#evidence_theory_dm), 
+[weighted_means_DM](G__OperatorsLZ#weighted_means_dm), [electre_DM](G__OperatorsAK#electre_dm), [evidence_theory_DM](G__OperatorsAK#evidence_theory_dm), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2113,7 +2113,7 @@ int var0 <- promethee_DM([[1.0, 7.0],[4.0,2.0],[3.0, 3.0]], [["name"::"utility",
 #### Result: 
 Constructs a file of type property. Allowed extensions are limited to properties
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2139,17 +2139,17 @@ geometry var0 <- pyramid(5); 	// var0 equals a geometry as a square with side_si
       
 
 #### See also: 
-[around](#around), [circle](#circle), [cone](#cone), [line](#line), [link](#link), [norm](#norm), [point](#point), [polygon](#polygon), [polyline](#polyline), [rectangle](#rectangle), [square](#square), 
+[around](G__OperatorsAK#around), [circle](G__OperatorsAK#circle), [cone](G__OperatorsAK#cone), [line](G__OperatorsLZ#line), [link](G__OperatorsLZ#link), [norm](G__OperatorsLZ#norm), [point](G__OperatorsLZ#point), [polygon](G__OperatorsLZ#polygon), [polyline](G__OperatorsLZ#polyline), [rectangle](G__OperatorsLZ#rectangle), [square](G__OperatorsLZ#square), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
 
 ### `R_correlation`
-Same signification as [corR](#corr)
+Same signification as [corR](G__OperatorsAK#corr)
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2162,15 +2162,15 @@ Same signification as [corR](#corr)
 #### Result: 
 Constructs a file of type R. Allowed extensions are limited to r
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
 
 ### `R_mean`
-Same signification as [meanR](#meanr)
+Same signification as [meanR](G__OperatorsLZ#meanr)
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2191,7 +2191,7 @@ unknown second_variable <- read (2); 	// second_variable equals reads the second
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2220,17 +2220,17 @@ geometry var1 <- rectangle({10, 5}); 	// var1 equals a geometry as a rectangle w
       
 
 #### See also: 
-[around](#around), [circle](#circle), [cone](#cone), [line](#line), [link](#link), [norm](#norm), [point](#point), [polygon](#polygon), [polyline](#polyline), [square](#square), [triangle](#triangle), 
+[around](G__OperatorsAK#around), [circle](G__OperatorsAK#circle), [cone](G__OperatorsAK#cone), [line](G__OperatorsLZ#line), [link](G__OperatorsLZ#link), [norm](G__OperatorsLZ#norm), [point](G__OperatorsLZ#point), [polygon](G__OperatorsLZ#polygon), [polyline](G__OperatorsLZ#polyline), [square](G__OperatorsLZ#square), [triangle](G__OperatorsLZ#triangle), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
 
 ### `reduced_by`
-Same signification as [-](#-)
+Same signification as [-](G__OperatorsAK#-)
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2243,7 +2243,7 @@ Same signification as [-](#-)
 #### Result: 
 Casts the operand into the type regression
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2275,7 +2275,7 @@ list var0 <- remove_duplicates([3,2,5,1,2,3,5,5,5]); 	// var0 equals [3,2,5,1]
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2297,7 +2297,7 @@ graph var0 <- node(0) remove_node_from graphEpidemio; 	// var0 equals the graph 
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2316,7 +2316,7 @@ string var0 <- replace('to be or not to be,that is the question','to', 'do'); 	/
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2370,7 +2370,7 @@ container var3 <- reverse(matrix([["c11","c12","c13"],["c21","c22","c23"]])); 	/
 
 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2393,9 +2393,9 @@ graph var1 <- graphEpidemio rewire_n 10; 	// var1 equals the graph with 3 egdes 
       
 
 #### See also: 
-[rewire_p](#rewire_p), 
+[rewire_p](G__OperatorsLZ#rewire_p), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2433,9 +2433,9 @@ rgb var5 <- rgb (255,0,0,125); 	// var5 equals a light red color
       
 
 #### See also: 
-[hsb](#hsb), 
+[hsb](G__OperatorsAK#hsb), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2461,9 +2461,9 @@ geometry var0 <- cube(10); 	// var0 equals a geometry as a square of side size 1
       
 
 #### See also: 
-[around](#around), [circle](#circle), [cone](#cone), [line](#line), [link](#link), [norm](#norm), [point](#point), [polygon](#polygon), [polyline](#polyline), [rectangle](#rectangle), [triangle](#triangle), 
+[around](G__OperatorsAK#around), [circle](G__OperatorsAK#circle), [cone](G__OperatorsAK#cone), [line](G__OperatorsLZ#line), [link](G__OperatorsLZ#link), [norm](G__OperatorsLZ#norm), [point](G__OperatorsLZ#point), [polygon](G__OperatorsLZ#polygon), [polyline](G__OperatorsLZ#polyline), [rectangle](G__OperatorsLZ#rectangle), [triangle](G__OperatorsLZ#triangle), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2482,7 +2482,7 @@ list<point> var0 <- rgb_to_xyz(texture); 	// var0 equals a list of points
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2508,9 +2508,9 @@ geometry var0 <- triangle(5); 	// var0 equals a geometry as a triangle with side
       
 
 #### See also: 
-[around](#around), [circle](#circle), [cone](#cone), [line](#line), [link](#link), [norm](#norm), [point](#point), [polygon](#polygon), [polyline](#polyline), [rectangle](#rectangle), [square](#square), 
+[around](G__OperatorsAK#around), [circle](G__OperatorsAK#circle), [cone](G__OperatorsAK#cone), [line](G__OperatorsLZ#line), [link](G__OperatorsLZ#link), [norm](G__OperatorsLZ#norm), [point](G__OperatorsLZ#point), [polygon](G__OperatorsLZ#polygon), [polyline](G__OperatorsLZ#polyline), [rectangle](G__OperatorsLZ#rectangle), [square](G__OperatorsLZ#square), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2554,9 +2554,9 @@ float var9 <- rnd (2.0, 4.0); 	// var9 equals a float number between 2.0 and 4.0
       
 
 #### See also: 
-[flip](#flip), 
+[flip](G__OperatorsAK#flip), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2576,9 +2576,9 @@ int var0 <- rnd_choice([0.2,0.5,0.3]); 	// var0 equals 2/10 chances to return 0,
       
 
 #### See also: 
-[rnd](#rnd), 
+[rnd](G__OperatorsLZ#rnd), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2601,9 +2601,9 @@ rgb var0 <- rnd_color(255); 	// var0 equals a random color, equivalent to rgb(rn
       
 
 #### See also: 
-[rgb](#rgb), [hsb](#hsb), 
+[rgb](G__OperatorsLZ#rgb), [hsb](G__OperatorsAK#hsb), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2629,9 +2629,9 @@ geometry var1 <- rotated_by(45, {1,0,0}); 	// var1 equals the geometry resulting
       
 
 #### See also: 
-[transformed_by](#transformed_by), [translated_by](#translated_by), 
+[transformed_by](G__OperatorsLZ#transformed_by), [translated_by](G__OperatorsLZ#translated_by), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2659,9 +2659,9 @@ int var3 <- round(-0.51); 	// var3 equals -1
       
 
 #### See also: 
-[round](#round), [int](#int), [with_precision](#with_precision), 
+[round](G__OperatorsLZ#round), [int](G__OperatorsAK#int), [with_precision](G__OperatorsLZ#with_precision), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2681,9 +2681,9 @@ list var0 <- matrix([["el11","el12","el13"],["el21","el22","el23"],["el31","el32
       
 
 #### See also: 
-[column_at](#column_at), [columns_list](#columns_list), 
+[column_at](G__OperatorsAK#column_at), [columns_list](G__OperatorsAK#columns_list), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2703,9 +2703,9 @@ list<list> var0 <- rows_list(matrix([["el11","el12","el13"],["el21","el22","el23
       
 
 #### See also: 
-[columns_list](#columns_list), 
+[columns_list](G__OperatorsAK#columns_list), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2728,15 +2728,15 @@ list var1 <- sample([2,10,1],2,false); 	// var1 equals [1,2]
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
 
 ### `scaled_by`
-Same signification as [*](#*)
+Same signification as [*](G__OperatorsAK#*)
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2755,15 +2755,15 @@ geometry var0 <- shape scaled_to {10,10}; 	// var0 equals a geometry correspondi
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
 
 ### `select`
-Same signification as [where](#where)
+Same signification as [where](G__OperatorsLZ#where)
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2782,7 +2782,7 @@ predicate set_truth false
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2804,9 +2804,9 @@ shape <- triangle(3) set_z [5,10,14];
       
 
 #### See also: 
-[add_z](#add_z), 
+[add_z](G__OperatorsAK#add_z), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2819,7 +2819,7 @@ shape <- triangle(3) set_z [5,10,14];
 #### Result: 
 Constructs a file of type shape. Allowed extensions are limited to shp
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2846,9 +2846,9 @@ string var2 <- shuffle ('abc'); 	// var2 equals 'bac' (for example)
       
 
 #### See also: 
-[reverse](#reverse), 
+[reverse](G__OperatorsLZ#reverse), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2869,7 +2869,7 @@ int var2 <- signum(0); 	// var2 equals 0
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2889,17 +2889,17 @@ list<list<agent>> var0 <- [ag1, ag2, ag3, ag4, ag5] simpleClusteringByDistance 2
       
 
 #### See also: 
-[hierarchical_clustering](#hierarchical_clustering), 
+[hierarchical_clustering](G__OperatorsAK#hierarchical_clustering), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
 
 ### `simple_clustering_by_envelope_distance`
-Same signification as [simple_clustering_by_distance](#simple_clustering_by_distance)
+Same signification as [simple_clustering_by_distance](G__OperatorsLZ#simple_clustering_by_distance)
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2921,7 +2921,7 @@ geometry var0 <- self simplification 0.1; 	// var0 equals the geometry resulting
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2946,9 +2946,9 @@ float var1 <- sin (0); 	// var1 equals 0.0
       
 
 #### See also: 
-[cos](#cos), [tan](#tan), 
+[cos](G__OperatorsAK#cos), [tan](G__OperatorsLZ#tan), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2971,9 +2971,9 @@ float var0 <- sin(360); 	// var0 equals 0.0
       
 
 #### See also: 
-[cos](#cos), [tan](#tan), 
+[cos](G__OperatorsAK#cos), [tan](G__OperatorsLZ#tan), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -2992,7 +2992,7 @@ list<geometry> var0 <- skeletonize(self); 	// var0 equals the list of geometries
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3018,9 +3018,9 @@ geometry var0 <- slice(10,0.3); 	// var0 equals a circle geometry of radius 10, 
       
 
 #### See also: 
-[around](#around), [cone](#cone), [line](#line), [link](#link), [norm](#norm), [point](#point), [polygon](#polygon), [polyline](#polyline), [rectangle](#rectangle), [square](#square), [triangle](#triangle), [hemisphere](#hemisphere), [pie3D](#pie3d), 
+[around](G__OperatorsAK#around), [cone](G__OperatorsAK#cone), [line](G__OperatorsLZ#line), [link](G__OperatorsLZ#link), [norm](G__OperatorsLZ#norm), [point](G__OperatorsLZ#point), [polygon](G__OperatorsLZ#polygon), [polyline](G__OperatorsLZ#polyline), [rectangle](G__OperatorsLZ#rectangle), [square](G__OperatorsLZ#square), [triangle](G__OperatorsLZ#triangle), [hemisphere](G__OperatorsAK#hemisphere), [pie3D](G__OperatorsLZ#pie3d), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3039,23 +3039,23 @@ geometry var0 <- smooth(square(10), 0.0); 	// var0 equals a 'rounded' square
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
 
 ### `solid`
-Same signification as [without_holes](#without_holes)
+Same signification as [without_holes](G__OperatorsLZ#without_holes)
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
 
 ### `sort`
-Same signification as [sort_by](#sort_by)
+Same signification as [sort_by](G__OperatorsLZ#sort_by)
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3084,9 +3084,9 @@ list var4 <- [1::2, 5::6, 3::4] sort_by (each); 	// var4 equals [2, 4, 6]
       
 
 #### See also: 
-[group_by](#group_by), 
+[group_by](G__OperatorsAK#group_by), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3112,9 +3112,9 @@ point var3 <- graphFromMap source_of(link({1,5}::{12,45})); 	// var3 equals {1,5
       
 
 #### See also: 
-[target_of](#target_of), 
+[target_of](G__OperatorsLZ#target_of), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3128,9 +3128,9 @@ point var3 <- graphFromMap source_of(link({1,5}::{12,45})); 	// var3 equals {1,5
 allows to create a spatial graph from a container of vertices, without trying to wire them. The container can be empty. Emits an error if the contents of the container are not geometries, points or agents    
 
 #### See also: 
-[graph](#graph), 
+[graph](G__OperatorsAK#graph), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3158,15 +3158,15 @@ species var3 <- species(node1); 	// var3 equals node
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
 
 ### `species_of`
-Same signification as [species](#species)
+Same signification as [species](G__OperatorsLZ#species)
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3192,9 +3192,9 @@ geometry var0 <- sphere(10); 	// var0 equals a geometry as a circle of radius 10
       
 
 #### See also: 
-[around](#around), [cone](#cone), [line](#line), [link](#link), [norm](#norm), [point](#point), [polygon](#polygon), [polyline](#polyline), [rectangle](#rectangle), [square](#square), [triangle](#triangle), 
+[around](G__OperatorsAK#around), [cone](G__OperatorsAK#cone), [line](G__OperatorsLZ#line), [link](G__OperatorsLZ#link), [norm](G__OperatorsLZ#norm), [point](G__OperatorsLZ#point), [polygon](G__OperatorsLZ#polygon), [polyline](G__OperatorsLZ#polyline), [rectangle](G__OperatorsLZ#rectangle), [square](G__OperatorsLZ#square), [triangle](G__OperatorsLZ#triangle), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3223,9 +3223,9 @@ geometry var1 <- spherical_pie(10,[1.0,1.0,1.0]); 	// var1 equals a circle geome
       
 
 #### See also: 
-[around](#around), [cone](#cone), [line](#line), [link](#link), [norm](#norm), [point](#point), [polygon](#polygon), [polyline](#polyline), [rectangle](#rectangle), [square](#square), [triangle](#triangle), [hemisphere](#hemisphere), [pie3D](#pie3d), 
+[around](G__OperatorsAK#around), [cone](G__OperatorsAK#cone), [line](G__OperatorsLZ#line), [link](G__OperatorsLZ#link), [norm](G__OperatorsLZ#norm), [point](G__OperatorsLZ#point), [polygon](G__OperatorsLZ#polygon), [polyline](G__OperatorsLZ#polyline), [rectangle](G__OperatorsLZ#rectangle), [square](G__OperatorsLZ#square), [triangle](G__OperatorsLZ#triangle), [hemisphere](G__OperatorsAK#hemisphere), [pie3D](G__OperatorsLZ#pie3d), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3247,7 +3247,7 @@ list<geometry> var0 <- polyline([{1,2},{4,6}]) split_at {7,6}; 	// var0 equals [
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3270,7 +3270,7 @@ list<geometry> var2 <- to_rectangles(self, 10,20); 	// var2 equals the list of t
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3289,7 +3289,7 @@ list<geometry> var0 <- split_lines([line([{0,10}, {20,10}]), line([{0,10}, {20,1
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3311,7 +3311,7 @@ list var0 <- 'to be or not to be,that is the question' split_with ' ,'; 	// var0
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3335,7 +3335,7 @@ float var1 <- sqrt(4); 	// var1 equals 2.0
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3361,9 +3361,9 @@ geometry var0 <- square(10); 	// var0 equals a geometry as a square of side size
       
 
 #### See also: 
-[around](#around), [circle](#circle), [cone](#cone), [line](#line), [link](#link), [norm](#norm), [point](#point), [polygon](#polygon), [polyline](#polyline), [rectangle](#rectangle), [triangle](#triangle), 
+[around](G__OperatorsAK#around), [circle](G__OperatorsAK#circle), [cone](G__OperatorsAK#cone), [line](G__OperatorsLZ#line), [link](G__OperatorsLZ#link), [norm](G__OperatorsLZ#norm), [point](G__OperatorsLZ#point), [polygon](G__OperatorsLZ#polygon), [polyline](G__OperatorsLZ#polyline), [rectangle](G__OperatorsLZ#rectangle), [triangle](G__OperatorsLZ#triangle), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3389,9 +3389,9 @@ geometry var0 <- squircle(4,4); 	// var0 equals a geometry as a squircle of side
       
 
 #### See also: 
-[around](#around), [cone](#cone), [line](#line), [link](#link), [norm](#norm), [point](#point), [polygon](#polygon), [polyline](#polyline), [super_ellipse](#super_ellipse), [rectangle](#rectangle), [square](#square), [circle](#circle), [ellipse](#ellipse), [triangle](#triangle), 
+[around](G__OperatorsAK#around), [cone](G__OperatorsAK#cone), [line](G__OperatorsLZ#line), [link](G__OperatorsLZ#link), [norm](G__OperatorsLZ#norm), [point](G__OperatorsLZ#point), [polygon](G__OperatorsLZ#polygon), [polyline](G__OperatorsLZ#polyline), [super_ellipse](G__OperatorsLZ#super_ellipse), [rectangle](G__OperatorsLZ#rectangle), [square](G__OperatorsLZ#square), [circle](G__OperatorsAK#circle), [ellipse](G__OperatorsAK#ellipse), [triangle](G__OperatorsLZ#triangle), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3414,9 +3414,9 @@ float var0 <- standard_deviation ([4.5, 3.5, 5.5, 7.0]); 	// var0 equals 1.29301
       
 
 #### See also: 
-[mean](#mean), [mean_deviation](#mean_deviation), 
+[mean](G__OperatorsLZ#mean), [mean_deviation](G__OperatorsLZ#mean_deviation), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3429,7 +3429,7 @@ float var0 <- standard_deviation ([4.5, 3.5, 5.5, 7.0]); 	// var0 equals 1.29301
 #### Result: 
 Casts the operand into the type string
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3450,9 +3450,9 @@ list var2 <- graphEpidemio successors_of node({34,56}); 	// var2 equals []
       
 
 #### See also: 
-[predecessors_of](#predecessors_of), [neighbours_of](#neighbours_of), 
+[predecessors_of](G__OperatorsLZ#predecessors_of), [neighbours_of](G__OperatorsLZ#neighbours_of), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3496,9 +3496,9 @@ unknown var1 <- sum([{1.0,3.0},{3.0,5.0},{9.0,1.0},{7.0,8.0}]); 	// var1 equals 
     
 
 #### See also: 
-[mul](#mul), 
+[mul](G__OperatorsLZ#mul), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3511,7 +3511,7 @@ unknown var1 <- sum([{1.0,3.0},{3.0,5.0},{9.0,1.0},{7.0,8.0}]); 	// var1 equals 
 #### Result: 
 Constructs a file of type svg. Allowed extensions are limited to svg
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3537,9 +3537,9 @@ float var1 <- tan(90); 	// var1 equals 1.633123935319537E16
       
 
 #### See also: 
-[cos](#cos), [sin](#sin), 
+[cos](G__OperatorsAK#cos), [sin](G__OperatorsLZ#sin), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3557,9 +3557,9 @@ Returns the value (in [-1,1]) of the trigonometric tangent of the operand (in de
   * The tangent is only defined for any real number except 90 + k `*` 180 (k an positive or negative integer). Nevertheless notice that tan(90) returns 1.633123935319537E16 (whereas we could except infinity).    
 
 #### See also: 
-[cos](#cos), [sin](#sin), 
+[cos](G__OperatorsAK#cos), [sin](G__OperatorsLZ#sin), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3580,7 +3580,7 @@ float var1 <- tanh(100); 	// var1 equals 1.0
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3606,9 +3606,9 @@ unknown var3 <- graphFromMap target_of(link({1,5}::{12,45})); 	// var3 equals {1
       
 
 #### See also: 
-[source_of](#source_of), 
+[source_of](G__OperatorsLZ#source_of), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3634,9 +3634,9 @@ geometry var0 <- teapot(10); 	// var0 equals a geometry as a circle of radius 10
       
 
 #### See also: 
-[around](#around), [cone](#cone), [line](#line), [link](#link), [norm](#norm), [point](#point), [polygon](#polygon), [polyline](#polyline), [rectangle](#rectangle), [square](#square), [triangle](#triangle), 
+[around](G__OperatorsAK#around), [cone](G__OperatorsAK#cone), [line](G__OperatorsLZ#line), [link](G__OperatorsLZ#link), [norm](G__OperatorsLZ#norm), [point](G__OperatorsLZ#point), [polygon](G__OperatorsLZ#polygon), [polyline](G__OperatorsLZ#polyline), [rectangle](G__OperatorsLZ#rectangle), [square](G__OperatorsLZ#square), [triangle](G__OperatorsLZ#triangle), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3649,15 +3649,15 @@ geometry var0 <- teapot(10); 	// var0 equals a geometry as a circle of radius 10
 #### Result: 
 Constructs a file of type text. Allowed extensions are limited to txt, data, csv, text, tsv, xml
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
 
 ### `TGauss`
-Same signification as [truncated_gauss](#truncated_gauss)
+Same signification as [truncated_gauss](G__OperatorsLZ#truncated_gauss)
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3670,7 +3670,7 @@ Same signification as [truncated_gauss](#truncated_gauss)
 #### Result: 
 Constructs a file of type threeds. Allowed extensions are limited to 3ds, max
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3699,7 +3699,7 @@ geometry var1 <- to_GAMA_CRS({121,14}); 	// var1 equals a geometry corresponding
 
 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3730,9 +3730,9 @@ string var11 <- to_gaml(node1); 	// var11 equals  1 as node
       
 
 #### See also: 
-[to_java](#to_java), 
+[to_java](G__OperatorsLZ#to_java), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3753,7 +3753,7 @@ list<geometry> var1 <- to_rectangles(self, {10.0, 15.0}, true); 	// var1 equals 
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3776,23 +3776,23 @@ list<geometry> var2 <- to_squares(self, 10.0, true); 	// var2 equals the list of
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
 
 ### `to_triangles`
-Same signification as [triangulate](#triangulate)
+Same signification as [triangulate](G__OperatorsLZ#triangulate)
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
 
 ### `tokenize`
-Same signification as [split_with](#split_with)
+Same signification as [split_with](G__OperatorsLZ#split_with)
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3822,9 +3822,9 @@ topology(a_graph)	--: Multiple topology in POLYGON ((24.712119771887785 7.867357
       
 
 #### See also: 
-[geometry](#geometry), 
+[geometry](G__OperatorsAK#geometry), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3860,9 +3860,9 @@ bool var10 <- polygon([{10,10},{10,20},{20,20},{20,10}]) touches {10,15}; 	// va
       
 
 #### See also: 
-[disjoint_from](#disjoint_from), [crosses](#crosses), [overlaps](#overlaps), [partially_overlaps](#partially_overlaps), [intersects](#intersects), 
+[disjoint_from](G__OperatorsAK#disjoint_from), [crosses](G__OperatorsAK#crosses), [overlaps](G__OperatorsLZ#overlaps), [partially_overlaps](G__OperatorsLZ#partially_overlaps), [intersects](G__OperatorsAK#intersects), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3882,9 +3882,9 @@ int var0 <- ag1 towards ag2; 	// var0 equals the direction between ag1 and ag2 a
       
 
 #### See also: 
-[distance_between](#distance_between), [distance_to](#distance_to), [direction_between](#direction_between), [path_between](#path_between), [path_to](#path_to), 
+[distance_between](G__OperatorsAK#distance_between), [distance_to](G__OperatorsAK#distance_to), [direction_between](G__OperatorsAK#direction_between), [path_between](G__OperatorsLZ#path_between), [path_to](G__OperatorsLZ#path_to), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3903,7 +3903,7 @@ float var0 <- trace(matrix([[1,2],[3,4]])); 	// var0 equals 5
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3923,9 +3923,9 @@ geometry var0 <- self transformed_by {45, 0.5}; 	// var0 equals the geometry res
       
 
 #### See also: 
-[rotated_by](#rotated_by), [translated_by](#translated_by), 
+[rotated_by](G__OperatorsLZ#rotated_by), [translated_by](G__OperatorsLZ#translated_by), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3945,17 +3945,17 @@ geometry var0 <- self translated_by {10,10,10}; 	// var0 equals the geometry res
       
 
 #### See also: 
-[rotated_by](#rotated_by), [transformed_by](#transformed_by), 
+[rotated_by](G__OperatorsLZ#rotated_by), [transformed_by](G__OperatorsLZ#transformed_by), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
 
 ### `translated_to`
-Same signification as [at_location](#at_location)
+Same signification as [at_location](G__OperatorsAK#at_location)
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -3974,7 +3974,7 @@ matrix var0 <- transpose(matrix([[5,-3],[6,-4]])); 	// var0 equals [[5,6],[-3,-4
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4000,9 +4000,9 @@ geometry var0 <- triangle(5); 	// var0 equals a geometry as a triangle with side
       
 
 #### See also: 
-[around](#around), [circle](#circle), [cone](#cone), [line](#line), [link](#link), [norm](#norm), [point](#point), [polygon](#polygon), [polyline](#polyline), [rectangle](#rectangle), [square](#square), 
+[around](G__OperatorsAK#around), [circle](G__OperatorsAK#circle), [cone](G__OperatorsAK#cone), [line](G__OperatorsLZ#line), [link](G__OperatorsLZ#link), [norm](G__OperatorsLZ#norm), [point](G__OperatorsLZ#point), [polygon](G__OperatorsLZ#polygon), [polyline](G__OperatorsLZ#polyline), [rectangle](G__OperatorsLZ#rectangle), [square](G__OperatorsLZ#square), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4023,7 +4023,7 @@ list<geometry> var1 <- triangulate(self); 	// var1 equals the list of geometries
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4050,9 +4050,9 @@ float var1 <- truncated_gauss ([0.5, 0.0]); 	// var1 equals 0.5
       
 
 #### See also: 
-[gauss](#gauss), 
+[gauss](G__OperatorsAK#gauss), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4069,15 +4069,15 @@ the operand graph becomes an undirected graph.
 the operator alters the operand graph, it does not create a new one.    
 
 #### See also: 
-[directed](#directed), 
+[directed](G__OperatorsAK#directed), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
 
 ### `union`
-Same signification as [+](#+)
+Same signification as [+](G__OperatorsAK#+)
 
 #### Possible use: 
   * OP(`container<geometry>`) --->  `geometry`
@@ -4100,9 +4100,9 @@ geometry var3 <- union([geom1, geom2, geom3]); 	// var3 equals a geometry corres
       
 
 #### See also: 
-[inter](#inter), [+](#+), 
+[inter](G__OperatorsAK#inter), [+](G__OperatorsAK#+), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4115,7 +4115,7 @@ geometry var3 <- union([geom1, geom2, geom3]); 	// var3 equals a geometry corres
 #### Result: 
 Casts the operand into the type unknown
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4128,7 +4128,7 @@ Casts the operand into the type unknown
 #### Result: 
 Constructs a file of type URL. Allowed extensions are limited to txt
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4145,9 +4145,9 @@ if the second operand is true, the operand graph will store in a cache all the p
 the operator alters the operand graph, it does not create a new one.    
 
 #### See also: 
-[path_between](#path_between), 
+[path_between](G__OperatorsLZ#path_between), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4173,7 +4173,7 @@ create bug number: int(values at "Number") with: [location:: (point(values at "L
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4196,9 +4196,9 @@ float var0 <- variance ([4.5, 3.5, 5.5, 7.0]); 	// var0 equals 1.671875
       
 
 #### See also: 
-[mean](#mean), [median](#median), 
+[mean](G__OperatorsLZ#mean), [median](G__OperatorsLZ#median), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4219,7 +4219,7 @@ list<geometry> var1 <- voronoi([{10,10},{50,50},{90,90},{10,90},{90,10}]); 	// v
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4247,7 +4247,7 @@ float var1 <- graphFromMap weight_of(link({1,5}::{12,45})); 	// var1 equals 1.0
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4270,9 +4270,9 @@ int var0 <- weighted_means_DM([[1.0, 7.0],[4.0,2.0],[3.0, 3.0]], [["name"::"util
       
 
 #### See also: 
-[promethee_DM](#promethee_dm), [electre_DM](#electre_dm), [evidence_theory_DM](#evidence_theory_dm), 
+[promethee_DM](G__OperatorsLZ#promethee_dm), [electre_DM](G__OperatorsAK#electre_dm), [evidence_theory_DM](G__OperatorsAK#evidence_theory_dm), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4308,9 +4308,9 @@ list var3 <- (list(node) where (round(node(each).location.x) > 32); 	// var3 equ
       
 
 #### See also: 
-[first_with](#first_with), [last_with](#last_with), [where](#where), 
+[first_with](G__OperatorsAK#first_with), [last_with](G__OperatorsLZ#last_with), [where](G__OperatorsLZ#where), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4339,9 +4339,9 @@ unknown var4 <- [1::2, 3::4, 5::6] with_max_of (each); 	// var4 equals 6
       
 
 #### See also: 
-[where](#where), [with_min_of](#with_min_of), 
+[where](G__OperatorsLZ#where), [with_min_of](G__OperatorsLZ#with_min_of), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4370,9 +4370,9 @@ unknown var4 <- [1::2, 3::4, 5::6] with_min_of (each); 	// var4 equals 2
       
 
 #### See also: 
-[where](#where), [with_max_of](#with_max_of), 
+[where](G__OperatorsLZ#where), [with_max_of](G__OperatorsLZ#with_max_of), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4395,9 +4395,9 @@ graphEpidemio <- graphEpidemio with_optimizer_type "static";
       
 
 #### See also: 
-[set_verbose](#set_verbose), 
+[set_verbose](G__OperatorsLZ#set_verbose), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4420,9 +4420,9 @@ point var2 <- {12345.78943, 12345.78943, 12345.78943} with_precision 2 ; 	// var
       
 
 #### See also: 
-[round](#round), 
+[round](G__OperatorsLZ#round), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4441,7 +4441,7 @@ predicate with_priority 2
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4460,7 +4460,7 @@ predicate with_parameter ["time"::10]
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4488,7 +4488,7 @@ graph_from_edges (list(ant) as_map each::one_of (list(ant))) with_weights (list(
 
 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4507,7 +4507,7 @@ geometry var0 <- solid(self); 	// var0 equals the geometry corresponding to the 
 ```
   
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4530,9 +4530,9 @@ file var0 <- shape_file("../images/point_eau.shp") writable false; 	// var0 equa
       
 
 #### See also: 
-[file](#file), 
+[file](G__OperatorsAK#file), 
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	
     	
 ----
@@ -4545,5 +4545,5 @@ file var0 <- shape_file("../images/point_eau.shp") writable false; 	// var0 equa
 #### Result: 
 Constructs a file of type xml. Allowed extensions are limited to xml
 
-[Top of the page](#table-of-contents)
+[Top of the page](G__OperatorsLZ#table-of-contents)
   	

@@ -125,4 +125,3 @@ These "advanced" preferences are accessible by clicking on the "Advanced…" but
 Depending on what is installed, the second view that appears will contain a tree of options on the left and preference pages on the right. **Contrary to the first set of preferences, please note that these preferences will be saved in the current workspace**, which means that changing workspace will revert them to their default values. It is however possible to import them in the new workspace using of the wizards provided in the standard "Import…" command (see [here](G__ImportingModels)).
 
 ![images/preferences/advanced_2.png](images/preferences/advanced_2.png)
-

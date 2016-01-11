@@ -46,4 +46,3 @@ Once an experiment has been launched (unless it is run in [headless](G__Headless
 It is however possible to make experiments run directly once launched, without requiring any intervention from the user.  To install this feature, [open the preferences of GAMA](G__Preferences). On the first tab, simply check "Auto-run experiments when they are launched" (which is unchecked by default) and hit "OK" to dismiss the dialog. Next time you'll launch an experiment, it will run automatically (this option also applies to experiments launched from the command line).
 
 ![images/launch_experiments/prefs_auto_run.png](images/launch_experiments/prefs_auto_run.png)
-

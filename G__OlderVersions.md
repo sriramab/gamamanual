@@ -81,7 +81,7 @@ Version 1.5.1 improved some features of 1.5 :
   * new models (driving\_traffic, Vote, 3D models)
 
 Documentation:
-  * [Documentation in PDF](http://code.google.com/p/gama-platform/downloads/detail?name=GAMAv151%20-%20doc.pdf)
+  * [Documentation in PDF](http://code.google.com/p/gama-platform/downloads/detail?name=GAMAv151 - doc.pdf)
 
 
 ![http://gama-platform.googlecode.com/files/splash1.5.png](http://gama-platform.googlecode.com/files/splash1.5.png)

@@ -148,7 +148,7 @@ The documentation is generate from the Java code thanks to the Java additional p
 
 Most of the annotations can contain a [`@doc`](G__DevelopingIndexAnnotations#doc) annotation, that can contain the main part of the documentation.
 
-For example, the `inter` ([inter](G__Operators#inter)) operator is commented using: 
+For example, the `inter` ([inter](G__OperatorsAK#inter)) operator is commented using: 
 ```
 @doc(
   value = "the intersection of the two operands",

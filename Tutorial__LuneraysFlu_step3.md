@@ -89,7 +89,7 @@ global {
 }
 ```
 
-We used here the [one_of](G__Operators#one_of) operator that returns a random element from a list and the [any_location_in](G__Operators#any_location_in) operator that returns a random location inside a geometry.
+We used here the [one_of](G__OperatorsLZ#one_of) operator that returns a random element from a list and the [any_location_in](G__OperatorsAK#any_location_in) operator that returns a random location inside a geometry.
 
 ### experiment
 

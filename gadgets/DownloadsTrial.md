@@ -21,4 +21,3 @@ The documentation of GAMA is not (yet) bundled with the application; however, it
 <wiki:gadget url="gadgets/download_gadget.xml" border=0 width="100%" height="500"/><br>
 </td>
 </tr></table>
-
