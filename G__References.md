@@ -49,6 +49,11 @@ As stated in [the first page](G__Overview), if you need to cite GAMA in a paper,
 
 
 ## Research papers that use GAMA as modeling/simulation support
+**2016**
+  * Bhamidipati, S., van der Lei, T. and Herder, P., 2016. A layered approach to model interconnected infrastructure and its significance for asset management. EJTIR, 16(1), pp.254-272.
+**2015**
+  * Srirama Bhamidipati, Simulation Framework for Asset Management in Climate-change Adaptation of Transportation Infrastructure, Transportation Research Procedia, Volume 8, 2015, Pages 17-28, ISSN 2352-1465, http://dx.doi.org/10.1016/j.trpro.2015.06.038.
+
 **2014**
 
   * E. G. Macatulad , A. C. Blanco (2014) 3DGIS-BASED MULTI-AGENT GEOSIMULATION AND VISUALIZATION OF BUILDING EVACUATION USING GAMA PLATFORM. The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XL-2, 2014. ISPRS Technical Commission II Symposium, 6 – 8 October 2014, Toronto, Canada. Retrieved from http://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XL-2/87/2014/isprsarchives-XL-2-87-2014.pdf
