@@ -1,4 +1,3 @@
-
 # Installing Plugins
 
 Besides the plugins delivered by the developers of the GAMA platform, which can be installed and updated as explained [here](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\InstallationAndLaunching\Updating.md), there are a number of additional plugins that can be installed to add new functionalities to GAMA or enhance the existing ones. GAMA being based on Eclipse, a number of plugins developed for Eclipse are then available (a complete listing of Eclipse plugins can be found in the so-called [Eclipse MarketPlace](http://marketplace.eclipse.org)).
@@ -18,6 +17,7 @@ With these restrictions in mind, it is however possible to install interesting a
 	* [Selected Plugins](#selected-plugins)
 		* [Overview](#overview)
 		* [Git](#git)
+		* [CKEditor] (#ckeditor)
 		* [Startexplorer](#startexplorer)
 		* [Pathtools](#pathtools)
 		* [CSV Edit](#csv-edit)
@@ -73,6 +73,10 @@ In addition to the RSS reader described above, below is a list of plugins that h
   * Select the two following plugins:
     * Eclipse EGit
     * Git Team Provider Core
+    
+### CKEditor
+  * CKEditor is a lightweight and powerful web-based editor, perfect for almost WYSIWYG edition of HTML files. It can be installed, directly in GAMA, in order to edit .html, .htm, .xml, .svg, etc. files directly without leaving the platform. No other dependencies are required. A must ! 
+  * Update site: `http://kosz.bitbucket.org/eclipse-ckeditor/update-site`
 
 ### Startexplorer
   * A nice utility that allows the user to select files, folders or projects in the [Navigator](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\WorkspaceProjectsAndModels\NavigatingWorkspace.md) and open them in the filesystem (either the UI Explorer, Finder, whatever, or in a terminal).

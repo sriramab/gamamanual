@@ -54,7 +54,7 @@ This version introduced many features over 1.5.1 :
   * more user/simulation interaction (event statement)
 
 Documentation:
-  * [Documentation in PDF](http://gama-platform.googlecode.com/files/docGAMAv16.pdf)
+  * [Documentation in PDF](https://github.com/gama-platform/gama/wiki/Content/ressources/pdf/GAMAv16.pdf)
 
 
 ![images/splash_1_6.png](images/splash_1_6.png)
@@ -78,7 +78,7 @@ Version 1.5.1 improved some features of 1.5 :
   * new models (driving\_traffic, Vote, 3D models)
 
 Documentation:
-  * [Documentation in PDF](http://code.google.com/p/gama-platform/downloads/detail?name=GAMAv151%20-%20doc.pdf)
+  * [Documentation in PDF](https://github.com/gama-platform/gama/wiki/Content/ressources/pdf/GAMAv151.pdf)
 
 
 ![images/splash_1_5.png](images/splash_1_5.png)
@@ -101,7 +101,7 @@ Key points :
   * Many more novelties/improvements/enrichments…
 
 Documentation:
-  * <a href='pdf/GAMAv14.pdf'>Documentation of GAMA 1.4 </a>
+  * [Documentation in PDF](https://github.com/gama-platform/gama/wiki/Content/ressources/pdf/GAMAv14.pdf)
 
 
 ![images/splash_1_4.png](images/splash_1_4.png)
@@ -121,7 +121,7 @@ Key points :
   * Integration of decision-making algorithms
 
 Documentation:
-  * <a href='pdf/GAMAv13.pdf'> Documentation of GAMA 1.3 </a>
+  * [Documentation in PDF](https://github.com/gama-platform/gama/wiki/Content/ressources/pdf/GAMAv13.pdf)
 
 
 ![images/splash_1_3.png](images/splash_1_3.png)
@@ -139,7 +139,7 @@ Key points :
   * First release as an open-source project
 
 Documentation:
-  * [Guidebook of GAMA 1.1](http://gama-platform.googlecode.com/files/Gama_guidebook_20_oct_2009.pdf)
+  * [Guidebook of GAMA 1.1](https://github.com/gama-platform/gama/wiki/Content/ressources/pdf/GAMAv11.pdf)
   * [Training session on GAMA 1.1 (Hanoi)](TrainingSessionHanoi2009)
 
 

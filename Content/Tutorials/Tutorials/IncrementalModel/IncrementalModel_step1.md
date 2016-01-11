@@ -29,7 +29,7 @@ A GAMA model is composed of three type of sections:
 More details about the different sections of a GAMA model can be found [here](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\StartWithGAML\OrganizationModel.md).
 
 ### species
-A [species](G__DefiningSpecies) represents a «prototype» of agents: it defines their common properties.
+A [species](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\RegularSpecies.md) represents a «prototype» of agents: it defines their common properties.
 
 A species includes several sub-definitions:
   * the internal state of its agents (attributes)
@@ -60,7 +60,7 @@ species people skills:[moving]{
 }
 ```
 
-Concerning the display of an agent, [aspects](G__DefiningAspects) have to be defined. An aspect represents a possible way to display the agents of a species : aspect aspect\_name {…}
+Concerning the display of an agent, [aspects](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\RegularSpecies.md#the-aspect-statement) have to be defined. An aspect represents a possible way to display the agents of a species : aspect aspect\_name {…}
 In the block of an aspect, it is possible to draw :
   * A geometry :  for instance, the shape of the agent
   * An image : to draw icons

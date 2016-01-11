@@ -62,9 +62,6 @@ Note that GAMA offers numerous operators to manipulate lists and containers:
   * Binary operators :
     * where : returns a sub-list where all the elements verify the condition defined in the right operand.
     * first\_with : returns the first element of the list that verifies the condition defined in the right operand.
-<a href='Hidden comment: 
-@Alexis: I don"t understand why we dont use one_of here (edouard).
-'></a>
     * …
 In the case of binary operators, each element (of the first operand list) can be accessed with the keyword **each**
 

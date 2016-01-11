@@ -79,4 +79,4 @@
 
 ## Other concepts
 
-[scheduling](G__RuntimeConcepts#Scheduling_of_Agents ), [step](G__RuntimeConcepts#Agents_Step), [Key concepts](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\Introduction\KeyConcepts.md), [G__KeyConcepts#Vocabulary_correspondance_with_the_agent-based_paradigm_as_in_Ne correspondance GAMA Netlogo], [operators statements type species](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\Introduction\KeyConcepts.md#Translation_into_a_concrete_syntax)
+[scheduling](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\OptimizingModels\RuntimeConcepts.md#Scheduling_of_Agents ), [step](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\OptimizingModels\RuntimeConcepts.md#Agents_Step), [Key concepts](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\Introduction.md), [operators statements type species](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\Introduction.md#Translation_into_a_concrete_syntax)

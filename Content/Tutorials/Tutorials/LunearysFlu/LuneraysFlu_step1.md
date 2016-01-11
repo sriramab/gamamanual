@@ -21,7 +21,7 @@ This first step illustrates how to create simple agents and make them move in th
 ### Project and model
 The first step of this tutorial consists in launching GAMA and choosing a workspace, then to define a new project or to import the existing one. For people that do not want to re-write all the models but just to follow the model construction, they can just download the model project here and the follow this [procedure](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\WorkspaceProjectsAndModels\ImportingModels.md) to import it into GAMA. For the other, the project and model creation procedures are detailed [here](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\EditingModels\GamlEditorGeneralities.md). 
 
-Note that the concepts of workspace and projects are explained [here](G__Workspace).
+Note that the concepts of workspace and projects are explained [here](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\WorkspaceProjectsAndModels.md).
 
 
 ### model structure
@@ -33,7 +33,7 @@ A GAMA model is composed of three type of sections:
 More details about the different sections of a GAMA model can be found [here](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\StartWithGAML\OrganizationModel.md).
 
 ### species
-A [species](G__DefiningSpecies) represents a «prototype» of agents: it defines their common properties.
+A [species](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\RegularSpecies.md) represents a «prototype» of agents: it defines their common properties.
 
 Three different elements can be defined in a species:
   * the internal state of its agents (attributes)
@@ -47,7 +47,7 @@ species people {
 }
 ```
 
-In addition, we want add a new capability to our agent: the possibility to move randomly. for that, we add a specific skill to our people agents. A [skill](G__Skills) is a built-in module that provide the modeler a self-contain and relevant set of actions and variables. The [moving](__BuiltInSkills#moving) provides the agents with several attributes and actions related to movement. 
+In addition, we want add a new capability to our agent: the possibility to move randomly. for that, we add a specific skill to our people agents. A [skill](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\AttachingSkills.md) is a built-in module that provide the modeler a self-contain and relevant set of actions and variables. The [moving](__BuiltInSkills#moving) provides the agents with several attributes and actions related to movement. 
 
 ```
    species people skills: [moving]{
@@ -114,7 +114,7 @@ species people skills:[moving]{
 The [ask](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Statements.md#ask) allows an agent to ask another agents to do something (i.e. to execute a sequence of statements). The [at_distance](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Expressions\Operators.md#at_distance) operator allows to get the list of agents (here of people agents) that are located at a distance lower or equal to the given distance (here 10m). The [flip](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Expressions\Operators.md#flip) operator allows to test a probability.
 
 #### Display
-An agent [aspects](G__DefiningAspects) have to be defined. An aspect is a way to display the agents of a species : aspect aspect\_name {…}
+An agent [aspects](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\RegularSpecies.md#the-aspect-statement) have to be defined. An aspect is a way to display the agents of a species : aspect aspect\_name {…}
 In the block of an aspect, it is possible to draw :
   * A geometry :  for instance, the shape of the agent (but it may be a different one, for instance a disk instead of a complex polygon)
   * An image : to draw icons
@@ -211,7 +211,7 @@ experiment main_experiment type:gui{
 }
 ```
 #### output
-[Output](G__DefiningOutputs) blocks are defined in an experiment and define how to visualize a simulation (with one or more [display](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningDisplays.md) blocks that define separate windows). Each display can be refreshed independently by defining the facet **refresh\_every:** nb (int) (the display will be refreshed every nb steps of the simulation).
+[Output](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment.md) blocks are defined in an experiment and define how to visualize a simulation (with one or more [display](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningDisplays.md) blocks that define separate windows). Each display can be refreshed independently by defining the facet **refresh\_every:** nb (int) (the display will be refreshed every nb steps of the simulation).
 
 Each display can include different layers (like in a GIS) :
   * Agents lists : **agents** layer\_name value: agents\_list aspect: my\_aspect;

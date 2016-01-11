@@ -3,7 +3,7 @@
 
 
 
-As described in the [presentation of GAML](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\Introduction\KeyConcepts.md), any model in GAMA is a species (introduced by the keyword [`global`](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\GlobalSpecies.md)) which directly inherits from an abstract species called `model`. This abstract species (sub-species of [`agent`](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInSpecies\AgentBuiltInSpecies.md)) defines several attributes and actions that can then be used in any global section of any model.
+As described in the [presentation of GAML](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\Introduction.md), any model in GAMA is a species (introduced by the keyword [`global`](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\GlobalSpecies.md)) which directly inherits from an abstract species called `model`. This abstract species (sub-species of [`agent`](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInSpecies\AgentBuiltInSpecies.md)) defines several attributes and actions that can then be used in any global section of any model.
 
 
 

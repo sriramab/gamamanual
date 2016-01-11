@@ -21,7 +21,7 @@ As stated in [the first page](https://github.com/gama-platform/gama/wiki/Content
 
   * [Taillandier, P., Drogoul, A., Vo, D.A. and Amouroux, E. (2012), GAMA: a simulation platform that integrates geographical information data, agent-based modeling and multi-scale control. In ‘The 13th International Conference on Principles and Practices in Multi-Agent Systems (PRIMA)’, India, Volume 7057/2012, pp 242-258.](http://www.springerlink.com/content/j7135j8722742j82/)
 
-  * [Taillandier, P. & Drogoul, A. (2011), From Grid Environment to Geographic Vector Agents, Modeling with the GAMA simulation platform. In ‘25th Conference of the International Cartographic Association’, Paris, France.](http://icaci.org/files/documents/ICC_proceedings/ICC2011/Oral%20Presentations%20PDF/C4-Simulation,%20spatio-temporal%20modelling,%20visualisation/CO-288.pdf)
+  * [Taillandier, P. & Drogoul, A. (2011), From Grid Environment to Geographic Vector Agents, Modeling with the GAMA simulation platform. In ‘25th Conference of the International Cartographic Association’, Paris, France.](http://icaci.org/files/documents/ICC_proceedings/ICC2011/Oral Presentations PDF/C4-Simulation, spatio-temporal modelling, visualisation/CO-288.pdf)
 
   * Taillandier, P. ; Drogoul A. ; Vo D.A. & Amouroux, E. (2010), GAMA : bringing GIS and multi-level capabilities to multi-agent simulation, in ‘the 8th European Workshop on Multi-Agent Systems’, Paris, France.
 

@@ -6,7 +6,7 @@ In the global species you can define the attributes, actions and behaviors that 
 ## Index
 
 * [Declaration](#declaration)
-* [Environment Size](#environment_size)
+* [Environment Size](#environment-size)
 * [Built-in Attributes](#built-in-attributes)
 * [Built-in Actions](#built-in-actions)
 * [The init statement](#the-init-statement)

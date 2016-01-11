@@ -28,7 +28,7 @@ A GAMA model is composed of three type of sections:
 More details about the different sections of a GAMA model can be found [here](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\StartWithGAML\OrganizationModel.md).
 
 ### species
-A [species](G__DefiningSpecies) represents a «prototype» of agents: it defines their common properties.
+A [species](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\RegularSpecies.md) represents a «prototype» of agents: it defines their common properties.
 
 A species definition requires the definition of three different elements :
   * the internal state of its agents (attributes)
@@ -48,7 +48,7 @@ In addition to the attributes the modeler explicitly defines, species "inherits"
 In this first model, we define one species of agents: the **prey** agents. For the moment, these agents will not have a particular behavior, they will just exist and be displayed.
 
 #### Display
-An agent [aspects](G__DefiningAspects) have to be defined. An aspect is a way to display the agents of a species : aspect aspect\_name {…}
+An agent [aspects](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\RegularSpecies.md#the-aspect-statement) have to be defined. An aspect is a way to display the agents of a species : aspect aspect\_name {…}
 In the block of an aspect, it is possible to draw :
   * A geometry :  for instance, the shape of the agent (but it may be a different one, for instance a disk instead of a complex polygon)
   * An image : to draw icons
@@ -76,7 +76,7 @@ species prey {
 ### global section
 The global section represents a specific agent, called world. Defining this agent follows the same principle as any agent and is, thus, defined after a species.
 The world agent represents everything that is global to the model : dynamics, variables…
-It allows to initialize simulations (init block): the world is always created and initialized first when a simulation is launched (before any other agents). The geometry (shape) of the world agent is by default a square with 100m for side size, but can be redefined if necessary (see the [Road traffic tutorial](Tutorial__RoadTrafficTutorial)).
+It allows to initialize simulations (init block): the world is always created and initialized first when a simulation is launched (before any other agents). The geometry (shape) of the world agent is by default a square with 100m for side size, but can be redefined if necessary (see the [Road traffic tutorial](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\RoadTrafficModel.md)).
 
 #### global variable
 In the current model, we will only have a certain numbers of preys thus we need to hold this number in a global or world's variable of type integer (_int_) which can be done as follows:

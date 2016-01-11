@@ -106,7 +106,7 @@ output {
 
 ## Complete Model
 
-The SVN (TODO : SVN vraiment ??) version of the model can be found here [Model 02.gaml](https://code.google.com/p/gama-platform/source/browse/branches/GAMA_CURRENT/msi.gama.models/models/Tutorials/3D/models/Model%2002.gaml)
+The SVN (TODO : SVN vraiment ??) version of the model can be found here [Model 02.gaml](https://github.com/gama-platform/gama/tree/master/msi.gama.models/models/Tutorials/3D/models/Model 02.gaml)
 
 ```
 model Tuto3D   

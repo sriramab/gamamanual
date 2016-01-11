@@ -14,4 +14,4 @@ Please proceed to one of these sections :
   * 1. [Editing Models](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\EditingModels.md)
   * 2. [GAML Language](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\GamlLanguage.md)
   * 3. [GAML Reference](https://github.com/gama-platform/gama/wiki/Content\References\GamlReference.md)
-  * 4. [Optimizing Models](G__OptimizingModels)
+  * 4. [Optimizing Models](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\OptimizingModels\OptimizingModels.md)

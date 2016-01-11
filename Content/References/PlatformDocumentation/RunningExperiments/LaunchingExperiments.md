@@ -21,7 +21,7 @@ As already mentioned on [this page](https://github.com/gama-platform/gama/wiki/C
 
 ![images/editor_launch.png](images/editor_launch.png)
 
-For each of those launching buttons, you can see 2 different pictograms, showing the type of experiment. An experiment can either be a [GUI Experiment](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment.md) or a [Batch Experiment](G__BatchExperiments).
+For each of those launching buttons, you can see 2 different pictograms, showing the type of experiment. An experiment can either be a [GUI Experiment](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment.md) or a [Batch Experiment](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ExploringModels\BatchExperiments.md).
 
 ![images/editor_different_types_of_experiment.png](images/editor_different_types_of_experiment.png)
 

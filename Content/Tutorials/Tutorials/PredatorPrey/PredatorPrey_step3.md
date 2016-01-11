@@ -122,9 +122,6 @@ species prey {
    }
 }
 ```
-<a href='Hidden comment: 
-Actions should not be introduced here. Maybe in step 5
-'></a>
 
 Note that an action is a capability available to the agents of a species (what they can do). It is a block of statements that can be used and reused whenever needed. Some actions, called primitives, are directly coded in Java: for instance, the **die** action defined for all the agents.
   * An action can accept arguments. For instance, write takes an argument called message.

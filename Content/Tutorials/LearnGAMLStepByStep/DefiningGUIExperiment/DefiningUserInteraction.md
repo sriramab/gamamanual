@@ -6,7 +6,7 @@ During the simulation, GAML provides you the possibility to define some function
 
 * [Catch Mouse Event](#catch-mouse-event)
 * [Define User command](#define-user-command)
-* [User control architecture](#user-control-architecture)
+* [User Control Architecture](#user-control-architecture)
 
 ## Catch Mouse Event
 
@@ -40,15 +40,76 @@ user_command kill_myself {
 }
 ```
 
-These commands (which belong to the "top-level" statements like actions, reflexes, etc.) are not executed when an agent runs. Instead, they are collected and used as follows:
+### Defining User command in GUI Experiment scope
 
-* When defined in a GUI experiment, they appear as buttons above the parameters of the simulation;
-(TODO_IMAGE)
-* When defined in the global block or in any species,
-**	when the agent is inspected, they appear as buttons above the agents' attributes
-(TODO_IMAGE)
-**	when the agent is selected by a right-click in a display, these command appear under the usual "Inspect", "Focus" and "Highlight" commands in the pop-up menu. 
-(TODO_IMAGE)
+The user command can be defined directly inside the GUI experiment scope. In that case, the implemented action appears as a button in the top of the parameter view.
+
+Here is a very short code example :
+
+```
+model quick_user_command_model
+
+global {
+	action createAgent
+	{
+		create my_species;
+	}
+}
+
+species my_species {
+	aspect base {
+		draw circle(1) color:#blue;
+	}
+}
+
+experiment expe type:gui {
+	user_command cmd_inside_experiment action:createAgent;
+	output {
+		display my_display {
+			species my_species aspect:base;
+		}
+	}
+}
+```
+
+And here is screenshots of the execution :
+
+[images/user_cmd_inside_expe.png](images/user_cmd_inside_expe.png)
+
+### Defining User command in a global or regular species
+
+The user command can also be defined inside a species scope (either global or regular one). Here is a quick example of model :
+
+```
+model quick_user_command_model
+
+global {
+	init {
+		create my_species number:10;
+	}
+}
+
+species my_species {
+	user_command cmd_inside_experiment action:die;
+	aspect base {
+		draw circle(1) color:#blue;
+	}
+}
+
+experiment expe type:gui {
+	output {
+		display my_display {
+			species my_species aspect:base;
+		}
+	}
+}
+```
+
+During the execution, you have 2 ways to access to the action :
+* When the agent is inspected, they appear as buttons above the agents' attributes
+[images/user_cmd_inside_species1.png](images/user_cmd_inside_species1.png)
+* When the agent is selected by a right-click in a display, these command appear under the usual "Inspect", "Focus" and "Highlight" commands in the pop-up menu.
+[images/user_cmd_inside_species2.png](images/user_cmd_inside_species2.png)
 
 
 Remark: The execution of a command obeys the following rules:
@@ -75,17 +136,39 @@ Note that if the world is inspected (this `user_command` appears thus as a butto
 
 ### user_input
 
-As it is also, sometimes, necessary to ask the user for some values (not defined as parameters), the `user_input` unary operator has been introduced. This operator takes a map [string::value] as argument, displays a dialog asking the user for these values, and returns the same map with the modified values (if any). The dialog is modal and will interrupt the execution of the simulation until the user has either dismissed or accepted it. It can be used, for instance, in an init section like the following one to force the user to input new values instead of relying on the initial values of parameters:
+As it is also, sometimes, necessary to ask the user for some values (not defined as parameters), the `user_input` unary operator has been introduced. This operator takes a map [string::value] as argument (the key is the name of the chosen parameter, the value is the default value), displays a dialog asking the user for these values, and returns the same map with the modified values (if any). You can also add a text as first argument of the operator, which will be displayed as a title for your dialog popup. The dialog is modal and will interrupt the execution of the simulation until the user has either dismissed or accepted it. It can be used, for instance, in an init section like the following one to force the user to input new values instead of relying on the initial values of parameters.
+
+Here is an example of implementation:
 
 ```
+model quick_user_command_model
+
 global {
    init {
-      map values <- user_input(["Number" :: 100]);
+      map values <- user_input("choose a number of agent to create",["Number" :: 100]);
       create my_species number : int(values at "Number");
    }
 }
+
+species my_species {
+	aspect base {
+		draw circle(1) color:#blue;
+	}
+}
+
+experiment expe type:gui {
+	output {
+		display my_display {
+			species my_species aspect:base;
+		}
+	}
+}
 ```
 
-## User control architecture
+When running this model, you will first have to input a number:
 
-[TODO quand corrig�]
+[images/input_cmd.png](images/input_cmd.png)
+
+## User Control Architecture
+
+An other way to define user interaction is to use the user control architecture. Please jump directly to the section [user control architecture](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\MultiParadigmModeling\ControlArchitecture.md#user-control-architecture) if you want to learn more about this point.

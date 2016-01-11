@@ -1,7 +1,7 @@
 
 # Batch Specific UI
 
-When an [experiment of type Batch](G__BatchExperiments) is run, a dedicated UI is displayed, depending on the parameters to explore and of the exploration methods.
+When an [experiment of type Batch](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ExploringModels\BatchExperiments.md) is run, a dedicated UI is displayed, depending on the parameters to explore and of the exploration methods.
 
 
 ## Table of contents 
@@ -13,7 +13,7 @@ When an [experiment of type Batch](G__BatchExperiments) is run, a dedicated UI i
 ## Information bar
 
 In batch mode, the top information bar displays 3 distinct information (instead of only the cycle number in the GUI experiment):
-  * **Run**: the run number. One run corresponds to X executions of simulation with one given parameters values (X is an integer given by the facet `repeat` in the definition of the [exploration method](G__ExplorationMethods));
+  * **Run**: the run number. One run corresponds to X executions of simulation with one given parameters values (X is an integer given by the facet `repeat` in the definition of the [exploration method](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ExploringModels\ExplorationMethods.md));
   * **Simulation**: the number of replications done (and the number of replications specified with the `repeat` facet);
   * **Cycle**: the cycle number in the current simulation.
 
