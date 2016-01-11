@@ -50,8 +50,10 @@ As stated in [the first page](G__Overview), if you need to cite GAMA in a paper,
 
 ## Research papers that use GAMA as modeling/simulation support
 **2016**
-  * Bhamidipati, S., van der Lei, T. and Herder, P., 2016. A layered approach to model interconnected infrastructure and its significance for asset management. EJTIR, 16(1), pp.254-272.
+  * Bhamidipati, S., van der Lei, T. and Herder, P., 2016. A layered approach to model interconnected infrastructure and its significance for asset management. EJTIR, 16(1), pp.254-272. from http://www.tbm.tudelft.nl/fileadmin/Faculteit/TBM/Onderzoek/EJTIR/Back_issues/16.1/2016_01a_09.pdf
+
 **2015**
+
   * Srirama Bhamidipati, Simulation Framework for Asset Management in Climate-change Adaptation of Transportation Infrastructure, Transportation Research Procedia, Volume 8, 2015, Pages 17-28, ISSN 2352-1465, http://dx.doi.org/10.1016/j.trpro.2015.06.038.
 
 **2014**
