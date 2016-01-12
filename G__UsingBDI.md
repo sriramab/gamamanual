@@ -1,7 +1,7 @@
 # Install
-You need to run the SVN version.
+You need to run the Git version.
 
-The plugin need to be add doing the following:
+The plugin need to be add in Eclipse doing the following:
 
   * In ummisco.gama.feature.core open the feature.xml file.
   * In plug-ins click add the msi.gaml.architecture.simplebdi
