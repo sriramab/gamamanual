@@ -3,7 +3,7 @@
 
 
 | **Key** | **Function** |
-|:--|:-|
+|:--------------------------|:-----------------------------------------------------------|
 | **Double Click** | Zoom Fit     |
 | **+**   | Zoom In      |
 | **-**   | Zoom Out     |
@@ -11,11 +11,11 @@
 | **Down**| Move backward|
 | **Left**| Strafe left  |
 | **Right**| Strafe right |
-| **<sub>SHIFT+Up</sub>**| Look up      |
-| **<sub>SHIFT+Down</sub>**| Look down    |
-| **<sub>SHIFT+Left</sub>**| Look left    |
-| **<sub>SHIFT+Right</sub>**| Look right   |
-| **<sub>MOUSE</sub>**| Makes the camera look up, down, left and right |
+| **SHIFT+Up**| Look up      |
+| **SHIFT+Down**| Look down    |
+| **SHIFT+Left**| Look left    |
+| **SHIFT+Right**| Look right   |
+| **MOUSE**| Makes the camera look up, down, left and right |
 | **MouseWheel**| Zoom-in/out to the current target (center of the screen)|
 
 _1 : control button on Windows_
