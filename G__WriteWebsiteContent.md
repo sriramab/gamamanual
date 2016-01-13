@@ -132,6 +132,12 @@ Metadatas in content files are written as comments, with the following syntax:
 
 Medatadas are not displayed in the wiki and the website content. For the website generation, metadatas are used in order to build the database, most of all to manage the search engine, and the learning graph.
 
+Here is the list of metadata we use in the content files:
+
+* **keyword** : will write an invisible anchor in this exact place in the website. When the user will do a research about this word, he can access directly to this anchor.
+
+* **startConcept**/**endConcept** : used to delimit a concept. The value of those two metadatas is the name of the concept. All the concepts are listed in the file "DependencyGraph", in the content folder in your wiki repository.
+
 ## Website generation workflow
 
 _This part is not yet implemented, it is under construction._
