@@ -1,7 +1,7 @@
 
 # Displays
 
-GAMA allows modelers to [define several and several kinds of displays](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningDisplays.md) in a [GUI experiment](G__DefiningGUIExperiments):
+GAMA allows modelers to [define several and several kinds of displays](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningDisplaysGeneralities.md) in a [GUI experiment](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment.md):
   * java 2D displays
   * OpenGL displays
 
@@ -63,5 +63,44 @@ The OpenGL display has an additional button **3D Options** providing 3D features
 
 ![images/display-OpenGL.png](images/display-OpenGL.png)
 
-
 In addition, the bottom overlay bar provides the Camera position in 3D.
+
+### FreeFly camera commands
+
+| **Key** | **Function** |
+|:--------------------------|:-----------------------------------------------------------|
+| **Double Click** | Zoom Fit     |
+| **+**   | Zoom In      |
+| **-**   | Zoom Out     |
+| **Up**  | Move forward |
+| **Down**| Move backward|
+| **Left**| Strafe left  |
+| **Right**| Strafe right |
+| **SHIFT+Up**| Look up      |
+| **SHIFT+Down**| Look down    |
+| **SHIFT+Left**| Look left    |
+| **SHIFT+Right**| Look right   |
+| **MOUSE**| Makes the camera look up, down, left and right |
+| **MouseWheel**| Zoom-in/out to the current target (center of the screen)|
+
+### ArbBall camera commands
+
+| **Key** | **Function** |
+|:--------------------------|:-----------------------------------------------------------|
+| **Double Click** | Zoom Fit     |
+| **+**   | Zoom In      |
+| **-**   | Zoom Out     |
+| **Up**  | Horizontal movement to the top|
+| **Down**| Horizontal movement to the bottom|
+| **Left**| Horizontal movement to the left |
+| **Right**| Horizontal movement to the right|
+| **SHIFT+Up**| Rotate the model up (rotation around x axis)|
+| **SHIFT+Down**| Rotate the model down (rotation around x axis)|
+| **SHIFT+Left**| Rotate the model left(rotation around y axis)|
+| **SHIFT+Right**| Rotate the model right (rotation around y axis)|
+| **ALT+Left**|   Rotate the model around z axis|
+| **ALT+Right**| Rotate the model around z axis|
+| **CMD+MOUSE1** | Makes the camera rotate around the model |
+| **ALT+MOUSE**| Enables ROI Agent Selection |
+| **SHIFT+MOUSE**| Enables ROI Zoom |
+| **SCROLL**| Zoom-in/out to the current target (center of the sphere)|

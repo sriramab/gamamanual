@@ -96,7 +96,7 @@ global {
 
 ## Experiment declarations
 
-Experiments are usually declared at the end of the file. They start with the keyword "experiment". They contains the [simulation parameters](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningParameters.md), and the definition of the output (such as [displays](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningDisplays.md), [monitors or inspectors](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningMonitorsAndInspectors.md)). You can declare as much experiments as you want.
+Experiments are usually declared at the end of the file. They start with the keyword "experiment". They contains the [simulation parameters](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningParameters.md), and the definition of the output (such as [displays](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningDisplaysGeneralities.md), [monitors or inspectors](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningMonitorsAndInspectors.md)). You can declare as much experiments as you want.
 
 ```
 experiment first_experiment {

@@ -83,7 +83,7 @@ int (234.5) -> 234.
   * **Comments:** this datatype is internally backed up by the Java String class. However, contrary to Java, strings are considered as a primitive type, which means they do not contain character objects. This can be seen when casting a string to a list using the list operator: the result is a list of one-character strings, not a list of characters.
   * **Litteral declaration:** a sequence of characters enclosed in quotes, like 'this is a string' . If one wants to literally declare strings that contain quotes, one has to double these quotes in the declaration. Strings accept escape characters like `\n` (newline), `\r` (carriage return), `\t` (tabulation), as well as any Unicode character (`\uXXXX`).
   * **Other declarations:** see string
-  * **Example:** see [string operators](Operators_14).
+  * **Example:** see [string operators](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Expressions\Operators.md#strings-related-operators).
 
 [Top of the page](#table-of-contents)
 
@@ -115,7 +115,7 @@ bool fileTextReadable <- fileText.readable;
 ### container
   * **Definition:** a generic datatype that represents a collection of data.
   * **Comments:**  a container variable can be a list, a matrix, a map... Conversely each list, matrix and map is a kind of container. In consequence every container can be used in container-related operators.
-  * **See also:** [Container operators](Operators_14)
+  * **See also:** [Container operators](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Expressions\Operators.md#containers-related-operators)
   * **Declaration:**
 ```
 container c  <- [1,2,3];
@@ -143,7 +143,7 @@ container c  <- list species1;
     * properties files: files with the extension .properties. The `content` is by default a map of string::string.
     * folders. The `content` is by default a list of string.
   * **Remark:** Files are also a particular kind of container and can thus be read, written or iterated using the container operators and commands.
-  * **See also:** [File operators](Operators_14)
+  * **See also:** [File operators](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Expressions\Operators.md#files-related-operators)
   * **Declaration:** a file can be created using the generic `file` (that opens a file in read only mode and tries to determine its contents), `folder` or the `new_folder` (to open an existing folder or create a new one) unary operators. But things can be specialized with the combination of the `read`/`write` and `image`/`text`/`shapefile`/`properties` unary operators.
 
 ```
@@ -176,7 +176,7 @@ write(properties(a_string)) // returns a property file which is available for wr
     * If this Geometry is the empty geometry, it is an empty point.
     * If the Geometry is a point, it is a non-empty point.
     * Otherwise, it is a Polygon whose points are (minx, miny), (maxx, miny), (maxx, maxy), (minx, maxy), (minx, miny).
-  * **See also:** [Spatial operators](Operators_14)
+  * **See also:** [Spatial operators](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Expressions\Operators.md#spatial-operators)
   * **Declaration:** geometries can be built from a point, a list of points or by using specific operators (circle, square, triangle...).
 
 ```
@@ -199,7 +199,7 @@ geometry polygonGeom <- polygon([{3,5}, {5,6},{1,4}]);
     * graphs are also a particular kind of container and can thus be manipulated using the container operators and commands.
     * This algorithm used to compute the circuit requires that the graph be complete and the triangle inequality exists (if x,y,z are vertices then d(x,y)+d(y,z)<d(x,z) for all x,y,z) then this algorithm will guarantee a hamiltonian cycle such that the total weight of the cycle is less than or equal to double the total weight of the optimal hamiltonian cycle.
     * The computation of the spanning tree uses an implementation of  the Kruskal's minimum spanning tree algorithm. If the given graph is connected it computes the minimum spanning tree, otherwise it computes the minimum spanning forest.
-  * **See also:** [Graph operators](Operators_14)
+  * **See also:** [Graph operators](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Expressions\Operators.md#graph-related-operators)
   * **Declaration:** graphs can be built from a list of vertices (agents or geometries) or from a list of edges (agents or geometries) by using specific operators. They are often used to deal with a road network and are built from a shapefile.
 
 ```
@@ -417,7 +417,6 @@ entities {
     * environment(type = geometry): the environment of this topology (i.e. the geometry that defines its boundaries)
   * **Comments:** the attributes `places` depends on the kind of the considered topolopy.  For continuous topologies, it is a list with their environment. For discrete topologies, it can be any of the container supporting the inclusion of geometries (list, graph, map, matrix)
   * **Remark:** There exist various kinds of topology: continous topology and discrete topology (e.g. grid, graph...)
-  * **See also:** [Topology operators](Operators_14)
   * **Declaration:** To create a topology, we can use the `topology` unary casting operator applied to:
     * an agent: returns a continuous topology built from the agent's geometry
     * a species name: returns the topology defined for this species population

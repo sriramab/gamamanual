@@ -26,7 +26,7 @@ A GAMA model is composed of three type of sections:
   * **species** : these sections define the species of agents composing the model.
   * **experiment** : these sections define a context of execution of the simulations. In particular, it defines the input (parameters) and output (displays, files...) of a model.
 
-More details about the different sections of a GAMA model can be found [here](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\StartWithGAML\OrganizationModel.md).
+More details about the different sections of a GAMA model can be found [here](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\StartWithGAML\ModelOrganization.md).
 
 ### species
 A [species](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\RegularSpecies.md) represents a «prototype» of agents: it defines their common properties.
@@ -45,7 +45,7 @@ species people skills:[moving]{
 }
 ```
 
-Concerning the internal state, a [attribute](G__DefiningAttributes) is defined as follows: type of the attribute (int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path...) + name
+Concerning the internal state, a [attribute](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\RegularSpecies.md#declaration) is defined as follows: type of the attribute (int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path...) + name
   * Optional facets: <- (initial value), update (value recomputed at each step of the simulation), function:{..} (value computed each time the variable is used), min, max
 
 Note that all the species inherit from predefined built-in variables:

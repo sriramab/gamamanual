@@ -30,7 +30,7 @@ A GAMA model is composed of three type of sections:
   * **species** and **grid**: these sections define the species of agents composing the model. Grid are defined in the following model step "vegetation dynamic";
   * **experiment** : these sections define a context of execution of the simulations. In particular, it defines the input (parameters) and output (displays, files...) of a model.
 
-More details about the different sections of a GAMA model can be found [here](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\StartWithGAML\OrganizationModel.md).
+More details about the different sections of a GAMA model can be found [here](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\StartWithGAML\ModelOrganization.md).
 
 ### species
 A [species](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\RegularSpecies.md) represents a «prototype» of agents: it defines their common properties.
@@ -57,7 +57,7 @@ In addition, we want add a new capability to our agent: the possibility to move 
 
 
 #### Internal state
-An [attribute](G__DefiningAttributes) is defined as follows: type of the attribute  and name. Numerous types of attributes are available: _int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path..._
+An [attribute](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\RegularSpecies.md#declaration) is defined as follows: type of the attribute  and name. Numerous types of attributes are available: _int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path..._
   * Optional facets: <- (initial value), update (value recomputed at each step of the simulation), function:{..} (value computed each time the variable is used), min, max
 
 In addition to the attributes the modeler explicitly defines, species "inherits" other attributes called "built-in" variables:
@@ -80,7 +80,7 @@ Note we use the [rnd](https://github.com/gama-platform/gama/wiki/Content\Referen
 #### Behavior
 GAMA proposes several ways to define the behavior of a species: dynamic variables (update facet), reflexes....
 
-A [reflex](G__DefiningBehaviors#reflex) is a block of statements (that can be defined in global or any species) that will be automatically executed at each simulation step if its condition is true, it is defined as follows:
+A [reflex](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\DefiningActionsAndBehaviors.md#behaviors) is a block of statements (that can be defined in global or any species) that will be automatically executed at each simulation step if its condition is true, it is defined as follows:
 ```
    reflex reflex_name when: condition {…}
 ```
@@ -188,7 +188,7 @@ experiment main_experiment type: gui {
 #### input
 Experiments can define (input) parameters. A parameter definition allows to make the value of a global variable definable by the user through the graphic interface.
 
-A [parameter](__DefiningParameters) is defined as follows:
+A [parameter](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningParameters.md) is defined as follows:
 **parameter** title var: global\_var category: cat;
   * **title** : string to display
   * **var** : reference to a global variable (defined in the global section)
@@ -211,7 +211,7 @@ experiment main_experiment type:gui{
 }
 ```
 #### output
-[Output](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment.md) blocks are defined in an experiment and define how to visualize a simulation (with one or more [display](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningDisplays.md) blocks that define separate windows). Each display can be refreshed independently by defining the facet **refresh\_every:** nb (int) (the display will be refreshed every nb steps of the simulation).
+[Output](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment.md) blocks are defined in an experiment and define how to visualize a simulation (with one or more [display](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningDisplaysGeneralities.md) blocks that define separate windows). Each display can be refreshed independently by defining the facet **refresh\_every:** nb (int) (the display will be refreshed every nb steps of the simulation).
 
 Each display can include different layers (like in a GIS) :
   * Agents lists : **agents** layer\_name value: agents\_list aspect: my\_aspect;

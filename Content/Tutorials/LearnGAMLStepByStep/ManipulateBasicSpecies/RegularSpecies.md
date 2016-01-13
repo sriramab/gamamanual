@@ -43,7 +43,6 @@ As for the global species, some attributes exist already by default in a regular
 * **location** (type: point) is used to control the position of your agent. 
 * **shape** (type: geometry) is used to describe the geometry of your agent. If you want to use some intersection operator between agents for instance, it is this geometry that is computed (nb : it can be totally different from the aspect you want to display for your agent !). By default, the shape is a point.
 * **host** (type: agent) is used when your agent is part of another agent. We will see this concept a bit further, in the topic multi-level architecture (TODO_URL).
-TODO : ajouter "parent", "subspecies", et "attributes".
 
 All those 4 built-in attributes can be accessed in both reading and writing very easily:
 
@@ -56,6 +55,20 @@ species my_species {
 	}
 }
 ```
+
+All those built-in attributes are attributes of an agent (an instantiation of a species). Species has also their own attributes, which can be accessed with the following syntax (read only) :
+
+```
+name_of_your_species.attribute_you_want
+```
+
+Here is the list of those attributes:
+
+* **name** (type: string) returns the name of your species
+* **attributes** (type: list of string) returns the list of the names of the attributes of your species
+* **population** (type: list) returns the list of agent that belong to it 
+* **subspecies** (type: list of string) returns the list of species that inherit directly from this species (we will talk about the concept of [inheritance](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\Inheritance.md) later)
+* **parent** (type: species) returns its parent species if it belongs to the model, or `nil` otherwise (we will talk about the concept of [inheritance](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\Inheritance.md) later)
 
 ## Built-in action
 

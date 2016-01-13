@@ -24,7 +24,7 @@ This third step presents how to create a road system from GIS data. More precise
 ## Model Definition
 
 ### people agents
-First, we have to change the skill of the **people** agents: as we want to use an action of the **moving** skill (**goto**), we will provide the **people** agents with this skill. A [skill](G__Skills) is a built-in module that provide the modeler a self-contain and relevant set of actions and variables.
+First, we have to change the skill of the **people** agents: as we want to use an action of the **moving** skill (**goto**), we will provide the **people** agents with this skill. A [skill](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\AttachingSkills.md) is a built-in module that provide the modeler a self-contain and relevant set of actions and variables.
 
 ```
    species people skills: [moving]{

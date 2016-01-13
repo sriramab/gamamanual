@@ -48,7 +48,7 @@ This hierarchical menu is always organized in the same way, whatever the experim
 
 
 
-Each agent, when selected, will reveal a similar individual menu. This menu will contain a set of predefined actions, [the commands defined by the user for this species](G__DefiningUserCommands), if any, and then the micro-populations hosted by this agent, if any. Agents (like the instances of "ant" below) that do not host other agents and whose species has no user commands will have a "simple" individual menu.
+Each agent, when selected, will reveal a similar individual menu. This menu will contain a set of predefined actions, [the commands defined by the user for this species](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningUserInteraction.md#define-user-command), if any, and then the micro-populations hosted by this agent, if any. Agents (like the instances of "ant" below) that do not host other agents and whose species has no user commands will have a "simple" individual menu.
 
 ![images/menu_agents_3.png](images/menu_agents_3.png)
 
@@ -59,11 +59,11 @@ These are the 4 actions that will be there most of the time:
   * **Focus**: this option is not accessible if no displays are defined. Makes the current display zoom on the selected agent (if it is displayed) so that it occupies the whole view.
   * **Kill**: destroys the selected agent and disposes of it. **Use this command with caution**, as it can have undesirable effects if the agent is currently executing its behavior.
 
-If an agent hosts other agents (it is the case in [multi-level architecture](G__MultiLevel)), you can access to the micro-population quite easily: 
+If an agent hosts other agents (it is the case in [multi-level architecture](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningAdvancedSpecies\MultiLevelArchitecture.md)), you can access to the micro-population quite easily: 
 
 ![images/menu_agents_multi_level.png](images/menu_agents_multi_level.png)
 
-If [user commands](G__UserControlled) are defined for a species (for example in the existing model Features/Driving Skill/Road Traffic simple (City)), their individual menu will look like the following:
+If [user commands](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningUserInteraction.md#define-user-command) are defined for a species (for example in the existing model Features/Driving Skill/Road Traffic simple (City)), their individual menu will look like the following:
 
 ![images/menu_agents_user_command.png](images/menu_agents_user_command.png)
 
@@ -105,4 +105,4 @@ Although these durations are entirely dependent on the speed of the simulation e
 ![images/toolbar_running_with_delay.png](images/toolbar_running_with_delay.png)
 
 
-In case it is necessary to have more than 1s of delay, it has to be defined, instead, as an attribute of the [experiment](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInSpecies\ExperimentBuiltInSpecies.md).
+In case it is necessary to have more than 1s of delay, it has to be defined, instead, as an attribute of the [experiment](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInSpecies\ExperimentBuiltIn.md).

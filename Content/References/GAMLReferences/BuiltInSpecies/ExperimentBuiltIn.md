@@ -11,7 +11,7 @@ As described in the [presentation of GAML](https://github.com/gama-platform/gama
 
 
 ## `experiment` attributes
-`experiment` defines several attributes, which, in addition to the attributes inherited from [`agent`](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInSpecies\AgentBuiltInSpecies.md), form the minimal set of knowledge any experiment will have access to.
+`experiment` defines several attributes, which, in addition to the attributes inherited from [`agent`](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInSpecies\AgentBuiltIn.md), form the minimal set of knowledge any experiment will have access to.
  
 
 

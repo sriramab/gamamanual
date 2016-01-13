@@ -183,7 +183,7 @@ TODO
 
 To practice a bit those notions, we will build a quick model. A "regular" species will move randomly on the environment. A grid is displayed, and its cells becomes red when an instance of the regular species is waking inside this cell, and yellow when the regular agent is in the surrounding of this cell. If no regular agent is on the surrounding, the cell turns green.
 
-[images/my_grid_species.png](images/my_grid_species.png)
+[images/my_grid_model.png](images/my_grid_model.png)
 
 Here is an example of implementation:
 

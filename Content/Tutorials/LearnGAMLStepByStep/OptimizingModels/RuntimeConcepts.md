@@ -58,7 +58,6 @@ step of agent agent_a
 ```
 
 ## Schedule Agents
-(TODO)
 
 The global scheduling of agents is then simply the application of this previous _step_ to the _experiment agent_, keeping in mind that this agent has only one micro-population (of simulation agents, each instance of the model species), and that the simulation(s) inside this population contain(s), in turn, all the "regular" populations of agents of the model.
 

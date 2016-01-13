@@ -30,7 +30,7 @@ From the data collected, we made some modeling choice:
 * Each time, people arrived at a building they are staying a certain time : they are staying longer in their home than in their friend houses
 * Infected people are never cured
 
-![https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/Luneray model.png](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/Luneray model.png)
+![images/Luneray.png](images/Luneray.png)
 
 ## Step List
 

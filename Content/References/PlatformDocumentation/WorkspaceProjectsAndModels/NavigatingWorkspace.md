@@ -21,7 +21,7 @@ All the models that you edit or run using GAMA are accessible from a central loc
 
 In the _Navigator_, models are organized in three different categories: _Models library_, _Plugin models_, and _User models_. This organization is purely logical and does not reflect where the models are actually stored in the workspace (or elsewhere). Whatever their actual location, model files need to be stored in **projects**, which may contain also other files (called _resources_) necessary for the models to function. A project may of course contain several model files, especially if they are importing each other, if they represent different models on the same topic, or if they share the same resources.
 
-![images/navigator_2_categories.png](images/navigator_2_categories.png)
+![images/navigator_3_categories.png](images/navigator_3_categories.png)
 
 ### Models library
 
@@ -62,15 +62,15 @@ Each models is presented as a node in the navigation workspace, including _Exper
 
 [images/inspect_model.png](images/inspect_model.png)
 
-* **Experiment button** : Experiment button are present if your model contains experiments (it is usually the case !). To run the corresponding experiment, just click on it. To learn more about running experiments, jump into this [section](LaunchingExperiments).
+* **Experiment button** : Experiment button are present if your model contains experiments (it is usually the case !). To run the corresponding experiment, just click on it. To learn more about running experiments, jump into this [section](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\RunningExperiments\LaunchingExperiments.md).
 
-* **Require node** : The node _Require_ is present if your model uses some plugins (additional or integrated by default). Each plugin is listed in this node, with a green icon if the plugin is already installed in your GAMA, and a red one if it is not the case. If the plugin you want in not installed, an error will be raised in your model. Please read about [how to install plugins](InstallingPlugins) to learn some more about it.
+* **Require node** : The node _Require_ is present if your model uses some plugins (additional or integrated by default). Each plugin is listed in this node, with a green icon if the plugin is already installed in your GAMA, and a red one if it is not the case. If the plugin you want in not installed, an error will be raised in your model. Please read about [how to install plugins](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\InstallationAndLaunching\InstallingPlugins.md) to learn some more about it.
 
 [images/requires_plugin_not_found.png](images/requires_plugin_not_found.png)
 
 * **Uses node** : The node _Uses_ is present if your model uses some external resources, *and if the path to the resource is correct* (if the path to the resource is not correct, the resource will not be displayed under _Uses_)
 
-|![images/uses_non_correct_path.png](images/uses_non_correct_path.png)|![images/uses_correct_path.png](images/uses_correct_path.png)|
+|![images/uses_non_correct_paths.png](images/uses_non_correct_paths.png)|![images/uses_correct_paths.png](images/uses_correct_paths.png)|
 |---|---|
 
 ## Moving Models Around

@@ -17,7 +17,6 @@ In this model, three types of entities are considered: preys, predators and vege
 eat grass on the vegetation cells and predators eat preys. At each simulation step, grass grows on the vegetation cells. Concerning the predators and preys, at each simulation step, they move (to a neighbor cell), eat, die if they do not have enough energy, and eventually reproduce.
 
 ![images/predator_prey.png](images/predator_prey.png)
-(TODO change url, ainsi que toutes les url du tuto)
 
 
 

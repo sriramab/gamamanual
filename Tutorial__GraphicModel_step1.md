@@ -25,7 +25,7 @@ A GAMA model is composed of three type of sections:
   * **species** and **grid**: these sections define the species of agents composing the model. Grid are defined in the following model step "vegetation dynamic";
   * **experiment** : these sections define a context of execution of the simulations. In particular, it defines the input (parameters) and output (displays, files...) of a model.
 
-More details about the different sections of a GAMA model can be found [here](G__OrganizationModel).
+More details about the different sections of a GAMA model can be found [here](G__ModelOrganization).
 
 
 ### Graphical modelling
@@ -45,7 +45,7 @@ A species definition requires the definition of three different elements :
   * how they are displayed (aspects)
 
 #### Internal state
-An [attribute](G__DefiningAttributes) is defined as follows: type of the attribute  and name. Numerous types of attributes are available: _int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path..._
+An [attribute](RegularSpecies#declaration) is defined as follows: type of the attribute  and name. Numerous types of attributes are available: _int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path..._
   * Optional facets: <- (initial value), update (value recomputed at each step of the simulation), function:{..} (value computed each time the variable is used), min, max
 
 In addition to the attributes the modeler explicitly defines, species "inherits" other attributes called "built-in" variables:

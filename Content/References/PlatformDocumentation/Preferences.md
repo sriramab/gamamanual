@@ -77,14 +77,14 @@ To open the preferences dialog of GAMA, either click on the small "form" button 
 ![images/display.png](images/display.png)
 
   * **Properties**: various properties of displays
-    * Default display method: use either 'Java2D' or 'OpenGL' if nothing is specified in the [declaration of a display](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningDisplays.md).
+    * Default display method: use either 'Java2D' or 'OpenGL' if nothing is specified in the [declaration of a display](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningDisplaysGeneralities.md).
     * Synchronize displays with simulations: if true, simulation cycles will wait for the displays to have finished their rendering before passing to the next cycle (this setting can be changed on an individual basis dynamically [here](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\RunningExperiments\Displays.md)).
     * Show display overlay: if true, the [bottom overlay](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\RunningExperiments\Displays.md) is visible when opening a display.
     * Show scale bar in overlay: if true, the scale bar is displayed in the bottom overlay.
     * Apply antialiasing: if true, displays are drawn using antialiasing, which is slower but renders a better quality of image and text (this setting can be changed on an individual basis dynamically [here](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\RunningExperiments\Displays.md)).
-    * Default background color: indicates which color to use when none is specified in the [declaration of a display](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningDisplays.md).
+    * Default background color: indicates which color to use when none is specified in the [declaration of a display](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningDisplaysGeneralities.md).
     * Default highlight color: indicates which color to use for highlighting agents in the displays.
-    * Stack displays on screen…: if true, the [display views](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\RunningExperiments\Displays.md), in case they are stacked on one another, will put the first [display declared in the model](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningDisplays.md) on top of the stack.
+    * Stack displays on screen…: if true, the [display views](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\RunningExperiments\Displays.md), in case they are stacked on one another, will put the first [display declared in the model](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningDisplaysGeneralities.md) on top of the stack.
   * **Default Aspect**: which aspect to use when an ['agent' or 'species' layer](G__DefiningOtherLayers) does not indicate it
     * Default shape: a choice between 'shape' (which represents the actual geometrical shape of the agent) and geometrical operators ('square', etc.).
     * Default size: what size to use. This expression must be a constant.

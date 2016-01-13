@@ -19,7 +19,7 @@
 
 ## Architectures
 	
-	[fsm](G__BuiltInControlArchitectures#fsm), [probabilistic_tasks](G__BuiltInControlArchitectures#probabilistic_tasks), [reflex](G__BuiltInControlArchitectures#reflex), [simple_bdi](G__BuiltInControlArchitectures#simple_bdi), [sorted_tasks](G__BuiltInControlArchitectures#sorted_tasks), [user_first](G__BuiltInControlArchitectures#user_first), [user_last](G__BuiltInControlArchitectures#user_last), [user_only](G__BuiltInControlArchitectures#user_only), [weighted_tasks](G__BuiltInControlArchitectures#weighted_tasks), 
+	[fsm](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInArchitectures.md#fsm), [probabilistic_tasks](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInArchitectures.md#probabilistic_tasks), [reflex](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInArchitectures.md#reflex), [simple_bdi](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInArchitectures.md#simple_bdi), [sorted_tasks](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInArchitectures.md#sorted_tasks), [user_first](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInArchitectures.md#user_first), [user_last](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInArchitectures.md#user_last), [user_only](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInArchitectures.md#user_only), [weighted_tasks](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInArchitectures.md#weighted_tasks), 
 
 ----
 

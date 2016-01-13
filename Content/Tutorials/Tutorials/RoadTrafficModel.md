@@ -4,7 +4,7 @@
 
 This tutorial has for goal to present the use of GIS data and complex geometries. In particular, this tutorial shows how to load gis data, to agentify them and to use a network of polylines to constraint the movement of agents. All the files related to this tutorial (shapefiles and models) are available in the Models Library (project road\_traffic\_tutorial).
 
-If you are not familiar with agent-based models or GAMA we advice you to have a look at the [prey-predator](Tutorial__PredatorPreyTutorial) model first.
+If you are not familiar with agent-based models or GAMA we advice you to have a look at the [prey-predator](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\PredatorPrey.md) model first.
 
 
 

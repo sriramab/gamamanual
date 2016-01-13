@@ -1,21 +1,19 @@
-
-# 3D Specific Instructions (Under construction)
+# Defining 3D Displays
 
 ## Table of contents 
 
-* [3D Specific Instructions (Under construction)](#3d-specific-instructions-under-construction)
-	* [OpenGL display](#opengl-display)
-		* [Position](#position)
-		* [Size](#size)
-	* [Camera](#camera)
-	* [Dynamic camera](#dynamic-camera)
-		* [Camera position](#camera-position)
-		* [Camera direction (Look Position)](#camera-direction-look-position)
-		* [Camera orientation (Up Vector)](#camera-orientation-up-vector)
-			* [Default view](#default-view)
-			* [First person view](#first-person-view)
-			* [Third Person view](#third-person-view)
-	* [Lighting](#lighting)
+* [OpenGL display](#opengl-display)
+	* [Position](#position)
+	* [Size](#size)
+* [Camera](#camera)
+* [Dynamic camera](#dynamic-camera)
+	* [Camera position](#camera-position)
+	* [Camera direction (Look Position)](#camera-direction-look-position)
+	* [Camera orientation (Up Vector)](#camera-orientation-up-vector)
+		* [Default view](#default-view)
+		* [First person view](#first-person-view)
+		* [Third Person view](#third-person-view)
+* [Lighting](#lighting)
 
 
 ## OpenGL display
@@ -28,7 +26,7 @@ output {
   }
 ```
 
-The opengl display share most of the feature that the java2D offers and that are described [here](G__DefiningDisplays)
+The opengl display share most of the feature that the java2D offers and that are described [here](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningDisplaysGeneralities.md)
 
 Using 3D display offers many way to represent a simulation. A layer can be positioned and scaled in a 3D world. It is possible to superpose layer on different z value and display different information on the model at different position on the screen.
 
@@ -38,14 +36,18 @@ Layer can be drawn on different position (x,y and z)  value using the _position_
 ### Size
 Layer can be drawn with different size (x,y and z) using the _size_ facet
 
-Here is an example of display using all the previous facet. You can also dynamically change those value by showing the side bar in the display.
+Here is an example of display using all the previous facet (experiment factice to add to the model _Incremental Model 5_). You can also dynamically change those value by showing the side bar in the display.
 
 ```
-display city_display type: opengl{
-  species road aspect: base refresh:false;
-  species building aspect: base transparency:0.5 ;
-  species people aspect: base position:{0,0,0.2};
-  species road aspect: base size:{0.3,0.3,0.3};
+experiment expe_test type:gui {
+	output {
+		display city_display type: opengl{
+			species road aspect: geom refresh:false;
+			species building aspect: geom transparency:0.5 ;
+			species people aspect: sphere3D position:{0,0,0.1};
+			species road aspect: geom size:{0.3,0.3,0.3};
+		}
+	}
 }
 ```
 
@@ -57,9 +59,9 @@ display city_display type: opengl{
 
 <a href='http://www.youtube.com/watch?feature=player_embedded&v=rMIVQlul1Ag' target='_blank'><img src='http://img.youtube.com/vi/rMIVQlul1Ag/0.jpg' width='425' height=344 /></a>
 
-[Arcball Camera](G__ArcBallCamera)
+[Arcball Camera](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\RunningExperiments\Displays.md#arcball-camera-commands)
 
-[FreeFly Camera](G__FreeFlyCamera)
+[FreeFly Camera](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\RunningExperiments\Displays.md#freefly-camera-commands)
 
 
 ## Dynamic camera
@@ -83,7 +85,7 @@ Here are some examples that can be done using those 3 parameters. You can test i
 
 <a href='http://www.youtube.com/watch?feature=player_embedded&v=lQVGD8aDKZY' target='_blank'><img src='http://img.youtube.com/vi/lQVGD8aDKZY/0.jpg' width='425' height=344 /></a>
 
-[Boids 3D Visualization](https://code.google.com/p/gama-platform/source/browse/branches/GAMA_CURRENT/msi.gama.models/models/Features/3D%20Visualization/Toy%20Models/Boids%20(3D%20Visualization).gaml)
+[Boids 3D Camera movement](https://code.google.com/p/gama-platform/source/browse/branches/GAMA_CURRENT/msi.gama.models/models/Features/3D Visualization/Toy Models/Boids 3D Camera movement.gaml)
 
 #### Default view
 ```

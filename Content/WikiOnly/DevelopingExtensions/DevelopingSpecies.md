@@ -4,7 +4,7 @@
 
 Additional [built-in species](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInSpecies.md) can be defined in Java in order to be used in GAML models. Additional attributes and actions can be defined. It could be very useful in order to define its behavior thanks to external libraries (e.g. [mulit-criteria decision-making](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInSpecies\OtherBuiltInSpecies.md), [database connection](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInSpecies\OtherBuiltInSpecies.md)...).
 
-A new built-in species extends the `GamlAgent` class, which defines the basic GAML agents. As a consequence, new built-in species have all the attributes (`name`, `shape`, ...) and actions (`die`...) of [regular species](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInSpecies\AgentBuiltInSpecies.md).
+A new built-in species extends the `GamlAgent` class, which defines the basic GAML agents. As a consequence, new built-in species have all the attributes (`name`, `shape`, ...) and actions (`die`...) of [regular species](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInSpecies\AgentBuiltIn.md).
 
 
 

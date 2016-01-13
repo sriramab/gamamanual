@@ -68,6 +68,12 @@ species other_species {
 }
 ```
 
+Note that you can use the attribute _population_ of `species` if you find it more explicit:
+
+```
+ask other_species.population
+```
+
 -	If you want to interact with all the agent of a particular species from a list of agents (for example, using the global variable "agents"):
 
 ```

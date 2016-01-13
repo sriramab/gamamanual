@@ -11,7 +11,7 @@ Although this choice requires users to learn a new programming (or better, _mode
 
 The documentation on GAML is organized in 5 main points:
 
-  * Description of the general structure of a model: see [this page](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\StartWithGAML\OrganizationModel.md)
+  * Description of the general structure of a model: see [this page](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\StartWithGAML\ModelOrganization.md)
   * Description of the declaration of species (and all their components): see [this page](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies.md) and all its subpages
   * Description of the declaration of experiments: see [this page](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment.md) for regular experiments and [this one](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ExploringModels\BatchExperiments.md) for batch experiments.
   * Reference of the [language](https://github.com/gama-platform/gama/wiki/Content\References\GamlReference.md) regarding all the structures provided to modelers
