@@ -76,7 +76,7 @@ The folder _images_ is present in every folder. It contains images files that ar
 If a _section_/_sub-section_ contains one of several sub-division, then those sub-divisions will be stored in a folder with the name of the corresponding _section_/_sub-section_, and this _section_/_sub-section_ folder will be associated with a markdown file with the same name (indeed, a _section_/_sub-section_ has its own page).
 If a _section_/_sub-section_ has no sub-division, then this _section_/_sub-section_ is simply defined with a markdown file containing the content wanted.
 
-[images/websiteContent/images_by_section.png](images/websiteContent/images_by_section.png) 
+![images/websiteContent/images_by_section.png](images/websiteContent/images_by_section.png) 
 
 Notice that there is some content which is present only in the wiki (the "WikiOnly" content), some content present only in the website (the model library, most of the community content…). In fact, the wiki tree structure is determined by the file __Sidebar_, while the website tree structure is determined by the file _WebsiteTreeStructure_.
 
@@ -142,7 +142,7 @@ Here is the list of metadata we use in the content files:
 
 _This part is not yet implemented, it is under construction._
 
-[images/websiteContent/website_generation_workflow.png](images/websiteContent/website_generation_workflow.png)
+![images/websiteContent/website_generation_workflow.png](images/websiteContent/website_generation_workflow.png)
 
 ### The gama.documentation plugin
 
