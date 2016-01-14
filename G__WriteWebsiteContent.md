@@ -10,7 +10,7 @@ Since the release of GAMA 1.7, with the new GAMA website, we have two contents:
 ## Index
 
 * [Requirements](#requirements)
-* [Gama.wiki tree structure](#gama.wiki-tree-structure)
+* [Gama.wiki tree structure](#gamawiki-tree-structure)
 * [Good practices when writing markdown files](#good-practices-when-writing-markdown-files)
   * [Title](#title)
   * [Hypertext Links](#hypertext-links)
@@ -46,7 +46,7 @@ In addition, the folder containing the wiki files is required. In the GitHub arc
     * "Import existing projects" should be checked
     * "Working Directory" should be selected
   * In **Import Projects** window:
-    * **Uncheck « Search for nested project »**
+    * **Uncheck Â« Search for nested project Â»**
     * Check the project `gama.wiki`
     * Finish
 2. Go back to the Java perspective: a `gama.wiki` plugin should have been added.
@@ -68,17 +68,17 @@ The "gama.wiki" plugin contains all the wiki content, and almost all the website
   * Training: contains a presentation of the training sessions organized by the GAMA team (only present in the website)
 * WikiOnly: contains the content only present in the wiki, and not in the website
   * DevelopingExtensions: contains explanations about how to extend the platform
-* ressources: contains all the additional resources needed (images, pdf…)
+* ressources: contains all the additional resources needed (images, pdfâ€¦)
 
 For the rest of this document, the highest level of tree structure ("Tutorials"/"References"/"Community"/"WikiOnly") will be named as **tabs**. The level just under will be named as **sections**, and the level under will be named as **sub-section**.
 All this content is written using the markdown format. 
-The folder _images_ is present in every folder. It contains images files that are used from the files in the corresponding folder (so that the file which needs an image will call it with the relative path `ìmages/name_of_the_image.png`).
+The folder _images_ is present in every folder. It contains images files that are used from the files in the corresponding folder (so that the file which needs an image will call it with the relative path `Ã¬mages/name_of_the_image.png`).
 If a _section_/_sub-section_ contains one of several sub-division, then those sub-divisions will be stored in a folder with the name of the corresponding _section_/_sub-section_, and this _section_/_sub-section_ folder will be associated with a markdown file with the same name (indeed, a _section_/_sub-section_ has its own page).
 If a _section_/_sub-section_ has no sub-division, then this _section_/_sub-section_ is simply defined with a markdown file containing the content wanted.
 
-[images/websiteContent/images_by_section.png](images/websiteContent/images_by_section.png) 
+![images/websiteContent/images_by_section.png](images/websiteContent/images_by_section.png) 
 
-Notice that there is some content which is present only in the wiki (the "WikiOnly" content), some content present only in the website (the model library, most of the community content…). In fact, the wiki tree structure is determined by the file __Sidebar_, while the website tree structure is determined by the file _WebsiteTreeStructure_.
+Notice that there is some content which is present only in the wiki (the "WikiOnly" content), some content present only in the website (the model library, most of the community contentâ€¦). In fact, the wiki tree structure is determined by the file __Sidebar_, while the website tree structure is determined by the file _WebsiteTreeStructure_.
 
 ## Good practices when writing markdown files
 
@@ -88,11 +88,11 @@ Each markdown files **has to** start with a title in the markdown format (like `
 
 ### Hypertext Links
 
-Hypertext links have to be written with the following syntax: `[text_displayed](your_link_url)`. You can write your hypertext link in other format of course (`<a href=…`), but better uniform the ways of writing things down (and with the first syntax asked, you will be able to run the [_CheckURL_ script](#checkurl-script), which may help you a lot). 
+Hypertext links have to be written with the following syntax: `[text_displayed](your_link_url)`. You can write your hypertext link in other format of course (`<a href=â€¦`), but better uniform the ways of writing things down (and with the first syntax asked, you will be able to run the [_CheckURL_ script](#checkurl-script), which may help you a lot). 
 
 ### Images Links
 
-As already said in the [previous paragraph](#gama.wiki-tree-structure), images have to be in an "images" folder next to your md file, so that you can write the relative path more easily.
+As already said in the [previous paragraph](#gamawiki-tree-structure), images have to be in an "images" folder next to your md file, so that you can write the relative path more easily.
 
 ### TODO parts
 
@@ -105,7 +105,7 @@ The checkURL script is part of the _msi.gama.documentation_ plugin, in the _msi.
 The checkURL script will first need the content folder, which has to be specified in a file called _localPath.txt_ in the _msi.gama.documentation_ folder. Then, it will scan all the folder contained inside this content folder, and store in a map the path to all the markdown files (the name of the file is the key, the url path is the value). 
 Then, the script will browse all the markdown files, searching for the `[text_displayed](your_link_url)` syntax. Once one is find, some verifications and/or modifications are done:
 * If the link is a link to an image (which means a relative link), no modifications are done. An error message appears if the image does not exist.
-* If the link is an anchor to the actual page, nothing is done (we hope the anchor is correct…)
+* If the link is an anchor to the actual page, nothing is done (we hope the anchor is correctâ€¦)
 * If the link is a link to another page,
   * if the link exists in the map, nothing is done.
   * if the link does not exist in the map, and if the file name is isolated from the rest of the path is a key of the map, then we change the old path by the new one (and we print a message)
@@ -117,7 +117,7 @@ Then, the script will browse all the markdown files, searching for the `[text_di
 In the same time, the CheckURL script also check if all the images (more precisely all the files in an "images" folder) have been used. If it is not the case, the unused images are listed as a warning point. We don't want dead resources!
 At last, CheckURL searches if some _forbidden syntax_ are present, and present you how many times those syntax are used in the code. Here is the list of forbidden syntax:
 * The "TODO" and the "Under construction" message: those syntax in the code indicates that the documentation is not finished. A useful reminder.
-* The links with the syntax `<a href=…` or `<img src=…` are not checked with the checkURL script. You have to check those links manually, so try to avoid them as much as possible.
+* The links with the syntax `<a href=â€¦` or `<img src=â€¦` are not checked with the checkURL script. You have to check those links manually, so try to avoid them as much as possible.
 
 ## Metadatas
 
@@ -132,11 +132,17 @@ Metadatas in content files are written as comments, with the following syntax:
 
 Medatadas are not displayed in the wiki and the website content. For the website generation, metadatas are used in order to build the database, most of all to manage the search engine, and the learning graph.
 
+Here is the list of metadata we use in the content files:
+
+* **keyword** : will write an invisible anchor in this exact place in the website. When the user will do a research about this word, he can access directly to this anchor.
+
+* **startConcept**/**endConcept** : used to delimit a concept. The value of those two metadatas is the name of the concept. All the concepts are listed in the file "DependencyGraph", in the content folder in your wiki repository.
+
 ## Website generation workflow
 
 _This part is not yet implemented, it is under construction._
 
-[images/websiteContent/website_generation_workflow.png](images/websiteContent/website_generation_workflow.png)
+![images/websiteContent/website_generation_workflow.png](images/websiteContent/website_generation_workflow.png)
 
 ### The gama.documentation plugin
 
@@ -145,7 +151,7 @@ The plugin is also used to generate the model library in the markdown format, wi
 
 ### The gama.wiki repository
 
-This repository contains in on hand the content auto generated by the documentation plugin, and in the other hand a handmade content. All the content is in the markdown format, organized through a [specific tree structure](#gama.wiki-tree-structure), sometime containing [metadatas](#metadatas).
+This repository contains in on hand the content auto generated by the documentation plugin, and in the other hand a handmade content. All the content is in the markdown format, organized through a [specific tree structure](#gamawiki-tree-structure), sometime containing [metadatas](#metadatas).
 
 ### The website repository
 
