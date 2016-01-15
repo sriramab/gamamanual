@@ -74,7 +74,7 @@ experiment expe type:gui {
 
 And here is screenshots of the execution :
 
-[images/user_command_inside_expe.png](resources/images/definingGUIExperiment/user_command_inside_expe.png)
+![images/user_command_inside_expe.png](resources/images/definingGUIExperiment/user_command_inside_expe.png)
 
 ### Defining User command in a global or regular species
 
@@ -167,7 +167,7 @@ experiment expe type:gui {
 
 When running this model, you will first have to input a number:
 
-[images/input_cmd.png](resources/images/definingGUIExperiment/input_cmd.png)
+![images/input_cmd.png](resources/images/definingGUIExperiment/input_cmd.png)
 
 ## User Control Architecture
 
