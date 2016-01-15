@@ -266,7 +266,7 @@ species user control:user_only {
 ```
 
 
-The panel marked with the � initial: true � facet will be the one run first when the agent is supposed to run. If none is marked, the first panel (in their definition order) is chosen.
+The panel marked with the "_initial: true_" facet will be the one run first when the agent is supposed to run. If none is marked, the first panel (in their definition order) is chosen.
 
 A special panel called user\_init will be invoked only once when initializing the agent if it is defined.
 If no panel is described or if all panels are empty (i.e. no user\_commands), the control view is never invoked. If the control is said to be "user\_only", the agent will then not run any of its behaviors.
