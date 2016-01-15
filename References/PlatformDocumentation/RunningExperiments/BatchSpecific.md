@@ -17,7 +17,7 @@ In batch mode, the top information bar displays 3 distinct information (instead 
   * **Simulation**: the number of replications done (and the number of replications specified with the `repeat` facet);
   * **Cycle**: the cycle number in the current simulation.
 
-![images/batch_Information_bar.png](resources/images/batch_Information_bar.png)
+![images/batch_Information_bar.png](resources/images/runningExperiments/batch_Information_bar.png)
 
 
 ## Batch UI
@@ -33,7 +33,7 @@ experiment Batch type: batch repeat: 2 keep_seed: true until: (food_gathered = f
    method exhaustive maximize: food_gathered;
 ```
 
-![images/batch_Parameters_pane.png](resources/images/batch_Parameters_pane.png)
+![images/batch_Parameters_pane.png](resources/images/runningExperiments/batch_Parameters_pane.png)
 
 
 The interface summarizes all model parameters and the parameters given to the exploration method:

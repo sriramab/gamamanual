@@ -23,13 +23,13 @@ Every [GUI experiment](DefiningGUIExperiment) displays a pane named "Parameters"
   * the Random Number Generator, with a choice between 4 RNG implementations,
   * the Random Seed
 
-![images/parameters_built_in.png](resources/images/parameters_built_in.png)
+![images/parameters_built_in.png](resources/images/runningExperiments/parameters_built_in.png)
 
 
 ## Parameters View
 The modeler can [define himself parameters](DefiningParameters) that can be displayed in the GUI and that are sorted by categories. Note that the interface will depend on the data type of the parameter: for example, for integer or float parameters, a simple text box will be displayed whereas a color selector will be available for color parameters. The parameters value displayed are the initial value provided to the variables associated to the parameters in the model.
 
-![images/parameters.png](resources/images/parameters.png)
+![images/parameters.png](resources/images/runningExperiments/parameters.png)
 
 The above parameters view is generated from the following code:
 ```
