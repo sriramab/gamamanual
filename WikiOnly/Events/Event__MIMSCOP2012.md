@@ -2,17 +2,17 @@
 
 The MIMSCOP Summer school 2012 (Modélisation Informatique et Mathématique des Systèmes Complexes de Pêcherie took place from the 16th to the 21th of July in the AIMS-IRD Campus at Mbour (Senegal).
 
-![http://gama-platform.googlecode.com/files/affiche_reduite.png](http://gama-platform.googlecode.com/files/affiche_reduite.png)
+![http://gama-platform.googlecode.com/files/affiche_reduite.png](http://gama-platform)
 
 # Developed models
 
-  * _Baye Cheikh MBAYE and Fatou Nene DIOP_ **Modélisation de l'impat de l'environnement sur la migration de sardinella aurita le long de la côte sénégalo-mauritanienne : outil de suivi et de prévision du stock pour la pêche** ([Slidehow](http://gama-platform.googlecode.com/files/Presentation_model_migration_poisson.pdf))
-  * _Macire Thieba TOURE and ￼Harouna DIOUF_ **Impact de la gestion sur la biomasse de la thonine pêchée au Sénégal** [(Slideshow)](http://gama-platform.googlecode.com/files/biomass.pdf)
-  * _Mansour NDOUR and Thierno DIOP_ **Modélisation Impacts des AMP sur la biomasse et les captures en fonction du site et du mode de gestion** [(Slideshow)](http://gama-platform.googlecode.com/files/simulationtp_final_AMP_mansourthierno.pdf)
-  * _Sidy DIOP and Papa Baba FALL_ **L'impact de la pollution sur les espèces halieutiques** [(slideshow)](http://gama-platform.googlecode.com/files/ImpactPollutionEspecesHalieutiques.pdf)
-  * _Sana KEITA and  Serigne Mbacke GUEYE_ **Comparaison de la pêche sélective et non sélective sur la petite côte** [(Slideshow](http://gama-platform.googlecode.com/files/serine-sana.pdf)
-  * _Siny NDOYE and Erick FARGEAS_  **Une alternative à la baisse de la biomasse : « l’aquaculture, solution de développement durable »** [(Slideshow)](http://gama-platform.googlecode.com/files/siny_fargeas.pdf)
-  * _Abdoulaye THIAM and Mouhamadou Baidy DIA_ **Evolution de poissons dans les AMP et dans l’aquaculture** [(Slideshow)](http://gama-platform.googlecode.com/files/thiam_Dia.pdf)
+  * _Baye Cheikh MBAYE and Fatou Nene DIOP_ **Modélisation de l'impat de l'environnement sur la migration de sardinella aurita le long de la côte sénégalo-mauritanienne : outil de suivi et de prévision du stock pour la pêche** ([Slidehow](http://gama-platform))
+  * _Macire Thieba TOURE and ￼Harouna DIOUF_ **Impact de la gestion sur la biomasse de la thonine pêchée au Sénégal** [(Slideshow)](http://gama-platform)
+  * _Mansour NDOUR and Thierno DIOP_ **Modélisation Impacts des AMP sur la biomasse et les captures en fonction du site et du mode de gestion** [(Slideshow)](http://gama-platform)
+  * _Sidy DIOP and Papa Baba FALL_ **L'impact de la pollution sur les espèces halieutiques** [(slideshow)](http://gama-platform)
+  * _Sana KEITA and  Serigne Mbacke GUEYE_ **Comparaison de la pêche sélective et non sélective sur la petite côte** [(Slideshow](http://gama-platform)
+  * _Siny NDOYE and Erick FARGEAS_  **Une alternative à la baisse de la biomasse : « l’aquaculture, solution de développement durable »** [(Slideshow)](http://gama-platform)
+  * _Abdoulaye THIAM and Mouhamadou Baidy DIA_ **Evolution de poissons dans les AMP et dans l’aquaculture** [(Slideshow)](http://gama-platform)
 
 # Trainers
 
@@ -46,4 +46,4 @@ The MIMSCOP Summer school 2012 (Modélisation Informatique et Mathématique des 
 
 # The participants
 
-![http://gama-platform.googlecode.com/files/photo.png](http://gama-platform.googlecode.com/files/photo.png)
+![http://gama-platform.googlecode.com/files/photo.png](http://gama-platform)

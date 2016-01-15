@@ -18,7 +18,7 @@ Developing a new type requiers the implementation of 2 Java files:
 ## The data structure file
 
 The class representing the data structure is a Java class annotated by:
-  * a [@vars](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/DevelopingExtensions/DevelopingIndexAnnotations.md#@vars) annotation to describe the attributes of a complex type. The `@vars` annotation contains a set of `@var` elements.
+  * a [@vars](https://github) annotation to describe the attributes of a complex type. The `@vars` annotation contains a set of `@var` elements.
 ```
 @vars({ @var(name = IKeyword.COLOR_RED, type = IType.INT), @var(name = IKeyword.COLOR_GREEN, type = IType.INT),
 	@var(name = IKeyword.COLOR_BLUE, type = IType.INT), @var(name = IKeyword.ALPHA, type = IType.INT),
@@ -26,7 +26,7 @@ The class representing the data structure is a Java class annotated by:
 public class GamaColor extends Color implements IValue {
 ```
 
-It can contain setter and/or getter for each of its attributes. Setters and getters are methods annotated by the [@getter](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/DevelopingExtensions/DevelopingIndexAnnotations.md#@getter) or [@setter](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/DevelopingExtensions/DevelopingIndexAnnotations.md#@setter) annotations.
+It can contain setter and/or getter for each of its attributes. Setters and getters are methods annotated by the [@getter](https://github) or [@setter](https://github) annotations.
 ```
 @getter(IKeyword.COLOR_RED)
 public Integer red() {
@@ -43,18 +43,18 @@ public abstract String stringValue(IScope scope) throws GamaRuntimeException;
 ## The type file
 
 The class representing the type is a Java class such that:
-  * the class should be annotated by the [@type](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/DevelopingExtensions/DevelopingIndexAnnotations.md#@type) annotation,
+  * the class should be annotated by the [@type](https://github) annotation,
   * the class should extend the class `GamaType<DataStructureFile>` (and thus implement its 3 methods),
 
 
-Example (from [GamaFloatType.java](https://github.com/gama-platform/gama/tree/master/msi.gama.core/src/msi/gaml/types/GamaFloatType.java)):
+Example (from [GamaFloatType.java](https://github)):
 ```
 @type(name = IKeyword.FLOAT, id = IType.FLOAT, wraps = { Double.class, double.class }, kind = ISymbolKind.Variable.NUMBER)
 ```
 
 ### Inheritance from the `GamaType<T>` class
 Each java class aiming at implement a type should inherit from the GamaType abstract class.
-Example (from [GamaColorType.java](https://github.com/gama-platform/gama/tree/master/msi.gama.core/src/msi/gaml/types/GamaColorType.java)):
+Example (from [GamaColorType.java](https://github)):
 ```
 public class GamaColorType extends GamaType<GamaColor>
 ```
@@ -78,10 +78,10 @@ It provides information necessary to the processor to identify a type.
 
 This annotation contains:
   * **name** (String, "" by default): _a String representing the type name in GAML_.
-  * **id** (int, 0 by default): _the unique identifier for this type. User-added types can be chosen between IType.AVAILABLE\_TYPE and IType.SPECIES\_TYPE (exclusive) (cf. [IType.java](https://github.com/gama-platform/gama/tree/master/msi.gama.core/src/msi/gaml/types/IType.java))_.
+  * **id** (int, 0 by default): _the unique identifier for this type. User-added types can be chosen between IType.AVAILABLE\_TYPE and IType.SPECIES\_TYPE (exclusive) (cf. [IType.java](https://github))_.
   * **wraps** (tab of Class, null by default): _the list of Java Classes this type is "wrapping" (i.e. representing). The first one is the one that will be used preferentially throughout GAMA. The other ones are to ensure compatibility, in operators, with compatible Java classes (for instance, List and GamaList)_.
-  * **kind** (int, ISymbolKind.Variable.REGULAR by default): _the kind of Variable used to store this type. See [ISymbolKind.Variable](https://github.com/gama-platform/gama/tree/master/msi.gama.processor/src/msi/gama/precompiler/ISymbolKind.java)_.
+  * **kind** (int, ISymbolKind.Variable.REGULAR by default): _the kind of Variable used to store this type. See [ISymbolKind.Variable](https://github)_.
   * **internal** (boolean, false by default): _whether this type is for internal use only_.
   * **doc** (set of @doc, empty by default): _the documentation associated to the facet_.
 
-All these annotations are defined in the file [GamlAnnotations.java](https://github.com/gama-platform/gama/tree/master/msi.gama.processor/src/msi/gama/precompiler/GamlAnnotations.java).
+All these annotations are defined in the file [GamlAnnotations.java](https://github).

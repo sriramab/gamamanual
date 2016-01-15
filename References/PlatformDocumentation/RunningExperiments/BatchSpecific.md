@@ -1,7 +1,7 @@
 
 # Batch Specific UI
 
-When an [experiment of type Batch](BatchExperiments.md) is run, a dedicated UI is displayed, depending on the parameters to explore and of the exploration methods.
+When an [experiment of type Batch](BatchExperiments) is run, a dedicated UI is displayed, depending on the parameters to explore and of the exploration methods.
 
 
 ## Table of contents 
@@ -13,11 +13,11 @@ When an [experiment of type Batch](BatchExperiments.md) is run, a dedicated UI i
 ## Information bar
 
 In batch mode, the top information bar displays 3 distinct information (instead of only the cycle number in the GUI experiment):
-  * **Run**: the run number. One run corresponds to X executions of simulation with one given parameters values (X is an integer given by the facet `repeat` in the definition of the [exploration method](ExplorationMethods.md));
+  * **Run**: the run number. One run corresponds to X executions of simulation with one given parameters values (X is an integer given by the facet `repeat` in the definition of the [exploration method](ExplorationMethods));
   * **Simulation**: the number of replications done (and the number of replications specified with the `repeat` facet);
   * **Cycle**: the cycle number in the current simulation.
 
-![images/batch_Information_bar.png](images/batch_Information_bar.png)
+![images/batch_Information_bar.png](images/batch_Information_bar)
 
 
 ## Batch UI
@@ -33,7 +33,7 @@ experiment Batch type: batch repeat: 2 keep_seed: true until: (food_gathered = f
    method exhaustive maximize: food_gathered;
 ```
 
-![images/batch_Parameters_pane.png](images/batch_Parameters_pane.png)
+![images/batch_Parameters_pane.png](images/batch_Parameters_pane)
 
 
 The interface summarizes all model parameters and the parameters given to the exploration method:

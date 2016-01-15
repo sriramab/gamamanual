@@ -26,4 +26,4 @@ msi.gama.models/models/3D/3D_Engine
 
 **pool3D.gaml**
 
-[![](http://gama-platform.googlecode.com/files/Pool_3D.png)](http://gama-platform.googlecode.com/files/Pool_3D.mov)
+[![](http://gama-platform)](http://gama-platform)

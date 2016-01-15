@@ -239,7 +239,7 @@ Shapefiles are classical GIS data files. A shapefile is not simple file, but a s
     * .shp.xml — geospatial metadata in XML format, such as ISO 19115 or other XML schema
     * .cpg — used to specify the code page (only for .dbf) for identifying the character encoding to be used
 
-More details about shapefiles can be found [here](http://en.wikipedia.org/wiki/Shapefile).
+More details about shapefiles can be found [here](http://en).
 
 ### Extensions
 Here the list of possible extension for shapefile:
@@ -302,7 +302,7 @@ file my_file <- shape_file("../includes/data.shp", "EPSG:32601");
 ## OSM File
 OSM (Open Street Map) is a collaborative project to create a free editable map of the world. The data produced in this project (OSM File)  represent physical features on the ground (e.g., roads or buildings) using tags attached to its basic data structures (its nodes, ways, and relations). Each tag describes a geographic attribute of the feature being shown by that specific node, way or relation (source: openstreetmap.org).
 
-More details about OSM data can be found [here](http://wiki.openstreetmap.org/wiki/Map_Features).
+More details about OSM data can be found [here](http://wiki).
 
 ### Extensions
 Here the list of possible extension for shapefile:
@@ -370,7 +370,7 @@ file<geometry> osmfile <-  file<geometry (osm_file("../includes/rouen.gz", filte
 ## Grid File
 Esri ASCII Grid files are classic text raster GIS data.
 
-More details about Esri ASCII grid file can be found [here](http://en.wikipedia.org/wiki/Esri_grid).
+More details about Esri ASCII grid file can be found [here](http://en).
 
 Note that grid files can be used to initialize a grid species. The number of rows and columns will be read from the file. Similarly, the values of each cell contained in the grid file will be accessible through the **grid\_value** attribute.
 
@@ -493,7 +493,7 @@ List of operators related to csv files:
 
 Scalable Vector Graphics (SVG) is an XML-based vector image format for two-dimensional graphics with support for interactivity and animation. Note that interactivity and animation features are not supported in GAMA.
 
-More details about SVG file can be found [here](http://en.wikipedia.org/wiki/Scalable_Vector_Graphics).
+More details about SVG file can be found [here](http://en).
 
 ### Extensions
 Here the list of possible extension for SVG file:
@@ -581,11 +581,11 @@ List of operators related to text files:
 ## R File
 R is a free software environment for statistical computing and graphics. GAMA allows to execute R script (if R is installed on the computer).
 
-More details about R can be found [here](http://www.r-project.org/).
+More details about R can be found [here](http://www).
 
 Note that GAMA also integrates some operators to manage R scripts:
-  * [R\_compute](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/Expressions/Operators.md#R_compute)
-  * [R\_compute\_param](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/Expressions/Operators.md#R_compute_param)
+  * [R\_compute](https://github)
+  * [R\_compute\_param](https://github)
 
 ### Extensions
 Here the list of possible extensions for R file:
@@ -623,7 +623,7 @@ List of operators related to R files:
 
 3DS is one of the file formats used by the Autodesk 3ds Max 3D modeling, animation and rendering software. 3DS files can be used in GAMA to load 3D geometries.
 
-More details about 3DS file can be found [here](http://en.wikipedia.org/wiki/.3ds).
+More details about 3DS file can be found [here](http://en).
 
 ### Extensions
 Here the list of possible extension for 3DS file:
@@ -661,7 +661,7 @@ List of operators related to 3ds files:
 ## OBJ File
 OBJ file is a geometry definition file format first developed by Wavefront Technologies for its Advanced Visualizer animation package. The file format is open and has been adopted by other 3D graphics application vendors.
 
-More details about Obj file can be found [here](http://en.wikipedia.org/wiki/Wavefront_.obj_file).
+More details about Obj file can be found [here](http://en).
 
 ### Extensions
 Here the list of possible extension for OBJ files:

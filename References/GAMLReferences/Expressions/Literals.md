@@ -3,7 +3,7 @@
 
 
 
-_(some literal expressions are also described in [data types](DataTypes.md))_
+_(some literal expressions are also described in [data types](DataTypes))_
 
 A literal is a way to specify an unnamed constant value corresponding to a given data type. GAML supports various types of literals for often — or less often — used data types.
 
@@ -29,7 +29,7 @@ Values of simple (i.e. not composed) types can all be expressed using literal ex
 
 
 ## Literal Constructors
-Although they are not strictly literals in the sense given above, some special constructs (called _literal constructors_) allow the modeler to declare constants of other data types. They are actually [operators](Operators.md) but can be thought of literals when used with constant operands.
+Although they are not strictly literals in the sense given above, some special constructs (called _literal constructors_) allow the modeler to declare constants of other data types. They are actually [operators](Operators) but can be thought of literals when used with constant operands.
 
   * **pair**: the key and the value separated by `::` (e.g. `12::'abc'`)
   * **list**: the elements, separated by commas, enclosed inside square brackets (e.g. `[12,15,15]`)

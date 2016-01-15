@@ -20,7 +20,7 @@ global
 
 When launching your experiment, the parameter will appear in your "Parameters" panel, with the name you chose for the `parameter` facet.
 
-[images/parameter1.png](images/parameter1.png)
+[images/parameter1.png](images/parameter1)
 
 You can also define your parameter inside the experiment, using the statement parameter. You have to specify first the name of your parameter, then the name of the global variable through the facet var.
 
@@ -61,7 +61,7 @@ global
 }
 ```
 
-[images/parameter2.png](images/parameter2.png)
+[images/parameter2.png](images/parameter2)
 
 You also can add some facets such as `min`, `max` or `among` to improve the declaration of the parameter.
 
@@ -77,4 +77,4 @@ experiment MyExperiment type: gui {
 }
 ```
 
-[images/parameter3.png](images/parameter3.png)
+[images/parameter3.png](images/parameter3)

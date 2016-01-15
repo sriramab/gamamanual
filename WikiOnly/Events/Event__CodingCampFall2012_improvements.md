@@ -47,7 +47,7 @@ For the command-line :
     * $1 input parameter file : an xml file determining experiment parameters and attended outputs
     * $2 output directory path : a directory which contains simulation results (numerical data and simulation snapshot)
 
-[go to headless documentation](Headless.md)
+[go to headless documentation](Headless)
 
 # Torus environment
 It is now possible to use toroidal environment for grid and continuous environments (even with complex GIS geometries).  The only thing to do is to use the **torus** facet.
@@ -67,7 +67,7 @@ Be careful concerning toroidal continuous environment: the computation required 
 A demonstration of a continuous toroidal environment is given in the experimental model: testTorus-> continuous\_torus.
 
 
-![http://gama-platform.googlecode.com/files/toroidalEnv.png](http://gama-platform.googlecode.com/files/toroidalEnv.png)
+![http://gama-platform.googlecode.com/files/toroidalEnv.png](http://gama-platform)
 
 # Communication Skill
 Plugin-needed: msi.gaml.extensions.fipa
@@ -96,11 +96,11 @@ grid cell width: 20 height: 20 neighbours: 6 torus: true;
 ```
 
 
-![http://gama-platform.googlecode.com/files/imageHexGrid.png](http://gama-platform.googlecode.com/files/imageHexGrid.png)
+![http://gama-platform.googlecode.com/files/imageHexGrid.png](http://gama-platform)
 
 # Using HSB color
 
-Add [HSB](http://en.wikipedia.org/wiki/HSL_and_HSV) color to be able to iterate through colors and use it to represent qualitative data.
+Add [HSB](http://en) color to be able to iterate through colors and use it to represent qualitative data.
 
 Example:
 
@@ -110,7 +110,7 @@ The association of the orientation of agents is enhanced by mapping the orientat
 color hsb_to_rgb ([heading/360,1.0,1.0]);
 ```
 
-In the following example boids are represented by a triangle with the colors depending on their heading. [![](http://gama-platform.googlecode.com/files/HSB_Color.png)](http://gama-platform.googlecode.com/files/Dynamic_Color_HSB.mov)
+In the following example boids are represented by a triangle with the colors depending on their heading. [![](http://gama-platform)](http://gama-platform)
 
 
 # Multicore runner in Headless Mode

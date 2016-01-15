@@ -12,7 +12,7 @@ A skill adds new features (attributes) and new capabilities (actions) to the ins
 
 A Skill is basically a **singleton** and **stateless** Java class that:
   * extends the abstract class `Skill`,
-  * begins by the annotation [@skill](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/DevelopingExtensions/DevelopingIndexAnnotations.md#@skill): `@skill(name = "name_of_the_skill_in_gaml")`.
+  * begins by the annotation [@skill](https://github): `@skill(name = "name_of_the_skill_in_gaml")`.
 
 Note: GAMA annotations are classes defined into the `msi.gama.precompiler.GamlAnnotations` class.
 
@@ -22,10 +22,10 @@ Note: GAMA annotations are classes defined into the `msi.gama.precompiler.GamlAn
 
 ## Defining new attributes
 
-To add new attributes to the species that declares this skill, developers have to define them before the class using the [@vars](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/DevelopingExtensions/DevelopingIndexAnnotations.md#@vars) and `@var` annotations.
+To add new attributes to the species that declares this skill, developers have to define them before the class using the [@vars](https://github) and `@var` annotations.
 The `@vars` annotation contains a set of `@var` elements.
 
-In a [@var](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/DevelopingExtensions/DevelopingIndexAnnotations.md#@var) element, one has to define the name, the type and the default value of the attribute. For example in MovingSkill:
+In a [@var](https://github) element, one has to define the name, the type and the default value of the attribute. For example in MovingSkill:
 ```
 @vars({
   @var(name = IKeyword.SPEED, type = IType.FLOAT, init = "1.0"),

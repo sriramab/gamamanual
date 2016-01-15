@@ -5,4 +5,4 @@ Whenever a runtime error, or a warning, is issued by the currently running exper
 
 Since an error appearing in the code is likely to be raised by several agents at once, GAMA groups similar errors together, simply indicating which agent(s) raised them. Note that, unless the error is raised by the experiment agent itself, its message will indicate that at least 2 agents raised it: the original agent and the experiment in which it is plunged.
 
-![images/errors_view.png](images/errors_view.png)
+![images/errors_view.png](images/errors_view)

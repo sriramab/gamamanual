@@ -1,7 +1,7 @@
 # Introduction
 
-During the [PDI2012](http://www.ummisco.ird.fr/pdi/) nearly 50 PhD students were working together on different topic related to complex system modeling.
-At the end of the formation, each student (by groups of 2 or 3) had to present a model in a mini-projet. The purpose of this mii-project was to use a platform and to create a model related to their respective research topics. Here is an overview of the model that has been implemented with Gama. Some of those projects has been presenting in [COMMISCO 2012](http://www.ummisco.ird.fr/pdi/spip.php?rubrique6)
+During the [PDI2012](http://www) nearly 50 PhD students were working together on different topic related to complex system modeling.
+At the end of the formation, each student (by groups of 2 or 3) had to present a model in a mini-projet. The purpose of this mii-project was to use a platform and to create a model related to their respective research topics. Here is an overview of the model that has been implemented with Gama. Some of those projects has been presenting in [COMMISCO 2012](http://www)
 
 
 # Projects

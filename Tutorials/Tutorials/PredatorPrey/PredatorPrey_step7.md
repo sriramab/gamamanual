@@ -56,7 +56,7 @@ We specialize the **prey** species from the **generic\_species** species:
    }
 ```
 
-The image file is here: ![images/predator_prey_sheep.png](images/predator_prey_sheep.png)
+The image file is here: ![images/predator_prey_sheep.png](images/predator_prey_sheep)
 
 You have to copy it in your project folder: images/
 
@@ -72,7 +72,7 @@ As done for the **prey** species, we specialize the **predator** species from th
    }
 ```
 
-The image file is here: ![images/predator_prey_wolf.png](images/predator_prey_wolf.png)
+The image file is here: ![images/predator_prey_wolf.png](images/predator_prey_wolf)
 
 You have to copy it in your project folder: images
 

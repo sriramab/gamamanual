@@ -25,10 +25,10 @@ A GAMA model is composed of three type of sections:
   * **species** and **grid**: these sections define the species of agents composing the model. Grid are defined in the following model step "vegetation dynamic";
   * **experiment** : these sections define a context of execution of the simulations. In particular, it defines the input (parameters) and output (displays, files...) of a model.
 
-More details about the different sections of a GAMA model can be found [here](ModelOrganization.md).
+More details about the different sections of a GAMA model can be found [here](ModelOrganization).
 
 ### species
-A [species](RegularSpecies.md) represents a «prototype» of agents: it defines their common properties.
+A [species](RegularSpecies) represents a «prototype» of agents: it defines their common properties.
 
 A species definition requires the definition of three different elements :
   * the internal state of its agents (attributes)
@@ -36,7 +36,7 @@ A species definition requires the definition of three different elements :
   * how they are displayed (aspects)
 
 #### Internal state
-An [attribute](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/ManipulateBasicSpecies/RegularSpecies.md#declaration) is defined as follows: type of the attribute  and name. Numerous types of attributes are available: _int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path..._
+An [attribute](https://github) is defined as follows: type of the attribute  and name. Numerous types of attributes are available: _int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path..._
   * Optional facets: <- (initial value), update (value recomputed at each step of the simulation), function:{..} (value computed each time the variable is used), min, max
 
 In addition to the attributes the modeler explicitly defines, species "inherits" other attributes called "built-in" variables:
@@ -48,7 +48,7 @@ In addition to the attributes the modeler explicitly defines, species "inherits"
 In this first model, we define one species of agents: the **prey** agents. For the moment, these agents will not have a particular behavior, they will just exist and be displayed.
 
 #### Display
-An agent [aspects](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/ManipulateBasicSpecies/RegularSpecies.md#the-aspect-statement) have to be defined. An aspect is a way to display the agents of a species : aspect aspect\_name {…}
+An agent [aspects](https://github) have to be defined. An aspect is a way to display the agents of a species : aspect aspect\_name {…}
 In the block of an aspect, it is possible to draw :
   * A geometry :  for instance, the shape of the agent (but it may be a different one, for instance a disk instead of a complex polygon)
   * An image : to draw icons
@@ -76,7 +76,7 @@ species prey {
 ### global section
 The global section represents a specific agent, called world. Defining this agent follows the same principle as any agent and is, thus, defined after a species.
 The world agent represents everything that is global to the model : dynamics, variables…
-It allows to initialize simulations (init block): the world is always created and initialized first when a simulation is launched (before any other agents). The geometry (shape) of the world agent is by default a square with 100m for side size, but can be redefined if necessary (see the [Road traffic tutorial](RoadTrafficModel.md)).
+It allows to initialize simulations (init block): the world is always created and initialized first when a simulation is launched (before any other agents). The geometry (shape) of the world agent is by default a square with 100m for side size, but can be redefined if necessary (see the [Road traffic tutorial](RoadTrafficModel)).
 
 #### global variable
 In the current model, we will only have a certain numbers of preys thus we need to hold this number in a global or world's variable of type integer (_int_) which can be done as follows:
@@ -142,7 +142,7 @@ Each display can include different layers (like in a GIS) :
   * Texts : **texte** layer\_name value: my\_text;
   * Charts : see later.
 
-Note that it is possible to define a [opengl display](Defining3DDisplays.md) (for 3D display) by using the facet **type: opengl**.
+Note that it is possible to define a [opengl display](Defining3DDisplays) (for 3D display) by using the facet **type: opengl**.
 
 In our model, we define a display to draw the _prey_ agents.
 ```

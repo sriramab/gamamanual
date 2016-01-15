@@ -1,7 +1,7 @@
 # 3. Importation of GIS data
 This third step illustrates how load GIS data and to agentify them.
 
-![images/luneray3.tiff](images/luneray3.tiff)
+![images/luneray3.tiff](images/luneray3)
 
 
 
@@ -15,7 +15,7 @@ This third step illustrates how load GIS data and to agentify them.
 
 ## Model Definition
 
-For this step, you will need to add the shapefiles of the roads and buildings inside the _includes_ folder of the project. The shapefiles (and all the other files) can be found [here](https://github.com/gama-platform/gama/wiki/images/Tutorials/Luneray's flu/Luneray's flu.zip). 
+For this step, you will need to add the shapefiles of the roads and buildings inside the _includes_ folder of the project. The shapefiles (and all the other files) can be found [here](https://github). 
  
 ### species
 In this model, we have to define two species of agents: the **road** agents and the **building** ones. These agents will not have a particular behavior, they will just be displayed.
@@ -89,7 +89,7 @@ global {
 }
 ```
 
-We used here the [one_of](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/Expressions/Operators.md#one_of) operator that returns a random element from a list and the [any_location_in](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/Expressions/Operators.md#any_location_in) operator that returns a random location inside a geometry.
+We used here the [one_of](https://github) operator that returns a random element from a list and the [any_location_in](https://github) operator that returns a random location inside a geometry.
 
 ### experiment
 
@@ -202,4 +202,4 @@ experiment main_experiment type:gui{
 }
 ```
 
-[Next step: Use of a graph to constraint the movements of people](LuneraysFlu_step4.md)
+[Next step: Use of a graph to constraint the movements of people](LuneraysFlu_step4)

@@ -2,9 +2,9 @@
 
 
 
-Additional [built-in species](BuiltInSpecies.md) can be defined in Java in order to be used in GAML models. Additional attributes and actions can be defined. It could be very useful in order to define its behavior thanks to external libraries (e.g. [mulit-criteria decision-making](OtherBuiltInSpecies.md), [database connection](OtherBuiltInSpecies.md)...).
+Additional [built-in species](BuiltInSpecies) can be defined in Java in order to be used in GAML models. Additional attributes and actions can be defined. It could be very useful in order to define its behavior thanks to external libraries (e.g. [mulit-criteria decision-making](OtherBuiltInSpecies), [database connection](OtherBuiltInSpecies)...).
 
-A new built-in species extends the `GamlAgent` class, which defines the basic GAML agents. As a consequence, new built-in species have all the attributes (`name`, `shape`, ...) and actions (`die`...) of [regular species](AgentBuiltIn.md).
+A new built-in species extends the `GamlAgent` class, which defines the basic GAML agents. As a consequence, new built-in species have all the attributes (`name`, `shape`, ...) and actions (`die`...) of [regular species](AgentBuiltIn).
 
 
 
@@ -15,19 +15,19 @@ A new built-in species extends the `GamlAgent` class, which defines the basic GA
 
 A new species can be **any Java class** that:
   * extends the `GamlAgent` class,
-  * begins by the [@species](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/DevelopingExtensions/DevelopingIndexAnnotations.md#@species): `@species(name = "name_of_the_species_gaml")`,
+  * begins by the [@species](https://github): `@species(name = "name_of_the_species_gaml")`,
 ```
 @species(name = "multicriteria_analyzer")
 public class MulticriteriaAnalyzer extends GamlAgent {
 ```
 
-[Similarly to skills](DevelopingSkills.md), a species can define additional attributes and actions.
+[Similarly to skills](DevelopingSkills), a species can define additional attributes and actions.
 
 ### Additional attributes
 
 Defining new attributes needs:
-  * to add [@vars](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/DevelopingExtensions/DevelopingIndexAnnotations.md#@vars) (and one embedded [@var](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/DevelopingExtensions/DevelopingIndexAnnotations.md#@var) per additional attribute) annotation on top of the class,
-  * to define [@setter](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/DevelopingExtensions/DevelopingIndexAnnotations.md#@setter) and [@getter](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/DevelopingExtensions/DevelopingIndexAnnotations.md#@getter) annotations to the accessors methods.
+  * to add [@vars](https://github) (and one embedded [@var](https://github) per additional attribute) annotation on top of the class,
+  * to define [@setter](https://github) and [@getter](https://github) annotations to the accessors methods.
 
 For example, regular species are defined with the following annotation:
 ```
@@ -48,7 +48,7 @@ public abstract void setName(String name);
 
 ### Additional actions
 
-An additional action is a method annotated by the [@action](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/DevelopingExtensions/DevelopingIndexAnnotations.md#@action) annotation.
+An additional action is a method annotated by the [@action](https://github) annotation.
 ```
 @action(name = ISpecies.stepActionName)
 public Object _step_(final IScope scope) {

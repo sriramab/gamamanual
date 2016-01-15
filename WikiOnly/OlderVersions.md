@@ -35,10 +35,10 @@ Version 1.6.1 is the current version of GAMA. It improves many features over ver
   * Definition of charts (dynamic data lists, marker type, range, etc.)
 
 Documentation:
-  * Available [online](Overview.md)
+  * Available [online](Overview)
 
 
-![images/splash_1_61.png](images/splash_1_61.png)
+![images/splash_1_61.png](images/splash_1_61)
 
 
 
@@ -54,10 +54,10 @@ This version introduced many features over 1.5.1 :
   * more user/simulation interaction (event statement)
 
 Documentation:
-  * [Documentation in PDF](https://github.com/gama-platform/gama/wiki/Content/ressources/pdf/GAMAv16.pdf)
+  * [Documentation in PDF](https://github)
 
 
-![images/splash_1_6.png](images/splash_1_6.png)
+![images/splash_1_6.png](images/splash_1_6)
 
 
 
@@ -78,10 +78,10 @@ Version 1.5.1 improved some features of 1.5 :
   * new models (driving\_traffic, Vote, 3D models)
 
 Documentation:
-  * [Documentation in PDF](https://github.com/gama-platform/gama/wiki/Content/ressources/pdf/GAMAv151.pdf)
+  * [Documentation in PDF](https://github)
 
 
-![images/splash_1_5.png](images/splash_1_5.png)
+![images/splash_1_5.png](images/splash_1_5)
 
 
 
@@ -101,10 +101,10 @@ Key points :
   * Many more novelties/improvements/enrichments…
 
 Documentation:
-  * [Documentation in PDF](https://github.com/gama-platform/gama/wiki/Content/ressources/pdf/GAMAv14.pdf)
+  * [Documentation in PDF](https://github)
 
 
-![images/splash_1_4.png](images/splash_1_4.png)
+![images/splash_1_4.png](images/splash_1_4)
 
 
 
@@ -121,10 +121,10 @@ Key points :
   * Integration of decision-making algorithms
 
 Documentation:
-  * [Documentation in PDF](https://github.com/gama-platform/gama/wiki/Content/ressources/pdf/GAMAv13.pdf)
+  * [Documentation in PDF](https://github)
 
 
-![images/splash_1_3.png](images/splash_1_3.png)
+![images/splash_1_3.png](images/splash_1_3)
 
 
 
@@ -139,8 +139,8 @@ Key points :
   * First release as an open-source project
 
 Documentation:
-  * [Guidebook of GAMA 1.1](https://github.com/gama-platform/gama/wiki/Content/ressources/pdf/GAMAv11.pdf)
+  * [Guidebook of GAMA 1.1](https://github)
   * [Training session on GAMA 1.1 (Hanoi)](TrainingSessionHanoi2009)
 
 
-![images/splash_1_1.png](images/splash_1_1.png)
+![images/splash_1_1.png](images/splash_1_1)

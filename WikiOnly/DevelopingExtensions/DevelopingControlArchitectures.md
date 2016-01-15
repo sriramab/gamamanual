@@ -2,9 +2,9 @@
 
 
 
-In addition to existing [control architectures](BuiltInArchitectures.md), developers can add new ones.
+In addition to existing [control architectures](BuiltInArchitectures), developers can add new ones.
 
-Defining a new control architecture needs to [create new statements of type behavior](DevelopingStatements.md) and included in species statements and to define how to manage their execution.
+Defining a new control architecture needs to [create new statements of type behavior](DevelopingStatements) and included in species statements and to define how to manage their execution.
 
 
 
@@ -14,7 +14,7 @@ Defining a new control architecture needs to [create new statements of type beha
 ## Implementation
 
 A control architecture is a Java class, that:
-  * is annotated by the [@skill](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/DevelopingExtensions/DevelopingIndexAnnotations.md#@skill) annotation,
+  * is annotated by the [@skill](https://github) annotation,
   * extends the `AbstractArchitecture` class (to get benefits of everything from the `reflex`-based control architecture, the `ReflexArchitecture` class can be extended instead).
 
 The `AbstractArchitecture` extends the `ISkill` and `IStatement` interfaces and add the 2 following methods:
