@@ -14,14 +14,14 @@ Statements are a fundamental part of GAML, as they represent both commands (impe
 A new statement must be a Java class that:
   * either implements the interface `IStatement` or extends an existing implementation of this interface (like `AbstractStatement` or `AbstractSequenceStatement`).
   * begins by the 2 following mandatory annotations:
-    * [@symbol](https://github): `@symbol(name = "name_of_the_statement_gaml", kind = "kind_of_statement", with_sequence = true/false)`,
-    * [@inside](https://github): `@symbol(kinds = {"kind_of_statement_1","kind_of_statement_2","..."}`
+    * [@symbol](DevelopingIndexAnnotations#@symbol): `@symbol(name = "name_of_the_statement_gaml", kind = "kind_of_statement", with_sequence = true/false)`,
+    * [@inside](DevelopingIndexAnnotations#@inside): `@symbol(kinds = {"kind_of_statement_1","kind_of_statement_2","..."}`
 
 In addition the 4 following optional annotations can be added:
-  * [@facets](https://github): to describe the set of [@facet](https://github) annotations,
-  * [@doc](https://github): to document the statement.
-  * [@serializer](https://github): in addition, statements can benefit from a custom serializer, by declaring `@serializer(CustomSerializer.class)`, with a class extending `SymbolSerializer`.
-  * [@validator](https://github): in addition, statements can benefit from a custom validation during the validation process, by declaring `@validator(CustomValidator.class)` with a class implementing `IDescriptionValidator` as value. This class will receive the `IDescription` of the statement and be able to execute further validations on the type of expressions, etc. or even to change the `IDescription`  (by adding new information, changing the value of facets, etc.).
+  * [@facets](DevelopingIndexAnnotations#@facets): to describe the set of [@facet](DevelopingIndexAnnotations#@facet) annotations,
+  * [@doc](DevelopingIndexAnnotations#@doc): to document the statement.
+  * [@serializer](DevelopingIndexAnnotations#@serializer): in addition, statements can benefit from a custom serializer, by declaring `@serializer(CustomSerializer.class)`, with a class extending `SymbolSerializer`.
+  * [@validator](DevelopingIndexAnnotations#@validator): in addition, statements can benefit from a custom validation during the validation process, by declaring `@validator(CustomValidator.class)` with a class implementing `IDescriptionValidator` as value. This class will receive the `IDescription` of the statement and be able to execute further validations on the type of expressions, etc. or even to change the `IDescription`  (by adding new information, changing the value of facets, etc.).
 
 Note: GAMA annotations are classes defined into the `msi.gama.precompiler.GamlAnnotations` class.
 
@@ -156,7 +156,7 @@ This class should only implement a constructor. The class `AbstractStatementSequ
 ### Additional methods that can implemented
 
 The following methods have a default implementation, but can be overridden if necessary:
-  * the **`String getTrace(final IScope scope)` method** is called to trace the execution of statements using [trace statement](https://github).
+  * the **`String getTrace(final IScope scope)` method** is called to trace the execution of statements using [trace statement](Statements#trace).
 ```
 public String getTrace(final IScope scope) {
 	// We dont trace write statements
@@ -175,7 +175,7 @@ This annotation represents a "statement" in GAML, and is used to define its name
 
 This annotation contains:
   * **name** (set of string, empty by default): _names of the statement_.
-  * **kind** (int): _the kind of the annotated symbol (see [ISymbolKind.java](https://github) for more details)_.
+  * **kind** (int): _the kind of the annotated symbol (see [ISymbolKind.java](https://github.com/gama-platform/gama/tree/master/msi.gama.processor/src/msi/gama/precompiler/ISymbolKind.java) for more details)_.
   * **with\_scope** (boolean, true by default): _indicates if the statement (usually a sequence) defines its own scope. Otherwise, all the temporary variables defined in it are actually defined in the super-scope_.
   * **with\_sequence** (boolean): _indicates wether or not a sequence can or should follow the symbol denoted by this class_.
   * **with\_args** (boolean, false by default): _indicates wether or not the symbol denoted by this class will accept arguments_.
@@ -187,7 +187,7 @@ This annotation is used in conjunction with symbol. Provides a way to tell where
 
 This annotation contains:
   * **symbols** (set of Strings, empty by default): _symbol names of the parents_.
-  * **kinds** (set of int, empty by default): _generic symbol kinds of the parents (see [ISymbolKind.java](https://github) for more details)_.
+  * **kinds** (set of int, empty by default): _generic symbol kinds of the parents (see [ISymbolKind.java](https://github.com/gama-platform/gama/tree/master/msi.gama.processor/src/msi/gama/precompiler/ISymbolKind.java) for more details)_.
 
 ### @facets
 This annotation describes a list of facets used by a statement in GAML.

@@ -20,17 +20,17 @@ Since model files need to reside in a project to be managed by GAMA, it is usual
 ## The "Import..." Menu Command
 The simplest, safest and most secure way to import a project into the workspace is to use the built-in "Import..." menu command, available in the "File" menu or in the contextual menu of the _Navigator_.
 
-![images/menu_file_import.png](images/menu_file_import)
+![images/menu_file_import.png](resources\images/menu_file_import.png)
 
 
 When invoked, this command will open a dialog asking the user to choose the source of the importation. It can be a directory in the filesystem (in which GAMA will look for existing projects), a zip file, a SVN site, etc. It is safer in any case to choose "Existing Projects into Workspace".
 
 
-![images/dialog_import.png](images/dialog_import)
+![images/dialog_import.png](resources\images/dialog_import.png)
 
 Note that when invoked from the contextual menu, "Import..." will directly give access to a shortcut of this source in a submenu.
 
-![images/menu_navigator_import.png](images/menu_navigator_import)
+![images/menu_navigator_import.png](resources\images/menu_navigator_import.png)
 
 
 Both options will lead the user to a last dialog where he/she will be asked to:
@@ -39,7 +39,7 @@ Both options will lead the user to a last dialog where he/she will be asked to:
 2. Choose among the list of available projects (computed by GAMA) the ones to effectively import
 3. Indicate whether or not these projects need to be **copied to** or **linked from** the workspace (the latter is done by default)
 
-![images/dialog_import_2.png](images/dialog_import_2)
+![images/dialog_import_2.png](resources\images/dialog_import_2.png)
 
 
 

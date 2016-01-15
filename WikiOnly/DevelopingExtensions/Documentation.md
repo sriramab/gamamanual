@@ -66,8 +66,8 @@ In addition, the folder containing the wiki files is required. In the GitHub arc
     * Finish
 2. Go back to the Java perspective: a `gama.wiki` plugin should have been added.
 
-In order to generate the PDF file from the wiki files, we use an external application named [Pandoc](http://pandoc).
-Follow the [Pandoc installation instructions to install it](http://pandoc). Note that Latex should be installed in order to be able to generate PDF files.
+In order to generate the PDF file from the wiki files, we use an external application named [Pandoc](http://pandoc.org/).
+Follow the [Pandoc installation instructions to install it](http://pandoc.org/installing.html). Note that Latex should be installed in order to be able to generate PDF files.
 
 
 ### Configuration
@@ -146,9 +146,9 @@ The documentation is generate from the Java code thanks to the Java additional p
 
 ### The `@doc` annotation
 
-Most of the annotations can contain a [`@doc`](https://github) annotation, that can contain the main part of the documentation.
+Most of the annotations can contain a [`@doc`](DevelopingIndexAnnotations#doc) annotation, that can contain the main part of the documentation.
 
-For example, the `inter` ([inter](https://github)) operator is commented using: 
+For example, the `inter` ([inter](Operators#inter)) operator is commented using: 
 ```
 @doc(
   value = "the intersection of the two operands",

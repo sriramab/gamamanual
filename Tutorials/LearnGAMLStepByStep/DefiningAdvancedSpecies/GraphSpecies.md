@@ -61,7 +61,7 @@ experiment MyExperiment type: gui {
 }
 ``` 
 
-[images/graph_related_to.png](images/graph_related_to)
+[images/graph_related_to.png](resources\images/graph_related_to.png)
 
 You can for example link 2 agents when they are closer than a certain distance.
 Beware: The topology used in graph species is the graph topology, and not the continuous topology. You can force the use of the continuous topology with the action "using" as follow:
@@ -74,7 +74,7 @@ bool related_to(graph_agent other){
 }
 ``` 
 
-[images/graph_related_to2.png](images/graph_related_to2)
+[images/graph_related_to2.png](resources\images/graph_related_to2.png)
 
 The abstract mother species "graph_node" has an attribute "my_graph", with the type "graph". The graph type represent a graph composed of vertices linked with edges. This type has built-in attributes such as `edges` (the list of all the edges agents), or `vertices` (the list of all the vertices agents).
 
@@ -189,7 +189,7 @@ list<graph_agent> list_neighbors <- list<graph_agent>(my_graph neighbors_of (sel
 
 Here is an example of model using those two previous concepts (a random node is chosen each step, displayed in red, and his neighbors are displayed in yellow):
 
-[images/graph_model.png](images/graph_model)
+[images/graph_model.png](resources\images/graph_model.png)
 
 ```
 model graph_model
@@ -300,7 +300,7 @@ Another operator exists, `paths_between`, that returns a list of shortest paths 
 
 Here is an example of code that show the shortest path between two points of a graph:
 
-[images/graph_model.png](images/graph_model)
+[images/graph_model.png](resources\images/graph_model.png)
 
 ```
 model graph_model
@@ -395,7 +395,7 @@ my_graph <- my_graph with_weights (my_graph.edges as_map (each::geometry(each).p
 
 The calculation of shortest path can change according to the weight you choose for your edges. For example, here is the result of the calculation of the shortest path when all the edges have 1 as weight value (it is the default graph topology), and when the edges have their length as weight.
 
-[images/path_weight.png](images/path_weight)
+[images/path_weight.png](resources\images/path_weight.png)
 
 Here is an example of implementation:
 

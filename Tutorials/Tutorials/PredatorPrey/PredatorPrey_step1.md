@@ -36,7 +36,7 @@ A species definition requires the definition of three different elements :
   * how they are displayed (aspects)
 
 #### Internal state
-An [attribute](https://github) is defined as follows: type of the attribute  and name. Numerous types of attributes are available: _int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path..._
+An [attribute](RegularSpecies#declaration) is defined as follows: type of the attribute  and name. Numerous types of attributes are available: _int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path..._
   * Optional facets: <- (initial value), update (value recomputed at each step of the simulation), function:{..} (value computed each time the variable is used), min, max
 
 In addition to the attributes the modeler explicitly defines, species "inherits" other attributes called "built-in" variables:
@@ -48,7 +48,7 @@ In addition to the attributes the modeler explicitly defines, species "inherits"
 In this first model, we define one species of agents: the **prey** agents. For the moment, these agents will not have a particular behavior, they will just exist and be displayed.
 
 #### Display
-An agent [aspects](https://github) have to be defined. An aspect is a way to display the agents of a species : aspect aspect\_name {…}
+An agent [aspects](RegularSpecies#the-aspect-statement) have to be defined. An aspect is a way to display the agents of a species : aspect aspect\_name {…}
 In the block of an aspect, it is possible to draw :
   * A geometry :  for instance, the shape of the agent (but it may be a different one, for instance a disk instead of a complex polygon)
   * An image : to draw icons

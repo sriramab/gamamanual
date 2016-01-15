@@ -152,7 +152,7 @@ The statement `migrate`, less used, permits agents to migrate from one populatio
 
 Here is an example of micro_species that gather together in macro_species when they are close enough.
 
-[images/multilevel_model.png](images/multilevel_model)
+[images/multilevel_model.png](resources\images/multilevel_model.png)
 
 ```
 model multilevel

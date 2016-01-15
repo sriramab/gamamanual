@@ -180,7 +180,7 @@ species other_specie {
 To practice those notions, here is a short basic example. Let's build a model with a fix number of agents with a circle shape. They can move randomly on the environment, and when they are close enough from another agent, a line is displayed between them. This line is destroyed when the distance between the two agents is too important.
 Hint: use the operator `polyline` to construct a line. List the points between angle brackets `[]`.
 
-[images/connect_the_neighbours.png](images/connect_the_neighbours) 
+[images/connect_the_neighbours.png](resources\images/connect_the_neighbours.png) 
 
 Here is one example of implementation:
 

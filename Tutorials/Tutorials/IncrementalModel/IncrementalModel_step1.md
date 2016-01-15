@@ -12,7 +12,7 @@ This first step Illustrates how to write a model in GAMA. In particular, it desc
   * Creation of **500** **people** agents randomly located in the environment (size: 500x500)
   * Definition a display to visualize the people agents.
 
-![images/Incremental_model1.jpg](images/Incremental_model1)
+![images/Incremental_model1.jpg](resources\images/Incremental_model1.jpg)
 
 
 
@@ -45,7 +45,7 @@ species people skills:[moving]{
 }
 ```
 
-Concerning the internal state, a [attribute](https://github) is defined as follows: type of the attribute (int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path...) + name
+Concerning the internal state, a [attribute](RegularSpecies#declaration) is defined as follows: type of the attribute (int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path...) + name
   * Optional facets: <- (initial value), update (value recomputed at each step of the simulation), function:{..} (value computed each time the variable is used), min, max
 
 Note that all the species inherit from predefined built-in variables:
@@ -60,7 +60,7 @@ species people skills:[moving]{
 }
 ```
 
-Concerning the display of an agent, [aspects](https://github) have to be defined. An aspect represents a possible way to display the agents of a species : aspect aspect\_name {…}
+Concerning the display of an agent, [aspects](RegularSpecies#the-aspect-statement) have to be defined. An aspect represents a possible way to display the agents of a species : aspect aspect\_name {…}
 In the block of an aspect, it is possible to draw :
   * A geometry :  for instance, the shape of the agent
   * An image : to draw icons
@@ -211,7 +211,7 @@ Each display can include different layers (like in a GIS) :
   * Texts : **texte** layer\_name value: my\_text;
   * Charts : see later.
 
-Note that it is possible to define a [opengl display](Defining3DDisplays) (for 3D display) by using the facet **type: opengl**.
+Note that it is possible to define a [opengl display](G__3DSpecificInstructions) (for 3D display) by using the facet **type: opengl**.
 
 In our model, we define a display to draw the **people** agents with their **circle** aspect.
 ```

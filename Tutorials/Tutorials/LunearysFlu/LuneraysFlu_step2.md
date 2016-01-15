@@ -2,7 +2,7 @@
 This second step illustrates how to create monitors and charts to follows the evolution of variables and to add an ending condition to the simulation.
 
 
-![images/luneray2.tiff](images/luneray2)
+![images/luneray2.tiff](resources\images/luneray2.tiff)
 
 
 
@@ -39,7 +39,7 @@ global{
 }
 ```
 
-We used the [count](https://github) operator that allows to count the number of elements of a list for which the left condition is true. The keyword _each_ represents each element of the list.
+We used the [count](Operators#count) operator that allows to count the number of elements of a list for which the left condition is true. The keyword _each_ represents each element of the list.
 
 #### ending condition
 
@@ -58,7 +58,7 @@ global {
 ### experiment
 
 #### monitor
-GAMA provides modelers with the possibility to define [monitors](https://github). A monitor allows to follow the value of an arbitrary expression in GAML. It will appear, in the User Interface, in a small window on its own and be recomputed every time step (or according to its 'refresh_every' facet). 
+GAMA provides modelers with the possibility to define [monitors](DefiningMonitorsAndInspectors#monitors). A monitor allows to follow the value of an arbitrary expression in GAML. It will appear, in the User Interface, in a small window on its own and be recomputed every time step (or according to its 'refresh_every' facet). 
 
 Definition of a monitor:
    * _value_: mandatory, the expression whose value will be displayed by the monitor.
@@ -79,7 +79,7 @@ experiment main_experiment type:gui{
 
 #### Chart
 
-In GAMA, [charts](DefiningCharts) are considered as a display layer. 
+In GAMA, [charts](G__DefiningChartLayers) are considered as a display layer. 
 GAMA can display 3 main types of charts using the _type_ facet:
 
   * histogram

@@ -16,7 +16,7 @@ Initialize a 3D world with a population of cells placed randomly in a 3D 100x100
   * Creation of **nb\_cells** **cells** agents randomly located in the 3D environment size: 100x100x100.
 
 
-![images/3D_model_LQ.png](images/3D_model_LQ)
+![images/3D_model_LQ.png](resources\images/3D_model_LQ.png)
 
 
 
@@ -91,7 +91,7 @@ output {
 
 ## Complete Model
 
-This model is available in the model library (under Tutorials > 3D) and the GIT version of the model can be found here [Model 01.gaml](https://github)
+This model is available in the model library (under Tutorials > 3D) and the GIT version of the model can be found here [Model 01.gaml](https://github.com/gama-platform/gama/tree/master/msi.gama.models/models/Tutorials/3D/models/Model 01.gaml)
 
 ```
 model Tuto3D

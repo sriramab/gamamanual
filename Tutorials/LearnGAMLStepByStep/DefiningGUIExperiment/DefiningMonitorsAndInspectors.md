@@ -46,8 +46,8 @@ inspect name:"inspector_name" value:the_value_you_want_to_display;
 Note that you can inspect any type of species (regular species, grid species, even the world...).
 
 The optional facet `type` is used to specify the type of your inspector. 2 values are possible : 
-* _agent_ (default value) if you want to display the information as a regular [agent inspector](https://github). Note that if you want to inspect a large number of agents, this can take a lot of time. In this case, prefer the other type _table_
-* _table_ if you want to display the information as an [agent browser](https://github)
+* _agent_ (default value) if you want to display the information as a regular [agent inspector](InspectorsAndMonitors#agent-inspector). Note that if you want to inspect a large number of agents, this can take a lot of time. In this case, prefer the other type _table_
+* _table_ if you want to display the information as an [agent browser](InspectorsAndMonitors#agent-browser)
 
 The optional facet `attribute` is used to filter the attributes you want to be displayed in your inspector.
 

@@ -2,7 +2,7 @@
 This first step illustrates how to create simple agents and make them move in their environment.
 
 
-![images/luneray1.tiff](images/luneray1)
+![images/luneray1.tiff](resources\images/luneray1.tiff)
 
 
 
@@ -47,7 +47,7 @@ species people {
 }
 ```
 
-In addition, we want add a new capability to our agent: the possibility to move randomly. for that, we add a specific skill to our people agents. A [skill](AttachingSkills) is a built-in module that provide the modeler a self-contain and relevant set of actions and variables. The [moving](https://github) provides the agents with several attributes and actions related to movement. 
+In addition, we want add a new capability to our agent: the possibility to move randomly. for that, we add a specific skill to our people agents. A [skill](AttachingSkills) is a built-in module that provide the modeler a self-contain and relevant set of actions and variables. The [moving](__BuiltInSkills#moving) provides the agents with several attributes and actions related to movement. 
 
 ```
    species people skills: [moving]{
@@ -57,7 +57,7 @@ In addition, we want add a new capability to our agent: the possibility to move 
 
 
 #### Internal state
-An [attribute](https://github) is defined as follows: type of the attribute  and name. Numerous types of attributes are available: _int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path..._
+An [attribute](RegularSpecies#declaration) is defined as follows: type of the attribute  and name. Numerous types of attributes are available: _int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path..._
   * Optional facets: <- (initial value), update (value recomputed at each step of the simulation), function:{..} (value computed each time the variable is used), min, max
 
 In addition to the attributes the modeler explicitly defines, species "inherits" other attributes called "built-in" variables:
@@ -75,19 +75,19 @@ species people skills:[moving]{
 	bool is_infected <- false;
 }
 ```
-Note we use the [rnd](https://github) operator to define a random value between 2 and 5 for the speed. In addition, we precise a unit for the speed value by using the # symbol. For more details about units, see [here](UnitsAndConstants).
+Note we use the [rnd](Operators#rnd) operator to define a random value between 2 and 5 for the speed. In addition, we precise a unit for the speed value by using the # symbol. For more details about units, see [here](UnitsAndConstants).
 
 #### Behavior
 GAMA proposes several ways to define the behavior of a species: dynamic variables (update facet), reflexes....
 
-A [reflex](https://github) is a block of statements (that can be defined in global or any species) that will be automatically executed at each simulation step if its condition is true, it is defined as follows:
+A [reflex](DefiningActionsAndBehaviors#behaviors) is a block of statements (that can be defined in global or any species) that will be automatically executed at each simulation step if its condition is true, it is defined as follows:
 ```
    reflex reflex_name when: condition {…}
 ```
 
 The **when** facet is optional: when it is omitted, the reflex is activated at each time step. Note that if several reflexes are defined for a species, the reflexes will be activated following their definition order.
 
-We define a first reflex called **move** that is activated at each simulation step (no condition) and that makes the people move randomly using the wander action from the [moving](https://github) skill.
+We define a first reflex called **move** that is activated at each simulation step (no condition) and that makes the people move randomly using the wander action from the [moving](BuiltInSkills#moving) skill.
 ```
 species people skills:[moving]{		
 	//variable definition
@@ -111,10 +111,10 @@ species people skills:[moving]{
 	}
 }
 ```
-The [ask](https://github) allows an agent to ask another agents to do something (i.e. to execute a sequence of statements). The [at_distance](https://github) operator allows to get the list of agents (here of people agents) that are located at a distance lower or equal to the given distance (here 10m). The [flip](https://github) operator allows to test a probability.
+The [ask](Statements#ask) allows an agent to ask another agents to do something (i.e. to execute a sequence of statements). The [at_distance](Operators#at_distance) operator allows to get the list of agents (here of people agents) that are located at a distance lower or equal to the given distance (here 10m). The [flip](Operators#flip) operator allows to test a probability.
 
 #### Display
-An agent [aspects](https://github) have to be defined. An aspect is a way to display the agents of a species : aspect aspect\_name {…}
+An agent [aspects](RegularSpecies#the-aspect-statement) have to be defined. An aspect is a way to display the agents of a species : aspect aspect\_name {…}
 In the block of an aspect, it is possible to draw :
   * A geometry :  for instance, the shape of the agent (but it may be a different one, for instance a disk instead of a complex polygon)
   * An image : to draw icons
@@ -220,7 +220,7 @@ Each display can include different layers (like in a GIS) :
   * Texts : **texte** layer\_name value: my\_text;
   * Charts : see later.
 
-Note that it is possible to define a [opengl display](Defining3DDisplays) (for 3D display or just to optimize the display) by using the facet **type: opengl**.
+Note that it is possible to define a [opengl display](G__3DSpecificInstructions) (for 3D display or just to optimize the display) by using the facet **type: opengl**.
 
 In our model, we define an OpenGL display to draw the _people_ agents. 
 ```

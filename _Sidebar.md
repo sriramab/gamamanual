@@ -16,7 +16,6 @@
   1. [GAML Editor (Generalities)](GamlEditorGeneralities)
   2. [GAML Editor Toolbar](GamlEditorToolbar)
   3. [Validation of Models](ValidationOfModels)
-  4. [Graphical Editor](GraphicalEditor)
 4. [Running Experiments](RunningExperiments)
   1. [Launching Experiments](LaunchingExperiments)
   2. [Experiments User interface](ExperimentsUserInterface)

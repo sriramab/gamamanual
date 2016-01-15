@@ -48,7 +48,7 @@ The second form is reserved for using models as _micro-models_ of the current mo
 The last part of the _header_ is the definition of the [`global` species](GlobalSpecies), which is the actual definition of the _model species_ itself.
 ```
 global {
-    // Definition of [global attributes](https://github), [actions and behaviors](DefiningActionsAndBehaviors)
+    // Definition of [global attributes](GlobalSpecies#declaration), [actions and behaviors](DefiningActionsAndBehaviors)
 }
 ```
 
@@ -69,7 +69,7 @@ global {
 [Regular species](RegularSpecies) can be declared with the keyword `species`. You can declare several regular species, and they all have to be named.
 ```
 species nameOfSpecies {
-	// definition of your [species attributes](https://github), [actions and behaviors](DefiningActionsAndBehaviors)
+	// definition of your [species attributes](RegularSpecies#declaration), [actions and behaviors](DefiningActionsAndBehaviors)
 }
 ```
 Note that the possibility to define the species _after_ the `global` definition is actually a convenience: these species are micro-species of the model species and, hence, could be perfectly defined as nested species of `global`. For instance:
@@ -85,7 +85,7 @@ species B {…}
 is completely equivalent to:
 ```
 global {
-    // definition of [global attributes](https://github), actions, behaviors
+    // definition of [global attributes](GlobalSpecies#declaration), actions, behaviors
 
     species A {…}
 
@@ -134,7 +134,7 @@ Here is the basic skeleton of a model :
 model name_of_the_model
 
 global {
-	// definition of [global attributes](https://github), actions, behaviours
+	// definition of [global attributes](GlobalSpecies#declaration), actions, behaviours
 }
 
 species my_specie {

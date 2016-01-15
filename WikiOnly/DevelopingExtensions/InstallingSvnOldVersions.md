@@ -100,9 +100,9 @@ To compile and run GAMA properly, you will need to configure your Eclipse IDE an
     * Window->Preferences
     * In: Java / Compiler: set "Compiler compliance level" to 1.6
     * In: Java / Installed JREs -> Add -> Standard VM -> JRE home -> Directory and choose the directory of a Java 6 JDK (preferable) or a Java 7 JDK (except for MacOS X, see [Installation](Installation)).
-      * Download the JDK 6 (for Windows & Linux) [here](http://www)
-      * Download the JDK 7 (for Windows & Linux) [here](http://www).
-      * Download the JDK 6 (for Mac OS X) [here](http://support). To switch between 1.7 and 1.6 (if both are installed), look at the use of `java-home` on this [page](http://docs).
+      * Download the JDK 6 (for Windows & Linux) [here](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html#jdk-6u45-oth-JPR)
+      * Download the JDK 7 (for Windows & Linux) [here](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
+      * Download the JDK 6 (for Mac OS X) [here](http://support.apple.com/kb/DL1572). To switch between 1.7 and 1.6 (if both are installed), look at the use of `java-home` on this [page](http://docs.oracle.com/javase/7/docs/webnotes/install/mac/mac-jdk.html).
     * In: Java / Installed JREs -> select Java 1.6 (for Mac) or 1.7 (on Windows & Linux).
   1. You should configure the GAMA `.product` file depending on your OS.
     * In the `msi.gama.application` project, open the `gama1.6.1.feature_based_release.product` file.
@@ -113,9 +113,9 @@ To compile and run GAMA properly, you will need to configure your Eclipse IDE an
     * Do a "Project -> Clean... (clean all projects)"
     * In the .product file, in "Overview" tab:
       * click on the � Synchronize � link. This will ensure your product has updated the inclusion of the plugins (from both Eclipse and the new XText). Do not forget to save it.
-      * The product, or some of the included features, may complain about missing plugins (identified by an error icon on the plugin icon in the dependencies view). It is normal for "fragments" that apply to another OS than yours and it is harmless in this case. If you are, however, concerned about this, you can install the "delta-pack" for Eclipse 3.7.2 or Eclipse 3.8.2 (follow these steps: http://ugosan.org/eclipse-rcp-delta-pack/. The delta pack itself can be downloaded from [here](http://archive)).
+      * The product, or some of the included features, may complain about missing plugins (identified by an error icon on the plugin icon in the dependencies view). It is normal for "fragments" that apply to another OS than yours and it is harmless in this case. If you are, however, concerned about this, you can install the "delta-pack" for Eclipse 3.7.2 or Eclipse 3.8.2 (follow these steps: http://ugosan.org/eclipse-rcp-delta-pack/. The delta pack itself can be downloaded from [here](http://archive.eclipse.org/eclipse/downloads/drops/R-3.7.2-201202080800/download.php?dropFile=eclipse-3.7.2-delta-pack.zip)).
       * If one of the missing plugins happens to be "com.ibm.icu.base" (and you did not want to install it as told above), you can replace it by "com.ibm.icu" without worries.
-      * As of GAMA 1.6.1, we use a version of the SWT binary fragments that is not the one shipped with Eclipse Indigo nor Juno. Although it is not mandatory to use it, it is required if you plan to produce release versions of GAMA from your product. To install it, simply download this [file](https://drive) and install it like the delta pack above.
+      * As of GAMA 1.6.1, we use a version of the SWT binary fragments that is not the one shipped with Eclipse Indigo nor Juno. Although it is not mandatory to use it, it is required if you plan to produce release versions of GAMA from your product. To install it, simply download this [file](https://drive.google.com/file/d/0B8DTAk4nDgyNNmN0NkMtX1RDRDA/edit?usp=sharing) and install it like the delta pack above.
       * click on the � Launch an Eclipse application � link. Note that a run configuration will be automatically created allowing to only click on the run button for future runs.
 
 **If the GAMA launch crashes:**
@@ -133,9 +133,9 @@ First note that GAMA will not work with the packaged Juno version (in fact versi
   * EMF Validation Frameworkd SDK
 
 The same instructions (than for Eclipse 3.7.2) can then be applied to this installation, with three differences :
-  * The delta-pack for Juno is available [here](http://archive).
+  * The delta-pack for Juno is available [here](http://archive.eclipse.org/eclipse/downloads/drops/R-3.8.2-201301310800/download.php?dropFile=eclipse-3.8.2-delta-pack.zip).
   * The name of the product to use is  `gama1.6.1.feature_based_Eclipse3_8_2_updatable_release.product`
-  * The version of XText to use is 2.8.2 and it should be obtained from [here](http://download), as this site will also provide updates for EMF and other components necessary for XText to work (you may need to install these components first, notably EMF ones, if the installation of XText does not work).
+  * The version of XText to use is 2.8.2 and it should be obtained from [here](http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/), as this site will also provide updates for EMF and other components necessary for XText to work (you may need to install these components first, notably EMF ones, if the installation of XText does not work).
 
 
 
@@ -209,7 +209,7 @@ This installation procedure has been tested on a macbook pro with macosx 10.6 64
 
 #### Details
 
-The graphical modeling framework is based on the [Graphiti](http://www) plug-in.
+The graphical modeling framework is based on the [Graphiti](http://www.eclipse.org/graphiti/) plug-in.
 
   1. The first step consists in installing the graphiti plug-ins : � Help � -> � Install new software �
 In "Work with", choose "Indigo - http://download.eclipse.org/releases/indigo" and install: Graphiti, Graphiti Export, Graphiti SDK and Graphiti SDK Plus.

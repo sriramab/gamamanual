@@ -2,7 +2,7 @@
 
 GAML is an _agent-oriented_ language dedicated to the definition of _agent-based_ simulations. It takes its roots in _object-oriented_ languages like Java or Smalltalk, but extends the object-oriented programming approach with powerful concepts (like skills, declarative definitions or agent migration) to allow for a better expressivity in models.
 
-It is of course very close to _agent\_based_ modeling languages like, e.g., [NetLogo](http://ccl), but, in addition to enriching the traditional representation of agents with modern computing notions like inheritance, type safety or multi-level agency, and providing the possibility to use different behavioral architectures for programming agents, GAML extends the agent-based paradigm to eliminate the boundaries between the domain of a model (which, in ABM, is represented with agents) and the experimental processes surrounding its simulations (which are usually not represented with agents), including, for example, _visualization_ processes. This [paper](http://citeseerx) (_Drogoul A., Vanbergue D., Meurisse T., Multi-Agent Based Simulation: Where are the Agents ?, Multi-Agent Based Simulation 3, pp. 1-15, LNCS, Springer-Verlag. 2003_) was in particular foundational in the definition of the concepts on which GAMA (and GAML) are based today.
+It is of course very close to _agent\_based_ modeling languages like, e.g., [NetLogo](http://ccl.northwestern.edu/netlogo/), but, in addition to enriching the traditional representation of agents with modern computing notions like inheritance, type safety or multi-level agency, and providing the possibility to use different behavioral architectures for programming agents, GAML extends the agent-based paradigm to eliminate the boundaries between the domain of a model (which, in ABM, is represented with agents) and the experimental processes surrounding its simulations (which are usually not represented with agents), including, for example, _visualization_ processes. This [paper](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.104.7241&rep=rep1&type=pdf) (_Drogoul A., Vanbergue D., Meurisse T., Multi-Agent Based Simulation: Where are the Agents ?, Multi-Agent Based Simulation 3, pp. 1-15, LNCS, Springer-Verlag. 2003_) was in particular foundational in the definition of the concepts on which GAMA (and GAML) are based today.
 
 This orientation has several conceptual consequences among which at least two are of immediate practical interest for modelers:
 * Since simulations, or experiments, are represented by agents, GAMA is bound to support high-level _model compositionality_, i.e. the definition of models that can use other models as _inner agents_, leveraging multi-modeling or multi-paradigm modeling as particular cases of composition.
@@ -29,11 +29,11 @@ The vocabulary of GAML is described in the following sentences, in which the mea
 1. Given that all **agents** are specified by a **species**, **simulations** and **experiments** are then instances of two species which are, respectively, called **model** and **experiment plan**. Think of them as "specialized" categories of species.
 1. The relationships between **species**, **models** and **experiment plans** are codified in the meta-model of GAML in the form of a framework composed of three abstract species respectively called **agent** (direct or indirect parent of all **species**), **model** (parent of all **species** that define a model) and **experiment** (parent of all **species** that define an experiment plan). In this meta-model, instances of the children of **agent** know the instance of the child of **model** in which they are hosted as their **world**, while the instance of **experiment plan** identifies the same agent as one of the **simulations** it is in charge of. The following diagram summarizes this framework:
 
-![images/framework.png](images/framework)
+![images/framework.png](resources\images/framework.png)
 
 Putting this all together, writing a model in GAML then consists in defining a species which inherits from **model**, in which other **species**, inheriting (directly or not) from **agent** and representing the entities that populate this model, will be nested, and which is itself nested in one or several **experiment plans** among which a user will be able to choose which **experiment** he/she wants to execute.
 
-![images/user_model.png](images/user_model)
+![images/user_model.png](resources\images/user_model.png)
 
 At the operational level, i.e. when _running_ an experiment in GAMA,
 

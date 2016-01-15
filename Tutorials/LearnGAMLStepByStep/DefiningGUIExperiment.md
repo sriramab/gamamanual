@@ -2,7 +2,7 @@
 
 When you execute your simulation, you will often need to display some information. For each simulation, you can define some inputs and outputs:
 * The inputs will be composed of parameters manipulated by the user for each simulation
-* The outputs will be composed of displays, monitors or output files. They will be define inside the scope `output`.
+* The outputs will be composed of displays, monitors or output files. They will be define inside the scope "output".
 
 ```
 experiment exp_name type: gui {

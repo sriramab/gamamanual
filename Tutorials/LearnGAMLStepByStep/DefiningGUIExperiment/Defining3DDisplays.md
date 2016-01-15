@@ -51,7 +51,7 @@ experiment expe_test type:gui {
 }
 ```
 
-![images/species_layer.png](images/species_layer)
+![images/species_layer.png](resources\images/species_layer.png)
 
 
 
@@ -59,9 +59,9 @@ experiment expe_test type:gui {
 
 <a href='http://www.youtube.com/watch?feature=player_embedded&v=rMIVQlul1Ag' target='_blank'><img src='http://img.youtube.com/vi/rMIVQlul1Ag/0.jpg' width='425' height=344 /></a>
 
-[Arcball Camera](https://github)
+[Arcball Camera](Displays#arcball-camera-commands)
 
-[FreeFly Camera](https://github)
+[FreeFly Camera](Displays#freefly-camera-commands)
 
 
 ## Dynamic camera
@@ -85,7 +85,7 @@ Here are some examples that can be done using those 3 parameters. You can test i
 
 <a href='http://www.youtube.com/watch?feature=player_embedded&v=lQVGD8aDKZY' target='_blank'><img src='http://img.youtube.com/vi/lQVGD8aDKZY/0.jpg' width='425' height=344 /></a>
 
-[Boids 3D Camera movement](https://code)
+[Boids 3D Camera movement](https://code.google.com/p/gama-platform/source/browse/branches/GAMA_CURRENT/msi.gama.models/models/Features/3D Visualization/Toy Models/Boids 3D Camera movement.gaml)
 
 #### Default view
 ```

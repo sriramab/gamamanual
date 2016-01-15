@@ -36,7 +36,7 @@ int value <- target.attribute1;
 
 To practice a bit with the mirror notion, we will now build a simple model displaying a species A (aspect: white circle) moving randomly, and another species B (aspect: blue sphere) with the species A location on x and y, with an upper value for the z axis.
 
-[images/mirror_model.png](images/mirror_model)
+[images/mirror_model.png](resources\images/mirror_model.png)
 
 Here is an example of implementation for this model:
 

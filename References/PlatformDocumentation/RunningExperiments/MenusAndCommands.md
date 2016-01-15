@@ -19,7 +19,7 @@ The simulation perspective adds on the user interface a number of new menus and 
 ## Experiment Menu
 A menu, called "Experiment", allows to control the current experiment. It shares some of its commands with the general toolbar (see [below](#general-toolbar)).
 
-![images/menu_experiment.png](images/menu_experiment)
+![images/menu_experiment.png](resources\images/menu_experiment.png)
 
 
   * **Run/Pause**: allows to run or pause the experiment depending on its current state.
@@ -39,18 +39,18 @@ A menu, called "Experiment", allows to control the current experiment. It shares
 
 A second menu is added in the simulation perspective: "Agents". This menu allows for an easy access to the different agents that populate an experiment.
 
-![images/menu_agents.png](images/menu_agents)
+![images/menu_agents.png](resources\images/menu_agents.png)
 
 
 This hierarchical menu is always organized in the same way, whatever the experiment being run. A first level is dedicated to the current simulation agent: it allows to [browse](InspectorsAndMonitors) its population or to inspect the simulation agent itself. Browsing the population will give access to the current experiment agent (the "host" of this population). A second level lists the "micro-populations" present in the simulation agent. And the third level will give access to each individual agent in these populations. This organization is of course recursive: if these agents are themselves hosts of micro-populations, they will be displayed in their individual menu.
 
-![images/menu_agents_2.png](images/menu_agents_2)
+![images/menu_agents_2.png](resources\images/menu_agents_2.png)
 
 
 
-Each agent, when selected, will reveal a similar individual menu. This menu will contain a set of predefined actions, [the commands defined by the user for this species](https://github), if any, and then the micro-populations hosted by this agent, if any. Agents (like the instances of "ant" below) that do not host other agents and whose species has no user commands will have a "simple" individual menu.
+Each agent, when selected, will reveal a similar individual menu. This menu will contain a set of predefined actions, [the commands defined by the user for this species](DefiningUserInteraction#define-user-command), if any, and then the micro-populations hosted by this agent, if any. Agents (like the instances of "ant" below) that do not host other agents and whose species has no user commands will have a "simple" individual menu.
 
-![images/menu_agents_3.png](images/menu_agents_3)
+![images/menu_agents_3.png](resources\images/menu_agents_3.png)
 
 These are the 4 actions that will be there most of the time:
 
@@ -61,11 +61,11 @@ These are the 4 actions that will be there most of the time:
 
 If an agent hosts other agents (it is the case in [multi-level architecture](MultiLevelArchitecture)), you can access to the micro-population quite easily: 
 
-![images/menu_agents_multi_level.png](images/menu_agents_multi_level)
+![images/menu_agents_multi_level.png](resources\images/menu_agents_multi_level.png)
 
-If [user commands](https://github) are defined for a species (for example in the existing model Features/Driving Skill/Road Traffic simple (City)), their individual menu will look like the following:
+If [user commands](DefiningUserInteraction#define-user-command) are defined for a species (for example in the existing model Features/Driving Skill/Road Traffic simple (City)), their individual menu will look like the following:
 
-![images/menu_agents_user_command.png](images/menu_agents_user_command)
+![images/menu_agents_user_command.png](resources\images/menu_agents_user_command.png)
 
 
 
@@ -76,25 +76,25 @@ The last piece of user interface specific to the Simulation Perspective is a too
 
 This toolbar is voluntarily minimalist, with three buttons already present in the [experiment menu](#experiment-menu) (namely, "Play/Pause", "Step by Step" and "Reload"), which don't need to be detailed here, and two new controls ("Experiment status" and "Cycle Delay"), which are explained below.
 
-![images/toolbar.png](images/toolbar)
+![images/toolbar.png](resources\images/toolbar.png)
 
 
 While opening an experiment, the status will display some information about what's going on. For instance, that GAMA is busy instantiating the agents, or opening the displays.
 
-![images/toolbar_instantiating_agents.png](images/toolbar_instantiating_agents)
+![images/toolbar_instantiating_agents.png](resources\images/toolbar_instantiating_agents.png)
 
 
-![images/toolbar_building_outputs.png](images/toolbar_building_outputs)
+![images/toolbar_building_outputs.png](resources\images/toolbar_building_outputs.png)
 
 
 The orange color usually means that, although the experiment is not ready, things are progressing without problems (a red color message is an indication that something went wrong). When the loading of the experiment is finished, GAMA displays the message "Simulation ready" on a green background. If the user runs the simulation, the status changes and displays the number of cycles already elapsed in the simulation currently managed by the experiment.
 
-![images/toolbar_running.png](images/toolbar_running)
+![images/toolbar_running.png](resources\images/toolbar_running.png)
 
 
 Hovering over the status produces a more accurate information about the internal clock of the simulation.
 
-![images/toolbar_running_with_info.png](images/toolbar_running_with_info)
+![images/toolbar_running_with_info.png](resources\images/toolbar_running_with_info.png)
 
 
 
@@ -102,7 +102,7 @@ From top to bottom of this hover, we find the number of cycles elapsed, the simu
 
 Although these durations are entirely dependent on the speed of the simulation engine (and, of course, the number of agents, their behaviors, etc.), there is a way to control it partially with the second control, which allows the user to force a minimal duration (in milliseconds) for a cycle, from 0 (its initial position) to 1000. Note that this minimal duration (or delay) will remain the same for the subsequent reloads of the experiment.
 
-![images/toolbar_running_with_delay.png](images/toolbar_running_with_delay)
+![images/toolbar_running_with_delay.png](resources\images/toolbar_running_with_delay.png)
 
 
 In case it is necessary to have more than 1s of delay, it has to be defined, instead, as an attribute of the [experiment](ExperimentBuiltIn).

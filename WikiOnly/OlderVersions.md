@@ -38,7 +38,7 @@ Documentation:
   * Available [online](Overview)
 
 
-![images/splash_1_61.png](images/splash_1_61)
+![images/splash_1_61.png](resources\images/splash_1_61.png)
 
 
 
@@ -54,10 +54,10 @@ This version introduced many features over 1.5.1 :
   * more user/simulation interaction (event statement)
 
 Documentation:
-  * [Documentation in PDF](https://github)
+  * [Documentation in PDF](https://github.com/gama-platform/gama/wiki/Content/ressources/pdf/GAMAv16.pdf)
 
 
-![images/splash_1_6.png](images/splash_1_6)
+![images/splash_1_6.png](resources\images/splash_1_6.png)
 
 
 
@@ -78,10 +78,10 @@ Version 1.5.1 improved some features of 1.5 :
   * new models (driving\_traffic, Vote, 3D models)
 
 Documentation:
-  * [Documentation in PDF](https://github)
+  * [Documentation in PDF](https://github.com/gama-platform/gama/wiki/Content/ressources/pdf/GAMAv151.pdf)
 
 
-![images/splash_1_5.png](images/splash_1_5)
+![images/splash_1_5.png](resources\images/splash_1_5.png)
 
 
 
@@ -101,10 +101,10 @@ Key points :
   * Many more novelties/improvements/enrichments…
 
 Documentation:
-  * [Documentation in PDF](https://github)
+  * [Documentation in PDF](https://github.com/gama-platform/gama/wiki/Content/ressources/pdf/GAMAv14.pdf)
 
 
-![images/splash_1_4.png](images/splash_1_4)
+![images/splash_1_4.png](resources\images/splash_1_4.png)
 
 
 
@@ -121,10 +121,10 @@ Key points :
   * Integration of decision-making algorithms
 
 Documentation:
-  * [Documentation in PDF](https://github)
+  * [Documentation in PDF](https://github.com/gama-platform/gama/wiki/Content/ressources/pdf/GAMAv13.pdf)
 
 
-![images/splash_1_3.png](images/splash_1_3)
+![images/splash_1_3.png](resources\images/splash_1_3.png)
 
 
 
@@ -139,8 +139,8 @@ Key points :
   * First release as an open-source project
 
 Documentation:
-  * [Guidebook of GAMA 1.1](https://github)
+  * [Guidebook of GAMA 1.1](https://github.com/gama-platform/gama/wiki/Content/ressources/pdf/GAMAv11.pdf)
   * [Training session on GAMA 1.1 (Hanoi)](TrainingSessionHanoi2009)
 
 
-![images/splash_1_1.png](images/splash_1_1)
+![images/splash_1_1.png](resources\images/splash_1_1.png)

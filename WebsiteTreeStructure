@@ -18,7 +18,7 @@ Tutorials
 ---MultiLevelArchitecture
 --DefiningGUIExperiement
 ---DefiningParameters
----DefiningDisplaysGeneralities
+---DefiningDisplaysGenerality
 ---DefiningCharts
 ---Defining3DDisplays
 ---DefiningMonitorsAndInspectors
@@ -100,7 +100,6 @@ References
 ---GamlEditorGeneralities
 ---GamlEditorToolbar
 ---ValidationOfModels
----GraphicalEditor
 --RunningExperiments
 ---LaunchingExperiments
 ---ExperimentsUserInterface

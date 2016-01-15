@@ -25,7 +25,7 @@ Finally the `init` statement is executed. It should include the creation of all 
 
 
 ## Agents Creation
-Except [`world`](GlobalSpecies) and [`grid`](GridSpecies) agents, other agents are created using the [`create` statement](https://github). It used to allocate memory memory for each agent and to initialize all its attributes.
+Except [`world`](GlobalSpecies) and [`grid`](GridSpecies) agents, other agents are created using the [`create` statement](Statements#create). It used to allocate memory memory for each agent and to initialize all its attributes.
 
 If no explicit initialization exists for an attribute, it will get the default value corresponding to its [type](DataTypes).
 
