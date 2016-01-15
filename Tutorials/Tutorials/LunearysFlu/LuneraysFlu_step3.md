@@ -1,7 +1,7 @@
 # 3. Importation of GIS data
 This third step illustrates how load GIS data and to agentify them.
 
-![images/luneray3.tiff](resources/images/luneray3.tiff)
+![images/luneray3.tiff](resources/images/tutorials/luneray3.tiff)
 
 
 

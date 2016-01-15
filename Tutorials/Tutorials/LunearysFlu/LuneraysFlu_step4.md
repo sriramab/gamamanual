@@ -2,7 +2,7 @@
 This fourth step illustrates how to use a graph to constraint the movements of agents
 
 
-![images/luneray4.tiff](resources/images/luneray4.tiff)
+![images/luneray4.tiff](resources/images/tutorials/luneray4.tiff)
 
 
 

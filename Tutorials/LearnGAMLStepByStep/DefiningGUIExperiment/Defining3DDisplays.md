@@ -51,7 +51,7 @@ experiment expe_test type:gui {
 }
 ```
 
-![images/species_layer.png](resources/images/species_layer.png)
+![images/species_layer.png](resources/images/definingGUIExperiment/species_layer.png)
 
 
 

@@ -14,7 +14,7 @@ If you are not familiar with agent-based models or GAMA we advice you to have a 
 ## Model Overview
 The model built in this tutorial concerns the study of the road traffic in a small city. Two layers of GIS data are used: a road layer (polylines) and a building layer (polygons). The building GIS data contain an attribute: the 'NATURE' of each building: a building can be either 'Residential' or 'Industrial'. In this model, people agents are moving along the road network. Each morning, they are going to an industrial building to work, and each night they are coming back home. Each time a people agent takes a road, it wears it out. More a road is worn out, more a people agent takes time to go all over it. The town council is able to repair some roads.
 
-![images/road_traffic.png](resources/images/road_traffic.png)
+![images/road_traffic.png](resources/images/tutorials/road_traffic.png)
 
 
 

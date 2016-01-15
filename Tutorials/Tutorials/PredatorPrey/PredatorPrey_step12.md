@@ -22,7 +22,7 @@ We add a new global variable: the image file:
 	file map_init <- image_file("../images/predator_prey_raster_map.png");
 ```
 
-The image file is here: ![images/predator_prey_raster_map.png](resources/images/predator_prey_raster_map.png)
+The image file is here: ![images/predator_prey_raster_map.png](resources/images/tutorials/predator_prey_raster_map.png)
 
 You have to copy it in your project folder: images/
 

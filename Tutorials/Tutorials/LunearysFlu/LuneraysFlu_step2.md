@@ -2,7 +2,7 @@
 This second step illustrates how to create monitors and charts to follows the evolution of variables and to add an ending condition to the simulation.
 
 
-![images/luneray2.tiff](resources/images/luneray2.tiff)
+![images/luneray2.tiff](resources/images/tutorials/luneray2.tiff)
 
 
 

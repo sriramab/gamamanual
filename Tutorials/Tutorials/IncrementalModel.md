@@ -22,7 +22,7 @@ We made the following modeling choice:
   * The staying time depends on the current hour (lower at 9h - go to work - at 12h go to lunch - at 18h - go back home)
   * Infected people are never cured
 
-![images/incremental_model.jpg](resources/images/incremental_model.jpg)
+![images/incremental_model.jpg](resources/images/tutorials/incremental_model.jpg)
 
 
 

@@ -9,7 +9,7 @@ The importation of models is described [here] (https://github.com/gama-platform/
 ## Model Overview
 The model built in this tutorial concerns the spreading of a flu in the city of Luneray (Normandie, France).
 
-![images/Luneray.jpg](resources/images/Luneray.jpg)
+![images/Luneray.jpg](resources/images/tutorials/Luneray.jpg)
 
 Two layers of GIS data are used: a road layer (polylines) and a building layer (polygons). In this model, people agents are moving from building to building using the road network. Each infected people can infect the neighbor people.
 
@@ -30,7 +30,7 @@ From the data collected, we made some modeling choice:
 * Each time, people arrived at a building they are staying a certain time : they are staying longer in their home than in their friend houses
 * Infected people are never cured
 
-![images/Luneray.png](resources/images/Luneray.png)
+![images/Luneray.png](resources/images/tutorials/Luneray.png)
 
 ## Step List
 

@@ -2,7 +2,7 @@
 This first step illustrates how to create simple agents and make them move in their environment.
 
 
-![images/luneray1.tiff](resources/images/luneray1.tiff)
+![images/luneray1.tiff](resources/images/tutorials/luneray1.tiff)
 
 
 
