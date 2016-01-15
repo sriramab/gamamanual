@@ -32,28 +32,28 @@ An excerpt from the page reads that :
 
 So we just have to follow these instructions, which leads us to the following dialog, in which we select "RSS view" and click "Next".
 
-![images/dialog_install_plugins.png](resources/images/installingAndLaunching/dialog_install_plugins.png)
+![images/dialog_install_plugins.png](resources/images/installationAndLaunching/dialog_install_plugins.png)
 
 The initial dialog is followed by two other ones, a first to report that the plugin satisfies all the dependencies, a second to ask the user to accept the license agreement.
 
 
 
-|![images/dialog_install_plugins_2.png](resources/images/installingAndLaunching/dialog_install_plugins_2.png)|![images/dialog_install_plugins_3.png](resources/images/installingAndLaunching/dialog_install_plugins_3.png)|
+|![images/dialog_install_plugins_2.png](resources/images/installationAndLaunching/dialog_install_plugins_2.png)|![images/dialog_install_plugins_3.png](resources/images/installationAndLaunching/dialog_install_plugins_3.png)|
 |---|---|
 
 Once we dismiss the warning that the plugin is not signed and accept to restart GAMA, we can test the new plugin by going to the "Views" menu.
 
-![images/menu_other_views.png](resources/images/installingAndLaunching/menu_other_views.png)
+![images/menu_other_views.png](resources/images/installationAndLaunching/menu_other_views.png)
 
 
 The new RSS view is available in the list of views that can be displayed in GAMA.
 
-![images/dialog_show_view.png](resources/images/installingAndLaunching/dialog_show_view.png)
+![images/dialog_show_view.png](resources/images/installationAndLaunching/dialog_show_view.png)
 
 
 And we can enjoy (after setting some preferences available in its local menu) monitoring the Issues of GAMA from within GAMA itself !
 
-![images/feed_working.png](resources/images/installingAndLaunching/feed_working.png)
+![images/feed_working.png](resources/images/installationAndLaunching/feed_working.png)
 
 
 
@@ -82,7 +82,7 @@ In addition to the RSS reader described above, below is a list of plugins that h
   * A nice utility that allows the user to select files, folders or projects in the [Navigator](NavigatingWorkspace) and open them in the filesystem (either the UI Explorer, Finder, whatever, or in a terminal).
   * Update site: `http://basti1302.github.com/startexplorer/update/`
 
-![images/start_explorer.png](resources/images/installingAndLaunching/start_explorer.png)
+![images/start_explorer.png](resources/images/installationAndLaunching/start_explorer.png)
 
 
 ### Pathtools
@@ -95,7 +95,7 @@ In addition to the RSS reader described above, below is a list of plugins that h
   * An editor for CSV files. Quite handy if you do not want to launch Excel every time you need to inspect or change the CSV data files used in models.
   * Update site: `http://csvedit.googlecode.com/svn/trunk/csvedit.update`
 
-![images/csv_edit.png](resources/images/installingAndLaunching/csv_edit.png)
+![images/csv_edit.png](resources/images/installationAndLaunching/csv_edit.png)
 
 
 ### Quickimage
@@ -103,4 +103,4 @@ In addition to the RSS reader described above, below is a list of plugins that h
   * A lightweight viewer of images, which can be useful when several images are used in a model.
   * Update site: `http://psnet.nu/eclipse/updates`
 
-![images/quick_image.png](resources/images/installingAndLaunching/quick_image.png)
+![images/quick_image.png](resources/images/installationAndLaunching/quick_image.png)
