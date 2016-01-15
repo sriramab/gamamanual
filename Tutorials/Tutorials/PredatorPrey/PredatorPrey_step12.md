@@ -22,7 +22,7 @@ We add a new global variable: the image file:
 	file map_init <- image_file("../images/predator_prey_raster_map.png");
 ```
 
-The image file is here: ![images/predator_prey_raster_map.png](images/predator_prey_raster_map.png)
+The image file is here: ![images/predator_prey_raster_map.png](resources/images/predator_prey_raster_map.png)
 
 You have to copy it in your project folder: images/
 
@@ -49,7 +49,7 @@ A  grid can be view as spatial matrix: each cell of a grid has two built-in vari
 
 
 ## Conclusion
-Congratulations, you have complete your first GAMA models! Now, you know have enough knowledge to create many models that includes: dynamic grid-based environment, moving and interacting agents and the needed viusalization to make good use of your simulation. Feel free to use this knowledge to create your very own models! Or perhaps you want to continue your study with the more advanced [tutorials](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials.md)?
+Congratulations, you have complete your first GAMA models! Now, you know have enough knowledge to create many models that includes: dynamic grid-based environment, moving and interacting agents and the needed viusalization to make good use of your simulation. Feel free to use this knowledge to create your very own models! Or perhaps you want to continue your study with the more advanced [tutorials](Tutorials)?
 
 
 

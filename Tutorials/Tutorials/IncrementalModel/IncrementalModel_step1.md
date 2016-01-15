@@ -12,7 +12,7 @@ This first step Illustrates how to write a model in GAMA. In particular, it desc
   * Creation of **500** **people** agents randomly located in the environment (size: 500x500)
   * Definition a display to visualize the people agents.
 
-![images/Incremental_model1.jpg](images/Incremental_model1.jpg)
+![images/Incremental_model1.jpg](resources/images/Incremental_model1.jpg)
 
 
 
@@ -26,10 +26,10 @@ A GAMA model is composed of three type of sections:
   * **species** : these sections define the species of agents composing the model.
   * **experiment** : these sections define a context of execution of the simulations. In particular, it defines the input (parameters) and output (displays, files...) of a model.
 
-More details about the different sections of a GAMA model can be found [here](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\StartWithGAML\ModelOrganization.md).
+More details about the different sections of a GAMA model can be found [here](ModelOrganization).
 
 ### species
-A [species](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\RegularSpecies.md) represents a «prototype» of agents: it defines their common properties.
+A [species](RegularSpecies) represents a «prototype» of agents: it defines their common properties.
 
 A species includes several sub-definitions:
   * the internal state of its agents (attributes)
@@ -45,7 +45,7 @@ species people skills:[moving]{
 }
 ```
 
-Concerning the internal state, a [attribute](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\RegularSpecies.md#declaration) is defined as follows: type of the attribute (int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path...) + name
+Concerning the internal state, a [attribute](RegularSpecies#declaration) is defined as follows: type of the attribute (int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path...) + name
   * Optional facets: <- (initial value), update (value recomputed at each step of the simulation), function:{..} (value computed each time the variable is used), min, max
 
 Note that all the species inherit from predefined built-in variables:
@@ -60,7 +60,7 @@ species people skills:[moving]{
 }
 ```
 
-Concerning the display of an agent, [aspects](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\RegularSpecies.md#the-aspect-statement) have to be defined. An aspect represents a possible way to display the agents of a species : aspect aspect\_name {…}
+Concerning the display of an agent, [aspects](RegularSpecies#the-aspect-statement) have to be defined. An aspect represents a possible way to display the agents of a species : aspect aspect\_name {…}
 In the block of an aspect, it is possible to draw :
   * A geometry :  for instance, the shape of the agent
   * An image : to draw icons

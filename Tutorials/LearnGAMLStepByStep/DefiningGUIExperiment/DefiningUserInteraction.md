@@ -74,7 +74,7 @@ experiment expe type:gui {
 
 And here is screenshots of the execution :
 
-[images/user_command_inside_expe.png](images/user_command_inside_expe.png)
+[images/user_command_inside_expe.png](resources/images/user_command_inside_expe.png)
 
 ### Defining User command in a global or regular species
 
@@ -107,9 +107,9 @@ experiment expe type:gui {
 
 During the execution, you have 2 ways to access to the action :
 * When the agent is inspected, they appear as buttons above the agents' attributes
-[images/user_command_inside_species1.png](images/user_command_inside_species1.png)
+[images/user_command_inside_species1.png](resources/images/user_command_inside_species1.png)
 * When the agent is selected by a right-click in a display, these command appear under the usual "Inspect", "Focus" and "Highlight" commands in the pop-up menu.
-[images/user_command_inside_species2.png](images/user_command_inside_species2.png)
+[images/user_command_inside_species2.png](resources/images/user_command_inside_species2.png)
 
 
 Remark: The execution of a command obeys the following rules:
@@ -167,8 +167,8 @@ experiment expe type:gui {
 
 When running this model, you will first have to input a number:
 
-[images/input_cmd.png](images/input_cmd.png)
+[images/input_cmd.png](resources/images/input_cmd.png)
 
 ## User Control Architecture
 
-An other way to define user interaction is to use the user control architecture. Please jump directly to the section [user control architecture](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\MultiParadigmModeling\ControlArchitecture.md#user-control-architecture) if you want to learn more about this point.
+An other way to define user interaction is to use the user control architecture. Please jump directly to the section [user control architecture](ControlArchitecture#user-control-architecture) if you want to learn more about this point.

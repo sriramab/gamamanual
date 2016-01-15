@@ -2,7 +2,7 @@
 This fourth step illustrates how to use a graph to constraint the movements of agents
 
 
-![images/luneray4.tiff](images/luneray4.tiff)
+![images/luneray4.tiff](resources/images/luneray4.tiff)
 
 
 
@@ -33,7 +33,7 @@ global{
 }
 ```
 
-In order to compute the graph from the road network, we use, just after having creating the road agents, the [as_edge_graph](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Expressions\Operators.md#as_edge_graph) operator. This operator automatically built a graph from a set of polylines. Each extremity point of the lines will become a node in the graph, and each polyline an edge. By default, the graph is not oriented and the weights of the edges are the perimeters of the polylines. It is of course possible to change through the use of some operators.  
+In order to compute the graph from the road network, we use, just after having creating the road agents, the [as_edge_graph](Operators#as_edge_graph) operator. This operator automatically built a graph from a set of polylines. Each extremity point of the lines will become a node in the graph, and each polyline an edge. By default, the graph is not oriented and the weights of the edges are the perimeters of the polylines. It is of course possible to change through the use of some operators.  
 
 ```
 global {
@@ -198,4 +198,4 @@ experiment main_experiment type:gui{
 }
 ```
 
-[Next step: Definition of 3D displays](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\LunearysFlu\LuneraysFlu_step5.md)
+[Next step: Definition of 3D displays](LuneraysFlu_step5)

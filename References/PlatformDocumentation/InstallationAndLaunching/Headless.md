@@ -3,7 +3,7 @@
 
 The aim of this feature is to be able to run one or multiple instances of GAMA without any user interface, so that models and experiments can be launched on a grid or a cluster. Without GUI, the memory footprint, as well as the speed of the simulations, are usually greatly improved.
 
-In this mode, GAMA can only be used to run experiments and that editing or managing models is not possible. In order to launch experiments and still benefit from a user interface (which can be used to prepare headless experiments), launch GAMA normally (see [here](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\InstallationAndLaunching\Launching.md)) and refer to this [page](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\RunningExperiments.md) for instructions.
+In this mode, GAMA can only be used to run experiments and that editing or managing models is not possible. In order to launch experiments and still benefit from a user interface (which can be used to prepare headless experiments), launch GAMA normally (see [here](Launching)) and refer to this [page](RunningExperiments) for instructions.
 
 ## Table of contents 
 

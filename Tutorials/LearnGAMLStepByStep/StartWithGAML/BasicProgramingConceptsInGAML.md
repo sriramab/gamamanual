@@ -137,7 +137,7 @@ string fruits <- "banana" among:["pear","apple","banana"];
 [//]: # (keyword::operators)
 ## Operators in GAMA
 
-In GAML language, you can use a lot of different operators. They are all listed in this [page](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Expressions\Operators.md), but here are the most useful ones:
+In GAML language, you can use a lot of different operators. They are all listed in this [page](Operators), but here are the most useful ones:
 
 [//]: # (keyword::add)
 [//]: # (keyword::substract)

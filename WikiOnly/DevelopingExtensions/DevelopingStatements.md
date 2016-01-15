@@ -14,14 +14,14 @@ Statements are a fundamental part of GAML, as they represent both commands (impe
 A new statement must be a Java class that:
   * either implements the interface `IStatement` or extends an existing implementation of this interface (like `AbstractStatement` or `AbstractSequenceStatement`).
   * begins by the 2 following mandatory annotations:
-    * [@symbol](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\DevelopingExtensions\DevelopingIndexAnnotations.md#@symbol): `@symbol(name = "name_of_the_statement_gaml", kind = "kind_of_statement", with_sequence = true/false)`,
-    * [@inside](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\DevelopingExtensions\DevelopingIndexAnnotations.md#@inside): `@symbol(kinds = {"kind_of_statement_1","kind_of_statement_2","..."}`
+    * [@symbol](DevelopingIndexAnnotations#@symbol): `@symbol(name = "name_of_the_statement_gaml", kind = "kind_of_statement", with_sequence = true/false)`,
+    * [@inside](DevelopingIndexAnnotations#@inside): `@symbol(kinds = {"kind_of_statement_1","kind_of_statement_2","..."}`
 
 In addition the 4 following optional annotations can be added:
-  * [@facets](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\DevelopingExtensions\DevelopingIndexAnnotations.md#@facets): to describe the set of [@facet](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\DevelopingExtensions\DevelopingIndexAnnotations.md#@facet) annotations,
-  * [@doc](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\DevelopingExtensions\DevelopingIndexAnnotations.md#@doc): to document the statement.
-  * [@serializer](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\DevelopingExtensions\DevelopingIndexAnnotations.md#@serializer): in addition, statements can benefit from a custom serializer, by declaring `@serializer(CustomSerializer.class)`, with a class extending `SymbolSerializer`.
-  * [@validator](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\DevelopingExtensions\DevelopingIndexAnnotations.md#@validator): in addition, statements can benefit from a custom validation during the validation process, by declaring `@validator(CustomValidator.class)` with a class implementing `IDescriptionValidator` as value. This class will receive the `IDescription` of the statement and be able to execute further validations on the type of expressions, etc. or even to change the `IDescription`  (by adding new information, changing the value of facets, etc.).
+  * [@facets](DevelopingIndexAnnotations#@facets): to describe the set of [@facet](DevelopingIndexAnnotations#@facet) annotations,
+  * [@doc](DevelopingIndexAnnotations#@doc): to document the statement.
+  * [@serializer](DevelopingIndexAnnotations#@serializer): in addition, statements can benefit from a custom serializer, by declaring `@serializer(CustomSerializer.class)`, with a class extending `SymbolSerializer`.
+  * [@validator](DevelopingIndexAnnotations#@validator): in addition, statements can benefit from a custom validation during the validation process, by declaring `@validator(CustomValidator.class)` with a class implementing `IDescriptionValidator` as value. This class will receive the `IDescription` of the statement and be able to execute further validations on the type of expressions, etc. or even to change the `IDescription`  (by adding new information, changing the value of facets, etc.).
 
 Note: GAMA annotations are classes defined into the `msi.gama.precompiler.GamlAnnotations` class.
 
@@ -156,7 +156,7 @@ This class should only implement a constructor. The class `AbstractStatementSequ
 ### Additional methods that can implemented
 
 The following methods have a default implementation, but can be overridden if necessary:
-  * the **`String getTrace(final IScope scope)` method** is called to trace the execution of statements using [trace statement](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Statements.md#trace).
+  * the **`String getTrace(final IScope scope)` method** is called to trace the execution of statements using [trace statement](Statements#trace).
 ```
 public String getTrace(final IScope scope) {
 	// We dont trace write statements

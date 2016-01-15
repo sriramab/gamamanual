@@ -67,7 +67,7 @@ We add as well a new reflex called **reproduce**:
     * the created agents are initialized as follows:
       * myCell: myCell of the agent creating the agents
       * location: location of myCell
-      * energy: energy of the agent creating the agents (use of keyword **[myself](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Expressions\PseudoVariables.md#myself)**) divided by the number of offsprings.
+      * energy: energy of the agent creating the agents (use of keyword **[myself](PseudoVariables#myself)**) divided by the number of offsprings.
 
   * after the agent creation, the reflex updates the energy value of the current agent with the value: energy / nb\_offsprings
 

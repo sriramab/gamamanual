@@ -14,7 +14,7 @@ This step illustrates how load a graph and use it for the displacement of our sp
   * definition of a new reflex for people agents: **stay**
   * modification of the **move** reflex of the people agents
 
-![images/Incremental_model4.jpg](images/Incremental_model4.jpg)
+![images/Incremental_model4.jpg](resources/images/Incremental_model4.jpg)
 
 
 

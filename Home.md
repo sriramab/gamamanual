@@ -1,14 +1,14 @@
-![GAMA splash](images/gama_front3.jpg)
+![GAMA splash](resources/images/gama_front3.jpg)
 
-<font size="3" color="#42618F">G A M A </font> is a modeling and simulation development environment for building spatially explicit agent-based simulations. Its latest version, 1.6.1, can be freely [downloaded](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Download.md) or [built from source](https://github.com/gama-platform/gama/), and comes pre-loaded with several models, [tutorials](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials.md) and a complete [on-line documentation](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Overview.md).
+<font size="3" color="#42618F">G A M A </font> is a modeling and simulation development environment for building spatially explicit agent-based simulations. Its latest version, 1.6.1, can be freely [downloaded](Download) or [built from source](https://github.com/gama-platform/gama/), and comes pre-loaded with several models, [tutorials](Tutorials) and a complete [on-line documentation](Overview).
 <p/> 
 <font size="3" color="#42618F">G A M A </font> allows to:
 
-* Design, prototype and write models in the **[GAML agent-oriented language](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\GamlLanguage.md)** and its optional **[graphical modeling tool](G__GraphicalEditor)**.
-* Instantiate agents from any kind of dataset, including **[GIS data](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\RoadTrafficModel.md)**, and execute **[large-scale simulations](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\RunningExperiments.md)** (up to millions of agents). 
-* Couple discrete or continuous **topological layers**, multiple **[levels of agency](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningAdvancedSpecies\MultiLevelArchitecture.md)** and **multiple paradigms** (mathematical equations, control architectures, finite state machines).
-* Define **[rich experiments](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment.md)** on models and explore their **[parameters space](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ExploringModels\BatchExperiments.md)** for calibration and validation.
-* Design rich user interfaces that support deep inspections on agents, **[user-controlled actions](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningUserInteraction.md)** and panels, **[multi-layer 2D/3D displays](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningDisplaysGeneralities.md)** and multiple agent aspects.
+* Design, prototype and write models in the **[GAML agent-oriented language](GamlLanguage)** and its optional **[graphical modeling tool](G__GraphicalEditor)**.
+* Instantiate agents from any kind of dataset, including **[GIS data](RoadTrafficModel)**, and execute **[large-scale simulations](RunningExperiments)** (up to millions of agents). 
+* Couple discrete or continuous **topological layers**, multiple **[levels of agency](MultiLevelArchitecture)** and **multiple paradigms** (mathematical equations, control architectures, finite state machines).
+* Define **[rich experiments](DefiningGUIExperiment)** on models and explore their **[parameters space](BatchExperiments)** for calibration and validation.
+* Design rich user interfaces that support deep inspections on agents, **[user-controlled actions](DefiningUserInteraction)** and panels, **[multi-layer 2D/3D displays](DefiningDisplaysGeneralities)** and multiple agent aspects.
 
 <font size="3" color="#42618F">G A M A </font> is developed by several teams under the umbrella of the IRD/UPMC international research unit [UMMISCO](http://www.ummisco.ird.fr/):
 

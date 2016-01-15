@@ -25,7 +25,7 @@ We introduce a simple example to illustrate the use of the BDI architecture.
 
 This simple model consists in creating "cognitive" agent whose goal is to extinguish a fire. In a first approximation we consider only one static water area and fire area. The aim is not to have a realistic model but to illustrate how to give a "cognitive" behavior to an agent using the BDI architecture.
 
-First let's create a BDI agent using the key control **simple\_bdi** (A description of all existing control architectures is available [here](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInArchitectures.md).)
+First let's create a BDI agent using the key control **simple\_bdi** (A description of all existing control architectures is available [here](BuiltInArchitectures).)
 
 ## Species Helicopter creation
 

@@ -47,11 +47,11 @@ In this model, we define a monitor to follow the value of the variable **nb\_pre
 Inspectors allow to obtain informations about a species or an agent. There are two kinds of agent information features:
   * Species browser: provides informations about all the agents of a species. Available in the Agents menu.
 
-![images/browser_table.png](images/browser_table.png)
+![images/browser_table.png](resources/images/browser_table.png)
 
   * Agent inspector: provides information about one specific agent. Also allows to change the values of its variables during the simulation. Available from the Agents menu, by right\_clicking on a display, in the species inspector or when inspecting another agent. It provides also the possibility to «highlight» the inspected agent.
 
-![images/inspector.png](images/inspector.png)
+![images/inspector.png](resources/images/inspector.png)
 
 
 

@@ -2,13 +2,13 @@ March 19-24th 2012
 
 # Coding Activities Summary
 
-|[Physics constraints operators](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CP12traffic.md) | [Water-management tutorial](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CP12Water.md) | [Test Models & Language](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CP12Test.md)|
+|[Physics constraints operators](Event__CP12traffic) | [Water-management tutorial](Event__CP12Water) | [Test Models & Language](Event__CP12Test)|
 |:------------------------------------------------------|:-------------------------------------------------|:--------------------------------------------|
-|[Library of models](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CP12Library.md)             | [FIPA-ACL Skill](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CP12FIPA.md)             | [Git repository](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CP12Git.md)         |
-|[SLD-based aspects](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CP12SLD.md)                 | [Headless operation](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CP12Headless.md)     | [Batch Experiments](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CP12Batch.md)    |
-|[OpenGL Display](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CP12OpenGL.md)                 | [Enhancement of the IDE](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CP12IDE.md)      | [GAMA Architecture](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CP12Archi.md)    |
-|[Improvement of the Multi-scale framework](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CP12MultiScale.md) | [GAMA Development](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CP12Development.md)    | [Online & Local Documentation](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CP12Doc.md)|
-|[Statistical Tools in GAMA](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CP12Stats.md)       | [Graph operators and indicators](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CP12Graph.md)|                                             |
+|[Library of models](Event__CP12Library)             | [FIPA-ACL Skill](Event__CP12FIPA)             | [Git repository](Event__CP12Git)         |
+|[SLD-based aspects](Event__CP12SLD)                 | [Headless operation](Event__CP12Headless)     | [Batch Experiments](Event__CP12Batch)    |
+|[OpenGL Display](Event__CP12OpenGL)                 | [Enhancement of the IDE](Event__CP12IDE)      | [GAMA Architecture](Event__CP12Archi)    |
+|[Improvement of the Multi-scale framework](Event__CP12MultiScale) | [GAMA Development](Event__CP12Development)    | [Online & Local Documentation](Event__CP12Doc)|
+|[Statistical Tools in GAMA](Event__CP12Stats)       | [Graph operators and indicators](Event__CP12Graph)|                                             |
 
 [and some "working" images...](https://picasaweb.google.com/114770356492687537213/Hanoiwiki?authuser=0&authkey=Gv1sRgCIKj0ITH_KOyiwE&feat=directlink)
 

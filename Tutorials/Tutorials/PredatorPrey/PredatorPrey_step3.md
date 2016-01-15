@@ -54,7 +54,7 @@ Note that the result of the operator **neighbours\_at dist** depends on the type
   * For a grid topology (grid species), the operator returns the neighbor cells (with a Von Neumann or Moore neighborhood).
   * For a continuous topology, the operator returns the list of agents of which the shape is located at a distance equals or inferior _dist_ meters to the agent shape.
 
-Also note the use of the [self](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Expressions\PseudoVariables.md#self) pseudo variable which is a reference to the agent currently executing the statement
+Also note the use of the [self](PseudoVariables#self) pseudo variable which is a reference to the agent currently executing the statement
 
 ## Prey agents
 

@@ -49,7 +49,7 @@ display my_display autosave:{500,500} type:java2D {}
 
 Each display can be decomposed in one or several layers. Here is a screenshot (from the Toy Model Ant) to better understand those different notions we are about to tackle in this session.
 
-[images/difference_layer_display.png](images/difference_layer_display.png)
+[images/difference_layer_display.png](resources/images/difference_layer_display.png)
 
 ## Organize your layers
 
@@ -77,7 +77,7 @@ experiment expe type:gui {
 
 Will have this output:
 
-[images/layers_order.png](images/layers_order.png)
+[images/layers_order.png](resources/images/layers_order.png)
 
 You have a large number of layers available. You already know some of them, such as `species`, `agents`, `grid`, but other specific layers such as `image` (to display image), `text` (to display text) and `graphics` (to freely draw shapes/geometries/texts without having to define a species) are also available:
 
@@ -117,13 +117,13 @@ experiment expe type:gui {
 }
 ```
 
-[images/layers_transparency.png](images/layers_transparency.png)
+[images/layers_transparency.png](resources/images/layers_transparency.png)
 
 To specify a position and a size for your layer, you can use the `position` and the `size` facets.
 The `position` facet is used with a point type, between {0,0} and {1,1}, which corresponds to the position of the upper left corner of your layer in percentage. Then, if you choose the point {0.5,0.5}, the upper left corner of your layer will be in the center of your display. By default, this value is {0,0}.
 The `size` facet is used with a point type, between {0,0} and {1,1} also. It corresponds to the size occupied by the layer in percentage. By default, this value is {1,1}.
 
-[images/layers_size_position.png](images/layers_size_position.png)
+[images/layers_size_position.png](resources/images/layers_size_position.png)
 
 A lot of other facets are available for the different layers. Please read the documentation about this for more information.
 

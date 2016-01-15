@@ -35,7 +35,7 @@ The section summarizes:
 
 ## Requirements
 
-To generate automatically the documentation, the GAMA Git version is required. See [Install Git version](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\DevelopingExtensions\InstallingGitVersion.md) for more details. 
+To generate automatically the documentation, the GAMA Git version is required. See [Install Git version](InstallingGitVersion) for more details. 
 
 Among all the GAMA plugins, the following ones are related to documentation generation:
 * `msi.gama.processor`: the java preprocessor is called during java compilation of the various plugins and extract information from the java code and the java annotations. For each plugin it produces the `docGAMA.xml` file in the `gaml` directory.
@@ -142,13 +142,13 @@ The pdf generator uses the table of content (toc) file located in the `files/inp
 
 ## How to document
 
-The documentation is generate from the Java code thanks to the Java additional processor, using mainly information from Java classes or methods and from the Java annotations. (see [the list of all annotations](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\DevelopingExtensions\DevelopingIndexAnnotations.md) for more details about annotations).
+The documentation is generate from the Java code thanks to the Java additional processor, using mainly information from Java classes or methods and from the Java annotations. (see [the list of all annotations](DevelopingIndexAnnotations) for more details about annotations).
 
 ### The `@doc` annotation
 
-Most of the annotations can contain a [`@doc`](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\DevelopingExtensions\DevelopingIndexAnnotations.md#doc) annotation, that can contain the main part of the documentation.
+Most of the annotations can contain a [`@doc`](DevelopingIndexAnnotations#doc) annotation, that can contain the main part of the documentation.
 
-For example, the `inter` ([inter](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Expressions\Operators.md#inter)) operator is commented using: 
+For example, the `inter` ([inter](Operators#inter)) operator is commented using: 
 ```
 @doc(
   value = "the intersection of the two operands",
@@ -202,7 +202,7 @@ By default, the `@example` annotation has the following default values:
 
 ### How to document operators
 
-A GAML operator is defined by a Java method annoted by the `@operator` annotation (see [the list of all annotations](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\DevelopingExtensions\DevelopingIndexAnnotations.md) for more details about annotations). In the core of GAMA, most of the operators are defined in the plugin `msi.gama.core` and in the package `msi.gaml.operators`.
+A GAML operator is defined by a Java method annoted by the `@operator` annotation (see [the list of all annotations](DevelopingIndexAnnotations) for more details about annotations). In the core of GAMA, most of the operators are defined in the plugin `msi.gama.core` and in the package `msi.gaml.operators`.
 
 The documentation generator will use information from:
 * the `@operator` annotation:
@@ -215,7 +215,7 @@ The documentation generator will use information from:
 
 ### How to document statements
 
-A GAML statement is defined by a Java class annoted by the `@symbol` annotation (see [the list of all annotations](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\DevelopingExtensions\DevelopingIndexAnnotations.md) for more details about annotations). In the core of GAMA, most of the statements are defined in the plugin `msi.gama.core` and in the package `msi.gaml.statements`.
+A GAML statement is defined by a Java class annoted by the `@symbol` annotation (see [the list of all annotations](DevelopingIndexAnnotations) for more details about annotations). In the core of GAMA, most of the statements are defined in the plugin `msi.gama.core` and in the package `msi.gaml.statements`.
 
 The documentation generator will use information from:
 * `@symbol` annotation,
@@ -225,7 +225,7 @@ The documentation generator will use information from:
 
 ### How to document skills
 
-A GAML skill is defined by a Java class annoted by the `@skill` annotation (see [the list of all annotations](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\DevelopingExtensions\DevelopingIndexAnnotations.md) for more details about annotations). In the core of GAMA, most of the skills are defined in the plugin `msi.gama.core` and in the package `msi.gaml.skills`.
+A GAML skill is defined by a Java class annoted by the `@skill` annotation (see [the list of all annotations](DevelopingIndexAnnotations) for more details about annotations). In the core of GAMA, most of the skills are defined in the plugin `msi.gama.core` and in the package `msi.gaml.skills`.
 
 The documentation generator will use information from:
 * `@skill` annotation,

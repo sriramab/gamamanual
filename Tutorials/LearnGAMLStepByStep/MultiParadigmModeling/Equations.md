@@ -20,11 +20,11 @@ This approach makes a lot of strong hypotheses. The model does not take into acc
 
 In the SIR model, the population is split into 3 compartments: S (Susceptible), I (Infected), R (Recovered). This can be represented by the following Forrester diagram: boxes represent stocks (i.e. compartments) and arrows are flows. Arrows hold the rate of a compartment population flowing to another compartment.
 
-![SIR-compartment.png](images/SIR-compartment.png)
+![SIR-compartment.png](resources/images/SIR-compartment.png)
 
 The corresponding ODE system contains one equation per stock. For example, the I compartment evolution is influenced by an inner (so positive) flow from the S compartment and an outer (so negative) flow to the R compartment.
 
-![SIR-equations.png](images/SIR-equations.png)
+![SIR-equations.png](resources/images/SIR-equations.png)
 
 Integrating this system using the Runge-Kutta 4 method provides the evolution of S, I and R over time. The initial values are:
 * S = 499
@@ -34,7 +34,7 @@ Integrating this system using the Runge-Kutta 4 method provides the evolution of
 * gamma = 0.1 
 * h = 0.1
 
-![SIR-result.png](images/SIR-result.png)
+![SIR-result.png](resources/images/SIR-result.png)
 
 
 ## Why and when can we use ODE in agent-based models ?
@@ -142,7 +142,7 @@ The results are computed using the RK4 method with:
 * gbeta = 0.3 
 * hKR4 = 0.1 
 
-![SI-split-results.png](images/SI-split-results.png)
+![SI-split-results.png](resources/images/SI-split-results.png)
 
 
 ## ``solve`` an equation
@@ -191,13 +191,13 @@ Some facets are specific to the DP853 integration methods: `max_step`, `min_step
 The `step` and `cycle_length` facets of the integration method may have a huge influence on the results. `step` has an impact on the result accuracy. In addition, it is possible to synchronize the step of the (agent-based) simulation and the (equation) integration step in various ways (depending on the modeler purpose) using the `cycle_length` facet: e.g. `cycle_length: 10` means that 10 simulation steps are equivalent to 1 unit of time of the integration method.
 
 * `solve SIR method: "rk4" step: 1.0 cycle_length: 1.0 ; `
-![SIR-results-h1.png](images/SIR-results-h1.png)
+![SIR-results-h1.png](resources/images/SIR-results-h1.png)
 
 * `solve SIR method: "rk4" step: 0.1 cycle_length: 10.0 ; `
-![SIR-results-h0.1.png](images/SIR-results-h0.1.png)
+![SIR-results-h0.1.png](resources/images/SIR-results-h0.1.png)
 
 * `solve SIR method: "rk4" step: 0.01 cycle_length: 100.0 ; `
-![SIR-results-h0.01.png](images/SIR-results-h0.01.png)
+![SIR-results-h0.01.png](resources/images/SIR-results-h0.01.png)
 
 ### List of built-in ODE systems
 Several built-in equations have been defined.
@@ -211,9 +211,9 @@ equation eqSI {
 }
 ```	
 
-![SI-compartment.png](images/SI-compartment.png)
+![SI-compartment.png](resources/images/SI-compartment.png)
 
-![SI-equations.png](images/SI-equations.png)
+![SI-equations.png](resources/images/SI-equations.png)
 
 The results are provided using the Runge-Kutta 4 method using following initial values:
 * S = 499
@@ -221,7 +221,7 @@ The results are provided using the Runge-Kutta 4 method using following initial 
 * beta = 0.4
 * h = 0.1
 
-![SI-result.png](images/SI-result.png)
+![SI-result.png](resources/images/SI-result.png)
 
 #### `equation eqSIS type: SIS vars: [S,I,t] params: [N,beta,gamma];`
 
@@ -232,9 +232,9 @@ equation eqSIS {
 	diff(I,t) = beta * S * I / N - gamma * I;
 }
 ```
-![SIS-compartment.png](images//SIS-compartment.png)
+![SIS-compartment.png](resources/images//SIS-compartment.png)
 
-![SIS-equations.png](images/SIS-equations.png)
+![SIS-equations.png](resources/images/SIS-equations.png)
 
 The results are provided using the Runge-Kutta 4 method using following initial values:
 * S = 499
@@ -243,7 +243,7 @@ The results are provided using the Runge-Kutta 4 method using following initial 
 * gamma = 0.1 
 * h = 0.1
 
-![SIS-result.png](images/SIS-result.png)
+![SIS-result.png](resources/images/SIS-result.png)
 
 #### `equation eqSIR type:SIR vars:[S,I,R,t] params:[N,beta,gamma] ;`
 
@@ -256,9 +256,9 @@ equation eqSIR {
 }
 ```
 
-![SIR-compartment.png](images/SIR-compartment.png)
+![SIR-compartment.png](resources/images/SIR-compartment.png)
 
-![SIR-equations.png](images/SIR-equations.png)
+![SIR-equations.png](resources/images/SIR-equations.png)
 
 The results are provided using the Runge-Kutta 4 method using following initial values:
 * S = 499
@@ -268,7 +268,7 @@ The results are provided using the Runge-Kutta 4 method using following initial 
 * gamma = 0.1 
 * h = 0.1
 
-![SIR-result.png](images/SIR-result.png)
+![SIR-result.png](resources/images/SIR-result.png)
 
 
 #### `equation eqSIRS type: SIRS vars: [S,I,R,t] params: [N,beta,gamma,omega,mu] ;`
@@ -282,9 +282,9 @@ equation eqSIRS {
 }
 ```
 
-![SIRS-compartment.png](images/SIRS-compartment.png)
+![SIRS-compartment.png](resources/images/SIRS-compartment.png)
 
-![SIRS-equations.png](images/SIRS-equations.png)
+![SIRS-equations.png](resources/images/SIRS-equations.png)
 
 The results are provided using the Runge-Kutta 4 method using following initial values:
 * S = 499
@@ -296,7 +296,7 @@ The results are provided using the Runge-Kutta 4 method using following initial 
 * mu = 0.01 
 * h = 0.1
 
-![SIRS-result.png](images/SIRS-result.png)
+![SIRS-result.png](resources/images/SIRS-result.png)
 
 
 #### `equation eqSEIR type: SEIR vars: [S,E,I,R,t] params: [N,beta,gamma,sigma,mu] ;`
@@ -311,9 +311,9 @@ equation eqSEIR {
 }
 ```
 
-![SEIR-compartment.png](images/SEIR-compartment.png)
+![SEIR-compartment.png](resources/images/SEIR-compartment.png)
 
-![SEIR-equations.png](images/SEIR-equations.png)
+![SEIR-equations.png](resources/images/SEIR-equations.png)
 
 The results are provided using the Runge-Kutta 4 method using following initial values:
 * S = 499
@@ -326,7 +326,7 @@ The results are provided using the Runge-Kutta 4 method using following initial 
 * mu = 0.01 
 * h = 0.1
 
-![SEIR-result.png](images/SEIR-result.png)
+![SEIR-result.png](resources/images/SEIR-result.png)
 
 
 #### `equation eqLV type: LV vars: [x,y,t] params: [alpha,beta,delta,gamma] ;`
@@ -339,7 +339,7 @@ equation eqLV {
 }	
 ```
 
-![LV-equations.png](images/LV-equations.png)
+![LV-equations.png](resources/images/LV-equations.png)
 
 The results are provided using the Runge-Kutta 4 method using following initial values:
 * x = 2
@@ -350,4 +350,4 @@ The results are provided using the Runge-Kutta 4 method using following initial 
 * delta = 0.85
 * h = 0.1
 
-![LV-result.png](images/LV-result.png)
+![LV-result.png](resources/images/LV-result.png)

@@ -1,6 +1,6 @@
 # Organization of a model
 
-As already extensively detailed in the [introduction page](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\Introduction.md), defining a model in GAML amounts to defining a _model species_, which later allows to instantiate a _model agent_ (aka a _simulation_), which may or may not contain micro-species, and which can be flanked by _experiment plans_ in order to be simulated.
+As already extensively detailed in the [introduction page](Introduction), defining a model in GAML amounts to defining a _model species_, which later allows to instantiate a _model agent_ (aka a _simulation_), which may or may not contain micro-species, and which can be flanked by _experiment plans_ in order to be simulated.
 
 This conceptual structure is respected in the definition of model files, which follows a similar pattern:
 
@@ -45,10 +45,10 @@ import "relative_path_to_a_model_file" as model_identifier
 When importing models using the first form, all the declarations of the model(s) imported will be merged with those of the current model (in the order with which the import statements are declared, i.e. the latest definitions of global attributes or behaviors superseding the previous ones).
 The second form is reserved for using models as _micro-models_ of the current model. This possibility is still experimental in the current version of GAMA.
 
-The last part of the _header_ is the definition of the [`global` species](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\GlobalSpecies.md), which is the actual definition of the _model species_ itself.
+The last part of the _header_ is the definition of the [`global` species](GlobalSpecies), which is the actual definition of the _model species_ itself.
 ```
 global {
-    // Definition of [global attributes](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\GlobalSpecies.md#declaration), [actions and behaviors](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\DefiningActionsAndBehaviors.md)
+    // Definition of [global attributes](GlobalSpecies#declaration), [actions and behaviors](DefiningActionsAndBehaviors)
 }
 ```
 
@@ -60,16 +60,16 @@ Note that neither the imports nor the definition of `global` are mandatory. Only
 
 The header is followed by the declaration of the different species of agents that populate the model.
 
-The [special species `global`](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\GlobalSpecies.md) is the world species. You will declare here all the global attributes/actions/behaviors. The global species does not have name, and is unique in your model.
+The [special species `global`](GlobalSpecies) is the world species. You will declare here all the global attributes/actions/behaviors. The global species does not have name, and is unique in your model.
 ```
 global {
     // definition of global attributes, actions, behaviors
 }
 ```
-[Regular species](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\RegularSpecies.md) can be declared with the keyword `species`. You can declare several regular species, and they all have to be named.
+[Regular species](RegularSpecies) can be declared with the keyword `species`. You can declare several regular species, and they all have to be named.
 ```
 species nameOfSpecies {
-	// definition of your [species attributes](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\RegularSpecies.md#declaration), [actions and behaviors](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\DefiningActionsAndBehaviors.md)
+	// definition of your [species attributes](RegularSpecies#declaration), [actions and behaviors](DefiningActionsAndBehaviors)
 }
 ```
 Note that the possibility to define the species _after_ the `global` definition is actually a convenience: these species are micro-species of the model species and, hence, could be perfectly defined as nested species of `global`. For instance:
@@ -85,7 +85,7 @@ species B {…}
 is completely equivalent to:
 ```
 global {
-    // definition of [global attributes](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\GlobalSpecies.md#declaration), actions, behaviors
+    // definition of [global attributes](GlobalSpecies#declaration), actions, behaviors
 
     species A {…}
 
@@ -96,7 +96,7 @@ global {
 
 ## Experiment declarations
 
-Experiments are usually declared at the end of the file. They start with the keyword "experiment". They contains the [simulation parameters](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningParameters.md), and the definition of the output (such as [displays](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningDisplaysGeneralities.md), [monitors or inspectors](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningMonitorsAndInspectors.md)). You can declare as much experiments as you want.
+Experiments are usually declared at the end of the file. They start with the keyword "experiment". They contains the [simulation parameters](DefiningParameters), and the definition of the output (such as [displays](DefiningDisplaysGeneralities), [monitors or inspectors](DefiningMonitorsAndInspectors)). You can declare as much experiments as you want.
 
 ```
 experiment first_experiment {
@@ -114,13 +114,13 @@ experiment second_experiment {
 ```
 
 Note that you have two types of experiments:
-A [GUI experiment](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment.md) allows to display a graphical interface with input parameters and outputs. It is declared with the following structure :
+A [GUI experiment](DefiningGUIExperiment) allows to display a graphical interface with input parameters and outputs. It is declared with the following structure :
 ```
 experiment gui_experiment type:gui {
 	[...]
 }
 ```
-A [Batch experiment](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ExploringModels\BatchExperiments.md) allows to execute numerous successive simulation runs (often used for model exploration). It is declared with the following structure :
+A [Batch experiment](BatchExperiments) allows to execute numerous successive simulation runs (often used for model exploration). It is declared with the following structure :
 ```
 experiment batch_experiment type:batch {
 	[...]
@@ -134,7 +134,7 @@ Here is the basic skeleton of a model :
 model name_of_the_model
 
 global {
-	// definition of [global attributes](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\GlobalSpecies.md#declaration), actions, behaviours
+	// definition of [global attributes](GlobalSpecies#declaration), actions, behaviours
 }
 
 species my_specie {

@@ -1,6 +1,6 @@
 # Installing Plugins
 
-Besides the plugins delivered by the developers of the GAMA platform, which can be installed and updated as explained [here](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\InstallationAndLaunching\Updating.md), there are a number of additional plugins that can be installed to add new functionalities to GAMA or enhance the existing ones. GAMA being based on Eclipse, a number of plugins developed for Eclipse are then available (a complete listing of Eclipse plugins can be found in the so-called [Eclipse MarketPlace](http://marketplace.eclipse.org)).
+Besides the plugins delivered by the developers of the GAMA platform, which can be installed and updated as explained [here](Updating), there are a number of additional plugins that can be installed to add new functionalities to GAMA or enhance the existing ones. GAMA being based on Eclipse, a number of plugins developed for Eclipse are then available (a complete listing of Eclipse plugins can be found in the so-called [Eclipse MarketPlace](http://marketplace.eclipse.org)).
 
 There are, however, three important restrictions:
 
@@ -8,7 +8,7 @@ There are, however, three important restrictions:
 2. The Eclipse foundations in GAMA are only a subset of the complete Eclipse platform, and a number of libraries or frameworks (for example the Java Development Toolkit) are not (and will never be) installed in GAMA. So plugins relying on their existence will refuse to install as well.
 3. Some components of GAMA rely on a specific version of other plugins and will refuse to work with other versions, essentially because their compatibility will not be ensured anymore. For instance, the parser and validator of the GAML language in GAMA 1.6.1 require [XText v. 2.4.1](http://www.eclipse.org/Xtext/) to be installed (and neither XText 2.5.4 nor XText 2.3 will satisfy this dependency).
 
-With these restrictions in mind, it is however possible to install interesting additional plugins. We propose here a list of some of these plugins (known to work with GAMA), but feel free to either add a comment if you have tested plugins not listed here or [create an issue](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\InstallationAndLaunching\Troubleshooting.md) if a plugin does not work, in order for us to see what the requirements to make it work are and how we can satisfy them (or not) in GAMA.
+With these restrictions in mind, it is however possible to install interesting additional plugins. We propose here a list of some of these plugins (known to work with GAMA), but feel free to either add a comment if you have tested plugins not listed here or [create an issue](Troubleshooting) if a plugin does not work, in order for us to see what the requirements to make it work are and how we can satisfy them (or not) in GAMA.
 
 ## Table of contents 
 
@@ -25,35 +25,35 @@ With these restrictions in mind, it is however possible to install interesting a
 
 
 ## Installation
-Installing new plugins is a process identical to the one described when [updating GAMA](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\InstallationAndLaunching\Updating.md), with one exception: the _update site_ to enter is normally provided by the vendor of the additional plugin and must be entered instead of GAMA's one in the dialog. Let us suppose, for instance, that we want to install a RSS feed reader available on this [site](http://junginger.biz/eclipse/).
+Installing new plugins is a process identical to the one described when [updating GAMA](Updating), with one exception: the _update site_ to enter is normally provided by the vendor of the additional plugin and must be entered instead of GAMA's one in the dialog. Let us suppose, for instance, that we want to install a RSS feed reader available on this [site](http://junginger.biz/eclipse/).
 An excerpt from the page reads that :
 
 > All plugins are installed with the standard update manager of Eclipse. It will guide you through the installation process and also eases keeping your plugins up-to-date. Just add the update site: http://www.junginger.biz/eclipse/
 
 So we just have to follow these instructions, which leads us to the following dialog, in which we select "RSS view" and click "Next".
 
-![images/dialog_install_plugins.png](images/dialog_install_plugins.png)
+![images/dialog_install_plugins.png](resources/images/dialog_install_plugins.png)
 
 The initial dialog is followed by two other ones, a first to report that the plugin satisfies all the dependencies, a second to ask the user to accept the license agreement.
 
 
 
-|![images/dialog_install_plugins_2.png](images/dialog_install_plugins_2.png)|![images/dialog_install_plugins_3.png](images/dialog_install_plugins_3.png)|
+|![images/dialog_install_plugins_2.png](resources/images/dialog_install_plugins_2.png)|![images/dialog_install_plugins_3.png](resources/images/dialog_install_plugins_3.png)|
 |---|---|
 
 Once we dismiss the warning that the plugin is not signed and accept to restart GAMA, we can test the new plugin by going to the "Views" menu.
 
-![images/menu_other_views.png](images/menu_other_views.png)
+![images/menu_other_views.png](resources/images/menu_other_views.png)
 
 
 The new RSS view is available in the list of views that can be displayed in GAMA.
 
-![images/dialog_show_view.png](images/dialog_show_view.png)
+![images/dialog_show_view.png](resources/images/dialog_show_view.png)
 
 
 And we can enjoy (after setting some preferences available in its local menu) monitoring the Issues of GAMA from within GAMA itself !
 
-![images/feed_working.png](images/feed_working.png)
+![images/feed_working.png](resources/images/feed_working.png)
 
 
 
@@ -79,14 +79,14 @@ In addition to the RSS reader described above, below is a list of plugins that h
   * Update site: `http://kosz.bitbucket.org/eclipse-ckeditor/update-site`
 
 ### Startexplorer
-  * A nice utility that allows the user to select files, folders or projects in the [Navigator](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\WorkspaceProjectsAndModels\NavigatingWorkspace.md) and open them in the filesystem (either the UI Explorer, Finder, whatever, or in a terminal).
+  * A nice utility that allows the user to select files, folders or projects in the [Navigator](NavigatingWorkspace) and open them in the filesystem (either the UI Explorer, Finder, whatever, or in a terminal).
   * Update site: `http://basti1302.github.com/startexplorer/update/`
 
-![images/start_explorer.png](images/start_explorer.png)
+![images/start_explorer.png](resources/images/start_explorer.png)
 
 
 ### Pathtools
-  * Same purpose as StartExplorer, but much more complete, and additionally offers the possibility to add new commands to handle files (open them in specific editors, execute external programs on them, etc.). Very nice and professional. Works flawlessly in GAMA except that contributions to the toolbar are not accepted (so you have to rely on the commands present in the [Navigator](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\WorkspaceProjectsAndModels\NavigatingWorkspace.md) pop-up menu).
+  * Same purpose as StartExplorer, but much more complete, and additionally offers the possibility to add new commands to handle files (open them in specific editors, execute external programs on them, etc.). Very nice and professional. Works flawlessly in GAMA except that contributions to the toolbar are not accepted (so you have to rely on the commands present in the [Navigator](NavigatingWorkspace) pop-up menu).
   * Update site: `http://pathtools.googlecode.com/svn/trunk/PathToolsUpdateSite/site.xml`
   * Website: `https://pathtools.googlecode.com`
 
@@ -95,7 +95,7 @@ In addition to the RSS reader described above, below is a list of plugins that h
   * An editor for CSV files. Quite handy if you do not want to launch Excel every time you need to inspect or change the CSV data files used in models.
   * Update site: `http://csvedit.googlecode.com/svn/trunk/csvedit.update`
 
-![images/csv_edit.png](images/csv_edit.png)
+![images/csv_edit.png](resources/images/csv_edit.png)
 
 
 ### Quickimage
@@ -103,4 +103,4 @@ In addition to the RSS reader described above, below is a list of plugins that h
   * A lightweight viewer of images, which can be useful when several images are used in a model.
   * Update site: `http://psnet.nu/eclipse/updates`
 
-![images/quick_image.png](images/quick_image.png)
+![images/quick_image.png](resources/images/quick_image.png)

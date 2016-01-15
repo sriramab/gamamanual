@@ -2,7 +2,7 @@
 This first step illustrates how to create simple agents and make them move in their environment.
 
 
-![images/luneray1.tiff](images/luneray1.tiff)
+![images/luneray1.tiff](resources/images/luneray1.tiff)
 
 
 
@@ -19,9 +19,9 @@ This first step illustrates how to create simple agents and make them move in th
 ## Model Definition
 
 ### Project and model
-The first step of this tutorial consists in launching GAMA and choosing a workspace, then to define a new project or to import the existing one. For people that do not want to re-write all the models but just to follow the model construction, they can just download the model project here and the follow this [procedure](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\WorkspaceProjectsAndModels\ImportingModels.md) to import it into GAMA. For the other, the project and model creation procedures are detailed [here](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\EditingModels\GamlEditorGeneralities.md). 
+The first step of this tutorial consists in launching GAMA and choosing a workspace, then to define a new project or to import the existing one. For people that do not want to re-write all the models but just to follow the model construction, they can just download the model project here and the follow this [procedure](ImportingModels) to import it into GAMA. For the other, the project and model creation procedures are detailed [here](GamlEditorGeneralities). 
 
-Note that the concepts of workspace and projects are explained [here](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\WorkspaceProjectsAndModels.md).
+Note that the concepts of workspace and projects are explained [here](WorkspaceProjectsAndModels).
 
 
 ### model structure
@@ -30,10 +30,10 @@ A GAMA model is composed of three type of sections:
   * **species** and **grid**: these sections define the species of agents composing the model. Grid are defined in the following model step "vegetation dynamic";
   * **experiment** : these sections define a context of execution of the simulations. In particular, it defines the input (parameters) and output (displays, files...) of a model.
 
-More details about the different sections of a GAMA model can be found [here](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\StartWithGAML\ModelOrganization.md).
+More details about the different sections of a GAMA model can be found [here](ModelOrganization).
 
 ### species
-A [species](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\RegularSpecies.md) represents a «prototype» of agents: it defines their common properties.
+A [species](RegularSpecies) represents a «prototype» of agents: it defines their common properties.
 
 Three different elements can be defined in a species:
   * the internal state of its agents (attributes)
@@ -47,7 +47,7 @@ species people {
 }
 ```
 
-In addition, we want add a new capability to our agent: the possibility to move randomly. for that, we add a specific skill to our people agents. A [skill](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\AttachingSkills.md) is a built-in module that provide the modeler a self-contain and relevant set of actions and variables. The [moving](__BuiltInSkills#moving) provides the agents with several attributes and actions related to movement. 
+In addition, we want add a new capability to our agent: the possibility to move randomly. for that, we add a specific skill to our people agents. A [skill](AttachingSkills) is a built-in module that provide the modeler a self-contain and relevant set of actions and variables. The [moving](__BuiltInSkills#moving) provides the agents with several attributes and actions related to movement. 
 
 ```
    species people skills: [moving]{
@@ -57,7 +57,7 @@ In addition, we want add a new capability to our agent: the possibility to move 
 
 
 #### Internal state
-An [attribute](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\RegularSpecies.md#declaration) is defined as follows: type of the attribute  and name. Numerous types of attributes are available: _int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path..._
+An [attribute](RegularSpecies#declaration) is defined as follows: type of the attribute  and name. Numerous types of attributes are available: _int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path..._
   * Optional facets: <- (initial value), update (value recomputed at each step of the simulation), function:{..} (value computed each time the variable is used), min, max
 
 In addition to the attributes the modeler explicitly defines, species "inherits" other attributes called "built-in" variables:
@@ -75,19 +75,19 @@ species people skills:[moving]{
 	bool is_infected <- false;
 }
 ```
-Note we use the [rnd](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Expressions\Operators.md#rnd) operator to define a random value between 2 and 5 for the speed. In addition, we precise a unit for the speed value by using the # symbol. For more details about units, see [here](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Expressions\UnitsAndConstants.md).
+Note we use the [rnd](Operators#rnd) operator to define a random value between 2 and 5 for the speed. In addition, we precise a unit for the speed value by using the # symbol. For more details about units, see [here](UnitsAndConstants).
 
 #### Behavior
 GAMA proposes several ways to define the behavior of a species: dynamic variables (update facet), reflexes....
 
-A [reflex](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\DefiningActionsAndBehaviors.md#behaviors) is a block of statements (that can be defined in global or any species) that will be automatically executed at each simulation step if its condition is true, it is defined as follows:
+A [reflex](DefiningActionsAndBehaviors#behaviors) is a block of statements (that can be defined in global or any species) that will be automatically executed at each simulation step if its condition is true, it is defined as follows:
 ```
    reflex reflex_name when: condition {…}
 ```
 
 The **when** facet is optional: when it is omitted, the reflex is activated at each time step. Note that if several reflexes are defined for a species, the reflexes will be activated following their definition order.
 
-We define a first reflex called **move** that is activated at each simulation step (no condition) and that makes the people move randomly using the wander action from the [moving](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\BuiltInSkills.md#moving) skill.
+We define a first reflex called **move** that is activated at each simulation step (no condition) and that makes the people move randomly using the wander action from the [moving](BuiltInSkills#moving) skill.
 ```
 species people skills:[moving]{		
 	//variable definition
@@ -111,10 +111,10 @@ species people skills:[moving]{
 	}
 }
 ```
-The [ask](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Statements.md#ask) allows an agent to ask another agents to do something (i.e. to execute a sequence of statements). The [at_distance](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Expressions\Operators.md#at_distance) operator allows to get the list of agents (here of people agents) that are located at a distance lower or equal to the given distance (here 10m). The [flip](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Expressions\Operators.md#flip) operator allows to test a probability.
+The [ask](Statements#ask) allows an agent to ask another agents to do something (i.e. to execute a sequence of statements). The [at_distance](Operators#at_distance) operator allows to get the list of agents (here of people agents) that are located at a distance lower or equal to the given distance (here 10m). The [flip](Operators#flip) operator allows to test a probability.
 
 #### Display
-An agent [aspects](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\RegularSpecies.md#the-aspect-statement) have to be defined. An aspect is a way to display the agents of a species : aspect aspect\_name {…}
+An agent [aspects](RegularSpecies#the-aspect-statement) have to be defined. An aspect is a way to display the agents of a species : aspect aspect\_name {…}
 In the block of an aspect, it is possible to draw :
   * A geometry :  for instance, the shape of the agent (but it may be a different one, for instance a disk instead of a complex polygon)
   * An image : to draw icons
@@ -135,7 +135,7 @@ species people {
 The **?** structure allows to return a different value (here red or green) according to a condition (here is_infected = true).
 
 ### global section
-The global section represents a specific agent, called [world](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\GlobalSpecies.md). Defining this agent follows the same principle as any agent and is, thus, defined after a species.
+The global section represents a specific agent, called [world](GlobalSpecies). Defining this agent follows the same principle as any agent and is, thus, defined after a species.
 The world agent represents everything that is global to the model : dynamics, variables…
 It allows to initialize simulations (init block): the world is always created and initialized first when a simulation is launched (before any other agents). The geometry (shape) of the world agent is by default a square with 100m for side size, but can be redefined if necessary. The _step_ attribute of the world agent allows to specify the duration of one simulation step (by default, 1 step = 1 seconde).
 
@@ -188,7 +188,7 @@ experiment main_experiment type: gui {
 #### input
 Experiments can define (input) parameters. A parameter definition allows to make the value of a global variable definable by the user through the graphic interface.
 
-A [parameter](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningParameters.md) is defined as follows:
+A [parameter](DefiningParameters) is defined as follows:
 **parameter** title var: global\_var category: cat;
   * **title** : string to display
   * **var** : reference to a global variable (defined in the global section)
@@ -211,7 +211,7 @@ experiment main_experiment type:gui{
 }
 ```
 #### output
-[Output](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment.md) blocks are defined in an experiment and define how to visualize a simulation (with one or more [display](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningDisplaysGeneralities.md) blocks that define separate windows). Each display can be refreshed independently by defining the facet **refresh\_every:** nb (int) (the display will be refreshed every nb steps of the simulation).
+[Output](DefiningGUIExperiment) blocks are defined in an experiment and define how to visualize a simulation (with one or more [display](DefiningDisplaysGeneralities) blocks that define separate windows). Each display can be refreshed independently by defining the facet **refresh\_every:** nb (int) (the display will be refreshed every nb steps of the simulation).
 
 Each display can include different layers (like in a GIS) :
   * Agents lists : **agents** layer\_name value: agents\_list aspect: my\_aspect;
@@ -279,4 +279,4 @@ experiment main_experiment type:gui{
 	}
 }
 ```
-[Next step: Definition of monitors and chart outputs](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\LunearysFlu\LuneraysFlu_step2.md)
+[Next step: Definition of monitors and chart outputs](LuneraysFlu_step2)
