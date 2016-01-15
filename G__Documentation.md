@@ -2,6 +2,8 @@
 
 [Test](http://github.com/gama-platform/gama/wiki/Content/G__Test)
 [Test](http://github.com/gama-platform/gama/wiki/Content/G__Test.md)
+[Test](./Content/G__Test.md)
+[Test](./Content/G__Test)
 
 * [Documentation](#documentation)
 	* [Requirements](#requirements)
