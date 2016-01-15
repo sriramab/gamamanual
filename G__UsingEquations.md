@@ -1,9 +1,4 @@
 
-TO FINISH 
-Add references to : 
-* integration method
-
-
 # Using Equations
 
 ## Introduction
@@ -14,7 +9,7 @@ A classical example is the SIR epidemic model representing the spreading of a di
 
 In general the ODE systems cannot be analytically solved, i.e. it is not possible to find the equation describing the evolution of the number of S, I or R. But these systems can be numerically integrated in order to get the evolution. A numerical integration computes step after step the value of S, I and R. Several integration methods exist (e.g. Euler, Runge-Kutta...), each of them being a compromise between accuracy and computation time. The length of the integration step has also a huge impact on precision. These models are deterministic.
 
-This approach makes a lot of strong hypotheses. The model does not take into account space. The population is considered has infinite and homogeneously mixed, so that any agent can interact with any other one.
+This approach makes a lot of strong hypotheses. The model does not take into account space. The population is considered has homogeneously mixed, so that any agent can interact with any other one.
 
 ## Example of a SIR model 
 
@@ -39,7 +34,7 @@ Integrating this system using the Runge-Kutta 4 method provides the evolution of
 
 ## Why and when can we use ODE in agent-based models ?
 
-These hypotheses are very strong and cannot be fulfilled in agent-based models. 
+These hypotheses (model aspatial, homogeneous mixed population with possible interaction between any agents) are very strong and cannot be fulfilled in agent-based models. 
 
 But in some multi-scale models, some entities can be close. For example if we want to implement a model describing the worldwide epidemic spread and the impact of air traffic on it, we cannot simulate the 7 billions people. But we can represent only cities with airports and airplanes as agents. In this case, cities are entities with a population of millions inhabitants, that will not been spatially located. As we are only interested in the disease spread, we are only interested in the number of infected people in the cities (and susceptibles and recovered too). As a consequence, it appears particularly relevant to describe the evolution of the disease in the city using a ODE system.
 
@@ -76,7 +71,7 @@ This equation has to be defined in a species with ``t``, ``S`` and ``I`` attribu
 Note: the ``t`` attribute will be automatically updated using the ``solve`` statement ; it contains the time elapsed in the equation integration.
 
 ### Using a built-in ODE system
-In order to ease the use of very classical ODE system, some built-in systems have been implemented in GAMA. For example, the previous SI system can be written as follows. Three additional facets are used to define the system:
+In order to ease the use of very classical ODE systems, some built-in systems have been implemented in GAMA. For example, the previous SI system can be written as follows. Three additional facets are used to define the system:
 * `type`: the identifier of the built-in system (here SI) (the list of all built-in systems are described below),
 * `vars`: this facet is expecting a list of variables of the species, that will be matched with the variables of the system,
 * `params`: this facet is expecting a list of variables of the species (of of the global), that will be matched with the parameters of the system.
