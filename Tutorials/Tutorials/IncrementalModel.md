@@ -22,7 +22,7 @@ We made the following modeling choice:
   * The staying time depends on the current hour (lower at 9h - go to work - at 12h go to lunch - at 18h - go back home)
   * Infected people are never cured
 
-![images/incremental_model.jpg](resources\images/incremental_model.jpg)
+![images/incremental_model.jpg](images/incremental_model.jpg)
 
 
 
@@ -32,10 +32,10 @@ We made the following modeling choice:
 
 This tutorial is composed of 7 steps corresponding to 7 models. For each step we present its purpose, an explicit formulation and the corresponding GAML code.
 
-  1. [Simple SI Model](IncrementalModel_step1)
-  1. [Charts](IncrementalModel_step2)
-  1. [Integration of GIS Data](IncrementalModel_step3)
-  1. [Movement on Graph](IncrementalModel_step4)
-  1. [3D visualization](IncrementalModel_step5)
-  1. [Multi-Level](IncrementalModel_step6)
-  1. [Differential Equations](IncrementalModel_step7)
+  1. [Simple SI Model](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\IncrementalModel\IncrementalModel_step1.md)
+  1. [Charts](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\IncrementalModel\IncrementalModel_step2.md)
+  1. [Integration of GIS Data](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\IncrementalModel\IncrementalModel_step3.md)
+  1. [Movement on Graph](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\IncrementalModel\IncrementalModel_step4.md)
+  1. [3D visualization](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\IncrementalModel\IncrementalModel_step5.md)
+  1. [Multi-Level](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\IncrementalModel\IncrementalModel_step6.md)
+  1. [Differential Equations](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\IncrementalModel\IncrementalModel_step7.md)

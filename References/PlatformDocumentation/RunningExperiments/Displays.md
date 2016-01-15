@@ -1,7 +1,7 @@
 
 # Displays
 
-GAMA allows modelers to [define several and several kinds of displays](DefiningDisplaysGeneralities) in a [GUI experiment](DefiningGUIExperiment):
+GAMA allows modelers to [define several and several kinds of displays](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningDisplaysGeneralities.md) in a [GUI experiment](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment.md):
   * java 2D displays
   * OpenGL displays
 
@@ -22,7 +22,7 @@ The classical displays displaying any kind of content can be manipulated via the
 * the **mouse right** click opens a context menu allowing the modeler to inspect displayed agents,
 * the **wheel** allows the modeler to zoom in or out.
 
-![images/display-java2D.png](resources\images/display-java2D.png)
+![images/display-java2D.png](images/display-java2D.png)
 
 
 Each display provides several buttons to manipulate the display (from left to right):
@@ -46,7 +46,7 @@ The bottom overlay bar displays information about the way it is displayed:
   * the zoom ratio,
   * the scale of the display (depending on the zoom).
 
-![images/display-sidebar-overlay.png](resources\images/display-sidebar-overlay.png)
+![images/display-sidebar-overlay.png](images/display-sidebar-overlay.png)
 
 
 
@@ -61,7 +61,7 @@ The OpenGL display has an additional button **3D Options** providing 3D features
   * **Split layers**/**Merge layers**: display each layer at a distinct height,
   * **Triangulate scene**: display the polygon primitives.
 
-![images/display-OpenGL.png](resources\images/display-OpenGL.png)
+![images/display-OpenGL.png](images/display-OpenGL.png)
 
 In addition, the bottom overlay bar provides the Camera position in 3D.
 

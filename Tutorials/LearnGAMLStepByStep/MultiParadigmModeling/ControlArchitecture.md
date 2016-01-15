@@ -2,7 +2,7 @@
 
 GAMA allows to attach built-in control architecture to agents.
 
-These control architectures will give the possibility to the modeler to use for a species a specific control architecture in addition to the [common behavior structure](DefiningActionsAndBehaviors#Behaviour). Note that only one control architecture can be used per species.
+These control architectures will give the possibility to the modeler to use for a species a specific control architecture in addition to the [common behavior structure](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\DefiningActionsAndBehaviors.md#Behaviour). Note that only one control architecture can be used per species.
 
 The attachment of a control architecture to a species is done through the facets `control`.
 
@@ -18,7 +18,7 @@ GAMA integrates several agent control architectures that can be used in addition
   * [weighted\_tasks](#task-based): task-based control architecture. At any given time, only the task only the task with the maximal weight is executed.
   * [sorted\_tasks](#task-based): task-based control architecture. At any given time, the tasks are all executed in the order specified by their weights (highest first).
   * [probabilistic\_tasks](#task-based): task-based control architecture. This architecture uses the weights as a support for making a weighted probabilistic choice among the different tasks. If all tasks have the same weight, one is randomly chosen at each step.
-  * [user\_only](DefiningUserInteraction#user-control-architecture): allows users to take control over an agent during the course of the simulation. With this architecture, only the user control the agents (no reflexes).
+  * [user\_only](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningUserInteraction.md#user-control-architecture): allows users to take control over an agent during the course of the simulation. With this architecture, only the user control the agents (no reflexes).
   * [user\_first](user-control-architecture): allows users to take control over an agent during the course of the simulation. With this architecture, the user actions are executed before the agent reflexes.
   * [user\_last](user-control-architecture): allows users to take control over an agent during the course of the simulation. With this architecture, the user actions are executed after the agent reflexes.
   
@@ -278,6 +278,6 @@ Finally, each agent provided with this architecture inherits a boolean attribute
 
 ## Other Control Architectures
 
-Some other control architectures are available in additionnal plugins. For instance, [BDI (Belief, desire, intention) architecture](UsingBDI) is available. Feel free to read about it if you want to learn more.
+Some other control architectures are available in additionnal plugins. For instance, [BDI (Belief, desire, intention) architecture](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Recipes\UsingBDI.md) is available. Feel free to read about it if you want to learn more.
 
 You need some other control architectures for your model ? Feel free to make your suggestion to the team of developper through the [mailing list](https://groups.google.com/forum/#!forum/gama-platform). Remember also that GAMA is an open-source platform, you can design your own control architecture easily. Go to the section Community/contribute if you want to jump into coding !

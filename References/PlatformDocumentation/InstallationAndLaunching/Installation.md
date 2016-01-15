@@ -3,7 +3,7 @@
 
 GAMA comes in 6 different versions (32 & 64 bits for Windows, Linux and MacOS). You first need to determine which version you are going to use (it depends on your computer, which may, or not, support 64 bits instructions, but also on the version of Java already installed, as the number of bits of the two versions must match).
 
-You can then download the right version from the [Downloads page](Download), expand the zip file wherever you want on your machine, and [launch GAMA](Launching).
+You can then download the right version from the [Downloads page](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Download.md), expand the zip file wherever you want on your machine, and [launch GAMA](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\InstallationAndLaunching\Launching.md).
 
 
 ## Table of contents 
@@ -19,7 +19,7 @@ You can then download the right version from the [Downloads page](Download), exp
 
 ## System Requirements
 
-GAMA requires that Java 1.6 or 1.7 be installed on your machine, approximately 200MB of disk space is available and that a minimum of RAM (4GB is recommended) is installed (to increase the portion of memory usable by GAMA, please refer to [these instructions](Troubleshooting#Memory_problems)).
+GAMA requires that Java 1.6 or 1.7 be installed on your machine, approximately 200MB of disk space is available and that a minimum of RAM (4GB is recommended) is installed (to increase the portion of memory usable by GAMA, please refer to [these instructions](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\InstallationAndLaunching\Troubleshooting.md#Memory_problems)).
 
 
 
@@ -75,4 +75,4 @@ You can then switch between java version using:
 sudo update-alternatives --config java
 ```
 
-See [the troubleshooting page](Troubleshooting#Ubuntu) for more information on workaround for problems on Unbuntu.
+See [the troubleshooting page](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\InstallationAndLaunching\Troubleshooting.md#Ubuntu) for more information on workaround for problems on Unbuntu.

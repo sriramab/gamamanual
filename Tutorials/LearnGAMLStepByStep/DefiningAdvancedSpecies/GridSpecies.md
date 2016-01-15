@@ -38,7 +38,7 @@ By default, a grid is composed by 100 rows and 100 columns.
 
 Another facet exists for grid only, very useful. It is the `neighbors` facet, used to determine how many neighbors has each cell. You can choose among 3 values: 4 (Von Neumann), 6 (hexagon) or 8 (Moore).
 
-[images/grid_neighbors.png](resources\images/grid_neighbors.png)
+[images/grid_neighbors.png](images/grid_neighbors.png)
 
 A grid can also be provided with specific facets that allows to optimize the computation time and the memory space, such as `use_regular_agents`, `use_indivitual_shapes` and `use_neighbours_cache`. Please refer to the GAML Reference for more explanation about those particular facets.
 
@@ -94,7 +94,7 @@ The **grid\_value** built-in variable is used when initializing a grid from grid
 
 there are several ways to access to a specific cell:
 
-  * by a location: by casting a location to a cell (the unity (```#m```, ```#cm```, etc...) is defined when you choose your environment size, in the [global species](GlobalSpecies).
+  * by a location: by casting a location to a cell (the unity (```#m```, ```#cm```, etc...) is defined when you choose your environment size, in the [global species](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\GlobalSpecies.md).
 
 ```
    global {
@@ -152,7 +152,7 @@ The grid will be displayed, using the color you defined for each cell (with the 
 grid MyGrid line:#black;
 ```
 
-An other way to display a grid will be to define an aspect in your grid agent (the same way as for a [regular species](RegularSpecies)), and define your grid as a regular species then in your experiment, choosing your aspect : 
+An other way to display a grid will be to define an aspect in your grid agent (the same way as for a [regular species](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\ManipulateBasicSpecies\RegularSpecies.md)), and define your grid as a regular species then in your experiment, choosing your aspect : 
 
 ```
 grid MyGrid {
@@ -183,7 +183,7 @@ TODO
 
 To practice a bit those notions, we will build a quick model. A "regular" species will move randomly on the environment. A grid is displayed, and its cells becomes red when an instance of the regular species is waking inside this cell, and yellow when the regular agent is in the surrounding of this cell. If no regular agent is on the surrounding, the cell turns green.
 
-[images/my_grid_model.png](resources\images/my_grid_model.png)
+[images/my_grid_model.png](images/my_grid_model.png)
 
 Here is an example of implementation:
 

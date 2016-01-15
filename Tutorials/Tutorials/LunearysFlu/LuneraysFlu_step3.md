@@ -1,7 +1,7 @@
 # 3. Importation of GIS data
 This third step illustrates how load GIS data and to agentify them.
 
-![images/luneray3.tiff](resources\images/luneray3.tiff)
+![images/luneray3.tiff](images/luneray3.tiff)
 
 
 
@@ -89,7 +89,7 @@ global {
 }
 ```
 
-We used here the [one_of](Operators#one_of) operator that returns a random element from a list and the [any_location_in](Operators#any_location_in) operator that returns a random location inside a geometry.
+We used here the [one_of](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Expressions\Operators.md#one_of) operator that returns a random element from a list and the [any_location_in](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Expressions\Operators.md#any_location_in) operator that returns a random location inside a geometry.
 
 ### experiment
 
@@ -202,4 +202,4 @@ experiment main_experiment type:gui{
 }
 ```
 
-[Next step: Use of a graph to constraint the movements of people](LuneraysFlu_step4)
+[Next step: Use of a graph to constraint the movements of people](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\LunearysFlu\LuneraysFlu_step4.md)

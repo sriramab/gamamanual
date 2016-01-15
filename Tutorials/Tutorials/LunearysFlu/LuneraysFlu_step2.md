@@ -2,7 +2,7 @@
 This second step illustrates how to create monitors and charts to follows the evolution of variables and to add an ending condition to the simulation.
 
 
-![images/luneray2.tiff](resources\images/luneray2.tiff)
+![images/luneray2.tiff](images/luneray2.tiff)
 
 
 
@@ -39,7 +39,7 @@ global{
 }
 ```
 
-We used the [count](Operators#count) operator that allows to count the number of elements of a list for which the left condition is true. The keyword _each_ represents each element of the list.
+We used the [count](https://github.com/gama-platform/gama/wiki/Content\References\GAMLReferences\Expressions\Operators.md#count) operator that allows to count the number of elements of a list for which the left condition is true. The keyword _each_ represents each element of the list.
 
 #### ending condition
 
@@ -58,7 +58,7 @@ global {
 ### experiment
 
 #### monitor
-GAMA provides modelers with the possibility to define [monitors](DefiningMonitorsAndInspectors#monitors). A monitor allows to follow the value of an arbitrary expression in GAML. It will appear, in the User Interface, in a small window on its own and be recomputed every time step (or according to its 'refresh_every' facet). 
+GAMA provides modelers with the possibility to define [monitors](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningMonitorsAndInspectors.md#monitors). A monitor allows to follow the value of an arbitrary expression in GAML. It will appear, in the User Interface, in a small window on its own and be recomputed every time step (or according to its 'refresh_every' facet). 
 
 Definition of a monitor:
    * _value_: mandatory, the expression whose value will be displayed by the monitor.
@@ -171,4 +171,4 @@ experiment main_experiment type:gui{
 }
 ```
 
-[Next step: Importation of GIS data](LuneraysFlu_step3)
+[Next step: Importation of GIS data](https://github.com/gama-platform/gama/wiki/Content\Tutorials\Tutorials\LunearysFlu\LuneraysFlu_step3.md)

@@ -26,7 +26,7 @@ output {
   }
 ```
 
-The opengl display share most of the feature that the java2D offers and that are described [here](DefiningDisplaysGeneralities)
+The opengl display share most of the feature that the java2D offers and that are described [here](https://github.com/gama-platform/gama/wiki/Content\Tutorials\LearnGAMLStepByStep\DefiningGUIExperiment\DefiningDisplaysGeneralities.md)
 
 Using 3D display offers many way to represent a simulation. A layer can be positioned and scaled in a 3D world. It is possible to superpose layer on different z value and display different information on the model at different position on the screen.
 
@@ -51,7 +51,7 @@ experiment expe_test type:gui {
 }
 ```
 
-![images/species_layer.png](resources\images/species_layer.png)
+![images/species_layer.png](images/species_layer.png)
 
 
 
@@ -59,9 +59,9 @@ experiment expe_test type:gui {
 
 <a href='http://www.youtube.com/watch?feature=player_embedded&v=rMIVQlul1Ag' target='_blank'><img src='http://img.youtube.com/vi/rMIVQlul1Ag/0.jpg' width='425' height=344 /></a>
 
-[Arcball Camera](Displays#arcball-camera-commands)
+[Arcball Camera](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\RunningExperiments\Displays.md#arcball-camera-commands)
 
-[FreeFly Camera](Displays#freefly-camera-commands)
+[FreeFly Camera](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\RunningExperiments\Displays.md#freefly-camera-commands)
 
 
 ## Dynamic camera

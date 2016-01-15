@@ -2,7 +2,7 @@
 
 Tested on MacOS X (10.9 to 10.11), Windows (8 to 10) and Ubuntu 15.04 (Vivid)
 
-_Important note: the current Git version is **not** compatible with the GAMA 1.6.1 release: if you plan to create plugins for this release, please download the source at revision r11988 (on Google Code) and [Eclipse following this procedure](InstallingSvnOldVersions)_
+_Important note: the current Git version is **not** compatible with the GAMA 1.6.1 release: if you plan to create plugins for this release, please download the source at revision r11988 (on Google Code) and [Eclipse following this procedure](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\DevelopingExtensions\InstallingSvnOldVersions.md)_
 
 ## Install Eclipse Mars SR1
 
@@ -19,38 +19,38 @@ The source is to be downloaded from GitHub in two steps: by creating a local clo
 1. Open the Git perspective:
   * Windows > Perspective > Open Perspective > Other...
   * Choose `Git`
-![Open GIT perspective](resources\images/GIT_open_perspective.png)
+![Open GIT perspective](images/GIT_open_perspective.png)
 2. Click on "Clone a Git repository"
-![Clone Repository](resources\images/GIT_Clone_Repository.png)
+![Clone Repository](images/GIT_Clone_Repository.png)
   * In **Source Git repository** window: 
     * Fill in the URI label with: `https://github.com/gama-platform/gama.git`
     * Other fields will be automatically filled in.
-![Source GIT repository](resources\images/GIT_source_git_repository.png)    
+![Source GIT repository](images/GIT_source_git_repository.png)    
   * In **Branch Selection** windows, 
     * check the master branch 
     * Next
-![Git branch selection](resources\images/GIT_branch_selection.png)
+![Git branch selection](images/GIT_branch_selection.png)
   * In **Local Destination** windows,
     * Choose a Directory (where the source files will be downloaded).
     * Everything else should be unchecked 
     * Finish
-![Local destination](resources\images/GIT_local_destination.png)
+![Local destination](images/GIT_local_destination.png)
 This can take a while...
 
 ### Import projects into workspace
 You have now to import projects into the workspace (notice that the folders downloaded during the clone will neither be copied nor moved).
 
 1. In the **Git perspective** and the **Git Repositories** view, Right-Click on "Working Directory" inside the `gama` repository, and choose "Import projects"
-![Context Working directory](resources\images/GIT_Context_WorkingDirectory.png)
+![Context Working directory](images/GIT_Context_WorkingDirectory.png)
   * In the **Select a wizard to use for importing projects** window:
     * "Import existing projects" should be checked
     * "Working Directory" should be selected
-![GIT Import projects](resources\images/GIT_Import_projects.png)    
+![GIT Import projects](images/GIT_Import_projects.png)    
   * In **Import Projects** window:
     * **Uncheck « Search for nested project »**
     * Check the projects you want to import
     * Finish
-![Choose Projects to import](resources\images/GIT_ChooseProjectToImport.png)
+![Choose Projects to import](images/GIT_ChooseProjectToImport.png)
 2. Go back to the Java perspective
 3. Clean project (Project menu > Clean ...)
 

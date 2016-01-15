@@ -49,7 +49,7 @@ aspect default {
 
 ## Complete Model
 
-The GIT version of the model can be found here [Model 03.gaml](https://github)
+The GIT version of the model can be found here [Model 03.gaml](https://github.com/gama-platform/gama/tree/master/msi.gama.models/models/Tutorials/3D/models/Model 03.gaml)
 
 ```
 model model3   

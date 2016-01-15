@@ -4,7 +4,7 @@ The Fall GAMA Coding Camp 2012 will take place from the 17th to the 19th of Nove
 
 Departure will take place from Ninh Kieu 3 hotel in Can Tho at 3:30 PM, Friday the 16th of November, and we expect to arrive in Hon Trem resort at around 9:00 PM (dinner will be taken on the road).
 
-A summary of the Spring GAMA Coding Camp 2012 can be found [here](Event__CodingCamp2012).
+A summary of the Spring GAMA Coding Camp 2012 can be found [here](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CodingCamp2012.md).
 
 # Work
 
@@ -12,7 +12,7 @@ A summary of the Spring GAMA Coding Camp 2012 can be found [here](Event__CodingC
 
 Some ideas of tasks that could be investigated during the camp (feel free to add anything you think about)
 
-## [COUPLING GAMA WITH OTHER TOOLS](Event__CodingCampFall2012_coupling)
+## [COUPLING GAMA WITH OTHER TOOLS](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CodingCampFall2012_coupling.md)
   * **Coupling GAMA with hydrodynamics simulators (for water flows, etc.)**
     * Participants: Thanh, Tuu, Benoit, Nghi, Quang, M.Thai
   * **Integration of EDP solver into GAMA**
@@ -27,7 +27,7 @@ Some ideas of tasks that could be investigated during the camp (feel free to add
   * **Improving the physics engine**
     * Participants: Javier, Philippe, Arnaud, Patrick
     * Plug-in needed: simtools.gaml.extensions.physics
-## [IMPROVEMENTS / ENHANCEMENTS](Event__CodingCampFall2012_improvements)
+## [IMPROVEMENTS / ENHANCEMENTS](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CodingCampFall2012_improvements.md)
   * **Improving and simplifying the syntax of GAML**
     * Participants: Nicolas, Alexis, Nghi
   * **Documenting and enhancing the command line version**
@@ -48,10 +48,10 @@ Some ideas of tasks that could be investigated during the camp (feel free to add
     * Participants: Nicolas, Nhan, Nghi
   * **Driving skill in 2D (skill: driving2d)**
     * Participants: Minh
-## [BUG FIXES](Event__CodingCampFall2012_bug)
+## [BUG FIXES](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CodingCampFall2012_bug.md)
   * **Eliminating bugs found in the 1.5 version**
     * Participants: Benoit, Patrick (for spatial/geometry related bugs). Arnaud for Opengl bug
-## [MODELS](Event__CodingCampFall2012_models)
+## [MODELS](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Events\Event__CodingCampFall2012_models.md)
   * **Adding 3D to the models**
     * Participants: Arnaud, Patrick, Nghi
 ## OTHER

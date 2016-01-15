@@ -35,10 +35,10 @@ Version 1.6.1 is the current version of GAMA. It improves many features over ver
   * Definition of charts (dynamic data lists, marker type, range, etc.)
 
 Documentation:
-  * Available [online](Overview)
+  * Available [online](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\Overview.md)
 
 
-![images/splash_1_61.png](resources\images/splash_1_61.png)
+![images/splash_1_61.png](images/splash_1_61.png)
 
 
 
@@ -57,7 +57,7 @@ Documentation:
   * [Documentation in PDF](https://github.com/gama-platform/gama/wiki/Content/ressources/pdf/GAMAv16.pdf)
 
 
-![images/splash_1_6.png](resources\images/splash_1_6.png)
+![images/splash_1_6.png](images/splash_1_6.png)
 
 
 
@@ -81,7 +81,7 @@ Documentation:
   * [Documentation in PDF](https://github.com/gama-platform/gama/wiki/Content/ressources/pdf/GAMAv151.pdf)
 
 
-![images/splash_1_5.png](resources\images/splash_1_5.png)
+![images/splash_1_5.png](images/splash_1_5.png)
 
 
 
@@ -104,7 +104,7 @@ Documentation:
   * [Documentation in PDF](https://github.com/gama-platform/gama/wiki/Content/ressources/pdf/GAMAv14.pdf)
 
 
-![images/splash_1_4.png](resources\images/splash_1_4.png)
+![images/splash_1_4.png](images/splash_1_4.png)
 
 
 
@@ -124,7 +124,7 @@ Documentation:
   * [Documentation in PDF](https://github.com/gama-platform/gama/wiki/Content/ressources/pdf/GAMAv13.pdf)
 
 
-![images/splash_1_3.png](resources\images/splash_1_3.png)
+![images/splash_1_3.png](images/splash_1_3.png)
 
 
 
@@ -143,4 +143,4 @@ Documentation:
   * [Training session on GAMA 1.1 (Hanoi)](TrainingSessionHanoi2009)
 
 
-![images/splash_1_1.png](resources\images/splash_1_1.png)
+![images/splash_1_1.png](images/splash_1_1.png)

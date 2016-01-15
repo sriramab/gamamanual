@@ -51,7 +51,7 @@ A species can have a parent species: it automatically get all the variables, ski
 
 We define a species called **generic\_species** that is the parent of the species **prey** and **predator**:
 
-![images/parent_species.png](resources\images/parent_species.png)
+![images/parent_species.png](images/parent_species.png)
 
 This species integrates all of the common feature between the **prey** and **predotor** species:
   * the variables:

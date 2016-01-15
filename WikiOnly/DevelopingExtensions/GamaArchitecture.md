@@ -9,7 +9,7 @@ Each project is either designed as a __plugin__ (containing an xml file "plugin.
   * A __plugin__ can be seen as a module (or bundle in the OSGI architecture), which can be necessary (the GAMA platform can't run without it) or optional (providing new functionalities to the platform). This decomposition between several plugins ensure the cohesion between functional blocks, each plugin has to be as independent as he can.
   * A __feature__ is a group of one or several modules (or plugin), which can be loaded. NB : Unlike a plugin, a feature does not include source code, but only two files : a build.properties and a feature.xml.
 
-To see how to create a plugin and a feature, please read [this page](InstallingGitVersion).
+To see how to create a plugin and a feature, please read [this page](https://github.com/gama-platform/gama/wiki/Content\WikiOnly\DevelopingExtensions\InstallingGitVersion.md).
 
 ## Table of contents 
 
@@ -47,7 +47,7 @@ Here is the list of projects which have to be imported in order to run the GAMA 
 
 Minimal configuration projects dependencies:
 
-![Minimal configuration projects dependencies](resources\images/minimal_configuration.png)
+![Minimal configuration projects dependencies](images/minimal_configuration.png)
 
 ## Optional Plugins
 
@@ -117,4 +117,4 @@ Beside those plugins and features, a project dedicated to gather a bunch of exam
 
 Global architecture of GAMA (nb : the features graphlayout, core, dependencies, plugins, jogl2.product and product are not represented here)
 
-![Global architecture of GAMA](resources\images/plugin_architecture.png)
+![Global architecture of GAMA](images/plugin_architecture.png)

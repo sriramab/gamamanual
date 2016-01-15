@@ -123,7 +123,7 @@ This annotation is used in conjunction with symbol. Provides a way to tell where
 
 This annotation contains:
   * **symbols** (set of Strings, empty by default): _symbol names of the parents_.
-  * **kinds** (set of int, empty by default): _generic symbol kinds of the parents (see [ISymbolKind.java](https://github) for more details)_.
+  * **kinds** (set of int, empty by default): _generic symbol kinds of the parents (see [ISymbolKind.java](https://github.com/gama-platform/gama/tree/master/msi.gama.processor/src/msi/gama/precompiler/ISymbolKind.java) for more details)_.
 
 
 
@@ -202,7 +202,7 @@ This annotation represents a "statement" in GAML, and is used to define its name
 
 This annotation contains:
   * **name** (set of string, empty by default): _names of the statement_.
-  * **kind** (int): _the kind of the annotated symbol (see [ISymbolKind.java](https://github) for more details)_.
+  * **kind** (int): _the kind of the annotated symbol (see [ISymbolKind.java](https://github.com/gama-platform/gama/tree/master/msi.gama.processor/src/msi/gama/precompiler/ISymbolKind.java) for more details)_.
   * **with\_scope** (boolean, true by default): _indicates if the statement (usually a sequence) defines its own scope. Otherwise, all the temporary variables defined in it are actually defined in the super-scope_.
   * **with\_sequence** (boolean): _indicates wether or not a sequence can or should follow the symbol denoted by this class_.
   * **with\_args** (boolean, false by default): _indicates wether or not the symbol denoted by this class will accept arguments_.
@@ -218,9 +218,9 @@ It provides information necessary to the processor to identify a type.
 
 This annotation contains:
   * **name** (String, "" by default): _a String representing the type name in GAML_.
-  * **id** (int, 0 by default): _the unique identifier for this type. User-added types can be chosen between IType.AVAILABLE\_TYPE and IType.SPECIES\_TYPE (exclusive) (cf. [IType.java](https://github))_.
+  * **id** (int, 0 by default): _the unique identifier for this type. User-added types can be chosen between IType.AVAILABLE\_TYPE and IType.SPECIES\_TYPE (exclusive) (cf. [IType.java](https://github.com/gama-platform/gama/tree/master/msi.gama.core/src/msi/gaml/types/IType.java))_.
   * **wraps** (tab of Class, null by default): _the list of Java Classes this type is "wrapping" (i.e. representing). The first one is the one that will be used preferentially throughout GAMA. The other ones are to ensure compatibility, in operators, with compatible Java classes (for instance, List and GamaList)_.
-  * **kind** (int, ISymbolKind.Variable.REGULAR by default): _the kind of Variable used to store this type. See [ISymbolKind.Variable](https://github)_.
+  * **kind** (int, ISymbolKind.Variable.REGULAR by default): _the kind of Variable used to store this type. See [ISymbolKind.Variable](https://github.com/gama-platform/gama/tree/master/msi.gama.processor/src/msi/gama/precompiler/ISymbolKind.java)_.
   * **internal** (boolean, false by default): _whether this type is for internal use only_.
   * **doc** (set of [@doc](#doc), empty by default): _the documentation associated to the facet_.
 

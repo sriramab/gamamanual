@@ -35,7 +35,7 @@ NB : you can also declare monitors during the simulation, by clicking on the but
 
 ## Define an inspector
 
-During the simulation, the user interface of GAMA provides the user the possibility to [inspect an agent](InspectorsAndMonitors), or a group of agents. But you can also define the inspector you want directly from your model, as an output of the experiment.
+During the simulation, the user interface of GAMA provides the user the possibility to [inspect an agent](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\RunningExperiments\InspectorsAndMonitors.md), or a group of agents. But you can also define the inspector you want directly from your model, as an output of the experiment.
 
 Use the statement `inspect` to define your inspector, in the output scope of your gui experiment. The inspector has to be named (using the facet `name`), a value has to be specified (with the `value` facet).
 
@@ -46,8 +46,8 @@ inspect name:"inspector_name" value:the_value_you_want_to_display;
 Note that you can inspect any type of species (regular species, grid species, even the world...).
 
 The optional facet `type` is used to specify the type of your inspector. 2 values are possible : 
-* _agent_ (default value) if you want to display the information as a regular [agent inspector](InspectorsAndMonitors#agent-inspector). Note that if you want to inspect a large number of agents, this can take a lot of time. In this case, prefer the other type _table_
-* _table_ if you want to display the information as an [agent browser](InspectorsAndMonitors#agent-browser)
+* _agent_ (default value) if you want to display the information as a regular [agent inspector](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\RunningExperiments\InspectorsAndMonitors.md#agent-inspector). Note that if you want to inspect a large number of agents, this can take a lot of time. In this case, prefer the other type _table_
+* _table_ if you want to display the information as an [agent browser](https://github.com/gama-platform/gama/wiki/Content\References\PlatformDocumentation\RunningExperiments\InspectorsAndMonitors.md#agent-browser)
 
 The optional facet `attribute` is used to filter the attributes you want to be displayed in your inspector.
 
