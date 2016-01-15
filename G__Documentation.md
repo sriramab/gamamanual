@@ -1,5 +1,7 @@
 ## Table of contents 
 
+[Test](http://github.com/gama-platform/gama/wiki/Content/Test.md)
+
 * [Documentation](#documentation)
 	* [Requirements](#requirements)
 		* [Configuration](#configuration)
