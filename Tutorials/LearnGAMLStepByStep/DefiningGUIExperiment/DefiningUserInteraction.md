@@ -107,9 +107,11 @@ experiment expe type:gui {
 
 During the execution, you have 2 ways to access to the action :
 * When the agent is inspected, they appear as buttons above the agents' attributes
-[images/user_command_inside_species1.png](resources/images/definingGUIExperiment/user_command_inside_species1.png)
+
+![images/user_command_inside_species1.png](resources/images/definingGUIExperiment/user_command_inside_species1.png)
 * When the agent is selected by a right-click in a display, these command appear under the usual "Inspect", "Focus" and "Highlight" commands in the pop-up menu.
-[images/user_command_inside_species2.png](resources/images/definingGUIExperiment/user_command_inside_species2.png)
+
+![images/user_command_inside_species2.png](resources/images/definingGUIExperiment/user_command_inside_species2.png)
 
 
 Remark: The execution of a command obeys the following rules:
