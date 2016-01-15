@@ -44,7 +44,7 @@ In the global context, you have to define a size and a shape for your environmen
 ```
 geometry shape <- circle(50#mm);
 geometry shape <- rectangle(10#m,20#m);
-geometry shape <- polygon([{1�m,2�m},{3�m,50�cm},{3.4�m,60�dm}]);
+geometry shape <- polygon([{1°m,2°m},{3°m,50°cm},{3.4°m,60°dm}]);
 ```
 
 nb: there are just examples. Try to avoid mixing dimensions! If no dimensions are specify, it'll be meter by default.
