@@ -1,5 +1,8 @@
 ## Table of contents 
 
+[Test](Content/Test)
+[Test](Content/Test.md)
+
 * [Documentation](#documentation)
 	* [Requirements](#requirements)
 		* [Configuration](#configuration)
