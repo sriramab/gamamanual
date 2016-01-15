@@ -1,10 +1,5 @@
 ![GAMA splash](images/gama_front3)
 
-<a href="https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials.md">myLib/README.md</a>
-[blabla](Tutorials)
-[blabla](Tutorials)
-[blabla](https://github)
-
 <font size="3" color="#42618F">G A M A </font> is a modeling and simulation development environment for building spatially explicit agent-based simulations. Its latest version, 1.6.1, can be freely [downloaded](https://github) or [built from source](https://github), and comes pre-loaded with several models, [tutorials](Tutorials) and a complete [on-line documentation](Overview).
 <p/> 
 <font size="3" color="#42618F">G A M A </font> allows to:
