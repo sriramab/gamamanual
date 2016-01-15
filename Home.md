@@ -1,6 +1,11 @@
 ![GAMA splash](images/gama_front3.jpg)
 
-<font size="3" color="#42618F">G A M A </font> is a modeling and simulation development environment for building spatially explicit agent-based simulations. Its latest version, 1.6.1, can be freely [downloaded](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/Download.md) or [built from source](https://github.com/gama-platform/gama/), and comes pre-loaded with several models, [tutorials](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials.md) and a complete [on-line documentation](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/Overview.md).
+<a href="https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials.md">myLib/README.md</a>
+[blabla](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials.md)
+[blabla](Tutorials/Tutorials.md)
+[blabla](Tutorials/Tutorials)
+
+<font size="3" color="#42618F">G A M A </font> is a modeling and simulation development environment for building spatially explicit agent-based simulations. Its latest version, 1.6.1, can be freely [downloaded](WikiOnly/Download) or [built from source](https://github.com/gama-platform/gama/), and comes pre-loaded with several models, [tutorials](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials.md) and a complete [on-line documentation](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/Overview.md).
 <p/> 
 <font size="3" color="#42618F">G A M A </font> allows to:
 
