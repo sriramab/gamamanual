@@ -38,7 +38,7 @@ By default, a grid is composed by 100 rows and 100 columns.
 
 Another facet exists for grid only, very useful. It is the `neighbors` facet, used to determine how many neighbors has each cell. You can choose among 3 values: 4 (Von Neumann), 6 (hexagon) or 8 (Moore).
 
-[images/grid_neighbors.png](resources/images/definingAdvancedSpecies/grid_neighbors.png)
+![images/grid_neighbors.png](resources/images/definingAdvancedSpecies/grid_neighbors.png)
 
 A grid can also be provided with specific facets that allows to optimize the computation time and the memory space, such as `use_regular_agents`, `use_indivitual_shapes` and `use_neighbours_cache`. Please refer to the GAML Reference for more explanation about those particular facets.
 
@@ -183,7 +183,7 @@ TODO
 
 To practice a bit those notions, we will build a quick model. A "regular" species will move randomly on the environment. A grid is displayed, and its cells becomes red when an instance of the regular species is waking inside this cell, and yellow when the regular agent is in the surrounding of this cell. If no regular agent is on the surrounding, the cell turns green.
 
-[images/my_grid_model.png](resources/images/definingAdvancedSpecies/my_grid_model.png)
+![images/my_grid_model.png](resources/images/definingAdvancedSpecies/my_grid_model.png)
 
 Here is an example of implementation:
 
