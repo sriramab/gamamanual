@@ -6,7 +6,7 @@ This page contains a subset of the scientific papers that have been written eith
 
 If you happen to publish a paper that uses or discusses GAMA, please let us know, so that we can include it in this list.
 
-As stated in [the first page](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/Overview.md), if you need to cite GAMA in a paper, we kindly ask you to use this reference:
+As stated in [the first page](Overview.md), if you need to cite GAMA in a paper, we kindly ask you to use this reference:
   * [A. Grignard, P. Taillandier, B. Gaudou, D-A. Vo, N-Q. Huynh, A. Drogoul (2013), GAMA 1.6: Advancing the Art of Complex Agent-Based Modeling and Simulation. In �PRIMA 2013: Principles and Practice of Multi-Agent Systems�, Lecture Notes in Computer Science, Vol. 8291, Springer, pp. 117-131.](http://link.springer.com/chapter/10.1007/978-3-642-44927-7_9)
 
 

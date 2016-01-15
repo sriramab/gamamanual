@@ -67,8 +67,8 @@ Here is the list of those attributes:
 * **name** (type: string) returns the name of your species
 * **attributes** (type: list of string) returns the list of the names of the attributes of your species
 * **population** (type: list) returns the list of agent that belong to it 
-* **subspecies** (type: list of string) returns the list of species that inherit directly from this species (we will talk about the concept of [inheritance](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/ManipulateBasicSpecies/Inheritance.md) later)
-* **parent** (type: species) returns its parent species if it belongs to the model, or `nil` otherwise (we will talk about the concept of [inheritance](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/ManipulateBasicSpecies/Inheritance.md) later)
+* **subspecies** (type: list of string) returns the list of species that inherit directly from this species (we will talk about the concept of [inheritance](Inheritance.md) later)
+* **parent** (type: species) returns its parent species if it belongs to the model, or `nil` otherwise (we will talk about the concept of [inheritance](Inheritance.md) later)
 
 ## Built-in action
 

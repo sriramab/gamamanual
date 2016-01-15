@@ -50,7 +50,7 @@ For each projects, you can see the list of plugins needed, and a caption to show
 
 ### User models
 
-This category regroups all the projects that have been [created](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/EditingModels/GamlEditorGeneralities.md) or [imported](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/WorkspaceProjectsAndModels/ImportingModels.md) in the workspace by the user. Each project is actually a folder that resides in the folder of the workspace (so they can be easily located from within the filesystem). Any modification (addition, removal of files…) made to them in the filesystem (or using another application) is immediately reflected in the _Navigator_ and vice-versa.
+This category regroups all the projects that have been [created](GamlEditorGeneralities.md) or [imported](ImportingModels.md) in the workspace by the user. Each project is actually a folder that resides in the folder of the workspace (so they can be easily located from within the filesystem). Any modification (addition, removal of files…) made to them in the filesystem (or using another application) is immediately reflected in the _Navigator_ and vice-versa.
 
 Model files, although it is by no means mandatory, usually reside in a sub-folder of the project called "models".
 
@@ -62,9 +62,9 @@ Each models is presented as a node in the navigation workspace, including _Exper
 
 [images/inspect_model.png](images/inspect_model.png)
 
-* **Experiment button** : Experiment button are present if your model contains experiments (it is usually the case !). To run the corresponding experiment, just click on it. To learn more about running experiments, jump into this [section](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/RunningExperiments/LaunchingExperiments.md).
+* **Experiment button** : Experiment button are present if your model contains experiments (it is usually the case !). To run the corresponding experiment, just click on it. To learn more about running experiments, jump into this [section](LaunchingExperiments.md).
 
-* **Require node** : The node _Require_ is present if your model uses some plugins (additional or integrated by default). Each plugin is listed in this node, with a green icon if the plugin is already installed in your GAMA, and a red one if it is not the case. If the plugin you want in not installed, an error will be raised in your model. Please read about [how to install plugins](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/InstallationAndLaunching/InstallingPlugins.md) to learn some more about it.
+* **Require node** : The node _Require_ is present if your model uses some plugins (additional or integrated by default). Each plugin is listed in this node, with a green icon if the plugin is already installed in your GAMA, and a red one if it is not the case. If the plugin you want in not installed, an error will be raised in your model. Please read about [how to install plugins](InstallingPlugins.md) to learn some more about it.
 
 [images/requires_plugin_not_found.png](images/requires_plugin_not_found.png)
 
@@ -85,7 +85,7 @@ Users can choose to get rid of old projects by either **closing** or **deleting*
 |![images/navigator_menu_close.png](images/navigator_menu_close.png)|![images/navigator_close_result.png](images/navigator_close_result.png)|
 |---|---|
 
-**Deleting** a project must be invoked when the user wants this project to not appear in the workspace anymore (unless, that is, it is [imported](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/WorkspaceProjectsAndModels/ImportingModels.md) again). Invoking this command will effectively make the workspace "forget" about this project, and this can be further doubled with a deletion of the projects resources and models from the filesystem.
+**Deleting** a project must be invoked when the user wants this project to not appear in the workspace anymore (unless, that is, it is [imported](ImportingModels.md) again). Invoking this command will effectively make the workspace "forget" about this project, and this can be further doubled with a deletion of the projects resources and models from the filesystem.
 
 | ![images/navigator_menu_delete.png](images/navigator_menu_delete.png) | ![images/navigator_delete_dialog.png](images/navigator_delete_dialog.png) |
 |---|---|

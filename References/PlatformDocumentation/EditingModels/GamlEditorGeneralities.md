@@ -1,7 +1,7 @@
 
 # The GAML Editor - Generalities
 
-The GAML Editor is a text editor that proposes several services to support the modeler in writing correct models: an integrated live validation system, a ribbon header that gives access to [experiments](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/RunningExperiments/LaunchingExperiments.md), information, warning and error markers.
+The GAML Editor is a text editor that proposes several services to support the modeler in writing correct models: an integrated live validation system, a ribbon header that gives access to [experiments](LaunchingExperiments.md), information, warning and error markers.
 
 ## Table of contents 
 
@@ -40,7 +40,7 @@ Once this dialog is filled and accepted, GAMA will display the new "empty" model
 ![images/5.view_model.png](images/5.view_model.png)
 
 
-Although GAML files are just plain text files, and can therefore be produced or modified in any text processor, using the dedicated GAML editor offers a number of advantages, among which the live display of errors and model statuses. A model can actually be in four different states, which are visually accessible above the editing area: _Functional_ (orange color), _Experimentable_ (green color), _InError_ (red color), InImportedError_(yellow color). See [the section on model compilation](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/EditingModels/ValidationOfModels.md) for more precise information about these statuses._
+Although GAML files are just plain text files, and can therefore be produced or modified in any text processor, using the dedicated GAML editor offers a number of advantages, among which the live display of errors and model statuses. A model can actually be in four different states, which are visually accessible above the editing area: _Functional_ (orange color), _Experimentable_ (green color), _InError_ (red color), InImportedError_(yellow color). See [the section on model compilation](ValidationOfModels.md) for more precise information about these statuses._
 
 In its initial state, a model is always in the _Functional_ state, which means it compiles without problems, but cannot be used to launch experiments. The _InError_ state, depicted below, occurs when the file contains errors (syntactic or semantic ones).
 
@@ -50,7 +50,7 @@ While the file is not saved, these errors remain displayed in the editor and now
 
 ![images/7.view_model_with_error_saved.png](images/7.view_model_with_error_saved.png)
 
-Reaching the _Experimentable_ state requires that all errors are eliminated and that at least one experiment is defined in the model, which is the case now in our toy model. The experiment is immediately displayed as a button in the toolbar, and clicking on it will allow to launch this experiment on your model. See [the section about running experiments](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/RunningExperiments.md) for more information on this point.
+Reaching the _Experimentable_ state requires that all errors are eliminated and that at least one experiment is defined in the model, which is the case now in our toy model. The experiment is immediately displayed as a button in the toolbar, and clicking on it will allow to launch this experiment on your model. See [the section about running experiments](RunningExperiments.md) for more information on this point.
 
 ![images/8.view_model_with_experiment.png](images/8.view_model_with_experiment.png)
 
@@ -110,4 +110,4 @@ This allows you to precisely pinpoint the modifications brought to the file and,
 
 ![images/17.view_model_with_local_history_side_by_side.png](images/17.view_model_with_local_history_side_by_side.png)
 
-This short introduction to GAML editors is now over. You might want to take a look, now, at [how the models you edit are parsed, validated and compiled](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/EditingModels/ValidationOfModels.md), and how this information is accessible to the modeler.
+This short introduction to GAML editors is now over. You might want to take a look, now, at [how the models you edit are parsed, validated and compiled](ValidationOfModels.md), and how this information is accessible to the modeler.

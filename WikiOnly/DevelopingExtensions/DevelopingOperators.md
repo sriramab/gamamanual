@@ -2,7 +2,7 @@
 
 
 
-[Operators](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/Expressions/Operators.md) in the GAML language are used to compose complex expressions. An operator performs a function on one, two, or n operands (which are other expressions and thus may be themselves composed of operators) and returns the result of this function. Developing a new operator allows, then, to add a new function to GAML.
+[Operators](Operators.md) in the GAML language are used to compose complex expressions. An operator performs a function on one, two, or n operands (which are other expressions and thus may be themselves composed of operators) and returns the result of this function. Developing a new operator allows, then, to add a new function to GAML.
 
 
 

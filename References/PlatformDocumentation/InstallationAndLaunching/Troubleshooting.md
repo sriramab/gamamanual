@@ -54,7 +54,7 @@ Memory problems are easy to detect: on the bottom right corner of its window, GA
 
 [images/memory_status.png](images/memory_status.png)
 
-There are two ways to circumvent this problem: the first one is to increase the memory allocated to GAMA by the Java Virtual Machine. The second, detailed [on this page](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/OptimizingModels/OptimizingModels.md) is to try to optimize your models to reduce their memory footprint at runtime.
+There are two ways to circumvent this problem: the first one is to increase the memory allocated to GAMA by the Java Virtual Machine. The second, detailed [on this page](OptimizingModels.md) is to try to optimize your models to reduce their memory footprint at runtime.
 To increase the memory allocated, first locate the file called `Gama.ini`. On Windows and Ubuntu, it is located next to the executable. On MacOS X, you have to right-click on `Gama.app`, choose "Display Package Contents…", and you will find `Gama.ini` in `Contents/MacOS`.
 This file typically looks like the following (some options/keywords may vary depending on the system), and we are interested in two JVM arguments:
 

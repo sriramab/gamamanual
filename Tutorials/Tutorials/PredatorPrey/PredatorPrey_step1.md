@@ -25,10 +25,10 @@ A GAMA model is composed of three type of sections:
   * **species** and **grid**: these sections define the species of agents composing the model. Grid are defined in the following model step "vegetation dynamic";
   * **experiment** : these sections define a context of execution of the simulations. In particular, it defines the input (parameters) and output (displays, files...) of a model.
 
-More details about the different sections of a GAMA model can be found [here](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/StartWithGAML/ModelOrganization.md).
+More details about the different sections of a GAMA model can be found [here](ModelOrganization.md).
 
 ### species
-A [species](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/ManipulateBasicSpecies/RegularSpecies.md) represents a «prototype» of agents: it defines their common properties.
+A [species](RegularSpecies.md) represents a «prototype» of agents: it defines their common properties.
 
 A species definition requires the definition of three different elements :
   * the internal state of its agents (attributes)
@@ -76,7 +76,7 @@ species prey {
 ### global section
 The global section represents a specific agent, called world. Defining this agent follows the same principle as any agent and is, thus, defined after a species.
 The world agent represents everything that is global to the model : dynamics, variables…
-It allows to initialize simulations (init block): the world is always created and initialized first when a simulation is launched (before any other agents). The geometry (shape) of the world agent is by default a square with 100m for side size, but can be redefined if necessary (see the [Road traffic tutorial](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/RoadTrafficModel.md)).
+It allows to initialize simulations (init block): the world is always created and initialized first when a simulation is launched (before any other agents). The geometry (shape) of the world agent is by default a square with 100m for side size, but can be redefined if necessary (see the [Road traffic tutorial](RoadTrafficModel.md)).
 
 #### global variable
 In the current model, we will only have a certain numbers of preys thus we need to hold this number in a global or world's variable of type integer (_int_) which can be done as follows:
@@ -142,7 +142,7 @@ Each display can include different layers (like in a GIS) :
   * Texts : **texte** layer\_name value: my\_text;
   * Charts : see later.
 
-Note that it is possible to define a [opengl display](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment/Defining3DDisplays.md) (for 3D display) by using the facet **type: opengl**.
+Note that it is possible to define a [opengl display](Defining3DDisplays.md) (for 3D display) by using the facet **type: opengl**.
 
 In our model, we define a display to draw the _prey_ agents.
 ```

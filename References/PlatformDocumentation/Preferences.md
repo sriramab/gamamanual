@@ -3,7 +3,7 @@
 
 Various preferences are accessible in GAMA to allow users and modelers to personalize their working environment. This section review the different preference tabs available in the current version of GAMA, as well as how to access the preferences and settings inherited by GAMA from Eclipse.
 
-Please note that the preferences specific to GAMA will be shared, on a same machine, and for a same user, among all the workspaces managed by GAMA. [Changing workspace](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/WorkspaceProjectsAndModels/ChangingWorkspace.md) will not alter them. If you happen to run several instances of GAMA, they will also share these preferences.
+Please note that the preferences specific to GAMA will be shared, on a same machine, and for a same user, among all the workspaces managed by GAMA. [Changing workspace](ChangingWorkspace.md) will not alter them. If you happen to run several instances of GAMA, they will also share these preferences.
 
 
 ## Table of contents 
@@ -31,7 +31,7 @@ To open the preferences dialog of GAMA, either click on the small "form" button 
     * Random Number Generator: the name of the generator to use by default (if none is specified in the model).
     * Define a default seed: whether or not a default seed should be used if none is specified in the model  (otherwise it is chosen randomly by GAMA)
     * Default Seed value: the value of this default seed
-    * Include in the parameters of models: whether the choice of generator and seed is included by default in the [parameters views](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/RunningExperiments/ParametersView.md) of experiments or not.
+    * Include in the parameters of models: whether the choice of generator and seed is included by default in the [parameters views](ParametersView.md) of experiments or not.
   * **Errors**: how to manage and consider simulation errors
     * Display Errors: whether errors should be displayed or not.
     * Number of errors to display: how many errors should be displayed at once
@@ -49,7 +49,7 @@ To open the preferences dialog of GAMA, either click on the small "form" button 
 ![images/UI.png](images/UI.png)
 
   * **Menus**
-    * Break down agents in menu every: when [inspecting](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/RunningExperiments/InspectorsAndMonitors.md) a large number of agents, how many should be displayed before the decision is made to separate the population in sub-menus.
+    * Break down agents in menu every: when [inspecting](InspectorsAndMonitors.md) a large number of agents, how many should be displayed before the decision is made to separate the population in sub-menus.
     * Sort colors menu by
     * Sort operators menu by
   * **Console**
@@ -77,14 +77,14 @@ To open the preferences dialog of GAMA, either click on the small "form" button 
 ![images/display.png](images/display.png)
 
   * **Properties**: various properties of displays
-    * Default display method: use either 'Java2D' or 'OpenGL' if nothing is specified in the [declaration of a display](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment/DefiningDisplaysGeneralities.md).
-    * Synchronize displays with simulations: if true, simulation cycles will wait for the displays to have finished their rendering before passing to the next cycle (this setting can be changed on an individual basis dynamically [here](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/RunningExperiments/Displays.md)).
-    * Show display overlay: if true, the [bottom overlay](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/RunningExperiments/Displays.md) is visible when opening a display.
+    * Default display method: use either 'Java2D' or 'OpenGL' if nothing is specified in the [declaration of a display](DefiningDisplaysGeneralities.md).
+    * Synchronize displays with simulations: if true, simulation cycles will wait for the displays to have finished their rendering before passing to the next cycle (this setting can be changed on an individual basis dynamically [here](Displays.md)).
+    * Show display overlay: if true, the [bottom overlay](Displays.md) is visible when opening a display.
     * Show scale bar in overlay: if true, the scale bar is displayed in the bottom overlay.
-    * Apply antialiasing: if true, displays are drawn using antialiasing, which is slower but renders a better quality of image and text (this setting can be changed on an individual basis dynamically [here](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/RunningExperiments/Displays.md)).
-    * Default background color: indicates which color to use when none is specified in the [declaration of a display](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment/DefiningDisplaysGeneralities.md).
+    * Apply antialiasing: if true, displays are drawn using antialiasing, which is slower but renders a better quality of image and text (this setting can be changed on an individual basis dynamically [here](Displays.md)).
+    * Default background color: indicates which color to use when none is specified in the [declaration of a display](DefiningDisplaysGeneralities.md).
     * Default highlight color: indicates which color to use for highlighting agents in the displays.
-    * Stack displays on screen…: if true, the [display views](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/RunningExperiments/Displays.md), in case they are stacked on one another, will put the first [display declared in the model](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment/DefiningDisplaysGeneralities.md) on top of the stack.
+    * Stack displays on screen…: if true, the [display views](Displays.md), in case they are stacked on one another, will put the first [display declared in the model](DefiningDisplaysGeneralities.md) on top of the stack.
   * **Default Aspect**: which aspect to use when an ['agent' or 'species' layer](G__DefiningOtherLayers) does not indicate it
     * Default shape: a choice between 'shape' (which represents the actual geometrical shape of the agent) and geometrical operators ('square', etc.).
     * Default size: what size to use. This expression must be a constant.
@@ -158,6 +158,6 @@ These "advanced" preferences are accessible by clicking on the "Advanced…" but
 ![images/advanced.png](images/advanced.png)
 
 
-Depending on what is installed, the second view that appears will contain a tree of options on the left and preference pages on the right. **Contrary to the first set of preferences, please note that these preferences will be saved in the current workspace**, which means that changing workspace will revert them to their default values. It is however possible to import them in the new workspace using of the wizards provided in the standard "Import…" command (see [here](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/WorkspaceProjectsAndModels/ImportingModels.md)).
+Depending on what is installed, the second view that appears will contain a tree of options on the left and preference pages on the right. **Contrary to the first set of preferences, please note that these preferences will be saved in the current workspace**, which means that changing workspace will revert them to their default values. It is however possible to import them in the new workspace using of the wizards provided in the standard "Import…" command (see [here](ImportingModels.md)).
 
 ![images/advanced_2.png](images/advanced_2.png)

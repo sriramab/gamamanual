@@ -202,4 +202,4 @@ experiment main_experiment type:gui{
 }
 ```
 
-[Next step: Use of a graph to constraint the movements of people](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/LunearysFlu/LuneraysFlu_step4.md)
+[Next step: Use of a graph to constraint the movements of people](LuneraysFlu_step4.md)

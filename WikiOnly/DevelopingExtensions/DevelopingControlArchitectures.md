@@ -2,9 +2,9 @@
 
 
 
-In addition to existing [control architectures](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/BuiltInArchitectures.md), developers can add new ones.
+In addition to existing [control architectures](BuiltInArchitectures.md), developers can add new ones.
 
-Defining a new control architecture needs to [create new statements of type behavior](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/DevelopingExtensions/DevelopingStatements.md) and included in species statements and to define how to manage their execution.
+Defining a new control architecture needs to [create new statements of type behavior](DevelopingStatements.md) and included in species statements and to define how to manage their execution.
 
 
 

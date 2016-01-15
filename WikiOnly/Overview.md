@@ -20,15 +20,15 @@ Beyond these features, GAMA also offers:
 
 
 ## Documentation
-The documentation of GAMA is available online on the wiki of the project. It is organized around a few central activities ([installing GAMA](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/InstallationAndLaunching/Installation.md), [writing models](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/WritingModels.md), [running experiments](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/RunningExperiments/LaunchingExperiments.md), [developing new extensions to the platform](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/DevelopingExtensions.md)) and provides complete references on both the [GAML language](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/GamlLanguage.md), the [platform](https://github.com/mazarsju/gama_doc_17/wiki/References/Platform.md) itself, and the scientific aspects of our work (with a complete [bibliography](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/References.md)). Several [tutorials](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials.md) are also provided in the documentation in order to minimize the learning curve, allowing users to build, step by step, the models corresponding to these tutorials, which are of course shipped with the platform.
+The documentation of GAMA is available online on the wiki of the project. It is organized around a few central activities ([installing GAMA](Installation.md), [writing models](WritingModels.md), [running experiments](LaunchingExperiments.md), [developing new extensions to the platform](DevelopingExtensions.md)) and provides complete references on both the [GAML language](GamlLanguage.md), the [platform](Platform.md) itself, and the scientific aspects of our work (with a complete [bibliography](References.md)). Several [tutorials](Tutorials.md) are also provided in the documentation in order to minimize the learning curve, allowing users to build, step by step, the models corresponding to these tutorials, which are of course shipped with the platform.
 
-The documentation can be accessed from the side bar of this page. A good starting point for new users is [the installation page](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/InstallationAndLaunching/Installation.md).
+The documentation can be accessed from the side bar of this page. A good starting point for new users is [the installation page](Installation.md).
 
 A standalone version of the documentation, in PDF format, can be directly downloaded from [here](https://github.com/gama-platform/gama/wiki/Content/ressources/pdf/GAMA 1.6.1 Documentation.pdf)
 
 
 ## Source Code
-GAMA can be [downloaded](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/Download.md) as a regular application or [built from source](https://github.com/gama-platform/gama), which is necessary if you want to contribute to the platform.
+GAMA can be [downloaded](Download.md) as a regular application or [built from source](https://github.com/gama-platform/gama), which is necessary if you want to contribute to the platform.
 The source code is available from this GITHub repository:
 
 ```
@@ -36,7 +36,7 @@ https://github.com/gama-platform/gama
 ```
 
 Which you can also browse from the web [here](https://github.com/gama-platform/gama).
-It is, in any case, recommended to follow the instructions on [this page](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/DevelopingExtensions/InstallingGitVersion.md) in order to build GAMA from source.
+It is, in any case, recommended to follow the instructions on [this page](InstallingGitVersion.md) in order to build GAMA from source.
 
 
 
@@ -74,7 +74,7 @@ or you can choose to cite the website instead:
 
 > GAMA Platform website, http://gama-platform.org
 
-A complete list of references (papers and PhD theses on or using GAMA) is available on the [references](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/References.md) page.
+A complete list of references (papers and PhD theses on or using GAMA) is available on the [references](References.md) page.
 
 
 

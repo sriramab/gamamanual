@@ -35,7 +35,7 @@ NB : you can also declare monitors during the simulation, by clicking on the but
 
 ## Define an inspector
 
-During the simulation, the user interface of GAMA provides the user the possibility to [inspect an agent](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/RunningExperiments/InspectorsAndMonitors.md), or a group of agents. But you can also define the inspector you want directly from your model, as an output of the experiment.
+During the simulation, the user interface of GAMA provides the user the possibility to [inspect an agent](InspectorsAndMonitors.md), or a group of agents. But you can also define the inspector you want directly from your model, as an output of the experiment.
 
 Use the statement `inspect` to define your inspector, in the output scope of your gui experiment. The inspector has to be named (using the facet `name`), a value has to be specified (with the `value` facet).
 

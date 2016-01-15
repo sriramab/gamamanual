@@ -35,7 +35,7 @@ Version 1.6.1 is the current version of GAMA. It improves many features over ver
   * Definition of charts (dynamic data lists, marker type, range, etc.)
 
 Documentation:
-  * Available [online](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/Overview.md)
+  * Available [online](Overview.md)
 
 
 ![images/splash_1_61.png](images/splash_1_61.png)

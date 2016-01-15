@@ -32,10 +32,10 @@ We made the following modeling choice:
 
 This tutorial is composed of 7 steps corresponding to 7 models. For each step we present its purpose, an explicit formulation and the corresponding GAML code.
 
-  1. [Simple SI Model](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/IncrementalModel/IncrementalModel_step1.md)
-  1. [Charts](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/IncrementalModel/IncrementalModel_step2.md)
-  1. [Integration of GIS Data](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/IncrementalModel/IncrementalModel_step3.md)
-  1. [Movement on Graph](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/IncrementalModel/IncrementalModel_step4.md)
-  1. [3D visualization](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/IncrementalModel/IncrementalModel_step5.md)
-  1. [Multi-Level](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/IncrementalModel/IncrementalModel_step6.md)
-  1. [Differential Equations](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/IncrementalModel/IncrementalModel_step7.md)
+  1. [Simple SI Model](IncrementalModel_step1.md)
+  1. [Charts](IncrementalModel_step2.md)
+  1. [Integration of GIS Data](IncrementalModel_step3.md)
+  1. [Movement on Graph](IncrementalModel_step4.md)
+  1. [3D visualization](IncrementalModel_step5.md)
+  1. [Multi-Level](IncrementalModel_step6.md)
+  1. [Differential Equations](IncrementalModel_step7.md)

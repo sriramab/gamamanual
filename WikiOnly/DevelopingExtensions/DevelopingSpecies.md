@@ -2,9 +2,9 @@
 
 
 
-Additional [built-in species](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/BuiltInSpecies.md) can be defined in Java in order to be used in GAML models. Additional attributes and actions can be defined. It could be very useful in order to define its behavior thanks to external libraries (e.g. [mulit-criteria decision-making](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/BuiltInSpecies/OtherBuiltInSpecies.md), [database connection](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/BuiltInSpecies/OtherBuiltInSpecies.md)...).
+Additional [built-in species](BuiltInSpecies.md) can be defined in Java in order to be used in GAML models. Additional attributes and actions can be defined. It could be very useful in order to define its behavior thanks to external libraries (e.g. [mulit-criteria decision-making](OtherBuiltInSpecies.md), [database connection](OtherBuiltInSpecies.md)...).
 
-A new built-in species extends the `GamlAgent` class, which defines the basic GAML agents. As a consequence, new built-in species have all the attributes (`name`, `shape`, ...) and actions (`die`...) of [regular species](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/BuiltInSpecies/AgentBuiltIn.md).
+A new built-in species extends the `GamlAgent` class, which defines the basic GAML agents. As a consequence, new built-in species have all the attributes (`name`, `shape`, ...) and actions (`die`...) of [regular species](AgentBuiltIn.md).
 
 
 
@@ -21,7 +21,7 @@ A new species can be **any Java class** that:
 public class MulticriteriaAnalyzer extends GamlAgent {
 ```
 
-[Similarly to skills](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/DevelopingExtensions/DevelopingSkills.md), a species can define additional attributes and actions.
+[Similarly to skills](DevelopingSkills.md), a species can define additional attributes and actions.
 
 ### Additional attributes
 

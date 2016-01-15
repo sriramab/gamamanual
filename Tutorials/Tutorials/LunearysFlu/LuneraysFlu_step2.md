@@ -79,7 +79,7 @@ experiment main_experiment type:gui{
 
 #### Chart
 
-In GAMA, [charts](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment/DefiningCharts.md) are considered as a display layer. 
+In GAMA, [charts](DefiningCharts.md) are considered as a display layer. 
 GAMA can display 3 main types of charts using the _type_ facet:
 
   * histogram
@@ -171,4 +171,4 @@ experiment main_experiment type:gui{
 }
 ```
 
-[Next step: Importation of GIS data](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/LunearysFlu/LuneraysFlu_step3.md)
+[Next step: Importation of GIS data](LuneraysFlu_step3.md)

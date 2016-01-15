@@ -278,6 +278,6 @@ Finally, each agent provided with this architecture inherits a boolean attribute
 
 ## Other Control Architectures
 
-Some other control architectures are available in additionnal plugins. For instance, [BDI (Belief, desire, intention) architecture](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Recipes/UsingBDI.md) is available. Feel free to read about it if you want to learn more.
+Some other control architectures are available in additionnal plugins. For instance, [BDI (Belief, desire, intention) architecture](UsingBDI.md) is available. Feel free to read about it if you want to learn more.
 
 You need some other control architectures for your model ? Feel free to make your suggestion to the team of developper through the [mailing list](https://groups.google.com/forum/#!forum/gama-platform). Remember also that GAMA is an open-source platform, you can design your own control architecture easily. Go to the section Community/contribute if you want to jump into coding !

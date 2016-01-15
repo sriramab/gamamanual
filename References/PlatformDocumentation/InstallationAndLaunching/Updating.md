@@ -1,7 +1,7 @@
 
 # Updating GAMA
 
-Unless you are using the version of GAMA built from the sources available in the GIT repository of the project (see [here](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/DevelopingExtensions/InstallingGitVersion.md)), you are normally running a specific **release** of GAMA that sports a given **version number** (e.g. GAMA 1.6.1, GAMA 1.7, etc.). When new features were developed, or when serious issues were fixed, the release you had on your disk, prior to GAMA 1.6.1, could not benefit from them. Since this version, however, GAMA has been enhanced to support a _self\_update_ mechanism, which allows to import from the GAMA update site additional plugins (offering new features) or updated versions of the plugins that constitute the core of GAMA.
+Unless you are using the version of GAMA built from the sources available in the GIT repository of the project (see [here](InstallingGitVersion.md)), you are normally running a specific **release** of GAMA that sports a given **version number** (e.g. GAMA 1.6.1, GAMA 1.7, etc.). When new features were developed, or when serious issues were fixed, the release you had on your disk, prior to GAMA 1.6.1, could not benefit from them. Since this version, however, GAMA has been enhanced to support a _self\_update_ mechanism, which allows to import from the GAMA update site additional plugins (offering new features) or updated versions of the plugins that constitute the core of GAMA.
 
 ## Table of contents 
 
@@ -44,7 +44,7 @@ Once the plugins are installed, GAMA will ask you whether you want to restart or
 
 
 ## Automatic Update
-GAMA offers a mechanism to monitor the availability of updates to the plugins already installed. To install this feature, [open the preferences of GAMA](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/Preferences.md) and choose the button "Advanced…", which gives access to additional preferences.
+GAMA offers a mechanism to monitor the availability of updates to the plugins already installed. To install this feature, [open the preferences of GAMA](Preferences.md) and choose the button "Advanced…", which gives access to additional preferences.
 
 ![Button to give access to additional preferences.](images/open_advanced.png)
 

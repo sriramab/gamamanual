@@ -47,7 +47,7 @@ For the command-line :
     * $1 input parameter file : an xml file determining experiment parameters and attended outputs
     * $2 output directory path : a directory which contains simulation results (numerical data and simulation snapshot)
 
-[go to headless documentation](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/InstallationAndLaunching/Headless.md)
+[go to headless documentation](Headless.md)
 
 # Torus environment
 It is now possible to use toroidal environment for grid and continuous environments (even with complex GIS geometries).  The only thing to do is to use the **torus** facet.

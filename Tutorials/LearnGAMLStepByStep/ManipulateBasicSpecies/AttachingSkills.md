@@ -81,7 +81,7 @@ Moves the agent towards a random location (3D point) at the maximum distance (wi
 
 ### Other skills
 
-A lot of other skills are available. Some of them can be [built in skills](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/BuiltInSkills.md), integrated by default in GAMA, other are linked to [additional plugins](https://github.com/mazarsju/gama_doc_17/wiki/References/Extension.md).
+A lot of other skills are available. Some of them can be [built in skills](BuiltInSkills.md), integrated by default in GAMA, other are linked to [additional plugins](Extension.md).
 
 This is the list of skills:
 `Advanced_driving`, `communication`, `driving`, `GAMASQL`, `graphic`, `grid`, `MDXSKILL`, `moving`, `moving3D`, `physical3D`, `skill_road`, `skill_road`, `skill_road_node`, `SQLSKILL`

@@ -198,4 +198,4 @@ experiment main_experiment type:gui{
 }
 ```
 
-[Next step: Definition of 3D displays](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/LunearysFlu/LuneraysFlu_step5.md)
+[Next step: Definition of 3D displays](LuneraysFlu_step5.md)

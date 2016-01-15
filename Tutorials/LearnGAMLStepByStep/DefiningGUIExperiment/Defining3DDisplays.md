@@ -26,7 +26,7 @@ output {
   }
 ```
 
-The opengl display share most of the feature that the java2D offers and that are described [here](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment/DefiningDisplaysGeneralities.md)
+The opengl display share most of the feature that the java2D offers and that are described [here](DefiningDisplaysGeneralities.md)
 
 Using 3D display offers many way to represent a simulation. A layer can be positioned and scaled in a 3D world. It is possible to superpose layer on different z value and display different information on the model at different position on the screen.
 

@@ -3,7 +3,7 @@
 
 
 
-We propose some tutorials that are designed to allow modelers to become progressively autonomous with the GAMA platform. These tutorials cover different aspects of GAMA (Grid environment, GIS integration, 3D, multi-level modeling, equation-based models...). It is a good idea to keep a copy of the [reference of the GAML language](https://github.com/mazarsju/gama_doc_17/wiki/References/GamlReference.md) around when undertaking one of these tutorials.
+We propose some tutorials that are designed to allow modelers to become progressively autonomous with the GAMA platform. These tutorials cover different aspects of GAMA (Grid environment, GIS integration, 3D, multi-level modeling, equation-based models...). It is a good idea to keep a copy of the [reference of the GAML language](GamlReference.md) around when undertaking one of these tutorials.
 
 <ul>
 <li>Predator Prey</li>
@@ -16,7 +16,7 @@ We propose some tutorials that are designed to allow modelers to become progress
 
 
 
-## [Predator Prey tutorial](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/PredatorPrey.md)
+## [Predator Prey tutorial](PredatorPrey.md)
 <a></a>
 [images/predator_prey.png](images/predator_prey.png)
 
@@ -24,7 +24,7 @@ This tutorial introduces the basic concepts of GAMA and the use of grids. It is 
 
 
 
-## [Road Traffic](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/RoadTrafficModel.md)
+## [Road Traffic](RoadTrafficModel.md)
 <a></a>
 [images/road_traffic.png](images/road_traffic.png)
 
@@ -33,19 +33,19 @@ This tutorial introduces the use of GIS data. It is based on a mobility and dail
 
 
 
-## [3D Tutorial](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/ThreeD.md)
+## [3D Tutorial](ThreeD.md)
 <a></a>
 This tutorial introduces the use of 3D in GAMA. In particular, it offers a quick overview of the 3D capabilities of the platform and how to integrate 3D features in models.
 
 
-## [Luneray's flu tutorial](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/LuneraysFlu.md)
+## [Luneray's flu tutorial](LuneraysFlu.md)
 <a></a>
 ![images/Luneray.jpg](images/Luneray.jpg)
 
 
 This tutorial dedicated to beginners introduces the basic concepts of GAMA and proposes a brief overview of many features.  It concerns a model of disease spreading in the small city of Luneray. In particular, it presents how to integrate GIS data and use GIS, to use a road shapefile for the movement of agents, and to define a 3D display.
 
-## [Incremental Model](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/IncrementalModel.md)
+## [Incremental Model](IncrementalModel.md)
 <a></a>
 
 [images/incremental_model.jpg](images/incremental_model.jpg)

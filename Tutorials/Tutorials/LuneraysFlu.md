@@ -36,8 +36,8 @@ From the data collected, we made some modeling choice:
 
 This tutorial is composed of 5 steps corresponding to 5 models. For each step we present its purpose, an explicit formulation and the corresponding GAML code.
 
-  1. [Creation of a first basic disease spreading model](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/LunearysFlu/LuneraysFlu_step1.md)
-  1. [Definition of monitors and chart outputs](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/LunearysFlu/LuneraysFlu_step2.md)
-  1. [Importation of GIS data](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/LunearysFlu/LuneraysFlu_step3.md)
-  1. [Use of a graph to constraint the movements of people](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/LunearysFlu/LuneraysFlu_step4.md)
-  1. [Definition of 3D displays](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/LunearysFlu/LuneraysFlu_step5.md)
+  1. [Creation of a first basic disease spreading model](LuneraysFlu_step1.md)
+  1. [Definition of monitors and chart outputs](LuneraysFlu_step2.md)
+  1. [Importation of GIS data](LuneraysFlu_step3.md)
+  1. [Use of a graph to constraint the movements of people](LuneraysFlu_step4.md)
+  1. [Definition of 3D displays](LuneraysFlu_step5.md)

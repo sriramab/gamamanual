@@ -21,7 +21,7 @@ In the dialog that appears, the current workspace location should already be ent
 ![images/dialog_switch_ok.png](images/dialog_switch_ok.png)
 
 ## Cloning the Current Workspace
-Another possibility, if you have models in your current workspace that you would like to keep in the new one (and that you do not want to [import](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/WorkspaceProjectsAndModels/ImportingModels.md) one by one after switching workspace), or if you change workspace because you suspect the current one is corrupted, or outdated, etc. but you still want to keep your models, is to **clone** the current workspace into a new (or existing) one.
+Another possibility, if you have models in your current workspace that you would like to keep in the new one (and that you do not want to [import](ImportingModels.md) one by one after switching workspace), or if you change workspace because you suspect the current one is corrupted, or outdated, etc. but you still want to keep your models, is to **clone** the current workspace into a new (or existing) one.
 
 **Please note that cloning (as its name implies) is an operation that will make a _copy_ of the files into a new workspace. So, if projects are stored in the current workspace, this will result in two different instances of the same projets/models with the same name in the two workspaces. However, for projects that are simply linked from the current workspace, only the link will be copied (which allows to have different workspaces "containing" the same project)**
 

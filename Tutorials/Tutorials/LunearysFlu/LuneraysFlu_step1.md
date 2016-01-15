@@ -19,9 +19,9 @@ This first step illustrates how to create simple agents and make them move in th
 ## Model Definition
 
 ### Project and model
-The first step of this tutorial consists in launching GAMA and choosing a workspace, then to define a new project or to import the existing one. For people that do not want to re-write all the models but just to follow the model construction, they can just download the model project here and the follow this [procedure](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/WorkspaceProjectsAndModels/ImportingModels.md) to import it into GAMA. For the other, the project and model creation procedures are detailed [here](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/EditingModels/GamlEditorGeneralities.md). 
+The first step of this tutorial consists in launching GAMA and choosing a workspace, then to define a new project or to import the existing one. For people that do not want to re-write all the models but just to follow the model construction, they can just download the model project here and the follow this [procedure](ImportingModels.md) to import it into GAMA. For the other, the project and model creation procedures are detailed [here](GamlEditorGeneralities.md). 
 
-Note that the concepts of workspace and projects are explained [here](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/WorkspaceProjectsAndModels.md).
+Note that the concepts of workspace and projects are explained [here](WorkspaceProjectsAndModels.md).
 
 
 ### model structure
@@ -30,10 +30,10 @@ A GAMA model is composed of three type of sections:
   * **species** and **grid**: these sections define the species of agents composing the model. Grid are defined in the following model step "vegetation dynamic";
   * **experiment** : these sections define a context of execution of the simulations. In particular, it defines the input (parameters) and output (displays, files...) of a model.
 
-More details about the different sections of a GAMA model can be found [here](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/StartWithGAML/ModelOrganization.md).
+More details about the different sections of a GAMA model can be found [here](ModelOrganization.md).
 
 ### species
-A [species](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/ManipulateBasicSpecies/RegularSpecies.md) represents a «prototype» of agents: it defines their common properties.
+A [species](RegularSpecies.md) represents a «prototype» of agents: it defines their common properties.
 
 Three different elements can be defined in a species:
   * the internal state of its agents (attributes)
@@ -47,7 +47,7 @@ species people {
 }
 ```
 
-In addition, we want add a new capability to our agent: the possibility to move randomly. for that, we add a specific skill to our people agents. A [skill](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/ManipulateBasicSpecies/AttachingSkills.md) is a built-in module that provide the modeler a self-contain and relevant set of actions and variables. The [moving](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/BuiltInSkills.md#moving) provides the agents with several attributes and actions related to movement. 
+In addition, we want add a new capability to our agent: the possibility to move randomly. for that, we add a specific skill to our people agents. A [skill](AttachingSkills.md) is a built-in module that provide the modeler a self-contain and relevant set of actions and variables. The [moving](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/BuiltInSkills.md#moving) provides the agents with several attributes and actions related to movement. 
 
 ```
    species people skills: [moving]{
@@ -75,7 +75,7 @@ species people skills:[moving]{
 	bool is_infected <- false;
 }
 ```
-Note we use the [rnd](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/Expressions/Operators.md#rnd) operator to define a random value between 2 and 5 for the speed. In addition, we precise a unit for the speed value by using the # symbol. For more details about units, see [here](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/Expressions/UnitsAndConstants.md).
+Note we use the [rnd](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/Expressions/Operators.md#rnd) operator to define a random value between 2 and 5 for the speed. In addition, we precise a unit for the speed value by using the # symbol. For more details about units, see [here](UnitsAndConstants.md).
 
 #### Behavior
 GAMA proposes several ways to define the behavior of a species: dynamic variables (update facet), reflexes....
@@ -135,7 +135,7 @@ species people {
 The **?** structure allows to return a different value (here red or green) according to a condition (here is_infected = true).
 
 ### global section
-The global section represents a specific agent, called [world](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/ManipulateBasicSpecies/GlobalSpecies.md). Defining this agent follows the same principle as any agent and is, thus, defined after a species.
+The global section represents a specific agent, called [world](GlobalSpecies.md). Defining this agent follows the same principle as any agent and is, thus, defined after a species.
 The world agent represents everything that is global to the model : dynamics, variables…
 It allows to initialize simulations (init block): the world is always created and initialized first when a simulation is launched (before any other agents). The geometry (shape) of the world agent is by default a square with 100m for side size, but can be redefined if necessary. The _step_ attribute of the world agent allows to specify the duration of one simulation step (by default, 1 step = 1 seconde).
 
@@ -188,7 +188,7 @@ experiment main_experiment type: gui {
 #### input
 Experiments can define (input) parameters. A parameter definition allows to make the value of a global variable definable by the user through the graphic interface.
 
-A [parameter](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment/DefiningParameters.md) is defined as follows:
+A [parameter](DefiningParameters.md) is defined as follows:
 **parameter** title var: global\_var category: cat;
   * **title** : string to display
   * **var** : reference to a global variable (defined in the global section)
@@ -211,7 +211,7 @@ experiment main_experiment type:gui{
 }
 ```
 #### output
-[Output](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment.md) blocks are defined in an experiment and define how to visualize a simulation (with one or more [display](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment/DefiningDisplaysGeneralities.md) blocks that define separate windows). Each display can be refreshed independently by defining the facet **refresh\_every:** nb (int) (the display will be refreshed every nb steps of the simulation).
+[Output](DefiningGUIExperiment.md) blocks are defined in an experiment and define how to visualize a simulation (with one or more [display](DefiningDisplaysGeneralities.md) blocks that define separate windows). Each display can be refreshed independently by defining the facet **refresh\_every:** nb (int) (the display will be refreshed every nb steps of the simulation).
 
 Each display can include different layers (like in a GIS) :
   * Agents lists : **agents** layer\_name value: agents\_list aspect: my\_aspect;
@@ -220,7 +220,7 @@ Each display can include different layers (like in a GIS) :
   * Texts : **texte** layer\_name value: my\_text;
   * Charts : see later.
 
-Note that it is possible to define a [opengl display](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment/Defining3DDisplays.md) (for 3D display or just to optimize the display) by using the facet **type: opengl**.
+Note that it is possible to define a [opengl display](Defining3DDisplays.md) (for 3D display or just to optimize the display) by using the facet **type: opengl**.
 
 In our model, we define an OpenGL display to draw the _people_ agents. 
 ```
@@ -279,4 +279,4 @@ experiment main_experiment type:gui{
 	}
 }
 ```
-[Next step: Definition of monitors and chart outputs](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/Tutorials/LunearysFlu/LuneraysFlu_step2.md)
+[Next step: Definition of monitors and chart outputs](LuneraysFlu_step2.md)

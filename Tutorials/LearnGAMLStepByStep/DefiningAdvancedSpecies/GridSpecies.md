@@ -94,7 +94,7 @@ The **grid\_value** built-in variable is used when initializing a grid from grid
 
 there are several ways to access to a specific cell:
 
-  * by a location: by casting a location to a cell (the unity (```#m```, ```#cm```, etc...) is defined when you choose your environment size, in the [global species](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/ManipulateBasicSpecies/GlobalSpecies.md).
+  * by a location: by casting a location to a cell (the unity (```#m```, ```#cm```, etc...) is defined when you choose your environment size, in the [global species](GlobalSpecies.md).
 
 ```
    global {
@@ -152,7 +152,7 @@ The grid will be displayed, using the color you defined for each cell (with the 
 grid MyGrid line:#black;
 ```
 
-An other way to display a grid will be to define an aspect in your grid agent (the same way as for a [regular species](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/ManipulateBasicSpecies/RegularSpecies.md)), and define your grid as a regular species then in your experiment, choosing your aspect : 
+An other way to display a grid will be to define an aspect in your grid agent (the same way as for a [regular species](RegularSpecies.md)), and define your grid as a regular species then in your experiment, choosing your aspect : 
 
 ```
 grid MyGrid {

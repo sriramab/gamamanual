@@ -2,7 +2,7 @@
 
 Tested on MacOS X (10.9 to 10.11), Windows (8 to 10) and Ubuntu 15.04 (Vivid)
 
-_Important note: the current Git version is **not** compatible with the GAMA 1.6.1 release: if you plan to create plugins for this release, please download the source at revision r11988 (on Google Code) and [Eclipse following this procedure](https://github.com/mazarsju/gama_doc_17/wiki/WikiOnly/DevelopingExtensions/InstallingSvnOldVersions.md)_
+_Important note: the current Git version is **not** compatible with the GAMA 1.6.1 release: if you plan to create plugins for this release, please download the source at revision r11988 (on Google Code) and [Eclipse following this procedure](InstallingSvnOldVersions.md)_
 
 ## Install Eclipse Mars SR1
 

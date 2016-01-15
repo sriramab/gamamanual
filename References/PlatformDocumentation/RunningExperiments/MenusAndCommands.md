@@ -24,10 +24,10 @@ A menu, called "Experiment", allows to control the current experiment. It shares
 
   * **Run/Pause**: allows to run or pause the experiment depending on its current state.
   * **Step by Step**: runs the experiment for one cycle and pauses it after.
-  * **Reload**: stops the current experiment, deletes its contents, and reloads it, **taking into account the [parameters values](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/RunningExperiments/ParametersView.md) that might have been changed by the user**.
-  * **Stop at first error**: if checked, the current experiment will stop running when an error is issued. The default value can be configured in the [preferences](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/Preferences.md).
-  * **Treat warnings as errors**: if checked, a warning will be considered as an error (and if the previous item is checked, will stop the experiment). The default value can be configured in the [preferences](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/Preferences.md).
-  * **Display warnings and errors**: if checked, displays the errors and warnings issued by the experiment. If not, do not display them. The default value can be configured in the [preferences](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/Preferences.md).
+  * **Reload**: stops the current experiment, deletes its contents, and reloads it, **taking into account the [parameters values](ParametersView.md) that might have been changed by the user**.
+  * **Stop at first error**: if checked, the current experiment will stop running when an error is issued. The default value can be configured in the [preferences](Preferences.md).
+  * **Treat warnings as errors**: if checked, a warning will be considered as an error (and if the previous item is checked, will stop the experiment). The default value can be configured in the [preferences](Preferences.md).
+  * **Display warnings and errors**: if checked, displays the errors and warnings issued by the experiment. If not, do not display them. The default value can be configured in the [preferences](Preferences.md).
   * **Force interrupt**: forces the experiment to stop, whatever it is currently doing, purges the memory from it, and switches to the modeling perspective. **Use this command with caution**, as it can have undesirable effects depending on the state of the experiment (for example, if it is reading files, or outputting data, etc.).
 
 
@@ -42,7 +42,7 @@ A second menu is added in the simulation perspective: "Agents". This menu allows
 ![images/menu_agents.png](images/menu_agents.png)
 
 
-This hierarchical menu is always organized in the same way, whatever the experiment being run. A first level is dedicated to the current simulation agent: it allows to [browse](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/RunningExperiments/InspectorsAndMonitors.md) its population or to inspect the simulation agent itself. Browsing the population will give access to the current experiment agent (the "host" of this population). A second level lists the "micro-populations" present in the simulation agent. And the third level will give access to each individual agent in these populations. This organization is of course recursive: if these agents are themselves hosts of micro-populations, they will be displayed in their individual menu.
+This hierarchical menu is always organized in the same way, whatever the experiment being run. A first level is dedicated to the current simulation agent: it allows to [browse](InspectorsAndMonitors.md) its population or to inspect the simulation agent itself. Browsing the population will give access to the current experiment agent (the "host" of this population). A second level lists the "micro-populations" present in the simulation agent. And the third level will give access to each individual agent in these populations. This organization is of course recursive: if these agents are themselves hosts of micro-populations, they will be displayed in their individual menu.
 
 ![images/menu_agents_2.png](images/menu_agents_2.png)
 
@@ -54,12 +54,12 @@ Each agent, when selected, will reveal a similar individual menu. This menu will
 
 These are the 4 actions that will be there most of the time:
 
-  * **Inspect**: open an [inspector](https://github.com/mazarsju/gama_doc_17/wiki/References/PlatformDocumentation/RunningExperiments/InspectorsAndMonitors.md) on this agent.
+  * **Inspect**: open an [inspector](InspectorsAndMonitors.md) on this agent.
   * **Highlight**: makes this agent the current "highlighted" agent, forcing it to appear "highlighted" in all the displays that might have been defined.
   * **Focus**: this option is not accessible if no displays are defined. Makes the current display zoom on the selected agent (if it is displayed) so that it occupies the whole view.
   * **Kill**: destroys the selected agent and disposes of it. **Use this command with caution**, as it can have undesirable effects if the agent is currently executing its behavior.
 
-If an agent hosts other agents (it is the case in [multi-level architecture](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/DefiningAdvancedSpecies/MultiLevelArchitecture.md)), you can access to the micro-population quite easily: 
+If an agent hosts other agents (it is the case in [multi-level architecture](MultiLevelArchitecture.md)), you can access to the micro-population quite easily: 
 
 ![images/menu_agents_multi_level.png](images/menu_agents_multi_level.png)
 
@@ -105,4 +105,4 @@ Although these durations are entirely dependent on the speed of the simulation e
 ![images/toolbar_running_with_delay.png](images/toolbar_running_with_delay.png)
 
 
-In case it is necessary to have more than 1s of delay, it has to be defined, instead, as an attribute of the [experiment](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/BuiltInSpecies/ExperimentBuiltIn.md).
+In case it is necessary to have more than 1s of delay, it has to be defined, instead, as an attribute of the [experiment](ExperimentBuiltIn.md).

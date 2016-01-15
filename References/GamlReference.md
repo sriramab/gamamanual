@@ -1,8 +1,8 @@
 
 # Gaml Reference
 
-The following pages introduce the various constructs that are made available to the modelers in GAML. All these constructs are **built-in**, i.e. defined in Java, either in the core of GAMA or in its extensions. They include [species](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/BuiltInSpecies.md), [skills](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/BuiltInSkills.md), [control architectures](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/BuiltInArchitectures.md), [statements](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/Statements.md), [data types](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/DataTypes.md), and various types of [expressions](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/Expressions.md), including a long and quite exhaustive list of [operators](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/Expressions/Operators.md).
+The following pages introduce the various constructs that are made available to the modelers in GAML. All these constructs are **built-in**, i.e. defined in Java, either in the core of GAMA or in its extensions. They include [species](BuiltInSpecies.md), [skills](BuiltInSkills.md), [control architectures](BuiltInArchitectures.md), [statements](Statements.md), [data types](DataTypes.md), and various types of [expressions](Expressions.md), including a long and quite exhaustive list of [operators](Operators.md).
 
 This set of pages is to be used as a _reference_, which means its role is not to explain _how_ to properly use these constructs but to detail their structures and components.
 
-If you are not familiar yet with GAML language, please read carefully the section [Learn GAML Step by Step](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep.md) before.
+If you are not familiar yet with GAML language, please read carefully the section [Learn GAML Step by Step](LearnGAMLStepByStep.md) before.

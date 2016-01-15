@@ -53,7 +53,7 @@ create cells number: nb_cells {
 ### Moving3D skills
 In the previous example, we only created **cells** agent that did not have any behavior. In this step we want to make move the **cells** agent. To do so we add a **moving3D** skills to the cells.
 
-More information on built-in skills proposed by Gama can be found [here](https://github.com/mazarsju/gama_doc_17/wiki/References/GAMLReferences/BuiltInSkills.md)
+More information on built-in skills proposed by Gama can be found [here](BuiltInSkills.md)
 
 ```
 species cells skills:[moving3D]{

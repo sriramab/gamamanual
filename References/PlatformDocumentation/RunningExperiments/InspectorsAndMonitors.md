@@ -59,7 +59,7 @@ Monitors allow to follow the value of a GAML expression. For instance the follow
 
 
 
-It is possible to define a monitor inside a model (see [this page](https://github.com/mazarsju/gama_doc_17/wiki/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment/DefiningMonitorsAndInspectors.md)). It is also possible to define a monitor through the graphical interface.
+It is possible to define a monitor inside a model (see [this page](DefiningMonitorsAndInspectors.md)). It is also possible to define a monitor through the graphical interface.
 
 To define a monitor, first choose **Add Monitor** in the **Views** menu (or by clicking on the icon in the Monitor view), then define the display legend and the expression to monitor.
 
@@ -69,4 +69,4 @@ In the following example, we defined a monitor with the legend "Number initial o
 
 ![images/monitor_definition.png](images/monitor_definition.png)
 
-The expression should be written with the GAML language. See [this page](https://github.com/mazarsju/gama_doc_17/wiki/References/GamlReference.md) for more details about the GAML language.
+The expression should be written with the GAML language. See [this page](GamlReference.md) for more details about the GAML language.
