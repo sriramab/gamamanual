@@ -72,6 +72,7 @@
 6. [Using GamAnalyzer](GamAnalyzer)
 7. [Using BDI](UsingBDI)
 8. [Using Driving Skill](UsingDrivingSkill)
+9. [FAQ](FAQ)
 
 ## [GAML References](GamlReference)
 1. [Built-in Species](BuiltInSpecies)

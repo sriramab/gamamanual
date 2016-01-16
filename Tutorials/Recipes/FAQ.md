@@ -1,6 +1,6 @@
 # FAQ (Frequently Asked Questions)
 
-[//] # (concept|video)
+[//]: # (concept|video)
 ## Can we record a video from an experiment ?
 
 No, we cannot directly. But you have two alternatives :
