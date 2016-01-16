@@ -113,6 +113,7 @@
 9. [Developing a Control Architecture](DevelopingControlArchitectures)
 10. [Index of annotations](DevelopingIndexAnnotations)
 11. [IScope](DevelopingIScope)
+12. [Documentation generation](Documentation)
 
 ## [Scientific References](References)
 
