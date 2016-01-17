@@ -1,4 +1,4 @@
-
+[//]: # (keyword|concept_optimization)
 # Optimizing Models
 
 
@@ -30,22 +30,21 @@ _Note:  since GAMA 1.6.1, some optimizations have become obsolete because they h
 
 
 
-
+[//]: # (keyword|attribute_machine_time)
 ## machine\_time
 
 In order to optimize a model, it is important to exactly know which part of the model take times. The simplest to do that is to use the **machine\_time** built-in global variable that gives the current time in milliseconds. Then to compute the time taken by a statement, a possible way is to write:
 
 ```
 float t <- machine_time;
-loop times: 1000 {
-     bug one_big_bug <- one_of (bug where (each.size > 10));
-}
+// here a block of instructions that you consider as "critical"
+// ...
 write "duration of the last instructions: " + (machine_time - t);
 ```
 
 
 
-
+[//]: # (keyword|concept_scheduler)
 ## Scheduling
 
 If you have a species of agents that, once created, are not supposed to do anything more (i.e. no behavior, no reflex, their actions triggered by other agents, their attributes being simply read and written by other agents), such as a "data" grid, or agents representing a "background" (from a shape file, etc.), consider using the `schedules: []` facet on the definition of their species. This trick allows to tell GAMA to not schedule any of these agents.
@@ -53,7 +52,7 @@ If you have a species of agents that, once created, are not supposed to do anyth
 ```
 grid my_grid height: 100 width: 100 schedules: [] 
 {
-      ….
+      ...
 }
 ```
 
@@ -77,7 +76,7 @@ species my_species frequency: 0
 
 
 
-
+[//]: # (keyword|concept_grid)
 ## Grid
 
 ### Optimization Facets
@@ -102,6 +101,9 @@ grid cell width: 50 height: 50 use_individual_shapes: false ;
 ## Operators
 
 ### List operators
+[//]: # (keyword|operator_first_with)
+[//]: # (keyword|operator_shuffle)
+[//]: # (keyword|one_of)
 #### first\_with
 It is sometimes necessary to randomly select an element of a list that verifies a certain condition.
 Many modelers use the **one\_of** and the **where** operators to do this:
@@ -112,6 +114,8 @@ Whereas it is often more optimized to use the **shuffle** operator to shuffle th
 ```
 bug one_big_bug <- shuffle(bug) first_with (each.size > 10);
 ```
+[//]: # (keyword|operator_where)
+[//]: # (keyword|operator_count)
 #### where / count
 It is quite common to want to count the number of elements of a list or a container that verify a condition.
 The obvious to do it is :
@@ -123,6 +127,10 @@ This will however create an intermediary list before counting it, and this opera
 int n <- my_container count (each.size > 10);
 ```
 ### Spatial operators
+[//]: # (keyword|operator_closest_to)
+[//]: # (keyword|operator_at_distance)
+[//]: # (keyword|operator_overlapping)
+[//]: # (keyword|operator_inside)
 #### container of agents in closest\_to, at\_distance, overlapping, inside
 Several spatial query operators (such as **closest\_to**, **at\_distance**, **overlapping** or **inside**) allow to restrict the agents being queried to a container of agents. For instance, one can write:
 ```
@@ -132,20 +140,24 @@ This expression is formally equivalent to :
 ```
 agent closest_agent <- a_container_containing_agent with_min_of (each distance_to self);
 ```
-But it is much faster if your container is large, as it will query the agents using a spatial index (instead of browsing through the whole container). The same applies for the other operators. Now consider a very common case: you need to restrict the agents being queried, not to a container, but to a species (which, actually, acts as a container in most cases). For instance, you want to know which predator is the closest to the current agent. If we apply the pattern above, we would write:
+But it is much faster **if your container is large**, as it will query the agents using a spatial index (instead of browsing through the whole container). Note that in some cases, when you have a small number of agents, the first syntax will be faster. The same applies for the other operators. 
+
+Now consider a very common case: you need to restrict the agents being queried, not to a container, but to a species (which, actually, acts as a container in most cases). For instance, you want to know which predator is the closest to the current agent. If we apply the pattern above, we would write:
 ```
-predator closest_ predator <- predator with_min_of (each distance_to self);
+predator closest_predator <- predator with_min_of (each distance_to self);
 ```
 or
 ```
-predator closest_ predator <- list(predator) closest_to self;
+predator closest_predator <- list(predator) closest_to self;
 ```
+
 But these two operators can be painfully slow if your species has many instances (even in the second form). In that case, always prefer using **directly** the species as the left member:
 ```
 predator closest_ predator <- predator closest_to self;
 ```
-Not only is the syntax clearer, but the speed gain can be phenomenal because, in that case, the list of instances is not used (we just check if the agent is an instance of the left species). Take a look at the diagrams in Issue668 (on Google Code). Impressive, uh ?
-However, what happens if one wants to query instances belonging to 2 or more species ? If we follow our reasoning, the immediate way to write it would be (if predator 1 and predator 2 are two species. Note that we don't even consider the **with\_min\_of** operator here):
+Not only is the syntax clearer, but the speed gain can be phenomenal because, in that case, the list of instances is not used (we just check if the agent is an instance of the left species).
+
+However, what happens if one wants to query instances belonging to 2 or more species ? If we follow our reasoning, the immediate way to write it would be (if predator 1 and predator 2 are two species):
 ```
 agent closest_agent <- (list(predator1) + list(predator2)) closest_to self; 
 ```
@@ -153,7 +165,7 @@ or, more simply:
 ```
 agent closest_agent <- (predator1 + predator2) closest_to self;
 ```
-The first syntax suffers from the same problem than syntax #2 above: GAMA has to browse through the list (created by the concatenation of the species populations) to filter agents. The solution, then, is again to use directly the species (see Issue 668 (on Google Code) again), as GAMA is clever enough to create a temporary "fake" population out of the concatenation of several species, which can be used exactly like a list of agents, but provides the advantages of a species population (no iteration made during filtering).
+The first syntax suffers from the same problem than the previous syntax: GAMA has to browse through the list (created by the concatenation of the species populations) to filter agents. The solution, then, is again to use directly the species, as GAMA is clever enough to create a temporary "fake" population out of the concatenation of several species, which can be used exactly like a list of agents, but provides the advantages of a species population (no iteration made during filtering).
 
 #### Accelerate **closest\_to** with a first spatial filtering
 The **closest\_to** operator can sometimes be slow if numerous agents are concerned by this query. If the modeler is just interested by a small subset of agents, it is possible to apply a first spatial filtering on the agent list by using the **at\_distance** operator.
@@ -171,10 +183,11 @@ if (closest_agent = nil) {closest_agent  <- predator1 closest_to self;}
 
 
 
-
-
+[//]: # (keyword|concept_display)
 ## Displays
 
+[//]: # (keyword|concept_geometry)
+[//]: # (keyword|statement_draw)
 ### shape
 It is quite common to want to display an agent as a circle or a square. A common mistake is to mix up the shape to draw and the geometry of the agent in the model. If the modeler just wants to display a particular shape, he/she should not modify the agent geometry (which is a point by default), but just specify the shape to draw in the agent aspect.
 
@@ -191,6 +204,8 @@ species bug {
 ### circle vs square / sphere vs cube
 Note that in OpenGL and Java2D (the two rendering subsystems used in GAMA), creating and drawing a circle geometry is more time consuming than creating and drawing a square (or a rectangle). In the same way, drawing a sphere is more time consuming than drawing a cube. Hence, if you want to optimize your model displays and if the rendering does not explicitly need "rounded" agents, try to use squares/cubes rather than circles/spheres.
 
+[//]: # (keyword|concept_opengl)
+[//]: # (keyword|concept_refresh)
 ### OpenGL refresh facets
 In OpenGL display, it is possible to specify that it is not necessary to refresh a layer with the facet **refresh**. If a species of agents is never modified in terms of visualization (location, shape or color), you can set **refresh** to false. Example:
 ```
