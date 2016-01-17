@@ -47,7 +47,7 @@ Here is the list of projects which have to be imported in order to run the GAMA 
 
 Minimal configuration projects dependencies:
 
-![Minimal configuration projects dependencies](resources/images/minimal_configuration.png)
+![Minimal configuration projects dependencies](resources/images/developpingExtension/minimal_configuration.png)
 
 ## Optional Plugins
 
@@ -117,4 +117,4 @@ Beside those plugins and features, a project dedicated to gather a bunch of exam
 
 Global architecture of GAMA (nb : the features graphlayout, core, dependencies, plugins, jogl2.product and product are not represented here)
 
-![Global architecture of GAMA](resources/images/plugin_architecture.png)
+![Global architecture of GAMA](resources/images/developpingExtension/plugin_architecture.png)
