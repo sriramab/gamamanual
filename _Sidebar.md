@@ -90,6 +90,8 @@
   8. [Defining User Interaction](G__DefininUserInteraction)
   9. [Using BDI Architecture](G__UsingBDI)
   10. [Using GamAnalyzer](G__GamAnalyzer)
+  11. [FAQ](G__FAQ)
+  12. [Known Issues](G__KnownIssues)
 8. [Index](G__Index)
 9. [Extensions](G__Extension)
 
