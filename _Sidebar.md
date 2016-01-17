@@ -73,6 +73,7 @@
 7. [Using BDI](UsingBDI)
 8. [Using Driving Skill](UsingDrivingSkill)
 9. [FAQ](FAQ)
+10. [Known Issues](KnownIssues)
 
 ## [GAML References](GamlReference)
 1. [Built-in Species](BuiltInSpecies)
