@@ -114,7 +114,7 @@ Here is the list of metadata we use in the content files:
 #### keyword
 
 The value of the keyword has to have this structure : keyword_category_keyword_name (indeed, several keywords can have the same name ! The type of the keyword has to be specified).
-Here is the list of the several keyword categories : concept, operator, statement, type, constant and skill.
+Here is the list of the several keyword categories : concept, operator, statement, architecture, type, constant and skill.
 Example of metadata : `[//]: # (keyword|concept_3D)`, or `[//]: # (keyword|operator_int)`.
 
 #### startConcept/endConcept
@@ -155,10 +155,11 @@ This repository contains:
 #### Keyword
 
 A **keyword** is a keyword that can be used for search, either manually (the user enters the wanted keyword in the searchbar of the website) or automatically (through the search tab in the navigation panel)
-A keyword in attached with a category (among the following names : concept, type, operator, statement, constant, action, attribute, skill, facet).
+A keyword in attached with a category (among the following names : concept, type, operator, statement, architecture, constant, action, attribute, skill, facet).
 --> A keyword that is a _concept_ can be linked with other keywords (ex : the keyword "BDI" will be linked with the keywords "eval_when", "get_priority"...)
 --> A keyword that is a _facet_ is linked to a _statement_ keyword (ex : the keyword "torus" will be linked with the keyword "global").
---> A keyword that is an _action_ or an _attribute_ is linked either to a _skill_ keyword (if it is actually an action or an attribute of a skill) or to a _statement_ keyword (if it is a built-in action or attribute).
+--> A keyword that is an _action_ or an _attribute_ is linked either to a _skill_ keyword (if it is actually an action or an attribute of a skill), an _architecture_ keyword (if it is an action or a behavior of an architecture) or to a _statement_ keyword (if it is a built-in action or attribute).
+--> A keyword that is a _statement_ can be linked to an _architecture_ keyword.
 
 A keyword is composed of:
 * **id** (unique id)
@@ -197,7 +198,9 @@ The tables **webpage** and **keyword** are linked through an association table. 
 
 ![resources/images/developpingExtension/webpage_table.png](resources/images/developpingExtension/webpage_table.png)
 
-Note that only the keywords which have the category _concept_, _type_, _statement_, _operator_, _skill_ and _constant_ can be attached to a webpage. The keywords wich have the catagory _action_, _attribute_ and _facet_ forward to an other keyword.
+Note that only the keywords which have the category _concept_, _type_, _operator_, _skill_ and _constant_ can be attached to a webpage. 
+The keywords which have the category _action_, _attribute_ and _facet_ forward to the attached keyword.
+The keywords which have the category _statement_ are attached to a webpage only if they are not attached to another keyword. If they are attached to another keyword (an _architecture_ keyword), then the _statement_ keyword forward to the attached keyword.
 
 #### LearningConcept
 
@@ -226,7 +229,7 @@ The file **catagory.txt** is a very simple file, listing the different keyword c
 
 Format of the file:
 ```
-concept, type, statement, operator, skill, constant, action, attribute, facet
+concept, type, statement, architecture, operator, skill, constant, action, attribute, facet
 ```
 
 The file **keyword.xml** is an xml file that contains all the possible keywords (all except some keywords written manually directly in the documentation pages). The GAML words can be found directly using the code of GAMA. The concept words can be found using the code of GAMA (thanks to the tag "catagory") and also by using the tags in the header of the model files. This xml file will be used to build the **Keyword** and the **AssociationKeywordCatagory** tables.
@@ -245,7 +248,7 @@ Format of the file:
 
 Note that:
 --> The list associatedKeywordList contains only one element for the _facet_ keywords, one of no element for the _action_ or _attribute_ keywords (none when the action/attribute is a built-in), several or no elements for the _concept_ keywords, and none for the other type of keywords.
---> The id is build with the value of the attribute "name" and with the value of the attribute "category" for every keywords except the _facet_, _action_ and _attribute_ keywords, which need also the value of the associatedKeyword linked. Ex : the id of the facet "torus" will be "facet_torus_statement_global".
+--> The id is build with the value of the attribute "name" and with the value of the attribute "category" for every keywords except the _statement_, _facet_, _action_ and _attribute_ keywords, which need also the value of the associatedKeyword linked. Ex : the id of the facet "torus" will be "facet_torus_statement_global".
 
 #### Preparation of the repository before the generation of the database
 
