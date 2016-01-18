@@ -1,4 +1,5 @@
 # Mirror species
+[//]: # (keyword|concept_mirror)
 
 A mirror species is a species whose population is automatically managed with respect to another species. Whenever an agent is created or destroyed from the other species, an instance of the mirror species is created or destroyed. Each of these 'mirror agents' has access to its reference agent (called its target).
 Mirror species can be used in different situations but the one we describe here is more oriented towards visualization purposes.

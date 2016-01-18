@@ -3,6 +3,7 @@ behaviour:reflex
 add:+
 addition:+
 bigger:>
+cell:grid
 cosinus:cos
 different:!=
 divide:/
@@ -16,6 +17,7 @@ larger:>
 location:agent_location
 method:action
 multiply:*
+neighbours:neighbors
 negation:!
 parent:inheritance
 print:write

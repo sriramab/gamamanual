@@ -1,4 +1,5 @@
 # Grid Species
+[//]: # (keyword|concept_grid)
 
 A grid is a particular species of agents. Indeed, a grid is a set of agents that share a grid topology (until now, we only saw species with continuous topologies). As other agents, a grid species can have attributes, attributes, behaviors, aspects
 However, contrary to regular species, grid agents are created automatically at the beginning of the simulation. It is thus not necessary to use the create statement to create them.
@@ -64,8 +65,10 @@ This variable stores the row index of a cell.
    }
 ```
 ### agents
+
 return the set of agents located inside the cell. Note the use of this variable is deprecated.
 It is preferable to use the **inside** operator:
+[//]: # (keyword|operator_inside)
 
 ```
  grid cell width: 10 height: 10 neighbors: 4 { 
@@ -73,6 +76,7 @@ It is preferable to use the **inside** operator:
    }
 ```
 
+[//]: # (keyword|concept_color)
 ### color
 The **color** built-in variable is used by the optimized grid display. Indeed, it is possible to use for grid agents an optimized aspect by using in a display the **grid** keyword. In this case, the grid will be displayed using the color defined by the **color** variable. The border of the cells can be displayed with a specific color by using the **lines** facet.
 Here an example of the display of a grid species named **cell** with black border.
@@ -87,6 +91,18 @@ experiment main_xp type: gui{
 }
 ```
 
+[//]: # (keyword|concept_neighbors)
+### neighbors
+The **neighbors** built-in variable returns the list of cells at a distance of 1.
+
+```
+grid my_grid {
+  reflex writeNeighbors {
+    write neighbors;
+  }
+}
+```
+
 ### grid\_value
 The **grid\_value** built-in variable is used when initializing a grid from grid file (see later). It is also used for the 3D representation of [DEM](http://code.google.com/p/gama-platform/wiki/DEM)(TODO_URL).
 
@@ -94,7 +110,7 @@ The **grid\_value** built-in variable is used when initializing a grid from grid
 
 there are several ways to access to a specific cell:
 
-  * by a location: by casting a location to a cell (the unity (```#m```, ```#cm```, etc...) is defined when you choose your environment size, in the [global species](GlobalSpecies).
+  * by a location: by casting a location to a cell (the unity (`#m`, `#cm`, etc...) is defined when you choose your environment size, in the [global species](GlobalSpecies).
 
 ```
    global {
@@ -119,6 +135,7 @@ there are several ways to access to a specific cell:
    }
 ```
 
+[//]: # (keyword|operator_grid_at)
 The operator `grid_at` also exists to get a particular cell. You just have to specify the index of the cell you want (in x and y):
 
 ```
@@ -175,9 +192,75 @@ experiment MyExperiment type: gui {
 
 Beware : don't use this second display when you have large grids : it's much slower.
 
-## Grid with matrix
+[//]: # (keyword|type_matrix)
+## Grid from a matrix
 
-TODO
+An easy way to load some values in a grid is to use matrix data. A `matrix` is a type of container (we invite you to learn some more about this useful type [here](DataTypes#matrix)). Once you have declared your matrix, you can set the values of your cells using the `ask` statement :
+
+```
+global {
+  init {
+    matrix data <- matrix([[0,1,1],[1,2,0]]);
+    ask cell {
+      grid_value <- float(data[grid_x, grid_y]);
+    } 
+  }
+}
+```
+
+[//]: # (keyword|operator_matrix)
+Declaring larger matrix in GAML can be boring as you can imagine. You can load your matrix directly from a csv file with the operator `matrix` (used for the contruction of the matrix).
+
+```
+file my_file <- csv_file("path/file.csv","separator");
+matrix my_matrix <- matrix(my_file);
+```
+
+You can try to read the following csv :
+```
+0,0,0,0,0,0,0,0,0,0,0
+0,0,0,1,1,1,1,1,0,0,0
+0,0,1,1,0,0,0,1,1,0,0
+0,1,1,0,0,0,0,0,0,0,0
+0,1,1,0,0,1,1,1,1,0,0
+0,0,1,1,0,0,1,1,1,0,0
+0,0,0,1,1,1,1,0,1,0,0
+0,0,0,0,0,0,0,0,0,0,0
+```
+
+With the following model :
+
+```
+model import_csv
+
+global {
+  file my_csv_file <- csv_file("../includes/test.csv",",");
+  init {
+    matrix data <- matrix(my_csv_file);
+    ask my_gama_grid {
+      grid_value <- float(data[grid_x,grid_y]);
+      write data[grid_x,grid_y];
+    }
+  }
+}
+
+grid my_gama_grid width: 11 height: 8 {
+  reflex update_color {
+    write grid_value;
+    color <- (grid_value = 1) ? #blue : #white;
+  }
+}
+
+experiment main type: gui{
+  output {
+    display display_grid {
+      grid my_gama_grid;
+    }
+  }
+}
+```
+
+For more complicated models, you can read some other files, such as ASCII files (asc), DEM files...
 
 ## Example
 

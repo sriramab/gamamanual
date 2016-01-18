@@ -65,11 +65,11 @@ Like the other attributes of the global species, global built-in attributes can 
 ### world
 * represents the sole instance of the model species (i.e. the one defined in the `global` section). It is accessible from everywhere (including experiments) and gives access to built-in or user-defined global attributes and actions.
 
-[//]: # (keyword|concept_attribute)
+[//]: # (keyword|concept_cycle)
 ### cycle
 * integer, read-only, designates the (integer) number of executions of the simulation cycles. Note that the first cycle is the cycle with number 0.
 
-[//]: # (keyword|concept_attribute)
+[//]: # (keyword|concept_step)
 ### step
 * float,  is the length, in model time, of an interval between two cycles, in seconds. Its default value is 1 (second). Each turn, the value of time is incremented by the value of step. The definition of step must be coherent with that of the agents' variables like speed. The use of time unit is particularly relevant for its definition.
 
