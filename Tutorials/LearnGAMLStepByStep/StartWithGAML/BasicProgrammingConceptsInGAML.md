@@ -65,7 +65,7 @@ experiment myExperiment
 
 The function write is overloaded for each type of variable (even for the more complex type, such as containers).
 
-[//]: # (keyword::point)
+[//]: # (keyword|type_point)
 ### The point type:
 
 Another variable type you should know is the point variable. This type of variable is used to describe coordinates. It is in fact a complex variable, composed of two float variables (or three if you are working in 3D). To declare it, you have to use the curly bracket `{`:
@@ -90,7 +90,7 @@ p <- p + {0.0,1.0};
 write p.y; // the output will be 3.4
 ```
 
-[//]: # (keyword::dimension)
+[//]: # (keyword|concept_dimension)
 ### A world about dimension:
 
 When manipulating float values, you can specify the dimension of your value. Dimensions are preceded by # or ° (exactly the same).
@@ -101,7 +101,7 @@ float b <- 4#cm;
 float c <- a + b; // c is equal to 5.0399999 (it's not equal to 5.04 because it is a float value, not as precise as int)
 ```
 
-[//]: # (keyword::facet)
+[//]: # (keyword|concept_facet)
 ## Declare variables using facet
 
 Facets are used to describe the behavior of a variable during its declaration, by adding the keyword `facet` just after the variable name, followed by the value you want for the facet (or also just after the initial value).
@@ -113,7 +113,7 @@ type variableName facet1:valueForFacet1 facet2:valueForFacet2;
 variableName <- initialValue;
 ```
 
-[//]: # (keyword::update)
+[//]: # (keyword|concept_update)
 You can use the facet `update` if you want to change the value of your variable. For example, to increment your integer variable each step, you can do as follow:
 
 ```
@@ -128,35 +128,34 @@ int integerVariable <- 3 min:0 max:10 update:integerVariable+1;
 // the result will be 3 - 4 - 5 - 6 - 7 - 8 - 9 - 10 - 10 - 10 - ...
 ```
 
-[//]: # (keyword::among)
+[//]: # (keyword|concept_enumeration)
 The facet `among` can also be useful (that can be seen as an enum):
 
 ```
 string fruits <- "banana" among:["pear","apple","banana"];
 ```
 
-[//]: # (keyword::operators)
+[//]: # (keyword|concept_operator)
 ## Operators in GAMA
 
 In GAML language, you can use a lot of different operators. They are all listed in this [page](Operators), but here are the most useful ones:
 
-[//]: # (keyword::add)
-[//]: # (keyword::substract)
-[//]: # (keyword::multiply)
-[//]: # (keyword::divide)
-[//]: # (keyword::power)
+[//]: # (keyword|operator_+)
+[//]: # (keyword|operator_-)
+[//]: # (keyword|operator_*)
+[//]: # (keyword|operator_/)
+[//]: # (keyword|operator_^)
 **-	Mathematical operators**
 
 The basic arithmetical operators, such as `+`(add), `-`(substract), `*`(multiply), `/`(divide), `^`(power) are used this way: 
 
 FirstOperand Operator SecondOperand --> ex: 5 * 3; // return 15
 
-[//]: # (keyword::cosinus)
-[//]: # (keyword::sinus)
-[//]: # (keyword::tangent)
-[//]: # (keyword::sqrt)
-[//]: # (keyword::power)
-[//]: # (keyword::round)
+[//]: # (keyword|operator_cos)
+[//]: # (keyword|operator_sin)
+[//]: # (keyword|operator_tan)
+[//]: # (keyword|operator_sqrt)
+[//]: # (keyword|operator_round)
 Some other operators, such as `cos`(cosinus), `sin`(sinus), `tan`(tangent), `sqrt`(square root), `round`(rounding) etc... are used this way:
 
 ```
@@ -165,10 +164,10 @@ Operator(Operand) --> ex: sqrt(49); // return 7
 
 ###	Logical operators
 
-[//]: # (keyword::logical)
-[//]: # (keyword::and)
-[//]: # (keyword::or)
-[//]: # (keyword::negation)
+[//]: # (keyword|concept_logical)
+[//]: # (keyword|operator_and)
+[//]: # (keyword|operator_or)
+[//]: # (keyword|operator_!)
 Logical operators such as `and`(and), `or`(inclusive or) are used the same way as basic arithmetical operators. The operator `!`(negation) has to be placed just before the operand. They return a boolean result.
 
 ```
@@ -176,11 +175,10 @@ FirstOperand Operator SecondOperand --> ex: true or false; // return true
 NegationOperator Operand --> ex: !(true or false); // return false
 ```
 
-[//]: # (keyword::different)
-[//]: # (keyword::smaller)
-[//]: # (keyword::bigger)
-[//]: # (keyword::equal)
-[//]: # (keyword::comparison)
+[//]: # (keyword|operator_!=)
+[//]: # (keyword|operator_<)
+[//]: # (keyword|operator_>)
+[//]: # (keyword|operator_=)
 ### Comparison operators
 
 The comparison operators `!=`(different than), `<`(smaller than), `<=`(smaller of equal), `=`(equal), `>`(bigger than), `>=`(bigger or equal) are used the same way as basic arithmetical operators:
@@ -189,7 +187,8 @@ The comparison operators `!=`(different than), `<`(smaller than), `<=`(smaller o
 FirstOperand Operator SecondOperand --> ex: 5 < 3; // return false
 ```
 
-[//]: # (keyword::cast)
+[//]: # (keyword|concept_cast)
+[//]: # (keyword|operator_int)
 ### Type casting operators
 
 You can cast an operand to a special type using casting operator:
@@ -212,9 +211,9 @@ Some others are used in a more intuitive way:
 FirstOperand Operator SecondOperand --> ex: 2[6,4,5] contains(5);
 ```
 
-[//]: # (keyword::conditional)
-[//]: # (keyword::if)
-[//]: # (keyword::else)
+[//]: # (keyword|concept_condition)
+[//]: # (keyword|statement_if)
+[//]: # (keyword|statement_else)
 ## Conditional structures
 
 You can write if/else if/else in GAML:
@@ -234,15 +233,15 @@ else {
 }
 ```
 
-[//]: # (keyword::ternary)
+[//]: # (keyword|concept_ternary)
 GAML also accepts ternary operator:
 
 ```
 stringVariable <- (booleanVariable) ? "booleanVariable = true" : "booleanVariable = false";
 ```
 
-[//]: # (keyword::loop)
-[//]: # (keyword::while)
+[//]: # (keyword|concept_loop)
+[//]: # (keyword|statement_loop)
 ## Loop
 
 Loops in GAML are designed by the keyword loop. As for variables, a loop have multiple facet to determine its behavior:
@@ -284,11 +283,11 @@ loop i from:0 to: 5 step: 2 {
 
 -	The facet over to browse containers, as we will see in the next part.
 
-[//]: # (keyword::break)
+[//]: # (keyword|statement_break)
 Nb: you can interrupt a loop at any time by using the `break` statement.
 
-[//]: # (keyword::containers)
-[//]: # (keyword::list)
+[//]: # (keyword|concept_container)
+[//]: # (keyword|type_list)
 ## Manipulate containers
 
 We saw in the previous parts "simple" types of variable. You also have a multiple containers types, such as list, matrix, map, pair... In this section, we will only focus on the container `list` (you can learn the other by reading the section about datatypes [TODO_URL]).
@@ -311,6 +310,8 @@ int theFirstElementOfTheList <- [5,4,9,8] at 0; // this will return 5
 int theThirdElementOfTheList <- [5,4,9,8] at 2; // this will return 9
 ```
 
+[//]: # (keyword|operator_last_index)
+[//]: # (keyword|operator_index_of)
 **How to know the index of an element of a list?**
 
 You can know the index of the first occurrence of a value in a list using the operator index_of.
@@ -321,6 +322,7 @@ int result <- [4,2,3,4,5,4] last_index_of 4;  // result equals 5
 int result <- [4,2,3,4,5,4] index_of 4;  // result equals 0
 ```
 
+[//]: # (keyword|operator_contains)
 **How to know if an element exists in a list?**
 
 You can use the operator contains (return a boolean):
@@ -329,6 +331,9 @@ You can use the operator contains (return a boolean):
 bool result <- [{1,2}, {3,4}, {5,6}] contains {3,4};  // result equals true
 ```
 
+[//]: # (keyword|statement_remove)
+[//]: # (keyword|statement_add)
+[//]: # (keyword|statement_put)
 **How to insert/remove an element to/from a list?**
 
 For those operation, no operator are available, but you can use a statement instead. The statements add and put are used to insert/modify an element, while the statement remove is used to remove an element. Here are some example of how to use those 3 statements with the most common facets:
@@ -349,10 +354,10 @@ put 2 in: list_int key: 2; // put 2 in the 3rd position
 write list_int; // the output is : [3,6,2,7,0]
 ```
 
-To learn more about those 3 statements, please read the GAML reference (TODO_URL).
 
 **How to browse a list?**
 
+[//]: # (keyword|concept_browse)
 You can use the facet `over` of a loop:
 
 ```
@@ -363,7 +368,7 @@ loop i over:exampleOfList {
 // the output will be 4 - 2 - 3 - 4 - 5 - 4
 ```
 
-[//]: # (keyword::filter)
+[//]: # (keyword|concept_filter)
 **How to filter a list?**
 
 If you want to get all the elements of a list that fulfill a particular condition, you need the operator where. In the condition, you can design all the element of a particular list by using the pseudo variable each as followed:
@@ -377,13 +382,13 @@ Other useful operators for the manipulation of lists:
 
 Here are some other operators which can be useful to manipulate lists: sort, sort_by, shuffle, reverse, collect, accumulate, among. Please read the GAML Reference if you want to know more about those operators.
 
-[//]: # (keyword::random)
-[//]: # (keyword::probability)
-[//]: # (keyword::distribution)
+[//]: # (keyword|concept_random)
+[//]: # (keyword|concept_probability)
 ## Random values
 
 When you will implement your model, you will have to manipulate some random values quite often. 
 
+[//]: # (keyword|operator_rnd)
 To get a random value in a range of value, use the operator `rnd`. You can use this operator in many ways:
 
 ```
@@ -399,12 +404,14 @@ point var8 <- rnd ({2.0, 4.0}, {2.0, 5.0, 10.0});   // var8 equals a point with 
 float var9 <- rnd (2.0, 4.0);   // var9 equals a float number between 2.0 and 4.0
 ```
 
+[//]: # (keyword|operator_flip)
 Use the operator `flip` if you want to pick a boolean value with a certain probability:
 
 ```
 bool result <- flip(0.2); // result will have 20% of chance to be true
 ```
 
+[//]: # (keyword|operator_shuffle)
 You can use randomness in list, by using the operator `shuffle`, or also by using the operator `among` to pick randomly one (or several) element of your list:
 
 ```
@@ -412,4 +419,5 @@ list TwoRandomValuesFromTheList <- 2 among [5,4,9,8];
 // the list will be for example [5,9].
 ```
 
-You can use probabilistic laws, using operators such as `gauss`, `poisson`, `binomial`, or `truncated_gauss` (TODO_URL) (we invite you to read the documentation for those operators).
+[//]: # (keyword|concept_distribution)
+You can use probabilistic laws, using operators such as [`gauss`](Operators#gauss), [`poisson`](Operators#poisson), [`binomial`](Operators#binomial), or [`truncated_gauss`](Operators#truncated_gauss) (we invite you to read the documentation for those operators).

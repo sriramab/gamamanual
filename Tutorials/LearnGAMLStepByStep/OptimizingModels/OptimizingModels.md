@@ -187,6 +187,7 @@ if (closest_agent = nil) {closest_agent  <- predator1 closest_to self;}
 ## Displays
 
 [//]: # (keyword|concept_geometry)
+[//]: # (keyword|concept_shape)
 [//]: # (keyword|statement_draw)
 ### shape
 It is quite common to want to display an agent as a circle or a square. A common mistake is to mix up the shape to draw and the geometry of the agent in the model. If the modeler just wants to display a particular shape, he/she should not modify the agent geometry (which is a point by default), but just specify the shape to draw in the agent aspect.
