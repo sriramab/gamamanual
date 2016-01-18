@@ -35,66 +35,68 @@ Note that the value of the step variable should be given in seconds. To facilita
 	
 
 ## The date variable type and the use of a real calendar
-//definition of the date of begining of the simulation - defining this date will allows to change the normal date management of the simulation by a more realistic one (using calendar) 
-	date starting_date <- date([2011,1,2,1,1,30]);
-	
-	//be careful, when real dates are used, modelers should not use the #month and #year values that are not consistent with them
-	float step <- 1#h;
-		
-	init {
-		write "starting_date: " + starting_date;
-		
-		//there are several ways to define a date.
-		//The simplest consists in using a list of int values: [year,month of the year,day of the month, hour of the day, minute of the hour, second of the minute]
-		date my_date <- date([2010,3,23,17,30,10]); //correspond the 23th of March 2010, at 17:30:10
-		
-		//It is also possible to define a date through a string:
-		date my_date2 <- date("2010-3-23T17:30:10+07:00"); 
-		write (my_date2);
-	
-		//it is possible to get the current date by using the "now" string:
-		date today <- date("now"); 
-		write (today);
-		
-		write "\n ----------------------------------------------- " ;
-		
-		//GAMA provides several operator to manipulate dates:	
-			
-		//for instance, it is possible to compute the duration in seconds between 2 dates:
-		float d <- starting_date - my_date;
-		write "duration between " + my_date + " and " + starting_date + " : " + d + "s";
-		
-		write "\n ----------------------------------------------- " ;
-		
-		//to add or substract a duration (in secondes) to a date:
-		 write "my_date2 + 10: " + (my_date2 + 10);
-		 write "my_date2 - 10: " + (my_date2 - 10);
-		 
-		 write "\n ----------------------------------------------- " ;
-		 
-		 
-		 //to add or substract a duration (in years, months, weeks, days, hours, minutes,  secondes) to a date:
-		  write "my_date2 add_years 1: " + (my_date2 add_years 1);
-		  write "my_date2 add_months 1: " + (my_date2 add_months 1);
-		  write "my_date2 add_weeks 1: " + (my_date2 add_weeks 1);
-		  write "my_date2 add_days 1: " + (my_date2 add_days 1);
-		  write "my_date2 add_hours 1: " + (my_date2 add_hours 1);
-		  write "my_date2 add_minutes 1: " + (my_date2 add_minutes 1);
-		  write "my_date2 add_seconds 1: " + (my_date2 add_seconds 1);
-		  
-		  write "my_date2 substract_years 1: " + (my_date2 substract_years 1);
-		  write "my_date2 substract_months 1: " + (my_date2 substract_months 1);
-		  write "my_date2 substract_weeks 1: " + (my_date2 substract_weeks 1);
-		  write "my_date2 substract_days 1: " + (my_date2 substract_days 1);
-		  write "my_date2 substract_hours 1: " + (my_date2 substract_hours 1);
-		  write "my_date2 substract_minutes 1: " + (my_date2 substract_minutes 1);
-		  write "my_date2 substract_seconds 1: " + (my_date2 substract_seconds 1);
-	}
-	
-	reflex info_date {
-		//at each simulation step, the current_date is updated - its value can be seen in the top-left green info panel.
-		write "current_date at cycle " + cycle + " : " + current_date;
-	}
-}
+Since GAMA 1.7, it is possible to use a real calendar to manage the time. For that, the modeler have just to define the starting date of the simulation. This variable is of type date which allow to represent a date and time. 
+A date variable has several attributes:
+* year (int): the year component of the date
+* month (int): the month component of the date
+* day (int): the day component of the date
+* hour (int): the hour component of the date
+* minute (int): the minute component of the date
+* second (int): the second component of the date
+* day_of_week (int): the day of the week
+* week_of_year (int): the week of the year
 
-experiment main type: gui;
+Several ways can be used to define a date. The simplest consists in using a list of int values: [year,month of the year,day of the month, hour of the day, minute of the hour, second of the minute]
+`
+date my_date <- date([2010,3,23,17,30,10]); //correspond the 23th of March 2010, at 17:30:10
+`
+Another way consists in using a string with the good format:
+`
+date my_date <- date("2010-3-23T17:30:10+07:00"); 
+`
+		
+Note that the current date can be access through the #now built-in variable (variable of type date).
+
+In addition, GAMA provides different useful operators working on dates. For instance, it is possible to compute the duration in seconds between 2 dates using the "-" operator. The result is given in seconds:
+`
+float d <- starting_date - my_date;
+`
+
+It is also possible to add or substract a duration (in secondes) to a date:
+`
+write "my_date + 10: " + (my_date + 10);
+write "my_date - 10: " + (my_date - 10);
+`
+		 
+At last, it is possible to add or substract a duration (in years, months, weeks, days, hours, minutes,  secondes) to a date:
+`
+write "my_date add_years 1: " + (my_date add_years 1);
+write "my_date add_months 1: " + (my_date add_months 1);
+write "my_date add_weeks 1: " + (my_date add_weeks 1);
+write "my_date add_days 1: " + (my_date add_days 1);
+write "my_date add_hours 1: " + (my_date add_hours 1);
+write "my_date add_minutes 1: " + (my_date add_minutes 1);
+write "my_date add_seconds 1: " + (my_date add_seconds 1);
+		  
+write "my_date substract_years 1: " + (my_date substract_years 1);
+write "my_date substract_months 1: " + (my_date substract_months 1);
+write "my_date substract_weeks 1: " + (my_date substract_weeks 1);
+write "my_date substract_days 1: " + (my_date substract_days 1);
+write "my_date substract_hours 1: " + (my_date substract_hours 1);
+write "my_date substract_minutes 1: " + (my_date substract_minutes 1);
+write "my_date substract_seconds 1: " + (my_date substract_seconds 1);
+`
+For the modelers, two global date variable are available:
+* starting_date: date considered as the beginning of the simulation
+* current_date: current date of the simulation
+
+By default, these variables are nil. Defining a value of the starting_date allows to change the normal time management of the simulation by a more realistic one (using calendar): 
+`
+global {
+     date starting_date <- date([1979,12,17,19,45,10]);
+}
+`
+
+When a variable is set to this variable, the current_date variable is automatically initialized with the same value. However, at each simulation step, the current_date variable is incremented by the step variable. The value of the current_date will replace the value of the time variable in the top left green panel.
+
+Note that you have to be careful, when a real calendar is used, the bullt-in constants #month and #year should not be used as there are not consistent with the calendar (where month can be composed of 28, 29, 30 or 31 days).
