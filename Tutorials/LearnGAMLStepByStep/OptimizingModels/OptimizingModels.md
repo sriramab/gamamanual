@@ -201,6 +201,10 @@ species bug {
 }
 ```
 
+[//]: # (keyword|operator_circle)
+[//]: # (keyword|operator_sphere)
+[//]: # (keyword|operator_rectangle)
+[//]: # (keyword|operator_cube)
 ### circle vs square / sphere vs cube
 Note that in OpenGL and Java2D (the two rendering subsystems used in GAMA), creating and drawing a circle geometry is more time consuming than creating and drawing a square (or a rectangle). In the same way, drawing a sphere is more time consuming than drawing a cube. Hence, if you want to optimize your model displays and if the rendering does not explicitly need "rounded" agents, try to use squares/cubes rather than circles/spheres.
 

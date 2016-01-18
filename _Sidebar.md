@@ -72,8 +72,9 @@
 6. [Using GamAnalyzer](GamAnalyzer)
 7. [Using BDI](UsingBDI)
 8. [Using Driving Skill](UsingDrivingSkill)
-9. [FAQ](FAQ)
-10. [Known Issues](KnownIssues)
+9. [Manipulate dates](ManipulateDates)
+10. [FAQ](FAQ)
+11. [Known Issues](KnownIssues)
 
 ## [GAML References](GamlReference)
 1. [Built-in Species](BuiltInSpecies)
@@ -114,6 +115,7 @@
 9. [Developing a Control Architecture](DevelopingControlArchitectures)
 10. [Index of annotations](DevelopingIndexAnnotations)
 11. [IScope](DevelopingIScope)
+12. [Creating a release of GAMA](CreatingAReleaseOfGama)
 12. [Documentation generation](Documentation)
 13. [Website generation](WebsiteGeneration)
 
