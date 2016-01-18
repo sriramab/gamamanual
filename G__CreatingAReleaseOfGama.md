@@ -8,7 +8,7 @@ This is works not only with the Mars release, but also previous releases, as wel
 * Click Add
 * Select "Software Site"
 * Click Next
-* In "Work With" type: http://download.eclipse.org/eclipse/updates/4.5 (replace 4.3 with your current version)
+* In "Work With" type: http://download.eclipse.org/eclipse/updates/4.5 (replace 4.5 with your current version)
 * Check "Eclipse RCP Target Components"
 * Check "Equinox Target Components"
 * Uncheck "Include required software"
