@@ -1,4 +1,7 @@
 # Defining displays (Generalities)
+[//]: # (keyword|concept_displays)
+[//]: # (keyword|concept_layers)
+[//]: # (keyword|concept_output)
 
 ## Index
 
@@ -21,11 +24,13 @@ experiment my_experiment type: gui {
 }
 ```
 
+[//]: # (keyword|concept_background)
 Other facets are available when defining your display:
 * Use `background` to define a color for your background
 ```
 display "my_display" background:#red
 ```
+[//]: # (keyword|concept_refresh)
 * Use `refresh` if you want to refresh the display when a condition is true (to refresh your display every number of steps, use the operator `every`)
 ```
 display "my_display" refresh:every(10)
@@ -35,6 +40,7 @@ You can choose between two types of displays, by using the facet type:
 * java2D displays will be used when you want to have 2D visualization. It is used for example when you manipulate charts. This is the default value for the facet type. 
 * opengl displays allows you to have 3D visualization.
 
+[//]: # (keyword|concept_autosave)
 You can save the display on the disk, as a png file, in the folder name_of_model/models/snapshots, by using the facet `autosave`. This facet takes one a boolean as argument (to allow or not to save each frame) or a point (to define the size of your image). By default, the resolution of the output image is 500x500.
 
 ```
@@ -100,6 +106,7 @@ experiment expe type:gui {
 }
 ```
 
+[//]: # (keyword|concept_transparency)
 Most of the layers have the `transparency` facet in order to see the layers which are under.
 
 ```

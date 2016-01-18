@@ -11,11 +11,15 @@ equal:=
 elseif:else
 for:loop
 foreach:loop
+host:multi_level
 increment:update
 initialize:init
 larger:>
 location:agent_location
+macro_species:multi_level
+micro_species:multi_level
 method:action
+members:multi_level
 multiply:*
 neighbours:neighbors
 negation:!
@@ -23,6 +27,7 @@ parent:inheritance
 print:write
 printf:write
 polymorphism:inheritance
+ponderation:graph_weight
 position:agent_location
 power:^
 procedure:action

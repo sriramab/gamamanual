@@ -1,4 +1,5 @@
 # Multi-level architecture
+[//]: # (keyword|concept_multi_level)
 
 The multi-level architecture offers the modeler the following possibilities: the declaration of a species as a micro-species of another species, the representation of an entity as different types of agent (i.e., GAML species), the dynamic migration of agents between populations.
 
@@ -134,18 +135,21 @@ species macro_species
 
 In our example about bees, a "swarm" entity is composed of nearby flying "bee" entities. When a "bee" entity approaches a "swarm" entity, this "bee" entity will become a member of the group. To represent this, the modeler lets the "bee" agent change its species to "bee_in_swarm" species. The "bee" agent hence becomes a "bee_in_swarm" agent. To change species of agent, we can use one of the following statements: `capture`, `release`, `migrate`.
 
+[//]: # (keyword|statement_capture)
 The statement `capture` is used by the "macro_species" to capture one (or several) "micro_species" agent(s), and turn it (them) to a "micro_species_in_group". You can specify which agent (or list of agents) you want to capture by using the facet `target`. The facet `as` is used to cast the agent from "micro_species" to "micro_species_in_group". You can use the facet `return` to get the newly captured agent(s).
 
 ```
 capture target:micro_species as:micro_species_in_group;
 ```
 
+[//]: # (keyword|statement_release)
 The statement `release` is used by the "macro_species" to release one (or several) "micro_species_in_group" agent(s), and turn it (them) to a "micro_species". You can specify which agent (or list of agents) you want to release by using the facet `target`. The facet `as` is used to cast the agent from "micro_species_in_group" to "micro_species". The facet `in` is used to specify the new host (by default, it is the host of the "macro_species"). You can use the facet `return` to get the newly released agent(s).
 
 ```
 release target:list(micro_species_in_group) as:micro_species in:world;
 ```
 
+[//]: # (keyword|statement_migrate)
 The statement `migrate`, less used, permits agents to migrate from one population/species to another population/species and stay in the same host after the migration. Read the GAML Reference to learn more about this statement.
 
 ## Example:

@@ -1,4 +1,6 @@
 # Graph Species
+[//]: # (keyword|concept_graph)
+[//]: # (keyword|type_graph)
 
 Using a graph species enables to easily show interaction between agents of a same species. This kind of species is particularly useful when trying to show the interaction (especially the non-spatial one) that exist between agents.
 
@@ -64,7 +66,7 @@ experiment MyExperiment type: gui {
 ![graph_related_to.png](resources/images/definingAdvancedSpecies/graph_related_to.png)
 
 You can for example link 2 agents when they are closer than a certain distance.
-Beware: The topology used in graph species is the graph topology, and not the continuous topology. You can force the use of the continuous topology with the action "using" as follow:
+Beware: The topology used in graph species is the graph topology, and not the continuous topology. You can force the use of the continuous topology with the action `using` as follow:
 
 ```
 bool related_to(graph_agent other){
@@ -84,6 +86,7 @@ The abstract mother species "graph_node" has an attribute "my_graph", with the t
 
 ### Declare a graph by using an geometry file
 
+[//]: # (keyword|operator_as_edge_graph)
 In most cases, you will have to construct a graph from an existing file (example: a "shp" file). In that case, you will have to first instantiate a species from the shape file (with the `create` statement, using the facet `from`). When, you will have to extract a graph from the agent, using the operator `as_edge_graph`.
 
 ```
@@ -117,6 +120,8 @@ experiment main_experiment type:gui{
 
 ### Declare a graph with nodes and edges
 
+[//]: # (keyword|operator_add_node)
+[//]: # (keyword|operator_add_edge)
 Another way to create a graph is building it manually nodes by nodes, and then edges by edges, without using agent structures. Use the `add_node` operator and the `add_edge` operator to do so. Here is an example of how to do:
 
 ```
@@ -137,6 +142,8 @@ my_graph <- my_graph add_edge (nodes at 0::nodes at 4);
 my_graph <- my_graph add_edge (nodes at 4::nodes at 1);
 ```
 
+[//]: # (keyword|concept_spatial_graph)
+[//]: # (keyword|concept_aspatial_graph)
 Using this solution, my_graph can have two types: it can be an a-spatial graph, or a spatial graph. The spatial graph will have a proper geometry, with segments that follow the position of your graph (you can access to the segments by using the built-in "segments"). The a-spatial graph will not have any shape.
 
 ```
@@ -166,6 +173,7 @@ global
 
 ### Knowing the degree of a node
 
+[//]: # (keyword|operator_degree_of)
 The operator `degree_of` returns the number of edge attached to a node. To use it, you have to specify a graph (on the left side of the operator), and a node (on the right side of the operator).
 
 The following code (to put inside the node species) displays the number of edges attached to each node:
@@ -180,12 +188,15 @@ aspect base
 
 ### Get the neighbors of a node
 
+[//]: # (keyword|operator_neighbors_of)
 To get the list of neighbors of a node, you should use the neighbors_of operator. On the left side of the operator, specify the graph you are using, and on the right side, specify the node. The operator returns the list of nodes located at a distance inferior or equal to 1, considering the graph topology.
 
+```
 species graph_agent parent: graph_node edge_species: edge_agent
 {
-list<graph_agent> list_neighbors <- list<graph_agent>(my_graph neighbors_of (self));
+  list<graph_agent> list_neighbors <- list<graph_agent>(my_graph neighbors_of (self));
 }
+```
 
 Here is an example of model using those two previous concepts (a random node is chosen each step, displayed in red, and his neighbors are displayed in yellow):
 
@@ -280,6 +291,7 @@ experiment MyExperiment type: gui
 
 ### Compute the shortest path
 
+[//]: # (keyword|concept_shortest_path)
 To compute the shortest path to go from a point to another, pick a source and a destination among the vertices you have for your graph. Store those values as point type.
 
 ```
@@ -289,6 +301,7 @@ source <- point(one_of(my_graph.vertices));
 destination <- point(one_of(my_graph.vertices));
 ```
 
+[//]: # (keyword|operator_path_between)
 Then, you can use the operator `path_between` to return the shortest path. To use this action, you have to give the graph, then the source point, and the destination point. This action returns a path type.
 
 ```
@@ -296,6 +309,7 @@ path shortest_path;
 shortest_path <- path_between (my_graph, source,destination);
 ```
 
+[//]: # (keyword|operator_paths_between)
 Another operator exists, `paths_between`, that returns a list of shortest paths between two points. Please read the documentation to learn more about this operator.
 
 Here is an example of code that show the shortest path between two points of a graph:
@@ -387,6 +401,8 @@ experiment MyExperiment type: gui {
 
 ### Control the weight in graph
 
+[//]: # (keyword|concept_graph_weight)
+[//]: # (keyword|operator_with_weights)
 You can add a map of weight for the edges that compose the graph. Use the operator `with_weights` to put weights in your graph. The graph has to be on the left side of the operator, and the map has to be on the right side. In the map, you have to put edges as key, and the weight for that edge as value. One common use is to put the distance as weight:
 
 ```

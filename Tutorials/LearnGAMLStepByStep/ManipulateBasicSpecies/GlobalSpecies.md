@@ -144,7 +144,7 @@ global {
 }
 ```
 
-[//]: # (keyword|concept_halt)
+[//]: # (keyword|concept_pause)
 ### pause
 * pauses the simulation, which can then be continued by the user.
 

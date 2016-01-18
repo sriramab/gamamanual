@@ -145,6 +145,7 @@ Now there is only one thing missing to display our agent: we have to instantiate
 
 ## Instantiate an agent
 
+[//]: # (keyword|statement_create)
 As already said quickly in the last session, the instantiation of the agents is most often in the init scope of the global species (this is not mandatory of course. You can instantiate your agents from an action / behavior of any specie). Use the statement `create` to instantiate an agent. 
 The facet species is used to specify which species you want to instantiate. 
 The facet number is used to tell how many instantiation you want. 
