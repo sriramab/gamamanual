@@ -1,7 +1,7 @@
 ## [Home](Home)
 ## [Introduction](Overview)
 ## [Platform](Platform)
-1. Installation and Launching
+1. [Installation and Launching](InstallationAndLaunching)
   1. [Installation](Installation)
   2. [Launching GAMA](Launching)
   3. [Headless Mode](Headless)
@@ -31,7 +31,7 @@
 1. [Introduction](Introduction)
 2. [Start with GAML](StartWithGAML)
   1. [Organization of a Model](ModelOrganization)
-  2. [Basic programming concepts in GAML](BasicProgramingConceptsInGAML)
+  2. [Basic programming concepts in GAML](BasicProgrammingConceptsInGAML)
 3. [Manipulate basic Species](ManipulateBasicSpecies)
   1. [Global Species](GlobalSpecies)
   2. [Regular Species](RegularSpecies)

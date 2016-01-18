@@ -4,6 +4,7 @@
 ## Crash when using openGL on Windows
 
 If you are using GAMA with Windows, and your video card is a Radeon AMD, then GAMA can crash while running a simulation using OpenGL. To avoid this issue, you have to disable your video card. This will slow down a bit the performances, but at least you will be able to run GAMA without those annoying crashes.
+
 To disable your video card, open the control panel, click on Hardware and Sound / Devices and Printers / Device manager, and then right click on your video card (as shown in the following image)
 
 ![resources/images/recipes/disable_amd_radeon.png](resources/images/recipes/disable_amd_radeon.png)

@@ -24,10 +24,11 @@ typeName myVariableName;
 
 ### Basic types:
 
-[//]: # (keyword::int)
-[//]: # (keyword::float)
-[//]: # (keyword::string)
-[//]: # (keyword::bool)
+[//]: # (keyword|type_int)
+[//]: # (keyword|type_float)
+[//]: # (keyword|type_string)
+[//]: # (keyword|type_bool)
+[//]: # (keyword|operator_<-)
 All the "basic" types are present in GAML:`int`, `float`, `string`, `bool`.
 The operator for the affectation in GAML is `<-` (the operator `=` is used to test the equality).
 
@@ -38,7 +39,7 @@ string stringVariable <- "test"; // you can also write simple ' : <- 'test'
 bool booleanVariable <- true; // or false
 ```
 
-[//]: # (keyword::write)
+[//]: # (keyword|action_write)
 To follow the behavior of variable, we can write their value in the console. Let's go back to our basic skeleton of a model, and let's create a reflex in the global scope (to be short, a reflex is a function that is executed in each step. We will come back to this concept later). The `write` function works very easily, simply writing down the keyword `write` and the name of the variable we want to be displayed.
 
 ```

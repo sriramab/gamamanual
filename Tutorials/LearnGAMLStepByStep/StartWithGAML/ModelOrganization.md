@@ -18,7 +18,7 @@ This conceptual structure is respected in the definition of model files, which f
 	* [Basic skeleton of a model](#basic-skeleton-of_a_model)
 
 
-
+[//]: # (keyword|concept_model)
 ## Model Header (_model species_)
 
 The header of a model file begins mandatorily with the declaration of the name of the model. Contrarily to other statements, this declaration **does not** end with a semi-colon.
@@ -31,6 +31,7 @@ model dummy
 ```
 will internally create a species called `dummy_model`, child of the abstract species `model`, from which simulations (called `dummy_model0`, `dummy_model1`, etc.) will be instantiated.
 
+[//]: # (keyword|concept_import)
 This declaration is followed by optional import statements that indicate which other models this model is importing. Import statements **do not** end with a semi-colon.
 
 Importing a model can take two forms. The first one, called _inheritance import_, is declared as follows:
