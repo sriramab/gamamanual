@@ -9,7 +9,7 @@ If some models are based on a abstract time - only the number of cycles is impor
 First, GAMA allows to define the duration of a simulation step. It provides access to different time variables. At last, since GAMA 1.7, it provides a date variable type and some global variables allowing to use a real calendar to manage time.
 
 ## Definition of the step and use of temporal unity values
-GAMA provides three important global variables to manage time:
+GAMA provides three important global variables to manage time (https://github.com/gama-platform/gama/wiki/G__GlobalSpecies#cycle):
 * cycle (int - not modifiable): the current simulation step - this variable is incremented by 1 at each simulation step
 * step (float - can be modified): the duration of a simulation step (in seconds). By default the duration is one second.
 * time (float - not modifiable): the current time spent since the beginning of the simulation - this variable is computed at each simulation step by: time = cycle * step. 
@@ -25,31 +25,14 @@ global {
 `
 In this example, each simulation step will represent 1 hour. This time will be taken into account for all actions based on time (e.g. moving actions).
 
-Note that the value of the step variable should be given in seconds. To facilitate the definition of the step value and of all expressions based on time, GAMA provides different built-in constant variable accessible with the "#" symbol : 
- * #s : second
- * #s : second
-	init {
-		//GAMA provides different values for temporal unities - these values are given in seconds
-		write "1#s: " + 1#s;
-		write "1#mn: " + 1#mn;
-		write "1#hour: " + 1#hour;
-		write "1#day: " + 1#day;
-		write "1#month: " + 1#month;
-		write "1#year: " + 1#year;
-		
-		//Note that these values are constant: the value #month is always equal to 30 #day. 
-	}
-	reflex info_time {
-		write "\n-------------------------------------------";
-		//the global variable cycle gives the current step of the simulation
-		write "cycle: " + cycle;
-		
-		//the global variable time gives the current duration (in seconds) since the beginning of the simulation: time = cycle * step
-		//The value of the time facet can be seen - in a date-time presentation - in the top-left green info panel (click on the number of cycle to see the time value).
-		//When presenting the time value, a month is considered as being composed of 30 days. For a more realistic calendar, use the starting_date global value (see the Date type and Real dates model)
-		write "time: " + time;
-	}
-}
+Note that the value of the step variable should be given in seconds. To facilitate the definition of the step value and of all expressions based on time, GAMA provides different built-in constant variables accessible with the "#" symbol (https://github.com/gama-platform/gama/wiki/G__UnitsAndConstants#time-units): 
+ * #s : second - 1 second
+ * #mn : minute - 60 seconds
+ * #hour : hour - 60 minutes - 3600 seconds
+ * #day : day - 24 hours - 86400 seconds
+ * #month : month - 30 days - 2592000 seconds
+ * #year : year - 12 month - 3.1104E7
+	
 
 ## The date variable type and the use of a real calendar
 //definition of the date of begining of the simulation - defining this date will allows to change the normal date management of the simulation by a more realistic one (using calendar) 
