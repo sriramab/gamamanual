@@ -14,10 +14,9 @@ This page exposes some of the most common problems a user may encounter when run
 	* [On Windows](#on-windows)
 	* [On MacOS X](#on-macos-x)
 		* [Workaround in case of glitches in the UI](#workaround-in-case-of-glitches-in-the-ui)
-		* [Workaround in case of corrupted icons in menus ](#workaround-in-case-of-corrupted-icons-in-menus-)
+		* [Workaround in case of corrupted icons in menus under El Capitan](#workaround-in-case-of-corrupted-icons-in-menus-under-el-capitan)
 	* [Memory problems](#memory-problems)
 	* [Submitting an Issue](#submitting-an-issue)
-
 
 
 ## On Ubuntu (& Linux Systems)
@@ -49,7 +48,7 @@ No common trouble...
 
 The only problems reported so far on MacOS X (from Lion to Yosemite) concern visual glitches in the UI and problems with displays, either not showing or crashing the JVM. Most (all ?) of these problems are usually related to the fact that GAMA does not run under the correct version of Java Virtual Machine. In that case, follow [these instructions](Installation#On_MacOS_X_(Lion,_Mountain_Lion,_Mavericks)) to install the correct version.
 
-### Workaround in case of corrupted icons in menus [El Capitan]
+### Workaround in case of corrupted icons in menus under El Capitan
 
 For some particular configurations (in particular some particular graphic cards), the icons of the menus (e.g. Edit menu) may be corrupted. This bug is documented for all RCP products under El Capitan. See these references:
 [https://bugs.eclipse.org/bugs/show_bug.cgi?id=479590](https://bugs.eclipse.org/bugs/show_bug.cgi?id=479590)
