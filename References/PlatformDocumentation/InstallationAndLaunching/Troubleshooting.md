@@ -7,14 +7,16 @@ This page exposes some of the most common problems a user may encounter when run
 ## Table of contents 
 
 * [Troubleshooting](#troubleshooting)
+	* [Table of contents](#table-of-contents)
 	* [On Ubuntu (& Linux Systems)](#on-ubuntu--linux-systems)
 		* [Workaround if GAMA crashes when displaying web contents](#workaround-if-gama-crashes-when-displaying-web-contents)
 		* [Workaround if GAMA does not display the menus (the 'Edit' menu is the only one working)](#workaround-if-gama-does-not-display-the-menus-the-edit-menu-is-the-only-one-working)
 	* [On Windows](#on-windows)
 	* [On MacOS X](#on-macos-x)
+		* [Workaround in case of glitches in the UI](#workaround-in-case-of-glitches-in-the-ui)
+		* [Workaround in case of corrupted icons in menus ](#workaround-in-case-of-corrupted-icons-in-menus-)
 	* [Memory problems](#memory-problems)
 	* [Submitting an Issue](#submitting-an-issue)
-
 
 
 
@@ -42,9 +44,18 @@ No common trouble...
 
 
 ## On MacOS X
+
+### Workaround in case of glitches in the UI
+
 The only problems reported so far on MacOS X (from Lion to Yosemite) concern visual glitches in the UI and problems with displays, either not showing or crashing the JVM. Most (all ?) of these problems are usually related to the fact that GAMA does not run under the correct version of Java Virtual Machine. In that case, follow [these instructions](Installation#On_MacOS_X_(Lion,_Mountain_Lion,_Mavericks)) to install the correct version.
 
+### Workaround in case of corrupted icons in menus [El Capitan]
 
+For some particular configurations (in particular some particular graphic cards), the icons of the menus (e.g. Edit menu) may be corrupted. This bug is documented for all RCP products under El Capitan. See these references:
+[https://bugs.eclipse.org/bugs/show_bug.cgi?id=479590](https://bugs.eclipse.org/bugs/show_bug.cgi?id=479590)
+[https://trac.filezilla-project.org/ticket/10669](https://trac.filezilla-project.org/ticket/10669)
+
+These is nothing we can do now except using the workaround that consists in switching the language of the OS to English (in System Preferences, Language & Region).
 
 
 ## Memory problems
