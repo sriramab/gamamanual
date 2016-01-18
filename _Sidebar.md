@@ -116,10 +116,11 @@
 7. [Developing a Type](G__DevelopingTypes)
 8. [Developing a Species](G__DevelopingSpecies)
 9. [Developing a Control Architecture](G__DevelopingControlArchitectures)
-10. [Index of annotations](G__DevelopingIndexAnnotations)
-11. [IScope](G__DevelopingIScope)
-12. [Documentation generation](G__Documentation)
-13. [How to write the Website Content](G__WriteWebsiteContent)
+10. [Creating a release of GAMA](G__CreatingAReleaseOfGama)
+11. [Index of annotations](G__DevelopingIndexAnnotations)
+12. [IScope](G__DevelopingIScope)
+13. [Documentation generation](G__Documentation)
+14. [How to write the Website Content](G__WriteWebsiteContent)
 
 ## [References](G__References)
 
