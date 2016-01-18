@@ -1,4 +1,5 @@
 # Interaction between agents
+[//]: # (keyword|concept_interaction)
 
 In this part, we will learn how interaction between agents works. We will also present you a bunch of operators useful for your modelling. 
 
@@ -11,6 +12,7 @@ In this part, we will learn how interaction between agents works. We will also p
 
 ## The ask statement
 
+[//]: # (keyword|statement_ask)
 The `ask` statement can be used in any reflex or action scope. It is used to specify the interaction between the instances of your species and the other agents. You only have to specify the species of the agents you want to interact with. Here are the different ways of calling the ask statement:
 
 -	If you want to interact with one particular agent (for example, defined as an attribute of your species):
@@ -88,6 +90,9 @@ species my_specie {
 
 ## Pseudo variables
 
+[//]: # (keyword|concept_other)
+[//]: # (keyword|concept_self)
+[//]: # (keyword|concept_myself)
 Once you are in the ask scope, you can use some pseudo variables to refer to the receiver agent (the one specify just after the ask statement) or the transmitter agent (the agent which is asking). 
 We use the pseudo variable `self` to refer to the receiver agent, and the pseudo variable `myself` to refer to the transmitter agent. The pseudo variable `self` can be omitted when calling actions or attributes.
 
@@ -148,6 +153,7 @@ Nb: try to avoid multiple imbrications of ask statements. Most of the time, ther
 
 ## Some useful interaction operators
 
+[//]: # (keyword|operator_at_distance)
 The operator `at_distance` can be used to know the list of agents that are in a certain distance from another agent.
 
 ```
@@ -159,6 +165,7 @@ species my_species {
 }
 ```
 
+[//]: # (keyword|operator_closest_to)
 The operator `closest_to` returns the closest agent of a position among a container.
 
 ```
@@ -177,6 +184,7 @@ species other_specie {
 
 ## Example
 
+[//]: # (keyword|operator_polyline)
 To practice those notions, here is a short basic example. Let's build a model with a fix number of agents with a circle shape. They can move randomly on the environment, and when they are close enough from another agent, a line is displayed between them. This line is destroyed when the distance between the two agents is too important.
 Hint: use the operator `polyline` to construct a line. List the points between angle brackets `[]`.
 

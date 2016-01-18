@@ -27,3 +27,13 @@ static
 dimension
 cycle
 keyword
+time
+halt
+pause
+agent_location
+write
+init
+reflex
+interaction
+skill
+inheritance

@@ -39,7 +39,7 @@ string stringVariable <- "test"; // you can also write simple ' : <- 'test'
 bool booleanVariable <- true; // or false
 ```
 
-[//]: # (keyword|action_write)
+[//]: # (keyword|concept_write)
 To follow the behavior of variable, we can write their value in the console. Let's go back to our basic skeleton of a model, and let's create a reflex in the global scope (to be short, a reflex is a function that is executed in each step. We will come back to this concept later). The `write` function works very easily, simply writing down the keyword `write` and the name of the variable we want to be displayed.
 
 ```
@@ -389,7 +389,7 @@ Here are some other operators which can be useful to manipulate lists: sort, sor
 When you will implement your model, you will have to manipulate some random values quite often. 
 
 [//]: # (keyword|operator_rnd)
-To get a random value in a range of value, use the operator `rnd`. You can use this operator in many ways:
+To get a random value in a range of value, use the operator [`rnd`](Operators#rnd). You can use this operator in many ways:
 
 ```
 int var0 <- rnd (2);    // var0 equals 0, 1 or 2
@@ -405,14 +405,14 @@ float var9 <- rnd (2.0, 4.0);   // var9 equals a float number between 2.0 and 4.
 ```
 
 [//]: # (keyword|operator_flip)
-Use the operator `flip` if you want to pick a boolean value with a certain probability:
+Use the operator [`flip`](Operators#flip) if you want to pick a boolean value with a certain probability:
 
 ```
 bool result <- flip(0.2); // result will have 20% of chance to be true
 ```
 
 [//]: # (keyword|operator_shuffle)
-You can use randomness in list, by using the operator `shuffle`, or also by using the operator `among` to pick randomly one (or several) element of your list:
+You can use randomness in list, by using the operator [`shuffle`](Operators#shuffle), or also by using the operator [`among`](Operators#among) to pick randomly one (or several) element of your list:
 
 ```
 list TwoRandomValuesFromTheList <- 2 among [5,4,9,8];

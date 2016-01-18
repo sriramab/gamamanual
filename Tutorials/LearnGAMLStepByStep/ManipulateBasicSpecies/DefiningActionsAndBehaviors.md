@@ -1,4 +1,6 @@
 # Defining actions and behaviors
+[//]: # (keyword|concept_action)
+[//]: # (keyword|concept_reflex)
 
 Both actions and behaviors can be seen as methods in OOP. They can be defined in any species.
 
@@ -12,10 +14,11 @@ Both actions and behaviors can be seen as methods in OOP. They can be defined in
 
 ### Declare an action
 
+[//]: # (keyword|statement_action)
 An action is a function run by an instance of species. An action can return a value (in that case, the type of return has to be specify just before the name of the action), or not (in that case, you just have to put the keyword `action` before the name of the action).
 
 ```
-species my_specie {
+species my_species {
 	int action_with_return_value {
 		// statements...
 		return 1;
@@ -44,6 +47,7 @@ action my_action (int argA, float argB <- 5.1, point argC <- {0,0}) {
 
 ### Call an action
 
+[//]: # (keyword|statement_do)
 To call an action, you have to use the statement `do`. You can use the statement do different ways:
 
 * With facets : after specifying the name of your action, you can specify the values of your arguments as if the name of your arguments were facets:
@@ -66,6 +70,7 @@ int var1 <- my_action(5,5.1);
 
 ## Behaviour
 
+[//]: # (keyword|statement_reflex)
 A behavior, or reflex, is an action which is called automatically at each time step by an agent.
 
 ```

@@ -127,7 +127,7 @@ Note that any agent has the `agents` attribute, representing the agents it conta
 
 
 
-
+[//]: # (keyword|concept_action)
 ## Built-in Actions
 The global species is provided with two specific actions.
 
@@ -157,6 +157,7 @@ global {
 }
 ```
 
+[//]: # (keyword|concept_init)
 ## The init statement
 
 After declaring all the global attributes and defining your environment size, you can define an initial state (before launching the simulation). Here, you normally initialize your global variables, and you instantiate your species. We will see in the next session how to initialize a regular species. 

@@ -1,4 +1,5 @@
 # Regular species
+[//]: # (keyword|concept_species)
 
 Regular species are composed of attributes, actions, reflex, aspect etc... They describes the behaviour of our agents. You can instantiate as much as you want agents from a regular species, and you can define as much as you want different regular species. You can see a species as a "class" in OOP.
 
@@ -27,6 +28,7 @@ species name:my_specie {
 }
 ```
 
+[//]: # (keyword|concept_attribute)
 Directly in the "species" scope, you have to declare all your attributes (or "member" in OOP). You declare them exactly the way you declare basic variables. Those attributes are accessible wherever you want inside the species scope.
 
 ```
@@ -37,6 +39,8 @@ species my_specie {
 
 ## Built-in attributes
 
+[//]: # (keyword|concept_agent_location)
+[//]: # (keyword|concept_shape)
 As for the global species, some attributes exist already by default in a regular species. Here is the list of built-in attributes:
 
 * **name** (type: string) is used to name your agent. By default, the name is equal to the name of your species + an incremental number. This name is the one visible on the species inspector.
@@ -70,10 +74,11 @@ Here is the list of those attributes:
 * **subspecies** (type: list of string) returns the list of species that inherit directly from this species (we will talk about the concept of [inheritance](Inheritance) later)
 * **parent** (type: species) returns its parent species if it belongs to the model, or `nil` otherwise (we will talk about the concept of [inheritance](Inheritance) later)
 
+[//]: # (keyword|concept_action)
 ## Built-in action
 
-Some actions are define by default for a minimal agent. We already saw quickly the action write, used to display a message in the console.
-Another very useful built-in action is the action die, used to destroy an agent.
+Some actions are define by default for a minimal agent. We already saw quickly the action `write`, used to display a message in the console.
+Another very useful built-in action is the action `die`, used to destroy an agent.
 
 ```
 species my_species{
@@ -83,8 +88,9 @@ species my_species{
 }
 ```
 
-Here is the list of the other built-in actions which you can find in the documentation: (TODO_URL) debug, message, tell.
+Here is the list of the other built-in actions which you can find in the documentation: debug, message, tell.
 
+[//]: # (keyword|concept_init)
 ## The init statement
 
 After declaring all the attributes of your species, you can define an initial state (before launching the simulation). It can be seen as the "constructor of the class" in OOP.
@@ -98,6 +104,7 @@ species my_species {
 }
 ```
 
+[//]: # (keyword|statement_aspect)
 ## The aspect statement
 
 Inside each species, you can define one or several aspects. This scope allows you to define how you want your species to be represented in the simulation.
@@ -110,6 +117,7 @@ species my_species {
 }
 ```
 
+[//]: # (keyword|statement_draw)
 You can then define your aspect by using the statement `draw`. You can then choose a geometry for your aspect (facet `geometry`), a color (facet `color`), an image (facet `image`), a text (facet `text`)... We invite you to read the documentation about the draw statement to know more about.
 
 ```
@@ -137,7 +145,7 @@ Now there is only one thing missing to display our agent: we have to instantiate
 
 ## Instantiate an agent
 
-As already said quickly in the last session, the instantiation of the agents is most often in the init scope of the global species (this is not mandatory of course. You can instantiate your agents from an action / behavior of any specie). Use the statement create to instantiate an agent. 
+As already said quickly in the last session, the instantiation of the agents is most often in the init scope of the global species (this is not mandatory of course. You can instantiate your agents from an action / behavior of any specie). Use the statement `create` to instantiate an agent. 
 The facet species is used to specify which species you want to instantiate. 
 The facet number is used to tell how many instantiation you want. 
 The facet with is used to specify some default values for some attributes of your instance. For example, you can specify the location.
