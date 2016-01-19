@@ -43,6 +43,6 @@ It is however possible to make experiments run directly once launched, without r
 
 It is possible in GAMA to run several simulations. Each simulation will be launched with the same seed (which means that if the parameters are the same, then the result will be exactly the same). All those simulations are synchronized in the same cycle.
 
-To run several experiments, you have to [write it directly in your model](LaunchSeveralGUISimulations).
+To run several experiments, you have to [write it directly in your model](LaunchSeveralSimulations).
 
 ![images/run_several_simulations.png](resources/images/runningExperiments/run_several_simulations.png)
