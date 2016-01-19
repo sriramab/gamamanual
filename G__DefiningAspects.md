@@ -30,7 +30,7 @@ Several facets can be added:
 * **size**: float, size of the text/icon (not use in the context of the drawing of a geometry).
 * **at**: point, location where the shape/text/icon is drawn.
 * **rotate**: int, orientation of the shape/text/icon.
-* **depth**: float, optional (only works if the type of the display is opengl). Add a depth to the geometry previously defined (a point becomes a sphere, a line becomes a plan, a circle becomes a cylinder, a square becomes a cube,a polygon becomes a polyhedron with depth equal to the z value). Note: This only works if the agent geometry is not a point.
+* **depth**: float, optional (only works if the type of the display is opengl). Add a depth to the geometry previously defined (a point becomes a sphere, a line becomes a plan, a circle becomes a cylinder, a square becomes a cube,a polygon becomes a polyhedron with depth equal to the z value). If the geometry is defined clockwise, the depth will have a positive z; if it is not the case the depth will have a negative z. Note: This only works if the agent geometry is not a point. 
 * **border**: rgb, optional, the color to use to display the envelope of the geometry.
 
 For example, the following model defines three aspects for the agent: one named "info", another named "icon" and the last one named "default".
