@@ -66,6 +66,17 @@ All those built-in attributes are attributes of an agent (an instantiation of a 
 name_of_your_species.attribute_you_want
 ```
 
+Notice that the world agent is also an agent ! It has all the built-in attributes declared above. The world agent is defined inside the `global` scope. From the `global` scope then, you can for example access to the center of the envelop of the world shape :
+
+```
+global
+{
+    init {
+    	write location; // writes {50.0,50.0,0.0}
+    }
+}
+```
+
 Here is the list of those attributes:
 
 * **name** (type: string) returns the name of your species
