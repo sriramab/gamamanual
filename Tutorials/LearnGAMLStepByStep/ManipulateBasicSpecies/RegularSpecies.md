@@ -44,7 +44,7 @@ species my_specie {
 As for the global species, some attributes exist already by default in a regular species. Here is the list of built-in attributes:
 
 * **name** (type: string) is used to name your agent. By default, the name is equal to the name of your species + an incremental number. This name is the one visible on the species inspector.
-* **location** (type: point) is used to control the position of your agent. 
+* **location** (type: point) is used to control the position of your agent. It refers to the center of the envelop of the shape associated to the agent.
 * **shape** (type: geometry) is used to describe the geometry of your agent. If you want to use some intersection operator between agents for instance, it is this geometry that is computed (nb : it can be totally different from the aspect you want to display for your agent !). By default, the shape is a point.
 * **host** (type: agent) is used when your agent is part of another agent. We will see this concept a bit further, in the topic multi-level architecture (TODO_URL).
 
