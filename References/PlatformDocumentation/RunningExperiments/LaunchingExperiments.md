@@ -12,7 +12,7 @@ GAMA supports multiple ways of launching experiments from within the Modeling Pe
 	* [From an Editor](#from-an-editor)
 	* [From the Navigator](#from-the-navigator)
 	* [Running Experiments Automatically](#running-experiments-automatically)
-
+	* [Running Several Simulations](#running-several-simulations)
 
 
 
@@ -38,3 +38,11 @@ Once an experiment has been launched (unless it is run in [headless](Headless) m
 It is however possible to make experiments run directly once launched, without requiring any intervention from the user.  To install this feature, [open the preferences of GAMA](Preferences). On the first tab, simply check "Auto-run experiments when they are launched" (which is unchecked by default) and hit "OK" to dismiss the dialog. Next time you'll launch an experiment, it will run automatically (this option also applies to experiments launched from the command line).
 
 ![images/prefs_auto_run.png](resources/images/runningExperiments/prefs_auto_run.png)
+
+## Running Several Simulations
+
+It is possible in GAMA to run several simulations. Each simulation will be launched with the same seed (which means that if the parameters are the same, then the result will be exactly the same). All those simulations are synchronized in the same cycle.
+
+To run several experiments, you have to [write it directly in your model](LaunchSeveralGUISimulations).
+
+![images/run_several_simulations.png](resources/images/runningExperiments/run_several_simulations.png)
