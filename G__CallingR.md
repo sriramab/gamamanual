@@ -80,7 +80,7 @@ global {
 Using **R\_compute(String RFile)** operator. This operator DOESN’T ALLOW to add any parameters form the GAML code. All inputs is directly added into the R codes.
 **Remarks**: Don’t let any white lines at the end of R codes. **R\_compute** will return the last variable of R file, this parameter can be a basic type or a list.  Please ensure that the called packages must be installed before using.
 
-#### Example 2
+#### Example 2 
 ```
 model CallingR
 
@@ -94,7 +94,21 @@ global
 	}
 }
 ```
+This syntax is deprecated, use R_file instead of R_compute:
 
+```
+model CallingR
+
+global
+{
+	file result;
+
+	init{
+		result <- R_file("C:/YourPath/Correlation.R");
+		write result.contents;
+	}
+}
+```
 #### Correlation.R file
 ```
 x <- c(1, 2, 3)
