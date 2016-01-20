@@ -26,11 +26,13 @@ negation:!
 parent:inheritance
 print:write
 printf:write
+propagation:diffusion
 polymorphism:inheritance
 ponderation:graph_weight
 position:agent_location
 power:^
 procedure:action
+screenshot:autosave
 sinus:sin
 shape:geometry
 smaller:<
