@@ -94,7 +94,7 @@ global
 	}
 }
 ```
-This syntax is deprecated, use R_file instead of R_compute:
+Above syntax is deprecated, use following syntax with R_file instead of R_compute:
 
 ```
 model CallingR
