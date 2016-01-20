@@ -27,3 +27,4 @@ gives examples
 * Error view
 * BDI control architecture for agents
 * language: file management, new operators, new statements, new skills(?), new built-in variables, 
+* status statement (to manipulate the status line from GAML)
