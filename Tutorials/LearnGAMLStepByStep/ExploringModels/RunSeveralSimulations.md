@@ -86,7 +86,81 @@ experiment my_experiment type:gui  {
 }
 ```
 
-You may ask, what is the purpose of such a thing ? Well, with such a short model, it is not very interestring, for sure. But you can imagine running a simulation, and if the simulation reaches a certain state, it can be closed, and another simulation can be run instead with different parameters.
+You may ask, what is the purpose of such a thing ? Well, with such a short model, it is not very interestring, for sure. But you can imagine running a simulation, and if the simulation reaches a certain state, it can be closed, and another simulation can be run instead with different parameters (a simulation can be closed by doing a "do die" on itself). You can also imagine to run two simulations, and to communicate from one to an other through the experiment, as it is shown in this easy model, where agents can move from one simulation to another :
+
+![resources/images/exploringModel/change_world.png](resources/images/exploringModel/change_world.png)
+
+```
+model smallWorld
+
+global {
+	int grid_size <- 10;
+	bool modelleft <- true;
+	int id<- 0;
+	int nb_agents <- 50;
+	
+	init {
+		create people number: nb_agents {
+			my_cell <- one_of(cell);
+			location <- my_cell.location;
+		}
+		if (modelleft) {
+			ask cell where (each.grid_x = (grid_size - 1))  {
+				color <- #red;	
+			}
+		} else {
+			ask cell where (each.grid_x = 0)  {
+				color <- #red;	
+			}
+		}
+	}
+	
+	action changeWorld(rgb color, point loc) {
+		create people with:[color::color, location::loc] {
+			my_cell <- cell(location);
+		}
+	}
+}
+
+species people {
+	rgb color <- rnd_color(255);
+	cell my_cell;
+
+	reflex move {
+		if (modelleft and my_cell.color = #red) {
+			ask smallWorld_model[1] {
+				do changeWorld(myself.color, {100 - myself.location.x,myself.location.y});
+		 	}
+		 	do die;
+		} else {
+			list<cell> free_cells <- list<cell> (my_cell.neighbors) where empty(people inside each);
+			if not empty(free_cells) {
+				my_cell <- one_of(free_cells);
+				location <- my_cell.location;
+			}
+		}
+		
+	} 
+	aspect default {
+		draw circle(50/grid_size) color: color;
+	}	
+}
+
+grid cell width: grid_size height: grid_size;
+
+experiment fromWorldToWorld type: gui {
+	init {
+		 create simulation with:[grid_size::20, modelleft::false, id::1, nb_agents::0];
+	}
+	
+	output {
+		display map {
+			grid cell lines: #black;
+			species people;
+		}
+	}
+}
+```
 
 ## Random seed
 
@@ -283,3 +357,48 @@ Which means :
 |  |     | 4.158355846617511     |
 
 When writing your models, you have to be aware of this behavior. Remember that each simulation has it's own random number generator.
+
+### Change the RNG
+
+The RNG (random number generator) can also be changed : `rng` is a string built-in attribute of the experiment (and also of the model). You can choose among the following rng :
+- mersenne (by default)
+- cellular
+- xor
+- java
+
+The following model shows how to run 4 simulations with the same seed but with some different RNG :
+
+```
+model multi_simulations
+
+global {
+	init {
+		create my_species number:50;
+	}
+}
+
+species my_species skills:[moving] {
+	reflex update {
+		do wander;
+	}
+	aspect base {
+		draw square(2) color:#blue;
+	}
+}
+
+experiment my_experiment type:gui  {
+	float seed <- 10.0;
+	init {
+		create simulation with:[rng::"cellular",seed::10.0];
+		create simulation with:[rng::"xor",seed::10.0];
+		create simulation with:[rng::"java",seed::10.0];
+	}
+	output {
+		display my_display {
+			species my_species aspect:base;
+			text name:rng position:{50,50};
+			text name:"coucou";
+		}
+	}
+}
+```
