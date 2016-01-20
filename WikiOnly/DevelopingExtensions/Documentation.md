@@ -231,3 +231,13 @@ The documentation generator will use information from:
 * `@skill` annotation,
 * `@vars` annotation (each var can contain a documentation in a `@doc` annotation),
 * `@doc` annotation
+
+## How to change the processor
+
+If you make some modifications in the plugin processor, you have to rebuild the .jar file associated to the processor to take in account the changes.
+Here are the several steps you have to do :
+- In the "processor" plugin, open the _plugin.xml_.
+- In exporting (from the _Overview_ tab), click on _Export Wizard_.
+- In the tab "Destination", choose processor/plugins for the directory. In the tab "Options", delete the field _Qualifier replacement_. Click "finish".
+- Right click on the folder "processor" to refresh.
+--> It's ok !
