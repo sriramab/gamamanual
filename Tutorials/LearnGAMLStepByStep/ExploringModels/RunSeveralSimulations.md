@@ -363,7 +363,6 @@ When writing your models, you have to be aware of this behavior. Remember that e
 The RNG (random number generator) can also be changed : `rng` is a string built-in attribute of the experiment (and also of the model). You can choose among the following rng :
 - mersenne (by default)
 - cellular
-- xor
 - java
 
 The following model shows how to run 4 simulations with the same seed but with some different RNG :
@@ -390,7 +389,6 @@ experiment my_experiment type:gui  {
 	float seed <- 10.0;
 	init {
 		create simulation with:[rng::"cellular",seed::10.0];
-		create simulation with:[rng::"xor",seed::10.0];
 		create simulation with:[rng::"java",seed::10.0];
 	}
 	output {
