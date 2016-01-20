@@ -22,7 +22,7 @@ Since the release of GAMA 1.7, with the new GAMA website, we have two contents:
 
 ## Requirements
 
-To generate automatically the documentation, the GAMA Git version is required. See [Install Git version](G__InstallingGitVersion) for more details.
+To generate automatically the documentation, the GAMA Git version is required. See [Install Git version](InstallingGitVersion) for more details.
 
 Among all the GAMA plugins, only one is related to documentation generation:
 * `msi.gama.documentation`: it contains some useful java scripts to help you to write a correct documentation.
@@ -79,7 +79,7 @@ If a _section_/_sub-section_ has no sub-division, then this _section_/_sub-secti
 
 ![resources/images/developpingExtension/tree_structure.png](resources/images/developpingExtension/tree_structure.png) 
 
-Notice that there is some content which is present only in the wiki (the "WikiOnly" content), some content present only in the website (the model library, most of the community content…). In fact, the wiki tree structure is determined by the file __Sidebar_, while the website tree structure is determined by the file _WebsiteTreeStructure_.
+Notice that there is some content which is present only in the wiki (the "WikiOnly" content), some content present only in the website (the model library, most of the community content…). In fact, the wiki tree structure is determined by the file _Sidebar, while the website tree structure is determined by the file _WebsiteTreeStructure_.
 
 ## Good practices when writing markdown files
 
@@ -114,7 +114,7 @@ Here is the list of metadata we use in the content files:
 #### keyword
 
 The value of the keyword has to have this structure : keyword_category_keyword_name (indeed, several keywords can have the same name ! The type of the keyword has to be specified).
-Here is the list of the several keyword categories : concept, operator, statement, architecture, type, constant and skill.
+Here is the list of the several keyword categories : concept, operator, statement, species, architecture, type, constant and skill.
 Example of metadata : `[//]: # (keyword|concept_3D)`, or `[//]: # (keyword|operator_int)`.
 
 #### startConcept/endConcept
@@ -132,7 +132,7 @@ _This part is not yet implemented, it is under construction._
 
 ### The gama.documentation plugin
 
-This plugin is used to [generate GAML documentation automatically in the markdown format](G__Documentation), and copy paste the content to the wiki folder.
+This plugin is used to [generate GAML documentation automatically in the markdown format](Documentation), and copy paste the content to the wiki folder.
 The plugin is also used to generate the model library in the markdown format, with the source code, a quick description, and an image (screenshot). In the same time, the plugin generates a html page (an "abstract") and put it directly in the model folder (in order to be loaded directly from GAMA).
 
 ### The gama.wiki repository
@@ -155,10 +155,10 @@ This repository contains:
 #### Keyword
 
 A **keyword** is a keyword that can be used for search, either manually (the user enters the wanted keyword in the searchbar of the website) or automatically (through the search tab in the navigation panel)
-A keyword in attached with a category (among the following names : concept, type, operator, statement, architecture, constant, action, attribute, skill, facet).
+A keyword in attached with a category (among the following names : concept, type, operator, statement, species, architecture, constant, action, attribute, skill, facet).
 --> A keyword that is a _concept_ can be linked with other keywords (ex : the keyword "BDI" will be linked with the keywords "eval_when", "get_priority"...)
---> A keyword that is a _facet_ is linked to a _statement_ keyword (ex : the keyword "torus" will be linked with the keyword "global").
---> A keyword that is an _action_ or an _attribute_ is linked either to a _skill_ keyword (if it is actually an action or an attribute of a skill), an _architecture_ keyword (if it is an action or a behavior of an architecture) or to a _statement_ keyword (if it is a built-in action or attribute).
+--> A keyword that is a _facet_ is linked to a _statement_ or a _species_ keyword (ex : the keyword "torus" will be linked with the keyword "global").
+--> A keyword that is an _action_ or an _attribute_ is linked either to a _skill_ keyword (if it is actually an action or an attribute of a skill), an _architecture_ keyword (if it is an action or a behavior of an architecture), to a _species_ keyword (if it is a built-in action or attribute).
 --> A keyword that is a _statement_ can be linked to an _architecture_ keyword.
 
 A keyword is composed of:
@@ -198,7 +198,7 @@ The tables **webpage** and **keyword** are linked through an association table. 
 
 ![resources/images/developpingExtension/webpage_table.png](resources/images/developpingExtension/webpage_table.png)
 
-Note that only the keywords which have the category _concept_, _type_, _operator_, _skill_ and _constant_ can be attached to a webpage. 
+Note that only the keywords which have the category _concept_, _species_, _type_, _operator_, _skill_ and _constant_ can be attached to a webpage. 
 The keywords which have the category _action_, _attribute_ and _facet_ forward to the attached keyword.
 The keywords which have the category _statement_ are attached to a webpage only if they are not attached to another keyword. If they are attached to another keyword (an _architecture_ keyword), then the _statement_ keyword forward to the attached keyword.
 
@@ -229,7 +229,7 @@ The file **catagory.txt** is a very simple file, listing the different keyword c
 
 Format of the file:
 ```
-concept, type, statement, architecture, operator, skill, constant, action, attribute, facet
+concept, type, statement, species, architecture, operator, skill, constant, action, attribute, facet
 ```
 
 The file **keyword.xml** is an xml file that contains all the possible keywords (all except some keywords written manually directly in the documentation pages). The GAML words can be found directly using the code of GAMA. The concept words can be found using the code of GAMA (thanks to the tag "catagory") and also by using the tags in the header of the model files. This xml file will be used to build the **Keyword** and the **AssociationKeywordCatagory** tables.
