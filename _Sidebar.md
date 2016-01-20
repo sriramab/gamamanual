@@ -53,7 +53,7 @@
   6. [Defining Export files](DefiningExportFiles)
   7. [Defining User Interaction](DefiningUserInteraction)
 6. [Exploring Models](ExploringModels)
-  1. [Run Several Experiments](RunSeveralSimulations)
+  1. [Run Several Simulations](RunSeveralSimulations)
   2. [Batch Experiments](BatchExperiments)
   3. [Parameters Space](ParameterSpace)
   4. [Exploration Methods](ExplorationMethods)
