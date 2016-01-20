@@ -76,7 +76,6 @@
 9. [Manipulate dates](ManipulateDates)
 10. [FAQ](FAQ)
 11. [Known Issues](KnownIssues)
-12. [Changes from 1.61 and 1.7](NewVersionChanges)
 
 ## [GAML References](GamlReference)
 1. [Built-in Species](BuiltInSpecies)
@@ -120,6 +119,7 @@
 12. [Creating a release of GAMA](CreatingAReleaseOfGama)
 12. [Documentation generation](Documentation)
 13. [Website generation](WebsiteGeneration)
+14. [Changes from 1.61 and 1.7](NewVersionChanges)
 
 ## [Scientific References](References)
 
