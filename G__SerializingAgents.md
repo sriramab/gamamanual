@@ -24,3 +24,21 @@ experiment toto {
 	}
 }
 ```
+
+
+## Syntax in GAML
+
+How to make it as simple as possible for the modeler to save and restore simulation states, or come back in time ?
+(like the creation of new simulations, for instance, which reuses exactly the same syntax than the creation of agents) ? 
+
+### Statements
+
+`store` (to differentiate it from `save`) ?
+* `to: ` a file 
+
+`restore` with facets that could allow to precise:
+* `at:` a cycle number (to come back at a certain point in time)
+* `at: ` a negative number (to come back relatively in time)
+* `at: ` a date ? 
+* `from:` a file
+* `
