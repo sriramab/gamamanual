@@ -157,17 +157,15 @@ This repository contains:
 A **keyword** is a keyword that can be used for search, either manually (the user enters the wanted keyword in the searchbar of the website) or automatically (through the search tab in the navigation panel)
 A keyword in attached with a category (among the following names : concept, type, operator, statement, species, architecture, constant, action, attribute, skill, facet).
 
---> A keyword that is a _concept_ can be linked with other keywords (ex : the keyword "BDI" will be linked with the keywords "eval_when", "get_priority"...)
-
---> A keyword that is a _facet_ is linked to a _statement_ or a _species_ keyword (ex : the keyword "torus" will be linked with the keyword "global").
-
---> A keyword that is an _action_ or an _attribute_ is linked either to a _skill_ keyword (if it is actually an action or an attribute of a skill), an _architecture_ keyword (if it is an action or a behavior of an architecture), to a _species_ keyword (if it is a built-in action or attribute).
---> A keyword that is a _statement_ can be linked to an _architecture_ keyword.
+* A keyword that is a **_concept_** can be linked with other keywords (ex : the keyword "BDI" will be linked with the keywords "eval_when", "get_priority"...)
+* A keyword that is a **_facet_** is linked to a **_statement_** or a **_species_** keyword (ex : the keyword "torus" will be linked with the keyword "global").
+* A keyword that is an **_action_** or an **_attribute_** is linked either to a **_skill_** keyword (if it is actually an action or an attribute of a skill), an **_architecture_** keyword (if it is an action or a behavior of an architecture), or a **_species_** keyword (if it is a built-in action or attribute).
+* A keyword that is a **_statement_** can be linked to an **_architecture_**.
 
 A keyword is composed of:
 * **id** (unique id)
 * **name** (the word which is searched by the user)
-* **idCatagory** (id of the category)
+* **idCategory** (id of the category)
 
 A cagegory is composed of:
 * **id** (unique id)
@@ -230,14 +228,14 @@ The database is loaded from a gathering of independent files. Some of those file
 
 As explained in the explication of the [documentation generation pages](Documentation), the documentation generation script is used to generate the gaml references and the model library pages (in the markdown format with metadatas), but also to build two files **category.txt** and **keyword.xml**.
 
-The file **catagory.txt** is a very simple file, listing the different keyword categories. This file will be used to build the **Catagory** table.
+The file **category.txt** is a very simple file, listing the different keyword categories. This file will be used to build the **Category** table.
 
 Format of the file:
 ```
 concept, type, statement, species, architecture, operator, skill, constant, action, attribute, facet
 ```
 
-The file **keyword.xml** is an xml file that contains all the possible keywords (all except some keywords written manually directly in the documentation pages). The GAML words can be found directly using the code of GAMA. The concept words can be found using the code of GAMA (thanks to the tag "catagory") and also by using the tags in the header of the model files. This xml file will be used to build the **Keyword** and the **AssociationKeywordCatagory** tables.
+The file **keyword.xml** is an xml file that contains all the possible keywords (all except some keywords written manually directly in the documentation pages). The GAML words can be found directly using the code of GAMA. The concept words can be found using the code of GAMA (thanks to the tag "category") and also by using the tags in the header of the model files. This xml file will be used to build the **Keyword** and the **AssociationKeywordCategory** tables.
 
 Format of the file:
 ```
@@ -293,6 +291,5 @@ The **Keyword** and **AssociationKeywordCategory** tables are loaded from the **
 
 The markdown files are converted one by one into html format.
 
---> When a metadata **startConcept**/**endConcept** is found (syntax : [//]: # (beginAnchor|name_of_learning_concept)), the metadata is replaced with an anchor in the page (with an unique id), and the **AssociationWebpageConcept** table is updated.
-
---> When a metadata **keyword** is found (syntax :  [//]: # (keyword|name_of_keyword_category_name_of_keyword)), the metadata is replaced with an anchor in the page (with an unique id), and the **AssociationWebpageKeyword** table is updated (the **Keyword** and **AssociationKeywordCategory** are updated if the keyword does not exist yet in the table).
+* When a metadata **startConcept**/**endConcept** is found (syntax : [//]: # (beginAnchor|name_of_learning_concept)), the metadata is replaced with an anchor in the page (with an unique id), and the **AssociationWebpageConcept** table is updated.
+* When a metadata **keyword** is found (syntax :  [//]: # (keyword|name_of_keyword_category_name_of_keyword)), the metadata is replaced with an anchor in the page (with an unique id), and the **AssociationWebpageKeyword** table is updated (the **Keyword** and **AssociationKeywordCategory** are updated if the keyword does not exist yet in the table).
