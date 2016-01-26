@@ -156,8 +156,11 @@ This repository contains:
 
 A **keyword** is a keyword that can be used for search, either manually (the user enters the wanted keyword in the searchbar of the website) or automatically (through the search tab in the navigation panel)
 A keyword in attached with a category (among the following names : concept, type, operator, statement, species, architecture, constant, action, attribute, skill, facet).
+
 --> A keyword that is a _concept_ can be linked with other keywords (ex : the keyword "BDI" will be linked with the keywords "eval_when", "get_priority"...)
+
 --> A keyword that is a _facet_ is linked to a _statement_ or a _species_ keyword (ex : the keyword "torus" will be linked with the keyword "global").
+
 --> A keyword that is an _action_ or an _attribute_ is linked either to a _skill_ keyword (if it is actually an action or an attribute of a skill), an _architecture_ keyword (if it is an action or a behavior of an architecture), to a _species_ keyword (if it is a built-in action or attribute).
 --> A keyword that is a _statement_ can be linked to an _architecture_ keyword.
 
@@ -199,7 +202,9 @@ The tables **webpage** and **keyword** are linked through an association table. 
 ![resources/images/developpingExtension/webpage_table.png](resources/images/developpingExtension/webpage_table.png)
 
 Note that only the keywords which have the category _concept_, _species_, _type_, _operator_, _skill_ and _constant_ can be attached to a webpage. 
+
 The keywords which have the category _action_, _attribute_ and _facet_ forward to the attached keyword.
+
 The keywords which have the category _statement_ are attached to a webpage only if they are not attached to another keyword. If they are attached to another keyword (an _architecture_ keyword), then the _statement_ keyword forward to the attached keyword.
 
 #### LearningConcept
@@ -248,6 +253,7 @@ Format of the file:
 
 Note that:
 --> The list associatedKeywordList contains only one element for the _facet_ keywords, one of no element for the _action_ or _attribute_ keywords (none when the action/attribute is a built-in), several or no elements for the _concept_ keywords, and none for the other type of keywords.
+
 --> The id is build with the value of the attribute "name" and with the value of the attribute "category" for every keywords except the _statement_, _facet_, _action_ and _attribute_ keywords, which need also the value of the associatedKeyword linked. Ex : the id of the facet "torus" will be "facet_torus_statement_global".
 
 #### Preparation of the repository before the generation of the database
@@ -286,5 +292,7 @@ The **Category**, **Alias**, **LearningConcept** and **AssociationLearningConcep
 The **Keyword** and **AssociationKeywordCategory** tables are loaded from the **keyword.xml** file. Note that those two tables are not entirely loaded yet, because other keywords can be presents in the header of other files.
 
 The markdown files are converted one by one into html format.
+
 --> When a metadata **startConcept**/**endConcept** is found (syntax : [//]: # (beginAnchor|name_of_learning_concept)), the metadata is replaced with an anchor in the page (with an unique id), and the **AssociationWebpageConcept** table is updated.
+
 --> When a metadata **keyword** is found (syntax :  [//]: # (keyword|name_of_keyword_category_name_of_keyword)), the metadata is replaced with an anchor in the page (with an unique id), and the **AssociationWebpageKeyword** table is updated (the **Keyword** and **AssociationKeywordCategory** are updated if the keyword does not exist yet in the table).
