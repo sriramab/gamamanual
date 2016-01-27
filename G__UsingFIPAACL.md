@@ -2,7 +2,7 @@
 # Using FIPA ACL
 
 
-The communicating skill offers some actions and built-in variables which enable agents to communicate with each other using the FIPA interaction protocol. This document describes the built-in variables and actions of this skill. Examples are found in the models library bundle with GAMA.
+The communicating skill offers some actions and built-in variables which enable agents to communicate with each other using the FIPA interaction protocol. This document describes the built-in variables and actions of this skill. Examples are found in the models library bundled with GAMA.
 
 ##Variables
 
