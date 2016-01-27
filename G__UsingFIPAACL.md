@@ -5,8 +5,8 @@
 The communicating skill offers some actions and built-in variables which enable agent to communicate with each other using the FIPA interaction protocol. This document describes the built-in variables and actions of this skill. Examples are found in the models library bundle with GAMA.
 
 ##Variables
-##accept_proposals (list):## A list of 'accept_proposal' performative messages of the agent's mailbox having .
-*agrees (list): A list of 'accept_proposal' performative messages.
+###accept_proposals (list):### A list of 'accept_proposal' performative messages of the agent's mailbox having .
+1 agrees (list): A list of 'accept_proposal' performative messages.
 *cancels (list): A list of 'cancel' performative messages.
 *cfps (list): A list of 'cfp' (call for proposal) performative messages.
 *conversations (list): A list containing the current conversations of agent. Ended conversations
