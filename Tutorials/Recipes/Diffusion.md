@@ -8,7 +8,7 @@ GAMA provides you the possibility to represent and simulate a diffusion through 
 * [Diffusion statement](#diffusion-statement)
 * [Diffusion with matrix](#diffusion-with-matrix)
 * [Diffusion with parameters](#diffusion-with-parameters)
-* [Other ]
+* [Further specifications for diffusion](#further-specifications-for-diffusion)
 
 ## Diffusion statement
 
@@ -71,3 +71,20 @@ experiment diffusion type: gui {
 ```
 
 This model will simulate a diffusion through a grid at each step, affecting 1 to the center cell diffusing variable value. The diffusion will be seen during the simulation through a color code, and through the elevation of the cell.
+
+## Diffusion with matrix
+
+A first way of specifying the behavior of your diffusion is using diffusion matrix. A diffusion matrix is a 2 dimension matrix `[n][m]` with `float` values, where both `n` and `m` have to be **pair values**. The most often, diffusion matrix are square matrix, but you can also declare rectangular matrix.
+
+Example of matrix:
+
+```
+matrix<float> math_diff <- matrix([
+		[1/9,1/9,1/9],
+		[1/9,1/9,1/9],
+		[1/9,1/9,1/9]]);
+```
+
+## Diffusion with parameters
+
+## Further specifications for diffusion
