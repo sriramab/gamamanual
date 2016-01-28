@@ -9,7 +9,6 @@ GAMA provides you the possibility to represent and simulate a diffusion through 
 * [Diffusion with matrix](#diffusion-with-matrix)
 * [Diffusion with parameters](#diffusion-with-parameters)
 * [Using mask](#using-mask)
-* [Diffusion and performance](#diffusion-and-performance)
 
 ## Diffusion statement
 
@@ -80,7 +79,7 @@ A first way of specifying the behavior of your diffusion is using diffusion matr
 Example of matrix:
 
 ```
-matrix<float> math_diff <- matrix([
+matrix<float> mat_diff <- matrix([
 		[1/9,1/9,1/9],
 		[1/9,1/9,1/9],
 		[1/9,1/9,1/9]]);
@@ -89,7 +88,7 @@ matrix<float> math_diff <- matrix([
 In the `diffusion` statement, you than have to specify the matrix of diffusion you want in the facet `mat_diffu`.
 
 ```
-diffusion var: phero on: cells mat_diffu:math_diff;
+diffusion var: phero on: cells mat_diffu:mat_diff;
 ```
 
 Using the facet `propagation`, you can specify if you want the value to be propagated as a _diffusion_ or as a _gratient_.
@@ -131,22 +130,22 @@ You can compute several times the propagation you want by using the facet `cycle
 Writing those two thinks are exactly equivalent (for diffusion):
 
 ```
-	matrix<float> math_diff <- matrix([
+	matrix<float> mat_diff <- matrix([
 			[1/81,2/81,3/81,2/81,1/81],
 			[2/81,4/81,6/81,4/81,2/81],
 			[3/81,6/81,1/9,6/81,3/81],
 			[2/81,4/81,6/81,4/81,2/81],
 			[1/81,2/81,3/81,2/81,1/81]]);
 	reflex diff {
-		diffusion var: phero on: cells mat_diffu:math_diff;
+		diffusion var: phero on: cells mat_diffu:mat_diff;
 ```
 ```
-	matrix<float> math_diff <- matrix([
+	matrix<float> mat_diff <- matrix([
 			[1/9,1/9,1/9],
 			[1/9,1/9,1/9],
 			[1/9,1/9,1/9]]);
 	reflex diff {
-		diffusion var: phero on: cells mat_diffu:math_diff cycle_length:2;
+		diffusion var: phero on: cells mat_diffu:mat_diff cycle_length:2;
 ```
 
 ### Executing several diffusion matrix
@@ -189,6 +188,8 @@ Note that if you declared a diffusion matrix, you cannot use those 3 facets (it 
 
 ## Using mask
 
+### Generalities
+
 If you want to propagate some values in an heterogeneous grid, you can use some mask to forbid some cells to propagate their values.
 
 You can pass a matrix to the facet `mask`. All the values smaller than `-1` will not propagate, and all the values greater or equal to `-1` will propagate.
@@ -199,6 +200,66 @@ A simple way to use mask is by loading an image :
 
 Note that when you use the `on` facet for the `diffusion` statement, you can choose only some cells, and not every cells. In fact, when you restrain the values to be diffuse, it is exactly the same process as if you were defining a mask.
 
+![resources/images/recipes/mask_with_on_facet.png](resources/images/recipes/mask_with_on_facet.png)
+
+### Tips
+
+Masks can be used to simulate a lot of environments. Here are some ideas for your models:
+
+#### Wall blocking the diffusion
+
+If you want to simulate a wall blocking a uniform diffusion, you can declare a second diffusion matrix that will be applied only on the cells where your wall will be. This diffusion matrix will "push" the values outside from himself, but conserving the values (the sum of the values of the diffusion still have to be equal to 1) :
+
+```
+matrix<float> mat_diff <- matrix([
+			[1/9,1/9,1/9],
+			[1/9,1/9,1/9],
+			[1/9,1/9,1/9]]);
+								
+matrix<float> mat_diff_left_wall <- matrix([
+			[0.0,0.0,2/9],
+			[0.0,0.0,4/9],
+			[0.0,0.0,2/9]]);
+
+reflex diff { 
+	diffusion var: phero on: (cells where(each.grid_x>30)) mat_diffu:mat_diff;
+	diffusion var: phero on: (cells where(each.grid_x=30)) mat_diffu:mat_diff_left_wall;
+}
+```
+
+![resources/images/recipes/wall_simulation.png](resources/images/recipes/wall_simulation.png)
+
+#### Wind pushing the diffusion
+
+Let's simulate a uniform diffusion that is pushed by a wind from "north" everywhere in the grid. A wind from "west" as blowing at the top side of the grid. We will here have to build 2 matrix : one for the uniform diffusion, one for the "north" wind and one for the "west" wind. The sum of the values for the 2 matrix meant to simulate the wind will be equal to 0 (as it will be add to the diffusion matrix).
+
+```
+matrix<float> mat_diff <- matrix([
+		[1/9,1/9,1/9],
+		[1/9,1/9,1/9],
+		[1/9,1/9,1/9]]);
+								
+matrix<float> mat_wind_from_west <- matrix([
+		[-1/9,0.0,1/9],
+		[-1/9,0.0,1/9],
+		[-1/9,0.0,1/9]]);
+								
+matrix<float> mat_wind_from_north <- matrix([
+		[-1/9,-1/9,-1/9],
+		[0.0,0.0,0.0],
+		[1/9,1/9,1/9]]);
+
+reflex diff { 
+	diffusion var: phero on: cells mat_diffu:mat_diff;
+	diffusion var: phero on: cells mat_diffu:mat_wind_from_north;
+	diffusion var: phero on: (cells where (each.grid_y>=32)) mat_diffu:mat_wind_from_west;
+}
+```
+
+![resources/images/recipes/diffusion_with_wind.png](resources/images/recipes/diffusion_with_wind.png)
+
+#### Endless world
+
 Note that when your world is not a torus, it has the same effect as a _mask_, since all the values outside from the world cannot diffuse some values back :
 
 ![resources/images/recipes/uniform_diffusion_near_edge.png](resources/images/recipes/uniform_diffusion_near_edge.png)
@@ -208,20 +269,18 @@ You can "fake" the fact that your world is endless by adding a different diffusi
 ![resources/images/recipes/uniform_diffusion_near_edge_with_mask.png](resources/images/recipes/uniform_diffusion_near_edge_with_mask.png)
 
 ```
-matrix<float> math_diff <- matrix([
+matrix<float> mat_diff <- matrix([
 			[1/9,1/9,1/9],
 			[1/9,1/9,1/9],
 			[1/9,1/9,1/9]]);
 								
-matrix<float> math_diff_upper_edge <- matrix([
+matrix<float> mat_diff_upper_edge <- matrix([
 			[0.0,0.0,0.0],
 			[1/9+7/81,2/9+1/81,1/9+7/81],
 			[1/9,1/9,1/9]]);
 
 reflex diff { 
-	diffusion var: phero on: (cells where(each.grid_y>0)) mat_diffu:math_diff;
-	diffusion var: phero on: (cells where(each.grid_y=0)) mat_diffu:math_diff_upper_edge;
+	diffusion var: phero on: (cells where(each.grid_y>0)) mat_diffu:mat_diff;
+	diffusion var: phero on: (cells where(each.grid_y=0)) mat_diffu:mat_diff_upper_edge;
 }
 ```
-
-## Diffusion and performance
