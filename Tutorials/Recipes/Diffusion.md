@@ -31,7 +31,7 @@ Here is the template of code we will use for the next following part of this pag
 
 ```
 global {
-	int size <- 50;
+	int size <- 64; // the size has to be a power of 2.
   	cells selected_cells;
 
 	// Initialize the emiter cell as the cell at the center of the word
@@ -90,7 +90,7 @@ Using the facet `propagation`, you can specify if you want the value to be propa
 
 ### Diffusion matrix
 
-A _diffusion_ (the default value of the facet `propagation`) will spread the values to the neighbors cells according to the diffusion matrix, and all those values will be added together, as it is the case in the following example (with a matrix `[[1/9,1/9,1/9][1/9,1/9,1/9][1/9,1/9,1/9]]`):
+A _diffusion_ (the default value of the facet `propagation`) will spread the values to the neighbors cells according to the diffusion matrix, and all those values will be added together, as it is the case in the following example :
 
 ![resources/images/recipes/diffusion_computation.png](resources/images/recipes/diffusion_computation.png)
 
@@ -104,7 +104,17 @@ Here are some example of matrix you can use, played with the template model:
 
 ### Gradient matrix
 
+A `gradient` (use facet : `propagation:gradient`) is an other type of propagation. This time, only the larger value diffused will be chosen as the new one.
 
+![resources/images/recipes/gradient_computation.png](resources/images/recipes/gradient_computation.png)
+
+Note that unlike the _diffusion_ propagation, the sum of your matrix can be greater than 1 (and it is the case, most often !).
+
+Here are some example of matrix with gradient propagation:
+
+![resources/images/recipes/uniform_gradient.png](resources/images/recipes/uniform_gradient.png)
+
+![resources/images/recipes/irregular_gradient.png](resources/images/recipes/irregular_gradient.png)
 
 ## Diffusion with parameters
 
