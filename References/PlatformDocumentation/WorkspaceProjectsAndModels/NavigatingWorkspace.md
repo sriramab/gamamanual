@@ -70,8 +70,8 @@ Each models is presented as a node in the navigation workspace, including _Exper
 
 * **Uses node** : The node _Uses_ is present if your model uses some external resources, *and if the path to the resource is correct* (if the path to the resource is not correct, the resource will not be displayed under _Uses_)
 
-|![images/uses_non_correct_paths.png](resources/images/workspaceProjectsAndModels/uses_non_correct_paths.png)|![images/uses_correct_paths.png](resources/images/workspaceProjectsAndModels/uses_correct_paths.png)|
-|---|---|
+![images/uses_non_correct_paths.png](resources/images/workspaceProjectsAndModels/uses_non_correct_paths.png)
+![images/uses_correct_paths.png](resources/images/workspaceProjectsAndModels/uses_correct_paths.png)
 
 ## Moving Models Around
 Model files, as well as resources, or even complete projects, can be moved around between the "Models Library"/"Plugin Models" and "Users Models" categories, or within them, directly in the _Navigator_. Drag'n drop operations are supported, as well as copy and paste. For example, the model "Life.gaml", present in the "Models Library", can perfectly be copied and then pasted in a project in the "Users Model". This local copy in the workspace can then be further edited by the user without altering the original one.
