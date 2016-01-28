@@ -9,6 +9,7 @@ GAMA provides you the possibility to represent and simulate a diffusion through 
 * [Diffusion with matrix](#diffusion-with-matrix)
 * [Diffusion with parameters](#diffusion-with-parameters)
 * [Further specifications for diffusion](#further-specifications-for-diffusion)
+* [Diffusion and performance](#diffusion-and-performance)
 
 ## Diffusion statement
 
@@ -24,7 +25,7 @@ The statement to use for the diffusion is `diffusion`. It has to be used in a `g
 * `radius` (int): a diffusion radius
 * `variation` (float): an absolute decrease of intensity that occurs between each place. It should be a positive number.
 
-To write a diffusion, you first have to declare a grid, and declare a special attribute for the diffusion. You will then have to write the `diffusion` statement in an other scope (such as the `global` scope for instance), which will permit the values to be diffused at each step. There, you will specify which variable you want to diffuse (through the **`var`** facet), on which species or list of agents you want the diffusion (through the **`on`** facet), and how you want this value to be diffused (through all the other facets).
+To write a diffusion, you first have to declare a grid, and declare a special attribute for the diffusion. You will then have to write the `diffusion` statement in an other scope (such as the `global` scope for instance), which will permit the values to be diffused at each step. There, you will specify which variable you want to diffuse (through the **`var`** facet), on which species or list of agents you want the diffusion (through the **`on`** facet), and how you want this value to be diffused (through all the other facets, we will see how it works [with matrix](#diffusion-with-matrix) and [with special parameters](#diffusion-with-parameters) just after).
 
 Here is the template of code we will use for the next following part of this page:
 
@@ -85,6 +86,28 @@ matrix<float> math_diff <- matrix([
 		[1/9,1/9,1/9]]);
 ```
 
+Using the facet `propagation`, you can specify if you want the value to be propagated as a _diffusion_ or as a _gratient_.
+
+### Diffusion matrix
+
+A _diffusion_ (the default value of the facet `propagation`) will spread the values to the neighbors cells according to the diffusion matrix, and all those values will be added together, as it is the case in the following example (with a matrix `[[1/9,1/9,1/9][1/9,1/9,1/9][1/9,1/9,1/9]]`):
+
+![resources/images/recipes/diffusion_computation.png](resources/images/recipes/diffusion_computation.png)
+
+Note that the sum of all the values diffused at the next step is equal to the sum of the values that will be diffused multiply by the sum of the values of the diffusion matrix. That means that if the sum of the values of your diffusion matrix is larger than 1, the values will increase exponentially at each step. The sum of the value of a diffusion matrix is usually equal to 1.
+
+Here are some example of matrix you can use, played with the template model:
+
+![resources/images/recipes/uniform_diffusion.png](resources/images/recipes/uniform_diffusion.png)
+
+![resources/images/recipes/anisotropic_diffusion.png](resources/images/recipes/anisotropic_diffusion.png)
+
+### Gradient matrix
+
+
+
 ## Diffusion with parameters
 
 ## Further specifications for diffusion
+
+## Diffusion and performance
