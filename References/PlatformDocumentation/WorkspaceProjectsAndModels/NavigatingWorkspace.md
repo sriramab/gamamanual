@@ -60,13 +60,13 @@ Model files, although it is by no means mandatory, usually reside in a sub-folde
 
 Each models is presented as a node in the navigation workspace, including _Experiment_ buttons and/or _Requires_ node and/or _Uses_ node.
 
-[images/inspect_model.png](resources/images/workspaceProjectsAndModels/inspect_model.png)
+![images/inspect_model.png](resources/images/workspaceProjectsAndModels/inspect_model.png)
 
 * **Experiment button** : Experiment button are present if your model contains experiments (it is usually the case !). To run the corresponding experiment, just click on it. To learn more about running experiments, jump into this [section](LaunchingExperiments).
 
 * **Require node** : The node _Require_ is present if your model uses some plugins (additional or integrated by default). Each plugin is listed in this node, with a green icon if the plugin is already installed in your GAMA, and a red one if it is not the case. If the plugin you want in not installed, an error will be raised in your model. Please read about [how to install plugins](InstallingPlugins) to learn some more about it.
 
-[images/requires_plugin_not_found.png](resources/images/workspaceProjectsAndModels/requires_plugin_not_found.png)
+![images/requires_plugin_not_found.png](resources/images/workspaceProjectsAndModels/requires_plugin_not_found.png)
 
 * **Uses node** : The node _Uses_ is present if your model uses some external resources, *and if the path to the resource is correct* (if the path to the resource is not correct, the resource will not be displayed under _Uses_)
 
