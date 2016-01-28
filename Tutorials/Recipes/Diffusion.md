@@ -8,7 +8,7 @@ GAMA provides you the possibility to represent and simulate a diffusion through 
 * [Diffusion statement](#diffusion-statement)
 * [Diffusion with matrix](#diffusion-with-matrix)
 * [Diffusion with parameters](#diffusion-with-parameters)
-* [Further specifications for diffusion](#further-specifications-for-diffusion)
+* [Using mask](#using-mask)
 * [Diffusion and performance](#diffusion-and-performance)
 
 ## Diffusion statement
@@ -21,9 +21,9 @@ The statement to use for the diffusion is `diffusion`. It has to be used in a `g
 * `mat_diffu` (matrix): the diffusion matrix.
 * `mask` (matrix): a matrix masking the diffusion (matrix created from a image for example). The cells corresponding to the values smaller than "-1" in the mask matrix will not diffuse, and the other will diffuse.
 * `method` takes values in: {convolution, dot_product}: the diffusion method
-* `proportion` (float): a diffusion rate
-* `radius` (int): a diffusion radius
-* `variation` (float): an absolute decrease of intensity that occurs between each place. It should be a positive number.
+* `proportion` (float): a diffusion rate (the default value is 1.0)
+* `radius` (int): a diffusion radius (the default value is 1)
+* `variation` (float): an absolute decrease of intensity that occurs between each place. It should be a positive number. (the default value is 1.0)
 
 To write a diffusion, you first have to declare a grid, and declare a special attribute for the diffusion. You will then have to write the `diffusion` statement in an other scope (such as the `global` scope for instance), which will permit the values to be diffused at each step. There, you will specify which variable you want to diffuse (through the **`var`** facet), on which species or list of agents you want the diffusion (through the **`on`** facet), and how you want this value to be diffused (through all the other facets, we will see how it works [with matrix](#diffusion-with-matrix) and [with special parameters](#diffusion-with-parameters) just after).
 
@@ -86,6 +86,12 @@ matrix<float> math_diff <- matrix([
 		[1/9,1/9,1/9]]);
 ```
 
+In the `diffusion` statement, you than have to specify the matrix of diffusion you want in the facet `mat_diffu`.
+
+```
+diffusion var: phero on: cells mat_diffu:math_diff;
+```
+
 Using the facet `propagation`, you can specify if you want the value to be propagated as a _diffusion_ or as a _gratient_.
 
 ### Diffusion matrix
@@ -116,8 +122,63 @@ Here are some example of matrix with gradient propagation:
 
 ![resources/images/recipes/irregular_gradient.png](resources/images/recipes/irregular_gradient.png)
 
+### Compute several propagations at the same step
+
+You can compute several times the propagation you want by using the facet `cycle_length`. GAMA will compute for you the corresponding new matrix, and will apply it.
+
+![resources/images/recipes/cycle_length.png](resources/images/recipes/cycle_length.png)
+
+Writing those two thinks are exactly equivalent (for diffusion):
+
+```
+	matrix<float> math_diff <- matrix([
+			[1/81,2/81,3/81,2/81,1/81],
+			[2/81,4/81,6/81,4/81,2/81],
+			[3/81,6/81,1/9,6/81,3/81],
+			[2/81,4/81,6/81,4/81,2/81],
+			[1/81,2/81,3/81,2/81,1/81]]);
+	reflex diff {
+		diffusion var: phero on: cells mat_diffu:math_diff;
+```
+```
+	matrix<float> math_diff <- matrix([
+			[1/9,1/9,1/9],
+			[1/9,1/9,1/9],
+			[1/9,1/9,1/9]]);
+	reflex diff {
+		diffusion var: phero on: cells mat_diffu:math_diff cycle_length:2;
+```
+
 ## Diffusion with parameters
 
-## Further specifications for diffusion
+Sometimes writing diffusion matrix is not exactly what you want, and you may prefer to just give some parameters to compute the correct diffusion matrix. You can use the following facets in order to do that : `propagation`, `variation` and `radius`.
+
+Depending on which `propagation` you choose, and how many neighbors your grid have, the propagation matrix will be compute differently. The propagation matrix will have the size (
+
+Let's note **P** for the propagation value, **V** for the variation, **R** for the range and **N** for the number of neighbors.
+
+* **With diffusion propagation**
+
+For diffusion propagation, we compute following the following steps:
+
+(1) We determine the "minimale" matrix according to N (if N = 8, the matrix will be `[[P/9,P/9,P/9][P/9,1/9,P/9][P/9,P/9,P/9]]`. if N = 4, the matrix will be `[[0,P/5,0][P/5,1/5,P/5][0,P/5,0]]`).
+(2) If R != 1, we propagate the matrix R times to obtain a `[2*R+1][2*R+1]` matrix (same computation as for `cycle_length`).
+(3) If V != 0, we substract each value by V*DistanceFromCenter (DistanceFromCenter depends on N).
+
+Ex with the default values (P=1, R=1, V=0, N=8):
+
+![resources/images/recipes/diffusion_computation_from_parameters.png](resources/images/recipes/diffusion_computation_from_parameters.png)
+
+* **With gradient propagation**
+
+The value of each cell will be equal to **P/POW(N,DistanceFromCenter)-DistanceFromCenter*V**. (DistanceFromCenter depends on N).
+
+Ex with R=2, other parameters default values (R=2, P=1, V=0, N=8):
+
+![resources/images/recipes/gradient_computation_from_parameters.png](resources/images/recipes/gradient_computation_from_parameters.png)
+
+Note that if you declared a diffusion matrix, you cannot use those 3 facets (it will raise a warning). Note also that if you use parameters, you will only have uniform matrix.
+
+## Using mask
 
 ## Diffusion and performance
