@@ -149,11 +149,19 @@ Writing those two thinks are exactly equivalent (for diffusion):
 		diffusion var: phero on: cells mat_diffu:math_diff cycle_length:2;
 ```
 
+### Executing several diffusion matrix
+
+If you execute several times the statement `diffusion` with different matrix on the same variable, their values will be added (and centered if their dimension is not equal).
+
+Thus, the following 3 matrix will be combined to create one unique matrix:
+
+![resources/images/recipes/addition_matrix.png](resources/images/recipes/addition_matrix.png)
+
 ## Diffusion with parameters
 
 Sometimes writing diffusion matrix is not exactly what you want, and you may prefer to just give some parameters to compute the correct diffusion matrix. You can use the following facets in order to do that : `propagation`, `variation` and `radius`.
 
-Depending on which `propagation` you choose, and how many neighbors your grid have, the propagation matrix will be compute differently. The propagation matrix will have the size (
+Depending on which `propagation` you choose, and how many neighbors your grid have, the propagation matrix will be compute differently. The propagation matrix will have the size : range*2+1.
 
 Let's note **P** for the propagation value, **V** for the variation, **R** for the range and **N** for the number of neighbors.
 
@@ -162,12 +170,12 @@ Let's note **P** for the propagation value, **V** for the variation, **R** for t
 For diffusion propagation, we compute following the following steps:
 
 (1) We determine the "minimale" matrix according to N (if N = 8, the matrix will be `[[P/9,P/9,P/9][P/9,1/9,P/9][P/9,P/9,P/9]]`. if N = 4, the matrix will be `[[0,P/5,0][P/5,1/5,P/5][0,P/5,0]]`).
+
 (2) If R != 1, we propagate the matrix R times to obtain a `[2*R+1][2*R+1]` matrix (same computation as for `cycle_length`).
+
 (3) If V != 0, we substract each value by V*DistanceFromCenter (DistanceFromCenter depends on N).
 
 Ex with the default values (P=1, R=1, V=0, N=8):
-
-![resources/images/recipes/diffusion_computation_from_parameters.png](resources/images/recipes/diffusion_computation_from_parameters.png)
 
 * **With gradient propagation**
 
@@ -180,5 +188,40 @@ Ex with R=2, other parameters default values (R=2, P=1, V=0, N=8):
 Note that if you declared a diffusion matrix, you cannot use those 3 facets (it will raise a warning). Note also that if you use parameters, you will only have uniform matrix.
 
 ## Using mask
+
+If you want to propagate some values in an heterogeneous grid, you can use some mask to forbid some cells to propagate their values.
+
+You can pass a matrix to the facet `mask`. All the values smaller than `-1` will not propagate, and all the values greater or equal to `-1` will propagate.
+
+A simple way to use mask is by loading an image :
+
+![resources/images/recipes/simple_mask.png](resources/images/recipes/simple_mask.png)
+
+Note that when you use the `on` facet for the `diffusion` statement, you can choose only some cells, and not every cells. In fact, when you restrain the values to be diffuse, it is exactly the same process as if you were defining a mask.
+
+Note that when your world is not a torus, it has the same effect as a _mask_, since all the values outside from the world cannot diffuse some values back :
+
+![resources/images/recipes/uniform_diffusion_near_edge.png](resources/images/recipes/uniform_diffusion_near_edge.png)
+
+You can "fake" the fact that your world is endless by adding a different diffusion for the cells with `grid_x=0` to have almost the same result :
+
+![resources/images/recipes/uniform_diffusion_near_edge_with_mask.png](resources/images/recipes/uniform_diffusion_near_edge_with_mask.png)
+
+```
+matrix<float> math_diff <- matrix([
+			[1/9,1/9,1/9],
+			[1/9,1/9,1/9],
+			[1/9,1/9,1/9]]);
+								
+matrix<float> math_diff_upper_edge <- matrix([
+			[0.0,0.0,0.0],
+			[1/9+7/81,2/9+1/81,1/9+7/81],
+			[1/9,1/9,1/9]]);
+
+reflex diff { 
+	diffusion var: phero on: (cells where(each.grid_y>0)) mat_diffu:math_diff;
+	diffusion var: phero on: (cells where(each.grid_y=0)) mat_diffu:math_diff_upper_edge;
+}
+```
 
 ## Diffusion and performance
