@@ -11,11 +11,10 @@ This conceptual structure is respected in the definition of model files, which f
 
 ## Table of contents 
 
-* [Organization of a model](#organization-of-a-model-under-construction)
-	* [Model Header (model species)](#model-header-model-species)
-	* [Species declarations](#species-declarations)
-	* [Experiment declarations](#experiment-declarations)
-	* [Basic skeleton of a model](#basic-skeleton-of_a_model)
+* [Model Header (model species)](#model-header-model-species)
+* [Species declarations](#species-declarations)
+* [Experiment declarations](#experiment-declarations)
+* [Basic skeleton of a model](#basic-skeleton-of_a_model)
 
 
 [//]: # (keyword|concept_model)
