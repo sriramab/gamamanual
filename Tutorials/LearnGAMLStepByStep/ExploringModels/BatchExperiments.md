@@ -16,11 +16,10 @@ experiment exp_title type: batch {
 
 ## Table of contents 
 
-* [Defining Batch Experiments](#defining-batch-experiments)
-	* [The batch experiment facets](#the-batch-experiment-facets)
-	* [Action _step](#action-step)
-	* [Reflexes](#reflexes)
-	* [Permanent](#permanent)
+* [The batch experiment facets](#the-batch-experiment-facets)
+* [Action _step](#action-step)
+* [Reflexes](#reflexes)
+* [Permanent](#permanent)
 
 
 
