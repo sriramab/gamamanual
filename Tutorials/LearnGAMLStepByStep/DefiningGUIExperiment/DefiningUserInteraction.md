@@ -6,11 +6,15 @@ During the simulation, GAML provides you the possibility to define some function
 
 * [Catch Mouse Event](#catch-mouse-event)
 * [Define User command](#define-user-command)
+  * [... in the GUI Experiment scope](defining-user-command-in-gui-experiment-scope)
+  * [... in global or regular species](defining-user-command-in-a-global-or-regular-species)
+  * [user_location](#user_location)
+  * [user_input](#user_input)
 * [User Control Architecture](#user-control-architecture)
 
 ## Catch Mouse Event
 
-[TODO quand corrig�]
+[TODO quand corrigé]
 
 ## Define User command
 
