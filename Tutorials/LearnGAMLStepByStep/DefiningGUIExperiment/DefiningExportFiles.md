@@ -22,4 +22,4 @@ Each time step (or according to the frequency defined in the `refresh_every` fac
 
 Optionally, a `footer` and a `header` can also be described with the corresponding facets (of type string).
 
-NB: image files can be exported also through the "autosave" facet of the display, as explained in the previous part [TODO_LINK].
+NB: image files can be exported also through the `autosave` facet of the display, as explained in [this previous part](DefiningDisplaysGeneralities#displays-and-layers).
