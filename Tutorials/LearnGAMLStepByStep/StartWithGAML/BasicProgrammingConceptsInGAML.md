@@ -6,8 +6,15 @@ We will overfly quickly all those basic programing concepts, admitting that you 
 ## Index
 	
 * [Variables](#variable)
+  * [Basic types](#basic-types)
+  * [The point type](#the-point-type)
+  * [A word about dimensions](#a-word-about-dimensions)
 * [Declare variables using facet](#declare-variables-using-facet)
 * [Operators in GAMA](#operators-in-gama)
+  * [Logical operators](#logical-operators)
+  * [Comparison operators](#comparison-operators)
+  * [Type casting operators](#type-casting-operators)
+  * [Other operators](#other-operators)
 * [Conditional structures](#conditional-structures)
 * [Loop](#loop)
 * [Manipulate containers](#manipulate-containers)
@@ -22,7 +29,7 @@ NB: The declaration has to be inside the `global` scope, or inside the `species`
 typeName myVariableName;
 ```
 
-### Basic types:
+### Basic types
 
 [//]: # (keyword|type_int)
 [//]: # (keyword|type_float)
@@ -66,7 +73,7 @@ experiment myExperiment
 The function write is overloaded for each type of variable (even for the more complex type, such as containers).
 
 [//]: # (keyword|type_point)
-### The point type:
+### The point type
 
 Another variable type you should know is the point variable. This type of variable is used to describe coordinates. It is in fact a complex variable, composed of two float variables (or three if you are working in 3D). To declare it, you have to use the curly bracket `{`:
 
@@ -91,7 +98,7 @@ write p.y; // the output will be 3.4
 ```
 
 [//]: # (keyword|concept_dimension)
-### A world about dimension:
+### A world about dimensions
 
 When manipulating float values, you can specify the dimension of your value. Dimensions are preceded by # or ° (exactly the same).
 
