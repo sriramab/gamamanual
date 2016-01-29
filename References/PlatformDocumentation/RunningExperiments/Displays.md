@@ -83,7 +83,7 @@ In addition, the bottom overlay bar provides the Camera position in 3D.
 | **MOUSE**| Makes the camera look up, down, left and right |
 | **MouseWheel**| Zoom-in/out to the current target (center of the screen)|
 
-### ArbBall camera commands
+### ArcBall camera commands
 
 | **Key** | **Function** |
 |:--------------------------|:-----------------------------------------------------------|
