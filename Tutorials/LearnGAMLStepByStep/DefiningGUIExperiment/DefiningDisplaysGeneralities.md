@@ -8,6 +8,10 @@
 * [Displays and layers](#displays-and-layers)
 * [Organize your layers](#organize-your-layers)
 * [Example of layers](#example-of-layers)
+  * [agents layer](#agents-layer)
+  * [species layer](#species-layer)
+  * [image layer](#image-layer)
+  * [text layer](#text-layer)
 
 ## Displays and layers
 
