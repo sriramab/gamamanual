@@ -69,9 +69,13 @@ Like the other attributes of the global species, global built-in attributes can 
 ### cycle
 * integer, read-only, designates the (integer) number of executions of the simulation cycles. Note that the first cycle is the cycle with number 0.
 
+To learn more about time, please read the [recipe about dates](ManipulateDates).
+
 [//]: # (keyword|concept_step)
 ### step
 * float,  is the length, in model time, of an interval between two cycles, in seconds. Its default value is 1 (second). Each turn, the value of time is incremented by the value of step. The definition of step must be coherent with that of the agents' variables like speed. The use of time unit is particularly relevant for its definition.
+
+To learn more about time, please read the [recipe about dates](ManipulateDates).
 
 ```
 global {
@@ -92,6 +96,8 @@ global {
 ...
 }
 ```
+
+To learn more about time, please read the [recipe about dates](ManipulateDates).
 
 ### duration
 * string, read-only, represents the value that is equal to the duration **in real machine time** of the last cycle.
