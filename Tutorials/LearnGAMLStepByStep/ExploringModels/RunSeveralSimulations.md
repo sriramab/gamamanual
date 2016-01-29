@@ -7,6 +7,10 @@ To explore a model, the easiest and the most intuitive way to proceed is running
 * [Create a simulation](#create-a-simulation)
 * [Manipulate simulations](#manipulate-simulations)
 * [Random seed](#random-seed)
+  * [Defining the seed from the model](#defining-the-seed-from-the-model)
+  * [Defining the seed from the experiment](#defining-the-seed-from-the-experiment)
+  * [Run several simulations with the same random numbers](#run-several-simulations-with-the-same-random-numbers)
+  * [Change the RNG](#change-the-rng)
 
 ## Create a simulation
 
@@ -164,7 +168,7 @@ experiment fromWorldToWorld type: gui {
 
 ## Random seed
 
-### Seed from your model
+### Defining the seed from the model
 
 If you run several simulations, you may want to use the same seed for each one of those simulations (to compare the influence of a certain parameter, in exactly the same conditions).
 
@@ -186,7 +190,7 @@ global {
 
 Notice that if you affect the value of your seed built-in directly in the global scope, the affectation of the parameters (for instance specified with the facet `with` of the statement `create`), and the "init" will be done after  will be done at the end. 
 
-### Seed from your experiment
+### Defining the seed from the experiment
 
 The experiment agent also have a built-in attribute `seed`. The value of this seed is defined in your [simulation preferences](Preferences#simulation). The first simulation created is created **with the seed value of the experiment**.
 
