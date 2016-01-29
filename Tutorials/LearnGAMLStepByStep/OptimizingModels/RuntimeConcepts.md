@@ -1,16 +1,15 @@
 
-# Runtime Concepts (Under Construction)
+# Runtime Concepts
 
 When a model is being simulated, a number of algorithms are applied, for instance to determine the order in which to run the different agents, or the order in which the initialization of agents is performed, etc. This section details some of them, which can be important when building models and understanding how they will be effectively simulated.
 
 
 ## Table of contents 
 
-* [Runtime Concepts (Under Construction)](#runtime-concepts-under-construction)
-	* [Simulation initialization](#simulation-initialization)
-	* [Agents Creation](#agents-creation)
-	* [Agents Step](#agents-step)
-	* [Schedule Agents](#schedule-agents)
+* [Simulation initialization](#simulation-initialization)
+* [Agents Creation](#agents-creation)
+* [Agents Step](#agents-step)
+* [Schedule Agents](#schedule-agents)
 
 
 ## Simulation initialization
