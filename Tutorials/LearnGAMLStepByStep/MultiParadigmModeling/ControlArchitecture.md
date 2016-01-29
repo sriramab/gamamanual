@@ -25,13 +25,20 @@ GAMA integrates several agent control architectures that can be used in addition
 ## Index
 
 * [Finite State Machine](#finite-state-machine)
+  * [Declaration](#declaration)
+  * [State](#state)
 * [Task Based](#task-based)
-* [User Interaction](#user-interaction)
+  * [Declaration](#declaration)
+  * [Task](#task)
+* [User Control Architecture](#user-control-architectures)
+  * [user_only, user_first, user_last](#user_only-user_first-user_last)
+  * [user_panel](#user_panel)
+  * [user_controlled](#user_controlled)
 * [Other Control Architectures](#other-control-architectures)
 
 ## Finite State Machine
 
-FSM (Finite State Machine) is a finite state machine based behavior model. During its life cycle, the agent can be in several states. At any given time step, it is in one single state. Such an agent needs to have one initial state (the state in which it will be at its initialization).
+**FSM (Finite State Machine)** is a finite state machine based behavior model. During its life cycle, the agent can be in several states. At any given time step, it is in one single state. Such an agent needs to have one initial state (the state in which it will be at its initialization).
 
 At each time step, the agent will:
 
@@ -131,7 +138,7 @@ Here a possible result that can be obtained with one dummy agent:
 
 ## Task Based
 
-GAMA integrated several task-based control architectures. Species can define any number of tasks within their body. At any given time, only one or several tasks are executed according to the architecture chosen:
+GAMA integrated several **task-based** control architectures. Species can define any number of tasks within their body. At any given time, only one or several tasks are executed according to the architecture chosen:
 
   * **weighted\_tasks** : in this architecture, only the task with the maximal weight is executed.
   * **sorted\_tasks** : in this architecture, the tasks are all executed in the order specified by their weights (biggest first)
