@@ -51,7 +51,7 @@ The optional facet `type` is used to specify the type of your inspector. 2 value
 
 The optional facet `attribute` is used to filter the attributes you want to be displayed in your inspector.
 
-**Beware** : only one agent inspector (type:agent) can be used for an experiment. Beside, you can add as many agent browser (type:table) as you want for your experiment.
+**Beware** : only one agent inspector (`type:agent`) can be used for an experiment. Beside, you can add as many agent browser (`type:table`) as you want for your experiment.
 
 Example of implementation :
 
