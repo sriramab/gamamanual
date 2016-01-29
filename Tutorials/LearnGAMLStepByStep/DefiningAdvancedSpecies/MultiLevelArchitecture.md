@@ -6,7 +6,7 @@ The multi-level architecture offers the modeler the following possibilities: the
 ## Index
 
 * [Declaration of micro-species](#declaration-of-micro-species)
-* [Access to micro-agents / host agent](#access-to-micro-agents-/-host-agent)
+* [Access to micro-agents / host agent](#access-to-micro-agents-host-agent)
 * [Representation of an entity as different types of agent](#representation-of-an-entity-as-different-types-of-agent)
 * [Dynamic migration of agents](#dynamic-migration-of-agents)
 * [Example](#example)
