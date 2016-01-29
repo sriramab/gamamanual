@@ -7,7 +7,15 @@ Using a graph species enables to easily show interaction between agents of a sam
 ## Index
 
 * [Declaration](#declaration)
+  * [Declare a graph with handmade agents](#declare-a-graph-with-handmade-agents)
+  * [Declare a graph by using a matrix file](#declare-a-graph-by-using-a-matrix-file)
+  * [Declare a graph by using an geometry file](#declare-a-graph-by-using-an-geometry-file)
+  * [Declare a graph with nodes and edges](#declare-a-graph-with-nodes-and-edges)
 * [Useful operators with graph](#useful-operators-with-graph)
+  * [Knowing the degree of a node](#knowing-the-degree-of-a-node)
+  * [Get the neighbors of a node](#get-the-neighbors-of-a-node)
+  * [Compute the shortest path](#compute-the-shortest-path)
+  * [Control the weight in graph](#control-the-weight-in-graph)
 * [Example](#example)
 
 ## Declaration
