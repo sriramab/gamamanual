@@ -12,6 +12,7 @@
   * [species layer](#species-layer)
   * [image layer](#image-layer)
   * [text layer](#text-layer)
+  * [graphics layer](#graphics-layer)
 
 ## Displays and layers
 
