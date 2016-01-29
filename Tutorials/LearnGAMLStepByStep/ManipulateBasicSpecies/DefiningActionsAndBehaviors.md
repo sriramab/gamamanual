@@ -7,6 +7,8 @@ Both actions and behaviors can be seen as methods in OOP. They can be defined in
 ## Index
 
 * [Action](#action)
+  * [Declare an action](#declare-an-action)
+  * [Call an action](#call-an-action)
 * [Behaviors](#behaviors)
 * [Example](#example)
 
@@ -68,7 +70,7 @@ We incite you to promote the second writing. To catch the returned value, you ca
 int var1 <- my_action(5,5.1);
 ```
 
-## Behaviour
+## Behavior
 
 [//]: # (keyword|statement_reflex)
 A behavior, or reflex, is an action which is called automatically at each time step by an agent.
