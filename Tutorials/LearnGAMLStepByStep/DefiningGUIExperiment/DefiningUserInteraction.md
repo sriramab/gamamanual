@@ -14,7 +14,42 @@ During the simulation, GAML provides you the possibility to define some function
 
 ## Catch Mouse Event
 
-[TODO quand corrigé]
+You can catch mouse event during the simulation using the statement `event`. This statement has 2 required facets:
+* **`name`** (identifier) : Specify which event do you want to trigger (among the following values : `mouse_down`, `mouse_down`).
+* **`action` (identifier) : Specify the name of the global action to call.
+
+```
+event mouse_down action: my_action;
+```
+
+The `event` statement has to be defined in the `experiment`/`output`/`display` scope. Once the event is triggered, the global action linked will be called. The action linked has to have 2 arguments : the location of the click (type `point`) and the list of agents which are displayed at this position.
+
+```
+global
+{
+	action my_action (point loc, list<my_species> selected_agents)
+	{
+		write "do action";
+	}
+
+}
+
+species my_species
+{
+}
+
+experiment my_experiment type: gui
+{
+	output
+	{
+		display my_display
+		{
+			species my_species;
+			event mouse_down action: my_action;
+		}
+	}
+}
+```
 
 ## Define User command
 
