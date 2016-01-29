@@ -6,13 +6,12 @@ Several batch methods are currently available. Each is described below.
 
 ## Table of contents 
 
-* [Exploration Methods](#exploration-methods)
-	* [Exhaustive exploration of the parameter space](#exhaustive-exploration-of-the-parameter-space)
-	* [Hill Climbing](#hill-climbing)
-	* [Simulated Annealing](#simulated-annealing)
-	* [Tabu Search](#tabu-search)
-	* [Reactive Tabu Search](#reactive-tabu-search)
-	* [Genetic Algorithm](#genetic-algorithm)
+* [Exhaustive exploration of the parameter space](#exhaustive-exploration-of-the-parameter-space)
+* [Hill Climbing](#hill-climbing)
+* [Simulated Annealing](#simulated-annealing)
+* [Tabu Search](#tabu-search)
+* [Reactive Tabu Search](#reactive-tabu-search)
+* [Genetic Algorithm](#genetic-algorithm)
 
 
 ## Exhaustive exploration of the parameter space
