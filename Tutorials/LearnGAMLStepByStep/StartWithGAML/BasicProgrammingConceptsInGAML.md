@@ -1,7 +1,7 @@
-# Basic programing concepts in GAML
+# Basic programming concepts in GAML
 
 In this part, we will focus on the very basic structures in GAML, such as how to declare a variable, how to use loops, or how to manipulate lists. 
-We will overfly quickly all those basic programing concepts, admitting that you already have some basics in coding.
+We will overfly quickly all those basic programming concepts, admitting that you already have some basics in coding.
 
 ## Index
 	
