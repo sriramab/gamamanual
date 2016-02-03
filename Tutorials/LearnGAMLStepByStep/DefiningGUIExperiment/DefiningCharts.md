@@ -1,3 +1,4 @@
+[//]: # (startConcept|defining_charts)
 # Defining Charts
 
 To visualize result and make analysis about you model, you will certainly have to use charts. You can define 3 types of charts in GAML: histograms, pie, and series. For each type, you will have to determine the data you want to highlight.
@@ -77,3 +78,4 @@ Quadtree ?
 3D Displays
 
 [TODO]
+[//]: # (endConcept|defining_charts)
