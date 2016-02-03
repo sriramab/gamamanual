@@ -1,3 +1,4 @@
+[//]: # (startConcept|monitors_and_inspectors)
 # Defining monitors and inspectors
 
 Other outputs can be very useful to study better the behavior of your agents.
@@ -84,3 +85,4 @@ experiment my_experiment type:gui {
 ```
 
 Another statement, `browse`, is doing a similar thing, but preferring the _table_ type (if you want to browse an agent species, the default type will be the _table_ type).
+[//]: # (endConcept|monitors_and_inspectors)
