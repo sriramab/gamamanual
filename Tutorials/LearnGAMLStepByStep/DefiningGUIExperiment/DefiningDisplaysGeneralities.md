@@ -1,3 +1,4 @@
+[//]: # (startConcept|2d_layers)
 # Defining displays (Generalities)
 [//]: # (keyword|concept_displays)
 [//]: # (keyword|concept_layers)
@@ -284,3 +285,4 @@ display my_display {
     draw "test" at: {10,10} size: 20 color: rgb("black");
   }
 ```
+[//]: # (endConcept|2d_layers)
