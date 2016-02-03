@@ -1,3 +1,4 @@
+[//]: # (startConcept|regular_species)
 # Regular species
 [//]: # (keyword|concept_species)
 
@@ -204,3 +205,4 @@ experiment my_experiment type:gui
 	}
 }
 ```
+[//]: # (endConcept|regular_species)
