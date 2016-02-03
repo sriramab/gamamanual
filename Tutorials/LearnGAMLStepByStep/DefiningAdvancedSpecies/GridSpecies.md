@@ -1,3 +1,4 @@
+[//]: # (startConcept|grid)
 # Grid Species
 [//]: # (keyword|concept_grid)
 
@@ -332,3 +333,4 @@ experiment MyExperiment type: gui {
     }
 }
 ```
+[//]: # (endConcept|grid)
