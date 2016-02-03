@@ -20,7 +20,8 @@ species B mirrors: A{
 ```
 
 In this case the species B mirrors the species A.
-By default the location of the species B will be random but in many cases, once want to place the mirror agent at the same location of the reference species. This can be achieve by simply adding the following lines in the mirror species
+
+By default the location of the species B will be random but in many cases, once want to place the mirror agent at the same location of the reference species. This can be achieve by simply adding the following lines in the mirror species : 
 
 ```
 species B mirrors: A{
@@ -28,11 +29,14 @@ species B mirrors: A{
 }
 ```
 
-In the same spirit any attribute of a reference species can be reach using the same syntax. For instance if the species A has an attribute called attribute1 of type int is is possible to get this attribute from the mirror species B using the following syntax: 
+**`target`** is a built-in attribute of a mirror species. It refers to the instance of the species tracked.
+
+In the same spirit any attribute of a reference species can be reach using the same syntax. For instance if the species A has an attribute called `attribute1` of type `int` is is possible to get this attribute from the mirror species B using the following syntax: 
 
 ```
 int value <- target.attribute1;
 ```
+[//]: # (endConcept|mirror_species)
 
 ## Example
 
@@ -75,4 +79,3 @@ experiment mirroExp type: gui {
     }
 }
 ```
-[//]: # (endConcept|mirror_species)
