@@ -263,6 +263,8 @@ experiment main type: gui{
 
 For more complicated models, you can read some other files, such as ASCII files (asc), DEM files...
 
+[//]: # (endConcept|grid)
+
 ## Example
 
 To practice a bit those notions, we will build a quick model. A "regular" species will move randomly on the environment. A grid is displayed, and its cells becomes red when an instance of the regular species is waking inside this cell, and yellow when the regular agent is in the surrounding of this cell. If no regular agent is on the surrounding, the cell turns green.
@@ -333,4 +335,3 @@ experiment MyExperiment type: gui {
     }
 }
 ```
-[//]: # (endConcept|grid)
