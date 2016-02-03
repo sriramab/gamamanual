@@ -1,3 +1,4 @@
+[//]: # (startConcept|define_parameters)
 # Defining Parameters
 
 When playing simulation, you have the possibility to define input parameters, in order to change them and replay the simulation. Defining parameters allows to make the value of a global variable definable by the user through the user graphic interface.
@@ -78,3 +79,4 @@ experiment MyExperiment type: gui {
 ```
 
 ![images/parameter3.png](resources/images/definingGUIExperiment/parameter3.png)
+[//]: # (endConcept|define_parameters)
