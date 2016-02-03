@@ -1,3 +1,4 @@
+[//]: # (startConcept|inheritance)
 # Inheritance
 [//]: # (keyword|concept_inheritance)
 
@@ -75,3 +76,4 @@ species child_species parent:virtual_mother_species {
 	}
 }
 ```
+[//]: # (endConcept|inheritance)
