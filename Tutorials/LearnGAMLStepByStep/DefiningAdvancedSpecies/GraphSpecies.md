@@ -1,3 +1,4 @@
+[//]: # (startConcept|graph)
 # Graph Species
 [//]: # (keyword|concept_graph)
 [//]: # (keyword|type_graph)
@@ -474,3 +475,4 @@ experiment MyExperiment type: gui {
 	}
 }
 ```
+[//]: # (endConcept|graph)
