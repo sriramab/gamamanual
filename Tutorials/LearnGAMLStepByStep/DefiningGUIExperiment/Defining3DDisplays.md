@@ -1,3 +1,4 @@
+[//]: # (startConcept|3d_displays)
 # Defining 3D Displays
 
 ## Table of contents 
@@ -142,3 +143,4 @@ display View1  type:opengl draw_diffuse_light:true ambient_light:(0) diffuse_lig
 ...
 }
 ```
+[//]: # (endConcept|3d_displays)
