@@ -68,14 +68,14 @@ Agents with such a skill can use additional actions (defined in the skill)
 In the actions defined in the SQLSkill, a parameter containing the connection parameters is required. It is a map with the following _key::value_ pairs:
 
 | **Key** | **Optional** | **Description** |
-|:--|:-|:-|
-| _dbtype_ | No           | DBMS type value. Its value is a string. We must use "mysql" when we want to connect to a MySQL. That is the same for "postgres", "sqlite" or "sqlserver" (ignore case sensitive) |
-| _host_  | Yes          | Host name or IP address of data server. It is absent when we work with SQlite. |
-| _port_  | Yes          | Port of connection. It is not required when we work with SQLite.|
-| _database_ | No           | Name of database. It is the file name including the path when we work with SQLite. |
-| _user_  | Yes          | Username. It is not required when we work with SQLite. |
-| _passwd_ | Yes          | Password. It is not required when we work with SQLite. |
-| srid    | Yes          | srid (Spatial Reference Identifier)  corresponds to a spatial reference system. This value is specified when GAMA connects to spatial database. If it is absent then GAMA uses spatial reference system defined in _Preferences->External_ configuration.|
+|:-------|:--------|:--------------------------------------------------------|
+| _dbtype_ | No | DBMS type value. Its value is a string. We must use "mysql" when we want to connect to a MySQL. That is the same for "postgres", "sqlite" or "sqlserver" (ignore case sensitive) |
+| _host_  | Yes | Host name or IP address of data server. It is absent when we work with SQlite. |
+| _port_  | Yes | Port of connection. It is not required when we work with SQLite.|
+| _database_ | No | Name of database. It is the file name including the path when we work with SQLite. |
+| _user_  | Yes | Username. It is not required when we work with SQLite. |
+| _passwd_ | Yes | Password. It is not required when we work with SQLite. |
+| srid    | Yes | srid (Spatial Reference Identifier)  corresponds to a spatial reference system. This value is specified when GAMA connects to spatial database. If it is absent then GAMA uses spatial reference system defined in _Preferences->External_ configuration. |
 **Table 1**: Connection parameter description
 
 
@@ -267,16 +267,18 @@ Agents with such a skill can use additional actions (defined in the skill)
 
 ### Map of connection parameters for MDX
 In the actions defined in the SQLSkill, a parameter containing the connection parameters is required. It is a map with following key::value pairs:
+
 | **Key** | **Optional** | **Description** |
-|:--|:-|:-|
-| _olaptype_ | No           | OLAP Server type value. Its value is a string. We must use "SSAS/XMLA" when we want to connect to an SQL Server Analysis Services by using XML for Analysis. That is the same for "MONDRIAN/XML" or "MONDRIAN" (ignore case sensitive)|
-| _dbtype_ | No           | DBMS type value. Its value is a string. We must use "mysql" when we want to connect to a MySQL. That is the same for "postgres" or "sqlserver" (ignore case sensitive) |
-| _host_  | No           | Host name or IP address of data server. |
-| _port_  | No           | Port of connection. It is no required when we work with SQLite. |
-| _database_ | No           | Name of database. It is file name include path when we work with SQLite. |
-| _catalog_ | Yes          | Name of catalog. It is an optional parameter. We do not need to use it when we connect to SSAS via XMLA and its file name includes the path when we connect a ROLAP database directly by using Mondrian API (see Example as below) |
-| _user_  | No           | Username.       |
-| _passwd_ | No           | Password.       |
+|:-------|:--------|:--------------------------------------------------------|
+| _olaptype_ | No | OLAP Server type value. Its value is a string. We must use "SSAS/XMLA" when we want to connect to an SQL Server Analysis Services by using XML for Analysis. That is the same for "MONDRIAN/XML" or "MONDRIAN" (ignore case sensitive) |
+| _dbtype_ | No | DBMS type value. Its value is a string. We must use "mysql" when we want to connect to a MySQL. That is the same for "postgres" or "sqlserver" (ignore case sensitive) |
+| _host_ | No | Host name or IP address of data server. |
+| _port_ | No | Port of connection. It is no required when we work with SQLite. |
+| _database_ | No | Name of database. It is file name include path when we work with SQLite. |
+| _catalog_ | Yes | Name of catalog. It is an optional parameter. We do not need to use it when we connect to SSAS via XMLA and its file name includes the path when we connect a ROLAP database directly by using Mondrian API (see Example as below) |
+| _user_  | No | Username. |
+| _passwd_ | No | Password. |
+
 **Table 2**: OLAP Connection parameter description
 
 **Example**: Definitions of OLAP connection parameter
@@ -414,7 +416,9 @@ entities {
 ```
 
 ### Connect to database
+
 **Syntax**:
+
 > _**Connect** (param: connection`_`parameter)_
 This action makes a connection to DBMS. If a connection is established then it will assign the connection object into a built-in attribute of species (conn) otherwise it throws a GamaRuntimeException.
   * **Return**: connection
@@ -422,6 +426,7 @@ This action makes a connection to DBMS. If a connection is established then it w
     * _params_: (type = map) map containing the connection parameters
   * **Exceptions**: GamaRuntimeException
 **Example**: Connect to PostgreSQL
+
 ```
 // POSTGRES connection parameter
 map <string, string>  POSTGRES <- [
@@ -434,11 +439,12 @@ map <string, string>  POSTGRES <- [
 ask agentDB {
       do connect (params: POSTGRES);
 }
-
 ```
 
 ### Check agent connected a database or not
+
 **Syntax**:
+
 > _**isConnected** (param: connection`_`parameter)_
 This action checks if an agent is connecting to database or not.
   * **Return**: Boolean.   If agent is connecting to a database then isConnected returns true; otherwise it returns false.
@@ -446,6 +452,7 @@ This action checks if an agent is connecting to database or not.
     * _params_: (type = map) map containing the connection parameters
 
 **Example**: Using action executeUpdate do sql commands (create, insert, update, delete and drop).
+
 ```
 ask agentDB {
 	if (self isConnected){
@@ -454,51 +461,58 @@ ask agentDB {
               do connect (params: POSTGRES);
         } 
 }
-
 ```
 
 ### Close the current connection
+
 **Syntax**:
+
 > _**close**_
 This action closes the current database connection of species. If species does not has a database connection then it throws a GamaRuntimeException.
   * **Return**: null
 If the current connection of species is close then the action return null value; otherwise it throws a GamaRuntimeException.
 
 **Example**:
+
 ```
 ask agentDB {
 	if (self isConnected){
 	      do close;
 	}
 }
-
 ```
 
 ### Get connection parameter
+
 **Syntax**:
+
 > _**getParameter**_
 This action returns the connection parameter of species.
   * **Return**: map < string, string >
 
 **Example**:
+
 ```
 ask agentDB {
 	if (self isConnected){
 		write “the connection parameter: ” +(self getParameter);
         }
 }
-
 ```
 
 ### Set connection parameter
+
 **Syntax**:
+
 > _**setParameter** (param: connection`_`parameter)_
 This action sets the new values for connection parameter and closes the current connection of species. If it can not close the current connection then it will throw GamaRuntimeException. If the species wants to make the connection to database with the new values then action connect must be called.
   * **Return**: null
   * **Arguments**:
     * _params_: (type = map) map containing the connection parameters
   * **Exceptions**: _GamaRuntimeException_
+
 **Example**:
+
 ```
 ask agentDB {
 	if (self isConnected){
@@ -506,13 +520,13 @@ ask agentDB {
              do connect(params: (self getParameter));
         }
 }
-
 ```
 
 ### Retrieve data from database by using AgentDB
 Because of the connection to database of AgentDB is kept alive then AgentDB can execute several SQL queries with only one connection. Hence AgentDB can do actions such as **select**, **insert**, **executeUpdate** with the same parameters of those actions of SQLSKILL _except **params** parameter is always absent_.
 
 **Examples**:
+
 ```
 map<string, string> PARAMS <- ['dbtype'::'sqlite', 'database'::'../../includes/Student.db'];
 ask agentDB {
@@ -541,10 +555,7 @@ ask agentDB {
      // Drop table
       do executeUpdate (updateComm: "DROP TABLE registration");
 }
-
 ```
-
-
 
 
 ## Using database features to define environment or create species
@@ -554,16 +565,17 @@ In Gama, we can use results of select action of SQLSKILL or AgentDB to create sp
 ### Define the boundary of the environment from database
   * **Step 1**: specify select query by declaration a map object with keys as below:
 
-| **Key** |	**Optional** | **Description** |
-|:--|:-|:-|
-| _dbtype_ | No           | DBMS type value. Its value is a string. We must use "mysql" when we want to connect to a MySQL. That is the same for "postgres", "sqlite" or "sqlserver" (ignore case sensitive) |
-| _host_  | Yes          | Host name or IP address of data server. It is absent when we work with SQlite. |
-| _port_  | Yes          | Port of connection. It is not required when we work with SQLite. |
-| _database_ | No           | Name of database. It is the file name including the path when we work with SQLite. |
-| _user_  | Yes          | Username. It is  not required when we work with SQLite. |
-| _passwd_ | Yes          | Password. It is  not required when we work with SQLite. |
-| _srid_  | Yes          | srid (Spatial Reference Identifier)  corresponds to a spatial reference system. This value is specified when GAMA connects to spatial database. If it is absent then GAMA uses spatial reference system defined in Preferences->External configuration. |
-| _select_ | No           |Selection string |
+| **Key** | **Optional** | **Description** |
+|:-------|:--------|:--------------------------------------------------------|
+| _dbtype_ | No | DBMS type value. Its value is a string. We must use "mysql" when we want to connect to a MySQL. That is the same for "postgres", "sqlite" or "sqlserver" (ignore case sensitive) |
+| _host_  | Yes | Host name or IP address of data server. It is absent when we work with SQlite. |
+| _port_  | Yes | Port of connection. It is not required when we work with SQLite. |
+| _database_ | No | Name of database. It is the file name including the path when we work with SQLite. |
+| _user_  | Yes | Username. It is  not required when we work with SQLite. |
+| _passwd_ | Yes | Password. It is  not required when we work with SQLite. |
+| _srid_  | Yes | srid (Spatial Reference Identifier)  corresponds to a spatial reference system. This value is specified when GAMA connects to spatial database. If it is absent then GAMA uses spatial reference system defined in Preferences->External configuration. |
+| _select_ | No |Selection string |
+
 **Table 3**: Select boundary parameter description
 
 **Example**:
