@@ -15,8 +15,8 @@ During the simulation, GAML provides you the possibility to define some function
 ## Catch Mouse Event
 
 You can catch mouse event during the simulation using the statement `event`. This statement has 2 required facets:
-* **`name`** (identifier) : Specify which event do you want to trigger (among the following values : `mouse_down`, `mouse_down`).
-* **`action` (identifier) : Specify the name of the global action to call.
+* **`name`** (identifier) : Specify which event do you want to trigger (among the following values : `mouse_down`, `mouse_down`, `mouse_move`, `mouse_enter`, `mouse_exit`).
+* **`action`** (identifier) : Specify the name of the global action to call.
 
 ```
 event mouse_down action: my_action;
