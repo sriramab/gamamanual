@@ -1,3 +1,4 @@
+[//]: # (startConcept|model_structure)
 # Organization of a model
 
 As already extensively detailed in the [introduction page](Introduction), defining a model in GAML amounts to defining a _model species_, which later allows to instantiate a _model agent_ (aka a _simulation_), which may or may not contain micro-species, and which can be flanked by _experiment plans_ in order to be simulated.
@@ -151,3 +152,4 @@ experiment my_experiment /* + specify the type : "type:gui" or "type:batch" */
 }
 ```
 Don't forget this structure ! This will be the basis for all the models you will create from now.
+[//]: # (endConcept|model_structure)
