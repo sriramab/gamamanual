@@ -1,3 +1,4 @@
+[//]: # (startConcept|attaching_skills)
 # Attaching Skills
 [//]: # (keyword|concept_skill)
 
@@ -156,3 +157,4 @@ experiment my_experiment type:gui
 	}
 }
 ```
+[//]: # (endConcept|attaching_skills)
