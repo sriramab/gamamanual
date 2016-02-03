@@ -1,3 +1,4 @@
+[//]: # (startConcept|interaction_between_agents)
 # Interaction between agents
 [//]: # (keyword|concept_interaction)
 
@@ -225,3 +226,4 @@ experiment my_experiment type:gui
 	}
 }
 ```
+[//]: # (endConcept|interaction_between_agents)
