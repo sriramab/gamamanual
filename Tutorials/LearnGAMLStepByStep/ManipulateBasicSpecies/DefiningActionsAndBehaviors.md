@@ -1,3 +1,4 @@
+[//]: # (startConcept|actions_and_behaviours)
 # Defining actions and behaviors
 [//]: # (keyword|concept_action)
 [//]: # (keyword|concept_reflex)
@@ -164,3 +165,4 @@ experiment my_experiment type:gui
 	}
 }
 ```
+[//]: # (endConcept|actions_and_behaviours)
