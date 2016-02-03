@@ -1,3 +1,4 @@
+[//]: # (startConcept|multi_architecture)
 # Multi-level architecture
 [//]: # (keyword|concept_multi_level)
 
@@ -245,3 +246,4 @@ experiment MyExperiment type: gui {
 	}
 }
 ```
+[//]: # (endConcept|multi_architecture)
