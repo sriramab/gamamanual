@@ -36,6 +36,7 @@ GAMA integrates several agent control architectures that can be used in addition
   * [user_controlled](#user_controlled)
 * [Other Control Architectures](#other-control-architectures)
 
+[//]: # (startConcept|finite_state_machine)
 ## Finite State Machine
 
 **FSM (Finite State Machine)** is a finite state machine based behavior model. During its life cycle, the agent can be in several states. At any given time step, it is in one single state. Such an agent needs to have one initial state (the state in which it will be at its initialization).
@@ -134,8 +135,9 @@ Here a possible result that can be obtained with one dummy agent:
 7:dummy0->state3
 8:dummy0->state2
 ```
+[//]: # (endConcept|finite_state_machine)
 
-
+[//]: # (startConcept|task_based)
 ## Task Based
 
 GAMA integrated several **task-based** control architectures. Species can define any number of tasks within their body. At any given time, only one or several tasks are executed according to the architecture chosen:
@@ -208,6 +210,7 @@ Here the result obtained with one dummy agent:
 5:dummy0->task1
 6:dummy0->task2
 ```
+[//]: # (endConcept|task_based)
 
 [//]: # (startConcept|user_control_architecture)
 ## User Control Architecture
