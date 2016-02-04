@@ -12,7 +12,7 @@ A website (still in construction) of the ACTEUR project can be found here http:/
 
 # An introduction to cognitive agent
 
-The belief�desire�intention software model (usually referred to simply, but ambiguously, as BDI) is a software model developed for programming intelligent agents.
+The belief-desire-intention software model (usually referred to simply, but ambiguously, as BDI) is a software model developed for programming intelligent agents.
 
   * **Belief**: State of the agent.
   * **Desire**: Objectives that the agent would like to accomplish.
