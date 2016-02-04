@@ -209,6 +209,7 @@ Here the result obtained with one dummy agent:
 6:dummy0->task2
 ```
 
+[//]: # (startConcept|user_control_architecture)
 ## User Control Architecture
 
 ### user\_only, user\_first, user\_last
@@ -282,6 +283,7 @@ If no panel is described or if all panels are empty (i.e. no user\_commands), th
 ### user\_controlled
 
 Finally, each agent provided with this architecture inherits a boolean attribute called `user_controlled`. If this attribute becomes false, no panels will be displayed and the agent will run "normally" unless its species is defined with a `user_only` control.
+[//]: # (endConcept|user_control_architecture)
 
 ## Other Control Architectures
 
