@@ -1,3 +1,4 @@
+[//]: # (startConcept|run_several_models_using_gamanalyzer)
 # Install
 
 Go to Git View -> Click on Import Projects
@@ -99,3 +100,4 @@ aspect clusterSimGlobal {
   } 
 }
 ```
+[//]: # (endConcept|run_several_models_using_gamanalyzer)
