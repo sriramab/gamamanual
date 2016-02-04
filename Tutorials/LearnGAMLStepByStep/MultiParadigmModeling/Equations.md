@@ -1,9 +1,4 @@
-
-TO FINISH 
-Add references to : 
-* integration method
-
-
+[//]: # (startConcept|equation)
 # Using Equations
 
 ## Introduction
@@ -351,3 +346,4 @@ The results are provided using the Runge-Kutta 4 method using following initial 
 * h = 0.1
 
 ![LV-result.png](resources/images/multiParadigmModeling/LV-result.png)
+[//]: # (endConcept|equation)
