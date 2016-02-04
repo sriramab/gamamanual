@@ -1,4 +1,5 @@
 
+[//]: # (startConcept|exploration_methods)
 # Exploration Methods
 
 Several batch methods are currently available. Each is described below.
@@ -6,6 +7,7 @@ Several batch methods are currently available. Each is described below.
 
 ## Table of contents 
 
+* [The method element](#the-method-element)
 * [Exhaustive exploration of the parameter space](#exhaustive-exploration-of-the-parameter-space)
 * [Hill Climbing](#hill-climbing)
 * [Simulated Annealing](#simulated-annealing)
@@ -13,6 +15,22 @@ Several batch methods are currently available. Each is described below.
 * [Reactive Tabu Search](#reactive-tabu-search)
 * [Genetic Algorithm](#genetic-algorithm)
 
+## The method element
+The optional method element controls the algorithm which drives the batch.
+
+If this element is omitted, the batch will run in a classical way, changing one parameter value at each step until all the possible combinations of parameter values have been covered. See the Exhaustive exploration of the parameter space for more details.
+
+When used, this element must contain at least a name attribute to specify the algorithm to use. It has theses facets:
+* minimize or a maximize (mandatory for optimization method): a attribute defining the expression to be optimized.
+* aggregation (optional): possible values ("min", "max"). Each combination of parameter values is tested **repeat** times. The aggregated fitness of one combination is by default the average of fitness values obtained with those repetitions. This facet can be used to tune this aggregation function and to choose to compute the aggregated fitness value as the minimum or the maximum of the obtained fitness values.
+* other parameters linked to exploration method (optional) : see below for a description of these parameters.
+
+Exemples of use of the method elements:
+```
+method exhaustive minimize: nb_infected ;
+
+method genetic pop_dim: 3 crossover_prob: 0.7 mutation_prob: 0.1 nb_prelim_gen: 1 max_gen: 5  minimize: nb_infected aggregation: "max";
+```
 
 ## Exhaustive exploration of the parameter space
 
@@ -240,3 +258,4 @@ experiment Batch type: batch repeat: 2 keep_seed: true until: (food_gathered = f
 	method genetic maximize: food_gathered pop_dim: 5 crossover_prob: 0.7 mutation_prob: 0.1 nb_prelim_gen: 1 max_gen: 20; 
 }
 ```
+[//]: # (endConcept|exploration_methods)
