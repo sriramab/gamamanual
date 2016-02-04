@@ -1,3 +1,4 @@
+[//]: # (startConcept|optimizing_tips)
 [//]: # (keyword|concept_optimization)
 # Optimizing Models
 
@@ -219,3 +220,4 @@ display city_display_opengl type: opengl{
      species people aspect: base;
 }
 ```
+[//]: # (endConcept|optimizing_tips)
