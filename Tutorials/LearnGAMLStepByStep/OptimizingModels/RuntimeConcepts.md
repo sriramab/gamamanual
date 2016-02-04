@@ -1,4 +1,4 @@
-
+[//]: # (startConcept|runtime_and_schedulers)
 # Runtime Concepts
 
 When a model is being simulated, a number of algorithms are applied, for instance to determine the order in which to run the different agents, or the order in which the initialization of agents is performed, etc. This section details some of them, which can be important when building models and understanding how they will be effectively simulated.
@@ -118,3 +118,4 @@ global {} // The world is normally scheduled...
 
 species my_scheduler schedules: [world]; // … but schedules itself again as a consequence of scheduling the micro-species 'my_scheduler'
 ```
+[//]: # (endConcept|runtime_and_schedulers)
