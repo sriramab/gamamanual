@@ -1,3 +1,4 @@
+[//]: # (startConcept|load_complex_datas)
 # File Types
 
 
@@ -690,3 +691,4 @@ Polygon
 List of operators related to obj files:
   * **obj\_file(string path)**: load a file (with an authorized extension) as a obj file.
   * **is\_obj(op)**: tests whether the operand is a OBJ file
+[//]: # (endConcept|load_complex_datas)
