@@ -75,5 +75,5 @@ Optionally, a `footer` and a `header` can also be described with the correspondi
 
 ## Autosave
 
-NB: image files can be exported also through the `autosave` facet of the display, as explained in [this previous part](DefiningDisplaysGeneralities#displays-and-layers).
+Image files can be exported also through the `autosave` facet of the display, as explained in [this previous part](DefiningDisplaysGeneralities#displays-and-layers).
 [//]: # (endConcept|export_files)
