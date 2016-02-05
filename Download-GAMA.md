@@ -1,6 +1,6 @@
 # Latest beta release of GAMA (1.7 beta 1)
-* GAMA for Windows 64 bits [Download](http://51.255.46.42/releases/gama1_7_b1_win64_setup.exe ) 
-* GAMA for Windows 32 bits [Download](http://51.255.46.42/releases/gama1_7_b1_win32_setup.exe )  
+* GAMA for Windows 64 bits [Download](http://51.255.46.42/releases/gama1_7_b1_win64.zip ) 
+* GAMA for Windows 32 bits [Download](http://51.255.46.42/releases/gama1_7_b1_win32.zip )  
 * GAMA for OSX 64 bits  [Download](http://51.255.46.42/releases/gama1_7_b1_OSX.zip ) 
 * GAMA for Linux 64 bits [Download](http://51.255.46.42/releases/gama1_7_b1_linux64.zip) 
 * GAMA for Linux 32 bits [Download](http://51.255.46.42/releases/gama1_7_b1_linux32.zip) 
