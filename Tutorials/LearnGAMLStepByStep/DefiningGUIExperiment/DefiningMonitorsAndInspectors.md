@@ -10,7 +10,7 @@ Other outputs can be very useful to study better the behavior of your agents.
 
 ## Define a monitor
 
-A monitor(InspectorsAndMonitors#monitor) allows to follow the value of an arbitrary expression in GAML. It will appear, in the User Interface, in a small window on its own and be recomputed every time step (or according to its refresh facet). 
+A [monitor](InspectorsAndMonitors#monitor) allows to follow the value of an arbitrary expression in GAML. It will appear, in the User Interface, in a small window on its own and be recomputed every time step (or according to its refresh facet). 
 
 Definition of a monitor: 
 
