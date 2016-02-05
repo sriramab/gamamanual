@@ -20,7 +20,7 @@ experiment toto {
 	} 
 	
 	reflex store22 when: cycle=2{
-		write "Sauvegarde de la simulation " + saveSimulation("file.xml");
+		write "Save the simulation " + saveSimulation("file.xml");
 	}
 }
 ```
