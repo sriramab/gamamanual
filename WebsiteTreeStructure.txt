@@ -25,8 +25,8 @@ Tutorials
 ---DefiningExportFiles
 ---DefiningUserInteraction
 --ExploringModels
+---RunSeveralSimulations
 ---BatchExperiments
----ParameterSpace
 ---ExplorationMethods
 --OptimizingModelsSection
 ---RuntimeConcepts
@@ -43,6 +43,7 @@ Tutorials
 --GamAnalyzer
 --UsingBDI
 --UsingDrivingSkill
+--ManipulateDates
 -Tutorials
 --LunearysFlu
 ---LunearysFlu_step1
