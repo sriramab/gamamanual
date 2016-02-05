@@ -10,7 +10,7 @@ Both actions and behaviors can be seen as methods in OOP. They can be defined in
 * [Action](#action)
   * [Declare an action](#declare-an-action)
   * [Call an action](#call-an-action)
-* [Behaviors](#behaviors)
+* [Behavior](#behavior)
 * [Example](#example)
 
 ## Action
