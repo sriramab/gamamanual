@@ -400,7 +400,7 @@ loop i over:exampleOfList {
 [//]: # (keyword|concept_filter)
 **How to filter a list?**
 
-If you want to get all the elements of a list that fulfill a particular condition, you need the operator where. In the condition, you can design all the element of a particular list by using the pseudo variable each as followed:
+If you want to get all the elements of a list that fulfill a particular condition, you need the operator where. In the condition, you can design all the element of a particular list by using the pseudo variable **`each`** as followed:
 
 ```
 list<int> exampleOfList <- [4,2,3,4,5,4] where (each <= 3); 
@@ -409,7 +409,7 @@ list<int> exampleOfList <- [4,2,3,4,5,4] where (each <= 3);
 
 Other useful operators for the manipulation of lists:
 
-Here are some other operators which can be useful to manipulate lists: sort, sort_by, shuffle, reverse, collect, accumulate, among. Please read the GAML Reference if you want to know more about those operators.
+Here are some other operators which can be useful to manipulate lists: `sort`, `sort_by`, `shuffle`, `reverse`, `collect`, `accumulate`, `among`. Please read the GAML Reference if you want to know more about those operators.
 
 [//]: # (keyword|concept_random)
 [//]: # (keyword|concept_probability)
