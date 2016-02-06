@@ -1,5 +1,5 @@
 
-# Types (Under Construction)
+# Types
 
 A variable's or expression's *type* (or *data type*) determines the values it can take, plus the operations that can be performed on or with it. GAML is a statically-typed language, which means that the type of an expression is always known at compile time, and is even enforced with casting operations.
 There are 4 categories of types:
