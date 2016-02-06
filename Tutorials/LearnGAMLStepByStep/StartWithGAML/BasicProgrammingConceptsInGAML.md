@@ -298,7 +298,7 @@ Nb: you can interrupt a loop at any time by using the `break` statement.
 [//]: # (keyword|type_list)
 ## Manipulate containers
 
-We saw in the previous parts "simple" types of variable. You also have a multiple containers types, such as list, matrix, map, pair... In this section, we will only focus on the container `list` (you can learn the other by reading the section about datatypes [TODO_URL]).
+We saw in the previous parts "simple" types of variable. You also have a multiple containers types, such as list, matrix, map, pair... In this section, we will only focus on the container `list` (you can learn the other by reading the [section about datatypes](DataTypes#complex-built-in-types)).
 
 **How to declare a list?**
 
@@ -309,6 +309,27 @@ list<int> listOfInt <- [5,4,9,8];
 list listWithoutType <- [2,4.6,"oij",["hoh",0.0]];
 ```
 
+[//]: # (keyword|operator_length)
+[//]: # (keyword|operator_empty)
+**How to know the number of elements of a list?**
+
+To know the number of element of a list, you can use the operator `length` that returns the number of elements (note that this operator also works with strings).
+
+```
+int numberOfElements <- length([12,13]); // will return 2
+int numberOfElements <- length([]); // will return 0
+int numberOfElements <- length("stuff"); // will return 5
+```
+
+There is an other operator, `empty`, that returns you a boolean telling you if the list is empty or not.
+
+```
+bool isEmpty <- empty([12,13]); // will return false
+bool isEmpty <- empty([]); // will return true
+bool isEmpty <- empty("stuff"); // will return false
+```
+
+[//]: # (keyword|operator_at)
 **How to get an element from a list?**
 
 To get an element from a list by its index, you have to use the operator `at` (nb: it is indeed an operator, and not a facet, so no ":" after the keyword).
@@ -322,8 +343,8 @@ int theThirdElementOfTheList <- [5,4,9,8] at 2; // this will return 9
 [//]: # (keyword|operator_index_of)
 **How to know the index of an element of a list?**
 
-You can know the index of the first occurrence of a value in a list using the operator index_of.
-You can know the index of the last occurrence of a value in a list using the operator last_index_of.
+You can know the index of the first occurrence of a value in a list using the operator `index_of`.
+You can know the index of the last occurrence of a value in a list using the operator `last_index_of`.
 
 ```
 int result <- [4,2,3,4,5,4] last_index_of 4;  // result equals 5
@@ -333,7 +354,7 @@ int result <- [4,2,3,4,5,4] index_of 4;  // result equals 0
 [//]: # (keyword|operator_contains)
 **How to know if an element exists in a list?**
 
-You can use the operator contains (return a boolean):
+You can use the operator `contains` (return a boolean):
 
 ```
 bool result <- [{1,2}, {3,4}, {5,6}] contains {3,4};  // result equals true
@@ -344,7 +365,7 @@ bool result <- [{1,2}, {3,4}, {5,6}] contains {3,4};  // result equals true
 [//]: # (keyword|statement_put)
 **How to insert/remove an element to/from a list?**
 
-For those operation, no operator are available, but you can use a statement instead. The statements add and put are used to insert/modify an element, while the statement remove is used to remove an element. Here are some example of how to use those 3 statements with the most common facets:
+For those operation, no operator are available, but you can use a statement instead. The statements `add` and `put` are used to insert/modify an element, while the statement `remove` is used to remove an element. Here are some example of how to use those 3 statements with the most common facets:
 
 ```
 list<int> list_int <- [1,5,7,6,7];
