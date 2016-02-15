@@ -1,18 +1,18 @@
 
 # Implementing diffusions
 
-GAMA provides you the possibility to represent and simulate a diffusion through a grid topology. 
+GAMA provides you the possibility to represent and simulate the diffusion of a variable through a grid topology. 
 
 ## Index
 
-* [Diffusion statement](#diffusion-statement)
+* [Diffuse statement](#diffuse-statement)
 * [Diffusion with matrix](#diffusion-with-matrix)
 * [Diffusion with parameters](#diffusion-with-parameters)
 * [Using mask](#using-mask)
 
-## Diffusion statement
+## Diffuse statement
 
-The statement to use for the diffusion is `diffusion`. It has to be used in a `grid` species. The `diffusion` uses the following facets:
+The statement to use for the diffusion is `diffuse`. It has to be used in a `grid` species. The `diffuse` uses the following facets:
 
 * **`var`** : the name of the variable that will be diffused through the grid. This variable has to be declared as an attribute of the grid.
 * **`on`** : the list of agents (usually the entire grid) where the diffusion will occur.
@@ -24,7 +24,7 @@ The statement to use for the diffusion is `diffusion`. It has to be used in a `g
 * `radius` (int): a diffusion radius (the default value is 1)
 * `variation` (float): an absolute decrease of intensity that occurs between each place. It should be a positive number. (the default value is 1.0)
 
-To write a diffusion, you first have to declare a grid, and declare a special attribute for the diffusion. You will then have to write the `diffusion` statement in an other scope (such as the `global` scope for instance), which will permit the values to be diffused at each step. There, you will specify which variable you want to diffuse (through the **`var`** facet), on which species or list of agents you want the diffusion (through the **`on`** facet), and how you want this value to be diffused (through all the other facets, we will see how it works [with matrix](#diffusion-with-matrix) and [with special parameters](#diffusion-with-parameters) just after).
+To write a diffusion, you first have to declare a grid, and declare a special attribute for the diffusion. You will then have to write the `diffuse` statement in an other scope (such as the `global` scope for instance), which will permit the values to be diffused at each step. There, you will specify which variable you want to diffuse (through the **`var`** facet), on which species or list of agents you want the diffusion (through the **`on`** facet), and how you want this value to be diffused (through all the other facets, we will see how it works [with matrix](#diffusion-with-matrix) and [with special parameters](#diffusion-with-parameters) just after).
 
 Here is the template of code we will use for the next following part of this page:
 
@@ -47,7 +47,7 @@ global {
 	reflex diff {
 		// Declare a diffusion on the grid "cells" and on "quick_cells". The diffusion declared on "quick_cells" will make 10 computations at each step to accelerate the process. 
 		// The value of the diffusion will be store in the new variable "phero" of the cell.
-		diffusion var: phero on: cells /*HERE WRITE DOWN THE DIFFUSION PROPERTIES*/;			
+		diffuse var: phero on: cells /*HERE WRITE DOWN THE DIFFUSION PROPERTIES*/;			
 	}
 }
 
@@ -85,10 +85,10 @@ matrix<float> mat_diff <- matrix([
 		[1/9,1/9,1/9]]);
 ```
 
-In the `diffusion` statement, you than have to specify the matrix of diffusion you want in the facet `mat_diffu`.
+In the `diffuse` statement, you than have to specify the matrix of diffusion you want in the facet `mat_diffu`.
 
 ```
-diffusion var: phero on: cells mat_diffu:mat_diff;
+diffuse var: phero on: cells mat_diffu:mat_diff;
 ```
 
 Using the facet `propagation`, you can specify if you want the value to be propagated as a _diffusion_ or as a _gratient_.
@@ -137,7 +137,7 @@ Writing those two thinks are exactly equivalent (for diffusion):
 			[2/81,4/81,6/81,4/81,2/81],
 			[1/81,2/81,3/81,2/81,1/81]]);
 	reflex diff {
-		diffusion var: phero on: cells mat_diffu:mat_diff;
+		diffuse var: phero on: cells mat_diffu:mat_diff;
 ```
 ```
 	matrix<float> mat_diff <- matrix([
@@ -145,12 +145,12 @@ Writing those two thinks are exactly equivalent (for diffusion):
 			[1/9,1/9,1/9],
 			[1/9,1/9,1/9]]);
 	reflex diff {
-		diffusion var: phero on: cells mat_diffu:mat_diff cycle_length:2;
+		diffuse var: phero on: cells mat_diffu:mat_diff cycle_length:2;
 ```
 
 ### Executing several diffusion matrix
 
-If you execute several times the statement `diffusion` with different matrix on the same variable, their values will be added (and centered if their dimension is not equal).
+If you execute several times the statement `diffuse` with different matrix on the same variable, their values will be added (and centered if their dimension is not equal).
 
 Thus, the following 3 matrix will be combined to create one unique matrix:
 
@@ -198,7 +198,7 @@ A simple way to use mask is by loading an image :
 
 ![resources/images/recipes/simple_mask.png](resources/images/recipes/simple_mask.png)
 
-Note that when you use the `on` facet for the `diffusion` statement, you can choose only some cells, and not every cells. In fact, when you restrain the values to be diffuse, it is exactly the same process as if you were defining a mask.
+Note that when you use the `on` facet for the `diffuse` statement, you can choose only some cells, and not every cells. In fact, when you restrain the values to be diffuse, it is exactly the same process as if you were defining a mask.
 
 ![resources/images/recipes/mask_with_on_facet.png](resources/images/recipes/mask_with_on_facet.png)
 
@@ -222,8 +222,8 @@ matrix<float> mat_diff_left_wall <- matrix([
 			[0.0,0.0,2/9]]);
 
 reflex diff { 
-	diffusion var: phero on: (cells where(each.grid_x>30)) mat_diffu:mat_diff;
-	diffusion var: phero on: (cells where(each.grid_x=30)) mat_diffu:mat_diff_left_wall;
+	diffuse var: phero on: (cells where(each.grid_x>30)) mat_diffu:mat_diff;
+	diffuse var: phero on: (cells where(each.grid_x=30)) mat_diffu:mat_diff_left_wall;
 }
 ```
 
@@ -250,9 +250,9 @@ matrix<float> mat_wind_from_north <- matrix([
 		[1/9,1/9,1/9]]);
 
 reflex diff { 
-	diffusion var: phero on: cells mat_diffu:mat_diff;
-	diffusion var: phero on: cells mat_diffu:mat_wind_from_north;
-	diffusion var: phero on: (cells where (each.grid_y>=32)) mat_diffu:mat_wind_from_west;
+	diffuse var: phero on: cells mat_diffu:mat_diff;
+	diffuse var: phero on: cells mat_diffu:mat_wind_from_north;
+	diffuse var: phero on: (cells where (each.grid_y>=32)) mat_diffu:mat_wind_from_west;
 }
 ```
 
@@ -280,7 +280,7 @@ matrix<float> mat_diff_upper_edge <- matrix([
 			[1/9,1/9,1/9]]);
 
 reflex diff { 
-	diffusion var: phero on: (cells where(each.grid_y>0)) mat_diffu:mat_diff;
-	diffusion var: phero on: (cells where(each.grid_y=0)) mat_diffu:mat_diff_upper_edge;
+	diffuse var: phero on: (cells where(each.grid_y>0)) mat_diffu:mat_diff;
+	diffuse var: phero on: (cells where(each.grid_y=0)) mat_diffu:mat_diff_upper_edge;
 }
 ```
