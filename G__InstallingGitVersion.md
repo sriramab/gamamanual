@@ -14,7 +14,7 @@ Unpack it and launch it. Please refer to this [link](http://help.eclipse.org/mar
 
 ## Install the latest XText version (currently 2.9.1)
 
-Goto `Help > Install new software…`. In the combo box identified by `Work with:`, paste `http://download.eclipse.org/modeling/tmf/xtext/updates`, wait for the items to appear and select `XText complete SDK`. You can then click `Next >` and follow the instructions (including relaunching Eclipse) to complete the installation.
+Goto `Help > Install new software…`. In the combo box identified by `Work with:`, paste `http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/`, wait for the items to appear and select `XText complete SDK`. You can then click `Next >` and follow the instructions (including relaunching Eclipse) to complete the installation.
 
 ## Install GAMA source code
 
