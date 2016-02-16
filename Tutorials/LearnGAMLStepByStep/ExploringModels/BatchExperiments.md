@@ -70,7 +70,7 @@ The **permanent** section allows to define a output block that will not be re-in
 For instance, this **permanent** section will allows to display for each simulation the end value of the _food\_gathered_ variable.
 ```
 permanent {
-	display Ants background: rgb('white') refresh_every: 1 {
+	display Ants background: rgb('white') refresh:every(1) {
 		chart "Food Gathered" type: series {
 			data "Food" value: food_gathered;
 		}

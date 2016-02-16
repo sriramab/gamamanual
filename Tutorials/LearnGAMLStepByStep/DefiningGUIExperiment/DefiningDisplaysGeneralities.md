@@ -236,7 +236,7 @@ display my_display{
 ```
 Or
 ```
-display city_display refresh_every: 1 {
+display city_display refresh:every(1) {
    image testGIS gis: "../includes/building.shp" color: rgb('blue');
 }
 ```

@@ -30,12 +30,12 @@ Thus, In the global section, we add the **nb\_preys** global variable:
 ### monitor
 A monitor allows to follow the value of an arbitrary expression in GAML. It has to be defined in an output section. A monitor is defined as follows:
 ```
-      monitor monitor_name value: an_expression refresh_every: nb_steps;
+      monitor monitor_name value: an_expression refresh:every(nb_steps);
 ```
 
 With:
   * value: mandatory, its that value will be displayed in the monitor.
-  * refresh\_every: int, optional : number of simulation steps between two computations of the expression (default is 1).
+  * refresh: bool, optional : if the expression is true, compute (default is true).
 
 In this model, we define a monitor to follow the value of the variable **nb\_preys**:
 ```

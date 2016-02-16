@@ -66,10 +66,10 @@ with:
 ### Example:
 
 ```
-file name: "results" type: text data: time + "; " + nb_preys + ";" + nb_predators refresh_every: 2;  
+file name: "results" type: text data: time + "; " + nb_preys + ";" + nb_predators refresh:every(2);  
 ```
 
-Each time step (or according to the frequency defined in the `refresh_every` facet of the file output), a new line will be added at the end of the file. If `rewrite: false` is defined in its facets, a new file will be created for each simulation (identified by a timestamp in its name).
+Each time step (or according to the frequency defined in the `refresh` facet of the file output), a new line will be added at the end of the file. If `rewrite: false` is defined in its facets, a new file will be created for each simulation (identified by a timestamp in its name).
 
 Optionally, a `footer` and a `header` can also be described with the corresponding facets (of type string).
 

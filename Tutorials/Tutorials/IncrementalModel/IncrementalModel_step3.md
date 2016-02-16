@@ -57,12 +57,12 @@ Note that it would have been possible to use the **pause** action that pauses th
 ### monitor
 A monitor allows to follow the value of an arbitrary expression in GAML. It has to be defined in an output section. A monitor is defined as follows:
 ```
-      monitor monitor_name value: an_expression refresh_every: nb_steps;
+      monitor monitor_name value: an_expression refresh:every(nb_steps);
 ```
 
 With:
   * value: mandatory, its value will be displayed in the monitor.
-  * refresh\_every: int, optional : number of simulation steps between two computations of the expression (default is 1).
+  * refresh: bool, optional : if the expression is true, compute (default is true).
 
 In this model, we define 2 monitors to follow the value of the variable **current\_hour** and **infected\_rate**:
 ```
@@ -109,7 +109,7 @@ experiment main_experiment type:gui{
 	...
 	output {
 		...
-		display chart refresh_every: 10 {
+		display chart refresh:every(10) {
 			chart "Disease spreading" type: series {
 				data "susceptible" value: nb_people_not_infected color: #green;
 				data "infected" value: nb_people_infected color: #red;
@@ -179,7 +179,7 @@ experiment main_experiment type:gui{
 		display map {
 			species people aspect:circle;			
 		}
-		display chart refresh_every: 10 {
+		display chart refresh:every(10) {
 			chart "Disease spreading" type: series {
 				data "susceptible" value: nb_people_not_infected color: #green;
 				data "infected" value: nb_people_infected color: #red;

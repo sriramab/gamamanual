@@ -58,11 +58,11 @@ global {
 ### experiment
 
 #### monitor
-GAMA provides modelers with the possibility to define [monitors](DefiningMonitorsAndInspectors#monitors). A monitor allows to follow the value of an arbitrary expression in GAML. It will appear, in the User Interface, in a small window on its own and be recomputed every time step (or according to its 'refresh_every' facet). 
+GAMA provides modelers with the possibility to define [monitors](DefiningMonitorsAndInspectors#monitors). A monitor allows to follow the value of an arbitrary expression in GAML. It will appear, in the User Interface, in a small window on its own and be recomputed every time step (or according to its 'refresh' facet). 
 
 Definition of a monitor:
    * _value_: mandatory, the expression whose value will be displayed by the monitor.
-   * _refresh\_every_: int, optional : the number of simulation steps between two evaluations of the expression (default is 1).
+   * _refresh_: bool, optional : if the expression is true, compute (default is true).
 
 For our model, we define a monitor to follow the value of the _infected\_rate_ variable:
 ```
@@ -98,7 +98,7 @@ experiment main_experiment type:gui{
 	output {
 		//...display and monitors
 		
-		display chart_display refresh_every: 10 {
+		display chart_display refresh:every(10) {
 			chart "Disease spreading" type: series {
 				data "susceptible" value: nb_people_not_infected color: #green;
 				data "infected" value: nb_people_infected color: #red;
@@ -161,7 +161,7 @@ experiment main_experiment type:gui{
 			species people aspect:circle;			
 		}
 		
-		display chart refresh_every: 10 {
+		display chart refresh:every(10) {
 			chart "Disease spreading" type: series {
 				data "susceptible" value: nb_people_not_infected color: #green;
 				data "infected" value: nb_people_infected color: #red;
