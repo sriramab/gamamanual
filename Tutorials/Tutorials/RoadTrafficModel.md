@@ -24,10 +24,10 @@ The model built in this tutorial concerns the study of the road traffic in a sma
 
 This tutorial is composed of 7 steps corresponding to 7 models. For each step we present its purpose, an explicit formulation and the corresponding GAML code.
 
-  1. [Loading of GIS data (buildings and roads)](RoadTraficModel_step1)
-  1. [Definition of people agents](RoadTraficModel_step2)
-  1. [Movement of the people agents](RoadTraficModel_step3)
-  1. [Definition of weight for the road network](RoadTraficModel_step4)
-  1. [Dynamic update of the road network](RoadTraficModel_step5)
-  1. [Definition of a chart display](RoadTraficModel_step6)
-  1. [Automatic repair of roads](RoadTraficModel_step7)
+  1. [Loading of GIS data (buildings and roads)](RoadTrafficModel_step1)
+  1. [Definition of people agents](RoadTrafficModel_step2)
+  1. [Movement of the people agents](RoadTrafficModel_step3)
+  1. [Definition of weight for the road network](RoadTrafficModel_step4)
+  1. [Dynamic update of the road network](RoadTrafficModel_step5)
+  1. [Definition of a chart display](RoadTrafficModel_step6)
+  1. [Automatic repair of roads](RoadTrafficModel_step7)
