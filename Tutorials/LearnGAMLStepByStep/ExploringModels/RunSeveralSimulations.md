@@ -167,6 +167,10 @@ experiment fromWorldToWorld type: gui {
 }
 ```
 
+Here is an other example of application of application, available in the model library. Here we run 4 times the Ant Foraging model, with different parameters.
+
+![resources/images/exploringModel/multi_foraging.jpg](resources/images/exploringModel/multi_foraging.jpg)
+
 ## Random seed
 
 ### Defining the seed from the model
