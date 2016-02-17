@@ -202,13 +202,20 @@
 	</learningConcept>
 	<learningConcept id="run_simulations_as_agents" x="0.183" y="0.605">
 		<name>Run Simulations\nas Agents</name>
-		<description>run multiple simulations in the\\nsame experiment, a world about seed</description>
+		<description>run multiple simulations in the same experiment</description>
 		<prerequisiteList>
 			<prerequisite>grid</prerequisite>
 			<prerequisite>2d_displays</prerequisite>
 		</prerequisiteList>
 	</learningConcept>
-	<learningConcept id="batch_experiments" x="0.265" y="0.739">
+	<learningConcept id="control_randomness" x="0.245" y="0.670">
+		<name>Control Randomness</name>
+		<description>control the seed, a word about RNG</description>
+		<prerequisiteList>
+			<prerequisite>run_simulations_as_agents</prerequisite>
+		</prerequisiteList>
+	</learningConcept>
+	<learningConcept id="batch_experiments" x="0.285" y="0.759">
 		<name>Batch\nExperiments</name>
 		<description>run several experiments using batch experiments</description>
 		<prerequisiteList>
@@ -265,7 +272,7 @@
 			<prerequisite>2d_displays</prerequisite>
 		</prerequisiteList>
 	</learningConcept>
-	<learningConcept id="load_complex_datas" x="0.903" y="0.705">
+	<learningConcept id="load_complex_datas" x="0.860" y="0.735">
 		<name>Load complex\ndatas</name>
 		<description>load Text, CVS, Shapefile, OSM, Grid,\\nimages, SVG, 3DS, OBJ...</description>
 		<prerequisiteList>
@@ -354,6 +361,7 @@
 			<learningConceptAssociated>run_several_models_using_gamanalyzer</learningConceptAssociated>
 			<learningConceptAssociated>batch_experiments</learningConceptAssociated>
 			<learningConceptAssociated>exploration_methods</learningConceptAssociated>
+			<learningConceptAssociated>control_randomness</learningConceptAssociated>
 		</learningConceptsAssociatedList>
 	</topic>
 	<topic id="multi_level_multi_paradigm" x="0.335" y="0.261" sizeBigHallow="95" xBigHallow="0.335" yBigHallow="0.258" color="rgba(0,176,80,1)">
