@@ -171,6 +171,9 @@ Here is an other example of application of application, available in the model l
 
 ![resources/images/exploringModel/multi_foraging.jpg](resources/images/exploringModel/multi_foraging.jpg)
 
+[//]: # (endConcept|run_simulations_as_agents)
+[//]: # (startConcept|control_randomness)
+
 ## Random seed
 
 ### Defining the seed from the model
@@ -409,4 +412,4 @@ experiment my_experiment type:gui  {
 	}
 }
 ```
-[//]: # (endConcept|run_simulations_as_agents)
+[//]: # (endConcept|control_randomness)
