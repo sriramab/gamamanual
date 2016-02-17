@@ -21,7 +21,7 @@ This conceptual structure is respected in the definition of model files, which f
 [//]: # (keyword|concept_model)
 ## Model Header (_model species_)
 
-The header of a model file begins mandatorily with the declaration of the name of the model. Contrarily to other statements, this declaration **does not** end with a semi-colon.
+The header of a model file begins with the declaration of the name of the model. Contrarily to other statements, this declaration **does not** end with a semi-colon.
 ```
 model name_of_the_model
 ```
@@ -97,7 +97,7 @@ global {
 
 ## Experiment declarations
 
-Experiments are usually declared at the end of the file. They start with the keyword "experiment". They contains the [simulation parameters](DefiningParameters), and the definition of the output (such as [displays](DefiningDisplaysGeneralities), [monitors or inspectors](DefiningMonitorsAndInspectors)). You can declare as much experiments as you want.
+Experiments are usually declared at the end of the file. They start with the keyword `experiment`. They contains the [simulation parameters](DefiningParameters), and the definition of the output (such as [displays](DefiningDisplaysGeneralities), [monitors or inspectors](DefiningMonitorsAndInspectors)). You can declare as much experiments as you want.
 
 ```
 experiment first_experiment {
