@@ -126,7 +126,7 @@ Please read the part concerning the database to learn more about it.
 
 ## Website generation workflow
 
-_This part is not yet implemented, it is under construction._
+_This part is not implemented yet, it is under construction._
 
 ![resources/images/developpingExtension/website_generation_workflow.png](resources/images/developpingExtension/website_generation_workflow.png)
 
@@ -134,6 +134,16 @@ _This part is not yet implemented, it is under construction._
 
 This plugin is used to [generate GAML documentation automatically in the markdown format](Documentation), and copy paste the content to the wiki folder.
 The plugin is also used to generate the model library in the markdown format, with the source code, a quick description, and an image (screenshot). In the same time, the plugin generates a html page (an "abstract") and put it directly in the model folder (in order to be loaded directly from GAMA).
+
+The documentation plugin contains also 2 other scripts which helps to create content:
+
+#### learningGraphDatabaseGenerator
+
+The **learningGraphDatabaseGenerator** script is used to generate the "_nodesDatabase.js_" file, which is read to visualize the learning graph. This script needs the "learningGraph.xml" file as input. Each learning concepts has an id, a name, a very short description, a position (position in x and y in %, between 0 and 1. This value is then multiplied by the **coeff** in the learningGraphDatabaseGenerator), and a list of prerequisite learning concepts. A category of learning concept (also defined in the learningGraph.xml file) has an id, a position (position in x and y), a position for the hallow (position in x and y of the big circle displayed when a category is selected), a size for the hallow, a color, a name, and the list of learningConcept associated.
+
+#### modelLibraryGenerator
+
+_TODO_
 
 ### The gama.wiki repository
 
