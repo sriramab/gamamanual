@@ -69,13 +69,7 @@ As we already said, you can display 3 types of graphs: the histograms, the pies 
 
 The histograms
 
-Quadtree ?
-[TODO]
-
 
 [TODO]
 
-3D Displays
-
-[TODO]
 [//]: # (endConcept|defining_charts)
