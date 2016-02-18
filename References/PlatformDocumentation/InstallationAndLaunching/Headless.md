@@ -27,10 +27,10 @@ In this mode, GAMA can only be used to run experiments and that editing or manag
 There are two ways to run a GAMA experiment in headless mode: using a dedicated shell script (recommended) or directly from the command line. These commands take 2 arguments: an experiment file and an output directory.
 
 ### Shell Script
-It can be found in the `headless` directory located inside `Gama`. Its name is `gamaHeadless.sh` on MacOSX and Linux, and `gamaHeadless.bat` on Windows.
+It can be found in the `headless` directory located inside `Gama`. Its name is `gama-headless.sh` on MacOSX and Linux, and `gama-headless.bat` on Windows.
 
 ```
- sh gamaHeadless.sh $1 $2
+ sh gama-headless.sh $1 $2
 ```
 
 * with:
@@ -45,7 +45,7 @@ sh headless/gama-headless.sh headless/samples/predatorPrey.xml outputHeadLess
 As specified in **predatorPrey.xml**, this command runs the prey - predator model for 1000 steps and record a screenshot of the main display every 5 steps. The screenshots are recorded in the directory outputHeadLess (under the GAMA root folder).
 
 
-Not that the current directory to run gamaHeadless command must be $GAMA\_PATH/headless
+Not that the current directory to run gama-headless command must be $GAMA\_PATH/headless
 
 ### Java Command
 
