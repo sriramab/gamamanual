@@ -8,7 +8,8 @@ GAMA provides you the possibility to represent and simulate the diffusion of a v
 * [Diffuse statement](#diffuse-statement)
 * [Diffusion with matrix](#diffusion-with-matrix)
 * [Diffusion with parameters](#diffusion-with-parameters)
-* [Using mask](#using-mask)
+* [Use mask](#using-mask)
+* [About performance](#about-performance)
 
 ## Diffuse statement
 
@@ -23,6 +24,7 @@ The statement to use for the diffusion is `diffuse`. It has to be used in a `gri
 * `proportion` (float): a diffusion rate (the default value is 1.0)
 * `radius` (int): a diffusion radius (the default value is 1)
 * `variation` (float): an absolute decrease of intensity that occurs between each place. It should be a positive number. (the default value is 1.0)
+* `min_value` (float): the minimal value possible for the diffusion. If the value is smaller than this one, the value will be turn into 0, and will not diffuse (the default value is 0.0, cannot be <0).
 
 To write a diffusion, you first have to declare a grid, and declare a special attribute for the diffusion. You will then have to write the `diffuse` statement in an other scope (such as the `global` scope for instance), which will permit the values to be diffused at each step. There, you will specify which variable you want to diffuse (through the **`var`** facet), on which species or list of agents you want the diffusion (through the **`on`** facet), and how you want this value to be diffused (through all the other facets, we will see how it works [with matrix](#diffusion-with-matrix) and [with special parameters](#diffusion-with-parameters) just after).
 
@@ -284,3 +286,43 @@ reflex diff {
 	diffuse var: phero on: (cells where(each.grid_y=0)) mat_diffu:mat_diff_upper_edge;
 }
 ```
+
+## Pseudo code
+
+_This section is more for a better understanding of the source code._
+
+Here is the pseudo code for the computation of diffusion :
+
+1) : Execute the statement `diffuse`, store the diffusions in a map (from class _DiffusionStatement_ to class _GridDiffuser_) :
+
+```
+- Get all the facet values
+- Compute the "real" mask, from the facet "mask:" and the facet "on:".
+  - If no value for "mask:" and "on:" all the grid, the mask is equal to null.
+- Compute the matrix of diffusion
+  - If no value for "mat_diffu:", compute with "nb_neighbors", "is_gradient", "proportion", "propagation", "variation", "range".
+  - Then, compute the matrix of diffusion with "cycle_length".
+- Store the diffusion properties in a map
+  - Map : ["method_diffu", "is_gradient", "mat_diffu", "mask", "min_value"] is value, ["var_diffu", "grid_name"] is key.
+  - If the key exists in the map, try to "mix" the diffusions
+    - If "method_diffu", "mask" and "is_gradient" equal for the 2 diffusions, mix the diffusion matrix.
+```
+
+2) : At the end of the step, execute the diffusions (class _GridDiffuser_) :
+
+```
+- For each key of the map,
+  - Load the couple "var_diffu" / "grid_name"
+  - Build the "output" and "input" array with the dimension of the grid. 
+  - Initialize the "output" array with -Double.MAX_VALUE.
+  - For each value of the map for that key,
+    - Load all the properties : "method_diffu", "is_gradient", "mat_diffu", "mask", "min_value"
+    - Compute :
+      - If the cell is not masked, if the value of input is > min_value, diffuse to the neighbors.
+        - If the value of the cell is equal to -Double.MAX_VALUE, remplace it by input[idx] * matDiffu[i][j].
+        - Else, do the computation (gradient or diffusion).
+    - Finish the diffusion :
+      - If output[idx] > -Double.MAX_VALUE, write the new value in the cell.
+```
+
+Things to notice :
