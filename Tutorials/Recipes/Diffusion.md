@@ -9,7 +9,7 @@ GAMA provides you the possibility to represent and simulate the diffusion of a v
 * [Diffusion with matrix](#diffusion-with-matrix)
 * [Diffusion with parameters](#diffusion-with-parameters)
 * [Use mask](#using-mask)
-* [About performance](#about-performance)
+* [Pseudo code](#pseudo-code)
 
 ## Diffuse statement
 
@@ -324,5 +324,3 @@ Here is the pseudo code for the computation of diffusion :
     - Finish the diffusion :
       - If output[idx] > -Double.MAX_VALUE, write the new value in the cell.
 ```
-
-Things to notice :
