@@ -21,13 +21,13 @@ We provides you a continual support through the [active mailing list](https://gr
 
 GAMA has been developed with a very general  approach, and can be used for many applications domains. Some [additional plugins](TODO_URL) had been developed to fit with particular needs.
 
-Example of domains where GAMA is mostly present :
+Example of application domains where GAMA is mostly present :
 * Transport
-* Urban growth
+* Urban planning
 * Epidemiology
 * Environment
 
-Some [training sessions](TODO_URL) about topics such as "urban management", "epidemiology" are also provided by the team.
+Some [training sessions](TODO_URL) about topics such as "urban management", "epidemiology", "risk management" are also provided by the team.
 Since GAMA is an open-source software that continues to grow, if you have any particular needs of improvement, feel free to [share it to its active community](https://groups.google.com/forum/#!forum/gama-platform) !
 
 ## GIS and Data-Driven models
