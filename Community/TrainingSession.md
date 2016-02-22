@@ -21,4 +21,4 @@ The training session was divided into 2 parts :
 |![resources/other/trainingSession/SiemReap2015/photos/theorie.JPG](resources/other/trainingSession/SiemReap2015/photos/theorie.JPG)|![resources/other/trainingSession/SiemReap2015/photos/group_Alexis.JPG](resources/other/trainingSession/SiemReap2015/photos/group_Alexis.JPG)|
 |---|---|
 
-(Here the link to download the different projects)[notDoneYet] (Gama version : 1.61)
+[Here the link to download the different projects](notDoneYet) (Gama version : 1.61)
