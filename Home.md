@@ -1,4 +1,4 @@
-<div style="text-align:center"><img src ="resources/images/general/GamaPlatform.png" /></div>
+<div style="text-align:center"><img src ="https://github.com/mazarsju/gama_doc_17/wiki/resources/images/general/GamaPlatform.png" width="800"/></div>
 
 GAMA is a modeling and simulation development environment for building spatially explicit agent-based simulations. 
 
@@ -41,6 +41,8 @@ You can import a [large number of data types](DataTypes), such as text, files, C
 GAMA provides you the possibility to have multiple displays for the same model. You can add as much visual representations as you want for the same model, in order to highlight a certain aspect of your simulation. Add easily new visual aspects to your agents.
 
 Advanced [3D displays](Defining3DDisplays) are provided : you can control lights, cameras, and also adding textures to your 3D objects. In an other hand, dedicated statements allows you to define easily [charts](DefiningCharts), such as series, histogram, or pies.
+
+During the simulations, some advanced features are available to inspect the population of your agents. To make your model more interactive, you can add easily some user-controlled action panels.
 
 ______________________________________
 
