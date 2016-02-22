@@ -4,6 +4,8 @@
 
 **_7-11 December 2015 - Siem Reap (Cambodia)_**
 
+![resources/other/trainingSession/SiemReap2015/photos/group.JPG](resources/other/trainingSession/SiemReap2015/photos/group.JPG)
+
 This training session took place at the Apsara Authorities, where we introduced how to build a model with agent-based approach, using GAMA. In a new and very fast growing city such as Siem Reap, some measures have to be taken to anticipate the future of the city, and modeling is a science that can give some solutions to face those problems.
 
 The training session was divided into 2 parts :
@@ -15,5 +17,8 @@ The training session was divided into 2 parts :
   * GIS, Raster datas and graphs to model urban growth
   * Use of experiments to calibrate and explore models
 * A practical part (2 days) to build a model about urban mobility in Siem Reap (by groups of 4/5 people)
+
+|![resources/other/trainingSession/SiemReap2015/photos/theorie.JPG](resources/other/trainingSession/SiemReap2015/photos/theorie.JPG)|![resources/other/trainingSession/SiemReap2015/photos/group_Alexis.JPG](resources/other/trainingSession/SiemReap2015/photos/group_Alexis.JPG)|
+|---|---|
 
 Here the link to download the different projects (Gama version : 1.61)
