@@ -124,6 +124,8 @@
 
 ## [Projects using GAMA](Projects)
 
+## [Training Session](TrainingSession)
+
 ## [Events](Events)
 
 ## [Older versions](OlderVersions)
