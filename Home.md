@@ -36,6 +36,10 @@ GAMA (GIS Agent-based Modeling Architecture) provides you, since its creation, t
 
 You can import a [large number of data types](DataTypes), such as text, files, CSV, shapefile, OSM ([open street map data](ManipulateOSMDatas)), grid, images, SVG, but also 3D files, such as 3DS or OBJ, with their texture.
 
+Some advanced features provides you the possibility to [connect GAMA to databases](UsingDatabase), and also to use powerful statistical tools such as [R](CallingR).
+
+GAMA has been used in [large-scale projects](Projects), using a great number of agents (up to millions of agents).
+
 ## Declarative user interface
 
 GAMA provides you the possibility to have multiple displays for the same model. You can add as much visual representations as you want for the same model, in order to highlight a certain aspect of your simulation. Add easily new visual aspects to your agents.
