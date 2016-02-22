@@ -122,6 +122,8 @@
 
 ## [Scientific References](References)
 
+## [Projects using GAMA](Projects)
+
 ## [Events](Events)
 
 ## [Older versions](OlderVersions)
