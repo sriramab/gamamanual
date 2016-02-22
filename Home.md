@@ -15,7 +15,7 @@ Thanks to its high-level and intuitive language, GAMA has been developed to be u
 
 GAML is the language used in GAMA, coded in Java. It is an agent-based language, that provides you the possibility to build your model with [several paradigms of modeling](MultiParadigmModeling). Once your model is ready, some features allows you to [explore and calibrate it](ExploringModels), using the parameters you defined as input of your simulation.
 
-We provides you a continual support through the active mailing list where the team will answer your questions. Besides, you can learn GAML on your own, following the step by step tutorial, or personal learning path in order reach the point you are interested in.
+We provides you a continual support through the [active mailing list](https://groups.google.com/forum/#!forum/gama-platform) where the team will answer your questions. Besides, you can learn GAML on your own, following the [step by step tutorial](LearnGAMLStepByStep), or [personal learning path](TODO_URL) in order reach the point you are interested in.
 
 ## Several applications domains
 
