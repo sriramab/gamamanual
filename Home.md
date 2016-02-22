@@ -1,16 +1,51 @@
-![GAMA splash](resources/images/general/gama_front3.jpg)
+<div style="text-align:center"><img src ="resources/images/general/GamaPlatform.png" /></div>
 
-<font size="3" color="#42618F">G A M A </font> is a modeling and simulation development environment for building spatially explicit agent-based simulations. Its latest version, 1.6.1, can be freely [downloaded](Download) or [built from source](https://github.com/gama-platform/gama/), and comes pre-loaded with several models, [tutorials](Tutorials) and a complete [on-line documentation](Overview).
-<p/> 
-<font size="3" color="#42618F">G A M A </font> allows to:
+GAMA is a modeling and simulation development environment for building spatially explicit agent-based simulations. 
 
-* Design, prototype and write models in the **[GAML agent-oriented language](GamlLanguage)** and its optional **[graphical modeling tool](G__GraphicalEditor)**.
-* Instantiate agents from any kind of dataset, including **[GIS data](RoadTrafficModel)**, and execute **[large-scale simulations](RunningExperiments)** (up to millions of agents). 
-* Couple discrete or continuous **topological layers**, multiple **[levels of agency](MultiLevelArchitecture)** and **multiple paradigms** (mathematical equations, control architectures, finite state machines).
-* Define **[rich experiments](DefiningGUIExperiment)** on models and explore their **[parameters space](BatchExperiments)** for calibration and validation.
-* Design rich user interfaces that support deep inspections on agents, **[user-controlled actions](DefiningUserInteraction)** and panels, **[multi-layer 2D/3D displays](DefiningDisplaysGeneralities)** and multiple agent aspects.
+* [**High-level and Intuitive Agent-based language :**](high-level-and-intuitive-agent-based-language) Write your models easily using GAML, a high-level and intuitive agent-based language.
+* [**Several applications domains :**](#several-applications-domains) Use GAMA for whatever application domain you want.
+* [**GIS and Data-Driven models :**](#gis-and-data-driven-models) Instantiate agents from any dataset, including GIS data, and execute large-scale simulations (up to millions of agents).
+* [**Declarative user interface :**](#declarative-user-interface) Declare interfaces supporting deep inspections on agents, user-controlled action panels, multi-layer 2D/3D displays & agent aspects.
 
-<font size="3" color="#42618F">G A M A </font> is developed by several teams under the umbrella of the IRD/UPMC international research unit [UMMISCO](http://www.ummisco.ird.fr/):
+Its latest version, **1.7**, can be freely [downloaded](Download) or [built from source](https://github.com/gama-platform/gama/), and comes pre-loaded with several models, [tutorials](Tutorials) and a complete [on-line documentation](Overview).
+
+## High level and intuitive language
+
+Thanks to its high-level and intuitive language, GAMA has been developed to be used by non-computer scientists. You can declare your species, giving them some special behaviors, create them in your world, and display them in [less than 10 minutes](TODO_URL).
+
+GAML is the language used in GAMA, coded in Java. It is an agent-based language, that provides you the possibility to build your model with [several paradigms of modeling](MultiParadigmModeling). Once your model is ready, some features allows you to [explore and calibrate it](ExploringModels), using the parameters you defined as input of your simulation.
+
+We provides you a continual support through the active mailing list where the team will answer your questions. Besides, you can learn GAML on your own, following the step by step tutorial, or personal learning path in order reach the point you are interested in.
+
+## Several applications domains
+
+GAMA has been developed with a very general  approach, and can be used for many applications domains. Some [additional plugins](TODO_URL) had been developed to fit with particular needs.
+
+Example of domains where GAMA is mostly present :
+* Transport
+* Urban growth
+* Epidemiology
+* Environment
+
+Some [training sessions](TODO_URL) about topics such as "urban management", "epidemiology" are also provided by the team.
+Since GAMA is an open-source software that continues to grow, if you have any particular needs of improvement, feel free to [share it to its active community](https://groups.google.com/forum/#!forum/gama-platform) !
+
+## GIS and Data-Driven models
+
+GAMA (GIS Agent-based Modeling Architecture) provides you, since its creation, the possibility to load easily GIS (Geographic Information System).
+
+You can import a [large number of data types](DataTypes), such as text, files, CSV, shapefile, OSM ([open street map data](ManipulateOSMDatas)), grid, images, SVG, but also 3D files, such as 3DS or OBJ, with their texture.
+
+## Declarative user interface
+
+GAMA provides you the possibility to have multiple displays for the same model. You can add as much visual representations as you want for the same model, in order to highlight a certain aspect of your simulation. Add easily new visual aspects to your agents.
+
+Advanced [3D displays](Defining3DDisplays) are provided : you can control lights, cameras, and also adding textures to your 3D objects. In an other hand, dedicated statements allows you to define easily [charts](DefiningCharts), such as series, histogram, or pies.
+
+______________________________________
+
+
+GAMA is developed by several teams under the umbrella of the IRD/UPMC international research unit [UMMISCO](http://www.ummisco.ird.fr/):
 
 * [MSI Research Team](http://www.ifi.auf.org/site/content/view/35/46/lang,french/), Vietnam National University, Hanoi, Vietnam (2007 - 2015)
 * [UMR 6228 IDEES](http://www.umr-idees.fr), CNRS/University of Rouen, France (2010 - 2015)
