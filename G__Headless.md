@@ -69,7 +69,8 @@ The XML input file contains for example:
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
-<Simulation id="2" sourcePath="./predatorPrey/predatorPrey.gaml" finalstep="1000" experiment="predPrey">
+<Experiment_plan>
+ <Simulation id="2" sourcePath="./predatorPrey/predatorPrey.gaml" finalStep="1000" experiment="predPrey">
   <Parameters>
     <Parameter name="nb_predator_init" type="INT" value="53" />
     <Parameter name="nb_preys_init" type="INT" value="621" />
@@ -80,7 +81,8 @@ The XML input file contains for example:
     <Output id="3" name="number_of_predators" framerate="1" />
     <Output id="4" name="duration" framerate="1" />
   </Outputs>
-</Simulation>
+ </Simulation>
+</Experiment_plan>
 ```
 
 ### Heading
