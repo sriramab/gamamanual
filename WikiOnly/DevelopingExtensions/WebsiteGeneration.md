@@ -143,6 +143,13 @@ The **learningGraphDatabaseGenerator** script is used to generate the "_nodesDat
 
 #### modelLibraryGenerator
 
+The **modelLibraryGenerator** script is used to generate all the markdown files of the model library. This script
+
+* Parse all the models of the model library, and build "input" files for a headless execution. Each one of those "input" files are created in a temporary folder called "tempInputForHeadless". 
+  * By default, this will ask to execute all the experiments for each model, and take a screenshot of the 10th cycle for each display.
+  * You can change this default behavior by changing the file "modelScreenshot.xml", in the wiki repo.
+* Browse a second time all models, and call the headless script for each one of the models. For each models, build the md file, including the screenshot computed from the headless execution, and analyzing the header of each model to extract the title, author and tags.
+
 _TODO_
 
 ### The gama.wiki repository
@@ -260,9 +267,9 @@ Format of the file:
 ```
 
 Note that:
---> The list associatedKeywordList contains only one element for the _facet_ keywords, one of no element for the _action_ or _attribute_ keywords (none when the action/attribute is a built-in), several or no elements for the _concept_ keywords, and none for the other type of keywords.
+* The list associatedKeywordList contains only one element for the _facet_ keywords, one of no element for the _action_ or _attribute_ keywords (none when the action/attribute is a built-in), several or no elements for the _concept_ keywords, and none for the other type of keywords.
 
---> The id is build with the value of the attribute "name" and with the value of the attribute "category" for every keywords except the _statement_, _facet_, _action_ and _attribute_ keywords, which need also the value of the associatedKeyword linked. Ex : the id of the facet "torus" will be "facet_torus_statement_global".
+* The id is build with the value of the attribute "name" and with the value of the attribute "category" for every keywords except the _statement_, _facet_, _action_ and _attribute_ keywords, which need also the value of the associatedKeyword linked. Ex : the id of the facet "torus" will be "facet_torus_statement_global".
 
 #### Preparation of the repository before the generation of the database
 
