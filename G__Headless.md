@@ -102,7 +102,7 @@ The XML input file contains for example:
 * with:
 	* `id`: permits to prefix output files for experiment plan with huge simulations.
 	* `sourcePath`: contains the relative or absolute path to read the gaml model.
-	* `finalstep`: determines the number of simulation step you want to run.
+	* `finalStep`: determines the number of simulation step you want to run.
 	* `experiment`: determines which experiment should be run on the model. This experiment should exist, otherwise the headless mode will exit.
 
 ### Parameters
