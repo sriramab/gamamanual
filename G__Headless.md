@@ -30,12 +30,20 @@ There are two ways to run a GAMA experiment in headless mode: using a dedicated 
 It can be found in the `headless` directory located inside `Gama`. Its name is `gama-headless.sh` on MacOSX and Linux, and `gama-headless.bat` on Windows.
 
 ```
- sh gama-headless.sh $1 $2
+ sh gama-headless.sh [m/c/t/hpc/v] $1 $2
 ```
 
 * with:
 	* $1 input parameter file : an xml file determining experiment parameters and attended outputs
 	* $2 output directory path : a directory which contains simulation results (numerical data and simulation snapshot)
+	* options [-m/c/t/hpc/v]
+		* -m memory : memory allocated to gama
+		* -c : console mode, the simulation description could be written with the stdin
+		* -t : tunneling mode, simulation description are read from the stdin, simulation results are printed out in stdout
+		* -hpc nb_of_cores : allocate a specific number of cores for the experiment plan
+		* -v : verbose mode. trace are displayed in the console 
+
+
 * For example (using the provided sample), navigate in your terminal to the GAMA root folder and type :
 
 ```
