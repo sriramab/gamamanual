@@ -97,7 +97,7 @@ Note that several simulations could be determined in one experiment plan. These 
 ### Heading
 
 ```
-<Simulation id="2" sourcePath="./predatorPrey/predatorPrey.gaml" finalstep="1000" experiment="predPrey">
+<Simulation id="2" sourcePath="./predatorPrey/predatorPrey.gaml" finalStep="1000" experiment="predPrey">
 ```
 
 * with:
