@@ -252,7 +252,7 @@ stringVariable <- (booleanVariable) ? "booleanVariable = true" : "booleanVariabl
 [//]: # (keyword|statement_loop)
 ## Loop
 
-Loops in GAML are designed by the keyword loop. As for variables, a loop have multiple facet to determine its behavior:
+Loops in GAML are designed by the keyword `loop`. As for variables, a loop have multiple facet to determine its behavior:
 
 -	The facet `times`, to repeat a fixed number of times a set of statements:
 
