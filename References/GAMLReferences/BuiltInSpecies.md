@@ -26,10 +26,10 @@ create cluster_builder returns: clusterer;
 
 ## Table of Contents
 <wiki:toc max_depth="3" />
-[agent](#agent), [agent_group_follower](#agent_group_follower), [AgentDB](#agentdb), [AgGroupAnalizer](#aggroupanalizer), [base_edge](#base_edge), [cluster_builder](#cluster_builder), [experiment](#experiment), [graph_edge](#graph_edge), [graph_node](#graph_node), [model](#model), [Physical3DWorld](#physical3dworld), 
+[agent](#agent), [AgentDB](#agentdb), [base_edge](#base_edge), [experiment](#experiment), [graph_edge](#graph_edge), [graph_node](#graph_node), [model](#model), [Physical3DWorld](#physical3dworld), 
     	
 ----
-
+[//]: # (keyword|species_agent)
 ## `agent`	
 
 ### Actions
@@ -49,43 +49,7 @@ create cluster_builder returns: clusterer;
 	
     	
 ----
-
-## `agent_group_follower`	
-
-### Actions
-	  
-	 
-#### **`analyse_cluster`**
-
-* returns: `void`
- 			
-* → **`species_to_analyse`** (`string`):   
-	 
-#### **`at_cycle`**
-
-* returns: `list`
- 			
-* → **`with_matrix`** (`string`):  			
-* → **`with_var`** (`string`):   
-	 
-#### **`at_var`**
-
-* returns: `list`
- 			
-* → **`with_matrix`** (`string`):  			
-* → **`with_var`** (`string`):   
-	 
-#### **`distrib_legend`**
-
-* returns: `list`
- 			
-* → **`with_var`** (`string`): 			
-
-[Top of the page](#table-of-contents) 
-	
-    	
-----
-
+[//]: # (keyword|species_AgentDB)
 ## `AgentDB`	
 
 ### Actions
@@ -110,11 +74,6 @@ create cluster_builder returns: clusterer;
 * → **`values`** (`list`): List of values that are used to replace question mark  
 	 
 #### **`getParameter`**
-
-* returns: `unknown`
-  
-	 
-#### **`helloWorld`**
 
 * returns: `unknown`
   
@@ -160,22 +119,7 @@ create cluster_builder returns: clusterer;
 	
     	
 ----
-
-## `AgGroupAnalizer`	
-
-### Actions
-	  
-	 
-#### **`creation_cluster`**
-
-* returns: `void`
-			
-
-[Top of the page](#table-of-contents) 
-	
-    	
-----
-
+[//]: # (keyword|species_base_edge)
 ## `base_edge`	
 
 ### Actions
@@ -185,66 +129,7 @@ create cluster_builder returns: clusterer;
 	
     	
 ----
-
-## `cluster_builder`	
-
-### Actions
-	  
-	 
-#### **`clustering_cobweb`**
-
-* returns: `list<list<agent>>`
-  
-	 
-#### **`clustering_DBScan`**
-
-* returns: `list<list<agent>>`
-  
-	 
-#### **`clustering_em`**
-
-* returns: `list<list<agent>>`
-  
-	 
-#### **`clustering_farthestFirst`**
-
-* returns: `list<list<agent>>`
-  
-	 
-#### **`clustering_simple_kmeans`**
-
-* returns: `list<list<agent>>`
- 			
-* → **`agents`** (`list`):  			
-* → **`attributes`** (`list`):  			
-* → **`distance_f`** (``):  			
-* → **`dont_replace_missing_values`** (``):  			
-* → **`max_iterations`** (``):  			
-* → **`num_clusters`** (``):  			
-* → **`preserve_instances_order`** (``):  			
-* → **`seed`** (``):   
-	 
-#### **`clustering_xmeans`**
-
-* returns: `list<list<agent>>`
- 			
-* → **`agents`** (`list`):  			
-* → **`attributes`** (`list`):  			
-* → **`bin_value`** (`float`): value that represents true in the new attributes 			
-* → **`cut_off_factor`** (`float`): the cut-off factor to use 			
-* → **`distance_f`** (`string`): The distance function to use. 4 possible distance functions: euclidean (by default) ; 'chebyshev', 'manhattan' or 'levenshtein' 			
-* → **`max_iterations`** (`int`): the maximum number of iterations to perform 			
-* → **`max_kmeans`** (`int`): the maximum number of iterations to perform in KMeans 			
-* → **`max_kmeans_for_children`** (`int`): the maximum number of iterations KMeans that is performed on the child centers 			
-* → **`max_num_clusters`** (`int`): the maximum number of clusters 			
-* → **`min_num_clusters`** (`int`): the maximum number of clusters 			
-* → **`seed`** (`int`): random number seed to be used			
-
-[Top of the page](#table-of-contents) 
-	
-    	
-----
-
+[//]: # (keyword|species_experiment)
 ## `experiment`	
 
 ### Actions
@@ -254,7 +139,7 @@ create cluster_builder returns: clusterer;
 	
     	
 ----
-
+[//]: # (keyword|species_graph_edge)
 ## `graph_edge`	
 
 ### Actions
@@ -264,7 +149,7 @@ create cluster_builder returns: clusterer;
 	
     	
 ----
-
+[//]: # (keyword|species_graph_node)
 ## `graph_node`	
 
 ### Actions
@@ -280,7 +165,7 @@ create cluster_builder returns: clusterer;
 	
     	
 ----
-
+[//]: # (keyword|species_model)
 ## `model`	
 
 ### Actions
@@ -300,7 +185,7 @@ Allows to pause the current simulation **ACTUALLY EXPERIMENT FOR THE MOMENT**. I
 	
     	
 ----
-
+[//]: # (keyword|species_Physical3DWorld)
 ## `Physical3DWorld`	
 
 ### Actions

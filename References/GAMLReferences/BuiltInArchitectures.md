@@ -18,11 +18,12 @@
 	[fsm](#fsm), [probabilistic_tasks](#probabilistic_tasks), [reflex](#reflex), [simple_bdi](#simple_bdi), [sorted_tasks](#sorted_tasks), [user_first](#user_first), [user_last](#user_last), [user_only](#user_only), [weighted_tasks](#weighted_tasks), 
 
 ----
+[//]: # (keyword|architecture_fsm)
 ## fsm 
 ### Variables
 	   
-* **`state`** (string): the current state   
-* **`states`** (list): the list of all possible states 
+* **`state`** (string): Returns the current state in which the agent is   
+* **`states`** (list): Returns the list of all possible states the agents can be in 
  	
 ### Actions 
 		
@@ -31,6 +32,7 @@
 	
 
 ----
+[//]: # (keyword|architecture_probabilistic_tasks)
 ## probabilistic_tasks 
 ### Variables
 	 
@@ -42,6 +44,7 @@
 	
 
 ----
+[//]: # (keyword|architecture_reflex)
 ## reflex 
 ### Variables
 	 
@@ -53,6 +56,7 @@
 	
 
 ----
+[//]: # (keyword|architecture_simple_bdi)
 ## simple_bdi 
 ### Variables
 	   
@@ -65,21 +69,32 @@
 * **`plan_base`** (list):    
 * **`plan_persistence`** (float): plan persistence   
 * **`probabilistic_choice`** (boolean):    
-* **`thinking`** (list):  
+* **`thinking`** (list):    
+* **`use_emotions_architecture`** (boolean):  
  	
 ### Actions 
 	  
 	 
 #### **`add_belief`**
-check if the predicates is in the desire base.
+add the predicate in the belief base.
 * returns: bool 			
-* **`predicate`** (map): predicate to check  
+* **`predicate`** (map): predicate to add as a belief  
 	 
 #### **`add_desire`**
 adds the predicates is in the desire base.
 * returns: bool 			
 * **`predicate`** (546704): predicate to add 			
 * **`todo`** (546704): add the desire as a subintention of this parameter  
+	 
+#### **`add_emotion`**
+add the emotion to the emotion base.
+* returns: bool 			
+* **`emotion`** (546706): emotion to add to the base  
+	 
+#### **`add_intention`**
+check if the predicates is in the desire base.
+* returns: bool 			
+* **`predicate`** (map): predicate to check  
 	 
 #### **`add_subintention`**
 adds the predicates is in the desire base.
@@ -103,12 +118,12 @@ clear the intention base
 #### **`current_intention_on_hold`**
 puts the current intention on hold until the specified condition is reached or all subintentions are reached (not in desire base anymore).
 * returns: bool 			
-* **`on_hold_until`** (any type): the specified intention is put on hold (fited plan are not considered) until specific condition is reached. Can be an expression (which will be tested), a list (of subintentions), or nil (by default the condition will be the current list of subintentions of the intention)  
+* **`until`** (any type): the current intention is put on hold (fited plan are not considered) until specific condition is reached. Can be an expression (which will be tested), a list (of subintentions), or nil (by default the condition will be the current list of subintentions of the intention)  
 	 
 #### **`get_belief`**
-get the predicates is in the belief base (if several, returns the first one).
+get the predicate in the belief base (if several, returns the first one).
 * returns: predicate 			
-* **`predicate`** (546704): predicate to check  
+* **`predicate`** (546704): predicate to get  
 	 
 #### **`get_belief_with_name`**
 get the predicates is in the belief base (if several, returns the first one).
@@ -117,7 +132,7 @@ get the predicates is in the belief base (if several, returns the first one).
 	 
 #### **`get_beliefs`**
 get the list of predicates is in the belief base
-* returns: java.util.List<msi.gaml.architecture.simplebdi.Predicate> 			
+* returns: msi.gama.util.IList<msi.gaml.architecture.simplebdi.Predicate> 			
 * **`predicate`** (546704): name of the predicates to check  
 	 
 #### **`get_beliefs_with_name`**
@@ -128,6 +143,51 @@ get the list of predicates is in the belief base with the given name.
 #### **`get_current_intention`**
 returns the current intention (last entry of intention base).
 * returns: predicate  
+	 
+#### **`get_desire`**
+get the predicates is in the desire base (if several, returns the first one).
+* returns: predicate 			
+* **`predicate`** (546704): predicate to check  
+	 
+#### **`get_desire_with_name`**
+get the predicates is in the belief base (if several, returns the first one).
+* returns: predicate 			
+* **`name`** (string): name of the predicate to check  
+	 
+#### **`get_desires`**
+get the list of predicates is in the belief base
+* returns: msi.gama.util.IList<msi.gaml.architecture.simplebdi.Predicate> 			
+* **`predicate`** (546704): name of the predicates to check  
+	 
+#### **`get_desires_with_name`**
+get the list of predicates is in the belief base with the given name.
+* returns: java.util.List<msi.gaml.architecture.simplebdi.Predicate> 			
+* **`name`** (string): name of the predicates to check  
+	 
+#### **`get_emotion`**
+get the emotion in the emotion base (if several, returns the first one).
+* returns: msi.gaml.architecture.simplebdi.Emotion 			
+* **`emotion`** (546706): emotion to get  
+	 
+#### **`get_intention`**
+get the predicates is in the belief base (if several, returns the first one).
+* returns: predicate 			
+* **`predicate`** (546704): predicate to check  
+	 
+#### **`get_intention_with_name`**
+get the predicates is in the belief base (if several, returns the first one).
+* returns: predicate 			
+* **`name`** (string): name of the predicate to check  
+	 
+#### **`get_intentions`**
+get the list of predicates is in the belief base
+* returns: msi.gama.util.IList<msi.gaml.architecture.simplebdi.Predicate> 			
+* **`predicate`** (546704): name of the predicates to check  
+	 
+#### **`get_intentions_with_name`**
+get the list of predicates is in the belief base with the given name.
+* returns: java.util.List<msi.gaml.architecture.simplebdi.Predicate> 			
+* **`name`** (string): name of the predicates to check  
 	 
 #### **`get_plans`**
 get the list of plans.
@@ -143,6 +203,11 @@ check if the predicates is in the desire base.
 * returns: bool 			
 * **`predicate`** (546704): predicate to check  
 	 
+#### **`has_emotion`**
+check if the emotion is in the belief base.
+* returns: bool 			
+* **`emotion`** (546706): emotion to check  
+	 
 #### **`is_current_intention`**
 check if the predicates is the current intention (last entry of intention base).
 * returns: bool 			
@@ -154,14 +219,19 @@ removes the predicates from the belief base.
 * **`predicate`** (546704): predicate to remove  
 	 
 #### **`remove_belief`**
-removes the first predicate from the belief base.
+removes the predicate from the belief base.
 * returns: bool 			
-* **`predicate`** (546704): predicate to add  
+* **`predicate`** (546704): predicate to remove  
 	 
 #### **`remove_desire`**
 removes the predicates from the desire base.
 * returns: bool 			
 * **`predicate`** (546704): predicate to add  
+	 
+#### **`remove_emotion`**
+removes the emotion from the emotion base.
+* returns: bool 			
+* **`emotion`** (546706): emotion to remove  
 	 
 #### **`remove_intention`**
 removes the predicates from the desire base.
@@ -179,6 +249,7 @@ replace the old predicate by the new one.
 	
 
 ----
+[//]: # (keyword|architecture_sorted_tasks)
 ## sorted_tasks 
 ### Variables
 	 
@@ -190,6 +261,7 @@ replace the old predicate by the new one.
 	
 
 ----
+[//]: # (keyword|architecture_user_first)
 ## user_first 
 ### Variables
 	 
@@ -201,6 +273,7 @@ replace the old predicate by the new one.
 	
 
 ----
+[//]: # (keyword|architecture_user_last)
 ## user_last 
 ### Variables
 	 
@@ -212,6 +285,7 @@ replace the old predicate by the new one.
 	
 
 ----
+[//]: # (keyword|architecture_user_only)
 ## user_only 
 ### Variables
 	 
@@ -223,6 +297,7 @@ replace the old predicate by the new one.
 	
 
 ----
+[//]: # (keyword|architecture_weighted_tasks)
 ## weighted_tasks 
 ### Variables
 	 

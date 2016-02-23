@@ -54,10 +54,10 @@ if speed = 5 {
 ## Table of Contents
 <wiki:toc max_depth="3" />
 
-[advanced_driving](#advanced_driving), [communicating](#communicating), [driving](#driving), [GAMASQL](#gamasql), [graphic](#graphic), [grid](#grid), [MDXSKILL](#mdxskill), [moving](#moving), [moving3D](#moving3d), [physical3D](#physical3d), [skill_road](#skill_road), [skill_road_node](#skill_road_node), [SQLSKILL](#sqlskill), 
+[advanced_driving](#advanced_driving), [communicating](#communicating), [driving](#driving), [GAMASQL](#gamasql), [grid](#grid), [MDXSKILL](#mdxskill), [moving](#moving), [moving3D](#moving3d), [network](#network), [physical3D](#physical3d), [skill_road](#skill_road), [skill_road_node](#skill_road_node), [SQLSKILL](#sqlskill), 
     	
 ----
-
+[//]: # (keyword|skill_advanced_driving)
 ## advanced_driving
 
  
@@ -157,7 +157,7 @@ action to test if the driver can take the given road
 	
     	
 ----
-
+[//]: # (keyword|skill_communicating)
 ## communicating
 The communicating skill offers some primitives and built-in variables which enable agent to communicate with each other using the FIPA interaction protocol.
  
@@ -303,7 +303,7 @@ Replies a message with a 'subscribe' performative message.
 	
     	
 ----
-
+[//]: # (keyword|skill_driving)
 ## driving
 
  
@@ -347,7 +347,7 @@ moves the agent towards the target passed in the arguments while considering the
 	
     	
 ----
-
+[//]: # (keyword|skill_GAMASQL)
 ## GAMASQL
 
  
@@ -383,51 +383,17 @@ moves the agent towards the target passed in the arguments while considering the
 	
     	
 ----
-
-## graphic
-The graphic skill is intended to define the minimal set of behaviours required from a graphical agent
- 
-### Variables
-	   
-  * **`transparency`** (`float`): the transparency of the agent (between 0.0 and 1.0) 
- 	
-### Actions
-	  
-	 
-#### **`brewer_color`**
-
-
-* returns: rgb 			
-* **`type`** (string): Palette Type (Sequential, Diverging, Qualitative) 			
-* **`class`** (int): Number of class 			
-* **`index`** (int): index  
-	 
-#### **`brewer_palette`**
-
-
-* returns: msi.gama.util.IList<java.awt.Color> 			
-* **`type`** (string): Palette Type (Sequential, Diverging, Qualitative)  
-	 
-#### **`twinkle`**
-
-
-* returns: void 			
-* **`period`** (int): make the agent twinkle with a given period	
-
-[Top of the page](#table-of-contents)
-	
-    	
-----
-
+[//]: # (keyword|skill_grid)
 ## grid
 
  
 ### Variables
 	   
-  * **`color`** (`rgb`):    
-  * **`grid_value`** (`float`):    
-  * **`grid_x`** (`int`):    
-  * **`grid_y`** (`int`):  
+  * **`color`** (`rgb`): Represents the color of the cell, used by default to represent the grid on displays   
+  * **`grid_value`** (`float`): Represents a floating point value (automatically set when the grid is initialized from a DEM, and used by default to represent the elevation of the cell when displaying it on a display)   
+  * **`grid_x`** (`int`): Returns the 0-based index of the column of the cell in the grid   
+  * **`grid_y`** (`int`): Returns the 0-based index of the row of the cell in the grid   
+  * **`neighbors`** (`list`): Represents the neighbor at distance 1 of the cell 
  	
 ### Actions
 		
@@ -436,7 +402,7 @@ The graphic skill is intended to define the minimal set of behaviours required f
 	
     	
 ----
-
+[//]: # (keyword|skill_MDXSKILL)
 ## MDXSKILL
 
  
@@ -445,11 +411,6 @@ The graphic skill is intended to define the minimal set of behaviours required f
  	
 ### Actions
 	  
-	 
-#### **`helloWorld`**
-
-
-* returns: unknown  
 	 
 #### **`select`**
 
@@ -477,16 +438,16 @@ The graphic skill is intended to define the minimal set of behaviours required f
 	
     	
 ----
-
+[//]: # (keyword|skill_moving)
 ## moving
 The moving skill is intended to define the minimal set of behaviours required for agents that are able to move on different topologies
  
 ### Variables
 	   
-  * **`destination`** (`point`): continuously updated destination of the agent with respect to its speed and heading (read-only)   
-  * **`heading`** (`int`): the absolute heading of the agent in degrees (in the range 0-359)   
+  * **`destination`** (`point`): Represents the next location of the agent if it keeps its current speed and heading (read-only)   
+  * **`heading`** (`int`): Represents the absolute heading of the agent in degrees (in the range 0-359)   
   * **`location`** (`point`):    
-  * **`speed`** (`float`): the speed of the agent (in meter/second) 
+  * **`speed`** (`float`): Represents the speed of the agent (in meter/second) 
  	
 ### Actions
 	  
@@ -525,22 +486,13 @@ Moves the agent towards a random location at the maximum distance (with respect 
 * returns: void 			
 * **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
 * **`amplitude`** (int): a restriction placed on the random heading choice. The new heading is chosen in the range (heading - amplitude/2, heading+amplitude/2) 			
-* **`bounds`** (agent,geometry): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry  
-	 
-#### **`wander_3D`**
-Moves the agent towards a random location (3D point) at the maximum distance (with respect to its speed). The heading of the agent is chosen randomly if no amplitude is specified. This action changes the value of heading.
-
-* returns: path 			
-* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
-* **`amplitude`** (int): a restriction placed on the random heading choice. The new heading is chosen in the range (heading - amplitude/2, heading+amplitude/2) 			
-* **`z_max`** (int): the maximum alltitude (z) the geometry can reach 			
 * **`bounds`** (agent,geometry): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry	
 
 [Top of the page](#table-of-contents)
 	
     	
 ----
-
+[//]: # (keyword|skill_moving3D)
 ## moving3D
 The moving skill 3D is intended to define the minimal set of behaviours required for agents that are able to move on different topologies
  
@@ -569,7 +521,47 @@ moves the agent forward, the distance being computed with respect to its speed a
 	
     	
 ----
+[//]: # (keyword|skill_network)
+## network
 
+ 
+### Variables
+	   
+  * **`netAgtName`** (`string`): Net ID of the agent 
+ 	
+### Actions
+	  
+	 
+#### **`connectMessenger`**
+moves the agent towards the target passed in the arguments.
+
+* returns: void 			
+* **`to`** (string): server URL 			
+* **`at`** (string): server URL 			
+* **`withName`** (string): agent Name  
+	 
+#### **`emptyMessageBox`**
+moves the agent towards the target passed in the arguments.
+
+* returns: bool  
+	 
+#### **`fetchMessage`**
+moves the agent towards the target passed in the arguments.
+
+* returns: map<string,unknown>  
+	 
+#### **`sendMessage`**
+Send a message to a destination.
+
+* returns: void 			
+* **`dest`** (string): The network ID of the agent who receive the message 			
+* **`content`** (any type): The content of the message	
+
+[Top of the page](#table-of-contents)
+	
+    	
+----
+[//]: # (keyword|skill_physical3D)
 ## physical3D
 
  
@@ -589,7 +581,7 @@ moves the agent forward, the distance being computed with respect to its speed a
 	
     	
 ----
-
+[//]: # (keyword|skill_skill_road)
 ## skill_road
 
  
@@ -623,7 +615,7 @@ unregister the agent on the road
 	
     	
 ----
-
+[//]: # (keyword|skill_skill_road_node)
 ## skill_road_node
 
  
@@ -642,7 +634,7 @@ unregister the agent on the road
 	
     	
 ----
-
+[//]: # (keyword|skill_SQLSKILL)
 ## SQLSKILL
 
  

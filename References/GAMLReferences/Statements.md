@@ -8,7 +8,7 @@
 
 ## Table of Contents
 <wiki:toc max_depth="2" />
-[=](#=), [action](#action), [add](#add), [agents](#agents), [analyse](#analyse), [annealing](#annealing), [ask](#ask), [aspect](#aspect), [assert](#assert), [break](#break), [capture](#capture), [chart](#chart), [create](#create), [data](#data), [datalist](#datalist), [default](#default), [diffusion](#diffusion), [display](#display), [display_grid](#display_grid), [display_population](#display_population), [do](#do), [draw](#draw), [else](#else), [enter](#enter), [equation](#equation), [error](#error), [event](#event), [exhaustive](#exhaustive), [exit](#exit), [experiment](#experiment), [export](#export), [focus](#focus), [genetic](#genetic), [graphics](#graphics), [hill_climbing](#hill_climbing), [if](#if), [image](#image), [inspect](#inspect), [let](#let), [loop](#loop), [match](#match), [migrate](#migrate), [monitor](#monitor), [output](#output), [output_file](#output_file), [overlay](#overlay), [parameter](#parameter), [perceive](#perceive), [permanent](#permanent), [plan](#plan), [put](#put), [quadtree](#quadtree), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [release](#release), [remove](#remove), [return](#return), [rule](#rule), [run](#run), [save](#save), [save_batch](#save_batch), [set](#set), [setup](#setup), [signal](#signal), [simulate](#simulate), [solve](#solve), [species](#species), [state](#state), [status](#status), [switch](#switch), [tabu](#tabu), [task](#task), [test](#test), [text](#text), [trace](#trace), [transition](#transition), [user_command](#user_command), [user_init](#user_init), [user_input](#user_input), [user_panel](#user_panel), [using](#using), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), [warn](#warn), [write](#write), 
+[=](#=), [action](#action), [add](#add), [agents](#agents), [annealing](#annealing), [ask](#ask), [aspect](#aspect), [assert](#assert), [break](#break), [camera](#camera), [capture](#capture), [chart](#chart), [create](#create), [data](#data), [datalist](#datalist), [default](#default), [diffuse](#diffuse), [display](#display), [display_grid](#display_grid), [display_population](#display_population), [do](#do), [draw](#draw), [else](#else), [enter](#enter), [equation](#equation), [error](#error), [event](#event), [exhaustive](#exhaustive), [exit](#exit), [experiment](#experiment), [export](#export), [focus](#focus), [genetic](#genetic), [graphics](#graphics), [hill_climbing](#hill_climbing), [if](#if), [image](#image), [inspect](#inspect), [let](#let), [loop](#loop), [match](#match), [migrate](#migrate), [monitor](#monitor), [output](#output), [output_file](#output_file), [overlay](#overlay), [parameter](#parameter), [perceive](#perceive), [permanent](#permanent), [plan](#plan), [put](#put), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [release](#release), [remove](#remove), [return](#return), [rule](#rule), [run](#run), [save](#save), [save_batch](#save_batch), [set](#set), [setup](#setup), [simulate](#simulate), [solve](#solve), [species](#species), [state](#state), [status](#status), [switch](#switch), [tabu](#tabu), [task](#task), [test](#test), [trace](#trace), [transition](#transition), [user_command](#user_command), [user_init](#user_init), [user_input](#user_input), [user_panel](#user_panel), [using](#using), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), [warn](#warn), [write](#write), 
 
 
 ## Statements by kinds
@@ -20,7 +20,7 @@
   * **Experiment**
     * [experiment](#experiment),  
   * **Layer**
-    * [agents](#agents),  [chart](#chart),  [display_grid](#display_grid),  [display_population](#display_population),  [event](#event),  [graphics](#graphics),  [image](#image),  [overlay](#overlay),  [quadtree](#quadtree),  [text](#text),  
+    * [agents](#agents),  [camera](#camera),  [chart](#chart),  [display_grid](#display_grid),  [display_population](#display_population),  [event](#event),  [graphics](#graphics),  [image](#image),  [overlay](#overlay),  
   * **Output**
     * [display](#display),  [inspect](#inspect),  [monitor](#monitor),  [output](#output),  [output_file](#output_file),  [permanent](#permanent),  
   * **Parameter**
@@ -28,7 +28,7 @@
   * **Sequence of statements or action**
     * [action](#action),  [ask](#ask),  [capture](#capture),  [create](#create),  [default](#default),  [else](#else),  [enter](#enter),  [equation](#equation),  [exit](#exit),  [if](#if),  [loop](#loop),  [match](#match),  [migrate](#migrate),  [perceive](#perceive),  [release](#release),  [run](#run),  [setup](#setup),  [switch](#switch),  [trace](#trace),  [transition](#transition),  [user_command](#user_command),  [using](#using),  
   * **Single statement**
-    * [=](#=),  [add](#add),  [analyse](#analyse),  [assert](#assert),  [break](#break),  [data](#data),  [datalist](#datalist),  [diffusion](#diffusion),  [do](#do),  [draw](#draw),  [error](#error),  [export](#export),  [focus](#focus),  [let](#let),  [put](#put),  [remove](#remove),  [return](#return),  [rule](#rule),  [save](#save),  [set](#set),  [simulate](#simulate),  [solve](#solve),  [status](#status),  [user_input](#user_input),  [warn](#warn),  [write](#write),  
+    * [=](#=),  [add](#add),  [assert](#assert),  [break](#break),  [data](#data),  [datalist](#datalist),  [diffuse](#diffuse),  [do](#do),  [draw](#draw),  [error](#error),  [export](#export),  [focus](#focus),  [let](#let),  [put](#put),  [remove](#remove),  [return](#return),  [rule](#rule),  [save](#save),  [set](#set),  [simulate](#simulate),  [solve](#solve),  [status](#status),  [user_input](#user_input),  [warn](#warn),  [write](#write),  
   * **Species**
     * [species](#species),  
   * **Variable (container)**
@@ -37,14 +37,12 @@
     * [Variable_number](#variable_number),  
   * **Variable (regular)**
     * [Variable_regular](#variable_regular),  
-  * **Variable (signal)**
-    * [signal](#signal),  
 
 
 ## Statements by embedment
 
   * **Behavior**
-    * [add](#add), [ask](#ask), [capture](#capture), [create](#create), [diffusion](#diffusion), [do](#do), [error](#error), [focus](#focus), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [run](#run), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [using](#using), [warn](#warn), [write](#write), 
+    * [add](#add), [ask](#ask), [capture](#capture), [create](#create), [diffuse](#diffuse), [do](#do), [error](#error), [focus](#focus), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [run](#run), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [using](#using), [warn](#warn), [write](#write), 
   * **Environment**
     * [species](#species), 
   * **Experiment**
@@ -54,11 +52,11 @@
   * **Model**
     * [action](#action), [aspect](#aspect), [equation](#equation), [experiment](#experiment), [output](#output), [reflex](#reflex), [run](#run), [setup](#setup), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
   * **Sequence of statements or action**
-    * [add](#add), [ask](#ask), [break](#break), [capture](#capture), [create](#create), [data](#data), [datalist](#datalist), [diffusion](#diffusion), [do](#do), [draw](#draw), [error](#error), [focus](#focus), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [using](#using), [warn](#warn), [write](#write), 
+    * [add](#add), [ask](#ask), [break](#break), [capture](#capture), [create](#create), [data](#data), [datalist](#datalist), [diffuse](#diffuse), [do](#do), [draw](#draw), [error](#error), [focus](#focus), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [using](#using), [warn](#warn), [write](#write), 
   * **Single statement**
     * [run](#run), 
   * **Species**
-    * [action](#action), [aspect](#aspect), [equation](#equation), [perceive](#perceive), [plan](#plan), [reflex](#reflex), [rule](#rule), [run](#run), [setup](#setup), [signal](#signal), [simulate](#simulate), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
+    * [action](#action), [aspect](#aspect), [equation](#equation), [perceive](#perceive), [plan](#plan), [reflex](#reflex), [rule](#rule), [run](#run), [setup](#setup), [simulate](#simulate), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
   * **action**
     * [return](#return), 
   * **aspect**
@@ -66,13 +64,11 @@
   * **chart**
     * [add](#add), [ask](#ask), [data](#data), [datalist](#datalist), [do](#do), [put](#put), [remove](#remove), [set](#set), [simulate](#simulate), [using](#using), 
   * **display**
-    * [agents](#agents), [chart](#chart), [display_grid](#display_grid), [display_population](#display_population), [event](#event), [graphics](#graphics), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [text](#text), 
+    * [agents](#agents), [camera](#camera), [chart](#chart), [display_grid](#display_grid), [display_population](#display_population), [event](#event), [graphics](#graphics), [image](#image), [overlay](#overlay), 
   * **display_population**
     * [display_population](#display_population), 
   * **equation**
     * [=](#=), 
-  * **experiment**
-    * [analyse](#analyse), 
   * **fsm**
     * [state](#state), [user_panel](#user_panel), 
   * **if**
@@ -131,7 +127,7 @@ statement_keyword1 expression1 facet2: expression2... { // a sequence statement
 	
 
 ----
-
+[//]: # (keyword|statement_=)
 ### = 
 #### Facets 
   
@@ -169,7 +165,7 @@ equation SI {
 	
 
 ----
-
+[//]: # (keyword|statement_action)
 ### action 
 #### Facets 
   
@@ -240,7 +236,7 @@ species children parent: parent_species {
 	
 
 ----
-
+[//]: # (keyword|statement_add)
 ### add 
 #### Facets 
   
@@ -335,19 +331,19 @@ list var <- g.edges; 	// var equals [polyline({1.0,5.0}::{12.0,45.0}),polyline({
 	
 
 ----
-
+[//]: # (keyword|statement_agents)
 ### agents 
 #### Facets 
   
-  * **`name`** (a label), (omissible) : identifier of the layer  
   * **`value`** (container): the set of agents to display
+  * `name` (a label), (omissible) : Human readable title of the layer
   * `aspect` (an identifier): the name of the aspect that should be used to display the species
   * `fading` (boolean): Used in conjunction with 'trace:', allows to apply a fading effect to the previous traces. Default is false
-  * `focus` (agent): the agent on with will be focus the camera (it is dynamically computed)
+  * `focus` (agent): the agent on which the camera will be focused (it is dynamically computed)
   * `position` (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
   * `refresh` (boolean): (openGL only) specify whether the display of the species is refreshed. (true by default, useful in case of agents that do not move)
   * `selectable` (boolean): Indicates whether the agents present on this layer are selectable by the user. Default is true
-  * `size` (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
+  * `size` (point): extent of the layer in the screen from its position. Coordinates in [0,1[ are treated as percentages of the total surface, while coordinates > 1 are treated as absolute sizes in model units (i.e. considering the model occupies the entire view). Like in 'position', an elevation can be provided with the z coordinate, allowing to scale the layer in the 3 directions
   * `trace` (any type in [boolean, int]): Allows to aggregate the visualization of agents at each timestep on the display. Default is false. If set to an int value, only the last n-th steps will be visualized. If set to true, no limit of timesteps is applied.
   * `transparency` (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency) 
  	
@@ -387,24 +383,7 @@ display Segregation {
 	
 
 ----
-
-### analyse 
-#### Facets 
-  
-  * **`species_to_analyse`** (any type in [string, string]), (omissible) :   
-  * **`with_constraint`** (any type in [string, string]): 
-
-#### Embedments
-* The `analyse` statement is of type: **Single statement**
-* The `analyse` statement can be embedded into: experiment, 
-* The `analyse` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
-
-----
-
+[//]: # (keyword|statement_annealing)
 ### annealing 
 #### Facets 
   
@@ -448,7 +427,7 @@ method annealing temp_init: 100  temp_end: 1 temp_decrease: 0.5 nb_iter_cst_temp
 	
 
 ----
-
+[//]: # (keyword|statement_ask)
 ### ask 
 #### Facets 
   
@@ -528,11 +507,11 @@ species animal {
 	
 
 ----
-
+[//]: # (keyword|statement_aspect)
 ### aspect 
 #### Facets 
 
-  * `name` (an identifier), (omissible) : identifier of the aspect (it can be used in a display to identify which aspect should be used for the given species) 
+  * `name` (an identifier), (omissible) : identifier of the aspect (it can be used in a display to identify which aspect should be used for the given species). Two special names can also be used: 'default' will allow this aspect to be used as a replacement for the default aspect defined in preferences; 'highlighted' will allow the aspect to be used when the agent is highlighted as a replacement for the default (application of a color) 
  	
 #### Definition
 
@@ -565,7 +544,7 @@ species one_species {
 	
 
 ----
-
+[//]: # (keyword|statement_assert)
 ### assert 
 #### Facets 
   
@@ -614,7 +593,7 @@ assert (3/z) raises: "error";
 	
 
 ----
-
+[//]: # (keyword|statement_break)
 ### break 
 #### Facets 
  
@@ -636,7 +615,34 @@ assert (3/z) raises: "error";
 	
 
 ----
+[//]: # (keyword|statement_camera)
+### camera 
+#### Facets 
+  
+  * **`name`** (string), (omissible) : The name of the camera
+  * `location` (point): The location of the camera in the world
+  * `look_at` (point): The location that the camera is looking
+  * `up_vector` (point): The up-vector of the camera. 
+ 	
+#### Definition
 
+`camera` allows the modeler to define a camera. The display will then be able to choose among the camera defined (either within this statement or globally in GAMA) in a dynamic way.
+
+#### Usages
+    
+* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
+
+#### Embedments
+* The `camera` statement is of type: **Layer**
+* The `camera` statement can be embedded into: display, 
+* The `camera` statement embeds statements: 
+
+[Top of the page](#table-of-contents)
+		
+	
+
+----
+[//]: # (keyword|statement_capture)
 ### capture 
 #### Facets 
   
@@ -692,11 +698,11 @@ capture target: list (B) as: C;
 	
 
 ----
-
+[//]: # (keyword|statement_chart)
 ### chart 
 #### Facets 
-  
-  * **`name`** (a label), (omissible) : the identifier of the chart layer
+
+  * `name` (a label), (omissible) : the human readable title of the chart layer
   * `axes` (rgb): the axis color
   * `background` (rgb): the background color
   * `color` (rgb): 
@@ -708,7 +714,7 @@ capture target: list (B) as: C;
   * `legend_font_size` (int): 
   * `legend_font_style` (an identifier), takes values in: {plain, bold, italic}: the style used to display legend
   * `position` (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
-  * `size` (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
+  * `size` (point): extent of the layer in the screen from its position. Coordinates in [0,1[ are treated as percentages of the total surface, while coordinates > 1 are treated as absolute sizes in model units (i.e. considering the model occupies the entire view). Like in 'position', an elevation can be provided with the z coordinate, allowing to scale the layer in the 3 directions
   * `style` (an identifier), takes values in: {exploded, 3d, stack, bar}: 
   * `tick_font` (string): 
   * `tick_font_size` (int): 
@@ -753,16 +759,16 @@ display chart_display {
 	
 
 ----
-
+[//]: # (keyword|statement_create)
 ### create 
 #### Facets 
 
-  * `species` (species), (omissible) : an expression that evaluates to a species, the species of created agents
+  * `species` (any type in [species, agent]), (omissible) : an expression that evaluates to a species, the species of the agents to be created. In the case of simulations, the name 'simulation', which represents the current instance of simulation, can also be used as a proxy to their species
   * `as` (species): 
   * `from` (any type): an expression that evaluates to a localized entity, a list of localized entities, a string (the path of a shapefile, a .csv, a .asc or a OSM file) or a container returned by a request to a database
   * `header` (boolean): an expression that evaluates to a boolean, when creating agents from csv file, specify whether the file header is loaded
   * `number` (int): an expression that evaluates to an int, the number of created agents
-  * `returns` (a new identifier): a new temporary variable name containing the list of created agents (a lsit even if only one agent has been created)
+  * `returns` (a new identifier): a new temporary variable name containing the list of created agents (a list, even if only one agent has been created)
   * `with` (map): an expression that evaluates to a map, for each pair the key is a species attribute and the value the assigned value 
  	
 #### Definition
@@ -853,7 +859,7 @@ create species: a_species number: an_int;
 	
 
 ----
-
+[//]: # (keyword|statement_data)
 ### data 
 #### Facets 
   
@@ -877,7 +883,7 @@ create species: a_species number: an_int;
 	
 
 ----
-
+[//]: # (keyword|statement_datalist)
 ### datalist 
 #### Facets 
   
@@ -901,7 +907,7 @@ create species: a_species number: an_int;
 	
 
 ----
-
+[//]: # (keyword|statement_default)
 ### default 
 #### Facets 
 
@@ -925,18 +931,22 @@ Used in a switch match structure, the block prefixed by default is executed only
 	
 
 ----
-
-### diffusion 
+[//]: # (keyword|statement_diffuse)
+### diffuse 
 #### Facets 
   
   * **`var`** (an identifier), (omissible) : the variable to be diffused  
-  * **`on`** (an identifier): the species (in general a grid), on which the diffusion will occur
+  * **`on`** (container): the list of agents (in general cells of a grid), on which the diffusion will occur
   * `cycle_length` (int): the number of diffusion operation applied in one simulation step
-  * `mask` (matrix): a matrix masking the diffusion (matrix created from a image for example)
+  * `mask` (matrix): a matrix masking the diffusion (matrix created from a image for example). The cells corresponding to the values smaller than "-1" in the mask matrix will not diffuse, and the other will diffuse.
   * `mat_diffu` (matrix): the diffusion matrix (can have any size)
+  * `matrix` (matrix): the diffusion matrix (can have any size)
   * `method` (an identifier), takes values in: {convolution, dot_product}: the diffusion method
+  * `min_value` (float): if a value is smaller than this value, it will not be diffused. By default, this value is equal to 0.0. This value cannot be smaller than 0.
+  * `propagation` (a label), takes values in: {diffusion, gradient}: represents both the way the signal is propagated and the way to treat multiple propagations of the same signal occuring at once from different places. If propagation equals 'diffusion', the intensity of a signal is shared between its neighbours with respect to 'proportion', 'variation' and the number of neighbours of the environment places (4, 6 or 8). I.e., for a given signal S propagated from place P, the value transmitted to its N neighbours is : S' = (S / N / proportion) - variation. The intensity of S is then diminished by S `*` proportion on P. In a diffusion, the different signals of the same name see their intensities added to each other on each place. If propagation equals 'gradient', the original intensity is not modified, and each neighbours receives the intensity : S / proportion - variation. If multiple propagations occur at once, only the maximum intensity is kept on each place. If 'propagation' is not defined, it is assumed that it is equal to 'diffusion'.
   * `proportion` (float): a diffusion rate
-  * `radius` (int): a diffusion radius 
+  * `radius` (int): a diffusion radius (in number of cells from the center)
+  * `variation` (float): an absolute value to decrease at each neighbors 
  	
 #### Definition
 
@@ -948,36 +958,36 @@ This statements allows a value to diffuse among a species on agents (generally o
 
 ```
 matrix<float> math_diff <- matrix([[1/9,1/9,1/9],[1/9,1/9,1/9],[1/9,1/9,1/9]]);
-diffusion var: phero on: cells mat_diffu: math_diff;
+diffuse var: phero on: cells mat_diffu: math_diff;
 ```
 
 
 * The diffusion can be masked by obstacles, created from a bitmap image:
 
 ```
-diffusion var: phero on: cells mat_diffu: math_diff mask: mymask;
+diffuse var: phero on: cells mat_diffu: math_diff mask: mymask;
 ```
 
 
 * A convenient way to have an uniform diffusion in a given radius is (which is equivalent to the above diffusion):
 
 ```
-diffusion var: phero on: cells proportion: 1/9 radius: 1;
+diffuse var: phero on: cells proportion: 1/9 radius: 1;
 ```
 
 
 
 #### Embedments
-* The `diffusion` statement is of type: **Single statement**
-* The `diffusion` statement can be embedded into: Behavior, Sequence of statements or action, 
-* The `diffusion` statement embeds statements: 
+* The `diffuse` statement is of type: **Single statement**
+* The `diffuse` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `diffuse` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 		
 	
 
 ----
-
+[//]: # (keyword|statement_display)
 ### display 
 #### Facets 
   
@@ -1033,14 +1043,14 @@ display gridWithElevationTriangulated type: opengl ambient_light: 100 {
 #### Embedments
 * The `display` statement is of type: **Output**
 * The `display` statement can be embedded into: output, permanent, 
-* The `display` statement embeds statements: [#agents agents],  [#chart chart],  [#display_grid display_grid],  [#display_population display_population],  [#event event],  [#graphics graphics],  [#image image],  [#overlay overlay],  [#quadtree quadtree],  [#text text],  
+* The `display` statement embeds statements: [#agents agents],  [#camera camera],  [#chart chart],  [#display_grid display_grid],  [#display_population display_population],  [#event event],  [#graphics graphics],  [#image image],  [#overlay overlay],  
 
 [Top of the page](#table-of-contents)
 		
 	
 
 ----
-
+[//]: # (keyword|statement_display_grid)
 ### display_grid 
 #### Facets 
   
@@ -1050,12 +1060,12 @@ display gridWithElevationTriangulated type: opengl ambient_light: 100 {
   * `elevation` (any type in [matrix, float, int, boolean]): Allows to specify the elevation of each cell, if any. Can be a matrix of float (provided it has the same size than the grid), an int or float variable of the grid species, or simply true (in which case, the variable called 'grid_value' is used to compute the elevation of each cell)
   * `grayscale` (boolean): if true, givse a grey value to each polygon depending on its elevation (false by default)
   * `lines` (rgb): the color to draw lines (borders of cells)
-  * `position` (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
+  * `position` (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greater than 1. The position can also be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
   * `refresh` (boolean): (openGL only) specify whether the display of the species is refreshed. (true by default, usefull in case of agents that do not move)
   * `selectable` (boolean): Indicates whether the agents present on this layer are selectable by the user. Default is true
-  * `size` (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
+  * `size` (point): extent of the layer in the screen from its position. Coordinates in [0,1[ are treated as percentages of the total surface, while coordinates > 1 are treated as absolute sizes in model units (i.e. considering the model occupies the entire view). Like in 'position', an elevation can be provided with the z coordinate, allowing to scale the layer in the 3 directions
   * `text` (boolean): specify whether the attribute used to compute the elevation is displayed on each cells (false by default)
-  * `texture` (any type in [boolean, file]): the file object containing the texture image to be applied on the grid
+  * `texture` (any type in [boolean, file]): Either file  containing the texture image to be applied on the grid or, if true, the use of the image composed by the colors of the cells. If false, no texture is applied
   * `transparency` (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency)
   * `triangulation` (boolean): specifies whther the cells will be triangulated: if it is false, they will be displayed as horizontal squares at a given elevation, whereas if it is true, cells will be triangulated and linked to neighbors in order to have a continuous surface (false by default) 
  	
@@ -1095,7 +1105,7 @@ display my_display {
 	
 
 ----
-
+[//]: # (keyword|statement_display_population)
 ### display_population 
 #### Facets 
   
@@ -1105,7 +1115,7 @@ display my_display {
   * `position` (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
   * `refresh` (boolean): (openGL only) specify whether the display of the species is refreshed. (true by default, usefull in case of agents that do not move)
   * `selectable` (boolean): Indicates whether the agents present on this layer are selectable by the user. Default is true
-  * `size` (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
+  * `size` (point): extent of the layer in the screen from its position. Coordinates in [0,1[ are treated as percentages of the total surface, while coordinates > 1 are treated as absolute sizes in model units (i.e. considering the model occupies the entire view). Like in 'position', an elevation can be provided with the z coordinate, allowing to scale the layer in the 3 directions
   * `trace` (any type in [boolean, int]): Allows to aggregate the visualization of agents at each timestep on the display. Default is false. If set to an int value, only the last n-th steps will be visualized. If set to true, no limit of timesteps is applied.
   * `transparency` (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency) 
  	
@@ -1158,7 +1168,7 @@ display my_display type: opengl{
 	
 
 ----
-
+[//]: # (keyword|statement_do)
 ### do 
 #### Facets 
   
@@ -1239,31 +1249,25 @@ do name_of_action_or_primitive {
 	
 
 ----
-
+[//]: # (keyword|statement_draw)
 ### draw 
 #### Facets 
 
   * `geometry` (any type), (omissible) : any type of data (it can be geometry, image, text)
   * `at` (point): location where the shape/text/icon is drawn
   * `begin_arrow` (any type in [int, float]): the size of the arrow, located at the beginning of the drawn geometry
-  * `bitmap` (boolean): 
+  * `bitmap` (boolean): Whether to render the text in 3D or not
   * `border` (any type in [rgb, boolean]): if used with a color, represents the color of the geometry border. If set to false, expresses that no border should be drawn. If not set, the borders will be drawn using the color of the geometry.
-  * `color` (rgb): the color to use to display the text/icon/geometry
-  * `depth` (float): (only if the display type is opengl) Add a depth to the geometry previously defined (a line becomes a plan, a circle becomes a cylinder, a square becomes a cube, a polygon becomes a polyhedron with height equal to the depth value). Note: This only works if a the agent has not a point geometry
+  * `color` (rgb): the color to use to display the object. In case of images, will try to colorize it
+  * `depth` (float): (only if the display type is opengl) Add an artificial depth to the geometry previously defined (a line becomes a plan, a circle becomes a cylinder, a square becomes a cube, a polygon becomes a polyhedron with height equal to the depth value). Note: This only works if the geometry is not a point
   * `empty` (boolean): a condition specifying whether the geometry is empty or full
   * `end_arrow` (any type in [int, float]): the size of the arrow, located at the end of the drawn geometry
-  * `font` (any type in [19, string]): the font used to draw the text
-  * `image` (string): path of the icon to draw (JPEG, PNG, GIF)
-  * `rotate` (any type in [float, int]): orientation of the shape/text/icon
-  * `rotate3D` (pair): orientation of the shape/text/icon
+  * `font` (any type in [19, string]): the font used to draw the text, if any. Applying this facet to geometries or images has no effect.
+  * `perspective` (boolean): Whether to render the text in perspective or facing the user. Default is true.
+  * `rotate` (any type in [float, int, pair]): orientation of the shape/text/icon; can be either an int/float (angle) or a pair float::point (angle::rotation axis). The rotation axis, when expressed as an angle, is by defaut {0,0,1}
   * `rounded` (boolean): specify whether the geometry have to be rounded (e.g. for squares)
-  * `scale` (float): 
-  * `shape` (any type): the shape to display
-  * `size` (float): size of the text/icon (not used in the context of the drawing of a geometry)
-  * `style` (an identifier), takes values in: {plain, bold, italic}: the style used to display text
-  * `text` (string): the text to draw
-  * `texture` (any type in [string, list]): the texture that should be applied to the geometry
-  * `to` (point):  
+  * `size` (any type in [float, point]): size of the object to draw, expressed as a bounding box (width, height, depth). If expressed as a float, represents the size in the three directions.
+  * `texture` (any type in [string, list]): the texture that should be applied to the geometry 
  	
 #### Definition
 
@@ -1312,7 +1316,7 @@ aspect arrowAspect {
 	
 
 ----
-
+[//]: # (keyword|statement_else)
 ### else 
 #### Facets 
  
@@ -1335,7 +1339,7 @@ This statement cannot be used alone
 	
 
 ----
-
+[//]: # (keyword|statement_enter)
 ### enter 
 #### Facets 
  
@@ -1370,7 +1374,7 @@ In an FSM architecture, `enter` introduces a sequence of statements to execute u
 	
 
 ----
-
+[//]: # (keyword|statement_equation)
 ### equation 
 #### Facets 
   
@@ -1424,7 +1428,7 @@ equation eqLV type: LV vars: [x,y,t] params: [alpha,beta,delta,gamma] ;
 	
 
 ----
-
+[//]: # (keyword|statement_error)
 ### error 
 #### Facets 
   
@@ -1454,18 +1458,19 @@ error 'This is an error raised by ' + self;
 	
 
 ----
-
+[//]: # (keyword|statement_event)
 ### event 
 #### Facets 
   
-  * **`name`** (an identifier), (omissible) , takes values in: {mouse_up, mouse_down, mouse_drag}: the type of event captured  
-  * **`action`** (string): the identifier of the action to be executed. It has to be an action written in the global block. This action have to follow the following specification: `action myAction (point location, list selected_agents)`
+  * **`name`** (an identifier), (omissible) : the type of event captured: can be  "mouse_up", "mouse_down", "mouse_move", "mouse_exit", "mouse_enter" or a character (not yet functional)  
+  * **`action`** (string): the identifier of the action to be executed. It has to be an action written in the global block. This action needs to be defined in 'global' and will receive two possible arguments: the location of the mouse in the environment and the agents under the mouse. For instance:`action myAction (point location, list selected_agents)`
   * `mouse_location` (string): 
-  * `selected_agents` (string):  
+  * `selected_agents` (string): 
+  * `unused` (an identifier), takes values in: {mouse_up, mouse_down, mouse_move, mouse_enter, mouse_exit}: an unused facet that serves only for the purpose of declaring the string values 
  	
 #### Definition
 
-`event` allows to interact with the simulation by capturing mouse event and doing an action. This action could apply a change on environment or on agents, according to the goal.
+`event` allows to interact with the simulation by capturing mouse or key events and doing an action. This action needs to be defined in 'global' and will receive two possible arguments: the location of the mouse in the environment and the agents under the mouse. The names of these arguments need not to be fixed: instead, the first argument of type 'point' will receive the location of the mouse, while the first argument whose type is compatible with 'container<agent>' will receive the list of agents selected.
 
 #### Usages
 
@@ -1481,7 +1486,7 @@ event [event_type] action: myAction;
 ```
 global {
    // ... 
-   action myAction (point location, list selected_agents) {
+   action myAction (point location, list<agent> selected_agents) {
       // location: contains le location of the click in the environment
       // selected_agents: contains agents clicked by the event
       
@@ -1509,7 +1514,7 @@ experiment Simple type:gui {
 	
 
 ----
-
+[//]: # (keyword|statement_exhaustive)
 ### exhaustive 
 #### Facets 
   
@@ -1549,7 +1554,7 @@ method exhaustive maximize: food_gathered;
 	
 
 ----
-
+[//]: # (keyword|statement_exit)
 ### exit 
 #### Facets 
  
@@ -1587,17 +1592,17 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 	
 
 ----
-
+[//]: # (keyword|statement_experiment)
 ### experiment 
 #### Facets 
   
   * **`name`** (a label), (omissible) : identifier of the experiment  
   * **`title`** (a label):   
-  * **`type`** (a label), takes values in: {batch, gui}: the type of the experiment (either 'gui' or 'batch'
+  * **`type`** (a label), takes values in: {batch, gui, headless}: the type of the experiment (either 'gui' or 'batch'
   * `control` (an identifier): 
   * `frequency` (int): the execution frequence of the experiment (default value: 1). If frequency: 10, the experiment is executed only each 10 steps.
   * `keep_seed` (boolean): 
-  * `multicore` (boolean): 
+  * `multicore` (boolean): Allows the experiment, when set to true, to use multiple threads to run its simulations
   * `parent` (an identifier): the parent experiment (in case of inheritance between experiments)
   * `repeat` (int): In case of a batch experiment, expresses hom many times the simulations must be repeated
   * `schedules` (container): an ordered list of agents giving the order of their execution
@@ -1607,14 +1612,14 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 #### Embedments
 * The `experiment` statement is of type: **Experiment**
 * The `experiment` statement can be embedded into: Model, 
-* The `experiment` statement embeds statements: [#analyse analyse],  
+* The `experiment` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 		
 	
 
 ----
-
+[//]: # (keyword|statement_export)
 ### export 
 #### Facets 
   
@@ -1632,13 +1637,14 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 	
 
 ----
-
+[//]: # (keyword|statement_focus)
 ### focus 
 #### Facets 
-  
-  * **`var`** (any type), (omissible) : the variable of the perceived agent you want to add to your beliefs  
-  * **`agent`** (agent): the agent that will add the belief (use the myself pseudo-variable
+
+  * `name` (an identifier), (omissible) : the identifier of the focus
+  * `expression` (any type): an expression that will be the value kept in the belief
   * `priority` (any type in [float, int]): The priority of the created predicate
+  * `var` (any type in [any type, list, container]): the variable of the perceived agent you want to add to your beliefs
   * `when` (boolean): A boolean value to focus only with a certian condition 
  	
 #### Definition
@@ -1663,7 +1669,7 @@ focus var:speed /*where speed is a variable from a species that is being perceiv
 	
 
 ----
-
+[//]: # (keyword|statement_genetic)
 ### genetic 
 #### Facets 
   
@@ -1708,15 +1714,15 @@ method genetic maximize: food_gathered pop_dim: 5 crossover_prob: 0.7 mutation_p
 	
 
 ----
-
+[//]: # (keyword|statement_graphics)
 ### graphics 
 #### Facets 
-  
-  * **`name`** (a label), (omissible) : the identifier of the graphics
+
+  * `name` (a label), (omissible) : the human readable title of the graphics
   * `fading` (boolean): Used in conjunction with 'trace:', allows to apply a fading effect to the previous traces. Default is false
   * `position` (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
   * `refresh` (boolean): (openGL only) specify whether the display of the species is refreshed. (true by default, usefull in case of agents that do not move)
-  * `size` (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
+  * `size` (point): extent of the layer in the screen from its position. Coordinates in [0,1[ are treated as percentages of the total surface, while coordinates > 1 are treated as absolute sizes in model units (i.e. considering the model occupies the entire view). Like in 'position', an elevation can be provided with the z coordinate, allowing to scale the layer in the 3 directions
   * `trace` (any type in [boolean, int]): Allows to aggregate the visualization at each timestep on the display. Default is false. If set to an int value, only the last n-th steps will be visualized. If set to true, no limit of timesteps is applied.
   * `transparency` (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency) 
  	
@@ -1750,7 +1756,7 @@ display my_display {
 	
 
 ----
-
+[//]: # (keyword|statement_hill_climbing)
 ### hill_climbing 
 #### Facets 
   
@@ -1791,7 +1797,7 @@ method hill_climbing iter_max: 50 maximize : food_gathered;
 	
 
 ----
-
+[//]: # (keyword|statement_if)
 ### if 
 #### Facets 
   
@@ -1866,17 +1872,17 @@ else {
 	
 
 ----
-
+[//]: # (keyword|statement_image)
 ### image 
 #### Facets 
 
-  * `name` (string), (omissible) : the identifier of the image layer
+  * `name` (string), (omissible) : Human readable title of the image layer
   * `color` (rgb): in the case of a shapefile, this the color used to fill in geometries of the shapefile
   * `file` (any type in [string, file]): the name/path of the image (in the case of a raster image)
   * `gis` (any type in [file, string]): the name/path of the shape file (to display a shapefile as background, without creating agents from it)
   * `position` (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
   * `refresh` (boolean): (openGL only) specify whether the image display is refreshed. (true by default, usefull in case of images that is not modified over the simulation)
-  * `size` (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
+  * `size` (point): extent of the layer in the screen from its position. Coordinates in [0,1[ are treated as percentages of the total surface, while coordinates > 1 are treated as absolute sizes in model units (i.e. considering the model occupies the entire view). Like in 'position', an elevation can be provided with the z coordinate, allowing to scale the layer in the 3 directions
   * `transparency` (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency) 
  	
 #### Definition
@@ -1935,7 +1941,7 @@ display my_display {
 	
 
 ----
-
+[//]: # (keyword|statement_inspect)
 ### inspect 
 #### Facets 
   
@@ -1943,7 +1949,7 @@ display my_display {
   * `attributes` (list): the list of attributes to inspect
   * `refresh` (boolean): Indicates the condition under which this output should be refreshed (default is true)
   * `refresh_every` (int): Allows to refresh the inspector every n time steps (default is 1)
-  * `type` (an identifier), takes values in: {agent, species, display_population, table}: the way to inspect agents: in a table, or a set of inspectors
+  * `type` (an identifier), takes values in: {agent, table}: the way to inspect agents: in a table, or a set of inspectors
   * `value` (any type): the set of agents to inspect, could be a species, a list of agents or an agent 
  	
 #### Definition
@@ -1970,7 +1976,7 @@ inspect "my_inspector" value: ant attributes: ["name", "location"];
 	
 
 ----
-
+[//]: # (keyword|statement_let)
 ### let 
 #### Facets 
   
@@ -1990,7 +1996,7 @@ inspect "my_inspector" value: ant attributes: ["name", "location"];
 	
 
 ----
-
+[//]: # (keyword|statement_loop)
 ### loop 
 #### Facets 
 
@@ -2063,7 +2069,7 @@ loop i over: [10, 20, 30] {
 ```
 
 
-* The second (quite common) case of the loop syntax allows one to use an interval of integers. The from and to facets take an integer expression as arguments, with the first (resp. the last) specifying the beginning (resp. end) of the inclusive interval (i.e. [to, from]). If the step is not defined, it is assumed to be equal to 1.
+* The second (quite common) case of the loop syntax allows one to use an interval of integers. The from and to facets take an integer expression as arguments, with the first (resp. the last) specifying the beginning (resp. end) of the inclusive interval (i.e. [to, from]). If the step is not defined, it is assumed to be equal to 1 or -1, depending on the direction of the range. If it is defined, its sign will be respected, so that a positive step will never allow the loop to enter a loop from i to j where i is greater than j
 
 ```
 list the_list <-list (species_of (self));
@@ -2086,7 +2092,7 @@ loop i from: 0 to: length (the_list) - 1 {
 	
 
 ----
-
+[//]: # (keyword|statement_match)
 ### match 
 #### Facets 
 
@@ -2140,7 +2146,7 @@ switch 3 {
 	
 
 ----
-
+[//]: # (keyword|statement_migrate)
 ### migrate 
 #### Facets 
   
@@ -2173,12 +2179,13 @@ migrate ball_in_group target: ball_in_cloud;
 	
 
 ----
-
+[//]: # (keyword|statement_monitor)
 ### monitor 
 #### Facets 
   
   * **`name`** (a label), (omissible) : identifier of the monitor  
   * **`value`** (any type): expression that will be evaluated to be displayed in the monitor
+  * `color` (rgb): Indicates the (possibly dynamic) color of this output (default is a light gray)
   * `refresh` (boolean): Indicates the condition under which this output should be refreshed (default is true)
   * `refresh_every` (int): Allows to refresh the monitor every n time steps (default is 1) 
  	
@@ -2206,7 +2213,7 @@ monitor "nb preys" value: length(prey as list) refresh_every: 5;
 	
 
 ----
-
+[//]: # (keyword|statement_output)
 ### output 
 #### Facets 
  
@@ -2241,18 +2248,18 @@ experiment exp_name type: gui {
 	
 
 ----
-
+[//]: # (keyword|statement_output_file)
 ### output_file 
 #### Facets 
   
-  * **`name`** (an identifier), (omissible) :   
-  * **`data`** (string): 
-  * `footer` (string): 
-  * `header` (string): 
+  * **`name`** (an identifier), (omissible) : The name of the file where you want to export the data  
+  * **`data`** (string): The data you want to export
+  * `footer` (string): Define a footer for your export file
+  * `header` (string): Define a header for your export file
   * `refresh` (boolean): Indicates the condition under which this file should be saved (default is true)
   * `refresh_every` (int): Allows to save the file every n time steps (default is 1)
-  * `rewrite` (boolean): 
-  * `type` (an identifier), takes values in: {csv, text, xml}: 
+  * `rewrite` (boolean): Rewrite or not the existing file
+  * `type` (an identifier), takes values in: {csv, text, xml}: The type of your output data
 
 #### Embedments
 * The `output_file` statement is of type: **Output**
@@ -2264,7 +2271,7 @@ experiment exp_name type: gui {
 	
 
 ----
-
+[//]: # (keyword|statement_overlay)
 ### overlay 
 #### Facets 
 
@@ -2298,7 +2305,7 @@ overlay "Cycle: " + (cycle) center: "Duration: " + total_duration + "ms" right: 
 	
 
 ----
-
+[//]: # (keyword|statement_parameter)
 ### parameter 
 #### Facets 
   
@@ -2345,11 +2352,11 @@ parameter 'Value of titi:' var: titi min: 1 max: 100 step: 2;
 	
 
 ----
-
+[//]: # (keyword|statement_perceive)
 ### perceive 
 #### Facets 
   
-  * **`target`** (any type in [container, point]): the list of the agent you want to perceive
+  * **`target`** (any type in [container, point, agent]): the list of the agent you want to perceive
   * `name` (an identifier), (omissible) : the name of the perception
   * `as` (species): an expression that evaluates to a species
   * `in` (any type in [float, geometry]): a float or a geometry. If it is a float, it's a radius of a detection area. If it is a geometry, it is the area of detection of others species.
@@ -2382,7 +2389,7 @@ If you want to make an action (such as adding a belief for example), use ask mys
 	
 
 ----
-
+[//]: # (keyword|statement_permanent)
 ### permanent 
 #### Facets 
  
@@ -2417,7 +2424,7 @@ permanent {
 	
 
 ----
-
+[//]: # (keyword|statement_plan)
 ### plan 
 #### Facets 
 
@@ -2438,7 +2445,7 @@ permanent {
 	
 
 ----
-
+[//]: # (keyword|statement_put)
 ### put 
 #### Facets 
   
@@ -2503,44 +2510,7 @@ put -30 all: true in: putMap; 	// putMap equals ["x"::-30,"y"::-30, "z"::-30]
 	
 
 ----
-
-### quadtree 
-#### Facets 
-  
-  * **`name`** (a label), (omissible) : identifier of the layer
-  * `position` (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
-  * `refresh` (boolean): (openGL only) specify whether the display of the species is refreshed. (true by default, usefull in case of agents that do not move)
-  * `size` (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
-  * `transparency` (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency) 
- 	
-#### Definition
-
-`quadtree` allows the modeler to display the quadtree.
-
-#### Usages
-
-* The general syntax is:
-
-```
-display my_display {
-   quadtree 'qt' position: { 0, 0.5 } size: quadrant_size;
-}
-```
-
-    
-* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
-
-#### Embedments
-* The `quadtree` statement is of type: **Layer**
-* The `quadtree` statement can be embedded into: display, 
-* The `quadtree` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
-
-----
-
+[//]: # (keyword|statement_reactive_tabu)
 ### reactive_tabu 
 #### Facets 
   
@@ -2587,7 +2557,7 @@ method reactive_tabu iter_max: 50 tabu_list_size_init: 5 tabu_list_size_min: 2 t
 	
 
 ----
-
+[//]: # (keyword|statement_reflex)
 ### reflex 
 #### Facets 
 
@@ -2620,7 +2590,7 @@ reflex my_reflex when: flip (0.5){ 		//Only executed when flip returns true
 	
 
 ----
-
+[//]: # (keyword|statement_release)
 ### release 
 #### Facets 
   
@@ -2680,7 +2650,7 @@ release list (C) as: new_species in: new host;
 	
 
 ----
-
+[//]: # (keyword|statement_remove)
 ### remove 
 #### Facets 
   
@@ -2783,7 +2753,7 @@ species speciesRemove {
 	
 
 ----
-
+[//]: # (keyword|statement_return)
 ### return 
 #### Facets 
 
@@ -2791,11 +2761,11 @@ species speciesRemove {
  	
 #### Definition
 
-Allows to specify which value to return from the evaluation of the surrounding statement. Usually used within the declaration of an action. For more details about actions, see the following [Section161 section].
+Allows to immediately stop and tell which value to return from the evaluation of the surrounding action or top-level statement (reflex, init, etc.). Usually used within the declaration of an action. For more details about actions, see the following [Section161 section].
 
 #### Usages
 
-* Contrary to other languages, using return does not stop the evaluation of the surrounding statement (for instance, a loop). It simply indicates what value to return: if it is inside a loop, then, only the last evaluation of return will be returned. Example:
+* Example:
 
 ```
 string foo {
@@ -2834,25 +2804,30 @@ reflex writing {
 	
 
 ----
-
+[//]: # (keyword|statement_rule)
 ### rule 
 #### Facets 
-  
-  * **`belief`** (any type): The belief required  
-  * **`desire`** (any type): The desire that will be added
+
   * `name` (an identifier), (omissible) : The name of the rule
+  * `belief` (546704): The mandatory belief
+  * `desire` (546704): The mandatory desire
+  * `new_belief` (546704): The belief that will be added
+  * `new_desire` (546704): The desire that will be added
   * `priority` (any type in [float, int]): The priority of the predicate added as a desire
+  * `remove_belief` (546704): The belief that will be removed
+  * `remove_desire` (546704): The desire that will be removed
+  * `remove_intention` (546704): The intention that will be removed
   * `when` (boolean):  
  	
 #### Definition
 
-enables to add a desire if the agent gets the belief mentioned.
+enables to add a desire or a belief or to remove a belief, a desire or an intention if the agent gets the belief or/and desire or/and condition mentioned.
 
 #### Usages
 
 * Other examples of use: 
 ```
-rule belif: new_predicate("test") desire: new_predicate("test")
+rule belief: new_predicate("test") when: flip(0.5) new_desire: new_predicate("test")
 ``` 
   
 
@@ -2866,15 +2841,15 @@ rule belif: new_predicate("test") desire: new_predicate("test")
 	
 
 ----
-
+[//]: # (keyword|statement_run)
 ### run 
 #### Facets 
   
-  * **`experiment`** (string), (omissible) :   
+  * **`name`** (string), (omissible) :   
   * **`of`** (string): 
   * `core` (int): 
   * `end_cycle` (int): 
-  * `out` (string): 
+  * `seed` (int): 
   * `with_output` (map): 
   * `with_param` (map): 
 
@@ -2888,13 +2863,14 @@ rule belif: new_predicate("test") desire: new_predicate("test")
 	
 
 ----
-
+[//]: # (keyword|statement_save)
 ### save 
 #### Facets 
   
   * **`to`** (string): an expression that evaluates to an string, the path to the file
   * `data` (any type), (omissible) : any expression, that will be saved in the file
-  * `crs` (any type): the name of the projectsion, e.g. crs:"EPSG:4326" or its EPSG id, e.g. crs:4326. Here a list of the CRS codes (and EPSG id): http://spatialreference.org
+  * `crs` (any type): the name of the projection, e.g. crs:"EPSG:4326" or its EPSG id, e.g. crs:4326. Here a list of the CRS codes (and EPSG id): http://spatialreference.org
+  * `header` (boolean): an expression that evaluates to a boolean, specifying whether the save will write a header if the file does not exist
   * `rewrite` (boolean): an expression that evaluates to a boolean, specifying whether the save will ecrase the file or append data at the end of it
   * `type` (an identifier): an expression that evaluates to an string, the type of the output file (it can be only "shp", "text" or "csv")
   * `with` (map):  
@@ -2926,6 +2902,13 @@ save [name, location, host] to: "save_data.csv" type: "csv";
 ```
 
 
+* To save the values of all attributes of all the agents of a species into a csv (with optional attributes):
+
+```
+save species_of(self) to: "save_csvfile.csv" type: "csv" header: false;
+```
+
+
 * To save the geometries of all the agents of a species into a shapefile (with optional attributes):
 
 ```
@@ -2945,7 +2928,7 @@ save species_of(self) to: "save_shapefile.shp" type: "shp" with: [name::"nameAge
 	
 
 ----
-
+[//]: # (keyword|statement_save_batch)
 ### save_batch 
 #### Facets 
   
@@ -2963,7 +2946,7 @@ save species_of(self) to: "save_shapefile.shp" type: "shp" with: [name::"nameAge
 	
 
 ----
-
+[//]: # (keyword|statement_set)
 ### set 
 #### Facets 
   
@@ -2987,7 +2970,7 @@ Allows to assign a value to the variable or attribute specified
 	
 
 ----
-
+[//]: # (keyword|statement_setup)
 ### setup 
 #### Facets 
  
@@ -3027,41 +3010,7 @@ species Tester {
 	
 
 ----
-
-### signal 
-#### Facets 
-  
-  * **`name`** (a new identifier), (omissible) : The name of the variable that will be introduced to represent this signal on the specified grid  
-  * **`decay`** (float): represents the amount to remove to the intensity of a signal, once dropped on a place, at each time step. It is a percentage between 0 and 1. If 'decay' is not defined, the signal will not be wiped from the places; otherwise, its intensity will be equal to (intensity `*` decay).
-  * `among` (list): 
-  * `environment` (species): The name of the grid species on which this signal will be propagated
-  * `on` (any type in [species, container]): Either the name of the grid species on which this signal will be propagated (equivalent to 'environment:'), or an expression that returns a subset of the cells of this grid species
-  * `propagation` (a label), takes values in: {diffusion, gradient}: represents both the way the signal is propagated and the way to treat multiple propagations of the same signal occuring at once from different places. If propagation equals 'diffusion', the intensity of a signal is shared between its neighbours with respect to 'proportion', 'variation' and the number of neighbours of the environment places (4, 6 or 8). I.e., for a given signal S propagated from place P, the value transmitted to its N neighbours is : S' = (S / N / proportion) - variation. The intensity of S is then diminished by S `*` proportion on P. In a diffusion, the different signals of the same name see their intensities added to each other on each place. If propagation equals 'gradient', the original intensity is not modified, and each neighbours receives the intensity : S / proportion - variation. If multiple propagations occur at once, only the maximum intensity is kept on each place. If 'propagation' is not defined, it is assumed that it is equal to 'diffusion'.
-  * `proportion` (float): a value between 0 and 1 that represents the percentage of the intensity which will be shared between the neighbours in the diffusion. For instance, for an intensity of 80, and  a proportion of 0.5, in a 4-neighbours environment, each of the neighbouring places will receive an intensity of (80 `*` 0.5) / 4 = 10. If no 'proportion' is defined, it is assumed that the propagation corresponds to a diffusion where 100% of the intensity is equally divided between the neighbours. I.e., for an intensity of 100, and 4 neighbours per place, each of them receives a signal with an intensity of 25.
-  * `range` (float): Indicates the distance (in meter) at which the signal stops propagating
-  * `type` (a datatype identifier): 
-  * `update` (any type): An expression that will be evaluated each cycle to update the value of the signal on each grid cell
-  * `value` (any type): 
-  * `variation` (float): an absolute decrease of intensity that occurs between each place. It should be a positive number. However, negative numbers are allowed (be aware, in this case, that if no range is defined, the signal will certainly propagate in the whole environment). If no 'variation' is defined, it defaults to 1 in the case of a gradient type and 0 in the case of a diffusion. 
- 	
-#### Definition
-
-A special attribute that holds signals that can be propagated in the environment. Signals have a fixed name, a variable float intensity (represented by their facet 'value'), propagate in only one grid environment (facet 'environment'), can be limited to a specific range (facet 'range', in meter), and can see their intensity decrease over time (facet 'decay'). Signals can be propagated using different combinations of the 'variation', 'proportion' and 'propagation' facets.
-
-#### Usages
-
-
-#### Embedments
-* The `signal` statement is of type: **Variable (signal)**
-* The `signal` statement can be embedded into: Species, 
-* The `signal` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
-
-----
-
+[//]: # (keyword|statement_simulate)
 ### simulate 
 #### Facets 
   
@@ -3098,7 +3047,7 @@ ask receiver_agent(s) {
 	
 
 ----
-
+[//]: # (keyword|statement_solve)
 ### solve 
 #### Facets 
   
@@ -3138,7 +3087,7 @@ solve SIR method: "rk4" step:0.001;
 	
 
 ----
-
+[//]: # (keyword|statement_species)
 ### species 
 #### Facets 
   
@@ -3146,14 +3095,15 @@ solve SIR method: "rk4" step:0.001;
   * `cell_height` (float): (grid only), the height of the cells of the grid
   * `cell_width` (float): (grid only), the width of the cells of the grid
   * `compile` (boolean): 
-  * `control` (a label): defines the architecture of the species (e.g. fsm...)
+  * `control` (22): defines the architecture of the species (e.g. fsm...)
   * `edge_species` (an identifier): In the case of a species defining a graph topology for its instances (nodes of the graph), specifies the species to use for representing the edges
   * `file` (file): (grid only), a bitmap file that will be loaded at runtime so that the value of each pixel  can be assigned to the attribute 'grid_value'
   * `frequency` (int): The execution frequency of the species (default value: 1). For instance, if frequency is set to 10, the population of agents will be executed only every 10 cycles.
   * `height` (int): (grid only),  the height of the grid (in terms of agent number)
   * `mirrors` (any type in [list, species]): The species this species is mirroring. The population of this current species will be dependent of that of the species mirrored (i.e. agents creation and death are entirely taken in charge by GAMA with respect to the demographics of the species mirrored). In addition, this species is provided with an attribute called 'target', which allows each agent to know which agent of the mirrored species it is representing.
+  * `neighbors` (int): (grid only), the chosen neighbourhood (4, 6 or 8)
   * `neighbours` (int): (grid only), the chosen neighbourhood (4, 6 or 8)
-  * `parent` (an identifier): the parent class (inheritance)
+  * `parent` (species): the parent class (inheritance)
   * `schedules` (container): A container of agents (a species, a dynamic list, or a combination of species and containers) , which represents which agents will be actually scheduled when the population is scheduled for execution. For instance, 'species a schedules: (10 among a)' will result in a population that schedules only 10 of its own agents every cycle. 'species b schedules: []' will prevent the agents of 'b' to be scheduled. Note that the scope of agents covered here can be larger than the population, which allows to build complex scheduling controls; for instance, defining 'global schedules: [] {...} species b schedules: []; species c schedules: b + world; ' allows to simulate a model where the agents of b are scheduled first, followed by the world, without even having to create an instance of c.
   * `skills` (list): The list of skills that will be made available to the instances of this species. Each new skill provides attributes and actions that will be added to the ones defined in this species
   * `topology` (topology): The topology of the population of agents defined by this species. In case of nested species, it can for example be the shape of the macro-agent. In case of grid or graph species, the topology is automatically computed and cannot be redefined
@@ -3208,7 +3158,7 @@ grid ant_grid file: grid_file neighbours: 8 use_regular_agents: false {
 	
 
 ----
-
+[//]: # (keyword|statement_state)
 ### state 
 #### Facets 
   
@@ -3263,7 +3213,7 @@ A state, like a reflex, can contains several statements that can be executed at 
 	
 
 ----
-
+[//]: # (keyword|statement_status)
 ### status 
 #### Facets 
   
@@ -3294,7 +3244,7 @@ status ('This is my status ' + self) color: Â°yellow;
 	
 
 ----
-
+[//]: # (keyword|statement_switch)
 ### switch 
 #### Facets 
   
@@ -3344,7 +3294,7 @@ switch 3 {
 	
 
 ----
-
+[//]: # (keyword|statement_tabu)
 ### tabu 
 #### Facets 
   
@@ -3386,7 +3336,7 @@ method tabu iter_max: 50 tabu_list_size: 5 maximize: food_gathered;
 	
 
 ----
-
+[//]: # (keyword|statement_task)
 ### task 
 #### Facets 
   
@@ -3410,7 +3360,7 @@ As reflex, a task is a sequence of statements that can be executed, at each time
 	
 
 ----
-
+[//]: # (keyword|statement_test)
 ### test 
 #### Facets 
 
@@ -3451,57 +3401,7 @@ species Tester {
 	
 
 ----
-
-### text 
-#### Facets 
-  
-  * **`name`** (string), (omissible) : the string to display
-  * `color` (rgb): the color used to display the text
-  * `font` (any type in [19, string]): the font used for the text
-  * `position` (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
-  * `refresh` (boolean): (openGL only) specify whether the display of the text is refreshed. (true by default, usefull in case of text that is not been modified over simulation)
-  * `size` (any type in [int, float, point]): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides it by 2
-  * `style` (an identifier), takes values in: {plain, bold, italic}: the style (bold, italic...) udes to display the text
-  * `transparency` (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency)
-  * `value` (string):  
- 	
-#### Definition
-
-`text` allows the modeler to display a string (that can change at each step) in a given position of the display.
-
-#### Usages
-
-* The general syntax is:
-
-```
-display my_display {
-   text expression [additional options];
-}
-```
-
-
-* For instance, in a segregation model, `agents` will only display unhappy agents:
-
-```
-display Segregation {
-   text 'Carrying ants : ' + (int(ant as list count(each.has_food)) + int(ant as list count(each.state = 'followingRoad'))) position: {0.5,0.03} color: rgb('black') size: {1,0.02};
-}
-```
-
-    
-* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), 
-
-#### Embedments
-* The `text` statement is of type: **Layer**
-* The `text` statement can be embedded into: display, 
-* The `text` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
-
-----
-
+[//]: # (keyword|statement_trace)
 ### trace 
 #### Facets 
  
@@ -3523,7 +3423,7 @@ All the statements executed in the trace statement are displayed in the console.
 	
 
 ----
-
+[//]: # (keyword|statement_transition)
 ### transition 
 #### Facets 
   
@@ -3560,7 +3460,7 @@ In an FSM architecture, `transition` specifies the next state of the life cycle.
 	
 
 ----
-
+[//]: # (keyword|statement_user_command)
 ### user_command 
 #### Facets 
   
@@ -3594,7 +3494,7 @@ user_command kill_myself action: some_action with: [arg1::val1, arg2::val2, ...]
 	
 
 ----
-
+[//]: # (keyword|statement_user_init)
 ### user_init 
 #### Facets 
   
@@ -3619,7 +3519,7 @@ Used in the user control architecture, user_init is executed only once when the 
 	
 
 ----
-
+[//]: # (keyword|statement_user_input)
 ### user_input 
 #### Facets 
   
@@ -3657,7 +3557,7 @@ user_panel "Advanced Control" {
 	
 
 ----
-
+[//]: # (keyword|statement_user_panel)
 ### user_panel 
 #### Facets 
   
@@ -3698,7 +3598,7 @@ user_panel "Advanced Control" {
 	
 
 ----
-
+[//]: # (keyword|statement_using)
 ### using 
 #### Facets 
   
@@ -3731,7 +3631,7 @@ using topology(grid_ant) {
 	
 
 ----
-
+[//]: # (keyword|statement_Variable_container)
 ### Variable_container 
 #### Facets 
   
@@ -3766,7 +3666,7 @@ Allows to declare an attribute of a species or an experiment
 	
 
 ----
-
+[//]: # (keyword|statement_Variable_number)
 ### Variable_number 
 #### Facets 
   
@@ -3801,7 +3701,7 @@ Allows to declare an attribute of a species or experiment
 	
 
 ----
-
+[//]: # (keyword|statement_Variable_regular)
 ### Variable_regular 
 #### Facets 
   
@@ -3810,11 +3710,11 @@ Allows to declare an attribute of a species or experiment
   * `category` (a label): Soon to be deprecated. Declare the parameter in an experiment instead
   * `const` (boolean): Indicates whether this attribute can be subsequently modified or not
   * `function` (any type): Used to specify an expression that will be evaluated each time the attribute is accessed. This facet is incompatible with both 'init:' and 'update:'
-  * `index` (a datatype identifier): 
+  * `index` (a datatype identifier): The type of the index used to retrieve elements if the type of the attribute is a container type
   * `init` (any type): The initial value of the attribute
-  * `of` (a datatype identifier): 
+  * `of` (a datatype identifier): The type of the elements contained in the type of this attribute if it is a container type
   * `parameter` (a label): Soon to be deprecated. Declare the parameter in an experiment instead
-  * `type` (a datatype identifier): 
+  * `type` (a datatype identifier): The type of this attribute. Can be combined with facets 'of' and 'index' to describe container types
   * `update` (any type): An expression that will be evaluated each cycle to compute a new value for the attribute
   * `value` (any type):  
  	
@@ -3835,7 +3735,7 @@ Allows to declare an attribute of a species or an experiment
 	
 
 ----
-
+[//]: # (keyword|statement_warn)
 ### warn 
 #### Facets 
   
@@ -3865,11 +3765,12 @@ warn 'This is a warning from ' + self;
 	
 
 ----
-
+[//]: # (keyword|statement_write)
 ### write 
 #### Facets 
   
-  * **`message`** (any type), (omissible) : the message to display. Modelers can add some formatting characters to the message (carriage returns, tabs, or Unicode characters), which will be used accordingly in the console. 
+  * **`message`** (any type), (omissible) : the message to display. Modelers can add some formatting characters to the message (carriage returns, tabs, or Unicode characters), which will be used accordingly in the console.
+  * `color` (rgb): The color with wich the message will be displayed. Note that different simulations will have different (default) colors to use for this purpose if this facet is not specified 
  	
 #### Definition
 
