@@ -92,6 +92,7 @@ The XML input file contains for example:
  </Simulation>
 </Experiment_plan>
 ```
+Note that several simulations could be determined in one experiment plan. These simulations are run in parallel according to the number of allocated cores.
 
 ### Heading
 
