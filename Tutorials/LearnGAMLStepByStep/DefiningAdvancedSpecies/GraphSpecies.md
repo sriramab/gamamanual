@@ -323,7 +323,7 @@ Another operator exists, `paths_between`, that returns a list of shortest paths 
 
 Here is an example of code that show the shortest path between two points of a graph:
 
-![graph_model.png](resources/images/definingAdvancedSpecies/graph_model.png)
+![shortest_path.png](resources/images/definingAdvancedSpecies/shortest_path.png)
 
 ```
 model graph_model
