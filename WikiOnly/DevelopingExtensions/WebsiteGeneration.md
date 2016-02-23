@@ -145,10 +145,16 @@ The **learningGraphDatabaseGenerator** script is used to generate the "_nodesDat
 
 The **modelLibraryGenerator** script is used to generate all the markdown files of the model library. This script
 
-* Parse all the models of the model library, and build "input" files for a headless execution. Each one of those "input" files are created in a temporary folder called "tempInputForHeadless". 
+* Parse all the models of the model library, and build "input" files for a headless execution. Each one of those "input" files are created in a temporary folder called "tempInputForHeadless" (one file by experiment) 
   * By default, this will ask to execute all the experiments for each model, and take a screenshot of the 10th cycle for each display.
   * You can change this default behavior by changing the file "modelScreenshot.xml", in the wiki repo.
 * Browse a second time all models, and call the headless script for each one of the models. For each models, build the md file, including the screenshot computed from the headless execution, and analyzing the header of each model to extract the title, author and tags.
+
+NB : 
+* format of the temporary input files : name_of_the_file_without_extention_without_strange_char + "_" + model_name + "_" + experiment_name + ".xml". 
+  * ex : "Ant Foraging (Charts examples).gaml" becomes "Ant_Foraging__Chart_examples__ants_Ant.xml"
+* format of the final md files : path_from_model_with_underscore_instead_of_slash_without_strange_char + ".md".
+  * ex : "Features/3D/3D Visualization/models/3D camera and trajectories.gaml" becomes "Features_3D_Visualization_models_3D_camera_and_trajectories.md".
 
 _TODO_
 
