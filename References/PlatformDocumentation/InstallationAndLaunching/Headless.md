@@ -3,7 +3,7 @@
 
 The aim of this feature is to be able to run one or multiple instances of GAMA without any user interface, so that models and experiments can be launched on a grid or a cluster. Without GUI, the memory footprint, as well as the speed of the simulations, are usually greatly improved.
 
-In this mode, GAMA can only be used to run experiments and that editing or managing models is not possible. In order to launch experiments and still benefit from a user interface (which can be used to prepare headless experiments), launch GAMA normally (see [here](Launching)) and refer to this [page](RunningExperiments) for instructions.
+In this mode, GAMA can only be used to run experiments and that editing or managing models is not possible. In order to launch experiments and still benefit from a user interface (which can be used to prepare headless experiments), launch GAMA normally (see [here](G__Launching)) and refer to this [page](G__RunningExperiments) for instructions.
 
 ## Table of contents 
 
@@ -30,12 +30,20 @@ There are two ways to run a GAMA experiment in headless mode: using a dedicated 
 It can be found in the `headless` directory located inside `Gama`. Its name is `gama-headless.sh` on MacOSX and Linux, and `gama-headless.bat` on Windows.
 
 ```
- sh gama-headless.sh $1 $2
+ sh gama-headless.sh [m/c/t/hpc/v] $1 $2
 ```
 
 * with:
 	* $1 input parameter file : an xml file determining experiment parameters and attended outputs
 	* $2 output directory path : a directory which contains simulation results (numerical data and simulation snapshot)
+	* options [-m/c/t/hpc/v]
+		* -m memory : memory allocated to gama
+		* -c : console mode, the simulation description could be written with the stdin
+		* -t : tunneling mode, simulation description are read from the stdin, simulation results are printed out in stdout
+		* -hpc nb_of_cores : allocate a specific number of cores for the experiment plan
+		* -v : verbose mode. trace are displayed in the console 
+
+
 * For example (using the provided sample), navigate in your terminal to the GAMA root folder and type :
 
 ```
@@ -69,7 +77,8 @@ The XML input file contains for example:
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
-<Simulation id="2" sourcePath="./predatorPrey/predatorPrey.gaml" finalstep="1000" experiment="predPrey">
+<Experiment_plan>
+ <Simulation id="2" sourcePath="./predatorPrey/predatorPrey.gaml" finalStep="1000" experiment="predPrey">
   <Parameters>
     <Parameter name="nb_predator_init" type="INT" value="53" />
     <Parameter name="nb_preys_init" type="INT" value="621" />
@@ -80,19 +89,21 @@ The XML input file contains for example:
     <Output id="3" name="number_of_predators" framerate="1" />
     <Output id="4" name="duration" framerate="1" />
   </Outputs>
-</Simulation>
+ </Simulation>
+</Experiment_plan>
 ```
+Note that several simulations could be determined in one experiment plan. These simulations are run in parallel according to the number of allocated cores.
 
 ### Heading
 
 ```
-<Simulation id="2" sourcePath="./predatorPrey/predatorPrey.gaml" finalstep="1000" experiment="predPrey">
+<Simulation id="2" sourcePath="./predatorPrey/predatorPrey.gaml" finalStep="1000" experiment="predPrey">
 ```
 
 * with:
 	* `id`: permits to prefix output files for experiment plan with huge simulations.
 	* `sourcePath`: contains the relative or absolute path to read the gaml model.
-	* `finalstep`: determines the number of simulation step you want to run.
+	* `finalStep`: determines the number of simulation step you want to run.
 	* `experiment`: determines which experiment should be run on the model. This experiment should exist, otherwise the headless mode will exit.
 
 ### Parameters
