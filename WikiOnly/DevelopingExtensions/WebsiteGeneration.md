@@ -145,16 +145,22 @@ The **learningGraphDatabaseGenerator** script is used to generate the "_nodesDat
 
 The **modelLibraryGenerator** script is used to generate all the markdown files of the model library. This script
 
-* Parse all the models of the model library, and build "input" files for a headless execution. Each one of those "input" files are created in a temporary folder called "tempInputForHeadless" (one file by experiment) 
+* Parse all the models of the model library, and build an "input" xml file for a headless execution (this file is deleted at the end of the execution).
   * By default, this will ask to execute all the experiments for each model, and take a screenshot of the 10th cycle for each display.
-  * You can change this default behavior by changing the file "modelScreenshot.xml", in the wiki repo.
-* Browse a second time all models, and call the headless script for each one of the models. For each models, build the md file, including the screenshot computed from the headless execution, and analyzing the header of each model to extract the title, author and tags.
+  * You can change this default behavior by changing the file "**modelScreenshot.xml**", in the wiki repo (see description below)
+* Execute the headless
+* Copy-paste all the generated images in the write folder, with the write names.
+* Browse a second time all the models, build the md file, including the screenshot computed from the headless execution, and analyzing the header of each model to extract the title, author and tags. Each md files respects the following format : path_from_model_with_underscore_instead_of_slash_without_strange_char + ".md". (ex : "Features/3D/3D Visualization/models/3D camera and trajectories.gaml" becomes "Features_3D_Visualization_models_3D_camera_and_trajectories.md".)
 
-NB : 
-* format of the temporary input files : name_of_the_file_without_extention_without_strange_char + "_" + model_name + "_" + experiment_name + ".xml". 
-  * ex : "Ant Foraging (Charts examples).gaml" becomes "Ant_Foraging__Chart_examples__ants_Ant.xml"
-* format of the final md files : path_from_model_with_underscore_instead_of_slash_without_strange_char + ".md".
-  * ex : "Features/3D/3D Visualization/models/3D camera and trajectories.gaml" becomes "Features_3D_Visualization_models_3D_camera_and_trajectories.md".
+Format of the xml file to "tune up" the screenshot generation :
+```
+<xmlFile>
+  <experiment id="name_of_the_file_without_extention"+" "+"model_name"+" "+"experiment_name">
+    <display name="display_name_1" cycle_number="number_of_the_cycle_for_the_screenshot"/>
+    <display name="display_name_2" cycle_number="number_of_the_cycle_for_the_screenshot"/>
+  </experiment>
+</xmlFile>
+```
 
 _TODO_
 
