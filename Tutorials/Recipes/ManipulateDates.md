@@ -62,13 +62,13 @@ In addition, GAMA provides different useful operators working on dates. For inst
 float d <- starting_date - my_date;
 ```
 
-It is also possible to add or substract a duration (in seconds) to a date:
+It is also possible to add or subtract a duration (in seconds) to a date:
 ```
 write "my_date + 10: " + (my_date + 10);
 write "my_date - 10: " + (my_date - 10);
 ```
 		 
-At last, it is possible to add or substract a duration (in years, months, weeks, days, hours, minutes,  seconds) to a date:
+At last, it is possible to add or subtract a duration (in years, months, weeks, days, hours, minutes,  seconds) to a date:
 ```
 write "my_date add_years 1: " + (my_date add_years 1);
 write "my_date add_months 1: " + (my_date add_months 1);
@@ -78,13 +78,13 @@ write "my_date add_hours 1: " + (my_date add_hours 1);
 write "my_date add_minutes 1: " + (my_date add_minutes 1);
 write "my_date add_seconds 1: " + (my_date add_seconds 1);
 		  
-write "my_date substract_years 1: " + (my_date substract_years 1);
-write "my_date substract_months 1: " + (my_date substract_months 1);
-write "my_date substract_weeks 1: " + (my_date substract_weeks 1);
-write "my_date substract_days 1: " + (my_date substract_days 1);
-write "my_date substract_hours 1: " + (my_date substract_hours 1);
-write "my_date substract_minutes 1: " + (my_date substract_minutes 1);
-write "my_date substract_seconds 1: " + (my_date substract_seconds 1);
+write "my_date subtract_years 1: " + (my_date subtract_years 1);
+write "my_date subtract_months 1: " + (my_date subtract_months 1);
+write "my_date subtract_weeks 1: " + (my_date subtract_weeks 1);
+write "my_date subtract_days 1: " + (my_date subtract_days 1);
+write "my_date subtract_hours 1: " + (my_date subtract_hours 1);
+write "my_date subtract_minutes 1: " + (my_date subtract_minutes 1);
+write "my_date subtract_seconds 1: " + (my_date subtract_seconds 1);
 ```
 For the modelers, two global date variable are available:
 * `starting_date`: date considered as the beginning of the simulation
