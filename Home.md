@@ -17,7 +17,7 @@ GAML is the language used in GAMA, coded in Java. It is an agent-based language,
 
 We provides you a continual support through the [active mailing list](https://groups.google.com/forum/#!forum/gama-platform) where the team will answer your questions. Besides, you can learn GAML on your own, following the [step by step tutorial](LearnGAMLStepByStep), or [personal learning path](TODO_URL) in order reach the point you are interested in.
 
-![High_level_language](resources/images/general/high_level_language.png)
+<div style="text-align:center"><img src ="https://github.com/mazarsju/gama_doc_17/wiki/resources/images/general/high_level_language.png" width="800"/></div>
 
 ## Several applications domains
 
@@ -32,7 +32,7 @@ Example of application domains where GAMA is mostly present :
 Some [training sessions](TODO_URL) about topics such as "urban management", "epidemiology", "risk management" are also provided by the team.
 Since GAMA is an open-source software that continues to grow, if you have any particular needs of improvement, feel free to [share it to its active community](https://groups.google.com/forum/#!forum/gama-platform) !
 
-![Several_domain_applications](resources/images/general/several_domain_application.png)
+<div style="text-align:center"><img src ="https://github.com/mazarsju/gama_doc_17/wiki/resources/images/general/several_domain_application.png" width="800"/></div>
 
 ## GIS and Data-Driven models
 
@@ -44,7 +44,7 @@ Some advanced features provides you the possibility to [connect GAMA to database
 
 GAMA has been used in [large-scale projects](Projects), using a great number of agents (up to millions of agents).
 
-![Data_driven_models](resources/images/general/data_driven_models.png)
+<div style="text-align:center"><img src ="https://github.com/mazarsju/gama_doc_17/wiki/resources/images/general/data_driven_models.png" width="800"/></div>
 
 ## Declarative user interface
 
@@ -54,7 +54,7 @@ Advanced [3D displays](Defining3DDisplays) are provided : you can control lights
 
 During the simulations, some advanced features are available to [inspect the population of your agents](InspectorsAndMonitors). To make your model more interactive, you can add easily some [user-controlled action panels, or mouse events](DefiningUserInteraction).
 
-![Declarative_UI](resources/images/general/declarative_UI.png)
+<div style="text-align:center"><img src ="https://github.com/mazarsju/gama_doc_17/wiki/resources/images/general/declarative_UI.png" width="800"/></div>
 
 ______________________________________
 
