@@ -17,10 +17,9 @@ In the case of an [experiment](DefiningGUIExperiment), the modeler can [define t
 	* [Modification of parameters values](#modification-of-parameters-values)
 
 
-
 ## Built-in parameters
 Every [GUI experiment](DefiningGUIExperiment) displays a pane named "Parameters" containing at least two built-in parameters related to the random generator:
-  * the Random Number Generator, with a choice between 4 RNG implementations,
+  * the Random Number Generator, with a choice between 3 RNG implementations,
   * the Random Seed
 
 ![images/parameters_built_in.png](resources/images/runningExperiments/parameters_built_in.png)
@@ -65,5 +64,8 @@ Click on Edit button in case of list or map parameters or the color or matrix wi
 
 ## Modification of parameters values
 
-The modeler can modify the parameters value. In order that the modification to be taken into account in the simulation, he has to reload the simulation.
-If he wants to come back to the initial value of parameters, he can click on the top-right curved arrow of the parameters view.
+The modeler can modify the parameter values. After modifying the parameter values, you can reload the simulation by clicking on the top-right circular arrow button. 
+
+You can also add a new simulation to the old one, using those new parameters, by clicking on the top-right plus symbol button.
+
+If he wants to come back to the initial value of parameters, he can click on the top-right red curved arrow of the parameters view.
