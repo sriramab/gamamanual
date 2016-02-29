@@ -25,6 +25,8 @@ closest:spatial_relation
 cluster:statistic
 clustering:statistic
 crs:gis
+communication:fipa
+conversation:fipa
 coordinate:point
 coordinate_reference_system:gis
 cosinus:cos
@@ -39,6 +41,7 @@ disjoint:spatial_relation
 distance:distance_unit
 divide:/
 djikstra:algrotihm
+double:float
 draw:display
 draw:shape
 equal:=
@@ -94,6 +97,7 @@ output:display
 output:gui
 overlaps:spatial_relation
 overlay:status
+pair:container
 parent:inheritance
 predicate:bdi
 print:write
@@ -126,6 +130,7 @@ sql:database
 statistical_operator:statistic
 step:cycle
 stop:halt
+strategy:algorithm
 string_operator:string
 strogatz_watts:algorithm
 strogatz:algorithm
@@ -134,6 +139,7 @@ strogatz:generate_watts_strogatz
 substract:-
 surface:surface_unit
 tangante:tan
+task:task_based
 time:time_unit
 time_machine:machine_time
 touches:spatial_relation
