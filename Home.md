@@ -46,7 +46,7 @@ GAMA provides you the possibility to have multiple displays for the same model. 
 
 Advanced [3D displays](Defining3DDisplays) are provided : you can control lights, cameras, and also adding textures to your 3D objects. In an other hand, dedicated statements allows you to define easily [charts](DefiningCharts), such as series, histogram, or pies.
 
-During the simulations, some advanced features are available to inspect the population of your agents. To make your model more interactive, you can add easily some user-controlled action panels.
+During the simulations, some advanced features are available to [inspect the population of your agents](InspectorsAndMonitors). To make your model more interactive, you can add easily some [user-controlled action panels, or mouse events](DefiningUserInteraction).
 
 ______________________________________
 
