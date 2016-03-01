@@ -2,8 +2,8 @@
 
 GAMA is a modeling and simulation development environment for building spatially explicit agent-based simulations. 
 
-* [**High-level and Intuitive Agent-based language :**](high-level-and-intuitive-agent-based-language) Write your models easily using GAML, a high-level and intuitive agent-based language.
 * [**Several applications domains :**](#several-applications-domains) Use GAMA for whatever application domain you want.
+* [**High-level and Intuitive Agent-based language :**](high-level-and-intuitive-agent-based-language) Write your models easily using GAML, a high-level and intuitive agent-based language.
 * [**GIS and Data-Driven models :**](#gis-and-data-driven-models) Instantiate agents from any dataset, including GIS data, and execute large-scale simulations (up to millions of agents).
 * [**Declarative user interface :**](#declarative-user-interface) Declare interfaces supporting deep inspections on agents, user-controlled action panels, multi-layer 2D/3D displays & agent aspects.
 
