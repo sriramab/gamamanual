@@ -9,16 +9,6 @@ GAMA is a modeling and simulation development environment for building spatially
 
 Its latest version, **1.7**, can be freely [downloaded](Download) or [built from source](https://github.com/gama-platform/gama/), and comes pre-loaded with several models, [tutorials](Tutorials) and a complete [on-line documentation](Overview).
 
-## High level and intuitive language
-
-Thanks to its high-level and intuitive language, GAMA has been developed to be used by non-computer scientists. You can declare your species, giving them some special behaviors, create them in your world, and display them in [less than 10 minutes](TODO_URL).
-
-GAML is the language used in GAMA, coded in Java. It is an agent-based language, that provides you the possibility to build your model with [several paradigms of modeling](MultiParadigmModeling). Once your model is ready, some features allows you to [explore and calibrate it](ExploringModels), using the parameters you defined as input of your simulation.
-
-We provides you a continual support through the [active mailing list](https://groups.google.com/forum/#!forum/gama-platform) where the team will answer your questions. Besides, you can learn GAML on your own, following the [step by step tutorial](LearnGAMLStepByStep), or [personal learning path](TODO_URL) in order reach the point you are interested in.
-
-<div style="text-align:center"><img src ="https://github.com/mazarsju/gama_doc_17/wiki/resources/images/general/high_level_language.png" width="800"/></div>
-
 ## Several applications domains
 
 GAMA has been developed with a very general  approach, and can be used for many applications domains. Some [additional plugins](TODO_URL) had been developed to fit with particular needs.
@@ -33,6 +23,16 @@ Some [training sessions](TODO_URL) about topics such as "urban management", "epi
 Since GAMA is an open-source software that continues to grow, if you have any particular needs of improvement, feel free to [share it to its active community](https://groups.google.com/forum/#!forum/gama-platform) !
 
 <div style="text-align:center"><img src ="https://github.com/mazarsju/gama_doc_17/wiki/resources/images/general/several_application_domains.png" width="800"/></div>
+
+## High level and intuitive language
+
+Thanks to its high-level and intuitive language, GAMA has been developed to be used by non-computer scientists. You can declare your species, giving them some special behaviors, create them in your world, and display them in [less than 10 minutes](TODO_URL).
+
+GAML is the language used in GAMA, coded in Java. It is an agent-based language, that provides you the possibility to build your model with [several paradigms of modeling](MultiParadigmModeling). Once your model is ready, some features allows you to [explore and calibrate it](ExploringModels), using the parameters you defined as input of your simulation.
+
+We provides you a continual support through the [active mailing list](https://groups.google.com/forum/#!forum/gama-platform) where the team will answer your questions. Besides, you can learn GAML on your own, following the [step by step tutorial](LearnGAMLStepByStep), or [personal learning path](TODO_URL) in order reach the point you are interested in.
+
+<div style="text-align:center"><img src ="https://github.com/mazarsju/gama_doc_17/wiki/resources/images/general/high_level_language.png" width="800"/></div>
 
 ## GIS and Data-Driven models
 
