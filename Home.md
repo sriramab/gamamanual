@@ -19,10 +19,10 @@ Example of application domains where GAMA is mostly present :
 * Epidemiology
 * Environment
 
-Some [training sessions](TODO_URL) about topics such as "urban management", "epidemiology", "risk management" are also provided by the team.
+Some [training sessions](TrainingSession) about topics such as "urban management", "epidemiology", "risk management" are also provided by the team.
 Since GAMA is an open-source software that continues to grow, if you have any particular needs of improvement, feel free to [share it to its active community](https://groups.google.com/forum/#!forum/gama-platform) !
 
-<div style="text-align:center"><img src ="https://github.com/mazarsju/gama_doc_17/wiki/resources/images/general/several_application_domains.png" width="800"/></div>
+<div style="text-align:center"><img src ="https://github.com/mazarsju/gama_doc_17/wiki/resources/images/general/multiple_application_domains.png" width="800"/></div>
 
 ## High level and intuitive language
 
