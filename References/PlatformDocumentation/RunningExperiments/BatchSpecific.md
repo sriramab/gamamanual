@@ -13,9 +13,9 @@ When an [experiment of type Batch](BatchExperiments) is run, a dedicated UI is d
 ## Information bar
 
 In batch mode, the top information bar displays 3 distinct information (instead of only the cycle number in the GUI experiment):
-  * **Run**: the run number. One run corresponds to X executions of simulation with one given parameters values (X is an integer given by the facet `repeat` in the definition of the [exploration method](ExplorationMethods));
-  * **Simulation**: the number of replications done (and the number of replications specified with the `repeat` facet);
-  * **Cycle**: the cycle number in the current simulation.
+  * The **run** number: One run corresponds to X executions of simulation with one given parameters values (X is an integer given by the facet `repeat` in the definition of the [exploration method](ExplorationMethods));
+  * The **simulation** number: the number of replications done (and the number of replications specified with the `repeat` facet);
+  * The number of **thread**: the number of threads used for the simulation.
 
 ![images/batch_Information_bar.png](resources/images/runningExperiments/batch_Information_bar.png)
 
