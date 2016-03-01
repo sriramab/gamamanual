@@ -2,16 +2,16 @@
 
 GAMA is a modeling and simulation development environment for building spatially explicit agent-based simulations. 
 
-* [**Several application domains :**](#several-application-domains) Use GAMA for whatever application domain you want.
+* [**Multiple application domains :**](#multiple-application-domains) Use GAMA for whatever application domain you want.
 * [**High-level and Intuitive Agent-based language :**](high-level-and-intuitive-agent-based-language) Write your models easily using GAML, a high-level and intuitive agent-based language.
 * [**GIS and Data-Driven models :**](#gis-and-data-driven-models) Instantiate agents from any dataset, including GIS data, and execute large-scale simulations (up to millions of agents).
 * [**Declarative user interface :**](#declarative-user-interface) Declare interfaces supporting deep inspections on agents, user-controlled action panels, multi-layer 2D/3D displays & agent aspects.
 
 Its latest version, **1.7**, can be freely [downloaded](Download) or [built from source](https://github.com/gama-platform/gama/), and comes pre-loaded with several models, [tutorials](Tutorials) and a complete [on-line documentation](Overview).
 
-## Several application domains
+## Multiple application domains
 
-GAMA has been developed with a very general  approach, and can be used for many application domains. Some [additional plugins](TODO_URL) had been developed to fit with particular needs.
+GAMA has been developed with a very general approach, and can be used for many application domains. Some [additional plugins](TODO_URL) had been developed to fit with particular needs.
 
 Example of application domains where GAMA is mostly present :
 * Transport
