@@ -1,8 +1,9 @@
 [//]: # (startConcept|grid)
-# Grid Species
 [//]: # (keyword|concept_grid)
+# Grid Species
+[//]: # (keyword|concept_topology)
 
-A grid is a particular species of agents. Indeed, a grid is a set of agents that share a grid topology (until now, we only saw species with continuous topologies). As other agents, a grid species can have attributes, attributes, behaviors, aspects
+A grid is a particular species of agents. Indeed, a grid is a set of agents that share a grid topology (until now, we only saw species with continuous topology). As other agents, a grid species can have attributes, attributes, behaviors, aspects
 However, contrary to regular species, grid agents are created automatically at the beginning of the simulation. It is thus not necessary to use the create statement to create them.
 Moreover, in addition to classic built-in variables, grid a provided with a set of additional built-in variables.
 
@@ -68,7 +69,7 @@ This variable stores the row index of a cell.
 ### agents
 
 return the set of agents located inside the cell. Note the use of this variable is deprecated.
-It is preferable to use the **inside** operator:
+It is preferable to use the `inside` operator:
 [//]: # (keyword|operator_inside)
 
 ```
@@ -80,6 +81,7 @@ It is preferable to use the **inside** operator:
 [//]: # (keyword|concept_color)
 ### color
 The **color** built-in variable is used by the optimized grid display. Indeed, it is possible to use for grid agents an optimized aspect by using in a display the **grid** keyword. In this case, the grid will be displayed using the color defined by the **color** variable. The border of the cells can be displayed with a specific color by using the **lines** facet.
+
 Here an example of the display of a grid species named **cell** with black border.
 
 ```
@@ -210,6 +212,8 @@ global {
 ```
 
 [//]: # (keyword|operator_matrix)
+[//]: # (keyword|concept_csv)
+[//]: # (keyword|concept_load_file)
 Declaring larger matrix in GAML can be boring as you can imagine. You can load your matrix directly from a csv file with the operator `matrix` (used for the contruction of the matrix).
 
 ```
