@@ -1,8 +1,8 @@
 [//]: # (startConcept|regular_species)
-# Regular species
 [//]: # (keyword|concept_species)
+# Regular species
 
-Regular species are composed of attributes, actions, reflex, aspect etc... They describes the behaviour of our agents. You can instantiate as much as you want agents from a regular species, and you can define as much as you want different regular species. You can see a species as a "class" in OOP.
+Regular species are composed of attributes, actions, reflex, aspect etc... They describes the behavior of our agents. You can instantiate as much as you want agents from a regular species, and you can define as much as you want different regular species. You can see a species as a "class" in OOP.
 
 ## Index
 
@@ -61,7 +61,7 @@ species my_species {
 }
 ```
 
-All those built-in attributes are attributes of an agent (an instantiation of a species). Species has also their own attributes, which can be accessed with the following syntax (read only) :
+All those built-in attributes are attributes of an agent (an instance of a species). Species has also their own attributes, which can be accessed with the following syntax (read only) :
 
 ```
 name_of_your_species.attribute_you_want
