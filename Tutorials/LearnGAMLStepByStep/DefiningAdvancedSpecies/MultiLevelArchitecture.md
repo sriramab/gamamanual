@@ -1,6 +1,6 @@
 [//]: # (startConcept|multi_architecture)
-# Multi-level architecture
 [//]: # (keyword|concept_multi_level)
+# Multi-level architecture
 
 The multi-level architecture offers the modeler the following possibilities: the declaration of a species as a micro-species of another species, the representation of an entity as different types of agent (i.e., GAML species), the dynamic migration of agents between populations.
 
