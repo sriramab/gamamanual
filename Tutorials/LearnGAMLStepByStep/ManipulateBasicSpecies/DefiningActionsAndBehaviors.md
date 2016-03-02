@@ -1,7 +1,8 @@
-[//]: # (startConcept|actions_and_behaviours)
-# Defining actions and behaviors
+[//]: # (startConcept|actions_and_behaviors)
 [//]: # (keyword|concept_action)
 [//]: # (keyword|concept_reflex)
+# Defining actions and behaviors
+[//]: # (keyword|concept_behavior)
 
 Both actions and behaviors can be seen as methods in OOP. They can be defined in any species.
 
@@ -165,4 +166,4 @@ experiment my_experiment type:gui
 	}
 }
 ```
-[//]: # (endConcept|actions_and_behaviours)
+[//]: # (endConcept|actions_and_behaviors)
