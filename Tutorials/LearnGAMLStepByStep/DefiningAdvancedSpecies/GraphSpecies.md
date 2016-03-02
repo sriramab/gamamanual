@@ -1,7 +1,10 @@
 [//]: # (startConcept|graph)
-# Graph Species
 [//]: # (keyword|concept_graph)
+[//]: # (keyword|concept_node)
+[//]: # (keyword|concept_edge)
+# Graph Species
 [//]: # (keyword|type_graph)
+[//]: # (keyword|concept_topology)
 
 Using a graph species enables to easily show interaction between agents of a same species. This kind of species is particularly useful when trying to show the interaction (especially the non-spatial one) that exist between agents.
 
@@ -91,6 +94,8 @@ The abstract mother species "graph_node" has an attribute "my_graph", with the t
 
 ### Declare a graph by using a matrix file
 
+[//]: # (keyword|concept_load_file)
+[//]: # (keyword|concept_shapefile)
 [TODO]
 
 ### Declare a graph by using an geometry file
