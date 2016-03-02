@@ -1,6 +1,6 @@
 [//]: # (startConcept|attaching_skills)
-# Attaching Skills
 [//]: # (keyword|concept_skill)
+# Attaching Skills
 
 GAMA allows to attach skills to agents through the facet `skills`. Skills are built-in modules that provide a set of related built-in attributes and built-in actions (in addition to those already proposed by GAMA) to the species that declare them.
 
