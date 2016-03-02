@@ -17,6 +17,8 @@
 
 ## Displays and layers
 
+[//]: # (keyword|statement_display)
+[//]: # (keyword|statement_output)
 A display is the graphical output of your simulation. You can define several displays related with what you want to represent from your model execution. To define a display, use the keyword `display` inside the `output` scope, and specify a name (`name` facet).
 
 ```
