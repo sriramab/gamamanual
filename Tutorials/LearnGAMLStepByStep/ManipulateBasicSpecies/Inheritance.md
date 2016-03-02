@@ -1,6 +1,6 @@
 [//]: # (startConcept|inheritance)
-# Inheritance
 [//]: # (keyword|concept_inheritance)
+# Inheritance
 
 As for multiple programming language, inheritance can be used in GAML. It is used to structure better your code, when you have some complex models.
 
