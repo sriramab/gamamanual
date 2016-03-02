@@ -1,5 +1,7 @@
 [//]: # (startConcept|define_parameters)
+[//]: # (keyword|concept_parameters)
 # Defining Parameters
+[//]: # (keyword|concept_gui)
 
 When playing simulation, you have the possibility to define input parameters, in order to change them and replay the simulation. Defining parameters allows to make the value of a global variable definable by the user through the user graphic interface.
 
@@ -10,7 +12,7 @@ When playing simulation, you have the possibility to define input parameters, in
 
 ## Defining parameters
 
-You can define parameters inside the global scope, when defining your global variables with the facet ```parameter```:
+You can define parameters inside the global scope, when defining your global variables with the facet `parameter`:
 
 ```
 global
@@ -23,7 +25,7 @@ When launching your experiment, the parameter will appear in your "Parameters" p
 
 ![images/parameter1.png](resources/images/definingGUIExperiment/parameter1.png)
 
-You can also define your parameter inside the experiment, using the statement parameter. You have to specify first the name of your parameter, then the name of the global variable through the facet var.
+You can also define your parameter inside the experiment, using the statement parameter. You have to specify first the name of your parameter, then the name of the global variable through the facet `var`.
 
 ```
 global
@@ -36,7 +38,7 @@ experiment MyExperiment type: gui {
 	parameter "My integer global value" var:my_integer_global_value;
 }
 
-NB: This variable has to be initialized with a value. If you don't want to initialize your value on the global scope, you can initialize the value directly on the parameter statement, using the facet `init`.
+NB: This variable has to be initialized with a value. If you don't want to initialize your value on the `global` scope, you can initialize the value directly on the parameter statement, using the facet `init`.
 
 ```
 global
