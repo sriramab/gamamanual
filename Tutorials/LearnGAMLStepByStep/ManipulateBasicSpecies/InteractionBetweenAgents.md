@@ -1,6 +1,5 @@
 [//]: # (startConcept|interaction_between_agents)
 # Interaction between agents
-[//]: # (keyword|concept_interaction)
 
 In this part, we will learn how interaction between agents works. We will also present you a bunch of operators useful for your modelling. 
 
