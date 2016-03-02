@@ -1,20 +1,26 @@
 [//]: # (keyword|operator_osm_file)
 [//]: # (keyword|operator_covers)
 [//]: # (keyword|operator_get)
+[//]: # (keyword|operator_not)
 [//]: # (keyword|operator_in)
 [//]: # (keyword|operator_last)
+[//]: # (keyword|operator_overlapping)
+[//]: # (keyword|statement_put)
 [//]: # (keyword|statement_save)
-[//]: # (keyword|concept_ImportFiles)
-[//]: # (keyword|concept_GIS)
-[//]: # (keyword|concept_Shapefiles)
-[//]: # (keyword|concept_SaveFiles)
-# OSM File to Shapefiles using GAMA
+[//]: # (keyword|concept_load_file)
+[//]: # (keyword|concept_gis)
+[//]: # (keyword|concept_shapefile)
+[//]: # (keyword|concept_save_file)
+[//]: # (keyword|concept_osm)
+# OSM Loading Driving
 
 
 _Author : Patrick Taillandier_
 
 Model to show how to import OSM Files, using them to create agents for a road network, and saving the different agents in shapefiles. The first goal of this model is to prepare data for the driving skill models.
 
+
+Code of the model : 
 
 ```
 

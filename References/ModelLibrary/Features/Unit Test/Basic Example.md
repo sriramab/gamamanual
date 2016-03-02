@@ -3,7 +3,7 @@
 [//]: # (keyword|statement_setup)
 [//]: # (keyword|statement_test)
 [//]: # (keyword|statement_assert)
-[//]: # (keyword|concept_UnitTest)
+[//]: # (keyword|concept_test)
 # Example of Unit Test
 
 
@@ -11,6 +11,8 @@ _Author : Benoit Gaudou_
 
 A model which shows how to use the unit test to show the possible errors  you have to go in the Views, Preferences, Simulation, in "Errors" Uncheck "stop at the first error", to show all the errors.
 
+
+Code of the model : 
 
 ```
 

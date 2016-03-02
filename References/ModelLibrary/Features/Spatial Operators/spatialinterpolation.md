@@ -1,7 +1,10 @@
 [//]: # (keyword|operator_^)
+[//]: # (keyword|operator_max)
 [//]: # (keyword|operator_IDW)
-[//]: # (keyword|concept_Topology)
-[//]: # (keyword|concept_Grid)
+[//]: # (keyword|statement_put)
+[//]: # (keyword|concept_topology)
+[//]: # (keyword|concept_grid)
+[//]: # (keyword|concept_spatial_computation)
 # Spatial Interpolation
 
 
@@ -9,6 +12,8 @@ _Author : Patrick Taillandier_
 
 A model which shows how to use spatial interpolation
 
+
+Code of the model : 
 
 ```
 

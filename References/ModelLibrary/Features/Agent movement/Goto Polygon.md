@@ -2,10 +2,11 @@
 [//]: # (keyword|operator_skeletonize)
 [//]: # (keyword|operator_split_lines)
 [//]: # (keyword|type_path)
-[//]: # (keyword|concept_Graph)
-[//]: # (keyword|concept_MovementofAgents)
-[//]: # (keyword|concept_Shapefiles)
-[//]: # (keyword|concept_Skill)
+[//]: # (keyword|concept_graph)
+[//]: # (keyword|concept_agent_movement)
+[//]: # (keyword|concept_shapefile)
+[//]: # (keyword|concept_skill)
+[//]: # (keyword|concept_shortest_path)
 #  Movement on a Graph created by Polygons
 
 
@@ -13,6 +14,8 @@ _Author :  Patrick Taillandier_
 
 Model to show how to create a graph using a polygon shapefile by skeletonizing it, and creating roads using the skeleton. All of the agents will use this graph to go to the same targeted location.
 
+
+Code of the model : 
 
 ```
 

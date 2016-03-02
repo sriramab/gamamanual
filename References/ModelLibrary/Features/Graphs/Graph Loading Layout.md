@@ -1,8 +1,9 @@
 [//]: # (keyword|operator_rectangle)
 [//]: # (keyword|operator_load_graph_from_file)
 [//]: # (keyword|operator_layout)
-[//]: # (keyword|concept_Graph)
-[//]: # (keyword|concept_ImportFiles)
+[//]: # (keyword|concept_graph)
+[//]: # (keyword|concept_load_file)
+[//]: # (keyword|concept_dgs)
 # Graph from DGS File and Layout Changed
 
 
@@ -10,6 +11,8 @@ _Author : Patrick Taillandier_
 
 Model which shows how to load a graph from a DGS File, and change is layout. 
 
+
+Code of the model : 
 
 ```
 

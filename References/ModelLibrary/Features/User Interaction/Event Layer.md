@@ -1,6 +1,7 @@
+[//]: # (keyword|operator_not)
 [//]: # (keyword|statement_event)
 [//]: # (keyword|constant_pink)
-[//]: # (keyword|concept_UserInteraction)
+[//]: # (keyword|concept_gui)
 # Event Feature
 
 
@@ -8,6 +9,8 @@ _Author : Arnaud Grignard & Patrick Taillandier_
 
 Model which shows how to use the event layer to trigger an action according to an event occuring in the display. The experiment has two displays : one for the changing color event, one for the changing shape event.
 
+
+Code of the model : 
 
 ```
 model event_layer_model

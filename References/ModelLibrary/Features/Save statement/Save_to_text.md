@@ -1,5 +1,6 @@
 [//]: # (keyword|statement_save)
-[//]: # (keyword|concept_SaveFiles)
+[//]: # (keyword|concept_save_file)
+[//]: # (keyword|concept_txt)
 # Save to Text
 
 
@@ -7,6 +8,8 @@ _Author : Patrick Taillandier_
 
 This is a model that shows how to save agents inside a text file to reuse it later or to keep it.
 
+
+Code of the model : 
 
 ```
 

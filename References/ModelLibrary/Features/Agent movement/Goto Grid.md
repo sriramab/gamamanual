@@ -1,9 +1,12 @@
+[//]: # (keyword|operator_not)
 [//]: # (keyword|operator_intersects)
 [//]: # (keyword|constant_magenta)
 [//]: # (keyword|type_path)
-[//]: # (keyword|concept_Grid)
-[//]: # (keyword|concept_MovementofAgents)
-[//]: # (keyword|concept_Skill)
+[//]: # (keyword|concept_grid)
+[//]: # (keyword|concept_agent_movement)
+[//]: # (keyword|concept_skill)
+[//]: # (keyword|concept_obstacle)
+[//]: # (keyword|concept_shortest_path)
 #  Movement on a Grid of Cells
 
 
@@ -11,6 +14,8 @@ _Author :  Patrick Taillandier_
 
 Model to represent how the agents move from one point to a target agent on a grid of cells with obstacles, following the shortest path and coloring in magenta the cells intersecting the path of an agent
 
+
+Code of the model : 
 
 ```
 

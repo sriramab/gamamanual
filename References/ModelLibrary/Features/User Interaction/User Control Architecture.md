@@ -5,7 +5,8 @@
 [//]: # (keyword|statement_user_command)
 [//]: # (keyword|statement_user_input)
 [//]: # (keyword|skill_user_only)
-[//]: # (keyword|concept_UserInteraction)
+[//]: # (keyword|concept_gui)
+[//]: # (keyword|concept_architecture)
 # User Command
 
 
@@ -13,6 +14,8 @@ _Author : Patrick Taillandier_
 
 Model which shows how to use the advanced user control, to create and kill agents. 
 
+
+Code of the model : 
 
 ```
 

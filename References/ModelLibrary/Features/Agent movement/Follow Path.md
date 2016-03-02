@@ -1,12 +1,13 @@
 [//]: # (keyword|operator_as_path)
 [//]: # (keyword|operator_line)
 [//]: # (keyword|operator_as_map)
+[//]: # (keyword|operator_\:\:)
 [//]: # (keyword|operator_with_weights)
 [//]: # (keyword|constant_pink)
 [//]: # (keyword|type_path)
-[//]: # (keyword|concept_Graph)
-[//]: # (keyword|concept_MovementofAgents)
-[//]: # (keyword|concept_Skill)
+[//]: # (keyword|concept_graph)
+[//]: # (keyword|concept_agent_movement)
+[//]: # (keyword|concept_skill)
 #  Movement of an agent on different paths
 
 
@@ -14,6 +15,8 @@ _Author : _
 
 Model showing the movement of an agent following three different paths : one defined by its vertices, an other defined thanks to all the roads species, and finally a path defined by a graph with weights (graph created thanks to an other species)
 
+
+Code of the model : 
 
 ```
 model path_and_follow

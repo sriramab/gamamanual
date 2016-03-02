@@ -1,7 +1,7 @@
 [//]: # (keyword|operator_csv_file)
 [//]: # (keyword|type_matrix)
-[//]: # (keyword|concept_CSV)
-[//]: # (keyword|concept_ImportFiles)
+[//]: # (keyword|concept_csv)
+[//]: # (keyword|concept_load_file)
 # Convertion of CSV data to Matrix
 
 
@@ -9,6 +9,8 @@ _Author :  Patrick Taillandier_
 
 Model which shows how to initialize a matrix by using the content of a CSV File. The model load a CSV File, and write its content in the console. 
 
+
+Code of the model : 
 
 ```
 

@@ -1,15 +1,19 @@
 [//]: # (keyword|operator_rectangle)
 [//]: # (keyword|operator_hsb)
 [//]: # (keyword|operator_^)
-[//]: # (keyword|concept_3DDisplay)
-[//]: # (keyword|concept_Grid)
-# 3D Display model of differents shapes and a special Object
+[//]: # (keyword|concept_3d)
+[//]: # (keyword|concept_grid)
+[//]: # (keyword|concept_shape)
+[//]: # (keyword|concept_color)
+# 3D Display model of differents shapes as cells of a grid
 
 
 _Author : Arnaud Grignard_
 
 Model presenting a 3D display of different aspects of the same grid cells in the same experiment but different displays
 
+
+Code of the model : 
 
 ```
 

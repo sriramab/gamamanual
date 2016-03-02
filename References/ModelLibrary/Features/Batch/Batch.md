@@ -1,10 +1,12 @@
+[//]: # (keyword|operator_not)
 [//]: # (keyword|operator_among)
 [//]: # (keyword|statement_save)
 [//]: # (keyword|statement_exhaustive)
 [//]: # (keyword|statement_genetic)
 [//]: # (keyword|statement_tabu)
-[//]: # (keyword|concept_Batch)
-[//]: # (keyword|concept_SaveFiles)
+[//]: # (keyword|concept_batch)
+[//]: # (keyword|concept_algorithm)
+[//]: # (keyword|concept_save_file)
 #  Model using Batch mode
 
 
@@ -12,6 +14,8 @@ _Author :  Patrick Taillandier_
 
 A model showing how to use batch experiments to find the best combination of parameters to minimize the numbers of infected people in a SIR infection model where agents infect others and become immune for a certain time. The batch mode uses three different methods : Exhaustive, GA and Tabu Search. The model proposes five experiments : one simple with a User Interface, one running 5 experiments and saving the data, and one for each strategy. 
 
+
+Code of the model : 
 
 ```
 

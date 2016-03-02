@@ -2,13 +2,16 @@
 [//]: # (keyword|operator_all_pairs_shortest_path)
 [//]: # (keyword|operator_path_between)
 [//]: # (keyword|operator_paths_between)
+[//]: # (keyword|operator_\:\:)
 [//]: # (keyword|statement_save)
 [//]: # (keyword|constant_cyan)
 [//]: # (keyword|constant_magenta)
 [//]: # (keyword|type_path)
 [//]: # (keyword|type_matrix)
-[//]: # (keyword|concept_Graph)
-[//]: # (keyword|concept_ImportFiles)
+[//]: # (keyword|concept_graph)
+[//]: # (keyword|concept_load_file)
+[//]: # (keyword|concept_shortest_path)
+[//]: # (keyword|concept_save_file)
 # ShortestPath
 
 
@@ -16,6 +19,8 @@ _Author : Patrick Taillandier_
 
 This model shows how get the shortest path from one point to another on a graph. The experiment proposes two displays : one to show the shortest path, an other to show the first k shortest paths. 
 
+
+Code of the model : 
 
 ```
 

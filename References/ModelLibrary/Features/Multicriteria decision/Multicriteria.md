@@ -3,7 +3,7 @@
 [//]: # (keyword|operator_electre_DM)
 [//]: # (keyword|operator_evidence_theory_DM)
 [//]: # (keyword|operator_copy)
-[//]: # (keyword|concept_Multicriteria)
+[//]: # (keyword|concept_multi_criteria)
 # Multicriteria
 
 
@@ -11,6 +11,8 @@ _Author : Patrick Taillandier_
 
 This model show how to use different methods of multicriteria analysis to look for the best house. Four methods are used : the Weighted_Means method , the Electre method , the Promethee method  an the Evidence Theory method. Each method uses different criteria with different weights according to the methods used. 
 
+
+Code of the model : 
 
 ```
 

@@ -1,7 +1,7 @@
 [//]: # (keyword|operator_shape_file)
-[//]: # (keyword|concept_3DDisplay)
-[//]: # (keyword|concept_Shapefiles)
-[//]: # (keyword|concept_ImportFiles)
+[//]: # (keyword|concept_3d)
+[//]: # (keyword|concept_shapefile)
+[//]: # (keyword|concept_load_file)
 # 3D shapefile loading
 
 
@@ -9,6 +9,8 @@ _Author :  _
 
 Model which shows how to create a shape using a 3D Shapefile after this one has been loaded. 
 
+
+Code of the model : 
 
 ```
 model shapefile_loading

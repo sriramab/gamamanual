@@ -5,9 +5,11 @@
 [//]: # (keyword|statement_save)
 [//]: # (keyword|type_path)
 [//]: # (keyword|type_matrix)
-[//]: # (keyword|concept_Graph)
-[//]: # (keyword|concept_MovementofAgents)
-[//]: # (keyword|concept_Skill)
+[//]: # (keyword|concept_graph)
+[//]: # (keyword|concept_agent_movement)
+[//]: # (keyword|concept_skill)
+[//]: # (keyword|concept_shortest_path)
+[//]: # (keyword|concept_algorithm)
 #  Shortest Path Computation on a Graph
 
 
@@ -15,6 +17,8 @@ _Author :  Patrick Taillandier_
 
 Model to show how to use the optimizer methods to compute the shortest path for the agents placed on a network with all of them having the same goal location. It also shows how to save these paths computed into a text file.
 
+
+Code of the model : 
 
 ```
 

@@ -2,6 +2,7 @@
 [//]: # (keyword|operator_of_species)
 [//]: # (keyword|operator_agents_at_distance)
 [//]: # (keyword|operator_simple_clustering_by_distance)
+[//]: # (keyword|operator_\:\:)
 [//]: # (keyword|operator_hierarchical_clustering)
 [//]: # (keyword|operator_path_to)
 [//]: # (keyword|operator_line)
@@ -9,8 +10,8 @@
 [//]: # (keyword|constant_grey)
 [//]: # (keyword|constant_pink)
 [//]: # (keyword|type_path)
-[//]: # (keyword|concept_Topology)
-[//]: # (keyword|concept_Grid)
+[//]: # (keyword|concept_topology)
+[//]: # (keyword|concept_grid)
 # Spatial Operators
 
 
@@ -18,6 +19,8 @@ _Author : Patrick Taillandier_
 
 A model which shows how to use spatial operator, allowing the user to change the parameter operator in the experiment to test the different operators and see the results
 
+
+Code of the model : 
 
 ```
 

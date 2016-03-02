@@ -2,6 +2,7 @@
 [//]: # (keyword|operator_agents_overlapping)
 [//]: # (keyword|operator_sort_by)
 [//]: # (keyword|operator_towards)
+[//]: # (keyword|operator_shuffle)
 [//]: # (keyword|operator_dead)
 [//]: # (keyword|operator_at_location)
 [//]: # (keyword|operator_intersects)
@@ -13,8 +14,9 @@
 [//]: # (keyword|statement_capture)
 [//]: # (keyword|statement_release)
 [//]: # (keyword|architecture_fsm)
-[//]: # (keyword|concept_Multi-level)
-[//]: # (keyword|concept_MovementsofAgents)
+[//]: # (keyword|constant_orange)
+[//]: # (keyword|concept_multi_level)
+[//]: # (keyword|concept_agent_movement)
 # Multi-Level Architecture with Preys and Predators
 
 
@@ -22,6 +24,8 @@ _Author : _
 
 This model shows how to use multi-level architecture. In this model, prey and predators agents move randomly in the environment. When a prey agent perceive a predator, it flees trying to go to the closest shelters while the predator agent chases it. The shelters capture the prey agents fleeing, changing them into prey_in_shelter species, that predator can't chase during a certain time. They are released after that time in an invisible state so that they can wander in the  environment without being chase by the predator, but also, for a certain time.
 
+
+Code of the model : 
 
 ```
 

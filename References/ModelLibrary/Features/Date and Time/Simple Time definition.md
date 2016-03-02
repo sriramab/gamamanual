@@ -1,4 +1,4 @@
-[//]: # (keyword|concept_Date)
+[//]: # (keyword|concept_date)
 # Simple definition of time property in a model
 
 
@@ -6,6 +6,8 @@ _Author : Patrick Taillandier_
 
 Show how the time is managed is GAMA.
 
+
+Code of the model : 
 
 ```
 

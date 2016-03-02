@@ -5,9 +5,9 @@
 [//]: # (keyword|operator_hsb)
 [//]: # (keyword|operator_line)
 [//]: # (keyword|skill_moving3D)
-[//]: # (keyword|concept_Graph)
-[//]: # (keyword|concept_3DDisplay)
-[//]: # (keyword|concept_Skill)
+[//]: # (keyword|concept_graph)
+[//]: # (keyword|concept_3d)
+[//]: # (keyword|concept_skill)
 # 3D Graph
 
 
@@ -15,6 +15,8 @@ _Author : Arnaud Grignard_
 
 Model using a 3D Graph and updating it at each step according to the location and the degree of each sphere.  An arc is created between two adjacent spheres. Two different experiments are proposed : one with a dynamic size for the spheres according to their degree, one simpler with no update of the size.
 
+
+Code of the model : 
 
 ```
   

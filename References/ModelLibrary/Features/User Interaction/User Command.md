@@ -1,7 +1,8 @@
+[//]: # (keyword|operator_not)
 [//]: # (keyword|operator_user_input)
 [//]: # (keyword|statement_user_command)
 [//]: # (keyword|constant_pink)
-[//]: # (keyword|concept_UserInteraction)
+[//]: # (keyword|concept_gui)
 # User Command
 
 
@@ -9,6 +10,8 @@ _Author : Patrick Taillandier_
 
 Model which shows how to use the user commands in order to create agents in the display. The user has two possibilities : create one agent, or create a number of agents, with the possibility to change their shape and a pink color. The user also has the possibility to change the color and the shapes of the agents.
 
+
+Code of the model : 
 
 ```
 

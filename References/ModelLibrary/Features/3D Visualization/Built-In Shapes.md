@@ -10,9 +10,10 @@
 [//]: # (keyword|operator_polyline)
 [//]: # (keyword|operator_triangle)
 [//]: # (keyword|operator_hexagon)
-[//]: # (keyword|concept_3DDisplay)
-[//]: # (keyword|concept_Shapes)
-[//]: # (keyword|concept_Textures)
+[//]: # (keyword|constant_orange)
+[//]: # (keyword|concept_3d)
+[//]: # (keyword|concept_shape)
+[//]: # (keyword|concept_texture)
 # Visualisation of the primitive shapes
 
 
@@ -20,6 +21,8 @@ _Author : Arnaud Grignard_
 
 Model presenting a 3D display with all the primitive shapes existing in GAMA in 2D and 3D, with or without textures. 
 
+
+Code of the model : 
 
 ```
 

@@ -386,7 +386,6 @@ write list_int; // the output is : [3,6,2,7,0]
 
 **How to browse a list?**
 
-[//]: # (keyword|concept_browse)
 You can use the facet `over` of a loop:
 
 ```

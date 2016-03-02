@@ -2,7 +2,7 @@
 [//]: # (keyword|operator_as_intersection_graph)
 [//]: # (keyword|statement_switch)
 [//]: # (keyword|statement_match)
-[//]: # (keyword|concept_Graph)
+[//]: # (keyword|concept_graph)
 # Graph Generation using Agents
 
 
@@ -10,6 +10,8 @@ _Author : Patrick Taillandier_
 
 Model which shows how to create a graph using agents of a species as vertices. Two kinds of generations are presented : one where the distance  taken into account to link two vertices by an edge, an other where the intersections of two vertices joins these vertices by an edge. 
 
+
+Code of the model : 
 
 ```
 

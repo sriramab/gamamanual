@@ -1,11 +1,14 @@
 [//]: # (keyword|operator_scaled_by)
 [//]: # (keyword|operator_rotated_by)
 [//]: # (keyword|operator_intersects)
+[//]: # (keyword|operator_shuffle)
 [//]: # (keyword|operator_inter)
 [//]: # (keyword|operator_convex_hull)
 [//]: # (keyword|type_topology)
-[//]: # (keyword|concept_Topology)
-[//]: # (keyword|concept_Shapefiles)
+[//]: # (keyword|concept_topology)
+[//]: # (keyword|concept_shapefile)
+[//]: # (keyword|concept_spatial_computation)
+[//]: # (keyword|concept_spatial_transformation)
 # Spatial Operators
 
 
@@ -13,6 +16,8 @@ _Author : Patrick Taillandier_
 
 A model which shows how to use spatial operators like rotated_by, scaled_by and convex_hull
 
+
+Code of the model : 
 
 ```
 model example_spatial_operators

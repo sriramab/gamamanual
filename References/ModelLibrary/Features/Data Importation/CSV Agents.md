@@ -1,7 +1,7 @@
 [//]: # (keyword|operator_csv_file)
 [//]: # (keyword|operator_get)
-[//]: # (keyword|concept_CSV)
-[//]: # (keyword|concept_ImportFiles)
+[//]: # (keyword|concept_csv)
+[//]: # (keyword|concept_load_file)
 # CSV to Agents Model
 
 
@@ -9,6 +9,8 @@ _Author :  Patrick Taillandier_
 
 Model which shows how to create agents by importing data of a CSV file. The model read the CSV File and create an agent Iris for each line of the CSV, linking its attributes to columns of the CSV File. 
 
+
+Code of the model : 
 
 ```
 

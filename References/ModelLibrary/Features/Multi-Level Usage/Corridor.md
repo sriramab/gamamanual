@@ -1,12 +1,13 @@
 [//]: # (keyword|operator_rectangle)
 [//]: # (keyword|operator_at_location)
 [//]: # (keyword|operator_towards)
+[//]: # (keyword|operator_overlapping)
 [//]: # (keyword|statement_capture)
 [//]: # (keyword|statement_release)
 [//]: # (keyword|constant_pixels)
 [//]: # (keyword|type_topology)
-[//]: # (keyword|concept_Multi-level)
-[//]: # (keyword|concept_MovementsofAgents)
+[//]: # (keyword|concept_multi_level)
+[//]: # (keyword|concept_agent_movement)
 # Corridor Multi-Level Architecture
 
 
@@ -14,6 +15,8 @@ _Author : _
 
 This model shows how to use multi-level architecture. A corridor can capture pedestrians going from left to right side if they are inside the corridor. This will result in changing their species from pedestrian to captured_pedestrian which will not be  displayed. Once they pass enought time to consider they reach the exit of the corridor, they will be released by the corridor agent  as pedestrians, letting them been displayed and going to their target. 
 
+
+Code of the model : 
 
 ```
 

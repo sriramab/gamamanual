@@ -1,20 +1,26 @@
 [//]: # (keyword|operator_image_file)
+[//]: # (keyword|operator_shuffle)
+[//]: # (keyword|operator_inside)
 [//]: # (keyword|operator_as_matrix)
+[//]: # (keyword|constant_orange)
 [//]: # (keyword|type_matrix)
-[//]: # (keyword|concept_ImportFiles)
-[//]: # (keyword|concept_GIS)
-[//]: # (keyword|concept_Shapefiles)
-# Roaster File and Shapefiles Import
+[//]: # (keyword|concept_load_file)
+[//]: # (keyword|concept_gis)
+[//]: # (keyword|concept_shapefile)
+[//]: # (keyword|concept_raster)
+# Raster File and Shapefiles Import
 
 
 _Author : Maroussia Vavasseur and Benoit Gaudou_
 
-Model which imports data from a roaster file and two shapefiles to initilalize a grid and two species. The roaster file initialize a grid attribute for the cells and the shapefiles a river species just with the same shape, and the managementUnit species with a link between the columns of the shapefile and the attributes of the species. 
+Model which imports data from a raster file and two shapefiles to initilalize a grid and two species. The roaster file initialize a grid attribute for the cells and the shapefiles a river species just with the same shape, and the managementUnit species with a link between the columns of the shapefile and the attributes of the species. 
 
+
+Code of the model : 
 
 ```
 
-model RoasterAndShapefiles
+model RasterAndShapefiles
 
 
  

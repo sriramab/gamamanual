@@ -1,7 +1,8 @@
 [//]: # (keyword|operator_osm_file)
 [//]: # (keyword|operator_rnd_color)
-[//]: # (keyword|concept_ImportFiles)
-[//]: # (keyword|concept_GIS)
+[//]: # (keyword|concept_load_file)
+[//]: # (keyword|concept_osm)
+[//]: # (keyword|concept_gis)
 # OSM file to Agents
 
 
@@ -9,6 +10,8 @@ _Author :  Patrick Taillandier_
 
 Model which shows how to import a OSM File in GAMA and use it to create Agents. In this model, a filter is done to take only into account the roads and the buildings contained in the file. 
 
+
+Code of the model : 
 
 ```
 

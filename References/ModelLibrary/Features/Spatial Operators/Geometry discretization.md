@@ -3,7 +3,9 @@
 [//]: # (keyword|operator_triangulate)
 [//]: # (keyword|operator_points_on)
 [//]: # (keyword|operator_voronoi)
-[//]: # (keyword|concept_Topology)
+[//]: # (keyword|concept_topology)
+[//]: # (keyword|concept_spatial_computation)
+[//]: # (keyword|concept_spatial_transformation)
 # Discretization of Topology
 
 
@@ -11,6 +13,8 @@ _Author : Patrick Taillandier_
 
 A model which shows how to use the different convert topologies operators : to_square, to_rectangle, points_on, triangulate, voronoi.
 
+
+Code of the model : 
 
 ```
 

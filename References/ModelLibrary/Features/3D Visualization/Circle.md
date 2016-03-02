@@ -5,8 +5,9 @@
 [//]: # (keyword|operator_cone3D)
 [//]: # (keyword|operator_cylinder)
 [//]: # (keyword|operator_teapot)
-[//]: # (keyword|concept_3DDisplay)
-[//]: # (keyword|concept_Shapes)
+[//]: # (keyword|concept_3d)
+[//]: # (keyword|concept_shape)
+[//]: # (keyword|concept_neighbors)
 # 3D Display model of differents shapes and a special Object
 
 
@@ -14,6 +15,8 @@ _Author : _
 
 Model presenting a 3D display of differents shapes (pyramid, cone, cylinder, sphere and a teapot object) to represent the same agents but with different aspects. Five experiments are possible, one for each of the shapes presented previously. In each experiment, the agents move to create a big circle but flee from their closest neighbour. 
 
+
+Code of the model : 
 
 ```
 

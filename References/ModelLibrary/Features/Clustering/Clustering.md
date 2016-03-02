@@ -1,7 +1,8 @@
 [//]: # (keyword|operator_dbscan)
 [//]: # (keyword|operator_rnd_color)
 [//]: # (keyword|operator_kmeans)
-[//]: # (keyword|concept_Clustering)
+[//]: # (keyword|concept_clustering)
+[//]: # (keyword|concept_statistic)
 #  Clustering of agents by K Means and DBScan
 
 
@@ -9,6 +10,8 @@ _Author :  Patrick Taillandier_
 
 A model to show how to use clustering operators and two methods of clustering (K Means and DBScan)  with the goal of regrouping agents in clusters
 
+
+Code of the model : 
 
 ```
 

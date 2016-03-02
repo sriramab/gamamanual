@@ -2,10 +2,12 @@
 [//]: # (keyword|operator_build)
 [//]: # (keyword|operator_predict)
 [//]: # (keyword|operator_line)
+[//]: # (keyword|statement_put)
 [//]: # (keyword|type_regression)
 [//]: # (keyword|type_matrix)
-[//]: # (keyword|concept_Regression)
-[//]: # (keyword|concept_3DDisplay)
+[//]: # (keyword|concept_regression)
+[//]: # (keyword|concept_3d)
+[//]: # (keyword|concept_statistic)
 # Regression
 
 
@@ -13,6 +15,8 @@ _Author : Patrick Taillandier_
 
 A model which shows how to use the regression 
 
+
+Code of the model : 
 
 ```
 

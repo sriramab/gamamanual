@@ -4,9 +4,9 @@
 [//]: # (keyword|statement_switch)
 [//]: # (keyword|statement_match)
 [//]: # (keyword|type_path)
-[//]: # (keyword|concept_DirectedGraph)
-[//]: # (keyword|concept_MovementofAgents)
-[//]: # (keyword|concept_Skill)
+[//]: # (keyword|concept_graph)
+[//]: # (keyword|concept_agent_movement)
+[//]: # (keyword|concept_skill)
 #  Directed Graph Model
 
 
@@ -14,6 +14,8 @@ _Author :  Patrick Taillandier_
 
 Model representing how to directed graph using GIS Data for the road networks : the GIS contains a column defining the direction of the roads   and people moving from one random point to another on this graph
 
+
+Code of the model : 
 
 ```
 

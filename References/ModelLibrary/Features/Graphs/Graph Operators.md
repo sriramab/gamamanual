@@ -1,5 +1,6 @@
 [//]: # (keyword|operator_as_distance_graph)
 [//]: # (keyword|operator_betweenness_centrality)
+[//]: # (keyword|operator_max)
 [//]: # (keyword|operator_degree_of)
 [//]: # (keyword|operator_nb_cycles)
 [//]: # (keyword|operator_alpha_index)
@@ -7,7 +8,7 @@
 [//]: # (keyword|operator_gamma_index)
 [//]: # (keyword|operator_connectivity_index)
 [//]: # (keyword|operator_connected_components_of)
-[//]: # (keyword|concept_Graph)
+[//]: # (keyword|concept_graph)
 # Graph Operators
 
 
@@ -15,6 +16,8 @@ _Author : Patrick Taillandier_
 
 Model to show how to use the different existing operators for the graph species
 
+
+Code of the model : 
 
 ```
 

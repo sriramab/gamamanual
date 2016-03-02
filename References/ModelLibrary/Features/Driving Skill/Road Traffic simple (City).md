@@ -1,4 +1,5 @@
 [//]: # (keyword|operator_as_map)
+[//]: # (keyword|operator_\:\:)
 [//]: # (keyword|operator_with_weights)
 [//]: # (keyword|operator_copy)
 [//]: # (keyword|operator_last)
@@ -9,11 +10,12 @@
 [//]: # (keyword|skill_driving)
 [//]: # (keyword|constant_magenta)
 [//]: # (keyword|type_species)
-[//]: # (keyword|concept_GIS)
-[//]: # (keyword|concept_Shapefiles)
-[//]: # (keyword|concept_Graph)
-[//]: # (keyword|concept_MovementofAgents)
-[//]: # (keyword|concept_Skill)
+[//]: # (keyword|concept_gis)
+[//]: # (keyword|concept_shapefile)
+[//]: # (keyword|concept_graph)
+[//]: # (keyword|concept_agent_movement)
+[//]: # (keyword|concept_skill)
+[//]: # (keyword|concept_transport)
 # Simple Road Network 
 
 
@@ -21,6 +23,8 @@ _Author : Patrick Taillandier_
 
 Model using shapefiles to create buildings and a road graph, with people going from their living place to their work place depending on the hour. The traffic jam is also taken into account to slow the people agents when they are too much on the same road. The experiment shows a display of the city, with people agents, buildings and roads, a display of the traffic jam occuring on the roads, and a chart display showing two charts : one for the traffic jam coefficients, and an other for the objectives of the people agents.
 
+
+Code of the model : 
 
 ```
   

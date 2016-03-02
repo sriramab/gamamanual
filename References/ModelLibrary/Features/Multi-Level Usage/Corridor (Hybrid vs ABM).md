@@ -1,10 +1,11 @@
 [//]: # (keyword|operator_rectangle)
 [//]: # (keyword|operator_at_location)
 [//]: # (keyword|operator_towards)
+[//]: # (keyword|operator_overlapping)
 [//]: # (keyword|statement_capture)
 [//]: # (keyword|statement_release)
-[//]: # (keyword|concept_Multi-level)
-[//]: # (keyword|concept_MovementsofAgents)
+[//]: # (keyword|concept_multi_level)
+[//]: # (keyword|concept_agent_movement)
 # Corridor Multi-Level Architecture with Mathematics Model and Agent Based Model
 
 
@@ -12,6 +13,8 @@ _Author : _
 
 This model shows how to use multi-level architecture. Two corridors are presented : one which can capture the pedestrians going through it and computing for them the time before releasing them at the end of the corridor, and an other doing nothing, letting the pedestrians moving by themselves in the corridor. 
 
+
+Code of the model : 
 
 ```
 

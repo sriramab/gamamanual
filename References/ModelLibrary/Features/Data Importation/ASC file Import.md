@@ -1,5 +1,6 @@
-[//]: # (keyword|concept_Grid)
-[//]: # (keyword|concept_ImportFiles)
+[//]: # (keyword|concept_grid)
+[//]: # (keyword|concept_load_file)
+[//]: # (keyword|concept_asc)
 # ESRI ASCII to grid model
 
 
@@ -7,6 +8,8 @@ _Author :  Patrick Taillandier_
 
 Model which shows how to initialize a grid using a ESRI ASCII file
 
+
+Code of the model : 
 
 ```
 

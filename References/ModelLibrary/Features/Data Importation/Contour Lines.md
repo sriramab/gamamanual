@@ -2,9 +2,9 @@
 [//]: # (keyword|operator_closest_to)
 [//]: # (keyword|operator_set_z)
 [//]: # (keyword|constant_grey)
-[//]: # (keyword|concept_ImportFiles)
-[//]: # (keyword|concept_GIS)
-[//]: # (keyword|concept_Shapefiles)
+[//]: # (keyword|concept_load_file)
+[//]: # (keyword|concept_gis)
+[//]: # (keyword|concept_shapefile)
 # Contour Lines Import
 
 
@@ -12,6 +12,8 @@ _Author : Patrick Taillandier_
 
 Model which imports a shapefile of contour lines, build triangles from these contour lines, compute their elevation by using the elevation attribute of the contour lines which had been linked to the elevation column of the shapefile. 
 
+
+Code of the model : 
 
 ```
 

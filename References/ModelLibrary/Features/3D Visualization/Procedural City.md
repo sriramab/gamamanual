@@ -3,8 +3,8 @@
 [//]: # (keyword|operator_sin)
 [//]: # (keyword|operator_cos)
 [//]: # (keyword|operator_hsb)
-[//]: # (keyword|concept_3DDisplay)
-[//]: # (keyword|concept_Textures)
+[//]: # (keyword|concept_3d)
+[//]: # (keyword|concept_texture)
 # Procedural City
 
 
@@ -12,6 +12,8 @@ _Author : Arnaud Grignard_
 
 Model with a 3D Display representing buildings with a random size. The model proposes two experiments : the first one represents the buildings with 3D shapes with textures, the second one without textures but the color of the buildings depends on the rotation of a ball-shaped light
 
+
+Code of the model : 
 
 ```
 

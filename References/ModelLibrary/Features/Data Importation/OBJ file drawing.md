@@ -1,5 +1,9 @@
-[//]: # (keyword|concept_ImportFiles)
-[//]: # (keyword|concept_3DDisplay)
+[//]: # (keyword|operator_\:\:)
+[//]: # (keyword|constant_orange)
+[//]: # (keyword|concept_load_file)
+[//]: # (keyword|concept_3d)
+[//]: # (keyword|concept_skill)
+[//]: # (keyword|concept_obj)
 # OBJ File to Geometry
 
 
@@ -7,6 +11,8 @@ _Author :  Arnaud Grignard_
 
 Model which shows how to use a OBJ File to draw a complex geometry. The geometry is simply used, in this case, to draw the agents.
 
+
+Code of the model : 
 
 ```
 

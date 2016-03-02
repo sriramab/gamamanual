@@ -1,11 +1,11 @@
 [//]: # (keyword|operator_get)
 [//]: # (keyword|statement_save)
 [//]: # (keyword|constant_pink)
-[//]: # (keyword|concept_GIS)
-[//]: # (keyword|concept_Shapefiles)
-[//]: # (keyword|concept_SaveFiles)
-[//]: # (keyword|concept_ImportFiles)
-[//]: # (keyword|concept_3DDisplay)
+[//]: # (keyword|concept_gis)
+[//]: # (keyword|concept_shapefile)
+[//]: # (keyword|concept_save_file)
+[//]: # (keyword|concept_load_file)
+[//]: # (keyword|concept_3d)
 # Shapefiles Import and Save
 
 
@@ -13,6 +13,8 @@ _Author : Patrick Taillandier_
 
 Model using shapefiles to create buildings, linking their height and type attributes to the height and nature columns of the shapefiles to finally save the data in an other shapefile.
 
+
+Code of the model : 
 
 ```
   

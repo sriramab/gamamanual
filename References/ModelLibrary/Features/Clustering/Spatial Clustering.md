@@ -6,8 +6,9 @@
 [//]: # (keyword|operator_hierarchical_clustering)
 [//]: # (keyword|operator_union)
 [//]: # (keyword|type_species)
-[//]: # (keyword|concept_Clustering)
-[//]: # (keyword|concept_Grid)
+[//]: # (keyword|concept_clustering)
+[//]: # (keyword|concept_statistic)
+[//]: # (keyword|concept_grid)
 #  Clustering of agents by their distance 
 
 
@@ -15,6 +16,8 @@ _Author :  Patrick Taillandier_
 
 A model to show how to use clustering operators with simple_clustering_by_distance to take into account the distances between agents or between cells to create the clusters,  and showing the relations between the people from the same cluster. 
 
+
+Code of the model : 
 
 ```
 

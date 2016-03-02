@@ -1,9 +1,9 @@
 [//]: # (keyword|operator_shape_file)
 [//]: # (keyword|statement_switch)
 [//]: # (keyword|statement_match)
-[//]: # (keyword|concept_3DDisplay)
-[//]: # (keyword|concept_Shapefiles)
-[//]: # (keyword|concept_GIS)
+[//]: # (keyword|concept_3d)
+[//]: # (keyword|concept_shapefile)
+[//]: # (keyword|concept_gis)
 # 3D Display model and Height of Building using shapefiles
 
 
@@ -12,12 +12,14 @@ _Author : Arnaud Grignard_
 Model presenting a 3D display of people and buildings moving on a road network imported thanks to shapefiles.  Three experiments are proposed : one showing people represented by a yellow sphere moving from a living 3D building to a working 3D building and coming back using a road network (road_traffic). The second experiment distinguish the species by using different layers for species (road_traffic_multi_layer). The last one increases the Z location of the buildings and the people according to the time simulated (road_traffic_flying_off).
 
 
+Code of the model : 
+
 ```
 model tutorial_gis_city_traffic
 
 global {
 	//Load of the different shapefiles used by the model
-	file shape_file_buildings <- shape_file('../includes/simplebuilding/building.shp', 0);
+	file shape_file_buildings <- shape_file('../includes/building.shp', 0);
 	file shape_file_roads <- shape_file('../includes/road.shp', 0);
 	file shape_file_bounds <- shape_file('../includes/bounds.shp', 0);
 	
@@ -46,7 +48,7 @@ global {
 			height <- 10 + rnd(90);
 		}
 
-		/*create road from: shape_file_roads;
+		create road from: shape_file_roads;
 		the_graph <- as_edge_graph(road);
 		list<building> residential_buildings <- building where (each.type = 'Residential');
 		list<building> industrial_buildings <- building where (each.type = 'Industrial');
@@ -58,7 +60,7 @@ global {
 			working_place <- one_of(industrial_buildings);
 			location <- any_location_in(living_place);
 			location <- {location.x, location.y,living_place.height };
-		}*/
+		}
 
 	}
 }

@@ -1,7 +1,9 @@
 [//]: # (keyword|operator_max_of)
 [//]: # (keyword|operator_min_of)
-[//]: # (keyword|concept_ImportFiles)
-[//]: # (keyword|concept_GIS)
+[//]: # (keyword|concept_load_file)
+[//]: # (keyword|concept_tif)
+[//]: # (keyword|concept_gis)
+[//]: # (keyword|concept_grid)
 # GeoTIFF file to Grid of Cells 
 
 
@@ -9,6 +11,8 @@ _Author :  Patrick Taillandier_
 
 Model which shows how to create a grid of cells by using a GeoTIFF File. 
 
+
+Code of the model : 
 
 ```
 

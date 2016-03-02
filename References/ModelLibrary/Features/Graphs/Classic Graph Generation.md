@@ -3,7 +3,7 @@
 [//]: # (keyword|operator_generate_complete_graph)
 [//]: # (keyword|statement_switch)
 [//]: # (keyword|statement_match)
-[//]: # (keyword|concept_Graph)
+[//]: # (keyword|concept_graph)
 # Graph Generation
 
 
@@ -11,6 +11,8 @@ _Author : Patrick Taillandier_
 
 Model which shows how to create three kind of graphs : a scale-free graph, a small-world graph, a complete graph and a complete graph with a radius.
 
+
+Code of the model : 
 
 ```
 

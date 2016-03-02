@@ -1,9 +1,10 @@
 [//]: # (keyword|operator_cube)
 [//]: # (keyword|operator_copy)
+[//]: # (keyword|operator_not)
 [//]: # (keyword|constant_magenta)
 [//]: # (keyword|constant_cyan)
-[//]: # (keyword|concept_Color)
-[//]: # (keyword|concept_3DDisplay)
+[//]: # (keyword|concept_color)
+[//]: # (keyword|concept_3d)
 # Creating color and sort cubes by color
 
 
@@ -11,6 +12,8 @@ _Author :  Arnaud Grignard_
 
 A model to show how to create color by using the rgb operator, the color depending on the position of cube in the xyz space. The cubes are randomly mixed to finally be sorted according to the color of each vertix of the whole big cube, using the bubble sort  algorithm (https://en.wikipedia.org/wiki/Bubble_sort). 
 
+
+Code of the model : 
 
 ```
 

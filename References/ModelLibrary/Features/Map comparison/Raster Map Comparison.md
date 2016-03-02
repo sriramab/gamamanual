@@ -1,3 +1,4 @@
+[//]: # (keyword|operator_shuffle)
 [//]: # (keyword|operator_in)
 [//]: # (keyword|operator_as_matrix)
 [//]: # (keyword|operator_kappa)
@@ -5,11 +6,14 @@
 [//]: # (keyword|operator_fuzzy_kappa)
 [//]: # (keyword|operator_fuzzy_kappa_sim)
 [//]: # (keyword|operator_percent_absolute_deviation)
+[//]: # (keyword|statement_put)
 [//]: # (keyword|statement_using)
 [//]: # (keyword|type_matrix)
 [//]: # (keyword|type_topology)
-[//]: # (keyword|concept_Grid)
-[//]: # (keyword|concept_Comparison)
+[//]: # (keyword|concept_grid)
+[//]: # (keyword|concept_comparison)
+[//]: # (keyword|concept_raster)
+[//]: # (keyword|concept_statistic)
 # Raster Map Comparison
 
 
@@ -17,6 +21,8 @@ _Author : Patrick Taillandier_
 
 This model shows how to use different comparators to know the accuracy of a prediction model. Four comparators are used : kappa, comparing the map observed and the map simulation ; kappa simulation comparing the initial map, the map observed and the map simulation; fuzzy kappa, comparing the map observed and the map simulation but being more permissive by using fuzzy logic; fuzzy kappa simulation, comparing the map observed, the map simulation and the map initial but being more permissive by using fuzzy logic
 
+
+Code of the model : 
 
 ```
 

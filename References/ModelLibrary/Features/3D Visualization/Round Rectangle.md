@@ -1,7 +1,7 @@
 [//]: # (keyword|operator_smooth)
 [//]: # (keyword|operator_rectangle)
-[//]: # (keyword|concept_3DDisplay)
-[//]: # (keyword|concept_Shapes)
+[//]: # (keyword|concept_3d)
+[//]: # (keyword|concept_shape)
 # 3D Display model of Rounded Rectangle
 
 
@@ -9,6 +9,8 @@ _Author : Arnaud Grignard_
 
 Model presenting a 3D display of rounded rectangle
 
+
+Code of the model : 
 
 ```
 
@@ -37,7 +39,7 @@ global {
 	geometry shape <- square(width_and_height_of_environment);
 	init { 
 		
-		global_color <- #yellow;//global_color hsb_to_rgb ([0.25,1.0,1.0]);
+		global_color <- #yellow;
 
 		maxSize<- 10;
 		

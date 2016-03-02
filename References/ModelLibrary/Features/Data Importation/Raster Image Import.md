@@ -1,13 +1,19 @@
 [//]: # (keyword|operator_image_file)
-[//]: # (keyword|concept_ImportFiles)
-[//]: # (keyword|concept_GIS)
-# Roaster File in a Grid of cells
+[//]: # (keyword|operator_shuffle)
+[//]: # (keyword|operator_inside)
+[//]: # (keyword|constant_orange)
+[//]: # (keyword|concept_load_file)
+[//]: # (keyword|concept_gis)
+[//]: # (keyword|concept_raster)
+# Raster File in a Grid of cells
 
 
 _Author : Maroussia Vavasseur and Benoit Gaudou_
 
-Model which shows how to import a Roaster file in GAMA and use it to initialize the color attributes of a grid of cells. This model represents a grid with a cell, each cell has a color, and this color is used for animals (izards) to be placed on a cell that verifies some conditions. The izards do not move once they have been placed. 
+Model which shows how to import a Raster file in GAMA and use it to initialize the color attributes of a grid of cells. This model represents a grid with a cell, each cell has a color, and this color is used for animals (izards) to be placed on a cell that verifies some conditions. The izards do not move once they have been placed. 
 
+
+Code of the model : 
 
 ```
 

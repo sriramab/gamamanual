@@ -1,11 +1,13 @@
 [//]: # (keyword|operator_path_between)
+[//]: # (keyword|operator_max)
 [//]: # (keyword|operator_node)
 [//]: # (keyword|operator_edge)
+[//]: # (keyword|operator_\:\:)
 [//]: # (keyword|operator_link)
 [//]: # (keyword|type_path)
-[//]: # (keyword|concept_Graph)
-[//]: # (keyword|concept_ImportFiles)
-[//]: # (keyword|concept_Skill)
+[//]: # (keyword|concept_graph)
+[//]: # (keyword|concept_load_file)
+[//]: # (keyword|concept_skill)
 # Multigraph
 
 
@@ -13,6 +15,8 @@ _Author : Patrick Taillandier_
 
 This model shows how to build a graph on which people agents will move with GIS Shapefile, but also to generate an other graph representing the friendship between the people agents, people agents trying to be closer spatially to each other
 
+
+Code of the model : 
 
 ```
 

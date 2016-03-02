@@ -1,7 +1,8 @@
 [//]: # (keyword|operator_dem)
-[//]: # (keyword|concept_ImportFiles)
-[//]: # (keyword|concept_GIS)
-[//]: # (keyword|concept_3DDisplay)
+[//]: # (keyword|concept_load_file)
+[//]: # (keyword|concept_gis)
+[//]: # (keyword|concept_3d)
+[//]: # (keyword|concept_dem)
 # ASCII File to DEM Representation
 
 
@@ -9,6 +10,8 @@ _Author : Arnaud Grignard_
 
 Model to show how to import a ASCII File to make a DEM Representation and apply a Texture on it. In this model, three experiments are presented : DEM to show the grid elevation using the ASCII File as data for the height of the cells, and showing different 3D displays. GridDEMComplete shows more displays with the three of the previous experiment, the grid of the cells in a 2D Display, with the Elevation but without triangulation, and the grid with text values to show the content of the ASCII used by the cells. GraphicDEMComplete shows the use of the z_factor to amplify or reduces the difference between the z values of a Dem geometry.
 
+
+Code of the model : 
 
 ```
 
