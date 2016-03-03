@@ -1,4 +1,5 @@
 [//]: # (startConcept|3d_displays)
+[//]: # (keyword|concept_3d)
 # Defining 3D Displays
 
 ## Table of contents 
@@ -16,7 +17,7 @@
 		* [Third Person view](#third-person-view)
 * [Lighting](#lighting)
 
-
+[//]: # (keyword|concept_opengl)
 ## OpenGL display
 
 * Define the attribute type of the display with `type:opengl` in the output of your model (or use the preferences->display windows to use it by default):
@@ -27,7 +28,7 @@ output {
   }
 ```
 
-The opengl display share most of the feature that the java2D offers and that are described [here](DefiningDisplaysGeneralities)
+The opengl display share most of the feature that the java2D offers and that are described [here](DefiningDisplaysGeneralities).
 
 Using 3D display offers many way to represent a simulation. A layer can be positioned and scaled in a 3D world. It is possible to superpose layer on different z value and display different information on the model at different position on the screen.
 
@@ -55,7 +56,7 @@ experiment expe_test type:gui {
 ![images/species_layer.png](resources/images/definingGUIExperiment/species_layer.png)
 
 
-
+[//]: # (keyword|concept_camera)
 ## Camera
 
 <a href='http://www.youtube.com/watch?feature=player_embedded&v=rMIVQlul1Ag' target='_blank'><img src='http://img.youtube.com/vi/rMIVQlul1Ag/0.jpg' width='425' height=344 /></a>
@@ -70,14 +71,14 @@ experiment expe_test type:gui {
 User have the possibility to set dynamically the parameter of the camera (observer). The basic camera properties are its **position**, the **direction** in which is pointing, and its **orientation**. Those 3 parameters can be set dynamically at each iteration of the simulation.
 
 ### Camera position
-`camera_pos(x,y,z)` places the camera at the given position.
+The facet `camera_pos(x,y,z)` places the camera at the given position.
 The default camera positon is _(world.width/2,world/height/2,world.maxDim`*`1.5)_ to place the camera at the middle of the environement at an altitude that enables to see the entire environment.
 
 ### Camera direction (Look Position)
-`camera_look_pos(x,y,z)` points the camera toward the given position.  The default look position is _(world.width/2,world/height/2,0)_ to look at the center of the environment.
+The facet `camera_look_pos(x,y,z)` points the camera toward the given position.  The default look position is _(world.width/2,world/height/2,0)_ to look at the center of the environment.
 
 ### Camera orientation (Up Vector)
-`camera_up_vector(x,y,z)` sets the _up vector_ of the camera.
+The camera `camera_up_vector(x,y,z)` sets the _up vector_ of the camera.
 The _up vector_ direction in your scene is the _up_ direction on your display screen.
 The default value is (0,1,0)
 
@@ -116,7 +117,7 @@ display ThirdPerson  type:opengl camera_pos:{boids(1).location.x,-boids(1).locat
 ```
 
 
-
+[//]: # (keyword|concept_light)
 ## Lighting
 
 In a 3D scene once can define light sources. The way how light sources and 3D object interact is called lighting. Lighting is an important factor to render realistic scenes.
