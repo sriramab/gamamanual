@@ -26,8 +26,8 @@
 			<prerequisite>global_species</prerequisite>
 		</prerequisiteList>
 	</learningConcept>
-	<learningConcept id="actions_and_behaviours" x="0.640" y="0.560">
-		<name>Actions &amp; Behaviours</name>
+	<learningConcept id="actions_and_behaviors" x="0.640" y="0.560">
+		<name>Actions &amp; Behaviors</name>
 		<description>declare / call an action, "reflex" statement</description>
 		<prerequisiteList>
 			<prerequisite>regular_species</prerequisite>
@@ -37,7 +37,7 @@
 		<name>Interaction\nbetween agents</name>
 		<description>"ask" statement, pseudo variables\\n"self" and "myself"</description>
 		<prerequisiteList>
-			<prerequisite>actions_and_behaviours</prerequisite>
+			<prerequisite>actions_and_behaviors</prerequisite>
 		</prerequisiteList>
 	</learningConcept>
 	<learningConcept id="attaching_skills" x="0.420" y="0.595">
@@ -115,7 +115,7 @@
 		<name>Mirror Species</name>
 		<description>duplicate agent with custom aspect</description>
 		<prerequisiteList>
-			<prerequisite>actions_and_behaviours</prerequisite>
+			<prerequisite>actions_and_behaviors</prerequisite>
 		</prerequisiteList>
 	</learningConcept>
 	<learningConcept id="define_aspect" x="0.691" y="0.423">
@@ -195,7 +195,7 @@
 		<description>tips about scheduler, grid, operators and displays</description>
 		<prerequisiteList>
 			<prerequisite>grid</prerequisite>
-			<prerequisite>actions_and_behaviours</prerequisite>
+			<prerequisite>actions_and_behaviors</prerequisite>
 			<prerequisite>runtime_and_schedulers</prerequisite>
 			<prerequisite>3d_displays</prerequisite>
 		</prerequisiteList>
@@ -219,14 +219,14 @@
 		<name>Batch\nExperiments</name>
 		<description>run several experiments using batch experiments</description>
 		<prerequisiteList>
-			<prerequisite>actions_and_behaviours</prerequisite>
+			<prerequisite>actions_and_behaviors</prerequisite>
 		</prerequisiteList>
 	</learningConcept>
 	<learningConcept id="run_several_models_using_gamanalyzer" x="0.079" y="0.635">
 		<name>Run several\nmodels (using\nGAMAnalyzer)</name>
 		<description>bla bla bla</description>
 		<prerequisiteList>
-			<prerequisite>actions_and_behaviours</prerequisite>
+			<prerequisite>actions_and_behaviors</prerequisite>
 		</prerequisiteList>
 	</learningConcept>
 	<learningConcept id="exploration_methods" x="0.179" y="0.811">
@@ -247,7 +247,7 @@
 		<name>Call R</name>
 		<description>data mining and statistics with R</description>
 		<prerequisiteList>
-			<prerequisite>actions_and_behaviours</prerequisite>
+			<prerequisite>actions_and_behaviors</prerequisite>
 		</prerequisiteList>
 	</learningConcept>
 	<learningConcept id="use_database" x="0.743" y="0.817">
@@ -288,7 +288,7 @@
 			<learningConceptAssociated>programming_basis</learningConceptAssociated>
 			<learningConceptAssociated>global_species</learningConceptAssociated>
 			<learningConceptAssociated>regular_species</learningConceptAssociated>
-			<learningConceptAssociated>actions_and_behaviours</learningConceptAssociated>
+			<learningConceptAssociated>actions_and_behaviors</learningConceptAssociated>
 			<learningConceptAssociated>interaction_between_agents</learningConceptAssociated>
 			<learningConceptAssociated>attaching_skills</learningConceptAssociated>
 			<learningConceptAssociated>inheritance</learningConceptAssociated>
