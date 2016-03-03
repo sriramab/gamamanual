@@ -19,6 +19,7 @@ Since the release of GAMA 1.7, with the new GAMA website, we have two contents:
 * [Website Generation Workflow](#website-generation-workflow)
   * [Website Database](#website-database)
   * [Loading the Database](#loading-the-database)
+* [Manage concepts keywords](#manage-concepts-keywords)
 
 ## Requirements
 
@@ -322,3 +323,168 @@ The markdown files are converted one by one into html format.
 
 * When a metadata **startConcept**/**endConcept** is found (syntax : [//]: # (beginAnchor|name_of_learning_concept)), the metadata is replaced with an anchor in the page (with an unique id), and the **AssociationWebpageConcept** table is updated.
 * When a metadata **keyword** is found (syntax :  [//]: # (keyword|name_of_keyword_category_name_of_keyword)), the metadata is replaced with an anchor in the page (with an unique id), and the **AssociationWebpageKeyword** table is updated (the **Keyword** and **AssociationKeywordCategory** are updated if the keyword does not exist yet in the table).
+
+# Manage concepts keywords
+
+Most of the keywords of the website (used for the search) are managed automatically. But the "concepts" keywords have to be (partially) hand-made managed. You can add the concepts with 3 differents methods :
+
+## In the Documentation
+"Documentation" here designs all the content manually written in the wiki. All those pages can contain "concepts" through the metadata format :
+
+`[//]: # (keyword|concept_name_of_concept)`
+
+You can either :
+- place those metadatas anywhere in the page if you want to point directly in this part of the page if the user makes a search
+- place those metadatas **above the title** : doing this, the "automatic search" (left navigation panel) will be made with this concept. You have to be really sure this concept is the **main** concept of the page to place it there.
+
+## In the Model library
+Directly from the gaml files of the model library, you can add the concept you want through the "Tags".
+
+## In the GAML References
+You can add a concept to a gaml word by using the syntax "concept = { IConcept.MY_CONCEPT }".
+
+Exemple :
+
+```
+@operator(value = "flip",
+	concept = { IConcept.RANDOM }
+```
+
+Note that **ALL** the concepts must be declared in the "IConcept" java class.
+
+___________________________________________________________
+
+Here is the exhaustive list of concepts with the number of occurrences in the different part of the website :
+
+
+| **Concept name** | **in Doc** | **in GAML Ref** | **in Model Lib** | **TOTAL** |
+|:----------------------------|:-------------|:-------------|:-------------|:-------------|
+| container | 1 | 0 | 0 | 50 |
+| csv | 1 | 0 | 3 | 4 |
+| osm | 0 | 0 | 2 | 3 |
+| arithmetic | 0 | 0 | 0 | 33 |
+| type | 0 | 0 | 0 | 29 |
+| dem | 0 | 0 | 1 | 1 |
+| save_file | 0 | 0 | 8 | 8 |
+| output | 1 | 0 | 0 | 1 |
+| cast | 1 | 0 | 0 | 17 |
+| spatial_relation | 0 | 0 | 0 | 28 |
+| experiment | 0 | 0 | 0 | 3 |
+| optimization | 1 | 0 | 0 | 2 |
+| action | 3 | 0 | 0 | 6 |
+| text | 1 | 0 | 0 | 7 |
+| obstacle | 0 | 0 | 1 | 2 |
+| write | 1 | 0 | 0 | 1 |
+| algorithm | 0 | 0 | 2 | 10 |
+| init | 2 | 0 | 0 | 2 |
+| graphic_unit | 1 | 0 | 0 | 4 |
+| shape | 3 | 0 | 4 | 28 |
+| probability | 1 | 0 | 0 | 1 |
+| topology | 2 | 0 | 4 | 15 |
+| node | 1 | 0 | 1 | 20 |
+| serialize | 0 | 0 | 0 | 0 |
+| shortest_path | 1 | 0 | 4 | 11 |
+| agent_movement | 0 | 0 | 14 | 14 |
+| system | 0 | 0 | 0 | 10 |
+| weight_unit | 0 | 0 | 0 | 5 |
+| light | 1 | 0 | 1 | 2 |
+| gui | 1 | 0 | 3 | 13 |
+| math | 0 | 0 | 0 | 36 |
+| task_based | 0 | 0 | 0 | 4 |
+| mirror | 1 | 0 | 0 | 1 |
+| global | 1 | 0 | 0 | 1 |
+| distribution | 1 | 0 | 0 | 1 |
+| matrix | 0 | 0 | 0 | 21 |
+| cycle | 1 | 0 | 0 | 2 |
+| layer | 0 | 0 | 0 | 0 |
+| dgs | 0 | 0 | 1 | 1 |
+| dxf | 0 | 0 | 1 | 1 |
+| file | 0 | 0 | 0 | 13 |
+| volume_unit | 0 | 0 | 0 | 5 |
+| graph_weight | 1 | 0 | 0 | 4 |
+| attribute | 2 | 0 | 0 | 7 |
+| behavior | 1 | 0 | 0 | 8 |
+| camera | 1 | 0 | 1 | 3 |
+| graphic | 1 | 0 | 0 | 8 |
+| map | 0 | 0 | 0 | 12 |
+| architecture | 0 | 0 | 1 | 11 |
+| autosave | 1 | 0 | 0 | 1 |
+| bdi | 0 | 0 | 0 | 28 |
+| texture | 0 | 0 | 3 | 4 |
+| display | 2 | 0 | 0 | 18 |
+| multi_criteria | 0 | 0 | 1 | 5 |
+| raster | 0 | 0 | 3 | 3 |
+| refresh | 2 | 0 | 0 | 2 |
+| opengl | 3 | 0 | 0 | 3 |
+| logical | 1 | 0 | 0 | 7 |
+| asc | 0 | 0 | 2 | 2 |
+| filter | 1 | 0 | 0 | 9 |
+| halt | 1 | 0 | 0 | 1 |
+| txt | 0 | 0 | 1 | 1 |
+| species | 1 | 0 | 0 | 18 |
+| grid | 3 | 0 | 8 | 19 |
+| geometry | 2 | 0 | 0 | 89 |
+| multi_level | 1 | 0 | 4 | 8 |
+| chart | 0 | 0 | 0 | 3 |
+| facet | 1 | 0 | 0 | 1 |
+| date | 0 | 0 | 2 | 27 |
+| constant | 0 | 0 | 0 | 10 |
+| sound | 0 | 0 | 0 | 0 |
+| inheritance | 1 | 0 | 0 | 1 |
+| operator | 1 | 0 | 0 | 1 |
+| length_unit | 0 | 0 | 0 | 9 |
+| tif | 0 | 0 | 1 | 1 |
+| 3d | 1 | 0 | 18 | 33 |
+| edge | 1 | 0 | 1 | 15 |
+| loop | 1 | 0 | 0 | 3 |
+| neighbors | 1 | 0 | 1 | 7 |
+| time_unit | 0 | 0 | 0 | 7 |
+| comodel | 0 | 0 | 1 | 1 |
+| communication | 0 | 0 | 0 | 2 |
+| enumeration | 1 | 0 | 0 | 1 |
+| statistic | 0 | 0 | 5 | 27 |
+| comparison | 0 | 0 | 2 | 8 |
+| static | 1 | 0 | 0 | 1 |
+| torus | 1 | 0 | 0 | 1 |
+| hydrology | 0 | 0 | 0 | 0 |
+| test | 0 | 0 | 2 | 2 |
+| surface_unit | 0 | 0 | 0 | 4 |
+| batch | 0 | 0 | 1 | 9 |
+| list | 0 | 0 | 0 | 8 |
+| graph | 1 | 0 | 17 | 67 |
+| pause | 1 | 0 | 0 | 1 |
+| condition | 1 | 0 | 0 | 7 |
+| background | 1 | 0 | 0 | 1 |
+| spatial_transformation | 0 | 0 | 2 | 27 |
+| agent_location | 1 | 0 | 0 | 20 |
+| spatial_computation | 0 | 0 | 3 | 72 |
+| color | 1 | 0 | 4 | 168 |
+| import | 1 | 0 | 0 | 1 |
+| string | 0 | 0 | 0 | 26 |
+| update | 1 | 0 | 0 | 1 |
+| point | 0 | 0 | 0 | 27 |
+| random_operator | 0 | 0 | 0 | 1 |
+| network | 0 | 0 | 0 | 1 |
+| shapefile | 1 | 0 | 14 | 15 |
+| gis | 0 | 0 | 11 | 14 |
+| scheduler | 1 | 0 | 0 | 3 |
+| random | 1 | 0 | 0 | 10 |
+| database | 0 | 0 | 17 | 20 |
+| parameter | 0 | 0 | 0 | 2 |
+| skill | 1 | 0 | 14 | 30 |
+| fipa | 0 | 0 | 0 | 4 |
+| dimension | 2 | 0 | 0 | 32 |
+| equation | 0 | 0 | 0 | 3 |
+| inspector | 0 | 0 | 0 | 3 |
+| reflex | 1 | 0 | 0 | 1 |
+| transport | 0 | 0 | 3 | 8 |
+| headless | 0 | 0 | 0 | 1 |
+| obj | 0 | 0 | 2 | 2 |
+| regression | 0 | 0 | 1 | 1 |
+| load_file | 2 | 0 | 18 | 20 |
+| clustering | 0 | 0 | 2 | 2 |
+| time | 2 | 0 | 0 | 15 |
+| ternary | 1 | 0 | 0 | 3 |
+
+
+_last update : 2016/03/03 18:12:31_
