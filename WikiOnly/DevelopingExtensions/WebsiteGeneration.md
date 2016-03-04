@@ -338,10 +338,23 @@ You can either :
 - place those metadatas **above the title** : doing this, the "automatic search" (left navigation panel) will be made with this concept. You have to be really sure this concept is the **main** concept of the page to place it there.
 
 ## In the Model library
-Directly from the gaml files of the model library, you can add the concept you want through the "Tags".
+Directly from the gaml files of the model library, you can add the concept you want through the "Tags" in the header of the model.
+
+Exemple :
+
+```
+/**
+* Name: 3D Display model of differents shapes and a special Object
+* Author: 
+* Description: Model presenting a 3D display of differents shapes (pyramid, cone, cylinder, sphere and a teapot object) to represent the same agents but with
+*       different aspects. Five experiments are possible, one for each of the shapes presented previously. In each experiment, the agents move to create a big circle but flee
+*       from their closest neighbour. 
+* Tags: 3d, shape, neighbors
+*/
+```
 
 ## In the GAML References
-You can add a concept to a gaml word by using the syntax "concept = { IConcept.MY_CONCEPT }".
+You can add a concept to a gaml word by using the syntax `concept = { IConcept.MY_CONCEPT }`.
 
 Exemple :
 
@@ -354,7 +367,7 @@ Note that **ALL** the concepts must be declared in the "IConcept" java class.
 
 ___________________________________________________________
 
-Here is the exhaustive list of concepts with the number of occurrences in the different part of the website :
+Here is the exhaustive list of concepts with the number of occurrences in the different part of the website (automatically generated from "mainCheckConcepts") :
 
 
 | **Concept name** | **in Doc** | **in GAML Ref** | **in Model Lib** | **TOTAL** |
@@ -377,7 +390,7 @@ Here is the exhaustive list of concepts with the number of occurrences in the di
 | cast | 1 | 16 | 0 | 17 |
 | chart | 0 | 3 | 0 | 3 |
 | clustering | 0 | 2 | 2 | 4 |
-| color | 1 | 163 | 4 | 168 |
+| color | 1 | 15 | 4 | 20 |
 | communication | 0 | 2 | 0 | 2 |
 | comodel | 0 | 0 | 1 | 1 |
 | comparison | 0 | 6 | 2 | 8 |
@@ -491,4 +504,4 @@ Here is the exhaustive list of concepts with the number of occurrences in the di
 | xml | 0 | 4 | 0 | 4 |
 
 
-_last update : 2016/03/04 11:04:38_
+_last update : 2016/03/04 11:15:50_
