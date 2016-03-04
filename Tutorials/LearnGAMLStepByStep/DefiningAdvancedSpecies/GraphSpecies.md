@@ -156,8 +156,6 @@ my_graph <- my_graph add_edge (nodes at 0::nodes at 4);
 my_graph <- my_graph add_edge (nodes at 4::nodes at 1);
 ```
 
-[//]: # (keyword|concept_spatial_graph)
-[//]: # (keyword|concept_aspatial_graph)
 Using this solution, my_graph can have two types: it can be an a-spatial graph, or a spatial graph. The spatial graph will have a proper geometry, with segments that follow the position of your graph (you can access to the segments by using the built-in "segments"). The a-spatial graph will not have any shape.
 
 ```

@@ -324,11 +324,13 @@ The markdown files are converted one by one into html format.
 * When a metadata **startConcept**/**endConcept** is found (syntax : [//]: # (beginAnchor|name_of_learning_concept)), the metadata is replaced with an anchor in the page (with an unique id), and the **AssociationWebpageConcept** table is updated.
 * When a metadata **keyword** is found (syntax :  [//]: # (keyword|name_of_keyword_category_name_of_keyword)), the metadata is replaced with an anchor in the page (with an unique id), and the **AssociationWebpageKeyword** table is updated (the **Keyword** and **AssociationKeywordCategory** are updated if the keyword does not exist yet in the table).
 
-# Manage concepts keywords
+## Manage concepts keywords
+
+**ALL** the concepts must be declared in the "IConcept" java class. If you want to add a new concept, please check before if your the concept you want to add cannot be remplaced by one of the existing concept. If it is the case, you can add your word as if it was an **alias**, pointing to the existing concept. Note that all the alias are listed in the alias.txt file. If you realy think that the concept has to be added, please add it to the IConcept file, and also to (one or several) of the lists _CONCEPTS_NOT_FOR_GAML_REF_, _CONCEPTS_NOT_FOR_MODEL_LIBRARY_, _CONCEPTS_DEDICATED_TO_SYNTAX_ in the ConceptManager class if needed.
 
 Most of the keywords of the website (used for the search) are managed automatically. But the "concepts" keywords have to be (partially) hand-made managed. You can add the concepts with 3 differents methods :
 
-## In the Documentation
+### In the Documentation
 "Documentation" here designs all the content manually written in the wiki. All those pages can contain "concepts" through the metadata format :
 
 `[//]: # (keyword|concept_name_of_concept)`
@@ -337,7 +339,7 @@ You can either :
 - place those metadatas anywhere in the page if you want to point directly in this part of the page if the user makes a search
 - place those metadatas **above the title** : doing this, the "automatic search" (left navigation panel) will be made with this concept. You have to be really sure this concept is the **main** concept of the page to place it there.
 
-## In the Model library
+### In the Model library
 Directly from the gaml files of the model library, you can add the concept you want through the "Tags" in the header of the model.
 
 Exemple :
@@ -353,7 +355,7 @@ Exemple :
 */
 ```
 
-## In the GAML References
+### In the GAML References
 You can add a concept to a gaml word by using the syntax `concept = { IConcept.MY_CONCEPT }`.
 
 Exemple :
@@ -363,29 +365,43 @@ Exemple :
 	concept = { IConcept.RANDOM }
 ```
 
-Note that **ALL** the concepts must be declared in the "IConcept" java class.
-
 ___________________________________________________________
 
-Here is the exhaustive list of concepts with the number of occurrences in the different part of the website (automatically generated from "mainCheckConcepts") :
 
+
+
+_The following text has been automatically generated from "mainCheckConcepts"_
+
+______________ _last update : 2016/03/04 14:26:21_
+
+**List of concepts to use for model library (except Syntax):**
+
+3d, agent_location, agent_movement, algorithm, architecture, asc, batch, bdi, camera, chart, clustering, color, communication, comodel, comparison, csv, database, date, dem, dgs, dxf, edge, equation, fipa, geometry, gis, graph, graph_weight, graphic, grid, gui, headless, hydrology, image, inheritance, inspector, light, load_file, math, mirror, multi_criteria, multi_level, neighbors, network, node, obj, obstacle, osm, r, raster, regression, save_file, scheduler, serialize, shape, shapefile, shortest_path, skill, sound, spatial_computation, spatial_relation, spatial_transformation, statistic, svg, system, task_based, test, text, texture, tif, topology, transport, txt, xml
+
+**List of concepts to use exclusively in Syntax models:**
+
+arithmetic, attribute, cast, condition, container, filter, list, logical, loop, map, matrix, string, ternary
+
+**List of concepts to use for GAML worlds:**
+
+3d, action, agent_location, agent_movement, algorithm, architecture, arithmetic, asc, attribute, batch, bdi, behavior, camera, cast, chart, clustering, color, communication, comodel, comparison, condition, constant, container, csv, cycle, database, date, dem, dgs, dimension, display, dxf, edge, equation, experiment, file, filter, fipa, geometry, gis, graph, graph_weight, graphic, graphic_unit, grid, gui, headless, hydrology, image, inspector, length_unit, light, list, load_file, logical, loop, map, math, matrix, mirror, multi_criteria, multi_level, neighbors, network, node, obj, obstacle, optimization, osm, parameter, point, r, random, random_operator, raster, regression, save_file, scheduler, serialize, shape, shapefile, shortest_path, skill, sound, spatial_computation, spatial_relation, spatial_transformation, species, statistic, string, surface_unit, svg, system, task_based, ternary, test, text, texture, tif, time, time_unit, topology, transport, txt, type, volume_unit, weight_unit, xml
 
 | **Concept name** | **in Doc** | **in GAML Ref** | **in Model Lib** | **TOTAL** |
 |:----------------------------|:-------------|:-------------|:-------------|:-------------|
 | 3d | 1 | 14 | 18 | 33 |
-| action | 3 | 3 | 0 | 6 |
+| action | 3 | 3 | _ | 6 |
 | agent_location | 1 | 19 | 0 | 20 |
 | agent_movement | 0 | 2 | 14 | 16 |
 | algorithm | 0 | 8 | 2 | 10 |
 | architecture | 0 | 10 | 1 | 11 |
 | arithmetic | 0 | 33 | 0 | 33 |
 | asc | 0 | 2 | 2 | 4 |
-| attribute | 2 | 5 | 0 | 7 |
-| autosave | 1 | 0 | 0 | 1 |
-| background | 1 | 0 | 0 | 1 |
+| attribute | 2 | 5 | _ | 7 |
+| autosave | 1 | _ | _ | 1 |
+| background | 1 | _ | _ | 1 |
 | batch | 0 | 8 | 1 | 9 |
 | bdi | 0 | 31 | 0 | 31 |
-| behavior | 1 | 7 | 0 | 8 |
+| behavior | 1 | 7 | _ | 8 |
 | camera | 1 | 1 | 1 | 3 |
 | cast | 1 | 16 | 0 | 17 |
 | chart | 0 | 3 | 0 | 3 |
@@ -395,45 +411,45 @@ Here is the exhaustive list of concepts with the number of occurrences in the di
 | comodel | 0 | 0 | 1 | 1 |
 | comparison | 0 | 6 | 2 | 8 |
 | condition | 1 | 7 | 0 | 8 |
-| constant | 0 | 10 | 0 | 10 |
+| constant | 0 | 10 | _ | 10 |
 | container | 1 | 54 | 0 | 55 |
 | csv | 1 | 4 | 3 | 8 |
-| cycle | 1 | 1 | 0 | 2 |
+| cycle | 1 | 1 | _ | 2 |
 | database | 0 | 3 | 17 | 20 |
 | date | 0 | 26 | 2 | 28 |
 | dem | 0 | 0 | 1 | 1 |
 | dgs | 0 | 0 | 1 | 1 |
-| dimension | 2 | 30 | 0 | 32 |
-| display | 2 | 16 | 0 | 18 |
-| distribution | 1 | 0 | 0 | 1 |
+| dimension | 2 | 30 | _ | 32 |
+| display | 2 | 16 | _ | 18 |
+| distribution | 1 | _ | _ | 1 |
 | dxf | 0 | 2 | 1 | 3 |
 | edge | 1 | 13 | 1 | 15 |
-| enumeration | 1 | 0 | 0 | 1 |
+| enumeration | 1 | _ | _ | 1 |
 | equation | 0 | 3 | 0 | 3 |
-| experiment | 0 | 3 | 0 | 3 |
-| facet | 1 | 0 | 0 | 1 |
-| file | 0 | 36 | 0 | 36 |
+| experiment | 0 | 3 | _ | 3 |
+| facet | 1 | _ | _ | 1 |
+| file | 0 | 36 | _ | 36 |
 | filter | 1 | 8 | 0 | 9 |
 | fipa | 0 | 4 | 0 | 4 |
 | geometry | 2 | 88 | 0 | 90 |
 | gis | 0 | 3 | 11 | 14 |
-| global | 1 | 0 | 0 | 1 |
+| global | 1 | _ | _ | 1 |
 | graph | 1 | 50 | 17 | 68 |
 | graph_weight | 1 | 3 | 0 | 4 |
 | graphic | 1 | 7 | 0 | 8 |
-| graphic_unit | 1 | 3 | 0 | 4 |
+| graphic_unit | 1 | 3 | _ | 4 |
 | grid | 3 | 10 | 8 | 21 |
 | gui | 1 | 9 | 3 | 13 |
-| halt | 1 | 0 | 0 | 1 |
+| halt | 1 | _ | _ | 1 |
 | headless | 0 | 1 | 0 | 1 |
 | hydrology | 0 | 0 | 0 | 0 |
 | image | 0 | 2 | 0 | 2 |
-| import | 1 | 0 | 0 | 1 |
-| inheritance | 1 | 0 | 0 | 1 |
-| init | 2 | 0 | 0 | 2 |
+| import | 1 | _ | _ | 1 |
+| inheritance | 1 | _ | 0 | 1 |
+| init | 2 | _ | _ | 2 |
 | inspector | 0 | 3 | 0 | 3 |
-| layer | 0 | 0 | 0 | 0 |
-| length_unit | 0 | 9 | 0 | 9 |
+| layer | 1 | _ | _ | 1 |
+| length_unit | 0 | 9 | _ | 9 |
 | light | 1 | 0 | 1 | 2 |
 | list | 0 | 9 | 0 | 9 |
 | load_file | 2 | 1 | 18 | 21 |
@@ -443,6 +459,7 @@ Here is the exhaustive list of concepts with the number of occurrences in the di
 | math | 0 | 36 | 0 | 36 |
 | matrix | 0 | 22 | 0 | 22 |
 | mirror | 1 | 0 | 0 | 1 |
+| model | 1 | _ | _ | 1 |
 | multi_criteria | 0 | 4 | 1 | 5 |
 | multi_level | 1 | 3 | 4 | 8 |
 | neighbors | 1 | 5 | 1 | 7 |
@@ -450,21 +467,22 @@ Here is the exhaustive list of concepts with the number of occurrences in the di
 | node | 1 | 18 | 1 | 20 |
 | obj | 0 | 0 | 2 | 2 |
 | obstacle | 0 | 1 | 1 | 2 |
-| opengl | 3 | 0 | 0 | 3 |
-| operator | 1 | 0 | 0 | 1 |
-| optimization | 1 | 1 | 0 | 2 |
+| opengl | 3 | _ | _ | 3 |
+| operator | 1 | _ | _ | 1 |
+| optimization | 1 | 1 | _ | 2 |
 | osm | 0 | 2 | 2 | 4 |
-| output | 1 | 0 | 0 | 1 |
-| parameter | 0 | 2 | 0 | 2 |
-| pause | 1 | 0 | 0 | 1 |
-| point | 0 | 27 | 0 | 27 |
-| probability | 1 | 0 | 0 | 1 |
+| output | 1 | _ | _ | 1 |
+| parameter | 1 | 2 | _ | 3 |
+| pause | 1 | _ | _ | 1 |
+| point | 0 | 27 | _ | 27 |
+| probability | 1 | _ | _ | 1 |
+| pseudo_variable | 1 | _ | _ | 1 |
 | r | 0 | 2 | 0 | 2 |
-| random | 1 | 9 | 0 | 10 |
-| random_operator | 0 | 1 | 0 | 1 |
+| random | 1 | 9 | _ | 10 |
+| random_operator | 0 | 1 | _ | 1 |
 | raster | 0 | 0 | 3 | 3 |
-| reflex | 1 | 0 | 0 | 1 |
-| refresh | 2 | 0 | 0 | 2 |
+| reflex | 1 | _ | _ | 1 |
+| refresh | 2 | _ | _ | 2 |
 | regression | 0 | 2 | 1 | 3 |
 | save_file | 0 | 2 | 8 | 10 |
 | scheduler | 1 | 2 | 0 | 3 |
@@ -477,31 +495,27 @@ Here is the exhaustive list of concepts with the number of occurrences in the di
 | spatial_computation | 0 | 69 | 3 | 72 |
 | spatial_relation | 0 | 28 | 0 | 28 |
 | spatial_transformation | 0 | 25 | 2 | 27 |
-| species | 1 | 18 | 0 | 19 |
-| static | 1 | 0 | 0 | 1 |
+| species | 1 | 18 | _ | 19 |
 | statistic | 0 | 22 | 5 | 27 |
 | string | 0 | 27 | 0 | 27 |
-| surface_unit | 0 | 4 | 0 | 4 |
+| surface_unit | 0 | 4 | _ | 4 |
 | svg | 0 | 2 | 0 | 2 |
-| system | 0 | 10 | 0 | 10 |
+| system | 1 | 10 | 0 | 11 |
 | task_based | 0 | 4 | 0 | 4 |
 | ternary | 1 | 2 | 0 | 3 |
 | test | 0 | 3 | 2 | 5 |
 | text | 1 | 10 | 0 | 11 |
 | texture | 0 | 1 | 3 | 4 |
 | tif | 0 | 2 | 1 | 3 |
-| time | 2 | 14 | 0 | 16 |
-| time_unit | 0 | 7 | 0 | 7 |
+| time | 2 | 14 | _ | 16 |
+| time_unit | 0 | 7 | _ | 7 |
 | topology | 2 | 9 | 4 | 15 |
-| torus | 1 | 0 | 0 | 1 |
+| torus | 1 | _ | _ | 1 |
 | transport | 0 | 5 | 3 | 8 |
 | txt | 0 | 0 | 1 | 1 |
-| type | 0 | 49 | 0 | 49 |
-| update | 1 | 0 | 0 | 1 |
-| volume_unit | 0 | 5 | 0 | 5 |
-| weight_unit | 0 | 5 | 0 | 5 |
-| write | 1 | 0 | 0 | 1 |
+| type | 0 | 49 | _ | 49 |
+| update | 1 | _ | _ | 1 |
+| volume_unit | 0 | 5 | _ | 5 |
+| weight_unit | 0 | 5 | _ | 5 |
+| write | 1 | _ | _ | 1 |
 | xml | 0 | 4 | 0 | 4 |
-
-
-_last update : 2016/03/04 11:15:50_

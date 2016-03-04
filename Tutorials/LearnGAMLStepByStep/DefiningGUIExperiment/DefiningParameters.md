@@ -1,5 +1,5 @@
 [//]: # (startConcept|define_parameters)
-[//]: # (keyword|concept_parameters)
+[//]: # (keyword|concept_parameter)
 # Defining Parameters
 [//]: # (keyword|concept_gui)
 

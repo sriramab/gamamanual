@@ -90,9 +90,7 @@ species my_specie {
 
 ## Pseudo variables
 
-[//]: # (keyword|concept_other)
-[//]: # (keyword|concept_self)
-[//]: # (keyword|concept_myself)
+[//]: # (keyword|concept_pseudo_variable)
 Once you are in the ask scope, you can use some pseudo variables to refer to the receiver agent (the one specify just after the ask statement) or the transmitter agent (the agent which is asking). 
 We use the pseudo variable `self` to refer to the receiver agent, and the pseudo variable `myself` to refer to the transmitter agent. The pseudo variable `self` can be omitted when calling actions or attributes.
 

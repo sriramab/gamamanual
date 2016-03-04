@@ -36,12 +36,10 @@ global torus:true {
 
 Other facets such as `control` or `schedules` are also available, but we will explain them later.
 
-[//]: # (keyword|concept_static)
 Directly in the `global` scope, you have to declare all your global attributes (can be seen as "static members" in Java or C++). To declare them, proceed exactly as for declaring basic variables. Those attributes are accessible wherever you want inside the species scope.
 
 ## Environment size
 
-[//]: # (keyword|concept_environment)
 [//]: # (keyword|concept_shape)
 [//]: # (keyword|concept_geometry)
 [//]: # (keyword|type_geometry)
@@ -72,7 +70,6 @@ Like the other attributes of the global species, global built-in attributes can 
 
 To learn more about time, please read the [recipe about dates](ManipulateDates).
 
-[//]: # (keyword|concept_step)
 ### step
 * float,  is the length, in model time, of an interval between two cycles, in seconds. Its default value is 1 (second). Each turn, the value of time is incremented by the value of step. The definition of step must be coherent with that of the agents' variables like speed. The use of time unit is particularly relevant for its definition.
 
@@ -109,7 +106,7 @@ To learn more about time, please read the [recipe about dates](ManipulateDates).
 ### average\_duration
 * string, read-only, represents the average of duration since the beginning of the simulation.
 
-[//]: # (keyword|concept_machine_time)
+[//]: # (keyword|concept_system)
 ### machine\_time
 * float, read-only, represents the current machine time in milliseconds.
 

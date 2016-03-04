@@ -1,7 +1,7 @@
 [//]: # (startConcept|2d_displays)
 # Defining displays (Generalities)
 [//]: # (keyword|concept_display)
-[//]: # (keyword|concept_layers)
+[//]: # (keyword|concept_layer)
 [//]: # (keyword|concept_output)
 
 ## Index
@@ -97,7 +97,6 @@ Will have this output:
 
 ![images/layers_order.png](resources/images/definingGUIExperiment/layers_order.png)
 
-[//]: # (keyword|concept_transparency)
 Most of the layers have the `transparency` facet in order to see the layers which are under.
 
 ```
