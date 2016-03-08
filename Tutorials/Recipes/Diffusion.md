@@ -1,5 +1,8 @@
-
-# Implementing diffusions
+[//]: # (keyword|concept_diffusion)
+# Implementing diffusion
+[//]: # (keyword|concept_grid)
+[//]: # (keyword|concept_math)
+[//]: # (keyword|concept_topology)
 
 GAMA provides you the possibility to represent and simulate the diffusion of a variable through a grid topology. 
 
@@ -13,6 +16,7 @@ GAMA provides you the possibility to represent and simulate the diffusion of a v
 
 ## Diffuse statement
 
+[//]: # (keyword|statement_diffuse)
 The statement to use for the diffusion is `diffuse`. It has to be used in a `grid` species. The `diffuse` uses the following facets:
 
 * **`var`** : the name of the variable that will be diffused through the grid. This variable has to be declared as an attribute of the grid.
@@ -76,6 +80,7 @@ This model will simulate a diffusion through a grid at each step, affecting 1 to
 
 ## Diffusion with matrix
 
+[//]: # (keyword|concept_matrix)
 A first way of specifying the behavior of your diffusion is using diffusion matrix. A diffusion matrix is a 2 dimension matrix `[n][m]` with `float` values, where both `n` and `m` have to be **pair values**. The most often, diffusion matrix are square matrix, but you can also declare rectangular matrix.
 
 Example of matrix:
