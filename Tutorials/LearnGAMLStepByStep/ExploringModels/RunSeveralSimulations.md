@@ -15,16 +15,19 @@ To explore a model, the easiest and the most intuitive way to proceed is running
 
 ## Create a simulation
 
+[//]: # (keyword|concept_world)
 Let's remind you that in GAMA, everything is an **agent**. We already saw that the **"world" agent** is the **agent of the model**. The model is thus a **species**, called modelName_model :
 
 ```
 model toto // <- the name of the species is "toto_model"
 ```
 
-New highlight of the day : an **Experiment** is also an agent ! It's a special agent which will instanciate automatically an agent from the model species. You can then perfectly create agents (_model_ agents) from your experiment, using the statement `create` :
+[//]: # (keyword|statement_create)
+[//]: # (keyword|concept_experiment)
+New highlight of the day : an **Experiment** is also an agent ! It's a special agent which will instantiate automatically an agent from the model species. You can then perfectly create agents (_model_ agents) from your experiment, using the statement `create` :
 
 ```
-model multi_simulations // the "world" is an instanciation of the "multi_simulations_model"
+model multi_simulations // the "world" is an instance of the "multi_simulations_model"
 
 global {
 }
@@ -36,9 +39,9 @@ experiment my_experiment type:gui  {
 }
 ```
 
-This sort model will instanciate 2 simulations (two instance of the model) : one is created automatically by the experiment, and the second one is explicitaly created through the statement `create`.
+This sort model will instantiate 2 simulations (two instance of the model) : one is created automatically by the experiment, and the second one is explicitly created through the statement `create`.
 
-To simplify the syntax, you can use the built-in attribute `simulation` of your **experiment**. When you have a model called "multi_simulations", the two following lines are strictaly equal :
+To simplify the syntax, you can use the built-in attribute `simulation` of your **experiment**. When you have a model called "multi_simulations", the two following lines are strictly equal :
 
 ```
 create multi_simulations_model;
@@ -91,7 +94,7 @@ experiment my_experiment type:gui  {
 }
 ```
 
-You may ask, what is the purpose of such a thing ? Well, with such a short model, it is not very interestring, for sure. But you can imagine running a simulation, and if the simulation reaches a certain state, it can be closed, and another simulation can be run instead with different parameters (a simulation can be closed by doing a "do die" on itself). You can also imagine to run two simulations, and to communicate from one to an other through the experiment, as it is shown in this easy model, where agents can move from one simulation to another :
+You may ask, what is the purpose of such a thing ? Well, with such a short model, it is not very interesting, for sure. But you can imagine running a simulation, and if the simulation reaches a certain state, it can be closed, and another simulation can be run instead with different parameters (a simulation can be closed by doing a "do die" on itself). You can also imagine to run two simulations, and to communicate from one to an other through the experiment, as it is shown in this easy model, where agents can move from one simulation to another :
 
 ![resources/images/exploringModel/change_world.png](resources/images/exploringModel/change_world.png)
 
@@ -174,13 +177,14 @@ Here is an other example of application of application, available in the model l
 [//]: # (endConcept|run_simulations_as_agents)
 [//]: # (startConcept|control_randomness)
 
+[//]: # (keyword|concept_random)
 ## Random seed
 
 ### Defining the seed from the model
 
 If you run several simulations, you may want to use the same seed for each one of those simulations (to compare the influence of a certain parameter, in exactly the same conditions).
 
-Let's remind you that `seed` is a built-in attribute of the model. You than just need to speficy the value of your seed during the creation of the simulation if you want to fix the seed :
+Let's remind you that `seed` is a built-in attribute of the model. You than just need to specify the value of your seed during the creation of the simulation if you want to fix the seed :
 
 ```
 create simulation with:[seed::10.0];
