@@ -1,3 +1,4 @@
+[//]: # (keyword|concept_gui)
 # Defining user interaction
 
 During the simulation, GAML provides you the possibility to define some function the user can execute during the execution. In this chapter, we will see how to define buttons to execute action during the simulation, how to catch click event, and how to use the user control architecture.
@@ -14,6 +15,7 @@ During the simulation, GAML provides you the possibility to define some function
 
 ## Catch Mouse Event
 
+[//]: # (keyword|statement_event)
 You can catch mouse event during the simulation using the statement `event`. This statement has 2 required facets:
 * **`name`** (identifier) : Specify which event do you want to trigger (among the following values : `mouse_down`, `mouse_down`, `mouse_move`, `mouse_enter`, `mouse_exit`).
 * **`action`** (identifier) : Specify the name of the global action to call.
@@ -53,6 +55,7 @@ experiment my_experiment type: gui
 
 ## Define User command
 
+[//]: # (keyword|statement_user_command)
 Anywhere in the global block, in a species or in an (GUI) experiment, `user_command` statements can be implemented. They can either call directly an existing action (with or without arguments) or be followed by a block that describes what to do when this command is run.
 
 Their syntax can be (depending of the modeler needs) either:
@@ -177,6 +180,7 @@ Note that if the world is inspected (this `user_command` appears thus as a butto
 
 ### user_input
 
+[//]: # (keyword|operator_user_input)
 As it is also, sometimes, necessary to ask the user for some values (not defined as parameters), the `user_input` unary operator has been introduced. This operator takes a map [string::value] as argument (the key is the name of the chosen parameter, the value is the default value), displays a dialog asking the user for these values, and returns the same map with the modified values (if any). You can also add a text as first argument of the operator, which will be displayed as a title for your dialog popup. The dialog is modal and will interrupt the execution of the simulation until the user has either dismissed or accepted it. It can be used, for instance, in an init section like the following one to force the user to input new values instead of relying on the initial values of parameters.
 
 Here is an example of implementation:
