@@ -69,11 +69,9 @@ In the same way, modelers can use the frequency facet to define when the agents 
 ```
 species my_species frequency: 0
 {
-     …
+     ...
 }
 ```
-
-
 
 
 [//]: # (keyword|concept_grid)
@@ -94,8 +92,6 @@ If false, then only one geometry is used for all agents. This facet allows to ga
 ```
 grid cell width: 50 height: 50 use_individual_shapes: false ;	
 ```
-
-
 
 
 ## Operators
