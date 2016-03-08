@@ -410,8 +410,10 @@ experiment my_experiment type:gui  {
 	output {
 		display my_display {
 			species my_species aspect:base;
-			text name:rng position:{50,50};
-			text name:"coucou";
+			graphics "my_graphic" {
+				draw rectangle(35,10) at:{0,0} color:#lightgrey;
+				draw rng at:{3,3} font:font("Helvetica", 20 , #plain) color:#black;
+			}
 		}
 	}
 }
