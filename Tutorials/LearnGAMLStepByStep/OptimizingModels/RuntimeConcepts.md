@@ -1,4 +1,5 @@
 [//]: # (startConcept|runtime_and_schedulers)
+[//]: # (keyword|concept_scheduler)
 # Runtime Concepts
 
 When a model is being simulated, a number of algorithms are applied, for instance to determine the order in which to run the different agents, or the order in which the initialization of agents is performed, etc. This section details some of them, which can be important when building models and understanding how they will be effectively simulated.
@@ -22,9 +23,11 @@ If a species of type [grid](GridSpecies) exists in the model, agents of species 
 
 Finally the `init` statement is executed. It should include the creation of all the other agents of [regular species](RegularSpecies) of the simulation. After their creation and initialization, they are added in the list `members` the `world` (that contains all the micro-agent of the `world`).
 
-
+[//]: # (keyword|concept_optimization)
+[//]: # (keyword|statement_create)
+[//]: # (keyword|concept_init)
 ## Agents Creation
-Except [`world`](GlobalSpecies) and [`grid`](GridSpecies) agents, other agents are created using the [`create` statement](Statements#create). It used to allocate memory memory for each agent and to initialize all its attributes.
+Except [`grid`](GridSpecies) agents, other agents are created using the [`create` statement](Statements#create). It is used to allocate memory for each agent and to initialize all its attributes.
 
 If no explicit initialization exists for an attribute, it will get the default value corresponding to its [type](DataTypes).
 
@@ -34,7 +37,7 @@ The initialization of an attribute can be located at several places in the code;
 * in the attribute declaration, using the `init` facet;
 * in the `init` block of the species.
 
-
+[//]: # (keyword|concept_cycle)
 ## Agents Step
 When an agent is asked to _step_, it means that it is expected to update its variables, run its behaviors and then _step_ its micro-agents (if any).
 
@@ -62,6 +65,7 @@ The global scheduling of agents is then simply the application of this previous 
 
 To influence this schedule, then, one possible way is to change the way populations compute their lists of agents to schedule, which can be done in a model by providing custom definitions to the "schedules:" facet of one or several species.
 
+[//]: # (keyword|concept_random)
 A practical application of this facet is to reduce simulation artifacts created by the default scheduling of populations, which is sequential (i.e. their agents are executed in turn in their order of creation). To enable a pseudo-parallel scheduling based on a random scheduling recomputed at each step, one has simply to define the corresponding species like in the following example:
 
 ```
