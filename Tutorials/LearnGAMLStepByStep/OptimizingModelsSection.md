@@ -1,3 +1,4 @@
+[//]: # (keyword|concept_optimization)
 # Optimizing Models
 
 Now you are becoming more comfortable with GAML, it is time to think about how the runtime works, to be able to run some more optimized models. Indeed, if you already tried to write some models by yourself using GAML, you could have notice that the execution time depends a lot of how you implemented your model !
