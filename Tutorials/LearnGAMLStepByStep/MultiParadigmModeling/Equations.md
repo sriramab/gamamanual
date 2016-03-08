@@ -1,5 +1,7 @@
 [//]: # (startConcept|equation)
+[//]: # (keyword|concept_equation)
 # Using Equations
+[//]: # (endConcept|concept_math)
 
 ## Introduction
 
