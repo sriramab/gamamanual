@@ -1,4 +1,5 @@
 [//]: # (startConcept|monitors_and_inspectors)
+[//]: # (keyword|concept_inspector)
 # Defining monitors and inspectors
 
 Other outputs can be very useful to study better the behavior of your agents.
@@ -10,6 +11,7 @@ Other outputs can be very useful to study better the behavior of your agents.
 
 ## Define a monitor
 
+[//]: # (keyword|statement_monitor)
 A [monitor](InspectorsAndMonitors#monitor) allows to follow the value of an arbitrary expression in GAML. It will appear, in the User Interface, in a small window on its own and be recomputed every time step (or according to its refresh facet). 
 
 Definition of a monitor: 
@@ -36,6 +38,7 @@ NB : you can also declare monitors during the simulation, by clicking on the but
 
 ## Define an inspector
 
+[//]: # (keyword|statement_inspector)
 During the simulation, the user interface of GAMA provides the user the possibility to [inspect an agent](InspectorsAndMonitors), or a group of agents. But you can also define the inspector you want directly from your model, as an output of the experiment.
 
 Use the statement `inspect` to define your inspector, in the output scope of your gui experiment. The inspector has to be named (using the facet `name`), a value has to be specified (with the `value` facet).
