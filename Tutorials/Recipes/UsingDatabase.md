@@ -1,5 +1,7 @@
 [//]: # (startConcept|use_database)
+[//]: # (keyword|concept_database)
 # Using Database Access
+
 Database features of GAMA provide a set of actions on Database Management Systems (DBMS) and Multi-Dimensional Database for agents in GAMA. Database features are implemented in the irit.gaml.exxtensions.database plug-in with these features:
   * Agents can execute SQL queries (create, Insert, select, update, drop, delete) to various kinds of DBMS.
   * Agents can execute MDX (Multidimensional Expressions) queries to select multidimensional objects, such as cubes, and return multidimensional cellsets that contain the cube's data .
