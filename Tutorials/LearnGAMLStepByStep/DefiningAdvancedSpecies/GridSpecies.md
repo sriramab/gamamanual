@@ -196,6 +196,7 @@ experiment MyExperiment type: gui {
 Beware : don't use this second display when you have large grids : it's much slower.
 
 [//]: # (keyword|type_matrix)
+[//]: # (keyword|concept_matrix)
 ## Grid from a matrix
 
 An easy way to load some values in a grid is to use matrix data. A `matrix` is a type of container (we invite you to learn some more about this useful type [here](DataTypes#matrix)). Once you have declared your matrix, you can set the values of your cells using the `ask` statement :
