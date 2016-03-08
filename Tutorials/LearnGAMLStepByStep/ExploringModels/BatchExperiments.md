@@ -1,4 +1,4 @@
-
+[//]: # (keyword|concept_batch)
 # Defining Batch Experiments
 
 Batch experiments allows to execute numerous successive simulation runs.They are used to explore the parameter space of a model or to optimize a set of model parameters.
@@ -40,7 +40,7 @@ experiment my_batch_experiment type: batch repeat: 5 keep_seed: true until: time
 ## Action _step
 The_step_action of an experiment is called at the end of a simulation. It is possible to override this action to apply a specific action at the end of each simulation. Note that at the experiment level, you have access to all the species and all the global variables._
 
-For instance, the following experiment runs the simulation 5 times, and, at the end of each simulation, saves the people agents in a shapefile
+For instance, the following experiment runs the simulation 5 times, and, at the end of each simulation, saves the people agents in a shapefile.
 ```
 experiment 'Run 5 simulations' type: batch repeat: 5 keep_seed: true until: ( time > 1000 ) {
 	int cpt <- 0;
@@ -64,7 +64,7 @@ reflex info_sim {
 ```
 
 
-
+[//]: # (keyword|concept_permanent)
 ## Permanent
 The **permanent** section allows to define a output block that will not be re-initialized at the beginning of each simulation but will be filled at the end of each simulation.
 For instance, this **permanent** section will allows to display for each simulation the end value of the _food\_gathered_ variable.
