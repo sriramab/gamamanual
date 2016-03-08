@@ -1,5 +1,5 @@
-
 [//]: # (startConcept|exploration_methods)
+[//]: # (keyword|concept_batch)
 # Exploration Methods
 
 Several batch methods are currently available. Each is described below.
@@ -15,6 +15,7 @@ Several batch methods are currently available. Each is described below.
 * [Reactive Tabu Search](#reactive-tabu-search)
 * [Genetic Algorithm](#genetic-algorithm)
 
+[//]: # (keyword|concept_algorithm)
 ## The method element
 The optional method element controls the algorithm which drives the batch.
 
@@ -32,6 +33,7 @@ method exhaustive minimize: nb_infected ;
 method genetic pop_dim: 3 crossover_prob: 0.7 mutation_prob: 0.1 nb_prelim_gen: 1 max_gen: 5  minimize: nb_infected aggregation: "max";
 ```
 
+[//]: # (keyword|concept_parameter)
 ## Exhaustive exploration of the parameter space
 
 Parameter definitions accepted: List with step and Explicit List.
