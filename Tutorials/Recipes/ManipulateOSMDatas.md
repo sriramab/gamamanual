@@ -1,7 +1,8 @@
 [//]: # (startConcept|use_osm_datas)
+[//]: # (keyword|concept_osm)
 # Manipulate OSM Datas
 
-
+[//]: # (keyword|concept_load_file)
 This section will be presented as a quick tutorial, showing how to proceed to manipulate OSM (Open street map) datas, and load them into GAMA. We will use the software [QGIS](http://www.qgis.org/en/site/) to change the attributes of the OSM file.
 
 
@@ -56,6 +57,7 @@ Choose "shapefile" as format, choose a save path and click ok.
 
 Copy passed all the .shp created in the include folder of your GAMA project. You are now ready to write the model.
 
+[//]: # (keyword|concept_shapefile)
 ```
 model HowToUseOpenStreetMap
 
