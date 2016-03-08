@@ -1,3 +1,4 @@
+[//]: # (startConcept|diffusion)
 [//]: # (keyword|concept_diffusion)
 # Implementing diffusion
 [//]: # (keyword|concept_grid)
@@ -329,3 +330,4 @@ Here is the pseudo code for the computation of diffusion :
     - Finish the diffusion :
       - If output[idx] > -Double.MAX_VALUE, write the new value in the cell.
 ```
+[//]: # (endConcept|diffusion)
