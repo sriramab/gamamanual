@@ -1,3 +1,5 @@
+[//]: # (keyword|concept_experiment)
+[//]: # (keyword|concept_batch)
 # Exploring Models
 
 We just learnt how to launch GUI Experiments from GAMA. A GUI Experiment will start with a particular set of input, compute several outputs, and will stop at the end (if asked).
