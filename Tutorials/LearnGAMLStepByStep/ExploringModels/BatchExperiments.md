@@ -63,7 +63,7 @@ reflex info_sim {
 }
 ```
 
-
+[//]: # (keyword|concept_output)
 [//]: # (keyword|concept_permanent)
 ## Permanent
 The **permanent** section allows to define a output block that will not be re-initialized at the beginning of each simulation but will be filled at the end of each simulation.
