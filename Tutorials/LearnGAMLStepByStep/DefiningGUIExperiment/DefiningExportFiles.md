@@ -1,4 +1,6 @@
 [//]: # (startConcept|export_files)
+[//]: # (keyword|concept_file)
+[//]: # (keyword|concept_load_file)
 # Defining export files
 
 ## Index
@@ -9,6 +11,7 @@
 
 ## The Save Statement
 
+[//]: # (keyword|statement_save)
 Allows to save data in a file. The type of file can be "shp", "text" or "csv". The **`save`** statement can be use in an init block, a reflex, an action or in a user command. Do not use it in experiments.
 
 ### Facets 
@@ -28,21 +31,21 @@ Allows to save data in a file. The type of file can be "shp", "text" or "csv". T
 save data to: output_file type: a_type_file;
 ```
 
-
+[//]: # (keyword|concept_text)
 * To save data in a text file:
 
 ```
 save (string(cycle) + "->"  + name + ":" + location) to: "save_data.txt" type: "text";
 ```
 
-
+[//]: # (keyword|concept_csv)
 * To save the values of some attributes of the current agent in csv file:
 
 ```
 save [name, location, host] to: "save_data.csv" type: "csv";
 ```
 
-
+[//]: # (keyword|concept_shapefile)
 * To save the geometries of all the agents of a species into a shapefile (with optional attributes):
 
 ```
@@ -51,6 +54,7 @@ save species_of(self) to: "save_shapefile.shp" type: "shp" with: [name::"nameAge
 
 ## Export files in experiment
 
+[//]: # (keyword|statement_output_file)
 Displays are not the only output you can manage in GAMA. Saving data to a file during an experiment can also be achieved in several ways, depending on the needs of the modeler. One way is provided by the `save` statement, which can be used everywhere in a model or a species. The other way, described here, is to include an **`output_file`** statement in the output section.
 
 ```
@@ -75,5 +79,6 @@ Optionally, a `footer` and a `header` can also be described with the correspondi
 
 ## Autosave
 
+[//]: # (keyword|concept_autosave)
 Image files can be exported also through the `autosave` facet of the display, as explained in [this previous part](DefiningDisplaysGeneralities#displays-and-layers).
 [//]: # (endConcept|export_files)
