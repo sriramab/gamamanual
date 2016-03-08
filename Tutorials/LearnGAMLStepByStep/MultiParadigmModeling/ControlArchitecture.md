@@ -1,7 +1,9 @@
+[//]: # (keyword|concept_architecture)
 # Control Architectures
 
 GAMA allows to attach built-in control architecture to agents.
 
+[//]: # (keyword|concept_behavior)
 These control architectures will give the possibility to the modeler to use for a species a specific control architecture in addition to the [common behavior structure](DefiningActionsAndBehaviors#Behaviour). Note that only one control architecture can be used per species.
 
 The attachment of a control architecture to a species is done through the facets `control`.
@@ -37,6 +39,8 @@ GAMA integrates several agent control architectures that can be used in addition
 * [Other Control Architectures](#other-control-architectures)
 
 [//]: # (startConcept|finite_state_machine)
+[//]: # (keyword|architecture_fsm)
+[//]: # (keyword|concept_fsm)
 ## Finite State Machine
 
 **FSM (Finite State Machine)** is a finite state machine based behavior model. During its life cycle, the agent can be in several states. At any given time step, it is in one single state. Such an agent needs to have one initial state (the state in which it will be at its initialization).
@@ -138,6 +142,10 @@ Here a possible result that can be obtained with one dummy agent:
 [//]: # (endConcept|finite_state_machine)
 
 [//]: # (startConcept|task_based)
+[//]: # (keyword|concept_task_based)
+[//]: # (keyword|architecture_probabilistic_tasks)
+[//]: # (keyword|architecture_weighted_tasks)
+[//]: # (keyword|architecture_sorted_tasks)
 ## Task Based
 
 GAMA integrated several **task-based** control architectures. Species can define any number of tasks within their body. At any given time, only one or several tasks are executed according to the architecture chosen:
@@ -171,8 +179,6 @@ species dummy control: probabilistic_tasks {
    ...
 }
 ```
-
-
 
 
 
@@ -213,6 +219,10 @@ Here the result obtained with one dummy agent:
 [//]: # (endConcept|task_based)
 
 [//]: # (startConcept|user_control_architecture)
+[//]: # (keyword|concept_gui)
+[//]: # (keyword|architecture_user_first)
+[//]: # (keyword|architecture_user_last)
+[//]: # (keyword|architecture_user_only)
 ## User Control Architecture
 
 ### user\_only, user\_first, user\_last
@@ -290,6 +300,7 @@ Finally, each agent provided with this architecture inherits a boolean attribute
 
 ## Other Control Architectures
 
+[//]: # (keyword|concept_bdi)
 Some other control architectures are available in additional plugins. For instance, [BDI (Belief, desire, intention) architecture](UsingBDI) is available. Feel free to read about it if you want to learn more.
 
 You need some other control architectures for your model ? Feel free to make your suggestion to the team of developer through the [mailing list](https://groups.google.com/forum/#!forum/gama-platform). Remember also that GAMA is an open-source platform, you can design your own control architecture easily. Go to the section Community/contribute if you want to jump into coding !
