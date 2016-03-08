@@ -1,4 +1,3 @@
-[//]: # (keyword|operator_image_file)
 [//]: # (keyword|operator_shuffle)
 [//]: # (keyword|operator_inside)
 [//]: # (keyword|operator_as_matrix)

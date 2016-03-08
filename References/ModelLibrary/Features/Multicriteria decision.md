@@ -1,0 +1,3 @@
+# Multicriteria decision
+
+[Multicriteria](Multicriteria)

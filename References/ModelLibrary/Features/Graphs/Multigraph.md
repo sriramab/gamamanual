@@ -2,7 +2,6 @@
 [//]: # (keyword|operator_max)
 [//]: # (keyword|operator_node)
 [//]: # (keyword|operator_edge)
-[//]: # (keyword|operator_\:\:)
 [//]: # (keyword|operator_link)
 [//]: # (keyword|type_path)
 [//]: # (keyword|concept_graph)
@@ -41,7 +40,7 @@ global {
 		
 		//creation of 50 people agent, and add each people agent as a node in the friendship graph
 		create people number: 50 {
-			add node:self to: friendship_graph;
+			add node(self) to: friendship_graph;
 		}
 		
 		//creation of 50 friendship link between people agents
@@ -49,8 +48,8 @@ global {
 			people p1 <- one_of(people);
 			people p2 <- one_of(list(people) - p1);
 			create friendship_link  {
-				add edge: (p1::p2)::self to: friendship_graph;
-				shape <- link(p1::p2);
+				add edge (p1, p2, self) to: friendship_graph;
+				shape <- link(p1,p2);
 			}
 		}
 	}
@@ -85,6 +84,7 @@ species people skills: [moving]{
 }
 	
 species friendship_link {
+	
 	aspect default {
 		draw shape color: #blue;
 	}

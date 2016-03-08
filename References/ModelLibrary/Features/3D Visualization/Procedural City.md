@@ -5,6 +5,7 @@
 [//]: # (keyword|operator_hsb)
 [//]: # (keyword|concept_3d)
 [//]: # (keyword|concept_texture)
+[//]: # (keyword|concept_light)
 # Procedural City
 
 
