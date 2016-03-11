@@ -1,4 +1,6 @@
-# Install
+# Using BDI
+
+## Install
 You need to run the Git version.
 
 The plugin need to be add with Eclipse doing the following:
@@ -6,11 +8,11 @@ The plugin need to be add with Eclipse doing the following:
   * In ummisco.gama.feature.core open the feature.xml file.
   * In plug-ins click add the msi.gaml.architecture.simplebdi
 
-# Acteur Projet
+## Acteur Projet
 A website (still in construction) of the ACTEUR project can be found here http://acteur-anr.fr/
 
 
-# An introduction to cognitive agent
+## An introduction to cognitive agent
 
 The belief-desire-intention software model (usually referred to simply, but ambiguously, as BDI) is a software model developed for programming intelligent agents.
 
@@ -19,7 +21,7 @@ The belief-desire-intention software model (usually referred to simply, but ambi
   * **Intention**: What the agent has chosen to do.
     * **Plan**: Sequences of actions that an agent can perform to achieve one or more of its intensions.
 
-# Basic Example: A fire rescue model using cognitive agent
+## Basic Example: A fire rescue model using cognitive agent
 
 We introduce a simple example to illustrate the use of the BDI architecture.
 
@@ -27,7 +29,7 @@ This simple model consists in creating "cognitive" agent whose goal is to exting
 
 First let's create a BDI agent using the key control **simple\_bdi** (A description of all existing control architectures is available [here](BuiltInArchitectures).)
 
-## Species Helicopter creation
+### Species Helicopter creation
 
 ```
 species helicopter skills:[moving] control: simple_bdi{
@@ -35,14 +37,14 @@ species helicopter skills:[moving] control: simple_bdi{
 }
 ```
 
-### Attributes
+#### Attributes
 The species `helicopter` needs 2 attributes to represent the water value and its speed.
 ```
 float waterValue;
 float speed <- 10.0;
 ```
 
-### Predicates
+#### Predicates
 The predicate are the structure that are used to define a belief, a desire or an intention.
 In this model we choose to declare 3 different predicates.
 
@@ -55,7 +57,7 @@ predicate no_water_predicate <- new_predicate("has water", false) ;
 The **new_predicate()** tool creates a predicate. It needs a name (string type) and it can contain a map of values, a priority (double type) or a truth value (boolean type).
 The **with_priority** tool add a priority to a predicate. The priority is used as an argument when the agent has to choose between two predicates (to choose an intention for example).
 
-### Initialization
+#### Initialization
 The initialization consists in setting the attribute **waterValue** to 1 and to add one desire. Three optional parameters are also set. The first desire added in the desire base is the **patrol\_desire** saying that the helicopter wants to patrol. The optional parameters are specific to the BDI plug-in. You can specify the commitment of an agent to his intentions and his plans with the variables intention_persistence and plan_persistence that are floats between 0.0 (no commitment) and 1.0. The variable probabilistic_choice is a boolean that enables the agent to use a probabilistic choice (when true) or a deterministic choice (when false) when trying to find a plan or an intention.
 ```
 waterValue <-1.0;
@@ -65,7 +67,7 @@ plan_persistence <- 1.0;
 probabilistic_choice <- false;	
 ```
 
-### Perception
+#### Perception
 At each iteration, the helicopter has two perceptions to do. The first one is about itself. The helicopter need to perceive if it has water or no. If it has water, it adds the belief corresponding while removing the belief that it does not have water. And if it does not have water, that is the contrary.
 ```
 perceive target:self{
@@ -89,7 +91,7 @@ perceive target:fireArea in: 10{
 }
 ```
 
-### Rules
+#### Rules
 The agent can use rules to create desires from beliefs. In this example, the agent has two rules. The first **rule** is to have a desire corresponding to the belief of a location of a fire. It means that when the agent has the belief that there is a fire in a particular location, it will have the desire to extinguish it. This permits to have the location value in the desire base.
 The second rule is to create the desire to have water when the agent has the belief that it not has water.
 
@@ -98,15 +100,15 @@ rule belief: new_predicate("fireLocation") new_desire: get_belief_with_name("fir
 rule belief: no_water_predicate new_desire: water_predicate;
 ```
 
-### Plan
-#### Patrolling
+#### Plan
+##### Patrolling
 This plan will be used when the agent has the intention to patrol.
 ```
 plan patrolling intention: patrol_desire{
   do wander;
 }
 ```
-#### stopFire
+##### stopFire
 This plan is executed when the agent has the intention to extinguish a fire.
 ```
 plan stopFire intention: new_predicate("fireLocation") {
@@ -137,7 +139,7 @@ plan stopFire intention: new_predicate("fireLocation") {
 	}
 }
 ```
-#### gotoTakeWater
+##### gotoTakeWater
 This plan is executed when the agent has the intention to have water.
 ```
 plan gotoTakeWater intention: water_predicate {
@@ -150,15 +152,15 @@ plan gotoTakeWater intention: water_predicate {
 ```
 Plans can have other options. They can have a priority (with the facet priority), a boolean condition to start (with the facet when) or a boolean condition to stop (with the facet finished_when).
 
-### Rest of the code
-#### Aspect of the helicopter
+#### Rest of the code
+##### Aspect of the helicopter
 ```
 aspect base {
 	draw circle(1) color: #black;	
 }
 ```
 
-#### FireArea Species
+##### FireArea Species
 ```
 species fireArea{
         float size <-1.0;	
@@ -169,7 +171,7 @@ species fireArea{
 }
 ```
 
-#### WaterArea Species
+##### WaterArea Species
 ```
 species waterArea{
 	float size <-10.0;
