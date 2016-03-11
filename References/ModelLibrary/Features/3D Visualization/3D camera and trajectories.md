@@ -1,10 +1,5 @@
-[//]: # (keyword|operator_copy)
-[//]: # (keyword|operator_overlapping)
-[//]: # (keyword|operator_triangle)
-[//]: # (keyword|operator_hsb)
-[//]: # (keyword|operator_cos)
-[//]: # (keyword|operator_sin)
-[//]: # (keyword|constant_orange)
+[//]: # (keyword|operator_rectangle)
+[//]: # (keyword|constant_lightgrey)
 [//]: # (keyword|concept_3d)
 [//]: # (keyword|concept_camera)
 # 3D Camera and Camera Positionning with Boids model

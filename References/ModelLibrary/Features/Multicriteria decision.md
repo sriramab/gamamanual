@@ -1,3 +1,6 @@
 # Multicriteria decision
 
-[Multicriteria](Multicriteria)
+This sub-section is composed of the following models :
+
+* [Multicriteria](references#Multicriteria)
+

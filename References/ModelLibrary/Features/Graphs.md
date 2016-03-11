@@ -1,10 +1,20 @@
 # Graphs
 
-[3D Graph](3dGraph)
-[Classic Graph Generation](ClassicGraphGeneration)
-[Graph Building From Agents](GraphBuildingFromAgents)
-[Graph Loading Layout](GraphLoadingLayout)
-[Graph Operators](GraphOperators)
-[Hand Made Graph](HandMadeGraph)
-[Multigraph](Multigraph)
-[Shortest paths](ShortestPaths)
+This sub-section is composed of the following models :
+
+* [3D Graph](references#3DGraph)
+
+* [Graph Generation](references#ClassicGraphGeneration)
+
+* [Graph Generation using Agents](references#GraphBuildingFromAgents)
+
+* [Graph from DGS File and Layout Changed](references#GraphLoadingLayout)
+
+* [Graph Operators](references#GraphOperators)
+
+* [Hand Made Graph](references#HandMadeGraph)
+
+* [Multigraph](references#Multigraph)
+
+* [ShortestPath](references#Shortestpaths)
+

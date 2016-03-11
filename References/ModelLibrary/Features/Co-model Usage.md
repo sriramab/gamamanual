@@ -1,3 +1,6 @@
 # Co-model Usage
 
-[comodelAntsBoids_worked](Comodelantsboids_worked)
+This sub-section is composed of the following models :
+
+* [ComodelAntsBoids](references#comodelAntsBoids_worked)
+
