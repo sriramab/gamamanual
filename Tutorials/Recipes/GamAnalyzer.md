@@ -1,5 +1,7 @@
 [//]: # (startConcept|run_several_models_using_gamanalyzer)
-# Install
+# Using GAMAnalyzer
+
+## Install
 
 Go to Git View -> Click on Import Projects
 Add the dependencies in ummisco.gama.feature.dependencies
@@ -8,7 +10,7 @@ GamAnalyzer is a tool to monitor several multi-agents simulation
 
 The "agent_group_follower" goal is to monitor and analyze a group of agent during several simulation. This group of agent can be chosen by the user according to criteria chosen by the user. The monitoring process and analysis of these agents involves the extraction, processing and visualization of their data at every step of the simulation.  The data for each simulation are pooled and treated commonly for their graphic representation or clusters.
 
-# Built-in Variable
+## Built-in Variable
 
 
 
@@ -36,11 +38,11 @@ The "agent_group_follower" goal is to monitor and analyze a group of agent durin
 * **multi_metadatahistory**: Aggregate each metadatahistory for each experiment 
 
 
-# Example 
+## Example 
 
 This example is based on a toy model which is only composed of wandering people. In this example we will use GamAnalyzer to follow the agent people. 
 
-## 
+### 
 ```
 agent_group_follower peoplefollower;
 ```
@@ -52,7 +54,7 @@ create agentfollower
 }
 ```
 
-## expGlobalNone
+### expGlobalNone
 No clustering only the current agent follower is displayed
 ```
 aspect base {
@@ -62,7 +64,7 @@ aspect base {
 }
 ```
 
-## expSimGlobalNone 
+### expSimGlobalNone 
 The agent_group_follower corresponding to the current iteration and all the already launch experiments are displayed. 
 ```
 aspect simglobal{
@@ -76,7 +78,7 @@ aspect simglobal{
   }
 }
 ```
-## expCluster
+### expCluster
 The agent group follower is divided in cluster computed thanks to a dbscan algorithm. Only the current agent_group_follower is displayed
 ```
 aspect cluster {
@@ -85,7 +87,7 @@ aspect cluster {
   draw shape color: #red;
 }
 ```
-## expClusterSimGlobal
+### expClusterSimGlobal
 The agent_group_follower (made of different cluster) corresponding to the current iteration and all the already launch experiments are displayed. 
 
 ```
