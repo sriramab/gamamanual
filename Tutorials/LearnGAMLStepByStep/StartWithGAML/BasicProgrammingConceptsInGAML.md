@@ -6,7 +6,7 @@ We will overfly quickly all those basic programming concepts, admitting that you
 
 ## Index
 	
-* [Variables](#variable)
+* [Variables](#variables)
   * [Basic types](#basic-types)
   * [The point type](#the-point-type)
   * [A word about dimensions](#a-word-about-dimensions)
