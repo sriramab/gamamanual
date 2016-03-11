@@ -95,7 +95,6 @@ The abstract mother species "graph_node" has an attribute "my_graph", with the t
 ### Declare a graph by using a matrix file
 
 [//]: # (keyword|concept_load_file)
-[//]: # (keyword|concept_shapefile)
 [TODO]
 
 ### Declare a graph by using an geometry file
