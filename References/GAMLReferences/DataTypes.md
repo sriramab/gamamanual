@@ -56,6 +56,7 @@ bool (0) -> false
 ```
 [Top of the page](#table-of-contents)
 
+[//]: # (keyword|type_float)
 ### float
   * **Definition:** primitive datatype holding floating point values, its absolute value is comprised between 4.9E-324 and 1.8E308.
   * **Comments:** this datatype is internally backed up by the Java double datatype.
@@ -67,6 +68,7 @@ float (12) -> 12.0
 ```
 [Top of the page](#table-of-contents)
 
+[//]: # (keyword|type_int)
 ### int
   * **Definition:** primitive datatype holding integer values comprised between -2147483648 and 2147483647 (i.e. between `-2^31` and `2^31 - 1`.
   * **Comments:** this datatype is internally backed up by the Java int datatype.
@@ -78,6 +80,7 @@ int (234.5) -> 234.
 ```
 [Top of the page](#table-of-contents)
 
+[//]: # (keyword|type_string)
 ### string
   * **Definition:** a datatype holding a sequence of characters.
   * **Comments:** this datatype is internally backed up by the Java String class. However, contrary to Java, strings are considered as a primitive type, which means they do not contain character objects. This can be seen when casting a string to a list using the list operator: the result is a list of one-character strings, not a list of characters.
@@ -104,6 +107,7 @@ file fileText <- file("../data/cell.Data");
 bool fileTextReadable <- fileText.readable;
 ```
 
+[//]: # (keyword|type_agent)
 ### agent
   * **Definition:** a generic datatype that represents an agent whatever its actual species.
   * **Comments:** This datatype is barely used, since species can be directly used as datatypes themselves.
@@ -112,6 +116,7 @@ bool fileTextReadable <- fileText.readable;
 [Top of the page](#table-of-contents)
 
 
+[//]: # (keyword|type_container)
 ### container
   * **Definition:** a generic datatype that represents a collection of data.
   * **Comments:**  a container variable can be a list, a matrix, a map... Conversely each list, matrix and map is a kind of container. In consequence every container can be used in container-related operators.
@@ -125,6 +130,7 @@ container c  <- list species1;
 ```
 [Top of the page](#table-of-contents)
 
+[//]: # (keyword|type_file)
 ### file
   * **Definition:** a datatype that represents a file.
   * **Built-in attributes:**
@@ -160,6 +166,7 @@ write(properties(a_string)) // returns a property file which is available for wr
 [Top of the page](#table-of-contents)
 
 
+[//]: # (keyword|type_geometry)
 ### geometry
   * **Definition:** a datatype that represents a vector geometry, i.e. a list of georeferenced points.
   * **Built-in attributes:**
@@ -187,6 +194,7 @@ geometry polygonGeom <- polygon([{3,5}, {5,6},{1,4}]);
 [Top of the page](#table-of-contents)
 
 
+[//]: # (keyword|type_graph)
 ### graph
   * **Definition:** a datatype that represents a graph composed of vertices linked by edges.
   * **Built-in attributes:**
@@ -216,6 +224,7 @@ graph(node1)    --: null
 [Top of the page](#table-of-contents)
 
 
+[//]: # (keyword|type_list)
 ### list
   * **Definition:** a composite datatype holding an ordered collection of values.
   * **Comments:** lists are more or less equivalent to instances of ArrayList in Java (although they are backed up by a specific class). They grow and shrink as needed, can be accessed via an index (see @ or index\_of), support set operations (like union and difference), and provide the modeller with a number of utilities that make it easy to deal with collections of agents (see, for instance, shuffle, reverse,where,sort\_by,...).
@@ -233,6 +242,7 @@ myList[2] => 3
 [Top of the page](#table-of-contents)
 
 
+[//]: # (keyword|type_map)
 ### map
   * **Definition:** a composite datatype holding an ordered collection of pairs (a key, and its associated value).
   * **Built-in attributes:**
@@ -252,6 +262,7 @@ map ({1,5}) -> [x::1, y::5]
 [Top of the page](#table-of-contents)
 
 
+[//]: # (keyword|type_matrix)
 ### matrix
   * **Definition:** a composite datatype that represents either a two-dimension array (matrix) or a one-dimension array (vector), holding any type of data (including other matrices).
   * **Comments:** Matrices are fixed-size structures that can be accessed by index (point for two-dimensions matrices, integer for vectors).
@@ -271,6 +282,7 @@ matrix mat3 <- matrix([["c11","c12","c13"],["c21","c22","c23"]]);
 [Top of the page](#table-of-contents)
 
 
+[//]: # (keyword|type_pair)
 ### pair
   * **Definition:** a datatype holding a key and its associated value.
   * **Built-in attributes:**
@@ -292,6 +304,7 @@ pair testPairMap <- [2::6,5::8,12::45];  // [12,5,2]::[45,8,6]
 [Top of the page](#table-of-contents)
 
 
+[//]: # (keyword|type_path)
 ### path
   * **Definition:** a datatype representing a path linking two agents or geometries in a graph.
   * **Built-in attributes:**
@@ -327,6 +340,7 @@ path_between (a_graph, a_source, a_target) // idem with a the given graph as top
 [Top of the page](#table-of-contents)
 
 
+[//]: # (keyword|type_point)
 ### point
   * **Definition:** a datatype normally holding two positive float values. Represents the absolute coordinates of agents in the model.
   * **Built-in attributes:**
@@ -343,7 +357,7 @@ point (2) -> {2.0, 2.0}
 ```
 [Top of the page](#table-of-contents)
 
-
+[//]: # (keyword|type_rgb)
 ### rgb
   * **Definition:** a datatype that represents a color in the RGB space.
   * **Built-in attributes:**
@@ -371,6 +385,7 @@ rgb tete <- rgb(["r"::34, "g"::56, "b"::345]); // rgb [34,56,255]
 [Top of the page](#table-of-contents)
 
 
+[//]: # (keyword|type_species)
 ### species
   * Definition: a generic datatype that represents a species
   * **Built-in attributes:**
@@ -410,20 +425,21 @@ entities {
 [Top of the page](#table-of-contents)
 
 
+[//]: # (keyword|type_topology)
 ### topology
-  * **Definition:** a topology is basically on neighbourhoods, distance,... structures in which agents evolves. It is the environment or the context in which all these values are computed. It also provides the access to the spatial index shared by all the agents. And it maintains a (eventually dynamic) link with the 'environment' which is a geometrical border.
+  * **Definition:** a topology is basically on neighborhoods, distance,... structures in which agents evolves. It is the environment or the context in which all these values are computed. It also provides the access to the spatial index shared by all the agents. And it maintains a (eventually dynamic) link with the 'environment' which is a geometrical border.
   * **Built-in attributes:**
     * places(type = container): the collection of places (geometry) defined by this topology.
     * environment(type = geometry): the environment of this topology (i.e. the geometry that defines its boundaries)
   * **Comments:** the attributes `places` depends on the kind of the considered topolopy.  For continuous topologies, it is a list with their environment. For discrete topologies, it can be any of the container supporting the inclusion of geometries (list, graph, map, matrix)
-  * **Remark:** There exist various kinds of topology: continous topology and discrete topology (e.g. grid, graph...)
+  * **Remark:** There exist various kinds of topology: continuous topology and discrete topology (e.g. grid, graph...)
   * **Declaration:** To create a topology, we can use the `topology` unary casting operator applied to:
     * an agent: returns a continuous topology built from the agent's geometry
     * a species name: returns the topology defined for this species population
     * a geometry: returns a continuous topology built on this geometry
     * a geometry container (list, map, shapefile): returns an half-discrete (with corresponding places), half-continuous topology (to compute distances...)
-    * a geometry matrix (i.e. a grid): returns a grid topology which computes specifically neighbourhood and distances
-    * a geometry graph: returns a graph topology which computes specifically neighbourhood and distances
+    * a geometry matrix (i.e. a grid): returns a grid topology which computes specifically neighborhood and distances
+    * a geometry graph: returns a graph topology which computes specifically neighborhood and distances
 More complex topologies can also be built using dedicated operators, e.g. to decompose a geometry...
 
 [Top of the page](#table-of-contents)
