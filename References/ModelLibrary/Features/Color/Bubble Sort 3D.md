@@ -1,8 +1,8 @@
 [//]: # (keyword|operator_cube)
 [//]: # (keyword|operator_copy)
 [//]: # (keyword|operator_not)
-[//]: # (keyword|constant_magenta)
-[//]: # (keyword|constant_cyan)
+[//]: # (keyword|constant_#magenta)
+[//]: # (keyword|constant_#cyan)
 [//]: # (keyword|concept_color)
 [//]: # (keyword|concept_3d)
 # Creating color and sort cubes by color

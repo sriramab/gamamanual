@@ -3,7 +3,7 @@
 [//]: # (keyword|operator_as_map)
 [//]: # (keyword|operator_\:\:)
 [//]: # (keyword|operator_with_weights)
-[//]: # (keyword|constant_pink)
+[//]: # (keyword|constant_#pink)
 [//]: # (keyword|type_path)
 [//]: # (keyword|concept_graph)
 [//]: # (keyword|concept_agent_movement)

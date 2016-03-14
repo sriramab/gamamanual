@@ -14,7 +14,7 @@
 [//]: # (keyword|statement_capture)
 [//]: # (keyword|statement_release)
 [//]: # (keyword|architecture_fsm)
-[//]: # (keyword|constant_orange)
+[//]: # (keyword|constant_#orange)
 [//]: # (keyword|concept_multi_level)
 [//]: # (keyword|concept_agent_movement)
 # Multi-Level Architecture with Preys and Predators

@@ -1,7 +1,7 @@
 [//]: # (keyword|operator_not)
 [//]: # (keyword|operator_user_input)
 [//]: # (keyword|statement_user_command)
-[//]: # (keyword|constant_pink)
+[//]: # (keyword|constant_#pink)
 [//]: # (keyword|concept_gui)
 # User Command
 

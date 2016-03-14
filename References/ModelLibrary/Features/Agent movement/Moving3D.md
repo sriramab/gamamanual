@@ -5,7 +5,7 @@
 [//]: # (keyword|operator_floor)
 [//]: # (keyword|operator_as_distance_graph)
 [//]: # (keyword|skill_moving3D)
-[//]: # (keyword|constant_orange)
+[//]: # (keyword|constant_#orange)
 [//]: # (keyword|concept_3d)
 [//]: # (keyword|concept_agent_movement)
 [//]: # (keyword|concept_graph)

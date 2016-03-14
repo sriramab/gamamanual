@@ -1,6 +1,6 @@
 [//]: # (keyword|operator_not)
 [//]: # (keyword|statement_event)
-[//]: # (keyword|constant_pink)
+[//]: # (keyword|constant_#pink)
 [//]: # (keyword|concept_gui)
 # Event Feature
 

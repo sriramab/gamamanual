@@ -1,6 +1,6 @@
 [//]: # (keyword|operator_get)
 [//]: # (keyword|statement_save)
-[//]: # (keyword|constant_pink)
+[//]: # (keyword|constant_#pink)
 [//]: # (keyword|concept_gis)
 [//]: # (keyword|concept_shapefile)
 [//]: # (keyword|concept_save_file)

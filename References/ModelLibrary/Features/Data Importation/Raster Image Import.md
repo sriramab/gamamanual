@@ -1,6 +1,6 @@
 [//]: # (keyword|operator_shuffle)
 [//]: # (keyword|operator_inside)
-[//]: # (keyword|constant_orange)
+[//]: # (keyword|constant_#orange)
 [//]: # (keyword|concept_load_file)
 [//]: # (keyword|concept_gis)
 [//]: # (keyword|concept_raster)

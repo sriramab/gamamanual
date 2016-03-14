@@ -1,6 +1,6 @@
 [//]: # (keyword|operator_not)
 [//]: # (keyword|operator_intersects)
-[//]: # (keyword|constant_magenta)
+[//]: # (keyword|constant_#magenta)
 [//]: # (keyword|type_path)
 [//]: # (keyword|concept_grid)
 [//]: # (keyword|concept_agent_movement)

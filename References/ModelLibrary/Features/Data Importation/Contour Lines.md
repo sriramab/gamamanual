@@ -1,7 +1,7 @@
 [//]: # (keyword|operator_triangulate)
 [//]: # (keyword|operator_closest_to)
 [//]: # (keyword|operator_set_z)
-[//]: # (keyword|constant_grey)
+[//]: # (keyword|constant_#grey)
 [//]: # (keyword|concept_load_file)
 [//]: # (keyword|concept_gis)
 [//]: # (keyword|concept_shapefile)

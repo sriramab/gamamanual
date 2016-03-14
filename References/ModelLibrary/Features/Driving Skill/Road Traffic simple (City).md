@@ -8,7 +8,7 @@
 [//]: # (keyword|statement_switch)
 [//]: # (keyword|statement_match)
 [//]: # (keyword|skill_driving)
-[//]: # (keyword|constant_magenta)
+[//]: # (keyword|constant_#magenta)
 [//]: # (keyword|type_species)
 [//]: # (keyword|concept_gis)
 [//]: # (keyword|concept_shapefile)

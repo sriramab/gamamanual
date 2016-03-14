@@ -1,7 +1,7 @@
 [//]: # (keyword|operator_shuffle)
 [//]: # (keyword|operator_inside)
 [//]: # (keyword|operator_as_matrix)
-[//]: # (keyword|constant_orange)
+[//]: # (keyword|constant_#orange)
 [//]: # (keyword|type_matrix)
 [//]: # (keyword|concept_load_file)
 [//]: # (keyword|concept_gis)

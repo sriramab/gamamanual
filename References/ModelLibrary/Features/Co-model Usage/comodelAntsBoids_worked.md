@@ -23,14 +23,14 @@
 [//]: # (keyword|statement_genetic)
 [//]: # (keyword|statement_event)
 [//]: # (keyword|architecture_fsm)
-[//]: # (keyword|constant_zoom)
-[//]: # (keyword|constant_bold)
-[//]: # (keyword|constant_plain)
-[//]: # (keyword|constant_darkgray)
-[//]: # (keyword|constant_pixels)
-[//]: # (keyword|constant_darkgreen)
-[//]: # (keyword|constant_orange)
-[//]: # (keyword|constant_lightblue)
+[//]: # (keyword|constant_#zoom)
+[//]: # (keyword|constant_#bold)
+[//]: # (keyword|constant_#plain)
+[//]: # (keyword|constant_#darkgray)
+[//]: # (keyword|constant_#pixels)
+[//]: # (keyword|constant_#darkgreen)
+[//]: # (keyword|constant_#orange)
+[//]: # (keyword|constant_#lightblue)
 [//]: # (keyword|concept_comodel)
 # ComodelAntsBoids
 
@@ -491,10 +491,10 @@ global {
 	reflex dododo{
 		
 		
-		ask (myAnt.Complete){
+		ask (first(myAnt.Complete).simulation){
 			do _step_;
 		}
-		ask (myBoids.boids_gui){
+		ask (first(myBoids.boids_gui).simulation){
 			do _step_;
 		}
 	}

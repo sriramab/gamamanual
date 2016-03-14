@@ -21,6 +21,7 @@ cast_operator:cast
 casting_operator:cast
 casting:cast
 cell:grid
+centimeters:cm
 closest:spatial_relation
 cluster:clustering
 crs:gis
@@ -32,6 +33,7 @@ cosinus:cos
 data_mining:statistic
 data:database
 date:time_unit
+decimeters:dm
 destroy:die
 different:!=
 direct:directed
@@ -79,6 +81,7 @@ jpeg:image
 jpg:image
 keyboard:gui
 kill:die
+kilometers:km
 larger:>
 load:serialize
 load:load_file

@@ -4,7 +4,7 @@
 [//]: # (keyword|operator_overlapping)
 [//]: # (keyword|statement_capture)
 [//]: # (keyword|statement_release)
-[//]: # (keyword|constant_pixels)
+[//]: # (keyword|constant_#pixels)
 [//]: # (keyword|type_topology)
 [//]: # (keyword|concept_multi_level)
 [//]: # (keyword|concept_agent_movement)

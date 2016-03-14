@@ -44,8 +44,8 @@ global {
 	reflex diff {
 		// Declare a diffusion on the grid "cells" and on "quick_cells". The diffusion declared on "quick_cells" will make 10 computations at each step to accelerate the process. 
 		// The value of the diffusion will be store in the new variable "phero" of the cell.
-		diffuse var: phero on: cells matrix: math_diff keep_masked_cells_null: false conserve_value: false;	
-		diffuse var: phero on: quick_cells matrix: math_diff cycle_length: 10 keep_masked_cells_null: false conserve_value: false;	
+		diffuse var: phero on: cells matrix: math_diff;	
+		diffuse var: phero on: quick_cells matrix: math_diff cycle_length: 10;			
 	}
 }
 
