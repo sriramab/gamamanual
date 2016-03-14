@@ -8,8 +8,8 @@ We propose some tutorials that are designed to allow modelers to become progress
 * [Predator Prey](#predator-prey-tutorial)
 * [Road Traffic](#road-traffic)
 * [3D Tutorial](#3d-tutorial)
+* [Luneray's flu](#lunerays-flu-tutorial)
 * [Incremental Model](#incremental-model)
-* [Luneray's flu](#lunerays-flu)
 
 ## [Predator Prey tutorial](PredatorPrey)
 
