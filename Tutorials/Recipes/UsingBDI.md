@@ -68,7 +68,7 @@ probabilistic_choice <- false;
 ```
 
 #### Perception
-At each iteration, the helicopter has two perceptions to do. The first one is about itself. The helicopter need to perceive if it has water or no. If it has water, it adds the belief corresponding while removing the belief that it does not have water. And if it does not have water, that is the contrary.
+At each iteration, the helicopter has two perceptions to do. The first one is about itself. The helicopter needs to perceive if it has water or not. If it has water, it adds the belief corresponding belief and removes the belief that it does not have water. And if it does not have water, that is the contrary.
 ```
 perceive target:self{
 	if(waterValue>0){
@@ -81,7 +81,7 @@ perceive target:self{
 	}
 }
 ```
-The second perception is about the fires. Here, the fires are represented with the specie **fireArea**. The helicopter has a radius of perception of 10 meters. If it perceives a fire, it will focus an the location of this fire. The **focus** tool create a belief with the same name as the focus (here, "fireLocation") and will store the value of the variable focused (here, the variable location from the specie fireArea) with a priority of 10 in this example. Once the fire is perceived, the helicopter remove its intention of patrolling.
+The second perception is about the fires. Here, the fires are represented with the species **fireArea**. The helicopter has a radius of perception of 10 meters. If it perceives a fire, it will focus on the location of this fire. The **focus** tool create a belief with the same name as the focus (here, "fireLocation") and will store the value of the focused variable (here, the variable location from the specie fireArea) with a priority of 10 in this example. Once the fire is perceived, the helicopter removes its intention of patrolling.
 ```
 perceive target:fireArea in: 10{
 	focus fireLocation var:location priority:10;
