@@ -258,6 +258,8 @@ Note that when you use the `on` facet for the `diffuse` statement, you can choos
 
 ![resources/images/recipes/mask_with_on_facet.png](resources/images/recipes/mask_with_on_facet.png)
 
+When your diffusion is combined with a mask, the default behavior is that the non-masked cells will diffuse their values in **all** existing cells (that means, even the masked cells !). To change this behavior, you can use the facet `avoid_mask`. In that case, the value which was supposed to be affected to the masked cell will be redistributed to the neighboring non-masked cells.
+
 ### Tips
 
 Masks can be used to simulate a lot of environments. Here are some ideas for your models:
