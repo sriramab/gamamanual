@@ -12,7 +12,6 @@ Using a graph species enables to easily show interaction between agents of a sam
 
 * [Declaration](#declaration)
   * [Declare a graph with handmade agents](#declare-a-graph-with-handmade-agents)
-  * [Declare a graph by using a matrix file](#declare-a-graph-by-using-a-matrix-file)
   * [Declare a graph by using an geometry file](#declare-a-graph-by-using-an-geometry-file)
   * [Declare a graph with nodes and edges](#declare-a-graph-with-nodes-and-edges)
 * [Useful operators with graph](#useful-operators-with-graph)
@@ -92,13 +91,9 @@ bool related_to(graph_agent other){
 
 The abstract mother species "graph_node" has an attribute "my_graph", with the type "graph". The graph type represent a graph composed of vertices linked with edges. This type has built-in attributes such as `edges` (the list of all the edges agents), or `vertices` (the list of all the vertices agents).
 
-### Declare a graph by using a matrix file
-
-[//]: # (keyword|concept_load_file)
-[TODO]
-
 ### Declare a graph by using an geometry file
 
+[//]: # (keyword|concept_load_file)
 [//]: # (keyword|operator_as_edge_graph)
 In most cases, you will have to construct a graph from an existing file (example: a "shp" file). In that case, you will have to first instantiate a species from the shape file (with the `create` statement, using the facet `from`). When, you will have to extract a graph from the agent, using the operator `as_edge_graph`.
 
