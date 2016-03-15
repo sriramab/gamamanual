@@ -372,11 +372,11 @@ ___________________________________________________________
 
 _The following text has been automatically generated from "mainCheckConcepts"_
 
-______________ _last update : 2016/03/07 14:56:26_
+______________ _last update : 2016/03/15 20:35:33_
 
 **List of concepts to use for model library (except Syntax):**
 
-3d, agent_location, agent_movement, algorithm, architecture, asc, batch, bdi, camera, chart, clustering, color, communication, comodel, comparison, csv, database, date, dem, dgs, dxf, edge, equation, fipa, geometry, gis, graph, graph_weight, graphic, grid, gui, headless, hydrology, image, inheritance, inspector, light, load_file, math, mirror, multi_criteria, multi_level, neighbors, network, node, obj, obstacle, osm, r, raster, regression, save_file, scheduler, serialize, shape, shapefile, shortest_path, skill, sound, spatial_computation, spatial_relation, spatial_transformation, statistic, svg, system, task_based, test, text, texture, tif, topology, transport, txt, xml
+3d, agent_location, agent_movement, algorithm, architecture, asc, batch, bdi, camera, chart, clustering, color, communication, comodel, comparison, csv, database, date, dem, dgs, dxf, edge, equation, fipa, fsm, geometry, gis, graph, graph_weight, graphic, grid, gui, headless, hydrology, image, inheritance, inspector, light, load_file, math, mirror, multi_criteria, multi_level, neighbors, network, node, obj, obstacle, osm, r, raster, regression, save_file, scheduler, serialize, shape, shapefile, shortest_path, skill, sound, spatial_computation, spatial_relation, spatial_transformation, statistic, svg, system, task_based, test, text, texture, tif, topology, transport, txt, xml
 
 **List of concepts to use exclusively in Syntax models:**
 
@@ -384,39 +384,39 @@ arithmetic, attribute, cast, condition, container, filter, list, logical, loop, 
 
 **List of concepts to use for GAML worlds:**
 
-3d, action, agent_location, agent_movement, algorithm, architecture, arithmetic, asc, attribute, batch, bdi, behavior, camera, cast, chart, clustering, color, communication, comodel, comparison, condition, constant, container, csv, cycle, database, date, dem, dgs, dimension, display, dxf, edge, equation, experiment, file, filter, fipa, geometry, gis, graph, graph_weight, graphic, graphic_unit, grid, gui, headless, hydrology, image, inspector, length_unit, light, list, load_file, logical, loop, map, math, matrix, mirror, multi_criteria, multi_level, neighbors, network, node, obj, obstacle, optimization, osm, parameter, point, r, random, random_operator, raster, regression, save_file, scheduler, serialize, shape, shapefile, shortest_path, skill, sound, spatial_computation, spatial_relation, spatial_transformation, species, statistic, string, surface_unit, svg, system, task_based, ternary, test, text, texture, tif, time, time_unit, topology, transport, txt, type, volume_unit, weight_unit, xml
+3d, action, agent_location, agent_movement, algorithm, architecture, arithmetic, asc, attribute, batch, bdi, behavior, camera, cast, chart, clustering, color, communication, comodel, comparison, condition, constant, container, csv, cycle, database, date, dem, dgs, dimension, display, dxf, edge, equation, experiment, file, filter, fipa, fsm, geometry, gis, graph, graph_weight, graphic, graphic_unit, grid, gui, headless, hydrology, image, inspector, length_unit, light, list, load_file, logical, loop, map, math, matrix, mirror, multi_criteria, multi_level, neighbors, network, node, obj, obstacle, optimization, osm, parameter, point, r, random, random_operator, raster, regression, save_file, scheduler, serialize, shape, shapefile, shortest_path, skill, sound, spatial_computation, spatial_relation, spatial_transformation, species, statistic, string, surface_unit, svg, system, task_based, ternary, test, text, texture, tif, time, time_unit, topology, transport, txt, type, volume_unit, weight_unit, xml
 
 | **Concept name** | **in Doc** | **in GAML Ref** | **in Model Lib** | **TOTAL** |
 |:----------------------------|:-------------|:-------------|:-------------|:-------------|
-| 3d | 1 | 14 | 18 | 33 |
+| 3d | 1 | 14 | 19 | 34 |
 | action | 3 | 3 | _ | 6 |
 | agent_location | 1 | 19 | 0 | 20 |
 | agent_movement | 0 | 2 | 14 | 16 |
-| algorithm | 0 | 8 | 2 | 10 |
-| architecture | 0 | 10 | 1 | 11 |
+| algorithm | 1 | 8 | 2 | 11 |
+| architecture | 2 | 10 | 1 | 13 |
 | arithmetic | 0 | 33 | 0 | 33 |
 | asc | 0 | 2 | 2 | 4 |
 | attribute | 2 | 5 | _ | 7 |
-| autosave | 1 | _ | _ | 1 |
+| autosave | 2 | _ | _ | 2 |
 | background | 1 | _ | _ | 1 |
-| batch | 0 | 8 | 1 | 9 |
-| bdi | 0 | 31 | 0 | 31 |
-| behavior | 1 | 7 | _ | 8 |
+| batch | 3 | 8 | 3 | 14 |
+| bdi | 1 | 31 | 0 | 32 |
+| behavior | 3 | 7 | _ | 10 |
 | camera | 1 | 1 | 1 | 3 |
 | cast | 1 | 16 | 0 | 17 |
 | chart | 0 | 3 | 0 | 3 |
 | clustering | 0 | 2 | 2 | 4 |
-| color | 1 | 15 | 4 | 20 |
+| color | 1 | 15 | 3 | 19 |
 | communication | 0 | 2 | 0 | 2 |
 | comodel | 0 | 0 | 1 | 1 |
 | comparison | 0 | 6 | 2 | 8 |
 | condition | 1 | 7 | 0 | 8 |
 | constant | 0 | 10 | _ | 10 |
 | container | 1 | 54 | 0 | 55 |
-| csv | 1 | 4 | 3 | 8 |
-| cycle | 1 | 1 | _ | 2 |
-| database | 0 | 3 | 17 | 20 |
-| date | 0 | 26 | 2 | 28 |
+| csv | 2 | 4 | 3 | 9 |
+| cycle | 2 | 1 | _ | 3 |
+| database | 1 | 3 | 17 | 21 |
+| date | 1 | 26 | 2 | 29 |
 | dem | 0 | 0 | 1 | 1 |
 | dgs | 0 | 0 | 1 | 1 |
 | dimension | 2 | 30 | _ | 32 |
@@ -425,72 +425,74 @@ arithmetic, attribute, cast, condition, container, filter, list, logical, loop, 
 | dxf | 0 | 2 | 1 | 3 |
 | edge | 1 | 13 | 1 | 15 |
 | enumeration | 1 | _ | _ | 1 |
-| equation | 0 | 3 | 0 | 3 |
-| experiment | 0 | 3 | _ | 3 |
+| equation | 2 | 3 | 1 | 6 |
+| experiment | 2 | 3 | _ | 5 |
 | facet | 1 | _ | _ | 1 |
-| file | 0 | 36 | _ | 36 |
+| file | 1 | 36 | _ | 37 |
 | filter | 1 | 8 | 0 | 9 |
-| fipa | 0 | 4 | 0 | 4 |
+| fipa | 1 | 4 | 0 | 5 |
+| fsm | 1 | 0 | 0 | 1 |
 | geometry | 2 | 88 | 0 | 90 |
 | gis | 0 | 3 | 11 | 14 |
 | global | 1 | _ | _ | 1 |
-| graph | 1 | 50 | 17 | 68 |
+| graph | 1 | 50 | 24 | 75 |
 | graph_weight | 1 | 3 | 0 | 4 |
 | graphic | 1 | 7 | 0 | 8 |
 | graphic_unit | 1 | 3 | _ | 4 |
-| grid | 3 | 10 | 8 | 21 |
-| gui | 1 | 9 | 3 | 13 |
+| grid | 4 | 10 | 13 | 27 |
+| gui | 3 | 9 | 15 | 27 |
 | halt | 1 | _ | _ | 1 |
 | headless | 0 | 1 | 0 | 1 |
 | hydrology | 0 | 0 | 0 | 0 |
 | image | 0 | 2 | 0 | 2 |
 | import | 1 | _ | _ | 1 |
 | inheritance | 1 | _ | 0 | 1 |
-| init | 2 | _ | _ | 2 |
-| inspector | 0 | 3 | 0 | 3 |
+| init | 3 | _ | _ | 3 |
+| inspector | 1 | 3 | 0 | 4 |
 | layer | 1 | _ | _ | 1 |
 | length_unit | 0 | 9 | _ | 9 |
 | light | 1 | 0 | 1 | 2 |
 | list | 0 | 9 | 0 | 9 |
-| load_file | 2 | 1 | 18 | 21 |
+| load_file | 4 | 1 | 18 | 23 |
 | logical | 1 | 7 | 0 | 8 |
 | loop | 1 | 2 | 0 | 3 |
 | map | 0 | 13 | 0 | 13 |
-| math | 0 | 36 | 0 | 36 |
-| matrix | 0 | 22 | 0 | 22 |
+| math | 1 | 36 | 6 | 43 |
+| matrix | 2 | 22 | 6 | 30 |
 | mirror | 1 | 0 | 0 | 1 |
 | model | 1 | _ | _ | 1 |
 | multi_criteria | 0 | 4 | 1 | 5 |
-| multi_level | 1 | 3 | 4 | 8 |
-| neighbors | 1 | 5 | 1 | 7 |
+| multi_level | 1 | 3 | 6 | 10 |
+| neighbors | 1 | 5 | 0 | 6 |
 | network | 0 | 1 | 0 | 1 |
 | node | 1 | 18 | 1 | 20 |
 | obj | 0 | 0 | 2 | 2 |
-| obstacle | 0 | 1 | 1 | 2 |
+| obstacle | 0 | 1 | 2 | 3 |
 | opengl | 3 | _ | _ | 3 |
 | operator | 1 | _ | _ | 1 |
-| optimization | 1 | 1 | _ | 2 |
-| osm | 0 | 2 | 2 | 4 |
-| output | 1 | _ | _ | 1 |
-| parameter | 1 | 2 | _ | 3 |
+| optimization | 3 | 1 | _ | 4 |
+| osm | 1 | 2 | 2 | 5 |
+| output | 2 | _ | _ | 2 |
+| parameter | 2 | 2 | _ | 4 |
 | pause | 1 | _ | _ | 1 |
+| permanent | 1 | _ | _ | 1 |
 | point | 0 | 27 | _ | 27 |
 | probability | 1 | _ | _ | 1 |
 | pseudo_variable | 1 | _ | _ | 1 |
-| r | 0 | 2 | 0 | 2 |
-| random | 1 | 9 | _ | 10 |
+| r | 1 | 2 | 0 | 3 |
+| random | 3 | 9 | _ | 12 |
 | random_operator | 0 | 1 | _ | 1 |
 | raster | 0 | 0 | 3 | 3 |
 | reflex | 1 | _ | _ | 1 |
 | refresh | 2 | _ | _ | 2 |
 | regression | 0 | 2 | 1 | 3 |
 | save_file | 0 | 2 | 8 | 10 |
-| scheduler | 1 | 2 | 0 | 3 |
+| scheduler | 2 | 2 | 0 | 4 |
 | serialize | 0 | 0 | 0 | 0 |
-| shape | 3 | 21 | 4 | 28 |
-| shapefile | 1 | 2 | 14 | 17 |
+| shape | 3 | 21 | 1 | 25 |
+| shapefile | 2 | 2 | 24 | 28 |
 | shortest_path | 1 | 6 | 4 | 11 |
-| skill | 1 | 16 | 14 | 31 |
+| skill | 2 | 16 | 26 | 44 |
 | sound | 0 | 0 | 0 | 0 |
 | spatial_computation | 0 | 69 | 3 | 72 |
 | spatial_relation | 0 | 28 | 0 | 28 |
@@ -501,21 +503,22 @@ arithmetic, attribute, cast, condition, container, filter, list, logical, loop, 
 | surface_unit | 0 | 4 | _ | 4 |
 | svg | 0 | 2 | 0 | 2 |
 | system | 1 | 10 | 0 | 11 |
-| task_based | 0 | 4 | 0 | 4 |
+| task_based | 1 | 4 | 0 | 5 |
 | ternary | 1 | 2 | 0 | 3 |
 | test | 0 | 3 | 2 | 5 |
-| text | 1 | 10 | 0 | 11 |
+| text | 2 | 10 | 0 | 12 |
 | texture | 0 | 1 | 3 | 4 |
 | tif | 0 | 2 | 1 | 3 |
 | time | 2 | 14 | _ | 16 |
 | time_unit | 0 | 7 | _ | 7 |
-| topology | 2 | 9 | 4 | 15 |
+| topology | 3 | 9 | 4 | 16 |
 | torus | 1 | _ | _ | 1 |
-| transport | 0 | 5 | 3 | 8 |
+| transport | 1 | 5 | 3 | 9 |
 | txt | 0 | 0 | 1 | 1 |
 | type | 0 | 49 | _ | 49 |
 | update | 1 | _ | _ | 1 |
 | volume_unit | 0 | 5 | _ | 5 |
 | weight_unit | 0 | 5 | _ | 5 |
+| world | 1 | _ | _ | 1 |
 | write | 1 | _ | _ | 1 |
 | xml | 0 | 4 | 0 | 4 |
