@@ -2,6 +2,7 @@
 [//]: # (keyword|statement_diffuse)
 [//]: # (keyword|type_matrix)
 [//]: # (keyword|concept_matrix)
+[//]: # (keyword|concept_math)
 # Anisotropic diffusion with several computation method
 
 
@@ -14,15 +15,15 @@ Code of the model :
 
 ```
 
-model diffusion
+model diffusion_computation_method
 
 global{
-	int taille <- 51;
+	int taille <- 64; // better to have a pow of 2 for the size of the grid
   	geometry shape <- envelope(square(taille) * 10);
   	cells_dot selected_cells_dot;
   	cells_convol selected_cells_convol;
   	// Declare the anisotropic matrix (diffuse to the left-upper direction)
-  	matrix<float> math_diff <- matrix([
+  	matrix<float> mat_diff <- matrix([
 									[2/9,2/9,1/9],
 									[2/9,1/9,0.0],
 									[1/9,0.0,0.0]]);
@@ -44,8 +45,8 @@ global{
 	reflex diff {
 		// Declare a diffusion on the grid "cells_dot" (with a dot product computation) and on "cells_convol" (with a convol computation). 
 		// The value of the diffusion will be store in the new variable "phero" of the cell.
-		diffuse var: phero on: cells_dot matrix: math_diff method: "dot_product";	
-		diffuse var: phero on: cells_convol matrix: math_diff method: "convolution";			
+		diffuse var: phero on: cells_dot matrix: mat_diff method: "dot_product";	
+		diffuse var: phero on: cells_convol matrix: mat_diff method: "convolution";			
 	}
 }
 

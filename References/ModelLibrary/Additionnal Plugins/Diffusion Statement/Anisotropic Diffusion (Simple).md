@@ -2,7 +2,8 @@
 [//]: # (keyword|statement_diffuse)
 [//]: # (keyword|type_matrix)
 [//]: # (keyword|concept_matrix)
-# Anisotropic diffusion with mask
+[//]: # (keyword|concept_math)
+# Anisotropic diffusion (Simple)
 
 
 _Author : Benoit Gaudou_
@@ -14,18 +15,22 @@ Code of the model :
 
 ```
 
-model diffusion
+model anisotropic_diffusion
 
 global {
-	int taille <- 51;
+	int taille <- 64; // better to have a pow of 2 for the size of the grid
   	geometry shape <- envelope(square(taille) * 10);
   	cells selected_cells;
   	
   	// Declare the anisotropic matrix (diffuse to the left-upper direction)
-  	matrix<float> math_diff <- matrix([
-									[2/9,2/9,1/9],
+	matrix<float> mat_diff <- matrix([
+									[4/9,2/9,0/9],
 									[2/9,1/9,0.0],
-									[1/9,0.0,0.0]]);
+									[0/9,0.0,0.0]]);
+	
+	reflex diff { 
+		diffuse var: phero on: cells matrix:mat_diff;
+	}
 
 	// Initialize the emiter cell as the cell at the center of the word
 	init {
@@ -34,13 +39,7 @@ global {
 	reflex new_Value {
 		ask selected_cells {
 			phero <- 1.0;
-			write phero;
 		}
-	}
-	
-	reflex diff {
-		// Declare a diffusion on the grid "cells". The value of the diffusion will be store in the new variable "phero" of the cell.
-		diffuse var: phero on: cells matrix: math_diff;	
 	}
 }
 

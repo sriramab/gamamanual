@@ -11,8 +11,17 @@ GAMA provides you the possibility to represent and simulate the diffusion of a v
 
 * [Diffuse statement](#diffuse-statement)
 * [Diffusion with matrix](#diffusion-with-matrix)
+  * [Diffusion matrix](#diffusion-matrix)
+  * [Gradient matrix](#gradient-matrix)
+  * [Compute multiple propagations at the same step](#compute-multiple-propagations-at-the-same-step)
+  * [Executing several diffusion matrix](#execution-several-diffusion-matrix)
 * [Diffusion with parameters](#diffusion-with-parameters)
+* [Computation methods](#computation-methods)
+  * [Convolution](#convolution)
+  * [Dot Product](#dot-product)
 * [Use mask](#using-mask)
+  * [Generalities](#generalities)
+  * [Tips](#tips)
 * [Pseudo code](#pseudo-code)
 
 ## Diffuse statement
@@ -20,16 +29,18 @@ GAMA provides you the possibility to represent and simulate the diffusion of a v
 [//]: # (keyword|statement_diffuse)
 The statement to use for the diffusion is `diffuse`. It has to be used in a `grid` species. The `diffuse` uses the following facets:
 
-* **`var`** : the name of the variable that will be diffused through the grid. This variable has to be declared as an attribute of the grid.
-* **`on`** : the list of agents (usually the entire grid) where the diffusion will occur.
-* `cycle_length` (int): the number of diffusion operation applied in one simulation step.
-* `mat_diffu` (matrix): the diffusion matrix.
-* `mask` (matrix): a matrix masking the diffusion (matrix created from a image for example). The cells corresponding to the values smaller than "-1" in the mask matrix will not diffuse, and the other will diffuse.
-* `method` takes values in: {convolution, dot_product}: the diffusion method
-* `proportion` (float): a diffusion rate (the default value is 1.0)
-* `radius` (int): a diffusion radius (the default value is 1)
-* `variation` (float): an absolute decrease of intensity that occurs between each place. It should be a positive number. (the default value is 1.0)
-* `min_value` (float): the minimal value possible for the diffusion. If the value is smaller than this one, the value will be turn into 0, and will not diffuse (the default value is 0.0, cannot be <0).
+  * **`var`** (an identifier), (omissible) : the variable to be diffused  
+  * **`on`** (any type in [container, species]): the list of agents (in general cells of a grid), on which the diffusion will occur
+  * `avoid_mask` (boolean): if true, the value will not be diffused in the masked cells, but will be restitute to the neighboring cells, multiplied by the variation value (no signal lost). If false, the value will be diffused in the masked cells, but masked cells won't diffuse the value afterward (lost of signal). (default value : false)
+  * `cycle_length` (int): the number of diffusion operation applied in one simulation step
+  * `mask` (matrix): a matrix masking the diffusion (matrix created from a image for example). The cells corresponding to the values smaller than "-1" in the mask matrix will not diffuse, and the other will diffuse.
+  * `matrix` (matrix): the diffusion matrix ("kernel" or "filter" in image processing). Can have any size, as long as dimensions are odd values.
+  * `method` (an identifier), takes values in: {convolution, dot_product}: the diffusion method
+  * `min_value` (float): if a value is smaller than this value, it will not be diffused. By default, this value is equal to 0.0. This value cannot be smaller than 0.
+  * `propagation` (a label), takes values in: {diffusion, gradient}: represents both the way the signal is propagated and the way to treat multiple propagation of the same signal occurring at once from different places. If propagation equals 'diffusion', the intensity of a signal is shared between its neighbors with respect to 'proportion', 'variation' and the number of neighbours of the environment places (4, 6 or 8). I.e., for a given signal S propagated from place P, the value transmitted to its N neighbors is : S' = (S / N / proportion) - variation. The intensity of S is then diminished by S `*` proportion on P. In a diffusion, the different signals of the same name see their intensities added to each other on each place. If propagation equals 'gradient', the original intensity is not modified, and each neighbors receives the intensity : S / proportion - variation. If multiple propagation occur at once, only the maximum intensity is kept on each place. If 'propagation' is not defined, it is assumed that it is equal to 'diffusion'.
+  * `proportion` (float): a diffusion rate
+  * `radius` (int): a diffusion radius (in number of cells from the center)
+  * `variation` (float): an absolute value to decrease at each neighbors 
 
 To write a diffusion, you first have to declare a grid, and declare a special attribute for the diffusion. You will then have to write the `diffuse` statement in an other scope (such as the `global` scope for instance), which will permit the values to be diffused at each step. There, you will specify which variable you want to diffuse (through the **`var`** facet), on which species or list of agents you want the diffusion (through the **`on`** facet), and how you want this value to be diffused (through all the other facets, we will see how it works [with matrix](#diffusion-with-matrix) and [with special parameters](#diffusion-with-parameters) just after).
 
@@ -93,10 +104,10 @@ matrix<float> mat_diff <- matrix([
 		[1/9,1/9,1/9]]);
 ```
 
-In the `diffuse` statement, you than have to specify the matrix of diffusion you want in the facet `mat_diffu`.
+In the `diffuse` statement, you than have to specify the matrix of diffusion you want in the facet `matrix`.
 
 ```
-diffuse var: phero on: cells mat_diffu:mat_diff;
+diffuse var: phero on: cells matrix:mat_diff;
 ```
 
 Using the facet `propagation`, you can specify if you want the value to be propagated as a _diffusion_ or as a _gratient_.
@@ -129,7 +140,7 @@ Here are some example of matrix with gradient propagation:
 
 ![resources/images/recipes/irregular_gradient.png](resources/images/recipes/irregular_gradient.png)
 
-### Compute several propagations at the same step
+### Compute multiple propagations at the same step
 
 You can compute several times the propagation you want by using the facet `cycle_length`. GAMA will compute for you the corresponding new matrix, and will apply it.
 
@@ -145,7 +156,7 @@ Writing those two thinks are exactly equivalent (for diffusion):
 			[2/81,4/81,6/81,4/81,2/81],
 			[1/81,2/81,3/81,2/81,1/81]]);
 	reflex diff {
-		diffuse var: phero on: cells mat_diffu:mat_diff;
+		diffuse var: phero on: cells matrix:mat_diff;
 ```
 ```
 	matrix<float> mat_diff <- matrix([
@@ -153,7 +164,7 @@ Writing those two thinks are exactly equivalent (for diffusion):
 			[1/9,1/9,1/9],
 			[1/9,1/9,1/9]]);
 	reflex diff {
-		diffuse var: phero on: cells mat_diffu:mat_diff cycle_length:2;
+		diffuse var: phero on: cells matrix:mat_diff cycle_length:2;
 ```
 
 ### Executing several diffusion matrix
@@ -194,6 +205,43 @@ Ex with R=2, other parameters default values (R=2, P=1, V=0, N=8):
 
 Note that if you declared a diffusion matrix, you cannot use those 3 facets (it will raise a warning). Note also that if you use parameters, you will only have uniform matrix.
 
+## Computation methods
+
+You can compute the output matrix using two computation methods by using the facet `method` : the dot product and the convolution. Note that the result of those two methods is exactly the same (except if you use the `avoid_mask` facet, the results can be slightly differents between the two computations).
+
+### Convolution
+
+`convolution` is the default computation method for the diffusion. For every output cells, we will multiply the input values and the flipped kernel together, as shown in the following image :
+
+![resources/images/recipes/convolution.png](resources/images/recipes/convolution.png)
+
+Pseudo-code (`k` the kernel, `x` the input matrix, `y` the output matrix) :
+
+```
+for (i = 0 ; i < y.nbRows ; i++)
+  for (j = 0 ; j < y.nbCols ; j++)
+    for (m = 0 ; m < k.nbRows ; m++)
+      for (n = 0 ; n < k.nbCols ; n++)
+        y[i,j] += k[k.nbRows - m - 1, k.nbCols - n - 1] 
+            * x[i - k.nbRows/2 + m, j - k.nbCols/2 + n]
+```
+
+### Dot Product
+
+`dot_product` method will compute the matrix using a simple dot product between the matrix. For every input cells, we multiply the cell by the kernel matrix, as shown in the following image :
+
+![resources/images/recipes/dot_product.png](resources/images/recipes/dot_product.png)
+
+Pseudo-code (`k` the kernel, `x` the input matrix, `y` the output matrix) :
+
+```
+for (i = 0 ; i < y.nbRows ; i++)
+  for (j = 0 ; j < y.nbCols ; j++)
+    for (m = 0 ; m < k.nbRows ; m++)
+      for (n = 0 ; n < k.nbCols ; n++)
+        y[i - k.nbRows/2 + m, j - k.nbCols/2 + n] += k[m, n] * x[i, j]
+```
+
 ## Using mask
 
 ### Generalities
@@ -230,12 +278,14 @@ matrix<float> mat_diff_left_wall <- matrix([
 			[0.0,0.0,2/9]]);
 
 reflex diff { 
-	diffuse var: phero on: (cells where(each.grid_x>30)) mat_diffu:mat_diff;
-	diffuse var: phero on: (cells where(each.grid_x=30)) mat_diffu:mat_diff_left_wall;
+	diffuse var: phero on: (cells where(each.grid_x>30)) matrix:mat_diff;
+	diffuse var: phero on: (cells where(each.grid_x=30)) matrix:mat_diff_left_wall;
 }
 ```
 
 ![resources/images/recipes/wall_simulation.png](resources/images/recipes/wall_simulation.png)
+
+Note that almost the same result can be obtained by using the facet `avoid_mask` : the value of all masked cells will remain at 0, and the value which was supposed to be affected to the masked cell will be distributed to the neighboring cells. Notice that the results can be slightly different if you are using the `convolution` or the `dot_product` method : the algorithm of redistribution of the value to the neighboring cells is a bit different. We advise you to use the `dot_product` with the `avoid_mask` facet, the results are more accurates.
 
 #### Wind pushing the diffusion
 
@@ -258,9 +308,9 @@ matrix<float> mat_wind_from_north <- matrix([
 		[1/9,1/9,1/9]]);
 
 reflex diff { 
-	diffuse var: phero on: cells mat_diffu:mat_diff;
-	diffuse var: phero on: cells mat_diffu:mat_wind_from_north;
-	diffuse var: phero on: (cells where (each.grid_y>=32)) mat_diffu:mat_wind_from_west;
+	diffuse var: phero on: cells matrix:mat_diff;
+	diffuse var: phero on: cells matrix:mat_wind_from_north;
+	diffuse var: phero on: (cells where (each.grid_y>=32)) matrix:mat_wind_from_west;
 }
 ```
 
@@ -288,8 +338,8 @@ matrix<float> mat_diff_upper_edge <- matrix([
 			[1/9,1/9,1/9]]);
 
 reflex diff { 
-	diffuse var: phero on: (cells where(each.grid_y>0)) mat_diffu:mat_diff;
-	diffuse var: phero on: (cells where(each.grid_y=0)) mat_diffu:mat_diff_upper_edge;
+	diffuse var: phero on: (cells where(each.grid_y>0)) matrix:mat_diff;
+	diffuse var: phero on: (cells where(each.grid_y=0)) matrix:mat_diff_upper_edge;
 }
 ```
 
@@ -306,10 +356,10 @@ Here is the pseudo code for the computation of diffusion :
 - Compute the "real" mask, from the facet "mask:" and the facet "on:".
   - If no value for "mask:" and "on:" all the grid, the mask is equal to null.
 - Compute the matrix of diffusion
-  - If no value for "mat_diffu:", compute with "nb_neighbors", "is_gradient", "proportion", "propagation", "variation", "range".
+  - If no value for "matrix:", compute with "nb_neighbors", "is_gradient", "proportion", "propagation", "variation", "range".
   - Then, compute the matrix of diffusion with "cycle_length".
 - Store the diffusion properties in a map
-  - Map : ["method_diffu", "is_gradient", "mat_diffu", "mask", "min_value"] is value, ["var_diffu", "grid_name"] is key.
+  - Map : ["method_diffu", "is_gradient", "matrix", "mask", "min_value"] is value, ["var_diffu", "grid_name"] is key.
   - If the key exists in the map, try to "mix" the diffusions
     - If "method_diffu", "mask" and "is_gradient" equal for the 2 diffusions, mix the diffusion matrix.
 ```
@@ -322,7 +372,7 @@ Here is the pseudo code for the computation of diffusion :
   - Build the "output" and "input" array with the dimension of the grid. 
   - Initialize the "output" array with -Double.MAX_VALUE.
   - For each value of the map for that key,
-    - Load all the properties : "method_diffu", "is_gradient", "mat_diffu", "mask", "min_value"
+    - Load all the properties : "method_diffu", "is_gradient", "matrix", "mask", "min_value"
     - Compute :
       - If the cell is not masked, if the value of input is > min_value, diffuse to the neighbors.
         - If the value of the cell is equal to -Double.MAX_VALUE, remplace it by input[idx] * matDiffu[i][j].

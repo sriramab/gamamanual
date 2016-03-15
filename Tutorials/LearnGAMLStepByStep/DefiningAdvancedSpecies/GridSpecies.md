@@ -107,7 +107,7 @@ grid my_grid {
 ```
 
 ### grid\_value
-The **grid\_value** built-in variable is used when initializing a grid from grid file (see later). It is also used for the 3D representation of [DEM](http://code.google.com/p/gama-platform/wiki/DEM)(TODO_URL).
+The **grid\_value** built-in variable is used when initializing a grid from grid file (see later). It is also used for the 3D representation of DEM.
 
 ## Access to a cell
 
