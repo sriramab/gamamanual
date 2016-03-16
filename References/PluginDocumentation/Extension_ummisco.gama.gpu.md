@@ -28,11 +28,11 @@
 	
     	
 ----
-
+[//]: # (keyword|operator_CPU_path_between)
 ### `CPU_path_between`
 
 #### Possible use: 
-  * OP(`graph`, `geometry`, `geometry`) --->  `path` 
+  *  **`CPU_path_between`** (`graph`, `geometry`, `geometry`) --->  `path` 
 
 #### Result: 
 The shortest path between a list of two objects in a graph computed with CPU
@@ -47,11 +47,11 @@ path var0 <- my_graph CPU_path_between (ag1:: ag2); 	// var0 equals A path betwe
   	
     	
 ----
-
+[//]: # (keyword|operator_GPU_path_between)
 ### `GPU_path_between`
 
 #### Possible use: 
-  * OP(`graph`, `geometry`, `geometry`) --->  `path` 
+  *  **`GPU_path_between`** (`graph`, `geometry`, `geometry`) --->  `path` 
 
 #### Result: 
 The shortest path between a list of two objects in a graph computed with GPU

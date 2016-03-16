@@ -25,6 +25,10 @@ centimeters:cm
 closest:spatial_relation
 cluster:clustering
 crs:gis
+collider:physics_engine
+collider:obstacle
+collision:physics_engine
+collision:obstacle
 communication:fipa
 conversation:fipa
 coordinate:point

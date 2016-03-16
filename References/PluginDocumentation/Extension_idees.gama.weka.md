@@ -28,11 +28,11 @@
 	
     	
 ----
-
+[//]: # (keyword|operator_clustering_cobweb)
 ### `clustering_cobweb`
 
 #### Possible use: 
-  * OP(`list<agent>`, `msi.gama.util.IList<java.lang.String>`, `map<string,unknown>`) --->  `list<list<agent>>` 
+  *  **`clustering_cobweb`** (`list<agent>`, `msi.gama.util.IList<java.lang.String>`, `map<string,unknown>`) --->  `list<list<agent>>` 
 
 #### Result: 
 A list of agent groups clusteredby CobWeb Algorithm based on the given attributes. Some paremeters can be defined: acuity: minimum standard deviation for numeric attributes; cutoff: category utility threshold by which to prune nodes seed
@@ -43,17 +43,18 @@ list<list<agent>> var0 <- clustering_cobweb([ag1, ag2, ag3, ag4, ag5],["size","a
 ```
       
 
-#### See also: [clustering_xmeans](#clustering_xmeans), [clustering_em](#clustering_em), [clustering_farthestFirst](#clustering_farthestfirst), [clustering_simple_kmeans](#clustering_simple_kmeans), [clustering_cobweb](#clustering_cobweb), 
+#### See also: 
+[clustering_xmeans](#clustering_xmeans), [clustering_em](#clustering_em), [clustering_farthestFirst](#clustering_farthestfirst), [clustering_simple_kmeans](#clustering_simple_kmeans), [clustering_cobweb](#clustering_cobweb), 
 
 [Top of the page](#table-of-contents)
   	
     	
 ----
-
+[//]: # (keyword|operator_clustering_DBScan)
 ### `clustering_DBScan`
 
 #### Possible use: 
-  * OP(`list<agent>`, `msi.gama.util.IList<java.lang.String>`, `map<string,unknown>`) --->  `list<list<agent>>` 
+  *  **`clustering_DBScan`** (`list<agent>`, `msi.gama.util.IList<java.lang.String>`, `map<string,unknown>`) --->  `list<list<agent>>` 
 
 #### Result: 
 A list of agent groups clustered by DBScan Algorithm based on the given attributes. Some paremeters can be defined: distance_f: The distance function to use for instances comparison (euclidean or manhattan); min_points: minimun number of DataObjects required in an epsilon-range-queryepsilon: epsilon -- radius of the epsilon-range-queries
@@ -64,17 +65,18 @@ list<list<agent>> var0 <- clustering_DBScan([ag1, ag2, ag3, ag4, ag5],["size","a
 ```
       
 
-#### See also: [clustering_xmeans](#clustering_xmeans), [clustering_em](#clustering_em), [clustering_farthestFirst](#clustering_farthestfirst), [clustering_simple_kmeans](#clustering_simple_kmeans), [clustering_cobweb](#clustering_cobweb), 
+#### See also: 
+[clustering_xmeans](#clustering_xmeans), [clustering_em](#clustering_em), [clustering_farthestFirst](#clustering_farthestfirst), [clustering_simple_kmeans](#clustering_simple_kmeans), [clustering_cobweb](#clustering_cobweb), 
 
 [Top of the page](#table-of-contents)
   	
     	
 ----
-
+[//]: # (keyword|operator_clustering_em)
 ### `clustering_em`
 
 #### Possible use: 
-  * OP(`list<agent>`, `msi.gama.util.IList<java.lang.String>`, `map<string,unknown>`) --->  `list<list<agent>>` 
+  *  **`clustering_em`** (`list<agent>`, `msi.gama.util.IList<java.lang.String>`, `map<string,unknown>`) --->  `list<list<agent>>` 
 
 #### Result: 
 A list of agent groups clustered by EM Algorithm based on the given attributes. Some paremeters can be defined: max_iterations: the maximum number of iterations to perform;num_clusters: the number of clusters; minStdDev: minimum allowable standard deviation
@@ -85,17 +87,18 @@ list<list<agent>> var0 <- clustering_em([ag1, ag2, ag3, ag4, ag5],["size","age",
 ```
       
 
-#### See also: [clustering_xmeans](#clustering_xmeans), [clustering_simple_kmeans](#clustering_simple_kmeans), [clustering_farthestFirst](#clustering_farthestfirst), [clustering_DBScan](#clustering_dbscan), [clustering_cobweb](#clustering_cobweb), 
+#### See also: 
+[clustering_xmeans](#clustering_xmeans), [clustering_simple_kmeans](#clustering_simple_kmeans), [clustering_farthestFirst](#clustering_farthestfirst), [clustering_DBScan](#clustering_dbscan), [clustering_cobweb](#clustering_cobweb), 
 
 [Top of the page](#table-of-contents)
   	
     	
 ----
-
+[//]: # (keyword|operator_clustering_farthestFirst)
 ### `clustering_farthestFirst`
 
 #### Possible use: 
-  * OP(`list<agent>`, `msi.gama.util.IList<java.lang.String>`, `map<string,unknown>`) --->  `list<list<agent>>` 
+  *  **`clustering_farthestFirst`** (`list<agent>`, `msi.gama.util.IList<java.lang.String>`, `map<string,unknown>`) --->  `list<list<agent>>` 
 
 #### Result: 
 A list of agent groups clustered by Farthest First Algorithm based on the given attributes. Some paremeters can be defined: num_clusters: the number of clusters
@@ -106,17 +109,18 @@ list<list<agent>> var0 <- clustering_farthestFirst([ag1, ag2, ag3, ag4, ag5],["s
 ```
       
 
-#### See also: [clustering_xmeans](#clustering_xmeans), [clustering_simple_kmeans](#clustering_simple_kmeans), [clustering_em](#clustering_em), [clustering_DBScan](#clustering_dbscan), [clustering_cobweb](#clustering_cobweb), 
+#### See also: 
+[clustering_xmeans](#clustering_xmeans), [clustering_simple_kmeans](#clustering_simple_kmeans), [clustering_em](#clustering_em), [clustering_DBScan](#clustering_dbscan), [clustering_cobweb](#clustering_cobweb), 
 
 [Top of the page](#table-of-contents)
   	
     	
 ----
-
+[//]: # (keyword|operator_clustering_simple_kmeans)
 ### `clustering_simple_kmeans`
 
 #### Possible use: 
-  * OP(`list<agent>`, `msi.gama.util.IList<java.lang.String>`, `map<string,unknown>`) --->  `list<list<agent>>` 
+  *  **`clustering_simple_kmeans`** (`list<agent>`, `msi.gama.util.IList<java.lang.String>`, `map<string,unknown>`) --->  `list<list<agent>>` 
 
 #### Result: 
 A list of agent groups clustered by K-Means Algorithm based on the given attributes. Some paremeters can be defined: distance_f: The distance function to use. 4 possible distance functions: euclidean (by default) ; 'chebyshev', 'manhattan' or 'levenshtein'; dont_replace_missing_values: if false, replace missing values globally with mean/mode; max_iterations: the maximum number of iterations to perform;num_clusters: the number of clusters
@@ -127,17 +131,18 @@ list<list<agent>> var0 <- clustering_simple_kmeans([ag1, ag2, ag3, ag4, ag5],["s
 ```
       
 
-#### See also: [clustering_xmeans](#clustering_xmeans), [clustering_em](#clustering_em), [clustering_farthestFirst](#clustering_farthestfirst), [clustering_DBScan](#clustering_dbscan), [clustering_cobweb](#clustering_cobweb), 
+#### See also: 
+[clustering_xmeans](#clustering_xmeans), [clustering_em](#clustering_em), [clustering_farthestFirst](#clustering_farthestfirst), [clustering_DBScan](#clustering_dbscan), [clustering_cobweb](#clustering_cobweb), 
 
 [Top of the page](#table-of-contents)
   	
     	
 ----
-
+[//]: # (keyword|operator_clustering_xmeans)
 ### `clustering_xmeans`
 
 #### Possible use: 
-  * OP(`list<agent>`, `msi.gama.util.IList<java.lang.String>`, `map<string,unknown>`) --->  `list<list<agent>>` 
+  *  **`clustering_xmeans`** (`list<agent>`, `msi.gama.util.IList<java.lang.String>`, `map<string,unknown>`) --->  `list<list<agent>>` 
 
 #### Result: 
 A list of agent groups clustered by X-Means Algorithm based on the given attributes. Some paremeters can be defined: bin_value: value given for true value of boolean attributes; cut_off_factor: the cut-off factor to use;distance_f: The distance function to use. 4 possible distance functions: euclidean (by default) ; 'chebyshev', 'manhattan' or 'levenshtein'; max_iterations: the maximum number of iterations to perform; max_kmeans: the maximum number of iterations to perform in KMeans; max_kmeans_for_children: the maximum number of iterations KMeans that is performed on the child centers;max_num_clusters: the maximum number of clusters; min_num_clusters: the minimal number of clusters
@@ -148,7 +153,8 @@ list<list<agent>> var0 <- clustering_xmeans([ag1, ag2, ag3, ag4, ag5],["size","a
 ```
       
 
-#### See also: [clustering_simple_kmeans](#clustering_simple_kmeans), [clustering_em](#clustering_em), [clustering_farthestFirst](#clustering_farthestfirst), [clustering_DBScan](#clustering_dbscan), [clustering_cobweb](#clustering_cobweb), 
+#### See also: 
+[clustering_simple_kmeans](#clustering_simple_kmeans), [clustering_em](#clustering_em), [clustering_farthestFirst](#clustering_farthestfirst), [clustering_DBScan](#clustering_dbscan), [clustering_cobweb](#clustering_cobweb), 
 
 [Top of the page](#table-of-contents)
   	

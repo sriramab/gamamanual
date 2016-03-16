@@ -28,11 +28,11 @@
 	
     	
 ----
-
+[//]: # (keyword|operator_gml_from_wfs)
 ### `gml_from_wfs`
 
 #### Possible use: 
-  * OP(`string`, `string`, `string`) --->  `msi.gama.util.IList<msi.gama.util.IList<java.lang.Object>>` 
+  *  **`gml_from_wfs`** (`string`, `string`, `string`) --->  `msi.gama.util.IList<msi.gama.util.IList<java.lang.Object>>` 
 
 #### Result: 
 WMS: A simple call to WFS/GML2
@@ -41,11 +41,11 @@ WMS: A simple call to WFS/GML2
   	
     	
 ----
-
+[//]: # (keyword|operator_image_from_direct_wms)
 ### `image_from_direct_wms`
 
 #### Possible use: 
-  * `string` OP `string` --->  `file` 
+  * `string` **`image_from_direct_wms`** `string` --->  `file` 
 
 #### Result: 
 WMS: A simple call to WMS
@@ -54,11 +54,11 @@ WMS: A simple call to WMS
   	
     	
 ----
-
+[//]: # (keyword|operator_image_from_wms)
 ### `image_from_wms`
 
 #### Possible use: 
-  * OP(`string`, `string`, `int`, `int`, `int`, `float`, `float`, `float`, `float`) --->  `file` 
+  *  **`image_from_wms`** (`string`, `string`, `int`, `int`, `int`, `float`, `float`, `float`, `float`) --->  `file` 
 
 #### Result: 
 WMS: A simple call to WMS
@@ -67,11 +67,11 @@ WMS: A simple call to WMS
   	
     	
 ----
-
+[//]: # (keyword|operator_read_json_rest)
 ### `read_json_rest`
 
 #### Possible use: 
-  * `string` OP `string` --->  `msi.gama.util.IList<msi.gama.util.IList<java.lang.Object>>` 
+  * `string` **`read_json_rest`** `string` --->  `msi.gama.util.IList<msi.gama.util.IList<java.lang.Object>>` 
 
 #### Result: 
 REST: Read data from RESTService

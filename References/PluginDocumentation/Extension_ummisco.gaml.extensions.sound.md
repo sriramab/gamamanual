@@ -38,7 +38,7 @@
 	
 
 ----
-
+[//]: # (keyword|statement_pause_sound)
 ### pause_sound 
 #### Facets 
 
@@ -53,7 +53,7 @@
 	
 
 ----
-
+[//]: # (keyword|statement_resume_sound)
 ### resume_sound 
 #### Facets 
 
@@ -68,7 +68,7 @@
 	
 
 ----
-
+[//]: # (keyword|statement_start_sound)
 ### start_sound 
 #### Facets 
   
@@ -86,7 +86,7 @@
 	
 
 ----
-
+[//]: # (keyword|statement_stop_sound)
 ### stop_sound 
 #### Facets 
 
