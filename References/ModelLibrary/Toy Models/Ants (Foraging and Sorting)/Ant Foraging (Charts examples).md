@@ -13,6 +13,7 @@
 [//]: # (keyword|concept_gui)
 [//]: # (keyword|concept_skill)
 [//]: # (keyword|concept_grid)
+[//]: # (keyword|concept_diffusion)
 # Ant Foraging (Charts examples)
 
 

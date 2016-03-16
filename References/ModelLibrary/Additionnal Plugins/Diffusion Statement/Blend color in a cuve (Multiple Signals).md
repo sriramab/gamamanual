@@ -1,8 +1,10 @@
 [//]: # (keyword|statement_diffuse)
 [//]: # (keyword|type_matrix)
+[//]: # (keyword|concept_diffusion)
 [//]: # (keyword|concept_matrix)
 [//]: # (keyword|concept_math)
 [//]: # (keyword|concept_color)
+[//]: # (keyword|concept_elevation)
 # Blend color in a cuve
 
 

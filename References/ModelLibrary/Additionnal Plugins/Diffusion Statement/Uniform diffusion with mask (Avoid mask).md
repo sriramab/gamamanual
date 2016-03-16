@@ -3,9 +3,11 @@
 [//]: # (keyword|operator_hsb)
 [//]: # (keyword|statement_diffuse)
 [//]: # (keyword|type_matrix)
+[//]: # (keyword|concept_diffusion)
 [//]: # (keyword|concept_matrix)
 [//]: # (keyword|concept_math)
 [//]: # (keyword|concept_obstacle)
+[//]: # (keyword|concept_elevation)
 # Uniform diffusion with mask (Avoid mask)
 
 
