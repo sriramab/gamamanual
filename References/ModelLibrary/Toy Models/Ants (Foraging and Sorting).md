@@ -12,5 +12,5 @@ This sub-section is composed of the following models :
 
 * [Ant Foraging (Simple)](references#Ants(ForagingandSorting)AntForaging(Simple))
 
-* [Ant Sorting)](references#Ants(ForagingandSorting)AntSorting)
+* [Ant Sorting](references#Ants(ForagingandSorting)AntSorting)
 

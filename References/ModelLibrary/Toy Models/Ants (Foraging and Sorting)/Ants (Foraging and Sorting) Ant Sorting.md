@@ -6,7 +6,7 @@
 [//]: # (keyword|concept_gui)
 [//]: # (keyword|concept_skill)
 [//]: # (keyword|concept_grid)
-# Ant Sorting)
+# Ant Sorting
 
 
 _Author : _
