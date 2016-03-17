@@ -2,11 +2,11 @@
 
 This sub-section is composed of the following models :
 
-* [Falling Balls](references#HelloWorld)
+* [Falling Balls](references#PhysicsEngineHelloWorld)
 
-* [Balls without gravity](references#PerfectGas)
+* [Balls without gravity](references#PhysicsEnginePerfectGas)
 
-* [Pool using Physic Engine](references#Pool)
+* [Pool using Physic Engine](references#PhysicsEnginePool)
 
-* [Water Tank](references#WaterTank)
+* [Water Tank](references#PhysicsEngineWaterTank)
 

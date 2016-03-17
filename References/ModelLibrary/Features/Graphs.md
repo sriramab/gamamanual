@@ -2,19 +2,19 @@
 
 This sub-section is composed of the following models :
 
-* [3D Graph](references#3DGraph)
+* [3D Graph](references#Graphs3DGraph)
 
-* [Graph Generation](references#ClassicGraphGeneration)
+* [Graph Generation](references#GraphsClassicGraphGeneration)
 
-* [Graph Generation using Agents](references#GraphBuildingFromAgents)
+* [Graph Generation using Agents](references#GraphsGraphBuildingFromAgents)
 
-* [Graph from DGS File and Layout Changed](references#GraphLoadingLayout)
+* [Graph from DGS File and Layout Changed](references#GraphsGraphLoadingLayout)
 
-* [Graph Operators](references#GraphOperators)
+* [Graph Operators](references#GraphsGraphOperators)
 
-* [Hand Made Graph](references#HandMadeGraph)
+* [Hand Made Graph](references#GraphsHandMadeGraph)
 
-* [Multigraph](references#Multigraph)
+* [Multigraph](references#GraphsMultigraph)
 
-* [ShortestPath](references#Shortestpaths)
+* [ShortestPath](references#GraphsShortestpaths)
 

@@ -2,17 +2,17 @@
 
 This sub-section is composed of the following models :
 
-* [ Movement of an agent on different paths](references#FollowPath)
+* [ Movement of an agent on different paths](references#AgentmovementFollowPath)
 
-* [ Follow Weighted Network](references#FollowWeightedNetwork(Agents))
+* [ Follow Weighted Network](references#AgentmovementFollowWeightedNetwork(Agents))
 
-* [ Directed Graph Model](references#GotoDirectedGraph)
+* [ Directed Graph Model](references#AgentmovementGotoDirectedGraph)
 
-* [ Movement on a Grid of Cells](references#GotoGrid)
+* [ Movement on a Grid of Cells](references#AgentmovementGotoGrid)
 
-* [ Shortest Path Computation on a Graph](references#GotoNetwork)
+* [ Shortest Path Computation on a Graph](references#AgentmovementGotoNetwork)
 
-* [ Movement on a Graph created by Polygons](references#GotoPolygon)
+* [ Movement on a Graph created by Polygons](references#AgentmovementGotoPolygon)
 
-* [ Movement in 3D](references#Moving3D)
+* [ Movement in 3D](references#AgentmovementMoving3D)
 

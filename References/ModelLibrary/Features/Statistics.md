@@ -2,5 +2,5 @@
 
 This sub-section is composed of the following models :
 
-* [Regression](references#Regression)
+* [Regression](references#StatisticsRegression)
 

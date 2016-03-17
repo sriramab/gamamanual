@@ -2,37 +2,37 @@
 
 This sub-section is composed of the following models :
 
-* [SQLConnection](references#ConnectionTest)
+* [SQLConnection](references#DatabaseUsageConnectionTest)
 
-* [ create_agents_Insert_result_MySQL](references#CreateAgentsandInsertinMySQL)
+* [ create_agents_Insert_result_MySQL](references#DatabaseUsageCreateAgentsandInsertinMySQL)
 
-* [ Simple Species MySql](references#SimpleSpeciesMySQL)
+* [ Simple Species MySql](references#DatabaseUsageSimpleSpeciesMySQL)
 
-* [ Simple SQL Command in SQLIte](references#SimpleSQLCommandinSQLite)
+* [ Simple SQL Command in SQLIte](references#DatabaseUsageSimpleSQLCommandinSQLite)
 
-* [ Agents from Database in MSSQL](references#AgentsfromDatabaseinMSSQL)
+* [ Agents from Database in MSSQL](references#DatabaseUsageAgentsfromDatabaseinMSSQL)
 
-* [ Agents from Database in MySQL](references#AgentsfromDatabaseinMySQL)
+* [ Agents from Database in MySQL](references#DatabaseUsageAgentsfromDatabaseinMySQL)
 
-* [ Agents from Database in PostGIS](references#AgentsfromDatabaseinPostGIS)
+* [ Agents from Database in PostGIS](references#DatabaseUsageAgentsfromDatabaseinPostGIS)
 
-* [ Agents from Database in SQLite ](references#AgentsfromDatabaseinSQLite)
+* [ Agents from Database in SQLite ](references#DatabaseUsageAgentsfromDatabaseinSQLite)
 
-* [ Agents from Database in SQLite QGIS](references#AgentsfromDatabaseinSQLite_QGis)
+* [ Agents from Database in SQLite QGIS](references#DatabaseUsageAgentsfromDatabaseinSQLite_QGis)
 
-* [ Agents to Database in MSSQL](references#AgentstoDatabaseinMSSQL)
+* [ Agents to Database in MSSQL](references#DatabaseUsageAgentstoDatabaseinMSSQL)
 
-* [ Agents to Database in MySQL](references#AgentstoDatabaseinMySQL)
+* [ Agents to Database in MySQL](references#DatabaseUsageAgentstoDatabaseinMySQL)
 
-* [ Agents to Database in PostGIS](references#AgentstoDatabaseinPostGIS)
+* [ Agents to Database in PostGIS](references#DatabaseUsageAgentstoDatabaseinPostGIS)
 
-* [ Agents to Database in SQLite](references#AgentstoDatabaseinSQLite)
+* [ Agents to Database in SQLite](references#DatabaseUsageAgentstoDatabaseinSQLite)
 
-* [ CreateBuildingTableMSSQL](references#CreateSpatialTableinMSSQL)
+* [ CreateBuildingTableMSSQL](references#DatabaseUsageCreateSpatialTableinMSSQL)
 
-* [ CreateBuildingTableMySQL](references#CreateSpatialTableinMySQL)
+* [ CreateBuildingTableMySQL](references#DatabaseUsageCreateSpatialTableinMySQL)
 
-* [ CreateBuildingTablePostGIS](references#CreateSpatialTableinPostGIS)
+* [ CreateBuildingTablePostGIS](references#DatabaseUsageCreateSpatialTableinPostGIS)
 
-* [ CreateBuildingTableSQLite](references#CreateSpatialTableinSQLite)
+* [ CreateBuildingTableSQLite](references#DatabaseUsageCreateSpatialTableinSQLite)
 

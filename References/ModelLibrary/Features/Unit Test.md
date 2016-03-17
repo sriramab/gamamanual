@@ -2,7 +2,7 @@
 
 This sub-section is composed of the following models :
 
-* [Example of Unit Test](references#BasicExample)
+* [Example of Unit Test](references#UnitTestBasicExample)
 
-* [Example of Unit Test](references#TwoSpecies(Example))
+* [Example of Unit Test](references#UnitTestTwoSpecies(Example))
 

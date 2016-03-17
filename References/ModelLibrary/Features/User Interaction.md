@@ -2,9 +2,9 @@
 
 This sub-section is composed of the following models :
 
-* [Event Feature](references#EventLayer)
+* [Event Feature](references#UserInteractionEventLayer)
 
-* [User Command](references#UserCommand)
+* [User Command](references#UserInteractionUserCommand)
 
-* [User Command](references#UserControlArchitecture)
+* [User Command](references#UserInteractionUserControlArchitecture)
 

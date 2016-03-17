@@ -2,11 +2,11 @@
 
 This sub-section is composed of the following models :
 
-* [Casting Syntax](references#Casting)
+* [Casting Syntax](references#SyntaxmodelsCasting)
 
-* [Lists](references#Lists)
+* [Lists](references#SyntaxmodelsLists)
 
-* [Maps](references#Maps)
+* [Maps](references#SyntaxmodelsMaps)
 
-* [Syntax](references#Syntax(1.6))
+* [Syntax](references#SyntaxmodelsSyntax(1.6))
 

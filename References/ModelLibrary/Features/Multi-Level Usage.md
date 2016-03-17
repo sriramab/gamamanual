@@ -2,11 +2,11 @@
 
 This sub-section is composed of the following models :
 
-* [Balls, Groups and Clouds Multilevel Architecture](references#Balls,GroupsandClouds)
+* [Balls, Groups and Clouds Multilevel Architecture](references#Multi-LevelUsageBalls,GroupsandClouds)
 
-* [Corridor Multi-Level Architecture with Mathematics Model and Agent Based Model](references#Corridor(HybridvsABM))
+* [Corridor Multi-Level Architecture with Mathematics Model and Agent Based Model](references#Multi-LevelUsageCorridor(HybridvsABM))
 
-* [Corridor Multi-Level Architecture](references#Corridor)
+* [Corridor Multi-Level Architecture](references#Multi-LevelUsageCorridor)
 
-* [Multi-Level Architecture with Preys and Predators](references#Predators,PreysandShelters)
+* [Multi-Level Architecture with Preys and Predators](references#Multi-LevelUsagePredators,PreysandShelters)
 

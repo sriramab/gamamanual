@@ -2,11 +2,11 @@
 
 This sub-section is composed of the following models :
 
-* [OSM Loading Driving](references#OSMLoadingDriving)
+* [OSM Loading Driving](references#DrivingSkillOSMLoadingDriving)
 
-* [Complex Road Network ](references#RoadTrafficadvanced)
+* [Complex Road Network ](references#DrivingSkillRoadTrafficadvanced)
 
-* [Simple Road Network ](references#RoadTrafficsimple(City))
+* [Simple Road Network ](references#DrivingSkillRoadTrafficsimple(City))
 
-* [Easy Road Network ](references#RoadTrafficsimple(Simpletrack))
+* [Easy Road Network ](references#DrivingSkillRoadTrafficsimple(Simpletrack))
 

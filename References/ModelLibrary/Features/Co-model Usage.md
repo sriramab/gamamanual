@@ -2,5 +2,5 @@
 
 This sub-section is composed of the following models :
 
-* [ComodelAntsBoids](references#comodelAntsBoids_worked)
+* [ComodelAntsBoids](references#Co-modelUsagecomodelAntsBoids_worked)
 

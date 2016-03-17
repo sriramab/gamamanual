@@ -2,17 +2,17 @@
 
 This sub-section is composed of the following models :
 
-* [Anisotropic diffusion (Simple)](references#AnisotropicDiffusion(Simple))
+* [Anisotropic diffusion (Simple)](references#DiffusionStatementAnisotropicDiffusion(Simple))
 
-* [Anisotropic diffusion (Toroidal)](references#AnisotropicDiffusion(Toroidal))
+* [Anisotropic diffusion (Toroidal)](references#DiffusionStatementAnisotropicDiffusion(Toroidal))
 
-* [Anisotropic diffusion with several computation method](references#AnisotropicDiffusion(VariousMethods))
+* [Anisotropic diffusion with several computation method](references#DiffusionStatementAnisotropicDiffusion(VariousMethods))
 
-* [Blend color in a cuve](references#Blendcolorinacuve(MultipleSignals))
+* [Blend color in a cuve](references#DiffusionStatementBlendcolorinacuve(MultipleSignals))
 
-* [Diffusion in a cuve (Cycle length)](references#Diffusioninacuve(Cyclelength))
+* [Diffusion in a cuve (Cycle length)](references#DiffusionStatementDiffusioninacuve(Cyclelength))
 
-* [Uniform diffusion with mask (Avoid mask)](references#Uniformdiffusionwithmask(Avoidmask))
+* [Uniform diffusion with mask (Avoid mask)](references#DiffusionStatementUniformdiffusionwithmask(Avoidmask))
 
-* [Uniform diffusion](references#UniformDiffusion)
+* [Uniform diffusion](references#DiffusionStatementUniformDiffusion)
 

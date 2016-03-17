@@ -2,5 +2,5 @@
 
 This sub-section is composed of the following models :
 
-* [Multicriteria](references#Multicriteria)
+* [Multicriteria](references#MulticriteriadecisionMulticriteria)
 
