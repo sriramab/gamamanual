@@ -92,6 +92,7 @@
   10. [Using GamAnalyzer](G__GamAnalyzer)
   11. [FAQ](G__FAQ)
   12. [Known Issues](G__KnownIssues)
+  13. [Using Comodel](G__Comodel)
 8. [Index](G__Index)
 9. [Extensions](G__Extension)
 
