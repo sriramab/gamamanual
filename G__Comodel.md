@@ -65,5 +65,24 @@ agents "name of layer" value: (<micro-model> . <experiment name> at <number>).<g
 ## More details
 
 
-### Example of the comodel
+## Example of the comodel
 
+
+### Flood model with Evacuation model
+Reusing of  two existing models:Flood Simulation and Evacuation.
+
+Toy Models/Evacuation/models/continuous_move.gaml
+
+![](images/comodel/continuous_move_model_display.png)
+
+Toy Models/Flood Simulation/models/Hydrological Model.gaml
+
+![](images/comodel/hydro_model_display.png)
+
+The comodel explore the effect of flood on evacuation plan:
+
+![](images/comodel/comodel_disp_Flood_Evacuation.png)
+
+Simulation results:
+
+![](images/comodel/comodel_Flood_Evacuation.png)
