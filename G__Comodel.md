@@ -67,6 +67,9 @@ agents "name of layer" value: (<micro-model> . <experiment name> at <number>).<g
 
 ## Example of the comodel
 
+### Urbanization model with Traffic model
+
+![](images/comodel/comodel_urban_traffic.png)
 
 ### Flood model with Evacuation model
 Reusing of  two existing models:Flood Simulation and Evacuation.
