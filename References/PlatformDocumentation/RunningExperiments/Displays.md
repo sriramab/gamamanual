@@ -94,12 +94,12 @@ In addition, the bottom overlay bar provides the Camera position in 3D.
 | **Down**| Horizontal movement to the bottom|
 | **Left**| Horizontal movement to the left |
 | **Right**| Horizontal movement to the right|
-| **SHIFT+Up**| Rotate the model up (rotation around x axis)|
-| **SHIFT+Down**| Rotate the model down (rotation around x axis)|
-| **SHIFT+Left**| Rotate the model left(rotation around y axis)|
-| **SHIFT+Right**| Rotate the model right (rotation around y axis)|
-| **ALT+Left**|   Rotate the model around z axis|
-| **ALT+Right**| Rotate the model around z axis|
+| **SHIFT+Up**| Rotate the model up (decrease the phi angle of the spherical coordinates)|
+| **SHIFT+Down**| Rotate the model down (increase the phi angle of the spherical coordinates)|
+| **SHIFT+Left**| Rotate the model left (increase the theta angle of the spherical coordinates)|
+| **SHIFT+Right**| Rotate the model right (decrease the theta angle of the spherical coordinates)|
+| **F**| Flip the upVector of the camera|
+| **KEYPAD 2,4,6,8**| Quick rotation (increase/decrease phi/theta by 30°)|
 | **CMD+MOUSE1** | Makes the camera rotate around the model |
 | **ALT+MOUSE**| Enables ROI Agent Selection |
 | **SHIFT+MOUSE**| Enables ROI Zoom |
