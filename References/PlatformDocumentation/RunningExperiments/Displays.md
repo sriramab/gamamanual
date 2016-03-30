@@ -99,8 +99,10 @@ In addition, the bottom overlay bar provides the Camera position in 3D.
 | **SHIFT+Left**| Rotate the model left (increase the theta angle of the spherical coordinates)|
 | **SHIFT+Right**| Rotate the model right (decrease the theta angle of the spherical coordinates)|
 | **F**| Flip the upVector of the camera|
+| **SPACE** | Reset the pivot to the center of the envelope |
 | **KEYPAD 2,4,6,8**| Quick rotation (increase/decrease phi/theta by 30°)|
 | **CMD+MOUSE1** | Makes the camera rotate around the model |
-| **ALT+MOUSE**| Enables ROI Agent Selection |
-| **SHIFT+MOUSE**| Enables ROI Zoom |
+| **ALT+LEFT_MOUSE**| Enables ROI Agent Selection |
+| **SHIFT+LEFT_MOUSE**| Enables ROI Zoom |
 | **SCROLL**| Zoom-in/out to the current target (center of the sphere)|
+| **WHEEL CLICK** | Reset the pivot to the center of the envelope |
