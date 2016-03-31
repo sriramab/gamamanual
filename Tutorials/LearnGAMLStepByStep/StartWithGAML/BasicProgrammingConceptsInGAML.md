@@ -71,7 +71,32 @@ experiment myExperiment
 }
 ```
 
-The function write is overloaded for each type of variable (even for the more complex type, such as containers).
+The function `write` is overloaded for each type of variable (even for the more complex type, such as containers).
+
+[//]: # (keyword|concept_nil)
+Note that before being initialized, a variable has the value `nil`.
+
+```
+reflex update {
+	string my_string;
+	write my_string; // this will write "nil".
+	int my_int;
+	write my_int; // this will write "0", which is the default value for int.
+}
+```
+
+`nil` is also a literal you can use to initialize your variable (you can learn more about the concept of literal in this [page](Literals)).
+
+```
+reflex update {
+	string my_string <- "a string";
+	my_string <- nil;
+	write my_string; // this will write "nil".
+	int my_int <- 6;
+	my_int <- nil;
+	write my_int; // this will write "0", which is the default value for int.
+}
+```
 
 [//]: # (keyword|type_point)
 ### The point type
