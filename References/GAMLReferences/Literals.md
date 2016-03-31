@@ -38,7 +38,7 @@ Although they are not strictly literals in the sense given above, some special c
 
 
 
-
+[//]: # (keyword|concept_nil)
 ## Universal Literal
 Finally, a special literal, of type `unknown`, is shared between the data types and all the agent types (aka species). Only `bool`, `int` and `float`, which do not derive from `unknown`, do not accept this literal. All the others will accept it (e.g. `string s <- nil;` is ok).
 
