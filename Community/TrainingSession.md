@@ -21,4 +21,36 @@ The training session was divided into 2 parts :
 |![resources/other/trainingSession/SiemReap2015/photos/theorie.JPG](resources/other/trainingSession/SiemReap2015/photos/theorie.JPG)|![resources/other/trainingSession/SiemReap2015/photos/group_Alexis.JPG](resources/other/trainingSession/SiemReap2015/photos/group_Alexis.JPG)|
 |---|---|
 
+Trainers : Drogoul Alexis, Gaudou Benoit, Trung Quang, Philippon Damien, Mazars Julien.
+
 [Here the link to download the different projects](notDoneYet) (Gama version : 1.61)
+
+## A Glance at Sustainable Urban Development (JTD)
+
+**_July 2014 - Da lat (Vietnam)_**
+
+The JTD ([Journées de Tam Dao](http://www.tamdaoconf.com/)) is an annual gathering of french-talkers researchers during the summer for one week, dealing with a specific subject related to sustainable development. For this 8th JTD, the topic was about sustainable urban development, and a workshop has been made especially about how to use tools as GAMA to build models in order to explore and understand urban spatial dynamics.
+
+Trainers : Drogoul Alexis, Banos Arnaud, Huỳnh Quang Nghi, Trương Chí Quang, Võ Đức Ân.
+
+Here is the link to download the pdf report of the JTD 2014 : https://drive.google.com/file/d/0B2Go6pohIhQcbERhczZRd253UUU/view.
+
+## The perception and Management of Risk (JTD)
+
+**_July 2013 - Da lat (Vietnam)_**
+
+The JTD ([Journées de Tam Dao](http://www.tamdaoconf.com/)) is an annual gathering of french-talkers researchers during the summer for one week, dealing with a specific subject related to sustainable development. For this 7th JTD, the topic was about the perception and management of risks, and a workshop has been made especially about how to use tools as GAMA to build models in order to understand past crises to better understand the present.
+
+Trainers : Alexis Drogoul, Benoit Gaudou, Nasser Gasmi, Arnaud Grignard, Patrick Taillandier, Olivier Tessier, Võ Đức Ân
+
+Here is the link to download the pdf report of the JTD 2013 : https://drive.google.com/file/d/0B2Go6pohIhQcNXFwVllHd2pFdlk/view.
+
+## Water and its many Issues (JTD)
+
+**_July 2012 - Vietnam_**
+
+The JTD ([Journées de Tam Dao](http://www.tamdaoconf.com/)) is an annual gathering of french-talkers researchers during the summer for one week, dealing with a specific subject related to sustainable development. For this 6th JTD, the topic was about the perception and management of risks, and a workshop has been made especially about how to use tools as GAMA to build models with an agent-based approach.
+
+Trainers : Alexis Drogoul, Benoit Gaudou, Arnaud Grignard, Patrick Taillandier, Vỗ Đức Ân
+
+Here is the link to download the pdf report of the JTD 2012 : https://docs.google.com/file/d/0B2Go6pohIhQcUWRKU2hPelNqQmc/view.
