@@ -3,8 +3,6 @@
 [//]: # (keyword|operator_get)
 [//]: # (keyword|operator_not)
 [//]: # (keyword|operator_in)
-[//]: # (keyword|operator_last)
-[//]: # (keyword|operator_overlapping)
 [//]: # (keyword|statement_put)
 [//]: # (keyword|statement_save)
 [//]: # (keyword|concept_load_file)

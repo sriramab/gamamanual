@@ -1,4 +1,3 @@
-[//]: # (keyword|operator_shuffle)
 [//]: # (keyword|operator_in)
 [//]: # (keyword|operator_as_matrix)
 [//]: # (keyword|operator_kappa)

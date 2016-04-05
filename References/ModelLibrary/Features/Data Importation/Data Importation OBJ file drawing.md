@@ -1,5 +1,4 @@
 [//]: # (keyword|operator_\:\:)
-[//]: # (keyword|constant_#orange)
 [//]: # (keyword|concept_load_file)
 [//]: # (keyword|concept_3d)
 [//]: # (keyword|concept_skill)

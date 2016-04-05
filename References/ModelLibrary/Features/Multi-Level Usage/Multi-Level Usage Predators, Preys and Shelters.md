@@ -2,7 +2,6 @@
 [//]: # (keyword|operator_agents_overlapping)
 [//]: # (keyword|operator_sort_by)
 [//]: # (keyword|operator_towards)
-[//]: # (keyword|operator_shuffle)
 [//]: # (keyword|operator_dead)
 [//]: # (keyword|operator_at_location)
 [//]: # (keyword|operator_intersects)
@@ -14,7 +13,6 @@
 [//]: # (keyword|statement_capture)
 [//]: # (keyword|statement_release)
 [//]: # (keyword|architecture_fsm)
-[//]: # (keyword|constant_#orange)
 [//]: # (keyword|concept_multi_level)
 [//]: # (keyword|concept_agent_movement)
 # Multi-Level Architecture with Preys and Predators

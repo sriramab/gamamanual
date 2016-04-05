@@ -1,7 +1,6 @@
 [//]: # (keyword|operator_list_with)
 [//]: # (keyword|operator_sample)
 [//]: # (keyword|operator_any)
-[//]: # (keyword|operator_last)
 [//]: # (keyword|operator_max)
 [//]: # (keyword|operator_among)
 [//]: # (keyword|operator_contains)

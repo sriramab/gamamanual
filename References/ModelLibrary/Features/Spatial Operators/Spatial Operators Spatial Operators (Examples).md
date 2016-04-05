@@ -1,7 +1,6 @@
 [//]: # (keyword|operator_scaled_by)
 [//]: # (keyword|operator_rotated_by)
 [//]: # (keyword|operator_intersects)
-[//]: # (keyword|operator_shuffle)
 [//]: # (keyword|operator_inter)
 [//]: # (keyword|operator_convex_hull)
 [//]: # (keyword|type_topology)

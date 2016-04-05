@@ -12,6 +12,8 @@ This sub-section is composed of the following models :
 
 * [Diffusion in a cuve (Cycle length)](references#DiffusionStatementDiffusioninacuve(Cyclelength))
 
+* [Generate diffusion matrix with parameters](references#DiffusionStatementKernelmatrixgeneration)
+
 * [Uniform diffusion with mask (Avoid mask)](references#DiffusionStatementUniformdiffusionwithmask(Avoidmask))
 
 * [Uniform diffusion](references#DiffusionStatementUniformDiffusion)

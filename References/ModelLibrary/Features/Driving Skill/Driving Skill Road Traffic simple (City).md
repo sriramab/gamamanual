@@ -2,7 +2,6 @@
 [//]: # (keyword|operator_\:\:)
 [//]: # (keyword|operator_with_weights)
 [//]: # (keyword|operator_copy)
-[//]: # (keyword|operator_last)
 [//]: # (keyword|operator_max_of)
 [//]: # (keyword|statement_user_command)
 [//]: # (keyword|statement_switch)

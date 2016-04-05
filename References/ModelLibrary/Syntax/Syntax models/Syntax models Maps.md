@@ -4,7 +4,6 @@
 [//]: # (keyword|operator_\:\:)
 [//]: # (keyword|operator_index_by)
 [//]: # (keyword|operator_group_by)
-[//]: # (keyword|operator_last)
 [//]: # (keyword|operator_max)
 [//]: # (keyword|operator_among)
 [//]: # (keyword|operator_contains)

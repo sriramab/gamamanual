@@ -10,7 +10,6 @@
 [//]: # (keyword|operator_polyline)
 [//]: # (keyword|operator_triangle)
 [//]: # (keyword|operator_hexagon)
-[//]: # (keyword|constant_#orange)
 [//]: # (keyword|concept_3d)
 [//]: # (keyword|concept_shape)
 [//]: # (keyword|concept_texture)

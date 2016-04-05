@@ -1,7 +1,6 @@
 [//]: # (keyword|architecture_fsm)
 [//]: # (keyword|operator_round)
 [//]: # (keyword|operator_sort_by)
-[//]: # (keyword|operator_last)
 [//]: # (keyword|operator_line)
 [//]: # (keyword|operator_font)
 [//]: # (keyword|operator_distance_between)

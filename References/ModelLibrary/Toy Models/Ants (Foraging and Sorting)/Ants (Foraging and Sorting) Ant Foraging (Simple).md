@@ -1,6 +1,5 @@
 [//]: # (keyword|operator_min_of)
 [//]: # (keyword|operator_sort)
-[//]: # (keyword|operator_last)
 [//]: # (keyword|statement_diffuse)
 [//]: # (keyword|statement_event)
 [//]: # (keyword|statement_exhaustive)

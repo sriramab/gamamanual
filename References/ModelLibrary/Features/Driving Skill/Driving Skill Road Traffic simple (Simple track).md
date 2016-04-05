@@ -1,6 +1,5 @@
 [//]: # (keyword|operator_with_min_of)
 [//]: # (keyword|operator_select)
-[//]: # (keyword|operator_last)
 [//]: # (keyword|statement_switch)
 [//]: # (keyword|statement_match)
 [//]: # (keyword|skill_driving)

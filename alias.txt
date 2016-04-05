@@ -60,6 +60,7 @@ exp:e
 event:gui
 environment:global
 factorial:fact
+false:bool
 folder:file
 font:text
 for:loop
@@ -108,9 +109,11 @@ move:agent_movement
 moving:agent_movement
 multiply:*
 multi_model:comodel
+multi_scale:multi_level
 multicriteria:multi_criteria
 multilevel:multi_level
 multimodel:comodel
+multiscale:multi_level
 mutator:attribute
 mutator:set
 myself:pseudo_variable
@@ -118,6 +121,7 @@ neighbor:neighbors
 neighbour:neighbors
 neighbours:neighbors
 negation:!
+null:nil
 ode:equation
 open_street_map:osm
 optimize:optimization
@@ -199,6 +203,7 @@ touches:spatial_relation
 transformation:spatial_transformation
 translation:spatial_transformation
 transparency:layer
+true:bool
 tsv:csv
 type:cast
 undirect:undirected

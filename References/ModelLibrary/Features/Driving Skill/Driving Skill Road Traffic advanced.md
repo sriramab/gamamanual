@@ -1,5 +1,4 @@
 [//]: # (keyword|operator_direction_to)
-[//]: # (keyword|operator_last)
 [//]: # (keyword|operator_abs)
 [//]: # (keyword|operator_not)
 [//]: # (keyword|operator_in)

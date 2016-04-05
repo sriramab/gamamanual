@@ -155,8 +155,8 @@
 			<prerequisite>define_parameters</prerequisite>
 		</prerequisiteList>
 	</learningConcept>
-	<learningConcept id="final_state_machine" x="0.403" y="0.199">
-		<name>Final State\nMachine</name>
+	<learningConcept id="finite_state_machine" x="0.403" y="0.199">
+		<name>Finite State\nMachine</name>
 		<description>finite state machine behavior model\\n("state"/"transition" statements)</description>
 		<prerequisiteList>
 			<prerequisite>regular_species</prerequisite>
@@ -334,7 +334,7 @@
 		<name>Architecture</name>
 		<learningConceptsAssociatedList>
 			<learningConceptAssociated>user_control_architecture</learningConceptAssociated>
-			<learningConceptAssociated>final_state_machine</learningConceptAssociated>
+			<learningConceptAssociated>finite_state_machine</learningConceptAssociated>
 			<learningConceptAssociated>task_based</learningConceptAssociated>
 			<learningConceptAssociated>bdi</learningConceptAssociated>
 		</learningConceptsAssociatedList>
@@ -371,7 +371,7 @@
 			<learningConceptAssociated>diffusion</learningConceptAssociated>
 			<learningConceptAssociated>equation</learningConceptAssociated>
 			<learningConceptAssociated>task_based</learningConceptAssociated>
-			<learningConceptAssociated>final_state_machine</learningConceptAssociated>
+			<learningConceptAssociated>finite_state_machine</learningConceptAssociated>
 		</learningConceptsAssociatedList>
 	</topic>
 	<topic id="database_and_data_mining" x="0.653" y="0.765" sizeBigHallow="70" xBigHallow="0.670" yBigHallow="0.803" color="rgba(243,79,79,1)">

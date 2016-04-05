@@ -5,7 +5,6 @@
 [//]: # (keyword|operator_at_location)
 [//]: # (keyword|operator_intersects)
 [//]: # (keyword|operator_closest_to)
-[//]: # (keyword|operator_overlapping)
 [//]: # (keyword|operator_buffer)
 [//]: # (keyword|operator_polygon)
 [//]: # (keyword|operator_in)

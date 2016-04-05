@@ -10,8 +10,6 @@ This section is composed of the following sub-section :
 
 * [Clustering](references#Clustering)
 
-* [Co-model Usage](references#Co-modelUsage)
-
 * [Color](references#Color)
 
 * [Data Importation](references#DataImportation)

@@ -1,7 +1,6 @@
 [//]: # (keyword|operator_rectangle)
 [//]: # (keyword|operator_at_location)
 [//]: # (keyword|operator_towards)
-[//]: # (keyword|operator_overlapping)
 [//]: # (keyword|statement_capture)
 [//]: # (keyword|statement_release)
 [//]: # (keyword|constant_#pixels)

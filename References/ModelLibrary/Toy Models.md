@@ -6,3 +6,9 @@ This section is composed of the following sub-section :
 
 * [Articles](references#Articles)
 
+* [Boids](references#Boids)
+
+* [Circle](references#Circle)
+
+* [Soccer](references#Soccer)
+
