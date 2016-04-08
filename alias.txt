@@ -200,6 +200,7 @@ tiff:image
 time:time_unit
 time_machine:system
 touches:spatial_relation
+traffic:transport
 transformation:spatial_transformation
 translation:spatial_transformation
 transparency:layer

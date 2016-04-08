@@ -2,7 +2,7 @@
 
 This sub-section is composed of the following models :
 
-* [](references#Co-modelUsageBoids_coupling)
+* [Ants_coupling](references#Co-modelUsageBoids_coupling)
 
 * [ComodelAntsBoids](references#Co-modelUsagecomodelBoidsVoronoi)
 
@@ -14,7 +14,11 @@ This sub-section is composed of the following models :
 
 * [comodel_with_the_coupling](references#Co-modelUsagecomodel_with_the_coupling)
 
+* [Comodel_SIR_Switch](references#Co-modelUsagem1)
+
 * [Comodel_SIR_Switch](references#Co-modelUsagem1_coupling)
+
+* [Comodel_SIR_Switch](references#Co-modelUsagem2)
 
 * [Comodel_SIR_Switch](references#Co-modelUsagem2_coupling)
 
