@@ -1,5 +1,4 @@
 [//]: # (startConcept|monitors_and_inspectors)
-[//]: # (keyword|concept_inspector)
 # Defining monitors and inspectors
 
 Other outputs can be very useful to study better the behavior of your agents.
@@ -9,6 +8,7 @@ Other outputs can be very useful to study better the behavior of your agents.
 * [Define a monitor](#define-a-monitor)
 * [Define an inspector](#define-an-inspector)
 
+[//]: # (keyword|concept_monitor)
 ## Define a monitor
 
 [//]: # (keyword|statement_monitor)
@@ -36,6 +36,7 @@ experiment my_experiment type: gui {
 
 NB : you can also declare monitors during the simulation, by clicking on the button "Add new monitor", and specifying the name of the variable you want to follow.
 
+[//]: # (keyword|concept_inspector)
 ## Define an inspector
 
 [//]: # (keyword|statement_inspector)
