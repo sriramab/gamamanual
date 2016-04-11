@@ -24,6 +24,7 @@ model toto // <- the name of the species is "toto_model"
 
 [//]: # (keyword|statement_create)
 [//]: # (keyword|concept_experiment)
+[//]: # (keyword|concept_multi_simulation)
 New highlight of the day : an **Experiment** is also an agent ! It's a special agent which will instantiate automatically an agent from the model species. You can then perfectly create agents (_model_ agents) from your experiment, using the statement `create` :
 
 ```
