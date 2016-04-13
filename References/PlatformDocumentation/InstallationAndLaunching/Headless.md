@@ -150,10 +150,13 @@ Outputed-directory-path/
           |- ...
 
 ```
-
 * with:
 	* `simulation-output.xml`: containing the results
 	* `snapshot`: containing the snapshots produced during the simulation
+
+Is it possible to change the output directory for the images by adding the attribute "output_path" in the xml : 
+
+If we write `<Output id="1" name="my_display" file:"/F:/path/imageName" framerate="10" />`, then the display "my_display" will have the name "imageName-stepNb.png" and will be written in the folder "/F:/path/"
 
 ## Simulation Output
 A file named `simulation-output.xml` is created with the following contents when the experiment runs.
