@@ -40,6 +40,7 @@ date:time_unit
 decimeters:dm
 destroy:die
 different:!=
+differential:equation
 direct:directed
 direct_graph:directed
 directed_graph:directed
@@ -78,6 +79,7 @@ initialize:init
 input:parameter
 input:gui
 inspect:inspector
+inspector:monitor
 interaction:ask
 interaction:gui
 intersect:spatial_relation
@@ -125,6 +127,8 @@ null:nil
 ode:equation
 open_street_map:osm
 optimize:optimization
+ordinary:equation
+ordinary_differential_equation:equation
 other:pseudo_variable
 output:file
 output:display
@@ -152,6 +156,7 @@ printf:write
 procedure:action
 pseudo:pseudo_variable
 random:random_operator
+read:file
 regression:statistic
 relation:spatial_relation
 repository:file
@@ -228,3 +233,4 @@ weight:graph_weight
 weight:weight_unit
 weight_graph:graph_weight
 while:loop
+write:file

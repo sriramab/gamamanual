@@ -44,6 +44,7 @@ Tutorials
 --UsingBDI
 --UsingDrivingSkill
 --ManipulateDates
+--Comodel
 -Tutorials
 --LuneraysFlu
 ---LuneraysFlu_step1

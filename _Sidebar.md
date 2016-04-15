@@ -73,8 +73,9 @@
 7. [Using BDI](UsingBDI)
 8. [Using Driving Skill](UsingDrivingSkill)
 9. [Manipulate dates](ManipulateDates)
-10. [FAQ](FAQ)
-11. [Known Issues](KnownIssues)
+10. [Using comodel](Comodel)
+11. [FAQ](FAQ)
+12. [Known Issues](KnownIssues)
 
 ## [GAML References](GamlReference)
 1. [Built-in Species](BuiltInSpecies)
