@@ -92,7 +92,8 @@
   2. [Units and Constants](UnitsAndConstants)
   3. [Pseudo Variables](PseudoVariables)
   4. [Variables And Attributes](VariablesAndAttributes)
-  5. [Operators](Operators)
+  5. [Operators [A-K]](OperatorsAK)
+  6. [Operators [L-Z]](OperatorsLZ)
 8. [Index](Index)
 
 ## [Tutorials](Tutorials)
