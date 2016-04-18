@@ -14,8 +14,8 @@
 ----
 
 ## Table of Contents
-
-[fsm](#fsm), [probabilistic_tasks](#probabilistic_tasks), [reflex](#reflex), [simple_bdi](#simple_bdi), [sorted_tasks](#sorted_tasks), [user_first](#user_first), [user_last](#user_last), [user_only](#user_only), [weighted_tasks](#weighted_tasks), 
+<wiki:toc max_depth="3" />
+	[fsm](#fsm), [reflex](#reflex), [simple_bdi](#simple_bdi), [user_first](#user_first), [user_last](#user_last), [user_only](#user_only), 
 
 ----
 [//]: # (keyword|architecture_fsm)
@@ -24,18 +24,6 @@
 	   
 * **`state`** (string): Returns the current state in which the agent is   
 * **`states`** (list): Returns the list of all possible states the agents can be in 
- 	
-### Actions 
-		
-
-[Top of the page](#table-of-contents) 
-	
-
-----
-[//]: # (keyword|architecture_probabilistic_tasks)
-## probabilistic_tasks 
-### Variables
-	 
  	
 ### Actions 
 		
@@ -70,6 +58,7 @@
 * **`plan_persistence`** (float): plan persistence   
 * **`probabilistic_choice`** (boolean):    
 * **`thinking`** (list):    
+* **`uncertainty_base`** (list):    
 * **`use_emotions_architecture`** (boolean):  
  	
 ### Actions 
@@ -102,6 +91,11 @@ adds the predicates is in the desire base.
 * **`predicate`** (546704): predicate name 			
 * **`subintentions`** (546704): the subintention to add to the predicate 			
 * **`add_as_desire`** (boolean): add the subintention as a desire as well (by default, false)  
+	 
+#### **`add_uncertainty`**
+add a predicate in the uncertainty base.
+* returns: bool 			
+* **`predicate`** (map): predicate to check  
 	 
 #### **`clear_beliefs`**
 clear the belief base
@@ -193,6 +187,11 @@ get the list of predicates is in the belief base with the given name.
 get the list of plans.
 * returns: java.util.List<msi.gaml.architecture.simplebdi.BDIPlan>  
 	 
+#### **`get_uncertainty`**
+get the predicates is in the uncertainty base (if several, returns the first one).
+* returns: predicate 			
+* **`predicate`** (546704): predicate to check  
+	 
 #### **`has_belief`**
 check if the predicates is in the belief base.
 * returns: bool 			
@@ -207,6 +206,11 @@ check if the predicates is in the desire base.
 check if the emotion is in the belief base.
 * returns: bool 			
 * **`emotion`** (546706): emotion to check  
+	 
+#### **`has_uncertainty`**
+check if the predicates is in the uncertainty base.
+* returns: bool 			
+* **`predicate`** (546704): predicate to check  
 	 
 #### **`is_current_intention`**
 check if the predicates is the current intention (last entry of intention base).
@@ -239,23 +243,16 @@ removes the predicates from the desire base.
 * **`predicate`** (546704): predicate to add 			
 * **`desire_also`** (boolean): removes also desire  
 	 
+#### **`remove_uncertainty`**
+removes the predicates from the desire base.
+* returns: bool 			
+* **`predicate`** (546704): predicate to add  
+	 
 #### **`replace_belief`**
 replace the old predicate by the new one.
 * returns: bool 			
 * **`old_predicate`** (546704): predicate to remove 			
 * **`predicate`** (546704): predicate to add	
-
-[Top of the page](#table-of-contents) 
-	
-
-----
-[//]: # (keyword|architecture_sorted_tasks)
-## sorted_tasks 
-### Variables
-	 
- 	
-### Actions 
-		
 
 [Top of the page](#table-of-contents) 
 	
@@ -287,18 +284,6 @@ replace the old predicate by the new one.
 ----
 [//]: # (keyword|architecture_user_only)
 ## user_only 
-### Variables
-	 
- 	
-### Actions 
-		
-
-[Top of the page](#table-of-contents) 
-	
-
-----
-[//]: # (keyword|architecture_weighted_tasks)
-## weighted_tasks 
 ### Variables
 	 
  	

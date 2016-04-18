@@ -8,7 +8,7 @@
 
 ## Table of Contents
 <wiki:toc max_depth="2" />
-[=](#=), [action](#action), [add](#add), [agents](#agents), [annealing](#annealing), [ask](#ask), [aspect](#aspect), [assert](#assert), [break](#break), [camera](#camera), [capture](#capture), [chart](#chart), [create](#create), [data](#data), [datalist](#datalist), [default](#default), [diffuse](#diffuse), [display](#display), [display_grid](#display_grid), [display_population](#display_population), [do](#do), [draw](#draw), [else](#else), [enter](#enter), [equation](#equation), [error](#error), [event](#event), [exhaustive](#exhaustive), [exit](#exit), [experiment](#experiment), [export](#export), [focus](#focus), [genetic](#genetic), [graphics](#graphics), [hill_climbing](#hill_climbing), [if](#if), [image](#image), [inspect](#inspect), [let](#let), [loop](#loop), [match](#match), [migrate](#migrate), [monitor](#monitor), [output](#output), [output_file](#output_file), [overlay](#overlay), [parameter](#parameter), [perceive](#perceive), [permanent](#permanent), [plan](#plan), [put](#put), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [release](#release), [remove](#remove), [return](#return), [rule](#rule), [run](#run), [save](#save), [save_batch](#save_batch), [set](#set), [setup](#setup), [simulate](#simulate), [solve](#solve), [species](#species), [state](#state), [status](#status), [switch](#switch), [tabu](#tabu), [task](#task), [test](#test), [trace](#trace), [transition](#transition), [user_command](#user_command), [user_init](#user_init), [user_input](#user_input), [user_panel](#user_panel), [using](#using), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), [warn](#warn), [write](#write), 
+[=](#=), [action](#action), [add](#add), [agents](#agents), [annealing](#annealing), [ask](#ask), [aspect](#aspect), [assert](#assert), [break](#break), [camera](#camera), [capture](#capture), [chart](#chart), [conscious_contagion](#conscious_contagion), [create](#create), [data](#data), [datalist](#datalist), [default](#default), [diffuse](#diffuse), [display](#display), [display_grid](#display_grid), [display_population](#display_population), [do](#do), [draw](#draw), [else](#else), [equation](#equation), [error](#error), [event](#event), [exhaustive](#exhaustive), [experiment](#experiment), [export](#export), [focus](#focus), [genetic](#genetic), [graphics](#graphics), [hill_climbing](#hill_climbing), [if](#if), [image](#image), [inspect](#inspect), [let](#let), [loop](#loop), [match](#match), [migrate](#migrate), [monitor](#monitor), [output](#output), [output_file](#output_file), [overlay](#overlay), [parameter](#parameter), [perceive](#perceive), [permanent](#permanent), [plan](#plan), [put](#put), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [release](#release), [remove](#remove), [return](#return), [rule](#rule), [run](#run), [save](#save), [save_batch](#save_batch), [set](#set), [setup](#setup), [simulate](#simulate), [solve](#solve), [species](#species), [state](#state), [status](#status), [switch](#switch), [tabu](#tabu), [task](#task), [test](#test), [trace](#trace), [transition](#transition), [unconscious_contagion](#unconscious_contagion), [user_command](#user_command), [user_init](#user_init), [user_input](#user_input), [user_panel](#user_panel), [using](#using), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), [warn](#warn), [write](#write), 
 
 
 ## Statements by kinds
@@ -26,9 +26,9 @@
   * **Parameter**
     * [parameter](#parameter),  
   * **Sequence of statements or action**
-    * [action](#action),  [ask](#ask),  [capture](#capture),  [create](#create),  [default](#default),  [else](#else),  [enter](#enter),  [equation](#equation),  [exit](#exit),  [if](#if),  [loop](#loop),  [match](#match),  [migrate](#migrate),  [perceive](#perceive),  [release](#release),  [run](#run),  [setup](#setup),  [switch](#switch),  [trace](#trace),  [transition](#transition),  [user_command](#user_command),  [using](#using),  
+    * [action](#action),  [ask](#ask),  [capture](#capture),  [create](#create),  [default](#default),  [else](#else),  [equation](#equation),  [if](#if),  [loop](#loop),  [match](#match),  [migrate](#migrate),  [perceive](#perceive),  [release](#release),  [run](#run),  [setup](#setup),  [switch](#switch),  [trace](#trace),  [transition](#transition),  [user_command](#user_command),  [using](#using),  
   * **Single statement**
-    * [=](#=),  [add](#add),  [assert](#assert),  [break](#break),  [data](#data),  [datalist](#datalist),  [diffuse](#diffuse),  [do](#do),  [draw](#draw),  [error](#error),  [export](#export),  [focus](#focus),  [let](#let),  [put](#put),  [remove](#remove),  [return](#return),  [rule](#rule),  [save](#save),  [set](#set),  [simulate](#simulate),  [solve](#solve),  [status](#status),  [user_input](#user_input),  [warn](#warn),  [write](#write),  
+    * [=](#=),  [add](#add),  [assert](#assert),  [break](#break),  [conscious_contagion](#conscious_contagion),  [data](#data),  [datalist](#datalist),  [diffuse](#diffuse),  [do](#do),  [draw](#draw),  [error](#error),  [export](#export),  [focus](#focus),  [let](#let),  [put](#put),  [remove](#remove),  [return](#return),  [rule](#rule),  [save](#save),  [set](#set),  [simulate](#simulate),  [solve](#solve),  [status](#status),  [unconscious_contagion](#unconscious_contagion),  [user_input](#user_input),  [warn](#warn),  [write](#write),  
   * **Species**
     * [species](#species),  
   * **Variable (container)**
@@ -42,7 +42,7 @@
 ## Statements by embedment
 
   * **Behavior**
-    * [add](#add), [ask](#ask), [capture](#capture), [create](#create), [diffuse](#diffuse), [do](#do), [error](#error), [focus](#focus), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [run](#run), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [using](#using), [warn](#warn), [write](#write), 
+    * [add](#add), [ask](#ask), [capture](#capture), [conscious_contagion](#conscious_contagion), [create](#create), [diffuse](#diffuse), [do](#do), [error](#error), [focus](#focus), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [run](#run), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [unconscious_contagion](#unconscious_contagion), [using](#using), [warn](#warn), [write](#write), 
   * **Environment**
     * [species](#species), 
   * **Experiment**
@@ -52,7 +52,7 @@
   * **Model**
     * [action](#action), [aspect](#aspect), [equation](#equation), [experiment](#experiment), [output](#output), [reflex](#reflex), [run](#run), [setup](#setup), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
   * **Sequence of statements or action**
-    * [add](#add), [ask](#ask), [break](#break), [capture](#capture), [create](#create), [data](#data), [datalist](#datalist), [diffuse](#diffuse), [do](#do), [draw](#draw), [error](#error), [focus](#focus), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [using](#using), [warn](#warn), [write](#write), 
+    * [add](#add), [ask](#ask), [break](#break), [capture](#capture), [conscious_contagion](#conscious_contagion), [create](#create), [data](#data), [datalist](#datalist), [diffuse](#diffuse), [do](#do), [draw](#draw), [error](#error), [focus](#focus), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [unconscious_contagion](#unconscious_contagion), [using](#using), [warn](#warn), [write](#write), 
   * **Single statement**
     * [run](#run), 
   * **Species**
@@ -81,8 +81,6 @@
     * [task](#task), 
   * **sorted_tasks**
     * [task](#task), 
-  * **state**
-    * [enter](#enter), [exit](#exit), 
   * **switch**
     * [default](#default), [match](#match), 
   * **test**
@@ -105,7 +103,7 @@
 
 ## General syntax
 
-A statement represents either a declaration or an imperative command. It consists in a keyword, followed by specific facets, some of them mandatory (in bold), some of them optional. One of the facet names can be ommitted (the one denoted as omissible). It has to be the first one.
+A statement represents either a declaration or an imperative command. It consists in a keyword, followed by specific facets, some of them mandatory (in bold), some of them optional. One of the facet names can be omitted (the one denoted as omissible). It has to be the first one.
 
 ```
 statement_keyword expression1 facet2: expression2 ... ;
@@ -131,7 +129,7 @@ statement_keyword1 expression1 facet2: expression2... { // a sequence statement
 ### = 
 #### Facets 
   
-  * **`right`** (float), (omissible) : the right part of the equation (it is mandatory that it can be evaluate to a float  
+  * **`right`** (float), (omissible) : the right part of the equation (it is mandatory that it can be evaluated as a float  
   * **`left`** (any type): the left part of the equation (it should be a variable or a call to the diff() or diff2() operators) 
  	
 #### Definition
@@ -140,7 +138,7 @@ Allows to implement an equation in the form function(n, t) = expression. The lef
 
 #### Usages
 
-* The syntax of the = statement is a bit different from the other statements. It hase to be used as follows (in an equation):
+* The syntax of the = statement is a bit different from the other statements. It has to be used as follows (in an equation):
 
 ```
 float t;
@@ -229,7 +227,7 @@ species children parent: parent_species {
 #### Embedments
 * The `action` statement is of type: **Sequence of statements or action**
 * The `action` statement can be embedded into: Species, Experiment, Model, 
-* The `action` statement embeds statements: [#return return],  
+* The `action` statement embeds statements: [return](#return),  
 
 [Top of the page](#table-of-contents)
 		
@@ -244,8 +242,8 @@ species children parent: parent_species {
   * `item` (any type), (omissible) : any expression to add in the container
   * `all` (any type): Allows to either pass a container so as to add all its element, or 'true', if the item to add is already a container.
   * `at` (any type): position in the container of added element
-  * `edge` (any type): a pair that will be added to a graph as an edge (if nodes do not exist, they are also added). Soon to be deprecated, please use 'add edge(..)' instead
-  * `node` (any type): an expression that will be added to a graph as a node. Soon to be deprecated, please use 'add node(...)' instead
+  * `edge` (any type): a pair that will be added to a graph as an edge (if nodes do not exist, they are also added)
+  * `node` (any type): an expression that will be added to a graph as a node.
   * `vertex` (any type): 
   * `weight` (float):  
  	
@@ -283,7 +281,7 @@ add "val1" at: "x" to: workingMap; 	// workingMap equals ["x"::"val1"]
 ```
 
 
-* If the at facet is ommitted, a pair expr_item::expr_item will be added to the map. An important exception is the case where the expr_item is a pair: in this case the pair is added.
+* If the at facet is omitted, a pair expr_item::expr_item will be added to the map. An important exception is the case where the expr_item is a pair: in this case the pair is added.
 
 ```
 add "val2" to: workingMap; 	// workingMap equals ["x"::"val1", "val2"::"val2"]
@@ -371,7 +369,7 @@ display Segregation {
 ```
 
     
-* See also: [display](#display), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
+* See also: [display](#display), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [display_population](#display_population), 
 
 #### Embedments
 * The `agents` statement is of type: **Layer**
@@ -537,7 +535,7 @@ species one_species {
 #### Embedments
 * The `aspect` statement is of type: **Behavior**
 * The `aspect` statement can be embedded into: Species, Model, 
-* The `aspect` statement embeds statements: [#draw draw],  
+* The `aspect` statement embeds statements: [draw](#draw),  
 
 [Top of the page](#table-of-contents)
 		
@@ -549,13 +547,13 @@ species one_species {
 #### Facets 
   
   * **`value`** (any type), (omissible) : the value that is evaluated and compared to other facets
-  * `equals` (any type): an expresion, assert tests whether the value is equals to this expression
+  * `equals` (any type): an expression, assert tests whether the value is equals to this expression
   * `is_not` (any type): an expression, assert tests whether the value is not equals to this expression
-  * `raises` (an identifier): "error" or "warning", used in testing what raises the evaluation of the value: expresion 
+  * `raises` (an identifier): "error" or "warning", used in testing what raises the evaluation of the value: expression 
  	
 #### Definition
 
-Allows to check whether the evaluation of a given expression fulfils a given condition. If it is not fulfilled, an exception is raised.
+Allows to check whether the evaluation of a given expression fulfills a given condition. If it is not fulfilled, an exception is raised.
 
 #### Usages
 
@@ -630,7 +628,7 @@ assert (3/z) raises: "error";
 
 #### Usages
     
-* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
+* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [display_population](#display_population), 
 
 #### Embedments
 * The `camera` statement is of type: **Layer**
@@ -723,7 +721,7 @@ capture target: list (B) as: C;
   * `title_font` (string): 
   * `title_font_size` (int): 
   * `title_font_style` (an identifier), takes values in: {plain, bold, italic}: the style used to display titles
-  * `transparency` (float): the style of the chart
+  * `transparency` (float): the transparency of the chart
   * `type` (an identifier), takes values in: {xy, scatter, histogram, series, pie, box_whisker}: the type of chart. It could be histogram, series, xy, pie or box whisker. The difference between series and xy is that the former adds an implicit x-axis that refers to the numbers of cycles, while the latter considers the first declaration of data to be its x-axis.
   * `x_range` (any type in [float, int, point]): range of the x-axis. Can be a number (which will set the axis total range) or a point (which will set the min and max of the axis).
   * `x_tick_unit` (float): the tick unit for the y-axis (distance between horyzontal lines and values on the left of the axis).
@@ -747,12 +745,46 @@ display chart_display {
 ```
 
     
-* See also: [display](#display), [agents](#agents), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
+* See also: [display](#display), [agents](#agents), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [display_population](#display_population), 
 
 #### Embedments
 * The `chart` statement is of type: **Layer**
 * The `chart` statement can be embedded into: display, 
-* The `chart` statement embeds statements: [#add add],  [#ask ask],  [#data data],  [#datalist datalist],  [#do do],  [#put put],  [#remove remove],  [#set set],  [#simulate simulate],  [#using using],  
+* The `chart` statement embeds statements: [add](#add),  [ask](#ask),  [data](#data),  [datalist](#datalist),  [do](#do),  [put](#put),  [remove](#remove),  [set](#set),  [simulate](#simulate),  [using](#using),  
+
+[Top of the page](#table-of-contents)
+		
+	
+
+----
+[//]: # (keyword|statement_conscious_contagion)
+### conscious_contagion 
+#### Facets 
+  
+  * **`emotion_created`** (546706): the emotion that will be created with the contagion  
+  * **`emotion_detected`** (546706): the emotion that will start the contagion
+  * `name` (an identifier), (omissible) : the identifier of the unconscious contagion
+  * `charisma` (float): The charisma value of the perceived agent (between 0 and 1)
+  * `receptivity` (float): The receptivity value of the current agent (between 0 and 1)
+  * `threshold` (float): The threshold value to make the contagion
+  * `when` (boolean): A boolean value to get the emotion only with a certain condition 
+ 	
+#### Definition
+
+enables to directly add a belief from the variable of a perceived specie.
+
+#### Usages
+
+* Other examples of use: 
+```
+focus var:speed /*where speed is a variable from a species that is being perceived*/ agent: myself
+``` 
+  
+
+#### Embedments
+* The `conscious_contagion` statement is of type: **Single statement**
+* The `conscious_contagion` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `conscious_contagion` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 		
@@ -765,7 +797,7 @@ display chart_display {
 
   * `species` (any type in [species, agent]), (omissible) : an expression that evaluates to a species, the species of the agents to be created. In the case of simulations, the name 'simulation', which represents the current instance of simulation, can also be used as a proxy to their species
   * `as` (species): 
-  * `from` (any type): an expression that evaluates to a localized entity, a list of localized entities, a string (the path of a shapefile, a .csv, a .asc or a OSM file) or a container returned by a request to a database
+  * `from` (any type): an expression that evaluates to a localized entity, a list of localized entities, a string (the path of a file), a file (shapefile, a .csv, a .asc or a OSM file) or a container returned by a request to a database
   * `header` (boolean): an expression that evaluates to a boolean, when creating agents from csv file, specify whether the file header is loaded
   * `number` (int): an expression that evaluates to an int, the number of created agents
   * `returns` (a new identifier): a new temporary variable name containing the list of created agents (a list, even if only one agent has been created)
@@ -887,7 +919,7 @@ create species: a_species number: an_int;
 ### datalist 
 #### Facets 
   
-  * **`value`** (list): the values to display. Has to be a List of List. Each element can be a number (series/histogram) or a list with two values (XY chart)
+  * **`value`** (list): the values to display.Each element can be a number (series/histogram) or a point/list with two values (XY chart)
   * `legend` (list), (omissible) : the name of the series: a list of strings (can be a variable with dynamic names)
   * `categoriesnames` (list): the name of categories (can be a variable with dynamic names)
   * `color` (list): list of colors
@@ -936,14 +968,15 @@ Used in a switch match structure, the block prefixed by default is executed only
 #### Facets 
   
   * **`var`** (an identifier), (omissible) : the variable to be diffused  
-  * **`on`** (container): the list of agents (in general cells of a grid), on which the diffusion will occur
+  * **`on`** (any type in [container, species]): the list of agents (in general cells of a grid), on which the diffusion will occur
+  * `avoid_mask` (boolean): if true, the value will not be diffused in the masked cells, but will be restitute to the neighboring cells, multiplied by the proportion value (no signal lost). If false, the value will be diffused in the masked cells, but masked cells won't diffuse the value afterward (lost of signal). (default value : false)
   * `cycle_length` (int): the number of diffusion operation applied in one simulation step
   * `mask` (matrix): a matrix masking the diffusion (matrix created from a image for example). The cells corresponding to the values smaller than "-1" in the mask matrix will not diffuse, and the other will diffuse.
   * `mat_diffu` (matrix): the diffusion matrix (can have any size)
-  * `matrix` (matrix): the diffusion matrix (can have any size)
+  * `matrix` (matrix): the diffusion matrix ("kernel" or "filter" in image processing). Can have any size, as long as dimensions are odd values.
   * `method` (an identifier), takes values in: {convolution, dot_product}: the diffusion method
   * `min_value` (float): if a value is smaller than this value, it will not be diffused. By default, this value is equal to 0.0. This value cannot be smaller than 0.
-  * `propagation` (a label), takes values in: {diffusion, gradient}: represents both the way the signal is propagated and the way to treat multiple propagations of the same signal occuring at once from different places. If propagation equals 'diffusion', the intensity of a signal is shared between its neighbours with respect to 'proportion', 'variation' and the number of neighbours of the environment places (4, 6 or 8). I.e., for a given signal S propagated from place P, the value transmitted to its N neighbours is : S' = (S / N / proportion) - variation. The intensity of S is then diminished by S `*` proportion on P. In a diffusion, the different signals of the same name see their intensities added to each other on each place. If propagation equals 'gradient', the original intensity is not modified, and each neighbours receives the intensity : S / proportion - variation. If multiple propagations occur at once, only the maximum intensity is kept on each place. If 'propagation' is not defined, it is assumed that it is equal to 'diffusion'.
+  * `propagation` (a label), takes values in: {diffusion, gradient}: represents both the way the signal is propagated and the way to treat multiple propagation of the same signal occurring at once from different places. If propagation equals 'diffusion', the intensity of a signal is shared between its neighbors with respect to 'proportion', 'variation' and the number of neighbours of the environment places (4, 6 or 8). I.e., for a given signal S propagated from place P, the value transmitted to its N neighbors is : S' = (S / N / proportion) - variation. The intensity of S is then diminished by S `*` proportion on P. In a diffusion, the different signals of the same name see their intensities added to each other on each place. If propagation equals 'gradient', the original intensity is not modified, and each neighbors receives the intensity : S / proportion - variation. If multiple propagation occur at once, only the maximum intensity is kept on each place. If 'propagation' is not defined, it is assumed that it is equal to 'diffusion'.
   * `proportion` (float): a diffusion rate
   * `radius` (int): a diffusion radius (in number of cells from the center)
   * `variation` (float): an absolute value to decrease at each neighbors 
@@ -1002,7 +1035,7 @@ diffuse var: phero on: cells proportion: 1/9 radius: 1;
   * `diffuse_light_pos` (point): Allows to define the position of the diffuse light either using an point (diffuse_light_pos:{x,y,z}). default is {world.shape.width/2,world.shape.height/2,world.shape.width`*`2}
   * `draw_diffuse_light` (boolean): Allows to enable/disable the drawing of the diffuse light. Default is false
   * `draw_env` (boolean): Allows to enable/disable the drawing of the world shape and the ordinate axes. Default can be configured in Preferences
-  * `focus` (geometry): the geometry (or agent) on which the displau will (dynamically) focus
+  * `focus` (geometry): the geometry (or agent) on which the display will (dynamically) focus
   * `light` (boolean): Allows to enable/disable the light. Default is true
   * `orthographic_projection` (boolean): Allows to enable/disable the orthographic projection. Default can be configured in Preferences
   * `output3D` (any type in [boolean, point]): 
@@ -1043,7 +1076,7 @@ display gridWithElevationTriangulated type: opengl ambient_light: 100 {
 #### Embedments
 * The `display` statement is of type: **Output**
 * The `display` statement can be embedded into: output, permanent, 
-* The `display` statement embeds statements: [#agents agents],  [#camera camera],  [#chart chart],  [#display_grid display_grid],  [#display_population display_population],  [#event event],  [#graphics graphics],  [#image image],  [#overlay overlay],  
+* The `display` statement embeds statements: [agents](#agents),  [camera](#camera),  [chart](#chart),  [display_grid](#display_grid),  [display_population](#display_population),  [event](#event),  [graphics](#graphics),  [image](#image),  [overlay](#overlay),  
 
 [Top of the page](#table-of-contents)
 		
@@ -1093,7 +1126,7 @@ display my_display {
 ```
 
     
-* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
+* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [image](#image), [overlay](#overlay), [display_population](#display_population), 
 
 #### Embedments
 * The `display_grid` statement is of type: **Layer**
@@ -1156,12 +1189,12 @@ display my_display type: opengl{
 ```
 
     
-* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [text](#text), 
+* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), 
 
 #### Embedments
 * The `display_population` statement is of type: **Layer**
 * The `display_population` statement can be embedded into: display, display_population, 
-* The `display_population` statement embeds statements: [#display_population display_population],  
+* The `display_population` statement embeds statements: [display_population](#display_population),  
 
 [Top of the page](#table-of-contents)
 		
@@ -1262,12 +1295,12 @@ do name_of_action_or_primitive {
   * `depth` (float): (only if the display type is opengl) Add an artificial depth to the geometry previously defined (a line becomes a plan, a circle becomes a cylinder, a square becomes a cube, a polygon becomes a polyhedron with height equal to the depth value). Note: This only works if the geometry is not a point
   * `empty` (boolean): a condition specifying whether the geometry is empty or full
   * `end_arrow` (any type in [int, float]): the size of the arrow, located at the end of the drawn geometry
-  * `font` (any type in [19, string]): the font used to draw the text, if any. Applying this facet to geometries or images has no effect.
+  * `font` (any type in [19, string]): the font used to draw the text, if any. Applying this facet to geometries or images has no effect. You can construct here your font with the operator "font". ex : font:font("Helvetica", 20 , #plain)
   * `perspective` (boolean): Whether to render the text in perspective or facing the user. Default is true.
   * `rotate` (any type in [float, int, pair]): orientation of the shape/text/icon; can be either an int/float (angle) or a pair float::point (angle::rotation axis). The rotation axis, when expressed as an angle, is by defaut {0,0,1}
   * `rounded` (boolean): specify whether the geometry have to be rounded (e.g. for squares)
   * `size` (any type in [float, point]): size of the object to draw, expressed as a bounding box (width, height, depth). If expressed as a float, represents the size in the three directions.
-  * `texture` (any type in [string, list]): the texture that should be applied to the geometry 
+  * `texture` (any type in [string, list]): the texture(s) that should be applied to the geometry. Either a path to a file or a list of paths 
  	
 #### Definition
 
@@ -1339,48 +1372,13 @@ This statement cannot be used alone
 	
 
 ----
-[//]: # (keyword|statement_enter)
-### enter 
-#### Facets 
- 
- 	
-#### Definition
-
-In an FSM architecture, `enter` introduces a sequence of statements to execute upon entering a state.
-
-#### Usages
-
-* In the following example, at the step it enters into the state s_init, the message 'Enter in s_init' is displayed followed by the display of the state name:
-
-```
-	state s_init {
-		enter { write "Enter in" + state; }
-			write "Enter in" + state;
-		}
-		write state;
-	}
-```
-
-    
-* See also: [state](#state), [exit](#exit), [transition](#transition), 
-
-#### Embedments
-* The `enter` statement is of type: **Sequence of statements or action**
-* The `enter` statement can be embedded into: state, 
-* The `enter` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
-
-----
 [//]: # (keyword|statement_equation)
 ### equation 
 #### Facets 
   
   * **`name`** (an identifier), (omissible) : the equation identifier
-  * `params` (list): the list of pramameters used in predefined equation systems
-  * `simultaneously` (list): a list of agents containing a system of equations (all systems will be solved simultaneously)
+  * `params` (list): the list of parameters used in predefined equation systems
+  * `simultaneously` (list): a list of species containing a system of equations (all systems will be solved simultaneously)
   * `type` (an identifier), takes values in: {SI, SIS, SIR, SIRS, SEIR, LV}: the choice of one among classical models (SI, SIS, SIR, SIRS, SEIR, LV)
   * `vars` (list): the list of variables used in predefined equation systems 
  	
@@ -1421,7 +1419,7 @@ equation eqLV type: LV vars: [x,y,t] params: [alpha,beta,delta,gamma] ;
 #### Embedments
 * The `equation` statement is of type: **Sequence of statements or action**
 * The `equation` statement can be embedded into: Species, Model, 
-* The `equation` statement embeds statements: [#= =],  
+* The `equation` statement embeds statements: [=](#=),  
 
 [Top of the page](#table-of-contents)
 		
@@ -1502,7 +1500,7 @@ experiment Simple type:gui {
 ```
 
     
-* See also: [display](#display), [agents](#agents), [chart](#chart), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
+* See also: [display](#display), [agents](#agents), [chart](#chart), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [display_population](#display_population), 
 
 #### Embedments
 * The `event` statement is of type: **Layer**
@@ -1548,44 +1546,6 @@ method exhaustive maximize: food_gathered;
 * The `exhaustive` statement is of type: **Batch method**
 * The `exhaustive` statement can be embedded into: Experiment, 
 * The `exhaustive` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
-
-----
-[//]: # (keyword|statement_exit)
-### exit 
-#### Facets 
- 
- 	
-#### Definition
-
-In an FSM architecture, `exit` introduces a sequence of statements to execute right before exiting the state.
-
-#### Usages
-
-* In the following example, at the state it leaves the state s_init, he will display the message 'EXIT from s_init':
-
-```
-	state s_init initial: true {
-		write state;
-		transition to: s1 when: (cycle > 2) {
-			write "transition s_init -> s1";
-		}
-		exit {
-			write "EXIT from "+state;
-		}
-	}
-```
-
-    
-* See also: [enter](#enter), [state](#state), [transition](#transition), 
-
-#### Embedments
-* The `exit` statement is of type: **Sequence of statements or action**
-* The `exit` statement can be embedded into: state, 
-* The `exit` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 		
@@ -1645,7 +1605,7 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
   * `expression` (any type): an expression that will be the value kept in the belief
   * `priority` (any type in [float, int]): The priority of the created predicate
   * `var` (any type in [any type, list, container]): the variable of the perceived agent you want to add to your beliefs
-  * `when` (boolean): A boolean value to focus only with a certian condition 
+  * `when` (boolean): A boolean value to focus only with a certain condition 
  	
 #### Definition
 
@@ -1744,7 +1704,7 @@ display my_display {
 ```
 
     
-* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
+* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [display_population](#display_population), 
 
 #### Embedments
 * The `graphics` statement is of type: **Layer**
@@ -1865,7 +1825,7 @@ else {
 #### Embedments
 * The `if` statement is of type: **Sequence of statements or action**
 * The `if` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
-* The `if` statement embeds statements: [#else else],  
+* The `if` statement embeds statements: [else](#else),  
 
 [Top of the page](#table-of-contents)
 		
@@ -1929,7 +1889,7 @@ display my_display {
 ```
 
     
-* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
+* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [overlay](#overlay), [display_population](#display_population), 
 
 #### Embedments
 * The `image` statement is of type: **Layer**
@@ -2150,8 +2110,8 @@ switch 3 {
 ### migrate 
 #### Facets 
   
-  * **`source`** (an identifier), (omissible) : can be an agent, a list of agents, a agent's population to be migrated  
-  * **`target`** (an identifier): target species/population that source agent(s) migrate to.
+  * **`source`** (any type in [agent, species, container, an identifier]), (omissible) : can be an agent, a list of agents, a agent's population to be migrated  
+  * **`target`** (species): target species/population that source agent(s) migrate to.
   * `returns` (a new identifier): the list of returned agents in a new local variable 
  	
 #### Definition
@@ -2241,7 +2201,7 @@ experiment exp_name type: gui {
 #### Embedments
 * The `output` statement is of type: **Output**
 * The `output` statement can be embedded into: Model, Experiment, 
-* The `output` statement embeds statements: [#display display],  [#inspect inspect],  [#monitor monitor],  [#output_file output_file],  
+* The `output` statement embeds statements: [display](#display),  [inspect](#inspect),  [monitor](#monitor),  [output_file](#output_file),  
 
 [Top of the page](#table-of-contents)
 		
@@ -2275,25 +2235,31 @@ experiment exp_name type: gui {
 ### overlay 
 #### Facets 
 
-  * `left` (any type), (omissible) : an expression that will be evaluated and displayed in the left section of the overlay
-  * `center` (any type): an expression that will be evaluated and displayed in the center section of the overlay
-  * `color` (any type in [list, rgb]): the color(s) used to display the expressions given in other facets
-  * `right` (any type): an expression that will be evaluated and displayed in the right section of the overlay 
+  * `background` (rgb): the background color of the overlay displayed inside the view (the bottom overlay remains black)
+  * `border` (rgb): Color to apply to the border of the rectangular shape of the overlay. Nil by default
+  * `center` (any type): an expression that will be evaluated and displayed in the center section of the bottom overlay
+  * `color` (any type in [list, rgb]): the color(s) used to display the expressions given in the 'left', 'center' and 'right' facets
+  * `left` (any type): an expression that will be evaluated and displayed in the left section of the bottom overlay
+  * `position` (point): position of the upper-left corner of the overlay. Note that if coordinates are in [0,1[, the position is relative to the size of the view (e.g. {0.5,0.5} refers to the middle of the view) whereas it is absolute when coordinates are greater than 1. When the position is a 3D point {0.5, 0.5, 0.5}, the last coordinate specifies the elevation of the layer.
+  * `right` (any type): an expression that will be evaluated and displayed in the right section of the bottom overlay
+  * `rounded` (boolean): Whether or not the rectangular shape of the overlay should be rounded. True by default
+  * `size` (point): extent of the layer in the view from its position. Coordinates in [0,1[ are treated as percentages of the total surface of the view, while coordinates > 1 are treated as absolute sizes in model units (i.e. considering the model occupies the entire view). Unlike  'position', no elevation can be provided with the z coordinate
+  * `transparency` (float): the transparency rate of the overlay (between 0 and 1, 1 means no transparency) when it is displayed inside the view. The bottom overlay will remain at 0.75 
  	
 #### Definition
 
-`overlay` allows the modeler to display a line to the already existing overlay, where the results of 'left', 'center' and 'right' facets, when they are defined, are displayed with the corresponding color if defined.
+`overlay` allows the modeler to display a line to the already existing bottom overlay, where the results of 'left', 'center' and 'right' facets, when they are defined, are displayed with the corresponding color if defined.
 
 #### Usages
 
-* The general syntax is:
+* To display information in the bottom overlay, the syntax is:
 
 ```
 overlay "Cycle: " + (cycle) center: "Duration: " + total_duration + "ms" right: "Model time: " + as_date(time,"") color: [#yellow, #orange, #yellow];
 ```
 
     
-* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
+* See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [display_population](#display_population), 
 
 #### Embedments
 * The `overlay` statement is of type: **Layer**
@@ -2417,7 +2383,7 @@ permanent {
 #### Embedments
 * The `permanent` statement is of type: **Output**
 * The `permanent` statement can be embedded into: Experiment, 
-* The `permanent` statement embeds statements: [#display display],  [#inspect inspect],  [#monitor monitor],  [#output_file output_file],  
+* The `permanent` statement embeds statements: [display](#display),  [inspect](#inspect),  [monitor](#monitor),  [output_file](#output_file),  
 
 [Top of the page](#table-of-contents)
 		
@@ -2429,10 +2395,12 @@ permanent {
 #### Facets 
 
   * `name` (an identifier), (omissible) : 
+  * `emotion` (546706): 
   * `finished_when` (boolean): 
   * `instantaneous` (boolean): 
-  * `intention` (any type): 
+  * `intention` (546704): 
   * `priority` (float): 
+  * `threshold` (float): 
   * `when` (boolean): 
 
 #### Embedments
@@ -2596,7 +2564,7 @@ reflex my_reflex when: flip (0.5){ 		//Only executed when flip returns true
   
   * **`target`** (any type in [agent, list]), (omissible) : an expression that is evaluated as an agent or a list of the agents to be released
   * `as` (species): an expression that is evaluated as a species in which the micro-agent will be released
-  * `in` (agent): an expresion that is evaluated as an agent that will be the macro-agent in which micro-agent will be released, i.e. their new host
+  * `in` (agent): an expression that is evaluated as an agent that will be the macro-agent in which micro-agent will be released, i.e. their new host
   * `returns` (a new identifier): a new variable containing a list of the newly released agent(s) 
  	
 #### Definition
@@ -2657,10 +2625,10 @@ release list (C) as: new_species in: new host;
   * **`from`** (any type in [container, species, agent, geometry]): an expression that evaluates to a container
   * `item` (any type), (omissible) : any expression to remove from the container
   * `all` (any type): an expression that evaluates to a container. If it is true and if the value a list, it removes the first instance of each element of the list. If it is true and the value is not a container, it will remove all instances of this value.
-  * `edge` (any type): Indicates that the item to remove should be considered as an edge of the receiving graph. Soon to be deprecated, use 'remove edge(item)...' instead
+  * `edge` (any type): Indicates that the item to remove should be considered as an edge of the receiving graph
   * `index` (any type): any expression, the key at which to remove the element from the container
   * `key` (any type): any expression, the key at which to remove the element from the container
-  * `node` (any type): Indicates that the item to remove should be considered as a node of the receiving graph. Soon to be deprecated, use 'remove node(item)...' instead
+  * `node` (any type): Indicates that the item to remove should be considered as a node of the receiving graph
   * `vertex` (any type):  
  	
 #### Definition
@@ -2679,7 +2647,7 @@ remove all: expr from: expr_container;
 ```
 
 
-* In the case of list, the facet `item:` is used to remove the first occurence of a given expression, whereas `all` is used to remove all the occurences of the given expression.
+* In the case of list, the facet `item:` is used to remove the first occurence of a given expression, whereas `all` is used to remove all the occurrences of the given expression.
 
 ```
 list<int> removeList <- [3,2,1,2,3];
@@ -2811,12 +2779,19 @@ reflex writing {
   * `name` (an identifier), (omissible) : The name of the rule
   * `belief` (546704): The mandatory belief
   * `desire` (546704): The mandatory desire
+  * `emotion` (546706): The mandatory emotion
   * `new_belief` (546704): The belief that will be added
   * `new_desire` (546704): The desire that will be added
+  * `new_emotion` (546706): The emotion that will be added
+  * `new_uncertainty` (546704): The uncertainty that will be added
   * `priority` (any type in [float, int]): The priority of the predicate added as a desire
   * `remove_belief` (546704): The belief that will be removed
   * `remove_desire` (546704): The desire that will be removed
+  * `remove_emotion` (546706): The emotion that will be removed
   * `remove_intention` (546704): The intention that will be removed
+  * `remove_uncertainty` (546704): The uncertainty that will be removed
+  * `threshold` (float): Threshold linked to the emotion.
+  * `uncertainty` (546704): The mandatory uncertainty
   * `when` (boolean):  
  	
 #### Definition
@@ -2872,7 +2847,7 @@ rule belief: new_predicate("test") when: flip(0.5) new_desire: new_predicate("te
   * `crs` (any type): the name of the projection, e.g. crs:"EPSG:4326" or its EPSG id, e.g. crs:4326. Here a list of the CRS codes (and EPSG id): http://spatialreference.org
   * `header` (boolean): an expression that evaluates to a boolean, specifying whether the save will write a header if the file does not exist
   * `rewrite` (boolean): an expression that evaluates to a boolean, specifying whether the save will ecrase the file or append data at the end of it
-  * `type` (an identifier): an expression that evaluates to an string, the type of the output file (it can be only "shp", "text" or "csv")
+  * `type` (an identifier), takes values in: {shp, text, csv, asc}: an expression that evaluates to an string, the type of the output file (it can be only "shp", "asc", "text" or "csv")
   * `with` (map):  
  	
 #### Definition
@@ -2981,7 +2956,7 @@ The setup statement is used to define the set of instructions that will be execu
 
 #### Usages
 
-* As every test should be independant from the others, the setup will mainly contain initialization of variables that will be used in each test.
+* As every test should be independent from the others, the setup will mainly contain initialization of variables that will be used in each test.
 
 ```
 species Tester {
@@ -3053,7 +3028,7 @@ ask receiver_agent(s) {
   
   * **`equation`** (an identifier), (omissible) : the equation system identifier to be numerically solved
   * `cycle_length` (int): length of simulation cycle which will be synchronize with step of integrator (default value: 1)
-  * `discretizing_step` (int): number of discret beside 2 step of simulation (default value: 0)
+  * `discretizing_step` (int): number of discrete between 2 steps of simulation (default value: 0)
   * `integrated_times` (list): time interval inside integration process
   * `integrated_values` (list): list of variables's value inside integration process
   * `max_step` (float): maximal step, (used with dp853 method only), (sign is irrelevant, regardless of integration direction, forward or backward), the last step can be smaller than this value
@@ -3096,7 +3071,7 @@ solve SIR method: "rk4" step:0.001;
   * `cell_width` (float): (grid only), the width of the cells of the grid
   * `compile` (boolean): 
   * `control` (22): defines the architecture of the species (e.g. fsm...)
-  * `edge_species` (an identifier): In the case of a species defining a graph topology for its instances (nodes of the graph), specifies the species to use for representing the edges
+  * `edge_species` (species): In the case of a species defining a graph topology for its instances (nodes of the graph), specifies the species to use for representing the edges
   * `file` (file): (grid only), a bitmap file that will be loaded at runtime so that the value of each pixel  can be assigned to the attribute 'grid_value'
   * `frequency` (int): The execution frequency of the species (default value: 1). For instance, if frequency is set to 10, the population of agents will be executed only every 10 cycles.
   * `height` (int): (grid only),  the height of the grid (in terms of agent number)
@@ -3206,7 +3181,7 @@ A state, like a reflex, can contains several statements that can be executed at 
 #### Embedments
 * The `state` statement is of type: **Behavior**
 * The `state` statement can be embedded into: fsm, Species, Experiment, Model, 
-* The `state` statement embeds statements: [#enter enter],  [#exit exit],  
+* The `state` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 		
@@ -3287,7 +3262,7 @@ switch 3 {
 #### Embedments
 * The `switch` statement is of type: **Sequence of statements or action**
 * The `switch` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
-* The `switch` statement embeds statements: [#default default],  [#match match],  
+* The `switch` statement embeds statements: [default](#default),  [match](#match),  
 
 [Top of the page](#table-of-contents)
 		
@@ -3368,7 +3343,7 @@ As reflex, a task is a sequence of statements that can be executed, at each time
  	
 #### Definition
 
-The test statement allows modeler to define a set of assertions that will be tested. Before the execution of the embeded set of instructions, if a setup is defined in the species, model or experiment, it is executed. In a test, if one assertion fails, the evaluation of other assertions continue (if GAMA is configured in the preferences that the program does not stop at the first exception).
+The test statement allows modeler to define a set of assertions that will be tested. Before the execution of the embedded set of instructions, if a setup is defined in the species, model or experiment, it is executed. In a test, if one assertion fails, the evaluation of other assertions continue (if GAMA is configured in the preferences that the program does not stop at the first exception).
 
 #### Usages
 
@@ -3394,7 +3369,7 @@ species Tester {
 #### Embedments
 * The `test` statement is of type: **Behavior**
 * The `test` statement can be embedded into: Species, Experiment, Model, 
-* The `test` statement embeds statements: [#assert assert],  
+* The `test` statement embeds statements: [assert](#assert),  
 
 [Top of the page](#table-of-contents)
 		
@@ -3460,14 +3435,49 @@ In an FSM architecture, `transition` specifies the next state of the life cycle.
 	
 
 ----
+[//]: # (keyword|statement_unconscious_contagion)
+### unconscious_contagion 
+#### Facets 
+  
+  * **`emotion`** (546706): the emotion that will be copied with the contagion
+  * `name` (an identifier), (omissible) : the identifier of the unconscious contagion
+  * `charisma` (float): The charisma value of the perceived agent (between 0 and 1)
+  * `receptivity` (float): The receptivity value of the current agent (between 0 and 1)
+  * `threshold` (float): The threshold value to make the contagion
+  * `when` (boolean): A boolean value to get the emotion only with a certain condition 
+ 	
+#### Definition
+
+enables to directly add a belief from the variable of a perceived specie.
+
+#### Usages
+
+* Other examples of use: 
+```
+focus var:speed /*where speed is a variable from a species that is being perceived*/ agent: myself
+``` 
+  
+
+#### Embedments
+* The `unconscious_contagion` statement is of type: **Single statement**
+* The `unconscious_contagion` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `unconscious_contagion` statement embeds statements: 
+
+[Top of the page](#table-of-contents)
+		
+	
+
+----
 [//]: # (keyword|statement_user_command)
 ### user_command 
 #### Facets 
   
   * **`name`** (a label), (omissible) : the identifier of the user_command
-  * `action` (an identifier): the identifier of the action to be executed
-  * `when` (boolean): the condition that should be fulfille in order that the action is executed
-  * `with` (map): the map of the parameters::values that requires the action 
+  * `action` (an identifier): the identifier of the action to be executed. This action should be accessible in the context in which it is defined (an experiment, the global section or a species). A special case is allowed to maintain the compatibility with older versions of GAMA, when the user_command is declared in an experiment and the action is declared in 'global'. In that case, all the simulations managed by the experiment will run the action in response to the user executing the command
+  * `color` (rgb): The color of the button to display
+  * `continue` (boolean): Whether or not the button, when clicked, should dismiss the user panel it is defined in. Has no effect in other contexts (menu, parameters, inspectors)
+  * `when` (boolean): the condition that should be fulfilled (in addition to the user clicking it) in order to execute this action
+  * `with` (map): the map of the parameters::values required by the action 
  	
 #### Definition
 
@@ -3487,7 +3497,7 @@ user_command kill_myself action: some_action with: [arg1::val1, arg2::val2, ...]
 #### Embedments
 * The `user_command` statement is of type: **Sequence of statements or action**
 * The `user_command` statement can be embedded into: user_panel, Species, Experiment, Model, 
-* The `user_command` statement embeds statements: [#user_input user_input],  
+* The `user_command` statement embeds statements: [user_input](#user_input),  
 
 [Top of the page](#table-of-contents)
 		
@@ -3512,7 +3522,7 @@ Used in the user control architecture, user_init is executed only once when the 
 #### Embedments
 * The `user_init` statement is of type: **Behavior**
 * The `user_init` statement can be embedded into: Species, Experiment, Model, 
-* The `user_init` statement embeds statements: [#user_panel user_panel],  
+* The `user_init` statement embeds statements: [user_panel](#user_panel),  
 
 [Top of the page](#table-of-contents)
 		
@@ -3591,7 +3601,7 @@ user_panel "Advanced Control" {
 #### Embedments
 * The `user_panel` statement is of type: **Behavior**
 * The `user_panel` statement can be embedded into: fsm, user_first, user_last, user_init, user_only, Species, Experiment, Model, 
-* The `user_panel` statement embeds statements: [#user_command user_command],  
+* The `user_panel` statement embeds statements: [user_command](#user_command),  
 
 [Top of the page](#table-of-contents)
 		

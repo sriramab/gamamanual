@@ -54,7 +54,7 @@ if speed = 5 {
 ## Table of Contents
 <wiki:toc max_depth="3" />
 
-[advanced_driving](#advanced_driving), [communicating](#communicating), [driving](#driving), [GAMASQL](#gamasql), [grid](#grid), [MDXSKILL](#mdxskill), [moving](#moving), [moving3D](#moving3d), [network](#network), [physical3D](#physical3d), [skill_road](#skill_road), [skill_road_node](#skill_road_node), [SQLSKILL](#sqlskill), 
+[advanced_driving](#advanced_driving), [driving](#driving), [fipa](#fipa), [GAMASQL](#gamasql), [grid](#grid), [MDXSKILL](#mdxskill), [moving](#moving), [moving3D](#moving3d), [network](#network), [physics](#physics), [skill_road](#skill_road), [skill_road_node](#skill_road_node), [SQLSKILL](#sqlskill), 
     	
 ----
 [//]: # (keyword|skill_advanced_driving)
@@ -157,9 +157,53 @@ action to test if the driver can take the given road
 	
     	
 ----
-[//]: # (keyword|skill_communicating)
-## communicating
-The communicating skill offers some primitives and built-in variables which enable agent to communicate with each other using the FIPA interaction protocol.
+[//]: # (keyword|skill_driving)
+## driving
+
+ 
+### Variables
+	   
+  * **`lanes_attribute`** (`string`): the name of the attribut of the road agent that determine the number of road lanes   
+  * **`living_space`** (`float`): the min distance between the agent and an obstacle (in meter)   
+  * **`obstacle_species`** (`list`): the list of species that are considered as obstacles   
+  * **`speed`** (`float`): the speed of the agent (in meter/second)   
+  * **`tolerance`** (`float`): the tolerance distance used for the computation (in meter) 
+ 	
+### Actions
+	  
+	 
+#### **`follow_driving`**
+moves the agent along a given path passed in the arguments while considering the other agents in the network.
+
+* returns: path 			
+* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
+* **`path`** (path): a path to be followed. 			
+* **`return_path`** (boolean): if true, return the path followed (by default: false) 			
+* **`move_weights`** (map): Weigths used for the moving. 			
+* **`living_space`** (float): min distance between the agent and an obstacle (replaces the current value of living_space) 			
+* **`tolerance`** (float): tolerance distance used for the computation (replaces the current value of tolerance) 			
+* **`lanes_attribute`** (string): the name of the attribut of the road agent that determine the number of road lanes (replaces the current value of lanes_attribute)  
+	 
+#### **`goto_driving`**
+moves the agent towards the target passed in the arguments while considering the other agents in the network (only for graph topology)
+
+* returns: path 			
+* **`target`** (point,geometry,agent): the location or entity towards which to move. 			
+* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
+* **`on`** (list,agent,graph,geometry): list, agent, graph, geometry that restrains this move (the agent moves inside this geometry) 			
+* **`return_path`** (boolean): if true, return the path followed (by default: false) 			
+* **`move_weights`** (map): Weigths used for the moving. 			
+* **`living_space`** (float): min distance between the agent and an obstacle (replaces the current value of living_space) 			
+* **`tolerance`** (float): tolerance distance used for the computation (replaces the current value of tolerance) 			
+* **`lanes_attribute`** (string): the name of the attribut of the road agent that determine the number of road lanes (replaces the current value of lanes_attribute)	
+
+[Top of the page](#table-of-contents)
+	
+    	
+----
+[//]: # (keyword|skill_fipa)
+## fipa
+The fipa skill offers some primitives and built-in variables which enable agent to communicate with each other using the FIPA interaction protocol.
  
 ### Variables
 	   
@@ -303,50 +347,6 @@ Replies a message with a 'subscribe' performative message.
 	
     	
 ----
-[//]: # (keyword|skill_driving)
-## driving
-
- 
-### Variables
-	   
-  * **`lanes_attribute`** (`string`): the name of the attribut of the road agent that determine the number of road lanes   
-  * **`living_space`** (`float`): the min distance between the agent and an obstacle (in meter)   
-  * **`obstacle_species`** (`list`): the list of species that are considered as obstacles   
-  * **`speed`** (`float`): the speed of the agent (in meter/second)   
-  * **`tolerance`** (`float`): the tolerance distance used for the computation (in meter) 
- 	
-### Actions
-	  
-	 
-#### **`follow_driving`**
-moves the agent along a given path passed in the arguments while considering the other agents in the network.
-
-* returns: path 			
-* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
-* **`path`** (path): a path to be followed. 			
-* **`return_path`** (boolean): if true, return the path followed (by default: false) 			
-* **`move_weights`** (map): Weigths used for the moving. 			
-* **`living_space`** (float): min distance between the agent and an obstacle (replaces the current value of living_space) 			
-* **`tolerance`** (float): tolerance distance used for the computation (replaces the current value of tolerance) 			
-* **`lanes_attribute`** (string): the name of the attribut of the road agent that determine the number of road lanes (replaces the current value of lanes_attribute)  
-	 
-#### **`goto_driving`**
-moves the agent towards the target passed in the arguments while considering the other agents in the network (only for graph topology)
-
-* returns: path 			
-* **`target`** (point,geometry,agent): the location or entity towards which to move. 			
-* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
-* **`on`** (list,agent,graph,geometry): list, agent, graph, geometry that restrains this move (the agent moves inside this geometry) 			
-* **`return_path`** (boolean): if true, return the path followed (by default: false) 			
-* **`move_weights`** (map): Weigths used for the moving. 			
-* **`living_space`** (float): min distance between the agent and an obstacle (replaces the current value of living_space) 			
-* **`tolerance`** (float): tolerance distance used for the computation (replaces the current value of tolerance) 			
-* **`lanes_attribute`** (string): the name of the attribut of the road agent that determine the number of road lanes (replaces the current value of lanes_attribute)	
-
-[Top of the page](#table-of-contents)
-	
-    	
-----
 [//]: # (keyword|skill_GAMASQL)
 ## GAMASQL
 
@@ -389,8 +389,9 @@ moves the agent towards the target passed in the arguments while considering the
  
 ### Variables
 	   
+  * **`bands`** (`list`): Represents the values of the different bands of the cell (list of floating point value automatically set when the grid is initialized from a grid file)   
   * **`color`** (`rgb`): Represents the color of the cell, used by default to represent the grid on displays   
-  * **`grid_value`** (`float`): Represents a floating point value (automatically set when the grid is initialized from a DEM, and used by default to represent the elevation of the cell when displaying it on a display)   
+  * **`grid_value`** (`float`): Represents a floating point value (automatically set when the grid is initialized from a grid file, and used by default to represent the elevation of the cell when displaying it on a display)   
   * **`grid_x`** (`int`): Returns the 0-based index of the column of the cell in the grid   
   * **`grid_y`** (`int`): Returns the 0-based index of the row of the cell in the grid   
   * **`neighbors`** (`list`): Represents the neighbor at distance 1 of the cell 
@@ -446,7 +447,7 @@ The moving skill is intended to define the minimal set of behaviours required fo
 	   
   * **`destination`** (`point`): Represents the next location of the agent if it keeps its current speed and heading (read-only)   
   * **`heading`** (`int`): Represents the absolute heading of the agent in degrees (in the range 0-359)   
-  * **`location`** (`point`):    
+  * **`location`** (`point`): Represents the current position of the agent   
   * **`speed`** (`float`): Represents the speed of the agent (in meter/second) 
  	
 ### Actions
@@ -561,8 +562,8 @@ Send a message to a destination.
 	
     	
 ----
-[//]: # (keyword|skill_physical3D)
-## physical3D
+[//]: # (keyword|skill_physics)
+## physics
 
  
 ### Variables
@@ -571,7 +572,7 @@ Send a message to a destination.
   * **`density`** (`float`):    
   * **`mass`** (`float`):    
   * **`motor`** (`point`):    
-  * **`physical_3D_world`** (`agent`):    
+  * **`space`** (`agent`):    
   * **`velocity`** (`list`):  
  	
 ### Actions
@@ -590,7 +591,7 @@ Send a message to a destination.
   * **`agents_on`** (`list`): for each lane of the road, the list of agents for each segment   
   * **`all_agents`** (`list`): the list of agents on the road   
   * **`lanes`** (`int`): the number of lanes   
-  * **`linked_road`** (`agent`): the linked road: the lanes of this linked road will be usable by drivers on the road   
+  * **`linked_road`** (`-18`): the linked road: the lanes of this linked road will be usable by drivers on the road   
   * **`maxspeed`** (`float`): the maximal speed on the road   
   * **`source_node`** (`agent`): the source node of the road   
   * **`target_node`** (`agent`): the target node of the road 
