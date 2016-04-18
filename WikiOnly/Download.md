@@ -1,25 +1,25 @@
-# Download GAMA 1.6.1
+# Download GAMA
 
+## Latest beta release of GAMA (1.7 beta 1)
+* GAMA for Windows 64 bits [Download](http://51.255.46.42/releases/gama1_7_b1_win64.exe ) 
+* GAMA for Windows 32 bits [Download](http://51.255.46.42/releases/gama1_7_b1_win32.exe )  
+* GAMA for OSX 64 bits  [Download](http://51.255.46.42/releases/gama1_7_b1_OSX.zip ) 
+* GAMA for Linux 64 bits [Download](http://51.255.46.42/releases/gama1_7_b1_linux64.zip) 
+* GAMA for Linux 32 bits [Download](http://51.255.46.42/releases/gama1_7_b1_linux32.zip) 
 
+## Latest release of GAMA (1.6.1)
+* GAMA for Windows 64 bits [Download](http://51.255.46.42/releases/gama1_6_1_win64.zip ) 
+* GAMA for Windows 32 bits [Download](http://51.255.46.42/releases/gama1_6_1_win32.zip )  
+* GAMA for OSX 64 bits  [Download](http://51.255.46.42/releases/gama1_6_1_osx64.zip ) 
+* GAMA for OSX 32 bits [Download](http://51.255.46.42/releases/gama1_6_1_osx32.zip) 
+* GAMA for Linux 64 bits [Download](http://51.255.46.42/releases/gama1_6_1_linux64.zip) 
+* GAMA for Linux 32 bits [Download](http://51.255.46.42/releases/gama1_6_1_linux32.zip) 
 
-<table width='100%'>
-<tr>
-<td width='40%' valign='top'>
-Enter your name, institution and e-mail address. These information will never be shared with anyone: they are used for internal statistics and occasional announcements about GAMA (leave the field blank if you do not want to receive any news from us).<br>
-<br>
-Then, select the version of GAMA adapted to your OS and Java Virtual Machine (JVM) or Java Development Kit (JDK)<code>*</code>. The version recommended for your current environment is highlighted in green color.<br>
-<br>
-<code>*</code><font size='1'><i>To know whether your default JVM/JDK is 32 or 64 Bit, type <code>'java -version'</code> in a Terminal or Console (depending on your OS). If the output contains a sentence like <code>'Java HotSpot(TM) 64-Bit (�)'</code> then you are running a 64 Bit version of the virtual machine and otherwise a 32 Bit version.</i></font>
-
-<hr />
-<h2>Installation</h2>
-Once the download is over, proceed to <a href='G__Installation'>this page</a> to know how to install GAMA and consult OS-specific troubleshooting information.<br>
-
-<hr />
-<h2>Documentation</h2>
-The documentation of GAMA is not (yet) bundled with the application; however, it can be downloaded in PDF format (from the table beside) or <a href='G__Overview'>browsed online</a>. <i>Please note that the contents of the  documentation for this version is not complete yet.</i>
-</td>
-<td valign='top'>
-<wiki:gadget url="gadgets/download_gadget_with_form.xml" border=0 width="100%" height="500"/><br>
-</td>
-</tr></table>
+## Older downloads
+### GAMA 1.6 version
+* GAMA for Windows 64 bits  [Download](http://51.255.46.42/releases/gama1_6_win64.zip) 
+* GAMA for Windows 32 bits [Download](http://51.255.46.42/releases/gama1_6_win32.zip) 
+* GAMA for OSX 64 bits [Download](http://51.255.46.42/releases/gama1_6_osx64.zip) 
+* GAMA for OSX 32 bits [Download](http://51.255.46.42/releases/gama1_6_osx32.zip) 
+* GAMA for Linux 64 bits [Download](http://51.255.46.42/releases/gama1_6_linux64.zip) 
+* GAMA 1.6 for Linux 32 bits [Download](http://51.255.46.42/releases/gama1_6_linux32.zip) 
