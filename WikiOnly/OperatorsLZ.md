@@ -89,112 +89,112 @@ Note that due to the fact that actions are written by modelers, the general func
 ----
 
 ### 3D
-[box](OperatorsLZ#box), [change_clockwise](OperatorsLZ#change_clockwise), [cone3D](OperatorsLZ#cone3d), [cube](OperatorsLZ#cube), [cylinder](OperatorsLZ#cylinder), [dem](OperatorsLZ#dem), [hexagon](OperatorsLZ#hexagon), [is_clockwise](OperatorsLZ#is_clockwise), [pyramid](OperatorsLZ#pyramid), [rgb_to_xyz](OperatorsLZ#rgb_to_xyz), [set_z](OperatorsLZ#set_z), [sphere](OperatorsLZ#sphere), [teapot](OperatorsLZ#teapot), 
+[box](OperatorsAK#box), [change_clockwise](OperatorsAK#change_clockwise), [cone3D](OperatorsAK#cone3d), [cube](OperatorsAK#cube), [cylinder](OperatorsAK#cylinder), [dem](OperatorsAK#dem), [hexagon](OperatorsAK#hexagon), [is_clockwise](OperatorsAK#is_clockwise), [pyramid](OperatorsLZ#pyramid), [rgb_to_xyz](OperatorsLZ#rgb_to_xyz), [set_z](OperatorsLZ#set_z), [sphere](OperatorsLZ#sphere), [teapot](OperatorsLZ#teapot), 
 
 ----
 
 ### Arithmetic operators
-[-](OperatorsLZ#-), [/](OperatorsLZ#/), [^](OperatorsLZ#^), [*](OperatorsLZ#*), [+](OperatorsLZ#+), [abs](OperatorsLZ#abs), [acos](OperatorsLZ#acos), [asin](OperatorsLZ#asin), [atan](OperatorsLZ#atan), [atan2](OperatorsLZ#atan2), [ceil](OperatorsLZ#ceil), [cos](OperatorsLZ#cos), [cos_rad](OperatorsLZ#cos_rad), [div](OperatorsLZ#div), [even](OperatorsLZ#even), [exp](OperatorsLZ#exp), [fact](OperatorsLZ#fact), [floor](OperatorsLZ#floor), [hypot](OperatorsLZ#hypot), [is_finite](OperatorsLZ#is_finite), [is_number](OperatorsLZ#is_number), [ln](OperatorsLZ#ln), [log](OperatorsLZ#log), [mod](OperatorsLZ#mod), [round](OperatorsLZ#round), [signum](OperatorsLZ#signum), [sin](OperatorsLZ#sin), [sin_rad](OperatorsLZ#sin_rad), [sqrt](OperatorsLZ#sqrt), [tan](OperatorsLZ#tan), [tan_rad](OperatorsLZ#tan_rad), [tanh](OperatorsLZ#tanh), [with_precision](OperatorsLZ#with_precision), 
+[-](OperatorsAK#-), [/](OperatorsAK#/), [^](OperatorsAK#^), [*](OperatorsAK#*), [+](OperatorsAK#+), [abs](OperatorsAK#abs), [acos](OperatorsAK#acos), [asin](OperatorsAK#asin), [atan](OperatorsAK#atan), [atan2](OperatorsAK#atan2), [ceil](OperatorsAK#ceil), [cos](OperatorsAK#cos), [cos_rad](OperatorsAK#cos_rad), [div](OperatorsAK#div), [even](OperatorsAK#even), [exp](OperatorsAK#exp), [fact](OperatorsAK#fact), [floor](OperatorsAK#floor), [hypot](OperatorsAK#hypot), [is_finite](OperatorsAK#is_finite), [is_number](OperatorsAK#is_number), [ln](OperatorsLZ#ln), [log](OperatorsLZ#log), [mod](OperatorsLZ#mod), [round](OperatorsLZ#round), [signum](OperatorsLZ#signum), [sin](OperatorsLZ#sin), [sin_rad](OperatorsLZ#sin_rad), [sqrt](OperatorsLZ#sqrt), [tan](OperatorsLZ#tan), [tan_rad](OperatorsLZ#tan_rad), [tanh](OperatorsLZ#tanh), [with_precision](OperatorsLZ#with_precision), 
 
 ----
 
 ### BDI
-[and](OperatorsLZ#and), [eval_when](OperatorsLZ#eval_when), [get_about](OperatorsLZ#get_about), [get_decay](OperatorsLZ#get_decay), [get_intensity](OperatorsLZ#get_intensity), [get_lifetime](OperatorsLZ#get_lifetime), [get_priority](OperatorsLZ#get_priority), [get_super_intention](OperatorsLZ#get_super_intention), [new_emotion](OperatorsLZ#new_emotion), [new_predicate](OperatorsLZ#new_predicate), [or](OperatorsLZ#or), [set_about](OperatorsLZ#set_about), [set_decay](OperatorsLZ#set_decay), [set_intensity](OperatorsLZ#set_intensity), [set_truth](OperatorsLZ#set_truth), [with_lifetime](OperatorsLZ#with_lifetime), [with_priority](OperatorsLZ#with_priority), [with_values](OperatorsLZ#with_values), 
+[and](OperatorsAK#and), [eval_when](OperatorsAK#eval_when), [get_about](OperatorsAK#get_about), [get_decay](OperatorsAK#get_decay), [get_intensity](OperatorsAK#get_intensity), [get_lifetime](OperatorsAK#get_lifetime), [get_priority](OperatorsAK#get_priority), [get_super_intention](OperatorsAK#get_super_intention), [new_emotion](OperatorsLZ#new_emotion), [new_predicate](OperatorsLZ#new_predicate), [or](OperatorsLZ#or), [set_about](OperatorsLZ#set_about), [set_decay](OperatorsLZ#set_decay), [set_intensity](OperatorsLZ#set_intensity), [set_truth](OperatorsLZ#set_truth), [with_lifetime](OperatorsLZ#with_lifetime), [with_priority](OperatorsLZ#with_priority), [with_values](OperatorsLZ#with_values), 
 
 ----
 
 ### Casting operators
-[as](OperatorsLZ#as), [as_int](OperatorsLZ#as_int), [as_matrix](OperatorsLZ#as_matrix), [font](OperatorsLZ#font), [is](OperatorsLZ#is), [is_skill](OperatorsLZ#is_skill), [list_with](OperatorsLZ#list_with), [matrix_with](OperatorsLZ#matrix_with), [species](OperatorsLZ#species), [to_gaml](OperatorsLZ#to_gaml), [topology](OperatorsLZ#topology), 
+[as](OperatorsAK#as), [as_int](OperatorsAK#as_int), [as_matrix](OperatorsAK#as_matrix), [font](OperatorsAK#font), [is](OperatorsAK#is), [is_skill](OperatorsAK#is_skill), [list_with](OperatorsLZ#list_with), [matrix_with](OperatorsLZ#matrix_with), [species](OperatorsLZ#species), [to_gaml](OperatorsLZ#to_gaml), [topology](OperatorsLZ#topology), 
 
 ----
 
 ### Color-related operators
-[-](OperatorsLZ#-), [/](OperatorsLZ#/), [*](OperatorsLZ#*), [+](OperatorsLZ#+), [blend](OperatorsLZ#blend), [brewer_colors](OperatorsLZ#brewer_colors), [brewer_palettes](OperatorsLZ#brewer_palettes), [grayscale](OperatorsLZ#grayscale), [hsb](OperatorsLZ#hsb), [mean](OperatorsLZ#mean), [rgb](OperatorsLZ#rgb), [rnd_color](OperatorsLZ#rnd_color), [sum](OperatorsLZ#sum), 
+[-](OperatorsAK#-), [/](OperatorsAK#/), [*](OperatorsAK#*), [+](OperatorsAK#+), [blend](OperatorsAK#blend), [brewer_colors](OperatorsAK#brewer_colors), [brewer_palettes](OperatorsAK#brewer_palettes), [grayscale](OperatorsAK#grayscale), [hsb](OperatorsAK#hsb), [mean](OperatorsLZ#mean), [rgb](OperatorsLZ#rgb), [rnd_color](OperatorsLZ#rnd_color), [sum](OperatorsLZ#sum), 
 
 ----
 
 ### Containers-related operators
-[-](OperatorsLZ#-), [::](OperatorsLZ#::), [+](OperatorsLZ#+), [accumulate](OperatorsLZ#accumulate), [among](OperatorsLZ#among), [at](OperatorsLZ#at), [collect](OperatorsLZ#collect), [contains](OperatorsLZ#contains), [contains_all](OperatorsLZ#contains_all), [contains_any](OperatorsLZ#contains_any), [count](OperatorsLZ#count), [empty](OperatorsLZ#empty), [first](OperatorsLZ#first), [first_with](OperatorsLZ#first_with), [get](OperatorsLZ#get), [group_by](OperatorsLZ#group_by), [in](OperatorsLZ#in), [index_by](OperatorsLZ#index_by), [inter](OperatorsLZ#inter), [interleave](OperatorsLZ#interleave), [internal_at](OperatorsLZ#internal_at), [last](OperatorsLZ#last), [last_with](OperatorsLZ#last_with), [length](OperatorsLZ#length), [max](OperatorsLZ#max), [max_of](OperatorsLZ#max_of), [mean](OperatorsLZ#mean), [mean_of](OperatorsLZ#mean_of), [min](OperatorsLZ#min), [min_of](OperatorsLZ#min_of), [mul](OperatorsLZ#mul), [one_of](OperatorsLZ#one_of), [product_of](OperatorsLZ#product_of), [remove_duplicates](OperatorsLZ#remove_duplicates), [reverse](OperatorsLZ#reverse), [shuffle](OperatorsLZ#shuffle), [sort_by](OperatorsLZ#sort_by), [sum](OperatorsLZ#sum), [sum_of](OperatorsLZ#sum_of), [union](OperatorsLZ#union), [variance_of](OperatorsLZ#variance_of), [where](OperatorsLZ#where), [with_max_of](OperatorsLZ#with_max_of), [with_min_of](OperatorsLZ#with_min_of), 
+[-](OperatorsAK#-), [::](OperatorsAK#::), [+](OperatorsAK#+), [accumulate](OperatorsAK#accumulate), [among](OperatorsAK#among), [at](OperatorsAK#at), [collect](OperatorsAK#collect), [contains](OperatorsAK#contains), [contains_all](OperatorsAK#contains_all), [contains_any](OperatorsAK#contains_any), [count](OperatorsAK#count), [empty](OperatorsAK#empty), [first](OperatorsAK#first), [first_with](OperatorsAK#first_with), [get](OperatorsAK#get), [group_by](OperatorsAK#group_by), [in](OperatorsAK#in), [index_by](OperatorsAK#index_by), [inter](OperatorsAK#inter), [interleave](OperatorsAK#interleave), [internal_at](OperatorsAK#internal_at), [last](OperatorsLZ#last), [last_with](OperatorsLZ#last_with), [length](OperatorsLZ#length), [max](OperatorsLZ#max), [max_of](OperatorsLZ#max_of), [mean](OperatorsLZ#mean), [mean_of](OperatorsLZ#mean_of), [min](OperatorsLZ#min), [min_of](OperatorsLZ#min_of), [mul](OperatorsLZ#mul), [one_of](OperatorsLZ#one_of), [product_of](OperatorsLZ#product_of), [remove_duplicates](OperatorsLZ#remove_duplicates), [reverse](OperatorsLZ#reverse), [shuffle](OperatorsLZ#shuffle), [sort_by](OperatorsLZ#sort_by), [sum](OperatorsLZ#sum), [sum_of](OperatorsLZ#sum_of), [union](OperatorsLZ#union), [variance_of](OperatorsLZ#variance_of), [where](OperatorsLZ#where), [with_max_of](OperatorsLZ#with_max_of), [with_min_of](OperatorsLZ#with_min_of), 
 
 ----
 
 ### Date-related operators
-[-](OperatorsLZ#-), [+](OperatorsLZ#+), [add_days](OperatorsLZ#add_days), [add_hours](OperatorsLZ#add_hours), [add_minutes](OperatorsLZ#add_minutes), [add_months](OperatorsLZ#add_months), [add_weeks](OperatorsLZ#add_weeks), [add_years](OperatorsLZ#add_years), [subtract_days](OperatorsLZ#subtract_days), [subtract_hours](OperatorsLZ#subtract_hours), [subtract_minutes](OperatorsLZ#subtract_minutes), [subtract_months](OperatorsLZ#subtract_months), [subtract_weeks](OperatorsLZ#subtract_weeks), [subtract_years](OperatorsLZ#subtract_years), 
+[-](OperatorsAK#-), [+](OperatorsAK#+), [add_days](OperatorsAK#add_days), [add_hours](OperatorsAK#add_hours), [add_minutes](OperatorsAK#add_minutes), [add_months](OperatorsAK#add_months), [add_weeks](OperatorsAK#add_weeks), [add_years](OperatorsAK#add_years), [subtract_days](OperatorsLZ#subtract_days), [subtract_hours](OperatorsLZ#subtract_hours), [subtract_minutes](OperatorsLZ#subtract_minutes), [subtract_months](OperatorsLZ#subtract_months), [subtract_weeks](OperatorsLZ#subtract_weeks), [subtract_years](OperatorsLZ#subtract_years), 
 
 ----
 
 ### Driving operators
-[as_driving_graph](OperatorsLZ#as_driving_graph), 
+[as_driving_graph](OperatorsAK#as_driving_graph), 
 
 ----
 
 ### edge
-[edge_between](OperatorsLZ#edge_between), 
+[edge_between](OperatorsAK#edge_between), 
 
 ----
 
 ### EDP-related operators
-[diff](OperatorsLZ#diff), [diff2](OperatorsLZ#diff2), [internal_zero_order_equation](OperatorsLZ#internal_zero_order_equation), 
+[diff](OperatorsAK#diff), [diff2](OperatorsAK#diff2), [internal_zero_order_equation](OperatorsAK#internal_zero_order_equation), 
 
 ----
 
 ### Files-related operators
-[crs](OperatorsLZ#crs), [file](OperatorsLZ#file), [file_exists](OperatorsLZ#file_exists), [folder](OperatorsLZ#folder), [get](OperatorsLZ#get), [new_folder](OperatorsLZ#new_folder), [osm_file](OperatorsLZ#osm_file), [read](OperatorsLZ#read), [writable](OperatorsLZ#writable), 
+[crs](OperatorsAK#crs), [file](OperatorsAK#file), [file_exists](OperatorsAK#file_exists), [folder](OperatorsAK#folder), [get](OperatorsAK#get), [new_folder](OperatorsLZ#new_folder), [osm_file](OperatorsLZ#osm_file), [read](OperatorsLZ#read), [writable](OperatorsLZ#writable), 
 
 ----
 
 ### FIPA-related operators
-[conversation](OperatorsLZ#conversation), [message](OperatorsLZ#message), 
+[conversation](OperatorsAK#conversation), [message](OperatorsLZ#message), 
 
 ----
 
 ### Graphs-related operators
-[add_edge](OperatorsLZ#add_edge), [add_node](OperatorsLZ#add_node), [adjacency](OperatorsLZ#adjacency), [agent_from_geometry](OperatorsLZ#agent_from_geometry), [all_pairs_shortest_path](OperatorsLZ#all_pairs_shortest_path), [alpha_index](OperatorsLZ#alpha_index), [as_distance_graph](OperatorsLZ#as_distance_graph), [as_edge_graph](OperatorsLZ#as_edge_graph), [as_intersection_graph](OperatorsLZ#as_intersection_graph), [as_path](OperatorsLZ#as_path), [beta_index](OperatorsLZ#beta_index), [betweenness_centrality](OperatorsLZ#betweenness_centrality), [connected_components_of](OperatorsLZ#connected_components_of), [connectivity_index](OperatorsLZ#connectivity_index), [contains_edge](OperatorsLZ#contains_edge), [contains_vertex](OperatorsLZ#contains_vertex), [degree_of](OperatorsLZ#degree_of), [directed](OperatorsLZ#directed), [edge](OperatorsLZ#edge), [edge_between](OperatorsLZ#edge_between), [edges](OperatorsLZ#edges), [gamma_index](OperatorsLZ#gamma_index), [grid_cells_to_graph](OperatorsLZ#grid_cells_to_graph), [in_degree_of](OperatorsLZ#in_degree_of), [in_edges_of](OperatorsLZ#in_edges_of), [layout](OperatorsLZ#layout), [load_graph_from_file](OperatorsLZ#load_graph_from_file), [load_shortest_paths](OperatorsLZ#load_shortest_paths), [nb_cycles](OperatorsLZ#nb_cycles), [neighbors_of](OperatorsLZ#neighbors_of), [node](OperatorsLZ#node), [nodes](OperatorsLZ#nodes), [out_degree_of](OperatorsLZ#out_degree_of), [out_edges_of](OperatorsLZ#out_edges_of), [path_between](OperatorsLZ#path_between), [paths_between](OperatorsLZ#paths_between), [predecessors_of](OperatorsLZ#predecessors_of), [remove_node_from](OperatorsLZ#remove_node_from), [rewire_n](OperatorsLZ#rewire_n), [source_of](OperatorsLZ#source_of), [spatial_graph](OperatorsLZ#spatial_graph), [successors_of](OperatorsLZ#successors_of), [sum](OperatorsLZ#sum), [target_of](OperatorsLZ#target_of), [undirected](OperatorsLZ#undirected), [use_cache](OperatorsLZ#use_cache), [weight_of](OperatorsLZ#weight_of), [with_optimizer_type](OperatorsLZ#with_optimizer_type), [with_weights](OperatorsLZ#with_weights), 
+[add_edge](OperatorsAK#add_edge), [add_node](OperatorsAK#add_node), [adjacency](OperatorsAK#adjacency), [agent_from_geometry](OperatorsAK#agent_from_geometry), [all_pairs_shortest_path](OperatorsAK#all_pairs_shortest_path), [alpha_index](OperatorsAK#alpha_index), [as_distance_graph](OperatorsAK#as_distance_graph), [as_edge_graph](OperatorsAK#as_edge_graph), [as_intersection_graph](OperatorsAK#as_intersection_graph), [as_path](OperatorsAK#as_path), [beta_index](OperatorsAK#beta_index), [betweenness_centrality](OperatorsAK#betweenness_centrality), [connected_components_of](OperatorsAK#connected_components_of), [connectivity_index](OperatorsAK#connectivity_index), [contains_edge](OperatorsAK#contains_edge), [contains_vertex](OperatorsAK#contains_vertex), [degree_of](OperatorsAK#degree_of), [directed](OperatorsAK#directed), [edge](OperatorsAK#edge), [edge_between](OperatorsAK#edge_between), [edges](OperatorsAK#edges), [gamma_index](OperatorsAK#gamma_index), [grid_cells_to_graph](OperatorsAK#grid_cells_to_graph), [in_degree_of](OperatorsAK#in_degree_of), [in_edges_of](OperatorsAK#in_edges_of), [layout](OperatorsLZ#layout), [load_graph_from_file](OperatorsLZ#load_graph_from_file), [load_shortest_paths](OperatorsLZ#load_shortest_paths), [nb_cycles](OperatorsLZ#nb_cycles), [neighbors_of](OperatorsLZ#neighbors_of), [node](OperatorsLZ#node), [nodes](OperatorsLZ#nodes), [out_degree_of](OperatorsLZ#out_degree_of), [out_edges_of](OperatorsLZ#out_edges_of), [path_between](OperatorsLZ#path_between), [paths_between](OperatorsLZ#paths_between), [predecessors_of](OperatorsLZ#predecessors_of), [remove_node_from](OperatorsLZ#remove_node_from), [rewire_n](OperatorsLZ#rewire_n), [source_of](OperatorsLZ#source_of), [spatial_graph](OperatorsLZ#spatial_graph), [successors_of](OperatorsLZ#successors_of), [sum](OperatorsLZ#sum), [target_of](OperatorsLZ#target_of), [undirected](OperatorsLZ#undirected), [use_cache](OperatorsLZ#use_cache), [weight_of](OperatorsLZ#weight_of), [with_optimizer_type](OperatorsLZ#with_optimizer_type), [with_weights](OperatorsLZ#with_weights), 
 
 ----
 
 ### Grid-related operators
-[as_4_grid](OperatorsLZ#as_4_grid), [as_grid](OperatorsLZ#as_grid), [as_hexagonal_grid](OperatorsLZ#as_hexagonal_grid), [grid_at](OperatorsLZ#grid_at), [path_between](OperatorsLZ#path_between), 
+[as_4_grid](OperatorsAK#as_4_grid), [as_grid](OperatorsAK#as_grid), [as_hexagonal_grid](OperatorsAK#as_hexagonal_grid), [grid_at](OperatorsAK#grid_at), [path_between](OperatorsLZ#path_between), 
 
 ----
 
 ### Iterator operators
-[accumulate](OperatorsLZ#accumulate), [as_map](OperatorsLZ#as_map), [collect](OperatorsLZ#collect), [count](OperatorsLZ#count), [first_with](OperatorsLZ#first_with), [frequency_of](OperatorsLZ#frequency_of), [group_by](OperatorsLZ#group_by), [index_by](OperatorsLZ#index_by), [last_with](OperatorsLZ#last_with), [max_of](OperatorsLZ#max_of), [mean_of](OperatorsLZ#mean_of), [min_of](OperatorsLZ#min_of), [product_of](OperatorsLZ#product_of), [sort_by](OperatorsLZ#sort_by), [sum_of](OperatorsLZ#sum_of), [variance_of](OperatorsLZ#variance_of), [where](OperatorsLZ#where), [with_max_of](OperatorsLZ#with_max_of), [with_min_of](OperatorsLZ#with_min_of), 
+[accumulate](OperatorsAK#accumulate), [as_map](OperatorsAK#as_map), [collect](OperatorsAK#collect), [count](OperatorsAK#count), [first_with](OperatorsAK#first_with), [frequency_of](OperatorsAK#frequency_of), [group_by](OperatorsAK#group_by), [index_by](OperatorsAK#index_by), [last_with](OperatorsLZ#last_with), [max_of](OperatorsLZ#max_of), [mean_of](OperatorsLZ#mean_of), [min_of](OperatorsLZ#min_of), [product_of](OperatorsLZ#product_of), [sort_by](OperatorsLZ#sort_by), [sum_of](OperatorsLZ#sum_of), [variance_of](OperatorsLZ#variance_of), [where](OperatorsLZ#where), [with_max_of](OperatorsLZ#with_max_of), [with_min_of](OperatorsLZ#with_min_of), 
 
 ----
 
 ### List-related operators
-[copy_between](OperatorsLZ#copy_between), [index_of](OperatorsLZ#index_of), [last_index_of](OperatorsLZ#last_index_of), 
+[copy_between](OperatorsAK#copy_between), [index_of](OperatorsAK#index_of), [last_index_of](OperatorsLZ#last_index_of), 
 
 ----
 
 ### Map comparaison operators
-[fuzzy_kappa](OperatorsLZ#fuzzy_kappa), [fuzzy_kappa_sim](OperatorsLZ#fuzzy_kappa_sim), [kappa](OperatorsLZ#kappa), [kappa_sim](OperatorsLZ#kappa_sim), [percent_absolute_deviation](OperatorsLZ#percent_absolute_deviation), 
+[fuzzy_kappa](OperatorsAK#fuzzy_kappa), [fuzzy_kappa_sim](OperatorsAK#fuzzy_kappa_sim), [kappa](OperatorsAK#kappa), [kappa_sim](OperatorsAK#kappa_sim), [percent_absolute_deviation](OperatorsLZ#percent_absolute_deviation), 
 
 ----
 
 ### Map-related operators
-[as_map](OperatorsLZ#as_map), [index_of](OperatorsLZ#index_of), [last_index_of](OperatorsLZ#last_index_of), 
+[as_map](OperatorsAK#as_map), [index_of](OperatorsAK#index_of), [last_index_of](OperatorsLZ#last_index_of), 
 
 ----
 
 ### Matrix-related operators
-[-](OperatorsLZ#-), [/](OperatorsLZ#/), [.](OperatorsLZ#.), [*](OperatorsLZ#*), [+](OperatorsLZ#+), [append_horizontally](OperatorsLZ#append_horizontally), [append_vertically](OperatorsLZ#append_vertically), [column_at](OperatorsLZ#column_at), [columns_list](OperatorsLZ#columns_list), [determinant](OperatorsLZ#determinant), [eigenvalues](OperatorsLZ#eigenvalues), [index_of](OperatorsLZ#index_of), [inverse](OperatorsLZ#inverse), [last_index_of](OperatorsLZ#last_index_of), [row_at](OperatorsLZ#row_at), [rows_list](OperatorsLZ#rows_list), [shuffle](OperatorsLZ#shuffle), [trace](OperatorsLZ#trace), [transpose](OperatorsLZ#transpose), 
+[-](OperatorsAK#-), [/](OperatorsAK#/), [.](OperatorsAK#.), [*](OperatorsAK#*), [+](OperatorsAK#+), [append_horizontally](OperatorsAK#append_horizontally), [append_vertically](OperatorsAK#append_vertically), [column_at](OperatorsAK#column_at), [columns_list](OperatorsAK#columns_list), [determinant](OperatorsAK#determinant), [eigenvalues](OperatorsAK#eigenvalues), [index_of](OperatorsAK#index_of), [inverse](OperatorsAK#inverse), [last_index_of](OperatorsLZ#last_index_of), [row_at](OperatorsLZ#row_at), [rows_list](OperatorsLZ#rows_list), [shuffle](OperatorsLZ#shuffle), [trace](OperatorsLZ#trace), [transpose](OperatorsLZ#transpose), 
 
 ----
 
 ### Path-related operators
-[agent_from_geometry](OperatorsLZ#agent_from_geometry), [all_pairs_shortest_path](OperatorsLZ#all_pairs_shortest_path), [as_path](OperatorsLZ#as_path), [load_shortest_paths](OperatorsLZ#load_shortest_paths), [path_between](OperatorsLZ#path_between), [path_to](OperatorsLZ#path_to), [paths_between](OperatorsLZ#paths_between), [use_cache](OperatorsLZ#use_cache), 
+[agent_from_geometry](OperatorsAK#agent_from_geometry), [all_pairs_shortest_path](OperatorsAK#all_pairs_shortest_path), [as_path](OperatorsAK#as_path), [load_shortest_paths](OperatorsLZ#load_shortest_paths), [path_between](OperatorsLZ#path_between), [path_to](OperatorsLZ#path_to), [paths_between](OperatorsLZ#paths_between), [use_cache](OperatorsLZ#use_cache), 
 
 ----
 
 ### Points-related operators
-[-](OperatorsLZ#-), [/](OperatorsLZ#/), [*](OperatorsLZ#*), [+](OperatorsLZ#+), [add_point](OperatorsLZ#add_point), [angle_between](OperatorsLZ#angle_between), [any_location_in](OperatorsLZ#any_location_in), [closest_points_with](OperatorsLZ#closest_points_with), [farthest_point_to](OperatorsLZ#farthest_point_to), [grid_at](OperatorsLZ#grid_at), [norm](OperatorsLZ#norm), [point](OperatorsLZ#point), [points_at](OperatorsLZ#points_at), [points_on](OperatorsLZ#points_on), 
+[-](OperatorsAK#-), [/](OperatorsAK#/), [*](OperatorsAK#*), [+](OperatorsAK#+), [add_point](OperatorsAK#add_point), [angle_between](OperatorsAK#angle_between), [any_location_in](OperatorsAK#any_location_in), [closest_points_with](OperatorsAK#closest_points_with), [farthest_point_to](OperatorsAK#farthest_point_to), [grid_at](OperatorsAK#grid_at), [norm](OperatorsLZ#norm), [point](OperatorsLZ#point), [points_at](OperatorsLZ#points_at), [points_on](OperatorsLZ#points_on), 
 
 ----
 
 ### Random operators
-[binomial](OperatorsLZ#binomial), [flip](OperatorsLZ#flip), [gauss](OperatorsLZ#gauss), [poisson](OperatorsLZ#poisson), [rnd](OperatorsLZ#rnd), [rnd_choice](OperatorsLZ#rnd_choice), [sample](OperatorsLZ#sample), [shuffle](OperatorsLZ#shuffle), [truncated_gauss](OperatorsLZ#truncated_gauss), 
+[binomial](OperatorsAK#binomial), [flip](OperatorsAK#flip), [gauss](OperatorsAK#gauss), [poisson](OperatorsLZ#poisson), [rnd](OperatorsLZ#rnd), [rnd_choice](OperatorsLZ#rnd_choice), [sample](OperatorsLZ#sample), [shuffle](OperatorsLZ#shuffle), [truncated_gauss](OperatorsLZ#truncated_gauss), 
 
 ----
 
@@ -204,62 +204,62 @@ Note that due to the fact that actions are written by modelers, the general func
 ----
 
 ### Shape
-[arc](OperatorsLZ#arc), [box](OperatorsLZ#box), [circle](OperatorsLZ#circle), [cone](OperatorsLZ#cone), [cone3D](OperatorsLZ#cone3d), [cube](OperatorsLZ#cube), [curve](OperatorsLZ#curve), [cylinder](OperatorsLZ#cylinder), [ellipse](OperatorsLZ#ellipse), [envelope](OperatorsLZ#envelope), [geometry_collection](OperatorsLZ#geometry_collection), [hexagon](OperatorsLZ#hexagon), [line](OperatorsLZ#line), [link](OperatorsLZ#link), [plan](OperatorsLZ#plan), [polygon](OperatorsLZ#polygon), [polyhedron](OperatorsLZ#polyhedron), [pyramid](OperatorsLZ#pyramid), [rectangle](OperatorsLZ#rectangle), [sphere](OperatorsLZ#sphere), [square](OperatorsLZ#square), [squircle](OperatorsLZ#squircle), [teapot](OperatorsLZ#teapot), [triangle](OperatorsLZ#triangle), 
+[arc](OperatorsAK#arc), [box](OperatorsAK#box), [circle](OperatorsAK#circle), [cone](OperatorsAK#cone), [cone3D](OperatorsAK#cone3d), [cube](OperatorsAK#cube), [curve](OperatorsAK#curve), [cylinder](OperatorsAK#cylinder), [ellipse](OperatorsAK#ellipse), [envelope](OperatorsAK#envelope), [geometry_collection](OperatorsAK#geometry_collection), [hexagon](OperatorsAK#hexagon), [line](OperatorsLZ#line), [link](OperatorsLZ#link), [plan](OperatorsLZ#plan), [polygon](OperatorsLZ#polygon), [polyhedron](OperatorsLZ#polyhedron), [pyramid](OperatorsLZ#pyramid), [rectangle](OperatorsLZ#rectangle), [sphere](OperatorsLZ#sphere), [square](OperatorsLZ#square), [squircle](OperatorsLZ#squircle), [teapot](OperatorsLZ#teapot), [triangle](OperatorsLZ#triangle), 
 
 ----
 
 ### Spatial operators
-[-](OperatorsLZ#-), [*](OperatorsLZ#*), [+](OperatorsLZ#+), [add_point](OperatorsLZ#add_point), [agent_closest_to](OperatorsLZ#agent_closest_to), [agent_farthest_to](OperatorsLZ#agent_farthest_to), [agents_at_distance](OperatorsLZ#agents_at_distance), [agents_inside](OperatorsLZ#agents_inside), [agents_overlapping](OperatorsLZ#agents_overlapping), [angle_between](OperatorsLZ#angle_between), [any_location_in](OperatorsLZ#any_location_in), [arc](OperatorsLZ#arc), [around](OperatorsLZ#around), [as_4_grid](OperatorsLZ#as_4_grid), [as_grid](OperatorsLZ#as_grid), [as_hexagonal_grid](OperatorsLZ#as_hexagonal_grid), [at_distance](OperatorsLZ#at_distance), [at_location](OperatorsLZ#at_location), [box](OperatorsLZ#box), [change_clockwise](OperatorsLZ#change_clockwise), [circle](OperatorsLZ#circle), [clean](OperatorsLZ#clean), [closest_points_with](OperatorsLZ#closest_points_with), [closest_to](OperatorsLZ#closest_to), [cone](OperatorsLZ#cone), [cone3D](OperatorsLZ#cone3d), [convex_hull](OperatorsLZ#convex_hull), [covers](OperatorsLZ#covers), [crosses](OperatorsLZ#crosses), [crs](OperatorsLZ#crs), [CRS_transform](OperatorsLZ#crs_transform), [cube](OperatorsLZ#cube), [curve](OperatorsLZ#curve), [cylinder](OperatorsLZ#cylinder), [dem](OperatorsLZ#dem), [direction_between](OperatorsLZ#direction_between), [disjoint_from](OperatorsLZ#disjoint_from), [distance_between](OperatorsLZ#distance_between), [distance_to](OperatorsLZ#distance_to), [ellipse](OperatorsLZ#ellipse), [envelope](OperatorsLZ#envelope), [farthest_point_to](OperatorsLZ#farthest_point_to), [farthest_to](OperatorsLZ#farthest_to), [geometry_collection](OperatorsLZ#geometry_collection), [hexagon](OperatorsLZ#hexagon), [hierarchical_clustering](OperatorsLZ#hierarchical_clustering), [IDW](OperatorsLZ#idw), [inside](OperatorsLZ#inside), [inter](OperatorsLZ#inter), [intersects](OperatorsLZ#intersects), [is_clockwise](OperatorsLZ#is_clockwise), [line](OperatorsLZ#line), [link](OperatorsLZ#link), [masked_by](OperatorsLZ#masked_by), [neighbors_at](OperatorsLZ#neighbors_at), [neighbors_of](OperatorsLZ#neighbors_of), [overlapping](OperatorsLZ#overlapping), [overlaps](OperatorsLZ#overlaps), [partially_overlaps](OperatorsLZ#partially_overlaps), [path_between](OperatorsLZ#path_between), [path_to](OperatorsLZ#path_to), [plan](OperatorsLZ#plan), [points_at](OperatorsLZ#points_at), [points_on](OperatorsLZ#points_on), [polygon](OperatorsLZ#polygon), [polyhedron](OperatorsLZ#polyhedron), [pyramid](OperatorsLZ#pyramid), [rectangle](OperatorsLZ#rectangle), [rgb_to_xyz](OperatorsLZ#rgb_to_xyz), [rotated_by](OperatorsLZ#rotated_by), [round](OperatorsLZ#round), [scaled_to](OperatorsLZ#scaled_to), [set_z](OperatorsLZ#set_z), [simple_clustering_by_distance](OperatorsLZ#simple_clustering_by_distance), [simplification](OperatorsLZ#simplification), [skeletonize](OperatorsLZ#skeletonize), [smooth](OperatorsLZ#smooth), [sphere](OperatorsLZ#sphere), [split_at](OperatorsLZ#split_at), [split_geometry](OperatorsLZ#split_geometry), [split_lines](OperatorsLZ#split_lines), [square](OperatorsLZ#square), [squircle](OperatorsLZ#squircle), [teapot](OperatorsLZ#teapot), [to_GAMA_CRS](OperatorsLZ#to_gama_crs), [to_rectangles](OperatorsLZ#to_rectangles), [to_squares](OperatorsLZ#to_squares), [touches](OperatorsLZ#touches), [towards](OperatorsLZ#towards), [transformed_by](OperatorsLZ#transformed_by), [translated_by](OperatorsLZ#translated_by), [triangle](OperatorsLZ#triangle), [triangulate](OperatorsLZ#triangulate), [union](OperatorsLZ#union), [using](OperatorsLZ#using), [voronoi](OperatorsLZ#voronoi), [with_precision](OperatorsLZ#with_precision), [without_holes](OperatorsLZ#without_holes), 
+[-](OperatorsAK#-), [*](OperatorsAK#*), [+](OperatorsAK#+), [add_point](OperatorsAK#add_point), [agent_closest_to](OperatorsAK#agent_closest_to), [agent_farthest_to](OperatorsAK#agent_farthest_to), [agents_at_distance](OperatorsAK#agents_at_distance), [agents_inside](OperatorsAK#agents_inside), [agents_overlapping](OperatorsAK#agents_overlapping), [angle_between](OperatorsAK#angle_between), [any_location_in](OperatorsAK#any_location_in), [arc](OperatorsAK#arc), [around](OperatorsAK#around), [as_4_grid](OperatorsAK#as_4_grid), [as_grid](OperatorsAK#as_grid), [as_hexagonal_grid](OperatorsAK#as_hexagonal_grid), [at_distance](OperatorsAK#at_distance), [at_location](OperatorsAK#at_location), [box](OperatorsAK#box), [change_clockwise](OperatorsAK#change_clockwise), [circle](OperatorsAK#circle), [clean](OperatorsAK#clean), [closest_points_with](OperatorsAK#closest_points_with), [closest_to](OperatorsAK#closest_to), [cone](OperatorsAK#cone), [cone3D](OperatorsAK#cone3d), [convex_hull](OperatorsAK#convex_hull), [covers](OperatorsAK#covers), [crosses](OperatorsAK#crosses), [crs](OperatorsAK#crs), [CRS_transform](OperatorsAK#crs_transform), [cube](OperatorsAK#cube), [curve](OperatorsAK#curve), [cylinder](OperatorsAK#cylinder), [dem](OperatorsAK#dem), [direction_between](OperatorsAK#direction_between), [disjoint_from](OperatorsAK#disjoint_from), [distance_between](OperatorsAK#distance_between), [distance_to](OperatorsAK#distance_to), [ellipse](OperatorsAK#ellipse), [envelope](OperatorsAK#envelope), [farthest_point_to](OperatorsAK#farthest_point_to), [farthest_to](OperatorsAK#farthest_to), [geometry_collection](OperatorsAK#geometry_collection), [hexagon](OperatorsAK#hexagon), [hierarchical_clustering](OperatorsAK#hierarchical_clustering), [IDW](OperatorsAK#idw), [inside](OperatorsAK#inside), [inter](OperatorsAK#inter), [intersects](OperatorsAK#intersects), [is_clockwise](OperatorsAK#is_clockwise), [line](OperatorsLZ#line), [link](OperatorsLZ#link), [masked_by](OperatorsLZ#masked_by), [neighbors_at](OperatorsLZ#neighbors_at), [neighbors_of](OperatorsLZ#neighbors_of), [overlapping](OperatorsLZ#overlapping), [overlaps](OperatorsLZ#overlaps), [partially_overlaps](OperatorsLZ#partially_overlaps), [path_between](OperatorsLZ#path_between), [path_to](OperatorsLZ#path_to), [plan](OperatorsLZ#plan), [points_at](OperatorsLZ#points_at), [points_on](OperatorsLZ#points_on), [polygon](OperatorsLZ#polygon), [polyhedron](OperatorsLZ#polyhedron), [pyramid](OperatorsLZ#pyramid), [rectangle](OperatorsLZ#rectangle), [rgb_to_xyz](OperatorsLZ#rgb_to_xyz), [rotated_by](OperatorsLZ#rotated_by), [round](OperatorsLZ#round), [scaled_to](OperatorsLZ#scaled_to), [set_z](OperatorsLZ#set_z), [simple_clustering_by_distance](OperatorsLZ#simple_clustering_by_distance), [simplification](OperatorsLZ#simplification), [skeletonize](OperatorsLZ#skeletonize), [smooth](OperatorsLZ#smooth), [sphere](OperatorsLZ#sphere), [split_at](OperatorsLZ#split_at), [split_geometry](OperatorsLZ#split_geometry), [split_lines](OperatorsLZ#split_lines), [square](OperatorsLZ#square), [squircle](OperatorsLZ#squircle), [teapot](OperatorsLZ#teapot), [to_GAMA_CRS](OperatorsLZ#to_gama_crs), [to_rectangles](OperatorsLZ#to_rectangles), [to_squares](OperatorsLZ#to_squares), [touches](OperatorsLZ#touches), [towards](OperatorsLZ#towards), [transformed_by](OperatorsLZ#transformed_by), [translated_by](OperatorsLZ#translated_by), [triangle](OperatorsLZ#triangle), [triangulate](OperatorsLZ#triangulate), [union](OperatorsLZ#union), [using](OperatorsLZ#using), [voronoi](OperatorsLZ#voronoi), [with_precision](OperatorsLZ#with_precision), [without_holes](OperatorsLZ#without_holes), 
 
 ----
 
 ### Spatial properties operators
-[covers](OperatorsLZ#covers), [crosses](OperatorsLZ#crosses), [intersects](OperatorsLZ#intersects), [partially_overlaps](OperatorsLZ#partially_overlaps), [touches](OperatorsLZ#touches), 
+[covers](OperatorsAK#covers), [crosses](OperatorsAK#crosses), [intersects](OperatorsAK#intersects), [partially_overlaps](OperatorsLZ#partially_overlaps), [touches](OperatorsLZ#touches), 
 
 ----
 
 ### Spatial queries operators
-[agent_closest_to](OperatorsLZ#agent_closest_to), [agent_farthest_to](OperatorsLZ#agent_farthest_to), [agents_at_distance](OperatorsLZ#agents_at_distance), [agents_inside](OperatorsLZ#agents_inside), [agents_overlapping](OperatorsLZ#agents_overlapping), [at_distance](OperatorsLZ#at_distance), [closest_to](OperatorsLZ#closest_to), [farthest_to](OperatorsLZ#farthest_to), [inside](OperatorsLZ#inside), [neighbors_at](OperatorsLZ#neighbors_at), [neighbors_of](OperatorsLZ#neighbors_of), [overlapping](OperatorsLZ#overlapping), 
+[agent_closest_to](OperatorsAK#agent_closest_to), [agent_farthest_to](OperatorsAK#agent_farthest_to), [agents_at_distance](OperatorsAK#agents_at_distance), [agents_inside](OperatorsAK#agents_inside), [agents_overlapping](OperatorsAK#agents_overlapping), [at_distance](OperatorsAK#at_distance), [closest_to](OperatorsAK#closest_to), [farthest_to](OperatorsAK#farthest_to), [inside](OperatorsAK#inside), [neighbors_at](OperatorsLZ#neighbors_at), [neighbors_of](OperatorsLZ#neighbors_of), [overlapping](OperatorsLZ#overlapping), 
 
 ----
 
 ### Spatial relations operators
-[direction_between](OperatorsLZ#direction_between), [distance_between](OperatorsLZ#distance_between), [distance_to](OperatorsLZ#distance_to), [path_between](OperatorsLZ#path_between), [path_to](OperatorsLZ#path_to), [towards](OperatorsLZ#towards), 
+[direction_between](OperatorsAK#direction_between), [distance_between](OperatorsAK#distance_between), [distance_to](OperatorsAK#distance_to), [path_between](OperatorsLZ#path_between), [path_to](OperatorsLZ#path_to), [towards](OperatorsLZ#towards), 
 
 ----
 
 ### Spatial statistical operators
-[hierarchical_clustering](OperatorsLZ#hierarchical_clustering), [simple_clustering_by_distance](OperatorsLZ#simple_clustering_by_distance), 
+[hierarchical_clustering](OperatorsAK#hierarchical_clustering), [simple_clustering_by_distance](OperatorsLZ#simple_clustering_by_distance), 
 
 ----
 
 ### Spatial transformations operators
-[-](OperatorsLZ#-), [*](OperatorsLZ#*), [+](OperatorsLZ#+), [as_4_grid](OperatorsLZ#as_4_grid), [as_grid](OperatorsLZ#as_grid), [as_hexagonal_grid](OperatorsLZ#as_hexagonal_grid), [at_location](OperatorsLZ#at_location), [clean](OperatorsLZ#clean), [convex_hull](OperatorsLZ#convex_hull), [CRS_transform](OperatorsLZ#crs_transform), [rotated_by](OperatorsLZ#rotated_by), [scaled_to](OperatorsLZ#scaled_to), [simplification](OperatorsLZ#simplification), [skeletonize](OperatorsLZ#skeletonize), [smooth](OperatorsLZ#smooth), [split_geometry](OperatorsLZ#split_geometry), [split_lines](OperatorsLZ#split_lines), [to_GAMA_CRS](OperatorsLZ#to_gama_crs), [to_rectangles](OperatorsLZ#to_rectangles), [to_squares](OperatorsLZ#to_squares), [transformed_by](OperatorsLZ#transformed_by), [translated_by](OperatorsLZ#translated_by), [triangulate](OperatorsLZ#triangulate), [voronoi](OperatorsLZ#voronoi), [without_holes](OperatorsLZ#without_holes), 
+[-](OperatorsAK#-), [*](OperatorsAK#*), [+](OperatorsAK#+), [as_4_grid](OperatorsAK#as_4_grid), [as_grid](OperatorsAK#as_grid), [as_hexagonal_grid](OperatorsAK#as_hexagonal_grid), [at_location](OperatorsAK#at_location), [clean](OperatorsAK#clean), [convex_hull](OperatorsAK#convex_hull), [CRS_transform](OperatorsAK#crs_transform), [rotated_by](OperatorsLZ#rotated_by), [scaled_to](OperatorsLZ#scaled_to), [simplification](OperatorsLZ#simplification), [skeletonize](OperatorsLZ#skeletonize), [smooth](OperatorsLZ#smooth), [split_geometry](OperatorsLZ#split_geometry), [split_lines](OperatorsLZ#split_lines), [to_GAMA_CRS](OperatorsLZ#to_gama_crs), [to_rectangles](OperatorsLZ#to_rectangles), [to_squares](OperatorsLZ#to_squares), [transformed_by](OperatorsLZ#transformed_by), [translated_by](OperatorsLZ#translated_by), [triangulate](OperatorsLZ#triangulate), [voronoi](OperatorsLZ#voronoi), [without_holes](OperatorsLZ#without_holes), 
 
 ----
 
 ### Species-related operators
-[index_of](OperatorsLZ#index_of), [last_index_of](OperatorsLZ#last_index_of), [of_generic_species](OperatorsLZ#of_generic_species), [of_species](OperatorsLZ#of_species), 
+[index_of](OperatorsAK#index_of), [last_index_of](OperatorsLZ#last_index_of), [of_generic_species](OperatorsLZ#of_generic_species), [of_species](OperatorsLZ#of_species), 
 
 ----
 
 ### Statistical operators
-[build](OperatorsLZ#build), [corR](OperatorsLZ#corr), [dbscan](OperatorsLZ#dbscan), [frequency_of](OperatorsLZ#frequency_of), [geometric_mean](OperatorsLZ#geometric_mean), [harmonic_mean](OperatorsLZ#harmonic_mean), [hierarchical_clustering](OperatorsLZ#hierarchical_clustering), [kmeans](OperatorsLZ#kmeans), [max](OperatorsLZ#max), [mean](OperatorsLZ#mean), [mean_deviation](OperatorsLZ#mean_deviation), [meanR](OperatorsLZ#meanr), [median](OperatorsLZ#median), [min](OperatorsLZ#min), [mul](OperatorsLZ#mul), [predict](OperatorsLZ#predict), [simple_clustering_by_distance](OperatorsLZ#simple_clustering_by_distance), [standard_deviation](OperatorsLZ#standard_deviation), [sum](OperatorsLZ#sum), [variance](OperatorsLZ#variance), 
+[build](OperatorsAK#build), [corR](OperatorsAK#corr), [dbscan](OperatorsAK#dbscan), [frequency_of](OperatorsAK#frequency_of), [geometric_mean](OperatorsAK#geometric_mean), [harmonic_mean](OperatorsAK#harmonic_mean), [hierarchical_clustering](OperatorsAK#hierarchical_clustering), [kmeans](OperatorsAK#kmeans), [max](OperatorsLZ#max), [mean](OperatorsLZ#mean), [mean_deviation](OperatorsLZ#mean_deviation), [meanR](OperatorsLZ#meanr), [median](OperatorsLZ#median), [min](OperatorsLZ#min), [mul](OperatorsLZ#mul), [predict](OperatorsLZ#predict), [simple_clustering_by_distance](OperatorsLZ#simple_clustering_by_distance), [standard_deviation](OperatorsLZ#standard_deviation), [sum](OperatorsLZ#sum), [variance](OperatorsLZ#variance), 
 
 ----
 
 ### Strings-related operators
-[+](OperatorsLZ#+), [as_date](OperatorsLZ#as_date), [as_system_date](OperatorsLZ#as_system_date), [as_system_time](OperatorsLZ#as_system_time), [as_time](OperatorsLZ#as_time), [at](OperatorsLZ#at), [char](OperatorsLZ#char), [contains](OperatorsLZ#contains), [contains_all](OperatorsLZ#contains_all), [contains_any](OperatorsLZ#contains_any), [copy_between](OperatorsLZ#copy_between), [empty](OperatorsLZ#empty), [first](OperatorsLZ#first), [in](OperatorsLZ#in), [indented_by](OperatorsLZ#indented_by), [index_of](OperatorsLZ#index_of), [is_number](OperatorsLZ#is_number), [last](OperatorsLZ#last), [last_index_of](OperatorsLZ#last_index_of), [length](OperatorsLZ#length), [replace](OperatorsLZ#replace), [reverse](OperatorsLZ#reverse), [sample](OperatorsLZ#sample), [shuffle](OperatorsLZ#shuffle), [split_with](OperatorsLZ#split_with), 
+[+](OperatorsAK#+), [as_date](OperatorsAK#as_date), [as_system_date](OperatorsAK#as_system_date), [as_system_time](OperatorsAK#as_system_time), [as_time](OperatorsAK#as_time), [at](OperatorsAK#at), [char](OperatorsAK#char), [contains](OperatorsAK#contains), [contains_all](OperatorsAK#contains_all), [contains_any](OperatorsAK#contains_any), [copy_between](OperatorsAK#copy_between), [empty](OperatorsAK#empty), [first](OperatorsAK#first), [in](OperatorsAK#in), [indented_by](OperatorsAK#indented_by), [index_of](OperatorsAK#index_of), [is_number](OperatorsAK#is_number), [last](OperatorsLZ#last), [last_index_of](OperatorsLZ#last_index_of), [length](OperatorsLZ#length), [replace](OperatorsLZ#replace), [reverse](OperatorsLZ#reverse), [sample](OperatorsLZ#sample), [shuffle](OperatorsLZ#shuffle), [split_with](OperatorsLZ#split_with), 
 
 ----
 
 ### System
-[.](OperatorsLZ#.), [copy](OperatorsLZ#copy), [dead](OperatorsLZ#dead), [eval_gaml](OperatorsLZ#eval_gaml), [every](OperatorsLZ#every), [user_input](OperatorsLZ#user_input), 
+[.](OperatorsAK#.), [copy](OperatorsAK#copy), [dead](OperatorsAK#dead), [eval_gaml](OperatorsAK#eval_gaml), [every](OperatorsAK#every), [user_input](OperatorsLZ#user_input), 
 
 ----
 
 ### Time-related operators
-[as_date](OperatorsLZ#as_date), [as_system_date](OperatorsLZ#as_system_date), [as_system_time](OperatorsLZ#as_system_time), [as_time](OperatorsLZ#as_time), 
+[as_date](OperatorsAK#as_date), [as_system_date](OperatorsAK#as_system_date), [as_system_time](OperatorsAK#as_system_time), [as_time](OperatorsAK#as_time), 
 
 ----
 
