@@ -8,6 +8,7 @@ As for multiple programming language, inheritance can be used in GAML. It is use
 
 * [Mother species / child species](#mother-species-/-child-species)
 * [Virtual actions](#virtual-actions)
+* [Get all the subspecies from a species](#get-all-the-subspecies-from-a-species)
 
 ## Mother species / child species
 
@@ -75,5 +76,47 @@ species child_species parent:virtual_mother_species {
 		// some statements
 	}
 }
+```
+
+## Get all the subspecies from a species
+
+If you declare a "mother" species, you create a "child" agent, then "mother" will return the population of agents "mother" and **not** the population of agents "child", as it is shown in the following example : 
+```
+global
+{
+    init {
+        create child number:2;
+        create mother number:1;
+    }
+    reflex update {
+        write length(mother); // will write 1 and not 3
+    }
+}
+
+species mother {}
+
+species child parent:mother {}
+```
+
+We reminds you that "subspecies" is a built-in attribute of the agent. Using this attribute, you can easily get all the subspecies agents of the mother species by writing the following gaml function : 
+
+```
+global
+{
+    init {
+        create child number:2;
+        create mother number:1;
+    }
+    reflex update {
+        write length(get_all_instances(mother)); // will write 3 (1+3)
+    }
+    list<agent> get_all_instances(species<agent> spec) {
+        return spec.population +  spec.subspecies accumulate (get_all_instances(each));
+    }
+}
+
+species mother {}
+
+species child parent:mother {}
 ```
 [//]: # (endConcept|inheritance)
