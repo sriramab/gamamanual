@@ -408,6 +408,16 @@ put 2 in: list_int key: 2; // put 2 in the 3rd position
 write list_int; // the output is : [3,6,2,7,0]
 ```
 
+**How to add 2 lists?**
+
+You can add 2 lists by creating a third one and browsing the 2 first one, but you can do it much easily by using the operator `+` : 
+
+```
+list<int> list_int1 <- [1,5,7,6,7];
+list<int> list_int2 <- [6,9];
+list<int> list_int_result <- list_int1 + list_int2;
+```
+
 
 **How to browse a list?**
 
