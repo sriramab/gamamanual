@@ -1,7 +1,5 @@
 # How to write the Website Content
 
-_The corresponding architecture presented here is not finished yet, and is hosted currently in the branch **branch_doc_1.7**_
-
 In this page, we will explain all about the convention we use to write and generate the website content and the wiki content.
 Since the release of GAMA 1.7, with the new GAMA website, we have two contents:
 * The _wiki_ content is hosted in github, witch directly interpret the markdown format of the files to display them in a proper way. This wiki, since it is a wiki, can be edited by any user. It is then, in constant changes.
@@ -354,6 +352,8 @@ Exemple :
 * Tags: 3d, shape, neighbors
 */
 ```
+
+Note that if you don't want this model to have a page in the website, you can name it starting with the character `_`.
 
 ### In the GAML References
 You can add a concept to a gaml word by using the syntax `concept = { IConcept.MY_CONCEPT }`.
