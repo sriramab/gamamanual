@@ -2,12 +2,14 @@
 [//]: # (keyword|statement_equation)
 [//]: # (keyword|statement_\=)
 [//]: # (keyword|statement_solve)
+[//]: # (keyword|concept_equation)
+[//]: # (keyword|concept_math)
 # SIR_split_in_agents
 
 
 _Author : hqnghi _
 
-This model illustrates the possibility to split an equation system into several agents.  All the equations are solve together thanks to the `simultaneously` facet of the equation statement.  We also compare the split model with the simple SIR one. 
+This model illustrates the possibility to split an equation system into several agents. All the equations are solve together thanks to the `simultaneously` facet of the equation statement. We also compare the split model with the simple SIR one. 
 
 
 Code of the model : 

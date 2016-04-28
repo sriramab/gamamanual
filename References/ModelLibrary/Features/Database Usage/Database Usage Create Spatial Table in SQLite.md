@@ -5,7 +5,7 @@
 
 _Author : Truong Minh Thai_
 
-   This model shows how to create a database and a table in SQLite using GAMA
+This model shows how to create a database and a table in SQLite using GAMA
  
 
 Code of the model : 

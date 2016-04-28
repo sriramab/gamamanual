@@ -1,3 +1,8 @@
+[//]: # (keyword|constant_#sec)
+[//]: # (keyword|constant_#minute)
+[//]: # (keyword|constant_#d)
+[//]: # (keyword|constant_#month)
+[//]: # (keyword|constant_#year)
 [//]: # (keyword|concept_date)
 # Simple definition of time property in a model
 

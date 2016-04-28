@@ -5,8 +5,6 @@
 [//]: # (keyword|operator_box)
 [//]: # (keyword|operator_pyramid)
 [//]: # (keyword|operator_polyhedron)
-[//]: # (keyword|operator_rectangle)
-[//]: # (keyword|operator_line)
 [//]: # (keyword|operator_polyline)
 [//]: # (keyword|operator_triangle)
 [//]: # (keyword|operator_hexagon)
@@ -20,6 +18,8 @@ _Author : Arnaud Grignard_
 
 Model presenting a 3D display with all the primitive shapes existing in GAMA in 2D and 3D, with or without textures. 
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Built-In Shapes\View1-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Built-In Shapes\View1-10.png)
 
 Code of the model : 
 

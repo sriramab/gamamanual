@@ -13,6 +13,10 @@ _Author : Julien Mazars_
 This model is used to show how to use diffusion on a grid, and how to accelerate the process by computing several times the diffusion at each step. The cells at the center of the grid emit a pheromon at the cycle 0, which is spread through the grid thanks to the diffusion mechanism, using a particular matrix of diffusion. The "avoid_mask" facet is used in order to have a constant sum of pheromon. 
 
 
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Diffusion Statement\Diffusion Statement Diffusion in a cuve (Cycle length)\a-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Diffusion Statement\Diffusion Statement Diffusion in a cuve (Cycle length)\a-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Diffusion Statement\Diffusion Statement Diffusion in a cuve (Cycle length)\quick-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Diffusion Statement\Diffusion Statement Diffusion in a cuve (Cycle length)\quick-10.png)
+
 Code of the model : 
 
 ```

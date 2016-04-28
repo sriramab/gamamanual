@@ -1,4 +1,3 @@
-[//]: # (keyword|operator_rectangle)
 [//]: # (keyword|skill_physics)
 [//]: # (keyword|concept_physics_engine)
 [//]: # (keyword|concept_skill)
@@ -12,6 +11,8 @@ _Author : Arnaud Grignard_
 
 This is a model that shows how the physics engine works using a pool with balls, collided by a white ball. The balls use the skill Physical3D.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Physics Engine\Physics Engine Pool\Circle-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Physics Engine\Physics Engine Pool\Circle-10.png)
 
 Code of the model : 
 
@@ -231,7 +232,7 @@ species ball skills: [physics] {
 
 experiment pool type: gui {
 	output {
-		display Circle type: opengl tesselation: true ambient_light: 100 background: #white draw_env: false { species ground aspect: default;
+		display Circle type: opengl tesselation: true background: #white draw_env: false { species ground aspect: default;
 		species wall aspect: default;
 		species ball aspect: sphere;
 		}

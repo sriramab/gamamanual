@@ -3,6 +3,7 @@
 [//]: # (keyword|operator_get)
 [//]: # (keyword|operator_not)
 [//]: # (keyword|operator_in)
+[//]: # (keyword|operator_last)
 [//]: # (keyword|statement_put)
 [//]: # (keyword|statement_save)
 [//]: # (keyword|concept_load_file)
@@ -121,7 +122,7 @@ species intersection {
 
 experiment fromOSMtoShapefiles type: gui {
 	output {
-		display map type: opengl ambient_light: 100{
+		display map type: opengl {
 			graphics "world" {
 				draw world.shape.contour;
 			}

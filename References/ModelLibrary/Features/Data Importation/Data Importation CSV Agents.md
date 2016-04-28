@@ -10,6 +10,8 @@ _Author :  Patrick Taillandier_
 Model which shows how to create agents by importing data of a CSV file. The model read the CSV File and create an agent Iris for each line of the CSV, linking its attributes to columns of the CSV File. 
 
 
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation CSV Agents\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation CSV Agents\map-10.png)
+
 Code of the model : 
 
 ```

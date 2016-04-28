@@ -9,8 +9,16 @@
 
 _Author : Arnaud Grignard_
 
-Model presenting a 3D display of people and buildings moving on a road network imported thanks to shapefiles.  Three experiments are proposed : one showing people represented by a yellow sphere moving from a living 3D building to a working 3D building and coming back using a road network (road_traffic). The second experiment distinguish the species by using different layers for species (road_traffic_multi_layer). The last one increases the Z location of the buildings and the people according to the time simulated (road_traffic_flying_off).
+Model presenting a 3D display of people and buildings moving on a road network imported thanks to shapefiles. 
 
+Three experiments are proposed : one showing people represented by a yellow sphere moving from a living 3D building to a working 3D building and coming back using a road network (road_traffic). The second experiment distinguish the species by using different layers for species (road_traffic_multi_layer). The last one increases the Z location of the buildings and the people according to the time simulated (road_traffic_flying_off).
+
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Building Elevation\city_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Building Elevation\city_display-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Building Elevation\city_display2-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Building Elevation\city_display2-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Building Elevation\flyingOffAgents-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Building Elevation\flyingOffAgents-10.png)
 
 Code of the model : 
 
@@ -133,13 +141,13 @@ experiment road_traffic type: gui {
 	parameter 'minimal speed' var: min_speed category: 'People';
 	parameter 'maximal speed' var: max_speed category: 'People';
 	output {
-		display city_display type: opengl ambient_light: 100{
+		display city_display type: opengl {
 			species building aspect: base;
 			species road aspect: base;
 			species people aspect: base;
 		}
 		
-		display city_display2 ambient_light: 100{
+		display city_display2 {
 			species building aspect: base;
 			species road aspect: base;
 			species people aspect: base;
@@ -159,7 +167,7 @@ experiment road_traffic_multi_layer type: gui {
 	parameter 'minimal speed' var: min_speed category: 'People';
 	parameter 'maximal speed' var: max_speed category: 'People';
 	output {
-		display city_display type: opengl ambient_light: 100 {
+		display city_display type: opengl {
 			species road aspect: base;
 			species building aspect: base position:{0,0,0.25};
 			species people aspect: base position:{0,0,0.5};
@@ -170,7 +178,7 @@ experiment road_traffic_multi_layer type: gui {
 
 experiment road_traffic_flying_off type: gui {
 	output {
-		display flyingOffAgents type: opengl ambient_light: 100 {
+		display flyingOffAgents type: opengl {
 			species road aspect: base;
 			species building aspect: base position: { 0, 0, (time * 2)/1000 };
 			species people aspect: base position: { 0, 0, (time * 4)/1000 };

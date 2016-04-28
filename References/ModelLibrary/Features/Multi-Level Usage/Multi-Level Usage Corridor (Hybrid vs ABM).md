@@ -1,4 +1,3 @@
-[//]: # (keyword|operator_rectangle)
 [//]: # (keyword|operator_at_location)
 [//]: # (keyword|operator_towards)
 [//]: # (keyword|statement_capture)
@@ -12,6 +11,8 @@ _Author : _
 
 This model shows how to use multi-level architecture. Two corridors are presented : one which can capture the pedestrians going through it and computing for them the time before releasing them at the end of the corridor, and an other doing nothing, letting the pedestrians moving by themselves in the corridor. 
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multi-Level Usage\Multi-Level Usage Corridor (Hybrid vs ABM)\default_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multi-Level Usage\Multi-Level Usage Corridor (Hybrid vs ABM)\default_display-10.png)
 
 Code of the model : 
 

@@ -15,6 +15,8 @@ _Author :  Patrick Taillandier_
 Model to represent how the agents move from one point to a target agent on a grid of cells with obstacles, following the shortest path and coloring in magenta the cells intersecting the path of an agent
 
 
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Goto Grid\objects_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Goto Grid\objects_display-10.png)
+
 Code of the model : 
 
 ```

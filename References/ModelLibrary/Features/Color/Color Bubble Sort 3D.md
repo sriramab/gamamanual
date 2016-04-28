@@ -10,8 +10,10 @@
 
 _Author :  Arnaud Grignard_
 
-A model to show how to create color by using the rgb operator, the color depending on the position of cube in the xyz space. The cubes are randomly mixed to finally be sorted according to the color of each vertix of the whole big cube, using the bubble sort  algorithm (https://en.wikipedia.org/wiki/Bubble_sort). 
+A model to show how to create color by using the rgb operator, the color depending on the position of cube in the xyz space. The cubes are randomly mixed to finally be sorted according to the color of each vertix of the whole big cube, using the bubble sort algorithm (https://en.wikipedia.org/wiki/Bubble_sort). 
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Color\Color Bubble Sort 3D\View1-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Color\Color Bubble Sort 3D\View1-10.png)
 
 Code of the model : 
 

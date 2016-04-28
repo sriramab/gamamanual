@@ -2,7 +2,9 @@
 [//]: # (keyword|operator_closest_to)
 [//]: # (keyword|operator_using)
 [//]: # (keyword|operator_sort_by)
+[//]: # (keyword|operator_last)
 [//]: # (keyword|statement_using)
+[//]: # (keyword|constant_#lightgray)
 [//]: # (keyword|constant_#cyan)
 [//]: # (keyword|type_topology)
 [//]: # (keyword|concept_gis)
@@ -14,8 +16,10 @@
 
 _Author : Truong Chi Quang, Patrick Taillandier, Benoit Gaudou & Alexis Drogoul_
 
-model based on the one proposed by (Raimbault et al., 2014):  At each simulation step the nb_plots_to_build empty plots with the highest constructability are built  The constructability is computed from 3 criteria: the density of construction in the neighborhood, the distance to a road, the distance to the city center (using the road network). 
+model based on the one proposed by (Raimbault et al., 2014): At each simulation step the nb_plots_to_build empty plots with the highest constructability are built The constructability is computed from 3 criteria: the density of construction in the neighborhood, the distance to a road, the distance to the city center (using the road network). 
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Urban Growth\Urban Growth raster model\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Urban Growth\Urban Growth raster model\map-10.png)
 
 Code of the model : 
 

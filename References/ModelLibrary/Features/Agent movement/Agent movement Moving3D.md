@@ -1,5 +1,4 @@
 [//]: # (keyword|operator_cube)
-[//]: # (keyword|operator_line)
 [//]: # (keyword|operator_cos)
 [//]: # (keyword|operator_sin)
 [//]: # (keyword|operator_floor)
@@ -16,6 +15,14 @@ _Author :  Arnaud Grignard - Tri Nguyen Huu_
 
 This model illustrates the different action and effect offered by the movingSkill3D (move,wander,goto and follow)
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Moving3D\GotoAgent-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Moving3D\GotoAgent-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Moving3D\GotoOnNetworkAgent-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Moving3D\GotoOnNetworkAgent-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Moving3D\MovingAgent-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Moving3D\MovingAgent-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Moving3D\WanderingAgent-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Moving3D\WanderingAgent-10.png)
 
 Code of the model : 
 
@@ -171,7 +178,7 @@ experiment Moving  type: gui {
 	parameter "Agent Aspect" var:agentAspect <- "direction";
 	parameter "Effect type" var:effectType <- "" among:["","firework"];
 	output {	
-		display MovingAgent type:opengl  ambient_light:10 diffuse_light:100  background:rgb(10,40,55) {
+		display MovingAgent type:opengl  background:rgb(10,40,55) {
 			species movingAgent trace:trace;
 		}
 	}
@@ -182,7 +189,7 @@ experiment Wandering  type: gui {
 	parameter "Movement" var:movingType <- "wander";
 	parameter "Agent Aspect" var:agentAspect <- "direction";
 	output {	
-		display WanderingAgent type:opengl  ambient_light:10 diffuse_light:100  background:rgb(10,40,55) {
+		display WanderingAgent type:opengl  background:rgb(10,40,55) {
 			species wanderAgent trace:trace;
 		}
 	}
@@ -194,7 +201,7 @@ experiment Goto  type: gui {
 	parameter "Agent Aspect" var:agentAspect <- "direction";
 	parameter "Effect Type" var:effectType <- "" among:["","blob"];
 	output {	
-		display GotoAgent type:opengl  ambient_light:10 diffuse_light:100  background:rgb(10,40,55) {
+		display GotoAgent type:opengl  background:rgb(10,40,55) {
 			species gotoAgent trace:trace;
 		}
 	}
@@ -206,7 +213,7 @@ experiment GotoOnNetwork  type: gui {
 	parameter "Agent Aspect" var:agentAspect <- "direction";
 	output {
 			
-		display GotoOnNetworkAgent type:opengl  ambient_light:10 diffuse_light:100  background:rgb(10,40,55) {
+		display GotoOnNetworkAgent type:opengl background:rgb(10,40,55) {
 			species gotoAgentOnNetwork trace:trace;
 			species cell aspect:myPoint;
 			species edge_agent aspect: base2 ;
@@ -220,7 +227,7 @@ experiment Complete  type: gui {
 	parameter "Agent Aspect" var:agentAspect <- "direction";
 	output {
 			
-		display GotoOnNetworkAgent type:opengl  ambient_light:10 diffuse_light:100  background:rgb(10,40,55) {
+		display GotoOnNetworkAgent type:opengl background:rgb(10,40,55) {
 			species movingAgent position:{0,0,0} trace:trace;
 			species wanderAgent position:{envSize,0,0} trace:trace;
 			species gotoAgent position:{envSize*2,0,0} trace:trace;

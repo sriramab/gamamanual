@@ -10,6 +10,8 @@ _Author : Maroussia Vavasseur and Benoit Gaudou_
 Model which shows how to import a Raster file in GAMA and use it to initialize the color attributes of a grid of cells. This model represents a grid with a cell, each cell has a color, and this color is used for animals (izards) to be placed on a cell that verifies some conditions. The izards do not move once they have been placed. 
 
 
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Raster Image Import\HowToImportRaster-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Raster Image Import\HowToImportRaster-10.png)
+
 Code of the model : 
 
 ```

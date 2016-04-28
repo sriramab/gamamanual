@@ -10,6 +10,8 @@ _Author : _
 This model shows the movement of cells trying to do a circle shape with themselves considering the other cells. The second experiment shows a bigger circle using more cell agents.
 
 
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Circle\Circle Circle\Circle-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Circle\Circle Circle\Circle-10.png)
+
 Code of the model : 
 
 ```

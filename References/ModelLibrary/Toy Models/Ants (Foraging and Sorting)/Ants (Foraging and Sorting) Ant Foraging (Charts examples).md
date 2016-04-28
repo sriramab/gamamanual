@@ -1,6 +1,7 @@
 [//]: # (keyword|architecture_fsm)
 [//]: # (keyword|operator_min_of)
 [//]: # (keyword|operator_sort)
+[//]: # (keyword|operator_last)
 [//]: # (keyword|operator_contains)
 [//]: # (keyword|statement_state)
 [//]: # (keyword|statement_transition)
@@ -8,8 +9,10 @@
 [//]: # (keyword|statement_datalist)
 [//]: # (keyword|skill_fsm)
 [//]: # (keyword|constant_#violet)
+[//]: # (keyword|constant_#purple)
 [//]: # (keyword|concept_gui)
 [//]: # (keyword|concept_skill)
+[//]: # (keyword|concept_chart)
 [//]: # (keyword|concept_grid)
 [//]: # (keyword|concept_diffusion)
 # Ant Foraging (Charts examples)
@@ -19,6 +22,34 @@ _Author : _
 
 Toy Model ant using the question of how ants search food and use pheromons to return to their nest once they did find food. In this model, the charts are particularly used.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\Ants-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\Ants-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartHisto-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartHisto-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartHistoList-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartHistoList-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartHistoListList-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartHistoListList-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartPie-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartPie-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartPieList-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartPieList-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartScatter-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartScatter-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartScatterHistory-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartScatterHistory-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartScatterList-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartScatterList-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartSerie-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartSerie-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartSerieList-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartSerieList-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartSeriesListList-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\ChartSeriesListList-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\Cyclevalues-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\Cyclevalues-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\Dispscaleoption-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Charts examples)\Dispscaleoption-10.png)
 
 Code of the model : 
 
@@ -290,8 +321,8 @@ experiment Ant type: gui {
 	
 	}
 	
-	//Experiment with only two display : the grid and the ants, and a chart
-	experiment AntOneDisp type: gui {
+//Experiment with only two display : the grid and the ants, and a chart
+experiment AntOneDisp type: gui {
 	parameter 'Number of ants:' var: ants_number category: 'Model' ;
 	parameter 'Evaporation of the signal unit/cycle):' var: evaporation_per_cycle category: 'Model' ;
 	parameter 'Rate of diffusion of the signal (%/cycle):' var: diffusion_rate category: 'Model' ;
@@ -322,7 +353,6 @@ experiment Ant type: gui {
 				}
 			add nl to:nbantsbydist;
 			}
-//			add length((list(world.ant) collect (each.next_place distance_to each.location)) where (each=x)) to:nbants;
 		}
 		write("nbants"+nbants);
 		write("nbantsbydist"+nbantsbydist);

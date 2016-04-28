@@ -9,7 +9,7 @@
 
 _Author : Benoit Gaudou_
 
-A model which shows how to use the unit test to show the possible errors  you have to go in the Views, Preferences, Simulation, in "Errors" Uncheck "stop at the first error", to show all the errors.
+A model which shows how to use the unit test to show the possible errors you have to go in the Views, Preferences, Simulation, in "Errors" Uncheck "stop at the first error", to show all the errors.
 
 
 Code of the model : 

@@ -22,6 +22,7 @@ casting_operator:cast
 casting:cast
 cell:grid
 centimeters:cm
+child:inheritence
 closest:spatial_relation
 cluster:clustering
 crs:gis
@@ -106,6 +107,7 @@ members:multi_level
 memory:system
 micro_species:multi_level
 monitor:inspector
+mother:inheritence
 mouse:gui
 move:agent_movement
 moving:agent_movement
@@ -149,6 +151,7 @@ pointer:system
 polymorphism:inheritance
 ponderation:graph_weight
 position:agent_location
+pow:^
 power:^
 predicate:bdi
 print:write

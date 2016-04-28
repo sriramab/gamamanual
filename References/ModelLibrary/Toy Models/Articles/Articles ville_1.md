@@ -8,6 +8,8 @@ _Author : _
 This is a simple model showing different circle with a color according to the income of the house.
 
 
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Articles\Articles ville_1\carte_principale-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Articles\Articles ville_1\carte_principale-10.png)
+
 Code of the model : 
 
 ```

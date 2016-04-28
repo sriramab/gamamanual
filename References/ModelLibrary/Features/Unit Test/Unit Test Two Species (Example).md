@@ -6,9 +6,9 @@
 
 _Author : Benoit Gaudou_
 
-The model creates 10 agents at initialization, kills one agent at each step.
- * 	With the assert we want to ensure that the test_species1 population always contains more than 5 agents. 
- * 	 After four steps the population is below 6 so Errors are raisen. you have to go in the Views, Preferences, Simulation, in "Errors" Uncheck "stop at the first error", to show all the errors.
+The model creates 10 agents at initialization, kills one agent at each step. 
+ * With the assert we want to ensure that the test_species1 population always contains more than 5 agents. 
+ * After four steps the population is below 6 so Errors are raisen. You have to go in the Views, Preferences, Simulation, in "Errors" Uncheck "stop at the first error", to show all the errors.
 
 
 Code of the model : 

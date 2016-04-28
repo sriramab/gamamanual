@@ -1,4 +1,5 @@
 [//]: # (keyword|operator_direction_to)
+[//]: # (keyword|operator_last)
 [//]: # (keyword|operator_abs)
 [//]: # (keyword|operator_not)
 [//]: # (keyword|operator_in)
@@ -6,7 +7,6 @@
 [//]: # (keyword|operator_cos)
 [//]: # (keyword|operator_sin)
 [//]: # (keyword|operator_triangle)
-[//]: # (keyword|operator_max)
 [//]: # (keyword|operator_polyline)
 [//]: # (keyword|operator_reverse)
 [//]: # (keyword|operator_as_map)
@@ -20,7 +20,7 @@
 [//]: # (keyword|skill_skill_road)
 [//]: # (keyword|skill_advanced_driving)
 [//]: # (keyword|constant_#km)
-[//]: # (keyword|constant_#h)
+[//]: # (keyword|constant_#m)
 [//]: # (keyword|constant_#minute)
 [//]: # (keyword|type_path)
 [//]: # (keyword|concept_gis)
@@ -36,6 +36,10 @@ _Author : Patrick Taillandier_
 
 Model to show how to use the driving skill to represent the traffic on a road network generated thanks to shapefiles, with intersections and traffic lights going from red to green to let people move or stop. Two experiments are presented : experiment_2D to display the model in 2D and which better display the orientation of roads and experiment_3D to display the model in 3D.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Driving Skill\Driving Skill Road Traffic advanced\carte_principale-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Driving Skill\Driving Skill Road Traffic advanced\carte_principale-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Driving Skill\Driving Skill Road Traffic advanced\city_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Driving Skill\Driving Skill Road Traffic advanced\city_display-10.png)
 
 Code of the model : 
 
@@ -278,7 +282,7 @@ experiment experiment_2D type: gui {
 experiment experiment_3D type: gui {
 	parameter "if true, simple data (simple track), if false complex one (Manhattan):" var: simple_data category: "GIS" ;
 	output {
-		display carte_principale type: opengl ambient_light: 100{
+		display carte_principale type: opengl {
 			species road aspect: base3D refresh: true;
 			species intersection aspect: base3D;
 			species people aspect: base3D ; 

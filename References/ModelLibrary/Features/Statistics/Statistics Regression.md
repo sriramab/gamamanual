@@ -1,7 +1,6 @@
 [//]: # (keyword|operator_as_matrix)
 [//]: # (keyword|operator_build)
 [//]: # (keyword|operator_predict)
-[//]: # (keyword|operator_line)
 [//]: # (keyword|statement_put)
 [//]: # (keyword|type_regression)
 [//]: # (keyword|type_matrix)
@@ -15,6 +14,8 @@ _Author : Patrick Taillandier_
 
 A model which shows how to use the regression 
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Statistics\Statistics Regression\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Statistics\Statistics Regression\map-10.png)
 
 Code of the model : 
 

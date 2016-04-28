@@ -12,6 +12,8 @@
 [//]: # (keyword|statement_put)
 [//]: # (keyword|statement_remove)
 [//]: # (keyword|architecture_fsm)
+[//]: # (keyword|constant_#m)
+[//]: # (keyword|constant_#sec)
 [//]: # (keyword|constant_#pixels)
 [//]: # (keyword|concept_attribute)
 [//]: # (keyword|concept_ternary)

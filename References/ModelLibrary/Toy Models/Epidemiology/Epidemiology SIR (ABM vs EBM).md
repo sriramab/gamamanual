@@ -3,6 +3,8 @@
 [//]: # (keyword|statement_equation)
 [//]: # (keyword|statement_solve)
 [//]: # (keyword|constant_#lightgray)
+[//]: # (keyword|concept_equation)
+[//]: # (keyword|concept_math)
 [//]: # (keyword|concept_grid)
 # comparison_ABM_EBM_SIR
 
@@ -11,6 +13,14 @@ _Author : Benoit Gaudou _
 
 Comparison between an agent-based and an equation-based model of the SIR model. The ABM use a grid to place the agents, and each cell will be the location of an agent, while the EBM is only using a ODE System and no geographical representation.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology SIR (ABM vs EBM)\ABM-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology SIR (ABM vs EBM)\ABM-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology SIR (ABM vs EBM)\ABM_EBM-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology SIR (ABM vs EBM)\ABM_EBM-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology SIR (ABM vs EBM)\EBM-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology SIR (ABM vs EBM)\EBM-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology SIR (ABM vs EBM)\sir_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology SIR (ABM vs EBM)\sir_display-10.png)
 
 Code of the model : 
 

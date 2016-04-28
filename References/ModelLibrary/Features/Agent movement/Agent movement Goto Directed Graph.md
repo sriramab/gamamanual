@@ -12,8 +12,10 @@
 
 _Author :  Patrick Taillandier_
 
-Model representing how to directed graph using GIS Data for the road networks : the GIS contains a column defining the direction of the roads   and people moving from one random point to another on this graph
+Model representing how to directed graph using GIS Data for the road networks : the GIS contains a column defining the direction of the roads and people moving from one random point to another on this graph
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Goto Directed Graph\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Goto Directed Graph\map-10.png)
 
 Code of the model : 
 

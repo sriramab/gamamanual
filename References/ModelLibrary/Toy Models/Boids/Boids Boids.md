@@ -12,6 +12,8 @@ _Author : _
 This model shows the movement of boids following a goal, and creating without their own volonty, a flock. The experiment proposes to display in a 3D view the different boids and allows the user to move the goal to see the behaviour of boids.
 
 
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Boids\Boids Boids\Sky-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Boids\Boids Boids\Sky-10.png)
+
 Code of the model : 
 
 ```

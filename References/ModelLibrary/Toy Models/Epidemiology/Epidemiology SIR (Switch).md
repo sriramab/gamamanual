@@ -8,14 +8,18 @@
 [//]: # (keyword|statement_\=)
 [//]: # (keyword|statement_solve)
 [//]: # (keyword|constant_#lightgray)
+[//]: # (keyword|concept_equation)
+[//]: # (keyword|concept_math)
 [//]: # (keyword|concept_grid)
 # SIR_switch
 
 
 _Author : tri and hqnghi _
 
-A model which show how to implement ODE system, IBM model, and to switch from one to another using a threshold. Another interesting point seen in this model is the  the minimization of the execution time by reducing the number of agents to compute infections.
+A model which show how to implement ODE system, IBM model, and to switch from one to another using a threshold. Another interesting point seen in this model is the the minimization of the execution time by reducing the number of agents to compute infections.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology SIR (Switch)\SI_maths-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology SIR (Switch)\SI_maths-10.png)
 
 Code of the model : 
 

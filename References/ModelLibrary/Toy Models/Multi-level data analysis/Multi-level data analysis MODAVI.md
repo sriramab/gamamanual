@@ -1,7 +1,6 @@
 [//]: # (keyword|operator_list_with)
 [//]: # (keyword|operator_as_matrix)
 [//]: # (keyword|operator_hsb)
-[//]: # (keyword|operator_line)
 [//]: # (keyword|operator_buffer)
 [//]: # (keyword|operator_source_of)
 [//]: # (keyword|operator_target_of)
@@ -20,8 +19,10 @@
 
 _Author : Arnaud Grignard_
 
-From a reference model with node of a given class, a spatial graph is created  (or a barabasi graph if spatialGraph is set to false) in the advanced view to  represent the interaction in the reference model. An abstract view/controller is created to summarize the interaction in the advanced view in a macro graph and control the reference model by defining an action (user_command)  for each macroNode and macroEdge.
+From a reference model with node of a given class, a spatial graph is created (or a barabasi graph if spatialGraph is set to false) in the advanced view to represent the interaction in the reference model.An abstract view/controller is created to summarize the interaction in the advanced viewin a macro graph and control the reference model by defining an action (user_command) for each macroNode and macroEdge.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Multi-level data analysis\Multi-level data analysis MODAVI\MODAVI-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Multi-level data analysis\Multi-level data analysis MODAVI\MODAVI-10.png)
 
 Code of the model : 
 
@@ -296,7 +297,7 @@ global {
 
 experiment MODAVI type: gui {
 	output {			
-		display MODAVI type:opengl ambient_light: 10 diffuse_light:100 draw_env:false {
+		display MODAVI type:opengl draw_env:false {
 			graphics 'ReferenceModel'{
 				draw "Reference model" at:{200,50,0} size:5 color: #black perspective:false;
 			}

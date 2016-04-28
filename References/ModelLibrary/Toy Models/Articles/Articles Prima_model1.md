@@ -7,6 +7,8 @@ _Author : _
 This model shows how to create agent and make them move randomly in the world. Some agents are infected, and others can gain the infection if they are in a certain range.
 
 
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Articles\Articles Prima_model1\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Articles\Articles Prima_model1\map-10.png)
+
 Code of the model : 
 
 ```

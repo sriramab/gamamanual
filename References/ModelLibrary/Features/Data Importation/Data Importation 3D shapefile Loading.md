@@ -10,6 +10,8 @@ _Author :  _
 Model which shows how to create a shape using a 3D Shapefile after this one has been loaded. 
 
 
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation 3D shapefile Loading\city_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation 3D shapefile Loading\city_display-10.png)
+
 Code of the model : 
 
 ```
@@ -34,7 +36,7 @@ species gis_3d_object {
 experiment display_shape type: gui {
 
 	output {
-		display city_display type: opengl ambient_light: 100 draw_env:false{
+		display city_display type: opengl draw_env:false{
 			species gis_3d_object aspect: base;
 		}
 

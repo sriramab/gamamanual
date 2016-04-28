@@ -1,17 +1,19 @@
 [//]: # (keyword|operator_hsb)
 [//]: # (keyword|operator_degree_of)
-[//]: # (keyword|operator_line)
 [//]: # (keyword|type_topology)
 [//]: # (keyword|statement_using)
 [//]: # (keyword|concept_graph)
+[//]: # (keyword|concept_mirror)
 [//]: # (keyword|concept_3d)
 # SpatialGraph3d
 
 
 _Author : Arnaud Grignard_
 
-From the reference model "bug.gaml" a spatial graph is created.  We create a species node that mirrors the species bug and then a spatial graph is creating  using as_distance_graph operator. The species node should then  define its own related_to method to decide wether or not a node is related to another one.  
+From the reference model "bug.gaml" a spatial graph is created. We create a species node that mirrors the species bug and then a spatial graph is creating using as_distance_graph operator. The species node should then define its own related_to method to decide wether or not a node is related to another one.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Multi-level data analysis\Multi-level data analysis Graph From Bug (Mirror Graph)\graph_plus_bug_layered-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Multi-level data analysis\Multi-level data analysis Graph From Bug (Mirror Graph)\graph_plus_bug_layered-10.png)
 
 Code of the model : 
 
@@ -80,7 +82,7 @@ species edge_agent parent: base_edge {
 
 experiment AdvancedView type: gui {
 	output {
-		display graph_plus_bug_layered type: opengl ambient_light: 10 diffuse_light:100{ 
+		display graph_plus_bug_layered type: opengl { 
 		  species bug aspect: base;
 		  species node_agent aspect: base position: { 0, 0, 0.2 };
 		  species edge_agent aspect: base position: { 0, 0, 0.2 };

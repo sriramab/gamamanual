@@ -18,7 +18,7 @@
 
 _Author :  Patrick Taillandier_
 
-A model to show how to use date variables and more particularly the starting_date and current_date global variables. In this model,
+A model to show how to use date variables and more particularly the starting_date and current_date global variables.
 
 
 Code of the model : 

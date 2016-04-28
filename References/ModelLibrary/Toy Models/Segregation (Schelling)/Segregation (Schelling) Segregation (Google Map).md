@@ -5,6 +5,8 @@
 [//]: # (keyword|operator_of_species)
 [//]: # (keyword|operator_any)
 [//]: # (keyword|statement_remove)
+[//]: # (keyword|constant_#magenta)
+[//]: # (keyword|constant_#cyan)
 [//]: # (keyword|constant_#lightgray)
 [//]: # (keyword|type_matrix)
 [//]: # (keyword|concept_grid)
@@ -15,6 +17,10 @@ _Author : _
 
 A model showing the segregation of the people just by putting a similarity wanted parameter using agents to represent the individuals and a grid to discretize space. Use the colors of the image to know if it is a possible space or not
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (Google Map)\Charts-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (Google Map)\Charts-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (Google Map)\Segregation-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (Google Map)\Segregation-10.png)
 
 Imported model : 
 

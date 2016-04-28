@@ -14,6 +14,8 @@ _Author : Arnaud Grignard_
 Model with a 3D Display representing buildings with a random size. The model proposes two experiments : the first one represents the buildings with 3D shapes with textures, the second one without textures but the color of the buildings depends on the rotation of a ball-shaped light
 
 
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Procedural City\City-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Procedural City\City-10.png)
+
 Code of the model : 
 
 ```
@@ -66,14 +68,14 @@ species Building{
 
 experiment DisplayTextured  type: gui {
 	output {
-	  display City type:opengl ambient_light:100  background:rgb(10,40,55){
+	  display City type:opengl background:rgb(10,40,55){
 			species Building aspect:textured;							
 		}
 	}
 }
 experiment DisplayWithDynamicDiffuseLight  type: gui {
 	output {
-	  display City type:opengl ambient_light:50 draw_diffuse_light:true diffuse_light:hsb((time mod 255) /255,1.0 ,0.5)  diffuse_light_pos:{world.shape.width*0.5+ world.shape.width*1.5*sin(time*2),world.shape.width*0.5,world.shape.width*cos(time*2)} background:rgb(10,40,55){
+	  display City type:opengl draw_diffuse_light:true diffuse_light:hsb((time mod 255) /255,1.0 ,0.5)  diffuse_light_pos:{world.shape.width*0.5+ world.shape.width*1.5*sin(time*2),world.shape.width*0.5,world.shape.width*cos(time*2)} background:rgb(10,40,55){
 			species Building aspect:base;									
 		}
 	}

@@ -1,7 +1,7 @@
 [//]: # (keyword|operator_list_with)
 [//]: # (keyword|operator_sample)
 [//]: # (keyword|operator_any)
-[//]: # (keyword|operator_max)
+[//]: # (keyword|operator_last)
 [//]: # (keyword|operator_among)
 [//]: # (keyword|operator_contains)
 [//]: # (keyword|operator_contains_all)
@@ -35,7 +35,7 @@
 
 _Author : Alexis Drogoul_
 
-Examples of the syntax and various operators used to manipulate the 'list' data type.  Read the comments and run the model to get a better idea on how to use lists in GAML. 
+Examples of the syntax and various operators used to manipulate the 'list' data type. Read the comments and run the model to get a better idea on how to use lists in GAML. 
 
 
 Code of the model : 

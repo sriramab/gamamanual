@@ -14,6 +14,26 @@ _Author : Patrick Taillandier_
 A model which shows how to use the different convert topologies operators : to_square, to_rectangle, points_on, triangulate, voronoi.
 
 
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Geometry discretization\decretization_rectangles-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Geometry discretization\decretization_rectangles-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Geometry discretization\decretization_rectangles_grid-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Geometry discretization\decretization_rectangles_grid-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Geometry discretization\decretization_squares-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Geometry discretization\decretization_squares-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Geometry discretization\points_on_contours-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Geometry discretization\points_on_contours-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Geometry discretization\rectangles_inside-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Geometry discretization\rectangles_inside-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Geometry discretization\rectangles_overlapping-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Geometry discretization\rectangles_overlapping-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Geometry discretization\squares_inside-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Geometry discretization\squares_inside-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Geometry discretization\squares_overlapping-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Geometry discretization\squares_overlapping-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Geometry discretization\triangles-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Geometry discretization\triangles-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Geometry discretization\voronoi-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Geometry discretization\voronoi-10.png)
+
 Code of the model : 
 
 ```

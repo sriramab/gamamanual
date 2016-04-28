@@ -4,7 +4,7 @@
 [//]: # (keyword|operator_\:\:)
 [//]: # (keyword|operator_index_by)
 [//]: # (keyword|operator_group_by)
-[//]: # (keyword|operator_max)
+[//]: # (keyword|operator_last)
 [//]: # (keyword|operator_among)
 [//]: # (keyword|operator_contains)
 [//]: # (keyword|operator_contains_all)
@@ -33,7 +33,7 @@
 
 _Author : Alexis Drogoul_
 
-Examples of the syntax and various operators used to manipulate the 'map' data type.  Read the comments and run the model to get a better idea on how to use maps in GAML. 
+Examples of the syntax and various operators used to manipulate the 'map' data type. Read the comments and run the model to get a better idea on how to use maps in GAML. 
 
 
 Code of the model : 

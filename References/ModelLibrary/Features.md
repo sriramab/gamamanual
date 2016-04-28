@@ -10,6 +10,8 @@ This section is composed of the following sub-section :
 
 * [Clustering](references#Clustering)
 
+* [Co-model Usage](references#Co-modelUsage)
+
 * [Color](references#Color)
 
 * [Data Importation](references#DataImportation)
@@ -26,7 +28,11 @@ This section is composed of the following sub-section :
 
 * [Multi-Level Usage](references#Multi-LevelUsage)
 
+* [Multi-simulation](references#Multi-simulation)
+
 * [Multicriteria decision](references#Multicriteriadecision)
+
+* [Overlay](references#Overlay)
 
 * [Save statement](references#Savestatement)
 

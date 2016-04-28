@@ -8,8 +8,12 @@
 
 _Author :  Patrick Taillandier_
 
-A model to show how to use clustering operators and two methods of clustering (K Means and DBScan)  with the goal of regrouping agents in clusters
+A model to show how to use clustering operators and two methods of clustering (K Means and DBScan) with the goal of regrouping agents in clusters
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Clustering\Clustering Clustering\map_dbscan-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Clustering\Clustering Clustering\map_dbscan-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Clustering\Clustering Clustering\map_kmeans-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Clustering\Clustering Clustering\map_kmeans-10.png)
 
 Code of the model : 
 

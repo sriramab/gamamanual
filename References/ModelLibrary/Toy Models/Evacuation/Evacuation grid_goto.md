@@ -15,6 +15,8 @@ _Author : Patrick Taillandier_
 A 3D model with walls and exit, and people agents trying to evacuate from the area to a exit location, avoiding the walls with a discretized space by a grid
 
 
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Evacuation\Evacuation grid_goto\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Evacuation\Evacuation grid_goto\map-10.png)
+
 Code of the model : 
 
 ```

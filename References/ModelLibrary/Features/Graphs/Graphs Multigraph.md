@@ -1,5 +1,4 @@
 [//]: # (keyword|operator_path_between)
-[//]: # (keyword|operator_max)
 [//]: # (keyword|operator_node)
 [//]: # (keyword|operator_edge)
 [//]: # (keyword|operator_link)
@@ -14,6 +13,8 @@ _Author : Patrick Taillandier_
 
 This model shows how to build a graph on which people agents will move with GIS Shapefile, but also to generate an other graph representing the friendship between the people agents, people agents trying to be closer spatially to each other
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Graphs\Graphs Multigraph\friendship-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Graphs\Graphs Multigraph\friendship-10.png)
 
 Code of the model : 
 

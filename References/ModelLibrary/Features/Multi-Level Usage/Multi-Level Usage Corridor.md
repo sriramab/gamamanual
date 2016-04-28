@@ -1,4 +1,3 @@
-[//]: # (keyword|operator_rectangle)
 [//]: # (keyword|operator_at_location)
 [//]: # (keyword|operator_towards)
 [//]: # (keyword|statement_capture)
@@ -12,8 +11,14 @@
 
 _Author : _
 
-This model shows how to use multi-level architecture. A corridor can capture pedestrians going from left to right side if they are inside the corridor. This will result in changing their species from pedestrian to captured_pedestrian which will not be  displayed. Once they pass enought time to consider they reach the exit of the corridor, they will be released by the corridor agent  as pedestrians, letting them been displayed and going to their target. 
+This model shows how to use multi-level architecture. A corridor can capture pedestrians going from left to right side if they are inside the corridor. This will result in changing their species from pedestrian to captured_pedestrian which will not be displayed. Once they pass enought time to consider they reach the exit of the corridor, they will be released by the corridor agent as pedestrians, letting them been displayed and going to their target. 
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multi-Level Usage\Multi-Level Usage Corridor\Captured_Pedestrians-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multi-Level Usage\Multi-Level Usage Corridor\Captured_Pedestrians-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multi-Level Usage\Multi-Level Usage Corridor\defaut_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multi-Level Usage\Multi-Level Usage Corridor\defaut_display-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multi-Level Usage\Multi-Level Usage Corridor\Execution_Time-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multi-Level Usage\Multi-Level Usage Corridor\Execution_Time-10.png)
 
 Code of the model : 
 

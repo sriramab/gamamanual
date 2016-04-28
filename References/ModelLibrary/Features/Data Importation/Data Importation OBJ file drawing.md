@@ -11,6 +11,8 @@ _Author :  Arnaud Grignard_
 Model which shows how to use a OBJ File to draw a complex geometry. The geometry is simply used, in this case, to draw the agents.
 
 
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation OBJ file drawing\ComplexObject-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation OBJ file drawing\ComplexObject-10.png)
+
 Code of the model : 
 
 ```

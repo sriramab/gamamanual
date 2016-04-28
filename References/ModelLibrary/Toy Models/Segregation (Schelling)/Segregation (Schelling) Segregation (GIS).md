@@ -1,5 +1,7 @@
 [//]: # (keyword|operator_sum)
 [//]: # (keyword|statement_remove)
+[//]: # (keyword|constant_#magenta)
+[//]: # (keyword|constant_#cyan)
 [//]: # (keyword|constant_#lightgray)
 [//]: # (keyword|concept_gis)
 [//]: # (keyword|concept_shapefile)
@@ -10,6 +12,10 @@ _Author : _
 
 A model showing the segregation of the people just by putting a similarity wanted parameter using agents to represent the individuals and GIS file for the places
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (GIS)\Charts-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (GIS)\Charts-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (GIS)\Town_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (GIS)\Town_display-10.png)
 
 Imported model : 
 

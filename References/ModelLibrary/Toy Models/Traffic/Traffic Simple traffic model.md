@@ -3,6 +3,8 @@
 [//]: # (keyword|operator_as_map)
 [//]: # (keyword|operator_\:\:)
 [//]: # (keyword|operator_with_weights)
+[//]: # (keyword|constant_#sec)
+[//]: # (keyword|constant_#km)
 [//]: # (keyword|concept_gis)
 [//]: # (keyword|concept_shapefile)
 [//]: # (keyword|concept_graph)
@@ -15,6 +17,8 @@ _Author : Patrick Taillandier_
 
 A simple road network model: the speed on a road depends on the number of people on this road (the highest, the slowest)
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Traffic\Traffic Simple traffic model\carte-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Traffic\Traffic Simple traffic model\carte-10.png)
 
 Code of the model : 
 

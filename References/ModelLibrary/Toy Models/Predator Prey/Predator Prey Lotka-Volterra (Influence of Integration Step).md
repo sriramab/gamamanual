@@ -2,10 +2,16 @@
 [//]: # (keyword|statement_equation)
 [//]: # (keyword|statement_\=)
 [//]: # (keyword|statement_solve)
+[//]: # (keyword|concept_equation)
+[//]: # (keyword|concept_math)
 # ODE_LotkaVolterra
 
 
 _Author : Huynh Quang Nghi & Nathalie Corson_
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Predator Prey\Predator Prey Lotka-Volterra (Influence of Integration Step)\PhasePortrait-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Predator Prey\Predator Prey Lotka-Volterra (Influence of Integration Step)\PhasePortrait-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Predator Prey\Predator Prey Lotka-Volterra (Influence of Integration Step)\TimeSeries-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Predator Prey\Predator Prey Lotka-Volterra (Influence of Integration Step)\TimeSeries-10.png)
 
 Code of the model : 
 

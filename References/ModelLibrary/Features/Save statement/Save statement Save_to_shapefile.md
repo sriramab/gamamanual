@@ -1,6 +1,5 @@
 [//]: # (keyword|operator_copy)
 [//]: # (keyword|statement_save)
-[//]: # (keyword|constant_#pink)
 [//]: # (keyword|concept_save_file)
 [//]: # (keyword|concept_shapefile)
 # Save to Shapefile
@@ -10,6 +9,8 @@ _Author : Patrick Taillandier_
 
 This is a model that shows how to save agents inside a Shapefile to reuse it later or to keep it.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Save statement\Save statement Save_to_shapefile\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Save statement\Save statement Save_to_shapefile\map-10.png)
 
 Code of the model : 
 

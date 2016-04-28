@@ -1,7 +1,6 @@
 [//]: # (keyword|operator_not)
 [//]: # (keyword|operator_user_input)
 [//]: # (keyword|statement_user_command)
-[//]: # (keyword|constant_#pink)
 [//]: # (keyword|concept_gui)
 # User Command
 
@@ -10,6 +9,8 @@ _Author : Patrick Taillandier_
 
 Model which shows how to use the user commands in order to create agents in the display. The user has two possibilities : create one agent, or create a number of agents, with the possibility to change their shape and a pink color. The user also has the possibility to change the color and the shapes of the agents.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\User Interaction\User Interaction User Command\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\User Interaction\User Interaction User Command\map-10.png)
 
 Code of the model : 
 

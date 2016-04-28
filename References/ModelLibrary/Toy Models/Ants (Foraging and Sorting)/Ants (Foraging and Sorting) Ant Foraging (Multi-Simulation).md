@@ -1,6 +1,7 @@
 [//]: # (keyword|architecture_fsm)
 [//]: # (keyword|operator_round)
 [//]: # (keyword|operator_sort_by)
+[//]: # (keyword|operator_last)
 [//]: # (keyword|operator_distance_between)
 [//]: # (keyword|statement_state)
 [//]: # (keyword|statement_transition)
@@ -12,6 +13,7 @@
 [//]: # (keyword|concept_gui)
 [//]: # (keyword|concept_skill)
 [//]: # (keyword|concept_grid)
+[//]: # (keyword|concept_multi_simulation)
 [//]: # (keyword|concept_diffusion)
 # Ant Foraging (Multi-Simulation)
 
@@ -169,7 +171,7 @@ experiment "4 Simulations" type: gui {
 	permanent {
 		display Comparison background: #white {
 			chart "Food Gathered" type: series {
-				loop s over: ants_model {
+				loop s over: simulations {
 					data "Food " + int(s) value: s.food_gathered color: s.color marker: false style: line ;
 				}
 			}

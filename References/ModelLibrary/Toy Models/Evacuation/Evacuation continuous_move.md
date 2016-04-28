@@ -16,6 +16,8 @@ _Author : Patrick Taillandier_
 A 3D model which show how to represent an evacuation system with obstacles, cohesion factor and velocity. The people are placed randomly and have to escape by going to a target point
 
 
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Evacuation\Evacuation continuous_move\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Evacuation\Evacuation continuous_move\map-10.png)
+
 Code of the model : 
 
 ```
@@ -120,7 +122,7 @@ species people skills:[moving]{
 experiment main type: gui {
 	parameter "nb people" var: nb_people min: 1 max: 1000;
 	output {
-		display map type: opengl ambient_light: 150 camera_pos: {world.location.x,-world.shape.height*1.5,70}
+		display map type: opengl camera_pos: {world.location.x,-world.shape.height*1.5,70}
                         camera_look_pos:{world.location.x,0,0}    {
 			image '../images/soil.jpg';
 			species building refresh: false;

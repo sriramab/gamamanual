@@ -18,8 +18,19 @@
 
 _Author : Patrick Taillandier_
 
-This model shows how to use different comparators to know the accuracy of a prediction model. Four comparators are used : kappa, comparing the map observed and the map simulation ; kappa simulation comparing the initial map, the map observed and the map simulation; fuzzy kappa, comparing the map observed and the map simulation but being more permissive by using fuzzy logic; fuzzy kappa simulation, comparing the map observed, the map simulation and the map initial but being more permissive by using fuzzy logic
+This model shows how to use different comparators to know the accuracy of a prediction model. Four comparators are used :
+- kappa, comparing the map observed and the map simulation ; kappa simulation comparing the initial map, the map observed and the map simulation;
+- fuzzy kappa, comparing the map observed and the map simulation but being more permissive by using fuzzy logic;
+- fuzzy kappa simulation, comparing the map observed, the map simulation and the map initial but being more permissive by using fuzzy logic
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Raster Map Comparison\map_fuzzy-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Raster Map Comparison\map_fuzzy-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Raster Map Comparison\map_init-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Raster Map Comparison\map_init-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Raster Map Comparison\map_observed-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Raster Map Comparison\map_observed-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Raster Map Comparison\map_sim-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Raster Map Comparison\map_sim-10.png)
 
 Code of the model : 
 

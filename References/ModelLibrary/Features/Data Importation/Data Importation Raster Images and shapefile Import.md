@@ -13,6 +13,8 @@ _Author : Maroussia Vavasseur and Benoit Gaudou_
 Model which imports data from a raster file and two shapefiles to initilalize a grid and two species. The roaster file initialize a grid attribute for the cells and the shapefiles a river species just with the same shape, and the managementUnit species with a link between the columns of the shapefile and the attributes of the species. 
 
 
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Raster Images and shapefile Import\HowToImportVectorial-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Raster Images and shapefile Import\HowToImportVectorial-10.png)
+
 Code of the model : 
 
 ```

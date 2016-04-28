@@ -1,9 +1,7 @@
 [//]: # (keyword|operator_as_path)
-[//]: # (keyword|operator_line)
 [//]: # (keyword|operator_as_map)
 [//]: # (keyword|operator_\:\:)
 [//]: # (keyword|operator_with_weights)
-[//]: # (keyword|constant_#pink)
 [//]: # (keyword|type_path)
 [//]: # (keyword|concept_graph)
 [//]: # (keyword|concept_agent_movement)
@@ -15,6 +13,8 @@ _Author : _
 
 Model showing the movement of an agent following three different paths : one defined by its vertices, an other defined thanks to all the roads species, and finally a path defined by a graph with weights (graph created thanks to an other species)
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Follow Path\myView-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Follow Path\myView-10.png)
 
 Code of the model : 
 

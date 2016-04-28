@@ -5,15 +5,12 @@
 
 _Author : Truong Minh Thai_
 
-  
- *      init: Select data from table vnm_adm2 (Created via QGis software)  and create  agents
- * 	    savetosql: Save data of agent into MySQL. 
- * 					transform= true because you need to transform geometry data from Absolute(GAMA) to Gis
- * 
- *  NOTE: You should have imported the database (spatial_DB.sql) into the MySQL server 
- *        in order that the model can run properly.
- * 
- 
+init: Select data from table vnm_adm2 (Created via QGis software)  and create  agents
+savetosql: Save data of agent into MySQL.
+transform= true because you need to transform geometry data from Absolute(GAMA) to Gis
+NOTE: You should have imported the database (spatial_DB.sql) into the MySQL server in order that the model can run properly.
+
+
 
 Code of the model : 
 

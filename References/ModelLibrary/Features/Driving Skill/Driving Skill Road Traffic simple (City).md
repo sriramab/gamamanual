@@ -2,6 +2,7 @@
 [//]: # (keyword|operator_\:\:)
 [//]: # (keyword|operator_with_weights)
 [//]: # (keyword|operator_copy)
+[//]: # (keyword|operator_last)
 [//]: # (keyword|operator_max_of)
 [//]: # (keyword|statement_user_command)
 [//]: # (keyword|statement_switch)
@@ -22,6 +23,12 @@ _Author : Patrick Taillandier_
 
 Model using shapefiles to create buildings and a road graph, with people going from their living place to their work place depending on the hour. The traffic jam is also taken into account to slow the people agents when they are too much on the same road. The experiment shows a display of the city, with people agents, buildings and roads, a display of the traffic jam occuring on the roads, and a chart display showing two charts : one for the traffic jam coefficients, and an other for the objectives of the people agents.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Driving Skill\Driving Skill Road Traffic simple (City)\chart_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Driving Skill\Driving Skill Road Traffic simple (City)\chart_display-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Driving Skill\Driving Skill Road Traffic simple (City)\city_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Driving Skill\Driving Skill Road Traffic simple (City)\city_display-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Driving Skill\Driving Skill Road Traffic simple (City)\traffic_jam_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Driving Skill\Driving Skill Road Traffic simple (City)\traffic_jam_display-10.png)
 
 Code of the model : 
 

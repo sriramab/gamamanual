@@ -1,11 +1,10 @@
 [//]: # (keyword|architecture_fsm)
 [//]: # (keyword|operator_round)
 [//]: # (keyword|operator_sort_by)
-[//]: # (keyword|operator_line)
+[//]: # (keyword|operator_last)
 [//]: # (keyword|operator_font)
 [//]: # (keyword|operator_distance_between)
 [//]: # (keyword|operator_with_precision)
-[//]: # (keyword|operator_max)
 [//]: # (keyword|statement_state)
 [//]: # (keyword|statement_transition)
 [//]: # (keyword|statement_diffuse)
@@ -35,6 +34,8 @@ _Author : _
 
 Toy Model ant using the question of how ants search food and use pheromons to return to their nest once they did find food. Two experiments are proposed to show how to use batch : Batch and Genetic.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Complex)\Ants-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Complex)\Ants-10.png)
 
 Code of the model : 
 

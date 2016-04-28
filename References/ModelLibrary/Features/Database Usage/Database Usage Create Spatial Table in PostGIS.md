@@ -7,7 +7,7 @@
 
 _Author : Truong Minh Thai_
 
-   This model shows how to create a database and a table in PostGIS using GAMA
+This model shows how to create a database and a table in PostGIS using GAMA
  
 
 Code of the model : 

@@ -1,4 +1,3 @@
-[//]: # (keyword|operator_rectangle)
 [//]: # (keyword|operator_using)
 [//]: # (keyword|operator_closest_to)
 [//]: # (keyword|type_topology)
@@ -12,6 +11,8 @@ _Author : _
 
 A model showing how to clusterize space using the closest center as the kernel of our cluster. The space is discretized using a grid, each cell computing its distance from a center to know in which cluster it is. 
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Voronoi\Voronoi Voronoi\Voronoi-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Voronoi\Voronoi Voronoi\Voronoi-10.png)
 
 Code of the model : 
 

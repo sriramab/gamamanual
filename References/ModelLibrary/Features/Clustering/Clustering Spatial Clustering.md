@@ -1,6 +1,5 @@
 [//]: # (keyword|operator_is)
 [//]: # (keyword|operator_polyline)
-[//]: # (keyword|operator_line)
 [//]: # (keyword|operator_simple_clustering_by_distance)
 [//]: # (keyword|operator_rnd_color)
 [//]: # (keyword|operator_hierarchical_clustering)
@@ -16,6 +15,12 @@ _Author :  Patrick Taillandier_
 
 A model to show how to use clustering operators with simple_clustering_by_distance to take into account the distances between agents or between cells to create the clusters,  and showing the relations between the people from the same cluster. 
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Clustering\Clustering Spatial Clustering\map_forest_clusters-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Clustering\Clustering Spatial Clustering\map_forest_clusters-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Clustering\Clustering Spatial Clustering\map_people_clusters-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Clustering\Clustering Spatial Clustering\map_people_clusters-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Clustering\Clustering Spatial Clustering\map_people_tree-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Clustering\Clustering Spatial Clustering\map_people_tree-10.png)
 
 Code of the model : 
 

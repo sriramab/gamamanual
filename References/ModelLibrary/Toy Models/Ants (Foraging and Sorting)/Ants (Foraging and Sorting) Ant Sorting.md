@@ -3,6 +3,8 @@
 [//]: # (keyword|statement_transition)
 [//]: # (keyword|statement_enter)
 [//]: # (keyword|skill_fsm)
+[//]: # (keyword|constant_#cyan)
+[//]: # (keyword|constant_#magenta)
 [//]: # (keyword|concept_gui)
 [//]: # (keyword|concept_skill)
 [//]: # (keyword|concept_grid)
@@ -11,8 +13,10 @@
 
 _Author : _
 
-This model is loosely based on the behavior of ants sorting different elements in their nest. A of mobile agents - the ants - is placed on a grid.  The grid itself contains cells of different colors. Each step, the agents move randomly. If they enter a colored cell, they pick this color if its density in the  neighbourhood is less than *number_of_objects_around*. If they have picked a color, they drop it on a black cell if they have encountered at least  *number_of_objects_in_history* cells with the same color.\n After a while, colors begin to be aggregated.
+This model is loosely based on the behavior of ants sorting different elements in their nest. A of mobile agents - the ants - is placed on a grid. The grid itself contains cells of different colors. Each step, the agents move randomly. If they enter a colored cell, they pick this color if its density in the neighbourhood is less than *number_of_objects_around*. If they have picked a color, they drop it on a black cell if they have encountered at least *number_of_objects_in_history* cells with the same color.\n After a while, colors begin to be aggregated.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Sorting\OpenGL-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Sorting\OpenGL-10.png)
 
 Code of the model : 
 

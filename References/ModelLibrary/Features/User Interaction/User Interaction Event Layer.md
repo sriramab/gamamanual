@@ -1,6 +1,5 @@
 [//]: # (keyword|operator_not)
 [//]: # (keyword|statement_event)
-[//]: # (keyword|constant_#pink)
 [//]: # (keyword|concept_gui)
 # Event Feature
 
@@ -9,6 +8,10 @@ _Author : Arnaud Grignard & Patrick Taillandier_
 
 Model which shows how to use the event layer to trigger an action according to an event occuring in the display. The experiment has two displays : one for the changing color event, one for the changing shape event.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\User Interaction\User Interaction Event Layer\View_change_color-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\User Interaction\User Interaction Event Layer\View_change_color-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\User Interaction\User Interaction Event Layer\View_change_shape-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\User Interaction\User Interaction Event Layer\View_change_shape-10.png)
 
 Code of the model : 
 

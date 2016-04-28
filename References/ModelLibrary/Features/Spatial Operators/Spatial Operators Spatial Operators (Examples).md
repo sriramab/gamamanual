@@ -16,6 +16,8 @@ _Author : Patrick Taillandier_
 A model which shows how to use spatial operators like rotated_by, scaled_by and convex_hull
 
 
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Spatial Operators (Examples)\space_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Spatial Operators (Examples)\space_display-10.png)
+
 Code of the model : 
 
 ```

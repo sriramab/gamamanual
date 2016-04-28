@@ -12,9 +12,13 @@ This section is composed of the following sub-section :
 
 * [Clock](references#Clock)
 
+* [Co-model Example](references#Co-modelExample)
+
 * [Epidemiology](references#Epidemiology)
 
 * [Evacuation](references#Evacuation)
+
+* [Flood Simulation](references#FloodSimulation)
 
 * [Life](references#Life)
 

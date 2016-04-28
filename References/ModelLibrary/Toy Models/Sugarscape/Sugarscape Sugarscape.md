@@ -1,6 +1,4 @@
-[//]: # (keyword|operator_rectangle)
 [//]: # (keyword|statement_put)
-[//]: # (keyword|constant_#pink)
 [//]: # (keyword|constant_#lightgray)
 [//]: # (keyword|concept_grid)
 # sugarscape
@@ -10,6 +8,12 @@ _Author : _
 
 A model with animal moving on a grid to find sugar. The animal agents have a life duration and die if it is reached or if they don't have anymore sugar.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Sugarscape\Sugarscape Sugarscape\chart-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Sugarscape\Sugarscape Sugarscape\chart-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Sugarscape\Sugarscape Sugarscape\chart2-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Sugarscape\Sugarscape Sugarscape\chart2-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Sugarscape\Sugarscape Sugarscape\grille-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Sugarscape\Sugarscape Sugarscape\grille-10.png)
 
 Code of the model : 
 

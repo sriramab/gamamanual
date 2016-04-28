@@ -1,5 +1,4 @@
 [//]: # (keyword|operator_gauss)
-[//]: # (keyword|constant_#pink)
 [//]: # (keyword|concept_gui)
 [//]: # (keyword|concept_shapefile)
 # Ville 3
@@ -9,6 +8,8 @@ _Author : _
 
 Creation of buildings and roads thanks to a shape file. The color of the building depends on the type of the building, while the color of a house depend on its income. People among the world will try to find the best building according to the mean income of their neighbors and their own income.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Articles\Articles ville_3\carte_principale-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Articles\Articles ville_3\carte_principale-10.png)
 
 Code of the model : 
 

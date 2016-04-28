@@ -5,8 +5,10 @@
 
 _Author : _
 
-This model shows how to create agent and make them move randomly in the world. Some agents are infected, and others can gain the infection if they are in a certain range. The  people are now placed in buildings at the initial state. Those buildings are created thanks to a shapefile. Roads are also created thanks to an other shapefile.
+This model shows how to create agent and make them move randomly in the world. Some agents are infected, and others can gain the infection if they are in a certain range. The people are now placed in buildings at the initial state. Those buildings are created thanks to a shapefile. Roads are also created thanks to an other shapefile.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Articles\Articles Prima_model2\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Articles\Articles Prima_model2\map-10.png)
 
 Code of the model : 
 

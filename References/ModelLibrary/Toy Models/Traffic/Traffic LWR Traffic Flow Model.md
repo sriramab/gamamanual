@@ -1,12 +1,23 @@
-[//]: # (keyword|operator_rectangle)
 [//]: # (keyword|operator_ln)
-[//]: # (keyword|operator_line)
-[//]: # (keyword|operator_max)
+[//]: # (keyword|operator_last)
 [//]: # (keyword|operator_sum)
+[//]: # (keyword|constant_#km)
+[//]: # (keyword|constant_#m)
+[//]: # (keyword|concept_transport)
 # Trafic Group (R2D2) MAPS7 - LWR Model
 
 
 _Author : A. Banos, N. Corson, C. Pivano, L. Rajaonarivo, P. Taillandier_
+
+The LWR model was proposed by Lighthill and Whitham (1955) and by Richards (1956). It describes the trafic at a global level considering the speed, concentration and flows without taking into account the individual behavior af vehicles. Speed, concentration and flow are the three components of the LWR model. This models reproduces flow of traffic and congestion in specific conditions (homogeneous traffic), going from one equilibrium state to another (see the fundamental diagramm of traffic, which gives flow according to concentration).
+In this model, a road is divided into sections and we arbitrarily give to the middle section a lower speed and critical concentration.
+
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Traffic\Traffic LWR Traffic Flow Model\Concentrations-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Traffic\Traffic LWR Traffic Flow Model\Concentrations-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Traffic\Traffic LWR Traffic Flow Model\Flows-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Traffic\Traffic LWR Traffic Flow Model\Flows-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Traffic\Traffic LWR Traffic Flow Model\TheRoad-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Traffic\Traffic LWR Traffic Flow Model\TheRoad-10.png)
 
 Code of the model : 
 

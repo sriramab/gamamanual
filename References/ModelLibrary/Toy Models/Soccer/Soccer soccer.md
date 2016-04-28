@@ -1,4 +1,3 @@
-[//]: # (keyword|operator_rectangle)
 [//]: # (keyword|operator_norm)
 [//]: # (keyword|operator_sqrt)
 [//]: # (keyword|operator_abs)
@@ -10,8 +9,8 @@
 [//]: # (keyword|operator_polyline)
 [//]: # (keyword|operator_cos)
 [//]: # (keyword|operator_sin)
-[//]: # (keyword|operator_line)
 [//]: # (keyword|operator_font)
+[//]: # (keyword|constant_#m)
 [//]: # (keyword|constant_#chartreuse)
 [//]: # (keyword|constant_#darkblue)
 [//]: # (keyword|constant_#darkred)
@@ -23,7 +22,9 @@
 
 _Author : Julien_
 
-This model shows how can we make an easy simulation of collective games, such as soccer.  Each player have an offensive and a defensive position, and a behavior associated. Each player of the defensive team  can either search to catch the ball or mark an other player (offensive player) according to his defensive position. Each player of the offensive team can either run to its offensive place (when he does not have the ball), run with the balloon /  pass the ball / try to score a goal (when he has the ball). By changing the different parameters, you can see the concequences  in real time. 
+This model shows how can we make an easy simulation of collective games, such as soccer. 
+Each player have an offensive and a defensive position, and a behavior associated. Each player of the defensive team can either search to catch the ball or mark an other player (offensive player) according to his defensive position.
+Each player of the offensive team can either run to its offensive place (when he does not have the ball), run with the balloon / pass the ball / try to score a goal (when he has the ball). By changing the different parameters, you can see the concequences in real time. 
 
 
 Code of the model : 

@@ -15,6 +15,8 @@ _Author :  Patrick Taillandier_
 A model showing how to use batch experiments to find the best combination of parameters to minimize the numbers of infected people in a SIR infection model where agents infect others and become immune for a certain time. The batch mode uses three different methods : Exhaustive, GA and Tabu Search. The model proposes five experiments : one simple with a User Interface, one running 5 experiments and saving the data, and one for each strategy. 
 
 
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Batch\Batch Batch\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Batch\Batch Batch\map-10.png)
+
 Code of the model : 
 
 ```

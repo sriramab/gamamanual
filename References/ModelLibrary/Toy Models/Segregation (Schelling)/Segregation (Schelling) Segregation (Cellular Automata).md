@@ -2,12 +2,18 @@
 [//]: # (keyword|operator_any)
 [//]: # (keyword|operator_copy)
 [//]: # (keyword|statement_remove)
+[//]: # (keyword|constant_#magenta)
+[//]: # (keyword|constant_#cyan)
 [//]: # (keyword|constant_#lightgray)
 [//]: # (keyword|concept_grid)
 # segregationGrid
 
 
 _Author : _
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (Cellular Automata)\Charts-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (Cellular Automata)\Charts-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (Cellular Automata)\Segregation-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (Cellular Automata)\Segregation-10.png)
 
 Imported model : 
 

@@ -9,6 +9,10 @@ _Author :  Patrick Taillandier_
  this model shows how to visualize GIS data without having to create agents  
 
 
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization GIS Visualization\gis_displays_graphics-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization GIS Visualization\gis_displays_graphics-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization GIS Visualization\gis_displays_image-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization GIS Visualization\gis_displays_image-10.png)
+
 Code of the model : 
 
 ```
@@ -25,7 +29,7 @@ global {
 experiment GIS_visualization type: gui {
 	output {
 		// display of buildings in 3D with texture and with reading their HEIGHT attribute from the shapefile
-		display gis_displays_graphics type: opengl light: true ambient_light: 50{
+		display gis_displays_graphics type: opengl light: true {
 			graphics "Buildings as shapes" refresh: false {
 				loop bd over: shape_file_buildings {
 					draw bd depth: rnd(50) + 50 texture:[roof_texture,texture] border:false;

@@ -1,4 +1,5 @@
 [//]: # (keyword|operator_sample)
+[//]: # (keyword|operator_\:\:)
 [//]: # (keyword|statement_user_command)
 [//]: # (keyword|constant_#m)
 [//]: # (keyword|type_pair)

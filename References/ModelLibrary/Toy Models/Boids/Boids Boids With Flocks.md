@@ -26,6 +26,8 @@ _Author : _
 This model shows the movement of boids following a goal, and creating without their own volonty, a flock . 
 
 
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Boids\Boids Boids With Flocks\default_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Boids\Boids Boids With Flocks\default_display-10.png)
+
 Imported model : 
 
 ```

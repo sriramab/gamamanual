@@ -1,6 +1,5 @@
 [//]: # (keyword|operator_brewer_palettes)
 [//]: # (keyword|operator_brewer_colors)
-[//]: # (keyword|operator_max)
 [//]: # (keyword|operator_not)
 [//]: # (keyword|concept_color)
 # Color defined by choosing a Color Brewer
@@ -10,6 +9,8 @@ _Author :  Arnaud Grignard & Patrick Taillandier_
 
 A model to show how to use color brewer. In this model, two experiments are presents : one just to show the different colors present in some selected brewer, and a second one to show in a grid the different colors of brewler having at least a minimal number of colors passed in parameter.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Color\Color Color Brewer\View1-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Color\Color Color Brewer\View1-10.png)
 
 Code of the model : 
 

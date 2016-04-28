@@ -6,12 +6,18 @@
 _Author : Truong Minh Thai_
 
  This model does SQl query commands:
- * 		- Create table 
- * 		- Insert data
- *      - Select data
- * 	    - Delete data
- *      - Drop table 
- * 
+
+ * - Create table 
+ 
+ * - Insert data
+ 
+ * - Select data
+ 
+ * - Delete data
+ 
+ * - Drop table 
+ 
+ 
  *  Note: the file emptyFile.db is only ... an empty file.
 
 

@@ -1,5 +1,7 @@
 [//]: # (keyword|operator_sum)
 [//]: # (keyword|statement_remove)
+[//]: # (keyword|constant_#magenta)
+[//]: # (keyword|constant_#cyan)
 [//]: # (keyword|concept_grid)
 # segregationAgents
 
@@ -8,6 +10,10 @@ _Author : _
 
 A model showing the segregation of the people just by putting a similarity wanted parameter using agents to represent the individuals
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (Agents)\Charts-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (Agents)\Charts-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (Agents)\Segregation-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (Agents)\Segregation-10.png)
 
 Imported model : 
 

@@ -1,5 +1,4 @@
 [//]: # (keyword|operator_^)
-[//]: # (keyword|operator_max)
 [//]: # (keyword|operator_IDW)
 [//]: # (keyword|statement_put)
 [//]: # (keyword|concept_topology)
@@ -12,6 +11,10 @@ _Author : Patrick Taillandier_
 
 A model which shows how to use spatial interpolation
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators spatialinterpolation\map_location-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators spatialinterpolation\map_location-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators spatialinterpolation\map_shape-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators spatialinterpolation\map_shape-10.png)
 
 Code of the model : 
 

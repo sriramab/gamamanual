@@ -16,8 +16,10 @@
 
 _Author : _
 
-This model shows how to create agent and make them move randomly in the world. Some agents are infected, and others can gain the infection if they are in a certain range. The  people are now placed in buildings at the initial state. Those buildings are created thanks to a shapefile. Roads are also created thanks to an other shapefile. A graph is now created from the road agents, and the people move from their location to a targent on the graph. The display is now a 3D display. The model adds a new level as people going inside a building will be now a new species belonging to the building and that will be manage by the building agent concerned The people_in_building agent will be infected inside a building respecting an ordinary differential equation system.
+This model shows how to create agent and make them move randomly in the world.Some agents are infected, and others can gain the infection if they are in a certain range. The people are now placed in buildings at the initial state. Those buildings are created thanks toa shapefile. Roads are also created thanks to an other shapefile. A graph is now created fromthe road agents, and the people move from their location to a targent on the graph. The displayis now a 3D display. The model adds a new level as people going inside a building will be nowa new species belonging to the building and that will be manage by the building agent concernedThe people_in_building agent will be infected inside a building respecting an ordinary differentialequation system.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Articles\Articles Prima_model6\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Articles\Articles Prima_model6\map-10.png)
 
 Code of the model : 
 
@@ -153,7 +155,7 @@ species buildings {
 
 experiment main_experiment type:gui{
 	output {
-		display map type: opengl ambient_light: 150{
+		display map type: opengl {
 			species roads aspect:geom;
 			species buildings aspect:geom;
 			species people aspect:circle;			

@@ -1,6 +1,5 @@
 [//]: # (keyword|operator_path_between)
 [//]: # (keyword|operator_with_weights)
-[//]: # (keyword|operator_line)
 [//]: # (keyword|operator_as_map)
 [//]: # (keyword|operator_\:\:)
 [//]: # (keyword|type_path)
@@ -12,8 +11,10 @@
 
 _Author :  Martine Taillandier_
 
-Model representing how to make a weighted graph and the impacts of the weights on the time to follow the path for the agents.  Two agents are represented to show this difference : one knowing the weights and following a fast path, an other following a path longer  without knowing it's a longer path.
+Model representing how to make a weighted graph and the impacts of the weights on the time to follow the path for the agents. Two agents are represented to show this difference : one knowing the weights and following a fast path, an other following a path longer without knowing it's a longer path.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Follow Weighted Network (Agents)\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Follow Weighted Network (Agents)\map-10.png)
 
 Code of the model : 
 

@@ -3,7 +3,6 @@
 [//]: # (keyword|operator_degree_of)
 [//]: # (keyword|operator_^)
 [//]: # (keyword|operator_hsb)
-[//]: # (keyword|operator_line)
 [//]: # (keyword|skill_moving3D)
 [//]: # (keyword|concept_graph)
 [//]: # (keyword|concept_3d)
@@ -13,8 +12,10 @@
 
 _Author : Arnaud Grignard_
 
-Model using a 3D Graph and updating it at each step according to the location and the degree of each sphere.  An arc is created between two adjacent spheres. Two different experiments are proposed : one with a dynamic size for the spheres according to their degree, one simpler with no update of the size.
+Model using a 3D Graph and updating it at each step according to the location and the degree of each sphere. An arc is created between two adjacent spheres. Two different experiments are proposed : one with a dynamic size for the spheres according to their degree, one simpler with no update of the size.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Graphs\Graphs 3D Graph\WanderingSphere-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Graphs\Graphs 3D Graph\WanderingSphere-10.png)
 
 Code of the model : 
 
@@ -97,7 +98,7 @@ species node_agent skills: [moving3D] {
 
 experiment Display type: gui {
 	output {
-		display WanderingSphere type: opengl ambient_light: 100 { 
+		display WanderingSphere type: opengl { 
 			species node_agent aspect: dynamic;
 			graphics "edges" {
 				//Creation of the edges of adjacence
@@ -117,7 +118,7 @@ experiment Display type: gui {
 
 experiment SimpleDisplay type: gui {
 	output {
-		display WanderingSphere type: opengl ambient_light: 100 { 
+		display WanderingSphere type: opengl { 
 			species node_agent aspect: base;
 			graphics "edges" {
 				if (my_graph != nil) {

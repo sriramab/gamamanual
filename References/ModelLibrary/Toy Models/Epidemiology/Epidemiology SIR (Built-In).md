@@ -1,6 +1,8 @@
 [//]: # (keyword|statement_equation)
 [//]: # (keyword|statement_solve)
 [//]: # (keyword|constant_#lightgray)
+[//]: # (keyword|concept_math)
+[//]: # (keyword|concept_equation)
 # simple_ODE_SIR_Predefined
 
 

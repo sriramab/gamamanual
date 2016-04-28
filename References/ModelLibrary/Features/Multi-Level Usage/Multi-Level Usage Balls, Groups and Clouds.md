@@ -1,4 +1,3 @@
-[//]: # (keyword|operator_rectangle)
 [//]: # (keyword|operator_towards)
 [//]: # (keyword|operator_cos)
 [//]: # (keyword|operator_sin)

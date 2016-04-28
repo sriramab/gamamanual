@@ -10,8 +10,18 @@
 
 _Author : Arnaud Grignard_
 
-Model using the Boids model to represent the flight of boids following a goal and avoiding obstacles. Five experiments are proposed with differents goals : understanding of the model used (Boids_gui), 3D Display (start), 3D Display with trajectories analysis of boids (trajectory_analysis), one coupling both previous experiments and the time simulated with boids going higher and higher according to the time (SpaceTimeCube) and a model presenting the different views  possible in the 3D Display : first person, third person and global view (Multiple view). 
+Model using the Boids model to represent the flight of boids following a goal and avoiding obstacles.
 
+Five experiments are proposed with differents goals : understanding of the model used (Boids_gui), 3D Display (start), 3D Display with trajectories analysis of boids (trajectory_analysis), one coupling both previous experiments and the time simulated with boids going higher and higher according to the time (SpaceTimeCube) and a model presenting the different views possible in the 3D Display : first person, third person and global view (Multiple view). 
+
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\FirstPerson-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\FirstPerson-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\RealBoids-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\RealBoids-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\SpaceTimeCubeAll-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\SpaceTimeCubeAll-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\ThirdPersonn-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\ThirdPersonn-10.png)
 
 Imported model : 
 
@@ -256,7 +266,7 @@ experiment start type: gui {
 	
 	//the type opengl allows the 3D Display instead of only 2D
 	output {
-		display RealBoids  type:opengl ambient_light:255 z_fighting:false {
+		display RealBoids  type:opengl z_fighting:false {
 			image name:'background' file:'../images/sky.jpg';
 			species boids aspect: image  position:{0,0,0.1};
 			species boids_goal transparency:0.2 position:{0,0,0.1};
@@ -270,7 +280,7 @@ experiment trajectory_analysis type: gui {
 	float minimum_cycle_duration <- 0.03;
 	output {
 		
-		display RealBoids  type:opengl ambient_light:100{
+		display RealBoids  type:opengl {
 			image name:'background' file:'../images/sky.jpg';
 			species boids trace:100{
 			    draw triangle(20) rotate: 90 + heading color: hsb (float(heading)/360.0,1.0,1.0) depth:8 ;	
@@ -285,14 +295,14 @@ experiment SpaceTimeCube type: gui {
 	
 	float minimum_cycle_duration <- 0.03;
 	output {
-		display RealBoids  type:opengl ambient_light:50 diffuse_light:100{
+		display RealBoids  type:opengl {
 			image name:'background' file:'../images/sky.jpg';
 			species boids aspect: image transparency:0.5 position:{0,0,0.11};
 			species boids_goal transparency:0.2 position:{0,0,0.1};
 			species obstacle position:{0,0,0.1}; 		
 		}
 		
-		display SpaceTimeCubeAll  type:opengl ambient_light:50 diffuse_light:100{
+		display SpaceTimeCubeAll  type:opengl {
 			image name:'background' file:'../images/sky.jpg';
 			species boids trace:100{
 			    draw triangle(20) rotate: 90 + heading color: hsb (float(heading)/360.0,1.0,1.0) depth:8 at: {location.x ,location.y,location.z+time};	
@@ -308,7 +318,7 @@ experiment SpaceTimeCube type: gui {
 experiment MultipleView type: gui {
 	float minimum_cycle_duration <- 0.03;
 	output {
-		display RealBoids   type:opengl ambient_light:255 {
+		display RealBoids   type:opengl {
 			image name:'background' file:'../images/sky.jpg';
 			species boids aspect: image  transparency:0.5 position:{0,0,0.25};
 			species boids_goal transparency:0.2 position:{0,0,0.25};
@@ -330,7 +340,7 @@ experiment MultipleView type: gui {
 		}
 		
 		//The facet camera_up_vector allows the definition of the vector on which the top of the camera point at, it has to be perpendicular to the look vector
-		display FirstPerson  type:opengl camera_interaction:false ambient_light:100 camera_pos:{int(first(boids).location.x),int(first(boids).location.y),10} 
+		display FirstPerson  type:opengl camera_interaction:false camera_pos:{int(first(boids).location.x),int(first(boids).location.y),10} 
 			camera_look_pos:{cos(first(boids).heading)*first(boids).speed+int(first(boids).location.x),
 			sin(first(boids).heading)*first(boids).speed+int(first(boids).location.y),10} 
 			camera_up_vector:{0.0,0.0,1.0} {	

@@ -11,6 +11,8 @@ _Author : _
 This model shows the movement of boids following a goal, and creating without their own volonty, a flock .  The goal agent and the boids will move within the 3D space.
 
 
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Boids\Boids Boids 3D Motion\Sky1-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Boids\Boids Boids 3D Motion\Sky1-10.png)
+
 Code of the model : 
 
 ```

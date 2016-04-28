@@ -15,6 +15,8 @@ _Author :  Patrick Taillandier_
 Model to show how to create a graph using a polygon shapefile by skeletonizing it, and creating roads using the skeleton. All of the agents will use this graph to go to the same targeted location.
 
 
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Goto Polygon\objects_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Goto Polygon\objects_display-10.png)
+
 Code of the model : 
 
 ```

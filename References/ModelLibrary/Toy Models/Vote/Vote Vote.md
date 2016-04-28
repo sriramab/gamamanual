@@ -1,8 +1,6 @@
-[//]: # (keyword|operator_rectangle)
 [//]: # (keyword|operator_points_at)
 [//]: # (keyword|operator_copy)
 [//]: # (keyword|operator_with_min_of)
-[//]: # (keyword|operator_max)
 [//]: # (keyword|operator_gauss)
 [//]: # (keyword|operator_triangle)
 [//]: # (keyword|operator_with_max_of)
@@ -24,6 +22,12 @@ _Author : MAPS TEAM (Frederic Amblard, Thomas Louail, Romain Reulier, Paul Salze
 
 Modeling of an election
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Vote\Vote Vote\indicateurs-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Vote\Vote Vote\indicateurs-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Vote\Vote Vote\main-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Vote\Vote Vote\main-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Vote\Vote Vote\votants-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Vote\Vote Vote\votants-10.png)
 
 Code of the model : 
 

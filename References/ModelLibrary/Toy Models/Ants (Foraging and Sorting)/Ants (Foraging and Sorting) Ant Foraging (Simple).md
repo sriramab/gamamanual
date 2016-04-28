@@ -1,5 +1,7 @@
+[//]: # (keyword|operator_round)
 [//]: # (keyword|operator_min_of)
 [//]: # (keyword|operator_sort)
+[//]: # (keyword|operator_last)
 [//]: # (keyword|statement_diffuse)
 [//]: # (keyword|statement_event)
 [//]: # (keyword|statement_exhaustive)
@@ -17,6 +19,10 @@ _Author : _
 
 Toy Model ant using the question of how ants search food and use pheromons to return to their nest once they did find food. This model is the simple one.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Simple)\Ants-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Simple)\Ants-10.png)
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Simple)\Ants_2-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Simple)\Ants_2-10.png)
 
 Code of the model : 
 

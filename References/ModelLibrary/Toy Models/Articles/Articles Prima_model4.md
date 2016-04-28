@@ -7,8 +7,10 @@
 
 _Author : _
 
-This model shows how to create agent and make them move randomly in the world. Some agents are infected, and others can gain the infection if they are in a certain range. The  people are now placed in buildings at the initial state. Those buildings are created thanks to a shapefile. Roads are also created thanks to an other shapefile. A graph is now created from the road agents, and the people move from their location to a targent on the graph. The display is now a 3D display.
+This model shows how to create agent and make them move randomly in the world.Some agents are infected, and others can gain the infection if they are in a certain range. The people are now placed in buildings at the initial state. Those buildings are created thanks toa shapefile. Roads are also created thanks to an other shapefile. A graph is now created fromthe road agents, and the people move from their location to a targent on the graph. The displayis now a 3D display.
 
+
+![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Articles\Articles Prima_model4\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Articles\Articles Prima_model4\map-10.png)
 
 Code of the model : 
 
@@ -82,7 +84,7 @@ species buildings {
 experiment main_experiment type:gui{
 	output {
 		//Type opengl to display in 3D
-		display map type: opengl ambient_light: 150{
+		display map type: opengl {
 			species roads aspect:geom;
 			species buildings aspect:geom;
 			species people aspect:circle;			
