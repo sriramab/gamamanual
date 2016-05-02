@@ -21,7 +21,7 @@ Moreover, in addition to classic built-in variables, grid a provided with a set 
 Instead of using the `species` keyword, use the keyword `grid` to declare a grid species. The grid species has exactly the same facets of the regular species, plus some others.
 To declare a grid, you have to specify the number of columns and rows first. You can do it two different ways:
 
-Using the two facets `weight:` and `height:` to fix the number of cells (the size of each cells will be determined thanks to the environment dimension).
+Using the two facets `width:` and `height:` to fix the number of cells (the size of each cells will be determined thanks to the environment dimension).
 
 ```
 grid my_grid width:8 height:10 {
