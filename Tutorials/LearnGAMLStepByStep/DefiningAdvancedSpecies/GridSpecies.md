@@ -29,7 +29,7 @@ grid my_grid width:8 height:10 {
 }
 ```
 
-Using the two facets `cell_weight:` and `cell_height:` to fix the size of each cells (the number cells will be determined thanks to the environment dimension).
+Using the two facets `cell_width:` and `cell_height:` to fix the size of each cells (the number cells will be determined thanks to the environment dimension).
 
 ```
 grid my_grid cell_width:3 cell_height:2 {
