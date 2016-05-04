@@ -11,6 +11,7 @@ give examples
 * header of CSV files: be careful, in GAMA 1.7, if the first line is detected as a header, it is not read when the file is casted as a matrix (so the first row of the matrix is not the header, but the first line of data)
 gives examples
 * the step of batch experiments is now executed after all repetitions of simulations are done (not after each one). They can however be still accessed using the attributes `simulations` (see Batch.gaml in Models Library)
+* signal and diffuse have been merged into a single statement
 
 # Enhancements in 1.7
 * multi-simulation
@@ -23,9 +24,19 @@ gives examples
 * validation: improvement in time, gathering of infos/todos
 * navigator: better overview of model files and their support files, addition of plugin models
 * Models library: 
-* Preferences:
+* Preferences: for performances and bug fixes in displays
 * Simulation views
 * Error view
 * BDI control architecture for agents
 * language: file management, new operators, new statements, new skills(?), new built-in variables, 
 * status statement (to manipulate the status line from GAML)
+* fullscreen mode for displays (ESC key)
+* new operators (sum_of, etc.)
+* cleaner OpenGL displays (less garbage, better drawing of lines, rotation helper, sticky ROI, etc.)
+* faster java2D displays (esp. on zoom)
+* casting of files works
+* co-modeling
+* better user interaction (mouse move, hover, key listener)
+* warnings can be removed from model files
+* getting values when moving the mouse on charts
+* populations of agents can now be easily exported to CSV files using the `save` statement
