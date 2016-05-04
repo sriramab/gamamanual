@@ -40,3 +40,4 @@ gives examples
 * warnings can be removed from model files
 * getting values when moving the mouse on charts
 * populations of agents can now be easily exported to CSV files using the `save` statement
+* monitors can have colors
