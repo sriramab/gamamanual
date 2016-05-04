@@ -10,6 +10,7 @@ map ? list ?
 give examples
 * header of CSV files: be careful, in GAMA 1.7, if the first line is detected as a header, it is not read when the file is casted as a matrix (so the first row of the matrix is not the header, but the first line of data)
 gives examples
+* the step of batch experiments is now executed after all repetitions of simulations are done (not after each one). They can however be still accessed using the attributes `simulations` (see Batch.gaml in Models Library)
 
 # Enhancements in 1.7
 * multi-simulation
