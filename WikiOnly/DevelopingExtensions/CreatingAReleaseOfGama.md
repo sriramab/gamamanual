@@ -49,6 +49,9 @@ If you also want the `.gaml` documents to be decorated with an icon and recogniz
 
 You can additionally create an icon (`Model.icns`) for these files, which needs to reside in `Gama.app/Contents/Resources` next to `icon.icns`. An example of icon is available in the plugin `msi.gama.application/macosx`. 
 
+## On Windows OS
+No specific step to do. After select the link `Eclipse Product export wizard`, choose the directory for the export by click on Browse button, in Destination section. Then, click on Finish.
+
 ## Configure your IDE in order to allow multi-platform builds
 
 * Open Eclipse Preferences
