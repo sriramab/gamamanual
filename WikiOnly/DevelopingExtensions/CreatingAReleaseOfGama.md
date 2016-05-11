@@ -50,9 +50,9 @@ If you also want the `.gaml` documents to be decorated with an icon and recogniz
 You can additionally create an icon (`Model.icns`) for these files, which needs to reside in `Gama.app/Contents/Resources` next to `icon.icns`. An example of icon is available in the plugin `msi.gama.application/macosx`. 
 
 ## Configure your IDE in order to allow multi-platform builds
-This is works not only with the Mars release, but also previous releases, as well.
-* Open Window/Preferences.
-* Find PDE/Target Platform
+
+* Open Eclipse Preferences
+* Navigate to Plugin Development Environment/Target Platform
 * Select your (active) target platform
 * Click Edit
 * Click Add
@@ -61,10 +61,11 @@ This is works not only with the Mars release, but also previous releases, as wel
 * In "Work With" type: http://download.eclipse.org/eclipse/updates/4.5 (replace 4.5 with your current version)
 * Check "Eclipse RCP Target Components"
 * Check "Equinox Target Components"
-* Uncheck "Include required software"
-* Check "Include all environments"
+* **Uncheck** "Include required software" (**IMPORTANT**)
+* **Check** "Include all environments" (**IMPORTANT**)
 * Press Finish
+* Wait for the plugins to be downloaded and provisioned
 * Press Finish
 * Press OK
 
-Open your product file and select the "Export" option. You will see that the "Export for multiple platforms" checkbox is available.
+Open your product file and select the "Export" option. You will see that the "Export for multiple platforms" checkbox is available. The next page allows you to choose for which platform you'd like to export GAMA.
