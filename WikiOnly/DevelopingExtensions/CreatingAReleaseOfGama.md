@@ -1,4 +1,54 @@
 # Product a release of GAMA
+## From the product
+Locate the file named `gama1.7.Eclipse3_8_2.product` (in plugin `msi.gama.application`and open it).
+On the first page, select the link `Eclipse Product export wizard` and follow the instructions in it. You can specify a root directory (under which the plugins will be copied) and an export directory on your hard drive where to export the whole application. Then click `Finish` and wait for a few minutes while Eclipse exports and packages your application. Once it is done, you can safely delete the `Repository` folder and the `logs.zip` file.
+## Specific to MacOS X
+Use `Gama.app` as the name of the root directory. Failing to do so will leave you with a non-working application. 
+
+[[/resources/images/Export_Mac.png]]
+
+This should result in a self-contained `Gama.app` application. However, the enclosed `Info.plist` lacks several key definitions. Open it (in a text editor) and paste the following items under the first <dict> (replace existing double entries if necessary):
+```
+	<key>NSHighResolutionCapable</key>
+	<string>True</string>
+	<key>CFBundleExecutable</key>
+	<string>Gama</string>
+	<key>CFBundleGetInfoString</key>
+	<string>Gama 1.7.0b, Copyright UMMISCO IRD/UPMC and partners 2006-2016 http://gama-platform.org</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.7.0b</string>
+	<key>CFBundleSignature</key>
+	<string>GAMA</string>
+	<key>CFBundleVersion</key>
+	<string>1.7.0b</string>
+
+```
+
+If you also want the `.gaml` documents to be decorated with an icon and recognized when double-clicking on them, you can add:
+```
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>gaml</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>Model.icns</string>
+			<key>CFBundleTypeName</key>
+			<string>Gama Model</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>TEXT</string>
+			</array>
+		</dict>
+	</array>
+```
+
+You can additionally create an icon (`Model.icns`) for these files, which needs to reside in `Gama.app/Contents/Resources` next to `icon.icns`. An example of icon is available in the plugin `msi.gama.application/macosx`. 
+
 ## Configure your IDE in order to allow multi-platform builds
 This is works not only with the Mars release, but also previous releases, as well.
 * Open Window/Preferences.
@@ -18,13 +68,3 @@ This is works not only with the Mars release, but also previous releases, as wel
 * Press OK
 
 Open your product file and select the "Export" option. You will see that the "Export for multiple platforms" checkbox is available.
-
-
-
-Ce qui n'est pas nécessaire
-
-Pas besoin Installation de EMF.Validation
-
-Installation de  Equinox Target Components	3.11.1.v20150831-1342	org.eclipse.equinox.sdk.feature.group	Eclipse  
-pasEquinox Project
-Suppression des dépendance cassé vers windows et linux
