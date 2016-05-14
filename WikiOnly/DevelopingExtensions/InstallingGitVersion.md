@@ -6,7 +6,7 @@ _Important note: the current Git version is **not** compatible with the GAMA 1.6
 
 ## Install Eclipse Mars SR2
 
-Download the ["Eclipse IDE for Java and DSL Developers"](http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/mars2) version (If you don't have Java installed yet on your computer you can download it [here](http://www.oracle.com/technetwork/java/javase/downloads/index.html)). 
+Download the ["Eclipse IDE for Java and DSL Developers"](http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/mars2) version (If Java is not installed on your computer you can download it [here](http://www.oracle.com/technetwork/java/javase/downloads/index.html)). 
 
 Unpack it and launch it. Please refer to this [link](http://help.eclipse.org/mars/index.jsp?nav=%2F0) for more information on running Eclipse.
 
