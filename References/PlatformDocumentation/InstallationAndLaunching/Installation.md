@@ -1,7 +1,7 @@
 
 # Installation
 
-GAMA comes in 6 different versions (32 & 64 bits for Windows, Linux and MacOS). You first need to determine which version you are going to use (it depends on your computer, which may, or not, support 64 bits instructions, but also on the version of Java already installed, as the number of bits of the two versions must match).
+GAMA 1.7 comes in 5 different versions (32 & 64 bits for Windows & Linux, and 64 bits for MacOS X). You first need to determine which version to use (it depends on your computer, which may, or not, support 64 bits instructions, but also on the version of Java already installed, as the number of bits of the two versions must match).
 
 You can then download the right version from the [Downloads page](Download), expand the zip file wherever you want on your machine, and [launch GAMA](Launching).
 
@@ -19,26 +19,16 @@ You can then download the right version from the [Downloads page](Download), exp
 
 ## System Requirements
 
-GAMA requires that Java 1.6 or 1.7 be installed on your machine, approximately 200MB of disk space is available and that a minimum of RAM (4GB is recommended) is installed (to increase the portion of memory usable by GAMA, please refer to [these instructions](Troubleshooting#Memory_problems)).
-
-
+GAMA 1.7 requires that 1.7 be installed on your machine, approximately 200MB of disk space is available and that a minimum of RAM (4GB is recommended) is installed (to increase the portion of memory usable by GAMA, please refer to [these instructions](Troubleshooting#Memory_problems)).
 
 ## Installation of Java
 
-On Windows and Linux the recommended Java Virtual Machine under which GAMA has been tested is the one distributed by Oracle. On MacOS X, it is (still) the one distributed by Apple (see below). It may work with others — or not. For better performances, you may also want to install the JDK version of the JVM (and not the standard JRE), although is it not mandatory  (GAMA should run fine, but slower, under a JRE).
+On all environments, the recommended Java Virtual Machine under which GAMA has been tested is the one distributed by Oracle. It may work with others — or not. For better performances, you may also want to install the JDK version of the JVM (and not the standard JRE), although is it not mandatory  (GAMA should run fine, but slower, under a JRE).
 
-### On MacOS X (Lion, Mountain Lion, Mavericks)
-The latest version of GAMA requires a JVM (or JDK) compatible with Java 1.6 to run. There are two of them available for MacOS X. JDK 1.7 is distributed by Oracle, while JDK 1.6 is distributed by Apple.
-Because of this bug in SWT (https://bugs.eclipse.org/bugs/show_bug.cgi?id=374199), GAMA will not run correctly under JDK 1.7 (all the displays will appear empty).
+### On MacOS X 
+The latest version of GAMA requires a JVM (or JDK or JRE) compatible with Java 1.7 to run. 
 
-If JDK 1.7 is already installed, it is then necessary to also install the JDK 1.6 distributed by Apple in order to run GAMA. The latest version, « Java for OS X 2014-001 », can be obtained here : http://support.apple.com/kb/DL1572. Alternatively, you might want to go to https://developer.apple.com/downloads and, after a free registration step if you're not an Apple Developer, get the complete JDK from the list of downloads.
-
-
-### On MacOS X (Yosemite)
-If you upgrade your Mac OS X version to **Yosemite** (latest version, aka Mac OS X 10.10), some changes in the management of Java Virtual Machines might prevent the GAMA displays from working and it will make your models crash the platform. One fix for this behavior is, **after** having upgraded Mac OS X, to install (or reinstall in case you have already installed it) the same « Java for OS X 2014-001 », available here: http://support.apple.com/kb/DL1572.
-
-If you run the developer version of GAMA (i.e. under Eclipse), it is necessary, in that case, to reconfigure the "Installed JREs" (Preferences > Java > Installed JREs) so as to point JDK1.6 to the location where Yosemite now installs it (i.e. in `/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home`). See [here](http://stackoverflow.com/questions/26450420/osx-10-10-and-eclipse-luna-own-app-crashes-when-started-from-inside-eclipse) for related information.
-
+_Note for GAMA 1.6.1 users: if you plan to keep a copy of GAMA 1.6.1, you will need to have both Java 1.6 (distributed by Apple) and Java 1.7 (distributed by Oracle) installed at the same time. Because of this bug in SWT (https://bugs.eclipse.org/bugs/show_bug.cgi?id=374199), GAMA 1.6.1 will not run correctly under Java 1.7 (all the displays will appear empty). To install the JDK 1.6 distributed by Apple, follow the instructions here : http://support.apple.com/kb/DL1572. Alternatively, you might want to go to https://developer.apple.com/downloads and, after a free registration step if you're not an Apple Developer, get the complete JDK from the list of downloads._
 
 ### On Windows 7 & 8 64 bits
 Please notice that, by default, Internet Explorer and Chrome browsers will download a 32 bits version of the JRE. Running GAMA 32 bits for Windows is ok, but you may want to download the latest JDK instead, in order to both improve the performances of the simulator and be able to run GAMA 64 bits.
