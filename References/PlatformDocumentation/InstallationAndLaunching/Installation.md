@@ -18,7 +18,7 @@ You can then download the right version from the [Downloads page](Download), exp
 
 ## System Requirements
 
-GAMA 1.7 requires that Java 1.7 be installed on your machine, approximately 200MB of disk space and a minimum of 4GB. To increase the portion of memory usable by GAMA, please refer to [these instructions](Troubleshooting#Memory_problems)).
+GAMA 1.7 requires that Java 1.7 be installed on your machine, approximately 200MB of disk space and a minimum of 4GB of RAM (to increase the portion of memory usable by GAMA, please refer to [these instructions](Troubleshooting#Memory_problems)).
 
 ## Installation of Java
 
