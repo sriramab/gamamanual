@@ -13,6 +13,7 @@ gives examples
 * the step of batch experiments is now executed after all repetitions of simulations are done (not after each one). They can however be still accessed using the attributes `simulations` (see Batch.gaml in Models Library)
 * signal and diffuse have been merged into a single statement
 * facets do not accept a space between their identifier and the `:` anymore.
+* simplification of equation/solve statements and deprecation of old facets
 
 # Enhancements in 1.7
 * multi-simulation
