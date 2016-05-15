@@ -22,7 +22,7 @@ GAMA 1.7 requires that Java 1.7 be installed on your machine, approximately 200M
 
 ## Installation of Java
 
-On all environments, the recommended Java Virtual Machine under which GAMA has been tested is the one distributed by Oracle. It may work with others — or not. For better performances, you may also want to install the JDK version of the JVM (and not the standard JRE), although is it not mandatory  (GAMA should run fine, but slower, under a JRE).
+On all environments, the recommended Java Virtual Machine under which GAMA has been tested is the one distributed by Oracle (http://www.java.com/en/download/manual.jsp). It may work with others — or not. For better performances, you may also want to install the JDK version of the JVM (and not the standard JRE), although is it not mandatory  (GAMA should run fine, but slower, under a JRE).
 
 ### On MacOS X 
 The latest version of GAMA requires a JVM (or JDK or JRE) compatible with Java 1.7 to run. 
@@ -32,7 +32,7 @@ _Note for GAMA 1.6.1 users: if you plan to keep a copy of GAMA 1.6.1, you will n
 ### On Windows
 Please notice that, by default, Internet Explorer and Chrome browsers will download a 32 bits version of the JRE. Running GAMA 32 bits for Windows is ok, but you may want to download the latest JDK instead, in order to both improve the performances of the simulator and be able to run GAMA 64 bits.
 
-  * To download the appropriate java version, follow this link: http://www.java.com/en/
+  * To download the appropriate java version, follow this link: http://www.java.com/en/download/manual.jsp
   * Execute the downloaded file
   * You can check that a **Java\\jre7** folder has been installed at the location **C:\\Program Files\\**
 
