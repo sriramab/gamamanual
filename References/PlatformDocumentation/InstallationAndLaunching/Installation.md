@@ -34,7 +34,7 @@ Please notice that, by default, Internet Explorer and Chrome browsers will downl
 
   * To download the appropriate java version, follow this link: http://www.java.com/en/download/manual.jsp
   * Execute the downloaded file
-  * You can check that a **Java\\jre7** folder has been installed at the location **C:\\Program Files\\**
+  * You can check that a **Java\\jre7** (or jre8) folder has been installed at the location **C:\\Program Files\\**
 
 In order for Java to be found by Windows, you may have to modify environment variables:
 
@@ -43,7 +43,7 @@ In order for Java to be found by Windows, you may have to modify environment var
   * On the left, click on **Advanced System parameters**
   * In the bottom, click on **Environment Variables**
   * In System Variables, choose to modify the **Path** variable
-  * At the end, add **;C:\\Program Files\\Java\\jre7\\bin**
+  * At the end, add **;C:\\Program Files\\Java\\jre7\\bin** (or jre8\\bin)
 
 ### On Ubuntu & Linux
 
@@ -56,7 +56,7 @@ Basically, you need to do:
 ```
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
-sudo apt-get install oracle-java7-installer
+sudo apt-get install oracle-java7-installer (or oracle-java8-installer)
 ```
 
 You can then switch between java version using:
