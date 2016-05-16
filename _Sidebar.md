@@ -74,6 +74,7 @@
 7. [Using BDI](UsingBDI)
 8. [Using Driving Skill](UsingDrivingSkill)
 9. [Manipulate dates](ManipulateDates)
+9. [Manipulate lights](ManipulateLight)
 10. [Using comodel](Comodel)
 11. [FAQ](FAQ)
 12. [Known Issues](KnownIssues)
