@@ -36,6 +36,6 @@ This tutorial is composed of 7 steps corresponding to 7 models. For each step we
   1. [Charts](IncrementalModel_step2)
   1. [Integration of GIS Data](IncrementalModel_step3)
   1. [Movement on Graph](IncrementalModel_step4)
-  1. [3D visualization](IncrementalModel_step5)
+  1. [Visualizing in 3D](IncrementalModel_step5)
   1. [Multi-Level](IncrementalModel_step6)
   1. [Differential Equations](IncrementalModel_step7)
