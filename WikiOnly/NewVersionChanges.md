@@ -43,3 +43,4 @@ gives examples
 * getting values when moving the mouse on charts
 * populations of agents can now be easily exported to CSV files using the `save` statement
 * monitors can have colors
+* light statement in 3D display provides the possibility to custom your lights (point lights, direction lights, spot lights)
