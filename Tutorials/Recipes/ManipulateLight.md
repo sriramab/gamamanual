@@ -4,6 +4,34 @@
 # Implementing light
 
 When using opengl display, GAMA provides you the possibility to manipulate one or several lights, making your display more realistic.
+Most of the following screenshots will be taken with the following short example gaml : 
+```
+model test_light
+
+grid cells {
+	aspect base {
+		draw square(1) at:{grid_x,grid_y} color:#white;
+	}
+}
+experiment my_experiment type:gui{
+	output {
+		display my_display type:opengl background:#darkblue {
+			graphics "my_layer" {
+				draw square(100) color:#white at:{50,50};
+				draw cube(5) color:#lightgrey at:{50,30};
+				draw cube(5) color:#lightgrey at:{30,35};
+				draw cube(5) color:#lightgrey at:{60,35};
+				draw sphere(5) color:#lightgrey at:{10,10,2.5};
+				draw sphere(5) color:#lightgrey at:{20,30,2.5};
+				draw sphere(5) color:#lightgrey at:{40,30,2.5};
+				draw sphere(5) color:#lightgrey at:{40,60,2.5};
+				draw cone3D(5,5) color:#lightgrey at:{55,10,0};
+				draw cylinder(5,5) color:#lightgrey at:{10,60,0};
+			}
+		}
+	}
+}
+```
 
 ## Index
 
@@ -13,21 +41,30 @@ When using opengl display, GAMA provides you the possibility to manipulate one o
 
 ## Light generalities
 
-Before going deep into the code, here is a quick explaination about how light works in opengl.
+Before going deep into the code, here is a quick explanation about how light works in opengl.
 First of all, you need to know that there are 3 types of lights you can manipulate : the **ambient light**, the **diffuse light** and the **specular light**. Each "light" in opengl is in fact composed of those 3 types of lights.
 
 ### Ambient light
 
-The **ambient light** is the light of your world without any lighting. If a face of a cube is not striken by the light rays for instance, this fice will appear totally black if there is no ambient light. To make your world more realistic, it is better to have an ambient light.
+The **ambient light** is the light of your world without any lighting. If a face of a cube is not stricken by the light rays for instance, this face will appear totally black if there is no ambient light. To make your world more realistic, it is better to have an ambient light.
 An ambient light has then no position or direction. It is equally distributed to all the objects of your scene.
+
+Here is an example of our GAML scene using only ambient light (color red) : 
+
+![resources/images/lightRecipes/ambient_light.png](resources/images/lightRecipes/ambient_light.png)
 
 ### Diffuse light
 
-The **diffuse light** can be seen as the light rays : if a face of a cube is striken by the diffuse light, it will take the color of this diffuse light. You have to know that the more perpendicular the face of your object will be to the light ray, the more lightened the face will be.
-A diffuse light has then a direction. It can have also a position.
-Your have 2 categories of diffuse light : the **positionnal lights**, and the **directionnal lights**.
+The **diffuse light** can be seen as the light rays : if a face of a cube is stricken by the diffuse light, it will take the color of this diffuse light. You have to know that the more perpendicular the face of your object will be to the light ray, the more lightened the face will be.
 
-#### Positionnal lights
+Here is an example of our GAML scene using only diffuse light (color red, the light source is displayed as a red sphere) : 
+
+![resources/images/lightRecipes/diffuse_light.png](resources/images/lightRecipes/diffuse_light.png)
+
+A diffuse light has then a direction. It can have also a position.
+Your have 2 categories of diffuse light : the **positional lights**, and the **directional lights**.
+
+#### Positional lights
 
 Those lights have a position in your world. It is the case of **point lights** and **spot lights**.
 
@@ -35,34 +72,44 @@ Those lights have a position in your world. It is the case of **point lights** a
 
 Points lights can be seen as a candle in your world, diffusing the light equally in all the direction.
 
-[TODO Image]
+Here is an example of our GAML scene using only diffuse light (color red, the light source is displayed as a red sphere) : 
+
+![resources/images/lightRecipes/point_light.png](resources/images/lightRecipes/point_light.png)
 
 - Spot lights
 
 Spot lights can be seen as a torch light in your world. It needs a position, and also a direction and an angle.
 
-[TODO Image]
+![resources/images/lightRecipes/spot_light.png](resources/images/lightRecipes/spot_light.png)
 
-Positionnal lights, as they have a position, can also have an attenuation according to the distance between the light source and the object. The value of positional lights are computed with the following formula :
+Positional lights, as they have a position, can also have an attenuation according to the distance between the light source and the object. The value of positional lights are computed with the following formula :
 diffuse_light = diffuse_light * ( 1 / (1 + constante_attenuation + linear_attenuation * d + quadratic_attenuation * d))
 By changing those 3 values (constante_attenuation, linear_attenuation and quadratic_attenuation), you can control the way light is diffused over your world (if your world is "foggy" for instance, you may turn your linear and quadratic attenuation on). Note that by default, all those attenuation are equal to 0.
 
-#### Directionnal lights
+Here is an example of our GAML scene using a point light with linear attenuation (color red, the light source is displayed as a red sphere) : 
 
-Directionnal lights have no real "position" : they only have a direction. A directionnal light will strike all the objects of your world with the same direction. An example of directionnal light you have in the real world would be the light of the sun : the sun is so far away from us that you can consider that the rays have the same direction and the same intensity wherever they strike.
-Since there is no position for directionnal lights, there is no attenuation either.
+![resources/images/lightRecipes/point_light_with_attenuation.png](resources/images/lightRecipes/point_light_with_attenuation.png)
+
+#### Directional lights
+
+Directional lights have no real "position" : they only have a direction. A directional light will strike all the objects of your world with the same direction. An example of directional light you have in the real world would be the light of the sun : the sun is so far away from us that you can consider that the rays have the same direction and the same intensity wherever they strike.
+Since there is no position for directional lights, there is no attenuation either.
+
+![resources/images/lightRecipes/direction_light.png](resources/images/lightRecipes/direction_light.png)
 
 ### Specular light
 
-This is a more advanced concept, giving an aspect a little bit "shinny" to the objects striken by the specular light. The way specular light is distributed to the environment depends on the way you implemented your diffuse light.
-
-[TODO Image]
+This is a more advanced concept, giving an aspect a little bit "shinny" to the objects stricken by the specular light. It is used to simulate the interaction between the light and a special material (ex : wood, steel, rubber...).
 
 ## Default light
 
 In your opengl display, without specifying any light, you will have only one light, with those following properties :
 
-Those values have been chosen in order to have the same visual effect in both opengl and java2D displays, when you display 2D objects.
+Those values have been chosen in order to have the same visual effect in both opengl and java2D displays, when you display 2D objects, and also to have a nice "3D effect" when using the opengl displays. We chose the following setting by default : 
+The ambient light value : rgb(127,127,127,255)
+diffuse light value : rgb(127,127,127,255)
+type of light : direction
+direction of the light : (0.5,0.5,-1);
 
 ## Custom lights
 
