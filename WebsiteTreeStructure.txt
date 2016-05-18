@@ -28,9 +28,9 @@ Tutorials
 ---RunSeveralSimulations
 ---BatchExperiments
 ---ExplorationMethods
---OptimizingModelsSection
+--OptimizingModels
 ---RuntimeConcepts
----OptimizingModels
+---OptimizingModelsSelection
 --MultiParadigmModeling
 ---ControlArchitecture
 ---Equations
