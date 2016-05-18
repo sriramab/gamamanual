@@ -9,6 +9,7 @@ This page provides a link to each of the extension pages. Extensions are the add
 * [msi.gaml.extensions.humanmoving](PluginDocumentation/Extension_msi.gaml.extensions.humanmoving)
 * [ummisco.gaml.extensions.stats](PluginDocumentation/Extension_ummisco.gaml.extensions.stats)
 * [ummisco.gama.gpu](PluginDocumentation/Extension_ummisco.gama.gpu)
+* [ummisco.gama.communicator](PluginDocumentation/Extension_ummisco.gama.communicator)
 * [ummisco.gaml.extensions.rjava](PluginDocumentation/Extension_ummisco.gaml.extensions.rjava)
 * [ummisco.gaml.extensions.sound](PluginDocumentation/Extension_ummisco.gaml.extensions.sound)
 * [ummisco.miro.extension.traffic](PluginDocumentation/Extension_ummisco.miro.extension.traffic)
@@ -21,3 +22,4 @@ This page provides a link to each of the extension pages. Extensions are the add
 * [msi.gaml.extensions.traffic2d](PluginDocumentation/Extension_msi.gaml.extensions.traffic2d)
 * [simtools.gamanalyzer.fr](PluginDocumentation/Extension_simtools.gamanalyzer.fr)
 * [simtools.graphanalysis.fr](PluginDocumentation/Extension_simtools.graphanalysis.fr)
+* [cict.gaml.extensions.netcdf](PluginDocumentation/Extension_cict.gaml.extensions.netcdf)

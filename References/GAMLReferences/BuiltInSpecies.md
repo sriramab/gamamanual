@@ -93,7 +93,7 @@ create cluster_builder returns: clusterer;
 	 
 #### **`select`**
 
-* returns: `list`
+* returns: `container`
  			
 * → **`select`** (`string`): select string 			
 * → **`values`** (`list`): List of values that are used to replace question marks  

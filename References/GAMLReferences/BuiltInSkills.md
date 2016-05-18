@@ -652,7 +652,7 @@ unregister the agent on the road
 #### **`select`**
 
 
-* returns: list 			
+* returns: container 			
 * **`params`** (map): Connection parameters 			
 * **`select`** (string): select string with question marks 			
 * **`values`** (list): List of values that are used to replace question marks  

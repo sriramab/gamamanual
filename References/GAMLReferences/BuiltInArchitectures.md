@@ -174,7 +174,7 @@ get the list of predicates is in the belief base with the given name.
 	 
 #### **`get_emotion`**
 get the emotion in the emotion base (if several, returns the first one).
-* returns: msi.gaml.architecture.simplebdi.Emotion 			
+* returns: emotion 			
 * **`emotion`** (546706): emotion to get  
 	 
 #### **`get_intention`**
