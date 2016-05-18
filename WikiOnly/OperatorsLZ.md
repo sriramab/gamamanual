@@ -109,12 +109,17 @@ Note that due to the fact that actions are written by modelers, the general func
 ----
 
 ### Color-related operators
-[-](OperatorsAK#-), [/](OperatorsAK#/), [*](OperatorsAK#*), [+](OperatorsAK#+), [blend](OperatorsAK#blend), [brewer_colors](OperatorsAK#brewer_colors), [brewer_palettes](OperatorsAK#brewer_palettes), [grayscale](OperatorsAK#grayscale), [hsb](OperatorsAK#hsb), [mean](OperatorsLZ#mean), [rgb](OperatorsLZ#rgb), [rnd_color](OperatorsLZ#rnd_color), [sum](OperatorsLZ#sum), 
+[-](OperatorsAK#-), [/](OperatorsAK#/), [*](OperatorsAK#*), [+](OperatorsAK#+), [blend](OperatorsAK#blend), [brewer_colors](OperatorsAK#brewer_colors), [brewer_palettes](OperatorsAK#brewer_palettes), [grayscale](OperatorsAK#grayscale), [hsb](OperatorsAK#hsb), [mean](OperatorsLZ#mean), [median](OperatorsLZ#median), [rgb](OperatorsLZ#rgb), [rnd_color](OperatorsLZ#rnd_color), [sum](OperatorsLZ#sum), 
+
+----
+
+### Comparison operators
+[!=](OperatorsAK#!=), [<](OperatorsAK#<), [<=](OperatorsAK#<=), [=](OperatorsAK#=), [>](OperatorsAK#>), [>=](OperatorsAK#>=), [between](OperatorsAK#between), 
 
 ----
 
 ### Containers-related operators
-[-](OperatorsAK#-), [::](OperatorsAK#::), [+](OperatorsAK#+), [accumulate](OperatorsAK#accumulate), [among](OperatorsAK#among), [at](OperatorsAK#at), [collect](OperatorsAK#collect), [contains](OperatorsAK#contains), [contains_all](OperatorsAK#contains_all), [contains_any](OperatorsAK#contains_any), [count](OperatorsAK#count), [empty](OperatorsAK#empty), [first](OperatorsAK#first), [first_with](OperatorsAK#first_with), [get](OperatorsAK#get), [group_by](OperatorsAK#group_by), [in](OperatorsAK#in), [index_by](OperatorsAK#index_by), [inter](OperatorsAK#inter), [interleave](OperatorsAK#interleave), [internal_at](OperatorsAK#internal_at), [last](OperatorsLZ#last), [last_with](OperatorsLZ#last_with), [length](OperatorsLZ#length), [max](OperatorsLZ#max), [max_of](OperatorsLZ#max_of), [mean](OperatorsLZ#mean), [mean_of](OperatorsLZ#mean_of), [min](OperatorsLZ#min), [min_of](OperatorsLZ#min_of), [mul](OperatorsLZ#mul), [one_of](OperatorsLZ#one_of), [product_of](OperatorsLZ#product_of), [remove_duplicates](OperatorsLZ#remove_duplicates), [reverse](OperatorsLZ#reverse), [shuffle](OperatorsLZ#shuffle), [sort_by](OperatorsLZ#sort_by), [sum](OperatorsLZ#sum), [sum_of](OperatorsLZ#sum_of), [union](OperatorsLZ#union), [variance_of](OperatorsLZ#variance_of), [where](OperatorsLZ#where), [with_max_of](OperatorsLZ#with_max_of), [with_min_of](OperatorsLZ#with_min_of), 
+[-](OperatorsAK#-), [::](OperatorsAK#::), [+](OperatorsAK#+), [accumulate](OperatorsAK#accumulate), [among](OperatorsAK#among), [at](OperatorsAK#at), [collect](OperatorsAK#collect), [contains](OperatorsAK#contains), [contains_all](OperatorsAK#contains_all), [contains_any](OperatorsAK#contains_any), [count](OperatorsAK#count), [empty](OperatorsAK#empty), [every](OperatorsAK#every), [first](OperatorsAK#first), [first_with](OperatorsAK#first_with), [get](OperatorsAK#get), [group_by](OperatorsAK#group_by), [in](OperatorsAK#in), [index_by](OperatorsAK#index_by), [inter](OperatorsAK#inter), [interleave](OperatorsAK#interleave), [internal_at](OperatorsAK#internal_at), [internal_integrated_value](OperatorsAK#internal_integrated_value), [last](OperatorsLZ#last), [last_with](OperatorsLZ#last_with), [length](OperatorsLZ#length), [max](OperatorsLZ#max), [max_of](OperatorsLZ#max_of), [mean](OperatorsLZ#mean), [mean_of](OperatorsLZ#mean_of), [median](OperatorsLZ#median), [min](OperatorsLZ#min), [min_of](OperatorsLZ#min_of), [mul](OperatorsLZ#mul), [one_of](OperatorsLZ#one_of), [product_of](OperatorsLZ#product_of), [range](OperatorsLZ#range), [remove_duplicates](OperatorsLZ#remove_duplicates), [reverse](OperatorsLZ#reverse), [shuffle](OperatorsLZ#shuffle), [sort_by](OperatorsLZ#sort_by), [sum](OperatorsLZ#sum), [sum_of](OperatorsLZ#sum_of), [union](OperatorsLZ#union), [variance_of](OperatorsLZ#variance_of), [where](OperatorsLZ#where), [with_max_of](OperatorsLZ#with_max_of), [with_min_of](OperatorsLZ#with_min_of), 
 
 ----
 
@@ -149,7 +154,7 @@ Note that due to the fact that actions are written by modelers, the general func
 ----
 
 ### Graphs-related operators
-[add_edge](OperatorsAK#add_edge), [add_node](OperatorsAK#add_node), [adjacency](OperatorsAK#adjacency), [agent_from_geometry](OperatorsAK#agent_from_geometry), [all_pairs_shortest_path](OperatorsAK#all_pairs_shortest_path), [alpha_index](OperatorsAK#alpha_index), [as_distance_graph](OperatorsAK#as_distance_graph), [as_edge_graph](OperatorsAK#as_edge_graph), [as_intersection_graph](OperatorsAK#as_intersection_graph), [as_path](OperatorsAK#as_path), [beta_index](OperatorsAK#beta_index), [betweenness_centrality](OperatorsAK#betweenness_centrality), [connected_components_of](OperatorsAK#connected_components_of), [connectivity_index](OperatorsAK#connectivity_index), [contains_edge](OperatorsAK#contains_edge), [contains_vertex](OperatorsAK#contains_vertex), [degree_of](OperatorsAK#degree_of), [directed](OperatorsAK#directed), [edge](OperatorsAK#edge), [edge_between](OperatorsAK#edge_between), [edges](OperatorsAK#edges), [gamma_index](OperatorsAK#gamma_index), [grid_cells_to_graph](OperatorsAK#grid_cells_to_graph), [in_degree_of](OperatorsAK#in_degree_of), [in_edges_of](OperatorsAK#in_edges_of), [layout](OperatorsLZ#layout), [load_graph_from_file](OperatorsLZ#load_graph_from_file), [load_shortest_paths](OperatorsLZ#load_shortest_paths), [nb_cycles](OperatorsLZ#nb_cycles), [neighbors_of](OperatorsLZ#neighbors_of), [node](OperatorsLZ#node), [nodes](OperatorsLZ#nodes), [out_degree_of](OperatorsLZ#out_degree_of), [out_edges_of](OperatorsLZ#out_edges_of), [path_between](OperatorsLZ#path_between), [paths_between](OperatorsLZ#paths_between), [predecessors_of](OperatorsLZ#predecessors_of), [remove_node_from](OperatorsLZ#remove_node_from), [rewire_n](OperatorsLZ#rewire_n), [source_of](OperatorsLZ#source_of), [spatial_graph](OperatorsLZ#spatial_graph), [successors_of](OperatorsLZ#successors_of), [sum](OperatorsLZ#sum), [target_of](OperatorsLZ#target_of), [undirected](OperatorsLZ#undirected), [use_cache](OperatorsLZ#use_cache), [weight_of](OperatorsLZ#weight_of), [with_optimizer_type](OperatorsLZ#with_optimizer_type), [with_weights](OperatorsLZ#with_weights), 
+[add_edge](OperatorsAK#add_edge), [add_node](OperatorsAK#add_node), [adjacency](OperatorsAK#adjacency), [agent_from_geometry](OperatorsAK#agent_from_geometry), [all_pairs_shortest_path](OperatorsAK#all_pairs_shortest_path), [alpha_index](OperatorsAK#alpha_index), [as_distance_graph](OperatorsAK#as_distance_graph), [as_edge_graph](OperatorsAK#as_edge_graph), [as_intersection_graph](OperatorsAK#as_intersection_graph), [as_path](OperatorsAK#as_path), [beta_index](OperatorsAK#beta_index), [betweenness_centrality](OperatorsAK#betweenness_centrality), [biggest_cliques_of](OperatorsAK#biggest_cliques_of), [connected_components_of](OperatorsAK#connected_components_of), [connectivity_index](OperatorsAK#connectivity_index), [contains_edge](OperatorsAK#contains_edge), [contains_vertex](OperatorsAK#contains_vertex), [degree_of](OperatorsAK#degree_of), [directed](OperatorsAK#directed), [edge](OperatorsAK#edge), [edge_between](OperatorsAK#edge_between), [edges](OperatorsAK#edges), [gamma_index](OperatorsAK#gamma_index), [generate_barabasi_albert](OperatorsAK#generate_barabasi_albert), [generate_complete_graph](OperatorsAK#generate_complete_graph), [generate_watts_strogatz](OperatorsAK#generate_watts_strogatz), [grid_cells_to_graph](OperatorsAK#grid_cells_to_graph), [in_degree_of](OperatorsAK#in_degree_of), [in_edges_of](OperatorsAK#in_edges_of), [layout](OperatorsLZ#layout), [load_graph_from_file](OperatorsLZ#load_graph_from_file), [load_shortest_paths](OperatorsLZ#load_shortest_paths), [maximal_cliques_of](OperatorsLZ#maximal_cliques_of), [nb_cycles](OperatorsLZ#nb_cycles), [neighbors_of](OperatorsLZ#neighbors_of), [node](OperatorsLZ#node), [nodes](OperatorsLZ#nodes), [out_degree_of](OperatorsLZ#out_degree_of), [out_edges_of](OperatorsLZ#out_edges_of), [path_between](OperatorsLZ#path_between), [paths_between](OperatorsLZ#paths_between), [predecessors_of](OperatorsLZ#predecessors_of), [remove_node_from](OperatorsLZ#remove_node_from), [rewire_n](OperatorsLZ#rewire_n), [source_of](OperatorsLZ#source_of), [spatial_graph](OperatorsLZ#spatial_graph), [successors_of](OperatorsLZ#successors_of), [sum](OperatorsLZ#sum), [target_of](OperatorsLZ#target_of), [undirected](OperatorsLZ#undirected), [use_cache](OperatorsLZ#use_cache), [weight_of](OperatorsLZ#weight_of), [with_optimizer_type](OperatorsLZ#with_optimizer_type), [with_weights](OperatorsLZ#with_weights), 
 
 ----
 
@@ -159,12 +164,17 @@ Note that due to the fact that actions are written by modelers, the general func
 ----
 
 ### Iterator operators
-[accumulate](OperatorsAK#accumulate), [as_map](OperatorsAK#as_map), [collect](OperatorsAK#collect), [count](OperatorsAK#count), [first_with](OperatorsAK#first_with), [frequency_of](OperatorsAK#frequency_of), [group_by](OperatorsAK#group_by), [index_by](OperatorsAK#index_by), [last_with](OperatorsLZ#last_with), [max_of](OperatorsLZ#max_of), [mean_of](OperatorsLZ#mean_of), [min_of](OperatorsLZ#min_of), [product_of](OperatorsLZ#product_of), [sort_by](OperatorsLZ#sort_by), [sum_of](OperatorsLZ#sum_of), [variance_of](OperatorsLZ#variance_of), [where](OperatorsLZ#where), [with_max_of](OperatorsLZ#with_max_of), [with_min_of](OperatorsLZ#with_min_of), 
+[accumulate](OperatorsAK#accumulate), [as_map](OperatorsAK#as_map), [collect](OperatorsAK#collect), [count](OperatorsAK#count), [distribution_of](OperatorsAK#distribution_of), [distribution_of](OperatorsAK#distribution_of), [first_with](OperatorsAK#first_with), [frequency_of](OperatorsAK#frequency_of), [group_by](OperatorsAK#group_by), [index_by](OperatorsAK#index_by), [last_with](OperatorsLZ#last_with), [max_of](OperatorsLZ#max_of), [mean_of](OperatorsLZ#mean_of), [min_of](OperatorsLZ#min_of), [product_of](OperatorsLZ#product_of), [sort_by](OperatorsLZ#sort_by), [sum_of](OperatorsLZ#sum_of), [variance_of](OperatorsLZ#variance_of), [where](OperatorsLZ#where), [with_max_of](OperatorsLZ#with_max_of), [with_min_of](OperatorsLZ#with_min_of), 
 
 ----
 
 ### List-related operators
 [copy_between](OperatorsAK#copy_between), [index_of](OperatorsAK#index_of), [last_index_of](OperatorsLZ#last_index_of), 
+
+----
+
+### Logical operators
+[:](OperatorsAK#:), [!](OperatorsAK#!), [?](OperatorsAK#?), [and](OperatorsAK#and), [or](OperatorsLZ#or), 
 
 ----
 
@@ -183,13 +193,18 @@ Note that due to the fact that actions are written by modelers, the general func
 
 ----
 
+### multicriteria operators
+[electre_DM](OperatorsAK#electre_dm), [evidence_theory_DM](OperatorsAK#evidence_theory_dm), [promethee_DM](OperatorsLZ#promethee_dm), [weighted_means_DM](OperatorsLZ#weighted_means_dm), 
+
+----
+
 ### Path-related operators
 [agent_from_geometry](OperatorsAK#agent_from_geometry), [all_pairs_shortest_path](OperatorsAK#all_pairs_shortest_path), [as_path](OperatorsAK#as_path), [load_shortest_paths](OperatorsLZ#load_shortest_paths), [path_between](OperatorsLZ#path_between), [path_to](OperatorsLZ#path_to), [paths_between](OperatorsLZ#paths_between), [use_cache](OperatorsLZ#use_cache), 
 
 ----
 
 ### Points-related operators
-[-](OperatorsAK#-), [/](OperatorsAK#/), [*](OperatorsAK#*), [+](OperatorsAK#+), [add_point](OperatorsAK#add_point), [angle_between](OperatorsAK#angle_between), [any_location_in](OperatorsAK#any_location_in), [closest_points_with](OperatorsAK#closest_points_with), [farthest_point_to](OperatorsAK#farthest_point_to), [grid_at](OperatorsAK#grid_at), [norm](OperatorsLZ#norm), [point](OperatorsLZ#point), [points_at](OperatorsLZ#points_at), [points_on](OperatorsLZ#points_on), 
+[-](OperatorsAK#-), [/](OperatorsAK#/), [*](OperatorsAK#*), [+](OperatorsAK#+), [<](OperatorsAK#<), [<=](OperatorsAK#<=), [>](OperatorsAK#>), [>=](OperatorsAK#>=), [add_point](OperatorsAK#add_point), [angle_between](OperatorsAK#angle_between), [any_location_in](OperatorsAK#any_location_in), [closest_points_with](OperatorsAK#closest_points_with), [farthest_point_to](OperatorsAK#farthest_point_to), [grid_at](OperatorsAK#grid_at), [norm](OperatorsLZ#norm), [point](OperatorsLZ#point), [points_at](OperatorsLZ#points_at), [points_on](OperatorsLZ#points_on), 
 
 ----
 
@@ -204,12 +219,12 @@ Note that due to the fact that actions are written by modelers, the general func
 ----
 
 ### Shape
-[arc](OperatorsAK#arc), [box](OperatorsAK#box), [circle](OperatorsAK#circle), [cone](OperatorsAK#cone), [cone3D](OperatorsAK#cone3d), [cube](OperatorsAK#cube), [curve](OperatorsAK#curve), [cylinder](OperatorsAK#cylinder), [ellipse](OperatorsAK#ellipse), [envelope](OperatorsAK#envelope), [geometry_collection](OperatorsAK#geometry_collection), [hexagon](OperatorsAK#hexagon), [line](OperatorsLZ#line), [link](OperatorsLZ#link), [plan](OperatorsLZ#plan), [polygon](OperatorsLZ#polygon), [polyhedron](OperatorsLZ#polyhedron), [pyramid](OperatorsLZ#pyramid), [rectangle](OperatorsLZ#rectangle), [sphere](OperatorsLZ#sphere), [square](OperatorsLZ#square), [squircle](OperatorsLZ#squircle), [teapot](OperatorsLZ#teapot), [triangle](OperatorsLZ#triangle), 
+[arc](OperatorsAK#arc), [box](OperatorsAK#box), [circle](OperatorsAK#circle), [cone](OperatorsAK#cone), [cone3D](OperatorsAK#cone3d), [cross](OperatorsAK#cross), [cube](OperatorsAK#cube), [curve](OperatorsAK#curve), [cylinder](OperatorsAK#cylinder), [ellipse](OperatorsAK#ellipse), [envelope](OperatorsAK#envelope), [geometry_collection](OperatorsAK#geometry_collection), [hexagon](OperatorsAK#hexagon), [line](OperatorsLZ#line), [link](OperatorsLZ#link), [plan](OperatorsLZ#plan), [polygon](OperatorsLZ#polygon), [polyhedron](OperatorsLZ#polyhedron), [pyramid](OperatorsLZ#pyramid), [rectangle](OperatorsLZ#rectangle), [sphere](OperatorsLZ#sphere), [square](OperatorsLZ#square), [squircle](OperatorsLZ#squircle), [teapot](OperatorsLZ#teapot), [triangle](OperatorsLZ#triangle), 
 
 ----
 
 ### Spatial operators
-[-](OperatorsAK#-), [*](OperatorsAK#*), [+](OperatorsAK#+), [add_point](OperatorsAK#add_point), [agent_closest_to](OperatorsAK#agent_closest_to), [agent_farthest_to](OperatorsAK#agent_farthest_to), [agents_at_distance](OperatorsAK#agents_at_distance), [agents_inside](OperatorsAK#agents_inside), [agents_overlapping](OperatorsAK#agents_overlapping), [angle_between](OperatorsAK#angle_between), [any_location_in](OperatorsAK#any_location_in), [arc](OperatorsAK#arc), [around](OperatorsAK#around), [as_4_grid](OperatorsAK#as_4_grid), [as_grid](OperatorsAK#as_grid), [as_hexagonal_grid](OperatorsAK#as_hexagonal_grid), [at_distance](OperatorsAK#at_distance), [at_location](OperatorsAK#at_location), [box](OperatorsAK#box), [change_clockwise](OperatorsAK#change_clockwise), [circle](OperatorsAK#circle), [clean](OperatorsAK#clean), [closest_points_with](OperatorsAK#closest_points_with), [closest_to](OperatorsAK#closest_to), [cone](OperatorsAK#cone), [cone3D](OperatorsAK#cone3d), [convex_hull](OperatorsAK#convex_hull), [covers](OperatorsAK#covers), [crosses](OperatorsAK#crosses), [crs](OperatorsAK#crs), [CRS_transform](OperatorsAK#crs_transform), [cube](OperatorsAK#cube), [curve](OperatorsAK#curve), [cylinder](OperatorsAK#cylinder), [dem](OperatorsAK#dem), [direction_between](OperatorsAK#direction_between), [disjoint_from](OperatorsAK#disjoint_from), [distance_between](OperatorsAK#distance_between), [distance_to](OperatorsAK#distance_to), [ellipse](OperatorsAK#ellipse), [envelope](OperatorsAK#envelope), [farthest_point_to](OperatorsAK#farthest_point_to), [farthest_to](OperatorsAK#farthest_to), [geometry_collection](OperatorsAK#geometry_collection), [hexagon](OperatorsAK#hexagon), [hierarchical_clustering](OperatorsAK#hierarchical_clustering), [IDW](OperatorsAK#idw), [inside](OperatorsAK#inside), [inter](OperatorsAK#inter), [intersects](OperatorsAK#intersects), [is_clockwise](OperatorsAK#is_clockwise), [line](OperatorsLZ#line), [link](OperatorsLZ#link), [masked_by](OperatorsLZ#masked_by), [neighbors_at](OperatorsLZ#neighbors_at), [neighbors_of](OperatorsLZ#neighbors_of), [overlapping](OperatorsLZ#overlapping), [overlaps](OperatorsLZ#overlaps), [partially_overlaps](OperatorsLZ#partially_overlaps), [path_between](OperatorsLZ#path_between), [path_to](OperatorsLZ#path_to), [plan](OperatorsLZ#plan), [points_at](OperatorsLZ#points_at), [points_on](OperatorsLZ#points_on), [polygon](OperatorsLZ#polygon), [polyhedron](OperatorsLZ#polyhedron), [pyramid](OperatorsLZ#pyramid), [rectangle](OperatorsLZ#rectangle), [rgb_to_xyz](OperatorsLZ#rgb_to_xyz), [rotated_by](OperatorsLZ#rotated_by), [round](OperatorsLZ#round), [scaled_to](OperatorsLZ#scaled_to), [set_z](OperatorsLZ#set_z), [simple_clustering_by_distance](OperatorsLZ#simple_clustering_by_distance), [simplification](OperatorsLZ#simplification), [skeletonize](OperatorsLZ#skeletonize), [smooth](OperatorsLZ#smooth), [sphere](OperatorsLZ#sphere), [split_at](OperatorsLZ#split_at), [split_geometry](OperatorsLZ#split_geometry), [split_lines](OperatorsLZ#split_lines), [square](OperatorsLZ#square), [squircle](OperatorsLZ#squircle), [teapot](OperatorsLZ#teapot), [to_GAMA_CRS](OperatorsLZ#to_gama_crs), [to_rectangles](OperatorsLZ#to_rectangles), [to_squares](OperatorsLZ#to_squares), [touches](OperatorsLZ#touches), [towards](OperatorsLZ#towards), [transformed_by](OperatorsLZ#transformed_by), [translated_by](OperatorsLZ#translated_by), [triangle](OperatorsLZ#triangle), [triangulate](OperatorsLZ#triangulate), [union](OperatorsLZ#union), [using](OperatorsLZ#using), [voronoi](OperatorsLZ#voronoi), [with_precision](OperatorsLZ#with_precision), [without_holes](OperatorsLZ#without_holes), 
+[-](OperatorsAK#-), [*](OperatorsAK#*), [+](OperatorsAK#+), [add_point](OperatorsAK#add_point), [agent_closest_to](OperatorsAK#agent_closest_to), [agent_farthest_to](OperatorsAK#agent_farthest_to), [agents_at_distance](OperatorsAK#agents_at_distance), [agents_inside](OperatorsAK#agents_inside), [agents_overlapping](OperatorsAK#agents_overlapping), [angle_between](OperatorsAK#angle_between), [any_location_in](OperatorsAK#any_location_in), [arc](OperatorsAK#arc), [around](OperatorsAK#around), [as_4_grid](OperatorsAK#as_4_grid), [as_grid](OperatorsAK#as_grid), [as_hexagonal_grid](OperatorsAK#as_hexagonal_grid), [at_distance](OperatorsAK#at_distance), [at_location](OperatorsAK#at_location), [box](OperatorsAK#box), [change_clockwise](OperatorsAK#change_clockwise), [circle](OperatorsAK#circle), [clean](OperatorsAK#clean), [closest_points_with](OperatorsAK#closest_points_with), [closest_to](OperatorsAK#closest_to), [cone](OperatorsAK#cone), [cone3D](OperatorsAK#cone3d), [convex_hull](OperatorsAK#convex_hull), [covers](OperatorsAK#covers), [cross](OperatorsAK#cross), [crosses](OperatorsAK#crosses), [crs](OperatorsAK#crs), [CRS_transform](OperatorsAK#crs_transform), [cube](OperatorsAK#cube), [curve](OperatorsAK#curve), [cylinder](OperatorsAK#cylinder), [dem](OperatorsAK#dem), [direction_between](OperatorsAK#direction_between), [disjoint_from](OperatorsAK#disjoint_from), [distance_between](OperatorsAK#distance_between), [distance_to](OperatorsAK#distance_to), [ellipse](OperatorsAK#ellipse), [envelope](OperatorsAK#envelope), [farthest_point_to](OperatorsAK#farthest_point_to), [farthest_to](OperatorsAK#farthest_to), [geometry_collection](OperatorsAK#geometry_collection), [hexagon](OperatorsAK#hexagon), [hierarchical_clustering](OperatorsAK#hierarchical_clustering), [IDW](OperatorsAK#idw), [inside](OperatorsAK#inside), [inter](OperatorsAK#inter), [intersects](OperatorsAK#intersects), [is_clockwise](OperatorsAK#is_clockwise), [line](OperatorsLZ#line), [link](OperatorsLZ#link), [masked_by](OperatorsLZ#masked_by), [neighbors_at](OperatorsLZ#neighbors_at), [neighbors_of](OperatorsLZ#neighbors_of), [overlapping](OperatorsLZ#overlapping), [overlaps](OperatorsLZ#overlaps), [partially_overlaps](OperatorsLZ#partially_overlaps), [path_between](OperatorsLZ#path_between), [path_to](OperatorsLZ#path_to), [plan](OperatorsLZ#plan), [points_at](OperatorsLZ#points_at), [points_on](OperatorsLZ#points_on), [polygon](OperatorsLZ#polygon), [polyhedron](OperatorsLZ#polyhedron), [pyramid](OperatorsLZ#pyramid), [rectangle](OperatorsLZ#rectangle), [rgb_to_xyz](OperatorsLZ#rgb_to_xyz), [rotated_by](OperatorsLZ#rotated_by), [round](OperatorsLZ#round), [scaled_to](OperatorsLZ#scaled_to), [set_z](OperatorsLZ#set_z), [simple_clustering_by_distance](OperatorsLZ#simple_clustering_by_distance), [simplification](OperatorsLZ#simplification), [skeletonize](OperatorsLZ#skeletonize), [smooth](OperatorsLZ#smooth), [sphere](OperatorsLZ#sphere), [split_at](OperatorsLZ#split_at), [split_geometry](OperatorsLZ#split_geometry), [split_lines](OperatorsLZ#split_lines), [square](OperatorsLZ#square), [squircle](OperatorsLZ#squircle), [teapot](OperatorsLZ#teapot), [to_GAMA_CRS](OperatorsLZ#to_gama_crs), [to_rectangles](OperatorsLZ#to_rectangles), [to_squares](OperatorsLZ#to_squares), [touches](OperatorsLZ#touches), [towards](OperatorsLZ#towards), [transformed_by](OperatorsLZ#transformed_by), [translated_by](OperatorsLZ#translated_by), [triangle](OperatorsLZ#triangle), [triangulate](OperatorsLZ#triangulate), [union](OperatorsLZ#union), [using](OperatorsLZ#using), [voronoi](OperatorsLZ#voronoi), [with_precision](OperatorsLZ#with_precision), [without_holes](OperatorsLZ#without_holes), 
 
 ----
 
@@ -244,12 +259,12 @@ Note that due to the fact that actions are written by modelers, the general func
 ----
 
 ### Statistical operators
-[build](OperatorsAK#build), [corR](OperatorsAK#corr), [dbscan](OperatorsAK#dbscan), [frequency_of](OperatorsAK#frequency_of), [geometric_mean](OperatorsAK#geometric_mean), [harmonic_mean](OperatorsAK#harmonic_mean), [hierarchical_clustering](OperatorsAK#hierarchical_clustering), [kmeans](OperatorsAK#kmeans), [max](OperatorsLZ#max), [mean](OperatorsLZ#mean), [mean_deviation](OperatorsLZ#mean_deviation), [meanR](OperatorsLZ#meanr), [median](OperatorsLZ#median), [min](OperatorsLZ#min), [mul](OperatorsLZ#mul), [predict](OperatorsLZ#predict), [simple_clustering_by_distance](OperatorsLZ#simple_clustering_by_distance), [standard_deviation](OperatorsLZ#standard_deviation), [sum](OperatorsLZ#sum), [variance](OperatorsLZ#variance), 
+[build](OperatorsAK#build), [corR](OperatorsAK#corr), [dbscan](OperatorsAK#dbscan), [distribution_of](OperatorsAK#distribution_of), [frequency_of](OperatorsAK#frequency_of), [geometric_mean](OperatorsAK#geometric_mean), [harmonic_mean](OperatorsAK#harmonic_mean), [hierarchical_clustering](OperatorsAK#hierarchical_clustering), [kmeans](OperatorsAK#kmeans), [max](OperatorsLZ#max), [mean](OperatorsLZ#mean), [mean_deviation](OperatorsLZ#mean_deviation), [meanR](OperatorsLZ#meanr), [median](OperatorsLZ#median), [min](OperatorsLZ#min), [mul](OperatorsLZ#mul), [predict](OperatorsLZ#predict), [simple_clustering_by_distance](OperatorsLZ#simple_clustering_by_distance), [standard_deviation](OperatorsLZ#standard_deviation), [sum](OperatorsLZ#sum), [variance](OperatorsLZ#variance), 
 
 ----
 
 ### Strings-related operators
-[+](OperatorsAK#+), [as_date](OperatorsAK#as_date), [as_system_date](OperatorsAK#as_system_date), [as_system_time](OperatorsAK#as_system_time), [as_time](OperatorsAK#as_time), [at](OperatorsAK#at), [char](OperatorsAK#char), [contains](OperatorsAK#contains), [contains_all](OperatorsAK#contains_all), [contains_any](OperatorsAK#contains_any), [copy_between](OperatorsAK#copy_between), [empty](OperatorsAK#empty), [first](OperatorsAK#first), [in](OperatorsAK#in), [indented_by](OperatorsAK#indented_by), [index_of](OperatorsAK#index_of), [is_number](OperatorsAK#is_number), [last](OperatorsLZ#last), [last_index_of](OperatorsLZ#last_index_of), [length](OperatorsLZ#length), [replace](OperatorsLZ#replace), [reverse](OperatorsLZ#reverse), [sample](OperatorsLZ#sample), [shuffle](OperatorsLZ#shuffle), [split_with](OperatorsLZ#split_with), 
+[+](OperatorsAK#+), [<](OperatorsAK#<), [<=](OperatorsAK#<=), [>](OperatorsAK#>), [>=](OperatorsAK#>=), [as_date](OperatorsAK#as_date), [as_system_date](OperatorsAK#as_system_date), [as_system_time](OperatorsAK#as_system_time), [as_time](OperatorsAK#as_time), [at](OperatorsAK#at), [char](OperatorsAK#char), [contains](OperatorsAK#contains), [contains_all](OperatorsAK#contains_all), [contains_any](OperatorsAK#contains_any), [copy_between](OperatorsAK#copy_between), [empty](OperatorsAK#empty), [first](OperatorsAK#first), [in](OperatorsAK#in), [indented_by](OperatorsAK#indented_by), [index_of](OperatorsAK#index_of), [is_number](OperatorsAK#is_number), [last](OperatorsLZ#last), [last_index_of](OperatorsLZ#last_index_of), [length](OperatorsLZ#length), [replace](OperatorsLZ#replace), [replace_regex](OperatorsLZ#replace_regex), [reverse](OperatorsLZ#reverse), [sample](OperatorsLZ#sample), [shuffle](OperatorsLZ#shuffle), [split_with](OperatorsLZ#split_with), 
 
 ----
 
@@ -281,9 +296,10 @@ Note that due to the fact that actions are written by modelers, the general func
 ### `last`
 
 #### Possible use: 
-  *  **`last`** (`container<KeyType,ValueType>`) --->  `ValueType`
   *  **`last`** (`string`) --->  `string`
-  * `int` **`last`** `container` --->  `list` 
+  *  **`last`** (`container<KeyType,ValueType>`) --->  `ValueType`
+  * `int` **`last`** `container` --->  `list`
+  *  **`last`** (`int` , `container`) --->  `list` 
 
 #### Result: 
 the last element of the operand  
@@ -299,18 +315,18 @@ the last operator behavior depends on the nature of the operand
   * if it is a matrix, last returns the element at {length-1,length-1} in the matrix    
   * for a matrix of int or float, it will return 0 if the matrix is empty    
   * for a matrix of object or geometry, it will return nil if the matrix is empty    
-  * if it is a list, last returns the last element of the list, or nil if the list is empty 
+  * if it is a string, last returns a string composed of its last character, or an empty string if the operand is empty 
   
 ```
-int var0 <- last ([1, 2, 3]); 	// var0 equals 3
+string var0 <- last ('abce'); 	// var0 equals 'e'
 
 ``` 
 
     
-  * if it is a string, last returns a string composed of its last character, or an empty string if the operand is empty 
+  * if it is a list, last returns the last element of the list, or nil if the list is empty 
   
 ```
-string var1 <- last ('abce'); 	// var1 equals 'e'
+int var1 <- last ([1, 2, 3]); 	// var1 equals 3
 
 ``` 
 
@@ -327,11 +343,16 @@ string var1 <- last ('abce'); 	// var1 equals 'e'
 ### `last_index_of`
 
 #### Possible use: 
-  * `species` **`last_index_of`** `unknown` --->  `int`
-  * `matrix` **`last_index_of`** `unknown` --->  `point`
   * `list` **`last_index_of`** `unknown` --->  `int`
+  *  **`last_index_of`** (`list` , `unknown`) --->  `int`
   * `map` **`last_index_of`** `unknown` --->  `unknown`
-  * `string` **`last_index_of`** `string` --->  `int` 
+  *  **`last_index_of`** (`map` , `unknown`) --->  `unknown`
+  * `matrix` **`last_index_of`** `unknown` --->  `point`
+  *  **`last_index_of`** (`matrix` , `unknown`) --->  `point`
+  * `string` **`last_index_of`** `string` --->  `int`
+  *  **`last_index_of`** (`string` , `string`) --->  `int`
+  * `species` **`last_index_of`** `unknown` --->  `int`
+  *  **`last_index_of`** (`species` , `unknown`) --->  `int` 
 
 #### Result: 
 the index of the last occurence of the right operand in the left operand container  
@@ -341,19 +362,11 @@ The definition of last_index_of and the type of the index depend on the containe
 
 #### Special cases:     
   * if the left operand is a species, the last index of an agent is the same as its index    
-  * if the left operand is a matrix, last_index_of returns the index as a point 
-  
-```
-point var0 <- matrix([[1,2,3],[4,5,4]]) last_index_of 4; 	// var0 equals {1.0,2.0}
-
-``` 
-
-    
   * if the left operand is a list, last_index_of returns the index as an integer 
   
 ```
-int var1 <- [1,2,3,4,5,6] last_index_of 4; 	// var1 equals 3
-int var2 <- [4,2,3,4,5,4] last_index_of 4; 	// var2 equals 5
+int var0 <- [1,2,3,4,5,6] last_index_of 4; 	// var0 equals 3
+int var1 <- [4,2,3,4,5,4] last_index_of 4; 	// var1 equals 5
 
 ``` 
 
@@ -361,7 +374,15 @@ int var2 <- [4,2,3,4,5,4] last_index_of 4; 	// var2 equals 5
   * if the left operand is a map, last_index_of returns the index as an int (the key of the pair) 
   
 ```
-unknown var3 <- [1::2, 3::4, 5::4] last_index_of 4; 	// var3 equals 5
+unknown var2 <- [1::2, 3::4, 5::4] last_index_of 4; 	// var2 equals 5
+
+``` 
+
+    
+  * if the left operand is a matrix, last_index_of returns the index as a point 
+  
+```
+point var3 <- matrix([[1,2,3],[4,5,4]]) last_index_of 4; 	// var3 equals {1.0,2.0}
 
 ``` 
 
@@ -376,7 +397,7 @@ int var4 <- "abcabcabc" last_index_of "ca"; 	// var4 equals 5
     
 
 #### See also: 
-[at](OperatorsAK#at), [index_of](OperatorsAK#index_of), [last_index_of](OperatorsLZ#last_index_of), 
+[at](OperatorsAK#at), [last_index_of](OperatorsLZ#last_index_of), [index_of](OperatorsAK#index_of), 
 
 [Top of the page](#table-of-contents)
   	
@@ -386,7 +407,8 @@ int var4 <- "abcabcabc" last_index_of "ca"; 	// var4 equals 5
 ### `last_with`
 
 #### Possible use: 
-  * `container` **`last_with`** `any expression` --->  `unknown` 
+  * `container` **`last_with`** `any expression` --->  `unknown`
+  *  **`last_with`** (`container` , `any expression`) --->  `unknown` 
 
 #### Result: 
 the last element of the left-hand operand that makes the right-hand operand evaluate to true.  
@@ -427,6 +449,7 @@ unknown var3 <- (list(node) last_with (round(node(each).location.x) > 32); 	// v
 
 #### Possible use: 
   * `graph` **`layout`** `string` --->  `graph`
+  *  **`layout`** (`graph` , `string`) --->  `graph`
   *  **`layout`** (`graph`, `string`, `int`) --->  `graph`
   *  **`layout`** (`graph`, `string`, `int`, `map<string,unknown>`) --->  `graph` 
 
@@ -441,8 +464,8 @@ layouts a GAMA graph.
 ### `length`
 
 #### Possible use: 
-  *  **`length`** (`container<KeyType,ValueType>`) --->  `int`
-  *  **`length`** (`string`) --->  `int` 
+  *  **`length`** (`string`) --->  `int`
+  *  **`length`** (`container<KeyType,ValueType>`) --->  `int` 
 
 #### Result: 
 the number of elements contained in the operand  
@@ -453,11 +476,19 @@ the length operator behavior depends on the nature of the operand
 #### Special cases:     
   * if it is a population, length returns number of agents of the population    
   * if it is a graph, length returns the number of vertexes or of edges (depending on the way it was created)    
+  * if it is a string, length returns the number of characters 
+  
+```
+int var0 <- length ('I am an agent'); 	// var0 equals 13
+
+``` 
+
+    
   * if it is a list or a map, length returns the number of elements in the list or map 
   
 ```
-int var0 <- length([12,13]); 	// var0 equals 2
-int var1 <- length([]); 	// var1 equals 0
+int var1 <- length([12,13]); 	// var1 equals 2
+int var2 <- length([]); 	// var2 equals 0
 
 ``` 
 
@@ -465,15 +496,7 @@ int var1 <- length([]); 	// var1 equals 0
   * if it is a matrix, length returns the number of cells 
   
 ```
-int var2 <- length(matrix([["c11","c12","c13"],["c21","c22","c23"]])); 	// var2 equals 6
-
-``` 
-
-    
-  * if it is a string, length returns the number of characters 
-  
-```
-int var3 <- length ('I am an agent'); 	// var3 equals 13
+int var3 <- length(matrix([["c11","c12","c13"],["c21","c22","c23"]])); 	// var3 equals 6
 
 ``` 
 
@@ -488,10 +511,11 @@ int var3 <- length ('I am an agent'); 	// var3 equals 13
 
 #### Possible use: 
   *  **`line`** (`container<geometry>`) --->  `geometry`
-  * `container<geometry>` **`line`** `float` --->  `geometry` 
+  * `container<geometry>` **`line`** `float` --->  `geometry`
+  *  **`line`** (`container<geometry>` , `float`) --->  `geometry` 
 
 #### Result: 
-A polyline geometry from the given list of points represented as a cylinder of radius r./nA polyline geometry from the given list of points.
+A polyline geometry from the given list of points./nA polyline geometry from the given list of points represented as a cylinder of radius r.
 
 #### Special cases:     
   * if the operand is nil, returns the point geometry {0,0}    
@@ -501,7 +525,7 @@ A polyline geometry from the given list of points represented as a cylinder of r
   * if a radius is added, the given list of points represented as a cylinder of radius r 
   
 ```
-geometry var0 <- polyline([{0,0}, {0,10}, {10,10}, {10,0}],0.2); 	// var0 equals a polyline geometry composed of the 4 points.
+geometry var1 <- polyline([{0,0}, {0,10}, {10,10}, {10,0}],0.2); 	// var1 equals a polyline geometry composed of the 4 points.
 
 ``` 
 
@@ -509,7 +533,7 @@ geometry var0 <- polyline([{0,0}, {0,10}, {10,10}, {10,0}],0.2); 	// var0 equals
 
 #### Examples: 
 ```
-geometry var1 <- polyline([{0,0}, {0,10}, {10,10}, {10,0}]); 	// var1 equals a polyline geometry composed of the 4 points.
+geometry var0 <- polyline([{0,0}, {0,10}, {10,10}, {10,0}]); 	// var0 equals a polyline geometry composed of the 4 points.
 ```
       
 
@@ -524,7 +548,8 @@ geometry var1 <- polyline([{0,0}, {0,10}, {10,10}, {10,0}]); 	// var1 equals a p
 ### `link`
 
 #### Possible use: 
-  * `geometry` **`link`** `geometry` --->  `geometry` 
+  * `geometry` **`link`** `geometry` --->  `geometry`
+  *  **`link`** (`geometry` , `geometry`) --->  `geometry` 
 
 #### Result: 
 A dynamic line geometry between the location of the two operands  
@@ -565,7 +590,8 @@ Casts the operand into the type list
 ### `list_with`
 
 #### Possible use: 
-  * `int` **`list_with`** `any expression` --->  `list` 
+  * `int` **`list_with`** `any expression` --->  `list`
+  *  **`list_with`** (`int` , `any expression`) --->  `list` 
 
 #### Result: 
 creates a list with a size provided by the first operand, and filled with the second operand  
@@ -584,8 +610,8 @@ Note that the right operand  should be positive, and that the second one is eval
 ### `ln`
 
 #### Possible use: 
-  *  **`ln`** (`float`) --->  `float`
-  *  **`ln`** (`int`) --->  `float` 
+  *  **`ln`** (`int`) --->  `float`
+  *  **`ln`** (`float`) --->  `float` 
 
 #### Result: 
 Returns the natural logarithm (base e) of the operand.
@@ -595,8 +621,8 @@ Returns the natural logarithm (base e) of the operand.
 
 #### Examples: 
 ```
-float var0 <- ln(exp(1)); 	// var0 equals 1.0
-float var1 <- ln(1); 	// var1 equals 0.0
+float var0 <- ln(1); 	// var0 equals 0.0
+float var1 <- ln(exp(1)); 	// var1 equals 1.0
 ```
       
 
@@ -612,15 +638,17 @@ float var1 <- ln(1); 	// var1 equals 0.0
 
 #### Possible use: 
   *  **`load_graph_from_file`** (`string`) --->  `graph`
-  * `string` **`load_graph_from_file`** `string` --->  `graph`
   * `string` **`load_graph_from_file`** `file` --->  `graph`
+  *  **`load_graph_from_file`** (`string` , `file`) --->  `graph`
+  * `string` **`load_graph_from_file`** `string` --->  `graph`
+  *  **`load_graph_from_file`** (`string` , `string`) --->  `graph`
   *  **`load_graph_from_file`** (`string`, `species`, `species`) --->  `graph`
-  *  **`load_graph_from_file`** (`string`, `file`, `species`, `species`) --->  `graph`
   *  **`load_graph_from_file`** (`string`, `string`, `species`, `species`) --->  `graph`
+  *  **`load_graph_from_file`** (`string`, `file`, `species`, `species`) --->  `graph`
   *  **`load_graph_from_file`** (`string`, `string`, `species`, `species`, `bool`) --->  `graph` 
 
 #### Result: 
-returns a graph loaded from a given file encoded into a given format. The last boolean parameter indicates whether the resulting graph will be considered as spatial or not by GAMA/nloads a graph from a file  
+loads a graph from a file/nreturns a graph loaded from a given file encoded into a given format. The last boolean parameter indicates whether the resulting graph will be considered as spatial or not by GAMA  
 
 #### Comment: 
 Available formats: "pajek": Pajek (Slovene word for Spider) is a program, for Windows, for analysis and visualization of large networks. See: http://pajek.imfm.si/doku.php?id=pajek for more details."lgl": LGL is a compendium of applications for making the visualization of large networks and trees tractable. See: http://lgl.sourceforge.net/ for more details."dot": DOT is a plain text graph description language. It is a simple way of describing graphs that both humans and computer programs can use. See: http://en.wikipedia.org/wiki/DOT_language for more details."edge": This format is a simple text file with numeric vertex ids defining the edges."gexf": GEXF (Graph Exchange XML Format) is a language for describing complex networks structures, their associated data and dynamics. Started in 2007 at Gephi project by different actors, deeply involved in graph exchange issues, the gexf specifications are mature enough to claim being both extensible and open, and suitable for real specific applications. See: http://gexf.net/format/ for more details."graphml": GraphML is a comprehensive and easy-to-use file format for graphs based on XML. See: http://graphml.graphdrawing.org/ for more details."tlp" or "tulip": TLP is the Tulip software graph format. See: http://tulip.labri.fr/TulipDrupal/?q=tlp-file-format for more details. "ncol": This format is used by the Large Graph Layout progra. It is simply a symbolic weighted edge list. It is a simple text file with one edge per line. An edge is defined by two symbolic vertex names separated by whitespace. (The symbolic vertex names themselves cannot contain whitespace.) They might followed by an optional number, this will be the weight of the edge. See: http://bioinformatics.icmb.utexas.edu/lgl for more details.The map operand should includes following elements:Available formats: "pajek": Pajek (Slovene word for Spider) is a program, for Windows, for analysis and visualization of large networks. See: http://pajek.imfm.si/doku.php?id=pajek for more details."lgl": LGL is a compendium of applications for making the visualization of large networks and trees tractable. See: http://lgl.sourceforge.net/ for more details."dot": DOT is a plain text graph description language. It is a simple way of describing graphs that both humans and computer programs can use. See: http://en.wikipedia.org/wiki/DOT_language for more details."edge": This format is a simple text file with numeric vertex ids defining the edges."gexf": GEXF (Graph Exchange XML Format) is a language for describing complex networks structures, their associated data and dynamics. Started in 2007 at Gephi project by different actors, deeply involved in graph exchange issues, the gexf specifications are mature enough to claim being both extensible and open, and suitable for real specific applications. See: http://gexf.net/format/ for more details."graphml": GraphML is a comprehensive and easy-to-use file format for graphs based on XML. See: http://graphml.graphdrawing.org/ for more details."tlp" or "tulip": TLP is the Tulip software graph format. See: http://tulip.labri.fr/TulipDrupal/?q=tlp-file-format for more details. "ncol": This format is used by the Large Graph Layout progra. It is simply a symbolic weighted edge list. It is a simple text file with one edge per line. An edge is defined by two symbolic vertex names separated by whitespace. (The symbolic vertex names themselves cannot contain whitespace.) They might followed by an optional number, this will be the weight of the edge. See: http://bioinformatics.icmb.utexas.edu/lgl for more details.The map operand should includes following elements:
@@ -634,7 +662,7 @@ Available formats: "pajek": Pajek (Slovene word for Spider) is a program, for Wi
   * "filename": the filename of the file containing the network    
   * "edges_species": the species of edges    
   * "vertices_specy": the species of vertices    
-  * "format": the format of the file, "filename": the filename of the file containing the network 
+  * "format": the format of the file, "file": the file containing the network 
   
 ```
 graph<myVertexSpecy,myEdgeSpecy> myGraph <- load_graph_from_file(
@@ -644,7 +672,7 @@ graph<myVertexSpecy,myEdgeSpecy> myGraph <- load_graph_from_file(
 ``` 
 
     
-  * "format": the format of the file, "file": the file containing the network 
+  * "file": the file containing the network 
   
 ```
 graph<myVertexSpecy,myEdgeSpecy> myGraph <- load_graph_from_file(
@@ -666,16 +694,6 @@ graph<myVertexSpecy,myEdgeSpecy> myGraph <- load_graph_from_file(
 ``` 
 
     
-  * "file": the file containing the network 
-  
-```
-graph<myVertexSpecy,myEdgeSpecy> myGraph <- load_graph_from_file(
-			"pajek",
-			"example_of_Pajek_file");
-
-``` 
-
-    
   * "filename": the filename of the file containing the network, "edges_species": the species of edges, "vertices_specy": the species of vertices 
   
 ```
@@ -687,6 +705,16 @@ graph<myVertexSpecy,myEdgeSpecy> myGraph <- load_graph_from_file(
 
 ``` 
 
+    
+  * "format": the format of the file, "filename": the filename of the file containing the network 
+  
+```
+graph<myVertexSpecy,myEdgeSpecy> myGraph <- load_graph_from_file(
+			"pajek",
+			"example_of_Pajek_file");
+
+``` 
+
 
 
 #### Examples: 
@@ -695,12 +723,12 @@ graph<myVertexSpecy,myEdgeSpecy> myGraph <- load_graph_from_file(
 			"pajek",
 			"./example_of_Pajek_file",
 			myVertexSpecy,
-			myEdgeSpecy , true);
+			myEdgeSpecy);
 graph<myVertexSpecy,myEdgeSpecy> myGraph <- load_graph_from_file(
 			"pajek",
 			"./example_of_Pajek_file",
 			myVertexSpecy,
-			myEdgeSpecy);
+			myEdgeSpecy , true);
 ```
   
 
@@ -712,7 +740,8 @@ graph<myVertexSpecy,myEdgeSpecy> myGraph <- load_graph_from_file(
 ### `load_shortest_paths`
 
 #### Possible use: 
-  * `graph` **`load_shortest_paths`** `matrix` --->  `graph` 
+  * `graph` **`load_shortest_paths`** `matrix` --->  `graph`
+  *  **`load_shortest_paths`** (`graph` , `matrix`) --->  `graph` 
 
 #### Result: 
 put in the graph cache the computed shortest paths contained in the matrix (rows: source, columns: target)
@@ -731,8 +760,8 @@ graph var0 <- load_shortest_paths(shortest_paths_matrix); 	// var0 equals return
 ### `log`
 
 #### Possible use: 
-  *  **`log`** (`int`) --->  `float`
-  *  **`log`** (`float`) --->  `float` 
+  *  **`log`** (`float`) --->  `float`
+  *  **`log`** (`int`) --->  `float` 
 
 #### Result: 
 Returns the logarithm (base 10) of the operand.
@@ -742,8 +771,8 @@ Returns the logarithm (base 10) of the operand.
 
 #### Examples: 
 ```
-float var0 <- log(1); 	// var0 equals 0.0
-float var1 <- log(10); 	// var1 equals 1.0
+float var0 <- log(10); 	// var0 equals 1.0
+float var1 <- log(1); 	// var1 equals 0.0
 ```
       
 
@@ -772,6 +801,7 @@ Casts the operand into the type map
 
 #### Possible use: 
   * `geometry` **`masked_by`** `container<geometry>` --->  `geometry`
+  *  **`masked_by`** (`geometry` , `container<geometry>`) --->  `geometry`
   *  **`masked_by`** (`geometry`, `container<geometry>`, `int`) --->  `geometry` 
 
 #### Result: 
@@ -805,7 +835,8 @@ Casts the operand into the type matrix
 ### `matrix_with`
 
 #### Possible use: 
-  * `point` **`matrix_with`** `any expression` --->  `matrix` 
+  * `point` **`matrix_with`** `any expression` --->  `matrix`
+  *  **`matrix_with`** (`point` , `any expression`) --->  `matrix` 
 
 #### Result: 
 creates a matrix with a size provided by the first operand, and filled with the second operand  
@@ -868,7 +899,8 @@ unknown var1 <- max([{1.0,3.0},{3.0,5.0},{9.0,1.0},{7.0,8.0}]); 	// var1 equals 
 ### `max_of`
 
 #### Possible use: 
-  * `container` **`max_of`** `any expression` --->  `unknown` 
+  * `container` **`max_of`** `any expression` --->  `unknown`
+  *  **`max_of`** (`container` , `any expression`) --->  `unknown` 
 
 #### Result: 
 the maximum value of the right-hand expression evaluated on each of the elements of the left-hand operand  
@@ -898,6 +930,29 @@ unknown var4 <- (list(node) max_of (round(node(each).location.x)); 	// var4 equa
 
 #### See also: 
 [min_of](OperatorsLZ#min_of), 
+
+[Top of the page](#table-of-contents)
+  	
+    	
+----
+[//]: # (keyword|operator_maximal_cliques_of)
+### `maximal_cliques_of`
+
+#### Possible use: 
+  *  **`maximal_cliques_of`** (`graph`) --->  `list<list>` 
+
+#### Result: 
+returns the maximal cliques of a graph using the Bron-Kerbosch clique detection algorithm: A clique is maximal if it is impossible to enlarge it by adding another vertex from the graph. Note that a maximal clique is not necessarily the biggest clique in the graph.
+
+#### Examples: 
+```
+graph my_graph <- graph([]);
+list<list> var1 <- maximal_cliques_of (my_graph); 	// var1 equals the list of all the maximal cliques as list
+```
+      
+
+#### See also: 
+[biggest_cliques_of](OperatorsAK#biggest_cliques_of), 
 
 [Top of the page](#table-of-contents)
   	
@@ -960,7 +1015,8 @@ float var0 <- mean_deviation ([4.5, 3.5, 5.5, 7.0]); 	// var0 equals 1.125
 ### `mean_of`
 
 #### Possible use: 
-  * `container` **`mean_of`** `any expression` --->  `unknown` 
+  * `container` **`mean_of`** `any expression` --->  `unknown`
+  *  **`mean_of`** (`container` , `any expression`) --->  `unknown` 
 
 #### Result: 
 the mean of the right-hand expression evaluated on each of the elements of the left-hand operand  
@@ -1015,17 +1071,17 @@ int var1 <- meanR(X); 	// var1 equals 2
 ### `median`
 
 #### Possible use: 
-  *  **`median`** (`container`) --->  `float` 
+  *  **`median`** (`container`) --->  `unknown` 
 
 #### Result: 
-the median of all the elements of the operand.  
+the median of all the elements of the operand.
 
-#### Comment: 
-The operator casts all the numerical element of the list into float. The elements that are not numerical are discarded.
+#### Special cases:     
+  * if the container contains points, the result will be a point. If the container contains rgb values, the result will be a rgb color
 
 #### Examples: 
 ```
-float var0 <- median ([4.5, 3.5, 5.5, 7.0]); 	// var0 equals 5.0
+unknown var0 <- median ([4.5, 3.5, 5.5, 3.4, 7.0]); 	// var0 equals 5.0
 ```
       
 
@@ -1090,7 +1146,8 @@ unknown var0 <- min ([100, 23.2, 34.5]); 	// var0 equals 23.2
 ### `min_of`
 
 #### Possible use: 
-  * `container` **`min_of`** `any expression` --->  `unknown` 
+  * `container` **`min_of`** `any expression` --->  `unknown`
+  *  **`min_of`** (`container` , `any expression`) --->  `unknown` 
 
 #### Result: 
 the minimum value of the right-hand expression evaluated on each of the elements of the left-hand operand  
@@ -1129,7 +1186,8 @@ unknown var4 <- (list(node) min_of (round(node(each).location.x)); 	// var4 equa
 ### `mod`
 
 #### Possible use: 
-  * `int` **`mod`** `int` --->  `int` 
+  * `int` **`mod`** `int` --->  `int`
+  *  **`mod`** (`int` , `int`) --->  `int` 
 
 #### Result: 
 Returns the remainder of the integer division of the left-hand operand by the right-hand operand.
@@ -1215,7 +1273,8 @@ int var1 <- nb_cycles(graphEpidemio); 	// var1 equals the number of cycles in th
 ### `neighbors_at`
 
 #### Possible use: 
-  * `geometry` **`neighbors_at`** `float` --->  `list` 
+  * `geometry` **`neighbors_at`** `float` --->  `list`
+  *  **`neighbors_at`** (`geometry` , `float`) --->  `list` 
 
 #### Result: 
 a list, containing all the agents of the same species than the left argument (if it is an agent) located at a distance inferior or equal to the right-hand operand to the left-hand operand (geometry, agent, point).  
@@ -1241,7 +1300,9 @@ list var0 <- (self neighbors_at (10)); 	// var0 equals all the agents located at
 
 #### Possible use: 
   * `topology` **`neighbors_of`** `agent` --->  `list`
+  *  **`neighbors_of`** (`topology` , `agent`) --->  `list`
   * `graph` **`neighbors_of`** `unknown` --->  `list`
+  *  **`neighbors_of`** (`graph` , `unknown`) --->  `list`
   *  **`neighbors_of`** (`topology`, `geometry`, `float`) --->  `list` 
 
 #### Result: 
@@ -1278,22 +1339,24 @@ list var3 <- graphFromMap neighbors_of node({12,45}); 	// var3 equals [{1.0,5.0}
 #### Possible use: 
   *  **`new_emotion`** (`string`) --->  `msi.gaml.architecture.simplebdi.Emotion`
   * `string` **`new_emotion`** `float` --->  `msi.gaml.architecture.simplebdi.Emotion`
+  *  **`new_emotion`** (`string` , `float`) --->  `msi.gaml.architecture.simplebdi.Emotion`
   * `string` **`new_emotion`** `predicate` --->  `msi.gaml.architecture.simplebdi.Emotion`
+  *  **`new_emotion`** (`string` , `predicate`) --->  `msi.gaml.architecture.simplebdi.Emotion`
   *  **`new_emotion`** (`string`, `float`, `predicate`) --->  `msi.gaml.architecture.simplebdi.Emotion`
   *  **`new_emotion`** (`string`, `float`, `float`) --->  `msi.gaml.architecture.simplebdi.Emotion`
   *  **`new_emotion`** (`string`, `float`, `predicate`, `float`) --->  `msi.gaml.architecture.simplebdi.Emotion` 
 
 #### Result: 
-a new emotion with the given properties (name)/na new emotion with the given properties (name, intensity)/na new emotion with the given properties (name,intensity,about)/na new emotion with the given properties (name)/na new emotion with the given properties (name,intensity,decay)/na new emotion with the given properties (name,about)
+a new emotion with the given properties (name, intensity)/na new emotion with the given properties (name)/na new emotion with the given properties (name)/na new emotion with the given properties (name,intensity,about)/na new emotion with the given properties (name,about)/na new emotion with the given properties (name,intensity,decay)
 
 #### Examples: 
 ```
-emotion("joy")
 emotion("joy",12.3)
-emotion("joy",12.3,eatFood)
 emotion("joy",12.3,eatFood,4)
-emotion("joy",12.3,4)
+emotion("joy")
+emotion("joy",12.3,eatFood)
 emotion("joy",eatFood)
+emotion("joy",12.3,4)
 ```
   
 
@@ -1334,26 +1397,30 @@ file dirNewT <- new_folder("incl/");   	// dirNewT represents the repository "..
 #### Possible use: 
   *  **`new_predicate`** (`string`) --->  `predicate`
   * `string` **`new_predicate`** `map` --->  `predicate`
-  * `string` **`new_predicate`** `bool` --->  `predicate`
-  * `string` **`new_predicate`** `float` --->  `predicate`
+  *  **`new_predicate`** (`string` , `map`) --->  `predicate`
   * `string` **`new_predicate`** `int` --->  `predicate`
-  *  **`new_predicate`** (`string`, `map`, `float`) --->  `predicate`
+  *  **`new_predicate`** (`string` , `int`) --->  `predicate`
+  * `string` **`new_predicate`** `bool` --->  `predicate`
+  *  **`new_predicate`** (`string` , `bool`) --->  `predicate`
+  * `string` **`new_predicate`** `float` --->  `predicate`
+  *  **`new_predicate`** (`string` , `float`) --->  `predicate`
   *  **`new_predicate`** (`string`, `map`, `int`) --->  `predicate`
-  *  **`new_predicate`** (`string`, `map`, `bool`) --->  `predicate` 
+  *  **`new_predicate`** (`string`, `map`, `bool`) --->  `predicate`
+  *  **`new_predicate`** (`string`, `map`, `float`) --->  `predicate` 
 
 #### Result: 
-a new predicate with the given properties (name, values)/na new predicate with the given is_true (name, is_true)/na new predicate with the given properties (name)/na new predicate with the given is_true (name, priority)/na new predicate with the given properties (name, values, priority)/na new predicate with the given properties (name, values, lifetime)/na new predicate with the given properties (name, values, is_true)/na new predicate with the given is_true (name, lifetime)
+a new predicate with the given properties (name, values, lifetime)/na new predicate with the given properties (name, values)/na new predicate with the given properties (name)/na new predicate with the given is_true (name, lifetime)/na new predicate with the given properties (name, values, is_true)/na new predicate with the given is_true (name, is_true)/na new predicate with the given is_true (name, priority)/na new predicate with the given properties (name, values, priority)
 
 #### Examples: 
 ```
+predicate("people to meet", ["time"::10], true)
 predicate("people to meet", people1 )
-predicate("hasWater", true)
 predicate("people to meet")
+predicate("hasWater", 10 
+predicate("people to meet", ["time"::10], true)
+predicate("hasWater", true)
 predicate("hasWater", 2.0 )
 predicate("people to meet", people1, ["time"::10])
-predicate("people to meet", ["time"::10], true)
-predicate("people to meet", ["time"::10], true)
-predicate("hasWater", 10 
 ```
   
 
@@ -1367,6 +1434,7 @@ predicate("hasWater", 10
 #### Possible use: 
   *  **`node`** (`unknown`) --->  `unknown`
   * `unknown` **`node`** `float` --->  `unknown`
+  *  **`node`** (`unknown` , `float`) --->  `unknown`
 
 [Top of the page](#table-of-contents)
   	
@@ -1401,6 +1469,27 @@ float var0 <- norm({3,4}); 	// var0 equals 5.0
   	
     	
 ----
+[//]: # (keyword|operator_not)
+### `not`
+Same signification as [!](OperatorsAK#!)
+
+[Top of the page](#table-of-contents)
+  	
+    	
+----
+[//]: # (keyword|operator_obj_file)
+### `obj_file`
+
+#### Possible use: 
+  *  **`obj_file`** (`string`) --->  `file` 
+
+#### Result: 
+Constructs a file of type obj. Allowed extensions are limited to obj
+
+[Top of the page](#table-of-contents)
+  	
+    	
+----
 [//]: # (keyword|operator_of)
 ### `of`
 Same signification as [.](OperatorsAK#.)
@@ -1413,7 +1502,8 @@ Same signification as [.](OperatorsAK#.)
 ### `of_generic_species`
 
 #### Possible use: 
-  * `container` **`of_generic_species`** `species` --->  `list` 
+  * `container` **`of_generic_species`** `species` --->  `list`
+  *  **`of_generic_species`** (`container` , `species`) --->  `list` 
 
 #### Result: 
 a list, containing the agents of the left-hand operand whose species is that denoted by the right-hand operand and whose species extends the right-hand operand species
@@ -1440,7 +1530,8 @@ list var5 <- [sous_test(0),sous_test(1),test(2),test(3)] of_species sous_test; 	
 ### `of_species`
 
 #### Possible use: 
-  * `container` **`of_species`** `species` --->  `list` 
+  * `container` **`of_species`** `species` --->  `list`
+  *  **`of_species`** (`container` , `species`) --->  `list` 
 
 #### Result: 
 a list, containing the agents of the left-hand operand whose species is the one denoted by the right-hand operand.The expression agents of_species (species self) is equivalent to agents where (species each = species self); however, the advantage of using the first syntax is that the resulting list is correctly typed with the right species, whereas, in the second syntax, the parser cannot determine the species of the agents within the list (resulting in the need to cast it explicitly if it is to be used in an ask statement, for instance).
@@ -1522,7 +1613,8 @@ bug b <- one_of(bug);  	// Given a previously defined species bug, b is one of t
 ### `or`
 
 #### Possible use: 
-  * `predicate` **`or`** `predicate` --->  `predicate` 
+  * `predicate` **`or`** `predicate` --->  `predicate`
+  *  **`or`** (`predicate` , `predicate`) --->  `predicate` 
 
 #### Result: 
 create a new predicate from two others by including them as subintentions. It's an exclusive "or"
@@ -1537,15 +1629,36 @@ predicate1 or predicate2
   	
     	
 ----
+[//]: # (keyword|operator_or)
+### `or`
+
+#### Possible use: 
+  * `bool` **`or`** `any expression` --->  `bool`
+  *  **`or`** (`bool` , `any expression`) --->  `bool` 
+
+#### Result: 
+a bool value, equal to the logical or between the left-hand operand and the right-hand operand.  
+
+#### Comment: 
+both operands are always casted to bool before applying the operator. Thus, an expression like 1 or 0 is accepted and returns true.    
+
+#### See also: 
+[bool](OperatorsAK#bool), [and](OperatorsAK#and), [!](OperatorsAK#!), 
+
+[Top of the page](#table-of-contents)
+  	
+    	
+----
 [//]: # (keyword|operator_osm_file)
 ### `osm_file`
 
 #### Possible use: 
   * `string` **`osm_file`** `map<string,list>` --->  `file`
+  *  **`osm_file`** (`string` , `map<string,list>`) --->  `file`
   *  **`osm_file`** (`string`, `map<string,list>`, `int`) --->  `file` 
 
 #### Result: 
-opens a file that a is a kind of OSM file with some filtering./nopens a file that a is a kind of OSM file with some filtering, forcing the initial CRS to be the one indicated by the second int parameter (see http://spatialreference.org/ref/epsg/). If this int parameter is equal to 0, the data is considered as already projected.  
+opens a file that a is a kind of OSM file with some filtering, forcing the initial CRS to be the one indicated by the second int parameter (see http://spatialreference.org/ref/epsg/). If this int parameter is equal to 0, the data is considered as already projected./nopens a file that a is a kind of OSM file with some filtering.  
 
 #### Comment: 
 The file should have a OSM file extension, cf. file type definition for supported file extensions.The file should have a OSM file extension, cf. file type definition for supported file extensions.
@@ -1556,8 +1669,8 @@ The file should have a OSM file extension, cf. file type definition for supporte
 
 #### Examples: 
 ```
-file myOSMfile <- osm_file("../includes/rouen.osm", ["highway"::["primary","motorway"]]);
 file myOSMfile2 <- osm_file("../includes/rouen.osm",["highway"::["primary","motorway"]], 0);
+file myOSMfile <- osm_file("../includes/rouen.osm", ["highway"::["primary","motorway"]]);
 ```
       
 
@@ -1572,7 +1685,8 @@ file myOSMfile2 <- osm_file("../includes/rouen.osm",["highway"::["primary","moto
 ### `out_degree_of`
 
 #### Possible use: 
-  * `graph` **`out_degree_of`** `unknown` --->  `int` 
+  * `graph` **`out_degree_of`** `unknown` --->  `int`
+  *  **`out_degree_of`** (`graph` , `unknown`) --->  `int` 
 
 #### Result: 
 returns the out degree of a vertex (right-hand operand) in the graph given as left-hand operand.
@@ -1594,7 +1708,8 @@ int var1 <- graphFromMap out_degree_of (node(3)); 	// var1 equals 4
 ### `out_edges_of`
 
 #### Possible use: 
-  * `graph` **`out_edges_of`** `unknown` --->  `list` 
+  * `graph` **`out_edges_of`** `unknown` --->  `list`
+  *  **`out_edges_of`** (`graph` , `unknown`) --->  `list` 
 
 #### Result: 
 returns the list of the out-edges of a vertex (right-hand operand) in the graph given as left-hand operand.
@@ -1616,7 +1731,8 @@ list var1 <- graphFromMap out_edges_of (node(3)); 	// var1 equals 3
 ### `overlapping`
 
 #### Possible use: 
-  * `container<agent>` **`overlapping`** `geometry` --->  `msi.gama.util.IList<? extends msi.gama.metamodel.shape.IShape>` 
+  * `container<agent>` **`overlapping`** `geometry` --->  `msi.gama.util.IList<? extends msi.gama.metamodel.shape.IShape>`
+  *  **`overlapping`** (`container<agent>` , `geometry`) --->  `msi.gama.util.IList<? extends msi.gama.metamodel.shape.IShape>` 
 
 #### Result: 
 A list of agents or geometries among the left-operand list, species or meta-population (addition of species), overlapping the operand (casted as a geometry).
@@ -1639,7 +1755,8 @@ msi.gama.util.IList<? extends msi.gama.metamodel.shape.IShape> var0 <- [ag1, ag2
 ### `overlaps`
 
 #### Possible use: 
-  * `geometry` **`overlaps`** `geometry` --->  `bool` 
+  * `geometry` **`overlaps`** `geometry` --->  `bool`
+  *  **`overlaps`** (`geometry` , `geometry`) --->  `bool` 
 
 #### Result: 
 A boolean, equal to true if the left-geometry (or agent/point) overlaps the right-geometry (or agent/point).
@@ -1686,7 +1803,8 @@ Casts the operand into the type pair
 ### `partially_overlaps`
 
 #### Possible use: 
-  * `geometry` **`partially_overlaps`** `geometry` --->  `bool` 
+  * `geometry` **`partially_overlaps`** `geometry` --->  `bool`
+  *  **`partially_overlaps`** (`geometry` , `geometry`) --->  `bool` 
 
 #### Result: 
 A boolean, equal to true if the left-geometry (or agent/point) partially overlaps the right-geometry (or agent/point).  
@@ -1736,17 +1854,18 @@ Casts the operand into the type path
 
 #### Possible use: 
   * `topology` **`path_between`** `container<geometry>` --->  `path`
-  *  **`path_between`** (`graph`, `geometry`, `geometry`) --->  `path`
-  *  **`path_between`** (`list<agent>`, `geometry`, `geometry`) --->  `path` 
+  *  **`path_between`** (`topology` , `container<geometry>`) --->  `path`
+  *  **`path_between`** (`list<agent>`, `geometry`, `geometry`) --->  `path`
+  *  **`path_between`** (`graph`, `geometry`, `geometry`) --->  `path` 
 
 #### Result: 
-The shortest path between a list of two objects in a graph/nThe shortest path between two objects according to set of cells
+The shortest path between two objects according to set of cells/nThe shortest path between a list of two objects in a graph
 
 #### Examples: 
 ```
-path var0 <- my_topology path_between [ag1, ag2]; 	// var0 equals A path between ag1 and ag2
+path var0 <- path_between (cell_grid where each.is_free, ag1, ag2); 	// var0 equals A path between ag1 and ag2 passing through the given cell_grid agents
 path var1 <- path_between (my_graph, ag1, ag2); 	// var1 equals A path between ag1 and ag2
-path var2 <- path_between (cell_grid where each.is_free, ag1, ag2); 	// var2 equals A path between ag1 and ag2 passing through the given cell_grid agents
+path var2 <- my_topology path_between [ag1, ag2]; 	// var2 equals A path between ag1 and ag2
 ```
       
 
@@ -1762,7 +1881,9 @@ path var2 <- path_between (cell_grid where each.is_free, ag1, ag2); 	// var2 equ
 
 #### Possible use: 
   * `geometry` **`path_to`** `geometry` --->  `path`
-  * `point` **`path_to`** `point` --->  `path` 
+  *  **`path_to`** (`geometry` , `geometry`) --->  `path`
+  * `point` **`path_to`** `point` --->  `path`
+  *  **`path_to`** (`point` , `point`) --->  `path` 
 
 #### Result: 
 A path between two geometries (geometries, agents or points) considering the topology of the agent applying the operator.
@@ -1803,7 +1924,8 @@ list<path> var0 <- paths_between(my_graph, ag1:: ag2, 2); 	// var0 equals the 2 
 ### `percent_absolute_deviation`
 
 #### Possible use: 
-  * `list<float>` **`percent_absolute_deviation`** `list<float>` --->  `float` 
+  * `list<float>` **`percent_absolute_deviation`** `list<float>` --->  `float`
+  *  **`percent_absolute_deviation`** (`list<float>` , `list<float>`) --->  `float` 
 
 #### Result: 
 percent absolute deviation indicator for 2 series of values: percent_absolute_deviation(list_vals_observe,list_vals_sim)
@@ -1818,11 +1940,25 @@ percent_absolute_deviation([200,300,150,150,200],[250,250,100,200,200])
   	
     	
 ----
+[//]: # (keyword|operator_pgm_file)
+### `pgm_file`
+
+#### Possible use: 
+  *  **`pgm_file`** (`string`) --->  `file` 
+
+#### Result: 
+Constructs a file of type pgm. Allowed extensions are limited to pgm
+
+[Top of the page](#table-of-contents)
+  	
+    	
+----
 [//]: # (keyword|operator_plan)
 ### `plan`
 
 #### Possible use: 
-  * `container<geometry>` **`plan`** `float` --->  `geometry` 
+  * `container<geometry>` **`plan`** `float` --->  `geometry`
+  *  **`plan`** (`container<geometry>` , `float`) --->  `geometry` 
 
 #### Result: 
 A polyline geometry from the given list of points.
@@ -1848,20 +1984,24 @@ geometry var0 <- polyplan([{0,0}, {0,10}, {10,10}, {10,0}],10); 	// var0 equals 
 ### `point`
 
 #### Possible use: 
-  * `float` **`point`** `float` --->  `point`
-  * `int` **`point`** `float` --->  `point`
   * `float` **`point`** `int` --->  `point`
+  *  **`point`** (`float` , `int`) --->  `point`
+  * `int` **`point`** `float` --->  `point`
+  *  **`point`** (`int` , `float`) --->  `point`
   * `int` **`point`** `int` --->  `point`
-  *  **`point`** (`int`, `float`, `float`) --->  `point`
+  *  **`point`** (`int` , `int`) --->  `point`
+  * `float` **`point`** `float` --->  `point`
+  *  **`point`** (`float` , `float`) --->  `point`
   *  **`point`** (`float`, `float`, `float`) --->  `point`
-  *  **`point`** (`int`, `int`, `int`) --->  `point`
+  *  **`point`** (`int`, `float`, `float`) --->  `point`
+  *  **`point`** (`float`, `int`, `int`) --->  `point`
   *  **`point`** (`float`, `int`, `float`) --->  `point`
-  *  **`point`** (`int`, `int`, `float`) --->  `point`
   *  **`point`** (`float`, `float`, `int`) --->  `point`
-  *  **`point`** (`float`, `int`, `int`) --->  `point` 
+  *  **`point`** (`int`, `int`, `int`) --->  `point`
+  *  **`point`** (`int`, `int`, `float`) --->  `point` 
 
 #### Result: 
-internal use only. Use the standard construction {x,y} instead./ninternal use only. Use the standard construction {x,y} instead./ninternal use only. Use the standard construction {x,y} instead./ninternal use only. Use the standard construction {x,y} instead.
+internal use only. Use the standard construction {x,y, z} instead./ninternal use only. Use the standard construction {x,y, z} instead./ninternal use only. Use the standard construction {x,y, z} instead./ninternal use only. Use the standard construction {x,y, z} instead./ninternal use only. Use the standard construction {x,y} instead./ninternal use only. Use the standard construction {x,y} instead./ninternal use only. Use the standard construction {x,y} instead./ninternal use only. Use the standard construction {x,y, z} instead./ninternal use only. Use the standard construction {x,y, z} instead./ninternal use only. Use the standard construction {x,y} instead./ninternal use only. Use the standard construction {x,y, z} instead.
 
 [Top of the page](#table-of-contents)
   	
@@ -1871,7 +2011,8 @@ internal use only. Use the standard construction {x,y} instead./ninternal use on
 ### `points_at`
 
 #### Possible use: 
-  * `int` **`points_at`** `float` --->  `list<point>` 
+  * `int` **`points_at`** `float` --->  `list<point>`
+  *  **`points_at`** (`int` , `float`) --->  `list<point>` 
 
 #### Result: 
 A list of left-operand number of points located at a the right-operand distance to the agent location.
@@ -1893,7 +2034,8 @@ list<point> var0 <- 3 points_at(20.0); 	// var0 equals returns [pt1, pt2, pt3] w
 ### `points_on`
 
 #### Possible use: 
-  * `geometry` **`points_on`** `float` --->  `list` 
+  * `geometry` **`points_on`** `float` --->  `list`
+  *  **`points_on`** (`geometry` , `float`) --->  `list` 
 
 #### Result: 
 A list of points of the operand-geometry distant from each other to the float right-operand .
@@ -1967,7 +2109,8 @@ geometry var0 <- polygon([{0,0}, {0,10}, {10,10}, {10,0}]); 	// var0 equals a po
 ### `polyhedron`
 
 #### Possible use: 
-  * `container<geometry>` **`polyhedron`** `float` --->  `geometry` 
+  * `container<geometry>` **`polyhedron`** `float` --->  `geometry`
+  *  **`polyhedron`** (`container<geometry>` , `float`) --->  `geometry` 
 
 #### Result: 
 A polyhedron geometry from the given list of points.
@@ -2010,7 +2153,8 @@ Same signification as [plan](OperatorsLZ#plan)
 ### `predecessors_of`
 
 #### Possible use: 
-  * `graph` **`predecessors_of`** `unknown` --->  `list` 
+  * `graph` **`predecessors_of`** `unknown` --->  `list`
+  *  **`predecessors_of`** (`graph` , `unknown`) --->  `list` 
 
 #### Result: 
 returns the list of predecessors (i.e. sources of in edges) of the given vertex (right-hand operand) in the given graph (left-hand operand)
@@ -2046,7 +2190,8 @@ Casts the operand into the type predicate
 ### `predict`
 
 #### Possible use: 
-  * `msi.gama.util.GamaRegression` **`predict`** `list<float>` --->  `float` 
+  * `msi.gama.util.GamaRegression` **`predict`** `list<float>` --->  `float`
+  *  **`predict`** (`msi.gama.util.GamaRegression` , `list<float>`) --->  `float` 
 
 #### Result: 
 returns the value predict by the regression parameters for a given instance. Usage: predict(regression, instance)
@@ -2073,7 +2218,8 @@ Same signification as [mul](OperatorsLZ#mul)
 ### `product_of`
 
 #### Possible use: 
-  * `container` **`product_of`** `any expression` --->  `unknown` 
+  * `container` **`product_of`** `any expression` --->  `unknown`
+  *  **`product_of`** (`container` , `any expression`) --->  `unknown` 
 
 #### Result: 
 the product of the right-hand expression evaluated on each of the elements of the left-hand operand  
@@ -2099,6 +2245,45 @@ unknown var1 <- [1,2] product_of (each * 10 ); 	// var1 equals 200
 
 #### See also: 
 [min_of](OperatorsLZ#min_of), [max_of](OperatorsLZ#max_of), [sum_of](OperatorsLZ#sum_of), [mean_of](OperatorsLZ#mean_of), 
+
+[Top of the page](#table-of-contents)
+  	
+    	
+----
+[//]: # (keyword|operator_promethee_DM)
+### `promethee_DM`
+
+#### Possible use: 
+  * `list<list>` **`promethee_DM`** `java.util.List<java.util.Map<java.lang.String,java.lang.Object>>` --->  `int`
+  *  **`promethee_DM`** (`list<list>` , `java.util.List<java.util.Map<java.lang.String,java.lang.Object>>`) --->  `int` 
+
+#### Result: 
+The index of the best candidate according to the Promethee II method. This method is based on a comparison per pair of possible candidates along each criterion: all candidates are compared to each other by pair and ranked. More information about this method can be found in [http://www.sciencedirect.com/science?_ob=ArticleURL&_udi=B6VCT-4VF56TV-1&_user=10&_coverDate=01%2F01%2F2010&_rdoc=1&_fmt=high&_orig=search&_sort=d&_docanchor=&view=c&_searchStrId=1389284642&_rerunOrigin=google&_acct=C000050221&_version=1&_urlVersion=0&_userid=10&md5=d334de2a4e0d6281199a39857648cd36 Behzadian, M., Kazemzadeh, R., Albadvi, A., M., A.: PROMETHEE: A comprehensive literature review on methodologies and applications. European Journal of Operational Research(2009)]. The first operand is the list of candidates (a candidate is a list of criterion values); the second operand the list of criterion: A criterion is a map that contains fours elements: a name, a weight, a preference value (p) and an indifference value (q). The preference value represents the threshold from which the difference between two criterion values allows to prefer one vector of values over another. The indifference value represents the threshold from which the difference between two criterion values is considered significant.
+
+#### Special cases:     
+  * returns -1 is the list of candidates is nil or empty
+
+#### Examples: 
+```
+int var0 <- promethee_DM([[1.0, 7.0],[4.0,2.0],[3.0, 3.0]], [["name"::"utility", "weight" :: 2.0,"p"::0.5, "q"::0.0, "s"::1.0, "maximize" :: true],["name"::"price", "weight" :: 1.0,"p"::0.5, "q"::0.0, "s"::1.0, "maximize" :: false]]); 	// var0 equals 1
+```
+      
+
+#### See also: 
+[weighted_means_DM](OperatorsLZ#weighted_means_dm), [electre_DM](OperatorsAK#electre_dm), [evidence_theory_DM](OperatorsAK#evidence_theory_dm), 
+
+[Top of the page](#table-of-contents)
+  	
+    	
+----
+[//]: # (keyword|operator_property_file)
+### `property_file`
+
+#### Possible use: 
+  *  **`property_file`** (`string`) --->  `file` 
+
+#### Result: 
+Constructs a file of type property. Allowed extensions are limited to properties
 
 [Top of the page](#table-of-contents)
   	
@@ -2132,20 +2317,36 @@ geometry var0 <- pyramid(5); 	// var0 equals a geometry as a square with side_si
   	
     	
 ----
+[//]: # (keyword|operator_range)
+### `range`
+
+#### Possible use: 
+  *  **`range`** (`int`) --->  `list`
+  * `int` **`range`** `int` --->  `list`
+  *  **`range`** (`int` , `int`) --->  `list`
+  *  **`range`** (`int`, `int`, `int`) --->  `list` 
+
+#### Result: 
+Allows to build a list of int representing all contiguous values from the first to the second argument. The range can be increasing or decreasing. Passing the same value for both will return a singleton list with this value/nAllows to build a list of int representing all contiguous values from zero to the argument. The range can be increasing or decreasing. Passing 0 will return a singleton list with 0/nAllows to build a list of int representing all contiguous values from the first to the second argument, using the step represented by the third argument. The range can be increasing or decreasing. Passing the same value for both will return a singleton list with this value. Passing a step of 0 will result in an exception. Attempting to build infinite ranges (e.g. end > start with a negative step) will similarly not be accepted and yield an exception
+
+[Top of the page](#table-of-contents)
+  	
+    	
+----
 [//]: # (keyword|operator_read)
 ### `read`
 
 #### Possible use: 
-  *  **`read`** (`string`) --->  `unknown`
-  *  **`read`** (`int`) --->  `unknown` 
+  *  **`read`** (`int`) --->  `unknown`
+  *  **`read`** (`string`) --->  `unknown` 
 
 #### Result: 
 Reads an attribute of the agent. The attribute's name is specified by the operand.
 
 #### Examples: 
 ```
-unknown agent_name <- read ('name'); 	// agent_name equals reads the 'name' variable of agent then assigns the returned value to the 'agent_name' variable. 
 unknown second_variable <- read (2); 	// second_variable equals reads the second variable of agent then assigns the returned value to the 'second_variable' variable. 
+unknown agent_name <- read ('name'); 	// agent_name equals reads the 'name' variable of agent then assigns the returned value to the 'agent_name' variable. 
 ```
   
 
@@ -2158,8 +2359,10 @@ unknown second_variable <- read (2); 	// second_variable equals reads the second
 
 #### Possible use: 
   *  **`rectangle`** (`point`) --->  `geometry`
+  * `float` **`rectangle`** `float` --->  `geometry`
+  *  **`rectangle`** (`float` , `float`) --->  `geometry`
   * `point` **`rectangle`** `point` --->  `geometry`
-  * `float` **`rectangle`** `float` --->  `geometry` 
+  *  **`rectangle`** (`point` , `point`) --->  `geometry` 
 
 #### Result: 
 A rectangle geometry which side sizes are given by the operands.  
@@ -2174,9 +2377,9 @@ the center of the rectangle is by default the location of the current agent in w
 
 #### Examples: 
 ```
-geometry var0 <- rectangle({2.0,6.0}, {6.0,20.0}); 	// var0 equals a geometry as a rectangle with {2.0,6.0} as the upper-left corner, {6.0,20.0} as the lower-right corner.
-geometry var1 <- rectangle({10, 5}); 	// var1 equals a geometry as a rectangle with width = 10 and height = 5.
-geometry var2 <- rectangle(10, 5); 	// var2 equals a geometry as a rectangle with width = 10 and height = 5.
+geometry var0 <- rectangle(10, 5); 	// var0 equals a geometry as a rectangle with width = 10 and height = 5.
+geometry var1 <- rectangle({2.0,6.0}, {6.0,20.0}); 	// var1 equals a geometry as a rectangle with {2.0,6.0} as the upper-left corner, {6.0,20.0} as the lower-right corner.
+geometry var2 <- rectangle({10, 5}); 	// var2 equals a geometry as a rectangle with width = 10 and height = 5.
 ```
       
 
@@ -2190,6 +2393,19 @@ geometry var2 <- rectangle(10, 5); 	// var2 equals a geometry as a rectangle wit
 [//]: # (keyword|operator_reduced_by)
 ### `reduced_by`
 Same signification as [-](OperatorsAK#-)
+
+[Top of the page](#table-of-contents)
+  	
+    	
+----
+[//]: # (keyword|operator_regression)
+### `regression`
+
+#### Possible use: 
+  *  **`regression`** (`any`) --->  `regression` 
+
+#### Result: 
+Casts the operand into the type regression
 
 [Top of the page](#table-of-contents)
   	
@@ -2231,7 +2447,8 @@ list var0 <- remove_duplicates([3,2,5,1,2,3,5,5,5]); 	// var0 equals [3,2,5,1]
 ### `remove_node_from`
 
 #### Possible use: 
-  * `geometry` **`remove_node_from`** `graph` --->  `graph` 
+  * `geometry` **`remove_node_from`** `graph` --->  `graph`
+  *  **`remove_node_from`** (`geometry` , `graph`) --->  `graph` 
 
 #### Result: 
 removes a node from a graph.  
@@ -2256,13 +2473,38 @@ graph var0 <- node(0) remove_node_from graphEpidemio; 	// var0 equals the graph 
   *  **`replace`** (`string`, `string`, `string`) --->  `string` 
 
 #### Result: 
-Returns the String resulting by replacing for the first operand all the sub-strings corresponding the the second operand by the thrid operand
+Returns the String resulting by replacing for the first operand all the sub-strings corresponding the second operand by the third operand
 
 #### Examples: 
 ```
 string var0 <- replace('to be or not to be,that is the question','to', 'do'); 	// var0 equals 'do be or not do be,that is the question'
 ```
-  
+      
+
+#### See also: 
+[replace_regex](OperatorsLZ#replace_regex), 
+
+[Top of the page](#table-of-contents)
+  	
+    	
+----
+[//]: # (keyword|operator_replace_regex)
+### `replace_regex`
+
+#### Possible use: 
+  *  **`replace_regex`** (`string`, `string`, `string`) --->  `string` 
+
+#### Result: 
+Returns the String resulting by replacing for the first operand all the sub-strings corresponding to the regular expression given in the second operand by the third operand
+
+#### Examples: 
+```
+string var0 <- replace_regex("colour, color", "colou?r", "col"); 	// var0 equals 'col, col'
+```
+      
+
+#### See also: 
+[replace](OperatorsLZ#replace), 
 
 [Top of the page](#table-of-contents)
   	
@@ -2326,7 +2568,8 @@ container var3 <- reverse(matrix([["c11","c12","c13"],["c21","c22","c23"]])); 	/
 ### `rewire_n`
 
 #### Possible use: 
-  * `graph` **`rewire_n`** `int` --->  `graph` 
+  * `graph` **`rewire_n`** `int` --->  `graph`
+  *  **`rewire_n`** (`graph` , `int`) --->  `graph` 
 
 #### Result: 
 rewires the given count of edges.  
@@ -2348,9 +2591,12 @@ graph var1 <- graphEpidemio rewire_n 10; 	// var1 equals the graph with 3 edges 
 ### `rgb`
 
 #### Possible use: 
-  * `rgb` **`rgb`** `int` --->  `rgb`
-  * `rgb` **`rgb`** `float` --->  `rgb`
   * `string` **`rgb`** `int` --->  `rgb`
+  *  **`rgb`** (`string` , `int`) --->  `rgb`
+  * `rgb` **`rgb`** `int` --->  `rgb`
+  *  **`rgb`** (`rgb` , `int`) --->  `rgb`
+  * `rgb` **`rgb`** `float` --->  `rgb`
+  *  **`rgb`** (`rgb` , `float`) --->  `rgb`
   *  **`rgb`** (`int`, `int`, `int`) --->  `rgb`
   *  **`rgb`** (`int`, `int`, `int`, `float`) --->  `rgb`
   *  **`rgb`** (`int`, `int`, `int`, `int`) --->  `rgb` 
@@ -2359,21 +2605,21 @@ graph var1 <- graphEpidemio rewire_n 10; 	// var1 equals the graph with 3 edges 
 Returns a color defined by red, green, blue components and an alpha blending value.
 
 #### Special cases:     
+  * It can be used with r=red, g=green, b=blue (each between 0 and 255), a=alpha (between 0.0 and 1.0)    
+  * It can be used with a name of color and alpha (between 0 and 255)    
   * It can be used with r=red, g=green, b=blue, each between 0 and 255    
   * It can be used with a color and an alpha between 0 and 255    
-  * It can be used with r=red, g=green, b=blue (each between 0 and 255), a=alpha (between 0.0 and 1.0)    
-  * It can be used with a color and an alpha between 0 and 1    
-  * It can be used with a name of color and alpha (between 0 and 255)    
-  * It can be used with r=red, g=green, b=blue (each between 0 and 255), a=alpha (between 0 and 255)
+  * It can be used with r=red, g=green, b=blue (each between 0 and 255), a=alpha (between 0 and 255)    
+  * It can be used with a color and an alpha between 0 and 1
 
 #### Examples: 
 ```
-rgb var0 <- rgb (255,0,0); 	// var0 equals #red
-rgb var1 <- rgb(rgb(255,0,0),125); 	// var1 equals a light red color
-rgb var2 <- rgb (255,0,0,0.5); 	// var2 equals a light red color
-rgb var3 <- rgb(rgb(255,0,0),0.5); 	// var3 equals a light red color
-rgb var4 <- rgb ("red"); 	// var4 equals rgb(255,0,0)
-rgb var5 <- rgb (255,0,0,125); 	// var5 equals a light red color
+rgb var0 <- rgb (255,0,0,0.5); 	// var0 equals a light red color
+rgb var1 <- rgb ("red"); 	// var1 equals rgb(255,0,0)
+rgb var2 <- rgb (255,0,0); 	// var2 equals #red
+rgb var3 <- rgb(rgb(255,0,0),125); 	// var3 equals a light red color
+rgb var4 <- rgb (255,0,0,125); 	// var4 equals a light red color
+rgb var6 <- rgb(rgb(255,0,0),0.5); 	// var6 equals a light red color
 ```
       
 
@@ -2407,15 +2653,18 @@ list<point> var0 <- rgb_to_xyz(texture); 	// var0 equals a list of points
 ### `rnd`
 
 #### Possible use: 
-  *  **`rnd`** (`float`) --->  `float`
   *  **`rnd`** (`int`) --->  `int`
   *  **`rnd`** (`point`) --->  `point`
-  * `int` **`rnd`** `int` --->  `int`
+  *  **`rnd`** (`float`) --->  `float`
   * `point` **`rnd`** `point` --->  `point`
+  *  **`rnd`** (`point` , `point`) --->  `point`
+  * `int` **`rnd`** `int` --->  `int`
+  *  **`rnd`** (`int` , `int`) --->  `int`
   * `float` **`rnd`** `float` --->  `float`
+  *  **`rnd`** (`float` , `float`) --->  `float`
   *  **`rnd`** (`int`, `int`, `int`) --->  `int`
-  *  **`rnd`** (`point`, `point`, `float`) --->  `point`
-  *  **`rnd`** (`float`, `float`, `float`) --->  `float` 
+  *  **`rnd`** (`float`, `float`, `float`) --->  `float`
+  *  **`rnd`** (`point`, `point`, `float`) --->  `point` 
 
 #### Result: 
 a random integer in the interval [0, operand]  
@@ -2424,20 +2673,20 @@ a random integer in the interval [0, operand]
 to obtain a probability between 0 and 1, use the expression (rnd n) / n, where n is used to indicate the precision
 
 #### Special cases:     
-  * if the operand is a float, returns an uniformly distributed float random number in [0.0, to]    
-  * if the operand is a point, returns a point with three random float ordinates, each in the interval [0, ordinate of argument]
+  * if the operand is a point, returns a point with three random float ordinates, each in the interval [0, ordinate of argument]    
+  * if the operand is a float, returns an uniformly distributed float random number in [0.0, to]
 
 #### Examples: 
 ```
-float var0 <- rnd(3.4); 	// var0 equals a random float between 0.0 and 3.4
-int var1 <- rnd (2, 4); 	// var1 equals 2, 3 or 4
-int var2 <- rnd (2, 12, 4); 	// var2 equals 2, 6 or 10
-int var3 <- rnd (2); 	// var3 equals 0, 1 or 2
-float var4 <- rnd (1000) / 1000; 	// var4 equals a float between 0 and 1 with a precision of 0.001
+point var0 <- rnd ({2.0, 4.0}, {2.0, 5.0, 10.0}); 	// var0 equals a point with x = 2.0, y between 2.0 and 4.0 and z between 0.0 and 10.0
+int var1 <- rnd (2); 	// var1 equals 0, 1 or 2
+float var2 <- rnd (1000) / 1000; 	// var2 equals a float between 0 and 1 with a precision of 0.001
+int var3 <- rnd (2, 12, 4); 	// var3 equals 2, 6 or 10
+float var4 <- rnd (2.0, 4.0, 0.5); 	// var4 equals a float number between 2.0 and 4.0 every 0.5
 point var5 <- rnd ({2.0, 4.0}, {2.0, 5.0, 10.0}, 1); 	// var5 equals a point with x = 2.0, y equal to 2.0, 3.0 or 4.0 and z between 0.0 and 10.0 every 1.0
-point var6 <- rnd ({2.0, 4.0}, {2.0, 5.0, 10.0}); 	// var6 equals a point with x = 2.0, y between 2.0 and 4.0 and z between 0.0 and 10.0
-point var7 <- rnd ({2.5,3, 0.0}); 	// var7 equals {x,y} with x in [0.0,2.0], y in [0.0,3.0], z = 0.0
-float var8 <- rnd (2.0, 4.0, 0.5); 	// var8 equals a float number between 2.0 and 4.0 every 0.5
+point var6 <- rnd ({2.5,3, 0.0}); 	// var6 equals {x,y} with x in [0.0,2.0], y in [0.0,3.0], z = 0.0
+float var7 <- rnd(3.4); 	// var7 equals a random float between 0.0 and 3.4
+int var8 <- rnd (2, 4); 	// var8 equals 2, 3 or 4
 float var9 <- rnd (2.0, 4.0); 	// var9 equals a float number between 2.0 and 4.0
 ```
       
@@ -2500,20 +2749,22 @@ rgb var0 <- rnd_color(255); 	// var0 equals a random color, equivalent to rgb(rn
 ### `rotated_by`
 
 #### Possible use: 
-  * `geometry` **`rotated_by`** `float` --->  `geometry`
   * `geometry` **`rotated_by`** `int` --->  `geometry`
+  *  **`rotated_by`** (`geometry` , `int`) --->  `geometry`
+  * `geometry` **`rotated_by`** `float` --->  `geometry`
+  *  **`rotated_by`** (`geometry` , `float`) --->  `geometry`
   *  **`rotated_by`** (`geometry`, `float`, `point`) --->  `geometry` 
 
 #### Result: 
-A geometry resulting from the application of a rotation by the right-hand operand angle (degree) to the left-hand operand (geometry, agent, point)/nA geometry resulting from the application of a rotation by the right-hand operand angles (degree) along the three axis (x,y,z) to the left-hand operand (geometry, agent, point)  
+A geometry resulting from the application of a rotation by the right-hand operand angles (degree) along the three axis (x,y,z) to the left-hand operand (geometry, agent, point)/nA geometry resulting from the application of a rotation by the right-hand operand angle (degree) to the left-hand operand (geometry, agent, point)  
 
 #### Comment: 
 the right-hand operand can be a float or a int
 
 #### Examples: 
 ```
-geometry var0 <- self rotated_by 45; 	// var0 equals the geometry resulting from a 45 degrees rotation to the geometry of the agent applying the operator.
-geometry var1 <- rotated_by(pyramid(10),45, {1,0,0}); 	// var1 equals the geometry resulting from a 45 degrees rotation along the {1,0,0} vector to the geometry of the agent applying the operator.
+geometry var0 <- rotated_by(pyramid(10),45, {1,0,0}); 	// var0 equals the geometry resulting from a 45 degrees rotation along the {1,0,0} vector to the geometry of the agent applying the operator.
+geometry var1 <- self rotated_by 45; 	// var1 equals the geometry resulting from a 45 degrees rotation to the geometry of the agent applying the operator.
 ```
       
 
@@ -2528,9 +2779,9 @@ geometry var1 <- rotated_by(pyramid(10),45, {1,0,0}); 	// var1 equals the geomet
 ### `round`
 
 #### Possible use: 
+  *  **`round`** (`int`) --->  `int`
   *  **`round`** (`point`) --->  `point`
-  *  **`round`** (`float`) --->  `int`
-  *  **`round`** (`int`) --->  `int` 
+  *  **`round`** (`float`) --->  `int` 
 
 #### Result: 
 Returns the rounded value of the operand.
@@ -2558,7 +2809,8 @@ int var3 <- round(-0.51); 	// var3 equals -1
 ### `row_at`
 
 #### Possible use: 
-  * `matrix` **`row_at`** `int` --->  `list` 
+  * `matrix` **`row_at`** `int` --->  `list`
+  *  **`row_at`** (`matrix` , `int`) --->  `list` 
 
 #### Result: 
 returns the row at a num_line (right-hand operand)
@@ -2604,6 +2856,7 @@ list<list> var0 <- rows_list(matrix([["el11","el12","el13"],["el21","el22","el23
 #### Possible use: 
   *  **`sample`** (`any expression`) --->  `string`
   * `string` **`sample`** `any expression` --->  `string`
+  *  **`sample`** (`string` , `any expression`) --->  `string`
   *  **`sample`** (`list`, `int`, `bool`) --->  `list`
   *  **`sample`** (`list`, `int`, `bool`, `list`) --->  `list` 
 
@@ -2626,6 +2879,7 @@ list var1 <- sample([2,10,1],2,false,[0.1,0.7,0.2]); 	// var1 equals [10,2]
 
 #### Possible use: 
   * `agent` **`saveAgent`** `string` --->  `int`
+  *  **`saveAgent`** (`agent` , `string`) --->  `int`
 
 [Top of the page](#table-of-contents)
   	
@@ -2653,7 +2907,8 @@ Same signification as [*](OperatorsAK#*)
 ### `scaled_to`
 
 #### Possible use: 
-  * `geometry` **`scaled_to`** `point` --->  `geometry` 
+  * `geometry` **`scaled_to`** `point` --->  `geometry`
+  *  **`scaled_to`** (`geometry` , `point`) --->  `geometry` 
 
 #### Result: 
 allows to restrict the size of a geometry so that it fits in the envelope {width, height, depth} defined by the second operand
@@ -2690,7 +2945,8 @@ Same signification as [where](OperatorsLZ#where)
 ### `set_about`
 
 #### Possible use: 
-  * `msi.gaml.architecture.simplebdi.Emotion` **`set_about`** `predicate` --->  `msi.gaml.architecture.simplebdi.Emotion` 
+  * `msi.gaml.architecture.simplebdi.Emotion` **`set_about`** `predicate` --->  `msi.gaml.architecture.simplebdi.Emotion`
+  *  **`set_about`** (`msi.gaml.architecture.simplebdi.Emotion` , `predicate`) --->  `msi.gaml.architecture.simplebdi.Emotion` 
 
 #### Result: 
 change the about value of the given emotion
@@ -2709,7 +2965,8 @@ emotion about predicate1
 ### `set_decay`
 
 #### Possible use: 
-  * `msi.gaml.architecture.simplebdi.Emotion` **`set_decay`** `float` --->  `msi.gaml.architecture.simplebdi.Emotion` 
+  * `msi.gaml.architecture.simplebdi.Emotion` **`set_decay`** `float` --->  `msi.gaml.architecture.simplebdi.Emotion`
+  *  **`set_decay`** (`msi.gaml.architecture.simplebdi.Emotion` , `float`) --->  `msi.gaml.architecture.simplebdi.Emotion` 
 
 #### Result: 
 change the decay value of the given emotion
@@ -2728,7 +2985,8 @@ emotion set_decay 12
 ### `set_intensity`
 
 #### Possible use: 
-  * `msi.gaml.architecture.simplebdi.Emotion` **`set_intensity`** `float` --->  `msi.gaml.architecture.simplebdi.Emotion` 
+  * `msi.gaml.architecture.simplebdi.Emotion` **`set_intensity`** `float` --->  `msi.gaml.architecture.simplebdi.Emotion`
+  *  **`set_intensity`** (`msi.gaml.architecture.simplebdi.Emotion` , `float`) --->  `msi.gaml.architecture.simplebdi.Emotion` 
 
 #### Result: 
 change the intensity value of the given emotion
@@ -2747,7 +3005,8 @@ emotion set_intensity 12
 ### `set_truth`
 
 #### Possible use: 
-  * `predicate` **`set_truth`** `bool` --->  `predicate` 
+  * `predicate` **`set_truth`** `bool` --->  `predicate`
+  *  **`set_truth`** (`predicate` , `bool`) --->  `predicate` 
 
 #### Result: 
 change the is_true value of the given predicate
@@ -2767,6 +3026,7 @@ predicate set_truth false
 
 #### Possible use: 
   * `geometry` **`set_z`** `container<float>` --->  `geometry`
+  *  **`set_z`** (`geometry` , `container<float>`) --->  `geometry`
   *  **`set_z`** (`geometry`, `int`, `float`) --->  `geometry` 
 
 #### Result: 
@@ -2783,13 +3043,26 @@ shape <- triangle(3) set_z [5,10,14];
   	
     	
 ----
+[//]: # (keyword|operator_shape_file)
+### `shape_file`
+
+#### Possible use: 
+  *  **`shape_file`** (`string`) --->  `file` 
+
+#### Result: 
+Constructs a file of type shape. Allowed extensions are limited to shp
+
+[Top of the page](#table-of-contents)
+  	
+    	
+----
 [//]: # (keyword|operator_shuffle)
 ### `shuffle`
 
 #### Possible use: 
   *  **`shuffle`** (`container`) --->  `list`
-  *  **`shuffle`** (`string`) --->  `string`
-  *  **`shuffle`** (`matrix`) --->  `matrix` 
+  *  **`shuffle`** (`matrix`) --->  `matrix`
+  *  **`shuffle`** (`string`) --->  `string` 
 
 #### Result: 
 The elements of the operand in random order./n/n
@@ -2800,8 +3073,8 @@ The elements of the operand in random order./n/n
 #### Examples: 
 ```
 list var0 <- shuffle ([12, 13, 14]); 	// var0 equals [14,12,13] (for example)
-string var1 <- shuffle ('abc'); 	// var1 equals 'bac' (for example)
-matrix var2 <- shuffle (matrix([["c11","c12","c13"],["c21","c22","c23"]])); 	// var2 equals matrix([["c12","c21","c11"],["c13","c22","c23"]]) (for example)
+matrix var1 <- shuffle (matrix([["c11","c12","c13"],["c21","c22","c23"]])); 	// var1 equals matrix([["c12","c21","c11"],["c13","c22","c23"]]) (for example)
+string var2 <- shuffle ('abc'); 	// var2 equals 'bac' (for example)
 ```
       
 
@@ -2837,7 +3110,8 @@ int var2 <- signum(0); 	// var2 equals 0
 ### `simple_clustering_by_distance`
 
 #### Possible use: 
-  * `container<agent>` **`simple_clustering_by_distance`** `float` --->  `list<list<agent>>` 
+  * `container<agent>` **`simple_clustering_by_distance`** `float` --->  `list<list<agent>>`
+  *  **`simple_clustering_by_distance`** (`container<agent>` , `float`) --->  `list<list<agent>>` 
 
 #### Result: 
 A list of agent groups clustered by distance considering a distance min between two groups.
@@ -2867,7 +3141,8 @@ Same signification as [simple_clustering_by_distance](OperatorsLZ#simple_cluster
 ### `simplification`
 
 #### Possible use: 
-  * `geometry` **`simplification`** `float` --->  `geometry` 
+  * `geometry` **`simplification`** `float` --->  `geometry`
+  *  **`simplification`** (`geometry` , `float`) --->  `geometry` 
 
 #### Result: 
 A geometry corresponding to the simplification of the operand (geometry, agent, point) considering a tolerance distance.  
@@ -2889,8 +3164,8 @@ geometry var0 <- self simplification 0.1; 	// var0 equals the geometry resulting
 ### `sin`
 
 #### Possible use: 
-  *  **`sin`** (`float`) --->  `float`
-  *  **`sin`** (`int`) --->  `float` 
+  *  **`sin`** (`int`) --->  `float`
+  *  **`sin`** (`float`) --->  `float` 
 
 #### Result: 
 Returns the value (in [-1,1]) of the sinus of the operand (in decimal degrees). The argument is casted to an int before being evaluated.
@@ -2900,8 +3175,8 @@ Returns the value (in [-1,1]) of the sinus of the operand (in decimal degrees). 
 
 #### Examples: 
 ```
-float var0 <- sin(360); 	// var0 equals 0.0
-float var1 <- sin (0); 	// var1 equals 0.0
+float var0 <- sin (0); 	// var0 equals 0.0
+float var1 <- sin(360); 	// var1 equals 0.0
 ```
       
 
@@ -2973,7 +3248,8 @@ Casts the operand into the type skill
 ### `smooth`
 
 #### Possible use: 
-  * `geometry` **`smooth`** `float` --->  `geometry` 
+  * `geometry` **`smooth`** `float` --->  `geometry`
+  *  **`smooth`** (`geometry` , `float`) --->  `geometry` 
 
 #### Result: 
 Returns a 'smoothed' geometry, where straight lines are replaces by polynomial (bicubic) curves. The first parameter is the original geometry, the second is the 'fit' parameter which can be in the range 0 (loose fit) to 1 (tightest fit).
@@ -3008,7 +3284,8 @@ Same signification as [sort_by](OperatorsLZ#sort_by)
 ### `sort_by`
 
 #### Possible use: 
-  * `container` **`sort_by`** `any expression` --->  `list` 
+  * `container` **`sort_by`** `any expression` --->  `list`
+  *  **`sort_by`** (`container` , `any expression`) --->  `list` 
 
 #### Result: 
 Returns a list, containing the elements of the left-hand operand sorted in ascending order by the value of the right-hand operand when it is evaluated on them.  
@@ -3039,7 +3316,8 @@ list var4 <- [1::2, 5::6, 3::4] sort_by (each); 	// var4 equals [2, 4, 6]
 ### `source_of`
 
 #### Possible use: 
-  * `graph` **`source_of`** `unknown` --->  `unknown` 
+  * `graph` **`source_of`** `unknown` --->  `unknown`
+  *  **`source_of`** (`graph` , `unknown`) --->  `unknown` 
 
 #### Result: 
 returns the source of the edge (right-hand operand) contained in the graph given in left-hand operand.
@@ -3147,7 +3425,8 @@ geometry var0 <- sphere(10); 	// var0 equals a geometry as a circle of radius 10
 ### `split_at`
 
 #### Possible use: 
-  * `geometry` **`split_at`** `point` --->  `list<geometry>` 
+  * `geometry` **`split_at`** `point` --->  `list<geometry>`
+  *  **`split_at`** (`geometry` , `point`) --->  `list<geometry>` 
 
 #### Result: 
 The two part of the left-operand lines split at the given right-operand point
@@ -3169,18 +3448,20 @@ list<geometry> var0 <- polyline([{1,2},{4,6}]) split_at {7,6}; 	// var0 equals [
 ### `split_geometry`
 
 #### Possible use: 
-  * `geometry` **`split_geometry`** `point` --->  `list<geometry>`
   * `geometry` **`split_geometry`** `float` --->  `list<geometry>`
+  *  **`split_geometry`** (`geometry` , `float`) --->  `list<geometry>`
+  * `geometry` **`split_geometry`** `point` --->  `list<geometry>`
+  *  **`split_geometry`** (`geometry` , `point`) --->  `list<geometry>`
   *  **`split_geometry`** (`geometry`, `int`, `int`) --->  `list<geometry>` 
 
 #### Result: 
-A list of geometries that result from the decomposition of the geometry by rectangle cells of the given dimension (geometry, {size_x, size_y})/nA list of geometries that result from the decomposition of the geometry by square cells of the given side size (geometry, size)/nA list of geometries that result from the decomposition of the geometry according to a grid with the given number of rows and columns (geometry, nb_cols, nb_rows)
+A list of geometries that result from the decomposition of the geometry according to a grid with the given number of rows and columns (geometry, nb_cols, nb_rows)/nA list of geometries that result from the decomposition of the geometry by square cells of the given side size (geometry, size)/nA list of geometries that result from the decomposition of the geometry by rectangle cells of the given dimension (geometry, {size_x, size_y})
 
 #### Examples: 
 ```
-list<geometry> var0 <- to_rectangles(self, {10.0, 15.0}); 	// var0 equals the list of the geometries corresponding to the decomposition of the geometry by rectangles of size 10.0, 15.0
+list<geometry> var0 <- to_rectangles(self, 10,20); 	// var0 equals the list of the geometries corresponding to the decomposition of the geometry of the agent applying the operator
 list<geometry> var1 <- to_squares(self, 10.0); 	// var1 equals the list of the geometries corresponding to the decomposition of the geometry by squares of side size 10.0
-list<geometry> var2 <- to_rectangles(self, 10,20); 	// var2 equals the list of the geometries corresponding to the decomposition of the geometry of the agent applying the operator
+list<geometry> var2 <- to_rectangles(self, {10.0, 15.0}); 	// var2 equals the list of the geometries corresponding to the decomposition of the geometry by rectangles of size 10.0, 15.0
 ```
   
 
@@ -3211,7 +3492,8 @@ list<geometry> var0 <- split_lines([line([{0,10}, {20,10}]), line([{0,10}, {20,1
 ### `split_with`
 
 #### Possible use: 
-  * `string` **`split_with`** `string` --->  `list` 
+  * `string` **`split_with`** `string` --->  `list`
+  *  **`split_with`** (`string` , `string`) --->  `list` 
 
 #### Result: 
 Returns a list containing the sub-strings (tokens) of the left-hand operand delimited by each of the characters of the right-hand operand.  
@@ -3285,7 +3567,8 @@ geometry var0 <- square(10); 	// var0 equals a geometry as a square of side size
 ### `squircle`
 
 #### Possible use: 
-  * `float` **`squircle`** `float` --->  `geometry` 
+  * `float` **`squircle`** `float` --->  `geometry`
+  *  **`squircle`** (`float` , `float`) --->  `geometry` 
 
 #### Result: 
 A mix of square and circle geometry (see : http://en.wikipedia.org/wiki/Squircle), which side size is equal to the first operand and power is equal to the second operand  
@@ -3351,7 +3634,8 @@ Casts the operand into the type string
 ### `subtract_days`
 
 #### Possible use: 
-  * `msi.gama.util.GamaDate` **`subtract_days`** `int` --->  `msi.gama.util.GamaDate` 
+  * `msi.gama.util.GamaDate` **`subtract_days`** `int` --->  `msi.gama.util.GamaDate`
+  *  **`subtract_days`** (`msi.gama.util.GamaDate` , `int`) --->  `msi.gama.util.GamaDate` 
 
 #### Result: 
 Subtract a given number of days from a date
@@ -3370,7 +3654,8 @@ date1 subtract_days 20
 ### `subtract_hours`
 
 #### Possible use: 
-  * `msi.gama.util.GamaDate` **`subtract_hours`** `int` --->  `msi.gama.util.GamaDate` 
+  * `msi.gama.util.GamaDate` **`subtract_hours`** `int` --->  `msi.gama.util.GamaDate`
+  *  **`subtract_hours`** (`msi.gama.util.GamaDate` , `int`) --->  `msi.gama.util.GamaDate` 
 
 #### Result: 
 Add a given number of hours from a date
@@ -3389,7 +3674,8 @@ date1 subtract_hours 15
 ### `subtract_minutes`
 
 #### Possible use: 
-  * `msi.gama.util.GamaDate` **`subtract_minutes`** `int` --->  `msi.gama.util.GamaDate` 
+  * `msi.gama.util.GamaDate` **`subtract_minutes`** `int` --->  `msi.gama.util.GamaDate`
+  *  **`subtract_minutes`** (`msi.gama.util.GamaDate` , `int`) --->  `msi.gama.util.GamaDate` 
 
 #### Result: 
 Subtract a given number of minutes from a date
@@ -3408,7 +3694,8 @@ date1 subtract_minutes 5
 ### `subtract_months`
 
 #### Possible use: 
-  * `msi.gama.util.GamaDate` **`subtract_months`** `int` --->  `msi.gama.util.GamaDate` 
+  * `msi.gama.util.GamaDate` **`subtract_months`** `int` --->  `msi.gama.util.GamaDate`
+  *  **`subtract_months`** (`msi.gama.util.GamaDate` , `int`) --->  `msi.gama.util.GamaDate` 
 
 #### Result: 
 Subtract a given number of months from a date
@@ -3435,7 +3722,8 @@ Same signification as [-](OperatorsAK#-)
 ### `subtract_weeks`
 
 #### Possible use: 
-  * `msi.gama.util.GamaDate` **`subtract_weeks`** `int` --->  `msi.gama.util.GamaDate` 
+  * `msi.gama.util.GamaDate` **`subtract_weeks`** `int` --->  `msi.gama.util.GamaDate`
+  *  **`subtract_weeks`** (`msi.gama.util.GamaDate` , `int`) --->  `msi.gama.util.GamaDate` 
 
 #### Result: 
 Subtract a given number of weeks from a date
@@ -3454,7 +3742,8 @@ date1 subtract_weeks 15
 ### `subtract_years`
 
 #### Possible use: 
-  * `msi.gama.util.GamaDate` **`subtract_years`** `int` --->  `msi.gama.util.GamaDate` 
+  * `msi.gama.util.GamaDate` **`subtract_years`** `int` --->  `msi.gama.util.GamaDate`
+  *  **`subtract_years`** (`msi.gama.util.GamaDate` , `int`) --->  `msi.gama.util.GamaDate` 
 
 #### Result: 
 Subtract a given number of year from a date
@@ -3473,7 +3762,8 @@ date1 subtract_years 3
 ### `successors_of`
 
 #### Possible use: 
-  * `graph` **`successors_of`** `unknown` --->  `list` 
+  * `graph` **`successors_of`** `unknown` --->  `list`
+  *  **`successors_of`** (`graph` , `unknown`) --->  `list` 
 
 #### Result: 
 returns the list of successors (i.e. targets of out edges) of the given vertex (right-hand operand) in the given graph (left-hand operand)
@@ -3542,7 +3832,8 @@ unknown var1 <- sum([{1.0,3.0},{3.0,5.0},{9.0,1.0},{7.0,8.0}]); 	// var1 equals 
 ### `sum_of`
 
 #### Possible use: 
-  * `container` **`sum_of`** `any expression` --->  `unknown` 
+  * `container` **`sum_of`** `any expression` --->  `unknown`
+  *  **`sum_of`** (`container` , `any expression`) --->  `unknown` 
 
 #### Result: 
 the sum of the right-hand expression evaluated on each of the elements of the left-hand operand  
@@ -3573,12 +3864,25 @@ unknown var1 <- [1,2] sum_of (each * 100 ); 	// var1 equals 300
   	
     	
 ----
+[//]: # (keyword|operator_svg_file)
+### `svg_file`
+
+#### Possible use: 
+  *  **`svg_file`** (`string`) --->  `file` 
+
+#### Result: 
+Constructs a file of type svg. Allowed extensions are limited to svg
+
+[Top of the page](#table-of-contents)
+  	
+    	
+----
 [//]: # (keyword|operator_tan)
 ### `tan`
 
 #### Possible use: 
-  *  **`tan`** (`float`) --->  `float`
-  *  **`tan`** (`int`) --->  `float` 
+  *  **`tan`** (`int`) --->  `float`
+  *  **`tan`** (`float`) --->  `float` 
 
 #### Result: 
 Returns the value (in [-1,1]) of the trigonometric tangent of the operand (in decimal degrees). The argument is casted to an int before being evaluated.
@@ -3646,7 +3950,8 @@ float var1 <- tanh(100); 	// var1 equals 1.0
 ### `target_of`
 
 #### Possible use: 
-  * `graph` **`target_of`** `unknown` --->  `unknown` 
+  * `graph` **`target_of`** `unknown` --->  `unknown`
+  *  **`target_of`** (`graph` , `unknown`) --->  `unknown` 
 
 #### Result: 
 returns the target of the edge (right-hand operand) contained in the graph given in left-hand operand.
@@ -3698,12 +4003,47 @@ geometry var0 <- teapot(10); 	// var0 equals a geometry as a circle of radius 10
   	
     	
 ----
+[//]: # (keyword|operator_text_file)
+### `text_file`
+
+#### Possible use: 
+  *  **`text_file`** (`string`) --->  `file` 
+
+#### Result: 
+Constructs a file of type text. Allowed extensions are limited to txt, data, text
+
+[Top of the page](#table-of-contents)
+  	
+    	
+----
+[//]: # (keyword|operator_threeds_file)
+### `threeds_file`
+
+#### Possible use: 
+  *  **`threeds_file`** (`string`) --->  `file` 
+
+#### Result: 
+Constructs a file of type threeds. Allowed extensions are limited to 3ds, max
+
+[Top of the page](#table-of-contents)
+  	
+    	
+----
+[//]: # (keyword|operator_to)
+### `to`
+Same signification as [range](OperatorsLZ#range)
+
+[Top of the page](#table-of-contents)
+  	
+    	
+----
 [//]: # (keyword|operator_to_GAMA_CRS)
 ### `to_GAMA_CRS`
 
 #### Possible use: 
   *  **`to_GAMA_CRS`** (`geometry`) --->  `geometry`
-  * `geometry` **`to_GAMA_CRS`** `string` --->  `geometry` 
+  * `geometry` **`to_GAMA_CRS`** `string` --->  `geometry`
+  *  **`to_GAMA_CRS`** (`geometry` , `string`) --->  `geometry` 
 
 #### Result: 
 /n
@@ -3762,19 +4102,18 @@ string var11 <- to_gaml(node1); 	// var11 equals  1 as node
 ----
 [//]: # (keyword|operator_to_rectangles)
 ### `to_rectangles`
-Same signification as [split_geometry](OperatorsLZ#split_geometry)
 
 #### Possible use: 
   *  **`to_rectangles`** (`geometry`, `point`, `bool`) --->  `list<geometry>`
   *  **`to_rectangles`** (`geometry`, `int`, `int`, `bool`) --->  `list<geometry>` 
 
 #### Result: 
-A list of rectangles corresponding to the given dimension that result from the decomposition of the geometry into rectangles (geometry, nb_cols, nb_rows, overlaps) by a grid composed of the given number of columns and rows, if overlaps = true, add the rectangles that overlap the border of the geometry/nA list of rectangles of the size corresponding to the given dimension that result from the decomposition of the geometry into rectangles (geometry, dimension, overlaps), if overlaps = true, add the rectangles that overlap the border of the geometry
+A list of rectangles of the size corresponding to the given dimension that result from the decomposition of the geometry into rectangles (geometry, dimension, overlaps), if overlaps = true, add the rectangles that overlap the border of the geometry/nA list of rectangles corresponding to the given dimension that result from the decomposition of the geometry into rectangles (geometry, nb_cols, nb_rows, overlaps) by a grid composed of the given number of columns and rows, if overlaps = true, add the rectangles that overlap the border of the geometry
 
 #### Examples: 
 ```
-list<geometry> var0 <- to_rectangles(self, 5, 20, true); 	// var0 equals the list of rectangles corresponding to the discretization by a grid of 5 columns and 20 rows into rectangles of the geometry of the agent applying the operator. The rectangles overlapping the border of the geometry are kept
-list<geometry> var1 <- to_rectangles(self, {10.0, 15.0}, true); 	// var1 equals the list of rectangles of size {10.0, 15.0} corresponding to the discretization into rectangles of the geometry of the agent applying the operator. The rectangles overlapping the border of the geometry are kept
+list<geometry> var0 <- to_rectangles(self, {10.0, 15.0}, true); 	// var0 equals the list of rectangles of size {10.0, 15.0} corresponding to the discretization into rectangles of the geometry of the agent applying the operator. The rectangles overlapping the border of the geometry are kept
+list<geometry> var1 <- to_rectangles(self, 5, 20, true); 	// var1 equals the list of rectangles corresponding to the discretization by a grid of 5 columns and 20 rows into rectangles of the geometry of the agent applying the operator. The rectangles overlapping the border of the geometry are kept
 ```
   
 
@@ -3784,20 +4123,21 @@ list<geometry> var1 <- to_rectangles(self, {10.0, 15.0}, true); 	// var1 equals 
 ----
 [//]: # (keyword|operator_to_squares)
 ### `to_squares`
+Same signification as [split_geometry](OperatorsLZ#split_geometry)
 
 #### Possible use: 
-  *  **`to_squares`** (`geometry`, `int`, `bool`) --->  `list<geometry>`
   *  **`to_squares`** (`geometry`, `float`, `bool`) --->  `list<geometry>`
+  *  **`to_squares`** (`geometry`, `int`, `bool`) --->  `list<geometry>`
   *  **`to_squares`** (`geometry`, `int`, `bool`, `float`) --->  `list<geometry>` 
 
 #### Result: 
-A list of a given number of squares from the decomposition of the geometry into squares (geometry, nb_square, overlaps), if overlaps = true, add the squares that overlap the border of the geometry/nA list of a given number of squares from the decomposition of the geometry into squares (geometry, nb_square, overlaps, precision_coefficient), if overlaps = true, add the squares that overlap the border of the geometry, coefficient_precision should be close to 1.0/nA list of squares of the size corresponding to the given size that result from the decomposition of the geometry into squares (geometry, size, overlaps), if overlaps = true, add the squares that overlap the border of the geometry
+A list of a given number of squares from the decomposition of the geometry into squares (geometry, nb_square, overlaps, precision_coefficient), if overlaps = true, add the squares that overlap the border of the geometry, coefficient_precision should be close to 1.0/nA list of squares of the size corresponding to the given size that result from the decomposition of the geometry into squares (geometry, size, overlaps), if overlaps = true, add the squares that overlap the border of the geometry/nA list of a given number of squares from the decomposition of the geometry into squares (geometry, nb_square, overlaps), if overlaps = true, add the squares that overlap the border of the geometry
 
 #### Examples: 
 ```
-list<geometry> var0 <- to_squares(self, 10, true); 	// var0 equals the list of 10 squares corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept
-list<geometry> var1 <- to_squares(self, 10, true, 0.99); 	// var1 equals the list of 10 squares corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept
-list<geometry> var2 <- to_squares(self, 10.0, true); 	// var2 equals the list of squares of side size 10.0 corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept
+list<geometry> var0 <- to_squares(self, 10, true, 0.99); 	// var0 equals the list of 10 squares corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept
+list<geometry> var1 <- to_squares(self, 10.0, true); 	// var1 equals the list of squares of side size 10.0 corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept
+list<geometry> var2 <- to_squares(self, 10, true); 	// var2 equals the list of 10 squares corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept
 ```
   
 
@@ -3857,7 +4197,8 @@ topology(a_graph)	--: Multiple topology in POLYGON ((24.712119771887785 7.867357
 ### `touches`
 
 #### Possible use: 
-  * `geometry` **`touches`** `geometry` --->  `bool` 
+  * `geometry` **`touches`** `geometry` --->  `bool`
+  *  **`touches`** (`geometry` , `geometry`) --->  `bool` 
 
 #### Result: 
 A boolean, equal to true if the left-geometry (or agent/point) touches the right-geometry (or agent/point).  
@@ -3895,7 +4236,8 @@ bool var10 <- polygon([{10,10},{10,20},{20,20},{20,10}]) touches {10,15}; 	// va
 ### `towards`
 
 #### Possible use: 
-  * `geometry` **`towards`** `geometry` --->  `int` 
+  * `geometry` **`towards`** `geometry` --->  `int`
+  *  **`towards`** (`geometry` , `geometry`) --->  `int` 
 
 #### Result: 
 The direction (in degree) between the two geometries (geometries, agents, points) considering the topology of the agent applying the operator.
@@ -3936,7 +4278,8 @@ float var0 <- trace(matrix([[1,2],[3,4]])); 	// var0 equals 5
 ### `transformed_by`
 
 #### Possible use: 
-  * `geometry` **`transformed_by`** `point` --->  `geometry` 
+  * `geometry` **`transformed_by`** `point` --->  `geometry`
+  *  **`transformed_by`** (`geometry` , `point`) --->  `geometry` 
 
 #### Result: 
 A geometry resulting from the application of a rotation and a scaling (right-operand : point {angle(degree), scale factor} of the left-hand operand (geometry, agent, point)
@@ -3958,7 +4301,8 @@ geometry var0 <- self transformed_by {45, 0.5}; 	// var0 equals the geometry res
 ### `translated_by`
 
 #### Possible use: 
-  * `geometry` **`translated_by`** `point` --->  `geometry` 
+  * `geometry` **`translated_by`** `point` --->  `geometry`
+  *  **`translated_by`** (`geometry` , `point`) --->  `geometry` 
 
 #### Result: 
 A geometry resulting from the application of a translation by the right-hand operand distance to the left-hand operand (geometry, agent, point)
@@ -4035,8 +4379,8 @@ geometry var0 <- triangle(5); 	// var0 equals a geometry as a triangle with side
 ### `triangulate`
 
 #### Possible use: 
-  *  **`triangulate`** (`list<geometry>`) --->  `list<geometry>`
-  *  **`triangulate`** (`geometry`) --->  `list<geometry>` 
+  *  **`triangulate`** (`geometry`) --->  `list<geometry>`
+  *  **`triangulate`** (`list<geometry>`) --->  `list<geometry>` 
 
 #### Result: 
 A list of geometries (triangles) corresponding to the Delaunay triangulation of the operand geometry (geometry, agent, point)
@@ -4106,21 +4450,22 @@ Same signification as [+](OperatorsAK#+)
 
 #### Possible use: 
   *  **`union`** (`container<geometry>`) --->  `geometry`
-  * `container` **`union`** `container` --->  `list` 
+  * `container` **`union`** `container` --->  `list`
+  *  **`union`** (`container` , `container`) --->  `list` 
 
 #### Result: 
-returns a new list containing all the elements of both containers without duplicated elements./n
+/nreturns a new list containing all the elements of both containers without duplicated elements.
 
 #### Special cases:     
-  * if the left or right operand is nil, union throws an error    
-  * if the right-operand is a container of points, geometries or agents, returns the geometry resulting from the union all the geometries
+  * if the right-operand is a container of points, geometries or agents, returns the geometry resulting from the union all the geometries    
+  * if the left or right operand is nil, union throws an error
 
 #### Examples: 
 ```
-list var0 <- [1,2,3,4,5,6] union [2,4,9]; 	// var0 equals [1,2,3,4,5,6,9]
-list var1 <- [1,2,3,4,5,6] union [0,8]; 	// var1 equals [1,2,3,4,5,6,0,8]
-list var2 <- [1,3,2,4,5,6,8,5,6] union [0,8]; 	// var2 equals [1,3,2,4,5,6,8,0]
-geometry var3 <- union([geom1, geom2, geom3]); 	// var3 equals a geometry corresponding to union between geom1, geom2 and geom3
+geometry var0 <- union([geom1, geom2, geom3]); 	// var0 equals a geometry corresponding to union between geom1, geom2 and geom3
+list var1 <- [1,2,3,4,5,6] union [2,4,9]; 	// var1 equals [1,2,3,4,5,6,9]
+list var2 <- [1,2,3,4,5,6] union [0,8]; 	// var2 equals [1,2,3,4,5,6,0,8]
+list var3 <- [1,3,2,4,5,6,8,5,6] union [0,8]; 	// var3 equals [1,3,2,4,5,6,8,0]
 ```
       
 
@@ -4158,7 +4503,8 @@ Casts the operand into the type unknown
 ### `use_cache`
 
 #### Possible use: 
-  * `graph` **`use_cache`** `bool` --->  `graph` 
+  * `graph` **`use_cache`** `bool` --->  `graph`
+  *  **`use_cache`** (`graph` , `bool`) --->  `graph` 
 
 #### Result: 
 if the second operand is true, the operand graph will store in a cache all the previously computed shortest path (the cache be cleared if the graph is modified).  
@@ -4178,7 +4524,8 @@ the operator alters the operand graph, it does not create a new one.
 
 #### Possible use: 
   *  **`user_input`** (`any expression`) --->  `map<string,unknown>`
-  * `string` **`user_input`** `any expression` --->  `map<string,unknown>` 
+  * `string` **`user_input`** `any expression` --->  `map<string,unknown>`
+  *  **`user_input`** (`string` , `any expression`) --->  `map<string,unknown>` 
 
 #### Result: 
 asks the user for some values (not defined as parameters). Takes a string (optional) and a map as arguments. The string is used to specify the message of the dialog box. The map is to specify the parameters you want the user to change before the simulation starts, with the name of the parameter in string key, and the default value as value.  
@@ -4203,7 +4550,8 @@ create bug number: int(values2 at "Number") with: [location:: (point(values2 at 
 ### `using`
 
 #### Possible use: 
-  * `any expression` **`using`** `topology` --->  `unknown` 
+  * `any expression` **`using`** `topology` --->  `unknown`
+  *  **`using`** (`any expression` , `topology`) --->  `unknown` 
 
 #### Result: 
 Allows to specify in which topology a spatial computation should take place.
@@ -4250,7 +4598,8 @@ float var0 <- variance ([4.5, 3.5, 5.5, 7.0]); 	// var0 equals 1.671875
 ### `variance_of`
 
 #### Possible use: 
-  * `container` **`variance_of`** `any expression` --->  `unknown` 
+  * `container` **`variance_of`** `any expression` --->  `unknown`
+  *  **`variance_of`** (`container` , `any expression`) --->  `unknown` 
 
 #### Result: 
 the variance of the right-hand expression evaluated on each of the elements of the left-hand operand  
@@ -4270,15 +4619,16 @@ in the right-hand operand, the keyword each can be used to represent, in turn, e
 
 #### Possible use: 
   *  **`voronoi`** (`list<point>`) --->  `list<geometry>`
-  * `list<point>` **`voronoi`** `geometry` --->  `list<geometry>` 
+  * `list<point>` **`voronoi`** `geometry` --->  `list<geometry>`
+  *  **`voronoi`** (`list<point>` , `geometry`) --->  `list<geometry>` 
 
 #### Result: 
-A list of geometries corresponding to the Voronoi diagram built from the list of points/nA list of geometries corresponding to the Voronoi diagram built from the list of points according to the given clip
+A list of geometries corresponding to the Voronoi diagram built from the list of points according to the given clip/nA list of geometries corresponding to the Voronoi diagram built from the list of points
 
 #### Examples: 
 ```
-list<geometry> var0 <- voronoi([{10,10},{50,50},{90,90},{10,90},{90,10}]); 	// var0 equals the list of geometries corresponding to the Voronoi Diagram built from the list of points.
-list<geometry> var1 <- voronoi([{10,10},{50,50},{90,90},{10,90},{90,10}], square(300)); 	// var1 equals the list of geometries corresponding to the Voronoi Diagram built from the list of points with a square of 300m side size as clip.
+list<geometry> var0 <- voronoi([{10,10},{50,50},{90,90},{10,90},{90,10}], square(300)); 	// var0 equals the list of geometries corresponding to the Voronoi Diagram built from the list of points with a square of 300m side size as clip.
+list<geometry> var1 <- voronoi([{10,10},{50,50},{90,90},{10,90},{90,10}]); 	// var1 equals the list of geometries corresponding to the Voronoi Diagram built from the list of points.
 ```
   
 
@@ -4290,7 +4640,8 @@ list<geometry> var1 <- voronoi([{10,10},{50,50},{90,90},{10,90},{90,10}], square
 ### `weight_of`
 
 #### Possible use: 
-  * `graph` **`weight_of`** `unknown` --->  `float` 
+  * `graph` **`weight_of`** `unknown` --->  `float`
+  *  **`weight_of`** (`graph` , `unknown`) --->  `float` 
 
 #### Result: 
 returns the weight of the given edge (right-hand operand) contained in the graph given in right-hand operand.  
@@ -4314,11 +4665,38 @@ float var1 <- graphFromMap weight_of(link({1,5}::{12,45})); 	// var1 equals 1.0
   	
     	
 ----
+[//]: # (keyword|operator_weighted_means_DM)
+### `weighted_means_DM`
+
+#### Possible use: 
+  * `list<list>` **`weighted_means_DM`** `java.util.List<java.util.Map<java.lang.String,java.lang.Object>>` --->  `int`
+  *  **`weighted_means_DM`** (`list<list>` , `java.util.List<java.util.Map<java.lang.String,java.lang.Object>>`) --->  `int` 
+
+#### Result: 
+The index of the candidate that maximizes the weighted mean of its criterion values. The first operand is the list of candidates (a candidate is a list of criterion values); the second operand the list of criterion (list of map)
+
+#### Special cases:     
+  * returns -1 is the list of candidates is nil or empty
+
+#### Examples: 
+```
+int var0 <- weighted_means_DM([[1.0, 7.0],[4.0,2.0],[3.0, 3.0]], [["name"::"utility", "weight" :: 2.0],["name"::"price", "weight" :: 1.0]]); 	// var0 equals 1
+```
+      
+
+#### See also: 
+[promethee_DM](OperatorsLZ#promethee_dm), [electre_DM](OperatorsAK#electre_dm), [evidence_theory_DM](OperatorsAK#evidence_theory_dm), 
+
+[Top of the page](#table-of-contents)
+  	
+    	
+----
 [//]: # (keyword|operator_where)
 ### `where`
 
 #### Possible use: 
-  * `container` **`where`** `any expression` --->  `list` 
+  * `container` **`where`** `any expression` --->  `list`
+  *  **`where`** (`container` , `any expression`) --->  `list` 
 
 #### Result: 
 a list containing all the elements of the left-hand operand that make the right-hand operand evaluate to true.  
@@ -4356,7 +4734,8 @@ list var3 <- (list(node) where (round(node(each).location.x) > 32); 	// var3 equ
 ### `with_lifetime`
 
 #### Possible use: 
-  * `predicate` **`with_lifetime`** `int` --->  `predicate` 
+  * `predicate` **`with_lifetime`** `int` --->  `predicate`
+  *  **`with_lifetime`** (`predicate` , `int`) --->  `predicate` 
 
 #### Result: 
 change the parameters of the given predicate
@@ -4375,7 +4754,8 @@ predicate with_lifetime 10
 ### `with_max_of`
 
 #### Possible use: 
-  * `container` **`with_max_of`** `any expression` --->  `unknown` 
+  * `container` **`with_max_of`** `any expression` --->  `unknown`
+  *  **`with_max_of`** (`container` , `any expression`) --->  `unknown` 
 
 #### Result: 
 one of elements of the left-hand operand that maximizes the value of the right-hand operand  
@@ -4406,7 +4786,8 @@ unknown var4 <- [1::2, 3::4, 5::6] with_max_of (each); 	// var4 equals 6
 ### `with_min_of`
 
 #### Possible use: 
-  * `container` **`with_min_of`** `any expression` --->  `unknown` 
+  * `container` **`with_min_of`** `any expression` --->  `unknown`
+  *  **`with_min_of`** (`container` , `any expression`) --->  `unknown` 
 
 #### Result: 
 one of elements of the left-hand operand that minimizes the value of the right-hand operand  
@@ -4437,7 +4818,8 @@ unknown var4 <- [1::2, 3::4, 5::6] with_min_of (each); 	// var4 equals 2
 ### `with_optimizer_type`
 
 #### Possible use: 
-  * `graph` **`with_optimizer_type`** `string` --->  `graph` 
+  * `graph` **`with_optimizer_type`** `string` --->  `graph`
+  *  **`with_optimizer_type`** (`graph` , `string`) --->  `graph` 
 
 #### Result: 
 changes the shortest path computation method of the given graph  
@@ -4463,7 +4845,9 @@ graphEpidemio <- graphEpidemio with_optimizer_type "static";
 
 #### Possible use: 
   * `float` **`with_precision`** `int` --->  `float`
-  * `point` **`with_precision`** `int` --->  `point` 
+  *  **`with_precision`** (`float` , `int`) --->  `float`
+  * `point` **`with_precision`** `int` --->  `point`
+  *  **`with_precision`** (`point` , `int`) --->  `point` 
 
 #### Result: 
 Rounds off the value of left-hand operand to the precision given by the value of right-hand operand/nRounds off the ordinates of the left-hand point to the precision given by the value of right-hand operand
@@ -4487,7 +4871,8 @@ point var2 <- {12345.78943, 12345.78943, 12345.78943} with_precision 2 ; 	// var
 ### `with_priority`
 
 #### Possible use: 
-  * `predicate` **`with_priority`** `float` --->  `predicate` 
+  * `predicate` **`with_priority`** `float` --->  `predicate`
+  *  **`with_priority`** (`predicate` , `float`) --->  `predicate` 
 
 #### Result: 
 change the priority of the given predicate
@@ -4506,7 +4891,8 @@ predicate with_priority 2
 ### `with_values`
 
 #### Possible use: 
-  * `predicate` **`with_values`** `map` --->  `predicate` 
+  * `predicate` **`with_values`** `map` --->  `predicate`
+  *  **`with_values`** (`predicate` , `map`) --->  `predicate` 
 
 #### Result: 
 change the parameters of the given predicate
@@ -4526,7 +4912,9 @@ predicate with_values ["time"::10]
 
 #### Possible use: 
   * `graph` **`with_weights`** `map` --->  `graph`
-  * `graph` **`with_weights`** `list` --->  `graph` 
+  *  **`with_weights`** (`graph` , `map`) --->  `graph`
+  * `graph` **`with_weights`** `list` --->  `graph`
+  *  **`with_weights`** (`graph` , `list`) --->  `graph` 
 
 #### Result: 
 returns the graph (left-hand operand) with weight given in the map (right-hand operand).  
@@ -4572,7 +4960,8 @@ geometry var0 <- solid(self); 	// var0 equals the geometry corresponding to the 
 ### `writable`
 
 #### Possible use: 
-  * `file` **`writable`** `bool` --->  `file` 
+  * `file` **`writable`** `bool` --->  `file`
+  *  **`writable`** (`file` , `bool`) --->  `file` 
 
 #### Result: 
 Marks the file as read-only or not, depending on the second boolean argument, and returns the first argument  
@@ -4588,6 +4977,19 @@ file var0 <- shape_file("../images/point_eau.shp") writable false; 	// var0 equa
 
 #### See also: 
 [file](OperatorsAK#file), 
+
+[Top of the page](#table-of-contents)
+  	
+    	
+----
+[//]: # (keyword|operator_xml_file)
+### `xml_file`
+
+#### Possible use: 
+  *  **`xml_file`** (`string`) --->  `file` 
+
+#### Result: 
+Constructs a file of type xml. Allowed extensions are limited to xml
 
 [Top of the page](#table-of-contents)
   	

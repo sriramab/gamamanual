@@ -15,7 +15,7 @@
 
 ## Table of Contents
 <wiki:toc max_depth="3" />
-	[fsm](#fsm), [reflex](#reflex), [simple_bdi](#simple_bdi), [user_first](#user_first), [user_last](#user_last), [user_only](#user_only), 
+	[fsm](#fsm), [probabilistic_tasks](#probabilistic_tasks), [reflex](#reflex), [simple_bdi](#simple_bdi), [sorted_tasks](#sorted_tasks), [user_first](#user_first), [user_last](#user_last), [user_only](#user_only), [weighted_tasks](#weighted_tasks), 
 
 ----
 [//]: # (keyword|architecture_fsm)
@@ -24,6 +24,18 @@
 	   
 * **`state`** (string): Returns the current state in which the agent is   
 * **`states`** (list): Returns the list of all possible states the agents can be in 
+ 	
+### Actions 
+		
+
+[Top of the page](#table-of-contents) 
+	
+
+----
+[//]: # (keyword|architecture_probabilistic_tasks)
+## probabilistic_tasks 
+### Variables
+	 
  	
 ### Actions 
 		
@@ -49,6 +61,7 @@
 ### Variables
 	   
 * **`belief_base`** (list):    
+* **`charisma`** (float):    
 * **`current_plan`** (any type):    
 * **`desire_base`** (list):    
 * **`emotion_base`** (list):    
@@ -57,6 +70,7 @@
 * **`plan_base`** (list):    
 * **`plan_persistence`** (float): plan persistence   
 * **`probabilistic_choice`** (boolean):    
+* **`receptivity`** (float):    
 * **`thinking`** (list):    
 * **`uncertainty_base`** (list):    
 * **`use_emotions_architecture`** (boolean):  
@@ -258,6 +272,18 @@ replace the old predicate by the new one.
 	
 
 ----
+[//]: # (keyword|architecture_sorted_tasks)
+## sorted_tasks 
+### Variables
+	 
+ 	
+### Actions 
+		
+
+[Top of the page](#table-of-contents) 
+	
+
+----
 [//]: # (keyword|architecture_user_first)
 ## user_first 
 ### Variables
@@ -284,6 +310,18 @@ replace the old predicate by the new one.
 ----
 [//]: # (keyword|architecture_user_only)
 ## user_only 
+### Variables
+	 
+ 	
+### Actions 
+		
+
+[Top of the page](#table-of-contents) 
+	
+
+----
+[//]: # (keyword|architecture_weighted_tasks)
+## weighted_tasks 
 ### Variables
 	 
  	

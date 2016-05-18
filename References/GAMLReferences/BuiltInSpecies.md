@@ -26,7 +26,7 @@ create cluster_builder returns: clusterer;
 
 ## Table of Contents
 <wiki:toc max_depth="3" />
-[agent](#agent), [AgentDB](#agentdb), [experiment](#experiment), [graph_edge](#graph_edge), [graph_node](#graph_node), [model](#model), [physical_world](#physical_world), 
+[agent](#agent), [AgentDB](#agentdb), [base_edge](#base_edge), [experiment](#experiment), [graph_edge](#graph_edge), [graph_node](#graph_node), [model](#model), [physical_world](#physical_world), 
     	
 ----
 [//]: # (keyword|species_agent)
@@ -114,6 +114,16 @@ create cluster_builder returns: clusterer;
 
 * returns: `float`
 			
+
+[Top of the page](#table-of-contents) 
+	
+    	
+----
+[//]: # (keyword|species_base_edge)
+## `base_edge`	
+
+### Actions
+				
 
 [Top of the page](#table-of-contents) 
 	

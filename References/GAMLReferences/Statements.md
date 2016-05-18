@@ -8,7 +8,7 @@
 
 ## Table of Contents
 <wiki:toc max_depth="2" />
-[=](#=), [action](#action), [add](#add), [agents](#agents), [annealing](#annealing), [ask](#ask), [aspect](#aspect), [assert](#assert), [break](#break), [camera](#camera), [capture](#capture), [chart](#chart), [conscious_contagion](#conscious_contagion), [create](#create), [data](#data), [datalist](#datalist), [default](#default), [diffuse](#diffuse), [display](#display), [display_grid](#display_grid), [display_population](#display_population), [do](#do), [draw](#draw), [else](#else), [equation](#equation), [error](#error), [event](#event), [exhaustive](#exhaustive), [experiment](#experiment), [export](#export), [focus](#focus), [genetic](#genetic), [graphics](#graphics), [hill_climbing](#hill_climbing), [if](#if), [image](#image), [inspect](#inspect), [let](#let), [loop](#loop), [match](#match), [migrate](#migrate), [monitor](#monitor), [output](#output), [output_file](#output_file), [overlay](#overlay), [parameter](#parameter), [perceive](#perceive), [permanent](#permanent), [plan](#plan), [put](#put), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [release](#release), [remove](#remove), [return](#return), [rule](#rule), [run](#run), [save](#save), [save_batch](#save_batch), [set](#set), [setup](#setup), [simulate](#simulate), [solve](#solve), [species](#species), [state](#state), [status](#status), [switch](#switch), [tabu](#tabu), [task](#task), [test](#test), [trace](#trace), [transition](#transition), [unconscious_contagion](#unconscious_contagion), [user_command](#user_command), [user_init](#user_init), [user_input](#user_input), [user_panel](#user_panel), [using](#using), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), [warn](#warn), [write](#write), 
+[=](#=), [action](#action), [add](#add), [agents](#agents), [annealing](#annealing), [ask](#ask), [aspect](#aspect), [assert](#assert), [break](#break), [camera](#camera), [capture](#capture), [chart](#chart), [conscious_contagion](#conscious_contagion), [create](#create), [data](#data), [datalist](#datalist), [default](#default), [diffuse](#diffuse), [display](#display), [display_grid](#display_grid), [display_population](#display_population), [do](#do), [draw](#draw), [else](#else), [emotional_contagion](#emotional_contagion), [enter](#enter), [equation](#equation), [error](#error), [event](#event), [exhaustive](#exhaustive), [exit](#exit), [experiment](#experiment), [export](#export), [focus](#focus), [genetic](#genetic), [graphics](#graphics), [hill_climbing](#hill_climbing), [if](#if), [image](#image), [inspect](#inspect), [let](#let), [light](#light), [loop](#loop), [match](#match), [migrate](#migrate), [monitor](#monitor), [output](#output), [output_file](#output_file), [overlay](#overlay), [parameter](#parameter), [perceive](#perceive), [permanent](#permanent), [plan](#plan), [put](#put), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [release](#release), [remove](#remove), [return](#return), [rule](#rule), [run](#run), [save](#save), [save_batch](#save_batch), [set](#set), [setup](#setup), [simulate](#simulate), [solve](#solve), [species](#species), [state](#state), [status](#status), [switch](#switch), [tabu](#tabu), [task](#task), [test](#test), [trace](#trace), [transition](#transition), [unconscious_contagion](#unconscious_contagion), [user_command](#user_command), [user_init](#user_init), [user_input](#user_input), [user_panel](#user_panel), [using](#using), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), [warn](#warn), [write](#write), 
 
 
 ## Statements by kinds
@@ -20,15 +20,15 @@
   * **Experiment**
     * [experiment](#experiment),  
   * **Layer**
-    * [agents](#agents),  [camera](#camera),  [chart](#chart),  [display_grid](#display_grid),  [display_population](#display_population),  [event](#event),  [graphics](#graphics),  [image](#image),  [overlay](#overlay),  
+    * [agents](#agents),  [camera](#camera),  [chart](#chart),  [display_grid](#display_grid),  [display_population](#display_population),  [event](#event),  [graphics](#graphics),  [image](#image),  [light](#light),  [overlay](#overlay),  
   * **Output**
     * [display](#display),  [inspect](#inspect),  [monitor](#monitor),  [output](#output),  [output_file](#output_file),  [permanent](#permanent),  
   * **Parameter**
     * [parameter](#parameter),  
   * **Sequence of statements or action**
-    * [action](#action),  [ask](#ask),  [capture](#capture),  [create](#create),  [default](#default),  [else](#else),  [equation](#equation),  [if](#if),  [loop](#loop),  [match](#match),  [migrate](#migrate),  [perceive](#perceive),  [release](#release),  [run](#run),  [setup](#setup),  [switch](#switch),  [trace](#trace),  [transition](#transition),  [user_command](#user_command),  [using](#using),  
+    * [action](#action),  [ask](#ask),  [capture](#capture),  [create](#create),  [default](#default),  [else](#else),  [enter](#enter),  [equation](#equation),  [exit](#exit),  [if](#if),  [loop](#loop),  [match](#match),  [migrate](#migrate),  [perceive](#perceive),  [release](#release),  [run](#run),  [setup](#setup),  [switch](#switch),  [trace](#trace),  [transition](#transition),  [user_command](#user_command),  [using](#using),  
   * **Single statement**
-    * [=](#=),  [add](#add),  [assert](#assert),  [break](#break),  [conscious_contagion](#conscious_contagion),  [data](#data),  [datalist](#datalist),  [diffuse](#diffuse),  [do](#do),  [draw](#draw),  [error](#error),  [export](#export),  [focus](#focus),  [let](#let),  [put](#put),  [remove](#remove),  [return](#return),  [rule](#rule),  [save](#save),  [set](#set),  [simulate](#simulate),  [solve](#solve),  [status](#status),  [unconscious_contagion](#unconscious_contagion),  [user_input](#user_input),  [warn](#warn),  [write](#write),  
+    * [=](#=),  [add](#add),  [assert](#assert),  [break](#break),  [conscious_contagion](#conscious_contagion),  [data](#data),  [datalist](#datalist),  [diffuse](#diffuse),  [do](#do),  [draw](#draw),  [emotional_contagion](#emotional_contagion),  [error](#error),  [export](#export),  [focus](#focus),  [let](#let),  [put](#put),  [remove](#remove),  [return](#return),  [rule](#rule),  [save](#save),  [set](#set),  [simulate](#simulate),  [solve](#solve),  [status](#status),  [unconscious_contagion](#unconscious_contagion),  [user_input](#user_input),  [warn](#warn),  [write](#write),  
   * **Species**
     * [species](#species),  
   * **Variable (container)**
@@ -42,7 +42,7 @@
 ## Statements by embedment
 
   * **Behavior**
-    * [add](#add), [ask](#ask), [capture](#capture), [conscious_contagion](#conscious_contagion), [create](#create), [diffuse](#diffuse), [do](#do), [error](#error), [focus](#focus), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [run](#run), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [unconscious_contagion](#unconscious_contagion), [using](#using), [warn](#warn), [write](#write), 
+    * [add](#add), [ask](#ask), [capture](#capture), [conscious_contagion](#conscious_contagion), [create](#create), [diffuse](#diffuse), [do](#do), [emotional_contagion](#emotional_contagion), [error](#error), [focus](#focus), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [run](#run), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [unconscious_contagion](#unconscious_contagion), [using](#using), [warn](#warn), [write](#write), 
   * **Environment**
     * [species](#species), 
   * **Experiment**
@@ -52,7 +52,7 @@
   * **Model**
     * [action](#action), [aspect](#aspect), [equation](#equation), [experiment](#experiment), [output](#output), [reflex](#reflex), [run](#run), [setup](#setup), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
   * **Sequence of statements or action**
-    * [add](#add), [ask](#ask), [break](#break), [capture](#capture), [conscious_contagion](#conscious_contagion), [create](#create), [data](#data), [datalist](#datalist), [diffuse](#diffuse), [do](#do), [draw](#draw), [error](#error), [focus](#focus), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [unconscious_contagion](#unconscious_contagion), [using](#using), [warn](#warn), [write](#write), 
+    * [add](#add), [ask](#ask), [break](#break), [capture](#capture), [conscious_contagion](#conscious_contagion), [create](#create), [data](#data), [datalist](#datalist), [diffuse](#diffuse), [do](#do), [draw](#draw), [emotional_contagion](#emotional_contagion), [error](#error), [focus](#focus), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [unconscious_contagion](#unconscious_contagion), [using](#using), [warn](#warn), [write](#write), 
   * **Single statement**
     * [run](#run), 
   * **Species**
@@ -64,7 +64,7 @@
   * **chart**
     * [add](#add), [ask](#ask), [data](#data), [datalist](#datalist), [do](#do), [put](#put), [remove](#remove), [set](#set), [simulate](#simulate), [using](#using), 
   * **display**
-    * [agents](#agents), [camera](#camera), [chart](#chart), [display_grid](#display_grid), [display_population](#display_population), [event](#event), [graphics](#graphics), [image](#image), [overlay](#overlay), 
+    * [agents](#agents), [camera](#camera), [chart](#chart), [display_grid](#display_grid), [display_population](#display_population), [event](#event), [graphics](#graphics), [image](#image), [light](#light), [overlay](#overlay), 
   * **display_population**
     * [display_population](#display_population), 
   * **equation**
@@ -81,6 +81,8 @@
     * [task](#task), 
   * **sorted_tasks**
     * [task](#task), 
+  * **state**
+    * [enter](#enter), [exit](#exit), 
   * **switch**
     * [default](#default), [match](#match), 
   * **test**
@@ -480,7 +482,7 @@ ask ${receiver_agents} of_species ${species_name} {
 species animal {
     float energy <- rnd (1000) min: 0.0 {
     reflex when: energy > 500 { // executed when the energy is above the given threshold
-         list<animal> others <- (animal at_distance 5); // find all the neighbouring animals in a radius of 5 meters
+         list<animal> others <- (animal at_distance 5); // find all the neighboring animals in a radius of 5 meters
          float shared_energy  <- (energy - 500) / length (others); // compute the amount of energy to share with each of them
          ask others { // no need to cast, since others has already been filtered to only include animals
               if (energy < 500) { // refers to the energy of each animal in others
@@ -699,33 +701,37 @@ capture target: list (B) as: C;
 [//]: # (keyword|statement_chart)
 ### chart 
 #### Facets 
-
-  * `name` (a label), (omissible) : the human readable title of the chart layer
+  
+  * **`name`** (a label), (omissible) : the identifier of the chart layer
   * `axes` (rgb): the axis color
   * `background` (rgb): the background color
-  * `color` (rgb): 
-  * `gap` (float): 
-  * `label_font` (string): 
-  * `label_font_size` (int): 
+  * `color` (rgb): Text color
+  * `gap` (float): minimum gap between bars (in proportion)
+  * `label_font` (string): Label font face
+  * `label_font_size` (int): Label font size
   * `label_font_style` (an identifier), takes values in: {plain, bold, italic}: the style used to display labels
-  * `legend_font` (string): 
-  * `legend_font_size` (int): 
+  * `legend_font` (string): Legend font face
+  * `legend_font_size` (int): Legend font size
   * `legend_font_style` (an identifier), takes values in: {plain, bold, italic}: the style used to display legend
   * `position` (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
-  * `size` (point): extent of the layer in the screen from its position. Coordinates in [0,1[ are treated as percentages of the total surface, while coordinates > 1 are treated as absolute sizes in model units (i.e. considering the model occupies the entire view). Like in 'position', an elevation can be provided with the z coordinate, allowing to scale the layer in the 3 directions
-  * `style` (an identifier), takes values in: {exploded, 3d, stack, bar}: 
-  * `tick_font` (string): 
-  * `tick_font_size` (int): 
+  * `series_label_position` (an identifier), takes values in: {default, none, legend, onchart, yaxis, xaxis}: Position of the Series names: default (best guess), none, legend, onchart, xaxis (for category plots) or yaxis (uses the first serie name).
+  * `size` (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
+  * `style` (an identifier), takes values in: {line, whisker, area, bar, dot, step, spline, stack, 3d, ring, exploded, default}: The sub-style style, also default style for the series.
+  * `tick_font` (string): Tick font face
+  * `tick_font_size` (int): Tick font size
   * `tick_font_style` (an identifier), takes values in: {plain, bold, italic}: the style used to display ticks
-  * `timexseries` (list): for series charts, change the default time serie (simulation cycle) for an other value.
-  * `title_font` (string): 
-  * `title_font_size` (int): 
+  * `title_font` (string): Title font face
+  * `title_font_size` (int): Title font size
   * `title_font_style` (an identifier), takes values in: {plain, bold, italic}: the style used to display titles
-  * `transparency` (float): the transparency of the chart
-  * `type` (an identifier), takes values in: {xy, scatter, histogram, series, pie, box_whisker}: the type of chart. It could be histogram, series, xy, pie or box whisker. The difference between series and xy is that the former adds an implicit x-axis that refers to the numbers of cycles, while the latter considers the first declaration of data to be its x-axis.
-  * `x_range` (any type in [float, int, point]): range of the x-axis. Can be a number (which will set the axis total range) or a point (which will set the min and max of the axis).
+  * `type` (an identifier), takes values in: {xy, scatter, histogram, series, pie, radar, box_whisker}: the type of chart. It could be histogram, series, xy, pie or box whisker. The difference between series and xy is that the former adds an implicit x-axis that refers to the numbers of cycles, while the latter considers the first declaration of data to be its x-axis.
+  * `x_label` (a label): the title for the X axis
+  * `x_range` (any type in [float, int, point, list]): range of the x-axis. Can be a number (which will set the axis total range) or a point (which will set the min and max of the axis).
+  * `x_serie` (any type in [list, float, int]): for series charts, change the default common x serie (simulation cycle) for an other value (list or numerical).
+  * `x_serie_labels` (any type in [list, float, int, a label]): change the default common x series labels (replace x value or categories) for an other value (string or numerical).
   * `x_tick_unit` (float): the tick unit for the y-axis (distance between horyzontal lines and values on the left of the axis).
-  * `y_range` (any type in [float, int, point]): range of the y-axis. Can be a number (which will set the axis total range) or a point (which will set the min and max of the axis).
+  * `y_label` (a label): the title for the Y axis
+  * `y_range` (any type in [float, int, point, list]): range of the y-axis. Can be a number (which will set the axis total range) or a point (which will set the min and max of the axis).
+  * `y_serie_labels` (any type in [list, float, int, a label]): for heatmaps/3d charts, change the default y serie for an other value (string or numerical in a list or cumulative).
   * `y_tick_unit` (float): the tick unit for the x-axis (distance between vertical lines and values bellow the axis). 
  	
 #### Definition
@@ -745,7 +751,7 @@ display chart_display {
 ```
 
     
-* See also: [display](#display), [agents](#agents), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [display_population](#display_population), 
+* See also: [display](#display), [agents](#agents), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
 
 #### Embedments
 * The `chart` statement is of type: **Layer**
@@ -771,13 +777,14 @@ display chart_display {
  	
 #### Definition
 
-enables to directly add a belief from the variable of a perceived specie.
+enables to directly add an emotion of a perceived specie if the perceived agent ges a patricular emotion.
 
 #### Usages
 
 * Other examples of use: 
 ```
-focus var:speed /*where speed is a variable from a species that is being perceived*/ agent: myself
+conscious_contagion emotion_detected:fear emotion_created:fearConfirmed;
+conscious_contagion emotion_detected:fear emotion_created:fearConfirmed charisma: 0.5 receptivity: 0.5;
 ``` 
   
 
@@ -897,13 +904,17 @@ create species: a_species number: an_int;
   
   * **`value`** (any type in [float, point, list]): 
   * `legend` (string), (omissible) : 
-  * `color` (rgb): 
-  * `fill` (boolean): 
-  * `line_visible` (boolean): 
-  * `marker` (boolean): 
-  * `marker_shape` (an identifier), takes values in: {marker_empty, marker_sqaure, marker_square, marker_up_triangle, marker_diamond, marker_hor_rectangle, marker_down_triangle, marker_hor_ellipse, marker_right_triangle, marker_vert_rectangle, marker_left_triangle}: 
-  * `name` (an identifier): 
-  * `style` (an identifier), takes values in: {line, whisker, area, bar, dot, step, spline, stack, 3d, ring, exploded}: 
+  * `accumulate_values` (boolean): Force to replace values at each step (false) or accumulate with previous steps (true)
+  * `color` (rgb): color of the serie
+  * `fill` (boolean): Marker filled (true) or not (false)
+  * `line_visible` (boolean): Line visible or not
+  * `marker` (boolean): marker visible or not
+  * `marker_shape` (an identifier), takes values in: {marker_empty, marker_square, marker_circle, marker_up_triangle, marker_diamond, marker_hor_rectangle, marker_down_triangle, marker_hor_ellipse, marker_right_triangle, marker_vert_rectangle, marker_left_triangle}: Shape of the marker
+  * `marker_size` (list): Size of the marker. Can be a double (same size for every marker) or a list (different sizes for each marker.
+  * `style` (an identifier), takes values in: {line, whisker, area, bar, dot, step, spline, stack, 3d, ring, exploded}: Style for the serie (if not the default one sepecified on chart statement)
+  * `x_err_values` (any type in [float, list]): the X Error bar values to display. Has to be a List. Each element can be a number or a list with two values (low and high value)
+  * `y_err_values` (any type in [float, list]): the Y Error bar values to display. Has to be a List. Each element can be a number or a list with two values (low and high value)
+  * `y_minmax_values` (list): the Y MinMax bar values to display (BW charts). Has to be a List. Each element can be a number or a list with two values (low and high value)
 
 #### Embedments
 * The `data` statement is of type: **Single statement**
@@ -919,15 +930,19 @@ create species: a_species number: an_int;
 ### datalist 
 #### Facets 
   
-  * **`value`** (list): the values to display.Each element can be a number (series/histogram) or a point/list with two values (XY chart)
+  * **`value`** (list): the values to display. Has to be a matrix, a list or a List of List. Each element can be a number (series/histogram) or a list with two values (XY chart)
   * `legend` (list), (omissible) : the name of the series: a list of strings (can be a variable with dynamic names)
-  * `categoriesnames` (list): the name of categories (can be a variable with dynamic names)
+  * `accumulate_values` (boolean): Force to replace values at each step (false) or accumulate with previous steps (true)
   * `color` (list): list of colors
-  * `fill` (boolean): 
-  * `inverse_series_categories` (boolean): reverse the order of series/categories ([[1,2],[3,4],[5,6]] --> [[1,3,5],[2,4,6]]. May be useful when it is easier to construct one list over the other.
-  * `line_visible` (boolean): 
-  * `marker` (boolean): 
-  * `style` (an identifier), takes values in: {line, whisker, area, bar, dot, step, spline, stack, 3d, ring, exploded}: series style
+  * `fill` (boolean): Marker filled (true) or not (false), same for all series.
+  * `line_visible` (boolean): Line visible or not (same for all series)
+  * `marker` (boolean): marker visible or not
+  * `marker_shape` (an identifier), takes values in: {marker_empty, marker_square, marker_circle, marker_up_triangle, marker_diamond, marker_hor_rectangle, marker_down_triangle, marker_hor_ellipse, marker_right_triangle, marker_vert_rectangle, marker_left_triangle}: Shape of the marker. Same one for all series.
+  * `marker_size` (list): the marker sizes to display. Can be a list of numbers (same size for each marker of the series) or a list of list (different sizes by point)
+  * `style` (an identifier), takes values in: {line, whisker, area, bar, dot, step, spline, stack, 3d, ring, exploded}: Style for the serie (if not the default one sepecified on chart statement)
+  * `x_err_values` (list): the X Error bar values to display. Has to be a List. Each element can be a number or a list with two values (low and high value)
+  * `y_err_values` (list): the Y Error bar values to display. Has to be a List. Each element can be a number or a list with two values (low and high value)
+  * `y_minmax_values` (list): the Y MinMax bar values to display (BW charts). Has to be a List. Each element can be a number or a list with two values (low and high value)
 
 #### Embedments
 * The `datalist` statement is of type: **Single statement**
@@ -976,7 +991,7 @@ Used in a switch match structure, the block prefixed by default is executed only
   * `matrix` (matrix): the diffusion matrix ("kernel" or "filter" in image processing). Can have any size, as long as dimensions are odd values.
   * `method` (an identifier), takes values in: {convolution, dot_product}: the diffusion method
   * `min_value` (float): if a value is smaller than this value, it will not be diffused. By default, this value is equal to 0.0. This value cannot be smaller than 0.
-  * `propagation` (a label), takes values in: {diffusion, gradient}: represents both the way the signal is propagated and the way to treat multiple propagation of the same signal occurring at once from different places. If propagation equals 'diffusion', the intensity of a signal is shared between its neighbors with respect to 'proportion', 'variation' and the number of neighbours of the environment places (4, 6 or 8). I.e., for a given signal S propagated from place P, the value transmitted to its N neighbors is : S' = (S / N / proportion) - variation. The intensity of S is then diminished by S `*` proportion on P. In a diffusion, the different signals of the same name see their intensities added to each other on each place. If propagation equals 'gradient', the original intensity is not modified, and each neighbors receives the intensity : S / proportion - variation. If multiple propagation occur at once, only the maximum intensity is kept on each place. If 'propagation' is not defined, it is assumed that it is equal to 'diffusion'.
+  * `propagation` (a label), takes values in: {diffusion, gradient}: represents both the way the signal is propagated and the way to treat multiple propagation of the same signal occurring at once from different places. If propagation equals 'diffusion', the intensity of a signal is shared between its neighbors with respect to 'proportion', 'variation' and the number of neighbors of the environment places (4, 6 or 8). I.e., for a given signal S propagated from place P, the value transmitted to its N neighbors is : S' = (S / N / proportion) - variation. The intensity of S is then diminished by S `*` proportion on P. In a diffusion, the different signals of the same name see their intensities added to each other on each place. If propagation equals 'gradient', the original intensity is not modified, and each neighbors receives the intensity : S / proportion - variation. If multiple propagation occur at once, only the maximum intensity is kept on each place. If 'propagation' is not defined, it is assumed that it is equal to 'diffusion'.
   * `proportion` (float): a diffusion rate
   * `radius` (int): a diffusion radius (in number of cells from the center)
   * `variation` (float): an absolute value to decrease at each neighbors 
@@ -1025,17 +1040,19 @@ diffuse var: phero on: cells proportion: 1/9 radius: 1;
 #### Facets 
   
   * **`name`** (a label), (omissible) : the identifier of the display
-  * `ambient_light` (any type in [int, rgb]): Allows to define the value of the ambient light either using an int (ambient_light:(125)) or a rgb color ((ambient_light:rgb(255,255,255)). default is rgb(125,125,125)
+  * `ambient_light` (any type in [int, rgb]): Allows to define the value of the ambient light either using an int (ambient_light:(125)) or a rgb color ((ambient_light:rgb(255,255,255)). default is rgb(127,127,127,255)
   * `autosave` (any type in [boolean, point]): Allows to save this display on disk. A value of true/false will save it at a resolution of 500x500. A point can be passed to personalize these dimensions
   * `background` (rgb): Allows to fill the background of the display with a specific color
+  * `camera_interaction` (boolean): If false, the user will not be able to modify the position and the orientation of the camera, and neither using the ROI. Default is true.
   * `camera_look_pos` (point): Allows to define the direction of the camera
   * `camera_pos` (any type in [point, agent]): Allows to define the position of the camera
   * `camera_up_vector` (point): Allows to define the orientation of the camera
-  * `diffuse_light` (any type in [int, rgb]): Allows to define the value of the diffuse light either using an int (diffuse_light:(125)) or a rgb color ((diffuse_light:rgb(255,255,255)). default is rgb(125,125,125)
+  * `diffuse_light` (any type in [int, rgb]): Allows to define the value of the diffuse light either using an int (diffuse_light:(125)) or a rgb color ((diffuse_light:rgb(255,255,255)). default is (127,127,127,255)
   * `diffuse_light_pos` (point): Allows to define the position of the diffuse light either using an point (diffuse_light_pos:{x,y,z}). default is {world.shape.width/2,world.shape.height/2,world.shape.width`*`2}
-  * `draw_diffuse_light` (boolean): Allows to enable/disable the drawing of the diffuse light. Default is false
+  * `draw_diffuse_light` (boolean): Allows to show/hide a representation of the lights. Default is false.
   * `draw_env` (boolean): Allows to enable/disable the drawing of the world shape and the ordinate axes. Default can be configured in Preferences
   * `focus` (geometry): the geometry (or agent) on which the display will (dynamically) focus
+  * `fullscreen` (boolean): Indicates whether or not the display should cover the whole screen (default is false
   * `light` (boolean): Allows to enable/disable the light. Default is true
   * `orthographic_projection` (boolean): Allows to enable/disable the orthographic projection. Default can be configured in Preferences
   * `output3D` (any type in [boolean, point]): 
@@ -1076,7 +1093,7 @@ display gridWithElevationTriangulated type: opengl ambient_light: 100 {
 #### Embedments
 * The `display` statement is of type: **Output**
 * The `display` statement can be embedded into: output, permanent, 
-* The `display` statement embeds statements: [agents](#agents),  [camera](#camera),  [chart](#chart),  [display_grid](#display_grid),  [display_population](#display_population),  [event](#event),  [graphics](#graphics),  [image](#image),  [overlay](#overlay),  
+* The `display` statement embeds statements: [agents](#agents),  [camera](#camera),  [chart](#chart),  [display_grid](#display_grid),  [display_population](#display_population),  [event](#event),  [graphics](#graphics),  [image](#image),  [light](#light),  [overlay](#overlay),  
 
 [Top of the page](#table-of-contents)
 		
@@ -1372,6 +1389,77 @@ This statement cannot be used alone
 	
 
 ----
+[//]: # (keyword|statement_emotional_contagion)
+### emotional_contagion 
+#### Facets 
+  
+  * **`emotion_detected`** (546706): the emotion that will start the contagion
+  * `name` (an identifier), (omissible) : the identifier of the emotional contagion
+  * `charisma` (float): The charisma value of the perceived agent (between 0 and 1)
+  * `emotion_created` (546706): the emotion that will be created with the contagion
+  * `receptivity` (float): The receptivity value of the current agent (between 0 and 1)
+  * `threshold` (float): The threshold value to make the contagion
+  * `when` (boolean): A boolean value to get the emotion only with a certain condition 
+ 	
+#### Definition
+
+enables to make conscious or unconscious emotional contagion
+
+#### Usages
+
+* Other examples of use: 
+```
+emotional_contagion emotion_detected:fearConfirmed;
+emotional_contagion emotion_detected:fear emotion_created:fearConfirmed;
+emotional_contagion emotion_detected:fear emotion_created:fearConfirmed charisma: 0.5 receptivity: 0.5;
+``` 
+  
+
+#### Embedments
+* The `emotional_contagion` statement is of type: **Single statement**
+* The `emotional_contagion` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `emotional_contagion` statement embeds statements: 
+
+[Top of the page](#table-of-contents)
+		
+	
+
+----
+[//]: # (keyword|statement_enter)
+### enter 
+#### Facets 
+ 
+ 	
+#### Definition
+
+In an FSM architecture, `enter` introduces a sequence of statements to execute upon entering a state.
+
+#### Usages
+
+* In the following example, at the step it enters into the state s_init, the message 'Enter in s_init' is displayed followed by the display of the state name:
+
+```
+	state s_init {
+		enter { write "Enter in" + state; }
+			write "Enter in" + state;
+		}
+		write state;
+	}
+```
+
+    
+* See also: [state](#state), [exit](#exit), [transition](#transition), 
+
+#### Embedments
+* The `enter` statement is of type: **Sequence of statements or action**
+* The `enter` statement can be embedded into: state, 
+* The `enter` statement embeds statements: 
+
+[Top of the page](#table-of-contents)
+		
+	
+
+----
 [//]: # (keyword|statement_equation)
 ### equation 
 #### Facets 
@@ -1552,13 +1640,51 @@ method exhaustive maximize: food_gathered;
 	
 
 ----
+[//]: # (keyword|statement_exit)
+### exit 
+#### Facets 
+ 
+ 	
+#### Definition
+
+In an FSM architecture, `exit` introduces a sequence of statements to execute right before exiting the state.
+
+#### Usages
+
+* In the following example, at the state it leaves the state s_init, he will display the message 'EXIT from s_init':
+
+```
+	state s_init initial: true {
+		write state;
+		transition to: s1 when: (cycle > 2) {
+			write "transition s_init -> s1";
+		}
+		exit {
+			write "EXIT from "+state;
+		}
+	}
+```
+
+    
+* See also: [enter](#enter), [state](#state), [transition](#transition), 
+
+#### Embedments
+* The `exit` statement is of type: **Sequence of statements or action**
+* The `exit` statement can be embedded into: state, 
+* The `exit` statement embeds statements: 
+
+[Top of the page](#table-of-contents)
+		
+	
+
+----
 [//]: # (keyword|statement_experiment)
 ### experiment 
 #### Facets 
   
   * **`name`** (a label), (omissible) : identifier of the experiment  
   * **`title`** (a label):   
-  * **`type`** (a label), takes values in: {batch, gui, headless}: the type of the experiment (either 'gui' or 'batch'
+  * **`type`** (a label), takes values in: {batch, memorize, gui, headless}: the type of the experiment (either 'gui' or 'batch'
   * `control` (an identifier): 
   * `frequency` (int): the execution frequence of the experiment (default value: 1). If frequency: 10, the experiment is executed only each 10 steps.
   * `keep_seed` (boolean): 
@@ -1615,7 +1741,7 @@ enables to directly add a belief from the variable of a perceived specie.
 
 * Other examples of use: 
 ```
-focus var:speed /*where speed is a variable from a species that is being perceived*/ agent: myself
+focus var:speed /*where speed is a variable from a species that is being perceived*/
 ``` 
   
 
@@ -1956,6 +2082,49 @@ inspect "my_inspector" value: ant attributes: ["name", "location"];
 	
 
 ----
+[//]: # (keyword|statement_light)
+### light 
+#### Facets 
+  
+  * **`id`** (int), (omissible) : a number from 1 to 7 to specify which light we are using
+  * `active` (boolean): a boolean expression telling if you want this light to be switch on or not. (default value : true)
+  * `color` (any type in [int, rgb]): an int / rgb / rgba value to specify the color and the intensity of the light. (default value : (127,127,127,255) ).
+  * `direction` (point): the direction of the light (only for direction and spot light). (default value : {0.5,0.5,-1})
+  * `draw_light` (boolean): draw or not the light. (default value : false).
+  * `linear_attenuation` (float): the linear attenuation of the positionnal light. (default value : 0)
+  * `position` (point): the position of the light (only for point and spot light). (default value : {0,0,1})
+  * `quadratic_attenuation` (float): the linear attenuation of the positionnal light. (default value : 0)
+  * `spot_angle` (float): the angle of the spot light in degree (only for spot light). (default value : 45)
+  * `type` (a label): the type of light to create. A value among {point, direction, spot}. (default value : direction)
+  * `update` (boolean): specify if the light has to be updated. (default value : true). 
+ 	
+#### Definition
+
+`light` allows to define diffusion lights in your 3D display.
+
+#### Usages
+
+* The general syntax is:
+
+```
+light 1 type:point position:{20,20,20} color:255, linear_attenuation:0.01 quadratic_attenuation:0.0001 draw_light:true update:false
+light 2 type:spot position:{20,20,20} direction:{0,0,-1} color:255 spot_angle:25 linear_attenuation:0.01 quadratic_attenuation:0.0001 draw_light:true update:false
+light 3 type:point direction:{1,1,-1} color:255 draw_light:true update:false
+```
+
+    
+* See also: [display](#display), 
+
+#### Embedments
+* The `light` statement is of type: **Layer**
+* The `light` statement can be embedded into: display, 
+* The `light` statement embeds statements: 
+
+[Top of the page](#table-of-contents)
+		
+	
+
+----
 [//]: # (keyword|statement_loop)
 ### loop 
 #### Facets 
@@ -2190,13 +2359,13 @@ monitor "nb preys" value: length(prey as list) refresh_every: 5;
 experiment exp_name type: gui {
    // [inputs]
    output {
-      // [display, file or monitor statements]
+      // [display, file, inspect, layout or monitor statements]
    }
 }
 ```
 
     
-* See also: [display](#display), [monitor](#monitor), [inspect](#inspect), [output_file](#output_file), 
+* See also: [display](#display), [monitor](#monitor), [inspect](#inspect), [output_file](#output_file), [layout](#layout), 
 
 #### Embedments
 * The `output` statement is of type: **Output**
@@ -2325,7 +2494,9 @@ parameter 'Value of titi:' var: titi min: 1 max: 100 step: 2;
   * **`target`** (any type in [container, point, agent]): the list of the agent you want to perceive
   * `name` (an identifier), (omissible) : the name of the perception
   * `as` (species): an expression that evaluates to a species
+  * `emotion` (546706): The emotion needed to do the perception
   * `in` (any type in [float, geometry]): a float or a geometry. If it is a float, it's a radius of a detection area. If it is a geometry, it is the area of detection of others species.
+  * `threshold` (float): Threshold linked to the emotion.
   * `when` (boolean): a boolean to tell when does the perceive is active 
  	
 #### Definition
@@ -2362,7 +2533,7 @@ If you want to make an action (such as adding a belief for example), use ask mys
  	
 #### Definition
 
-In a batch experiment, the permanent section allows to define an output block that will NOT be re-initialized at the beginning of each simulation but will be filled at the end of each simulation.
+Represents the outputs of the experiment itself. In a batch experiment, the permanent section allows to define an output block that will NOT be re-initialized at the beginning of each simulation but will be filled at the end of each simulation.
 
 #### Usages
 
@@ -3032,7 +3203,7 @@ ask receiver_agent(s) {
   * `integrated_times` (list): time interval inside integration process
   * `integrated_values` (list): list of variables's value inside integration process
   * `max_step` (float): maximal step, (used with dp853 method only), (sign is irrelevant, regardless of integration direction, forward or backward), the last step can be smaller than this value
-  * `method` (an identifier), takes values in: {rk4, dp853}: integrate method (can be only "rk4" or "dp853") (default value: "rk4")
+  * `method` (an identifier), takes values in: {Euler, ThreeEighthes, Midpoint, Gill, Luther, rk4, dp853, AdamsBashforth, AdamsMoulton, DormandPrince54, GraggBulirschStoer, HighamHall54}: integrate method (can be only "Euler", "ThreeEighthes", "Midpoint", "Gill", "Luther", "rk4" or "dp853", "AdamsBashforth", "AdamsMoulton", "DormandPrince54", "GraggBulirschStoer",  "HighamHall54") (default value: "rk4")
   * `min_step` (float): minimal step, (used with dp853 method only), (sign is irrelevant, regardless of integration direction, forward or backward), the last step can be smaller than this value
   * `scalAbsoluteTolerance` (float): allowed absolute error (used with dp853 method only)
   * `scalRelativeTolerance` (float): allowed relative error (used with dp853 method only)
@@ -3076,15 +3247,15 @@ solve SIR method: "rk4" step:0.001;
   * `frequency` (int): The execution frequency of the species (default value: 1). For instance, if frequency is set to 10, the population of agents will be executed only every 10 cycles.
   * `height` (int): (grid only),  the height of the grid (in terms of agent number)
   * `mirrors` (any type in [list, species]): The species this species is mirroring. The population of this current species will be dependent of that of the species mirrored (i.e. agents creation and death are entirely taken in charge by GAMA with respect to the demographics of the species mirrored). In addition, this species is provided with an attribute called 'target', which allows each agent to know which agent of the mirrored species it is representing.
-  * `neighbors` (int): (grid only), the chosen neighbourhood (4, 6 or 8)
-  * `neighbours` (int): (grid only), the chosen neighbourhood (4, 6 or 8)
+  * `neighbors` (int): (grid only), the chosen neighborhood (4, 6 or 8)
+  * `neighbours` (int): (grid only), the chosen neighborhood (4, 6 or 8)
   * `parent` (species): the parent class (inheritance)
   * `schedules` (container): A container of agents (a species, a dynamic list, or a combination of species and containers) , which represents which agents will be actually scheduled when the population is scheduled for execution. For instance, 'species a schedules: (10 among a)' will result in a population that schedules only 10 of its own agents every cycle. 'species b schedules: []' will prevent the agents of 'b' to be scheduled. Note that the scope of agents covered here can be larger than the population, which allows to build complex scheduling controls; for instance, defining 'global schedules: [] {...} species b schedules: []; species c schedules: b + world; ' allows to simulate a model where the agents of b are scheduled first, followed by the world, without even having to create an instance of c.
   * `skills` (list): The list of skills that will be made available to the instances of this species. Each new skill provides attributes and actions that will be added to the ones defined in this species
   * `topology` (topology): The topology of the population of agents defined by this species. In case of nested species, it can for example be the shape of the macro-agent. In case of grid or graph species, the topology is automatically computed and cannot be redefined
   * `torus` (boolean): is the topology toric (defaut: false). Needs to be defined on the global species.
   * `use_individual_shapes` (boolean): (grid only),(true by default). Allows to specify whether or not the agents of the grid will have distinct geometries. If set to false, they will all have simpler proxy geometries
-  * `use_neighbours_cache` (boolean): (grid only),(true by default). Allows to turn on or off the use of the neighbours cache used for grids. Note that if a diffusion of variable occurs, GAMA will emit a warning and automatically switch to a caching version
+  * `use_neighbors_cache` (boolean): (grid only),(true by default). Allows to turn on or off the use of the neighbors cache used for grids. Note that if a diffusion of variable occurs, GAMA will emit a warning and automatically switch to a caching version
   * `use_regular_agents` (boolean): (grid only),(true by default). Allows to specify if the agents of the grid are regular agents (like those of any other species) or minimal ones (which can't have sub-populations, can't inherit from a regular species, etc.)
   * `width` (int): (grid only), the width of the grid (in terms of agent number) 
  	
@@ -3111,14 +3282,14 @@ species node_agent mirrors: list(bug) parent: graph_node edge_species: edge_agen
 * The definition of the single grid of a model will automatically create gridwidth x gridheight agents:
 
 ```
-grid ant_grid width: gridwidth height: gridheight file: grid_file neighbours: 8 use_regular_agents: false { 
+grid ant_grid width: gridwidth height: gridheight file: grid_file neighbors: 8 use_regular_agents: false { 
 ```
 
 
 * Using a file to initialize the grid can replace width/height facets:
 
 ```
-grid ant_grid file: grid_file neighbours: 8 use_regular_agents: false { 
+grid ant_grid file: grid_file neighbors: 8 use_regular_agents: false { 
 ```
 
 
@@ -3181,7 +3352,7 @@ A state, like a reflex, can contains several statements that can be executed at 
 #### Embedments
 * The `state` statement is of type: **Behavior**
 * The `state` statement can be embedded into: fsm, Species, Experiment, Model, 
-* The `state` statement embeds statements: 
+* The `state` statement embeds statements: [enter](#enter),  [exit](#exit),  
 
 [Top of the page](#table-of-contents)
 		
@@ -3448,13 +3619,14 @@ In an FSM architecture, `transition` specifies the next state of the life cycle.
  	
 #### Definition
 
-enables to directly add a belief from the variable of a perceived specie.
+enables to directly copy an emotion presents in the perceived specie.
 
 #### Usages
 
 * Other examples of use: 
 ```
-focus var:speed /*where speed is a variable from a species that is being perceived*/ agent: myself
+unconscious_contagion emotion:fearConfirmed; 
+unconscious_contagion emotion:fearConfirmed charisma: 0.5 receptivity: 0.5;
 ``` 
   
 

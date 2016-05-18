@@ -54,7 +54,7 @@ if speed = 5 {
 ## Table of Contents
 <wiki:toc max_depth="3" />
 
-[advanced_driving](#advanced_driving), [driving](#driving), [fipa](#fipa), [GAMASQL](#gamasql), [grid](#grid), [MDXSKILL](#mdxskill), [moving](#moving), [moving3D](#moving3d), [network](#network), [physics](#physics), [skill_road](#skill_road), [skill_road_node](#skill_road_node), [SQLSKILL](#sqlskill), 
+[advanced_driving](#advanced_driving), [driving](#driving), [fipa](#fipa), [GAMASQL](#gamasql), [grid](#grid), [MDXSKILL](#mdxskill), [moving](#moving), [moving3D](#moving3d), [physics](#physics), [skill_road](#skill_road), [skill_road_node](#skill_road_node), [SQLSKILL](#sqlskill), 
     	
 ----
 [//]: # (keyword|skill_advanced_driving)
@@ -517,46 +517,6 @@ moves the agent forward, the distance being computed with respect to its speed a
 * **`pitch`** (int): int, optional, the direction to take for this move (replaces the current value of pitch) 			
 * **`heading`** (int): int, optional, the direction to take for this move (replaces the current value of roll) 			
 * **`bounds`** (geometry,agent): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry	
-
-[Top of the page](#table-of-contents)
-	
-    	
-----
-[//]: # (keyword|skill_network)
-## network
-
- 
-### Variables
-	   
-  * **`netAgtName`** (`string`): Net ID of the agent 
- 	
-### Actions
-	  
-	 
-#### **`connectMessenger`**
-moves the agent towards the target passed in the arguments.
-
-* returns: void 			
-* **`to`** (string): server URL 			
-* **`at`** (string): server URL 			
-* **`withName`** (string): agent Name  
-	 
-#### **`emptyMessageBox`**
-moves the agent towards the target passed in the arguments.
-
-* returns: bool  
-	 
-#### **`fetchMessage`**
-moves the agent towards the target passed in the arguments.
-
-* returns: map<string,unknown>  
-	 
-#### **`sendMessage`**
-Send a message to a destination.
-
-* returns: void 			
-* **`dest`** (string): The network ID of the agent who receive the message 			
-* **`content`** (any type): The content of the message	
 
 [Top of the page](#table-of-contents)
 	
