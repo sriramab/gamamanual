@@ -16,6 +16,7 @@ grid cells {
 experiment my_experiment type:gui{
 	output {
 		display my_display type:opengl background:#darkblue {
+			species cells aspect:base;
 			graphics "my_layer" {
 				draw square(100) color:#white at:{50,50};
 				draw cube(5) color:#lightgrey at:{50,30};
@@ -95,6 +96,7 @@ Here is an example of our GAML scene using a point light with linear attenuation
 Directional lights have no real "position" : they only have a direction. A directional light will strike all the objects of your world with the same direction. An example of directional light you have in the real world would be the light of the sun : the sun is so far away from us that you can consider that the rays have the same direction and the same intensity wherever they strike.
 Since there is no position for directional lights, there is no attenuation either.
 
+Here is an example of our GAML scene using a point light with linear attenuation (color red, the light source is displayed as a red sphere) : 
 ![resources/images/lightRecipes/direction_light.png](resources/images/lightRecipes/direction_light.png)
 
 ### Specular light
