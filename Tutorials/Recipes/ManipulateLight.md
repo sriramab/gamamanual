@@ -108,10 +108,10 @@ This specular light is not implemented yet in gama, only the two others are.
 In your opengl display, without specifying any light, you will have only one light, with those following properties :
 
 Those values have been chosen in order to have the same visual effect in both opengl and java2D displays, when you display 2D objects, and also to have a nice "3D effect" when using the opengl displays. We chose the following setting by default : 
-The ambient light value : rgb(127,127,127,255)
-diffuse light value : rgb(127,127,127,255)
-type of light : direction
-direction of the light : (0.5,0.5,-1);
+* The ambient light value : rgb(127,127,127,255)
+* diffuse light value : rgb(127,127,127,255)
+* type of light : direction
+* direction of the light : (0.5,0.5,-1);
 
 Here is an example of our GAML scene using the default light : 
 
