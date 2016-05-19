@@ -99,8 +99,11 @@ The typical workflow to generate the wiki files is as follow:
 
 The typical workflow to generate the wiki files is as follow:
 * Clean and Build all the GAMA projects,
-* Run the `MainGeneratePDF.java` file in the `msi.gama.documentation`,
+* Copy paste the file "gama_style.sty" (originally in files/gen/input/pandocPDF) to the pandoc folder,
+* Run the `MainGeneratePDF.java` file in the `msi.gama.documentation`, accepting all the packages install of latex,
 * The wiki files are generated in the `msi.gama.documentation` plugin.
+
+NB : the full procedure may take a while, and no logs are displayed. If you think the program is not working, try to run pandoc through your command console. Do not hesitate to go to MikTek package manager to add the needed packages.
 
 
 ## Workflow to generate unit tests
