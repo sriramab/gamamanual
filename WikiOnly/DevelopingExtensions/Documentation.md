@@ -67,7 +67,9 @@ In addition, the folder containing the wiki files is required. In the GitHub arc
 2. Go back to the Java perspective: a `gama.wiki` plugin should have been added.
 
 In order to generate the PDF file from the wiki files, we use an external application named [Pandoc](http://pandoc.org/).
-Follow the [Pandoc installation instructions to install it](http://pandoc.org/installing.html). Note that Latex should be installed in order to be able to generate PDF files.
+Follow the [Pandoc installation instructions to install it](http://pandoc.org/installing.html). Specify the path to the pandoc folder in the file "Constants.java", in the static constant `CMD_PANDOC` : "_yourAbsolutePathToPandoc/pandoc_".
+
+Note that Latex should be installed in order to be able to generate PDF files. Make sure you have already installed [Miktex](http://miktex.org/download) (for OS Windows and Mac). Specify the path to the miktex folder in the file "Constants.java", in the static constant `CMD_PDFLATEX` : "_yourAbsolutePathToMiktex/pdflatex_".
 
 
 ### Configuration
