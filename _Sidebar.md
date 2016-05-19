@@ -1,7 +1,7 @@
 ## [Home](Home)
 ## [Introduction](Overview)
-## [Platform](Platform)
 ## [Changes from 1.6.1 to 1.7](NewVersionChanges)
+## [Platform](Platform)
 1. [Installation and Launching](InstallationAndLaunching)
   1. [Installation](Installation)
   2. [Launching GAMA](Launching)
