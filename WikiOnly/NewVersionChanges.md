@@ -14,6 +14,8 @@ gives examples
 * signal and diffuse have been merged into a single statement
 * facets do not accept a space between their identifier and the `:` anymore.
 * simplification of equation/solve statements and deprecation of old facets
+* in FIPA skill, `content`is replaced everywhere with `contents`
+* in FIPA skill, `receivers` is replaced everywhere with `to`
 
 # Enhancements in 1.7
 * multi-simulation
