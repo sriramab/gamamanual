@@ -16,6 +16,7 @@ gives examples
 * simplification of equation/solve statements and deprecation of old facets
 * in FIPA skill, `content`is replaced everywhere with `contents`
 * in FIPA skill, `receivers` is replaced everywhere with `to`
+* in FIPA skill, `messages` is replaced by `mailbox`
 
 # Enhancements in 1.7
 * multi-simulation
