@@ -28,11 +28,14 @@
 	
     	
 ----
+
+
 [//]: # (keyword|operator_auto_correlation)
 ### `auto_correlation`
 
 #### Possible use: 
-  * `container` **`auto_correlation`** `int` --->  `float` 
+  * `container` **`auto_correlation`** `int` --->  `float`
+  *  **`auto_correlation`** (`container` , `int`) --->  `float` 
 
 #### Result: 
 Returns the auto-correlation of a data sequence
@@ -41,11 +44,14 @@ Returns the auto-correlation of a data sequence
   	
     	
 ----
+
+
 [//]: # (keyword|operator_beta)
 ### `beta`
 
 #### Possible use: 
-  * `float` **`beta`** `float` --->  `float` 
+  * `float` **`beta`** `float` --->  `float`
+  *  **`beta`** (`float` , `float`) --->  `float` 
 
 #### Result: 
 Returns the beta function with arguments a, b.
@@ -54,11 +60,14 @@ Returns the beta function with arguments a, b.
   	
     	
 ----
+
+
 [//]: # (keyword|operator_binomial_coeff)
 ### `binomial_coeff`
 
 #### Possible use: 
-  * `int` **`binomial_coeff`** `int` --->  `float` 
+  * `int` **`binomial_coeff`** `int` --->  `float`
+  *  **`binomial_coeff`** (`int` , `int`) --->  `float` 
 
 #### Result: 
 Returns n choose k as a double. Note the integerization of the double return value.
@@ -67,6 +76,8 @@ Returns n choose k as a double. Note the integerization of the double return val
   	
     	
 ----
+
+
 [//]: # (keyword|operator_binomial_complemented)
 ### `binomial_complemented`
 
@@ -80,6 +91,8 @@ Returns the sum of the terms k+1 through n of the Binomial probability density, 
   	
     	
 ----
+
+
 [//]: # (keyword|operator_binomial_sum)
 ### `binomial_sum`
 
@@ -93,11 +106,14 @@ Returns the sum of the terms 0 through k of the Binomial probability density, wh
   	
     	
 ----
+
+
 [//]: # (keyword|operator_chi_square)
 ### `chi_square`
 
 #### Possible use: 
-  * `float` **`chi_square`** `float` --->  `float` 
+  * `float` **`chi_square`** `float` --->  `float`
+  *  **`chi_square`** (`float` , `float`) --->  `float` 
 
 #### Result: 
 Returns the area under the left hand tail (from 0 to x) of the Chi square probability density function with df degrees of freedom.
@@ -106,11 +122,14 @@ Returns the area under the left hand tail (from 0 to x) of the Chi square probab
   	
     	
 ----
+
+
 [//]: # (keyword|operator_chi_square_complemented)
 ### `chi_square_complemented`
 
 #### Possible use: 
-  * `float` **`chi_square_complemented`** `float` --->  `float` 
+  * `float` **`chi_square_complemented`** `float` --->  `float`
+  *  **`chi_square_complemented`** (`float` , `float`) --->  `float` 
 
 #### Result: 
 Returns the area under the right hand tail (from x to infinity) of the Chi square probability density function with df degrees of freedom.
@@ -119,11 +138,14 @@ Returns the area under the right hand tail (from x to infinity) of the Chi squar
   	
     	
 ----
+
+
 [//]: # (keyword|operator_correlation)
 ### `correlation`
 
 #### Possible use: 
-  * `container` **`correlation`** `container` --->  `float` 
+  * `container` **`correlation`** `container` --->  `float`
+  *  **`correlation`** (`container` , `container`) --->  `float` 
 
 #### Result: 
 Returns the correlation of two data sequences
@@ -132,11 +154,14 @@ Returns the correlation of two data sequences
   	
     	
 ----
+
+
 [//]: # (keyword|operator_covariance)
 ### `covariance`
 
 #### Possible use: 
-  * `container` **`covariance`** `container` --->  `float` 
+  * `container` **`covariance`** `container` --->  `float`
+  *  **`covariance`** (`container` , `container`) --->  `float` 
 
 #### Result: 
 Returns the covariance of two data sequences
@@ -145,6 +170,8 @@ Returns the covariance of two data sequences
   	
     	
 ----
+
+
 [//]: # (keyword|operator_dnorm)
 ### `dnorm`
 Same signification as [normal_density](#normal_density)
@@ -153,6 +180,8 @@ Same signification as [normal_density](#normal_density)
   	
     	
 ----
+
+
 [//]: # (keyword|operator_durbin_watson)
 ### `durbin_watson`
 
@@ -166,6 +195,8 @@ Durbin-Watson computation
   	
     	
 ----
+
+
 [//]: # (keyword|operator_gamma)
 ### `gamma`
 
@@ -179,6 +210,8 @@ Returns the value of the Gamma function at x.
   	
     	
 ----
+
+
 [//]: # (keyword|operator_gamma_distribution)
 ### `gamma_distribution`
 
@@ -195,6 +228,8 @@ incomplete_gamma(a,x) is equal to pgamma(a,1,x).
   	
     	
 ----
+
+
 [//]: # (keyword|operator_gamma_distribution_complemented)
 ### `gamma_distribution_complemented`
 
@@ -208,6 +243,8 @@ Returns the integral from x to infinity of the gamma probability density functio
   	
     	
 ----
+
+
 [//]: # (keyword|operator_incomplete_beta)
 ### `incomplete_beta`
 
@@ -221,11 +258,14 @@ Returns the regularized integral of the beta function with arguments a and b, fr
   	
     	
 ----
+
+
 [//]: # (keyword|operator_incomplete_gamma)
 ### `incomplete_gamma`
 
 #### Possible use: 
-  * `float` **`incomplete_gamma`** `float` --->  `float` 
+  * `float` **`incomplete_gamma`** `float` --->  `float`
+  *  **`incomplete_gamma`** (`float` , `float`) --->  `float` 
 
 #### Result: 
  Returns the regularized integral of the Gamma function with argument a to the integration end point x.
@@ -234,11 +274,14 @@ Returns the regularized integral of the beta function with arguments a and b, fr
   	
     	
 ----
+
+
 [//]: # (keyword|operator_incomplete_gamma_complement)
 ### `incomplete_gamma_complement`
 
 #### Possible use: 
-  * `float` **`incomplete_gamma_complement`** `float` --->  `float` 
+  * `float` **`incomplete_gamma_complement`** `float` --->  `float`
+  *  **`incomplete_gamma_complement`** (`float` , `float`) --->  `float` 
 
 #### Result: 
 Returns the complemented regularized incomplete Gamma function of the argument a and integration start point x.
@@ -247,20 +290,26 @@ Returns the complemented regularized incomplete Gamma function of the argument a
   	
     	
 ----
+
+
 [//]: # (keyword|operator_kurtosis)
 ### `kurtosis`
 
 #### Possible use: 
   *  **`kurtosis`** (`container`) --->  `float`
-  * `float` **`kurtosis`** `float` --->  `float` 
+  * `float` **`kurtosis`** `float` --->  `float`
+  *  **`kurtosis`** (`float` , `float`) --->  `float` 
 
 #### Result: 
-Returns the kurtosis (aka excess) of a data sequence/nReturns the kurtosis (aka excess) of a data sequence
+Returns the kurtosis (aka excess) of a data sequence
+Returns the kurtosis (aka excess) of a data sequence
 
 [Top of the page](#table-of-contents)
   	
     	
 ----
+
+
 [//]: # (keyword|operator_lgamma)
 ### `lgamma`
 Same signification as [log_gamma](#log_gamma)
@@ -269,6 +318,8 @@ Same signification as [log_gamma](#log_gamma)
   	
     	
 ----
+
+
 [//]: # (keyword|operator_log_gamma)
 ### `log_gamma`
 
@@ -282,6 +333,8 @@ Returns the log of the value of the Gamma function at x.
   	
     	
 ----
+
+
 [//]: # (keyword|operator_moment)
 ### `moment`
 
@@ -295,6 +348,8 @@ Returns the moment of k-th order with constant c of a data sequence
   	
     	
 ----
+
+
 [//]: # (keyword|operator_normal_area)
 ### `normal_area`
 
@@ -308,6 +363,8 @@ Returns the area to the left of x in the normal distribution with the given mean
   	
     	
 ----
+
+
 [//]: # (keyword|operator_normal_density)
 ### `normal_density`
 
@@ -321,6 +378,8 @@ Returns the probability of x in the normal distribution with the given mean and 
   	
     	
 ----
+
+
 [//]: # (keyword|operator_normal_inverse)
 ### `normal_inverse`
 
@@ -334,6 +393,8 @@ Returns the x in the normal distribution with the given mean and standard deviat
   	
     	
 ----
+
+
 [//]: # (keyword|operator_pbinom)
 ### `pbinom`
 Same signification as [binomial_sum](#binomial_sum)
@@ -342,6 +403,8 @@ Same signification as [binomial_sum](#binomial_sum)
   	
     	
 ----
+
+
 [//]: # (keyword|operator_pchisq)
 ### `pchisq`
 Same signification as [chi_square](#chi_square)
@@ -350,6 +413,8 @@ Same signification as [chi_square](#chi_square)
   	
     	
 ----
+
+
 [//]: # (keyword|operator_percentile)
 ### `percentile`
 Same signification as [quantile_inverse](#quantile_inverse)
@@ -358,6 +423,8 @@ Same signification as [quantile_inverse](#quantile_inverse)
   	
     	
 ----
+
+
 [//]: # (keyword|operator_pgamma)
 ### `pgamma`
 Same signification as [gamma_distribution](#gamma_distribution)
@@ -366,6 +433,8 @@ Same signification as [gamma_distribution](#gamma_distribution)
   	
     	
 ----
+
+
 [//]: # (keyword|operator_pnorm)
 ### `pnorm`
 Same signification as [normal_area](#normal_area)
@@ -374,6 +443,8 @@ Same signification as [normal_area](#normal_area)
   	
     	
 ----
+
+
 [//]: # (keyword|operator_pValue_for_fStat)
 ### `pValue_for_fStat`
 
@@ -387,11 +458,14 @@ Returns the P value of F statistic fstat with numerator degrees of freedom dfn a
   	
     	
 ----
+
+
 [//]: # (keyword|operator_pValue_for_tStat)
 ### `pValue_for_tStat`
 
 #### Possible use: 
-  * `float` **`pValue_for_tStat`** `int` --->  `float` 
+  * `float` **`pValue_for_tStat`** `int` --->  `float`
+  *  **`pValue_for_tStat`** (`float` , `int`) --->  `float` 
 
 #### Result: 
 Returns the P value of the T statistic tstat with df degrees of freedom. This is a two-tailed test so we just double the right tail which is given by studentT of -|tstat|.
@@ -400,11 +474,14 @@ Returns the P value of the T statistic tstat with df degrees of freedom. This is
   	
     	
 ----
+
+
 [//]: # (keyword|operator_quantile)
 ### `quantile`
 
 #### Possible use: 
-  * `container` **`quantile`** `float` --->  `float` 
+  * `container` **`quantile`** `float` --->  `float`
+  *  **`quantile`** (`container` , `float`) --->  `float` 
 
 #### Result: 
 Returns the phi-quantile; that is, an element elem for which holds that phi percent of data elements are less than elem. The quantile need not necessarily be contained in the data sequence, it can be a linear interpolation.
@@ -413,11 +490,14 @@ Returns the phi-quantile; that is, an element elem for which holds that phi perc
   	
     	
 ----
+
+
 [//]: # (keyword|operator_quantile_inverse)
 ### `quantile_inverse`
 
 #### Possible use: 
-  * `container` **`quantile_inverse`** `float` --->  `float` 
+  * `container` **`quantile_inverse`** `float` --->  `float`
+  *  **`quantile_inverse`** (`container` , `float`) --->  `float` 
 
 #### Result: 
 Returns how many percent of the elements contained in the receiver are <= element. Does linear interpolation if the element is not contained but lies in between two contained elements.
@@ -426,11 +506,14 @@ Returns how many percent of the elements contained in the receiver are <= elemen
   	
     	
 ----
+
+
 [//]: # (keyword|operator_rank_interpolated)
 ### `rank_interpolated`
 
 #### Possible use: 
-  * `container` **`rank_interpolated`** `float` --->  `float` 
+  * `container` **`rank_interpolated`** `float` --->  `float`
+  *  **`rank_interpolated`** (`container` , `float`) --->  `float` 
 
 #### Result: 
 Returns the linearly interpolated number of elements in a list less or equal to a given element. The rank is the number of elements <= element. Ranks are of the form {0, 1, 2,..., sortedList.size()}. If no element is <= element, then the rank is zero. If the element lies in between two contained elements, then linear interpolation is used and a non integer value is returned.
@@ -439,11 +522,14 @@ Returns the linearly interpolated number of elements in a list less or equal to 
   	
     	
 ----
+
+
 [//]: # (keyword|operator_rms)
 ### `rms`
 
 #### Possible use: 
-  * `int` **`rms`** `float` --->  `float` 
+  * `int` **`rms`** `float` --->  `float`
+  *  **`rms`** (`int` , `float`) --->  `float` 
 
 #### Result: 
 Returns the RMS (Root-Mean-Square) of a data sequence. The RMS of data sequence is the square-root of the mean of the squares of the elements in the data sequence. It is a measure of the average size of the elements of a data sequence.
@@ -452,25 +538,32 @@ Returns the RMS (Root-Mean-Square) of a data sequence. The RMS of data sequence 
   	
     	
 ----
+
+
 [//]: # (keyword|operator_skew)
 ### `skew`
 
 #### Possible use: 
   *  **`skew`** (`container`) --->  `float`
-  * `float` **`skew`** `float` --->  `float` 
+  * `float` **`skew`** `float` --->  `float`
+  *  **`skew`** (`float` , `float`) --->  `float` 
 
 #### Result: 
-Returns the skew of a data sequence./nReturns the skew of a data sequence, which is moment(data,3,mean) / standardDeviation3
+Returns the skew of a data sequence.
+Returns the skew of a data sequence, which is moment(data,3,mean) / standardDeviation3
 
 [Top of the page](#table-of-contents)
   	
     	
 ----
+
+
 [//]: # (keyword|operator_student_area)
 ### `student_area`
 
 #### Possible use: 
-  * `float` **`student_area`** `int` --->  `float` 
+  * `float` **`student_area`** `int` --->  `float`
+  *  **`student_area`** (`float` , `int`) --->  `float` 
 
 #### Result: 
 Returns the area to the left of x in the Student T distribution with the given degrees of freedom.
@@ -479,11 +572,14 @@ Returns the area to the left of x in the Student T distribution with the given d
   	
     	
 ----
+
+
 [//]: # (keyword|operator_student_t_inverse)
 ### `student_t_inverse`
 
 #### Possible use: 
-  * `float` **`student_t_inverse`** `int` --->  `float` 
+  * `float` **`student_t_inverse`** `int` --->  `float`
+  *  **`student_t_inverse`** (`float` , `int`) --->  `float` 
 
 #### Result: 
 Returns the value, t, for which the area under the Student-t probability density function (integrated from minus infinity to t) is equal to x.
@@ -492,6 +588,8 @@ Returns the value, t, for which the area under the Student-t probability density
   	
     	
 ----
+
+
 [//]: # (keyword|operator_variance)
 ### `variance`
 
@@ -500,7 +598,8 @@ Returns the value, t, for which the area under the Student-t probability density
   *  **`variance`** (`int`, `float`, `float`) --->  `float` 
 
 #### Result: 
-Returns the variance of a data sequence. That is (sumOfSquares - mean*sum) / size with mean = sum/size./nReturns the variance from a standard deviation.
+Returns the variance from a standard deviation.
+Returns the variance of a data sequence. That is (sumOfSquares - mean*sum) / size with mean = sum/size.
 
 [Top of the page](#table-of-contents)
   	

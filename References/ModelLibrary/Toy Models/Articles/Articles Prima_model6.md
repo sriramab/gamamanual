@@ -19,8 +19,6 @@ _Author : _
 This model shows how to create agent and make them move randomly in the world.Some agents are infected, and others can gain the infection if they are in a certain range. The people are now placed in buildings at the initial state. Those buildings are created thanks toa shapefile. Roads are also created thanks to an other shapefile. A graph is now created fromthe road agents, and the people move from their location to a targent on the graph. The displayis now a 3D display. The model adds a new level as people going inside a building will be nowa new species belonging to the building and that will be manage by the building agent concernedThe people_in_building agent will be infected inside a building respecting an ordinary differentialequation system.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Articles\Articles Prima_model6\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Articles\Articles Prima_model6\map-10.png)
-
 Code of the model : 
 
 ```
@@ -97,9 +95,9 @@ species buildings {
 	//Variable to know the number of people inside the building
 	int nbInhabitants update: length(members);
 	//List of all the people_in_building agents not infected				
-	list<people_in_building> membersS <- [] update: list<people_in_building>(members) where (!each.is_infected);
+	list<people_in_building> membersS update: list<people_in_building>(members) where (!each.is_infected);
 	//List of all the people_in_building agents infected				
-	list<people_in_building> membersI <- [] update: list<people_in_building>(members) where (each.is_infected);
+	list<people_in_building> membersI update: list<people_in_building>(members) where (each.is_infected);
 	float t;
 	//Float used in the ODE system representing the number of non infected agents    
 	float S update: length(membersS) as float; 

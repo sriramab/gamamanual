@@ -12,8 +12,6 @@ _Author : Patrick Taillandier_
 Model which shows how to create three kind of graphs : a scale-free graph, a small-world graph, a complete graph and a complete graph with a radius.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Graphs\Graphs Classic Graph Generation\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Graphs\Graphs Classic Graph Generation\map-10.png)
-
 Code of the model : 
 
 ```

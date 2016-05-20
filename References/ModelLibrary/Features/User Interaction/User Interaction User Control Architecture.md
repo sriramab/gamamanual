@@ -15,8 +15,6 @@ _Author : Patrick Taillandier_
 Model which shows how to use the advanced user control, to create and kill agents. 
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\User Interaction\User Interaction User Control Architecture\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\User Interaction\User Interaction User Control Architecture\map-10.png)
-
 Code of the model : 
 
 ```

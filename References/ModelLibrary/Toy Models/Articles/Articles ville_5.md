@@ -14,10 +14,6 @@ _Author : _
 Creation of buildings and roads thanks to a shape file. The color of the building depends on the type of the building, while the color of a house depend on its income. People among the world will try to find the best building according to the mean income of their neighbors and their own income, but also to their working place. This model add a new display showing the "color" of each building according to the mean income of its residents
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Articles\Articles ville_5\carte_batiment-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Articles\Articles ville_5\carte_batiment-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Articles\Articles ville_5\carte_principale-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Articles\Articles ville_5\carte_principale-10.png)
-
 Code of the model : 
 
 ```

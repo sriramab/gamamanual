@@ -11,8 +11,6 @@ _Author : Patrick Taillandier_
 Model to show how to use multi-simulation, i.e. to run several times the same GUI experiment with potentially different parameter sets 
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multi-simulation\Multi-simulation Multi-simulation\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multi-simulation\Multi-simulation Multi-simulation\map-10.png)
-
 Code of the model : 
 
 ```
@@ -55,7 +53,7 @@ experiment main type: gui {
 	output {
 		display map {
 			//we use an overlay to display the speed of the agents in the simulation
-			overlay position: { 5, 5 } size: { 180 #px, 30 #px } background: # black transparency: 0.5 border: #black rounded: true
+			overlay "Overlay" position: { 5, 5 } size: { 180 #px, 30 #px } background: # black transparency: 0.5 border: #black rounded: true
             {
                draw "agent_speed: " + agent_speed color: # white font: font("SansSerif", 20, #bold) at: { 10°px, 20°px };
             }

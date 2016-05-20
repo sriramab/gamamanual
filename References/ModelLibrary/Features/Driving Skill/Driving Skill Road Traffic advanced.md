@@ -1,7 +1,6 @@
 [//]: # (keyword|operator_direction_to)
 [//]: # (keyword|operator_last)
 [//]: # (keyword|operator_abs)
-[//]: # (keyword|operator_not)
 [//]: # (keyword|operator_in)
 [//]: # (keyword|operator_box)
 [//]: # (keyword|operator_cos)
@@ -36,10 +35,6 @@ _Author : Patrick Taillandier_
 
 Model to show how to use the driving skill to represent the traffic on a road network generated thanks to shapefiles, with intersections and traffic lights going from red to green to let people move or stop. Two experiments are presented : experiment_2D to display the model in 2D and which better display the orientation of roads and experiment_3D to display the model in 3D.
 
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Driving Skill\Driving Skill Road Traffic advanced\carte_principale-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Driving Skill\Driving Skill Road Traffic advanced\carte_principale-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Driving Skill\Driving Skill Road Traffic advanced\city_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Driving Skill\Driving Skill Road Traffic advanced\city_display-10.png)
 
 Code of the model : 
 
@@ -90,6 +85,10 @@ global {
 		//creation of the road network using the road and intersection agents
 		road_network <-  (as_driving_graph(road, intersection))  with_weights general_speed_map;
 		
+		//initialize the traffic light
+		ask intersection {
+			do initialize;
+		}
 		
 		create people number: nb_people { 
 			max_speed <- 160 °km/°h;
@@ -116,7 +115,7 @@ global {
 //species that will represent the intersection node, it can be traffic lights or not, using the skill_road_node skill
 species intersection skills: [skill_road_node] {
 	bool is_traffic_signal;
-	list<list> stop <- [];
+	list<list> stop;
 	int time_to_change <- 100;
 	int counter <- rnd (time_to_change) ;
 	list<road> ways1;
@@ -124,7 +123,7 @@ species intersection skills: [skill_road_node] {
 	bool is_green;
 	rgb color_fire;
 	
-	init {
+	action initialize {
 		if (is_traffic_signal) {
 			do compute_crossing;
 			stop<< [];

@@ -18,8 +18,6 @@ _Author : Patrick Taillandier_
 Model using shapefiles to create roads using shapefiles with people driving on these roads. The model take into account the number of lanes of the roads.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Driving Skill\Driving Skill Road Traffic simple (Simple track)\city_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Driving Skill\Driving Skill Road Traffic simple (Simple track)\city_display-10.png)
-
 Code of the model : 
 
 ```

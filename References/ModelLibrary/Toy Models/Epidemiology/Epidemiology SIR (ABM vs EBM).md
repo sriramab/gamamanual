@@ -14,14 +14,6 @@ _Author : Benoit Gaudou _
 Comparison between an agent-based and an equation-based model of the SIR model. The ABM use a grid to place the agents, and each cell will be the location of an agent, while the EBM is only using a ODE System and no geographical representation.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology SIR (ABM vs EBM)\ABM-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology SIR (ABM vs EBM)\ABM-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology SIR (ABM vs EBM)\ABM_EBM-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology SIR (ABM vs EBM)\ABM_EBM-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology SIR (ABM vs EBM)\EBM-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology SIR (ABM vs EBM)\EBM-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology SIR (ABM vs EBM)\sir_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology SIR (ABM vs EBM)\sir_display-10.png)
-
 Code of the model : 
 
 ```
@@ -43,9 +35,9 @@ global {
 	//Total number of individuals
 	int N <- number_S + number_I + number_R;
 	//Number of hosts (for ABM)
-	int nb_hosts <- number_S + number_I + number_R update : length(Host);
+	int nb_hosts <- number_S + number_I + number_R update: length(Host);
 	//Number of infected hosts (for ABM)
-	int nb_infected <- number_I update :  Host count (each.is_infected);
+	int nb_infected <- number_I update:  Host count (each.is_infected);
 	float hKR4 <- 0.7;
 	geometry shape <- square(50);
 	init {

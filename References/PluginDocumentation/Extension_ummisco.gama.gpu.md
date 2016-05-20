@@ -28,6 +28,8 @@
 	
     	
 ----
+
+
 [//]: # (keyword|operator_CPU_path_between)
 ### `CPU_path_between`
 
@@ -47,6 +49,8 @@ path var0 <- my_graph CPU_path_between (ag1:: ag2); 	// var0 equals A path betwe
   	
     	
 ----
+
+
 [//]: # (keyword|operator_GPU_path_between)
 ### `GPU_path_between`
 

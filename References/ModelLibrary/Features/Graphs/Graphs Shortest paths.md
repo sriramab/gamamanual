@@ -20,10 +20,6 @@ _Author : Patrick Taillandier_
 This model shows how get the shortest path from one point to another on a graph. The experiment proposes two displays : one to show the shortest path, an other to show the first k shortest paths. 
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Graphs\Graphs Shortest paths\map_k_shortest_paths-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Graphs\Graphs Shortest paths\map_k_shortest_paths-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Graphs\Graphs Shortest paths\map_shortest_path-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Graphs\Graphs Shortest paths\map_shortest_path-10.png)
-
 Code of the model : 
 
 ```

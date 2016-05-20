@@ -12,8 +12,6 @@ _Author :  Patrick Taillandier_
 Model which shows how to create a grid of cells by using a GeoTIFF File. 
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation GEOTIFF file Import\test-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation GEOTIFF file Import\test-10.png)
-
 Code of the model : 
 
 ```

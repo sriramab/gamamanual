@@ -3,7 +3,6 @@
 [//]: # (keyword|operator_sort_by)
 [//]: # (keyword|operator_closest_to)
 [//]: # (keyword|operator_copy)
-[//]: # (keyword|operator_not)
 [//]: # (keyword|operator_closest_points_with)
 [//]: # (keyword|operator_pyramid)
 [//]: # (keyword|operator_simplification)
@@ -128,8 +127,8 @@ species people skills:[moving]{
 experiment main type: gui {
 	parameter "nb people" var: nb_people min: 1 max: 1000;
 	output {
-		display map type: opengl camera_pos: {world.location.x,-world.shape.height*1.5,70}
-                        camera_look_pos:{world.location.x,0,0}    {
+		display map type: opengl camera_pos: (cycle = 0) ? {world.location.x,-world.shape.height*1.5,70} : nil
+                        camera_look_pos:  (cycle = 0) ? {world.location.x,0,0} : nil    {
 			image '../images/soil.jpg';
 			species building refresh: false;
 			species people;

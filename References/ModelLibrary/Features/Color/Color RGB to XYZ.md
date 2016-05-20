@@ -10,8 +10,6 @@ _Author :  Arnaud Grignard_
 A model to show how to convert rgb values in xyz position using the operator rgb_to_xyz. Each pixel of a given image is used to create a point with its coordinates depending on its color : red value for x coordinate, green value for y coordinate and blue value for the z coordinate.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Color\Color RGB to XYZ\RGB_to_XYZ-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Color\Color RGB to XYZ\RGB_to_XYZ-10.png)
-
 Code of the model : 
 
 ```

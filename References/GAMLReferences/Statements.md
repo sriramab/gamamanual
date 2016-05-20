@@ -127,6 +127,7 @@ statement_keyword1 expression1 facet2: expression2... { // a sequence statement
 	
 
 ----
+
 [//]: # (keyword|statement_=)
 ### = 
 #### Facets 
@@ -165,6 +166,7 @@ equation SI {
 	
 
 ----
+
 [//]: # (keyword|statement_action)
 ### action 
 #### Facets 
@@ -236,6 +238,7 @@ species children parent: parent_species {
 	
 
 ----
+
 [//]: # (keyword|statement_add)
 ### add 
 #### Facets 
@@ -331,6 +334,7 @@ list var <- g.edges; 	// var equals [polyline({1.0,5.0}::{12.0,45.0}),polyline({
 	
 
 ----
+
 [//]: # (keyword|statement_agents)
 ### agents 
 #### Facets 
@@ -383,6 +387,7 @@ display Segregation {
 	
 
 ----
+
 [//]: # (keyword|statement_annealing)
 ### annealing 
 #### Facets 
@@ -427,6 +432,7 @@ method annealing temp_init: 100  temp_end: 1 temp_decrease: 0.5 nb_iter_cst_temp
 	
 
 ----
+
 [//]: # (keyword|statement_ask)
 ### ask 
 #### Facets 
@@ -507,6 +513,7 @@ species animal {
 	
 
 ----
+
 [//]: # (keyword|statement_aspect)
 ### aspect 
 #### Facets 
@@ -544,6 +551,7 @@ species one_species {
 	
 
 ----
+
 [//]: # (keyword|statement_assert)
 ### assert 
 #### Facets 
@@ -593,6 +601,7 @@ assert (3/z) raises: "error";
 	
 
 ----
+
 [//]: # (keyword|statement_break)
 ### break 
 #### Facets 
@@ -615,6 +624,7 @@ assert (3/z) raises: "error";
 	
 
 ----
+
 [//]: # (keyword|statement_camera)
 ### camera 
 #### Facets 
@@ -642,6 +652,7 @@ assert (3/z) raises: "error";
 	
 
 ----
+
 [//]: # (keyword|statement_capture)
 ### capture 
 #### Facets 
@@ -698,6 +709,7 @@ capture target: list (B) as: C;
 	
 
 ----
+
 [//]: # (keyword|statement_chart)
 ### chart 
 #### Facets 
@@ -763,6 +775,7 @@ display chart_display {
 	
 
 ----
+
 [//]: # (keyword|statement_conscious_contagion)
 ### conscious_contagion 
 #### Facets 
@@ -798,6 +811,7 @@ conscious_contagion emotion_detected:fear emotion_created:fearConfirmed charisma
 	
 
 ----
+
 [//]: # (keyword|statement_create)
 ### create 
 #### Facets 
@@ -898,6 +912,7 @@ create species: a_species number: an_int;
 	
 
 ----
+
 [//]: # (keyword|statement_data)
 ### data 
 #### Facets 
@@ -926,6 +941,7 @@ create species: a_species number: an_int;
 	
 
 ----
+
 [//]: # (keyword|statement_datalist)
 ### datalist 
 #### Facets 
@@ -954,6 +970,7 @@ create species: a_species number: an_int;
 	
 
 ----
+
 [//]: # (keyword|statement_default)
 ### default 
 #### Facets 
@@ -978,6 +995,7 @@ Used in a switch match structure, the block prefixed by default is executed only
 	
 
 ----
+
 [//]: # (keyword|statement_diffuse)
 ### diffuse 
 #### Facets 
@@ -1035,6 +1053,7 @@ diffuse var: phero on: cells proportion: 1/9 radius: 1;
 	
 
 ----
+
 [//]: # (keyword|statement_display)
 ### display 
 #### Facets 
@@ -1100,6 +1119,7 @@ display gridWithElevationTriangulated type: opengl ambient_light: 100 {
 	
 
 ----
+
 [//]: # (keyword|statement_display_grid)
 ### display_grid 
 #### Facets 
@@ -1155,6 +1175,7 @@ display my_display {
 	
 
 ----
+
 [//]: # (keyword|statement_display_population)
 ### display_population 
 #### Facets 
@@ -1218,6 +1239,7 @@ display my_display type: opengl{
 	
 
 ----
+
 [//]: # (keyword|statement_do)
 ### do 
 #### Facets 
@@ -1299,6 +1321,7 @@ do name_of_action_or_primitive {
 	
 
 ----
+
 [//]: # (keyword|statement_draw)
 ### draw 
 #### Facets 
@@ -1366,6 +1389,7 @@ aspect arrowAspect {
 	
 
 ----
+
 [//]: # (keyword|statement_else)
 ### else 
 #### Facets 
@@ -1389,6 +1413,7 @@ This statement cannot be used alone
 	
 
 ----
+
 [//]: # (keyword|statement_emotional_contagion)
 ### emotional_contagion 
 #### Facets 
@@ -1425,6 +1450,7 @@ emotional_contagion emotion_detected:fear emotion_created:fearConfirmed charisma
 	
 
 ----
+
 [//]: # (keyword|statement_enter)
 ### enter 
 #### Facets 
@@ -1460,6 +1486,7 @@ In an FSM architecture, `enter` introduces a sequence of statements to execute u
 	
 
 ----
+
 [//]: # (keyword|statement_equation)
 ### equation 
 #### Facets 
@@ -1514,6 +1541,7 @@ equation eqLV type: LV vars: [x,y,t] params: [alpha,beta,delta,gamma] ;
 	
 
 ----
+
 [//]: # (keyword|statement_error)
 ### error 
 #### Facets 
@@ -1544,6 +1572,7 @@ error 'This is an error raised by ' + self;
 	
 
 ----
+
 [//]: # (keyword|statement_event)
 ### event 
 #### Facets 
@@ -1600,6 +1629,7 @@ experiment Simple type:gui {
 	
 
 ----
+
 [//]: # (keyword|statement_exhaustive)
 ### exhaustive 
 #### Facets 
@@ -1640,6 +1670,7 @@ method exhaustive maximize: food_gathered;
 	
 
 ----
+
 [//]: # (keyword|statement_exit)
 ### exit 
 #### Facets 
@@ -1678,6 +1709,7 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 	
 
 ----
+
 [//]: # (keyword|statement_experiment)
 ### experiment 
 #### Facets 
@@ -1705,6 +1737,7 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 	
 
 ----
+
 [//]: # (keyword|statement_export)
 ### export 
 #### Facets 
@@ -1723,6 +1756,7 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 	
 
 ----
+
 [//]: # (keyword|statement_focus)
 ### focus 
 #### Facets 
@@ -1755,6 +1789,7 @@ focus var:speed /*where speed is a variable from a species that is being perceiv
 	
 
 ----
+
 [//]: # (keyword|statement_genetic)
 ### genetic 
 #### Facets 
@@ -1800,6 +1835,7 @@ method genetic maximize: food_gathered pop_dim: 5 crossover_prob: 0.7 mutation_p
 	
 
 ----
+
 [//]: # (keyword|statement_graphics)
 ### graphics 
 #### Facets 
@@ -1842,6 +1878,7 @@ display my_display {
 	
 
 ----
+
 [//]: # (keyword|statement_hill_climbing)
 ### hill_climbing 
 #### Facets 
@@ -1883,6 +1920,7 @@ method hill_climbing iter_max: 50 maximize : food_gathered;
 	
 
 ----
+
 [//]: # (keyword|statement_if)
 ### if 
 #### Facets 
@@ -1958,6 +1996,7 @@ else {
 	
 
 ----
+
 [//]: # (keyword|statement_image)
 ### image 
 #### Facets 
@@ -2027,6 +2066,7 @@ display my_display {
 	
 
 ----
+
 [//]: # (keyword|statement_inspect)
 ### inspect 
 #### Facets 
@@ -2062,6 +2102,7 @@ inspect "my_inspector" value: ant attributes: ["name", "location"];
 	
 
 ----
+
 [//]: # (keyword|statement_let)
 ### let 
 #### Facets 
@@ -2082,6 +2123,7 @@ inspect "my_inspector" value: ant attributes: ["name", "location"];
 	
 
 ----
+
 [//]: # (keyword|statement_light)
 ### light 
 #### Facets 
@@ -2125,6 +2167,7 @@ light 3 type:point direction:{1,1,-1} color:255 draw_light:true update:false
 	
 
 ----
+
 [//]: # (keyword|statement_loop)
 ### loop 
 #### Facets 
@@ -2221,6 +2264,7 @@ loop i from: 0 to: length (the_list) - 1 {
 	
 
 ----
+
 [//]: # (keyword|statement_match)
 ### match 
 #### Facets 
@@ -2275,6 +2319,7 @@ switch 3 {
 	
 
 ----
+
 [//]: # (keyword|statement_migrate)
 ### migrate 
 #### Facets 
@@ -2308,6 +2353,7 @@ migrate ball_in_group target: ball_in_cloud;
 	
 
 ----
+
 [//]: # (keyword|statement_monitor)
 ### monitor 
 #### Facets 
@@ -2342,6 +2388,7 @@ monitor "nb preys" value: length(prey as list) refresh_every: 5;
 	
 
 ----
+
 [//]: # (keyword|statement_output)
 ### output 
 #### Facets 
@@ -2377,6 +2424,7 @@ experiment exp_name type: gui {
 	
 
 ----
+
 [//]: # (keyword|statement_output_file)
 ### output_file 
 #### Facets 
@@ -2400,6 +2448,7 @@ experiment exp_name type: gui {
 	
 
 ----
+
 [//]: # (keyword|statement_overlay)
 ### overlay 
 #### Facets 
@@ -2440,6 +2489,7 @@ overlay "Cycle: " + (cycle) center: "Duration: " + total_duration + "ms" right: 
 	
 
 ----
+
 [//]: # (keyword|statement_parameter)
 ### parameter 
 #### Facets 
@@ -2487,6 +2537,7 @@ parameter 'Value of titi:' var: titi min: 1 max: 100 step: 2;
 	
 
 ----
+
 [//]: # (keyword|statement_perceive)
 ### perceive 
 #### Facets 
@@ -2526,6 +2577,7 @@ If you want to make an action (such as adding a belief for example), use ask mys
 	
 
 ----
+
 [//]: # (keyword|statement_permanent)
 ### permanent 
 #### Facets 
@@ -2561,6 +2613,7 @@ permanent {
 	
 
 ----
+
 [//]: # (keyword|statement_plan)
 ### plan 
 #### Facets 
@@ -2584,6 +2637,7 @@ permanent {
 	
 
 ----
+
 [//]: # (keyword|statement_put)
 ### put 
 #### Facets 
@@ -2649,6 +2703,7 @@ put -30 all: true in: putMap; 	// putMap equals ["x"::-30,"y"::-30, "z"::-30]
 	
 
 ----
+
 [//]: # (keyword|statement_reactive_tabu)
 ### reactive_tabu 
 #### Facets 
@@ -2696,6 +2751,7 @@ method reactive_tabu iter_max: 50 tabu_list_size_init: 5 tabu_list_size_min: 2 t
 	
 
 ----
+
 [//]: # (keyword|statement_reflex)
 ### reflex 
 #### Facets 
@@ -2729,6 +2785,7 @@ reflex my_reflex when: flip (0.5){ 		//Only executed when flip returns true
 	
 
 ----
+
 [//]: # (keyword|statement_release)
 ### release 
 #### Facets 
@@ -2789,6 +2846,7 @@ release list (C) as: new_species in: new host;
 	
 
 ----
+
 [//]: # (keyword|statement_remove)
 ### remove 
 #### Facets 
@@ -2892,6 +2950,7 @@ species speciesRemove {
 	
 
 ----
+
 [//]: # (keyword|statement_return)
 ### return 
 #### Facets 
@@ -2943,6 +3002,7 @@ reflex writing {
 	
 
 ----
+
 [//]: # (keyword|statement_rule)
 ### rule 
 #### Facets 
@@ -2987,6 +3047,7 @@ rule belief: new_predicate("test") when: flip(0.5) new_desire: new_predicate("te
 	
 
 ----
+
 [//]: # (keyword|statement_run)
 ### run 
 #### Facets 
@@ -3009,6 +3070,7 @@ rule belief: new_predicate("test") when: flip(0.5) new_desire: new_predicate("te
 	
 
 ----
+
 [//]: # (keyword|statement_save)
 ### save 
 #### Facets 
@@ -3019,7 +3081,7 @@ rule belief: new_predicate("test") when: flip(0.5) new_desire: new_predicate("te
   * `header` (boolean): an expression that evaluates to a boolean, specifying whether the save will write a header if the file does not exist
   * `rewrite` (boolean): an expression that evaluates to a boolean, specifying whether the save will ecrase the file or append data at the end of it
   * `type` (an identifier), takes values in: {shp, text, csv, asc}: an expression that evaluates to an string, the type of the output file (it can be only "shp", "asc", "text" or "csv")
-  * `with` (map):  
+  * `with` (map): Not yet used 
  	
 #### Definition
 
@@ -3074,6 +3136,7 @@ save species_of(self) to: "save_shapefile.shp" type: "shp" with: [name::"nameAge
 	
 
 ----
+
 [//]: # (keyword|statement_save_batch)
 ### save_batch 
 #### Facets 
@@ -3092,6 +3155,7 @@ save species_of(self) to: "save_shapefile.shp" type: "shp" with: [name::"nameAge
 	
 
 ----
+
 [//]: # (keyword|statement_set)
 ### set 
 #### Facets 
@@ -3116,6 +3180,7 @@ Allows to assign a value to the variable or attribute specified
 	
 
 ----
+
 [//]: # (keyword|statement_setup)
 ### setup 
 #### Facets 
@@ -3156,6 +3221,7 @@ species Tester {
 	
 
 ----
+
 [//]: # (keyword|statement_simulate)
 ### simulate 
 #### Facets 
@@ -3193,6 +3259,7 @@ ask receiver_agent(s) {
 	
 
 ----
+
 [//]: # (keyword|statement_solve)
 ### solve 
 #### Facets 
@@ -3233,6 +3300,7 @@ solve SIR method: "rk4" step:0.001;
 	
 
 ----
+
 [//]: # (keyword|statement_species)
 ### species 
 #### Facets 
@@ -3304,6 +3372,7 @@ grid ant_grid file: grid_file neighbors: 8 use_regular_agents: false {
 	
 
 ----
+
 [//]: # (keyword|statement_state)
 ### state 
 #### Facets 
@@ -3359,6 +3428,7 @@ A state, like a reflex, can contains several statements that can be executed at 
 	
 
 ----
+
 [//]: # (keyword|statement_status)
 ### status 
 #### Facets 
@@ -3390,6 +3460,7 @@ status ('This is my status ' + self) color: Â°yellow;
 	
 
 ----
+
 [//]: # (keyword|statement_switch)
 ### switch 
 #### Facets 
@@ -3440,6 +3511,7 @@ switch 3 {
 	
 
 ----
+
 [//]: # (keyword|statement_tabu)
 ### tabu 
 #### Facets 
@@ -3482,6 +3554,7 @@ method tabu iter_max: 50 tabu_list_size: 5 maximize: food_gathered;
 	
 
 ----
+
 [//]: # (keyword|statement_task)
 ### task 
 #### Facets 
@@ -3506,6 +3579,7 @@ As reflex, a task is a sequence of statements that can be executed, at each time
 	
 
 ----
+
 [//]: # (keyword|statement_test)
 ### test 
 #### Facets 
@@ -3547,6 +3621,7 @@ species Tester {
 	
 
 ----
+
 [//]: # (keyword|statement_trace)
 ### trace 
 #### Facets 
@@ -3569,6 +3644,7 @@ All the statements executed in the trace statement are displayed in the console.
 	
 
 ----
+
 [//]: # (keyword|statement_transition)
 ### transition 
 #### Facets 
@@ -3606,6 +3682,7 @@ In an FSM architecture, `transition` specifies the next state of the life cycle.
 	
 
 ----
+
 [//]: # (keyword|statement_unconscious_contagion)
 ### unconscious_contagion 
 #### Facets 
@@ -3640,6 +3717,7 @@ unconscious_contagion emotion:fearConfirmed charisma: 0.5 receptivity: 0.5;
 	
 
 ----
+
 [//]: # (keyword|statement_user_command)
 ### user_command 
 #### Facets 
@@ -3676,6 +3754,7 @@ user_command kill_myself action: some_action with: [arg1::val1, arg2::val2, ...]
 	
 
 ----
+
 [//]: # (keyword|statement_user_init)
 ### user_init 
 #### Facets 
@@ -3701,6 +3780,7 @@ Used in the user control architecture, user_init is executed only once when the 
 	
 
 ----
+
 [//]: # (keyword|statement_user_input)
 ### user_input 
 #### Facets 
@@ -3739,6 +3819,7 @@ user_panel "Advanced Control" {
 	
 
 ----
+
 [//]: # (keyword|statement_user_panel)
 ### user_panel 
 #### Facets 
@@ -3780,6 +3861,7 @@ user_panel "Advanced Control" {
 	
 
 ----
+
 [//]: # (keyword|statement_using)
 ### using 
 #### Facets 
@@ -3813,6 +3895,7 @@ using topology(grid_ant) {
 	
 
 ----
+
 [//]: # (keyword|statement_Variable_container)
 ### Variable_container 
 #### Facets 
@@ -3848,6 +3931,7 @@ Allows to declare an attribute of a species or an experiment
 	
 
 ----
+
 [//]: # (keyword|statement_Variable_number)
 ### Variable_number 
 #### Facets 
@@ -3883,6 +3967,7 @@ Allows to declare an attribute of a species or experiment
 	
 
 ----
+
 [//]: # (keyword|statement_Variable_regular)
 ### Variable_regular 
 #### Facets 
@@ -3917,6 +4002,7 @@ Allows to declare an attribute of a species or an experiment
 	
 
 ----
+
 [//]: # (keyword|statement_warn)
 ### warn 
 #### Facets 
@@ -3947,6 +4033,7 @@ warn 'This is a warning from ' + self;
 	
 
 ----
+
 [//]: # (keyword|statement_write)
 ### write 
 #### Facets 

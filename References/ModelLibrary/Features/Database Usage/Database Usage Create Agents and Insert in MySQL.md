@@ -1,4 +1,3 @@
-[//]: # (keyword|operator_not)
 [//]: # (keyword|skill_SQLSKILL)
 [//]: # (keyword|concept_database)
 #  create_agents_Insert_result_MySQL

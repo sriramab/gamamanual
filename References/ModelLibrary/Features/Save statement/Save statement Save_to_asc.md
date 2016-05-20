@@ -9,8 +9,6 @@ _Author : Patrick Taillandier_
 This is a model that shows how to save a grid inside a ASCII File to reuse it later or to keep it.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Save statement\Save statement Save_to_asc\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Save statement\Save statement Save_to_asc\map-10.png)
-
 Code of the model : 
 
 ```

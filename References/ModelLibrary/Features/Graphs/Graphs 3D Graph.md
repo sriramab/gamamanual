@@ -15,8 +15,6 @@ _Author : Arnaud Grignard_
 Model using a 3D Graph and updating it at each step according to the location and the degree of each sphere. An arc is created between two adjacent spheres. Two different experiments are proposed : one with a dynamic size for the spheres according to their degree, one simpler with no update of the size.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Graphs\Graphs 3D Graph\WanderingSphere-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Graphs\Graphs 3D Graph\WanderingSphere-10.png)
-
 Code of the model : 
 
 ```

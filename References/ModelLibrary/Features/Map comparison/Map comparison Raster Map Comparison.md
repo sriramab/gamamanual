@@ -24,14 +24,6 @@ This model shows how to use different comparators to know the accuracy of a pred
 - fuzzy kappa simulation, comparing the map observed, the map simulation and the map initial but being more permissive by using fuzzy logic
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Raster Map Comparison\map_fuzzy-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Raster Map Comparison\map_fuzzy-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Raster Map Comparison\map_init-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Raster Map Comparison\map_init-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Raster Map Comparison\map_observed-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Raster Map Comparison\map_observed-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Raster Map Comparison\map_sim-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Raster Map Comparison\map_sim-10.png)
-
 Code of the model : 
 
 ```
@@ -71,7 +63,7 @@ global {
 		loop i from: 0 to: (length(categories) * length(categories)) - 1 {
 			fuzzy_transitions[i,i] <- 1.0;	
 		}
-		list<float> similarity_per_agents <- [];
+		list<float> similarity_per_agents ;
 		write "kappa(map observed, map simulation, categories): " + kappa( cell collect (each.cat_observed),cell collect (each.cat),categories);
 		write "kappa simulation(map init, map observed, map simulation,categories): " + kappa_sim( cell collect (each.cat_init), cell collect (each.cat_observed),cell collect (each.cat),categories);
 		using topology(cell) {

@@ -62,7 +62,7 @@ species declaring_map_attributes {
 	map map_initialized_with_list <- map<int, int>([1,2,3,4]);
 	// maps can be declared so that they only accept a given type of keys and values
 	// For instance, empty_map_of_int will accept string keys and integer values
-	map<string, int> empty_map_of_int <- [];
+	map<string, int> empty_map_of_int;
 	// The appropriate casting is realized if the map is initialized with a list of values
 	map<string, int> map_of_int_with_init_of_string <- map<string, int>(['10', '20']); // => ['10'::10,'20'::20]
 	// or with another map
@@ -195,7 +195,7 @@ species modifying_maps {
 		m1 <+ 5::5;
 		write sample(m1);
 		// tired of writing lines of add ? The "all:" facet is here to serve:
-		add all: [6, 7, 8, 9] to: m1;
+		add [6, 7, 8, 9] to: m1 all: true;
 		// or, in a more compact way:
 		m1 <<+ [10,11,12,13];
 		write sample(m1);
@@ -234,10 +234,10 @@ species modifying_maps {
 		// For instance:
 		m1 >>- 2;
 		// or, written using the long syntactic form
-		remove all: 1 from: m1;
+		remove 1 from: m1 all: true;
 		write sample(m1);
 		// To remove keys instead, the same syntax can be used, but on the keys of the map (i.e. map[])
-		m1[] >- 1; // This will remove the (unique) pair whose key = 0
+		m1[] >- 1; // This will remove the (unique) pair whose key = 1
 		// The equivalent long syntax is
 		remove key: 1 from: m1;
 		// To remove a set of keys, the following syntax can be used

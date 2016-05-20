@@ -1,7 +1,6 @@
 [//]: # (keyword|operator_osm_file)
 [//]: # (keyword|operator_covers)
 [//]: # (keyword|operator_get)
-[//]: # (keyword|operator_not)
 [//]: # (keyword|operator_in)
 [//]: # (keyword|operator_last)
 [//]: # (keyword|statement_put)

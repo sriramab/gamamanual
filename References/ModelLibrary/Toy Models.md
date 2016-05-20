@@ -16,27 +16,3 @@ This section is composed of the following sub-section :
 
 * [Epidemiology](references#Epidemiology)
 
-* [Evacuation](references#Evacuation)
-
-* [Flood Simulation](references#FloodSimulation)
-
-* [Life](references#Life)
-
-* [Multi-level data analysis](references#Multi-leveldataanalysis)
-
-* [Predator Prey](references#PredatorPrey)
-
-* [Segregation (Schelling)](references#Segregation(Schelling))
-
-* [Soccer](references#Soccer)
-
-* [Sugarscape](references#Sugarscape)
-
-* [Traffic](references#Traffic)
-
-* [Urban Growth](references#UrbanGrowth)
-
-* [Voronoi](references#Voronoi)
-
-* [Vote](references#Vote)
-

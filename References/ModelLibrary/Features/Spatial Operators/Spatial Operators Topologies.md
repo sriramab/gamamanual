@@ -18,8 +18,6 @@ _Author : Patrick Taillandier_
 A model which shows how to use spatial operator, allowing the user to change the parameter operator in the experiment to test the different operators and see the results
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Topologies\Continuous_Environment-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators Topologies\Continuous_Environment-10.png)
-
 Code of the model : 
 
 ```

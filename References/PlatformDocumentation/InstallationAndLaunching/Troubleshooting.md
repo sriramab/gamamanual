@@ -97,7 +97,7 @@ In the dialog that appears, you will find a button called "Installation Details"
 Click this button and a new dialog appears with several tabs.
 
 
-![images/dialog_configuration.png](resources/images/installingAndLaunching/dialog_configuration.png)
+![images/dialog_configuration.png](resources/images/installationAndLaunching/dialog_configuration.png)
 
 
 To provide a complete information about the status of your system at the time of the error, you can

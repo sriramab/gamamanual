@@ -1,8 +1,6 @@
 [//]: # (keyword|operator_rotated_by)
 [//]: # (keyword|operator_box)
-[//]: # (keyword|operator_sin)
-[//]: # (keyword|operator_cos)
-[//]: # (keyword|operator_hsb)
+[//]: # (keyword|statement_light)
 [//]: # (keyword|concept_3d)
 [//]: # (keyword|concept_texture)
 [//]: # (keyword|concept_light)
@@ -13,8 +11,6 @@ _Author : Arnaud Grignard_
 
 Model with a 3D Display representing buildings with a random size. The model proposes two experiments : the first one represents the buildings with 3D shapes with textures, the second one without textures but the color of the buildings depends on the rotation of a ball-shaped light
 
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Procedural City\City-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Procedural City\City-10.png)
 
 Code of the model : 
 
@@ -57,7 +53,7 @@ species Building{
 	}
 	
 	aspect base {
-		draw shape;
+		draw shape color:#white;
 	}
 	
 	aspect textured {
@@ -74,8 +70,10 @@ experiment DisplayTextured  type: gui {
 	}
 }
 experiment DisplayWithDynamicDiffuseLight  type: gui {
+	float seed <- 5.0;
 	output {
-	  display City type:opengl draw_diffuse_light:true diffuse_light:hsb((time mod 255) /255,1.0 ,0.5)  diffuse_light_pos:{world.shape.width*0.5+ world.shape.width*1.5*sin(time*2),world.shape.width*0.5,world.shape.width*cos(time*2)} background:rgb(10,40,55){
+	  display City type:opengl background:rgb(10,40,55){
+	  		light 1 type:point color:#white position:{world.shape.width/2,world.shape.height/2,0} draw_light:true update:true;
 			species Building aspect:base;									
 		}
 	}

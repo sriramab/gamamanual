@@ -18,6 +18,7 @@
 	[fsm](#fsm), [probabilistic_tasks](#probabilistic_tasks), [reflex](#reflex), [simple_bdi](#simple_bdi), [sorted_tasks](#sorted_tasks), [user_first](#user_first), [user_last](#user_last), [user_only](#user_only), [weighted_tasks](#weighted_tasks), 
 
 ----
+
 [//]: # (keyword|architecture_fsm)
 ## fsm 
 ### Variables
@@ -32,6 +33,7 @@
 	
 
 ----
+
 [//]: # (keyword|architecture_probabilistic_tasks)
 ## probabilistic_tasks 
 ### Variables
@@ -44,6 +46,7 @@
 	
 
 ----
+
 [//]: # (keyword|architecture_reflex)
 ## reflex 
 ### Variables
@@ -56,6 +59,7 @@
 	
 
 ----
+
 [//]: # (keyword|architecture_simple_bdi)
 ## simple_bdi 
 ### Variables
@@ -272,6 +276,7 @@ replace the old predicate by the new one.
 	
 
 ----
+
 [//]: # (keyword|architecture_sorted_tasks)
 ## sorted_tasks 
 ### Variables
@@ -284,6 +289,7 @@ replace the old predicate by the new one.
 	
 
 ----
+
 [//]: # (keyword|architecture_user_first)
 ## user_first 
 ### Variables
@@ -296,6 +302,7 @@ replace the old predicate by the new one.
 	
 
 ----
+
 [//]: # (keyword|architecture_user_last)
 ## user_last 
 ### Variables
@@ -308,6 +315,7 @@ replace the old predicate by the new one.
 	
 
 ----
+
 [//]: # (keyword|architecture_user_only)
 ## user_only 
 ### Variables
@@ -320,6 +328,7 @@ replace the old predicate by the new one.
 	
 
 ----
+
 [//]: # (keyword|architecture_weighted_tasks)
 ## weighted_tasks 
 ### Variables

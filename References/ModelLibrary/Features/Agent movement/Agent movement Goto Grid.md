@@ -1,4 +1,3 @@
-[//]: # (keyword|operator_not)
 [//]: # (keyword|operator_intersects)
 [//]: # (keyword|constant_#magenta)
 [//]: # (keyword|type_path)

@@ -15,8 +15,6 @@ SIR_ABM_coupling is the coupling that manipulates the elements inside SIR_ABM mo
 SIR_EBM_coupling is the coupling that manipulates the elements inside SIR_EBM model and proposes the function would be used from outside. SIR_EBM is a simple example of ODE use into agents with the example of the SIR equation system.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Co-model Example\Co-model Example Comodel_SIR_Switch\co_SIR_chart-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Co-model Example\Co-model Example Comodel_SIR_Switch\co_SIR_chart-10.png)
-
 Imported models : 
 
 ```
