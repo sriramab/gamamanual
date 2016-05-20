@@ -22,7 +22,7 @@ GAMA 1.7 requires that Java 1.7 be installed on your machine, approximately 200M
 
 ## Installation of Java
 
-On all environments, the recommended Java Virtual Machine under which GAMA has been tested is the one distributed by Oracle (http://www.java.com/en/download/manual.jsp). It may work with others — or not. For better performances, you may also want to install the JDK version of the JVM (and not the standard JRE), although is it not mandatory  (GAMA should run fine, but slower, under a JRE).
+On all environments, the recommended Java Virtual Machine under which GAMA has been tested is the one distributed by Oracle ([http://www.java.com/en/download/manual.jsp](http://www.java.com/en/download/manual.jsp)). It may work with others — or not. For better performances, you may also want to install the JDK version of the JVM (and not the standard JRE), although is it not mandatory  (GAMA should run fine, but slower, under a JRE).
 
 ### On MacOS X 
 The latest version of GAMA requires a JVM (or JDK or JRE) compatible with Java 1.7 to run. 
@@ -50,7 +50,7 @@ In order for Java to be found by Windows, you may have to modify environment var
 To have a complete overview of java management on Ubuntu, have a look at:
 
   * [Ubuntu Java documentation](https://help.ubuntu.com/community/Java)
-  * for French speaking users: http://doc.ubuntu-fr.org/java#installations_alternatives
+  * for French speaking users: [http://doc.ubuntu-fr.org/java#installations_alternatives](http://doc.ubuntu-fr.org/java#installations_alternatives)
 
 Basically, you need to do:
 ```
