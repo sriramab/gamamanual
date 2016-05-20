@@ -102,6 +102,8 @@ The typical workflow to generate the wiki files is as follow:
 * Run the `MainGeneratePDF.java` file in the `msi.gama.documentation`, accepting all the packages install of latex,
 * The wiki files are generated in the `msi.gama.documentation` plugin.
 
+Note that generating the PDF takes a lot of time. Please be patient !
+
 ## Workflow to generate unit tests
 
 The typical workflow to generate the wiki files is as follow:
