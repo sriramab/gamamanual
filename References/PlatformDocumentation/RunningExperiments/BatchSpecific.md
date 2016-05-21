@@ -1,4 +1,3 @@
-
 # Batch Specific UI
 
 When an [experiment of type Batch](BatchExperiments) is run, a dedicated UI is displayed, depending on the parameters to explore and of the exploration methods.

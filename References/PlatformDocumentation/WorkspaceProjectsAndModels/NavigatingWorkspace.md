@@ -1,4 +1,3 @@
-
 # Navigating in the Workspace
 
 All the models that you edit or run using GAMA are accessible from a central location: the _Navigator_, which is always on the left-hand side of the main window and cannot be closed. This view presents the models currently present in (or linked from) your **workspace**.

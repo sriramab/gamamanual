@@ -46,7 +46,7 @@ RCaller 2.0 package (Website: http://code.google.com/p/rcaller/) is used for GAM
 ## Configuration in GAMA
 1) Install R language into your computer.
 
-2) In GAMA, select menu option: **Edit\Preferences**.
+2) In GAMA, select menu option: **Edit/Preferences**.
 
 3) In "**Config RScript's path**", browse to your "**Rscript**" file (R language installed in your system).
 
