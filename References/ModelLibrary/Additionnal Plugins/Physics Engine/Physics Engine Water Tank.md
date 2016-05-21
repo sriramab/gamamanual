@@ -11,8 +11,6 @@ _Author : Arnaud Grignard_
 This is a model that shows how the physics engine works using a tank, with a floor and 4 walls, and balls falling into it. The floor doesn't have any mass, 
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Physics Engine\Physics Engine Water Tank\Circle-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Physics Engine\Physics Engine Water Tank\Circle-10.png)
-
 Code of the model : 
 
 ```

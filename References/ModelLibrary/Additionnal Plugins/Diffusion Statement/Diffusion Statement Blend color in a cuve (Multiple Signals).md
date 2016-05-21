@@ -13,8 +13,6 @@ _Author : Julien Mazars_
 This model is used to show how we can diffuse several variables in the same grid. At the cycle 0, 3 different pheromons are emited in 3 of the 4 corners of the cuve (each one associated to a color). Thanks to the diffusion mechanism, all the 3 colors will blend each other. The process is accelerated by using the facet "cycle_length". The "avoid_mask" facet is used in order to have a constant sum of pheromon. 
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Diffusion Statement\Diffusion Statement Blend color in a cuve (Multiple Signals)\a-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Diffusion Statement\Diffusion Statement Blend color in a cuve (Multiple Signals)\a-10.png)
-
 Code of the model : 
 
 ```

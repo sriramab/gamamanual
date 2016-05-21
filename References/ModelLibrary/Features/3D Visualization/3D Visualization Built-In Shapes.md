@@ -19,8 +19,6 @@ _Author : Arnaud Grignard_
 Model presenting a 3D display with all the primitive shapes existing in GAMA in 2D and 3D, with or without textures. 
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Built-In Shapes\View1-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Built-In Shapes\View1-10.png)
-
 Code of the model : 
 
 ```

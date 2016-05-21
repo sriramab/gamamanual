@@ -12,8 +12,6 @@
 5th part of the tutorial: Road Traffic
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Tutorials\Road Traffic\Road Traffic Model 05\city_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Tutorials\Road Traffic\Road Traffic Model 05\city_display-10.png)
-
 Code of the model : 
 
 ```

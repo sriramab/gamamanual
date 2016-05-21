@@ -9,10 +9,6 @@
 
 _Author : Huynh Quang Nghi & Nathalie Corson_
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Predator Prey\Predator Prey Lotka-Volterra (Simple)\PhasePortrait-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Predator Prey\Predator Prey Lotka-Volterra (Simple)\PhasePortrait-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Predator Prey\Predator Prey Lotka-Volterra (Simple)\TimeSeries-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Predator Prey\Predator Prey Lotka-Volterra (Simple)\TimeSeries-10.png)
-
 Code of the model : 
 
 ```
@@ -47,7 +43,7 @@ species LotkaVolterra_agent {
 		diff(nb_predator,t) = - nb_predator * (predator_death_rate - predation_efficiency * nb_prey); 		// evolution of the number of predator during an integration time step
       }
       reflex solving {
-       	solve lotka_volterra method: "rk4" step:integration_time_step cycle_length:1/step; 			// use of runge kutta 4 method with an integration time step of value integration_time_step
+       	solve lotka_volterra method: "rk4" step:integration_time_step ;//cycle_length:1/step; 			// use of runge kutta 4 method with an integration time step of value integration_time_step
        }
 }
 

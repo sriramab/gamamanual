@@ -12,8 +12,6 @@ _Author : Arnaud Grignard_
 This is a model that shows how the physics engine works using a pool with balls, collided by a white ball. The balls use the skill Physical3D.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Physics Engine\Physics Engine Pool\Circle-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Physics Engine\Physics Engine Pool\Circle-10.png)
-
 Code of the model : 
 
 ```
@@ -50,14 +48,16 @@ global {
 		int initY <- int(height_of_environment / 8);
 		
 		//Create the other balls for the pool
-		create ball number: 0 {
+		create ball number: 15 {
 			location <- { initX + (i - deltaI) * 10, initY, 5.0 };
 			heading <- 90;
 			speed <- 0.0;
 			mass <- 3.0;
 			collisionBound <- ["shape"::"sphere", "radius"::5];
 			i <- i + 1;
+			
 			if ((i mod 2) = 0) {
+	
 				color <- #red;
 			} else {
 				color <- #yellow;
@@ -187,7 +187,7 @@ global {
 	//Reflex to compute the forces at each step
 	reflex computeForces {
 		ask world2 {
-			do compute_forces step : 1;
+			do compute_forces step: 1;
 		}
 
 	}
@@ -220,12 +220,9 @@ species ball skills: [physics] {
 	int size <- size_of_agents;
 	float speed <- speed_of_agents;
 	int heading <- rnd(359);
-	aspect default {
-		draw circle(10) color: color depth: 1;
-	}
 
 	aspect sphere {
-		draw sphere(5);
+		draw sphere(5) color:color;
 	}
 
 }

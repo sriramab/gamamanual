@@ -3,7 +3,6 @@
 [//]: # (keyword|operator_abs)
 [//]: # (keyword|operator_in)
 [//]: # (keyword|operator_box)
-[//]: # (keyword|operator_cos)
 [//]: # (keyword|operator_sin)
 [//]: # (keyword|operator_triangle)
 [//]: # (keyword|operator_polyline)

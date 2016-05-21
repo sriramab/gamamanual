@@ -1,7 +1,6 @@
 [//]: # (keyword|operator_copy)
 [//]: # (keyword|operator_triangle)
 [//]: # (keyword|operator_hsb)
-[//]: # (keyword|operator_cos)
 [//]: # (keyword|operator_sin)
 [//]: # (keyword|concept_3d)
 [//]: # (keyword|concept_camera)
@@ -14,14 +13,6 @@ Model using the Boids model to represent the flight of boids following a goal an
 
 Five experiments are proposed with differents goals : understanding of the model used (Boids_gui), 3D Display (start), 3D Display with trajectories analysis of boids (trajectory_analysis), one coupling both previous experiments and the time simulated with boids going higher and higher according to the time (SpaceTimeCube) and a model presenting the different views possible in the 3D Display : first person, third person and global view (Multiple view). 
 
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\FirstPerson-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\FirstPerson-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\RealBoids-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\RealBoids-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\SpaceTimeCubeAll-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\SpaceTimeCubeAll-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\ThirdPersonn-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\ThirdPersonn-10.png)
 
 Imported model : 
 

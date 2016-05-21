@@ -4,10 +4,8 @@
 [//]: # (keyword|operator_intersects)
 [//]: # (keyword|operator_closest_points_with)
 [//]: # (keyword|operator_inter)
-[//]: # (keyword|operator_not)
 [//]: # (keyword|operator_among)
 [//]: # (keyword|operator_polyline)
-[//]: # (keyword|operator_cos)
 [//]: # (keyword|operator_sin)
 [//]: # (keyword|operator_font)
 [//]: # (keyword|constant_#m)
@@ -551,8 +549,8 @@ experiment match type:gui {
 				draw "Blue side - "+string(blue_score) color:#blue at: {10,5} font: font("Helvetica", 18 * #zoom, #bold) perspective:true;
 				draw string(red_score)+" - Red side" color:#red at: {100,5} font: font("Helvetica", 18 * #zoom, #bold) perspective:true;
 				if (show_status) {
-					draw geometry:line([{red_offside_pos,0},{red_offside_pos,90}]) color:#red;
-					draw geometry:line([{blue_offside_pos,0},{blue_offside_pos,90}]) color:#blue;
+					draw line([{red_offside_pos,0},{red_offside_pos,90}]) color:#red;
+					draw line([{blue_offside_pos,0},{blue_offside_pos,90}]) color:#blue;
 				}
 			}
 		}

@@ -1,3 +1,4 @@
+[//]: # (keyword|constant_#sec)
 [//]: # (keyword|concept_3d)
 [//]: # (keyword|concept_shapefile)
 [//]: # (keyword|concept_texture)
@@ -8,10 +9,6 @@ _Author :  Patrick Taillandier_
 
  this model shows how to visualize GIS data without having to create agents  
 
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization GIS Visualization\gis_displays_graphics-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization GIS Visualization\gis_displays_graphics-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization GIS Visualization\gis_displays_image-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization GIS Visualization\gis_displays_image-10.png)
 
 Code of the model : 
 
@@ -27,6 +24,9 @@ global {
 }
 
 experiment GIS_visualization type: gui {
+	float minimum_cycle_duration <- 1#s;
+
+	
 	output {
 		// display of buildings in 3D with texture and with reading their HEIGHT attribute from the shapefile
 		display gis_displays_graphics type: opengl  {

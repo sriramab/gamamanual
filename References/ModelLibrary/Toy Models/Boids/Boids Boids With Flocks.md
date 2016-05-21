@@ -6,7 +6,6 @@
 [//]: # (keyword|operator_solid)
 [//]: # (keyword|operator_intersects)
 [//]: # (keyword|operator_towards)
-[//]: # (keyword|operator_cos)
 [//]: # (keyword|operator_sin)
 [//]: # (keyword|operator_simple_clustering_by_distance)
 [//]: # (keyword|statement_release)

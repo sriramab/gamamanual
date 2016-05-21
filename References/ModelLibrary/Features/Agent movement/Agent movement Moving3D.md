@@ -1,5 +1,4 @@
 [//]: # (keyword|operator_cube)
-[//]: # (keyword|operator_cos)
 [//]: # (keyword|operator_sin)
 [//]: # (keyword|operator_floor)
 [//]: # (keyword|operator_as_distance_graph)
@@ -15,14 +14,6 @@ _Author :  Arnaud Grignard - Tri Nguyen Huu_
 
 This model illustrates the different action and effect offered by the movingSkill3D (move,wander,goto and follow)
 
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Moving3D\GotoAgent-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Moving3D\GotoAgent-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Moving3D\GotoOnNetworkAgent-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Moving3D\GotoOnNetworkAgent-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Moving3D\MovingAgent-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Moving3D\MovingAgent-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Moving3D\WanderingAgent-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Agent movement\Agent movement Moving3D\WanderingAgent-10.png)
 
 Code of the model : 
 

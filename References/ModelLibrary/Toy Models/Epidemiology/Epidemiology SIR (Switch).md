@@ -3,7 +3,6 @@
 [//]: # (keyword|operator_of_species)
 [//]: # (keyword|operator_any)
 [//]: # (keyword|operator_^)
-[//]: # (keyword|operator_not)
 [//]: # (keyword|statement_equation)
 [//]: # (keyword|statement_\=)
 [//]: # (keyword|statement_solve)
@@ -18,8 +17,6 @@ _Author : tri and hqnghi _
 
 A model which show how to implement ODE system, IBM model, and to switch from one to another using a threshold. Another interesting point seen in this model is the the minimization of the execution time by reducing the number of agents to compute infections.
 
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology SIR (Switch)\SI_maths-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology SIR (Switch)\SI_maths-10.png)
 
 Code of the model : 
 
@@ -43,6 +40,7 @@ global {
 	
 	// Global variables
 	int grid_size <- 50;
+geometry shape <- square(grid_size);
 	int number_Hosts <- initial_S + initial_I + initial_R; // Total number of individuals
 	SIR_model current_model; // serves as an interface, it is transparent to user if model is maths or IBM
 
@@ -117,13 +115,11 @@ global {
 
 }
 //Grid which represent the discretized space for the host agents
-environment width: grid_size height: grid_size {
 	grid sir_grid width: grid_size height: grid_size {
 		rgb color <- #black;
 		list<sir_grid> neighbours <- (self neighbors_at neighbours_range) of_species sir_grid;
 	}
 
-}
 
 //Species which allows the execution of only Host, IBM_model, Math_model and switch_model at each cycle
 species new_scheduler schedules: (Host + IBM_model + Math_model + switch_model) ;
@@ -295,10 +291,10 @@ species Host schedules: [] skills: [moving] {
 	//Reflex to make the agent infected when the infection is computed from S for a better execution time
 	reflex become_infected when: (is_susceptible and computeInfectionFromS) {
 		if (flip(1 - (1 - beta) ^ (((self) neighbors_at (2)) of_species Host) count (each.is_infected))) {
-			set is_susceptible <- false;
-			set is_infected <- true;
-			set is_immune <- false;
-			set color <- #red;
+			is_susceptible <- false;
+			is_infected <- true;
+			is_immune <- false;
+			color <- #red;
 		}
 
 	}

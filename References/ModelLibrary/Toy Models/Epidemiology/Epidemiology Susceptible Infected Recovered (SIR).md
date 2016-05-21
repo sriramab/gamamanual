@@ -10,10 +10,6 @@ _Author : _
 A simple SIR model without Ordinary Differential Equations showing agents moving randomly among a grid and becoming infected then resistant to a disease
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology Susceptible Infected Recovered (SIR)\chart-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology Susceptible Infected Recovered (SIR)\chart-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology Susceptible Infected Recovered (SIR)\sir_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology Susceptible Infected Recovered (SIR)\sir_display-10.png)
-
 Code of the model : 
 
 ```

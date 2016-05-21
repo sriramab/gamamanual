@@ -1,5 +1,4 @@
 [//]: # (keyword|operator_towards)
-[//]: # (keyword|operator_cos)
 [//]: # (keyword|operator_sin)
 [//]: # (keyword|operator_at_location)
 [//]: # (keyword|operator_intersects)

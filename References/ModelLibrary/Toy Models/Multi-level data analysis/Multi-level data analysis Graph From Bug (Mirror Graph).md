@@ -13,8 +13,6 @@ _Author : Arnaud Grignard_
 From the reference model "bug.gaml" a spatial graph is created. We create a species node that mirrors the species bug and then a spatial graph is creating using as_distance_graph operator. The species node should then define its own related_to method to decide wether or not a node is related to another one.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Multi-level data analysis\Multi-level data analysis Graph From Bug (Mirror Graph)\graph_plus_bug_layered-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Multi-level data analysis\Multi-level data analysis Graph From Bug (Mirror Graph)\graph_plus_bug_layered-10.png)
-
 Code of the model : 
 
 ```

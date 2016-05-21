@@ -7,13 +7,12 @@
 third part of the tutorial: Road Traffic
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Tutorials\Road Traffic\Road Traffic Model 03\city_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Tutorials\Road Traffic\Road Traffic Model 03\city_display-10.png)
-
 Code of the model : 
 
 ```
 
 model tutorial_gis_city_traffic
+
 
 global {
 	file shape_file_buildings <- file("../includes/building.shp");
@@ -40,6 +39,7 @@ global {
 		create road from: shape_file_roads ;
 		the_graph <- as_edge_graph(road);
 		
+		
 		list<building> residential_buildings <- building where (each.type="Residential");
 		list<building>  industrial_buildings <- building  where (each.type="Industrial") ;
 		create people number: nb_people {
@@ -53,6 +53,7 @@ global {
 		}
 	}
 }
+
 
 species building {
 	string type; 
@@ -101,22 +102,16 @@ species people skills:[moving] {
 	}
 }
 
+
 experiment road_traffic type: gui {
-	parameter "Shapefile for the buildings:" var: shape_file_buildings category: "GIS" ;
-	parameter "Shapefile for the roads:" var: shape_file_roads category: "GIS" ;
-	parameter "Shapefile for the bounds:" var: shape_file_bounds category: "GIS" ;
 	parameter "Number of people agents" var: nb_people category: "People" ;
-	parameter "Earliest hour to start work" var: min_work_start category: "People" min: 2 max: 8;
-	parameter "Latest hour to start work" var: max_work_start category: "People" min: 8 max: 12;
-	parameter "Earliest hour to end work" var: min_work_end category: "People" min: 12 max: 16;
-	parameter "Latest hour to end work" var: max_work_end category: "People" min: 16 max: 23;
 	parameter "minimal speed" var: min_speed category: "People" min: 0.1 #km/#h ;
-	parameter "maximal speed" var: max_speed category: "People" max: 10 #km/#h;
+	parameter "maximal speed" var: max_speed category: "People" max: 50 #km/#h;
 	
 	output {
-		display city_display type:opengl {
-			species building aspect: base ;
-			species road aspect: base ;
+		display city_display type: opengl {
+			species building aspect: base refresh: false;
+			species road aspect: base refresh: false;
 			species people aspect: base ;
 		}
 	}

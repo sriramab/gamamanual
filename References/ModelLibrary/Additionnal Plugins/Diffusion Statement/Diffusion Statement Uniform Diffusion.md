@@ -12,10 +12,6 @@ _Author : Benoit Gaudou_
 This model is used to show how a diffusion works with a uniform matrix of diffusion in a grid. The cell at the center of the grid emit a pheromon at each step, which is spread through the grid thanks to the diffusion mechanism. Without passing a diffusion matrix, the default diffusion matrix is a uniform matrix 3x3, with value 1/nb_neighbors.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Diffusion Statement\Diffusion Statement Uniform Diffusion\uniform_diffusion_in_4_neighbors_grid-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Diffusion Statement\Diffusion Statement Uniform Diffusion\uniform_diffusion_in_4_neighbors_grid-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Diffusion Statement\Diffusion Statement Uniform Diffusion\uniform_diffusion_in_8_neighbors_grid-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Diffusion Statement\Diffusion Statement Uniform Diffusion\uniform_diffusion_in_8_neighbors_grid-10.png)
-
 Code of the model : 
 
 ```

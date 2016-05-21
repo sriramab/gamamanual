@@ -26,6 +26,8 @@ This section is composed of the following sub-section :
 
 * [Graphs](references#Graphs)
 
+* [Init Action](references#InitAction)
+
 * [Map comparison](references#Mapcomparison)
 
 * [Multi-Level Usage](references#Multi-LevelUsage)

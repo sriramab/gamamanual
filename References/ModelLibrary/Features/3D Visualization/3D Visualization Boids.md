@@ -8,8 +8,6 @@ _Author : _
 
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Boids\Sky-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Boids\Sky-10.png)
-
 Code of the model : 
 
 ```

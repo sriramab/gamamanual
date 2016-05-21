@@ -11,10 +11,6 @@
 
 _Author : _
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (Cellular Automata)\Charts-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (Cellular Automata)\Charts-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (Cellular Automata)\Segregation-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (Cellular Automata)\Segregation-10.png)
-
 Imported model : 
 
 ```
@@ -30,7 +26,6 @@ global {
 	rgb color_6 <- rgb ("pink") parameter: "Color of group 6:" category: "User interface";   
 	rgb color_7 <- rgb ("magenta") parameter: "Color of group 7:" category: "User interface";
 	rgb color_8 <- rgb ("cyan") parameter: "Color of group 8:" category: "User interface";
-	const black type: rgb <- rgb ("black");
 	list colors <- [°yellow, °red, °blue, °orange, °green, °pink, °magenta, °cyan] of: rgb;
 	
 	//Number of groups
@@ -52,9 +47,9 @@ global {
 	//Number of neighbours
 	int sum_total_neighbours <- 1 update: sum (all_people collect each.total_nearby) min: 1;
 	//List of all the places
-	list<agent> all_places <- [];
+	list<agent> all_places;
 	//List of all the people
-	list<base> all_people <- [];  
+	list<base> all_people;  
 	
 	//Action to write the description of the model in the console
 	action description {
@@ -109,18 +104,18 @@ import "../include/Common Schelling Segregation.gaml"
 //Define the environment as torus
 global torus: true{
 	//List of all the free places
-	list<space> free_places <- [] ;
+	list<space> free_places ;
 	//List of all the places
-	list<space> all_places <- [] ;
+	list<space> all_places  ;
 	//List of all the people
-	list<space> all_people <- [];
+	list<space> all_people;
 	//Shape of the environment
 	geometry shape <- square(dimensions);
 	
 	//Action to initialize the places
 	action initialize_places {
-		set all_places <- shuffle(space);
-		set free_places <- shuffle(all_places);
+		all_places <- shuffle(space);
+		free_places <- shuffle(all_places);
 	}
 	//Action to initialize the people agents
 	action initialize_people {
@@ -145,21 +140,21 @@ global torus: true{
 
 //Grid species representing the places and the people in each cell
 grid space parent: base width: dimensions height: dimensions neighbors: 8  {
-	rgb color <- black;
+	rgb color <- #black;
 	//List of the neighbours of the places
 	list<space> my_neighbours <- self neighbors_at neighbours_distance;
 	//Action to migrate the agent in another cell if it is not happy
 	action migrate {
 		if !is_happy {
 			//Change the space of the agent to a free space
-			space pp <- any(my_neighbours where (each.color = black));
+			space pp <- any(my_neighbours where (each.color = #black));
 			if (pp != nil) {
 				free_places <+ self;
 				free_places >- pp;
 				all_people >- self;
 				all_people << pp;
-				set pp.color <- color;
-				set color <- black;
+				pp.color <- color;
+				color <- #black;
 			}
 		}
 	}
@@ -173,12 +168,12 @@ experiment schelling type: gui {
 		}
 
 		display Charts {
-			chart name: "Proportion of happiness" type: pie background: #lightgray style: exploded position: { 0, 0 } size: { 1.0, 0.5 } {
+			chart "Proportion of happiness" type: pie background: #lightgray style: exploded position: { 0, 0 } size: { 1.0, 0.5 } {
 				data "Unhappy" value: number_of_people - sum_happy_people color: #green;
 				data "Happy" value: sum_happy_people color: #yellow;
 			}
 
-			chart name: "Global happiness and similarity" type: series background: #lightgray axes: #white position: { 0, 0.5 } size: { 1.0, 0.5 }  x_range: 50{
+			chart "Global happiness and similarity" type: series background: #lightgray axes: #white position: { 0, 0.5 } size: { 1.0, 0.5 }  x_range: 50{
 				data "happy" color: #blue value: (sum_happy_people / number_of_people) * 100 style: spline;
 				data "similarity" color: #red value: (sum_similar_neighbours / sum_total_neighbours) * 100 style: step;
 			}

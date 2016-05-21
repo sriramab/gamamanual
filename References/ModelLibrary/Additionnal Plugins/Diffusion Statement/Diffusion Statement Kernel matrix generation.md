@@ -16,8 +16,6 @@ _Author : Julien Mazars_
 This model shows how to create a diffusion matrix by using the 4 parameters variation, proportion, radius and min-value. Manipulate the parameters to see in real time the result. The number displayed in each cells are the ratio of the initial signal diffused at the end of a step.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Diffusion Statement\Diffusion Statement Kernel matrix generation\my_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Diffusion Statement\Diffusion Statement Kernel matrix generation\my_display-10.png)
-
 Code of the model : 
 
 ```

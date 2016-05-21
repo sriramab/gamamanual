@@ -18,10 +18,6 @@ _Author : _
 A model showing the segregation of the people just by putting a similarity wanted parameter using agents to represent the individuals and a grid to discretize space. Use the colors of the image to know if it is a possible space or not
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (Google Map)\Charts-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (Google Map)\Charts-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (Google Map)\Segregation-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (Google Map)\Segregation-10.png)
-
 Imported model : 
 
 ```
@@ -37,7 +33,6 @@ global {
 	rgb color_6 <- rgb ("pink") parameter: "Color of group 6:" category: "User interface";   
 	rgb color_7 <- rgb ("magenta") parameter: "Color of group 7:" category: "User interface";
 	rgb color_8 <- rgb ("cyan") parameter: "Color of group 8:" category: "User interface";
-	const black type: rgb <- rgb ("black");
 	list colors <- [°yellow, °red, °blue, °orange, °green, °pink, °magenta, °cyan] of: rgb;
 	
 	//Number of groups
@@ -59,9 +54,9 @@ global {
 	//Number of neighbours
 	int sum_total_neighbours <- 1 update: sum (all_people collect each.total_nearby) min: 1;
 	//List of all the places
-	list<agent> all_places <- [];
+	list<agent> all_places;
 	//List of all the people
-	list<base> all_people <- [];  
+	list<base> all_people;  
 	
 	//Action to write the description of the model in the console
 	action description {
@@ -115,9 +110,9 @@ import "../include/Common Schelling Segregation.gaml"
 
 global {
 	//List of all the free places
-	list<space> free_places <- []; 
+	list<space> free_places ; 
 	//List of all the places
-	list<space> all_places <- [];
+	list<space> all_places;
 	//Shape of the environment
 	geometry shape <- square(dimensions);
 	//Percentage of similarity wanted by an agent
@@ -126,7 +121,7 @@ global {
 	int neighbours_distance <- 4; 
 	//Number of groups of people
 	int number_of_groups <- 3;
-	const google_buildings type: list <- [rgb("#EBE6DC"), rgb("#D1D0CD"), rgb("#F2EFE9"), rgb("#EEEBE1"), rgb("#F9EFE8")] ;
+	list google_buildings  <- [rgb("#EBE6DC"), rgb("#D1D0CD"), rgb("#F2EFE9"), rgb("#EEEBE1"), rgb("#F9EFE8")] ;
 	//List of all the available places
 	list<space> available_places ;
 	//Image file to load
@@ -153,7 +148,7 @@ grid space width: dimensions height: dimensions neighbors: 8 use_individual_shap
  
 //Species people representing the people agent
 species people parent: base  {
-	const color type: rgb <- colors at (rnd (number_of_groups - 1));
+	rgb color <- colors at (rnd (number_of_groups - 1));
 	//List of all the neighbours
 	list<people> my_neighbours -> {(self neighbors_at neighbours_distance) of_species people};
 	
@@ -185,12 +180,12 @@ experiment schelling type: gui {
 			species people transparency: 0.5 aspect: geom;
 		}	
 		display Charts {
-			chart name: "Proportion of happiness" type: pie background: #lightgray style: exploded position: { 0, 0 } size: { 1.0, 0.5 } {
+			chart "Proportion of happiness" type: pie background: #lightgray style: exploded position: { 0, 0 } size: { 1.0, 0.5 } {
 				data "Unhappy" value: number_of_people - sum_happy_people color: #green;
 				data "Happy" value: sum_happy_people color: #yellow;
 			}
 
-			chart name: "Global happiness and similarity" type: series background: #lightgray axes: #white position: { 0, 0.5 } size: { 1.0, 0.5 } x_range: 20 y_range: 20 {
+			chart "Global happiness and similarity" type: series background: #lightgray axes: #white position: { 0, 0.5 } size: { 1.0, 0.5 } x_range: 20 y_range: 20 {
 				data "happy" color: °blue value: (sum_happy_people / number_of_people) * 100 style: spline fill: false;
 				data "similarity" color: °red value: (sum_similar_neighbours / sum_total_neighbours) * 100 style: line fill: true ;
 			}

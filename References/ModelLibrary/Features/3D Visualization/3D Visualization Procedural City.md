@@ -1,5 +1,7 @@
 [//]: # (keyword|operator_rotated_by)
 [//]: # (keyword|operator_box)
+[//]: # (keyword|operator_hsb)
+[//]: # (keyword|operator_sin)
 [//]: # (keyword|statement_light)
 [//]: # (keyword|concept_3d)
 [//]: # (keyword|concept_texture)
@@ -70,10 +72,9 @@ experiment DisplayTextured  type: gui {
 	}
 }
 experiment DisplayWithDynamicDiffuseLight  type: gui {
-	float seed <- 5.0;
 	output {
 	  display City type:opengl background:rgb(10,40,55){
-	  		light 1 type:point color:#white position:{world.shape.width/2,world.shape.height/2,0} draw_light:true update:true;
+	  		light 1 type:point color:hsb((time mod 255) /255,1.0 ,0.5) position:{world.shape.width*0.5+ world.shape.width*1.5*sin(time*2),world.shape.width*0.5,world.shape.width*cos(time*2)} draw_light:true update:true;
 			species Building aspect:base;									
 		}
 	}

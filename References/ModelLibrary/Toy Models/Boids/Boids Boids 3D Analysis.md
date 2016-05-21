@@ -1,4 +1,3 @@
-[//]: # (keyword|operator_cos)
 [//]: # (keyword|operator_sin)
 [//]: # (keyword|operator_polygon)
 [//]: # (keyword|operator_dead)
