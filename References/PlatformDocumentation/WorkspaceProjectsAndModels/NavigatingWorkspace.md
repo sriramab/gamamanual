@@ -37,8 +37,8 @@ It may happen, in some occasions, that the library of models is not synchronized
 To look up for a particular model in the library, users can use the "Search for file" menu item. A search dialog is then displayed, which allows to look for models by their title (for example, models containing "GIS" in the example below).
 
 
-|![images/navigator_menu_search.png](resources/images/workspaceProjectsAndModels/navigator_menu_search.png)|![images/navigator_dialog_search.png](resources/images/workspaceProjectsAndModels/navigator_dialog_search.png)|
-|---|---|
+![images/navigator_menu_search.png](resources/images/workspaceProjectsAndModels/navigator_menu_search.png)
+![images/navigator_dialog_search.png](resources/images/workspaceProjectsAndModels/navigator_dialog_search.png)
 
 ### Plugin models
 
@@ -82,10 +82,10 @@ Model files, as well as resources, or even complete projects, can be moved aroun
 ## Closing and Deleting Projects
 Users can choose to get rid of old projects by either **closing** or **deleting** them. Closing a project means that it will still reside in the workspace (and be still visible, although a bit differently, in the _Navigator_) but its model(s) won't participate to the build process and won't be displayable until the project is opened again.
 
-|![images/navigator_menu_close.png](resources/images/workspaceProjectsAndModels/navigator_menu_close.png)|![images/navigator_close_result.png](resources/images/workspaceProjectsAndModels/navigator_close_result.png)|
-|---|---|
+![images/navigator_menu_close.png](resources/images/workspaceProjectsAndModels/navigator_menu_close.png)
+![images/navigator_close_result.png](resources/images/workspaceProjectsAndModels/navigator_close_result.png)
 
 **Deleting** a project must be invoked when the user wants this project to not appear in the workspace anymore (unless, that is, it is [imported](ImportingModels) again). Invoking this command will effectively make the workspace "forget" about this project, and this can be further doubled with a deletion of the projects resources and models from the filesystem.
 
-| ![images/navigator_menu_delete.png](resources/images/workspaceProjectsAndModels/navigator_menu_delete.png) | ![images/navigator_delete_dialog.png](resources/images/workspaceProjectsAndModels/navigator_delete_dialog.png) |
-|---|---|
+![images/navigator_menu_delete.png](resources/images/workspaceProjectsAndModels/navigator_menu_delete.png)
+![images/navigator_delete_dialog.png](resources/images/workspaceProjectsAndModels/navigator_delete_dialog.png)
