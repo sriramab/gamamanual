@@ -24,7 +24,7 @@ In general, it is preferable to use the second command, as more options (includi
 
 GAMA expects the user to enter a so-called _update site_. You can copy and paste the following line (or choose it from the drop-down menu as this address is built inside GAMA):
 ```
-https://gama-platform.googlecode.com/svn/update_site/
+http://updates.gama-platform.org
 ```
 
 GAMA will then scan the entire update site, looking both for new plugins (the example below) and updates to existing plugins. The list available in your installation will of course be different from the one displayed here.
