@@ -596,6 +596,7 @@ map<string,string> BOUNDS <- [
 ```
 
   * **Step 2**: define boundary of environment by using the map object in first step.
+
 ```
 geometry shape <- envelope(BOUNDS);
 
