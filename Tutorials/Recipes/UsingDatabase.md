@@ -54,6 +54,7 @@ All the actions can be used independently from the chosen DBMS. Only the connect
 ### Define a species that uses the SQLSKILL skill
 
 Example of declaration:
+
 ```
 entities {
    species toto skills: [SQLSKILL]
@@ -83,6 +84,7 @@ In the actions defined in the SQLSkill, a parameter containing the connection pa
 
 
 **Example**: Definitions of connection parameter
+
 ```
 
 // POSTGRES connection parameter
@@ -131,6 +133,7 @@ The action tests the connection to a given database.
   * **Exceptions**: _GamaRuntimeException_
 
 **Example**: Check a connection to MySQL
+
 ```
 if (self testConnection(params:MySQL)){
 	write "Connection is OK" ;
@@ -155,6 +158,7 @@ The action creates a connection to a DBMS and executes the select statement. If 
   * **Exceptions**: _GamaRuntimeException_
 
 **Example**: select data from table points
+
 ```
 map <string, string>   PARAMS <- ['dbtype'::'sqlite', 'database'::'../includes/meteo.db'];
 list<list> t <- list<list> (self select(params:PARAMS, 
@@ -163,6 +167,7 @@ list<list> t <- list<list> (self select(params:PARAMS,
 ```
 
 **Example**: select data from table point with question marks from table points
+
 ```
 map <string, string>   PARAMS <- ['dbtype'::'sqlite', 'database'::'../includes/meteo.db'];
 list<list> t <- list<list> (self select(params: PARAMS, 
@@ -183,6 +188,7 @@ list<list> t <- list<list> (self select(params: PARAMS,
   * **Exceptions**:_GamaRuntimeException
 
 **Example**: Insert data into table registration
+
 ```
 map<string, string> PARAMS <- ['dbtype'::'sqlite', 'database'::'../../includes/Student.db'];
 
@@ -215,6 +221,7 @@ The action executeUpdate executes an update command (create/insert/delete/drop) 
   * **Exceptions**: _GamaRuntimeException_
 
 **Examples**: Using action executeUpdate do sql commands (create, insert, update, delete and drop).
+
 ```
 map<string, string> PARAMS <- ['dbtype'::'sqlite',  'database'::'../../includes/Student.db'];
 // Create table
@@ -257,6 +264,7 @@ do executeUpdate (params: PARAMS, updateComm: "DROP TABLE registration");
 MDXSKILL plays the role of an OLAP tool using select to query data from OLAP server to GAMA environment and then species can use the queried data for any analysis purposes.
 ### Define a species that uses the MDXSKILL skill
 Example of declaration:
+
 ```
 entities {   
 	species olap skills: [MDXSKILL]
@@ -266,6 +274,7 @@ entities {
 	 } 
       ...
 ```
+
 Agents with such a skill can use additional actions (defined in the skill)
 
 ### Map of connection parameters for MDX
@@ -285,6 +294,7 @@ In the actions defined in the SQLSkill, a parameter containing the connection pa
 **Table 2**: OLAP Connection parameter description
 
 **Example**: Definitions of OLAP connection parameter
+
 ```
 //Connect SQL Server Analysis Services via XMLA
 	map<string,string> SSAS <- [
@@ -332,6 +342,7 @@ The action tests the connection to a given OLAP database.
   * **Exceptions**: _GamaRuntimeException_
 
 **Example**: Check a connection to MySQL
+
 ```
 if (self testConnection(params:MONDIRANXMLA)){
 	write "Connection is OK";
@@ -359,6 +370,7 @@ The action creates a connection to an OLAP database and executes the select stat
   * **Exceptions**:_GamaRuntimeException
 
 **Example**: select data from SQL Server Analysis Service via XMLA
+
 ```
 if (self testConnection[ params::SSAS]){
 	list l1  <- list(self select (params: SSAS ,
@@ -377,6 +389,7 @@ if (self testConnection[ params::SSAS]){
 ```
 
 **Example**: select data from Mondrian via XMLA with question marks in selection
+
 ```
 if (self testConnection(params:MONDRIANXMLA)){
 	list<list> l2  <- list<list> (self select(params: MONDRIANXMLA, 
@@ -407,6 +420,7 @@ if (self testConnection(params:MONDRIANXMLA)){
 AgentBD is a built-in species, which supports behaviors that look like actions in SQLSKILL but differs slightly with SQLSKILL in that it uses  only one connection for several actions. It means that AgentDB makes a connection to DBMS and keeps that connection for its later operations with DBMS.
 ### Define a species that is an inheritance of agentDB
 Example of declaration:
+
 ```
 entities { 
 	species agentDB parent: AgentDB {
@@ -582,6 +596,7 @@ In Gama, we can use results of select action of SQLSKILL or AgentDB to create sp
 **Table 3**: Select boundary parameter description
 
 **Example**:
+
 ```
 map<string,string> BOUNDS <- [	
 	//'srid'::'32648',
@@ -609,6 +624,7 @@ Note: We can do the same way if we work with MySQL, SQLite, or SQLServer and we 
 If we are familiar with how to create agents from a shapefile then it becomes very simple to create agents from select result. We can do as below:
 
   * **Step 1**: Define a species with SQLSKILL or AgentDB
+
 ```
 entities { 
 	species toto skills: SQLSKILL {
@@ -622,6 +638,7 @@ entities {
 
   * **Step 2**: Define a connection and selection parameters
 ```
+
 global {
 	map<string,string>  PARAMS <- ['dbtype'::'sqlite','database'::'../includes/bph.sqlite'];
 	string location <- 'select ID_4, Name_4, ST_AsBinary(geometry) as geom from vnm_adm4 
@@ -633,6 +650,7 @@ global {
 
   * **Step 3**: Create species by using selected results
 ```
+
 init {
    create toto { 
 	  create locations from: list(self select (params: PARAMS, 
@@ -647,6 +665,7 @@ init {
 If we are familiar with how to create agents from a shapefile then it becomes very simple to create agents from select result. We can do as below:
 
   * **Step 1**: Define a species with SQLSKILL or AgentDB
+
 ```
 entities { 
 	species toto skills: SQLSKILL {
@@ -660,6 +679,7 @@ entities {
 ```
 
   * **Step 2**: Define a connection and create GIS database and tables
+
 ```
 global {
 	map<string,string> PARAMS <-  ['host'::'localhost', 'dbtype'::'Postgres', 'database'::'', 
@@ -692,6 +712,7 @@ global {
 ```
 
   * **Step 3**: Insert geometry data to GIS database
+
 ```
 ask building {
    ask DB_Accessor {
