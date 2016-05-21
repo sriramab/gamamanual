@@ -1,4 +1,4 @@
-<div style="text-align:center"><img src ="https://github.com/mazarsju/gama_doc_17/wiki/resources/images/general/GamaPlatform.png" width="800"/></div>
+<div style="text-align:center"><img src ="https://github.com/gama-platform/gama/wiki/resources/images/general/GamaPlatform.png" width="800"/></div>
 
 GAMA is a modeling and simulation development environment for building spatially explicit agent-based simulations. 
 
@@ -22,7 +22,7 @@ Example of application domains where GAMA is mostly present :
 Some [training sessions](TrainingSession) about topics such as "urban management", "epidemiology", "risk management" are also provided by the team.
 Since GAMA is an open-source software that continues to grow, if you have any particular needs of improvement, feel free to [share it to its active community](https://groups.google.com/forum/#!forum/gama-platform) !
 
-<div style="text-align:center"><img src ="https://github.com/mazarsju/gama_doc_17/wiki/resources/images/general/multiple_application_domains.png" width="800"/></div>
+<div style="text-align:center"><img src ="https://github.com/gama-platform/gama/wiki/resources/images/general/multiple_application_domains.png" width="800"/></div>
 
 ## High level and intuitive language
 
@@ -32,7 +32,7 @@ GAML is the language used in GAMA, coded in Java. It is an agent-based language,
 
 We provides you a continual support through the [active mailing list](https://groups.google.com/forum/#!forum/gama-platform) where the team will answer your questions. Besides, you can learn GAML on your own, following the [step by step tutorial](LearnGAMLStepByStep), or [personal learning path](TODO_URL) in order reach the point you are interested in.
 
-<div style="text-align:center"><img src ="https://github.com/mazarsju/gama_doc_17/wiki/resources/images/general/high_level_language.png" width="800"/></div>
+<div style="text-align:center"><img src ="https://github.com/gama-platform/gama/wiki/resources/images/general/high_level_language.png" width="800"/></div>
 
 ## GIS and Data-Driven models
 
@@ -44,7 +44,7 @@ Some advanced features provides you the possibility to [connect GAMA to database
 
 GAMA has been used in [large-scale projects](Projects), using a great number of agents (up to millions of agents).
 
-<div style="text-align:center"><img src ="https://github.com/mazarsju/gama_doc_17/wiki/resources/images/general/data_driven_models.png" width="800"/></div>
+<div style="text-align:center"><img src ="https://github.com/gama-platform/gama/wiki/resources/images/general/data_driven_models.png" width="800"/></div>
 
 ## Declarative user interface
 
@@ -54,7 +54,7 @@ Advanced [3D displays](Defining3DDisplays) are provided : you can control lights
 
 During the simulations, some advanced features are available to [inspect the population of your agents](InspectorsAndMonitors). To make your model more interactive, you can add easily some [user-controlled action panels, or mouse events](DefiningUserInteraction).
 
-<div style="text-align:center"><img src ="https://github.com/mazarsju/gama_doc_17/wiki/resources/images/general/declarative_UI.png" width="800"/></div>
+<div style="text-align:center"><img src ="https://github.com/gama-platform/gama/wiki/resources/images/general/declarative_UI.png" width="800"/></div>
 
 ______________________________________
 
