@@ -91,9 +91,9 @@ The generated files are (by default) generated in various locations depending on
 
 The typical workflow to generate the wiki files is as follow:
 * Clean and Build all the GAMA projects,
+* In the file mytemplate.tex, specify the absolute path to your "gama_style.tex" (it should be just next to this file)
 * Run the `MainGenerateWiki.java` file in the `msi.gama.documentation`,
 * The wiki files are generated in the `gama.wiki` plugin.
-
 
 ## Workflow to generate PDF files
 
