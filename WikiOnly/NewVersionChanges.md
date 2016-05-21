@@ -47,3 +47,8 @@ gives examples
 * populations of agents can now be easily exported to CSV files using the `save` statement
 * monitors can have colors
 * light statement in 3D display provides the possibility to custom your lights (point lights, direction lights, spot lights)
+* a whole new set of charts
+* Serialize simulations and replay them (to come)
+* Allow TCP, UDP and MQQT communications between agents in different simulations (to come)
+* Simple messaging between agents 
+* Serialization and deserialization of agents between simulations (to come)
