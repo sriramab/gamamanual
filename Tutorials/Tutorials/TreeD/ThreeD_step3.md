@@ -52,42 +52,50 @@ aspect default {
 The GIT version of the model can be found here [Model 03.gaml](https://github.com/gama-platform/gama/tree/master/msi.gama.models/models/Tutorials/3D/models/Model 03.gaml)
 
 ```
-model model3   
+model Tuto3D
 
 global {
-	init { 
-		create cells number: 1000{ 
-			location <- {rnd(100), rnd(100), rnd(100)};	
-		} 
-	}  
+  int nb_cells <-100;
+  int environmentSize <-100;
+  geometry shape <- cube(environmentSize);	
+  init { 
+    create cells number: nb_cells { 
+      location <- {rnd(environmentSize), rnd(environmentSize), rnd(environmentSize)};       
+    } 
+  }  
 } 
     
-species cells skills: [moving] {  
+species cells skills: [moving3D] {  
 	rgb color;
-	list<cells> neighbours;
+	list<cells> neighbors;
 	int offset;
 	
 	reflex move {
-		do wander_3D;	
+      do wander;	
 	}	
 	
-	reflex computeNeighbours {
-		neighbours <- cells select ((each distance_to self) < 10);
-        }
+	reflex computeNeighbors {
+      neighbors <- cells select ((each distance_to self) < 10);
+    }
 		
 	aspect default {
-		draw sphere(1) color:#orange;
-		loop pp over: neighbours {
+		draw sphere(environmentSize*0.01) color:#orange;
+		loop pp over: neighbors {
 			draw line([self.location,pp.location]);
 		}	
-	}
+    }
 }
 
-experiment Display  type: gui {
-	output {
-		display View1 type:opengl background:rgb(10,40,55) {
-			species cells;
-		}
-	}
+
+experiment Tuto3D  type: gui {
+  parameter "Initial number of cells: " var: nb_cells min: 1 max: 1000 category: "Cells" ;
+  output {
+    display View1 type:opengl background:rgb(10,40,55){
+      graphics "env"{
+      	draw cube(environmentSize) color: #black empty:true;	
+      }
+      species cells;
+    }
+  }  
 }
 ```
