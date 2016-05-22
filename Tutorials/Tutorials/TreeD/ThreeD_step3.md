@@ -36,11 +36,11 @@ reflex computeNeighbours {
 Then we update the cell aspect as follows. For each elements (cells) of the **neighbours** list we draw a line between this neighbour's location and the current cell's location.
 ```
 aspect default {
-                draw sphere(1) color:rgb(rnd(255),rnd(255),rnd(255));
-                loop pp over: neighbours {
-                        draw line([self.location,pp.location]);
-                }       
-        }
+  draw sphere(environmentSize*0.01) color:#orange;
+  loop pp over: neighbors {
+    draw line([self.location,pp.location]);
+  }	
+}
 ```
 
 
