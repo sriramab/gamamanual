@@ -71,7 +71,7 @@ reflex move{
 Finally we modify a bit the aspect of the sphere to set its size according to the _environmentSize_ global variable previously defined.
 ```
 aspect default {
- draw sphere(environmentSize*0.01) color:rgb(rnd(255),rnd(255),rnd(255));   
+  draw sphere(environmentSize*0.01) color:#blue;   
 }
 ```
 
