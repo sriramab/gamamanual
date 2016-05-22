@@ -95,7 +95,6 @@ This model is available in the model library (under Tutorials > 3D) and the GIT 
 
 ```
 model Tuto3D
-//Model 1 of the 3D tutorial   
 
 global {
   int nb_cells <-100;	
@@ -108,7 +107,7 @@ global {
   
 species cells{                      
   aspect default {
-    draw sphere(1) color:rgb(rnd(255),rnd(255),rnd(255));   
+    draw sphere(1) color:#blue;   
   }
 }
 
