@@ -24,12 +24,12 @@ Initialize a 3D world with a population of cells placed randomly in a 3D 100x100
 
 ## Model Definition
 
-In this model we define one species of agent: the **cells** agents. The agents will be just displayed as a sphere of radius 1 and a random color defined in the default aspect.
+In this model we define one species of agent: the **cells** agents. The agents will be just displayed as a blue sphere of radius 1.
 
 ```
-species cells{
+species cells{                      
   aspect default {
-    draw sphere(1) color:rgb(rnd(255),rnd(255),rnd(255));
+    draw sphere(1) color:#blue;   
   }
 }
 ```
