@@ -52,3 +52,6 @@ gives examples
 * Allow TCP, UDP and MQQT communications between agents in different simulations (to come)
 * Simple messaging between agents 
 * Serialization and deserialization of agents between simulations (to come)
+* Console now accepts colored text output
+* New `status` statement allows to change the text of the status.
+* Changing simulation names is reflected in their display titles (and it can be dynamic)
