@@ -13,19 +13,19 @@ _Author : Benoit Gaudou_
 Presentation of all the predefined equation systems.Comparaison with hand-written systems to test them.
 
 
-![http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/diff-10.png](http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/diff-10.png)
+![resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/diff-10.png](resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/diff-10.png)
 
-![http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/LV-10.png](http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/LV-10.png)
+![resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/LV-10.png](resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/LV-10.png)
 
-![http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/SEIR-10.png](http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/SEIR-10.png)
+![resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/SEIR-10.png](resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/SEIR-10.png)
 
-![http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/SI-10.png](http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/SI-10.png)
+![resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/SI-10.png](resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/SI-10.png)
 
-![http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/SIR-10.png](http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/SIR-10.png)
+![resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/SIR-10.png](resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/SIR-10.png)
 
-![http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/SIRS-10.png](http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/SIRS-10.png)
+![resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/SIRS-10.png](resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/SIRS-10.png)
 
-![http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/SISs-10.png](http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/SISs-10.png)
+![resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/SISs-10.png](resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations Built-In Equations/SISs-10.png)
 
 Code of the model : 
 

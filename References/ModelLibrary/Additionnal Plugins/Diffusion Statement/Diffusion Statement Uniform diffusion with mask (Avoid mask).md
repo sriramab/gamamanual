@@ -16,9 +16,9 @@ _Author : Julien Mazars_
 This model is used to show how a uniform diffusion can be used with a mask. The cell at the center of the grid emit a pheromon at each step, which is spread through the grid thanks to the diffusion mechanism. A mask is used to restrict the diffusion to a "corridor" (the white part of the bmp image). The first display shows a diffusion avoiding the masked cells (the value is redistributed to the neighboring cells, to have a constant number of pheromon), the second display shows a diffusion without avoiding the masked cells (the value is diffused in the masked cell, and never rediffused again).
 
 
-![http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Diffusion Statement/Diffusion Statement Uniform diffusion with mask (Avoid mask)/a-10.png](http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Diffusion Statement/Diffusion Statement Uniform diffusion with mask (Avoid mask)/a-10.png)
+![resources/images/modelLibraryScreenshots/Additionnal Plugins/Diffusion Statement/Diffusion Statement Uniform diffusion with mask (Avoid mask)/a-10.png](resources/images/modelLibraryScreenshots/Additionnal Plugins/Diffusion Statement/Diffusion Statement Uniform diffusion with mask (Avoid mask)/a-10.png)
 
-![http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Diffusion Statement/Diffusion Statement Uniform diffusion with mask (Avoid mask)/b-10.png](http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Diffusion Statement/Diffusion Statement Uniform diffusion with mask (Avoid mask)/b-10.png)
+![resources/images/modelLibraryScreenshots/Additionnal Plugins/Diffusion Statement/Diffusion Statement Uniform diffusion with mask (Avoid mask)/b-10.png](resources/images/modelLibraryScreenshots/Additionnal Plugins/Diffusion Statement/Diffusion Statement Uniform diffusion with mask (Avoid mask)/b-10.png)
 
 Code of the model : 
 

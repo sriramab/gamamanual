@@ -13,11 +13,11 @@ _Author : hqnghi_
 A simple example of ODE use into agents with the example of the SIR equation system.
 
 
-![http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_charts-10.png](http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_charts-10.png)
+![resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_charts-10.png](resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_charts-10.png)
 
-![http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_chartsH-10.png](http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_chartsH-10.png)
+![resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_chartsH-10.png](resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_chartsH-10.png)
 
-![http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_charts_radar-10.png](http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_charts_radar-10.png)
+![resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_charts_radar-10.png](resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_charts_radar-10.png)
 
 Code of the model : 
 
