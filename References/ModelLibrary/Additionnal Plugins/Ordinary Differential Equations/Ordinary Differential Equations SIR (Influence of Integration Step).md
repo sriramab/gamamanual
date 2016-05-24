@@ -13,13 +13,7 @@ _Author : hqnghi_
 A SIR model to illustrate the impact of the change of the integration parameters.
 
 
-![resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Influence of Integration Step)/SIR_1-10.png](resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Influence of Integration Step)/SIR_1-10.png)
-
-![resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Influence of Integration Step)/SIR_10-10.png](resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Influence of Integration Step)/SIR_10-10.png)
-
-![resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Influence of Integration Step)/SIR_100-10.png](resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Influence of Integration Step)/SIR_100-10.png)
-
-Code of the model : 
+<p><img src="gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Influence of Integration Step)/SIR_1-10.png" alt="Eclipse folder." title class="img-responsive"> == $0</p><p><img src="gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Influence of Integration Step)/SIR_10-10.png" alt="Eclipse folder." title class="img-responsive"> == $0</p><p><img src="gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Influence of Integration Step)/SIR_100-10.png" alt="Eclipse folder." title class="img-responsive"> == $0</p>Code of the model : 
 
 ```
 

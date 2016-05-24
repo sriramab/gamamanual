@@ -13,13 +13,7 @@ _Author : hqnghi_
 A simple example of ODE use into agents with the example of the SIR equation system.
 
 
-![resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_charts-10.png](resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_charts-10.png)
-
-![resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_chartsH-10.png](resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_chartsH-10.png)
-
-![resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_charts_radar-10.png](resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_charts_radar-10.png)
-
-Code of the model : 
+<p><img src="gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_charts-10.png" alt="Eclipse folder." title class="img-responsive"> == $0</p><p><img src="gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_chartsH-10.png" alt="Eclipse folder." title class="img-responsive"> == $0</p><p><img src="gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_charts_radar-10.png" alt="Eclipse folder." title class="img-responsive"> == $0</p>Code of the model : 
 
 ```
 

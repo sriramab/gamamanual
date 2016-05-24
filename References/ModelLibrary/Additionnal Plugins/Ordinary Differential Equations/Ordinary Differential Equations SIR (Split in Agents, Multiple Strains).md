@@ -16,11 +16,7 @@ _Author : tri and nghi_
 This model is an extension of the model SIR_split_in_agents.gaml. It creates several agents of one compartment type (here typically several I_agt).
 
 
-![resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Split in Agents, Multiple Strains)/chart_1system_eq-10.png](resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Split in Agents, Multiple Strains)/chart_1system_eq-10.png)
-
-![resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Split in Agents, Multiple Strains)/chart_3system_eq-10.png](resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Split in Agents, Multiple Strains)/chart_3system_eq-10.png)
-
-Code of the model : 
+<p><img src="gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Split in Agents, Multiple Strains)/chart_1system_eq-10.png" alt="Eclipse folder." title class="img-responsive"> == $0</p><p><img src="gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Split in Agents, Multiple Strains)/chart_3system_eq-10.png" alt="Eclipse folder." title class="img-responsive"> == $0</p>Code of the model : 
 
 ```
 model SIR_split_in_agents_multiple_strains
