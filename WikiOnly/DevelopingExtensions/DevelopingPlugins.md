@@ -46,7 +46,7 @@ Your plug-in has been created.
       * In exported Packages: nothing (but when you will have implemented new packages in the plug-in you should add them there)
       * Add in the classpath all the additional libraries (.jar files) used in the project.
     * Extensions pane:
-      * "Add" "gaml.grammar.addition"
+      * "Add" "gaml.extension"
     * Save the file. This should create a "plugin.xml" file.
 
   * Select the project and in menu Project > Properties:
