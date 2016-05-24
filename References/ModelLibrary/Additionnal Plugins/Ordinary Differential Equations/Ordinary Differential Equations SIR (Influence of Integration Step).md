@@ -13,6 +13,12 @@ _Author : hqnghi_
 A SIR model to illustrate the impact of the change of the integration parameters.
 
 
+![http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Influence of Integration Step)/SIR_1-10.png](http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Influence of Integration Step)/SIR_1-10.png)
+
+![http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Influence of Integration Step)/SIR_10-10.png](http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Influence of Integration Step)/SIR_10-10.png)
+
+![http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Influence of Integration Step)/SIR_100-10.png](http://vps226121.ovh.net/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Influence of Integration Step)/SIR_100-10.png)
+
 Code of the model : 
 
 ```

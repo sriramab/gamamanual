@@ -129,7 +129,7 @@ experiment "Click and Move" type: gui
 	font regular <- font("Helvetica", 14, # bold);
 	output
 	{
-		display "Click and Move (OPENGL)" type: opengl
+		display "Click and Move [OPENGL]" type: opengl
 		{
 			graphics "Empty target" 
 			{
@@ -162,7 +162,7 @@ experiment "Click and Move" type: gui
 
 		}
 		
-		display "Click and Move (JAVA2D)" type: java2D
+		display "Click and Move [JAVA2D]" type: java2D
 		{
 			graphics "Empty target" 
 			{

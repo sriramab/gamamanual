@@ -1,7 +1,5 @@
 [//]: # (keyword|operator_sum)
 [//]: # (keyword|statement_remove)
-[//]: # (keyword|constant_#magenta)
-[//]: # (keyword|constant_#cyan)
 [//]: # (keyword|constant_#lightgray)
 [//]: # (keyword|concept_gis)
 [//]: # (keyword|concept_shapefile)
@@ -28,7 +26,8 @@ global {
 	rgb color_6 <- rgb ("pink") parameter: "Color of group 6:" category: "User interface";   
 	rgb color_7 <- rgb ("magenta") parameter: "Color of group 7:" category: "User interface";
 	rgb color_8 <- rgb ("cyan") parameter: "Color of group 8:" category: "User interface";
-	list colors <- [°yellow, °red, °blue, °orange, °green, °pink, °magenta, °cyan] of: rgb;
+    list colors <- [color_1, color_2, color_3, color_4, color_5, color_6, color_7, color_8] of: rgb;
+
 	
 	//Number of groups
 	int number_of_groups <- 2 max: 8 parameter: "Number of groups:" category: "Population";

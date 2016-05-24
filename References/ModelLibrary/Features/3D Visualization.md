@@ -2,8 +2,6 @@
 
 This sub-section is composed of the following models :
 
-* [Boids Imported Model](references#3DVisualizationBoids)
-
 * [3D Camera and Camera Positionning with Boids model](references#3DVisualization3Dcameraandtrajectories)
 
 * [3D Display model and Height of Building using shapefiles](references#3DVisualizationBuildingElevation)
