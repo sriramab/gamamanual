@@ -55,3 +55,4 @@ gives examples
 * Console now accepts colored text output
 * New `status` statement allows to change the text of the status.
 * Changing simulation names is reflected in their display titles (and it can be dynamic)
+* Terminal commands can now be issued from within GAMA using the `console` operator
