@@ -8,7 +8,7 @@
 
 ## Table of Contents
 <wiki:toc max_depth="2" />
-[=](#=), [action](#action), [add](#add), [agents](#agents), [annealing](#annealing), [ask](#ask), [aspect](#aspect), [assert](#assert), [break](#break), [camera](#camera), [capture](#capture), [chart](#chart), [conscious_contagion](#conscious_contagion), [create](#create), [data](#data), [datalist](#datalist), [default](#default), [diffuse](#diffuse), [display](#display), [display_grid](#display_grid), [display_population](#display_population), [do](#do), [draw](#draw), [else](#else), [emotional_contagion](#emotional_contagion), [enter](#enter), [equation](#equation), [error](#error), [event](#event), [exhaustive](#exhaustive), [exit](#exit), [experiment](#experiment), [export](#export), [focus](#focus), [genetic](#genetic), [graphics](#graphics), [hill_climbing](#hill_climbing), [if](#if), [image](#image), [inspect](#inspect), [let](#let), [light](#light), [loop](#loop), [match](#match), [migrate](#migrate), [monitor](#monitor), [output](#output), [output_file](#output_file), [overlay](#overlay), [parameter](#parameter), [perceive](#perceive), [permanent](#permanent), [plan](#plan), [put](#put), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [release](#release), [remove](#remove), [return](#return), [rule](#rule), [run](#run), [save](#save), [save_batch](#save_batch), [set](#set), [setup](#setup), [simulate](#simulate), [solve](#solve), [species](#species), [state](#state), [status](#status), [switch](#switch), [tabu](#tabu), [task](#task), [test](#test), [trace](#trace), [transition](#transition), [unconscious_contagion](#unconscious_contagion), [user_command](#user_command), [user_init](#user_init), [user_input](#user_input), [user_panel](#user_panel), [using](#using), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), [warn](#warn), [write](#write), 
+[action](#action), [add](#add), [agents](#agents), [annealing](#annealing), [ask](#ask), [aspect](#aspect), [break](#break), [camera](#camera), [capture](#capture), [chart](#chart), [create](#create), [data](#data), [datalist](#datalist), [default](#default), [display](#display), [display_grid](#display_grid), [display_population](#display_population), [do](#do), [draw](#draw), [else](#else), [enter](#enter), [error](#error), [event](#event), [exhaustive](#exhaustive), [exit](#exit), [experiment](#experiment), [export](#export), [genetic](#genetic), [graphics](#graphics), [hill_climbing](#hill_climbing), [if](#if), [image](#image), [inspect](#inspect), [let](#let), [light](#light), [loop](#loop), [match](#match), [migrate](#migrate), [monitor](#monitor), [output](#output), [output_file](#output_file), [overlay](#overlay), [parameter](#parameter), [permanent](#permanent), [put](#put), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [release](#release), [remove](#remove), [return](#return), [run](#run), [save](#save), [save_batch](#save_batch), [set](#set), [simulate](#simulate), [species](#species), [state](#state), [status](#status), [switch](#switch), [tabu](#tabu), [task](#task), [trace](#trace), [transition](#transition), [user_command](#user_command), [user_init](#user_init), [user_input](#user_input), [user_panel](#user_panel), [using](#using), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), [warn](#warn), [write](#write), 
 
 
 ## Statements by kinds
@@ -16,7 +16,7 @@
   * **Batch method**
     * [annealing](#annealing),  [exhaustive](#exhaustive),  [genetic](#genetic),  [hill_climbing](#hill_climbing),  [reactive_tabu](#reactive_tabu),  [save_batch](#save_batch),  [tabu](#tabu),  
   * **Behavior**
-    * [aspect](#aspect),  [plan](#plan),  [reflex](#reflex),  [state](#state),  [task](#task),  [test](#test),  [user_init](#user_init),  [user_panel](#user_panel),  
+    * [aspect](#aspect),  [reflex](#reflex),  [state](#state),  [task](#task),  [user_init](#user_init),  [user_panel](#user_panel),  
   * **Experiment**
     * [experiment](#experiment),  
   * **Layer**
@@ -26,9 +26,9 @@
   * **Parameter**
     * [parameter](#parameter),  
   * **Sequence of statements or action**
-    * [action](#action),  [ask](#ask),  [capture](#capture),  [create](#create),  [default](#default),  [else](#else),  [enter](#enter),  [equation](#equation),  [exit](#exit),  [if](#if),  [loop](#loop),  [match](#match),  [migrate](#migrate),  [perceive](#perceive),  [release](#release),  [run](#run),  [setup](#setup),  [switch](#switch),  [trace](#trace),  [transition](#transition),  [user_command](#user_command),  [using](#using),  
+    * [action](#action),  [ask](#ask),  [capture](#capture),  [create](#create),  [default](#default),  [else](#else),  [enter](#enter),  [exit](#exit),  [if](#if),  [loop](#loop),  [match](#match),  [migrate](#migrate),  [release](#release),  [run](#run),  [switch](#switch),  [trace](#trace),  [transition](#transition),  [user_command](#user_command),  [using](#using),  
   * **Single statement**
-    * [=](#=),  [add](#add),  [assert](#assert),  [break](#break),  [conscious_contagion](#conscious_contagion),  [data](#data),  [datalist](#datalist),  [diffuse](#diffuse),  [do](#do),  [draw](#draw),  [emotional_contagion](#emotional_contagion),  [error](#error),  [export](#export),  [focus](#focus),  [let](#let),  [put](#put),  [remove](#remove),  [return](#return),  [rule](#rule),  [save](#save),  [set](#set),  [simulate](#simulate),  [solve](#solve),  [status](#status),  [unconscious_contagion](#unconscious_contagion),  [user_input](#user_input),  [warn](#warn),  [write](#write),  
+    * [add](#add),  [break](#break),  [data](#data),  [datalist](#datalist),  [do](#do),  [draw](#draw),  [error](#error),  [export](#export),  [let](#let),  [put](#put),  [remove](#remove),  [return](#return),  [save](#save),  [set](#set),  [simulate](#simulate),  [status](#status),  [user_input](#user_input),  [warn](#warn),  [write](#write),  
   * **Species**
     * [species](#species),  
   * **Variable (container)**
@@ -42,21 +42,21 @@
 ## Statements by embedment
 
   * **Behavior**
-    * [add](#add), [ask](#ask), [capture](#capture), [conscious_contagion](#conscious_contagion), [create](#create), [diffuse](#diffuse), [do](#do), [emotional_contagion](#emotional_contagion), [error](#error), [focus](#focus), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [run](#run), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [unconscious_contagion](#unconscious_contagion), [using](#using), [warn](#warn), [write](#write), 
+    * [add](#add), [ask](#ask), [capture](#capture), [create](#create), [do](#do), [error](#error), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [run](#run), [save](#save), [set](#set), [simulate](#simulate), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [using](#using), [warn](#warn), [write](#write), 
   * **Environment**
     * [species](#species), 
   * **Experiment**
-    * [action](#action), [annealing](#annealing), [exhaustive](#exhaustive), [export](#export), [genetic](#genetic), [hill_climbing](#hill_climbing), [output](#output), [parameter](#parameter), [permanent](#permanent), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [save_batch](#save_batch), [setup](#setup), [simulate](#simulate), [state](#state), [tabu](#tabu), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
+    * [action](#action), [annealing](#annealing), [exhaustive](#exhaustive), [export](#export), [genetic](#genetic), [hill_climbing](#hill_climbing), [output](#output), [parameter](#parameter), [permanent](#permanent), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [save_batch](#save_batch), [simulate](#simulate), [state](#state), [tabu](#tabu), [task](#task), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
   * **Layer**
     * [draw](#draw), [error](#error), [if](#if), [let](#let), [loop](#loop), [status](#status), [switch](#switch), [trace](#trace), [warn](#warn), [write](#write), 
   * **Model**
-    * [action](#action), [aspect](#aspect), [equation](#equation), [experiment](#experiment), [output](#output), [reflex](#reflex), [run](#run), [setup](#setup), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
+    * [action](#action), [aspect](#aspect), [experiment](#experiment), [output](#output), [reflex](#reflex), [run](#run), [species](#species), [state](#state), [task](#task), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
   * **Sequence of statements or action**
-    * [add](#add), [ask](#ask), [break](#break), [capture](#capture), [conscious_contagion](#conscious_contagion), [create](#create), [data](#data), [datalist](#datalist), [diffuse](#diffuse), [do](#do), [draw](#draw), [emotional_contagion](#emotional_contagion), [error](#error), [focus](#focus), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [unconscious_contagion](#unconscious_contagion), [using](#using), [warn](#warn), [write](#write), 
+    * [add](#add), [ask](#ask), [break](#break), [capture](#capture), [create](#create), [data](#data), [datalist](#datalist), [do](#do), [draw](#draw), [error](#error), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [using](#using), [warn](#warn), [write](#write), 
   * **Single statement**
     * [run](#run), 
   * **Species**
-    * [action](#action), [aspect](#aspect), [equation](#equation), [perceive](#perceive), [plan](#plan), [reflex](#reflex), [rule](#rule), [run](#run), [setup](#setup), [simulate](#simulate), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
+    * [action](#action), [aspect](#aspect), [reflex](#reflex), [run](#run), [simulate](#simulate), [species](#species), [state](#state), [task](#task), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
   * **action**
     * [return](#return), 
   * **aspect**
@@ -67,8 +67,6 @@
     * [agents](#agents), [camera](#camera), [chart](#chart), [display_grid](#display_grid), [display_population](#display_population), [event](#event), [graphics](#graphics), [image](#image), [light](#light), [overlay](#overlay), 
   * **display_population**
     * [display_population](#display_population), 
-  * **equation**
-    * [=](#=), 
   * **fsm**
     * [state](#state), [user_panel](#user_panel), 
   * **if**
@@ -85,8 +83,6 @@
     * [enter](#enter), [exit](#exit), 
   * **switch**
     * [default](#default), [match](#match), 
-  * **test**
-    * [assert](#assert), 
   * **user_command**
     * [user_input](#user_input), 
   * **user_first**
@@ -124,45 +120,6 @@ statement_keyword1 expression1 facet2: expression2... { // a sequence statement
 
 [Top of the page](#table-of-contents)
 
-	
-
-----
-
-[//]: # (keyword|statement_=)
-### = 
-#### Facets 
-  
-  * **`right`** (float), (omissible) : the right part of the equation (it is mandatory that it can be evaluated as a float  
-  * **`left`** (any type): the left part of the equation (it should be a variable or a call to the diff() or diff2() operators) 
- 	
-#### Definition
-
-Allows to implement an equation in the form function(n, t) = expression. The left function is only here as a placeholder for enabling a simpler syntax and grabbing the variable as its left member.
-
-#### Usages
-
-* The syntax of the = statement is a bit different from the other statements. It has to be used as follows (in an equation):
-
-```
-float t;
-float S;
-float I;
-equation SI { 
-   diff(S,t) = (- 0.3 * S * I / 100);
-   diff(I,t) = (0.3 * S * I / 100);
-} 
-```
-
-    
-* See also: [equation](#equation), [solve](#solve), 
-
-#### Embedments
-* The `=` statement is of type: **Single statement**
-* The `=` statement can be embedded into: equation, 
-* The `=` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
 	
 
 ----
@@ -552,56 +509,6 @@ species one_species {
 
 ----
 
-[//]: # (keyword|statement_assert)
-### assert 
-#### Facets 
-  
-  * **`value`** (any type), (omissible) : the value that is evaluated and compared to other facets
-  * `equals` (any type): an expression, assert tests whether the value is equals to this expression
-  * `is_not` (any type): an expression, assert tests whether the value is not equals to this expression
-  * `raises` (an identifier): "error" or "warning", used in testing what raises the evaluation of the value: expression 
- 	
-#### Definition
-
-Allows to check whether the evaluation of a given expression fulfills a given condition. If it is not fulfilled, an exception is raised.
-
-#### Usages
-
-* if the equals: facet is used, the equality between the evaluation of expressions in the value: and in the equals: facets is tested
-
-```
-assert (2+2) equals: 4;
-```
-
-
-* if the is_not: facet is used, the inequality between the evaluation of expressions in the value: and in the equals: facets is tested
-
-```
-assert self is_not: nil;
-```
-
-
-* if the raises: facet is used with either "warning" or "error", the statement tests whether the evaluation of the value: expression raises an error (resp. a warning)
-
-```
-int z <- 0;
-assert (3/z) raises: "error";
-```
-
-    
-* See also: [test](#test), [setup](#setup), 
-
-#### Embedments
-* The `assert` statement is of type: **Single statement**
-* The `assert` statement can be embedded into: test, 
-* The `assert` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
-
-----
-
 [//]: # (keyword|statement_break)
 ### break 
 #### Facets 
@@ -726,6 +633,7 @@ capture target: list (B) as: C;
   * `legend_font_size` (int): Legend font size
   * `legend_font_style` (an identifier), takes values in: {plain, bold, italic}: the style used to display legend
   * `position` (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greter than 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
+  * `reverse_axes` (boolean): reverse X and Y axis (for example to get horizental bar charts
   * `series_label_position` (an identifier), takes values in: {default, none, legend, onchart, yaxis, xaxis}: Position of the Series names: default (best guess), none, legend, onchart, xaxis (for category plots) or yaxis (uses the first serie name).
   * `size` (point): the layer resize factor: {1,1} refers to the original size whereas {0.5,0.5} divides by 2 the height and the width of the layer. In case of a 3D layer, a 3D point can be used (note that {1,1} is equivalent to {1,1,0}, so a resize of a layer containing 3D objects with a 2D points will remove the elevation)
   * `style` (an identifier), takes values in: {line, whisker, area, bar, dot, step, spline, stack, 3d, ring, exploded, default}: The sub-style style, also default style for the series.
@@ -735,7 +643,7 @@ capture target: list (B) as: C;
   * `title_font` (string): Title font face
   * `title_font_size` (int): Title font size
   * `title_font_style` (an identifier), takes values in: {plain, bold, italic}: the style used to display titles
-  * `type` (an identifier), takes values in: {xy, scatter, histogram, series, pie, radar, box_whisker}: the type of chart. It could be histogram, series, xy, pie or box whisker. The difference between series and xy is that the former adds an implicit x-axis that refers to the numbers of cycles, while the latter considers the first declaration of data to be its x-axis.
+  * `type` (an identifier), takes values in: {xy, scatter, histogram, series, pie, radar, heatmap, box_whisker}: the type of chart. It could be histogram, series, xy, pie, radar, heatmap or box whisker. The difference between series and xy is that the former adds an implicit x-axis that refers to the numbers of cycles, while the latter considers the first declaration of data to be its x-axis.
   * `x_label` (a label): the title for the X axis
   * `x_range` (any type in [float, int, point, list]): range of the x-axis. Can be a number (which will set the axis total range) or a point (which will set the min and max of the axis).
   * `x_serie` (any type in [list, float, int]): for series charts, change the default common x serie (simulation cycle) for an other value (list or numerical).
@@ -769,42 +677,6 @@ display chart_display {
 * The `chart` statement is of type: **Layer**
 * The `chart` statement can be embedded into: display, 
 * The `chart` statement embeds statements: [add](#add),  [ask](#ask),  [data](#data),  [datalist](#datalist),  [do](#do),  [put](#put),  [remove](#remove),  [set](#set),  [simulate](#simulate),  [using](#using),  
-
-[Top of the page](#table-of-contents)
-		
-	
-
-----
-
-[//]: # (keyword|statement_conscious_contagion)
-### conscious_contagion 
-#### Facets 
-  
-  * **`emotion_created`** (546706): the emotion that will be created with the contagion  
-  * **`emotion_detected`** (546706): the emotion that will start the contagion
-  * `name` (an identifier), (omissible) : the identifier of the unconscious contagion
-  * `charisma` (float): The charisma value of the perceived agent (between 0 and 1)
-  * `receptivity` (float): The receptivity value of the current agent (between 0 and 1)
-  * `threshold` (float): The threshold value to make the contagion
-  * `when` (boolean): A boolean value to get the emotion only with a certain condition 
- 	
-#### Definition
-
-enables to directly add an emotion of a perceived specie if the perceived agent ges a patricular emotion.
-
-#### Usages
-
-* Other examples of use: 
-```
-conscious_contagion emotion_detected:fear emotion_created:fearConfirmed;
-conscious_contagion emotion_detected:fear emotion_created:fearConfirmed charisma: 0.5 receptivity: 0.5;
-``` 
-  
-
-#### Embedments
-* The `conscious_contagion` statement is of type: **Single statement**
-* The `conscious_contagion` statement can be embedded into: Behavior, Sequence of statements or action, 
-* The `conscious_contagion` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 		
@@ -917,10 +789,10 @@ create species: a_species number: an_int;
 ### data 
 #### Facets 
   
+  * **`legend`** (string), (omissible) :   
   * **`value`** (any type in [float, point, list]): 
-  * `legend` (string), (omissible) : 
   * `accumulate_values` (boolean): Force to replace values at each step (false) or accumulate with previous steps (true)
-  * `color` (rgb): color of the serie
+  * `color` (any type in [rgb, list]): color of the serie, for heatmap can be a list to specify [minColor,maxColor] or [minColor,medColor,maxColor]
   * `fill` (boolean): Marker filled (true) or not (false)
   * `line_visible` (boolean): Line visible or not
   * `marker` (boolean): marker visible or not
@@ -949,7 +821,7 @@ create species: a_species number: an_int;
   * **`value`** (list): the values to display. Has to be a matrix, a list or a List of List. Each element can be a number (series/histogram) or a list with two values (XY chart)
   * `legend` (list), (omissible) : the name of the series: a list of strings (can be a variable with dynamic names)
   * `accumulate_values` (boolean): Force to replace values at each step (false) or accumulate with previous steps (true)
-  * `color` (list): list of colors
+  * `color` (list): list of colors, for heatmaps can be a list of [minColor,maxColor] or [minColor,medColor,maxColor]
   * `fill` (boolean): Marker filled (true) or not (false), same for all series.
   * `line_visible` (boolean): Line visible or not (same for all series)
   * `marker` (boolean): marker visible or not
@@ -989,64 +861,6 @@ Used in a switch match structure, the block prefixed by default is executed only
 * The `default` statement is of type: **Sequence of statements or action**
 * The `default` statement can be embedded into: switch, 
 * The `default` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
-
-----
-
-[//]: # (keyword|statement_diffuse)
-### diffuse 
-#### Facets 
-  
-  * **`var`** (an identifier), (omissible) : the variable to be diffused  
-  * **`on`** (any type in [container, species]): the list of agents (in general cells of a grid), on which the diffusion will occur
-  * `avoid_mask` (boolean): if true, the value will not be diffused in the masked cells, but will be restitute to the neighboring cells, multiplied by the proportion value (no signal lost). If false, the value will be diffused in the masked cells, but masked cells won't diffuse the value afterward (lost of signal). (default value : false)
-  * `cycle_length` (int): the number of diffusion operation applied in one simulation step
-  * `mask` (matrix): a matrix masking the diffusion (matrix created from a image for example). The cells corresponding to the values smaller than "-1" in the mask matrix will not diffuse, and the other will diffuse.
-  * `mat_diffu` (matrix): the diffusion matrix (can have any size)
-  * `matrix` (matrix): the diffusion matrix ("kernel" or "filter" in image processing). Can have any size, as long as dimensions are odd values.
-  * `method` (an identifier), takes values in: {convolution, dot_product}: the diffusion method
-  * `min_value` (float): if a value is smaller than this value, it will not be diffused. By default, this value is equal to 0.0. This value cannot be smaller than 0.
-  * `propagation` (a label), takes values in: {diffusion, gradient}: represents both the way the signal is propagated and the way to treat multiple propagation of the same signal occurring at once from different places. If propagation equals 'diffusion', the intensity of a signal is shared between its neighbors with respect to 'proportion', 'variation' and the number of neighbors of the environment places (4, 6 or 8). I.e., for a given signal S propagated from place P, the value transmitted to its N neighbors is : S' = (S / N / proportion) - variation. The intensity of S is then diminished by S `*` proportion on P. In a diffusion, the different signals of the same name see their intensities added to each other on each place. If propagation equals 'gradient', the original intensity is not modified, and each neighbors receives the intensity : S / proportion - variation. If multiple propagation occur at once, only the maximum intensity is kept on each place. If 'propagation' is not defined, it is assumed that it is equal to 'diffusion'.
-  * `proportion` (float): a diffusion rate
-  * `radius` (int): a diffusion radius (in number of cells from the center)
-  * `variation` (float): an absolute value to decrease at each neighbors 
- 	
-#### Definition
-
-This statements allows a value to diffuse among a species on agents (generally on a grid) depending on a given diffusion matrix.
-
-#### Usages
-
-* A basic example of diffusion of the variable phero defined in the species cells, given a diffusion matrix math_diff is:
-
-```
-matrix<float> math_diff <- matrix([[1/9,1/9,1/9],[1/9,1/9,1/9],[1/9,1/9,1/9]]);
-diffuse var: phero on: cells mat_diffu: math_diff;
-```
-
-
-* The diffusion can be masked by obstacles, created from a bitmap image:
-
-```
-diffuse var: phero on: cells mat_diffu: math_diff mask: mymask;
-```
-
-
-* A convenient way to have an uniform diffusion in a given radius is (which is equivalent to the above diffusion):
-
-```
-diffuse var: phero on: cells proportion: 1/9 radius: 1;
-```
-
-
-
-#### Embedments
-* The `diffuse` statement is of type: **Single statement**
-* The `diffuse` statement can be embedded into: Behavior, Sequence of statements or action, 
-* The `diffuse` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 		
@@ -1414,43 +1228,6 @@ This statement cannot be used alone
 
 ----
 
-[//]: # (keyword|statement_emotional_contagion)
-### emotional_contagion 
-#### Facets 
-  
-  * **`emotion_detected`** (546706): the emotion that will start the contagion
-  * `name` (an identifier), (omissible) : the identifier of the emotional contagion
-  * `charisma` (float): The charisma value of the perceived agent (between 0 and 1)
-  * `emotion_created` (546706): the emotion that will be created with the contagion
-  * `receptivity` (float): The receptivity value of the current agent (between 0 and 1)
-  * `threshold` (float): The threshold value to make the contagion
-  * `when` (boolean): A boolean value to get the emotion only with a certain condition 
- 	
-#### Definition
-
-enables to make conscious or unconscious emotional contagion
-
-#### Usages
-
-* Other examples of use: 
-```
-emotional_contagion emotion_detected:fearConfirmed;
-emotional_contagion emotion_detected:fear emotion_created:fearConfirmed;
-emotional_contagion emotion_detected:fear emotion_created:fearConfirmed charisma: 0.5 receptivity: 0.5;
-``` 
-  
-
-#### Embedments
-* The `emotional_contagion` statement is of type: **Single statement**
-* The `emotional_contagion` statement can be embedded into: Behavior, Sequence of statements or action, 
-* The `emotional_contagion` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
-
-----
-
 [//]: # (keyword|statement_enter)
 ### enter 
 #### Facets 
@@ -1480,61 +1257,6 @@ In an FSM architecture, `enter` introduces a sequence of statements to execute u
 * The `enter` statement is of type: **Sequence of statements or action**
 * The `enter` statement can be embedded into: state, 
 * The `enter` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
-
-----
-
-[//]: # (keyword|statement_equation)
-### equation 
-#### Facets 
-  
-  * **`name`** (an identifier), (omissible) : the equation identifier
-  * `params` (list): the list of parameters used in predefined equation systems
-  * `simultaneously` (list): a list of species containing a system of equations (all systems will be solved simultaneously)
-  * `type` (an identifier), takes values in: {SI, SIS, SIR, SIRS, SEIR, LV}: the choice of one among classical models (SI, SIS, SIR, SIRS, SEIR, LV)
-  * `vars` (list): the list of variables used in predefined equation systems 
- 	
-#### Definition
-
-The equation statement is used to create an equation system from several single equations.
-
-#### Usages
-
-* The basic syntax to define an equation system is:
-
-```
-float t;
-float S;
-float I;
-equation SI { 
-   diff(S,t) = (- 0.3 * S * I / 100);
-   diff(I,t) = (0.3 * S * I / 100);
-} 
-```
-
-
-* If the type: facet is used, a predefined equation system is defined using variables vars: and parameters params: in the right order. All possible predefined equation systems are the following ones (see [EquationPresentation161 EquationPresentation161] for precise definition of each classical equation system): 
-
-```
-equation eqSI type: SI vars: [S,I,t] params: [N,beta];
-equation eqSIS type: SIS vars: [S,I,t] params: [N,beta,gamma];
-equation eqSIR type:SIR vars:[S,I,R,t] params:[N,beta,gamma];
-equation eqSIRS type: SIRS vars: [S,I,R,t] params: [N,beta,gamma,omega,mu];
-equation eqSEIR type: SEIR vars: [S,E,I,R,t] params: [N,beta,gamma,sigma,mu];
-equation eqLV type: LV vars: [x,y,t] params: [alpha,beta,delta,gamma] ;
-```
-
-
-* If the simultaneously: facet is used, system of all the agents will be solved simultaneously.    
-* See also: [=](#=), [solve](#solve), 
-
-#### Embedments
-* The `equation` statement is of type: **Sequence of statements or action**
-* The `equation` statement can be embedded into: Species, Model, 
-* The `equation` statement embeds statements: [=](#=),  
 
 [Top of the page](#table-of-contents)
 		
@@ -1750,39 +1472,6 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 * The `export` statement is of type: **Single statement**
 * The `export` statement can be embedded into: Experiment, 
 * The `export` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
-
-----
-
-[//]: # (keyword|statement_focus)
-### focus 
-#### Facets 
-
-  * `name` (an identifier), (omissible) : the identifier of the focus
-  * `expression` (any type): an expression that will be the value kept in the belief
-  * `priority` (any type in [float, int]): The priority of the created predicate
-  * `var` (any type in [any type, list, container]): the variable of the perceived agent you want to add to your beliefs
-  * `when` (boolean): A boolean value to focus only with a certain condition 
- 	
-#### Definition
-
-enables to directly add a belief from the variable of a perceived specie.
-
-#### Usages
-
-* Other examples of use: 
-```
-focus var:speed /*where speed is a variable from a species that is being perceived*/
-``` 
-  
-
-#### Embedments
-* The `focus` statement is of type: **Single statement**
-* The `focus` statement can be embedded into: Behavior, Sequence of statements or action, 
-* The `focus` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 		
@@ -2538,46 +2227,6 @@ parameter 'Value of titi:' var: titi min: 1 max: 100 step: 2;
 
 ----
 
-[//]: # (keyword|statement_perceive)
-### perceive 
-#### Facets 
-  
-  * **`target`** (any type in [container, point, agent]): the list of the agent you want to perceive
-  * `name` (an identifier), (omissible) : the name of the perception
-  * `as` (species): an expression that evaluates to a species
-  * `emotion` (546706): The emotion needed to do the perception
-  * `in` (any type in [float, geometry]): a float or a geometry. If it is a float, it's a radius of a detection area. If it is a geometry, it is the area of detection of others species.
-  * `threshold` (float): Threshold linked to the emotion.
-  * `when` (boolean): a boolean to tell when does the perceive is active 
- 	
-#### Definition
-
-Allow the agent, with a bdi architecture, to perceive others agents
-
-#### Usages
-
-* the basic syntax to perceive agents inside a circle of perception
-
-```
-perceive name_of-perception target: the_agents_you_want_to_perceive in: a_distance when: a_certain_condition {
-Here you are in the context of the perceived agents. To refer to the agent who does the perception, use myself.
-If you want to make an action (such as adding a belief for example), use ask myself{ do the_action}
-}
-```
-
-
-
-#### Embedments
-* The `perceive` statement is of type: **Sequence of statements or action**
-* The `perceive` statement can be embedded into: Species, 
-* The `perceive` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
-
-----
-
 [//]: # (keyword|statement_permanent)
 ### permanent 
 #### Facets 
@@ -2607,30 +2256,6 @@ permanent {
 * The `permanent` statement is of type: **Output**
 * The `permanent` statement can be embedded into: Experiment, 
 * The `permanent` statement embeds statements: [display](#display),  [inspect](#inspect),  [monitor](#monitor),  [output_file](#output_file),  
-
-[Top of the page](#table-of-contents)
-		
-	
-
-----
-
-[//]: # (keyword|statement_plan)
-### plan 
-#### Facets 
-
-  * `name` (an identifier), (omissible) : 
-  * `emotion` (546706): 
-  * `finished_when` (boolean): 
-  * `instantaneous` (boolean): 
-  * `intention` (546704): 
-  * `priority` (float): 
-  * `threshold` (float): 
-  * `when` (boolean): 
-
-#### Embedments
-* The `plan` statement is of type: **Behavior**
-* The `plan` statement can be embedded into: Species, 
-* The `plan` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 		
@@ -3003,51 +2628,6 @@ reflex writing {
 
 ----
 
-[//]: # (keyword|statement_rule)
-### rule 
-#### Facets 
-
-  * `name` (an identifier), (omissible) : The name of the rule
-  * `belief` (546704): The mandatory belief
-  * `desire` (546704): The mandatory desire
-  * `emotion` (546706): The mandatory emotion
-  * `new_belief` (546704): The belief that will be added
-  * `new_desire` (546704): The desire that will be added
-  * `new_emotion` (546706): The emotion that will be added
-  * `new_uncertainty` (546704): The uncertainty that will be added
-  * `priority` (any type in [float, int]): The priority of the predicate added as a desire
-  * `remove_belief` (546704): The belief that will be removed
-  * `remove_desire` (546704): The desire that will be removed
-  * `remove_emotion` (546706): The emotion that will be removed
-  * `remove_intention` (546704): The intention that will be removed
-  * `remove_uncertainty` (546704): The uncertainty that will be removed
-  * `threshold` (float): Threshold linked to the emotion.
-  * `uncertainty` (546704): The mandatory uncertainty
-  * `when` (boolean):  
- 	
-#### Definition
-
-enables to add a desire or a belief or to remove a belief, a desire or an intention if the agent gets the belief or/and desire or/and condition mentioned.
-
-#### Usages
-
-* Other examples of use: 
-```
-rule belief: new_predicate("test") when: flip(0.5) new_desire: new_predicate("test")
-``` 
-  
-
-#### Embedments
-* The `rule` statement is of type: **Single statement**
-* The `rule` statement can be embedded into: Species, 
-* The `rule` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
-
-----
-
 [//]: # (keyword|statement_run)
 ### run 
 #### Facets 
@@ -3181,47 +2761,6 @@ Allows to assign a value to the variable or attribute specified
 
 ----
 
-[//]: # (keyword|statement_setup)
-### setup 
-#### Facets 
- 
- 	
-#### Definition
-
-The setup statement is used to define the set of instructions that will be executed before every [#test test].
-
-#### Usages
-
-* As every test should be independent from the others, the setup will mainly contain initialization of variables that will be used in each test.
-
-```
-species Tester {
-    int val_to_test;
-
-    setup {
-        val_to_test <- 0;
-    }
-
-    test t1 {
-       // [set of instructions, including asserts]
-    }
-}
-```
-
-    
-* See also: [test](#test), [assert](#assert), 
-
-#### Embedments
-* The `setup` statement is of type: **Sequence of statements or action**
-* The `setup` statement can be embedded into: Species, Experiment, Model, 
-* The `setup` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
-
-----
-
 [//]: # (keyword|statement_simulate)
 ### simulate 
 #### Facets 
@@ -3253,47 +2792,6 @@ ask receiver_agent(s) {
 * The `simulate` statement is of type: **Single statement**
 * The `simulate` statement can be embedded into: chart, Experiment, Species, Behavior, Sequence of statements or action, 
 * The `simulate` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
-
-----
-
-[//]: # (keyword|statement_solve)
-### solve 
-#### Facets 
-  
-  * **`equation`** (an identifier), (omissible) : the equation system identifier to be numerically solved
-  * `cycle_length` (int): length of simulation cycle which will be synchronize with step of integrator (default value: 1)
-  * `discretizing_step` (int): number of discrete between 2 steps of simulation (default value: 0)
-  * `integrated_times` (list): time interval inside integration process
-  * `integrated_values` (list): list of variables's value inside integration process
-  * `max_step` (float): maximal step, (used with dp853 method only), (sign is irrelevant, regardless of integration direction, forward or backward), the last step can be smaller than this value
-  * `method` (an identifier), takes values in: {Euler, ThreeEighthes, Midpoint, Gill, Luther, rk4, dp853, AdamsBashforth, AdamsMoulton, DormandPrince54, GraggBulirschStoer, HighamHall54}: integrate method (can be only "Euler", "ThreeEighthes", "Midpoint", "Gill", "Luther", "rk4" or "dp853", "AdamsBashforth", "AdamsMoulton", "DormandPrince54", "GraggBulirschStoer",  "HighamHall54") (default value: "rk4")
-  * `min_step` (float): minimal step, (used with dp853 method only), (sign is irrelevant, regardless of integration direction, forward or backward), the last step can be smaller than this value
-  * `scalAbsoluteTolerance` (float): allowed absolute error (used with dp853 method only)
-  * `scalRelativeTolerance` (float): allowed relative error (used with dp853 method only)
-  * `step` (float): integration step, use with most integrator methods (default value: 1)
-  * `time_final` (float): target time for the integration (can be set to a value smaller than t0 for backward integration)
-  * `time_initial` (float): initial time 
- 	
-#### Definition
-
-Solves all equations which matched the given name, with all systems of agents that should solved simultaneously.
-
-#### Usages
-
-* Other examples of use: 
-```
-solve SIR method: "rk4" step:0.001;
-``` 
-  
-
-#### Embedments
-* The `solve` statement is of type: **Single statement**
-* The `solve` statement can be embedded into: Behavior, Sequence of statements or action, 
-* The `solve` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 		
@@ -3580,48 +3078,6 @@ As reflex, a task is a sequence of statements that can be executed, at each time
 
 ----
 
-[//]: # (keyword|statement_test)
-### test 
-#### Facets 
-
-  * `name` (an identifier), (omissible) : identifier of the test 
- 	
-#### Definition
-
-The test statement allows modeler to define a set of assertions that will be tested. Before the execution of the embedded set of instructions, if a setup is defined in the species, model or experiment, it is executed. In a test, if one assertion fails, the evaluation of other assertions continue (if GAMA is configured in the preferences that the program does not stop at the first exception).
-
-#### Usages
-
-* An example of use:
-
-```
-species Tester {
-    // set of attributes that will be used in test
-
-    setup {
-        // [set of instructions... in particular initializations]
-    }
-
-    test t1 {
-       // [set of instructions, including asserts]
-    }
-}
-```
-
-    
-* See also: [setup](#setup), [assert](#assert), 
-
-#### Embedments
-* The `test` statement is of type: **Behavior**
-* The `test` statement can be embedded into: Species, Experiment, Model, 
-* The `test` statement embeds statements: [assert](#assert),  
-
-[Top of the page](#table-of-contents)
-		
-	
-
-----
-
 [//]: # (keyword|statement_trace)
 ### trace 
 #### Facets 
@@ -3676,41 +3132,6 @@ In an FSM architecture, `transition` specifies the next state of the life cycle.
 * The `transition` statement is of type: **Sequence of statements or action**
 * The `transition` statement can be embedded into: Sequence of statements or action, Behavior, 
 * The `transition` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
-
-----
-
-[//]: # (keyword|statement_unconscious_contagion)
-### unconscious_contagion 
-#### Facets 
-  
-  * **`emotion`** (546706): the emotion that will be copied with the contagion
-  * `name` (an identifier), (omissible) : the identifier of the unconscious contagion
-  * `charisma` (float): The charisma value of the perceived agent (between 0 and 1)
-  * `receptivity` (float): The receptivity value of the current agent (between 0 and 1)
-  * `threshold` (float): The threshold value to make the contagion
-  * `when` (boolean): A boolean value to get the emotion only with a certain condition 
- 	
-#### Definition
-
-enables to directly copy an emotion presents in the perceived specie.
-
-#### Usages
-
-* Other examples of use: 
-```
-unconscious_contagion emotion:fearConfirmed; 
-unconscious_contagion emotion:fearConfirmed charisma: 0.5 receptivity: 0.5;
-``` 
-  
-
-#### Embedments
-* The `unconscious_contagion` statement is of type: **Single statement**
-* The `unconscious_contagion` statement can be embedded into: Behavior, Sequence of statements or action, 
-* The `unconscious_contagion` statement embeds statements: 
 
 [Top of the page](#table-of-contents)
 		
