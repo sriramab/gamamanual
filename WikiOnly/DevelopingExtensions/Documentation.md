@@ -17,6 +17,7 @@
 	* [How to document statements](#how-to-document-statements)
 	* [How to document skills](#how-to-document-skills)
 * [How to change the processor](#how-to-change-the-processor)
+* [General workflow of file generation](#general-workflow-of-file-generation)
 
 
 # Documentation
@@ -244,3 +245,8 @@ Here are the several steps you have to do :
 - In the tab "Destination", choose processor/plugins for the directory. In the tab "Options", delete the field _Qualifier replacement_. Click "finish".
 - Right click on the folder "processor" to refresh.
 --> It's ok !
+
+# General workflow of file generation
+
+This following diagram explains roughly the workflow for the generation of the different files : 
+![resources/images/developpingExtension/generationFilesWorkflow.png](resources/images/developpingExtension/generationFilesWorkflow.png)
