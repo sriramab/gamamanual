@@ -56,3 +56,4 @@ gives examples
 * New `status` statement allows to change the text of the status.
 * Changing simulation names is reflected in their display titles (and it can be dynamic)
 * Terminal commands can now be issued from within GAMA using the `console` operator
+* Interactive console allows to directly interact with agents (experiments, simulations and any agent) and get a direct feedback on the impact of code execution using a new interpreter integrated with the console.
