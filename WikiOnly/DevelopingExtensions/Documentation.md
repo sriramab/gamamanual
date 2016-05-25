@@ -92,7 +92,6 @@ The generated files are (by default) generated in various locations depending on
 
 The typical workflow to generate the wiki files is as follow:
 * Clean and Build all the GAMA projects,
-* In the file mytemplate.tex, specify the absolute path to your "gama_style.tex" (it should be just next to this file)
 * Run the `MainGenerateWiki.java` file in the `msi.gama.documentation`,
 * The wiki files are generated in the `gama.wiki` plugin.
 
@@ -100,10 +99,12 @@ The typical workflow to generate the wiki files is as follow:
 
 The typical workflow to generate the wiki files is as follow:
 * Clean and Build all the GAMA projects,
+* In the file mytemplate.tex, specify the absolute path to your "gama_style.tex" (it should be just next to this file)
 * Run the `MainGeneratePDF.java` file in the `msi.gama.documentation`, accepting all the packages install of latex,
 * The wiki files are generated in the `msi.gama.documentation` plugin.
 
 Note that generating the PDF takes a lot of time. Please be patient !
+If you want to update the file "gama_style.sty" (for syntax coloration), you have to turn the flag "generateGamaStyle" to "true" (and make sure the file "keywords.xml" is already generated).
 
 ## Workflow to generate unit tests
 
