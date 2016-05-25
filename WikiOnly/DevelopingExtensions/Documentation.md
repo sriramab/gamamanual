@@ -104,6 +104,7 @@ The typical workflow to generate the wiki files is as follow:
 * The wiki files are generated in the `msi.gama.documentation` plugin.
 
 Note that generating the PDF takes a lot of time. Please be patient !
+
 If you want to update the file "gama_style.sty" (for syntax coloration), you have to turn the flag "generateGamaStyle" to "true" (and make sure the file "keywords.xml" is already generated).
 
 ## Workflow to generate unit tests
