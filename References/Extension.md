@@ -6,18 +6,10 @@
 
 ## Introduction
 This page provides a link to each of the extension pages. Extensions are the additional GAMA plugins that exist in the GAMA GitHub repository but will not be packaged with the release. **These extensions are not maintained by GAMA core team but by their authors.**
-* [msi.gama.application](PluginDocumentation/Extension_msi.gama.application)
+* [ummisco.gama.network](PluginDocumentation/Extension_ummisco.gama.network)
 * [ummisco.gaml.extensions.stats](PluginDocumentation/Extension_ummisco.gaml.extensions.stats)
-* [simtools.gaml.extensions.physics](PluginDocumentation/Extension_simtools.gaml.extensions.physics)
-* [simtools.gaml.extensions.traffic](PluginDocumentation/Extension_simtools.gaml.extensions.traffic)
-* [ummisco.gaml.extensions.sound](PluginDocumentation/Extension_ummisco.gaml.extensions.sound)
-* [ummisco.gaml.extensions.rjava](PluginDocumentation/Extension_ummisco.gaml.extensions.rjava)
-* [irit.gaml.extensions.test](PluginDocumentation/Extension_irit.gaml.extensions.test)
-* [ummisco.gama.opengl](PluginDocumentation/Extension_ummisco.gama.opengl)
-* [ummisco.gama.serialize](PluginDocumentation/Extension_ummisco.gama.serialize)
 * [idees.gama.weka](PluginDocumentation/Extension_idees.gama.weka)
-* [msi.gaml.architecture.simplebdi](PluginDocumentation/Extension_msi.gaml.architecture.simplebdi)
-* [irit.gaml.extensions.database](PluginDocumentation/Extension_irit.gaml.extensions.database)
+* [ummisco.gaml.extensions.rjava](PluginDocumentation/Extension_ummisco.gaml.extensions.rjava)
+* [ummisco.gaml.extensions.sound](PluginDocumentation/Extension_ummisco.gaml.extensions.sound)
 * [simtools.graphanalysis.fr](PluginDocumentation/Extension_simtools.graphanalysis.fr)
-* [msi.gaml.extensions.fipa](PluginDocumentation/Extension_msi.gaml.extensions.fipa)
-* [ummisco.gaml.extensions.maths](PluginDocumentation/Extension_ummisco.gaml.extensions.maths)
+* [ummisco.gama.serialize](PluginDocumentation/Extension_ummisco.gama.serialize)
