@@ -54,6 +54,9 @@ You have now to import projects into the workspace (notice that the folders down
 2. Go back to the Java perspective
 3. Clean project (Project menu > Clean ...)
 
+### If you have errors...
+If errors continue to show on in the different projects, be sure to correctly set the JDK used in the Eclipse preferences. GAMA is targeting JDK 1.7, and Eclipse will produce errors if it not found in your environment. So, either you set the compatibility to 1.8 by default (in Preferences > Java > Compiler > Compiler Compliance Level) or you change the error produced by Eclipse to a warning only (in Preferences > Java > Compiler > Building > "No strictly compatible JRE for execution environment available).
+
 ### Run GAMA
 1. In the `msi.gama.application` plugin, open the `gama.product` file
 2. Go to "Contents" tab and click on "Add required"
