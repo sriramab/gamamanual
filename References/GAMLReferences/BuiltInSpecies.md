@@ -26,7 +26,28 @@ create cluster_builder returns: clusterer;
 
 ## Table of Contents
 <wiki:toc max_depth="3" />
-[AgentDB](#agentdb), [experiment](#experiment), [physical_world](#physical_world), 
+[agent](#agent), [AgentDB](#agentdb), [base_edge](#base_edge), [experiment](#experiment), [graph_edge](#graph_edge), [graph_node](#graph_node), [model](#model), [physical_world](#physical_world), 
+    	
+----
+
+[//]: # (keyword|species_agent)
+## `agent`	
+
+### Actions
+	  
+	 
+#### **`_init_`**
+
+* returns: `unknown`
+  
+	 
+#### **`_step_`**
+
+* returns: `unknown`
+			
+
+[Top of the page](#table-of-contents) 
+	
     	
 ----
 
@@ -101,11 +122,71 @@ create cluster_builder returns: clusterer;
     	
 ----
 
+[//]: # (keyword|species_base_edge)
+## `base_edge`	
+
+### Actions
+				
+
+[Top of the page](#table-of-contents) 
+	
+    	
+----
+
 [//]: # (keyword|species_experiment)
 ## `experiment`	
 
 ### Actions
 				
+
+[Top of the page](#table-of-contents) 
+	
+    	
+----
+
+[//]: # (keyword|species_graph_edge)
+## `graph_edge`	
+
+### Actions
+				
+
+[Top of the page](#table-of-contents) 
+	
+    	
+----
+
+[//]: # (keyword|species_graph_node)
+## `graph_node`	
+
+### Actions
+	  
+	 
+#### **`related_to`**
+
+* returns: `bool`
+ 			
+* → **`other`** (`agent`): 			
+
+[Top of the page](#table-of-contents) 
+	
+    	
+----
+
+[//]: # (keyword|species_model)
+## `model`	
+
+### Actions
+	  
+	 
+#### **`halt`**
+Allows to stop the current simulation so that cannot be continued after. All the behaviors and updates are stopped.
+* returns: `unknown`
+  
+	 
+#### **`pause`**
+Allows to pause the current simulation **ACTUALLY EXPERIMENT FOR THE MOMENT**. It can be set to continue with the manual intervention of the user.
+* returns: `unknown`
+			
 
 [Top of the page](#table-of-contents) 
 	

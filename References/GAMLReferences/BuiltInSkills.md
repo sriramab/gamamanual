@@ -54,7 +54,7 @@ if speed = 5 {
 ## Table of Contents
 <wiki:toc max_depth="3" />
 
-[advanced_driving](#advanced_driving), [driving](#driving), [fipa](#fipa), [GAMASQL](#gamasql), [MDXSKILL](#mdxskill), [physics](#physics), [skill_road](#skill_road), [skill_road_node](#skill_road_node), [SQLSKILL](#sqlskill), 
+[advanced_driving](#advanced_driving), [driving](#driving), [fipa](#fipa), [GAMASQL](#gamasql), [grid](#grid), [MDXSKILL](#mdxskill), [messaging](#messaging), [moving](#moving), [moving3D](#moving3d), [physics](#physics), [skill_road](#skill_road), [skill_road_node](#skill_road_node), [SQLSKILL](#sqlskill), 
     	
 ----
 
@@ -387,6 +387,27 @@ Replies a message with a 'subscribe' performative message.
     	
 ----
 
+[//]: # (keyword|skill_grid)
+## grid
+
+ 
+### Variables
+	   
+  * **`bands`** (`list`): Represents the values of the different bands of the cell (list of floating point value automatically set when the grid is initialized from a grid file)   
+  * **`color`** (`rgb`): Represents the color of the cell, used by default to represent the grid on displays   
+  * **`grid_value`** (`float`): Represents a floating point value (automatically set when the grid is initialized from a grid file, and used by default to represent the elevation of the cell when displaying it on a display)   
+  * **`grid_x`** (`int`): Returns the 0-based index of the column of the cell in the grid   
+  * **`grid_y`** (`int`): Returns the 0-based index of the row of the cell in the grid   
+  * **`neighbors`** (`list`): Represents the neighbor at distance 1 of the cell 
+ 	
+### Actions
+		
+
+[Top of the page](#table-of-contents)
+	
+    	
+----
+
 [//]: # (keyword|skill_MDXSKILL)
 ## MDXSKILL
 
@@ -418,6 +439,114 @@ Replies a message with a 'subscribe' performative message.
 
 
 * returns: float	
+
+[Top of the page](#table-of-contents)
+	
+    	
+----
+
+[//]: # (keyword|skill_messaging)
+## messaging
+A simple skill that provides agents with a mailbox than can be filled with messages
+ 
+### Variables
+	   
+  * **`mailbox`** (`list`): The list of messages that can be consulted by the agent 
+ 	
+### Actions
+	  
+	 
+#### **`send`**
+
+
+* returns: msi.gama.extensions.messaging.GamaMessage 			
+* **`to`** (any type): The agent, or server, to which this message will be sent to 			
+* **`contents`** (any type): The contents of the message, an arbitrary object	
+
+[Top of the page](#table-of-contents)
+	
+    	
+----
+
+[//]: # (keyword|skill_moving)
+## moving
+The moving skill is intended to define the minimal set of behaviours required for agents that are able to move on different topologies
+ 
+### Variables
+	   
+  * **`destination`** (`point`): Represents the next location of the agent if it keeps its current speed and heading (read-only)   
+  * **`heading`** (`int`): Represents the absolute heading of the agent in degrees.   
+  * **`location`** (`point`): Represents the current position of the agent   
+  * **`speed`** (`float`): Represents the speed of the agent (in meter/second) 
+ 	
+### Actions
+	  
+	 
+#### **`follow`**
+moves the agent along a given path passed in the arguments.
+
+* returns: path 			
+* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
+* **`path`** (path): a path to be followed. 			
+* **`move_weights`** (map): Weights used for the moving. 			
+* **`return_path`** (boolean): if true, return the path followed (by default: false)  
+	 
+#### **`goto`**
+moves the agent towards the target passed in the arguments.
+
+* returns: path 			
+* **`target`** (agent,point,geometry): the location or entity towards which to move. 			
+* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
+* **`on`** (graph): graph that restrains this move 			
+* **`recompute_path`** (boolean): if false, the path is not recompute even if the graph is modified (by default: true) 			
+* **`return_path`** (boolean): if true, return the path followed (by default: false) 			
+* **`move_weights`** (map): Weights used for the moving.  
+	 
+#### **`move`**
+moves the agent forward, the distance being computed with respect to its speed and heading. The value of the corresponding variables are used unless arguments are passed.
+
+* returns: path 			
+* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
+* **`heading`** (int): the angle (in degree) of the target direction. 			
+* **`bounds`** (geometry,agent): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry  
+	 
+#### **`wander`**
+Moves the agent towards a random location at the maximum distance (with respect to its speed). The heading of the agent is chosen randomly if no amplitude is specified. This action changes the value of heading.
+
+* returns: void 			
+* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
+* **`amplitude`** (int): a restriction placed on the random heading choice. The new heading is chosen in the range (heading - amplitude/2, heading+amplitude/2) 			
+* **`bounds`** (agent,geometry): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry	
+
+[Top of the page](#table-of-contents)
+	
+    	
+----
+
+[//]: # (keyword|skill_moving3D)
+## moving3D
+The moving skill 3D is intended to define the minimal set of behaviours required for agents that are able to move on different topologies
+ 
+### Variables
+	   
+  * **`destination`** (`point`): continuously updated destination of the agent with respect to its speed and heading (read-only)   
+  * **`heading`** (`int`): the absolute heading of the agent in degrees (in the range 0-359)   
+  * **`pitch`** (`int`): the absolute pitch of the agent in degrees (in the range 0-359)   
+  * **`roll`** (`int`): the absolute roll of the agent in degrees (in the range 0-359)   
+  * **`speed`** (`float`): the speed of the agent (in meter/second) 
+ 	
+### Actions
+	  
+	 
+#### **`move`**
+moves the agent forward, the distance being computed with respect to its speed and heading. The value of the corresponding variables are used unless arguments are passed.
+
+* returns: path 			
+* **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
+* **`heading`** (int): int, optional, the direction to take for this move (replaces the current value of heading) 			
+* **`pitch`** (int): int, optional, the direction to take for this move (replaces the current value of pitch) 			
+* **`heading`** (int): int, optional, the direction to take for this move (replaces the current value of roll) 			
+* **`bounds`** (geometry,agent): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry	
 
 [Top of the page](#table-of-contents)
 	

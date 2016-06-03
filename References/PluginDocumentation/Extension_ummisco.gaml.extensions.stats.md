@@ -444,8 +444,8 @@ Returns the RMS (Root-Mean-Square) of a data sequence. The RMS of data sequence 
   *  **`skew`** (`float` , `float`) --->  `float` 
 
 #### Result: 
-Returns the skew of a data sequence.
 Returns the skew of a data sequence, which is moment(data,3,mean) / standardDeviation3
+Returns the skew of a data sequence.
     	
 ----
 
@@ -484,8 +484,8 @@ Returns the value, t, for which the area under the Student-t probability density
   *  **`variance`** (`int`, `float`, `float`) --->  `float` 
 
 #### Result: 
-Returns the variance from a standard deviation.
 Returns the variance of a data sequence. That is (sumOfSquares - mean*sum) / size with mean = sum/size.
+Returns the variance from a standard deviation.
 
 ----
 

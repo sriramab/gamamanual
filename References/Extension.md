@@ -9,7 +9,6 @@ This page provides a link to each of the extension pages. Extensions are the add
 * [ummisco.gama.network](PluginDocumentation/Extension_ummisco.gama.network)
 * [ummisco.gaml.extensions.stats](PluginDocumentation/Extension_ummisco.gaml.extensions.stats)
 * [idees.gama.weka](PluginDocumentation/Extension_idees.gama.weka)
-* [ummisco.gaml.extensions.rjava](PluginDocumentation/Extension_ummisco.gaml.extensions.rjava)
 * [ummisco.gaml.extensions.sound](PluginDocumentation/Extension_ummisco.gaml.extensions.sound)
 * [simtools.graphanalysis.fr](PluginDocumentation/Extension_simtools.graphanalysis.fr)
 * [ummisco.gama.serialize](PluginDocumentation/Extension_ummisco.gama.serialize)
