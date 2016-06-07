@@ -40,11 +40,11 @@ This can take a while...
 ### Import projects into workspace
 You have now to import projects into the workspace (notice that the folders downloaded during the clone will neither be copied nor moved).
 
-1. In the **Git perspective** and the **Git Repositories** view, Right-Click on "Working Directory" inside the `gama` repository, and choose "Import projects"
-![Context Working directory](resources/images/developpingExtension/GIT_Context_WorkingDirectory.png)
+1. In the **Git perspective** and the **Git Repositories** view, Right-Click on "Working Tree" inside the `gama` repository, and choose "Import projects"
+![Context Working tree](resources/images/developpingExtension/GIT_Context_WorkingDirectory.png)
   * In the **Select a wizard to use for importing projects** window:
     * "Import existing projects" should be checked
-    * "Working Directory" should be selected
+    * "Working Tree" should be selected
 ![GIT Import projects](resources/images/developpingExtension/GIT_Import_projects.png)    
   * In **Import Projects** window:
     * **Uncheck « Search for nested project »**
