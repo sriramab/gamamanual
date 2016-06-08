@@ -97,7 +97,6 @@ In addition, the bottom overlay bar provides the Camera position in 3D.
 | **SHIFT+Down**| Rotate the model down (increase the phi angle of the spherical coordinates)|
 | **SHIFT+Left**| Rotate the model left (increase the theta angle of the spherical coordinates)|
 | **SHIFT+Right**| Rotate the model right (decrease the theta angle of the spherical coordinates)|
-| **F**| Flip the upVector of the camera|
 | **SPACE** | Reset the pivot to the center of the envelope |
 | **KEYPAD 2,4,6,8**| Quick rotation (increase/decrease phi/theta by 30°)|
 | **CMD+MOUSE1** | Makes the camera rotate around the model |
