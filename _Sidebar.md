@@ -1,7 +1,7 @@
 ## [Home](Home)
 ## [Introduction](Overview)
-## [Platform](Platform)
 ## [Changes from 1.6.1 to 1.7](NewVersionChanges)
+## [Platform](PlatformDocumentation)
 1. [Installation and Launching](InstallationAndLaunching)
   1. [Installation](Installation)
   2. [Launching GAMA](Launching)
@@ -74,6 +74,7 @@
 7. [Using BDI](UsingBDI)
 8. [Using Driving Skill](UsingDrivingSkill)
 9. [Manipulate dates](ManipulateDates)
+9. [Manipulate lights](ManipulateLight)
 10. [Using comodel](Comodel)
 11. [FAQ](FAQ)
 12. [Known Issues](KnownIssues)
@@ -93,8 +94,9 @@
   2. [Units and Constants](UnitsAndConstants)
   3. [Pseudo Variables](PseudoVariables)
   4. [Variables And Attributes](VariablesAndAttributes)
-  5. [Operators [A-K]](OperatorsAK)
-  6. [Operators [L-Z]](OperatorsLZ)
+  5. [Operators [A-C]](OperatorsAC)
+  6. [Operators [D-M]](OperatorsDM)
+  6. [Operators [N-Z]](OperatorsNZ)
 8. [Index](Index)
 
 ## [Tutorials](Tutorials)
@@ -121,7 +123,6 @@
 12. [Creating a release of GAMA](CreatingAReleaseOfGama)
 12. [Documentation generation](Documentation)
 13. [Website generation](WebsiteGeneration)
-14. [Changes from 1.61 and 1.7](NewVersionChanges)
 
 ## [Scientific References](References)
 

@@ -18,10 +18,6 @@ _Author : Patrick Taillandier_
 A model showing how to represent a flooding system with dykes and buildings. It uses a grid to discretize space, and has a 3D display. The water can flow from one cell to another considering the height of the cells, and the water pressure. It is also possible to delete dyke by clicking on one of them in the display.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Flood Simulation\Flood Simulation Hydrological Model\chart_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Flood Simulation\Flood Simulation Hydrological Model\chart_display-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Flood Simulation\Flood Simulation Hydrological Model\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Flood Simulation\Flood Simulation Hydrological Model\map-10.png)
-
 Code of the model : 
 
 ```

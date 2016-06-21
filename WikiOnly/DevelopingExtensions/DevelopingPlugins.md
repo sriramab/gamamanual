@@ -4,7 +4,7 @@
 
 This page details how to create a new plug-in in order to extend the GAML language with new skills, species, displays or operators.
 It also details how to create a plug-in that can be  uploaded on an update site and can be installed into the GAMA release.
-We consider here that the developper version of GAMA has been installed (as detailled in [this page](InstallingGitVersion)).
+We consider here that the developer version of GAMA has been installed (as detailled in [this page](InstallingGitVersion)).
 
 
 
@@ -43,15 +43,15 @@ Your plug-in has been created.
     * Dependencies pane:
       * add (at least minimum) the three plug-ins "msi.gama.core", "msi.gama.ext" and "msi.gama.processor" in the "Required Plug-ins". When you click on "Add", a new window will appear without any plug-in. Just write the beginning of the plug-in name in the text field under "Select a plug-in".
     * Runtime pane:
-      * In exported Packages: nothing (but when you will have implemented new packages in the plug-in you should add them their)
+      * In exported Packages: nothing (but when you will have implemented new packages in the plug-in you should add them there)
       * Add in the classpath all the additional libraries (.jar files) used in the project.
     * Extensions pane:
-      * "Add" "gaml.grammar.addition"
+      * "Add" "gaml.extension"
     * Save the file. This should create a "plugin.xml" file.
 
   * Select the project and in menu Project > Properties:
     * Java Compiler  > Annotation Processing: check "Enable project specific settings", then in "Generated Source Directory", change ".apt\_generated" in "gaml",
-    * Java Compiler  > Annotation Processing > Factory path: check "Enable project specific settings", then "Add Jars" and choose "msi.gama.processor/processor/plugins/mis.gama.processor.1.4.0.jar"
+    * Java Compiler  > Annotation Processing > Factory path: check "Enable project specific settings", then "Add Jars" and choose "msi.gama.processor/processor/plugins/msi.gama.processor.1.4.0.jar"
     * Close the menu. It should compile the project and create the `gaml` directory.
     * Return in the Project > Properties Menu.
     * In Java Buildpath  > Source, check that the gaml directory has been added. Otherwise click on Add Folder and select the gaml directory

@@ -13,11 +13,7 @@ _Author : Benoit Gaudou_
 This model is used to show two different computation methods to use diffusion : with the dot product method and with the convolution method. The cell at the center of the grid emit a pheromon at each step, which is spread through the grid thanks to the diffusion mechanism, using a particular matrix of diffusion. 
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Diffusion Statement\Diffusion Statement Anisotropic Diffusion (Various Methods)\convol-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Diffusion Statement\Diffusion Statement Anisotropic Diffusion (Various Methods)\convol-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Diffusion Statement\Diffusion Statement Anisotropic Diffusion (Various Methods)\dot-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Diffusion Statement\Diffusion Statement Anisotropic Diffusion (Various Methods)\dot-10.png)
-
-Code of the model : 
+<p><img src="gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Diffusion Statement/Diffusion Statement Anisotropic Diffusion (Various Methods)/convol-10.png" alt="Eclipse folder." title class="img-responsive"> == $0</p><p><img src="gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Diffusion Statement/Diffusion Statement Anisotropic Diffusion (Various Methods)/dot-10.png" alt="Eclipse folder." title class="img-responsive"> == $0</p>Code of the model : 
 
 ```
 

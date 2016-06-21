@@ -14,12 +14,6 @@ _Author : _
 This model shows how to use multi-level architecture. A corridor can capture pedestrians going from left to right side if they are inside the corridor. This will result in changing their species from pedestrian to captured_pedestrian which will not be displayed. Once they pass enought time to consider they reach the exit of the corridor, they will be released by the corridor agent as pedestrians, letting them been displayed and going to their target. 
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multi-Level Usage\Multi-Level Usage Corridor\Captured_Pedestrians-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multi-Level Usage\Multi-Level Usage Corridor\Captured_Pedestrians-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multi-Level Usage\Multi-Level Usage Corridor\defaut_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multi-Level Usage\Multi-Level Usage Corridor\defaut_display-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multi-Level Usage\Multi-Level Usage Corridor\Execution_Time-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multi-Level Usage\Multi-Level Usage Corridor\Execution_Time-10.png)
-
 Code of the model : 
 
 ```
@@ -62,7 +56,7 @@ global {
 	int new_pedestian_generate_frequency <- 1;
 	int new_pedestrian_y_distance <- int(environment_size / new_pedestrian_rate);
 	
-	list<pedestrian> pedestrians <- [] update: list(pedestrian); 
+	list<pedestrian> pedestrians  update: list(pedestrian); 
 	float start_time <- machine_time;
 	
 	init {
@@ -185,7 +179,7 @@ species corridor_wall {
 		create corridor_wall_info_drawer number: 1 with: [target :: self];
 	}
 	
-	aspect name: my_aspect {
+	aspect  my_aspect {
 		draw shape color: corridor_wall_color;
 	}
 }
@@ -227,13 +221,13 @@ experiment corridor_expr type: gui{
 		}
 
 		display Execution_Time refresh: every(25) {
-			chart name: 'Simulation step length' type: series background: #white {
+			chart 'Simulation step length' type: series background: #white {
 				data 'simulation_step_length_in_mili_second' value: machine_time - start_time color: (rgb ('green'));
 			}
 		}
 	 	
 		display Captured_Pedestrians refresh: every(25){
-			chart name: 'Captured Pedestrian' type: series background: #white {
+			chart 'Captured Pedestrian' type: series background: #white {
 				data 'captured_pedestrians' value: length ( ((list (corridor)) at 0).members ) color: rgb ('blue');
 				data 'pedestrians' value: length (list (pedestrian)) color: rgb ('white');  
 			}

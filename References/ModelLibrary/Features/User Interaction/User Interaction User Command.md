@@ -1,4 +1,3 @@
-[//]: # (keyword|operator_not)
 [//]: # (keyword|operator_user_input)
 [//]: # (keyword|statement_user_command)
 [//]: # (keyword|concept_gui)
@@ -9,8 +8,6 @@ _Author : Patrick Taillandier_
 
 Model which shows how to use the user commands in order to create agents in the display. The user has two possibilities : create one agent, or create a number of agents, with the possibility to change their shape and a pink color. The user also has the possibility to change the color and the shapes of the agents.
 
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\User Interaction\User Interaction User Command\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\User Interaction\User Interaction User Command\map-10.png)
 
 Code of the model : 
 
@@ -39,7 +36,7 @@ global {
 	//User command to create a given number of agents according
 	user_command "Create agents" {
 		 map input_values <- user_input(["Number" :: nbAgent, "shape" :: "circle"]);
-     	 create cell number : int(input_values at "Number") with: [color:: °pink, is_square:: string(input_values at "shape") = "square"];
+     	 create cell number: int(input_values at "Number") with: [color:: °pink, is_square:: string(input_values at "shape") = "square"];
 	}
 	
 }

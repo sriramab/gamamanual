@@ -10,10 +10,6 @@ _Author : _
 A simple SI model without Ordinary Differential Equations showing agents moving randomly among a grid and becoming infected
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology Susceptible Infected (SI)\chart-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology Susceptible Infected (SI)\chart-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology Susceptible Infected (SI)\si_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Epidemiology\Epidemiology Susceptible Infected (SI)\si_display-10.png)
-
 Code of the model : 
 
 ```

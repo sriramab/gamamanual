@@ -8,6 +8,8 @@ This section is composed of the following sub-section :
 
 * [Batch](references#Batch)
 
+* [Charts](references#Charts)
+
 * [Clustering](references#Clustering)
 
 * [Co-model Usage](references#Co-modelUsage)
@@ -23,6 +25,8 @@ This section is composed of the following sub-section :
 * [Driving Skill](references#DrivingSkill)
 
 * [Graphs](references#Graphs)
+
+* [Init Action](references#InitAction)
 
 * [Map comparison](references#Mapcomparison)
 

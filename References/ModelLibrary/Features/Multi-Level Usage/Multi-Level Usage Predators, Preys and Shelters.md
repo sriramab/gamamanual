@@ -23,8 +23,6 @@ _Author : _
 This model shows how to use multi-level architecture. In this model, prey and predators agents move randomly in the environment. When a prey agent perceive a predator, it flees trying to go to the closest shelters while the predator agent chases it. The shelters capture the prey agents fleeing, changing them into prey_in_shelter species, that predator can't chase during a certain time. They are released after that time in an invisible state so that they can wander in the  environment without being chase by the predator, but also, for a certain time.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multi-Level Usage\Multi-Level Usage Predators, Preys and Shelters\default_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multi-Level Usage\Multi-Level Usage Predators, Preys and Shelters\default_display-10.png)
-
 Code of the model : 
 
 ```
@@ -114,7 +112,7 @@ species prey skills: [moving] control: fsm {
 	}
 	
 	aspect default {
-		draw geometry: shape color: color;
+		draw  shape color: color;
 	}
 }
 
@@ -138,7 +136,7 @@ species predator skills: [moving] schedules: shuffle (list (predator)) {
 	reflex chase_prey when: (target_prey != nil) { do move heading: self towards target_prey speed: predator_speed;}
 	
 	aspect default {
-		draw geometry:shape color: predator_color;
+		draw shape color: predator_color;
 	} 
 } 
 
@@ -173,19 +171,19 @@ species shelter skills: [moving]  frequency: 2 {
 	
 	//Subspecies prey_in_shelter that will represent the prey agents captured by the shelter
 	species prey_in_shelter parent: prey frequency: 2 schedules: ( ( int ( (length (prey_in_shelter)) / 2 ) ) among (list (prey_in_shelter)) ) {
-		var in_shelter_time type: int init: int(time);
+		int in_shelter_time <- int(time);
 		
 		state in_shelter {
 			do wander speed: shelter_speed;
 		}
 		
 		aspect default {
-			draw geometry: shape color: predator_in_shelter_color;
+			draw  shape color: predator_in_shelter_color;
 		} 
 	}
 	
 	aspect default {
-		draw geometry:shape color: shelter_color;
+		draw shape color: shelter_color;
 		draw 'Members: ' + (string (length ((members)))) color: rgb ('white') size: 6 at: {(location).x - 20, (location).y};
 	}
 }

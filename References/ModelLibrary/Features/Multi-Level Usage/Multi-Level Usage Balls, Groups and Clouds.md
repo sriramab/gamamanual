@@ -1,5 +1,4 @@
 [//]: # (keyword|operator_towards)
-[//]: # (keyword|operator_cos)
 [//]: # (keyword|operator_sin)
 [//]: # (keyword|operator_at_location)
 [//]: # (keyword|operator_intersects)
@@ -298,7 +297,7 @@ global {
 		//Action to do when the group is disaggregated
 		action disaggregate {
 			release members as: ball in: world {
-				set state value: 'chaos' ;
+				 state <- 'chaos' ;
 			}
 			
 			do die ;
@@ -312,7 +311,7 @@ global {
 				if target in nearby_groups {
 					if (rnd(10)) < (merge_possibility * 10) {
 						list<ball_in_group> target_coms <- list<ball_in_group>(target.members) ;
-						list<ball> released_balls <- [];
+						list<ball> released_balls ;
 						ask target {
 							release target_coms as: ball in: world returns: released_coms;
 							released_balls <- list(released_coms);

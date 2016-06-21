@@ -14,32 +14,69 @@ gives examples
 * signal and diffuse have been merged into a single statement
 * facets do not accept a space between their identifier and the `:` anymore.
 * simplification of equation/solve statements and deprecation of old facets
+* in FIPA skill, `content`is replaced everywhere with `contents`
+* in FIPA skill, `receivers` is replaced everywhere with `to`
+* in FIPA skill, `messages` is replaced by `mailbox`
 
 # Enhancements in 1.7
-* multi-simulation
-* date : new variable type and possibility to use a real calendar
-* font in draw
-* draw of complex shapes through obj file
-* new types fo files are taken into account: geotiff and dxf
-* viewers for common files
-* editor: doc on built-in elements, templates, shortcuts to common tasks, hyperlinks to files used
-* validation: improvement in time, gathering of infos/todos
-* navigator: better overview of model files and their support files, addition of plugin models
+
+* Simulations
+ * multi-simulation
+
+* Language
+ * date : new variable type and possibility to use a real calendar
+ * font in draw
+ * BDI control architecture for agents
+ * file management, new operators, new statements, new skills(?), new built-in variables, 
+ * status statement (to manipulate the status line from GAML)
+ * new operators (sum_of, etc.)
+ * casting of files works
+ * co-modeling (importation of micro-models that can be managed within a macro-model)
+ * populations of agents can now be easily exported to CSV files using the `save` statement 
+ * Simple messaging skill between agents  
+ * Terminal commands can now be issued from within GAMA using the `console` operator
+ * New `status` statement allows to change the text of the status.
+ * light statement in 3D display provides the possibility to custom your lights (point lights, direction lights, spot lights)
+
+* Data importation
+ * draw of complex shapes through obj file
+ * new types fo files are taken into account: geotiff and dxf
+ * viewers for common files
+ * navigator: better overview of model files and their support files, addition of plugin models 
+
+* Editor
+ * doc on built-in elements, templates, shortcuts to common tasks, hyperlinks to files used
+ * improvement in time, gathering of infos/todos
+ * warnings can be removed from model files
+
+
 * Models library: 
-* Preferences: for performances and bug fixes in displays
-* Simulation views
+ * New models (make a list)
+
+* Preferences
+ * For performances and bug fixes in displays
+
+* Simulation displays
+ * fullscreen mode for displays (ESC key)
+ * CTRL+O for overlay and CTRL+L for layers side controls
+ * cleaner OpenGL displays (less garbage, better drawing of lines, rotation helper, sticky ROI, etc.)
+ * faster java2D displays (esp. on zoom)
+ * better user interaction (mouse move, hover, key listener)
+ * a whole new set of charts
+ * getting values when moving the mouse on charts
+ * Changing simulation names is reflected in their display titles (and it can be dynamic)
+
 * Error view
-* BDI control architecture for agents
-* language: file management, new operators, new statements, new skills(?), new built-in variables, 
-* status statement (to manipulate the status line from GAML)
-* fullscreen mode for displays (ESC key)
-* new operators (sum_of, etc.)
-* cleaner OpenGL displays (less garbage, better drawing of lines, rotation helper, sticky ROI, etc.)
-* faster java2D displays (esp. on zoom)
-* casting of files works
-* co-modeling
-* better user interaction (mouse move, hover, key listener)
-* warnings can be removed from model files
-* getting values when moving the mouse on charts
-* populations of agents can now be easily exported to CSV files using the `save` statement
-* monitors can have colors
+
+* Console
+ * Interactive console allows to directly interact with agents (experiments, simulations and any agent) and get a direct feedback on the impact of code execution using a new interpreter integrated with the console.
+ * Console now accepts colored text output 
+
+* Monitor view
+ * monitors can have colors
+
+* Serialization
+ * Serialize simulations and replay them (to come)
+ * Serialization and deserialization of agents between simulations (to come)
+
+* Allow TCP, UDP and MQQT communications between agents in different simulations (to come)

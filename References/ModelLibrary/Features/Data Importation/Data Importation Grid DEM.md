@@ -11,30 +11,6 @@ _Author : Arnaud Grignard_
 Model to show how to import a ASCII File to make a DEM Representation and apply a Texture on it. In this model, three experiments are presented : DEM to show the grid elevation using the ASCII File as data for the height of the cells, and showing different 3D displays. GridDEMComplete shows more displays with the three of the previous experiment, the grid of the cells in a 2D Display, with the Elevation but without triangulation, and the grid with text values to show the content of the ASCII used by the cells. GraphicDEMComplete shows the use of the z_factor to amplify or reduces the difference between the z values of a Dem geometry.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\grid-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\grid-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\gridGrayScaled-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\gridGrayScaled-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\gridGrayScaledTriangulated-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\gridGrayScaledTriangulated-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\gridTextured-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\gridTextured-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\gridTexturedTriangulated-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\gridTexturedTriangulated-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\gridWithElevation-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\gridWithElevation-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\gridWithElevationTriangulated-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\gridWithElevationTriangulated-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\gridWithText-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\gridWithText-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\VulcanoDEM-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\VulcanoDEM-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\VulcanoDEMScaled-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\VulcanoDEMScaled-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\VulcanoTextured-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\VulcanoTextured-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\VulcanoTexturedScaled-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation Grid DEM\VulcanoTexturedScaled-10.png)
-
 Code of the model : 
 
 ```

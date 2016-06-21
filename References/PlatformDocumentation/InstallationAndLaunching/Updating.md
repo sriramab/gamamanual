@@ -1,4 +1,3 @@
-
 # Updating GAMA
 
 Unless you are using the version of GAMA built from the sources available in the GIT repository of the project (see [here](InstallingGitVersion)), you are normally running a specific **release** of GAMA that sports a given **version number** (e.g. GAMA 1.6.1, GAMA 1.7, etc.). When new features were developed, or when serious issues were fixed, the release you had on your disk, prior to GAMA 1.6.1, could not benefit from them. Since this version, however, GAMA has been enhanced to support a _self\_update_ mechanism, which allows to import from the GAMA update site additional plugins (offering new features) or updated versions of the plugins that constitute the core of GAMA.
@@ -24,7 +23,7 @@ In general, it is preferable to use the second command, as more options (includi
 
 GAMA expects the user to enter a so-called _update site_. You can copy and paste the following line (or choose it from the drop-down menu as this address is built inside GAMA):
 ```
-https://gama-platform.googlecode.com/svn/update_site/
+http://updates.gama-platform.org
 ```
 
 GAMA will then scan the entire update site, looking both for new plugins (the example below) and updates to existing plugins. The list available in your installation will of course be different from the one displayed here.

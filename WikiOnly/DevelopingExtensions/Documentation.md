@@ -17,6 +17,7 @@
 	* [How to document statements](#how-to-document-statements)
 	* [How to document skills](#how-to-document-skills)
 * [How to change the processor](#how-to-change-the-processor)
+* [General workflow of file generation](#general-workflow-of-file-generation)
 
 
 # Documentation
@@ -67,7 +68,9 @@ In addition, the folder containing the wiki files is required. In the GitHub arc
 2. Go back to the Java perspective: a `gama.wiki` plugin should have been added.
 
 In order to generate the PDF file from the wiki files, we use an external application named [Pandoc](http://pandoc.org/).
-Follow the [Pandoc installation instructions to install it](http://pandoc.org/installing.html). Note that Latex should be installed in order to be able to generate PDF files.
+Follow the [Pandoc installation instructions to install it](http://pandoc.org/installing.html). Specify the path to the pandoc folder in the file "Constants.java", in the static constant `CMD_PANDOC` : "_yourAbsolutePathToPandoc/pandoc_".
+
+Note that Latex should be installed in order to be able to generate PDF files. Make sure you have already installed [Miktex](http://miktex.org/download) (for OS Windows and Mac). Specify the path to the miktex folder in the file "Constants.java", in the static constant `CMD_PDFLATEX` : "_yourAbsolutePathToMiktex/pdflatex_".
 
 
 ### Configuration
@@ -92,14 +95,17 @@ The typical workflow to generate the wiki files is as follow:
 * Run the `MainGenerateWiki.java` file in the `msi.gama.documentation`,
 * The wiki files are generated in the `gama.wiki` plugin.
 
-
 ## Workflow to generate PDF files
 
 The typical workflow to generate the wiki files is as follow:
 * Clean and Build all the GAMA projects,
-* Run the `MainGeneratePDF.java` file in the `msi.gama.documentation`,
+* In the file mytemplate.tex, specify the absolute path to your "gama_style.tex" (it should be just next to this file)
+* Run the `MainGeneratePDF.java` file in the `msi.gama.documentation`, accepting all the packages install of latex,
 * The wiki files are generated in the `msi.gama.documentation` plugin.
 
+Note that generating the PDF takes a lot of time. Please be patient !
+
+If you want to update the file "gama_style.sty" (for syntax coloration), you have to turn the flag "generateGamaStyle" to "true" (and make sure the file "keywords.xml" is already generated).
 
 ## Workflow to generate unit tests
 
@@ -241,3 +247,8 @@ Here are the several steps you have to do :
 - In the tab "Destination", choose processor/plugins for the directory. In the tab "Options", delete the field _Qualifier replacement_. Click "finish".
 - Right click on the folder "processor" to refresh.
 --> It's ok !
+
+# General workflow of file generation
+
+This following diagram explains roughly the workflow for the generation of the different files : 
+![resources/images/developpingExtension/generationFilesWorkflow.png](resources/images/developpingExtension/generationFilesWorkflow.png)

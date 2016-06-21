@@ -9,10 +9,6 @@
 
 _Author : Huynh Quang Nghi & Nathalie Corson_
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Predator Prey\Predator Prey Lotka-Volterra (Influence of Integration Step)\PhasePortrait-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Predator Prey\Predator Prey Lotka-Volterra (Influence of Integration Step)\PhasePortrait-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Predator Prey\Predator Prey Lotka-Volterra (Influence of Integration Step)\TimeSeries-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Predator Prey\Predator Prey Lotka-Volterra (Influence of Integration Step)\TimeSeries-10.png)
-
 Code of the model : 
 
 ```
@@ -33,9 +29,9 @@ global {
 	float t;   					// simulation time : t = n * integration_time_step  where n is the number of already computed time step
 	
 	
-	float integration_time_step1 ;  // first integration time step to compare 
-	float integration_time_step2 ;  // second integration time step to compare 
-	float integration_time_step3 ;  // third integration time step to compare 
+	float integration_time_step1  <- 1.0;  // first integration time step to compare 
+	float integration_time_step2  <- 0.1;  // second integration time step to compare 
+	float integration_time_step3  <- 0.01;  // third integration time step to compare 
 	
 	list<LotkaVolterra_agent> LV_agents;
 	
@@ -59,7 +55,7 @@ species LotkaVolterra_agent {
 		diff(nb_predator,t) = - nb_predator * (predator_death_rate - predation_efficiency * nb_prey); 		// evolution of the number of predator during an integration time step
       }
       reflex solving {        
-       	solve lotka_volterra method: "rk4" step:integration_time_step cycle_length:1/integration_time_step; 			// use of runge kutta 4 method with an integration time step of value integration_time_step
+       	solve lotka_volterra method: "rk4" step:integration_time_step;// cycle_length:1/integration_time_step; 			// use of runge kutta 4 method with an integration time step of value integration_time_step
        }
 }
 

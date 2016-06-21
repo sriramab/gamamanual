@@ -12,8 +12,6 @@ _Author :  Patrick Taillandier_
 Model which shows how to create agents by importing data of a DXF file
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation DXF Agents\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation DXF Agents\map-10.png)
-
 Code of the model : 
 
 ```

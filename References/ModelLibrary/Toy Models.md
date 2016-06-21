@@ -20,6 +20,8 @@ This section is composed of the following sub-section :
 
 * [Flood Simulation](references#FloodSimulation)
 
+* [Learning](references#Learning)
+
 * [Life](references#Life)
 
 * [Multi-level data analysis](references#Multi-leveldataanalysis)

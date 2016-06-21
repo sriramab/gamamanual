@@ -9,10 +9,6 @@
 
 _Author : Huynh Quang Nghi & Nathalie Corson_
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Predator Prey\Predator Prey Lotka-Volterra (Simple)\PhasePortrait-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Predator Prey\Predator Prey Lotka-Volterra (Simple)\PhasePortrait-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Predator Prey\Predator Prey Lotka-Volterra (Simple)\TimeSeries-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Predator Prey\Predator Prey Lotka-Volterra (Simple)\TimeSeries-10.png)
-
 Code of the model : 
 
 ```
@@ -21,15 +17,15 @@ model ODE_LotkaVolterra
 
 global {
 
-	float prey_birth_rate ; 		// natural birth rate of preys
-	float predation_rate ; 			// death rate of preys due to predators
-	float predator_death_rate ; 	// natural death rate of predators
-	float predation_efficiency ; 	// birth rate of predators due to prey consumption
+	float prey_birth_rate<- 0.05 ; 		// natural birth rate of preys
+	float predation_rate <- 0.001; 			// death rate of preys due to predators
+	float predator_death_rate<- 0.03 ; 	// natural death rate of predators
+	float predation_efficiency<- 0.0002 ; 	// birth rate of predators due to prey consumption
 
-	float nb_prey_init ; 			// initial number of preys
-	float nb_predator_init  ; 		// initial number of predators
+	float nb_prey_init <- 250.0; 			// initial number of preys
+	float nb_predator_init <- 45.0 ; 		// initial number of predators
 
-	float integration_time_step ; 	// integration time step used in the Runge Kutta 4 method
+	float integration_time_step <- 0.01; 	// integration time step used in the Runge Kutta 4 method
 	float t; 						// simulation time : t = n * integration_time_step  where n is the number of already computed time step
 
 	init{
@@ -47,7 +43,7 @@ species LotkaVolterra_agent {
 		diff(nb_predator,t) = - nb_predator * (predator_death_rate - predation_efficiency * nb_prey); 		// evolution of the number of predator during an integration time step
       }
       reflex solving {
-       	solve lotka_volterra method: "rk4" step:integration_time_step cycle_length:1/step; 			// use of runge kutta 4 method with an integration time step of value integration_time_step
+       	solve lotka_volterra method: "rk4" step:integration_time_step ;//cycle_length:1/step; 			// use of runge kutta 4 method with an integration time step of value integration_time_step
        }
 }
 

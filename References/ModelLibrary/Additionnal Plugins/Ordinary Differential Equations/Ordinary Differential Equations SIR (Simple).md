@@ -12,9 +12,7 @@ _Author : hqnghi_
 A simple example of ODE use into agents with the example of the SIR equation system.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Ordinary Differential Equations\Ordinary Differential Equations SIR (Simple)\display_charts-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Ordinary Differential Equations\Ordinary Differential Equations SIR (Simple)\display_charts-10.png)
-
-Code of the model : 
+<p><img src="gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple)/display_charts-10.png" alt="Eclipse folder." title class="img-responsive"> == $0</p>Code of the model : 
 
 ```
 
@@ -48,7 +46,7 @@ species agent_with_SIR_dynamic {
 	}
                 
     reflex solving {
-    	solve SIR method: "rk4" step: h cycle_length: 1/h ;
+    	solve SIR method: "rk4" step: h ;//cycle_length: 1/h ;
     }    
 }
 

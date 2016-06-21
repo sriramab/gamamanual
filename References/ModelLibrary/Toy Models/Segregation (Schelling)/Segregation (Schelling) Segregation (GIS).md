@@ -1,7 +1,5 @@
 [//]: # (keyword|operator_sum)
 [//]: # (keyword|statement_remove)
-[//]: # (keyword|constant_#magenta)
-[//]: # (keyword|constant_#cyan)
 [//]: # (keyword|constant_#lightgray)
 [//]: # (keyword|concept_gis)
 [//]: # (keyword|concept_shapefile)
@@ -12,10 +10,6 @@ _Author : _
 
 A model showing the segregation of the people just by putting a similarity wanted parameter using agents to represent the individuals and GIS file for the places
 
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (GIS)\Charts-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (GIS)\Charts-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (GIS)\Town_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Segregation (Schelling)\Segregation (Schelling) Segregation (GIS)\Town_display-10.png)
 
 Imported model : 
 
@@ -32,8 +26,8 @@ global {
 	rgb color_6 <- rgb ("pink") parameter: "Color of group 6:" category: "User interface";   
 	rgb color_7 <- rgb ("magenta") parameter: "Color of group 7:" category: "User interface";
 	rgb color_8 <- rgb ("cyan") parameter: "Color of group 8:" category: "User interface";
-	const black type: rgb <- rgb ("black");
-	list colors <- [°yellow, °red, °blue, °orange, °green, °pink, °magenta, °cyan] of: rgb;
+    list colors <- [color_1, color_2, color_3, color_4, color_5, color_6, color_7, color_8] of: rgb;
+
 	
 	//Number of groups
 	int number_of_groups <- 2 max: 8 parameter: "Number of groups:" category: "Population";
@@ -54,9 +48,9 @@ global {
 	//Number of neighbours
 	int sum_total_neighbours <- 1 update: sum (all_people collect each.total_nearby) min: 1;
 	//List of all the places
-	list<agent> all_places <- [];
+	list<agent> all_places;
 	//List of all the people
-	list<base> all_people <- [];  
+	list<base> all_people;  
 	
 	//Action to write the description of the model in the console
 	action description {
@@ -109,9 +103,9 @@ model segregation
 import "../include/Common Schelling Segregation.gaml" 
 global {
 	//List of all the free places
-	list<space> free_places <- [] ;  
+	list<space> free_places  ;  
 	//List of all the places
-	list<space> all_places <- [] ;
+	list<space> all_places ;
 	//Neighbours distance for the perception of an agent
 	int neighbours_distance <- 50 min: 1 parameter: "Distance of perception:" category: "Population" max: 1000;
 	//Shapefile to load
@@ -143,12 +137,12 @@ global {
 //Species people representing the people
 species people parent: base { 
 	//Size of the people agent
-	const size type: float <- 2.0;
+	float size const: true <- 2.0;
 	//Color of the people agent  
-	const color type: rgb <- colors at (rnd (number_of_groups - 1)); 
-	const red type: int <- (color as list) at 0; 
-	const green type: int <- (color as list) at 1;  
-	const blue type: int <- (color as list) at 2;  
+	rgb color const: true <- colors at (rnd (number_of_groups - 1)); 
+	int red const: true <- (color as list) at 0; 
+	int green const: true <- (color as list) at 1;  
+	int blue const: true <- (color as list) at 2;  
 	//Building in which the agent lives
 	space current_building <- nil;
 	//List of all the neighbour people agents
@@ -179,7 +173,7 @@ species people parent: base {
 //Species space representing a space for a people agent to live in
 species space {	
 	//List of all the people agents living within
-	list<people> insiders <- [];
+	list<people> insiders;
 	rgb color <- rgb(255, 255, 255); 
 	//Surface of the place
 	float surface;
@@ -219,11 +213,11 @@ experiment schelling type: gui {
 			species people  aspect: simple;
 		}
 		display Charts {
-			chart name: "Proportion of happiness" type: histogram background: #lightgray gap:0.05 position: {0,0} size: {1.0,0.5}{
+			chart "Proportion of happiness" type: histogram background: #lightgray gap:0.05 position: {0,0} size: {1.0,0.5}{
 				data "Unhappy" value: number_of_people - sum_happy_people color: #green;
 				data "Happy" value: sum_happy_people color: #yellow ;
 			}
-			chart name: "Global happiness and similarity" type: series background: #lightgray axes: #white position: {0,0.5} size: {1.0,0.5} {
+			chart "Global happiness and similarity" type: series background: #lightgray axes: #white position: {0,0.5} size: {1.0,0.5} {
 				data "happy" color: #blue value:  ((sum_happy_people * 100) / number_of_people)  style: spline ;
 				data "similarity" color: #red value:  (sum_similar_neighbours / sum_total_neighbours) * 100 style: step ;
 			}

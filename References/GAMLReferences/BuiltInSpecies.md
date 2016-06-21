@@ -26,9 +26,10 @@ create cluster_builder returns: clusterer;
 
 ## Table of Contents
 <wiki:toc max_depth="3" />
-[agent](#agent), [AgentDB](#agentdb), [experiment](#experiment), [graph_edge](#graph_edge), [graph_node](#graph_node), [model](#model), [physical_world](#physical_world), 
+[agent](#agent), [AgentDB](#agentdb), [base_edge](#base_edge), [experiment](#experiment), [graph_edge](#graph_edge), [graph_node](#graph_node), [model](#model), [physical_world](#physical_world), 
     	
 ----
+
 [//]: # (keyword|species_agent)
 ## `agent`	
 
@@ -49,6 +50,7 @@ create cluster_builder returns: clusterer;
 	
     	
 ----
+
 [//]: # (keyword|species_AgentDB)
 ## `AgentDB`	
 
@@ -93,7 +95,7 @@ create cluster_builder returns: clusterer;
 	 
 #### **`select`**
 
-* returns: `list`
+* returns: `container`
  			
 * → **`select`** (`string`): select string 			
 * → **`values`** (`list`): List of values that are used to replace question marks  
@@ -119,6 +121,18 @@ create cluster_builder returns: clusterer;
 	
     	
 ----
+
+[//]: # (keyword|species_base_edge)
+## `base_edge`	
+
+### Actions
+				
+
+[Top of the page](#table-of-contents) 
+	
+    	
+----
+
 [//]: # (keyword|species_experiment)
 ## `experiment`	
 
@@ -129,6 +143,7 @@ create cluster_builder returns: clusterer;
 	
     	
 ----
+
 [//]: # (keyword|species_graph_edge)
 ## `graph_edge`	
 
@@ -139,6 +154,7 @@ create cluster_builder returns: clusterer;
 	
     	
 ----
+
 [//]: # (keyword|species_graph_node)
 ## `graph_node`	
 
@@ -155,6 +171,7 @@ create cluster_builder returns: clusterer;
 	
     	
 ----
+
 [//]: # (keyword|species_model)
 ## `model`	
 
@@ -175,6 +192,7 @@ Allows to pause the current simulation **ACTUALLY EXPERIMENT FOR THE MOMENT**. I
 	
     	
 ----
+
 [//]: # (keyword|species_physical_world)
 ## `physical_world`	
 

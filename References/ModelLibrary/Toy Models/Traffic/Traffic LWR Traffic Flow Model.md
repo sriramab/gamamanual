@@ -13,12 +13,6 @@ The LWR model was proposed by Lighthill and Whitham (1955) and by Richards (1956
 In this model, a road is divided into sections and we arbitrarily give to the middle section a lower speed and critical concentration.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Traffic\Traffic LWR Traffic Flow Model\Concentrations-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Traffic\Traffic LWR Traffic Flow Model\Concentrations-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Traffic\Traffic LWR Traffic Flow Model\Flows-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Traffic\Traffic LWR Traffic Flow Model\Flows-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Traffic\Traffic LWR Traffic Flow Model\TheRoad-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Traffic\Traffic LWR Traffic Flow Model\TheRoad-10.png)
-
 Code of the model : 
 
 ```

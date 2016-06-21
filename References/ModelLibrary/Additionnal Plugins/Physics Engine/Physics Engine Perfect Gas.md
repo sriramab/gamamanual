@@ -11,8 +11,6 @@ _Author : Arnaud Grignard_
 This is a model that shows how the physics engine work without gravity. Balls can collide each other and can't go further than the wall and the ground agents.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Physics Engine\Physics Engine Perfect Gas\Cube-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Additionnal Plugins\Physics Engine\Physics Engine Perfect Gas\Cube-10.png)
-
 Code of the model : 
 
 ```

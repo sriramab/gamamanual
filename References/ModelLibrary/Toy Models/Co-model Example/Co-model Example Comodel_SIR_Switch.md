@@ -15,8 +15,6 @@ SIR_ABM_coupling is the coupling that manipulates the elements inside SIR_ABM mo
 SIR_EBM_coupling is the coupling that manipulates the elements inside SIR_EBM model and proposes the function would be used from outside. SIR_EBM is a simple example of ODE use into agents with the example of the SIR equation system.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Co-model Example\Co-model Example Comodel_SIR_Switch\co_SIR_chart-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Co-model Example\Co-model Example Comodel_SIR_Switch\co_SIR_chart-10.png)
-
 Imported models : 
 
 ```
@@ -156,7 +154,7 @@ model SIR_EBM
 global {
 	init{
 		create agent_with_SIR_dynamic;
-	}
+	} 
 }
 
 
@@ -175,14 +173,14 @@ species agent_with_SIR_dynamic {
 	float h <- 0.01;
    
 	equation SIR{ 
-		diff(S,t) = (- beta * S * I / N);
-		diff(I,t) = (beta * S * I / N) - (alpha * I);
-		diff(R,t) = (alpha * I);
+		diff(S,t) = (- beta *   S * I / N);
+		diff(I,t) = (  beta*  S * I / N) - (alpha * I)  ;
+		diff(R,t) = (  alpha  *  I) ;
 	}
                 
     reflex solving {
 //    	write S;
-    	solve SIR method: "rk4" step: h cycle_length: 1/h ;
+    	solve SIR method: "rk4" step: h;// cycle_length: 1/h ;
     }    
 }
 

@@ -11,8 +11,6 @@ _Author : Patrick Taillandier_
 Model which shows how to create a graph using agents of a species as vertices. Two kinds of generations are presented : one where the distance taken into account to link two vertices by an edge, an other where the intersections of two vertices joins these vertices by an edge. 
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Graphs\Graphs Graph Building From Agents\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Graphs\Graphs Graph Building From Agents\map-10.png)
-
 Code of the model : 
 
 ```

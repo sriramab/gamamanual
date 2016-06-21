@@ -3,7 +3,6 @@
 [//]: # (keyword|operator_norm)
 [//]: # (keyword|operator_sqrt)
 [//]: # (keyword|operator_abs)
-[//]: # (keyword|operator_cos)
 [//]: # (keyword|operator_sin)
 [//]: # (keyword|operator_among)
 [//]: # (keyword|operator_^)

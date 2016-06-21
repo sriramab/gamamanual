@@ -46,7 +46,7 @@ species test_species {
     	assert any([1,2,3]) is int;
     	assert any([1,2,3]) is_not: 5;
     	assert any([1,2,3]) is float;
-    	assert value: any([1,2,3]) is string;
+    	assert any([1,2,3]) is string;
 	}
 
 	//test the incrementation of a
@@ -57,9 +57,9 @@ species test_species {
 	
 	//Third test for lists
 	test t3 {
- 		list<int> aa <- [];
-	 	assert value: aa[0] raises: "error";
-	 	assert value: aa[0] raises: "";
+ 		list<int> aa;
+	 	assert aa[0] raises: "error";
+	 	assert aa[0] raises: "";
 	 	assert a raises: "error";
 	}
 }

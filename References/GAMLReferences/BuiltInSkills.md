@@ -54,9 +54,10 @@ if speed = 5 {
 ## Table of Contents
 <wiki:toc max_depth="3" />
 
-[advanced_driving](#advanced_driving), [driving](#driving), [fipa](#fipa), [GAMASQL](#gamasql), [grid](#grid), [MDXSKILL](#mdxskill), [moving](#moving), [moving3D](#moving3d), [network](#network), [physics](#physics), [skill_road](#skill_road), [skill_road_node](#skill_road_node), [SQLSKILL](#sqlskill), 
+[advanced_driving](#advanced_driving), [driving](#driving), [fipa](#fipa), [GAMASQL](#gamasql), [grid](#grid), [MDXSKILL](#mdxskill), [messaging](#messaging), [moving](#moving), [moving3D](#moving3d), [physics](#physics), [skill_road](#skill_road), [skill_road_node](#skill_road_node), [SQLSKILL](#sqlskill), 
     	
 ----
+
 [//]: # (keyword|skill_advanced_driving)
 ## advanced_driving
 
@@ -157,6 +158,7 @@ action to test if the driver can take the given road
 	
     	
 ----
+
 [//]: # (keyword|skill_driving)
 ## driving
 
@@ -201,6 +203,7 @@ moves the agent towards the target passed in the arguments while considering the
 	
     	
 ----
+
 [//]: # (keyword|skill_fipa)
 ## fipa
 The fipa skill offers some primitives and built-in variables which enable agent to communicate with each other using the FIPA interaction protocol.
@@ -214,7 +217,6 @@ The fipa skill offers some primitives and built-in variables which enable agent 
   * **`conversations`** (`list`): A list containing the current conversations of agent. Ended conversations are automatically removed from this list.   
   * **`failures`** (`list`): A list of 'failure' performative messages.   
   * **`informs`** (`list`): A list of 'inform' performative messages.   
-  * **`messages`** (`list`): The mailbox of the agent, a list of messages of all types of performatives.   
   * **`proposes`** (`list`): A list of 'propose' performative messages .   
   * **`queries`** (`list`): A list of 'query' performative messages.   
   * **`refuses`** (`list`): A list of 'propose' performative messages.   
@@ -230,109 +232,109 @@ The fipa skill offers some primitives and built-in variables which enable agent 
 Replies a message with an 'accept_proposal' performative message.
 
 * returns: unknown 			
-* **`message`** (message): The message to be replied 			
-* **`content`** (list): The content of the replying message  
+* **`message`** (24): The message to be replied 			
+* **`contents`** (list): The content of the replying message  
 	 
 #### **`agree`**
 Replies a message with an 'agree' performative message.
 
 * returns: unknown 			
-* **`message`** (message): The message to be replied 			
-* **`content`** (list): The content of the replying message  
+* **`message`** (24): The message to be replied 			
+* **`contents`** (list): The content of the replying message  
 	 
 #### **`cancel`**
 Replies a message with a 'cancel' peformative message.
 
 * returns: unknown 			
-* **`message`** (message): The message to be replied 			
-* **`content`** (list): The content of the replying message  
+* **`message`** (24): The message to be replied 			
+* **`contents`** (list): The content of the replying message  
 	 
 #### **`cfp`**
 Replies a message with a 'cfp' performative message.
 
 * returns: unknown 			
-* **`message`** (message): The message to be replied 			
-* **`content`** (list): The content of the replying message  
+* **`message`** (24): The message to be replied 			
+* **`contents`** (list): The content of the replying message  
 	 
 #### **`end_conversation`**
 Reply a message with an 'end_conversation' peprformative message. This message marks the end of a conversation. In a 'no-protocol' conversation, it is the responsible of the modeler to explicitly send this message to mark the end of a conversation/interaction protocol.
 
 * returns: unknown 			
-* **`message`** (message): The message to be replied 			
-* **`content`** (list): The content of the replying message  
+* **`message`** (24): The message to be replied 			
+* **`contents`** (list): The content of the replying message  
 	 
 #### **`failure`**
 Replies a message with a 'failure' performative message.
 
 * returns: unknown 			
-* **`message`** (message): The message to be replied 			
-* **`content`** (list): The content of the replying message  
+* **`message`** (24): The message to be replied 			
+* **`contents`** (list): The content of the replying message  
 	 
 #### **`inform`**
 Replies a message with an 'inform' performative message.
 
 * returns: unknown 			
-* **`message`** (message): The message to be replied 			
-* **`content`** (list): The content of the replying message  
+* **`message`** (24): The message to be replied 			
+* **`contents`** (list): The content of the replying message  
 	 
 #### **`propose`**
 Replies a message with a 'propose' performative message.
 
 * returns: unknown 			
-* **`message`** (message): The message to be replied 			
-* **`content`** (list): The content of the replying message  
+* **`message`** (24): The message to be replied 			
+* **`contents`** (list): The content of the replying message  
 	 
 #### **`query`**
 Replies a message with a 'query' performative message.
 
 * returns: unknown 			
-* **`message`** (message): The message to be replied 			
-* **`content`** (list): The content of the replying message  
+* **`message`** (24): The message to be replied 			
+* **`contents`** (list): The content of the replying message  
 	 
 #### **`refuse`**
 Replies a message with a 'refuse' performative message.
 
 * returns: unknown 			
-* **`message`** (message): The message to be replied 			
-* **`content`** (list): The content of the replying message  
+* **`message`** (24): The message to be replied 			
+* **`contents`** (list): The contents of the replying message  
 	 
 #### **`reject_proposal`**
 Replies a message with a 'reject_proposal' performative message.
 
 * returns: unknown 			
-* **`message`** (message): The message to be replied 			
-* **`content`** (list): The content of the replying message  
+* **`message`** (24): The message to be replied 			
+* **`contents`** (list): The content of the replying message  
 	 
 #### **`reply`**
 Replies a message. This action should be only used to reply a message in a 'no-protocol' conversation and with a 'user defined performative'. For performatives supported by GAMA (i.e., standard FIPA performatives), please use the 'action' with the same name of 'performative'. For example, to reply a message with a 'request' performative message, the modeller should use the 'request' action.
 
 * returns: unknown 			
-* **`message`** (message): The message to be replied 			
+* **`message`** (24): The message to be replied 			
 * **`performative`** (string): The performative of the replying message 			
-* **`content`** (list): The content of the replying message  
+* **`contents`** (list): The content of the replying message  
 	 
 #### **`request`**
 Replies a message with a 'request' performative message.
 
 * returns: unknown 			
-* **`message`** (message): The message to be replied 			
-* **`content`** (list): The content of the replying message  
+* **`message`** (24): The message to be replied 			
+* **`contents`** (list): The content of the replying message  
 	 
 #### **`send`**
 Starts a conversation/interaction protocol.
 
-* returns: message 			
-* **`receivers`** (list): A list of receiver agents 			
-* **`content`** (list): The content of the message. A list of any GAML type 			
+* returns: msi.gaml.extensions.fipa.FIPAMessage 			
+* **`to`** (list): A list of receiver agents 			
+* **`contents`** (list): The content of the message. A list of any GAML type 			
 * **`performative`** (string): A string, representing the message performative 			
 * **`protocol`** (string): A string representing the name of interaction protocol  
 	 
 #### **`start_conversation`**
 Starts a conversation/interaction protocol.
 
-* returns: message 			
-* **`receivers`** (list): A list of receiver agents 			
-* **`content`** (list): The content of the message. A list of any GAML type 			
+* returns: msi.gaml.extensions.fipa.FIPAMessage 			
+* **`to`** (list): A list of receiver agents 			
+* **`contents`** (list): The content of the message. A list of any GAML type 			
 * **`performative`** (string): A string, representing the message performative 			
 * **`protocol`** (string): A string representing the name of interaction protocol  
 	 
@@ -340,13 +342,14 @@ Starts a conversation/interaction protocol.
 Replies a message with a 'subscribe' performative message.
 
 * returns: unknown 			
-* **`message`** (message): The message to be replied 			
-* **`content`** (list): The content of the replying message	
+* **`message`** (24): The message to be replied 			
+* **`contents`** (list): The content of the replying message	
 
 [Top of the page](#table-of-contents)
 	
     	
 ----
+
 [//]: # (keyword|skill_GAMASQL)
 ## GAMASQL
 
@@ -383,6 +386,7 @@ Replies a message with a 'subscribe' performative message.
 	
     	
 ----
+
 [//]: # (keyword|skill_grid)
 ## grid
 
@@ -403,6 +407,7 @@ Replies a message with a 'subscribe' performative message.
 	
     	
 ----
+
 [//]: # (keyword|skill_MDXSKILL)
 ## MDXSKILL
 
@@ -439,6 +444,30 @@ Replies a message with a 'subscribe' performative message.
 	
     	
 ----
+
+[//]: # (keyword|skill_messaging)
+## messaging
+A simple skill that provides agents with a mailbox than can be filled with messages
+ 
+### Variables
+	   
+  * **`mailbox`** (`list`): The list of messages that can be consulted by the agent 
+ 	
+### Actions
+	  
+	 
+#### **`send`**
+
+
+* returns: msi.gama.extensions.messaging.GamaMessage 			
+* **`to`** (any type): The agent, or server, to which this message will be sent to 			
+* **`contents`** (any type): The contents of the message, an arbitrary object	
+
+[Top of the page](#table-of-contents)
+	
+    	
+----
+
 [//]: # (keyword|skill_moving)
 ## moving
 The moving skill is intended to define the minimal set of behaviours required for agents that are able to move on different topologies
@@ -446,7 +475,7 @@ The moving skill is intended to define the minimal set of behaviours required fo
 ### Variables
 	   
   * **`destination`** (`point`): Represents the next location of the agent if it keeps its current speed and heading (read-only)   
-  * **`heading`** (`int`): Represents the absolute heading of the agent in degrees (in the range 0-359)   
+  * **`heading`** (`int`): Represents the absolute heading of the agent in degrees.   
   * **`location`** (`point`): Represents the current position of the agent   
   * **`speed`** (`float`): Represents the speed of the agent (in meter/second) 
  	
@@ -478,7 +507,7 @@ moves the agent forward, the distance being computed with respect to its speed a
 
 * returns: path 			
 * **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
-* **`heading`** (int): a restriction placed on the random heading choice. The new heading is chosen in the range (heading - amplitude/2, heading+amplitude/2) 			
+* **`heading`** (int): the angle (in degree) of the target direction. 			
 * **`bounds`** (geometry,agent): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry  
 	 
 #### **`wander`**
@@ -493,6 +522,7 @@ Moves the agent towards a random location at the maximum distance (with respect 
 	
     	
 ----
+
 [//]: # (keyword|skill_moving3D)
 ## moving3D
 The moving skill 3D is intended to define the minimal set of behaviours required for agents that are able to move on different topologies
@@ -522,46 +552,7 @@ moves the agent forward, the distance being computed with respect to its speed a
 	
     	
 ----
-[//]: # (keyword|skill_network)
-## network
 
- 
-### Variables
-	   
-  * **`netAgtName`** (`string`): Net ID of the agent 
- 	
-### Actions
-	  
-	 
-#### **`connectMessenger`**
-moves the agent towards the target passed in the arguments.
-
-* returns: void 			
-* **`to`** (string): server URL 			
-* **`at`** (string): server URL 			
-* **`withName`** (string): agent Name  
-	 
-#### **`emptyMessageBox`**
-moves the agent towards the target passed in the arguments.
-
-* returns: bool  
-	 
-#### **`fetchMessage`**
-moves the agent towards the target passed in the arguments.
-
-* returns: map<string,unknown>  
-	 
-#### **`sendMessage`**
-Send a message to a destination.
-
-* returns: void 			
-* **`dest`** (string): The network ID of the agent who receive the message 			
-* **`content`** (any type): The content of the message	
-
-[Top of the page](#table-of-contents)
-	
-    	
-----
 [//]: # (keyword|skill_physics)
 ## physics
 
@@ -582,6 +573,7 @@ Send a message to a destination.
 	
     	
 ----
+
 [//]: # (keyword|skill_skill_road)
 ## skill_road
 
@@ -616,6 +608,7 @@ unregister the agent on the road
 	
     	
 ----
+
 [//]: # (keyword|skill_skill_road_node)
 ## skill_road_node
 
@@ -635,6 +628,7 @@ unregister the agent on the road
 	
     	
 ----
+
 [//]: # (keyword|skill_SQLSKILL)
 ## SQLSKILL
 
@@ -692,7 +686,7 @@ unregister the agent on the road
 #### **`select`**
 
 
-* returns: list 			
+* returns: container 			
 * **`params`** (map): Connection parameters 			
 * **`select`** (string): select string with question marks 			
 * **`values`** (list): List of values that are used to replace question marks  

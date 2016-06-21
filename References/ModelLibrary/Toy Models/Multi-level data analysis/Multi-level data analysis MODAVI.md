@@ -6,7 +6,6 @@
 [//]: # (keyword|operator_target_of)
 [//]: # (keyword|operator_generate_barabasi_albert)
 [//]: # (keyword|operator_as_distance_graph)
-[//]: # (keyword|operator_cos)
 [//]: # (keyword|operator_sin)
 [//]: # (keyword|statement_put)
 [//]: # (keyword|statement_user_command)
@@ -21,8 +20,6 @@ _Author : Arnaud Grignard_
 
 From a reference model with node of a given class, a spatial graph is created (or a barabasi graph if spatialGraph is set to false) in the advanced view to represent the interaction in the reference model.An abstract view/controller is created to summarize the interaction in the advanced viewin a macro graph and control the reference model by defining an action (user_command) for each macroNode and macroEdge.
 
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Multi-level data analysis\Multi-level data analysis MODAVI\MODAVI-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Multi-level data analysis\Multi-level data analysis MODAVI\MODAVI-10.png)
 
 Code of the model : 
 
@@ -66,8 +63,8 @@ global {
     	//Ask for each edge agent to update it sources and destination to create the matrix
     	ask edge_agent{
 			loop i from:0 to: nbTypeOfClass-1{															
-				set src <- my_graph source_of(self);
-				set dest <- my_graph target_of(self);
+				src <- my_graph source_of(self);
+				dest <- my_graph target_of(self);
 				int tmp <- (interactionMatrix[i]  at {(src.classVector[i]-1),(dest.classVector[i]-1)});
 				interactionMatrix[i][src.classVector[i]-1,dest.classVector[i]-1] <- (tmp+1);
 			}
@@ -114,7 +111,7 @@ global {
 			location <- {(cos (((class-1)/nbValuePerClass)*360)*50 +50),(sin (((class-1)/nbValuePerClass)*360)*50+50),0};
 			color <- hsb (i/nbValuePerClass,1.0,1.0);
 			do updatemyNodes;
-			set i<-i+1;	
+			i<-i+1;	
 		}
 		//We finally create the macroGraph
 		create macroGraph;
@@ -242,7 +239,7 @@ global {
 		aspect base {
 			loop i from:0 to: nbTypeOfClass-1{
 				if(nbAggregatedLinkList[i]>threshold){
-				draw geometry: (line([src.posVector[i],dest.posVector[i]]) buffer ((nbAggregatedLinkList[i])/((length(edge_agent)))*nbEdgeMax)) color: rgb(125,125,125) border:rgb(125,125,125); 	
+				draw (line([src.posVector[i],dest.posVector[i]]) buffer ((nbAggregatedLinkList[i])/((length(edge_agent)))*nbEdgeMax)) color: rgb(125,125,125) border:rgb(125,125,125); 	
 				}
 			}
 		}
@@ -277,8 +274,8 @@ global {
 		        if(i!=j){
 		            create macroEdge{
 		              nbAggregatedLinkList[h] <- tmp;
-		              set src <- macroNode[i];
-				      set dest <- macroNode[j];
+		              src <- macroNode[i];
+				      dest <- macroNode[j];
 		            }	  
 		        }      
 		      }

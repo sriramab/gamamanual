@@ -11,8 +11,6 @@ _Author : _
 This model shows the movement of boids following a goal, and creating without their own volonty, a flock .  The goal agent and the boids will move within the 3D space.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Boids\Boids Boids 3D Motion\Sky1-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Boids\Boids Boids 3D Motion\Sky1-10.png)
-
 Code of the model : 
 
 ```
@@ -64,7 +62,7 @@ global torus: torus_environment{
 
 //Species boids_goal that will represent the goal agent, using the skill moving
 species boids_goal skills: [moving3D] {
-	const range type: float init: 20.0;
+	float range init: 20.0;
 	
 	//Reflex to make the goal agent wander in a certain amplitude and a certain speed, 
 	//Respecting the minimal and maximal z values

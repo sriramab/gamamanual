@@ -40,11 +40,11 @@ This can take a while...
 ### Import projects into workspace
 You have now to import projects into the workspace (notice that the folders downloaded during the clone will neither be copied nor moved).
 
-1. In the **Git perspective** and the **Git Repositories** view, Right-Click on "Working Directory" inside the `gama` repository, and choose "Import projects"
-![Context Working directory](resources/images/developpingExtension/GIT_Context_WorkingDirectory.png)
+1. In the **Git perspective** and the **Git Repositories** view, Right-Click on "Working Tree" inside the `gama` repository, and choose "Import projects"
+![Context Working tree](resources/images/developpingExtension/GIT_Context_WorkingDirectory.png)
   * In the **Select a wizard to use for importing projects** window:
     * "Import existing projects" should be checked
-    * "Working Directory" should be selected
+    * "Working Tree" should be selected
 ![GIT Import projects](resources/images/developpingExtension/GIT_Import_projects.png)    
   * In **Import Projects** window:
     * **Uncheck « Search for nested project »**
@@ -54,8 +54,11 @@ You have now to import projects into the workspace (notice that the folders down
 2. Go back to the Java perspective
 3. Clean project (Project menu > Clean ...)
 
+### If you have errors...
+If errors continue to show on in the different projects, be sure to correctly set the JDK used in the Eclipse preferences. GAMA is targeting JDK 1.7, and Eclipse will produce errors if it not found in your environment. So, either you set the compatibility to 1.8 by default (in Preferences > Java > Compiler > Compiler Compliance Level) or you change the error produced by Eclipse to a warning only (in Preferences > Java > Compiler > Building > "No strictly compatible JRE for execution environment available).
+
 ### Run GAMA
-1. In the `msi.gama.application` plugin, open the `gama1.7.Eclipse3_8_2.product` file
+1. In the `msi.gama.application` plugin, open the `gama.product` file
 2. Go to "Contents" tab and click on "Add required"
 3. Go to "Overview" tab and click on Synchronize
 4. Click on Launch an Eclipse Application

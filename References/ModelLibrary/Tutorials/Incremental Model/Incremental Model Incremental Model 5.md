@@ -1,6 +1,7 @@
 [//]: # (keyword|operator_^)
 [//]: # (keyword|operator_abs)
 [//]: # (keyword|operator_among)
+[//]: # (keyword|statement_light)
 [//]: # (keyword|constant_#minute)
 [//]: # (keyword|constant_#m)
 [//]: # (keyword|constant_#km)
@@ -11,10 +12,6 @@
 
 5th part of the tutorial : Incremental Model
 
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Tutorials\Incremental Model\Incremental Model Incremental Model 5\chart-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Tutorials\Incremental Model\Incremental Model Incremental Model 5\chart-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Tutorials\Incremental Model\Incremental Model Incremental Model 5\map_3D-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Tutorials\Incremental Model\Incremental Model Incremental Model 5\map_3D-10.png)
 
 Code of the model : 
 
@@ -111,7 +108,8 @@ experiment main_experiment type:gui{
 	output {
 		monitor "Current hour" value: current_hour;
 		monitor "Infected people rate" value: infected_rate;
-		display map_3D type: opengl ambient_light: is_night ? 20 : 50 diffuse_light: is_night ? 60 : 110 {
+		display map_3D type: opengl {
+			light 1 color:(is_night ? 50 : 255) update:true;
 			image "../includes/soil.jpg";
 			species road aspect:geom;
 			species people aspect:sphere3D;			

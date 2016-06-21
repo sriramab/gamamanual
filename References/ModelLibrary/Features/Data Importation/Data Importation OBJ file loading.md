@@ -10,8 +10,6 @@ _Author :  Arnaud Grignard_
 Provides a  complex geometry to agents (svg,obj or 3ds are accepted). The geometry becomes that of the agents.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation OBJ file loading\complex-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Data Importation\Data Importation OBJ file loading\complex-10.png)
-
 Code of the model : 
 
 ```

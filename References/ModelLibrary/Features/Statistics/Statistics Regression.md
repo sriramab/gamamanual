@@ -15,8 +15,6 @@ _Author : Patrick Taillandier_
 A model which shows how to use the regression 
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Statistics\Statistics Regression\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Statistics\Statistics Regression\map-10.png)
-
 Code of the model : 
 
 ```

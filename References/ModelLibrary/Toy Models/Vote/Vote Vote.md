@@ -23,12 +23,6 @@ _Author : MAPS TEAM (Frederic Amblard, Thomas Louail, Romain Reulier, Paul Salze
 Modeling of an election
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Vote\Vote Vote\indicateurs-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Vote\Vote Vote\indicateurs-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Vote\Vote Vote\main-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Vote\Vote Vote\main-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Vote\Vote Vote\votants-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Vote\Vote Vote\votants-10.png)
-
 Code of the model : 
 
 ```
@@ -120,7 +114,7 @@ global {
 		//For each candidate, ask to move
 		ask active_candidates{
 			do moving;
-			my_electors <- [];
+			my_electors <- list<elector>([]);
 		}
 		//For each elector, do its definition
 		ask elector {
@@ -162,7 +156,7 @@ global {
 		 		do die;
 		 	}
 		 	//Compute the list of elector according to their distance
-			list<list<elector>> Groups<- [];
+			list<list<elector>> Groups;
 			geometry geoms <- union(elector collect ((each.shape) buffer (["distance"::float(threshold_attraction_electors) , "quadrantSegments"::4, "endCapStyle"::1])));
 			loop geom over: geoms.geometries { 
 				if (geom != nil and !empty(geom.points)) {
@@ -373,7 +367,7 @@ experiment vote type: gui {
 		display votants {
 			chart "Distribution of electors" type: pie background: #white  {
 			 	loop cand over: candidate {
-			 		data legend: cand.name value:cand.percentage_vote color: cand.color ;
+			 		data  cand.name value:cand.percentage_vote color: cand.color ;
 			 	}	
 			}
 			

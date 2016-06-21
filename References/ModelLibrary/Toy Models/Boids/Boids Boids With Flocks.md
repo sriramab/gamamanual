@@ -6,7 +6,6 @@
 [//]: # (keyword|operator_solid)
 [//]: # (keyword|operator_intersects)
 [//]: # (keyword|operator_towards)
-[//]: # (keyword|operator_cos)
 [//]: # (keyword|operator_sin)
 [//]: # (keyword|operator_simple_clustering_by_distance)
 [//]: # (keyword|statement_release)
@@ -25,8 +24,6 @@ _Author : _
 
 This model shows the movement of boids following a goal, and creating without their own volonty, a flock . 
 
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Boids\Boids Boids With Flocks\default_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Boids\Boids Boids With Flocks\default_display-10.png)
 
 Imported model : 
 
@@ -89,7 +86,7 @@ global torus: torus_environment{
 
 //Species boids goal which represents the goal that will be followed by boids agents using the skill moving
 species boids_goal skills: [moving] {
-	const range type: float <- 20.0;
+	float range  <- 20.0;
 	
 	//If the mouse is not used, then the goal just wander
 	reflex wander {  
@@ -350,7 +347,7 @@ species flock skills: [moving] {
 			if (f != self and (shape intersects f.shape)) {
 				geometry new_shape <- convex_hull(polygon(shape.points + f.shape.points));
 				if empty(obstacle overlapping new_shape) {
-					list<boids> released_boids <- [];
+					list<boids> released_boids;
 					ask f {
 						release members as: boids in: world returns: released_coms;
 						released_boids <- list(released_coms);

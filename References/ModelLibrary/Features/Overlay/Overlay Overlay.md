@@ -13,8 +13,6 @@ _Author : Alexis Drogoul and Patrick Taillandier_
 Model to show how to use overlay layers in a display
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Overlay\Overlay Overlay\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Overlay\Overlay Overlay\map-10.png)
-
 Code of the model : 
 
 ```
@@ -40,7 +38,7 @@ experiment overlay type: gui
         display map 
         {
         	//define a new overlay layer positioned at the coordinate 5,5, with a constant size of 180 pixels per 100 pixels.
-            overlay position: { 5, 5 } size: { 180 #px, 100 #px } background: # black transparency: 0.5 border: #black rounded: true
+            overlay "Overlay" position: { 5, 5 } size: { 180 #px, 100 #px } background: # black transparency: 0.5 border: #black rounded: true
             {
             	//for each possible type, we draw a square with the corresponding color and we write the name of the type
                 float y <- 30#px;

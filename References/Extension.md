@@ -6,18 +6,9 @@
 
 ## Introduction
 This page provides a link to each of the extension pages. Extensions are the additional GAMA plugins that exist in the GAMA GitHub repository but will not be packaged with the release. **These extensions are not maintained by GAMA core team but by their authors.**
-* [msi.gaml.extensions.humanmoving](PluginDocumentation/Extension_msi.gaml.extensions.humanmoving)
+* [ummisco.gama.network](PluginDocumentation/Extension_ummisco.gama.network)
 * [ummisco.gaml.extensions.stats](PluginDocumentation/Extension_ummisco.gaml.extensions.stats)
-* [ummisco.gama.gpu](PluginDocumentation/Extension_ummisco.gama.gpu)
-* [ummisco.gaml.extensions.rjava](PluginDocumentation/Extension_ummisco.gaml.extensions.rjava)
-* [ummisco.gaml.extensions.sound](PluginDocumentation/Extension_ummisco.gaml.extensions.sound)
-* [ummisco.miro.extension.traffic](PluginDocumentation/Extension_ummisco.miro.extension.traffic)
-* [cenres.gaml.extensions.hydro](PluginDocumentation/Extension_cenres.gaml.extensions.hydro)
-* [irit.maelia.gaml.additions](PluginDocumentation/Extension_irit.maelia.gaml.additions)
-* [ummisco.miro.extension](PluginDocumentation/Extension_ummisco.miro.extension)
-* [dream.gama.opengis](PluginDocumentation/Extension_dream.gama.opengis)
-* [msi.gaml.extensions.cplex](PluginDocumentation/Extension_msi.gaml.extensions.cplex)
 * [idees.gama.weka](PluginDocumentation/Extension_idees.gama.weka)
-* [msi.gaml.extensions.traffic2d](PluginDocumentation/Extension_msi.gaml.extensions.traffic2d)
-* [simtools.gamanalyzer.fr](PluginDocumentation/Extension_simtools.gamanalyzer.fr)
+* [ummisco.gaml.extensions.sound](PluginDocumentation/Extension_ummisco.gaml.extensions.sound)
 * [simtools.graphanalysis.fr](PluginDocumentation/Extension_simtools.graphanalysis.fr)
+* [ummisco.gama.serialize](PluginDocumentation/Extension_ummisco.gama.serialize)

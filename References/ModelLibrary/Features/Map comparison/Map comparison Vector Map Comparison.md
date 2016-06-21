@@ -1,4 +1,3 @@
-[//]: # (keyword|operator_not)
 [//]: # (keyword|operator_in)
 [//]: # (keyword|operator_as_matrix)
 [//]: # (keyword|operator_kappa)
@@ -23,14 +22,6 @@ This model shows how to use different comparators to know the accuracy of a pred
 - fuzzy kappa simulation, comparing the map observed, the map simulation and the map initial but being more permissive by using fuzzy logic
 For each comparator, two comparisons are made : one without taking into account the weights of an area, just computing with each area having the same importance, and an other using weights related to the area of the region
 
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Vector Map Comparison\map_fuzzy-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Vector Map Comparison\map_fuzzy-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Vector Map Comparison\map_init-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Vector Map Comparison\map_init-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Vector Map Comparison\map_observed-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Vector Map Comparison\map_observed-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Vector Map Comparison\map_sim-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Map comparison\Map comparison Vector Map Comparison\map_sim-10.png)
 
 Code of the model : 
 
@@ -71,7 +62,7 @@ global {
 		loop i from: 0 to: (length(categories) * length(categories)) - 1 {
 			fuzzy_transitions[i,i] <- 1.0;	
 		}
-		list<float> similarity_per_agents <- [];
+		list<float> similarity_per_agents ;
 		write "kappa(map observed, map simulation, categories): " + kappa( areaclc collect (each.obs_cover),areaclc collect (each.sim_cover),categories);
 		write "kappa(map observed, map simulation,categories, weights): " + kappa( areaclc collect (each.obs_cover),areaclc collect (each.sim_cover),categories,areaclc collect (each.shape.area));
 		
@@ -133,7 +124,7 @@ experiment mapcomparison type: gui {
 		display map_init type: opengl{
 			species areaclc aspect: init refresh: false;
 		}
-		display map_fuzzy type: opengl{
+		display map_fuzzy type: opengl background: #pink{
 			species areaclc aspect: fuzzy_sim ;
 		}
 	}

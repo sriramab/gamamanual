@@ -13,14 +13,6 @@ _Author : Patrick Taillandier_
 This model show how to use different methods of multicriteria analysis to look for the best house. Four methods are used : the Weighted_Means method , the Electre method , the Promethee method  an the Evidence Theory method. Each method uses different criteria with different weights according to the methods used. 
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multicriteria decision\Multicriteria decision Multicriteria\Map_Electre-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multicriteria decision\Multicriteria decision Multicriteria\Map_Electre-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multicriteria decision\Multicriteria decision Multicriteria\Map_Evidence_theory-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multicriteria decision\Multicriteria decision Multicriteria\Map_Evidence_theory-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multicriteria decision\Multicriteria decision Multicriteria\Map_Promethee-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multicriteria decision\Multicriteria decision Multicriteria\Map_Promethee-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multicriteria decision\Multicriteria decision Multicriteria\Map_Weighted_Means-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Multicriteria decision\Multicriteria decision Multicriteria\Map_Weighted_Means-10.png)
-
 Code of the model : 
 
 ```
@@ -142,9 +134,9 @@ species people  {
 	}
 	
 	list<list> houses_eval {
-		list<list> candidates <- [];
+		list<list> candidates;
 		loop bat over: house {
-			list<float> cand <- [];
+			list<float> cand;
 			add bat.standing / 5 to: cand;
 			add ((500000 - bat.price) / 500000) to: cand;
 			add ((100 - (self distance_to bat)) / 100) to: cand;

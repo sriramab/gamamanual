@@ -12,7 +12,7 @@ Since GAMA is a free opensource software, we are proud to share the source code 
 
 ## Developer documentation
 
-A more complete documentation exists on Github at the following address : [https://github.com/gama-platform/gama/wiki](https://github.com/gama-platform/gama/wiki). You can find here the last updated version of the documentation (the documentation of the latest git version), and also a [developer documentation](https://github.com/gama-platform/gama/wiki/G__DevelopingExtensions) (which is not available in the "regular" website).
+A more complete documentation exists on Github at the following address : [https://github.com/gama-platform/gama/wiki](https://github.com/gama-platform/gama/wiki). You can find here the last updated version of the documentation (the documentation of the latest git version), and also a [developer documentation](https://github.com/gama-platform/gama/wiki/DevelopingExtensions) (which is not available in the "regular" website).
 
 ## Source Code
 
@@ -24,7 +24,7 @@ https://github.com/gama-platform/gama
 ```
 
 Which you can also browse from the web [here](https://github.com/gama-platform/gama).
-It is, in any case, recommended to follow the instructions on [this page](https://github.com/gama-platform/gama/wiki/G__InstallingGitVersion) in order to build GAMA from source.
+It is, in any case, recommended to follow the instructions on [this page](https://github.com/gama-platform/gama/wiki/InstallingGitVersion) in order to build GAMA from source.
 
 ## GAMA Dev mailing list
 

@@ -11,8 +11,6 @@ _Author : Patrick Taillandier_
 Model which shows how to load a graph from a DGS File, and change is layout. 
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Graphs\Graphs Graph Loading Layout\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Graphs\Graphs Graph Loading Layout\map-10.png)
-
 Code of the model : 
 
 ```

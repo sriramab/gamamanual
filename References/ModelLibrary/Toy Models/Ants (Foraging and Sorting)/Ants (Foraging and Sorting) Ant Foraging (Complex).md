@@ -35,8 +35,6 @@ _Author : _
 Toy Model ant using the question of how ants search food and use pheromons to return to their nest once they did find food. Two experiments are proposed to show how to use batch : Batch and Genetic.
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Complex)\Ants-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Ants (Foraging and Sorting)\Ants (Foraging and Sorting) Ant Foraging (Complex)\Ants-10.png)
-
 Code of the model : 
 
 ```
@@ -56,15 +54,15 @@ global {
 	//Number of food places among the grid
 	int number_of_food_places <- 5 min: 1 parameter: 'Number of food depots:' category: 'Environment and Population';
 	float grid_transparency <- 1.0;
-	const ant_shape_empty type: file <- file('../icons/ant.png');
-	const ant_shape_full type: image_file <- file('../icons/full_ant.png');
+	file ant_shape_empty const: true <- file('../icons/ant.png');
+	image_file ant_shape_full const: true <- file('../icons/full_ant.png');
 	//The center of the grid that will be considered as the nest location
-	const center type: point <- { round(gridsize / 2), round(gridsize / 2) };
-	var food_gathered type: int <- 1;
-	var food_placed type: int <- 1;
-	const background type: rgb <- rgb(#99CC66);
-	const food_color type: rgb <- rgb(#312200);
-	const nest_color type: rgb <- rgb(#000000); 
+	point center const: true <- { round(gridsize / 2), round(gridsize / 2) };
+	int food_gathered <- 1;
+	int food_placed <- 1;
+	rgb background const: true <- rgb(#99CC66);
+	rgb food_color const: true <- rgb(#312200);
+	rgb nest_color const: true <- rgb(#000000); 
 
 	geometry shape <- square(gridsize);
 	init {
@@ -92,7 +90,7 @@ global {
 
 //Grid used to discretize the space to place food
 grid ant_grid width: gridsize height: gridsize neighbors: 8 frequency: grid_frequency use_regular_agents: false use_individual_shapes: false{
-	const is_nest type: bool <- (topology(ant_grid) distance_between [self, center]) < 4;
+	bool is_nest const: true <- (topology(ant_grid) distance_between [self, center]) < 4;
 	float road <- 0.0 max: 240.0 update: (road <= evaporation_per_cycle) ? 0.0 : road - evaporation_per_cycle;
 	rgb color <- is_nest ? nest_color : ((food > 0) ? food_color : ((road < 0.001) ? background : rgb(#009900) + int(road * 5))) update: is_nest ? nest_color : ((food > 0) ?
 	food_color : ((road < 0.001) ? background : rgb(#009900) + int(road * 5)));
@@ -203,9 +201,9 @@ experiment Displays type: gui {
 }
 //Complete experiment that will inspect all ants in a table
 experiment Complete type: gui {
-	parameter name: 'Number:' var: ants_number init: 100 unit: 'ants' category: 'Environment and Population';
-	parameter name: 'Grid dimension:' var: gridsize init: 100 unit: '(number of rows and columns)' category: 'Environment and Population';
-	parameter name: 'Number of food depots:' var: number_of_food_places init: 5 min: 1 category: 'Environment and Population';
+	parameter 'Number:' var: ants_number init: 100 unit: 'ants' category: 'Environment and Population';
+	parameter 'Grid dimension:' var: gridsize init: 100 unit: '(number of rows and columns)' category: 'Environment and Population';
+	parameter 'Number of food depots:' var: number_of_food_places init: 5 min: 1 category: 'Environment and Population';
 
 	// Experimentator
 
@@ -233,7 +231,7 @@ experiment Complete type: gui {
 //Batch experiment to find the best way to maximize the food gathered using exhaustive method
 experiment Batch type: batch repeat: 4 keep_seed: true until: (food_gathered = food_placed) or (time > 1000) {
 	parameter 'Size of the grid:' var: gridsize init: 75 unit: 'width and height';
-	parameter name: 'Number:' var: ants_number among:[10,20,50] unit: 'ants';
+	parameter 'Number:' var: ants_number among:[10,20,50] unit: 'ants';
 	parameter  'Evaporation:' var: evaporation_per_cycle among: [0.1, 0.5, 2.0, 10.0] unit: 'units every cycle';
 	parameter  'Diffusion:' var: diffusion_rate min: 0.1 max: 1.0 unit: 'rate every cycle (1.0 means 100%)' step: 0.2;
 	method exhaustive maximize: food_gathered;
@@ -251,10 +249,10 @@ experiment Batch type: batch repeat: 4 keep_seed: true until: (food_gathered = f
 
 //Batch experiment to find the best way to maximize the food gathered using genetic method
 experiment Genetic type: batch repeat: 2 keep_seed: true until: (food_gathered = food_placed) or (time > 1000) {
-	parameter name: 'Size of the grid:' var: gridsize init: 75 unit: '(width and height)';
-	parameter name: 'Number:' var: ants_number among:[10,20,50] unit: 'ants';
+	parameter 'Size of the grid:' var: gridsize init: 75 unit: '(width and height)';
+	parameter 'Number:' var: ants_number among:[10,20,50] unit: 'ants';
 	parameter  'Evaporation:' var: evaporation_per_cycle among: [0.1, 0.5, 2.0, 10.0] unit: 'units every cycle';
-	parameter name: 'Diffusion:' var: diffusion_rate min: 0.1 max: 1.0 unit: 'rate every cycle (1.0 means 100%)' step: 0.2;
+	parameter 'Diffusion:' var: diffusion_rate min: 0.1 max: 1.0 unit: 'rate every cycle (1.0 means 100%)' step: 0.2;
 	method genetic maximize: food_gathered pop_dim: 5 crossover_prob: 0.7 mutation_prob: 0.1 nb_prelim_gen: 1 max_gen: 20;
 	
 		permanent {

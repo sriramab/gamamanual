@@ -1,4 +1,3 @@
-
 # Troubleshooting
 
 This page exposes some of the most common problems a user may encounter when running GAMA — and offers advices and workarounds for them. It will be regularly enriched with new contents. Note also that the [Issues section](https://github.com/gama-platform/gama/issues) of the website might contain precious information on crashes and bugs encountered by other users. If neither the workarounds described here nor the solutions provided by other users allow to solve your particular problem, please submit a new issue report to the developers.
@@ -97,7 +96,7 @@ In the dialog that appears, you will find a button called "Installation Details"
 Click this button and a new dialog appears with several tabs.
 
 
-![images/dialog_configuration.png](resources/images/installingAndLaunching/dialog_configuration.png)
+![images/dialog_configuration.png](resources/images/installationAndLaunching/dialog_configuration.png)
 
 
 To provide a complete information about the status of your system at the time of the error, you can

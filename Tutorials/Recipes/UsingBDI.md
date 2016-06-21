@@ -1,3 +1,4 @@
+[//]: # (keyword|concept_bdi)
 # Using BDI
 
 ## Install

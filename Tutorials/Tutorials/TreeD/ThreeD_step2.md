@@ -71,7 +71,7 @@ reflex move{
 Finally we modify a bit the aspect of the sphere to set its size according to the _environmentSize_ global variable previously defined.
 ```
 aspect default {
- draw sphere(environmentSize*0.01) color:rgb(rnd(255),rnd(255),rnd(255));   
+  draw sphere(environmentSize*0.01) color:#blue;   
 }
 ```
 
@@ -110,7 +110,7 @@ The GIT version of the model can be found here [Model 02.gaml](https://github.co
 
 ```
 model Tuto3D   
-//Model 2 of the 3D tutorial   
+
 global {
   int nb_cells <-100;
   int environmentSize <-100;
@@ -128,11 +128,11 @@ species cells skills:[moving3D]{
   	do move;
   }	                    
   aspect default {
-    draw sphere(environmentSize*0.01) color:rgb(rnd(255),rnd(255),rnd(255));   
+    draw sphere(environmentSize*0.01) color:#blue;   
   }
 }
 
-experiment Display  type: gui {
+experiment Tuto3D  type: gui {
   parameter "Initial number of cells: " var: nb_cells min: 1 max: 1000 category: "Cells" ;
   output {
     display View1 type:opengl{

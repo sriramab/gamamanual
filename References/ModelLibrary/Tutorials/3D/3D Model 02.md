@@ -10,8 +10,6 @@ _Author : Arnaud Grignard_
 Second part of the tutorial : Tuto3D
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Tutorials\3D\3D Model 02\View1-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Tutorials\3D\3D Model 02\View1-10.png)
-
 Code of the model : 
 
 ```
@@ -38,7 +36,7 @@ species cells skills:[moving3D]{
   }
 }
 
-experiment Display  type: gui {
+experiment Tuto3D  type: gui {
   parameter "Initial number of cells: " var: nb_cells min: 1 max: 1000 category: "Cells" ;
   output {
     display View1 type:opengl{

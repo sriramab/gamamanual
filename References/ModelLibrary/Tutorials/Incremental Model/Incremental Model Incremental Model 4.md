@@ -11,10 +11,6 @@
 4th part of the tutorial : Incremental Model
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Tutorials\Incremental Model\Incremental Model Incremental Model 4\chart-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Tutorials\Incremental Model\Incremental Model Incremental Model 4\chart-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Tutorials\Incremental Model\Incremental Model Incremental Model 4\map-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Tutorials\Incremental Model\Incremental Model Incremental Model 4\map-10.png)
-
 Code of the model : 
 
 ```

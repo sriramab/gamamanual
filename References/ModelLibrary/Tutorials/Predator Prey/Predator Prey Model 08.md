@@ -8,10 +8,6 @@
 8th part of the tutorial: Predator Prey
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Tutorials\Predator Prey\Predator Prey Model 08\info_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Tutorials\Predator Prey\Predator Prey Model 08\info_display-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Tutorials\Predator Prey\Predator Prey Model 08\main_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Tutorials\Predator Prey\Predator Prey Model 08\main_display-10.png)
-
 Code of the model : 
 
 ```

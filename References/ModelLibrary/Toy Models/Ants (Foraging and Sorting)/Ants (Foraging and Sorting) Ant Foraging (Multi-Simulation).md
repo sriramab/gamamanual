@@ -40,14 +40,14 @@ global {
 	//Number of food places to create
 	int number_of_food_places <- 5 min: 1 parameter: 'Number of food depots:' category: 'Environment and Population';
 	float grid_transparency <- 1.0;
-	const ant_shape_empty type: file <- file('../icons/ant.png');
-	const ant_shape_full type: string <- '../icons/full_ant.png';
-	const center type: point <- { round(gridsize / 2), round(gridsize / 2) };
-	var food_gathered type: int <- 1;
-	var food_placed type: int <- 1;
-	const background type: rgb <- rgb(#99CC66);
-	const food_color type: rgb <- rgb(#312200);
-	const nest_color type: rgb <- rgb(#000000); 
+	file ant_shape_empty const: true <- file('../icons/ant.png');
+	string ant_shape_full const: true <- '../icons/full_ant.png';
+	point center const: true <- { round(gridsize / 2), round(gridsize / 2) };
+	int food_gathered  <- 1;
+	int food_placed  <- 1;
+	rgb background const: true <- rgb(#99CC66);
+	rgb food_color const: true <- rgb(#312200);
+	rgb nest_color const: true <- rgb(#000000); 
 
 	geometry shape <- square(gridsize);
 	init {
@@ -79,7 +79,7 @@ global {
 
 //Grid used to discretize the space to place food
 grid ant_grid width: gridsize height: gridsize neighbors: 8 /*frequency: grid_frequency*/ use_regular_agents: false use_individual_shapes: false{
-	const is_nest type: bool <- (topology(ant_grid) distance_between [self, center]) < 4;
+	bool is_nest const: true <- (topology(ant_grid) distance_between [self, center]) < 4;
 	float road <- 0.0 max:240.0 update: (road<=evaporation_per_cycle) ? 0.0 : road-evaporation_per_cycle;
 	rgb color <- is_nest ? nest_color : ((food > 0) ? food_color : ((road < 0.001) ? background : rgb(#009900) + int(road * 5))) update: is_nest ? nest_color : ((food > 0) ?
 	food_color : ((road < 0.001) ? background : rgb(#009900) + int(road * 5)));
@@ -156,9 +156,9 @@ species ant skills: [moving] control: fsm {
 
 //Experiment to show how to make multi simulations
 experiment "4 Simulations" type: gui {
-	parameter name: 'Number:' var: ants_number init: 100 unit: 'ants' category: 'Environment and Population';
-	parameter name: 'Grid dimension:' var: gridsize init: 100 unit: '(number of rows and columns)' category: 'Environment and Population';
-	parameter name: 'Number of food depots:' var: number_of_food_places init: 5 min: 1 category: 'Environment and Population';
+	parameter 'Number:' var: ants_number init: 100 unit: 'ants' category: 'Environment and Population';
+	parameter 'Grid dimension:' var: gridsize init: 100 unit: '(number of rows and columns)' category: 'Environment and Population';
+	parameter 'Number of food depots:' var: number_of_food_places init: 5 min: 1 category: 'Environment and Population';
 
 	// We create three supplementary simulations using the species name 'ants_model' (automatically created from the name of the model + '_model')
 

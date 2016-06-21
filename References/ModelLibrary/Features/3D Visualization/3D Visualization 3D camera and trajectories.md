@@ -1,7 +1,6 @@
 [//]: # (keyword|operator_copy)
 [//]: # (keyword|operator_triangle)
 [//]: # (keyword|operator_hsb)
-[//]: # (keyword|operator_cos)
 [//]: # (keyword|operator_sin)
 [//]: # (keyword|concept_3d)
 [//]: # (keyword|concept_camera)
@@ -14,14 +13,6 @@ Model using the Boids model to represent the flight of boids following a goal an
 
 Five experiments are proposed with differents goals : understanding of the model used (Boids_gui), 3D Display (start), 3D Display with trajectories analysis of boids (trajectory_analysis), one coupling both previous experiments and the time simulated with boids going higher and higher according to the time (SpaceTimeCube) and a model presenting the different views possible in the 3D Display : first person, third person and global view (Multiple view). 
 
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\FirstPerson-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\FirstPerson-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\RealBoids-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\RealBoids-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\SpaceTimeCubeAll-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\SpaceTimeCubeAll-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\ThirdPersonn-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization 3D camera and trajectories\ThirdPersonn-10.png)
 
 Imported model : 
 
@@ -91,8 +82,8 @@ global torus: torus_environment{
 
 
 species boids_goal skills: [moving] {
-	const range type: float <- 20.0;
-	const size type: float <- 10.0;
+	float range  <- 20.0;
+	float size  <- 10.0;
 	
 	reflex wander {  
 		do  wander amplitude: 45 speed: 20;  
@@ -267,7 +258,7 @@ experiment start type: gui {
 	//the type opengl allows the 3D Display instead of only 2D
 	output {
 		display RealBoids  type:opengl z_fighting:false {
-			image name:'background' file:'../images/sky.jpg';
+			image 'background' file:'../images/sky.jpg';
 			species boids aspect: image  position:{0,0,0.1};
 			species boids_goal transparency:0.2 position:{0,0,0.1};
 			species obstacle position:{0,0,0.1}; 		
@@ -281,7 +272,7 @@ experiment trajectory_analysis type: gui {
 	output {
 		
 		display RealBoids  type:opengl {
-			image name:'background' file:'../images/sky.jpg';
+			image 'background' file:'../images/sky.jpg';
 			species boids trace:100{
 			    draw triangle(20) rotate: 90 + heading color: hsb (float(heading)/360.0,1.0,1.0) depth:8 ;	
 			}
@@ -296,14 +287,14 @@ experiment SpaceTimeCube type: gui {
 	float minimum_cycle_duration <- 0.03;
 	output {
 		display RealBoids  type:opengl {
-			image name:'background' file:'../images/sky.jpg';
+			image 'background' file:'../images/sky.jpg';
 			species boids aspect: image transparency:0.5 position:{0,0,0.11};
 			species boids_goal transparency:0.2 position:{0,0,0.1};
 			species obstacle position:{0,0,0.1}; 		
 		}
 		
 		display SpaceTimeCubeAll  type:opengl {
-			image name:'background' file:'../images/sky.jpg';
+			image 'background' file:'../images/sky.jpg';
 			species boids trace:100{
 			    draw triangle(20) rotate: 90 + heading color: hsb (float(heading)/360.0,1.0,1.0) depth:8 at: {location.x ,location.y,location.z+time};	
 			}
@@ -319,7 +310,7 @@ experiment MultipleView type: gui {
 	float minimum_cycle_duration <- 0.03;
 	output {
 		display RealBoids   type:opengl {
-			image name:'background' file:'../images/sky.jpg';
+			image 'background' file:'../images/sky.jpg';
 			species boids aspect: image  transparency:0.5 position:{0,0,0.25};
 			species boids_goal transparency:0.2 position:{0,0,0.25};
 			species obstacle ;
@@ -329,7 +320,7 @@ experiment MultipleView type: gui {
 		display ThirdPersonn  type:opengl camera_interaction:false camera_pos:{int(first(boids).location.x),int(first(boids).location.y),250} 
 		camera_look_pos:{int(first(boids).location.x),(first(boids).location.y),0} camera_up_vector:{0.0,-1.0,0.0} {
 		
-			image name:'background' file:'../images/sky.jpg';
+			image 'background' file:'../images/sky.jpg';
 			species obstacle;
 			species boids{
 			    draw triangle(20) rotate: 90 + heading color: hsb (float(heading)/360.0,1.0,1.0) depth:8 ;	
@@ -344,7 +335,7 @@ experiment MultipleView type: gui {
 			camera_look_pos:{cos(first(boids).heading)*first(boids).speed+int(first(boids).location.x),
 			sin(first(boids).heading)*first(boids).speed+int(first(boids).location.y),10} 
 			camera_up_vector:{0.0,0.0,1.0} {	
-			image name:'background' file:'../images/sky.jpg';
+			image 'background' file:'../images/sky.jpg';
 			species obstacle ;
 			species boids{
 			    draw triangle(20) rotate: 90 + heading color: hsb (float(heading)/360.0,1.0,1.0) depth:8 ;	

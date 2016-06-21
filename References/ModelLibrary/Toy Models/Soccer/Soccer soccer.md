@@ -4,10 +4,8 @@
 [//]: # (keyword|operator_intersects)
 [//]: # (keyword|operator_closest_points_with)
 [//]: # (keyword|operator_inter)
-[//]: # (keyword|operator_not)
 [//]: # (keyword|operator_among)
 [//]: # (keyword|operator_polyline)
-[//]: # (keyword|operator_cos)
 [//]: # (keyword|operator_sin)
 [//]: # (keyword|operator_font)
 [//]: # (keyword|constant_#m)
@@ -551,8 +549,8 @@ experiment match type:gui {
 				draw "Blue side - "+string(blue_score) color:#blue at: {10,5} font: font("Helvetica", 18 * #zoom, #bold) perspective:true;
 				draw string(red_score)+" - Red side" color:#red at: {100,5} font: font("Helvetica", 18 * #zoom, #bold) perspective:true;
 				if (show_status) {
-					draw geometry:line([{red_offside_pos,0},{red_offside_pos,90}]) color:#red;
-					draw geometry:line([{blue_offside_pos,0},{blue_offside_pos,90}]) color:#blue;
+					draw line([{red_offside_pos,0},{red_offside_pos,90}]) color:#red;
+					draw line([{blue_offside_pos,0},{blue_offside_pos,90}]) color:#blue;
 				}
 			}
 		}
@@ -564,13 +562,13 @@ experiment match type:gui {
 			}
 			chart "red pass" type:pie position:{0,0.5} size:{0.5,0.5} {
 				// note that a pass is said "successful" if the player that has the ball was the player called initially. A "failed pass" does not necessary means that the team have lost the ball.
-				data "Red pass succeed" value:float(nb_red_pass_succeed)/float(nb_red_pass) color:#red;
-				data "Red pass failed" value:1-float(nb_red_pass_succeed)/float(nb_red_pass) color:#darkred;
+					data "Red pass succeed" value:(nb_red_pass = 0) ? 0 : float(nb_red_pass_succeed)/float(nb_red_pass) color:#red;
+					data "Red pass failed" value:(nb_red_pass = 0) ? 0 : 1-float(nb_red_pass_succeed)/float(nb_red_pass) color:#darkred;
 			}
 			chart "blue pass" type:pie position:{0.5,0.5} size:{0.5,0.5} {
 				// note that a pass is said "successful" if the player that has the ball was the player called initially. A "failed pass" does not necessary means that the team have lost the ball.
-				data "Blue pass succeed" value:float(nb_blue_pass_succeed)/float(nb_blue_pass) color:#blue;
-				data "Blue pass failed" value:1-float(nb_blue_pass_succeed)/float(nb_blue_pass) color:#darkblue;
+				data "Blue pass succeed" value:(nb_blue_pass = 0) ? 0 : float(nb_blue_pass_succeed)/float(nb_blue_pass) color:#blue;
+				data "Blue pass failed" value:(nb_blue_pass = 0) ? 0 : 1-float(nb_blue_pass_succeed)/float(nb_blue_pass) color:#darkblue;
 			}
 			chart "number pass" type:series position:{0.5,0} size:{0.5,0.5} {
 				data "Number pass red" value:nb_red_pass color:#red;

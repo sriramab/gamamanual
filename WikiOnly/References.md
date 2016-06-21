@@ -49,6 +49,11 @@ As stated in [the first page](Overview), if you need to cite GAMA in a paper, we
 
 
 ## Research papers that use GAMA as modeling/simulation support
+
+**2016**
+
+* Bhamidipati, S., van der Lei, T., & Herder, P. (2016). A layered approach to model interconnected infrastructure and its significance for asset management. EJTIR, 16(1), 254-272.
+
 **2014**
 
   * E. G. Macatulad , A. C. Blanco (2014) 3DGIS-BASED MULTI-AGENT GEOSIMULATION AND VISUALIZATION OF BUILDING EVACUATION USING GAMA PLATFORM. The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XL-2, 2014. ISPRS Technical Commission II Symposium, 6 – 8 October 2014, Toronto, Canada. Retrieved from http://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XL-2/87/2014/isprsarchives-XL-2-87-2014.pdf

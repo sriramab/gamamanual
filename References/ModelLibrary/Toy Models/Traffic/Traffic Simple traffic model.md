@@ -18,8 +18,6 @@ _Author : Patrick Taillandier_
 A simple road network model: the speed on a road depends on the number of people on this road (the highest, the slowest)
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Traffic\Traffic Simple traffic model\carte-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Toy Models\Traffic\Traffic Simple traffic model\carte-10.png)
-
 Code of the model : 
 
 ```

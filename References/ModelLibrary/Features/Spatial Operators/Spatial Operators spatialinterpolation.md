@@ -12,10 +12,6 @@ _Author : Patrick Taillandier_
 A model which shows how to use spatial interpolation
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators spatialinterpolation\map_location-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators spatialinterpolation\map_location-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators spatialinterpolation\map_shape-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\Spatial Operators\Spatial Operators spatialinterpolation\map_shape-10.png)
-
 Code of the model : 
 
 ```

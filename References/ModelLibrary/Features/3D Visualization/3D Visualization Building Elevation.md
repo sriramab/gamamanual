@@ -14,12 +14,6 @@ Model presenting a 3D display of people and buildings moving on a road network i
 Three experiments are proposed : one showing people represented by a yellow sphere moving from a living 3D building to a working 3D building and coming back using a road network (road_traffic). The second experiment distinguish the species by using different layers for species (road_traffic_multi_layer). The last one increases the Z location of the buildings and the people according to the time simulated (road_traffic_flying_off).
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Building Elevation\city_display-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Building Elevation\city_display-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Building Elevation\city_display2-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Building Elevation\city_display2-10.png)
-
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Building Elevation\flyingOffAgents-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Features\3D Visualization\3D Visualization Building Elevation\flyingOffAgents-10.png)
-
 Code of the model : 
 
 ```

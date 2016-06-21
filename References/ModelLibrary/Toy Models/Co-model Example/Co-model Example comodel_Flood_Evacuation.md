@@ -3,7 +3,6 @@
 [//]: # (keyword|operator_sort_by)
 [//]: # (keyword|operator_closest_to)
 [//]: # (keyword|operator_copy)
-[//]: # (keyword|operator_not)
 [//]: # (keyword|operator_closest_points_with)
 [//]: # (keyword|operator_pyramid)
 [//]: # (keyword|operator_simplification)
@@ -128,9 +127,7 @@ species people skills:[moving]{
 experiment main type: gui {
 	parameter "nb people" var: nb_people min: 1 max: 1000;
 	output {
-		display map type: opengl camera_pos: {world.location.x,-world.shape.height*1.5,70}
-                        camera_look_pos:{world.location.x,0,0}    {
-			image '../images/soil.jpg';
+		display map type: opengl {
 			species building refresh: false;
 			species people;
 			graphics "exit" refresh: false {
@@ -146,7 +143,7 @@ experiment main type: gui {
 ```
 model Evacuation_coupling
 
-import "../../../Toy Models/Evacuation/models/continuous_move.gaml"
+import "../../../Toy Models/Evacuation/models/Continuous Move.gaml"
 experiment Evacuation_coupling_exp type: gui parent: main
 {
 	point centroid <- { 0, 180 };

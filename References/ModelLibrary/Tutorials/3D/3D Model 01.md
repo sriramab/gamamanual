@@ -6,8 +6,6 @@ _Author : Arnaud Grignard_
 First part of the tutorial : Tuto3D
 
 
-![F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Tutorials\3D\3D Model 01\View1-10.png](F:\Gama\GamaWiki\resources\images\modelLibraryScreenshots\Tutorials\3D\3D Model 01\View1-10.png)
-
 Code of the model : 
 
 ```

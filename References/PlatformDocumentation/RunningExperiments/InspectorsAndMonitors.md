@@ -1,4 +1,3 @@
-
 # Inspectors and monitors
 
 GAMA offers some tools to obtain informations about one or several agents. There are two kinds of tools :
