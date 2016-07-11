@@ -17,6 +17,8 @@ gives examples
 * in FIPA skill, `content`is replaced everywhere with `contents`
 * in FIPA skill, `receivers` is replaced everywhere with `to`
 * in FIPA skill, `messages` is replaced by `mailbox`
+* The pseudo-attribute `user_location` has been removed (not deprecated, unfortunately) and replaced by the "unit" `#user_location`.
+* The actions called by an `event` layer do not need anymore to define `point` and `list<agent>` arguments to receive the mouse location and the list of agents selected. Instead, they can now use `#user_location` and they have to compute the selected agents by themselves (using an arbitrary function).
 
 # Enhancements in 1.7
 
