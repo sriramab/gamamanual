@@ -17,6 +17,8 @@ gives examples
 * in FIPA skill, `content`is replaced everywhere with `contents`
 * in FIPA skill, `receivers` is replaced everywhere with `to`
 * in FIPA skill, `messages` is replaced by `mailbox`
+* The pseudo-attribute `user_location` has been removed (not deprecated, unfortunately) and replaced by the "unit" `#user_location`.
+* The actions called by an `event` layer do not need anymore to define `point` and `list<agent>` arguments to receive the mouse location and the list of agents selected. Instead, they can now use `#user_location` and they have to compute the selected agents by themselves (using an arbitrary function).
 
 # Enhancements in 1.7
 
@@ -67,6 +69,8 @@ gives examples
  * Changing simulation names is reflected in their display titles (and it can be dynamic)
 
 * Error view
+ * Much faster (up to 100x !) display of errors
+ * Contextual menu to copy the text of errors to clipboard or open the editor on it
 
 * Console
  * Interactive console allows to directly interact with agents (experiments, simulations and any agent) and get a direct feedback on the impact of code execution using a new interpreter integrated with the console.
