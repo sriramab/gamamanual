@@ -3,23 +3,25 @@
    		<name>3d</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_rgb_to_xyz</associatedKeyword>
-			<associatedKeyword>operator_cone3D</associatedKeyword>
 			<associatedKeyword>operator_change_clockwise</associatedKeyword>
-			<associatedKeyword>operator_teapot</associatedKeyword>
-			<associatedKeyword>operator_box</associatedKeyword>
-			<associatedKeyword>operator_is_clockwise</associatedKeyword>
-			<associatedKeyword>operator_hexagon</associatedKeyword>
-			<associatedKeyword>operator_dem</associatedKeyword>
+			<associatedKeyword>operator_rgb_to_xyz</associatedKeyword>
 			<associatedKeyword>operator_pyramid</associatedKeyword>
-			<associatedKeyword>operator_set_z</associatedKeyword>
-			<associatedKeyword>operator_cube</associatedKeyword>
+			<associatedKeyword>operator_teapot</associatedKeyword>
+			<associatedKeyword>operator_is_clockwise</associatedKeyword>
 			<associatedKeyword>operator_sphere</associatedKeyword>
+			<associatedKeyword>operator_cube</associatedKeyword>
+			<associatedKeyword>operator_cone3D</associatedKeyword>
+			<associatedKeyword>operator_dem</associatedKeyword>
+			<associatedKeyword>operator_hexagon</associatedKeyword>
+			<associatedKeyword>operator_box</associatedKeyword>
+			<associatedKeyword>operator_set_z</associatedKeyword>
 			<associatedKeyword>statement_light</associatedKeyword>
 			<associatedKeyword>statement_camera</associatedKeyword>
-			<associatedKeyword>skill_physics</associatedKeyword>
 			<associatedKeyword>skill_moving3D</associatedKeyword>
+			<associatedKeyword>skill_physics</associatedKeyword>
 			<associatedKeyword>constant_#camera_location</associatedKeyword>
+			<associatedKeyword>constant_#camera_target</associatedKeyword>
+			<associatedKeyword>constant_#camera_orientation</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -37,27 +39,27 @@
    		<name>agent_location</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_overlapping</associatedKeyword>
-			<associatedKeyword>operator_without_holes</associatedKeyword>
-			<associatedKeyword>operator_inside</associatedKeyword>
-			<associatedKeyword>operator_simple_clustering_by_distance</associatedKeyword>
-			<associatedKeyword>operator_agent_farthest_to</associatedKeyword>
+			<associatedKeyword>operator_distance_between</associatedKeyword>
 			<associatedKeyword>operator_closest_to</associatedKeyword>
-			<associatedKeyword>operator_neighbors_of</associatedKeyword>
-			<associatedKeyword>operator_path_between</associatedKeyword>
+			<associatedKeyword>operator_at_distance</associatedKeyword>
+			<associatedKeyword>operator_inside</associatedKeyword>
+			<associatedKeyword>operator_overlapping</associatedKeyword>
 			<associatedKeyword>operator_at_location</associatedKeyword>
 			<associatedKeyword>operator_agents_inside</associatedKeyword>
-			<associatedKeyword>operator_at_distance</associatedKeyword>
-			<associatedKeyword>operator_agents_at_distance</associatedKeyword>
-			<associatedKeyword>operator_farthest_to</associatedKeyword>
-			<associatedKeyword>operator_agents_overlapping</associatedKeyword>
-			<associatedKeyword>operator_towards</associatedKeyword>
-			<associatedKeyword>operator_hierarchical_clustering</associatedKeyword>
-			<associatedKeyword>operator_distance_to</associatedKeyword>
-			<associatedKeyword>operator_neighbors_at</associatedKeyword>
-			<associatedKeyword>operator_agent_closest_to</associatedKeyword>
-			<associatedKeyword>operator_distance_between</associatedKeyword>
 			<associatedKeyword>operator_path_to</associatedKeyword>
+			<associatedKeyword>operator_without_holes</associatedKeyword>
+			<associatedKeyword>operator_agent_farthest_to</associatedKeyword>
+			<associatedKeyword>operator_towards</associatedKeyword>
+			<associatedKeyword>operator_agents_overlapping</associatedKeyword>
+			<associatedKeyword>operator_simple_clustering_by_distance</associatedKeyword>
+			<associatedKeyword>operator_agent_closest_to</associatedKeyword>
+			<associatedKeyword>operator_distance_to</associatedKeyword>
+			<associatedKeyword>operator_agents_at_distance</associatedKeyword>
+			<associatedKeyword>operator_neighbors_of</associatedKeyword>
+			<associatedKeyword>operator_farthest_to</associatedKeyword>
+			<associatedKeyword>operator_hierarchical_clustering</associatedKeyword>
+			<associatedKeyword>operator_neighbors_at</associatedKeyword>
+			<associatedKeyword>operator_path_between</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -65,8 +67,8 @@
    		<name>agent_movement</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>skill_driving</associatedKeyword>
 			<associatedKeyword>skill_moving</associatedKeyword>
+			<associatedKeyword>skill_driving</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -98,6 +100,7 @@
 			<associatedKeyword>architecture_reflex</associatedKeyword>
 			<associatedKeyword>architecture_weighted_tasks</associatedKeyword>
 			<associatedKeyword>architecture_sorted_tasks</associatedKeyword>
+			<associatedKeyword>architecture_simple_bdi</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -105,39 +108,39 @@
    		<name>arithmetic</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_floor</associatedKeyword>
-			<associatedKeyword>operator_fact</associatedKeyword>
-			<associatedKeyword>operator_atan2</associatedKeyword>
-			<associatedKeyword>operator_tanh</associatedKeyword>
-			<associatedKeyword>operator_mod</associatedKeyword>
-			<associatedKeyword>operator_ceil</associatedKeyword>
-			<associatedKeyword>operator_sin_rad</associatedKeyword>
-			<associatedKeyword>operator_atan</associatedKeyword>
-			<associatedKeyword>operator_with_precision</associatedKeyword>
-			<associatedKeyword>operator_tan_rad</associatedKeyword>
-			<associatedKeyword>operator_round</associatedKeyword>
-			<associatedKeyword>operator_ln</associatedKeyword>
-			<associatedKeyword>operator_log</associatedKeyword>
-			<associatedKeyword>operator_exp</associatedKeyword>
-			<associatedKeyword>operator_is_finite</associatedKeyword>
-			<associatedKeyword>operator_^</associatedKeyword>
-			<associatedKeyword>operator_acos</associatedKeyword>
-			<associatedKeyword>operator_even</associatedKeyword>
-			<associatedKeyword>operator_cos</associatedKeyword>
-			<associatedKeyword>operator_asin</associatedKeyword>
 			<associatedKeyword>operator_cos_rad</associatedKeyword>
-			<associatedKeyword>operator_signum</associatedKeyword>
-			<associatedKeyword>operator_tan</associatedKeyword>
-			<associatedKeyword>operator_+</associatedKeyword>
-			<associatedKeyword>operator_sin</associatedKeyword>
+			<associatedKeyword>operator_sin_rad</associatedKeyword>
+			<associatedKeyword>operator_tanh</associatedKeyword>
 			<associatedKeyword>operator_hypot</associatedKeyword>
-			<associatedKeyword>operator_/</associatedKeyword>
-			<associatedKeyword>operator_abs</associatedKeyword>
-			<associatedKeyword>operator_-</associatedKeyword>
-			<associatedKeyword>operator_sqrt</associatedKeyword>
-			<associatedKeyword>operator_div</associatedKeyword>
-			<associatedKeyword>operator_*</associatedKeyword>
+			<associatedKeyword>operator_^</associatedKeyword>
+			<associatedKeyword>operator_even</associatedKeyword>
+			<associatedKeyword>operator_tan</associatedKeyword>
 			<associatedKeyword>operator_is_number</associatedKeyword>
+			<associatedKeyword>operator_fact</associatedKeyword>
+			<associatedKeyword>operator_floor</associatedKeyword>
+			<associatedKeyword>operator_mod</associatedKeyword>
+			<associatedKeyword>operator_exp</associatedKeyword>
+			<associatedKeyword>operator_tan_rad</associatedKeyword>
+			<associatedKeyword>operator_ln</associatedKeyword>
+			<associatedKeyword>operator_signum</associatedKeyword>
+			<associatedKeyword>operator_sin</associatedKeyword>
+			<associatedKeyword>operator_log</associatedKeyword>
+			<associatedKeyword>operator_cos</associatedKeyword>
+			<associatedKeyword>operator_acos</associatedKeyword>
+			<associatedKeyword>operator_sqrt</associatedKeyword>
+			<associatedKeyword>operator_atan2</associatedKeyword>
+			<associatedKeyword>operator_abs</associatedKeyword>
+			<associatedKeyword>operator_ceil</associatedKeyword>
+			<associatedKeyword>operator_is_finite</associatedKeyword>
+			<associatedKeyword>operator_asin</associatedKeyword>
+			<associatedKeyword>operator_div</associatedKeyword>
+			<associatedKeyword>operator_with_precision</associatedKeyword>
+			<associatedKeyword>operator_round</associatedKeyword>
+			<associatedKeyword>operator_*</associatedKeyword>
+			<associatedKeyword>operator_atan</associatedKeyword>
+			<associatedKeyword>operator_/</associatedKeyword>
+			<associatedKeyword>operator_-</associatedKeyword>
+			<associatedKeyword>operator_+</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -154,8 +157,8 @@
    		<name>attribute</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_.</associatedKeyword>
 			<associatedKeyword>operator_read</associatedKeyword>
+			<associatedKeyword>operator_.</associatedKeyword>
 			<associatedKeyword>operator_get</associatedKeyword>
 			<associatedKeyword>statement_Variable_regular</associatedKeyword>
 			<associatedKeyword>statement_remove</associatedKeyword>
@@ -196,6 +199,38 @@
    		<name>bdi</name>
    		<category>concept</category>
    		<associatedKeywordList>
+			<associatedKeyword>operator_with_values</associatedKeyword>
+			<associatedKeyword>operator_eval_when</associatedKeyword>
+			<associatedKeyword>operator_set_intensity</associatedKeyword>
+			<associatedKeyword>operator_set_truth</associatedKeyword>
+			<associatedKeyword>operator_get_lifetime</associatedKeyword>
+			<associatedKeyword>operator_get_intensity</associatedKeyword>
+			<associatedKeyword>operator_and</associatedKeyword>
+			<associatedKeyword>operator_with_lifetime</associatedKeyword>
+			<associatedKeyword>operator_get_decay</associatedKeyword>
+			<associatedKeyword>operator_set_decay</associatedKeyword>
+			<associatedKeyword>operator_or</associatedKeyword>
+			<associatedKeyword>operator_new_predicate</associatedKeyword>
+			<associatedKeyword>operator_get_priority</associatedKeyword>
+			<associatedKeyword>operator_with_priority</associatedKeyword>
+			<associatedKeyword>operator_get_about</associatedKeyword>
+			<associatedKeyword>operator_set_about</associatedKeyword>
+			<associatedKeyword>operator_get_super_intention</associatedKeyword>
+			<associatedKeyword>operator_new_emotion</associatedKeyword>
+			<associatedKeyword>operator_BDIPlan</associatedKeyword>
+			<associatedKeyword>operator_predicate</associatedKeyword>
+			<associatedKeyword>operator_emotion</associatedKeyword>
+			<associatedKeyword>statement_focus</associatedKeyword>
+			<associatedKeyword>statement_emotional_contagion</associatedKeyword>
+			<associatedKeyword>statement_perceive</associatedKeyword>
+			<associatedKeyword>statement_unconscious_contagion</associatedKeyword>
+			<associatedKeyword>statement_conscious_contagion</associatedKeyword>
+			<associatedKeyword>statement_rule</associatedKeyword>
+			<associatedKeyword>statement_plan</associatedKeyword>
+			<associatedKeyword>type_BDIPlan</associatedKeyword>
+			<associatedKeyword>type_predicate</associatedKeyword>
+			<associatedKeyword>type_emotion</associatedKeyword>
+			<associatedKeyword>architecture_simple_bdi</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -225,22 +260,22 @@
    		<name>cast</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_is_skill</associatedKeyword>
-			<associatedKeyword>operator_is</associatedKeyword>
 			<associatedKeyword>operator_species</associatedKeyword>
-			<associatedKeyword>operator_as_int</associatedKeyword>
-			<associatedKeyword>operator_topology</associatedKeyword>
-			<associatedKeyword>operator_as_path</associatedKeyword>
-			<associatedKeyword>operator_to_gaml</associatedKeyword>
-			<associatedKeyword>operator_as_date</associatedKeyword>
-			<associatedKeyword>operator_as</associatedKeyword>
-			<associatedKeyword>operator_as_intersection_graph</associatedKeyword>
-			<associatedKeyword>operator_as_distance_graph</associatedKeyword>
 			<associatedKeyword>operator_as_matrix</associatedKeyword>
-			<associatedKeyword>operator_grid_cells_to_graph</associatedKeyword>
 			<associatedKeyword>operator_matrix_with</associatedKeyword>
+			<associatedKeyword>operator_is_skill</associatedKeyword>
 			<associatedKeyword>operator_as_edge_graph</associatedKeyword>
+			<associatedKeyword>operator_is</associatedKeyword>
+			<associatedKeyword>operator_to_gaml</associatedKeyword>
+			<associatedKeyword>operator_as_int</associatedKeyword>
+			<associatedKeyword>operator_grid_cells_to_graph</associatedKeyword>
+			<associatedKeyword>operator_as_path</associatedKeyword>
+			<associatedKeyword>operator_as_date</associatedKeyword>
+			<associatedKeyword>operator_as_intersection_graph</associatedKeyword>
+			<associatedKeyword>operator_as</associatedKeyword>
 			<associatedKeyword>operator_list_with</associatedKeyword>
+			<associatedKeyword>operator_as_distance_graph</associatedKeyword>
+			<associatedKeyword>operator_topology</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -248,8 +283,8 @@
    		<name>chart</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_distribution_of</associatedKeyword>
 			<associatedKeyword>operator_distribution2d_of</associatedKeyword>
+			<associatedKeyword>operator_distribution_of</associatedKeyword>
 			<associatedKeyword>statement_datalist</associatedKeyword>
 			<associatedKeyword>statement_chart</associatedKeyword>
 			<associatedKeyword>statement_data</associatedKeyword>
@@ -261,6 +296,8 @@
    		<category>concept</category>
    		<associatedKeywordList>
 			<associatedKeyword>operator_dbscan</associatedKeyword>
+			<associatedKeyword>operator_skewness</associatedKeyword>
+			<associatedKeyword>operator_kurtosis</associatedKeyword>
 			<associatedKeyword>operator_kmeans</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
@@ -270,20 +307,21 @@
    		<category>concept</category>
    		<associatedKeywordList>
 			<associatedKeyword>operator_rgb_to_xyz</associatedKeyword>
+			<associatedKeyword>operator_mean</associatedKeyword>
+			<associatedKeyword>operator_brewer_colors</associatedKeyword>
+			<associatedKeyword>operator_median</associatedKeyword>
+			<associatedKeyword>operator_rnd_color</associatedKeyword>
 			<associatedKeyword>operator_grayscale</associatedKeyword>
 			<associatedKeyword>operator_blend</associatedKeyword>
-			<associatedKeyword>operator_mean</associatedKeyword>
-			<associatedKeyword>operator_rnd_color</associatedKeyword>
-			<associatedKeyword>operator_brewer_colors</associatedKeyword>
 			<associatedKeyword>operator_brewer_palettes</associatedKeyword>
-			<associatedKeyword>operator_hsb</associatedKeyword>
-			<associatedKeyword>operator_sum</associatedKeyword>
-			<associatedKeyword>operator_+</associatedKeyword>
-			<associatedKeyword>operator_rgb</associatedKeyword>
-			<associatedKeyword>operator_median</associatedKeyword>
-			<associatedKeyword>operator_/</associatedKeyword>
-			<associatedKeyword>operator_-</associatedKeyword>
 			<associatedKeyword>operator_*</associatedKeyword>
+			<associatedKeyword>operator_/</associatedKeyword>
+			<associatedKeyword>operator_sum</associatedKeyword>
+			<associatedKeyword>operator_rgb</associatedKeyword>
+			<associatedKeyword>operator_-</associatedKeyword>
+			<associatedKeyword>operator_+</associatedKeyword>
+			<associatedKeyword>operator_hsb</associatedKeyword>
+			<associatedKeyword>statement_highlight</associatedKeyword>
 			<associatedKeyword>type_rgb</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
@@ -293,8 +331,8 @@
    		<category>concept</category>
    		<associatedKeywordList>
 			<associatedKeyword>operator_command</associatedKeyword>
-			<associatedKeyword>skill_network</associatedKeyword>
 			<associatedKeyword>skill_fipa</associatedKeyword>
+			<associatedKeyword>skill_network</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -310,11 +348,11 @@
    		<category>concept</category>
    		<associatedKeywordList>
 			<associatedKeyword>operator_between</associatedKeyword>
-			<associatedKeyword>operator_&gt;</associatedKeyword>
-			<associatedKeyword>operator_&lt;</associatedKeyword>
 			<associatedKeyword>operator_!=</associatedKeyword>
 			<associatedKeyword>operator_=</associatedKeyword>
 			<associatedKeyword>operator_&gt;=</associatedKeyword>
+			<associatedKeyword>operator_&gt;</associatedKeyword>
+			<associatedKeyword>operator_&lt;</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -336,16 +374,19 @@
    		<name>constant</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>constant_#max_int</associatedKeyword>
-			<associatedKeyword>constant_#min_int</associatedKeyword>
-			<associatedKeyword>constant_#min_float</associatedKeyword>
-			<associatedKeyword>constant_#pi</associatedKeyword>
-			<associatedKeyword>constant_#nan</associatedKeyword>
-			<associatedKeyword>constant_#to_deg</associatedKeyword>
-			<associatedKeyword>constant_#max_float</associatedKeyword>
 			<associatedKeyword>constant_#e</associatedKeyword>
-			<associatedKeyword>constant_#infinity</associatedKeyword>
+			<associatedKeyword>constant_#max_int</associatedKeyword>
 			<associatedKeyword>constant_#to_rad</associatedKeyword>
+			<associatedKeyword>constant_#min_float</associatedKeyword>
+			<associatedKeyword>constant_#square</associatedKeyword>
+			<associatedKeyword>constant_#nan</associatedKeyword>
+			<associatedKeyword>constant_#flat</associatedKeyword>
+			<associatedKeyword>constant_#min_int</associatedKeyword>
+			<associatedKeyword>constant_#to_deg</associatedKeyword>
+			<associatedKeyword>constant_#infinity</associatedKeyword>
+			<associatedKeyword>constant_#pi</associatedKeyword>
+			<associatedKeyword>constant_#max_float</associatedKeyword>
+			<associatedKeyword>constant_#round</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -353,50 +394,50 @@
    		<name>container</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_accumulate</associatedKeyword>
-			<associatedKeyword>operator_sort_by</associatedKeyword>
-			<associatedKeyword>operator_at</associatedKeyword>
-			<associatedKeyword>operator_one_of</associatedKeyword>
-			<associatedKeyword>operator_mean_of</associatedKeyword>
-			<associatedKeyword>operator_contains</associatedKeyword>
-			<associatedKeyword>operator_first_with</associatedKeyword>
-			<associatedKeyword>operator_as_map</associatedKeyword>
-			<associatedKeyword>operator_inter</associatedKeyword>
-			<associatedKeyword>operator_last_with</associatedKeyword>
-			<associatedKeyword>operator_index_by</associatedKeyword>
 			<associatedKeyword>operator_min_of</associatedKeyword>
-			<associatedKeyword>operator_internal_at</associatedKeyword>
-			<associatedKeyword>operator_product_of</associatedKeyword>
-			<associatedKeyword>operator_variance_of</associatedKeyword>
-			<associatedKeyword>operator_::</associatedKeyword>
-			<associatedKeyword>operator_reverse</associatedKeyword>
-			<associatedKeyword>operator_get</associatedKeyword>
-			<associatedKeyword>operator_with_max_of</associatedKeyword>
-			<associatedKeyword>operator_index_of</associatedKeyword>
-			<associatedKeyword>operator_collect</associatedKeyword>
+			<associatedKeyword>operator_last_with</associatedKeyword>
+			<associatedKeyword>operator_as_map</associatedKeyword>
+			<associatedKeyword>operator_first_with</associatedKeyword>
 			<associatedKeyword>operator_as_matrix</associatedKeyword>
-			<associatedKeyword>operator_group_by</associatedKeyword>
-			<associatedKeyword>operator_length</associatedKeyword>
-			<associatedKeyword>operator_last_index_of</associatedKeyword>
-			<associatedKeyword>operator_first</associatedKeyword>
+			<associatedKeyword>operator_accumulate</associatedKeyword>
 			<associatedKeyword>operator_count</associatedKeyword>
 			<associatedKeyword>operator_matrix_with</associatedKeyword>
-			<associatedKeyword>operator_contains_all</associatedKeyword>
-			<associatedKeyword>operator_sum_of</associatedKeyword>
-			<associatedKeyword>operator_remove_duplicates</associatedKeyword>
-			<associatedKeyword>operator_with_min_of</associatedKeyword>
-			<associatedKeyword>operator_last</associatedKeyword>
-			<associatedKeyword>operator_empty</associatedKeyword>
-			<associatedKeyword>operator_+</associatedKeyword>
-			<associatedKeyword>operator_among</associatedKeyword>
-			<associatedKeyword>operator_union</associatedKeyword>
-			<associatedKeyword>operator_copy_between</associatedKeyword>
-			<associatedKeyword>operator_-</associatedKeyword>
-			<associatedKeyword>operator_interleave</associatedKeyword>
+			<associatedKeyword>operator_sort_by</associatedKeyword>
 			<associatedKeyword>operator_contains_any</associatedKeyword>
-			<associatedKeyword>operator_list_with</associatedKeyword>
+			<associatedKeyword>operator_contains</associatedKeyword>
+			<associatedKeyword>operator_collect</associatedKeyword>
 			<associatedKeyword>operator_where</associatedKeyword>
+			<associatedKeyword>operator_remove_duplicates</associatedKeyword>
+			<associatedKeyword>operator_empty</associatedKeyword>
+			<associatedKeyword>operator_sum_of</associatedKeyword>
 			<associatedKeyword>operator_max_of</associatedKeyword>
+			<associatedKeyword>operator_at</associatedKeyword>
+			<associatedKeyword>operator_group_by</associatedKeyword>
+			<associatedKeyword>operator_variance_of</associatedKeyword>
+			<associatedKeyword>operator_with_min_of</associatedKeyword>
+			<associatedKeyword>operator_among</associatedKeyword>
+			<associatedKeyword>operator_last_index_of</associatedKeyword>
+			<associatedKeyword>operator_::</associatedKeyword>
+			<associatedKeyword>operator_get</associatedKeyword>
+			<associatedKeyword>operator_index_by</associatedKeyword>
+			<associatedKeyword>operator_with_max_of</associatedKeyword>
+			<associatedKeyword>operator_copy_between</associatedKeyword>
+			<associatedKeyword>operator_one_of</associatedKeyword>
+			<associatedKeyword>operator_mean_of</associatedKeyword>
+			<associatedKeyword>operator_product_of</associatedKeyword>
+			<associatedKeyword>operator_last</associatedKeyword>
+			<associatedKeyword>operator_first</associatedKeyword>
+			<associatedKeyword>operator_reverse</associatedKeyword>
+			<associatedKeyword>operator_union</associatedKeyword>
+			<associatedKeyword>operator_list_with</associatedKeyword>
+			<associatedKeyword>operator_length</associatedKeyword>
+			<associatedKeyword>operator_interleave</associatedKeyword>
+			<associatedKeyword>operator_index_of</associatedKeyword>
+			<associatedKeyword>operator_inter</associatedKeyword>
+			<associatedKeyword>operator_contains_all</associatedKeyword>
+			<associatedKeyword>operator_internal_at</associatedKeyword>
+			<associatedKeyword>operator_-</associatedKeyword>
+			<associatedKeyword>operator_+</associatedKeyword>
 			<associatedKeyword>operator_list</associatedKeyword>
 			<associatedKeyword>operator_container</associatedKeyword>
 			<associatedKeyword>operator_pair</associatedKeyword>
@@ -447,31 +488,31 @@
    		<name>date</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_subtract_hours</associatedKeyword>
-			<associatedKeyword>operator_add_hours</associatedKeyword>
+			<associatedKeyword>operator_subtract_days</associatedKeyword>
+			<associatedKeyword>operator_add_weeks</associatedKeyword>
 			<associatedKeyword>operator_add_days</associatedKeyword>
+			<associatedKeyword>operator_add_months</associatedKeyword>
+			<associatedKeyword>operator_subtract_years</associatedKeyword>
 			<associatedKeyword>operator_add_years</associatedKeyword>
-			<associatedKeyword>operator_as_system_date</associatedKeyword>
-			<associatedKeyword>operator_subtract_minutes</associatedKeyword>
+			<associatedKeyword>operator_subtract_hours</associatedKeyword>
 			<associatedKeyword>operator_as_date</associatedKeyword>
 			<associatedKeyword>operator_add_minutes</associatedKeyword>
+			<associatedKeyword>operator_as_system_date</associatedKeyword>
 			<associatedKeyword>operator_subtract_months</associatedKeyword>
+			<associatedKeyword>operator_subtract_minutes</associatedKeyword>
+			<associatedKeyword>operator_add_hours</associatedKeyword>
 			<associatedKeyword>operator_subtract_weeks</associatedKeyword>
-			<associatedKeyword>operator_subtract_days</associatedKeyword>
-			<associatedKeyword>operator_subtract_years</associatedKeyword>
-			<associatedKeyword>operator_add_months</associatedKeyword>
-			<associatedKeyword>operator_add_weeks</associatedKeyword>
-			<associatedKeyword>operator_+</associatedKeyword>
 			<associatedKeyword>operator_-</associatedKeyword>
+			<associatedKeyword>operator_+</associatedKeyword>
 			<associatedKeyword>operator_date</associatedKeyword>
-			<associatedKeyword>constant_#minute</associatedKeyword>
-			<associatedKeyword>constant_#msec</associatedKeyword>
-			<associatedKeyword>constant_#year</associatedKeyword>
 			<associatedKeyword>constant_#month</associatedKeyword>
-			<associatedKeyword>constant_#h</associatedKeyword>
+			<associatedKeyword>constant_#year</associatedKeyword>
+			<associatedKeyword>constant_#msec</associatedKeyword>
+			<associatedKeyword>constant_#now</associatedKeyword>
+			<associatedKeyword>constant_#minute</associatedKeyword>
 			<associatedKeyword>constant_#sec</associatedKeyword>
 			<associatedKeyword>constant_#day</associatedKeyword>
-			<associatedKeyword>constant_#now</associatedKeyword>
+			<associatedKeyword>constant_#h</associatedKeyword>
 			<associatedKeyword>type_date</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
@@ -502,37 +543,39 @@
    		<name>dimension</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>constant_#yard</associatedKeyword>
-			<associatedKeyword>constant_#minute</associatedKeyword>
-			<associatedKeyword>constant_#msec</associatedKeyword>
-			<associatedKeyword>constant_#m3</associatedKeyword>
-			<associatedKeyword>constant_#mm</associatedKeyword>
-			<associatedKeyword>constant_#hl</associatedKeyword>
-			<associatedKeyword>constant_#year</associatedKeyword>
 			<associatedKeyword>constant_#mile</associatedKeyword>
-			<associatedKeyword>constant_#ounce</associatedKeyword>
-			<associatedKeyword>constant_#cl</associatedKeyword>
-			<associatedKeyword>constant_#stone</associatedKeyword>
-			<associatedKeyword>constant_#l</associatedKeyword>
-			<associatedKeyword>constant_#m</associatedKeyword>
-			<associatedKeyword>constant_#m2</associatedKeyword>
-			<associatedKeyword>constant_#inch</associatedKeyword>
-			<associatedKeyword>constant_#km</associatedKeyword>
-			<associatedKeyword>constant_#foot</associatedKeyword>
 			<associatedKeyword>constant_#month</associatedKeyword>
-			<associatedKeyword>constant_#h</associatedKeyword>
-			<associatedKeyword>constant_#dm</associatedKeyword>
-			<associatedKeyword>constant_#gram</associatedKeyword>
-			<associatedKeyword>constant_#kg</associatedKeyword>
-			<associatedKeyword>constant_#sqin</associatedKeyword>
+			<associatedKeyword>constant_#year</associatedKeyword>
 			<associatedKeyword>constant_#dl</associatedKeyword>
-			<associatedKeyword>constant_#pound</associatedKeyword>
-			<associatedKeyword>constant_#ton</associatedKeyword>
-			<associatedKeyword>constant_#sec</associatedKeyword>
+			<associatedKeyword>constant_#msec</associatedKeyword>
+			<associatedKeyword>constant_#cl</associatedKeyword>
+			<associatedKeyword>constant_#shortton</associatedKeyword>
+			<associatedKeyword>constant_#foot</associatedKeyword>
+			<associatedKeyword>constant_#yard</associatedKeyword>
+			<associatedKeyword>constant_#km</associatedKeyword>
+			<associatedKeyword>constant_#mm</associatedKeyword>
+			<associatedKeyword>constant_#minute</associatedKeyword>
 			<associatedKeyword>constant_#sqft</associatedKeyword>
-			<associatedKeyword>constant_#sqmi</associatedKeyword>
-			<associatedKeyword>constant_#cm</associatedKeyword>
+			<associatedKeyword>constant_#dm</associatedKeyword>
+			<associatedKeyword>constant_#sqin</associatedKeyword>
+			<associatedKeyword>constant_#ton</associatedKeyword>
+			<associatedKeyword>constant_#stone</associatedKeyword>
+			<associatedKeyword>constant_#kg</associatedKeyword>
+			<associatedKeyword>constant_#longton</associatedKeyword>
+			<associatedKeyword>constant_#sec</associatedKeyword>
 			<associatedKeyword>constant_#day</associatedKeyword>
+			<associatedKeyword>constant_#pound</associatedKeyword>
+			<associatedKeyword>constant_#m2</associatedKeyword>
+			<associatedKeyword>constant_#ounce</associatedKeyword>
+			<associatedKeyword>constant_#h</associatedKeyword>
+			<associatedKeyword>constant_#inch</associatedKeyword>
+			<associatedKeyword>constant_#cm</associatedKeyword>
+			<associatedKeyword>constant_#hl</associatedKeyword>
+			<associatedKeyword>constant_#sqmi</associatedKeyword>
+			<associatedKeyword>constant_#m</associatedKeyword>
+			<associatedKeyword>constant_#m3</associatedKeyword>
+			<associatedKeyword>constant_#l</associatedKeyword>
+			<associatedKeyword>constant_#gram</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -547,19 +590,23 @@
 			<associatedKeyword>statement_graphics</associatedKeyword>
 			<associatedKeyword>statement_display_grid</associatedKeyword>
 			<associatedKeyword>statement_overlay</associatedKeyword>
+			<associatedKeyword>statement_highlight</associatedKeyword>
 			<associatedKeyword>statement_display_population</associatedKeyword>
 			<associatedKeyword>statement_agents</associatedKeyword>
 			<associatedKeyword>statement_aspect</associatedKeyword>
 			<associatedKeyword>statement_camera</associatedKeyword>
 			<associatedKeyword>statement_chart</associatedKeyword>
+			<associatedKeyword>statement_permanent</associatedKeyword>
+			<associatedKeyword>statement_focus_on</associatedKeyword>
 			<associatedKeyword>statement_display</associatedKeyword>
 			<associatedKeyword>statement_draw</associatedKeyword>
-			<associatedKeyword>constant_#vertical</associatedKeyword>
-			<associatedKeyword>constant_#horizontal</associatedKeyword>
-			<associatedKeyword>constant_#split</associatedKeyword>
-			<associatedKeyword>constant_#stack</associatedKeyword>
-			<associatedKeyword>constant_#zoom</associatedKeyword>
 			<associatedKeyword>constant_#none</associatedKeyword>
+			<associatedKeyword>constant_#zoom</associatedKeyword>
+			<associatedKeyword>constant_#stack</associatedKeyword>
+			<associatedKeyword>constant_#split</associatedKeyword>
+			<associatedKeyword>constant_#horizontal</associatedKeyword>
+			<associatedKeyword>constant_#user_location</associatedKeyword>
+			<associatedKeyword>constant_#vertical</associatedKeyword>
 			<associatedKeyword>type_font</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
@@ -584,19 +631,19 @@
    		<name>edge</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_biggest_cliques_of</associatedKeyword>
+			<associatedKeyword>operator_connected_components_of</associatedKeyword>
 			<associatedKeyword>operator_source_of</associatedKeyword>
-			<associatedKeyword>operator_maximal_cliques_of</associatedKeyword>
-			<associatedKeyword>operator_contains_edge</associatedKeyword>
-			<associatedKeyword>operator_in_edges_of</associatedKeyword>
-			<associatedKeyword>operator_as_distance_graph</associatedKeyword>
-			<associatedKeyword>operator_target_of</associatedKeyword>
-			<associatedKeyword>operator_out_edges_of</associatedKeyword>
-			<associatedKeyword>operator_out_degree_of</associatedKeyword>
-			<associatedKeyword>operator_rewire_n</associatedKeyword>
 			<associatedKeyword>operator_add_edge</associatedKeyword>
 			<associatedKeyword>operator_as_edge_graph</associatedKeyword>
-			<associatedKeyword>operator_connected_components_of</associatedKeyword>
+			<associatedKeyword>operator_maximal_cliques_of</associatedKeyword>
+			<associatedKeyword>operator_out_degree_of</associatedKeyword>
+			<associatedKeyword>operator_biggest_cliques_of</associatedKeyword>
+			<associatedKeyword>operator_in_edges_of</associatedKeyword>
+			<associatedKeyword>operator_contains_edge</associatedKeyword>
+			<associatedKeyword>operator_rewire_n</associatedKeyword>
+			<associatedKeyword>operator_out_edges_of</associatedKeyword>
+			<associatedKeyword>operator_target_of</associatedKeyword>
+			<associatedKeyword>operator_as_distance_graph</associatedKeyword>
 			<associatedKeyword>statement_remove</associatedKeyword>
 			<associatedKeyword>statement_add</associatedKeyword>
 		</associatedKeywordList>	
@@ -620,10 +667,10 @@
    		<name>equation</name>
    		<category>concept</category>
    		<associatedKeywordList>
+			<associatedKeyword>operator_internal_integrated_value</associatedKeyword>
+			<associatedKeyword>operator_diff2</associatedKeyword>
 			<associatedKeyword>operator_internal_zero_order_equation</associatedKeyword>
 			<associatedKeyword>operator_diff</associatedKeyword>
-			<associatedKeyword>operator_diff2</associatedKeyword>
-			<associatedKeyword>operator_internal_integrated_value</associatedKeyword>
 			<associatedKeyword>statement_solve</associatedKeyword>
 			<associatedKeyword>statement_equation</associatedKeyword>
 			<associatedKeyword>statement_=</associatedKeyword>
@@ -651,15 +698,15 @@
    		<name>file</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_new_folder</associatedKeyword>
-			<associatedKeyword>operator_read</associatedKeyword>
-			<associatedKeyword>operator_file</associatedKeyword>
-			<associatedKeyword>operator_folder</associatedKeyword>
-			<associatedKeyword>operator_file_exists</associatedKeyword>
 			<associatedKeyword>operator_crs</associatedKeyword>
+			<associatedKeyword>operator_read</associatedKeyword>
+			<associatedKeyword>operator_new_folder</associatedKeyword>
+			<associatedKeyword>operator_folder</associatedKeyword>
 			<associatedKeyword>operator_osm_file</associatedKeyword>
 			<associatedKeyword>operator_writable</associatedKeyword>
 			<associatedKeyword>operator_load_graph_from_file</associatedKeyword>
+			<associatedKeyword>operator_file</associatedKeyword>
+			<associatedKeyword>operator_file_exists</associatedKeyword>
 			<associatedKeyword>operator_is_image</associatedKeyword>
 			<associatedKeyword>operator_image_file</associatedKeyword>
 			<associatedKeyword>operator_is_R</associatedKeyword>
@@ -694,18 +741,18 @@
    		<name>filter</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_mean_of</associatedKeyword>
-			<associatedKeyword>operator_first_with</associatedKeyword>
-			<associatedKeyword>operator_last_with</associatedKeyword>
 			<associatedKeyword>operator_min_of</associatedKeyword>
-			<associatedKeyword>operator_product_of</associatedKeyword>
-			<associatedKeyword>operator_variance_of</associatedKeyword>
-			<associatedKeyword>operator_with_max_of</associatedKeyword>
+			<associatedKeyword>operator_last_with</associatedKeyword>
+			<associatedKeyword>operator_first_with</associatedKeyword>
+			<associatedKeyword>operator_where</associatedKeyword>
 			<associatedKeyword>operator_sum_of</associatedKeyword>
+			<associatedKeyword>operator_max_of</associatedKeyword>
+			<associatedKeyword>operator_variance_of</associatedKeyword>
 			<associatedKeyword>operator_with_min_of</associatedKeyword>
 			<associatedKeyword>operator_among</associatedKeyword>
-			<associatedKeyword>operator_where</associatedKeyword>
-			<associatedKeyword>operator_max_of</associatedKeyword>
+			<associatedKeyword>operator_with_max_of</associatedKeyword>
+			<associatedKeyword>operator_mean_of</associatedKeyword>
+			<associatedKeyword>operator_product_of</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -731,95 +778,99 @@
    		<name>geometry</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_intersects</associatedKeyword>
-			<associatedKeyword>operator_overlapping</associatedKeyword>
-			<associatedKeyword>operator_squircle</associatedKeyword>
-			<associatedKeyword>operator_crosses</associatedKeyword>
-			<associatedKeyword>operator_without_holes</associatedKeyword>
-			<associatedKeyword>operator_rgb_to_xyz</associatedKeyword>
-			<associatedKeyword>operator_polygon</associatedKeyword>
-			<associatedKeyword>operator_voronoi</associatedKeyword>
-			<associatedKeyword>operator_points_on</associatedKeyword>
-			<associatedKeyword>operator_to_rectangles</associatedKeyword>
-			<associatedKeyword>operator_split_lines</associatedKeyword>
-			<associatedKeyword>operator_triangle</associatedKeyword>
-			<associatedKeyword>operator_inside</associatedKeyword>
-			<associatedKeyword>operator_simple_clustering_by_distance</associatedKeyword>
-			<associatedKeyword>operator_points_at</associatedKeyword>
-			<associatedKeyword>operator_agent_farthest_to</associatedKeyword>
 			<associatedKeyword>operator_closest_to</associatedKeyword>
-			<associatedKeyword>operator_skeletonize</associatedKeyword>
-			<associatedKeyword>operator_covers</associatedKeyword>
-			<associatedKeyword>operator_cylinder</associatedKeyword>
-			<associatedKeyword>operator_cone3D</associatedKeyword>
-			<associatedKeyword>operator_neighbors_of</associatedKeyword>
-			<associatedKeyword>operator_as_grid</associatedKeyword>
-			<associatedKeyword>operator_partially_overlaps</associatedKeyword>
-			<associatedKeyword>operator_change_clockwise</associatedKeyword>
-			<associatedKeyword>operator_clean</associatedKeyword>
-			<associatedKeyword>operator_to_squares</associatedKeyword>
-			<associatedKeyword>operator_closest_points_with</associatedKeyword>
-			<associatedKeyword>operator_overlaps</associatedKeyword>
-			<associatedKeyword>operator_square</associatedKeyword>
-			<associatedKeyword>operator_at_location</associatedKeyword>
-			<associatedKeyword>operator_polyhedron</associatedKeyword>
-			<associatedKeyword>operator_arc</associatedKeyword>
-			<associatedKeyword>operator_teapot</associatedKeyword>
-			<associatedKeyword>operator_internal_at</associatedKeyword>
-			<associatedKeyword>operator_agents_inside</associatedKeyword>
-			<associatedKeyword>operator_add_point</associatedKeyword>
-			<associatedKeyword>operator_translated_by</associatedKeyword>
-			<associatedKeyword>operator_to_GAMA_CRS</associatedKeyword>
-			<associatedKeyword>operator_simplification</associatedKeyword>
-			<associatedKeyword>operator_link</associatedKeyword>
-			<associatedKeyword>operator_at_distance</associatedKeyword>
-			<associatedKeyword>operator_get</associatedKeyword>
-			<associatedKeyword>operator_agents_at_distance</associatedKeyword>
-			<associatedKeyword>operator_crs</associatedKeyword>
-			<associatedKeyword>operator_scaled_to</associatedKeyword>
-			<associatedKeyword>operator_farthest_to</associatedKeyword>
-			<associatedKeyword>operator_any_location_in</associatedKeyword>
-			<associatedKeyword>operator_agents_overlapping</associatedKeyword>
-			<associatedKeyword>operator_IDW</associatedKeyword>
-			<associatedKeyword>operator_envelope</associatedKeyword>
-			<associatedKeyword>operator_hierarchical_clustering</associatedKeyword>
-			<associatedKeyword>operator_around</associatedKeyword>
-			<associatedKeyword>operator_rotated_by</associatedKeyword>
-			<associatedKeyword>operator_farthest_point_to</associatedKeyword>
-			<associatedKeyword>operator_transformed_by</associatedKeyword>
-			<associatedKeyword>operator_box</associatedKeyword>
-			<associatedKeyword>operator_disjoint_from</associatedKeyword>
-			<associatedKeyword>operator_masked_by</associatedKeyword>
-			<associatedKeyword>operator_rectangle</associatedKeyword>
-			<associatedKeyword>operator_curve</associatedKeyword>
-			<associatedKeyword>operator_is_clockwise</associatedKeyword>
-			<associatedKeyword>operator_circle</associatedKeyword>
-			<associatedKeyword>operator_agent_from_geometry</associatedKeyword>
-			<associatedKeyword>operator_cone</associatedKeyword>
 			<associatedKeyword>operator_as_hexagonal_grid</associatedKeyword>
-			<associatedKeyword>operator_convex_hull</associatedKeyword>
+			<associatedKeyword>operator_at_distance</associatedKeyword>
+			<associatedKeyword>operator_crs</associatedKeyword>
+			<associatedKeyword>operator_spatial_graph</associatedKeyword>
+			<associatedKeyword>operator_change_clockwise</associatedKeyword>
+			<associatedKeyword>operator_inside</associatedKeyword>
+			<associatedKeyword>operator_simplification</associatedKeyword>
+			<associatedKeyword>operator_agent_from_geometry</associatedKeyword>
+			<associatedKeyword>operator_rgb_to_xyz</associatedKeyword>
+			<associatedKeyword>operator_cylinder</associatedKeyword>
+			<associatedKeyword>operator_overlapping</associatedKeyword>
+			<associatedKeyword>operator_polygon</associatedKeyword>
 			<associatedKeyword>operator_as_4_grid</associatedKeyword>
+			<associatedKeyword>operator_as_grid</associatedKeyword>
+			<associatedKeyword>operator_cone</associatedKeyword>
+			<associatedKeyword>operator_at_location</associatedKeyword>
+			<associatedKeyword>operator_agents_inside</associatedKeyword>
+			<associatedKeyword>operator_without_holes</associatedKeyword>
+			<associatedKeyword>operator_closest_points_with</associatedKeyword>
+			<associatedKeyword>operator_transformed_by</associatedKeyword>
+			<associatedKeyword>operator_touches</associatedKeyword>
+			<associatedKeyword>operator_agent_farthest_to</associatedKeyword>
+			<associatedKeyword>operator_points_at</associatedKeyword>
+			<associatedKeyword>operator_pyramid</associatedKeyword>
+			<associatedKeyword>operator_overlaps</associatedKeyword>
+			<associatedKeyword>operator_clean</associatedKeyword>
+			<associatedKeyword>operator_agents_overlapping</associatedKeyword>
+			<associatedKeyword>operator_simple_clustering_by_distance</associatedKeyword>
+			<associatedKeyword>operator_teapot</associatedKeyword>
+			<associatedKeyword>operator_to_rectangles</associatedKeyword>
+			<associatedKeyword>operator_farthest_point_to</associatedKeyword>
+			<associatedKeyword>operator_convex_hull</associatedKeyword>
+			<associatedKeyword>operator_skeletonize</associatedKeyword>
+			<associatedKeyword>operator_polyhedron</associatedKeyword>
+			<associatedKeyword>operator_ellipse</associatedKeyword>
+			<associatedKeyword>operator_split_lines</associatedKeyword>
+			<associatedKeyword>operator_voronoi</associatedKeyword>
+			<associatedKeyword>operator_line</associatedKeyword>
+			<associatedKeyword>operator_IDW</associatedKeyword>
+			<associatedKeyword>operator_is_clockwise</associatedKeyword>
+			<associatedKeyword>operator_disjoint_from</associatedKeyword>
+			<associatedKeyword>operator_squircle</associatedKeyword>
+			<associatedKeyword>operator_arc</associatedKeyword>
+			<associatedKeyword>operator_agent_closest_to</associatedKeyword>
+			<associatedKeyword>operator_get</associatedKeyword>
+			<associatedKeyword>operator_to_GAMA_CRS</associatedKeyword>
+			<associatedKeyword>operator_sphere</associatedKeyword>
+			<associatedKeyword>operator_add_point</associatedKeyword>
+			<associatedKeyword>operator_smooth</associatedKeyword>
+			<associatedKeyword>operator_triangulate</associatedKeyword>
+			<associatedKeyword>operator_covers</associatedKeyword>
+			<associatedKeyword>operator_partially_overlaps</associatedKeyword>
+			<associatedKeyword>operator_to_squares</associatedKeyword>
+			<associatedKeyword>operator_cube</associatedKeyword>
+			<associatedKeyword>operator_link</associatedKeyword>
+			<associatedKeyword>operator_square</associatedKeyword>
+			<associatedKeyword>operator_agents_at_distance</associatedKeyword>
+			<associatedKeyword>operator_envelope</associatedKeyword>
+			<associatedKeyword>operator_neighbors_of</associatedKeyword>
+			<associatedKeyword>operator_triangle</associatedKeyword>
+			<associatedKeyword>operator_rotated_by</associatedKeyword>
+			<associatedKeyword>operator_union</associatedKeyword>
+			<associatedKeyword>operator_rectangle</associatedKeyword>
+			<associatedKeyword>operator_translated_by</associatedKeyword>
+			<associatedKeyword>operator_scaled_to</associatedKeyword>
+			<associatedKeyword>operator_split_geometry</associatedKeyword>
+			<associatedKeyword>operator_CRS_transform</associatedKeyword>
+			<associatedKeyword>operator_farthest_to</associatedKeyword>
+			<associatedKeyword>operator_crosses</associatedKeyword>
+			<associatedKeyword>operator_intersects</associatedKeyword>
+			<associatedKeyword>operator_any_location_in</associatedKeyword>
+			<associatedKeyword>operator_around</associatedKeyword>
+			<associatedKeyword>operator_cone3D</associatedKeyword>
+			<associatedKeyword>operator_dem</associatedKeyword>
+			<associatedKeyword>operator_hierarchical_clustering</associatedKeyword>
+			<associatedKeyword>operator_points_on</associatedKeyword>
 			<associatedKeyword>operator_hexagon</associatedKeyword>
 			<associatedKeyword>operator_neighbors_at</associatedKeyword>
-			<associatedKeyword>operator_CRS_transform</associatedKeyword>
-			<associatedKeyword>operator_agent_closest_to</associatedKeyword>
-			<associatedKeyword>operator_dem</associatedKeyword>
-			<associatedKeyword>operator_+</associatedKeyword>
-			<associatedKeyword>operator_ellipse</associatedKeyword>
-			<associatedKeyword>operator_line</associatedKeyword>
-			<associatedKeyword>operator_pyramid</associatedKeyword>
-			<associatedKeyword>operator_triangulate</associatedKeyword>
-			<associatedKeyword>operator_touches</associatedKeyword>
-			<associatedKeyword>operator_set_z</associatedKeyword>
-			<associatedKeyword>operator_union</associatedKeyword>
-			<associatedKeyword>operator_spatial_graph</associatedKeyword>
-			<associatedKeyword>operator_-</associatedKeyword>
-			<associatedKeyword>operator_split_geometry</associatedKeyword>
-			<associatedKeyword>operator_cube</associatedKeyword>
-			<associatedKeyword>operator_smooth</associatedKeyword>
-			<associatedKeyword>operator_sphere</associatedKeyword>
 			<associatedKeyword>operator_*</associatedKeyword>
+			<associatedKeyword>operator_curve</associatedKeyword>
+			<associatedKeyword>operator_box</associatedKeyword>
+			<associatedKeyword>operator_set_z</associatedKeyword>
+			<associatedKeyword>operator_internal_at</associatedKeyword>
+			<associatedKeyword>operator_masked_by</associatedKeyword>
+			<associatedKeyword>operator_-</associatedKeyword>
+			<associatedKeyword>operator_+</associatedKeyword>
+			<associatedKeyword>operator_circle</associatedKeyword>
 			<associatedKeyword>operator_geometry</associatedKeyword>
+			<associatedKeyword>statement_focus_on</associatedKeyword>
+			<associatedKeyword>constant_#square</associatedKeyword>
+			<associatedKeyword>constant_#flat</associatedKeyword>
+			<associatedKeyword>constant_#round</associatedKeyword>
 			<associatedKeyword>type_geometry</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
@@ -828,8 +879,8 @@
    		<name>gis</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_to_GAMA_CRS</associatedKeyword>
 			<associatedKeyword>operator_crs</associatedKeyword>
+			<associatedKeyword>operator_to_GAMA_CRS</associatedKeyword>
 			<associatedKeyword>operator_CRS_transform</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
@@ -845,58 +896,58 @@
    		<name>graph</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_as_driving_graph</associatedKeyword>
-			<associatedKeyword>operator_biggest_cliques_of</associatedKeyword>
-			<associatedKeyword>operator_source_of</associatedKeyword>
-			<associatedKeyword>operator_weight_of</associatedKeyword>
-			<associatedKeyword>operator_maximal_cliques_of</associatedKeyword>
-			<associatedKeyword>operator_directed</associatedKeyword>
-			<associatedKeyword>operator_contains_edge</associatedKeyword>
-			<associatedKeyword>operator_undirected</associatedKeyword>
-			<associatedKeyword>operator_nb_cycles</associatedKeyword>
-			<associatedKeyword>operator_in_degree_of</associatedKeyword>
-			<associatedKeyword>operator_use_cache</associatedKeyword>
-			<associatedKeyword>operator_contains_vertex</associatedKeyword>
-			<associatedKeyword>operator_beta_index</associatedKeyword>
-			<associatedKeyword>operator_add_node</associatedKeyword>
-			<associatedKeyword>operator_neighbors_of</associatedKeyword>
-			<associatedKeyword>operator_as_path</associatedKeyword>
-			<associatedKeyword>operator_paths_between</associatedKeyword>
-			<associatedKeyword>operator_path_between</associatedKeyword>
-			<associatedKeyword>operator_successors_of</associatedKeyword>
-			<associatedKeyword>operator_predecessors_of</associatedKeyword>
-			<associatedKeyword>operator_alpha_index</associatedKeyword>
-			<associatedKeyword>operator_as_intersection_graph</associatedKeyword>
-			<associatedKeyword>operator_in_edges_of</associatedKeyword>
-			<associatedKeyword>operator_as_distance_graph</associatedKeyword>
-			<associatedKeyword>operator_target_of</associatedKeyword>
-			<associatedKeyword>operator_connectivity_index</associatedKeyword>
-			<associatedKeyword>operator_with_optimizer_type</associatedKeyword>
-			<associatedKeyword>operator_out_edges_of</associatedKeyword>
-			<associatedKeyword>operator_degree_of</associatedKeyword>
-			<associatedKeyword>operator_load_shortest_paths</associatedKeyword>
-			<associatedKeyword>operator_layout</associatedKeyword>
+			<associatedKeyword>operator_connected_components_of</associatedKeyword>
 			<associatedKeyword>operator_betweenness_centrality</associatedKeyword>
-			<associatedKeyword>operator_with_weights</associatedKeyword>
-			<associatedKeyword>operator_grid_cells_to_graph</associatedKeyword>
+			<associatedKeyword>operator_with_optimizer_type</associatedKeyword>
+			<associatedKeyword>operator_spatial_graph</associatedKeyword>
+			<associatedKeyword>operator_beta_index</associatedKeyword>
+			<associatedKeyword>operator_source_of</associatedKeyword>
+			<associatedKeyword>operator_add_edge</associatedKeyword>
 			<associatedKeyword>operator_agent_from_geometry</associatedKeyword>
+			<associatedKeyword>operator_connectivity_index</associatedKeyword>
+			<associatedKeyword>operator_successors_of</associatedKeyword>
+			<associatedKeyword>operator_contains_vertex</associatedKeyword>
+			<associatedKeyword>operator_as_edge_graph</associatedKeyword>
+			<associatedKeyword>operator_maximal_cliques_of</associatedKeyword>
 			<associatedKeyword>operator_out_degree_of</associatedKeyword>
+			<associatedKeyword>operator_nb_cycles</associatedKeyword>
+			<associatedKeyword>operator_load_shortest_paths</associatedKeyword>
+			<associatedKeyword>operator_use_cache</associatedKeyword>
+			<associatedKeyword>operator_degree_of</associatedKeyword>
+			<associatedKeyword>operator_gamma_index</associatedKeyword>
+			<associatedKeyword>operator_biggest_cliques_of</associatedKeyword>
+			<associatedKeyword>operator_all_pairs_shortest_path</associatedKeyword>
+			<associatedKeyword>operator_grid_cells_to_graph</associatedKeyword>
+			<associatedKeyword>operator_undirected</associatedKeyword>
+			<associatedKeyword>operator_directed</associatedKeyword>
+			<associatedKeyword>operator_in_edges_of</associatedKeyword>
+			<associatedKeyword>operator_contains_edge</associatedKeyword>
+			<associatedKeyword>operator_rewire_n</associatedKeyword>
+			<associatedKeyword>operator_with_weights</associatedKeyword>
+			<associatedKeyword>operator_out_edges_of</associatedKeyword>
+			<associatedKeyword>operator_target_of</associatedKeyword>
+			<associatedKeyword>operator_remove_node_from</associatedKeyword>
+			<associatedKeyword>operator_as_path</associatedKeyword>
+			<associatedKeyword>operator_neighbors_of</associatedKeyword>
+			<associatedKeyword>operator_in_degree_of</associatedKeyword>
+			<associatedKeyword>operator_as_intersection_graph</associatedKeyword>
+			<associatedKeyword>operator_layout</associatedKeyword>
+			<associatedKeyword>operator_add_node</associatedKeyword>
+			<associatedKeyword>operator_alpha_index</associatedKeyword>
+			<associatedKeyword>operator_predecessors_of</associatedKeyword>
+			<associatedKeyword>operator_paths_between</associatedKeyword>
+			<associatedKeyword>operator_as_distance_graph</associatedKeyword>
+			<associatedKeyword>operator_path_between</associatedKeyword>
+			<associatedKeyword>operator_load_graph_from_file</associatedKeyword>
 			<associatedKeyword>operator_generate_complete_graph</associatedKeyword>
 			<associatedKeyword>operator_sum</associatedKeyword>
-			<associatedKeyword>operator_rewire_n</associatedKeyword>
-			<associatedKeyword>operator_remove_node_from</associatedKeyword>
-			<associatedKeyword>operator_add_edge</associatedKeyword>
-			<associatedKeyword>operator_gamma_index</associatedKeyword>
-			<associatedKeyword>operator_as_edge_graph</associatedKeyword>
-			<associatedKeyword>operator_load_graph_from_file</associatedKeyword>
-			<associatedKeyword>operator_spatial_graph</associatedKeyword>
-			<associatedKeyword>operator_all_pairs_shortest_path</associatedKeyword>
-			<associatedKeyword>operator_connected_components_of</associatedKeyword>
+			<associatedKeyword>operator_weight_of</associatedKeyword>
 			<associatedKeyword>operator_graph</associatedKeyword>
-			<associatedKeyword>statement_layout_forceatlas2</associatedKeyword>
-			<associatedKeyword>statement_layout_yifanhu</associatedKeyword>
+			<associatedKeyword>operator_as_driving_graph</associatedKeyword>
 			<associatedKeyword>statement_remove</associatedKeyword>
 			<associatedKeyword>statement_add</associatedKeyword>
+			<associatedKeyword>statement_layout_forceatlas2</associatedKeyword>
+			<associatedKeyword>statement_layout_yifanhu</associatedKeyword>
 			<associatedKeyword>species_graph_node</associatedKeyword>
 			<associatedKeyword>type_graph</associatedKeyword>
 		</associatedKeywordList>	
@@ -906,9 +957,9 @@
    		<name>graph_weight</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_weight_of</associatedKeyword>
 			<associatedKeyword>operator_with_optimizer_type</associatedKeyword>
 			<associatedKeyword>operator_with_weights</associatedKeyword>
+			<associatedKeyword>operator_weight_of</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -916,14 +967,16 @@
    		<name>graphic</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>constant_#pixels</associatedKeyword>
-			<associatedKeyword>constant_#display_width</associatedKeyword>
-			<associatedKeyword>constant_#display_height</associatedKeyword>
-			<associatedKeyword>constant_#zoom</associatedKeyword>
 			<associatedKeyword>constant_#camera_location</associatedKeyword>
+			<associatedKeyword>constant_#zoom</associatedKeyword>
+			<associatedKeyword>constant_#camera_target</associatedKeyword>
 			<associatedKeyword>constant_#plain</associatedKeyword>
-			<associatedKeyword>constant_#italic</associatedKeyword>
 			<associatedKeyword>constant_#bold</associatedKeyword>
+			<associatedKeyword>constant_#camera_orientation</associatedKeyword>
+			<associatedKeyword>constant_#italic</associatedKeyword>
+			<associatedKeyword>constant_#pixels</associatedKeyword>
+			<associatedKeyword>constant_#display_height</associatedKeyword>
+			<associatedKeyword>constant_#display_width</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -931,10 +984,12 @@
    		<name>graphic_unit</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>constant_#pixels</associatedKeyword>
-			<associatedKeyword>constant_#display_width</associatedKeyword>
-			<associatedKeyword>constant_#display_height</associatedKeyword>
 			<associatedKeyword>constant_#camera_location</associatedKeyword>
+			<associatedKeyword>constant_#camera_target</associatedKeyword>
+			<associatedKeyword>constant_#camera_orientation</associatedKeyword>
+			<associatedKeyword>constant_#pixels</associatedKeyword>
+			<associatedKeyword>constant_#display_height</associatedKeyword>
+			<associatedKeyword>constant_#display_width</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -942,12 +997,12 @@
    		<name>grid</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_grid_at</associatedKeyword>
-			<associatedKeyword>operator_as_grid</associatedKeyword>
-			<associatedKeyword>operator_path_between</associatedKeyword>
-			<associatedKeyword>operator_grid_cells_to_graph</associatedKeyword>
 			<associatedKeyword>operator_as_hexagonal_grid</associatedKeyword>
+			<associatedKeyword>operator_grid_at</associatedKeyword>
 			<associatedKeyword>operator_as_4_grid</associatedKeyword>
+			<associatedKeyword>operator_as_grid</associatedKeyword>
+			<associatedKeyword>operator_grid_cells_to_graph</associatedKeyword>
+			<associatedKeyword>operator_path_between</associatedKeyword>
 			<associatedKeyword>operator_is_grid</associatedKeyword>
 			<associatedKeyword>operator_grid_file</associatedKeyword>
 			<associatedKeyword>statement_display_grid</associatedKeyword>
@@ -1043,15 +1098,15 @@
    		<name>length_unit</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>constant_#yard</associatedKeyword>
-			<associatedKeyword>constant_#mm</associatedKeyword>
 			<associatedKeyword>constant_#mile</associatedKeyword>
-			<associatedKeyword>constant_#m</associatedKeyword>
-			<associatedKeyword>constant_#inch</associatedKeyword>
-			<associatedKeyword>constant_#km</associatedKeyword>
 			<associatedKeyword>constant_#foot</associatedKeyword>
+			<associatedKeyword>constant_#yard</associatedKeyword>
+			<associatedKeyword>constant_#km</associatedKeyword>
+			<associatedKeyword>constant_#mm</associatedKeyword>
 			<associatedKeyword>constant_#dm</associatedKeyword>
+			<associatedKeyword>constant_#inch</associatedKeyword>
 			<associatedKeyword>constant_#cm</associatedKeyword>
+			<associatedKeyword>constant_#m</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -1067,10 +1122,10 @@
    		<name>list</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_index_of</associatedKeyword>
-			<associatedKeyword>operator_last_index_of</associatedKeyword>
 			<associatedKeyword>operator_as_edge_graph</associatedKeyword>
+			<associatedKeyword>operator_last_index_of</associatedKeyword>
 			<associatedKeyword>operator_copy_between</associatedKeyword>
+			<associatedKeyword>operator_index_of</associatedKeyword>
 			<associatedKeyword>operator_list</associatedKeyword>
 			<associatedKeyword>statement_remove</associatedKeyword>
 			<associatedKeyword>statement_add</associatedKeyword>
@@ -1091,11 +1146,11 @@
    		<name>logical</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_:</associatedKeyword>
-			<associatedKeyword>operator_?</associatedKeyword>
-			<associatedKeyword>operator_or</associatedKeyword>
 			<associatedKeyword>operator_!</associatedKeyword>
+			<associatedKeyword>operator_?</associatedKeyword>
+			<associatedKeyword>operator_:</associatedKeyword>
 			<associatedKeyword>operator_and</associatedKeyword>
+			<associatedKeyword>operator_or</associatedKeyword>
 			<associatedKeyword>operator_bool</associatedKeyword>
 			<associatedKeyword>type_bool</associatedKeyword>
 		</associatedKeywordList>	
@@ -1116,11 +1171,11 @@
    		<associatedKeywordList>
 			<associatedKeyword>operator_as_map</associatedKeyword>
 			<associatedKeyword>operator_kappa_sim</associatedKeyword>
-			<associatedKeyword>operator_fuzzy_kappa_sim</associatedKeyword>
-			<associatedKeyword>operator_kappa</associatedKeyword>
-			<associatedKeyword>operator_index_of</associatedKeyword>
-			<associatedKeyword>operator_last_index_of</associatedKeyword>
 			<associatedKeyword>operator_as_edge_graph</associatedKeyword>
+			<associatedKeyword>operator_last_index_of</associatedKeyword>
+			<associatedKeyword>operator_kappa</associatedKeyword>
+			<associatedKeyword>operator_fuzzy_kappa_sim</associatedKeyword>
+			<associatedKeyword>operator_index_of</associatedKeyword>
 			<associatedKeyword>operator_fuzzy_kappa</associatedKeyword>
 			<associatedKeyword>operator_map</associatedKeyword>
 			<associatedKeyword>statement_remove</associatedKeyword>
@@ -1134,47 +1189,47 @@
    		<name>math</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_floor</associatedKeyword>
-			<associatedKeyword>operator_fact</associatedKeyword>
-			<associatedKeyword>operator_atan2</associatedKeyword>
-			<associatedKeyword>operator_tanh</associatedKeyword>
-			<associatedKeyword>operator_mod</associatedKeyword>
-			<associatedKeyword>operator_ceil</associatedKeyword>
-			<associatedKeyword>operator_sin_rad</associatedKeyword>
-			<associatedKeyword>operator_atan</associatedKeyword>
-			<associatedKeyword>operator_with_precision</associatedKeyword>
-			<associatedKeyword>operator_tan_rad</associatedKeyword>
-			<associatedKeyword>operator_round</associatedKeyword>
-			<associatedKeyword>operator_ln</associatedKeyword>
-			<associatedKeyword>operator_log</associatedKeyword>
-			<associatedKeyword>operator_exp</associatedKeyword>
-			<associatedKeyword>operator_is_finite</associatedKeyword>
-			<associatedKeyword>operator_^</associatedKeyword>
-			<associatedKeyword>operator_acos</associatedKeyword>
-			<associatedKeyword>operator_even</associatedKeyword>
-			<associatedKeyword>operator_cos</associatedKeyword>
-			<associatedKeyword>operator_asin</associatedKeyword>
 			<associatedKeyword>operator_cos_rad</associatedKeyword>
-			<associatedKeyword>operator_signum</associatedKeyword>
-			<associatedKeyword>operator_tan</associatedKeyword>
-			<associatedKeyword>operator_+</associatedKeyword>
-			<associatedKeyword>operator_sin</associatedKeyword>
+			<associatedKeyword>operator_sin_rad</associatedKeyword>
+			<associatedKeyword>operator_tanh</associatedKeyword>
 			<associatedKeyword>operator_hypot</associatedKeyword>
-			<associatedKeyword>operator_/</associatedKeyword>
-			<associatedKeyword>operator_abs</associatedKeyword>
-			<associatedKeyword>operator_-</associatedKeyword>
-			<associatedKeyword>operator_sqrt</associatedKeyword>
-			<associatedKeyword>operator_div</associatedKeyword>
-			<associatedKeyword>operator_*</associatedKeyword>
+			<associatedKeyword>operator_^</associatedKeyword>
+			<associatedKeyword>operator_even</associatedKeyword>
+			<associatedKeyword>operator_tan</associatedKeyword>
 			<associatedKeyword>operator_is_number</associatedKeyword>
+			<associatedKeyword>operator_fact</associatedKeyword>
+			<associatedKeyword>operator_floor</associatedKeyword>
+			<associatedKeyword>operator_mod</associatedKeyword>
+			<associatedKeyword>operator_exp</associatedKeyword>
+			<associatedKeyword>operator_tan_rad</associatedKeyword>
+			<associatedKeyword>operator_ln</associatedKeyword>
+			<associatedKeyword>operator_signum</associatedKeyword>
+			<associatedKeyword>operator_sin</associatedKeyword>
+			<associatedKeyword>operator_log</associatedKeyword>
+			<associatedKeyword>operator_cos</associatedKeyword>
+			<associatedKeyword>operator_acos</associatedKeyword>
+			<associatedKeyword>operator_sqrt</associatedKeyword>
+			<associatedKeyword>operator_atan2</associatedKeyword>
+			<associatedKeyword>operator_abs</associatedKeyword>
+			<associatedKeyword>operator_ceil</associatedKeyword>
+			<associatedKeyword>operator_is_finite</associatedKeyword>
+			<associatedKeyword>operator_asin</associatedKeyword>
+			<associatedKeyword>operator_div</associatedKeyword>
+			<associatedKeyword>operator_with_precision</associatedKeyword>
+			<associatedKeyword>operator_round</associatedKeyword>
+			<associatedKeyword>operator_*</associatedKeyword>
+			<associatedKeyword>operator_atan</associatedKeyword>
+			<associatedKeyword>operator_/</associatedKeyword>
+			<associatedKeyword>operator_-</associatedKeyword>
+			<associatedKeyword>operator_+</associatedKeyword>
+			<associatedKeyword>operator_diff2</associatedKeyword>
 			<associatedKeyword>operator_internal_zero_order_equation</associatedKeyword>
 			<associatedKeyword>operator_diff</associatedKeyword>
-			<associatedKeyword>operator_diff2</associatedKeyword>
 			<associatedKeyword>statement_diffuse</associatedKeyword>
 			<associatedKeyword>statement_solve</associatedKeyword>
 			<associatedKeyword>statement_=</associatedKeyword>
-			<associatedKeyword>constant_#pi</associatedKeyword>
 			<associatedKeyword>constant_#e</associatedKeyword>
+			<associatedKeyword>constant_#pi</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -1182,23 +1237,23 @@
    		<name>matrix</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_inverse</associatedKeyword>
-			<associatedKeyword>operator_.</associatedKeyword>
 			<associatedKeyword>operator_rows_list</associatedKeyword>
-			<associatedKeyword>operator_row_at</associatedKeyword>
-			<associatedKeyword>operator_transpose</associatedKeyword>
-			<associatedKeyword>operator_columns_list</associatedKeyword>
-			<associatedKeyword>operator_determinant</associatedKeyword>
-			<associatedKeyword>operator_column_at</associatedKeyword>
 			<associatedKeyword>operator_eigenvalues</associatedKeyword>
-			<associatedKeyword>operator_index_of</associatedKeyword>
-			<associatedKeyword>operator_append_vertically</associatedKeyword>
-			<associatedKeyword>operator_last_index_of</associatedKeyword>
-			<associatedKeyword>operator_+</associatedKeyword>
-			<associatedKeyword>operator_append_horizontally</associatedKeyword>
-			<associatedKeyword>operator_/</associatedKeyword>
+			<associatedKeyword>operator_columns_list</associatedKeyword>
+			<associatedKeyword>operator_.</associatedKeyword>
+			<associatedKeyword>operator_transpose</associatedKeyword>
+			<associatedKeyword>operator_inverse</associatedKeyword>
 			<associatedKeyword>operator_trace</associatedKeyword>
+			<associatedKeyword>operator_last_index_of</associatedKeyword>
+			<associatedKeyword>operator_row_at</associatedKeyword>
+			<associatedKeyword>operator_append_vertically</associatedKeyword>
+			<associatedKeyword>operator_column_at</associatedKeyword>
+			<associatedKeyword>operator_append_horizontally</associatedKeyword>
+			<associatedKeyword>operator_index_of</associatedKeyword>
+			<associatedKeyword>operator_determinant</associatedKeyword>
 			<associatedKeyword>operator_*</associatedKeyword>
+			<associatedKeyword>operator_/</associatedKeyword>
+			<associatedKeyword>operator_+</associatedKeyword>
 			<associatedKeyword>operator_matrix</associatedKeyword>
 			<associatedKeyword>statement_remove</associatedKeyword>
 			<associatedKeyword>statement_add</associatedKeyword>
@@ -1233,8 +1288,8 @@
    		<name>multi_criteria</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_promethee_DM</associatedKeyword>
 			<associatedKeyword>operator_electre_DM</associatedKeyword>
+			<associatedKeyword>operator_promethee_DM</associatedKeyword>
 			<associatedKeyword>operator_evidence_theory_DM</associatedKeyword>
 			<associatedKeyword>operator_weighted_means_DM</associatedKeyword>
 		</associatedKeywordList>	
@@ -1261,10 +1316,10 @@
    		<name>neighbors</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_neighbors_of</associatedKeyword>
 			<associatedKeyword>operator_successors_of</associatedKeyword>
-			<associatedKeyword>operator_predecessors_of</associatedKeyword>
 			<associatedKeyword>operator_grid_cells_to_graph</associatedKeyword>
+			<associatedKeyword>operator_neighbors_of</associatedKeyword>
+			<associatedKeyword>operator_predecessors_of</associatedKeyword>
 			<associatedKeyword>operator_neighbors_at</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
@@ -1288,23 +1343,23 @@
    		<name>node</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_biggest_cliques_of</associatedKeyword>
-			<associatedKeyword>operator_source_of</associatedKeyword>
-			<associatedKeyword>operator_maximal_cliques_of</associatedKeyword>
-			<associatedKeyword>operator_in_degree_of</associatedKeyword>
-			<associatedKeyword>operator_contains_vertex</associatedKeyword>
-			<associatedKeyword>operator_add_node</associatedKeyword>
-			<associatedKeyword>operator_neighbors_of</associatedKeyword>
-			<associatedKeyword>operator_successors_of</associatedKeyword>
-			<associatedKeyword>operator_predecessors_of</associatedKeyword>
-			<associatedKeyword>operator_as_intersection_graph</associatedKeyword>
-			<associatedKeyword>operator_as_distance_graph</associatedKeyword>
-			<associatedKeyword>operator_target_of</associatedKeyword>
-			<associatedKeyword>operator_out_edges_of</associatedKeyword>
-			<associatedKeyword>operator_degree_of</associatedKeyword>
-			<associatedKeyword>operator_out_degree_of</associatedKeyword>
-			<associatedKeyword>operator_remove_node_from</associatedKeyword>
 			<associatedKeyword>operator_connected_components_of</associatedKeyword>
+			<associatedKeyword>operator_source_of</associatedKeyword>
+			<associatedKeyword>operator_successors_of</associatedKeyword>
+			<associatedKeyword>operator_contains_vertex</associatedKeyword>
+			<associatedKeyword>operator_maximal_cliques_of</associatedKeyword>
+			<associatedKeyword>operator_out_degree_of</associatedKeyword>
+			<associatedKeyword>operator_degree_of</associatedKeyword>
+			<associatedKeyword>operator_biggest_cliques_of</associatedKeyword>
+			<associatedKeyword>operator_out_edges_of</associatedKeyword>
+			<associatedKeyword>operator_target_of</associatedKeyword>
+			<associatedKeyword>operator_remove_node_from</associatedKeyword>
+			<associatedKeyword>operator_neighbors_of</associatedKeyword>
+			<associatedKeyword>operator_in_degree_of</associatedKeyword>
+			<associatedKeyword>operator_as_intersection_graph</associatedKeyword>
+			<associatedKeyword>operator_add_node</associatedKeyword>
+			<associatedKeyword>operator_predecessors_of</associatedKeyword>
+			<associatedKeyword>operator_as_distance_graph</associatedKeyword>
 			<associatedKeyword>statement_remove</associatedKeyword>
 			<associatedKeyword>statement_add</associatedKeyword>
 			<associatedKeyword>species_graph_node</associatedKeyword>
@@ -1361,11 +1416,11 @@
    		<name>output</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>constant_#vertical</associatedKeyword>
-			<associatedKeyword>constant_#horizontal</associatedKeyword>
-			<associatedKeyword>constant_#split</associatedKeyword>
-			<associatedKeyword>constant_#stack</associatedKeyword>
 			<associatedKeyword>constant_#none</associatedKeyword>
+			<associatedKeyword>constant_#stack</associatedKeyword>
+			<associatedKeyword>constant_#split</associatedKeyword>
+			<associatedKeyword>constant_#horizontal</associatedKeyword>
+			<associatedKeyword>constant_#vertical</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -1381,7 +1436,6 @@
    		<category>concept</category>
    		<associatedKeywordList>
 			<associatedKeyword>statement_parameter</associatedKeyword>
-			<associatedKeyword>statement_permanent</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -1410,32 +1464,32 @@
    		<name>point</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_polygon</associatedKeyword>
-			<associatedKeyword>operator_points_on</associatedKeyword>
-			<associatedKeyword>operator_grid_at</associatedKeyword>
-			<associatedKeyword>operator_points_at</associatedKeyword>
-			<associatedKeyword>operator_closest_points_with</associatedKeyword>
-			<associatedKeyword>operator_polyhedron</associatedKeyword>
-			<associatedKeyword>operator_angle_between</associatedKeyword>
-			<associatedKeyword>operator_add_point</associatedKeyword>
-			<associatedKeyword>operator_any_location_in</associatedKeyword>
-			<associatedKeyword>operator_with_precision</associatedKeyword>
-			<associatedKeyword>operator_round</associatedKeyword>
-			<associatedKeyword>operator_&gt;</associatedKeyword>
-			<associatedKeyword>operator_farthest_point_to</associatedKeyword>
-			<associatedKeyword>operator_curve</associatedKeyword>
-			<associatedKeyword>operator_&lt;</associatedKeyword>
-			<associatedKeyword>operator_norm</associatedKeyword>
-			<associatedKeyword>operator_+</associatedKeyword>
-			<associatedKeyword>operator_line</associatedKeyword>
-			<associatedKeyword>operator_set_z</associatedKeyword>
 			<associatedKeyword>operator_spatial_graph</associatedKeyword>
+			<associatedKeyword>operator_angle_between</associatedKeyword>
+			<associatedKeyword>operator_grid_at</associatedKeyword>
+			<associatedKeyword>operator_polygon</associatedKeyword>
+			<associatedKeyword>operator_closest_points_with</associatedKeyword>
+			<associatedKeyword>operator_points_at</associatedKeyword>
+			<associatedKeyword>operator_farthest_point_to</associatedKeyword>
+			<associatedKeyword>operator_polyhedron</associatedKeyword>
+			<associatedKeyword>operator_line</associatedKeyword>
+			<associatedKeyword>operator_add_point</associatedKeyword>
+			<associatedKeyword>operator_norm</associatedKeyword>
+			<associatedKeyword>operator_&lt;=</associatedKeyword>
+			<associatedKeyword>operator_any_location_in</associatedKeyword>
+			<associatedKeyword>operator_&gt;=</associatedKeyword>
+			<associatedKeyword>operator_with_precision</associatedKeyword>
+			<associatedKeyword>operator_points_on</associatedKeyword>
+			<associatedKeyword>operator_round</associatedKeyword>
+			<associatedKeyword>operator_*</associatedKeyword>
+			<associatedKeyword>operator_curve</associatedKeyword>
+			<associatedKeyword>operator_&gt;</associatedKeyword>
+			<associatedKeyword>operator_&lt;</associatedKeyword>
+			<associatedKeyword>operator_set_z</associatedKeyword>
 			<associatedKeyword>operator_/</associatedKeyword>
 			<associatedKeyword>operator_point</associatedKeyword>
-			<associatedKeyword>operator_&lt;=</associatedKeyword>
 			<associatedKeyword>operator_-</associatedKeyword>
-			<associatedKeyword>operator_&gt;=</associatedKeyword>
-			<associatedKeyword>operator_*</associatedKeyword>
+			<associatedKeyword>operator_+</associatedKeyword>
 			<associatedKeyword>type_point</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
@@ -1467,15 +1521,15 @@
    		<name>random</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_flip</associatedKeyword>
-			<associatedKeyword>operator_binomial</associatedKeyword>
 			<associatedKeyword>operator_poisson</associatedKeyword>
-			<associatedKeyword>operator_rnd_choice</associatedKeyword>
-			<associatedKeyword>operator_shuffle</associatedKeyword>
 			<associatedKeyword>operator_truncated_gauss</associatedKeyword>
-			<associatedKeyword>operator_rnd</associatedKeyword>
-			<associatedKeyword>operator_gauss</associatedKeyword>
 			<associatedKeyword>operator_sample</associatedKeyword>
+			<associatedKeyword>operator_flip</associatedKeyword>
+			<associatedKeyword>operator_gauss</associatedKeyword>
+			<associatedKeyword>operator_shuffle</associatedKeyword>
+			<associatedKeyword>operator_rnd_choice</associatedKeyword>
+			<associatedKeyword>operator_binomial</associatedKeyword>
+			<associatedKeyword>operator_rnd</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -1546,27 +1600,27 @@
    		<name>shape</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_squircle</associatedKeyword>
-			<associatedKeyword>operator_polygon</associatedKeyword>
-			<associatedKeyword>operator_triangle</associatedKeyword>
 			<associatedKeyword>operator_cylinder</associatedKeyword>
-			<associatedKeyword>operator_cone3D</associatedKeyword>
-			<associatedKeyword>operator_square</associatedKeyword>
-			<associatedKeyword>operator_polyhedron</associatedKeyword>
-			<associatedKeyword>operator_arc</associatedKeyword>
-			<associatedKeyword>operator_teapot</associatedKeyword>
-			<associatedKeyword>operator_link</associatedKeyword>
-			<associatedKeyword>operator_box</associatedKeyword>
-			<associatedKeyword>operator_rectangle</associatedKeyword>
-			<associatedKeyword>operator_curve</associatedKeyword>
-			<associatedKeyword>operator_circle</associatedKeyword>
+			<associatedKeyword>operator_polygon</associatedKeyword>
 			<associatedKeyword>operator_cone</associatedKeyword>
-			<associatedKeyword>operator_hexagon</associatedKeyword>
+			<associatedKeyword>operator_pyramid</associatedKeyword>
+			<associatedKeyword>operator_teapot</associatedKeyword>
+			<associatedKeyword>operator_polyhedron</associatedKeyword>
 			<associatedKeyword>operator_ellipse</associatedKeyword>
 			<associatedKeyword>operator_line</associatedKeyword>
-			<associatedKeyword>operator_pyramid</associatedKeyword>
-			<associatedKeyword>operator_cube</associatedKeyword>
+			<associatedKeyword>operator_squircle</associatedKeyword>
+			<associatedKeyword>operator_arc</associatedKeyword>
 			<associatedKeyword>operator_sphere</associatedKeyword>
+			<associatedKeyword>operator_cube</associatedKeyword>
+			<associatedKeyword>operator_link</associatedKeyword>
+			<associatedKeyword>operator_square</associatedKeyword>
+			<associatedKeyword>operator_triangle</associatedKeyword>
+			<associatedKeyword>operator_rectangle</associatedKeyword>
+			<associatedKeyword>operator_cone3D</associatedKeyword>
+			<associatedKeyword>operator_hexagon</associatedKeyword>
+			<associatedKeyword>operator_curve</associatedKeyword>
+			<associatedKeyword>operator_box</associatedKeyword>
+			<associatedKeyword>operator_circle</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -1583,12 +1637,12 @@
    		<name>shortest_path</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_undirected</associatedKeyword>
-			<associatedKeyword>operator_use_cache</associatedKeyword>
 			<associatedKeyword>operator_with_optimizer_type</associatedKeyword>
-			<associatedKeyword>operator_load_shortest_paths</associatedKeyword>
 			<associatedKeyword>operator_path_to</associatedKeyword>
+			<associatedKeyword>operator_load_shortest_paths</associatedKeyword>
+			<associatedKeyword>operator_use_cache</associatedKeyword>
 			<associatedKeyword>operator_all_pairs_shortest_path</associatedKeyword>
+			<associatedKeyword>operator_undirected</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -1598,19 +1652,20 @@
    		<associatedKeywordList>
 			<associatedKeyword>operator_is_skill</associatedKeyword>
 			<associatedKeyword>operator_skill</associatedKeyword>
-			<associatedKeyword>skill_network</associatedKeyword>
+			<associatedKeyword>skill_grid</associatedKeyword>
+			<associatedKeyword>skill_moving3D</associatedKeyword>
+			<associatedKeyword>skill_moving</associatedKeyword>
+			<associatedKeyword>skill_fipa</associatedKeyword>
+			<associatedKeyword>skill_MDXSKILL</associatedKeyword>
+			<associatedKeyword>skill_GAMASQL</associatedKeyword>
+			<associatedKeyword>skill_SQLSKILL</associatedKeyword>
 			<associatedKeyword>skill_physics</associatedKeyword>
 			<associatedKeyword>skill_advanced_driving</associatedKeyword>
 			<associatedKeyword>skill_driving</associatedKeyword>
 			<associatedKeyword>skill_skill_road_node</associatedKeyword>
 			<associatedKeyword>skill_skill_road</associatedKeyword>
-			<associatedKeyword>skill_MDXSKILL</associatedKeyword>
-			<associatedKeyword>skill_GAMASQL</associatedKeyword>
-			<associatedKeyword>skill_SQLSKILL</associatedKeyword>
-			<associatedKeyword>skill_grid</associatedKeyword>
-			<associatedKeyword>skill_moving3D</associatedKeyword>
-			<associatedKeyword>skill_moving</associatedKeyword>
-			<associatedKeyword>skill_fipa</associatedKeyword>
+			<associatedKeyword>skill_network</associatedKeyword>
+			<associatedKeyword>skill_RSkill</associatedKeyword>
 			<associatedKeyword>type_skill</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
@@ -1630,77 +1685,77 @@
    		<name>spatial_computation</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_intersects</associatedKeyword>
-			<associatedKeyword>operator_overlapping</associatedKeyword>
-			<associatedKeyword>operator_crosses</associatedKeyword>
-			<associatedKeyword>operator_without_holes</associatedKeyword>
-			<associatedKeyword>operator_rgb_to_xyz</associatedKeyword>
-			<associatedKeyword>operator_voronoi</associatedKeyword>
-			<associatedKeyword>operator_points_on</associatedKeyword>
-			<associatedKeyword>operator_to_rectangles</associatedKeyword>
-			<associatedKeyword>operator_split_lines</associatedKeyword>
-			<associatedKeyword>operator_inside</associatedKeyword>
-			<associatedKeyword>operator_simple_clustering_by_distance</associatedKeyword>
-			<associatedKeyword>operator_points_at</associatedKeyword>
-			<associatedKeyword>operator_agent_farthest_to</associatedKeyword>
+			<associatedKeyword>operator_distance_between</associatedKeyword>
 			<associatedKeyword>operator_closest_to</associatedKeyword>
-			<associatedKeyword>operator_skeletonize</associatedKeyword>
-			<associatedKeyword>operator_covers</associatedKeyword>
-			<associatedKeyword>operator_neighbors_of</associatedKeyword>
-			<associatedKeyword>operator_as_grid</associatedKeyword>
-			<associatedKeyword>operator_partially_overlaps</associatedKeyword>
+			<associatedKeyword>operator_as_hexagonal_grid</associatedKeyword>
+			<associatedKeyword>operator_at_distance</associatedKeyword>
+			<associatedKeyword>operator_crs</associatedKeyword>
 			<associatedKeyword>operator_change_clockwise</associatedKeyword>
-			<associatedKeyword>operator_clean</associatedKeyword>
-			<associatedKeyword>operator_to_squares</associatedKeyword>
-			<associatedKeyword>operator_path_between</associatedKeyword>
-			<associatedKeyword>operator_closest_points_with</associatedKeyword>
-			<associatedKeyword>operator_overlaps</associatedKeyword>
+			<associatedKeyword>operator_inside</associatedKeyword>
+			<associatedKeyword>operator_angle_between</associatedKeyword>
+			<associatedKeyword>operator_simplification</associatedKeyword>
+			<associatedKeyword>operator_rgb_to_xyz</associatedKeyword>
+			<associatedKeyword>operator_overlapping</associatedKeyword>
+			<associatedKeyword>operator_as_4_grid</associatedKeyword>
+			<associatedKeyword>operator_as_grid</associatedKeyword>
 			<associatedKeyword>operator_at_location</associatedKeyword>
 			<associatedKeyword>operator_agents_inside</associatedKeyword>
-			<associatedKeyword>operator_angle_between</associatedKeyword>
-			<associatedKeyword>operator_add_point</associatedKeyword>
-			<associatedKeyword>operator_translated_by</associatedKeyword>
-			<associatedKeyword>operator_to_GAMA_CRS</associatedKeyword>
-			<associatedKeyword>operator_simplification</associatedKeyword>
-			<associatedKeyword>operator_link</associatedKeyword>
-			<associatedKeyword>operator_at_distance</associatedKeyword>
-			<associatedKeyword>operator_using</associatedKeyword>
-			<associatedKeyword>operator_agents_at_distance</associatedKeyword>
-			<associatedKeyword>operator_crs</associatedKeyword>
-			<associatedKeyword>operator_scaled_to</associatedKeyword>
-			<associatedKeyword>operator_farthest_to</associatedKeyword>
-			<associatedKeyword>operator_any_location_in</associatedKeyword>
-			<associatedKeyword>operator_agents_overlapping</associatedKeyword>
-			<associatedKeyword>operator_IDW</associatedKeyword>
-			<associatedKeyword>operator_envelope</associatedKeyword>
-			<associatedKeyword>operator_towards</associatedKeyword>
-			<associatedKeyword>operator_hierarchical_clustering</associatedKeyword>
-			<associatedKeyword>operator_around</associatedKeyword>
-			<associatedKeyword>operator_rotated_by</associatedKeyword>
-			<associatedKeyword>operator_farthest_point_to</associatedKeyword>
-			<associatedKeyword>operator_transformed_by</associatedKeyword>
-			<associatedKeyword>operator_disjoint_from</associatedKeyword>
-			<associatedKeyword>operator_masked_by</associatedKeyword>
-			<associatedKeyword>operator_distance_to</associatedKeyword>
-			<associatedKeyword>operator_is_clockwise</associatedKeyword>
-			<associatedKeyword>operator_as_hexagonal_grid</associatedKeyword>
-			<associatedKeyword>operator_convex_hull</associatedKeyword>
-			<associatedKeyword>operator_as_4_grid</associatedKeyword>
-			<associatedKeyword>operator_neighbors_at</associatedKeyword>
-			<associatedKeyword>operator_CRS_transform</associatedKeyword>
-			<associatedKeyword>operator_agent_closest_to</associatedKeyword>
-			<associatedKeyword>operator_distance_between</associatedKeyword>
-			<associatedKeyword>operator_dem</associatedKeyword>
-			<associatedKeyword>operator_+</associatedKeyword>
-			<associatedKeyword>operator_triangulate</associatedKeyword>
-			<associatedKeyword>operator_touches</associatedKeyword>
-			<associatedKeyword>operator_set_z</associatedKeyword>
-			<associatedKeyword>operator_union</associatedKeyword>
-			<associatedKeyword>operator_-</associatedKeyword>
 			<associatedKeyword>operator_path_to</associatedKeyword>
-			<associatedKeyword>operator_split_geometry</associatedKeyword>
+			<associatedKeyword>operator_without_holes</associatedKeyword>
+			<associatedKeyword>operator_closest_points_with</associatedKeyword>
+			<associatedKeyword>operator_transformed_by</associatedKeyword>
+			<associatedKeyword>operator_touches</associatedKeyword>
+			<associatedKeyword>operator_agent_farthest_to</associatedKeyword>
+			<associatedKeyword>operator_towards</associatedKeyword>
+			<associatedKeyword>operator_points_at</associatedKeyword>
+			<associatedKeyword>operator_using</associatedKeyword>
+			<associatedKeyword>operator_overlaps</associatedKeyword>
+			<associatedKeyword>operator_clean</associatedKeyword>
+			<associatedKeyword>operator_agents_overlapping</associatedKeyword>
+			<associatedKeyword>operator_simple_clustering_by_distance</associatedKeyword>
+			<associatedKeyword>operator_to_rectangles</associatedKeyword>
+			<associatedKeyword>operator_farthest_point_to</associatedKeyword>
+			<associatedKeyword>operator_convex_hull</associatedKeyword>
+			<associatedKeyword>operator_skeletonize</associatedKeyword>
+			<associatedKeyword>operator_split_lines</associatedKeyword>
+			<associatedKeyword>operator_voronoi</associatedKeyword>
+			<associatedKeyword>operator_IDW</associatedKeyword>
+			<associatedKeyword>operator_is_clockwise</associatedKeyword>
+			<associatedKeyword>operator_disjoint_from</associatedKeyword>
+			<associatedKeyword>operator_agent_closest_to</associatedKeyword>
+			<associatedKeyword>operator_to_GAMA_CRS</associatedKeyword>
+			<associatedKeyword>operator_distance_to</associatedKeyword>
+			<associatedKeyword>operator_add_point</associatedKeyword>
 			<associatedKeyword>operator_smooth</associatedKeyword>
+			<associatedKeyword>operator_triangulate</associatedKeyword>
+			<associatedKeyword>operator_covers</associatedKeyword>
+			<associatedKeyword>operator_partially_overlaps</associatedKeyword>
+			<associatedKeyword>operator_to_squares</associatedKeyword>
+			<associatedKeyword>operator_link</associatedKeyword>
+			<associatedKeyword>operator_agents_at_distance</associatedKeyword>
+			<associatedKeyword>operator_envelope</associatedKeyword>
+			<associatedKeyword>operator_neighbors_of</associatedKeyword>
+			<associatedKeyword>operator_rotated_by</associatedKeyword>
+			<associatedKeyword>operator_union</associatedKeyword>
+			<associatedKeyword>operator_translated_by</associatedKeyword>
+			<associatedKeyword>operator_scaled_to</associatedKeyword>
+			<associatedKeyword>operator_split_geometry</associatedKeyword>
+			<associatedKeyword>operator_CRS_transform</associatedKeyword>
+			<associatedKeyword>operator_farthest_to</associatedKeyword>
+			<associatedKeyword>operator_crosses</associatedKeyword>
+			<associatedKeyword>operator_intersects</associatedKeyword>
+			<associatedKeyword>operator_any_location_in</associatedKeyword>
+			<associatedKeyword>operator_around</associatedKeyword>
+			<associatedKeyword>operator_dem</associatedKeyword>
+			<associatedKeyword>operator_hierarchical_clustering</associatedKeyword>
+			<associatedKeyword>operator_points_on</associatedKeyword>
+			<associatedKeyword>operator_neighbors_at</associatedKeyword>
+			<associatedKeyword>operator_path_between</associatedKeyword>
 			<associatedKeyword>operator_*</associatedKeyword>
+			<associatedKeyword>operator_set_z</associatedKeyword>
+			<associatedKeyword>operator_masked_by</associatedKeyword>
+			<associatedKeyword>operator_-</associatedKeyword>
+			<associatedKeyword>operator_+</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -1708,36 +1763,36 @@
    		<name>spatial_relation</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_intersects</associatedKeyword>
-			<associatedKeyword>operator_overlapping</associatedKeyword>
-			<associatedKeyword>operator_crosses</associatedKeyword>
-			<associatedKeyword>operator_points_on</associatedKeyword>
-			<associatedKeyword>operator_inside</associatedKeyword>
-			<associatedKeyword>operator_points_at</associatedKeyword>
-			<associatedKeyword>operator_agent_farthest_to</associatedKeyword>
+			<associatedKeyword>operator_distance_between</associatedKeyword>
 			<associatedKeyword>operator_closest_to</associatedKeyword>
-			<associatedKeyword>operator_covers</associatedKeyword>
-			<associatedKeyword>operator_neighbors_of</associatedKeyword>
-			<associatedKeyword>operator_partially_overlaps</associatedKeyword>
-			<associatedKeyword>operator_path_between</associatedKeyword>
-			<associatedKeyword>operator_closest_points_with</associatedKeyword>
-			<associatedKeyword>operator_overlaps</associatedKeyword>
-			<associatedKeyword>operator_agents_inside</associatedKeyword>
-			<associatedKeyword>operator_angle_between</associatedKeyword>
 			<associatedKeyword>operator_at_distance</associatedKeyword>
-			<associatedKeyword>operator_agents_at_distance</associatedKeyword>
-			<associatedKeyword>operator_farthest_to</associatedKeyword>
-			<associatedKeyword>operator_any_location_in</associatedKeyword>
-			<associatedKeyword>operator_agents_overlapping</associatedKeyword>
+			<associatedKeyword>operator_inside</associatedKeyword>
+			<associatedKeyword>operator_angle_between</associatedKeyword>
+			<associatedKeyword>operator_overlapping</associatedKeyword>
+			<associatedKeyword>operator_agents_inside</associatedKeyword>
+			<associatedKeyword>operator_path_to</associatedKeyword>
+			<associatedKeyword>operator_closest_points_with</associatedKeyword>
+			<associatedKeyword>operator_touches</associatedKeyword>
+			<associatedKeyword>operator_agent_farthest_to</associatedKeyword>
 			<associatedKeyword>operator_towards</associatedKeyword>
+			<associatedKeyword>operator_points_at</associatedKeyword>
+			<associatedKeyword>operator_overlaps</associatedKeyword>
+			<associatedKeyword>operator_agents_overlapping</associatedKeyword>
 			<associatedKeyword>operator_farthest_point_to</associatedKeyword>
 			<associatedKeyword>operator_disjoint_from</associatedKeyword>
-			<associatedKeyword>operator_distance_to</associatedKeyword>
-			<associatedKeyword>operator_neighbors_at</associatedKeyword>
 			<associatedKeyword>operator_agent_closest_to</associatedKeyword>
-			<associatedKeyword>operator_distance_between</associatedKeyword>
-			<associatedKeyword>operator_touches</associatedKeyword>
-			<associatedKeyword>operator_path_to</associatedKeyword>
+			<associatedKeyword>operator_distance_to</associatedKeyword>
+			<associatedKeyword>operator_covers</associatedKeyword>
+			<associatedKeyword>operator_partially_overlaps</associatedKeyword>
+			<associatedKeyword>operator_agents_at_distance</associatedKeyword>
+			<associatedKeyword>operator_neighbors_of</associatedKeyword>
+			<associatedKeyword>operator_farthest_to</associatedKeyword>
+			<associatedKeyword>operator_crosses</associatedKeyword>
+			<associatedKeyword>operator_intersects</associatedKeyword>
+			<associatedKeyword>operator_any_location_in</associatedKeyword>
+			<associatedKeyword>operator_points_on</associatedKeyword>
+			<associatedKeyword>operator_neighbors_at</associatedKeyword>
+			<associatedKeyword>operator_path_between</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -1745,31 +1800,30 @@
    		<name>spatial_transformation</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_without_holes</associatedKeyword>
-			<associatedKeyword>operator_voronoi</associatedKeyword>
-			<associatedKeyword>operator_to_rectangles</associatedKeyword>
-			<associatedKeyword>operator_split_lines</associatedKeyword>
-			<associatedKeyword>operator_skeletonize</associatedKeyword>
-			<associatedKeyword>operator_as_grid</associatedKeyword>
-			<associatedKeyword>operator_clean</associatedKeyword>
-			<associatedKeyword>operator_to_squares</associatedKeyword>
-			<associatedKeyword>operator_at_location</associatedKeyword>
-			<associatedKeyword>operator_translated_by</associatedKeyword>
-			<associatedKeyword>operator_to_GAMA_CRS</associatedKeyword>
-			<associatedKeyword>operator_simplification</associatedKeyword>
-			<associatedKeyword>operator_scaled_to</associatedKeyword>
-			<associatedKeyword>operator_rotated_by</associatedKeyword>
-			<associatedKeyword>operator_transformed_by</associatedKeyword>
 			<associatedKeyword>operator_as_hexagonal_grid</associatedKeyword>
-			<associatedKeyword>operator_convex_hull</associatedKeyword>
+			<associatedKeyword>operator_simplification</associatedKeyword>
 			<associatedKeyword>operator_as_4_grid</associatedKeyword>
-			<associatedKeyword>operator_CRS_transform</associatedKeyword>
-			<associatedKeyword>operator_+</associatedKeyword>
-			<associatedKeyword>operator_triangulate</associatedKeyword>
-			<associatedKeyword>operator_-</associatedKeyword>
-			<associatedKeyword>operator_split_geometry</associatedKeyword>
+			<associatedKeyword>operator_as_grid</associatedKeyword>
+			<associatedKeyword>operator_at_location</associatedKeyword>
+			<associatedKeyword>operator_without_holes</associatedKeyword>
+			<associatedKeyword>operator_transformed_by</associatedKeyword>
+			<associatedKeyword>operator_clean</associatedKeyword>
+			<associatedKeyword>operator_to_rectangles</associatedKeyword>
+			<associatedKeyword>operator_convex_hull</associatedKeyword>
+			<associatedKeyword>operator_skeletonize</associatedKeyword>
+			<associatedKeyword>operator_split_lines</associatedKeyword>
+			<associatedKeyword>operator_voronoi</associatedKeyword>
+			<associatedKeyword>operator_to_GAMA_CRS</associatedKeyword>
 			<associatedKeyword>operator_smooth</associatedKeyword>
+			<associatedKeyword>operator_triangulate</associatedKeyword>
+			<associatedKeyword>operator_to_squares</associatedKeyword>
+			<associatedKeyword>operator_rotated_by</associatedKeyword>
+			<associatedKeyword>operator_translated_by</associatedKeyword>
+			<associatedKeyword>operator_scaled_to</associatedKeyword>
+			<associatedKeyword>operator_split_geometry</associatedKeyword>
+			<associatedKeyword>operator_CRS_transform</associatedKeyword>
 			<associatedKeyword>operator_*</associatedKeyword>
+			<associatedKeyword>operator_-</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -1777,14 +1831,14 @@
    		<name>species</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_of_species</associatedKeyword>
-			<associatedKeyword>operator_of_generic_species</associatedKeyword>
 			<associatedKeyword>operator_species</associatedKeyword>
-			<associatedKeyword>operator_internal_at</associatedKeyword>
-			<associatedKeyword>operator_get</associatedKeyword>
-			<associatedKeyword>operator_index_of</associatedKeyword>
-			<associatedKeyword>operator_dead</associatedKeyword>
+			<associatedKeyword>operator_of_species</associatedKeyword>
 			<associatedKeyword>operator_last_index_of</associatedKeyword>
+			<associatedKeyword>operator_of_generic_species</associatedKeyword>
+			<associatedKeyword>operator_get</associatedKeyword>
+			<associatedKeyword>operator_dead</associatedKeyword>
+			<associatedKeyword>operator_index_of</associatedKeyword>
+			<associatedKeyword>operator_internal_at</associatedKeyword>
 			<associatedKeyword>operator_agent</associatedKeyword>
 			<associatedKeyword>statement_species</associatedKeyword>
 			<associatedKeyword>statement_display_population</associatedKeyword>
@@ -1809,68 +1863,71 @@
    		<name>statistic</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_rank_interpolated</associatedKeyword>
-			<associatedKeyword>operator_pValue_for_fStat</associatedKeyword>
-			<associatedKeyword>operator_chi_square</associatedKeyword>
-			<associatedKeyword>operator_student_t_inverse</associatedKeyword>
-			<associatedKeyword>operator_durbin_watson</associatedKeyword>
-			<associatedKeyword>operator_pValue_for_tStat</associatedKeyword>
-			<associatedKeyword>operator_normal_inverse</associatedKeyword>
-			<associatedKeyword>operator_gamma_distribution_complemented</associatedKeyword>
-			<associatedKeyword>operator_binomial_complemented</associatedKeyword>
-			<associatedKeyword>operator_auto_correlation</associatedKeyword>
-			<associatedKeyword>operator_rms</associatedKeyword>
-			<associatedKeyword>operator_incomplete_gamma</associatedKeyword>
-			<associatedKeyword>operator_covariance</associatedKeyword>
-			<associatedKeyword>operator_quantile</associatedKeyword>
-			<associatedKeyword>operator_beta</associatedKeyword>
-			<associatedKeyword>operator_student_area</associatedKeyword>
-			<associatedKeyword>operator_gamma_distribution</associatedKeyword>
-			<associatedKeyword>operator_normal_density</associatedKeyword>
-			<associatedKeyword>operator_incomplete_beta</associatedKeyword>
-			<associatedKeyword>operator_moment</associatedKeyword>
-			<associatedKeyword>operator_normal_area</associatedKeyword>
-			<associatedKeyword>operator_chi_square_complemented</associatedKeyword>
-			<associatedKeyword>operator_gamma</associatedKeyword>
-			<associatedKeyword>operator_log_gamma</associatedKeyword>
-			<associatedKeyword>operator_quantile_inverse</associatedKeyword>
-			<associatedKeyword>operator_correlation</associatedKeyword>
-			<associatedKeyword>operator_kurtosis</associatedKeyword>
-			<associatedKeyword>operator_incomplete_gamma_complement</associatedKeyword>
-			<associatedKeyword>operator_skew</associatedKeyword>
+			<associatedKeyword>operator_meanR</associatedKeyword>
+			<associatedKeyword>operator_corR</associatedKeyword>
+			<associatedKeyword>operator_mean_deviation</associatedKeyword>
+			<associatedKeyword>operator_standard_deviation</associatedKeyword>
+			<associatedKeyword>operator_harmonic_mean</associatedKeyword>
 			<associatedKeyword>operator_variance</associatedKeyword>
-			<associatedKeyword>operator_binomial_coeff</associatedKeyword>
-			<associatedKeyword>operator_binomial_sum</associatedKeyword>
+			<associatedKeyword>operator_predict</associatedKeyword>
+			<associatedKeyword>operator_mean</associatedKeyword>
+			<associatedKeyword>operator_simple_clustering_by_distance</associatedKeyword>
+			<associatedKeyword>operator_geometric_mean</associatedKeyword>
+			<associatedKeyword>operator_percent_absolute_deviation</associatedKeyword>
+			<associatedKeyword>operator_mul</associatedKeyword>
+			<associatedKeyword>operator_dbscan</associatedKeyword>
+			<associatedKeyword>operator_min</associatedKeyword>
+			<associatedKeyword>operator_IDW</associatedKeyword>
+			<associatedKeyword>operator_build</associatedKeyword>
+			<associatedKeyword>operator_skewness</associatedKeyword>
+			<associatedKeyword>operator_kurtosis</associatedKeyword>
+			<associatedKeyword>operator_median</associatedKeyword>
+			<associatedKeyword>operator_distribution2d_of</associatedKeyword>
+			<associatedKeyword>operator_kmeans</associatedKeyword>
+			<associatedKeyword>operator_hierarchical_clustering</associatedKeyword>
+			<associatedKeyword>operator_distribution_of</associatedKeyword>
+			<associatedKeyword>operator_max</associatedKeyword>
+			<associatedKeyword>operator_frequency_of</associatedKeyword>
+			<associatedKeyword>operator_sum</associatedKeyword>
 			<associatedKeyword>operator_clustering_DBScan</associatedKeyword>
-			<associatedKeyword>operator_clustering_farthestFirst</associatedKeyword>
-			<associatedKeyword>operator_clustering_em</associatedKeyword>
+			<associatedKeyword>operator_clustering_cobweb</associatedKeyword>
 			<associatedKeyword>operator_clustering_simple_kmeans</associatedKeyword>
 			<associatedKeyword>operator_clustering_xmeans</associatedKeyword>
-			<associatedKeyword>operator_clustering_cobweb</associatedKeyword>
+			<associatedKeyword>operator_clustering_em</associatedKeyword>
+			<associatedKeyword>operator_clustering_farthestFirst</associatedKeyword>
+			<associatedKeyword>operator_durbin_watson</associatedKeyword>
+			<associatedKeyword>operator_normal_density</associatedKeyword>
+			<associatedKeyword>operator_binomial_coeff</associatedKeyword>
+			<associatedKeyword>operator_quantile</associatedKeyword>
+			<associatedKeyword>operator_student_t_inverse</associatedKeyword>
+			<associatedKeyword>operator_student_area</associatedKeyword>
+			<associatedKeyword>operator_quantile_inverse</associatedKeyword>
+			<associatedKeyword>operator_normal_inverse</associatedKeyword>
+			<associatedKeyword>operator_correlation</associatedKeyword>
+			<associatedKeyword>operator_beta</associatedKeyword>
+			<associatedKeyword>operator_kurtosis</associatedKeyword>
+			<associatedKeyword>operator_gamma_distribution_complemented</associatedKeyword>
+			<associatedKeyword>operator_rank_interpolated</associatedKeyword>
+			<associatedKeyword>operator_binomial_complemented</associatedKeyword>
+			<associatedKeyword>operator_pValue_for_tStat</associatedKeyword>
 			<associatedKeyword>operator_variance</associatedKeyword>
-			<associatedKeyword>operator_percent_absolute_deviation</associatedKeyword>
-			<associatedKeyword>operator_frequency_of</associatedKeyword>
-			<associatedKeyword>operator_standard_deviation</associatedKeyword>
-			<associatedKeyword>operator_min</associatedKeyword>
-			<associatedKeyword>operator_simple_clustering_by_distance</associatedKeyword>
-			<associatedKeyword>operator_predict</associatedKeyword>
-			<associatedKeyword>operator_corR</associatedKeyword>
-			<associatedKeyword>operator_distribution_of</associatedKeyword>
-			<associatedKeyword>operator_mean</associatedKeyword>
-			<associatedKeyword>operator_harmonic_mean</associatedKeyword>
-			<associatedKeyword>operator_build</associatedKeyword>
-			<associatedKeyword>operator_dbscan</associatedKeyword>
-			<associatedKeyword>operator_mul</associatedKeyword>
-			<associatedKeyword>operator_max</associatedKeyword>
-			<associatedKeyword>operator_distribution2d_of</associatedKeyword>
-			<associatedKeyword>operator_IDW</associatedKeyword>
-			<associatedKeyword>operator_hierarchical_clustering</associatedKeyword>
-			<associatedKeyword>operator_geometric_mean</associatedKeyword>
-			<associatedKeyword>operator_sum</associatedKeyword>
-			<associatedKeyword>operator_median</associatedKeyword>
-			<associatedKeyword>operator_kmeans</associatedKeyword>
-			<associatedKeyword>operator_meanR</associatedKeyword>
-			<associatedKeyword>operator_mean_deviation</associatedKeyword>
+			<associatedKeyword>operator_skew</associatedKeyword>
+			<associatedKeyword>operator_covariance</associatedKeyword>
+			<associatedKeyword>operator_binomial_sum</associatedKeyword>
+			<associatedKeyword>operator_gamma_distribution</associatedKeyword>
+			<associatedKeyword>operator_chi_square</associatedKeyword>
+			<associatedKeyword>operator_incomplete_beta</associatedKeyword>
+			<associatedKeyword>operator_log_gamma</associatedKeyword>
+			<associatedKeyword>operator_chi_square_complemented</associatedKeyword>
+			<associatedKeyword>operator_incomplete_gamma_complement</associatedKeyword>
+			<associatedKeyword>operator_auto_correlation</associatedKeyword>
+			<associatedKeyword>operator_pValue_for_fStat</associatedKeyword>
+			<associatedKeyword>operator_rms</associatedKeyword>
+			<associatedKeyword>operator_normal_area</associatedKeyword>
+			<associatedKeyword>operator_gamma</associatedKeyword>
+			<associatedKeyword>operator_incomplete_gamma</associatedKeyword>
+			<associatedKeyword>operator_moment</associatedKeyword>
+			<associatedKeyword>skill_RSkill</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -1878,32 +1935,34 @@
    		<name>string</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_split_with</associatedKeyword>
-			<associatedKeyword>operator_at</associatedKeyword>
-			<associatedKeyword>operator_as_time</associatedKeyword>
+			<associatedKeyword>operator_lower_case</associatedKeyword>
+			<associatedKeyword>operator_contains_any</associatedKeyword>
 			<associatedKeyword>operator_contains</associatedKeyword>
+			<associatedKeyword>operator_is_number</associatedKeyword>
+			<associatedKeyword>operator_as_time</associatedKeyword>
+			<associatedKeyword>operator_empty</associatedKeyword>
+			<associatedKeyword>operator_at</associatedKeyword>
+			<associatedKeyword>operator_split_with</associatedKeyword>
+			<associatedKeyword>operator_last_index_of</associatedKeyword>
+			<associatedKeyword>operator_upper_case</associatedKeyword>
 			<associatedKeyword>operator_char</associatedKeyword>
-			<associatedKeyword>operator_as_system_date</associatedKeyword>
+			<associatedKeyword>operator_copy_between</associatedKeyword>
 			<associatedKeyword>operator_as_system_time</associatedKeyword>
-			<associatedKeyword>operator_replace_regex</associatedKeyword>
+			<associatedKeyword>operator_last</associatedKeyword>
+			<associatedKeyword>operator_first</associatedKeyword>
 			<associatedKeyword>operator_as_date</associatedKeyword>
 			<associatedKeyword>operator_reverse</associatedKeyword>
-			<associatedKeyword>operator_indented_by</associatedKeyword>
-			<associatedKeyword>operator_replace</associatedKeyword>
-			<associatedKeyword>operator_index_of</associatedKeyword>
-			<associatedKeyword>operator_length</associatedKeyword>
-			<associatedKeyword>operator_last_index_of</associatedKeyword>
-			<associatedKeyword>operator_first</associatedKeyword>
-			<associatedKeyword>operator_in</associatedKeyword>
-			<associatedKeyword>operator_contains_all</associatedKeyword>
-			<associatedKeyword>operator_last</associatedKeyword>
-			<associatedKeyword>operator_empty</associatedKeyword>
-			<associatedKeyword>operator_+</associatedKeyword>
-			<associatedKeyword>operator_copy_between</associatedKeyword>
 			<associatedKeyword>operator_&lt;=</associatedKeyword>
-			<associatedKeyword>operator_contains_any</associatedKeyword>
+			<associatedKeyword>operator_indented_by</associatedKeyword>
+			<associatedKeyword>operator_in</associatedKeyword>
+			<associatedKeyword>operator_as_system_date</associatedKeyword>
 			<associatedKeyword>operator_&gt;=</associatedKeyword>
-			<associatedKeyword>operator_is_number</associatedKeyword>
+			<associatedKeyword>operator_length</associatedKeyword>
+			<associatedKeyword>operator_index_of</associatedKeyword>
+			<associatedKeyword>operator_replace</associatedKeyword>
+			<associatedKeyword>operator_contains_all</associatedKeyword>
+			<associatedKeyword>operator_replace_regex</associatedKeyword>
+			<associatedKeyword>operator_+</associatedKeyword>
 			<associatedKeyword>operator_string</associatedKeyword>
 			<associatedKeyword>type_string</associatedKeyword>
 		</associatedKeywordList>	
@@ -1913,9 +1972,9 @@
    		<name>surface_unit</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>constant_#m2</associatedKeyword>
-			<associatedKeyword>constant_#sqin</associatedKeyword>
 			<associatedKeyword>constant_#sqft</associatedKeyword>
+			<associatedKeyword>constant_#sqin</associatedKeyword>
+			<associatedKeyword>constant_#m2</associatedKeyword>
 			<associatedKeyword>constant_#sqmi</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
@@ -1933,12 +1992,12 @@
    		<name>system</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_eval_gaml</associatedKeyword>
-			<associatedKeyword>operator_copy</associatedKeyword>
-			<associatedKeyword>operator_.</associatedKeyword>
 			<associatedKeyword>operator_command</associatedKeyword>
-			<associatedKeyword>operator_user_input</associatedKeyword>
+			<associatedKeyword>operator_eval_gaml</associatedKeyword>
+			<associatedKeyword>operator_.</associatedKeyword>
+			<associatedKeyword>operator_copy</associatedKeyword>
 			<associatedKeyword>operator_dead</associatedKeyword>
+			<associatedKeyword>operator_user_input</associatedKeyword>
 			<associatedKeyword>operator_every</associatedKeyword>
 			<associatedKeyword>statement_write</associatedKeyword>
 			<associatedKeyword>statement_error</associatedKeyword>
@@ -1962,8 +2021,8 @@
    		<name>ternary</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_:</associatedKeyword>
 			<associatedKeyword>operator_?</associatedKeyword>
+			<associatedKeyword>operator_:</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -1988,8 +2047,8 @@
 			<associatedKeyword>operator_URL_file</associatedKeyword>
 			<associatedKeyword>statement_status</associatedKeyword>
 			<associatedKeyword>constant_#plain</associatedKeyword>
-			<associatedKeyword>constant_#italic</associatedKeyword>
 			<associatedKeyword>constant_#bold</associatedKeyword>
+			<associatedKeyword>constant_#italic</associatedKeyword>
 			<associatedKeyword>type_font</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
@@ -2016,18 +2075,18 @@
    		<category>concept</category>
    		<associatedKeywordList>
 			<associatedKeyword>operator_as_time</associatedKeyword>
-			<associatedKeyword>operator_as_system_date</associatedKeyword>
 			<associatedKeyword>operator_as_system_time</associatedKeyword>
 			<associatedKeyword>operator_as_date</associatedKeyword>
+			<associatedKeyword>operator_as_system_date</associatedKeyword>
 			<associatedKeyword>operator_date</associatedKeyword>
-			<associatedKeyword>constant_#minute</associatedKeyword>
-			<associatedKeyword>constant_#msec</associatedKeyword>
-			<associatedKeyword>constant_#year</associatedKeyword>
 			<associatedKeyword>constant_#month</associatedKeyword>
-			<associatedKeyword>constant_#h</associatedKeyword>
+			<associatedKeyword>constant_#year</associatedKeyword>
+			<associatedKeyword>constant_#msec</associatedKeyword>
+			<associatedKeyword>constant_#now</associatedKeyword>
+			<associatedKeyword>constant_#minute</associatedKeyword>
 			<associatedKeyword>constant_#sec</associatedKeyword>
 			<associatedKeyword>constant_#day</associatedKeyword>
-			<associatedKeyword>constant_#now</associatedKeyword>
+			<associatedKeyword>constant_#h</associatedKeyword>
 			<associatedKeyword>type_date</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
@@ -2036,13 +2095,13 @@
    		<name>time_unit</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>constant_#minute</associatedKeyword>
-			<associatedKeyword>constant_#msec</associatedKeyword>
-			<associatedKeyword>constant_#year</associatedKeyword>
 			<associatedKeyword>constant_#month</associatedKeyword>
-			<associatedKeyword>constant_#h</associatedKeyword>
+			<associatedKeyword>constant_#year</associatedKeyword>
+			<associatedKeyword>constant_#msec</associatedKeyword>
+			<associatedKeyword>constant_#minute</associatedKeyword>
 			<associatedKeyword>constant_#sec</associatedKeyword>
 			<associatedKeyword>constant_#day</associatedKeyword>
+			<associatedKeyword>constant_#h</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -2050,13 +2109,13 @@
    		<name>topology</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_topology</associatedKeyword>
-			<associatedKeyword>operator_path_between</associatedKeyword>
-			<associatedKeyword>operator_using</associatedKeyword>
-			<associatedKeyword>operator_towards</associatedKeyword>
-			<associatedKeyword>operator_distance_to</associatedKeyword>
 			<associatedKeyword>operator_distance_between</associatedKeyword>
 			<associatedKeyword>operator_path_to</associatedKeyword>
+			<associatedKeyword>operator_towards</associatedKeyword>
+			<associatedKeyword>operator_using</associatedKeyword>
+			<associatedKeyword>operator_distance_to</associatedKeyword>
+			<associatedKeyword>operator_path_between</associatedKeyword>
+			<associatedKeyword>operator_topology</associatedKeyword>
 			<associatedKeyword>statement_using</associatedKeyword>
 			<associatedKeyword>type_topology</associatedKeyword>
 		</associatedKeywordList>	
@@ -2092,8 +2151,8 @@
    		<name>type</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>operator_is</associatedKeyword>
 			<associatedKeyword>operator_is_number</associatedKeyword>
+			<associatedKeyword>operator_is</associatedKeyword>
 			<associatedKeyword>operator_list</associatedKeyword>
 			<associatedKeyword>operator_unknown</associatedKeyword>
 			<associatedKeyword>operator_container</associatedKeyword>
@@ -2111,6 +2170,9 @@
 			<associatedKeyword>operator_geometry</associatedKeyword>
 			<associatedKeyword>operator_skill</associatedKeyword>
 			<associatedKeyword>operator_matrix</associatedKeyword>
+			<associatedKeyword>operator_BDIPlan</associatedKeyword>
+			<associatedKeyword>operator_predicate</associatedKeyword>
+			<associatedKeyword>operator_emotion</associatedKeyword>
 			<associatedKeyword>type_list</associatedKeyword>
 			<associatedKeyword>type_unknown</associatedKeyword>
 			<associatedKeyword>type_font</associatedKeyword>
@@ -2135,6 +2197,9 @@
 			<associatedKeyword>type_matrix</associatedKeyword>
 			<associatedKeyword>type_topology</associatedKeyword>
 			<associatedKeyword>type_conversation</associatedKeyword>
+			<associatedKeyword>type_BDIPlan</associatedKeyword>
+			<associatedKeyword>type_predicate</associatedKeyword>
+			<associatedKeyword>type_emotion</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -2149,11 +2214,11 @@
    		<name>volume_unit</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>constant_#m3</associatedKeyword>
-			<associatedKeyword>constant_#hl</associatedKeyword>
-			<associatedKeyword>constant_#cl</associatedKeyword>
-			<associatedKeyword>constant_#l</associatedKeyword>
 			<associatedKeyword>constant_#dl</associatedKeyword>
+			<associatedKeyword>constant_#cl</associatedKeyword>
+			<associatedKeyword>constant_#hl</associatedKeyword>
+			<associatedKeyword>constant_#m3</associatedKeyword>
+			<associatedKeyword>constant_#l</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -2161,12 +2226,14 @@
    		<name>weight_unit</name>
    		<category>concept</category>
    		<associatedKeywordList>
-			<associatedKeyword>constant_#ounce</associatedKeyword>
-			<associatedKeyword>constant_#stone</associatedKeyword>
-			<associatedKeyword>constant_#gram</associatedKeyword>
-			<associatedKeyword>constant_#kg</associatedKeyword>
-			<associatedKeyword>constant_#pound</associatedKeyword>
+			<associatedKeyword>constant_#shortton</associatedKeyword>
 			<associatedKeyword>constant_#ton</associatedKeyword>
+			<associatedKeyword>constant_#stone</associatedKeyword>
+			<associatedKeyword>constant_#kg</associatedKeyword>
+			<associatedKeyword>constant_#longton</associatedKeyword>
+			<associatedKeyword>constant_#pound</associatedKeyword>
+			<associatedKeyword>constant_#ounce</associatedKeyword>
+			<associatedKeyword>constant_#gram</associatedKeyword>
 		</associatedKeywordList>	
    	</keyword> 	
    	
@@ -2410,6 +2477,11 @@
    		<category>operator</category>		
    	</keyword> 	
    	
+   	<keyword id="operator_and">
+   		<name>and</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
    	<keyword id="operator_angle_between">
    		<name>angle_between</name>
    		<category>operator</category>		
@@ -2562,6 +2634,11 @@
    	
    	<keyword id="operator_auto_correlation">
    		<name>auto_correlation</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
+   	<keyword id="operator_BDIPlan">
+   		<name>BDIPlan</name>
    		<category>operator</category>		
    	</keyword> 	
    	
@@ -3020,6 +3097,11 @@
    		<category>operator</category>		
    	</keyword> 	
    	
+   	<keyword id="operator_emotion">
+   		<name>emotion</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
    	<keyword id="operator_empty">
    		<name>empty</name>
    		<category>operator</category>		
@@ -3037,6 +3119,11 @@
    	
    	<keyword id="operator_eval_gaml">
    		<name>eval_gaml</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
+   	<keyword id="operator_eval_when">
+   		<name>eval_when</name>
    		<category>operator</category>		
    	</keyword> 	
    	
@@ -3197,6 +3284,36 @@
    	
    	<keyword id="operator_get">
    		<name>get</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
+   	<keyword id="operator_get_about">
+   		<name>get_about</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
+   	<keyword id="operator_get_decay">
+   		<name>get_decay</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
+   	<keyword id="operator_get_intensity">
+   		<name>get_intensity</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
+   	<keyword id="operator_get_lifetime">
+   		<name>get_lifetime</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
+   	<keyword id="operator_get_priority">
+   		<name>get_priority</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
+   	<keyword id="operator_get_super_intention">
+   		<name>get_super_intention</name>
    		<category>operator</category>		
    	</keyword> 	
    	
@@ -3490,6 +3607,11 @@
    		<category>operator</category>		
    	</keyword> 	
    	
+   	<keyword id="operator_kurtosis">
+   		<name>kurtosis</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
    	<keyword id="operator_last">
    		<name>last</name>
    		<category>operator</category>		
@@ -3565,6 +3687,11 @@
    		<category>operator</category>		
    	</keyword> 	
    	
+   	<keyword id="operator_lower_case">
+   		<name>lower_case</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
    	<keyword id="operator_map">
    		<name>map</name>
    		<category>operator</category>		
@@ -3572,6 +3699,11 @@
    	
    	<keyword id="operator_masked_by">
    		<name>masked_by</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
+   	<keyword id="operator_material">
+   		<name>material</name>
    		<category>operator</category>		
    	</keyword> 	
    	
@@ -3670,8 +3802,18 @@
    		<category>operator</category>		
    	</keyword> 	
    	
+   	<keyword id="operator_new_emotion">
+   		<name>new_emotion</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
    	<keyword id="operator_new_folder">
    		<name>new_folder</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
+   	<keyword id="operator_new_predicate">
+   		<name>new_predicate</name>
    		<category>operator</category>		
    	</keyword> 	
    	
@@ -3732,6 +3874,11 @@
    	
    	<keyword id="operator_one_of">
    		<name>one_of</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
+   	<keyword id="operator_or">
+   		<name>or</name>
    		<category>operator</category>		
    	</keyword> 	
    	
@@ -3877,6 +4024,11 @@
    	
    	<keyword id="operator_predecessors_of">
    		<name>predecessors_of</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
+   	<keyword id="operator_predicate">
+   		<name>predicate</name>
    		<category>operator</category>		
    	</keyword> 	
    	
@@ -4060,16 +4212,6 @@
    		<category>operator</category>		
    	</keyword> 	
    	
-   	<keyword id="operator_saveAgent">
-   		<name>saveAgent</name>
-   		<category>operator</category>		
-   	</keyword> 	
-   	
-   	<keyword id="operator_saveSimulation">
-   		<name>saveSimulation</name>
-   		<category>operator</category>		
-   	</keyword> 	
-   	
    	<keyword id="operator_scaled_by">
    		<name>scaled_by</name>
    		<category>operator</category>		
@@ -4085,13 +4227,23 @@
    		<category>operator</category>		
    	</keyword> 	
    	
-   	<keyword id="operator_serialize">
-   		<name>serialize</name>
+   	<keyword id="operator_set_about">
+   		<name>set_about</name>
    		<category>operator</category>		
    	</keyword> 	
    	
-   	<keyword id="operator_serializeAgent">
-   		<name>serializeAgent</name>
+   	<keyword id="operator_set_decay">
+   		<name>set_decay</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
+   	<keyword id="operator_set_intensity">
+   		<name>set_intensity</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
+   	<keyword id="operator_set_truth">
+   		<name>set_truth</name>
    		<category>operator</category>		
    	</keyword> 	
    	
@@ -4147,6 +4299,11 @@
    	
    	<keyword id="operator_skew">
    		<name>skew</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
+   	<keyword id="operator_skewness">
+   		<name>skewness</name>
    		<category>operator</category>		
    	</keyword> 	
    	
@@ -4455,13 +4612,8 @@
    		<category>operator</category>		
    	</keyword> 	
    	
-   	<keyword id="operator_unserialize">
-   		<name>unserialize</name>
-   		<category>operator</category>		
-   	</keyword> 	
-   	
-   	<keyword id="operator_unSerializeSimulation">
-   		<name>unSerializeSimulation</name>
+   	<keyword id="operator_upper_case">
+   		<name>upper_case</name>
    		<category>operator</category>		
    	</keyword> 	
    	
@@ -4520,6 +4672,11 @@
    		<category>operator</category>		
    	</keyword> 	
    	
+   	<keyword id="operator_with_lifetime">
+   		<name>with_lifetime</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
    	<keyword id="operator_with_max_of">
    		<name>with_max_of</name>
    		<category>operator</category>		
@@ -4537,6 +4694,16 @@
    	
    	<keyword id="operator_with_precision">
    		<name>with_precision</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
+   	<keyword id="operator_with_priority">
+   		<name>with_priority</name>
+   		<category>operator</category>		
+   	</keyword> 	
+   	
+   	<keyword id="operator_with_values">
+   		<name>with_values</name>
    		<category>operator</category>		
    	</keyword> 	
    	
@@ -4620,6 +4787,11 @@
    		<category>statement</category>		
    	</keyword> 	
    	
+   	<keyword id="statement_conscious_contagion">
+   		<name>conscious_contagion</name>
+   		<category>statement</category>		
+   	</keyword> 	
+   	
    	<keyword id="statement_create">
    		<name>create</name>
    		<category>statement</category>		
@@ -4675,6 +4847,11 @@
    		<category>statement</category>		
    	</keyword> 	
    	
+   	<keyword id="statement_emotional_contagion">
+   		<name>emotional_contagion</name>
+   		<category>statement</category>		
+   	</keyword> 	
+   	
    	<keyword id="statement_enter">
    		<name>enter</name>
    		<category>statement</category>		
@@ -4715,6 +4892,16 @@
    		<category>statement</category>		
    	</keyword> 	
    	
+   	<keyword id="statement_focus">
+   		<name>focus</name>
+   		<category>statement</category>		
+   	</keyword> 	
+   	
+   	<keyword id="statement_focus_on">
+   		<name>focus_on</name>
+   		<category>statement</category>		
+   	</keyword> 	
+   	
    	<keyword id="statement_genetic">
    		<name>genetic</name>
    		<category>statement</category>		
@@ -4722,6 +4909,11 @@
    	
    	<keyword id="statement_graphics">
    		<name>graphics</name>
+   		<category>statement</category>		
+   	</keyword> 	
+   	
+   	<keyword id="statement_highlight">
+   		<name>highlight</name>
    		<category>statement</category>		
    	</keyword> 	
    	
@@ -4810,8 +5002,18 @@
    		<category>statement</category>		
    	</keyword> 	
    	
+   	<keyword id="statement_perceive">
+   		<name>perceive</name>
+   		<category>statement</category>		
+   	</keyword> 	
+   	
    	<keyword id="statement_permanent">
    		<name>permanent</name>
+   		<category>statement</category>		
+   	</keyword> 	
+   	
+   	<keyword id="statement_plan">
+   		<name>plan</name>
    		<category>statement</category>		
    	</keyword> 	
    	
@@ -4847,6 +5049,11 @@
    	
    	<keyword id="statement_return">
    		<name>return</name>
+   		<category>statement</category>		
+   	</keyword> 	
+   	
+   	<keyword id="statement_rule">
+   		<name>rule</name>
    		<category>statement</category>		
    	</keyword> 	
    	
@@ -4937,6 +5144,11 @@
    	
    	<keyword id="statement_transition">
    		<name>transition</name>
+   		<category>statement</category>		
+   	</keyword> 	
+   	
+   	<keyword id="statement_unconscious_contagion">
+   		<name>unconscious_contagion</name>
    		<category>statement</category>		
    	</keyword> 	
    	
@@ -5630,6 +5842,62 @@
 		</associatedKeywordList>		
    	</keyword> 	
    	
+   	<keyword id="facet_name_statement_conscious_contagion">
+   		<name>name</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_conscious_contagion</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_emotion_detected_statement_conscious_contagion">
+   		<name>emotion_detected</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_conscious_contagion</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_emotion_created_statement_conscious_contagion">
+   		<name>emotion_created</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_conscious_contagion</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_charisma_statement_conscious_contagion">
+   		<name>charisma</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_conscious_contagion</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_when_statement_conscious_contagion">
+   		<name>when</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_conscious_contagion</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_threshold_statement_conscious_contagion">
+   		<name>threshold</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_conscious_contagion</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_receptivity_statement_conscious_contagion">
+   		<name>receptivity</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_conscious_contagion</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
    	<keyword id="facet_species_statement_create">
    		<name>species</name>
    		<category>facet</category>
@@ -6182,8 +6450,24 @@
 		</associatedKeywordList>		
    	</keyword> 	
    	
+   	<keyword id="facet_camera_lens_statement_display">
+   		<name>camera_lens</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_display</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
    	<keyword id="facet_camera_interaction_statement_display">
    		<name>camera_interaction</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_display</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_use_shader_statement_display">
+   		<name>use_shader</name>
    		<category>facet</category>
 		<associatedKeywordList>
 			<associatedKeyword>statement_display</associatedKeyword>	
@@ -6542,11 +6826,75 @@
 		</associatedKeywordList>		
    	</keyword> 	
    	
+   	<keyword id="facet_material_statement_draw">
+   		<name>material</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_draw</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
    	<keyword id="facet_bitmap_statement_draw">
    		<name>bitmap</name>
    		<category>facet</category>
 		<associatedKeywordList>
 			<associatedKeyword>statement_draw</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_name_statement_emotional_contagion">
+   		<name>name</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_emotional_contagion</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_emotion_detected_statement_emotional_contagion">
+   		<name>emotion_detected</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_emotional_contagion</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_emotion_created_statement_emotional_contagion">
+   		<name>emotion_created</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_emotional_contagion</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_charisma_statement_emotional_contagion">
+   		<name>charisma</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_emotional_contagion</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_when_statement_emotional_contagion">
+   		<name>when</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_emotional_contagion</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_threshold_statement_emotional_contagion">
+   		<name>threshold</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_emotional_contagion</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_receptivity_statement_emotional_contagion">
+   		<name>receptivity</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_emotional_contagion</associatedKeyword>	
 		</associatedKeywordList>		
    	</keyword> 	
    	
@@ -6616,22 +6964,6 @@
    	
    	<keyword id="facet_action_statement_event">
    		<name>action</name>
-   		<category>facet</category>
-		<associatedKeywordList>
-			<associatedKeyword>statement_event</associatedKeyword>	
-		</associatedKeywordList>		
-   	</keyword> 	
-   	
-   	<keyword id="facet_mouse_location_statement_event">
-   		<name>mouse_location</name>
-   		<category>facet</category>
-		<associatedKeywordList>
-			<associatedKeyword>statement_event</associatedKeyword>	
-		</associatedKeywordList>		
-   	</keyword> 	
-   	
-   	<keyword id="facet_selected_agents_statement_event">
-   		<name>selected_agents</name>
    		<category>facet</category>
 		<associatedKeywordList>
 			<associatedKeyword>statement_event</associatedKeyword>	
@@ -6734,6 +7066,14 @@
 		</associatedKeywordList>		
    	</keyword> 	
    	
+   	<keyword id="facet_keep_simulations_statement_experiment">
+   		<name>keep_simulations</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_experiment</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
    	<keyword id="facet_repeat_statement_experiment">
    		<name>repeat</name>
    		<category>facet</category>
@@ -6787,6 +7127,54 @@
    		<category>facet</category>
 		<associatedKeywordList>
 			<associatedKeyword>statement_export</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_name_statement_focus">
+   		<name>name</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_focus</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_var_statement_focus">
+   		<name>var</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_focus</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_expression_statement_focus">
+   		<name>expression</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_focus</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_when_statement_focus">
+   		<name>when</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_focus</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_priority_statement_focus">
+   		<name>priority</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_focus</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_value_statement_focus_on">
+   		<name>value</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_focus_on</associatedKeyword>	
 		</associatedKeywordList>		
    	</keyword> 	
    	
@@ -6915,6 +7303,22 @@
    		<category>facet</category>
 		<associatedKeywordList>
 			<associatedKeyword>statement_graphics</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_color_statement_highlight">
+   		<name>color</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_highlight</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_value_statement_highlight">
+   		<name>value</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_highlight</associatedKeyword>	
 		</associatedKeywordList>		
    	</keyword> 	
    	
@@ -7750,6 +8154,134 @@
 		</associatedKeywordList>		
    	</keyword> 	
    	
+   	<keyword id="facet_name_statement_perceive">
+   		<name>name</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_perceive</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_as_statement_perceive">
+   		<name>as</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_perceive</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_when_statement_perceive">
+   		<name>when</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_perceive</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_in_statement_perceive">
+   		<name>in</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_perceive</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_emotion_statement_perceive">
+   		<name>emotion</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_perceive</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_threshold_statement_perceive">
+   		<name>threshold</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_perceive</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_target_statement_perceive">
+   		<name>target</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_perceive</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_layout_statement_permanent">
+   		<name>layout</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_permanent</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_when_statement_plan">
+   		<name>when</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_plan</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_finished_when_statement_plan">
+   		<name>finished_when</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_plan</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_priority_statement_plan">
+   		<name>priority</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_plan</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_name_statement_plan">
+   		<name>name</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_plan</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_intention_statement_plan">
+   		<name>intention</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_plan</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_emotion_statement_plan">
+   		<name>emotion</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_plan</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_threshold_statement_plan">
+   		<name>threshold</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_plan</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_instantaneous_statement_plan">
+   		<name>instantaneous</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_plan</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
    	<keyword id="facet_at_statement_put">
    		<name>at</name>
    		<category>facet</category>
@@ -8011,6 +8543,142 @@
    		<category>facet</category>
 		<associatedKeywordList>
 			<associatedKeyword>statement_return</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_belief_statement_rule">
+   		<name>belief</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_rule</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_desire_statement_rule">
+   		<name>desire</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_rule</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_emotion_statement_rule">
+   		<name>emotion</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_rule</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_uncertainty_statement_rule">
+   		<name>uncertainty</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_rule</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_new_desire_statement_rule">
+   		<name>new_desire</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_rule</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_new_belief_statement_rule">
+   		<name>new_belief</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_rule</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_new_emotion_statement_rule">
+   		<name>new_emotion</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_rule</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_new_uncertainty_statement_rule">
+   		<name>new_uncertainty</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_rule</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_remove_belief_statement_rule">
+   		<name>remove_belief</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_rule</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_remove_desire_statement_rule">
+   		<name>remove_desire</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_rule</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_remove_intention_statement_rule">
+   		<name>remove_intention</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_rule</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_remove_emotion_statement_rule">
+   		<name>remove_emotion</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_rule</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_remove_uncertainty_statement_rule">
+   		<name>remove_uncertainty</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_rule</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_when_statement_rule">
+   		<name>when</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_rule</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_threshold_statement_rule">
+   		<name>threshold</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_rule</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_priority_statement_rule">
+   		<name>priority</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_rule</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_name_statement_rule">
+   		<name>name</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_rule</associatedKeyword>	
 		</associatedKeywordList>		
    	</keyword> 	
    	
@@ -8662,6 +9330,54 @@
 		</associatedKeywordList>		
    	</keyword> 	
    	
+   	<keyword id="facet_name_statement_unconscious_contagion">
+   		<name>name</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_unconscious_contagion</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_emotion_statement_unconscious_contagion">
+   		<name>emotion</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_unconscious_contagion</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_charisma_statement_unconscious_contagion">
+   		<name>charisma</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_unconscious_contagion</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_when_statement_unconscious_contagion">
+   		<name>when</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_unconscious_contagion</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_threshold_statement_unconscious_contagion">
+   		<name>threshold</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_unconscious_contagion</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="facet_receptivity_statement_unconscious_contagion">
+   		<name>receptivity</name>
+   		<category>facet</category>
+		<associatedKeywordList>
+			<associatedKeyword>statement_unconscious_contagion</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
    	<keyword id="facet_continue_statement_user_command">
    		<name>continue</name>
    		<category>facet</category>
@@ -9189,6 +9905,11 @@
    		<category>skill</category>		
    	</keyword> 	
    	
+   	<keyword id="skill_RSkill">
+   		<name>RSkill</name>
+   		<category>skill</category>		
+   	</keyword> 	
+   	
    	<keyword id="skill_skill_road">
    		<name>skill_road</name>
    		<category>skill</category>		
@@ -9281,6 +10002,16 @@
    	
    	<keyword id="constant_#camera_location">
    		<name>#camera_location</name>
+   		<category>constant</category>		
+   	</keyword> 	
+   	
+   	<keyword id="constant_#camera_orientation">
+   		<name>#camera_orientation</name>
+   		<category>constant</category>		
+   	</keyword> 	
+   	
+   	<keyword id="constant_#camera_target">
+   		<name>#camera_target</name>
    		<category>constant</category>		
    	</keyword> 	
    	
@@ -9481,6 +10212,11 @@
    	
    	<keyword id="constant_#firebrick">
    		<name>#firebrick</name>
+   		<category>constant</category>		
+   	</keyword> 	
+   	
+   	<keyword id="constant_#flat">
+   		<name>#flat</name>
    		<category>constant</category>		
    	</keyword> 	
    	
@@ -9731,6 +10467,11 @@
    	
    	<keyword id="constant_#linen">
    		<name>#linen</name>
+   		<category>constant</category>		
+   	</keyword> 	
+   	
+   	<keyword id="constant_#longton">
+   		<name>#longton</name>
    		<category>constant</category>		
    	</keyword> 	
    	
@@ -10014,6 +10755,11 @@
    		<category>constant</category>		
    	</keyword> 	
    	
+   	<keyword id="constant_#round">
+   		<name>#round</name>
+   		<category>constant</category>		
+   	</keyword> 	
+   	
    	<keyword id="constant_#royalblue">
    		<name>#royalblue</name>
    		<category>constant</category>		
@@ -10046,6 +10792,11 @@
    	
    	<keyword id="constant_#sec">
    		<name>#sec</name>
+   		<category>constant</category>		
+   	</keyword> 	
+   	
+   	<keyword id="constant_#shortton">
+   		<name>#shortton</name>
    		<category>constant</category>		
    	</keyword> 	
    	
@@ -10109,6 +10860,11 @@
    		<category>constant</category>		
    	</keyword> 	
    	
+   	<keyword id="constant_#square">
+   		<name>#square</name>
+   		<category>constant</category>		
+   	</keyword> 	
+   	
    	<keyword id="constant_#stack">
    		<name>#stack</name>
    		<category>constant</category>		
@@ -10166,6 +10922,11 @@
    	
    	<keyword id="constant_#turquoise">
    		<name>#turquoise</name>
+   		<category>constant</category>		
+   	</keyword> 	
+   	
+   	<keyword id="constant_#user_location">
+   		<name>#user_location</name>
    		<category>constant</category>		
    	</keyword> 	
    	
@@ -10539,11 +11300,35 @@
 		</associatedKeywordList>		
    	</keyword> 	
    	
+   	<keyword id="action_fetch_message_skill_network">
+   		<name>fetch_message</name>
+   		<category>action</category>
+		<associatedKeywordList>
+			<associatedKeyword>skill_network</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="action_has_more_message_skill_network">
+   		<name>has_more_message</name>
+   		<category>action</category>
+		<associatedKeywordList>
+			<associatedKeyword>skill_network</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
    	<keyword id="action_leave_the_group_skill_network">
    		<name>leave_the_group</name>
    		<category>action</category>
 		<associatedKeywordList>
 			<associatedKeyword>skill_network</associatedKeyword>	
+		</associatedKeywordList>		
+   	</keyword> 	
+   	
+   	<keyword id="action_R_eval_skill_RSkill">
+   		<name>R_eval</name>
+   		<category>action</category>
+		<associatedKeywordList>
+			<associatedKeyword>skill_RSkill</associatedKeyword>	
 		</associatedKeywordList>		
    	</keyword> 	
    	
@@ -10560,14 +11345,6 @@
    		<category>action</category>
 		<associatedKeywordList>
 			<associatedKeyword>skill_skill_road</associatedKeyword>	
-		</associatedKeywordList>		
-   	</keyword> 	
-   	
-   	<keyword id="action_helloWorld_skill_SQLSKILL">
-   		<name>helloWorld</name>
-   		<category>action</category>
-		<associatedKeywordList>
-			<associatedKeyword>skill_SQLSKILL</associatedKeyword>	
 		</associatedKeywordList>		
    	</keyword> 	
    	
@@ -11680,6 +12457,11 @@
    		<category>type</category>		
    	</keyword> 	
    	
+   	<keyword id="type_BDIPlan">
+   		<name>BDIPlan</name>
+   		<category>type</category>		
+   	</keyword> 	
+   	
    	<keyword id="type_bool">
    		<name>bool</name>
    		<category>type</category>		
@@ -11697,6 +12479,11 @@
    	
    	<keyword id="type_date">
    		<name>date</name>
+   		<category>type</category>		
+   	</keyword> 	
+   	
+   	<keyword id="type_emotion">
+   		<name>emotion</name>
    		<category>type</category>		
    	</keyword> 	
    	
@@ -11740,6 +12527,11 @@
    		<category>type</category>		
    	</keyword> 	
    	
+   	<keyword id="type_material">
+   		<name>material</name>
+   		<category>type</category>		
+   	</keyword> 	
+   	
    	<keyword id="type_matrix">
    		<name>matrix</name>
    		<category>type</category>		
@@ -11762,6 +12554,11 @@
    	
    	<keyword id="type_point">
    		<name>point</name>
+   		<category>type</category>		
+   	</keyword> 	
+   	
+   	<keyword id="type_predicate">
+   		<name>predicate</name>
    		<category>type</category>		
    	</keyword> 	
    	
@@ -11812,6 +12609,11 @@
    	
    	<keyword id="architecture_reflex">
    		<name>reflex</name>
+   		<category>architecture</category>		
+   	</keyword> 	
+   	
+   	<keyword id="architecture_simple_bdi">
+   		<name>simple_bdi</name>
    		<category>architecture</category>		
    	</keyword> 	
    	

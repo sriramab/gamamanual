@@ -18,9 +18,6 @@ So, for instance, to be able to use clustering techniques in the model:
 ```
 create cluster_builder returns: clusterer;
 ```
-
-[Top of the page](#table-of-contents) 
-
 	
 
 
@@ -44,10 +41,7 @@ create cluster_builder returns: clusterer;
 #### **`_step_`**
 
 * returns: `unknown`
-			
 
-[Top of the page](#table-of-contents) 
-	
     	
 ----
 
@@ -115,10 +109,7 @@ create cluster_builder returns: clusterer;
 #### **`timeStamp`**
 
 * returns: `float`
-			
 
-[Top of the page](#table-of-contents) 
-	
     	
 ----
 
@@ -126,9 +117,6 @@ create cluster_builder returns: clusterer;
 ## `base_edge`	
 
 ### Actions
-				
-
-[Top of the page](#table-of-contents) 
 	
     	
 ----
@@ -137,9 +125,6 @@ create cluster_builder returns: clusterer;
 ## `experiment`	
 
 ### Actions
-				
-
-[Top of the page](#table-of-contents) 
 	
     	
 ----
@@ -148,9 +133,6 @@ create cluster_builder returns: clusterer;
 ## `graph_edge`	
 
 ### Actions
-				
-
-[Top of the page](#table-of-contents) 
 	
     	
 ----
@@ -165,10 +147,7 @@ create cluster_builder returns: clusterer;
 
 * returns: `bool`
  			
-* → **`other`** (`agent`): 			
-
-[Top of the page](#table-of-contents) 
-	
+* → **`other`** (`agent`): 
     	
 ----
 
@@ -186,10 +165,7 @@ Allows to stop the current simulation so that cannot be continued after. All the
 #### **`pause`**
 Allows to pause the current simulation **ACTUALLY EXPERIMENT FOR THE MOMENT**. It can be set to continue with the manual intervention of the user.
 * returns: `unknown`
-			
 
-[Top of the page](#table-of-contents) 
-	
     	
 ----
 
@@ -202,7 +178,3 @@ Allows to pause the current simulation **ACTUALLY EXPERIMENT FOR THE MOMENT**. I
 #### **`compute_forces`**
 
 * returns: `unknown`
-			
-
-[Top of the page](#table-of-contents) 
-	

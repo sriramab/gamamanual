@@ -90,11 +90,20 @@ float one_cubic_inch <- 1 °sqin * 1 °inch;
 [//]: # (keyword|constant_#camera_location)
 * **`\#camera_location`**, value= No Default Value, Comment: This unit, only available when running aspects or declaring displays, returns the current position of the camera as a point
 
+[//]: # (keyword|constant_#camera_orientation)
+* **`\#camera_orientation`**, value= No Default Value, Comment: This unit, only available when running aspects or declaring displays, returns the current orientation of the camera as a point
+
+[//]: # (keyword|constant_#camera_target)
+* **`\#camera_target`**, value= No Default Value, Comment: This unit, only available when running aspects or declaring displays, returns the current target of the camera as a point
+
 [//]: # (keyword|constant_#display_height)
 * **`\#display_height`**, value= 1.0, Comment: This constant is only accessible in a graphical context: display, graphics...
 
 [//]: # (keyword|constant_#display_width)
 * **`\#display_width`**, value= 1.0, Comment: This constant is only accessible in a graphical context: display, graphics...
+
+[//]: # (keyword|constant_#flat)
+* **`\#flat`**, value= 2, Comment: This constant represents a flat line buffer end cap style
 
 [//]: # (keyword|constant_#horizontal)
 * **`\#horizontal`**, value= 3, Comment: This constant represents a layout where all display views are aligned horizontally
@@ -111,11 +120,20 @@ float one_cubic_inch <- 1 °sqin * 1 °inch;
 [//]: # (keyword|constant_#plain)
 * **`\#plain`**, value= 0, Comment: This constant allows to build a font with a plain face
 
+[//]: # (keyword|constant_#round)
+* **`\#round`**, value= 1, Comment: This constant represents a round line buffer end cap style
+
 [//]: # (keyword|constant_#split)
 * **`\#split`**, value= 2, Comment: This constant represents a layout where all display views are split in a grid-like structure
 
+[//]: # (keyword|constant_#square)
+* **`\#square`**, value= 3, Comment: This constant represents a square line buffer end cap style
+
 [//]: # (keyword|constant_#stack)
 * **`\#stack`**, value= 1, Comment: This constant represents a layout where all display views are stacked
+
+[//]: # (keyword|constant_#user_location)
+* **`\#user_location`**, value= No Default Value, Comment: This unit contains in permanence the location of the mouse on the display in which it is situated. The latest location is provided when it is out of a display
 
 [//]: # (keyword|constant_#vertical)
 * **`\#vertical`**, value= 4, Comment: This constant represents a layout where all display views are aligned vertically
@@ -227,11 +245,17 @@ float one_cubic_inch <- 1 °sqin * 1 °inch;
 [//]: # (keyword|constant_#kg)
 * **`\#kg`** (#kilo,#kilogram,#kilos), value= 1.0, Comment: second: the basic unit for weights
 
+[//]: # (keyword|constant_#longton)
+* **`\#longton`** (#lton), value= 1016.0469088000001, Comment: short ton unit
+
 [//]: # (keyword|constant_#ounce)
 * **`\#ounce`** (#oz,#ounces), value= 0.028349523125, Comment: ounce unit
 
 [//]: # (keyword|constant_#pound)
 * **`\#pound`** (#lb,#pounds,#lbm), value= 0.45359237, Comment: pound unit
+
+[//]: # (keyword|constant_#shortton)
+* **`\#shortton`** (#ston), value= 907.18474, Comment: short ton unit
 
 [//]: # (keyword|constant_#stone)
 * **`\#stone`** (#st), value= 6.35029318, Comment: stone unit

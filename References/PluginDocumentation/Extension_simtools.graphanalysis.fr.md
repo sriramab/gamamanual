@@ -64,10 +64,6 @@
 * The `layout_forceatlas2` statement can be embedded into: Behavior, Sequence of statements or action, 
 * The `layout_forceatlas2` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_layout_yifanhu)
@@ -87,11 +83,7 @@
 #### Embedments
 * The `layout_yifanhu` statement is of type: **Single statement**
 * The `layout_yifanhu` statement can be embedded into: Behavior, Sequence of statements or action, 
-* The `layout_yifanhu` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-		
+* The `layout_yifanhu` statement embeds statements: 	
 	
 ----
 

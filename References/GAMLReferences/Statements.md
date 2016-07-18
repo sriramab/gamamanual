@@ -8,7 +8,7 @@
 
 ## Table of Contents
 <wiki:toc max_depth="2" />
-[=](#=), [action](#action), [add](#add), [agents](#agents), [annealing](#annealing), [ask](#ask), [aspect](#aspect), [assert](#assert), [break](#break), [camera](#camera), [capture](#capture), [chart](#chart), [create](#create), [data](#data), [datalist](#datalist), [default](#default), [diffuse](#diffuse), [display](#display), [display_grid](#display_grid), [display_population](#display_population), [do](#do), [draw](#draw), [else](#else), [enter](#enter), [equation](#equation), [error](#error), [event](#event), [exhaustive](#exhaustive), [exit](#exit), [experiment](#experiment), [export](#export), [genetic](#genetic), [graphics](#graphics), [hill_climbing](#hill_climbing), [if](#if), [image](#image), [inspect](#inspect), [let](#let), [light](#light), [loop](#loop), [match](#match), [migrate](#migrate), [monitor](#monitor), [output](#output), [output_file](#output_file), [overlay](#overlay), [parameter](#parameter), [permanent](#permanent), [put](#put), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [release](#release), [remove](#remove), [return](#return), [run](#run), [save](#save), [save_batch](#save_batch), [set](#set), [setup](#setup), [simulate](#simulate), [solve](#solve), [species](#species), [state](#state), [status](#status), [switch](#switch), [tabu](#tabu), [task](#task), [test](#test), [trace](#trace), [transition](#transition), [user_command](#user_command), [user_init](#user_init), [user_input](#user_input), [user_panel](#user_panel), [using](#using), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), [warn](#warn), [write](#write), 
+[=](#=), [action](#action), [add](#add), [agents](#agents), [annealing](#annealing), [ask](#ask), [aspect](#aspect), [assert](#assert), [break](#break), [camera](#camera), [capture](#capture), [chart](#chart), [conscious_contagion](#conscious_contagion), [create](#create), [data](#data), [datalist](#datalist), [default](#default), [diffuse](#diffuse), [display](#display), [display_grid](#display_grid), [display_population](#display_population), [do](#do), [draw](#draw), [else](#else), [emotional_contagion](#emotional_contagion), [enter](#enter), [equation](#equation), [error](#error), [event](#event), [exhaustive](#exhaustive), [exit](#exit), [experiment](#experiment), [export](#export), [focus](#focus), [focus_on](#focus_on), [genetic](#genetic), [graphics](#graphics), [highlight](#highlight), [hill_climbing](#hill_climbing), [if](#if), [image](#image), [inspect](#inspect), [let](#let), [light](#light), [loop](#loop), [match](#match), [migrate](#migrate), [monitor](#monitor), [output](#output), [output_file](#output_file), [overlay](#overlay), [parameter](#parameter), [perceive](#perceive), [permanent](#permanent), [plan](#plan), [put](#put), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [release](#release), [remove](#remove), [return](#return), [rule](#rule), [run](#run), [save](#save), [save_batch](#save_batch), [set](#set), [setup](#setup), [simulate](#simulate), [solve](#solve), [species](#species), [state](#state), [status](#status), [switch](#switch), [tabu](#tabu), [task](#task), [test](#test), [trace](#trace), [transition](#transition), [unconscious_contagion](#unconscious_contagion), [user_command](#user_command), [user_init](#user_init), [user_input](#user_input), [user_panel](#user_panel), [using](#using), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), [warn](#warn), [write](#write), 
 
 
 ## Statements by kinds
@@ -16,7 +16,7 @@
   * **Batch method**
     * [annealing](#annealing),  [exhaustive](#exhaustive),  [genetic](#genetic),  [hill_climbing](#hill_climbing),  [reactive_tabu](#reactive_tabu),  [save_batch](#save_batch),  [tabu](#tabu),  
   * **Behavior**
-    * [aspect](#aspect),  [reflex](#reflex),  [state](#state),  [task](#task),  [test](#test),  [user_init](#user_init),  [user_panel](#user_panel),  
+    * [aspect](#aspect),  [plan](#plan),  [reflex](#reflex),  [state](#state),  [task](#task),  [test](#test),  [user_init](#user_init),  [user_panel](#user_panel),  
   * **Experiment**
     * [experiment](#experiment),  
   * **Layer**
@@ -26,9 +26,9 @@
   * **Parameter**
     * [parameter](#parameter),  
   * **Sequence of statements or action**
-    * [action](#action),  [ask](#ask),  [capture](#capture),  [create](#create),  [default](#default),  [else](#else),  [enter](#enter),  [equation](#equation),  [exit](#exit),  [if](#if),  [loop](#loop),  [match](#match),  [migrate](#migrate),  [release](#release),  [run](#run),  [setup](#setup),  [switch](#switch),  [trace](#trace),  [transition](#transition),  [user_command](#user_command),  [using](#using),  
+    * [action](#action),  [ask](#ask),  [capture](#capture),  [create](#create),  [default](#default),  [else](#else),  [enter](#enter),  [equation](#equation),  [exit](#exit),  [if](#if),  [loop](#loop),  [match](#match),  [migrate](#migrate),  [perceive](#perceive),  [release](#release),  [run](#run),  [setup](#setup),  [switch](#switch),  [trace](#trace),  [transition](#transition),  [user_command](#user_command),  [using](#using),  
   * **Single statement**
-    * [=](#=),  [add](#add),  [assert](#assert),  [break](#break),  [data](#data),  [datalist](#datalist),  [diffuse](#diffuse),  [do](#do),  [draw](#draw),  [error](#error),  [export](#export),  [let](#let),  [put](#put),  [remove](#remove),  [return](#return),  [save](#save),  [set](#set),  [simulate](#simulate),  [solve](#solve),  [status](#status),  [user_input](#user_input),  [warn](#warn),  [write](#write),  
+    * [=](#=),  [add](#add),  [assert](#assert),  [break](#break),  [conscious_contagion](#conscious_contagion),  [data](#data),  [datalist](#datalist),  [diffuse](#diffuse),  [do](#do),  [draw](#draw),  [emotional_contagion](#emotional_contagion),  [error](#error),  [export](#export),  [focus](#focus),  [focus_on](#focus_on),  [highlight](#highlight),  [let](#let),  [put](#put),  [remove](#remove),  [return](#return),  [rule](#rule),  [save](#save),  [set](#set),  [simulate](#simulate),  [solve](#solve),  [status](#status),  [unconscious_contagion](#unconscious_contagion),  [user_input](#user_input),  [warn](#warn),  [write](#write),  
   * **Species**
     * [species](#species),  
   * **Variable (container)**
@@ -42,21 +42,21 @@
 ## Statements by embedment
 
   * **Behavior**
-    * [add](#add), [ask](#ask), [capture](#capture), [create](#create), [diffuse](#diffuse), [do](#do), [error](#error), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [run](#run), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [using](#using), [warn](#warn), [write](#write), 
+    * [add](#add), [ask](#ask), [capture](#capture), [conscious_contagion](#conscious_contagion), [create](#create), [diffuse](#diffuse), [do](#do), [emotional_contagion](#emotional_contagion), [error](#error), [focus](#focus), [focus_on](#focus_on), [highlight](#highlight), [if](#if), [inspect](#inspect), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [run](#run), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [unconscious_contagion](#unconscious_contagion), [using](#using), [warn](#warn), [write](#write), 
   * **Environment**
     * [species](#species), 
   * **Experiment**
     * [action](#action), [annealing](#annealing), [exhaustive](#exhaustive), [export](#export), [genetic](#genetic), [hill_climbing](#hill_climbing), [output](#output), [parameter](#parameter), [permanent](#permanent), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [save_batch](#save_batch), [setup](#setup), [simulate](#simulate), [state](#state), [tabu](#tabu), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
   * **Layer**
-    * [draw](#draw), [error](#error), [if](#if), [let](#let), [loop](#loop), [status](#status), [switch](#switch), [trace](#trace), [warn](#warn), [write](#write), 
+    * [draw](#draw), [error](#error), [focus_on](#focus_on), [highlight](#highlight), [if](#if), [let](#let), [loop](#loop), [status](#status), [switch](#switch), [trace](#trace), [warn](#warn), [write](#write), 
   * **Model**
-    * [action](#action), [aspect](#aspect), [equation](#equation), [experiment](#experiment), [output](#output), [reflex](#reflex), [run](#run), [setup](#setup), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
+    * [action](#action), [aspect](#aspect), [equation](#equation), [experiment](#experiment), [output](#output), [perceive](#perceive), [plan](#plan), [reflex](#reflex), [rule](#rule), [run](#run), [setup](#setup), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
   * **Sequence of statements or action**
-    * [add](#add), [ask](#ask), [break](#break), [capture](#capture), [create](#create), [data](#data), [datalist](#datalist), [diffuse](#diffuse), [do](#do), [draw](#draw), [error](#error), [if](#if), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [using](#using), [warn](#warn), [write](#write), 
+    * [add](#add), [ask](#ask), [break](#break), [capture](#capture), [conscious_contagion](#conscious_contagion), [create](#create), [data](#data), [datalist](#datalist), [diffuse](#diffuse), [do](#do), [draw](#draw), [emotional_contagion](#emotional_contagion), [error](#error), [focus](#focus), [focus_on](#focus_on), [highlight](#highlight), [if](#if), [inspect](#inspect), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [unconscious_contagion](#unconscious_contagion), [using](#using), [warn](#warn), [write](#write), 
   * **Single statement**
     * [run](#run), 
   * **Species**
-    * [action](#action), [aspect](#aspect), [equation](#equation), [reflex](#reflex), [run](#run), [setup](#setup), [simulate](#simulate), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
+    * [action](#action), [aspect](#aspect), [equation](#equation), [perceive](#perceive), [plan](#plan), [reflex](#reflex), [rule](#rule), [run](#run), [setup](#setup), [simulate](#simulate), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
   * **action**
     * [return](#return), 
   * **aspect**
@@ -121,9 +121,6 @@ statement_keyword1 expression1 facet2: expression2... { // a sequence statement
      statement_keyword3 expression1 facet2: expression2...;
 }
 ```
-
-[Top of the page](#table-of-contents)
-
 	
 
 ----
@@ -160,10 +157,6 @@ equation SI {
 * The `=` statement is of type: **Single statement**
 * The `=` statement can be embedded into: equation, 
 * The `=` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -232,10 +225,6 @@ species children parent: parent_species {
 * The `action` statement is of type: **Sequence of statements or action**
 * The `action` statement can be embedded into: Species, Experiment, Model, 
 * The `action` statement embeds statements: [return](#return),  
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -329,10 +318,6 @@ list var <- g.edges; 	// var equals [polyline({1.0,5.0}::{12.0,45.0}),polyline({
 * The `add` statement can be embedded into: chart, Behavior, Sequence of statements or action, 
 * The `add` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_agents)
@@ -382,10 +367,6 @@ display Segregation {
 * The `agents` statement can be embedded into: display, 
 * The `agents` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_annealing)
@@ -426,10 +407,6 @@ method annealing temp_init: 100  temp_end: 1 temp_decrease: 0.5 nb_iter_cst_temp
 * The `annealing` statement is of type: **Batch method**
 * The `annealing` statement can be embedded into: Experiment, 
 * The `annealing` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -508,10 +485,6 @@ species animal {
 * The `ask` statement can be embedded into: chart, Behavior, Sequence of statements or action, 
 * The `ask` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_aspect)
@@ -545,10 +518,6 @@ species one_species {
 * The `aspect` statement is of type: **Behavior**
 * The `aspect` statement can be embedded into: Species, Model, 
 * The `aspect` statement embeds statements: [draw](#draw),  
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -596,10 +565,6 @@ assert (3/z) raises: "error";
 * The `assert` statement can be embedded into: test, 
 * The `assert` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_break)
@@ -618,10 +583,6 @@ assert (3/z) raises: "error";
 * The `break` statement is of type: **Single statement**
 * The `break` statement can be embedded into: Sequence of statements or action, 
 * The `break` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -646,10 +607,6 @@ assert (3/z) raises: "error";
 * The `camera` statement is of type: **Layer**
 * The `camera` statement can be embedded into: display, 
 * The `camera` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -703,10 +660,6 @@ capture target: list (B) as: C;
 * The `capture` statement is of type: **Sequence of statements or action**
 * The `capture` statement can be embedded into: Behavior, Sequence of statements or action, 
 * The `capture` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -771,9 +724,37 @@ display chart_display {
 * The `chart` statement can be embedded into: display, 
 * The `chart` statement embeds statements: [add](#add),  [ask](#ask),  [data](#data),  [datalist](#datalist),  [do](#do),  [put](#put),  [remove](#remove),  [set](#set),  [simulate](#simulate),  [using](#using),  
 
-[Top of the page](#table-of-contents)
-		
-	
+----
+
+[//]: # (keyword|statement_conscious_contagion)
+### conscious_contagion 
+#### Facets 
+  
+  * **`emotion_created`** (546706): the emotion that will be created with the contagion  
+  * **`emotion_detected`** (546706): the emotion that will start the contagion
+  * `name` (an identifier), (omissible) : the identifier of the unconscious contagion
+  * `charisma` (float): The charisma value of the perceived agent (between 0 and 1)
+  * `receptivity` (float): The receptivity value of the current agent (between 0 and 1)
+  * `threshold` (float): The threshold value to make the contagion
+  * `when` (boolean): A boolean value to get the emotion only with a certain condition 
+ 	
+#### Definition
+
+enables to directly add an emotion of a perceived specie if the perceived agent ges a patricular emotion.
+
+#### Usages
+
+* Other examples of use: 
+```
+conscious_contagion emotion_detected:fear emotion_created:fearConfirmed;
+conscious_contagion emotion_detected:fear emotion_created:fearConfirmed charisma: 0.5 receptivity: 0.5;
+``` 
+  
+
+#### Embedments
+* The `conscious_contagion` statement is of type: **Single statement**
+* The `conscious_contagion` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `conscious_contagion` statement embeds statements: 
 
 ----
 
@@ -872,10 +853,6 @@ create species: a_species number: an_int;
 * The `create` statement can be embedded into: Behavior, Sequence of statements or action, 
 * The `create` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_data)
@@ -900,10 +877,6 @@ create species: a_species number: an_int;
 * The `data` statement is of type: **Single statement**
 * The `data` statement can be embedded into: chart, Sequence of statements or action, 
 * The `data` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -930,10 +903,6 @@ create species: a_species number: an_int;
 * The `datalist` statement can be embedded into: chart, Sequence of statements or action, 
 * The `datalist` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_default)
@@ -954,10 +923,6 @@ Used in a switch match structure, the block prefixed by default is executed only
 * The `default` statement is of type: **Sequence of statements or action**
 * The `default` statement can be embedded into: switch, 
 * The `default` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -1013,10 +978,6 @@ diffuse var: phero on: cells proportion: 1/9 radius: 1;
 * The `diffuse` statement can be embedded into: Behavior, Sequence of statements or action, 
 * The `diffuse` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_display)
@@ -1028,6 +989,7 @@ diffuse var: phero on: cells proportion: 1/9 radius: 1;
   * `autosave` (any type in [boolean, point]): Allows to save this display on disk. A value of true/false will save it at a resolution of 500x500. A point can be passed to personalize these dimensions
   * `background` (rgb): Allows to fill the background of the display with a specific color
   * `camera_interaction` (boolean): If false, the user will not be able to modify the position and the orientation of the camera, and neither using the ROI. Default is true.
+  * `camera_lens` (int): Allows to define the lens of the camera
   * `camera_look_pos` (point): Allows to define the direction of the camera
   * `camera_pos` (any type in [point, agent]): Allows to define the position of the camera
   * `camera_up_vector` (point): Allows to define the orientation of the camera
@@ -1048,6 +1010,7 @@ diffuse var: phero on: cells proportion: 1/9 radius: 1;
   * `tesselation` (boolean): 
   * `trace` (any type in [boolean, int]): Allows to aggregate the visualization of agents at each timestep on the display. Default is false. If set to an int value, only the last n-th steps will be visualized. If set to true, no limit of timesteps is applied. This facet can also be applied to individual layers
   * `type` (a label): Allows to use either Java2D (for planar models) or OpenGL (for 3D models) as the rendering subsystem
+  * `use_shader` (boolean): Under construction...
   * `z_fighting` (boolean): Allows to alleviate a problem where agents at the same z would overlap each other in random ways 
  	
 #### Definition
@@ -1078,10 +1041,6 @@ display gridWithElevationTriangulated type: opengl ambient_light: 100 {
 * The `display` statement is of type: **Output**
 * The `display` statement can be embedded into: output, permanent, 
 * The `display` statement embeds statements: [agents](#agents),  [camera](#camera),  [chart](#chart),  [display_grid](#display_grid),  [display_population](#display_population),  [event](#event),  [graphics](#graphics),  [image](#image),  [light](#light),  [overlay](#overlay),  
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -1134,10 +1093,6 @@ display my_display {
 * The `display_grid` statement is of type: **Layer**
 * The `display_grid` statement can be embedded into: display, 
 * The `display_grid` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -1198,10 +1153,6 @@ display my_display type: opengl{
 * The `display_population` statement is of type: **Layer**
 * The `display_population` statement can be embedded into: display, display_population, 
 * The `display_population` statement embeds statements: [display_population](#display_population),  
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -1281,10 +1232,6 @@ do name_of_action_or_primitive {
 * The `do` statement can be embedded into: chart, Behavior, Sequence of statements or action, 
 * The `do` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_draw)
@@ -1301,6 +1248,7 @@ do name_of_action_or_primitive {
   * `empty` (boolean): a condition specifying whether the geometry is empty or full
   * `end_arrow` (any type in [int, float]): the size of the arrow, located at the end of the drawn geometry
   * `font` (any type in [19, string]): the font used to draw the text, if any. Applying this facet to geometries or images has no effect. You can construct here your font with the operator "font". ex : font:font("Helvetica", 20 , #plain)
+  * `material` (25): Set a particular material to the object (only if you are in the "use_shader" mode).
   * `perspective` (boolean): Whether to render the text in perspective or facing the user. Default is true.
   * `rotate` (any type in [float, int, pair]): orientation of the shape/text/icon; can be either an int/float (angle) or a pair float::point (angle::rotation axis). The rotation axis, when expressed as an angle, is by defaut {0,0,1}
   * `rounded` (boolean): specify whether the geometry have to be rounded (e.g. for squares)
@@ -1349,10 +1297,6 @@ aspect arrowAspect {
 * The `draw` statement can be embedded into: aspect, Sequence of statements or action, Layer, 
 * The `draw` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_else)
@@ -1373,9 +1317,38 @@ This statement cannot be used alone
 * The `else` statement can be embedded into: if, 
 * The `else` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
+----
+
+[//]: # (keyword|statement_emotional_contagion)
+### emotional_contagion 
+#### Facets 
+  
+  * **`emotion_detected`** (546706): the emotion that will start the contagion
+  * `name` (an identifier), (omissible) : the identifier of the emotional contagion
+  * `charisma` (float): The charisma value of the perceived agent (between 0 and 1)
+  * `emotion_created` (546706): the emotion that will be created with the contagion
+  * `receptivity` (float): The receptivity value of the current agent (between 0 and 1)
+  * `threshold` (float): The threshold value to make the contagion
+  * `when` (boolean): A boolean value to get the emotion only with a certain condition 
+ 	
+#### Definition
+
+enables to make conscious or unconscious emotional contagion
+
+#### Usages
+
+* Other examples of use: 
+```
+emotional_contagion emotion_detected:fearConfirmed;
+emotional_contagion emotion_detected:fear emotion_created:fearConfirmed;
+emotional_contagion emotion_detected:fear emotion_created:fearConfirmed charisma: 0.5 receptivity: 0.5;
+``` 
+  
+
+#### Embedments
+* The `emotional_contagion` statement is of type: **Single statement**
+* The `emotional_contagion` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `emotional_contagion` statement embeds statements: 
 
 ----
 
@@ -1408,10 +1381,6 @@ In an FSM architecture, `enter` introduces a sequence of statements to execute u
 * The `enter` statement is of type: **Sequence of statements or action**
 * The `enter` statement can be embedded into: state, 
 * The `enter` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -1464,10 +1433,6 @@ equation eqLV type: LV vars: [x,y,t] params: [alpha,beta,delta,gamma] ;
 * The `equation` statement can be embedded into: Species, Model, 
 * The `equation` statement embeds statements: [=](#=),  
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_error)
@@ -1495,20 +1460,14 @@ error 'This is an error raised by ' + self;
 * The `error` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
 * The `error` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_event)
 ### event 
 #### Facets 
   
-  * **`name`** (an identifier), (omissible) : the type of event captured: can be  "mouse_up", "mouse_down", "mouse_move", "mouse_exit", "mouse_enter" or a character (not yet functional)  
-  * **`action`** (string): the identifier of the action to be executed. It has to be an action written in the global block. This action needs to be defined in 'global' and will receive two possible arguments: the location of the mouse in the environment and the agents under the mouse. For instance:`action myAction (point location, list selected_agents)`
-  * `mouse_location` (string): 
-  * `selected_agents` (string): 
+  * **`name`** (an identifier), (omissible) : the type of event captured: can be  "mouse_up", "mouse_down", "mouse_move", "mouse_exit", "mouse_enter" or a character  
+  * **`action`** (any type): Either a block of statements to execute in the context of the simulation or the identifier of the action to be executed. This action needs to be defined in 'global' and will receive two possible arguments: the location of the mouse in the environment and the agents under the mouse. For instance:`action myAction (point location, list selected_agents)`
   * `unused` (an identifier), takes values in: {mouse_up, mouse_down, mouse_move, mouse_enter, mouse_exit}: an unused facet that serves only for the purpose of declaring the string values 
  	
 #### Definition
@@ -1552,10 +1511,6 @@ experiment Simple type:gui {
 * The `event` statement can be embedded into: display, 
 * The `event` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_exhaustive)
@@ -1593,10 +1548,6 @@ method exhaustive maximize: food_gathered;
 * The `exhaustive` statement can be embedded into: Experiment, 
 * The `exhaustive` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_exit)
@@ -1632,10 +1583,6 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 * The `exit` statement can be embedded into: state, 
 * The `exit` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_experiment)
@@ -1648,21 +1595,18 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
   * `control` (an identifier): 
   * `frequency` (int): the execution frequence of the experiment (default value: 1). If frequency: 10, the experiment is executed only each 10 steps.
   * `keep_seed` (boolean): 
+  * `keep_simulations` (boolean): In the case of a batch experiment, specifies whether or not the simulations should be kept in memory for further analysis or immediately discarded with only their fitness kept in memory
   * `multicore` (boolean): Allows the experiment, when set to true, to use multiple threads to run its simulations
   * `parent` (an identifier): the parent experiment (in case of inheritance between experiments)
-  * `repeat` (int): In case of a batch experiment, expresses hom many times the simulations must be repeated
+  * `repeat` (int): In the case of a batch experiment, expresses hom many times the simulations must be repeated
   * `schedules` (container): an ordered list of agents giving the order of their execution
   * `skills` (list): 
-  * `until` (boolean): In case of a batch experiment, an expression that will be evaluated to know when a simulation should be terminated
+  * `until` (boolean): In the case of a batch experiment, an expression that will be evaluated to know when a simulation should be terminated
 
 #### Embedments
 * The `experiment` statement is of type: **Experiment**
 * The `experiment` statement can be embedded into: Model, 
 * The `experiment` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -1679,9 +1623,61 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 * The `export` statement can be embedded into: Experiment, 
 * The `export` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
+----
+
+[//]: # (keyword|statement_focus)
+### focus 
+#### Facets 
+
+  * `name` (an identifier), (omissible) : the identifier of the focus
+  * `expression` (any type): an expression that will be the value kept in the belief
+  * `priority` (any type in [float, int]): The priority of the created predicate
+  * `var` (any type in [any type, list, container]): the variable of the perceived agent you want to add to your beliefs
+  * `when` (boolean): A boolean value to focus only with a certain condition 
+ 	
+#### Definition
+
+enables to directly add a belief from the variable of a perceived specie.
+
+#### Usages
+
+* Other examples of use: 
+```
+focus var:speed /*where speed is a variable from a species that is being perceived*/
+``` 
+  
+
+#### Embedments
+* The `focus` statement is of type: **Single statement**
+* The `focus` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `focus` statement embeds statements: 
+
+----
+
+[//]: # (keyword|statement_focus_on)
+### focus_on 
+#### Facets 
+  
+  * **`value`** (any type), (omissible) : The agent, list of agents, geometry to focus on 
+ 	
+#### Definition
+
+Allows to focus on the passed parameter in all available displays. Passing 'nil' for the parameter will make all screens return to their normal zoom
+
+#### Usages
+
+* Focuses on an agent, a geometry, a set of agents, etc...)
+
+```
+focus_on my_species(0);
+```
+
+
+
+#### Embedments
+* The `focus_on` statement is of type: **Single statement**
+* The `focus_on` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
+* The `focus_on` statement embeds statements: 
 
 ----
 
@@ -1725,10 +1721,6 @@ method genetic maximize: food_gathered pop_dim: 5 crossover_prob: 0.7 mutation_p
 * The `genetic` statement can be embedded into: Experiment, 
 * The `genetic` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_graphics)
@@ -1768,9 +1760,33 @@ display my_display {
 * The `graphics` statement can be embedded into: display, 
 * The `graphics` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
+----
+
+[//]: # (keyword|statement_highlight)
+### highlight 
+#### Facets 
+  
+  * **`value`** (agent), (omissible) : The agent to hightlight
+  * `color` (rgb): An optional color to highlight the agent. Note that this color will become the default color for further higlight operations 
+ 	
+#### Definition
+
+Allows to highlight the agent passed in parameter in all available displays, optionaly setting a color. Passing 'nil' for the agent will remove the current highlight
+
+#### Usages
+
+* Highlighting an agent
+
+```
+highlight my_species(0) color: #blue;
+```
+
+
+
+#### Embedments
+* The `highlight` statement is of type: **Single statement**
+* The `highlight` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
+* The `highlight` statement embeds statements: 
 
 ----
 
@@ -1809,10 +1825,6 @@ method hill_climbing iter_max: 50 maximize : food_gathered;
 * The `hill_climbing` statement is of type: **Batch method**
 * The `hill_climbing` statement can be embedded into: Experiment, 
 * The `hill_climbing` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -1886,10 +1898,6 @@ else {
 * The `if` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
 * The `if` statement embeds statements: [else](#else),  
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_image)
@@ -1956,10 +1964,6 @@ display my_display {
 * The `image` statement can be embedded into: display, 
 * The `image` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_inspect)
@@ -1989,12 +1993,8 @@ inspect "my_inspector" value: ant attributes: ["name", "location"];
 
 #### Embedments
 * The `inspect` statement is of type: **Output**
-* The `inspect` statement can be embedded into: output, permanent, 
+* The `inspect` statement can be embedded into: output, permanent, Behavior, Sequence of statements or action, 
 * The `inspect` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -2012,10 +2012,6 @@ inspect "my_inspector" value: ant attributes: ["name", "location"];
 * The `let` statement is of type: **Single statement**
 * The `let` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
 * The `let` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -2056,10 +2052,6 @@ light 3 type:point direction:{1,1,-1} color:255 draw_light:true update:false
 * The `light` statement is of type: **Layer**
 * The `light` statement can be embedded into: display, 
 * The `light` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -2154,10 +2146,6 @@ loop i from: 0 to: length (the_list) - 1 {
 * The `loop` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
 * The `loop` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_match)
@@ -2209,10 +2197,6 @@ switch 3 {
 * The `match` statement can be embedded into: switch, 
 * The `match` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_migrate)
@@ -2242,10 +2226,6 @@ migrate ball_in_group target: ball_in_cloud;
 * The `migrate` statement is of type: **Sequence of statements or action**
 * The `migrate` statement can be embedded into: Behavior, Sequence of statements or action, 
 * The `migrate` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -2277,10 +2257,6 @@ monitor "nb preys" value: length(prey as list) refresh_every: 5;
 * The `monitor` statement is of type: **Output**
 * The `monitor` statement can be embedded into: output, permanent, 
 * The `monitor` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -2314,10 +2290,6 @@ experiment exp_name type: gui {
 * The `output` statement can be embedded into: Model, Experiment, 
 * The `output` statement embeds statements: [display](#display),  [inspect](#inspect),  [monitor](#monitor),  [output_file](#output_file),  
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_output_file)
@@ -2337,10 +2309,6 @@ experiment exp_name type: gui {
 * The `output_file` statement is of type: **Output**
 * The `output_file` statement can be embedded into: output, permanent, 
 * The `output_file` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -2378,10 +2346,6 @@ overlay "Cycle: " + (cycle) center: "Duration: " + total_duration + "ms" right: 
 * The `overlay` statement is of type: **Layer**
 * The `overlay` statement can be embedded into: display, 
 * The `overlay` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -2427,16 +2391,49 @@ parameter 'Value of titi:' var: titi min: 1 max: 100 step: 2;
 * The `parameter` statement can be embedded into: Experiment, 
 * The `parameter` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
+----
+
+[//]: # (keyword|statement_perceive)
+### perceive 
+#### Facets 
+  
+  * **`target`** (any type in [container, point, agent]): the list of the agent you want to perceive
+  * `name` (an identifier), (omissible) : the name of the perception
+  * `as` (species): an expression that evaluates to a species
+  * `emotion` (546706): The emotion needed to do the perception
+  * `in` (any type in [float, geometry]): a float or a geometry. If it is a float, it's a radius of a detection area. If it is a geometry, it is the area of detection of others species.
+  * `threshold` (float): Threshold linked to the emotion.
+  * `when` (boolean): a boolean to tell when does the perceive is active 
+ 	
+#### Definition
+
+Allow the agent, with a bdi architecture, to perceive others agents
+
+#### Usages
+
+* the basic syntax to perceive agents inside a circle of perception
+
+```
+perceive name_of-perception target: the_agents_you_want_to_perceive in: a_distance when: a_certain_condition {
+Here you are in the context of the perceived agents. To refer to the agent who does the perception, use myself.
+If you want to make an action (such as adding a belief for example), use ask myself{ do the_action}
+}
+```
+
+
+
+#### Embedments
+* The `perceive` statement is of type: **Sequence of statements or action**
+* The `perceive` statement can be embedded into: Species, Model, 
+* The `perceive` statement embeds statements: 
 
 ----
 
 [//]: # (keyword|statement_permanent)
 ### permanent 
 #### Facets 
- 
+
+  * `layout` (int), (omissible) : Either #none, to indicate that no layout will be imposed, or one of the four possible predefined layouts: #stack, #split, #horizontal or #vertical. This layout will be applied to both experiment and simulation display views 
  	
 #### Definition
 
@@ -2463,9 +2460,25 @@ permanent {
 * The `permanent` statement can be embedded into: Experiment, 
 * The `permanent` statement embeds statements: [display](#display),  [inspect](#inspect),  [monitor](#monitor),  [output_file](#output_file),  
 
-[Top of the page](#table-of-contents)
-		
-	
+----
+
+[//]: # (keyword|statement_plan)
+### plan 
+#### Facets 
+
+  * `name` (an identifier), (omissible) : 
+  * `emotion` (546706): 
+  * `finished_when` (boolean): 
+  * `instantaneous` (boolean): 
+  * `intention` (546704): 
+  * `priority` (float): 
+  * `threshold` (float): 
+  * `when` (boolean): 
+
+#### Embedments
+* The `plan` statement is of type: **Behavior**
+* The `plan` statement can be embedded into: Species, Model, 
+* The `plan` statement embeds statements: 
 
 ----
 
@@ -2529,10 +2542,6 @@ put -30 all: true in: putMap; 	// putMap equals ["x"::-30,"y"::-30, "z"::-30]
 * The `put` statement can be embedded into: chart, Behavior, Sequence of statements or action, 
 * The `put` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_reactive_tabu)
@@ -2577,10 +2586,6 @@ method reactive_tabu iter_max: 50 tabu_list_size_init: 5 tabu_list_size_min: 2 t
 * The `reactive_tabu` statement can be embedded into: Experiment, 
 * The `reactive_tabu` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_reflex)
@@ -2610,10 +2615,6 @@ reflex my_reflex when: flip (0.5){ 		//Only executed when flip returns true
 * The `reflex` statement is of type: **Behavior**
 * The `reflex` statement can be embedded into: Species, Experiment, Model, 
 * The `reflex` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -2671,10 +2672,6 @@ release list (C) as: new_species in: new host;
 * The `release` statement is of type: **Sequence of statements or action**
 * The `release` statement can be embedded into: Behavior, Sequence of statements or action, 
 * The `release` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -2776,10 +2773,6 @@ species speciesRemove {
 * The `remove` statement can be embedded into: chart, Behavior, Sequence of statements or action, 
 * The `remove` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_return)
@@ -2828,9 +2821,46 @@ reflex writing {
 * The `return` statement can be embedded into: action, Behavior, Sequence of statements or action, 
 * The `return` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
+----
+
+[//]: # (keyword|statement_rule)
+### rule 
+#### Facets 
+
+  * `name` (an identifier), (omissible) : The name of the rule
+  * `belief` (546704): The mandatory belief
+  * `desire` (546704): The mandatory desire
+  * `emotion` (546706): The mandatory emotion
+  * `new_belief` (546704): The belief that will be added
+  * `new_desire` (546704): The desire that will be added
+  * `new_emotion` (546706): The emotion that will be added
+  * `new_uncertainty` (546704): The uncertainty that will be added
+  * `priority` (any type in [float, int]): The priority of the predicate added as a desire
+  * `remove_belief` (546704): The belief that will be removed
+  * `remove_desire` (546704): The desire that will be removed
+  * `remove_emotion` (546706): The emotion that will be removed
+  * `remove_intention` (546704): The intention that will be removed
+  * `remove_uncertainty` (546704): The uncertainty that will be removed
+  * `threshold` (float): Threshold linked to the emotion.
+  * `uncertainty` (546704): The mandatory uncertainty
+  * `when` (boolean):  
+ 	
+#### Definition
+
+enables to add a desire or a belief or to remove a belief, a desire or an intention if the agent gets the belief or/and desire or/and condition mentioned.
+
+#### Usages
+
+* Other examples of use: 
+```
+rule belief: new_predicate("test") when: flip(0.5) new_desire: new_predicate("test")
+``` 
+  
+
+#### Embedments
+* The `rule` statement is of type: **Single statement**
+* The `rule` statement can be embedded into: Species, Model, 
+* The `rule` statement embeds statements: 
 
 ----
 
@@ -2851,10 +2881,6 @@ reflex writing {
 * The `run` statement can be embedded into: Behavior, Single statement, Species, Model, 
 * The `run` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_save)
@@ -2866,12 +2892,12 @@ reflex writing {
   * `crs` (any type): the name of the projection, e.g. crs:"EPSG:4326" or its EPSG id, e.g. crs:4326. Here a list of the CRS codes (and EPSG id): http://spatialreference.org
   * `header` (boolean): an expression that evaluates to a boolean, specifying whether the save will write a header if the file does not exist
   * `rewrite` (boolean): an expression that evaluates to a boolean, specifying whether the save will ecrase the file or append data at the end of it
-  * `type` (an identifier), takes values in: {shp, text, csv, asc}: an expression that evaluates to an string, the type of the output file (it can be only "shp", "asc", "text" or "csv")
+  * `type` (an identifier), takes values in: {shp, text, csv, asc, geotiff, image}: an expression that evaluates to an string, the type of the output file (it can be only "shp", "asc", "geotiff", "image", "text" or "csv")
   * `with` (map): Not yet used 
  	
 #### Definition
 
-Allows to save data in a file. The type of file can be "shp", "text" or "csv".
+Allows to save data in a file. The type of file can be "shp", "asc", "geotiff", "text" or "csv".
 
 #### Usages
 
@@ -2910,16 +2936,33 @@ save species_of(self) to: "save_shapefile.shp" type: "shp" with: [name::"nameAge
 ```
 
 
+* To save the grid_value attributes of all the cells of a grid into an ESRI ASCII Raster file:
+
+```
+save grid to: "save_grid.asc" type: "asc";
+```
+
+
+* To save the grid_value attributes of all the cells of a grid into geotiff:
+
+```
+save grid to: "save_grid.tif" type: "geotiff";
+```
+
+
+* To save the grid_value attributes of all the cells of a grid into png (with a worldfile):
+
+```
+save grid to: "save_grid.png" type: "image";
+```
+
+
 * The save statement can be use in an init block, a reflex, an action or in a user command. Do not use it in experiments.
 
 #### Embedments
 * The `save` statement is of type: **Single statement**
 * The `save` statement can be embedded into: Behavior, Sequence of statements or action, 
 * The `save` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -2935,10 +2978,6 @@ save species_of(self) to: "save_shapefile.shp" type: "shp" with: [name::"nameAge
 * The `save_batch` statement is of type: **Batch method**
 * The `save_batch` statement can be embedded into: Experiment, 
 * The `save_batch` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -2960,10 +2999,6 @@ Allows to assign a value to the variable or attribute specified
 * The `set` statement is of type: **Single statement**
 * The `set` statement can be embedded into: chart, Behavior, Sequence of statements or action, 
 * The `set` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -3002,10 +3037,6 @@ species Tester {
 * The `setup` statement can be embedded into: Species, Experiment, Model, 
 * The `setup` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_simulate)
@@ -3039,10 +3070,6 @@ ask receiver_agent(s) {
 * The `simulate` statement is of type: **Single statement**
 * The `simulate` statement can be embedded into: chart, Experiment, Species, Behavior, Sequence of statements or action, 
 * The `simulate` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -3080,10 +3107,6 @@ solve SIR method: "rk4" step:0.001;
 * The `solve` statement is of type: **Single statement**
 * The `solve` statement can be embedded into: Behavior, Sequence of statements or action, 
 * The `solve` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -3153,10 +3176,6 @@ grid ant_grid file: grid_file neighbors: 8 use_regular_agents: false {
 * The `species` statement can be embedded into: Model, Environment, Species, 
 * The `species` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_state)
@@ -3209,10 +3228,6 @@ A state, like a reflex, can contains several statements that can be executed at 
 * The `state` statement can be embedded into: fsm, Species, Experiment, Model, 
 * The `state` statement embeds statements: [enter](#enter),  [exit](#exit),  
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_status)
@@ -3231,7 +3246,7 @@ The statement makes the agent output an arbitrary message in the status box.
 * Outputting a message
 
 ```
-status ('This is my status ' + self) color: Â°yellow;
+status ('This is my status ' + self) color: ÃÂ°yellow;
 ```
 
 
@@ -3240,10 +3255,6 @@ status ('This is my status ' + self) color: Â°yellow;
 * The `status` statement is of type: **Single statement**
 * The `status` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
 * The `status` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -3292,10 +3303,6 @@ switch 3 {
 * The `switch` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
 * The `switch` statement embeds statements: [default](#default),  [match](#match),  
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_tabu)
@@ -3335,10 +3342,6 @@ method tabu iter_max: 50 tabu_list_size: 5 maximize: food_gathered;
 * The `tabu` statement can be embedded into: Experiment, 
 * The `tabu` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_task)
@@ -3359,10 +3362,6 @@ As reflex, a task is a sequence of statements that can be executed, at each time
 * The `task` statement is of type: **Behavior**
 * The `task` statement can be embedded into: weighted_tasks, sorted_tasks, probabilistic_tasks, Species, Experiment, Model, 
 * The `task` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -3402,10 +3401,6 @@ species Tester {
 * The `test` statement can be embedded into: Species, Experiment, Model, 
 * The `test` statement embeds statements: [assert](#assert),  
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_trace)
@@ -3424,10 +3419,6 @@ All the statements executed in the trace statement are displayed in the console.
 * The `trace` statement is of type: **Sequence of statements or action**
 * The `trace` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
 * The `trace` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -3463,9 +3454,36 @@ In an FSM architecture, `transition` specifies the next state of the life cycle.
 * The `transition` statement can be embedded into: Sequence of statements or action, Behavior, 
 * The `transition` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
+----
+
+[//]: # (keyword|statement_unconscious_contagion)
+### unconscious_contagion 
+#### Facets 
+  
+  * **`emotion`** (546706): the emotion that will be copied with the contagion
+  * `name` (an identifier), (omissible) : the identifier of the unconscious contagion
+  * `charisma` (float): The charisma value of the perceived agent (between 0 and 1)
+  * `receptivity` (float): The receptivity value of the current agent (between 0 and 1)
+  * `threshold` (float): The threshold value to make the contagion
+  * `when` (boolean): A boolean value to get the emotion only with a certain condition 
+ 	
+#### Definition
+
+enables to directly copy an emotion presents in the perceived specie.
+
+#### Usages
+
+* Other examples of use: 
+```
+unconscious_contagion emotion:fearConfirmed; 
+unconscious_contagion emotion:fearConfirmed charisma: 0.5 receptivity: 0.5;
+``` 
+  
+
+#### Embedments
+* The `unconscious_contagion` statement is of type: **Single statement**
+* The `unconscious_contagion` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `unconscious_contagion` statement embeds statements: 
 
 ----
 
@@ -3500,10 +3518,6 @@ user_command kill_myself action: some_action with: [arg1::val1, arg2::val2, ...]
 * The `user_command` statement can be embedded into: user_panel, Species, Experiment, Model, 
 * The `user_command` statement embeds statements: [user_input](#user_input),  
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_user_init)
@@ -3525,10 +3539,6 @@ Used in the user control architecture, user_init is executed only once when the 
 * The `user_init` statement is of type: **Behavior**
 * The `user_init` statement can be embedded into: Species, Experiment, Model, 
 * The `user_init` statement embeds statements: [user_panel](#user_panel),  
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -3564,10 +3574,6 @@ user_panel "Advanced Control" {
 * The `user_input` statement is of type: **Single statement**
 * The `user_input` statement can be embedded into: user_command, 
 * The `user_input` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -3607,10 +3613,6 @@ user_panel "Advanced Control" {
 * The `user_panel` statement can be embedded into: fsm, user_first, user_last, user_init, user_only, Species, Experiment, Model, 
 * The `user_panel` statement embeds statements: [user_command](#user_command),  
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_using)
@@ -3640,10 +3642,6 @@ using topology(grid_ant) {
 * The `using` statement is of type: **Sequence of statements or action**
 * The `using` statement can be embedded into: chart, Behavior, Sequence of statements or action, 
 * The `using` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -3677,10 +3675,6 @@ Allows to declare an attribute of a species or an experiment
 * The `Variable_container` statement can be embedded into: Species, Experiment, Model, 
 * The `Variable_container` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_Variable_number)
@@ -3713,10 +3707,6 @@ Allows to declare an attribute of a species or experiment
 * The `Variable_number` statement can be embedded into: Species, Experiment, Model, 
 * The `Variable_number` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_Variable_regular)
@@ -3748,10 +3738,6 @@ Allows to declare an attribute of a species or an experiment
 * The `Variable_regular` statement can be embedded into: Species, Experiment, Model, 
 * The `Variable_regular` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_warn)
@@ -3778,10 +3764,6 @@ warn 'This is a warning from ' + self;
 * The `warn` statement is of type: **Single statement**
 * The `warn` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
 * The `warn` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -3810,7 +3792,3 @@ write 'This is a message from ' + self;
 * The `write` statement is of type: **Single statement**
 * The `write` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
 * The `write` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
