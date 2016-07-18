@@ -27,6 +27,7 @@ global {
 In this example, each simulation step will represent 1 hour. This time will be taken into account for all actions based on time (e.g. moving actions).
 
 Note that the value of the step variable should be given in seconds. To facilitate the definition of the step value and of all expressions based on time, GAMA provides [different built-in constant variables accessible with the "`#`" symbol](UnitsAndConstants#time-units): 
+
  * `#s` : second - 1 second
  * `#mn` : minute - 60 seconds
  * `#hour` : hour - 60 minutes - 3600 seconds
@@ -38,6 +39,7 @@ Note that the value of the step variable should be given in seconds. To facilita
 ## The date variable type and the use of a real calendar
 Since GAMA 1.7, it is possible to use a real calendar to manage the time. For that, the modeler have just to define the starting date of the simulation. This variable is of type date which allow to represent a date and time. 
 A date variable has several attributes:
+
 * `year` (int): the year component of the date
 * `month` (int): the month component of the date
 * `day` (int): the day component of the date
