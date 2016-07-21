@@ -1257,7 +1257,7 @@ do name_of_action_or_primitive {
  	
 #### Definition
 
-`draw` is used in an aspect block to expresse how agents of the species will be drawn. It is evaluated each time the agent has to be drawn. It can also be used in the graphics block.
+`draw` is used in an aspect block to express how agents of the species will be drawn. It is evaluated each time the agent has to be drawn. It can also be used in the graphics block.
 
 #### Usages
 
@@ -3246,7 +3246,7 @@ The statement makes the agent output an arbitrary message in the status box.
 * Outputting a message
 
 ```
-status ('This is my status ' + self) color: ÃÂ°yellow;
+status ('This is my status ' + self) color: Â°yellow;
 ```
 
 
