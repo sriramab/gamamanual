@@ -444,8 +444,8 @@ Returns the RMS (Root-Mean-Square) of a data sequence. The RMS of data sequence 
   *  **`skew`** (`float` , `float`) --->  `float` 
 
 #### Result: 
-Returns the skew of a data sequence, which is moment(data,3,mean) / standardDeviation3
 Returns the skew of a data sequence.
+Returns the skew of a data sequence, which is moment(data,3,mean) / standardDeviation3
     	
 ----
 

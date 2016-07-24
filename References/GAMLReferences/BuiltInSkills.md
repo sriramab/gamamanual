@@ -46,8 +46,6 @@ if speed = 5 {
 }
 ```
 
-[Top of the page](#table-of-contents)
-
 ----
 
 
@@ -152,10 +150,7 @@ action to choose a speed
 action to test if the driver can take the given road
 
 * returns: bool 			
-* **`new_road`** (agent): the road to test	
-
-[Top of the page](#table-of-contents)
-	
+* **`new_road`** (agent): the road to test
     	
 ----
 
@@ -197,10 +192,7 @@ moves the agent towards the target passed in the arguments while considering the
 * **`move_weights`** (map): Weigths used for the moving. 			
 * **`living_space`** (float): min distance between the agent and an obstacle (replaces the current value of living_space) 			
 * **`tolerance`** (float): tolerance distance used for the computation (replaces the current value of tolerance) 			
-* **`lanes_attribute`** (string): the name of the attribut of the road agent that determine the number of road lanes (replaces the current value of lanes_attribute)	
-
-[Top of the page](#table-of-contents)
-	
+* **`lanes_attribute`** (string): the name of the attribut of the road agent that determine the number of road lanes (replaces the current value of lanes_attribute)
     	
 ----
 
@@ -343,10 +335,7 @@ Replies a message with a 'subscribe' performative message.
 
 * returns: unknown 			
 * **`message`** (24): The message to be replied 			
-* **`contents`** (list): The content of the replying message	
-
-[Top of the page](#table-of-contents)
-	
+* **`contents`** (list): The content of the replying message
     	
 ----
 
@@ -380,10 +369,7 @@ Replies a message with a 'subscribe' performative message.
 
 
 * returns: bool 			
-* **`params`** (map): Connection parameters	
-
-[Top of the page](#table-of-contents)
-	
+* **`params`** (map): Connection parameters
     	
 ----
 
@@ -401,9 +387,6 @@ Replies a message with a 'subscribe' performative message.
   * **`neighbors`** (`list`): Represents the neighbor at distance 1 of the cell 
  	
 ### Actions
-		
-
-[Top of the page](#table-of-contents)
 	
     	
 ----
@@ -438,10 +421,7 @@ Replies a message with a 'subscribe' performative message.
 #### **`timeStamp`**
 
 
-* returns: float	
-
-[Top of the page](#table-of-contents)
-	
+* returns: float
     	
 ----
 
@@ -461,10 +441,7 @@ A simple skill that provides agents with a mailbox than can be filled with messa
 
 * returns: msi.gama.extensions.messaging.GamaMessage 			
 * **`to`** (any type): The agent, or server, to which this message will be sent to 			
-* **`contents`** (any type): The contents of the message, an arbitrary object	
-
-[Top of the page](#table-of-contents)
-	
+* **`contents`** (any type): The contents of the message, an arbitrary object
     	
 ----
 
@@ -516,10 +493,7 @@ Moves the agent towards a random location at the maximum distance (with respect 
 * returns: void 			
 * **`speed`** (float): the speed to use for this move (replaces the current value of speed) 			
 * **`amplitude`** (int): a restriction placed on the random heading choice. The new heading is chosen in the range (heading - amplitude/2, heading+amplitude/2) 			
-* **`bounds`** (agent,geometry): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry	
-
-[Top of the page](#table-of-contents)
-	
+* **`bounds`** (agent,geometry): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry
     	
 ----
 
@@ -546,10 +520,7 @@ moves the agent forward, the distance being computed with respect to its speed a
 * **`heading`** (int): int, optional, the direction to take for this move (replaces the current value of heading) 			
 * **`pitch`** (int): int, optional, the direction to take for this move (replaces the current value of pitch) 			
 * **`heading`** (int): int, optional, the direction to take for this move (replaces the current value of roll) 			
-* **`bounds`** (geometry,agent): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry	
-
-[Top of the page](#table-of-contents)
-	
+* **`bounds`** (geometry,agent): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry
     	
 ----
 
@@ -567,9 +538,6 @@ moves the agent forward, the distance being computed with respect to its speed a
   * **`velocity`** (`list`):  
  	
 ### Actions
-		
-
-[Top of the page](#table-of-contents)
 	
     	
 ----
@@ -602,10 +570,7 @@ register the agent on the road at the given lane
 unregister the agent on the road
 
 * returns: void 			
-* **`agent`** (agent): the agent to unregister on the road.	
-
-[Top of the page](#table-of-contents)
-	
+* **`agent`** (agent): the agent to unregister on the road.
     	
 ----
 
@@ -622,9 +587,6 @@ unregister the agent on the road
   * **`stop`** (`list`): define for each type of stop, the list of concerned roads 
  	
 ### Actions
-		
-
-[Top of the page](#table-of-contents)
 	
     	
 ----
@@ -661,11 +623,6 @@ unregister the agent on the road
 * **`dateStr`** (string): Start date 			
 * **`offset`** (string): number on day to increase or decrease  
 	 
-#### **`helloWorld`**
-
-
-* returns: unknown  
-	 
 #### **`insert`**
 
 
@@ -700,7 +657,4 @@ unregister the agent on the road
 #### **`timeStamp`**
 
 
-* returns: float	
-
-[Top of the page](#table-of-contents)
-	
+* returns: float

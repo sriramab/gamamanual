@@ -49,10 +49,6 @@
 * The `pause_sound` statement can be embedded into: Behavior, Sequence of statements or action, 
 * The `pause_sound` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_resume_sound)
@@ -64,10 +60,6 @@
 * The `resume_sound` statement is of type: **Sequence of statements or action**
 * The `resume_sound` statement can be embedded into: Behavior, Sequence of statements or action, 
 * The `resume_sound` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-	
 
 ----
 
@@ -84,10 +76,6 @@
 * The `start_sound` statement can be embedded into: Behavior, Sequence of statements or action, 
 * The `start_sound` statement embeds statements: 
 
-[Top of the page](#table-of-contents)
-		
-	
-
 ----
 
 [//]: # (keyword|statement_stop_sound)
@@ -98,11 +86,7 @@
 #### Embedments
 * The `stop_sound` statement is of type: **Sequence of statements or action**
 * The `stop_sound` statement can be embedded into: Behavior, Sequence of statements or action, 
-* The `stop_sound` statement embeds statements: 
-
-[Top of the page](#table-of-contents)
-		
-		
+* The `stop_sound` statement embeds statements: 	
 	
 ----
 

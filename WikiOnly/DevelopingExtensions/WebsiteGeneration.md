@@ -372,7 +372,7 @@ ___________________________________________________________
 
 _The following text has been automatically generated from "mainCheckConcepts"_
 
-______________ _last update : 2016/05/30 13:41:10_
+______________ _last update : 2016/07/21 08:58:31_
 
 **List of concepts to use for model library (except Syntax):**
 
@@ -388,30 +388,30 @@ arithmetic, attribute, cast, condition, container, filter, list, logical, loop, 
 
 | **Concept name** | **in Doc** | **in GAML Ref** | **in Model Lib** | **TOTAL** |
 |:----------------------------|:-------------|:-------------|:-------------|:-------------|
-| 3d | 2 | 17 | 39 | 58 |
+| 3d | 2 | 19 | 39 | 60 |
 | action | 3 | 3 | _ | 7 |
 | agent_location | 1 | 21 | 0 | 22 |
 | agent_movement | 0 | 2 | 23 | 25 |
 | algorithm | 1 | 8 | 2 | 11 |
-| architecture | 2 | 9 | 1 | 12 |
+| architecture | 2 | 10 | 1 | 13 |
 | arithmetic | 0 | 33 | 0 | 33 |
 | asc | 0 | 2 | 2 | 4 |
 | attribute | 2 | 6 | _ | 9 |
 | autosave | 2 | _ | _ | 2 |
 | background | 1 | _ | _ | 1 |
 | batch | 3 | 8 | 4 | 15 |
-| bdi | 1 | 0 | 0 | 1 |
+| bdi | 1 | 32 | 0 | 33 |
 | behavior | 3 | 7 | _ | 10 |
 | camera | 1 | 1 | 2 | 4 |
 | cast | 1 | 16 | 1 | 18 |
 | chart | 0 | 5 | 5 | 10 |
-| clustering | 0 | 2 | 3 | 5 |
-| color | 1 | 16 | 4 | 21 |
+| clustering | 0 | 4 | 3 | 7 |
+| color | 1 | 17 | 4 | 22 |
 | communication | 0 | 3 | 0 | 3 |
 | comodel | 0 | 0 | 8 | 8 |
 | comparison | 0 | 6 | 2 | 8 |
 | condition | 1 | 7 | 0 | 8 |
-| constant | 0 | 10 | _ | 10 |
+| constant | 0 | 13 | _ | 13 |
 | container | 1 | 58 | 1 | 60 |
 | csv | 2 | 4 | 3 | 9 |
 | cycle | 2 | 1 | _ | 3 |
@@ -420,8 +420,8 @@ arithmetic, attribute, cast, condition, container, filter, list, logical, loop, 
 | dem | 0 | 0 | 1 | 1 |
 | dgs | 0 | 0 | 1 | 1 |
 | diffusion | 1 | 1 | 14 | 16 |
-| dimension | 2 | 31 | _ | 33 |
-| display | 2 | 21 | _ | 25 |
+| dimension | 2 | 33 | _ | 35 |
+| display | 2 | 25 | _ | 29 |
 | distribution | 1 | _ | _ | 1 |
 | dxf | 0 | 2 | 1 | 3 |
 | edge | 1 | 15 | 1 | 17 |
@@ -434,13 +434,13 @@ arithmetic, attribute, cast, condition, container, filter, list, logical, loop, 
 | filter | 1 | 12 | 0 | 13 |
 | fipa | 1 | 4 | 11 | 16 |
 | fsm | 1 | 0 | 0 | 1 |
-| geometry | 2 | 90 | 0 | 92 |
+| geometry | 2 | 94 | 0 | 96 |
 | gis | 0 | 3 | 24 | 27 |
 | global | 1 | _ | _ | 1 |
 | graph | 1 | 54 | 32 | 87 |
 | graph_weight | 1 | 3 | 0 | 4 |
-| graphic | 1 | 8 | 1 | 10 |
-| graphic_unit | 1 | 4 | _ | 5 |
+| graphic | 1 | 10 | 1 | 12 |
+| graphic_unit | 1 | 6 | _ | 7 |
 | grid | 4 | 10 | 33 | 47 |
 | gui | 3 | 9 | 24 | 36 |
 | halt | 1 | _ | _ | 1 |
@@ -479,7 +479,7 @@ arithmetic, attribute, cast, condition, container, filter, list, logical, loop, 
 | osm | 1 | 2 | 2 | 5 |
 | output | 2 | _ | _ | 7 |
 | overlay | 0 | 0 | 1 | 1 |
-| parameter | 2 | 2 | _ | 4 |
+| parameter | 2 | 1 | _ | 3 |
 | pause | 1 | _ | _ | 1 |
 | permanent | 1 | _ | _ | 1 |
 | physics_engine | 0 | 0 | 4 | 4 |
@@ -499,15 +499,15 @@ arithmetic, attribute, cast, condition, container, filter, list, logical, loop, 
 | shape | 3 | 21 | 1 | 25 |
 | shapefile | 2 | 2 | 34 | 38 |
 | shortest_path | 1 | 6 | 4 | 11 |
-| skill | 2 | 16 | 42 | 60 |
+| skill | 2 | 17 | 42 | 61 |
 | sound | 0 | 4 | 0 | 4 |
 | spatial_computation | 0 | 71 | 7 | 78 |
 | spatial_relation | 0 | 30 | 0 | 30 |
-| spatial_transformation | 0 | 25 | 2 | 27 |
+| spatial_transformation | 0 | 24 | 2 | 26 |
 | species | 1 | 18 | _ | 19 |
 | sport | 0 | _ | 2 | 2 |
-| statistic | 0 | 62 | 5 | 67 |
-| string | 0 | 28 | 0 | 28 |
+| statistic | 0 | 65 | 5 | 70 |
+| string | 0 | 30 | 0 | 30 |
 | surface_unit | 0 | 4 | _ | 4 |
 | svg | 0 | 2 | 0 | 2 |
 | system | 1 | 11 | 0 | 12 |
@@ -523,10 +523,10 @@ arithmetic, attribute, cast, condition, container, filter, list, logical, loop, 
 | torus | 1 | _ | _ | 1 |
 | transport | 1 | 5 | 6 | 12 |
 | txt | 0 | 0 | 1 | 1 |
-| type | 0 | 43 | _ | 43 |
+| type | 0 | 49 | _ | 49 |
 | update | 1 | _ | _ | 1 |
 | volume_unit | 0 | 5 | _ | 5 |
-| weight_unit | 0 | 6 | _ | 6 |
+| weight_unit | 0 | 8 | _ | 8 |
 | world | 1 | _ | _ | 1 |
 | write | 1 | _ | _ | 1 |
 | xml | 0 | 4 | 0 | 4 |
