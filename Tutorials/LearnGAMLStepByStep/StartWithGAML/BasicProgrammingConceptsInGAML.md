@@ -484,4 +484,5 @@ list TwoRandomValuesFromTheList <- 2 among [5,4,9,8];
 
 [//]: # (keyword|concept_distribution)
 You can use probabilistic laws, using operators such as [`gauss`](Operators#gauss), [`poisson`](Operators#poisson), [`binomial`](Operators#binomial), or [`truncated_gauss`](Operators#truncated_gauss) (we invite you to read the documentation for those operators).
+
 [//]: # (endConcept|programming_basis)
