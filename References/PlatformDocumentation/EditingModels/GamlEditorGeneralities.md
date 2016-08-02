@@ -14,7 +14,7 @@ The GAML Editor is a text editor that proposes several services to support the m
 
 ## Creating a first model
 
-Editing a model requires that at least one **project** is created in _User Models_. If there is none, right-click on _User Models_ and choose "New… > Gama Project…" (if you already have user projects and want to create a model in one of them, skip the next step).
+Editing a model requires that at least one **project** is created in _User Models_. If there is none, right-click on _User Models_ and choose "New... > Gama Project..." (if you already have user projects and want to create a model in one of them, skip the next step).
 
 ![images/1.new_project.png](resources/images/editingModels/1.new_project.png)
 
@@ -23,7 +23,7 @@ A dialog is then displayed, offering you to enter the name of the project as wel
 ![images/2.new_project2.png](resources/images/editingModels/2.new_project2.png)
 
 
-Once the project is created (or if you have an existing project), navigate to it and right-click on it. This time, choose "New…>Model file…" to create a new model.
+Once the project is created (or if you have an existing project), navigate to it and right-click on it. This time, choose "New...>Model file..." to create a new model.
 
 ![images/3.new_model.png](resources/images/editingModels/3.new_model.png)
 
@@ -62,7 +62,7 @@ Experiment buttons are updated in real-time to reflect what's in your code. If m
 
 ## Editor Preferences
 
-Text editing in general, and especially in Eclipse-based editors, sports a number of options and preferences. You might want to turn off/on the numbering of the lines, change the fonts used, change the colors used to highlight the code, etc. All of these preferences are accessible from the "Preferences…" item of the editor contextual menu.
+Text editing in general, and especially in Eclipse-based editors, sports a number of options and preferences. You might want to turn off/on the numbering of the lines, change the fonts used, change the colors used to highlight the code, etc. All of these preferences are accessible from the "Preferences..." item of the editor contextual menu.
 
 ![images/10.view_model_with_preferences.png](resources/images/editingModels/10.view_model_with_preferences.png)
 

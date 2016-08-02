@@ -65,7 +65,7 @@ In addition to the RSS reader described above, below is a list of plugins that h
 ### Overview
   * A very useful plugin for working with large model files. It renders an overview of the file in a separate view (with a user selectable font size), allowing to know where the edition takes place, but also to navigate very quickly and efficiently to different places in the model.
   * Update site: http://sandipchitaleseclipseplugins.googlecode.com/svn/trunk/text.overview.updatesite/site.xml
-  * After installing the plugin, an error might happen when closing GAMA. It is harmless. After restarting GAMA, go to Views > Open View > Others… > Overview >.
+  * After installing the plugin, an error might happen when closing GAMA. It is harmless. After restarting GAMA, go to Views > Open View > Others... > Overview >.
 
 ### Git
   * Git is a version control system (like CVS or SVN, extensively used in GAMA) http://git-scm.com/. Free sharing space are provided on website such as [GitHub](https://github.com/) or [Google Code](https://code.google.com/) among others. Installing Git allows to share or gather models that are available in Git repositories.

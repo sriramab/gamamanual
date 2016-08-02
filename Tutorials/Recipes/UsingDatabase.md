@@ -500,7 +500,7 @@ This action returns the connection parameter of species.
 ```
 ask agentDB {
 	if (self isConnected){
-		write “the connection parameter: ” +(self getParameter);
+		write "the connection parameter: " +(self getParameter);
         }
 }
 ```

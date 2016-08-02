@@ -11,7 +11,7 @@ Unless you are using the version of GAMA built from the sources available in the
 
 
 ## Manual Update
-To activate this feature, you have to invoke the "Check for Updates" or "Install New Software…" menu commands in the "Help" menu.
+To activate this feature, you have to invoke the "Check for Updates" or "Install New Software..." menu commands in the "Help" menu.
 
 The first one will only check if the existing plugins have any updates available, while the second will, in addition, scan the update site to detect any new plugins that might be added to the current installation.
 
@@ -30,7 +30,7 @@ GAMA will then scan the entire update site, looking both for new plugins (the ex
 
 ![Display of the list of available extensions.](resources/images/installationAndLaunching/dialog_install_2.png)
 
-Choose the ones you want to install (or update) and click "Next…". A summary page will appear, indicating which plugins will actually be installed (since some plugins might require additional plugins to run properly), followed by a license page that you have to accept. GAMA will then proceed to the installation (that can be cancelled any time) of the plugins chosen.
+Choose the ones you want to install (or update) and click "Next...". A summary page will appear, indicating which plugins will actually be installed (since some plugins might require additional plugins to run properly), followed by a license page that you have to accept. GAMA will then proceed to the installation (that can be cancelled any time) of the plugins chosen.
 
 During the course of the installation, you might receive the following warning, that you can dismiss by clicking "OK".
 
@@ -43,7 +43,7 @@ Once the plugins are installed, GAMA will ask you whether you want to restart or
 
 
 ## Automatic Update
-GAMA offers a mechanism to monitor the availability of updates to the plugins already installed. To install this feature, [open the preferences of GAMA](Preferences) and choose the button "Advanced…", which gives access to additional preferences.
+GAMA offers a mechanism to monitor the availability of updates to the plugins already installed. To install this feature, [open the preferences of GAMA](Preferences) and choose the button "Advanced...", which gives access to additional preferences.
 
 ![Button to give access to additional preferences.](resources/images/installationAndLaunching/open_advanced.png)
 

@@ -48,7 +48,7 @@ In addition to the attributes the modeler explicitly defines, species "inherits"
 In this first model, we define one species of agents: the **prey** agents. For the moment, these agents will not have a particular behavior, they will just exist and be displayed.
 
 #### Display
-An agent [aspects](RegularSpecies#the-aspect-statement) have to be defined. An aspect is a way to display the agents of a species : aspect aspect\_name {…}
+An agent [aspects](RegularSpecies#the-aspect-statement) have to be defined. An aspect is a way to display the agents of a species : aspect aspect\_name {...}
 In the block of an aspect, it is possible to draw :
   * A geometry :  for instance, the shape of the agent (but it may be a different one, for instance a disk instead of a complex polygon)
   * An image : to draw icons
@@ -75,7 +75,7 @@ species prey {
 
 ### global section
 The global section represents a specific agent, called world. Defining this agent follows the same principle as any agent and is, thus, defined after a species.
-The world agent represents everything that is global to the model : dynamics, variables…
+The world agent represents everything that is global to the model : dynamics, variables...
 It allows to initialize simulations (init block): the world is always created and initialized first when a simulation is launched (before any other agents). The geometry (shape) of the world agent is by default a square with 100m for side size, but can be redefined if necessary (see the [Road traffic tutorial](RoadTrafficModel)).
 
 #### global variable

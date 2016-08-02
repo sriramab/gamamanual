@@ -21,7 +21,7 @@ West africa is one of the part of the world that faced the most climate variabil
 
 **Hédia Zardi - Tran Thi Cam Giang** _Modelisation of the SEIR model by GAMA_
 
-Until today, many infectious diseases in the world such as measles, tuberculosis, dengue … still exist. These diseases are one of the main causes of infant mortality in most countries of Asis, Africa, etc.
+Until today, many infectious diseases in the world such as measles, tuberculosis, dengue ... still exist. These diseases are one of the main causes of infant mortality in most countries of Asis, Africa, etc.
 Therefore, we want to present these infectious diseases in the computer models, after we want to find the periods of diseases to provide positive solutions that allow us to turn them off.
 
 ## Second year (promo2011)

@@ -1974,8 +1974,8 @@ the center of the arc is by default the location of the current agent in which h
 
 #### Examples: 
 ```
-geometry var0 <- arc(4,45,90, false); 	// var0 equals a geometry as an arc of radius 4, in a direction of 45Â° and an amplitude of 90Â°, which only contains the points on the arc
-geometry var1 <- arc(4,45,90); 	// var1 equals a geometry as an arc of radius 4, in a direction of 45Â° and an amplitude of 90Â°
+geometry var0 <- arc(4,45,90, false); 	// var0 equals a geometry as an arc of radius 4, in a direction of 45° and an amplitude of 90Â°, which only contains the points on the arc
+geometry var1 <- arc(4,45,90); 	// var1 equals a geometry as an arc of radius 4, in a direction of 45° and an amplitude of 90°
 ```
       
 

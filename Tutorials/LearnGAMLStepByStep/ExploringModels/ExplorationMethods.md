@@ -85,7 +85,7 @@ Algorithm:
  While iter <= iter_max, do:
    Choice of the solution s' in the neighborhood of s that maximize the fitness function
    If f(s') > f(s)
-     s = s’
+     s = s'
    Else
      end of the search process
    EndIf
@@ -235,7 +235,7 @@ This is a simple implementation of Genetic Algorithms (GA). See the wikipedia ar
 * Selection: only a part of the population is kept. Different techniques can be applied for this selection. Most of them are based on the solution quality (fitness).
 
 Representation of the solutions:
-* Individual solution: {Param1 = val1; Param2 = val2; …}
+* Individual solution: {Param1 = val1; Param2 = val2; ...}
 * Gene: Parami = vali
 
 Initial population building: the system builds nb\_prelim\_gen random initial populations composed of pop\_dim individual solutions. Then, the best pop\_dim solutions are selected to be part of the initial population.

@@ -50,7 +50,7 @@ GAMA is being designed, developed and maintained by an active group of researche
 ## Citing GAMA
 If you use GAMA in your research and want to cite it (in a paper, presentation, whatever), please use this reference:
 
-> A. Grignard, P. Taillandier, B. Gaudou, D-A. Vo, N-Q. Huynh, A. Drogoul (2013), GAMA 1.6: Advancing the Art of Complex Agent-Based Modeling and Simulation. In ‘PRIMA 2013: Principles and Practice of Multi-Agent Systems’, Lecture Notes in Computer Science, Vol. 8291, Springer, pp. 117-131.
+> A. Grignard, P. Taillandier, B. Gaudou, D-A. Vo, N-Q. Huynh, A. Drogoul (2013), GAMA 1.6: Advancing the Art of Complex Agent-Based Modeling and Simulation. In ‘PRIMA 2013: Principles and Practice of Multi-Agent Systems', Lecture Notes in Computer Science, Vol. 8291, Springer, pp. 117-131.
 
 or you can choose to cite the website instead:
 

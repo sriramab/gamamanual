@@ -11,7 +11,7 @@ If you happen to publish a paper that uses or discusses GAMA, please let us know
 
 If you need to cite GAMA in a paper, we kindly ask you to use this reference:
 
-  * [A. Grignard, P. Taillandier, B. Gaudou, D-A. Vo, N-Q. Huynh, A. Drogoul (2013), GAMA 1.6: Advancing the Art of Complex Agent-Based Modeling and Simulation. In ‘PRIMA 2013: Principles and Practice of Multi-Agent Systems’, Lecture Notes in Computer Science, Vol. 8291, Springer, pp. 117-131.](http://link.springer.com/chapter/10.1007/978-3-642-44927-7_9)
+  * [A. Grignard, P. Taillandier, B. Gaudou, D-A. Vo, N-Q. Huynh, A. Drogoul (2013), GAMA 1.6: Advancing the Art of Complex Agent-Based Modeling and Simulation. In ‘PRIMA 2013: Principles and Practice of Multi-Agent Systems', Lecture Notes in Computer Science, Vol. 8291, Springer, pp. 117-131.](http://link.springer.com/chapter/10.1007/978-3-642-44927-7_9)
 
 
 
@@ -19,7 +19,7 @@ If you need to cite GAMA in a paper, we kindly ask you to use this reference:
 ### Papers about GAMA
   * [Taillandier, Patrick, Arnaud Grignard, Benoit Gaudou, and Alexis Drogoul. "Des données géographiques à la simulation à base d’agents: application de la plate-forme GAMA." Cybergeo: European Journal of Geography (2014).](http://spi.cybergeo.revues.org/26263)
 
-  * [A. Grignard, P. Taillandier, B. Gaudou, D-A. Vo, N-Q. Huynh, A. Drogoul (2013), GAMA 1.6: Advancing the Art of Complex Agent-Based Modeling and Simulation. In ‘PRIMA 2013: Principles and Practice of Multi-Agent Systems’, Lecture Notes in Computer Science, Vol. 8291, Springer, pp. 117-131.](http://link.springer.com/chapter/10.1007/978-3-642-44927-7_9)
+  * [A. Grignard, P. Taillandier, B. Gaudou, D-A. Vo, N-Q. Huynh, A. Drogoul (2013), GAMA 1.6: Advancing the Art of Complex Agent-Based Modeling and Simulation. In ‘PRIMA 2013: Principles and Practice of Multi-Agent Systems', Lecture Notes in Computer Science, Vol. 8291, Springer, pp. 117-131.](http://link.springer.com/chapter/10.1007/978-3-642-44927-7_9)
 
   * [Grignard, Arnaud, Alexis Drogoul, and Jean-Daniel Zucker. "Online analysis and visualization of agent based models." Computational Science and Its Applications–ICCSA 2013. Springer Berlin Heidelberg, 2013. 662-672.](http://link.springer.com/chapter/10.1007/978-3-642-39637-3_52#page-1)
 
@@ -27,11 +27,11 @@ If you need to cite GAMA in a paper, we kindly ask you to use this reference:
 
   * [Taillandier, P. & Drogoul, A. (2011), From Grid Environment to Geographic Vector Agents, Modeling with the GAMA simulation platform. In ‘25th Conference of the International Cartographic Association’, Paris, France.](http://icaci.org/files/documents/ICC_proceedings/ICC2011/Oral Presentations PDF/C4-Simulation, spatio-temporal modelling, visualisation/CO-288.pdf)
 
-  * Taillandier, P. ; Drogoul A. ; Vo D.A. & Amouroux, E. (2010), GAMA : bringing GIS and multi-level capabilities to multi-agent simulation, in ‘the 8th European Workshop on Multi-Agent Systems’, Paris, France.
+  * Taillandier, P. ; Drogoul A. ; Vo D.A. & Amouroux, E. (2010), GAMA : bringing GIS and multi-level capabilities to multi-agent simulation, in ‘the 8th European Workshop on Multi-Agent Systems', Paris, France.
 
   * Amouroux, E., Taillandier, P. &  Drogoul, A. (2010), Complex environment representation in epidemiology ABM: application on `H5N1` propagation. In ‘the 3rd International Conference on Theories and Applications of Computer Science’ (ICTACS'10).
 
-  * [Amouroux, E., Chu, T.Q., Boucher, A. and Drogoul, A. (2007), GAMA: an environment for implementing and running spatially explicit multi-agent simulations. In ‘Pacific Rim International Workshop on Multi-Agents’, Bangkoku, Thailand, pp. 359--371.](http://www.springerlink.com/content/88006131542n1204/)
+  * [Amouroux, E., Chu, T.Q., Boucher, A. and Drogoul, A. (2007), GAMA: an environment for implementing and running spatially explicit multi-agent simulations. In ‘Pacific Rim International Workshop on Multi-Agents', Bangkoku, Thailand, pp. 359--371.](http://www.springerlink.com/content/88006131542n1204/)
 
 
 
@@ -93,7 +93,7 @@ If you need to cite GAMA in a paper, we kindly ask you to use this reference:
 
   * Taillandier, P. & Amblard, F. (2011), Cartography of Multi-Agent Model Parameter Space through a reactive Dicotomous Approach. In ’25th European Simulation and Modelling Conference’, Guimaraes, Portugal, pp. 38-42.
 
-  * [Taillandier, P. & Stinckwich, S. (2011), Using the PROMETHEE Multi-Criteria Decision Making Method to Define New Exploration Strategies for Rescue Robots’, IEEE International Symposium on Safety, Security, and Rescue Robotics, Kyoto, Japon, pp. 321 - 326.](http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6106747&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D6106747)
+  * [Taillandier, P. & Stinckwich, S. (2011), Using the PROMETHEE Multi-Criteria Decision Making Method to Define New Exploration Strategies for Rescue Robots', IEEE International Symposium on Safety, Security, and Rescue Robotics, Kyoto, Japon, pp. 321 - 326.](http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6106747&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D6106747)
 
 **2010**
   * [Nguyen Vu, Q.A. , Gaudou, B., Canal, R., Hassas, S. and Armetta, F. (2010), A cluster-based approach for disturbed, spatialized, distributed information gathering systems,  in ‘The first Pacific Rim workshop on Agent-based modeling and simulation of Complex Systems (PRACSYS)’, India, pp. 588-603.](http://www.springerlink.com/content/u02nq35387418q11/)
@@ -122,6 +122,6 @@ If you need to cite GAMA in a paper, we kindly ask you to use this reference:
   * [Nguyen, V.Q., Gaudou B., Canal R., Hassas S. and Armetta F. (2009), Stratégie de communication dans un système de collecte d’information à base d’agents perturbés. In ‘Journées Francophones sur les Systèmes Multi-Agents (JFSMA'09)’.](http://liesp.insa-lyon.fr/v2/?q=fr/node/100911)
 
 **2008**
-  * [Chu, T.Q., Boucher, A., Drogoul, A., Vo, D.A., Nguyen, H.P. and Zucker, J.D. (2008). Interactive Learning of Expert Criteria for Rescue Simulations. In ‘Pacific Rim International Workshop on Multi-Agents’, Ha Noi, Viet Nam, pp. 127--138.](http://www.springerlink.com/content/r83v0125vl0430l1/)
+  * [Chu, T.Q., Boucher, A., Drogoul, A., Vo, D.A., Nguyen, H.P. and Zucker, J.D. (2008). Interactive Learning of Expert Criteria for Rescue Simulations. In ‘Pacific Rim International Workshop on Multi-Agents', Ha Noi, Viet Nam, pp. 127--138.](http://www.springerlink.com/content/r83v0125vl0430l1/)
 
-  * [Amouroux, E., Desvaux, S. and Drogoul, A. (2008), Towards Virtual Epidemiology: An Agent-Based Approach to the Modeling of H5N1 Propagation and Persistence in North-Vietnam. In ‘Pacific Rim International Workshop on Multi-Agents’, Ha Noi, Viet Nam, pp. 26--33.](http://www.springerlink.com/content/v6471t1453k17244/)
+  * [Amouroux, E., Desvaux, S. and Drogoul, A. (2008), Towards Virtual Epidemiology: An Agent-Based Approach to the Modeling of H5N1 Propagation and Persistence in North-Vietnam. In ‘Pacific Rim International Workshop on Multi-Agents', Ha Noi, Viet Nam, pp. 26--33.](http://www.springerlink.com/content/v6471t1453k17244/)

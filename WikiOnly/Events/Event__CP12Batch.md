@@ -56,7 +56,7 @@ o   Ex: explore b={1,2,3}. if a=2 explore b={2,3} only
 
 o   How? Put code in the exploring loop => put real GAML code in the agent
 
-o   => reflex “method” or “explore”
+o   => reflex "method" or "explore"
 
 o   Some existing exploration actions can be used with a ParameterSet (Map?) parameter
 
@@ -82,13 +82,13 @@ o   => use of the Save already working
 
 ·         Launch parallel simulation on multicore/clusters
 
-o   => special action “runSimulation” parameter to launch 4 in parallel?
+o   => special action "runSimulation" parameter to launch 4 in parallel?
 
-·         “Generate” agents
+·         "Generate" agents
 
 o   Define agent parameters by using global/previous variables/files
 
-o   Use of an “initSimulation” action before the “runSimulation” to  be able to change manually the simulation parameters
+o   Use of an "initSimulation" action before the "runSimulation" to  be able to change manually the simulation parameters
 
 ·         Définition graphique de l’espace de valeur, éventuellement en 2D et disjoint
 
@@ -121,7 +121,7 @@ experiment InteliExplore type: batch repeat: 2 keep_seed: true until: ( time > 2
                    do: initsimulation
 
                    if (prey_max<100)
-                   setParameter(“nb_predators_init",200)
+                   setParameter("nb_predators_init",200)
                    if (prey_max>100)
                    setParameter("nb_predators_init",200)
 

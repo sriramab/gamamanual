@@ -15,7 +15,7 @@ This process is similar to the [choice of the workspace location](Launching#Choo
 
 ![images/menu_switch.png](resources/images/workspaceProjectsAndModels/menu_switch.png)
 
-In the dialog that appears, the current workspace location should already be entered. Changing it to a new location (or choosing one in the file selector invoked by clicking on "Browse…") and pressing "OK" will then either create a new workspace if none existed at that location or switch to this new workspace. Both operations will restart GAMA and set the new workspace location. To come back to the previous location, just repeat this step (the previous location is normally now accessible from the combo box).
+In the dialog that appears, the current workspace location should already be entered. Changing it to a new location (or choosing one in the file selector invoked by clicking on "Browse...") and pressing "OK" will then either create a new workspace if none existed at that location or switch to this new workspace. Both operations will restart GAMA and set the new workspace location. To come back to the previous location, just repeat this step (the previous location is normally now accessible from the combo box).
 
 ![images/dialog_switch_ok.png](resources/images/workspaceProjectsAndModels/dialog_switch_ok.png)
 

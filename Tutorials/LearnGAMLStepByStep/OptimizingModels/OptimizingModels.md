@@ -5,7 +5,7 @@
 
 This page aims at presenting some tips to optimize the memory footprint or the execution time of a model in GAMA.
 
-_Note:  since GAMA 1.6.1, some optimizations have become obsolete because they have been included in the compiler. They have, then, been removed from this page. For instance, writing 'rgb(0,0,0)' is now compiled directly as '°black'._
+_Note:  since GAMA 1.6.1, some optimizations have become obsolete because they have been included in the compiler. They have, then, been removed from this page. For instance, writing 'rgb(0,0,0)' is now compiled directly as '#black'._
 
 
 ## Table of contents 
@@ -61,7 +61,7 @@ The `schedules:` facet is dynamically computed (even if the agents are not sched
 ```
 species my_species schedules: (every 10) ? (condition ? my_species : []) : [] 
 {
-     …
+     ...
 }
 ```
 

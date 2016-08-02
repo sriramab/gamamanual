@@ -3246,7 +3246,7 @@ The statement makes the agent output an arbitrary message in the status box.
 * Outputting a message
 
 ```
-status ('This is my status ' + self) color: Â°yellow;
+status ('This is my status ' + self) color: °yellow;
 ```
 
 

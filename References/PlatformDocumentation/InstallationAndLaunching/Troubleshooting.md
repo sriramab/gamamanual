@@ -64,7 +64,7 @@ Memory problems are easy to detect: on the bottom right corner of its window, GA
 ![images/memory_status.png](resources/images/installationAndLaunching/memory_status.png)
 
 There are two ways to circumvent this problem: the first one is to increase the memory allocated to GAMA by the Java Virtual Machine. The second, detailed [on this page](OptimizingModels) is to try to optimize your models to reduce their memory footprint at runtime.
-To increase the memory allocated, first locate the file called `Gama.ini`. On Windows and Ubuntu, it is located next to the executable. On MacOS X, you have to right-click on `Gama.app`, choose "Display Package Contents…", and you will find `Gama.ini` in `Contents/MacOS`.
+To increase the memory allocated, first locate the file called `Gama.ini`. On Windows and Ubuntu, it is located next to the executable. On MacOS X, you have to right-click on `Gama.app`, choose "Display Package Contents...", and you will find `Gama.ini` in `Contents/MacOS`.
 This file typically looks like the following (some options/keywords may vary depending on the system), and we are interested in two JVM arguments:
 
 ![images/gama_ini.png](resources/images/installationAndLaunching/gama_ini.png)
@@ -81,7 +81,7 @@ If you think you have found a new bug/issue in GAMA, it is time to create an iss
   * The GAMA model or code you are having trouble with. If possible, attach a complete model.
   * Screenshots or other files that help describe the issue.
 
-Two files may be particularly interesting to attach to your issue: the **configuration details** and the **error log**. Both can be obtained quite easily from within GAMA itself in a few steps. First, click the "About GAMA…" menu item (under the "Gama" menu on MacOS X, "Help" menu on Linux & Windows)
+Two files may be particularly interesting to attach to your issue: the **configuration details** and the **error log**. Both can be obtained quite easily from within GAMA itself in a few steps. First, click the "About GAMA..." menu item (under the "Gama" menu on MacOS X, "Help" menu on Linux & Windows)
 
 > 
 ![images/menu_about_gama.png](resources/images/installationAndLaunching/menu_about_gama.png)

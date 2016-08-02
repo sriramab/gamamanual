@@ -17,7 +17,7 @@ Please note that the preferences specific to GAMA will be shared, on a same mach
 
 
 ## Opening Preferences
-To open the preferences dialog of GAMA, either click on the small "form" button on the top-left corner of the window or select "Preferences…" from the Gama, "Help" or "Views" menu depending on your OS.
+To open the preferences dialog of GAMA, either click on the small "form" button on the top-left corner of the window or select "Preferences..." from the Gama, "Help" or "Views" menu depending on your OS.
 
 ![images/open_prefs.png](resources/images/preferences/open_prefs.png)
 
@@ -83,7 +83,7 @@ To open the preferences dialog of GAMA, either click on the small "form" button 
     * Apply antialiasing: if true, displays are drawn using antialiasing, which is slower but renders a better quality of image and text (this setting can be changed on an individual basis dynamically [here](Displays)).
     * Default background color: indicates which color to use when none is specified in the [declaration of a display](DefiningDisplaysGeneralities).
     * Default highlight color: indicates which color to use for highlighting agents in the displays.
-    * Stack displays on screen…: if true, the [display views](Displays), in case they are stacked on one another, will put the first [display declared in the model](DefiningDisplaysGeneralities) on top of the stack.
+    * Stack displays on screen...: if true, the [display views](Displays), in case they are stacked on one another, will put the first [display declared in the model](DefiningDisplaysGeneralities) on top of the stack.
   * **Default Aspect**: which aspect to use when an ['agent' or 'species' layer](G__DefiningOtherLayers) does not indicate it
     * Default shape: a choice between 'shape' (which represents the actual geometrical shape of the agent) and geometrical operators ('square', etc.).
     * Default size: what size to use. This expression must be a constant.
@@ -139,7 +139,7 @@ These preferences pertain to the use of external libraries or data with GAMA.
     * Path to RScript: the path to the RScript library (http://www.r-project.org) in the system.
   * **GIS Coordinate Reference Systems**: settings about CRS to use when loading or saving GIS files
     * Let GAMA decide which CRS to use to project GIS data: if true, GAMA will decide which CRS, based on input, should be used to project GIS data. Default is false (i.e. only one CRS, entered below, is used to project data in the models)
-    * …or use the following CRS (EPSG code): choose a CRS that will be applied to all GIS data when projected in the models. Please refer to http://spatialreference.org/ref/epsg/ for a list of EPSG codes.
+    * ...or use the following CRS (EPSG code): choose a CRS that will be applied to all GIS data when projected in the models. Please refer to http://spatialreference.org/ref/epsg/ for a list of EPSG codes.
     * When no .prj file or CRS is supplied, consider GIS data to be already projected: if true, GIS data that is not accompanied by a CRS information will be considered as projected using the above code.
     * ...or use the following CRS (EPSG code): choose a CRS that will represent the default code for loading uninformed GIS data.
     * When no CRS is provided, save the GIS data with the current CRS: if true, saving GIS data will use the projected CRS unless a CRS is provided.
@@ -152,11 +152,11 @@ These preferences pertain to the use of external libraries or data with GAMA.
 
 The set of preferences described above are specific to GAMA. But there are other preferences or settings that are inherited from the Eclipse underpinnings of GAMA, which concern either the "core" of the platform (workspace, editors, updates, etc.) or plugins (like SVN, for instance) that are part of the distribution of GAMA.
 
-These "advanced" preferences are accessible by clicking on the "Advanced…" button in the Preferences view.
+These "advanced" preferences are accessible by clicking on the "Advanced..." button in the Preferences view.
 
 ![images/advanced.png](resources/images/preferences/advanced.png)
 
 
-Depending on what is installed, the second view that appears will contain a tree of options on the left and preference pages on the right. **Contrary to the first set of preferences, please note that these preferences will be saved in the current workspace**, which means that changing workspace will revert them to their default values. It is however possible to import them in the new workspace using of the wizards provided in the standard "Import…" command (see [here](ImportingModels)).
+Depending on what is installed, the second view that appears will contain a tree of options on the left and preference pages on the right. **Contrary to the first set of preferences, please note that these preferences will be saved in the current workspace**, which means that changing workspace will revert them to their default values. It is however possible to import them in the new workspace using of the wizards provided in the standard "Import..." command (see [here](ImportingModels)).
 
 ![images/advanced_2.png](resources/images/preferences/advanced_2.png)

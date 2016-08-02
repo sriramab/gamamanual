@@ -58,11 +58,11 @@ my_var <- action_name (v1, v2);
 We specialize the **choose\_cell** species for the **prey** species: the agent will choose the vegetation cell of the neighborhood (list myCell.neighbours) that maximizes the quantity of food.
 
 Note that GAMA offers numerous operators to manipulate lists and containers:
-  * Unary operators : min, max, sum…
+  * Unary operators : min, max, sum...
   * Binary operators :
     * where : returns a sub-list where all the elements verify the condition defined in the right operand.
     * first\_with : returns the first element of the list that verifies the condition defined in the right operand.
-    * …
+    * ...
 In the case of binary operators, each element (of the first operand list) can be accessed with the keyword **each**
 
 Thus the **choose\_cell** action of the **prey** species is defined by:
@@ -85,10 +85,10 @@ If all the neighbor cells are empty (myCell\_tmp = nil, **nil** is the null valu
 
 GAMA contains statements that allow to execute blocks depending on some conditions:
 ```
-   if condition1 {…} 
-   else if condition2{…} 
-   … 
-   else {…} 
+   if condition1 {...} 
+   else if condition2{...} 
+   ... 
+   else {...} 
 ```
 
 This statement means that if condition1 = true then the first block is executed; otherwise if condition2 = true, then it is the second block, etc. When no conditions are satisfied and an else block is defined (it is optional), this latter is executed.

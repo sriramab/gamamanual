@@ -68,7 +68,7 @@ The "gama.wiki" plugin contains all the wiki content, and almost all the website
   * Training: contains a presentation of the training sessions organized by the GAMA team (only present in the website)
 * WikiOnly: contains the content only present in the wiki, and not in the website
   * DevelopingExtensions: contains explanations about how to extend the platform
-* resources: contains all the additional resources needed (images, pdf…)
+* resources: contains all the additional resources needed (images, pdf...)
 
 For the rest of this document, the highest level of tree structure ("Tutorials"/"References"/"Community"/"WikiOnly") will be named as **tabs**. The level just under will be named as **sections**, and the level under will be named as **sub-section**.
 All this content is written using the markdown format.
@@ -78,7 +78,7 @@ If a _section_/_sub-section_ has no sub-division, then this _section_/_sub-secti
 
 ![resources/images/developpingExtension/tree_structure.png](resources/images/developpingExtension/tree_structure.png) 
 
-Notice that there is some content which is present only in the wiki (the "WikiOnly" content), some content present only in the website (the model library, most of the community content…). In fact, the wiki tree structure is determined by the file _Sidebar, while the website tree structure is determined by the file _WebsiteTreeStructure_.
+Notice that there is some content which is present only in the wiki (the "WikiOnly" content), some content present only in the website (the model library, most of the community content...). In fact, the wiki tree structure is determined by the file _Sidebar, while the website tree structure is determined by the file _WebsiteTreeStructure_.
 
 ## Good practices when writing markdown files
 
@@ -303,7 +303,7 @@ Format of the file :
   <name>learningConceptName</name>
   <prerequisiteList>
     <prerequisite>learningConcept1</prerequisite>
-    <prerequisite>learningConcept2…</prerequisite>
+    <prerequisite>learningConcept2...</prerequisite>
   </prerequisiteList>
 </learningConcept>
 ```

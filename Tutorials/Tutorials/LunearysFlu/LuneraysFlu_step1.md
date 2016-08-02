@@ -82,7 +82,7 @@ GAMA proposes several ways to define the behavior of a species: dynamic variable
 
 A [reflex](DefiningActionsAndBehaviors#behaviors) is a block of statements (that can be defined in global or any species) that will be automatically executed at each simulation step if its condition is true, it is defined as follows:
 ```
-   reflex reflex_name when: condition {…}
+   reflex reflex_name when: condition {...}
 ```
 
 The **when** facet is optional: when it is omitted, the reflex is activated at each time step. Note that if several reflexes are defined for a species, the reflexes will be activated following their definition order.
@@ -114,7 +114,7 @@ species people skills:[moving]{
 The [ask](Statements#ask) allows an agent to ask another agents to do something (i.e. to execute a sequence of statements). The [at_distance](Operators#at_distance) operator allows to get the list of agents (here of people agents) that are located at a distance lower or equal to the given distance (here 10m). The [flip](Operators#flip) operator allows to test a probability.
 
 #### Display
-An agent [aspects](RegularSpecies#the-aspect-statement) have to be defined. An aspect is a way to display the agents of a species : aspect aspect\_name {…}
+An agent [aspects](RegularSpecies#the-aspect-statement) have to be defined. An aspect is a way to display the agents of a species : aspect aspect\_name {...}
 In the block of an aspect, it is possible to draw :
   * A geometry :  for instance, the shape of the agent (but it may be a different one, for instance a disk instead of a complex polygon)
   * An image : to draw icons
@@ -136,7 +136,7 @@ The **?** structure allows to return a different value (here red or green) accor
 
 ### global section
 The global section represents a specific agent, called [world](GlobalSpecies). Defining this agent follows the same principle as any agent and is, thus, defined after a species.
-The world agent represents everything that is global to the model : dynamics, variables…
+The world agent represents everything that is global to the model : dynamics, variables...
 It allows to initialize simulations (init block): the world is always created and initialized first when a simulation is launched (before any other agents). The geometry (shape) of the world agent is by default a square with 100m for side size, but can be redefined if necessary. The _step_ attribute of the world agent allows to specify the duration of one simulation step (by default, 1 step = 1 seconde).
 
 #### global variable

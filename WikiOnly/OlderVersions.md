@@ -98,7 +98,7 @@ Key points :
   * Better integration of multi-level species
   * New important notion: topology
   * New variable types: geometry, graph, path, topology
-  * Many more novelties/improvements/enrichments…
+  * Many more novelties/improvements/enrichments...
 
 Documentation:
   * [Documentation in PDF](https://github.com/gama-platform/gama/wiki/Content/ressources/pdf/GAMAv14.pdf)

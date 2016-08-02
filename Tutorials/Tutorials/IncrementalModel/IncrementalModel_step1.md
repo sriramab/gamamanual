@@ -60,7 +60,7 @@ species people skills:[moving]{
 }
 ```
 
-Concerning the display of an agent, [aspects](RegularSpecies#the-aspect-statement) have to be defined. An aspect represents a possible way to display the agents of a species : aspect aspect\_name {…}
+Concerning the display of an agent, [aspects](RegularSpecies#the-aspect-statement) have to be defined. An aspect represents a possible way to display the agents of a species : aspect aspect\_name {...}
 In the block of an aspect, it is possible to draw :
   * A geometry :  for instance, the shape of the agent
   * An image : to draw icons
@@ -77,7 +77,7 @@ species people skills:[moving]{
 ```
 Concerning the behavior of agents, the simplest way to define it is through reflexes. A reflex is a block of statements (that can be defined in global or any species) that will be automatically executed at each simulation step if its condition is true. A reflex is defined as follows:
 ```
-   reflex reflex_name when: condition {…}
+   reflex reflex_name when: condition {...}
 ```
 
 The **when** facet is optional: when it is omitted, the reflex is activated at each time step. Note that if several reflexes are defined for a species, the reflexes will be activated following their definition order.
@@ -127,7 +127,7 @@ Note that we used the **ask** statement. This statement allows to make a remote 
 
 ### global section
 The global section represents the definition of the species of a specific agent (called world).
-The world agent represents everything that is global to the model : dynamics, variables…
+The world agent represents everything that is global to the model: dynamics, variables...
 It allows to init simulations (init block): the world is always created and initialized first when a simulation is launched. The geometry (shape) of the world agent is by default a square with 100m for side size, but can be redefined if necessary. In the same way, the modeler can redefined the **step** variable that represent the duration of a simulation step and that is by default 1 second.
 
 #### global variable

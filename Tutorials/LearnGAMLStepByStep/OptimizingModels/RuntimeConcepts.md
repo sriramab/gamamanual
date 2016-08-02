@@ -53,7 +53,7 @@ step of agent agent_a
 
         ask each micro-population mp of agent_a to step {
             list<agent> sub-agents <- mp.compute_agents_to_schedule
-            ask each agent_b of sub-agents to step //… recursive call...
+            ask each agent_b of sub-agents to step //... recursive call...
         }
     }
 
@@ -69,17 +69,17 @@ To influence this schedule, then, one possible way is to change the way populati
 A practical application of this facet is to reduce simulation artifacts created by the default scheduling of populations, which is sequential (i.e. their agents are executed in turn in their order of creation). To enable a pseudo-parallel scheduling based on a random scheduling recomputed at each step, one has simply to define the corresponding species like in the following example:
 
 ```
-species A schedules: shuffle(A) {…}
+species A schedules: shuffle(A) {...}
 ```
 
 Moving further, it is possible to enable a completely random scheduling that will eliminate the sequential scheduling of populations:
 
 ```
-global schedules: [world] + shuffle(A + B + C) {…}
+global schedules: [world] + shuffle(A + B + C) {...}
 
-species A schedules: [] {…}
-species B schedules: [] {…}
-species C schedules: [] {…}
+species A schedules: [] {...}
+species B schedules: [] {...}
+species C schedules: [] {...}
 ```
 
 It is important to (1) explicitly invoke the scheduling of the world (although it doesn't have to be the first); (2) suppress the population-based scheduling to avoid having agent being scheduled 2 times (one time in the custom definition, one time by their population).
@@ -87,7 +87,7 @@ It is important to (1) explicitly invoke the scheduling of the world (although i
 Other schemes are possible. For instance, the following definition will completely suppress the default scheduling mechanism to replace it with a custom scheduler that will execute the world, then all agents of species A in a random way and then all agents of species B in their order of creation:
 
 ```
-global schedules: [world] + shuffle(A) + B {…} // explicit scheduling in the world
+global schedules: [world] + shuffle(A) + B {...} // explicit scheduling in the world
 
 species A schedules [];
 
@@ -101,7 +101,7 @@ Complex conditions can be used to express which agents need to be scheduled each
 species A schedules: A where each.can_be_scheduled() {
 
     bool can_be_scheduled() {
-         …
+         ...
          returns true_or_false;
     }
 }
@@ -120,6 +120,6 @@ and this one will result in an **infinite loop** (which will trigger a stack ove
 ```
 global {} // The world is normally scheduled...
 
-species my_scheduler schedules: [world]; // … but schedules itself again as a consequence of scheduling the micro-species 'my_scheduler'
+species my_scheduler schedules: [world]; // ... but schedules itself again as a consequence of scheduling the micro-species 'my_scheduler'
 ```
 [//]: # (endConcept|runtime_and_schedulers)

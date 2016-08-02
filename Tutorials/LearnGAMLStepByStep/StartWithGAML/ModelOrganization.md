@@ -79,18 +79,18 @@ global {
     // definition of global attributes, actions, behaviors
 }
 
-species A {…}
+species A {...}
 
-species B {…}
+species B {...}
 ```
 is completely equivalent to:
 ```
 global {
     // definition of [global attributes](GlobalSpecies#declaration), actions, behaviors
 
-    species A {…}
+    species A {...}
 
-    species B {…}
+    species B {...}
 }
 ```
 
@@ -152,4 +152,5 @@ experiment my_experiment /* + specify the type : "type:gui" or "type:batch" */
 }
 ```
 Don't forget this structure ! This will be the basis for all the models you will create from now.
+
 [//]: # (endConcept|model_structure)

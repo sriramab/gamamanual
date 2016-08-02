@@ -80,7 +80,7 @@ species prey {
 
 In order to define the movement behaviour of a prey we will add a **reflex**. A reflex is a block of statements (that can be defined in global or any species) that will be automatically executed at each simulation step if its condition is true, it is defined as follows:
 ```
-   reflex reflex_name when: condition {…}
+   reflex reflex_name when: condition {...}
 ```
 
 The **when** facet is optional: when it is omitted, the reflex is activated at each time step. Note that if several reflexes are defined for a species, the reflexes will be activated following their definition order.
