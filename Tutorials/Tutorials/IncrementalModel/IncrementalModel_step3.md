@@ -1,5 +1,5 @@
-# 2. Charts
-This step Illustrates how define monitors and charts in GAMA. In addition, it illustrates how to define a stopping condition for the simulation.
+# 3. Integration of GIS Data
+This step Illustrates how load and agentry GIS data.
 
 
 
@@ -8,12 +8,10 @@ This step Illustrates how define monitors and charts in GAMA. In addition, it il
 
 
 ## Formulation
-  * Definition of new global variables: current\_hour, nb\_people\_infected, nb\_people\_not\_infected, infected\_rate
-  * Definition of a monitor to follow the current hour and the nb of people infected
-  * Definition of a series chart to follow the number of people infected and not infected
-  * Definition of a stopping condition (when infected rate = 1)
+  * Load, agentify and display two layers of GIS data (building and road)
+  * Modify the initialization of the people agents to put them inside buildings
 
-![images/Incremental_model2.jpg](resources/images/tutorials/Incremental_model2.jpg)
+![resources/images/tutorials/Incremental_model3.jpg](resources/images/tutorials/Incremental_model3.jpg)
 
 
 
@@ -21,103 +19,95 @@ This step Illustrates how define monitors and charts in GAMA. In addition, it il
 
 ## Model Definition
 
-### global variables
-In order to define dynamic variable able to update itself, we use the **update** facet of variable definition.
-Indeed, at each simulation step, all the agents (and the world agent) apply for each dynamic variable (in their definition order) its update expression.
-We define 4 new variables:
-  * **current hour** (int) : current simulation step (**cycle**) / 60 mod 24
-  * **nb\_people\_infected** (int): nb of people with is\_infected = true (use of the **list count condition** operator that count the number of elements of the list for which the condition is true)
-  * **nb\_people\_not\_infected** (int): nb\_people - nb of people infected
-  * **infected\_rate** (float): nb of people infected / nb of people
+### species
+We have to define two species of agents: the **building** agents and the **road** ones. These agents will not have a particular behavior, they will just be displayed.
+We define an aspect for these species. In this model, we want to represent the geometry of the agent, we then use the keyword **draw** that allow to draw a given geometry. In order to draw the geometry of the agent we use the attribute **shape** (which is a built-in attribute of all agents).
+
 ```
-global{
-	...
-        int current_hour update: (cycle / 60) mod 24;
-	int nb_people_infected <- nb_infected_init update: people count (each.is_infected);
-	int nb_people_not_infected <- nb_people - nb_infected_init update: nb_people - nb_people_infected;
-	float infected_rate update: nb_people_infected/nb_people;
-	...
+species building {
+	aspect geom {
+		draw shape color: #gray;
+	}
+}
+
+species road {
+	aspect geom {
+		draw shape color: #black;
+	}
 }
 ```
-### stopping condition
 
-We add a new reflex that stops the simulation if the **infected\_rate** is equal to 1. To stop the simulation, we apply the **halt** action.
+
+### parameters
+GAMA allows to automatically read GIS data that are formatted as shapefiles. In order to let the user chooses his/her shapefiles, we define three parameters. One allowing the user to choose the road shapefile, one allowing him/her to choose the building shapefile, and, at last, one allowing him/her to choose the bounds shapefile. We will come back later on the notion of "bounds" in GAMA.
+
+Definition of the three global variables of type _file_ concerning the GIS files:
+```
+global {
+   file shape_file_buildings <- file("../includes/building.shp");
+   file shape_file_roads <- file("../includes/road.shp");
+}
+```
+
+In the experiment, definition of the parameters from the three global variables:
+```
+experiment road_traffic type: gui {
+   parameter "Shapefile for the buildings:" var: shape_file_buildings category: "GIS" ;
+   parameter "Shapefile for the roads:" var: shape_file_roads category: "GIS" ;
+}
+```
+
+### agentification of GIS data
+
+In GAMA, the agentification of GIS data is very straightforward: it only requires to use the **create** command with the **from** facet to pass the shapefile. Each object of the shapefile will be directly used to instantiate an agent of the specified species.
+
+We modify the init section of the global block in order to create road and building agents from the shape files. Then, we define the initial location of people as a point inside one of the building.
+```
+global {
+  ...
+       init {
+		create road from: roads_shapefile;
+		create building from: buildings_shapefile;
+		create people number:nb_people {
+			speed <- 5.0 #km/#h;
+			building bd <- one_of(building);
+			location <- any_location_in(bd);
+		}
+		ask nb_infected_init among people {
+			is_infected <- true;
+		}
+        }
+} 
+```
+We defined here a local variable called **bd** of type building that is a one of the building (randomly chosen). Note that the name of a species can be used to obtain all the agents of this species (here **building** returns the list of all the buildings). The **any\_location\_in** returns a random point inside a geometry or an agent geometry.
+
+### environment
+Building a GIS environment in GAMA requires nothing special, just to define the bounds of the environment, i.e. the geometry of the world agent. It is possible to use a shapefile to automatically define it by computing its envelope. In this model, we use the road shapefile to define it.
 
 ```
 global {
-   ...
-        reflex end_simulation when: infected_rate = 1.0 {
-		do halt;
-	}
+  ...
+  geometry shape <- envelope(shape_file_roads); 
+  ...
 }
 ```
 
-Note that it would have been possible to use the **pause** action that pauses the simulation instead of the **halt** action that stops the simulation.
+### display
+We add to the **map** display the road and building agents.
 
-### monitor
-A monitor allows to follow the value of an arbitrary expression in GAML. It has to be defined in an output section. A monitor is defined as follows:
+In the **experiment** block:
 ```
-      monitor monitor_name value: an_expression refresh:every(nb_steps);
-```
-
-With:
-  * value: mandatory, its value will be displayed in the monitor.
-  * refresh: bool, optional : if the expression is true, compute (default is true).
-
-In this model, we define 2 monitors to follow the value of the variable **current\_hour** and **infected\_rate**:
-```
-experiment main_experiment type:gui{
-	...
-	output {
-		monitor "Current hour" value: current_hour;
-		monitor "Infected people rate" value: infected_rate;
-		...
-	}
+output {
+   display map {
+	species road aspect:geom;
+	species building aspect:geom;
+	species people aspect:circle;			
+    }
+    ...
 }
 ```
 
-### chart
 
-GAMA can display various chart types:
-  * Time series
-  * Pie charts
-  * Histograms
-
-A chart must be defined in a display : it behaves exactly like any other layer.
-Definition of a chart :
-
-```
-chart chart_name type: chart_type  {
-     [data]
-}
-```
-
-The data to draw are define inside the chart block:
-
-```
-     data data_legend value: data_value
-```
-
-We add a new display called **chart** refresh every 10 simulation steps.
-Inside this display, we define a chart of type _series_:
-  * "Species evolution"; background : white; size : {1, 0.5}; position : {0, 0}
-    * data1: susceptible; color : green
-    * data2: infected; color : red
-
-```
-experiment main_experiment type:gui{
-	...
-	output {
-		...
-		display chart refresh:every(10) {
-			chart "Disease spreading" type: series {
-				data "susceptible" value: nb_people_not_infected color: #green;
-				data "infected" value: nb_people_infected color: #red;
-			}
-		}
-	}
-}
-```
 
 
 
@@ -125,23 +115,29 @@ experiment main_experiment type:gui{
 ## Complete Model
 
 ```
-model SI_city
-
-global{
+model model3 
+ 
+global {
 	int nb_people <- 500;
 	float step <- 1 #minutes;
-	geometry shape<-envelope(square(500 #m));
 	float infection_distance <- 2.0 #m;
 	float proba_infection <- 0.05;
 	int nb_infected_init <- 5;
+	file roads_shapefile <- file("../includes/road.shp");
+	file buildings_shapefile <- file("../includes/building.shp");
+	geometry shape <- envelope(roads_shapefile);
 	int current_hour update: (cycle / 60) mod 24;
 	int nb_people_infected <- nb_infected_init update: people count (each.is_infected);
 	int nb_people_not_infected <- nb_people - nb_infected_init update: nb_people - nb_people_infected;
-	float infected_rate update: nb_people_infected/length(people);
 	
-	init{
+	float infected_rate update: nb_people_infected/length(people);
+	init {
+		create road from: roads_shapefile;
+		create building from: buildings_shapefile;
 		create people number:nb_people {
 			speed <- 5.0 #km/#h;
+			building bd <- one_of(building);
+			location <- any_location_in(bd);
 		}
 		ask nb_infected_init among people {
 			is_infected <- true;
@@ -154,6 +150,7 @@ global{
 
 species people skills:[moving]{		
 	bool is_infected <- false;
+		
 	reflex move{
 		do wander;
 	}
@@ -169,6 +166,18 @@ species people skills:[moving]{
 	}
 }
 
+species road {
+	aspect geom {
+		draw shape color: #black;
+	}
+}
+
+species building {
+	aspect geom {
+		draw shape color: #gray;
+	}
+}
+
 experiment main_experiment type:gui{
 	parameter "Infection distance" var: infection_distance;
 	parameter "Proba infection" var: proba_infection min: 0.0 max: 1.0;
@@ -177,6 +186,8 @@ experiment main_experiment type:gui{
 		monitor "Current hour" value: current_hour;
 		monitor "Infected people rate" value: infected_rate;
 		display map {
+			species road aspect:geom;
+			species building aspect:geom;
 			species people aspect:circle;			
 		}
 		display chart refresh:every(10) {
