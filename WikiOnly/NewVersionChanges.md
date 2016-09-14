@@ -72,6 +72,11 @@ gives examples
  * Much faster (up to 100x !) display of errors
  * Contextual menu to copy the text of errors to clipboard or open the editor on it
 
+* Validation
+ * Faster validation of multi-file models (x2 approx.)
+ * Much less memory used compared to 1.6.1 (/10 approx.)
+ * No more "false positive" errors
+
 * Console
  * Interactive console allows to directly interact with agents (experiments, simulations and any agent) and get a direct feedback on the impact of code execution using a new interpreter integrated with the console.
  * Console now accepts colored text output 
