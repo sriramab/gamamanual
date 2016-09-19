@@ -39,21 +39,13 @@ species road {
 
 
 ### parameters
-GAMA allows to automatically read GIS data that are formatted as shapefiles. In order to let the user chooses his/her shapefiles, we define three parameters. One allowing the user to choose the road shapefile, one allowing him/her to choose the building shapefile, and, at last, one allowing him/her to choose the bounds shapefile. We will come back later on the notion of "bounds" in GAMA.
+GAMA allows to automatically read GIS data that are formatted as shapefiles. In order to let the user chooses his/her shapefiles, we define two parameters. One allowing the user to choose the road shapefile, one allowing him/her to choose the building shapefile.
 
-Definition of the three global variables of type _file_ concerning the GIS files:
+Definition of the two global variables of type _file_ concerning the GIS files:
 ```
 global {
    file shape_file_buildings <- file("../includes/building.shp");
    file shape_file_roads <- file("../includes/road.shp");
-}
-```
-
-In the experiment, definition of the parameters from the three global variables:
-```
-experiment road_traffic type: gui {
-   parameter "Shapefile for the buildings:" var: shape_file_buildings category: "GIS" ;
-   parameter "Shapefile for the roads:" var: shape_file_roads category: "GIS" ;
 }
 ```
 
