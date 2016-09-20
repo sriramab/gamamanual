@@ -25,7 +25,7 @@ This step Illustrates how to define a 3D display
 ### building
 First, we add a new variable for buildings (**height**) of type float from 10m to 20m. Then we modify the aspect in order to specify a depth for the geometry (using the **depth** facet).
 ```
-species building skills:[moving] {
+species building {
 	float height <- 10#m + rnd(10) #m;
 	aspect geom {
 		draw shape color: #gray depth: height;
@@ -175,7 +175,7 @@ species road {
 	}
 }
 
-species building skills:[moving] {
+species building {
 	float height <- 10#m + rnd(10) #m;
 	aspect geom {
 		draw shape color: #gray depth: height;
@@ -189,7 +189,8 @@ experiment main_experiment type:gui{
 	output {
 		monitor "Current hour" value: current_hour;
 		monitor "Infected people rate" value: infected_rate;
-		display map_3D type: opengl ambient_light: is_night ? 20 : 50 diffuse_light: is_night ? 60 : 110 {
+		display map_3D type: opengl ambient_light: is_night ? 20 : 50 {
+			light 1 color:(is_night ? 50 : 255) update:true;
 			image "../includes/soil.jpg";
 			species road aspect:geom;
 			species people aspect:sphere3D;			
