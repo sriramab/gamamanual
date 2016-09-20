@@ -26,14 +26,12 @@ We will need to:
 ## Model Definition
 ### building
 First, we define a new species called **people\_in\_building** inside the **building** species. Thus, a building could have agents of this species as **members** and control them. The **people\_in\_building** species has for parent the **people** species, which means that a **people\_in\_building** agent has all the properties, aspect and behaviors of a **people** agent.
-In our case, we want the once a people agent inside a building, this people agent does nothing. Then, we use the **schedules** facet of the species to remove the **people\_in\_building** from the scheduler. In addition, as we do not want to display them, we redefine their aspects as empty aspects.
+In our case, we want the once a people agent inside a building, this people agent does nothing. Then, we use the **schedules** facet of the species to remove the **people\_in\_building** from the scheduler.
 
 ```
 species building {
 	...
         species people_in_building parent: people schedules: [] {
-		aspect circle{}
-		aspect sphere3D{}
 	}
 	...
 }
@@ -240,7 +238,7 @@ experiment main_experiment type:gui{
 		monitor "Current hour" value: current_hour;
 		monitor "Infected people rate" value: infected_rate;
 		display map_3D type: opengl {
-			light 1 color:(is_night ? 50 : 255) update:true;
+			light 1 color:(is_night ? 50 : 255);
 			image "../includes/soil.jpg";
 			species road aspect:geom;
 			species people aspect:sphere3D;			
