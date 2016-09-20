@@ -68,8 +68,8 @@ In addition to the RSS reader described above, below is a list of plugins that h
   * After installing the plugin, an error might happen when closing GAMA. It is harmless. After restarting GAMA, go to Views > Open View > Others... > Overview >.
 
 ### Git
-  * Git is a version control system (like CVS or SVN, extensively used in GAMA) http://git-scm.com/. Free sharing space are provided on website such as [GitHub](https://github.com/) or [Google Code](https://code.google.com/) among others. Installing Git allows to share or gather models that are available in Git repositories.
-  * Update site (general): `http://download.eclipse.org/releases/juno/`
+  * Git is a version control system (like CVS or SVN, extensively used in GAMA) http://git-scm.com/. Free sharing space are provided on [GitHub](https://github.com/) among others. Installing Git allows to share or gather models that are available in Git repositories.
+  * Update site (general): `http://download.eclipse.org/releases/mars/` (Alternatively, you can use `http://download.eclipse.org/egit/updates`)
   * Select the two following plugins:
     * Eclipse EGit
     * Git Team Provider Core
@@ -96,6 +96,12 @@ In addition to the RSS reader described above, below is a list of plugins that h
   * Update site: `http://csvedit.googlecode.com/svn/trunk/csvedit.update`
 
 ![images/csv_edit.png](resources/images/installationAndLaunching/csv_edit.png)
+
+### TM Terminal
+
+  * A powerful, yet simple, terminal which can connect locally or via ssh or other methods. 
+  * Update site (general): `http://download.eclipse.org/releases/mars/`
+  * Select the following plugin: TM Terminal
 
 
 ### Quickimage
