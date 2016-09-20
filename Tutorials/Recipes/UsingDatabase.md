@@ -2,7 +2,7 @@
 [//]: # (keyword|concept_database)
 # Using Database Access
 
-Database features of GAMA provide a set of actions on Database Management Systems (DBMS) and Multi-Dimensional Database for agents in GAMA. Database features are implemented in the irit.gaml.exxtensions.database plug-in with these features:
+Database features of GAMA provide a set of actions on Database Management Systems (DBMS) and Multi-Dimensional Database for agents in GAMA. Database features are implemented in the irit.gaml.extensions.database plug-in with these features:
   * Agents can execute SQL queries (create, Insert, select, update, drop, delete) to various kinds of DBMS.
   * Agents can execute MDX (Multidimensional Expressions) queries to select multidimensional objects, such as cubes, and return multidimensional cellsets that contain the cube's data .
 These features are implemented in two kinds of component: _skills_ (SQLSKILL, MDXSKILL) and agent (AgentDB)
@@ -56,12 +56,8 @@ All the actions can be used independently from the chosen DBMS. Only the connect
 Example of declaration:
 
 ```
-entities {
-   species toto skills: [SQLSKILL]
-   {
-     //insert your descriptions here
-   }
-   ...
+species toto skills: [SQLSKILL] {
+	//insert your descriptions here
 }
 ```
 
@@ -258,8 +254,7 @@ MDXSKILL plays the role of an OLAP tool using select to query data from OLAP ser
 ### Define a species that uses the MDXSKILL skill
 Example of declaration:
 
-```
-entities {   
+``` 
 	species olap skills: [MDXSKILL]
 	 {  
 		//insert your descriptions here
@@ -411,13 +406,9 @@ AgentBD is a built-in species, which supports behaviors that look like actions i
 Example of declaration:
 
 ```
-entities { 
-	species agentDB parent: AgentDB {
-	 {  
-		//insert your descriptions here	
-	 } 
-       ...
-}
+species agentDB parent: AgentDB {  
+	//insert your descriptions here
+} 
 ```
 
 ### Connect to database
@@ -611,12 +602,8 @@ If we are familiar with how to create agents from a shapefile then it becomes ve
   * **Step 1**: Define a species with SQLSKILL or AgentDB
 
 ```
-entities { 
-	species toto skills: SQLSKILL {
-	 {  
-		//insert your descriptions here	
-	 }
-   ...
+species toto skills: SQLSKILL {
+	//insert your descriptions here	
 }	
 ```
 
@@ -650,14 +637,9 @@ If we are familiar with how to create agents from a shapefile then it becomes ve
   * **Step 1**: Define a species with SQLSKILL or AgentDB
 
 ```
-entities { 
-	species toto skills: SQLSKILL {
-	 {  
-		//insert your descriptions here
-	
-	 } 
-        ...
-}
+species toto skills: SQLSKILL {  
+	//insert your descriptions here
+} 
 ```
 
   * **Step 2**: Define a connection and create GIS database and tables
