@@ -69,7 +69,7 @@ species people skills:[moving]{
 The element that we have to modify is the display. We change its name to **map\_3D** to better reflect its visual aspect.
 
 In order to get a 3D aspect, we specify that this display will be an opengl one. For that, we just have to add the facet **type: opengl**. In addition, to get a different light between night and day : 
-The statement `light` allows us to declare a light. We can change up to 7 lights, called through the facet "id". The default light is a white light, directional, with the id=1. You can set the intensity of the light through the facet "color" (you can pass a color, or an integer between 0 and 255). To have a nice effect night / day, we will set the intensity of the light to 50 during the night, and 255 for the day. We also have to add the facet "update", so that the light can be recomputed at each step. To learn more about light, please read this [page](ManipulateLight).
+The statement `light` allows us to declare a light. We can change up to 7 lights, called through the facet "id". The default light is a white light, directional, with the id=1. You can set the intensity of the light through the facet "color" (you can pass a color, or an integer between 0 and 255). To have a nice effect night / day, we will set the intensity of the light to 50 during the night, and 255 for the day. To learn more about light, please read this [page](ManipulateLight).
 
 Then, we add a new layer that consists in an image (soil.jpg) by using the **image** statement.
 In order to see the people inside the building, we add transparency to the building (0.5). The transparency of a layer is a float value between 0 (solid) and 1 (totally transparent). In order to be able to manage this transparency aspect, opengl has to draw the people agents before the building, thus we modify the order of drawing of the different layers (people agents before building agents). At last, we modify the aspect of the people agents by the new one: **sphere3D**.
@@ -80,7 +80,7 @@ experiment main_experiment type:gui{
 	output {
 		...
 		display map_3D type: opengl {
-			light 1 color:(is_night ? 50 : 255) update:true;
+			light 1 color:(is_night ? 50 : 255);
 			image "../includes/soil.jpg";
 			species road aspect:geom;
 			species people aspect:sphere3D;			
@@ -190,7 +190,7 @@ experiment main_experiment type:gui{
 		monitor "Current hour" value: current_hour;
 		monitor "Infected people rate" value: infected_rate;
 		display map_3D type: opengl ambient_light: is_night ? 20 : 50 {
-			light 1 color:(is_night ? 50 : 255) update:true;
+			light 1 color:(is_night ? 50 : 255);
 			image "../includes/soil.jpg";
 			species road aspect:geom;
 			species people aspect:sphere3D;			
