@@ -94,8 +94,8 @@ Here are detailled steps to create and configure a new feature.
 
 ## Addition of a feature to the product
 
-In the product, e.g. `gama1.6.1.feature_based_Eclipse3_8_2_release.product` in the `msi.gama.application` project:
-  * Dependencies pane
+In the product, e.g. `gama.product` in the `ummisco.gama.product` project:
+  * Contents pane
     * Click on Add button
     * In the window select the feature
     * Click on OK.
