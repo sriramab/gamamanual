@@ -55,10 +55,13 @@ public void setSpeed(final IAgent agent, final double s) {
 ## Defining new actions
 An action (also called `primitive`) is basically a Java method that can be called from the GAML language using the same syntax as the one used for calling actions defined in a model. The method should be annotated with `@action`, supplying the name of the action as it will be available in GAML.
 
-The developer can also define parameters for this action using the annotation `@args` will a set of parameters names. For example, the action `goto` of the MovingSkill is defined as follows:
+The developer can also define parameters for this action using the annotation `@arg` will a set of parameters names. For example, the action `goto` of the MovingSkill is defined as follows:
 ```
-@action(name="goto")
-@args({ "target", "speed", "on" })
+@action(name="goto", args={ 
+    @arg(name = "target", type = { IType.AGENT, IType.POINT,IType.GEOMETRY }, optional = false),
+    @arg(name = IKeyword.SPEED, type = IType.FLOAT, optional = true),
+    @arg(name = "on", type = { IType.GRAPH }, optional = true)})
+
 public IPath primGoto(final IScope scope) throws GamaRuntimeException {
 ...
 }
