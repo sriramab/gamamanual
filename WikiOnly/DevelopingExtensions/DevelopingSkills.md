@@ -60,7 +60,9 @@ The developer can also define parameters for this action using the annotation `@
 @action(name="goto", args={ 
     @arg(name = "target", type = { IType.AGENT, IType.POINT,IType.GEOMETRY }, optional = false),
     @arg(name = IKeyword.SPEED, type = IType.FLOAT, optional = true),
-    @arg(name = "on", type = { IType.GRAPH }, optional = true)})
+    @arg(name = "on", type = { IType.GRAPH }, optional = true)
+    }
+)
 
 public IPath primGoto(final IScope scope) throws GamaRuntimeException {
 ...
