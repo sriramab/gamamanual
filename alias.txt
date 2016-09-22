@@ -17,6 +17,7 @@ bigger:>
 bmp:image
 browse:inspect
 bz2:osm
+calibration:keystone
 cast_operator:cast
 casting_operator:cast
 casting:cast
@@ -72,6 +73,7 @@ finite_state_machine:fsm
 gif:image
 gz:osm
 host:multi_level
+homography:keystone
 import:file
 import:load_file
 include:import
@@ -88,6 +90,7 @@ intersection:spatial_relation
 jpeg:image
 jpg:image
 keyboard:gui
+keystoning:keystone
 kill:die
 kilometers:km
 larger:>
@@ -157,6 +160,7 @@ predicate:bdi
 print:write
 printf:write
 procedure:action
+projection:keystone
 pseudo:pseudo_variable
 random:random_operator
 read:file
