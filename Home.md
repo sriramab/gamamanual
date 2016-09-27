@@ -1,4 +1,4 @@
-**The new website of GAMA is now available in this address : [gama-platform.org](http://gama-platform.org/)**
+**The new website of GAMA is now available at this address : [gama-platform.org](http://gama-platform.org/)**
 
 <div style="text-align:center"><img src ="https://github.com/gama-platform/gama/wiki/resources/images/general/GamaPlatform.png" width="800"/></div>
 
