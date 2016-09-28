@@ -1,3 +1,7 @@
+# Java version
+
+Due to changes in the libraries used by GAMA 1.7, this version now **requires JDK/JVM 1.8** to run.
+
 # Changes between 1.6.1 and 1.7 that can influence the dynamics of models
 
 * Initialization order between the initialization of variables and the execution of the `init` block in grids
