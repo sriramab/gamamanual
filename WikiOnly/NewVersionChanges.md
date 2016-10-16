@@ -27,7 +27,8 @@ gives examples
 # Enhancements in 1.7
 
 * Simulations
- * multi-simulation
+ * multi-simulation can now be run in parallel
+ * concurrency between agents is now possible and can be controlled on a species/grid/ask basis (from multi-threaded concurrency to complete parallelism within a species/grid or between the targets of an `ask` statement)
 
 * Language
  * date : new variable type and possibility to use a real calendar
