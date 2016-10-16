@@ -23,6 +23,7 @@ gives examples
 * in FIPA skill, `messages` is replaced by `mailbox`
 * The pseudo-attribute `user_location` has been removed (not deprecated, unfortunately) and replaced by the "unit" `#user_location`.
 * The actions called by an `event` layer do not need anymore to define `point` and `list<agent>` arguments to receive the mouse location and the list of agents selected. Instead, they can now use `#user_location` and they have to compute the selected agents by themselves (using an arbitrary function).
+* The random number generators now better handle seeding (larger range), but it can change the series of values previously obtained from a given seed in 1.6.1
 
 # Enhancements in 1.7
 
