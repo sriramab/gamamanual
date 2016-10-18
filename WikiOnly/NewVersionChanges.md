@@ -24,6 +24,9 @@ gives examples
 * The pseudo-attribute `user_location` has been removed (not deprecated, unfortunately) and replaced by the "unit" `#user_location`.
 * The actions called by an `event` layer do not need anymore to define `point` and `list<agent>` arguments to receive the mouse location and the list of agents selected. Instead, they can now use `#user_location` and they have to compute the selected agents by themselves (using an arbitrary function).
 * The random number generators now better handle seeding (larger range), but it can change the series of values previously obtained from a given seed in 1.6.1
+* #year (and its nicknames #y, #years) and #month (and its nickname #month) have been deprecated as they failed to represent a proper duration (see Dates below)
+* `as_time` and `as_system_time` have been removed
+* `as_date` and `as_system_date` now return a `date` object from the time in seconds or in milliseconds
 
 # Enhancements in 1.7
 
@@ -33,16 +36,16 @@ gives examples
  * concurrency between agents is now possible and can be controlled on a species/grid/ask basis (from multi-threaded concurrency to complete parallelism within a species/grid or between the targets of an `ask` statement)
 
 * Language
- * date : new variable type and possibility to use a real calendar
+ * `date` : new data type that offers the possibility to use a real calendar, to define a `starting_date` and to query a `current_date` from a simulation, to parse dates from date files or to output them in custom formats. Dates can be added, subtracted, compared. Various new operators (`minus_months`, etc.) allow for a fine manipulation of their data. Time units (`#sec`, `#s`, `#mn`, `#minute`, `#h`, `#hour`, `#day`, etc.) can be used in conjunction with them.
  * font in draw
  * BDI control architecture for agents
  * file management, new operators, new statements, new skills(?), new built-in variables, 
- * status statement (to manipulate the status line from GAML)
- * new operators (sum_of, etc.)
+ * `status` statement (to manipulate the status line from GAML)
+ * new operators (`sum_of`, `product_of`, etc.)
  * casting of files works
  * co-modeling (importation of micro-models that can be managed within a macro-model)
  * populations of agents can now be easily exported to CSV files using the `save` statement 
- * Simple messaging skill between agents  
+ * Simple `messaging` skill between agents  
  * Terminal commands can now be issued from within GAMA using the `console` operator
  * New `status` statement allows to change the text of the status.
  * light statement in 3D display provides the possibility to custom your lights (point lights, direction lights, spot lights)
@@ -69,6 +72,7 @@ gives examples
  * fullscreen mode for displays (ESC key)
  * CTRL+O for overlay and CTRL+L for layers side controls
  * cleaner OpenGL displays (less garbage, better drawing of lines, rotation helper, sticky ROI, etc.)
+ * possibility to use a new OpenGl pipeline and to define keystoning parameters (for projections)
  * faster java2D displays (esp. on zoom)
  * better user interaction (mouse move, hover, key listener)
  * a whole new set of charts
