@@ -25,8 +25,7 @@ gives examples
 * The actions called by an `event` layer do not need anymore to define `point` and `list<agent>` arguments to receive the mouse location and the list of agents selected. Instead, they can now use `#user_location` and they have to compute the selected agents by themselves (using an arbitrary function).
 * The random number generators now better handle seeding (larger range), but it can change the series of values previously obtained from a given seed in 1.6.1
 * #year (and its nicknames #y, #years) and #month (and its nickname #month) have been deprecated as they failed to represent a proper duration (see Dates below)
-* `as_time` and `as_system_time` have been removed
-* `as_date` and `as_system_date` now return a `date` object from the time in seconds or in milliseconds
+* `as_time`, `as_system_time`, `as_date` and `as_system_date` have been removed
 
 # Enhancements in 1.7
 
