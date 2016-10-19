@@ -38,7 +38,7 @@ gives examples
  * `date` : new data type that offers the possibility to use a real calendar, to define a `starting_date` and to query a `current_date` from a simulation, to parse dates from date files or to output them in custom formats. Dates can be added, subtracted, compared. Various new operators (`minus_months`, etc.) allow for a fine manipulation of their data. Time units (`#sec`, `#s`, `#mn`, `#minute`, `#h`, `#hour`, `#day`, etc.) can be used in conjunction with them.
  * font in draw
  * BDI control architecture for agents
- * file management, new operators, new statements, new skills(?), new built-in variables, 
+ * file management, new operators, new statements, new skills(?), new built-in variables, files can now download their contents from the web by using standard http: https: addresses instead of file paths.
  * `status` statement (to manipulate the status line from GAML)
  * new operators (`sum_of`, `product_of`, etc.)
  * casting of files works
