@@ -39,6 +39,7 @@ gives examples
  * font in draw
  * BDI control architecture for agents
  * file management, new operators, new statements, new skills(?), new built-in variables, files can now download their contents from the web by using standard http: https: addresses instead of file paths.
+ * The `save` can now directly manipulate files and ... save them. So something like `save shape_file("bb.shp", my_agents collect each.shape);` is possible. 
  * `status` statement (to manipulate the status line from GAML)
  * new operators (`sum_of`, `product_of`, etc.)
  * casting of files works
