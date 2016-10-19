@@ -49,6 +49,7 @@ gives examples
  * Terminal commands can now be issued from within GAMA using the `console` operator
  * New `status` statement allows to change the text of the status.
  * light statement in 3D display provides the possibility to custom your lights (point lights, direction lights, spot lights)
+ * `on_change:` facet for attributes/parameters allows to define a sequence of statements to run whenever the value changes. 
 
 * Data importation
  * draw of complex shapes through obj file
@@ -77,6 +78,7 @@ gives examples
  * better user interaction (mouse move, hover, key listener)
  * a whole new set of charts
  * getting values when moving the mouse on charts
+ * possibility to declare `permanent layout: ` + `#splitted`, `#horizontal`, `#vertical`, `#stacked` in the `output` section to automatically layout the display view.
  * Changing simulation names is reflected in their display titles (and it can be dynamic)
 
 * Error view
