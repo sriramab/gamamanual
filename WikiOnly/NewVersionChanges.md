@@ -36,6 +36,7 @@ gives examples
  * concurrency between agents is now possible and can be controlled on a species/grid/ask basis (from multi-threaded concurrency to complete parallelism within a species/grid or between the targets of an `ask` statement)
 
 * Language
+ * `gama` : a new immutable agent that can be invoked to change preferences or access to platform-only properties (like `machine-time`)
  * `date` : new data type that offers the possibility to use a real calendar, to define a `starting_date` and to query a `current_date` from a simulation, to parse dates from date files or to output them in custom formats. Dates can be added, subtracted, compared. Various new operators (`minus_months`, etc.) allow for a fine manipulation of their data. Time units (`#sec`, `#s`, `#mn`, `#minute`, `#h`, `#hour`, `#day`, etc.) can be used in conjunction with them. Interval of dates (date1 to date2) can be created and used as a basis for loops, etc. Various simple operators allow for defining conditions based on the current_date (after(date1), before(date2), since(date1), etc.).
  * font in draw
  * BDI control architecture for agents
@@ -92,11 +93,14 @@ gives examples
  * No more "false positive" errors
 
 * Console
- * Interactive console allows to directly interact with agents (experiments, simulations and any agent) and get a direct feedback on the impact of code execution using a new interpreter integrated with the console.
+ * Interactive console allows to directly interact with agents (experiments, simulations and any agent) and get a direct feedback on the impact of code execution using a new interpreter integrated with the console. Available in the modeling perspective (to interact with the new `gama` agent) as well as the simulation perspective (to interact with the current `experiment` agent).
  * Console now accepts colored text output 
 
 * Monitor view
  * monitors can have colors
+
+* GAMA-wide online help on the language
+ * A global search engine is now available in the top-right corner of the GAMA window to look for GAML idioms
 
 * Serialization
  * Serialize simulations and replay them (to come)
