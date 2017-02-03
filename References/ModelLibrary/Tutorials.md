@@ -6,7 +6,7 @@ This section is composed of the following sub-section :
 
 * [Incremental Model](references#IncrementalModel)
 
-* [Predator Prey](references#PredatorPrey)
+* [Predator Prey](PredatorPrey)
 
 * [Road Traffic](references#RoadTraffic)
 
