@@ -46,6 +46,7 @@ Tutorials
 --ManipulateDates
 --ManipulateLight
 --Comodel
+—-Headless-mode-for-dummies
 -Tutorials
 --LuneraysFlu
 ---LuneraysFlu_step1
