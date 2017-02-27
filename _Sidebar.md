@@ -76,8 +76,9 @@
 9. [Manipulate dates](ManipulateDates)
 9. [Manipulate lights](ManipulateLight)
 10. [Using comodel](Comodel)
-11. [FAQ](FAQ)
-12. [Known Issues](KnownIssues)
+11. [Headless mode](Headless-mode-for-dummies)
+12. [FAQ](FAQ)
+13. [Known Issues](KnownIssues)
 
 ## [GAML References](GamlReference)
 1. [Built-in Species](BuiltInSpecies)
