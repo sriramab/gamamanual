@@ -13,7 +13,7 @@
 
 ## Table of Contents
 <wiki:toc max_depth="3" />
-	[fsm](#fsm), [probabilistic_tasks](#probabilistic_tasks), [reflex](#reflex), [simple_bdi](#simple_bdi), [sorted_tasks](#sorted_tasks), [user_first](#user_first), [user_last](#user_last), [user_only](#user_only), [weighted_tasks](#weighted_tasks), 
+	[fsm](#fsm), [parallel_bdi](#parallel_bdi), [probabilistic_tasks](#probabilistic_tasks), [reflex](#reflex), [simple_bdi](#simple_bdi), [sorted_tasks](#sorted_tasks), [user_first](#user_first), [user_last](#user_last), [user_only](#user_only), [weighted_tasks](#weighted_tasks), 
 
 ----
 
@@ -23,6 +23,16 @@
 	   
 * **`state`** (string): Returns the current state in which the agent is   
 * **`states`** (list): Returns the list of all possible states the agents can be in 
+ 	
+### Actions 
+	
+
+----
+
+[//]: # (keyword|architecture_parallel_bdi)
+## parallel_bdi 
+### Variables
+	 
  	
 ### Actions 
 	
@@ -64,9 +74,11 @@
 * **`plan_persistence`** (float): plan persistence   
 * **`probabilistic_choice`** (boolean):    
 * **`receptivity`** (float):    
+* **`social_link_base`** (list):    
 * **`thinking`** (list):    
 * **`uncertainty_base`** (list):    
-* **`use_emotions_architecture`** (boolean):  
+* **`use_emotions_architecture`** (boolean):    
+* **`use_social_architecture`** (boolean):  
  	
 ### Actions 
 	  
@@ -74,7 +86,7 @@
 #### **`add_belief`**
 add the predicate in the belief base.
 * returns: bool 			
-* **`predicate`** (map): predicate to add as a belief  
+* **`predicate`** (546704): predicate to add as a belief  
 	 
 #### **`add_desire`**
 adds the predicates is in the desire base.
@@ -92,6 +104,11 @@ check if the predicates is in the desire base.
 * returns: bool 			
 * **`predicate`** (map): predicate to check  
 	 
+#### **`add_social_link`**
+add the social link to the social link base.
+* returns: bool 			
+* **`social_link`** (546707): social link to add to the base  
+	 
 #### **`add_subintention`**
 adds the predicates is in the desire base.
 * returns: bool 			
@@ -102,7 +119,7 @@ adds the predicates is in the desire base.
 #### **`add_uncertainty`**
 add a predicate in the uncertainty base.
 * returns: bool 			
-* **`predicate`** (map): predicate to check  
+* **`predicate`** (546704): predicate to check  
 	 
 #### **`clear_beliefs`**
 clear the belief base
@@ -112,8 +129,20 @@ clear the belief base
 clear the desire base
 * returns: bool  
 	 
+#### **`clear_emotions`**
+clear the emotion base
+* returns: bool  
+	 
 #### **`clear_intentions`**
 clear the intention base
+* returns: bool  
+	 
+#### **`clear_social_links`**
+clear the intention base
+* returns: bool  
+	 
+#### **`clear_uncertainties`**
+clear the uncertainty base
 * returns: bool  
 	 
 #### **`current_intention_on_hold`**
@@ -138,7 +167,7 @@ get the list of predicates is in the belief base
 	 
 #### **`get_beliefs_with_name`**
 get the list of predicates is in the belief base with the given name.
-* returns: java.util.List<msi.gaml.architecture.simplebdi.Predicate> 			
+* returns: msi.gama.util.IList<msi.gaml.architecture.simplebdi.Predicate> 			
 * **`name`** (string): name of the predicates to check  
 	 
 #### **`get_current_intention`**
@@ -194,6 +223,11 @@ get the list of predicates is in the belief base with the given name.
 get the list of plans.
 * returns: java.util.List<msi.gaml.architecture.simplebdi.BDIPlan>  
 	 
+#### **`get_social_link`**
+get the social linke (if several, returns the first one).
+* returns: msi.gaml.architecture.simplebdi.SocialLink 			
+* **`social_link`** (546707): social link to check  
+	 
 #### **`get_uncertainty`**
 get the predicates is in the uncertainty base (if several, returns the first one).
 * returns: predicate 			
@@ -213,6 +247,11 @@ check if the predicates is in the desire base.
 check if the emotion is in the belief base.
 * returns: bool 			
 * **`emotion`** (546706): emotion to check  
+	 
+#### **`has_social_link`**
+check if the social link base.
+* returns: bool 			
+* **`social_link`** (546707): social link to check  
 	 
 #### **`has_uncertainty`**
 check if the predicates is in the uncertainty base.
@@ -249,6 +288,11 @@ removes the predicates from the desire base.
 * returns: bool 			
 * **`predicate`** (546704): predicate to add 			
 * **`desire_also`** (boolean): removes also desire  
+	 
+#### **`remove_social_link`**
+removes the social link from the social relation base.
+* returns: bool 			
+* **`social_link`** (546707): social link to remove  
 	 
 #### **`remove_uncertainty`**
 removes the predicates from the desire base.
