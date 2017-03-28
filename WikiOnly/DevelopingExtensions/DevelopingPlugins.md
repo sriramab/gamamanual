@@ -175,11 +175,11 @@ It will fix this compilation error "Project configuration is not up-to-date with
 
 
 
-### Update parent pom.xml
+### Update parent pom.xml (this step will be done automatically by travis, soon)
 Open msi.gama.experimental.parent/pom.xml
 * Modules -> Add -> institution.gama.feature.pluginsName
 
-### Update p2updatesite category.xml
+### Update p2updatesite category.xml (this step will be done automatically by travis, soon)
 Open msi.gama.experimental.p2updatesite
 * Tab Managing the Categories -> Add feature -> institution.gama.feature.pluginsName
 
