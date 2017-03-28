@@ -107,8 +107,11 @@ In the product, e.g. `gama.product` in the `ummisco.gama.product` project:
 
 
 ## How to make a plug-in available at GAMA update site for the GAMA release 
-Considering an working GAMA plugin as institution.gama.pluginsName
-1/
+
+Considering a working GAMA plugin named institution.gama.pluginsName
+
+### Configure plugin to be available for Maven
+
 a/ Add pom.xml for plugin institution.gama.pluginsName :
 * Right click -> Configure -> Convert to maven project to add pom.xml:
 * Set:
@@ -130,7 +133,7 @@ It will fix this compilation error "Project configuration is not up-to-date with
 * Right click -> Maven -> Update project
 
 
-2/ Create a feature for the plugin
+### Create a feature for the plugin
 
 a/ Create new feature
 * New -> Project -> type in : feature -> Select "Feature Project"
@@ -170,11 +173,11 @@ It will fix this compilation error "Project configuration is not up-to-date with
 
 
 
-3/Update parent pom.xml
+### Update parent pom.xml
 Open msi.gama.experimental.parent/pom.xml
 * Modules -> Add -> institution.gama.feature.pluginsName
 
-4/Update p2updatesite category.xml
+### Update p2updatesite category.xml
 Open msi.gama.experimental.p2updatesite
 * Tab Managing the Categories -> Add feature -> institution.gama.feature.pluginsName
 
