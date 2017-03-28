@@ -120,6 +120,7 @@ a/ Add pom.xml for plugin institution.gama.pluginsName :
   * Version: 1.0.0-SNAPSHOT // must have -SNAPSHOT if the plugin version is x.x.x.qualifier
   * Packaging: eclipse-plugin
 * Finish
+
 b/ Configure pom.xml to recognize the parent pom.xml for Maven builds
 * Open pom.xml in institution.gama.pluginsName
 * Tab overview, Parent section, type in:
@@ -128,6 +129,7 @@ b/ Configure pom.xml to recognize the parent pom.xml for Maven builds
   * Version: 1.7.0-SNAPSHOT
   * Relative path: ../msi.gama.experimental
 * Save
+
 c/ Update maven cache in eclipse (optional)
 It will fix this compilation error "Project configuration is not up-to-date with pom.xml. Select: Maven->Update Project... from the project context menu or use Quick Fix."
 * Right click -> Maven -> Update project
