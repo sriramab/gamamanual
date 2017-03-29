@@ -127,7 +127,7 @@ b/ Configure pom.xml to recognize the parent pom.xml for Maven builds
   * Group id: msi.gama
   * Artifact id: msi.gama.experimental.parent
   * Version: 1.7.0-SNAPSHOT
-  * Relative path: ../msi.gama.experimental
+  * Relative path: ../msi.gama.experimental.parent
 * Save
 
 c/ Update maven cache in eclipse (optional)
@@ -166,7 +166,7 @@ c/ Configure pom.xml to recognize the parent pom.xml for Maven builds
   * Group id: msi.gama
   * Artifact id: msi.gama.experimental.parent
   * Version: 1.7.0-SNAPSHOT
-  * Relative path: ../msi.gama.experimental
+  * Relative path: ../msi.gama.experimental.parent
 * Save
 
 d/ Update maven cache in eclipse (optional)
