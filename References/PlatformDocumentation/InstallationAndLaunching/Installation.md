@@ -21,9 +21,18 @@ GAMA 1.7 requires that **Java 1.8** be installed on your machine, approximately 
 
 ### MacOS 
 
-In some rare cases, "Archive utility.app" in MacOS may damage the files when extracting them from the zip or tar.gz archive files. This problem manifests itself by a dialog opening and explaining that the application is damaged and cannot be launched (see [Issue 2082](https://github.com/gama-platform/gama/issues/2082#issuecomment-271812519) and also [this thread](https://bugs.eclipse.org/bugs/show_bug.cgi?id=398450#c17). In that case, to expand the files, consider using a different utility, like the free [Stuffit Expander](http://my.smithmicro.com/stuffit-expander-mac.html) or directly from the command line. 
+In some cases, "Archive utility.app" in MacOS may damage the files when extracting them from the zip or tar.gz archive files. This problem manifests itself by a dialog opening and explaining that the application is damaged and cannot be launched (see [Issue 2082](https://github.com/gama-platform/gama/issues/2082#issuecomment-271812519) and also [this thread](https://bugs.eclipse.org/bugs/show_bug.cgi?id=398450#c17). In that case, to expand the files, consider using a different utility, like the free [Stuffit Expander](http://my.smithmicro.com/stuffit-expander-mac.html) or directly from the command line. 
 
-Another recent issue (with MacOS Sierra) has popped up for Mac users, which makes using the Models Library models impossible. See this [page](http://lapcatsoftware.com/articles/app-translocation.html) for background information. Basically, the only known fix to date is to copy and paste `Gama.app` in your Applications folder instead of trying to launch it from the Downloads folder.
+MacOS Sierra has introduced a series of issues linked to the so-called "quarantine" mode (where applications downloaded from Internet prevent the use and updated of internal components, such as the models of the library or the self update of the application). See this [page](http://lapcatsoftware.com/articles/app-translocation.html) for background information. To be certain that Gama will work, and until we find an easier solution, the installation should follow these steps:
+
+1. Download the GAMA zip file
+2. Unzip it (possibly with another archive utility, see above)
+3. Copy and paste `Gama` in the `Applications` folder
+4. Launch `Terminal.app`
+5. Type `cd /Applications` and hit return.
+6. Type `xattr -d -r com.apple.quarantine Gama.app/` and hit return to remove the quarantine attribute
+
+From now on, Gama should be fully functional.
 
 ## Installation of Java
 
