@@ -34,8 +34,7 @@ The source is to be downloaded from GitHub in two steps: by creating a local clo
         * Open eclipse.ini
         * Add these 2 lines before **--launcher.appendVmargs**:
 
-        --launcher.GTK_version
-
+        --launcher.GTK_version   
         2
         * Change required version of java from : -Dosgi.requiredJavaVersion=1.7 into -Dosgi.requiredJavaVersion=1.8
         * Remove this line: -XX:MaxPermSize=256m
