@@ -12,6 +12,8 @@ The expressions known as **pseudo-variables** are special read-only variables th
 	* [self](#self)
 	* [myself](#myself)
 	* [each](#each)
+        * [super] (#super)
+
 
 
 
@@ -28,7 +30,26 @@ if potential_friend != nil {
 }
 ```
 
+## super
+The pseudo-variable `super` behaves exactly in the same way as `self` except when calling an action, in which case it represents an indirection to the parent species. It is mainly used for allowing to call inherited actions within redefined ones. For instance:
 
+```
+species parent {
+
+    int add(int a, int b) {
+        return a + b;
+    }
+
+}
+
+species child parent: parent {
+
+    int add(int a, int b) {
+        // Calls the action defined in 'parent' with modified arguments
+        return super.add(a + 20, b + 20);
+    }
+
+}
 
 
 ## myself
