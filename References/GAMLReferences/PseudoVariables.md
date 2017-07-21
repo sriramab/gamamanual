@@ -12,7 +12,7 @@ The expressions known as **pseudo-variables** are special read-only variables th
 	* [self](#self)
 	* [myself](#myself)
 	* [each](#each)
-        * [super] (#super)
+	* [super](#super)
 
 
 
@@ -50,7 +50,7 @@ species child parent: parent {
     }
 
 }
-
+```
 
 ## myself
 `myself` plays the same role as `self` but in remotely-executed code (`ask`, `create`, `capture` and `release` statements), where it represents the _calling_ agent when the code is executed by the _remote_ agent.
