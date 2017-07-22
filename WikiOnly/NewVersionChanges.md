@@ -31,7 +31,7 @@ gives examples
 # Enhancements in 1.7
 
 * Simulations
- * simulations can now be run in parallel withing an experiment (with their outputs, displays, etc.)
+    * simulations can now be run in parallel withing an experiment (with their outputs, displays, etc.)
  * batch experiments inherit from this possibility and can now run their repetitions in parallel too.
  * concurrency between agents is now possible and can be controlled on a species/grid/ask basis (from multi-threaded concurrency to complete parallelism within a species/grid or between the targets of an `ask` statement)
 
