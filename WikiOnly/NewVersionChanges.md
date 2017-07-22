@@ -30,12 +30,12 @@ gives examples
 
 # Enhancements in 1.7
 
-* Simulations
-    * simulations can now be run in parallel withing an experiment (with their outputs, displays, etc.)
+## Simulations
+ * simulations can now be run in parallel withing an experiment (with their outputs, displays, etc.)
  * batch experiments inherit from this possibility and can now run their repetitions in parallel too.
  * concurrency between agents is now possible and can be controlled on a species/grid/ask basis (from multi-threaded concurrency to complete parallelism within a species/grid or between the targets of an `ask` statement)
 
-* Language
+## Language
  * `gama` : a new immutable agent that can be invoked to change preferences or access to platform-only properties (like `machine-time`)
  * `try` and `catch` statements now provide a robust way to catch errors happening in the simulations. 
  * `super` (instead of `self`) and `invoke` (instead of `do`) can now be used to call an action defined in a parent species. 
@@ -56,26 +56,27 @@ gives examples
  * Displays can now inherit from other displays (facets `parent` and `virtual` to describe abstract displays)
  * `on_change:` facet for attributes/parameters allows to define a sequence of statements to run whenever the value changes. 
 
-* Data importation
+## Data importation
  * draw of complex shapes through obj file
  * new types fo files are taken into account: geotiff and dxf
  * viewers for common files
  * navigator: better overview of model files and their support files, addition of plugin models 
 
-* Editor
+## Editor
  * doc on built-in elements, templates, shortcuts to common tasks, hyperlinks to files used
  * improvement in time, gathering of infos/todos
  * warnings can be removed from model files
 
 
-* Models library: 
+## Models library: 
  * New models (make a list)
 
-* Preferences
+## Preferences
  * For performances and bug fixes in displays
- * OpenGL displays should be up to 3 times faster in rendering
+ * For charts defaults
 
-* Simulation displays
+## Simulation displays
+ * OpenGL displays should be up to 3 times faster in rendering
  * fullscreen mode for displays (ESC key)
  * CTRL+O for overlay and CTRL+L for layers side controls
  * cleaner OpenGL displays (less garbage, better drawing of lines, rotation helper, sticky ROI, etc.)
@@ -89,28 +90,28 @@ gives examples
  * Changing simulation names is reflected in their display titles (and it can be dynamic)
  * OpenGL displays now handle rotations of 2D and 3D shapes, combinations of textures and colours, and keystoning
 
-* Error view
+## Error view
  * Much faster (up to 100x !) display of errors
  * Contextual menu to copy the text of errors to clipboard or open the editor on it
 
-* Validation
+## Validation
  * Faster validation of multi-file models (x2 approx.)
  * Much less memory used compared to 1.6.1 (/10 approx.)
  * No more "false positive" errors
 
-* Console
+## Console
  * Interactive console allows to directly interact with agents (experiments, simulations and any agent) and get a direct feedback on the impact of code execution using a new interpreter integrated with the console. Available in the modeling perspective (to interact with the new `gama` agent) as well as the simulation perspective (to interact with the current `experiment` agent).
  * Console now accepts colored text output 
 
-* Monitor view
+## Monitor view
  * monitors can have colors
  * monitors now have contextual menus depending on the value displayed (save as CSV, inspect, browse...)
 
-* GAMA-wide online help on the language
+## GAMA-wide online help on the language
  * A global search engine is now available in the top-right corner of the GAMA window to look for GAML idioms
 
-* Serialization
+## Serialization
  * Serialize simulations and replay them (to come)
  * Serialization and deserialization of agents between simulations (to come)
 
-* Allow TCP, UDP and MQQT communications between agents in different simulations (to come)
+## Allow TCP, UDP and MQQT communications between agents in different simulations (to come)
