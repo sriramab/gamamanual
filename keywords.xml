@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <xml version="1.0" encoding="UTF-8"><xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:wiki="www.google.fr">
    	<keyword id="concept_3d">
    		<name>3d</name>
@@ -5198,4 +5199,8 @@
    	</keyword> 	
    	
 	</xsl:stylesheet>
+=======
+<xml version="1.0" encoding="UTF-8"><xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:wiki="www.google.fr">
+	</xsl:stylesheet>
+>>>>>>> 6d5ac2b29e0fe2ee0379e7f09c6dffd05787945c
 </xml>

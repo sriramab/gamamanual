@@ -372,7 +372,11 @@ ___________________________________________________________
 
 _The following text has been automatically generated from "mainCheckConcepts"_
 
+<<<<<<< HEAD
 ______________ _last update : 2017/07/24 10:19:50_
+=======
+______________ _last update : 2017/07/24 03:16:07_
+>>>>>>> 6d5ac2b29e0fe2ee0379e7f09c6dffd05787945c
 
 **List of concepts to use for model library (except Syntax):**
 
@@ -388,6 +392,7 @@ arithmetic, attribute, cast, condition, container, filter, list, logical, loop, 
 
 | **Concept name** | **in Doc** | **in GAML Ref** | **in Model Lib** | **TOTAL** |
 |:----------------------------|:-------------|:-------------|:-------------|:-------------|
+<<<<<<< HEAD
 | 3d | 2 | 6 | 39 | 47 |
 | action | 3 | 3 | _ | 7 |
 | agent_location | 1 | 0 | 0 | 1 |
@@ -397,10 +402,22 @@ arithmetic, attribute, cast, condition, container, filter, list, logical, loop, 
 | arithmetic | 0 | 0 | 0 | 0 |
 | asc | 0 | 0 | 2 | 2 |
 | attribute | 2 | 3 | _ | 6 |
+=======
+| 3d | 2 | 0 | 39 | 41 |
+| action | 3 | 0 | _ | 4 |
+| agent_location | 1 | 0 | 0 | 1 |
+| agent_movement | 0 | 0 | 23 | 23 |
+| algorithm | 1 | 0 | 2 | 3 |
+| architecture | 2 | 0 | 1 | 3 |
+| arithmetic | 0 | 0 | 0 | 0 |
+| asc | 0 | 0 | 2 | 2 |
+| attribute | 2 | 0 | _ | 3 |
+>>>>>>> 6d5ac2b29e0fe2ee0379e7f09c6dffd05787945c
 | autosave | 2 | _ | _ | 2 |
 | background | 1 | _ | _ | 1 |
 | batch | 3 | 0 | 4 | 7 |
 | bdi | 1 | 0 | 0 | 1 |
+<<<<<<< HEAD
 | behavior | 3 | 2 | _ | 5 |
 | camera | 1 | 1 | 2 | 4 |
 | cast | 1 | 12 | 1 | 14 |
@@ -447,11 +464,60 @@ arithmetic, attribute, cast, condition, container, filter, list, logical, loop, 
 | headless | 0 | 0 | 0 | 0 |
 | hydrology | 0 | 0 | 1 | 1 |
 | image | 0 | 2 | 0 | 2 |
+=======
+| behavior | 3 | 0 | _ | 3 |
+| camera | 1 | 0 | 2 | 3 |
+| cast | 1 | 0 | 1 | 2 |
+| chart | 0 | 0 | 5 | 5 |
+| clustering | 0 | 0 | 3 | 3 |
+| color | 1 | 0 | 4 | 5 |
+| communication | 0 | 0 | 0 | 0 |
+| comodel | 0 | 0 | 8 | 8 |
+| comparison | 0 | 0 | 2 | 2 |
+| condition | 1 | 0 | 0 | 1 |
+| constant | 0 | 0 | _ | 0 |
+| container | 1 | 0 | 1 | 2 |
+| csv | 2 | 0 | 3 | 5 |
+| cycle | 2 | 0 | _ | 2 |
+| database | 1 | 0 | 17 | 18 |
+| date | 1 | 0 | 2 | 3 |
+| dem | 0 | 0 | 1 | 1 |
+| dgs | 0 | 0 | 1 | 1 |
+| diffusion | 1 | 0 | 14 | 15 |
+| dimension | 2 | 0 | _ | 2 |
+| display | 2 | 0 | _ | 4 |
+| distribution | 1 | _ | _ | 1 |
+| dxf | 0 | 0 | 1 | 1 |
+| edge | 1 | 0 | 1 | 2 |
+| elevation | 0 | 0 | 7 | 7 |
+| enumeration | 1 | _ | _ | 1 |
+| equation | 2 | 0 | 15 | 17 |
+| experiment | 2 | 0 | _ | 2 |
+| facet | 1 | _ | _ | 1 |
+| file | 1 | 0 | _ | 3 |
+| filter | 1 | 0 | 0 | 1 |
+| fipa | 1 | 0 | 11 | 12 |
+| fsm | 1 | 0 | 0 | 1 |
+| geometry | 2 | 0 | 0 | 2 |
+| gis | 0 | 0 | 24 | 24 |
+| global | 1 | _ | _ | 1 |
+| graph | 1 | 0 | 32 | 33 |
+| graph_weight | 1 | 0 | 0 | 1 |
+| graphic | 1 | 0 | 1 | 2 |
+| graphic_unit | 1 | 0 | _ | 1 |
+| grid | 4 | 0 | 33 | 37 |
+| gui | 3 | 0 | 24 | 27 |
+| halt | 1 | _ | _ | 1 |
+| headless | 0 | 0 | 0 | 0 |
+| hydrology | 0 | 0 | 1 | 1 |
+| image | 0 | 0 | 0 | 0 |
+>>>>>>> 6d5ac2b29e0fe2ee0379e7f09c6dffd05787945c
 | import | 1 | _ | _ | 1 |
 | inheritance | 1 | _ | 1 | 2 |
 | init | 3 | _ | _ | 3 |
 | inspector | 1 | 0 | 1 | 2 |
 | layer | 1 | _ | _ | 1 |
+<<<<<<< HEAD
 | length_unit | 0 | 9 | _ | 9 |
 | light | 2 | 1 | 4 | 7 |
 | list | 0 | 5 | 2 | 7 |
@@ -471,32 +537,72 @@ arithmetic, attribute, cast, condition, container, filter, list, logical, loop, 
 | network | 0 | 1 | 0 | 1 |
 | nil | 1 | 0 | 0 | 1 |
 | node | 1 | 1 | 1 | 3 |
+=======
+| length_unit | 0 | 0 | _ | 0 |
+| light | 2 | 0 | 4 | 6 |
+| list | 0 | 0 | 2 | 2 |
+| load_file | 4 | 0 | 18 | 22 |
+| logical | 1 | 0 | 0 | 1 |
+| loop | 1 | 0 | 2 | 3 |
+| map | 0 | 0 | 1 | 1 |
+| math | 1 | 0 | 20 | 21 |
+| matrix | 2 | 0 | 8 | 10 |
+| mirror | 1 | 0 | 2 | 3 |
+| model | 1 | _ | _ | 1 |
+| monitor | 1 | 0 | 1 | 2 |
+| multi_criteria | 0 | 0 | 1 | 1 |
+| multi_level | 1 | 0 | 9 | 10 |
+| multi_simulation | 1 | 0 | 2 | 3 |
+| neighbors | 1 | 0 | 1 | 2 |
+| network | 0 | 0 | 0 | 0 |
+| nil | 1 | 0 | 0 | 1 |
+| node | 1 | 0 | 1 | 2 |
+>>>>>>> 6d5ac2b29e0fe2ee0379e7f09c6dffd05787945c
 | obj | 0 | 0 | 2 | 2 |
 | obstacle | 0 | 0 | 3 | 3 |
 | opengl | 3 | _ | _ | 3 |
 | operator | 1 | _ | _ | 1 |
+<<<<<<< HEAD
 | optimization | 3 | 3 | _ | 6 |
 | osm | 1 | 1 | 2 | 4 |
 | output | 2 | _ | _ | 7 |
+=======
+| optimization | 3 | 0 | _ | 3 |
+| osm | 1 | 0 | 2 | 3 |
+| output | 2 | _ | _ | 2 |
+>>>>>>> 6d5ac2b29e0fe2ee0379e7f09c6dffd05787945c
 | overlay | 0 | 0 | 1 | 1 |
-| parameter | 2 | 1 | _ | 3 |
+| parameter | 2 | 0 | _ | 2 |
 | pause | 1 | _ | _ | 1 |
 | permanent | 1 | _ | _ | 1 |
 | physics_engine | 0 | 0 | 4 | 4 |
+<<<<<<< HEAD
 | point | 0 | 14 | _ | 14 |
 | probability | 1 | _ | _ | 1 |
 | pseudo_variable | 1 | _ | _ | 1 |
 | r | 1 | 0 | 0 | 1 |
 | random | 3 | 10 | _ | 13 |
+=======
+| point | 0 | 0 | _ | 0 |
+| probability | 1 | _ | _ | 1 |
+| pseudo_variable | 1 | _ | _ | 1 |
+| r | 1 | 0 | 0 | 1 |
+| random | 3 | 0 | _ | 3 |
+>>>>>>> 6d5ac2b29e0fe2ee0379e7f09c6dffd05787945c
 | random_operator | 0 | 0 | _ | 0 |
 | raster | 0 | 0 | 4 | 4 |
 | reflex | 1 | _ | _ | 1 |
 | refresh | 2 | _ | _ | 2 |
+<<<<<<< HEAD
 | regression | 0 | 2 | 1 | 3 |
+=======
+| regression | 0 | 0 | 1 | 1 |
+>>>>>>> 6d5ac2b29e0fe2ee0379e7f09c6dffd05787945c
 | save_file | 0 | 0 | 8 | 8 |
 | scheduler | 2 | 0 | 0 | 2 |
 | serialize | 0 | 0 | 0 | 0 |
 | shape | 3 | 0 | 1 | 4 |
+<<<<<<< HEAD
 | shapefile | 2 | 2 | 34 | 38 |
 | shortest_path | 1 | 2 | 4 | 7 |
 | skill | 2 | 10 | 42 | 54 |
@@ -524,9 +630,38 @@ arithmetic, attribute, cast, condition, container, filter, list, logical, loop, 
 | transport | 1 | 3 | 6 | 10 |
 | txt | 0 | 0 | 1 | 1 |
 | type | 0 | 33 | _ | 33 |
+=======
+| shapefile | 2 | 0 | 34 | 36 |
+| shortest_path | 1 | 0 | 4 | 5 |
+| skill | 2 | 0 | 42 | 44 |
+| sound | 0 | 0 | 0 | 0 |
+| spatial_computation | 0 | 0 | 7 | 7 |
+| spatial_relation | 0 | 0 | 0 | 0 |
+| spatial_transformation | 0 | 0 | 2 | 2 |
+| species | 1 | 0 | _ | 1 |
+| sport | 0 | _ | 2 | 2 |
+| statistic | 0 | 0 | 5 | 5 |
+| string | 0 | 0 | 0 | 0 |
+| surface_unit | 0 | 0 | _ | 0 |
+| svg | 0 | 0 | 0 | 0 |
+| system | 1 | 0 | 0 | 1 |
+| task_based | 1 | 0 | 0 | 1 |
+| ternary | 1 | 0 | 1 | 2 |
+| test | 0 | 0 | 2 | 2 |
+| text | 2 | 0 | 0 | 2 |
+| texture | 0 | 0 | 3 | 3 |
+| tif | 0 | 0 | 1 | 1 |
+| time | 2 | 0 | _ | 2 |
+| time_unit | 0 | 0 | _ | 0 |
+| topology | 3 | 0 | 4 | 7 |
+| torus | 1 | _ | _ | 1 |
+| transport | 1 | 0 | 6 | 7 |
+| txt | 0 | 0 | 1 | 1 |
+| type | 0 | 0 | _ | 0 |
+>>>>>>> 6d5ac2b29e0fe2ee0379e7f09c6dffd05787945c
 | update | 1 | _ | _ | 1 |
-| volume_unit | 0 | 5 | _ | 5 |
-| weight_unit | 0 | 8 | _ | 8 |
+| volume_unit | 0 | 0 | _ | 0 |
+| weight_unit | 0 | 0 | _ | 0 |
 | world | 1 | _ | _ | 1 |
 | write | 1 | _ | _ | 1 |
-| xml | 0 | 4 | 0 | 4 |
+| xml | 0 | 0 | 0 | 0 |
