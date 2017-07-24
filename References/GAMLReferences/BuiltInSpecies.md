@@ -23,7 +23,7 @@ create cluster_builder returns: clusterer;
 
 ## Table of Contents
 <wiki:toc max_depth="3" />
-[agent](#agent), [AgentDB](#agentdb), [base_edge](#base_edge), [experiment](#experiment), [graph_edge](#graph_edge), [graph_node](#graph_node), [model](#model), [physical_world](#physical_world), 
+[agent](#agent), [experiment](#experiment), [graph_edge](#graph_edge), [graph_node](#graph_node), 
     	
 ----
 
@@ -42,82 +42,6 @@ create cluster_builder returns: clusterer;
 
 * returns: `unknown`
 
-    	
-----
-
-[//]: # (keyword|species_AgentDB)
-## `AgentDB`	
-
-### Actions
-	  
-	 
-#### **`close`**
-
-* returns: `unknown`
-  
-	 
-#### **`connect`**
-
-* returns: `unknown`
- 			
-* → **`params`** (`map`): Connection parameters  
-	 
-#### **`executeUpdate`**
-
-* returns: `int`
- 			
-* → **`updateComm`** (`string`): SQL commands such as Create, Update, Delete, Drop with question mark 			
-* → **`values`** (`list`): List of values that are used to replace question mark  
-	 
-#### **`getParameter`**
-
-* returns: `unknown`
-  
-	 
-#### **`insert`**
-
-* returns: `int`
- 			
-* → **`into`** (`string`): Table name 			
-* → **`columns`** (`list`): List of column name of table 			
-* → **`values`** (`list`): List of values that are used to insert into table. Columns and values must have same size  
-	 
-#### **`isConnected`**
-
-* returns: `bool`
-  
-	 
-#### **`select`**
-
-* returns: `container`
- 			
-* → **`select`** (`string`): select string 			
-* → **`values`** (`list`): List of values that are used to replace question marks  
-	 
-#### **`setParameter`**
-
-* returns: `unknown`
- 			
-* → **`params`** (`map`): Connection parameters  
-	 
-#### **`testConnection`**
-
-* returns: `bool`
- 			
-* → **`params`** (`map`): Connection parameters  
-	 
-#### **`timeStamp`**
-
-* returns: `float`
-
-    	
-----
-
-[//]: # (keyword|species_base_edge)
-## `base_edge`	
-
-### Actions
-	
     	
 ----
 
@@ -150,37 +74,7 @@ Forces all outputs to refresh, optionally recomputing their values
 	  
 	 
 #### **`related_to`**
-
+This operator should never be called
 * returns: `bool`
  			
-* → **`other`** (`agent`): 
-    	
-----
-
-[//]: # (keyword|species_model)
-## `model`	
-
-### Actions
-	  
-	 
-#### **`halt`**
-Allows to stop the current simulation so that cannot be continued after. All the behaviors and updates are stopped.
-* returns: `unknown`
-  
-	 
-#### **`pause`**
-Allows to pause the current simulation **ACTUALLY EXPERIMENT FOR THE MOMENT**. It can be set to continue with the manual intervention of the user.
-* returns: `unknown`
-
-    	
-----
-
-[//]: # (keyword|species_physical_world)
-## `physical_world`	
-
-### Actions
-	  
-	 
-#### **`compute_forces`**
-
-* returns: `unknown`
+* → **`other`** (`agent`): The other agent

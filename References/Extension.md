@@ -6,9 +6,14 @@
 
 ## Introduction
 This page provides a link to each of the extension pages. Extensions are the additional GAMA plugins that exist in the GAMA GitHub repository but will not be packaged with the release. **These extensions are not maintained by GAMA core team but by their authors.**
+* [idees.gama.mapcomparison](PluginDocumentation/Extension_idees.gama.mapcomparison)
 * [idees.gama.weka](PluginDocumentation/Extension_idees.gama.weka)
-* [ummisco.gaml.extensions.stats](PluginDocumentation/Extension_ummisco.gaml.extensions.stats)
 * [miat.gama.extension.ifcfile](PluginDocumentation/Extension_miat.gama.extension.ifcfile)
-* [ummisco.gaml.extensions.sound](PluginDocumentation/Extension_ummisco.gaml.extensions.sound)
-* [simtools.graphanalysis.fr](PluginDocumentation/Extension_simtools.graphanalysis.fr)
-* [ummisco.gaml.extensions.rjava](PluginDocumentation/Extension_ummisco.gaml.extensions.rjava)
+* [ummisco.miro.extension.traffic](PluginDocumentation/Extension_ummisco.miro.extension.traffic)
+* [irit.maelia.gaml.additions](PluginDocumentation/Extension_irit.maelia.gaml.additions)
+* [msi.gaml.extensions.cplex](PluginDocumentation/Extension_msi.gaml.extensions.cplex)
+* [ummisco.gama.gpu](PluginDocumentation/Extension_ummisco.gama.gpu)
+* [msi.gaml.extensions.humanmoving](PluginDocumentation/Extension_msi.gaml.extensions.humanmoving)
+* [msi.gaml.extensions.traffic2d](PluginDocumentation/Extension_msi.gaml.extensions.traffic2d)
+* [ummisco.gama.communicator](PluginDocumentation/Extension_ummisco.gama.communicator)
+* [ummisco.miro.extension](PluginDocumentation/Extension_ummisco.miro.extension)

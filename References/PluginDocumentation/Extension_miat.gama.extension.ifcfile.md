@@ -6,7 +6,7 @@
 
 ## Table of Contents
 ### Operators
-[eleldkdjxuxsnel](#eleldkdjxuxsnel), [ifc_file](#ifc_file), [is_ifc](#is_ifc), 
+[eleldkdjxuxsnel](#eleldkdjxuxsnel), 
 
 ### Statements
 
@@ -36,30 +36,6 @@
 #### Possible use: 
   * `rgb` **`eleldkdjxuxsnel`** `rgb` --->  `string`
   *  **`eleldkdjxuxsnel`** (`rgb` , `rgb`) --->  `string`
-    	
-----
-
-
-[//]: # (keyword|operator_ifc_file)
-### `ifc_file`
-
-#### Possible use: 
-  *  **`ifc_file`** (`string`) --->  `file` 
-
-#### Result: 
-Constructs a file of type ifc. Allowed extensions are limited to ifc
-    	
-----
-
-
-[//]: # (keyword|operator_is_ifc)
-### `is_ifc`
-
-#### Possible use: 
-  *  **`is_ifc`** (`any`) --->  `bool` 
-
-#### Result: 
-Tests whether the operand is a ifc file.
 
 ----
 
