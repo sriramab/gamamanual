@@ -261,11 +261,31 @@ add expr at: expr to: expr_container;   // Add at position expr
 
 ```
 list<int> workingList <- [];
-add 0 at: 0 to: workingList ; 	// workingList equals [0]
-add 10 at: 0 to: workingList ; 	// workingList equals [10,0]
-add 20 at: 2 to: workingList ; 	// workingList equals [10,0,20]
-add 50 to: workingList; 	// workingList equals [10,0,20,50]
-add [60,70] all: true to: workingList; 	// workingList equals [10,0,20,50,60,70]
+add 0 at: 0 to: workingList ;
+								//
+								workingList
+								equals
+								[0]
+add 10 at: 0 to: workingList ;
+								//
+								workingList
+								equals
+								[10,0]
+add 20 at: 2 to: workingList ;
+								//
+								workingList
+								equals
+								[10,0,20]
+add 50 to: workingList;
+								//
+								workingList
+								equals
+								[10,0,20,50]
+add [60,70] all: true to: workingList;
+								//
+								workingList
+								equals
+								[10,0,20,50,60,70]
 ```
 
 
@@ -273,29 +293,49 @@ add [60,70] all: true to: workingList; 	// workingList equals [10,0,20,50,60,70]
 
 ```
 map<string,string> workingMap <- [];
-add "val1" at: "x" to: workingMap; 	// workingMap equals ["x"::"val1"]
+add "val1" at: "x" to: workingMap;
+								//
+								workingMap
+								equals
+								["x"::"val1"]
 ```
 
 
 * If the at facet is omitted, a pair expr_item::expr_item will be added to the map. An important exception is the case where the expr_item is a pair: in this case the pair is added.
 
 ```
-add "val2" to: workingMap; 	// workingMap equals ["x"::"val1", "val2"::"val2"]
-add "5"::"val4" to: workingMap;  	// workingMap equals ["x"::"val1", "val2"::"val2", "5"::"val4"]
+add "val2" to: workingMap;
+								//
+								workingMap
+								equals
+								["x"::"val1", "val2"::"val2"]
+add "5"::"val4" to: workingMap; 
+								//
+								workingMap
+								equals
+								["x"::"val1", "val2"::"val2", "5"::"val4"]
 ```
 
 
 * Notice that, as the key should be unique, the addition of an item at an existing position (i.e. existing key) will only modify the value associated with the given key.
 
 ```
-add "val3" at: "x" to: workingMap; 	// workingMap equals ["x"::"val3", "val2"::"val2", "5"::"val4"]
+add "val3" at: "x" to: workingMap;
+								//
+								workingMap
+								equals
+								["x"::"val3", "val2"::"val2", "5"::"val4"]
 ```
 
 
 * On a map, the all facet will add all value of a container  in the map (so as pair val_cont::val_cont)
 
 ```
-add ["val4","val5"] all: true at: "x" to: workingMap; 	// workingMap equals ["x"::"val3", "val2"::"val2", "5"::"val4","val4"::"val4","val5"::"val5"]
+add ["val4","val5"] all: true at: "x" to: workingMap;
+								//
+								workingMap
+								equals
+								["x"::"val3", "val2"::"val2", "5"::"val4","val4"::"val4","val5"::"val5"]
 ```
 
 
@@ -304,11 +344,43 @@ add ["val4","val5"] all: true at: "x" to: workingMap; 	// workingMap equals ["x"
 ```
 graph g <- as_edge_graph([{1,5}::{12,45}]);
 add edge: {1,5}::{2,3} to: g;
-list var <- g.vertices; 	// var equals [{1,5},{12,45},{2,3}]
-list var <- g.edges; 	// var equals [polyline({1.0,5.0}::{12.0,45.0}),polyline({1.0,5.0}::{2.0,3.0})]
+list
+								var
+								
+								<-
+								g.vertices
+								; // var
+								
+								equals
+								[{1,5},{12,45},{2,3}]
+list
+								var
+								
+								<-
+								g.edges
+								; // var
+								
+								equals
+								[polyline({1.0,5.0}::{12.0,45.0}),polyline({1.0,5.0}::{2.0,3.0})]
 add node: {5,5} to: g;
-list var <- g.vertices; 	// var equals [{1.0,5.0},{12.0,45.0},{2.0,3.0},{5.0,5.0}]
-list var <- g.edges; 	// var equals [polyline({1.0,5.0}::{12.0,45.0}),polyline({1.0,5.0}::{2.0,3.0})]
+list
+								var
+								
+								<-
+								g.vertices
+								; // var
+								
+								equals
+								[{1.0,5.0},{12.0,45.0},{2.0,3.0},{5.0,5.0}]
+list
+								var
+								
+								<-
+								g.edges
+								; // var
+								
+								equals
+								[polyline({1.0,5.0}::{12.0,45.0}),polyline({1.0,5.0}::{2.0,3.0})]
 ```
 
 
@@ -1926,7 +1998,11 @@ if true {
 else {
 	valTrue <- "false";
 }
- 	// valTrue equals "true"
+
+								//
+								valTrue
+								equals
+								"true"
 string valFalse <- "";
 if false {
 	valFalse <- "true";
@@ -1934,7 +2010,11 @@ if false {
 else {
 	valFalse <- "false";
 }
- 	// valFalse equals "false"
+
+								//
+								valFalse
+								equals
+								"false"
 ```
 
 
@@ -2589,28 +2669,80 @@ put all: expr in: expr_container;
 * In the case of a list, the position should an integer in the bound of the list. The facet all: is used to replace all the elements of the list by the given value.
 
 ```
-list<int> putList <- [1,2,3,4,5]; 	// putList equals [1,2,3,4,5]
-put -10 at: 1 in: putList; 	// putList equals [1,-10,3,4,5]
-put 10 all: true in: putList; 	// putList equals [10,10,10,10,10]
+list<int> putList
+									<-
+								[1,2,3,4,5]
+									;
+								
+								//
+								putList
+								equals
+								[1,2,3,4,5]
+put -10 at: 1 in: putList;
+								//
+								putList
+								equals
+								[1,-10,3,4,5]
+put 10 all: true in: putList;
+								//
+								putList
+								equals
+								[10,10,10,10,10]
 ```
 
 
 * In the case of a matrix, the position should be a point in the bound of the matrix. The facet all: is used to replace all the elements of the matrix by the given value.
 
 ```
-matrix<int> putMatrix <- matrix([[0,1],[2,3]]); 	// putMatrix equals matrix([[0,1],[2,3]])
-put -10 at: {1,1} in: putMatrix; 	// putMatrix equals matrix([[0,1],[2,-10]])
-put 10 all: true in: putMatrix; 	// putMatrix equals matrix([[10,10],[10,10]])
+matrix<int> putMatrix
+									<-
+								matrix([[0,1],[2,3]])
+									;
+								
+								//
+								putMatrix
+								equals
+								matrix([[0,1],[2,3]])
+put -10 at: {1,1} in: putMatrix;
+								//
+								putMatrix
+								equals
+								matrix([[0,1],[2,-10]])
+put 10 all: true in: putMatrix;
+								//
+								putMatrix
+								equals
+								matrix([[10,10],[10,10]])
 ```
 
 
 * In the case of a map, the position should be one of the key values of the map. Notice that if the given key value does not exist in the map, the given pair key::value will be added to the map. The facet all is used to replace the value of all the pairs of the map.
 
 ```
-map<string,int> putMap <- ["x"::4,"y"::7]; 	// putMap equals ["x"::4,"y"::7]
-put -10 key: "y" in: putMap; 	// putMap equals ["x"::4,"y"::-10]
-put -20 key: "z" in: putMap; 	// putMap equals ["x"::4,"y"::-10, "z"::-20]
-put -30 all: true in: putMap; 	// putMap equals ["x"::-30,"y"::-30, "z"::-30]
+map<string,int> putMap
+									<-
+								["x"::4,"y"::7]
+									;
+								
+								//
+								putMap
+								equals
+								["x"::4,"y"::7]
+put -10 key: "y" in: putMap;
+								//
+								putMap
+								equals
+								["x"::4,"y"::-10]
+put -20 key: "z" in: putMap;
+								//
+								putMap
+								equals
+								["x"::4,"y"::-10, "z"::-20]
+put -30 all: true in: putMap;
+								//
+								putMap
+								equals
+								["x"::-30,"y"::-30, "z"::-30]
 ```
 
 
@@ -2786,9 +2918,21 @@ remove all: expr from: expr_container;
 
 ```
 list<int> removeList <- [3,2,1,2,3];
-remove 2 from: removeList; 	// removeList equals [3,1,2,3]
-remove 3 all: true from: removeList; 	// removeList equals [1,2]
-remove index: 1 from: removeList; 	// removeList equals [1]
+remove 2 from: removeList;
+								//
+								removeList
+								equals
+								[3,1,2,3]
+remove 3 all: true from: removeList;
+								//
+								removeList
+								equals
+								[1,2]
+remove index: 1 from: removeList;
+								//
+								removeList
+								equals
+								[1]
 ```
 
 
@@ -2796,8 +2940,16 @@ remove index: 1 from: removeList; 	// removeList equals [1]
 
 ```
 map<string,int> removeMap <- ["x"::5, "y"::7, "z"::7];
-remove key: "x" from: removeMap; 	// removeMap equals ["y"::7, "z"::7]
-remove 7 all: true from: removeMap; 	// removeMap equals map([])
+remove key: "x" from: removeMap;
+								//
+								removeMap
+								equals
+								["y"::7, "z"::7]
+remove 7 all: true from: removeMap;
+								//
+								removeMap
+								equals
+								map([])
 ```
 
 
@@ -2805,9 +2957,21 @@ remove 7 all: true from: removeMap; 	// removeMap equals map([])
 
 ```
 map<string,int> removeMapList <- ["x"::5, "y"::7, "z"::7, "t"::5];
-remove 7 from: removeMapList; 	// removeMapList equals ["x"::5, "z"::7, "t"::5]
-remove [5,7] all: true from: removeMapList; 	// removeMapList equals ["t"::5]
-remove index: "t" from: removeMapList; 	// removeMapList equals map([])
+remove 7 from: removeMapList;
+								//
+								removeMapList
+								equals
+								["x"::5, "z"::7, "t"::5]
+remove [5,7] all: true from: removeMapList;
+								//
+								removeMapList
+								equals
+								["t"::5]
+remove index: "t" from: removeMapList;
+								//
+								removeMapList
+								equals
+								map([])
 ```
 
 
@@ -2817,12 +2981,44 @@ remove index: "t" from: removeMapList; 	// removeMapList equals map([])
 graph removeGraph <- as_edge_graph([{1,2}::{3,4},{3,4}::{5,6}]);
 remove node: {1,2} from: removeGraph;
 remove node(1,2) from: removeGraph;
-list var <- removeGraph.vertices; 	// var equals [{3,4},{5,6}]
-list var <- removeGraph.edges; 	// var equals [polyline({3,4}::{5,6})]
+list
+								var
+								
+								<-
+								removeGraph.vertices
+								; // var
+								
+								equals
+								[{3,4},{5,6}]
+list
+								var
+								
+								<-
+								removeGraph.edges
+								; // var
+								
+								equals
+								[polyline({3,4}::{5,6})]
 remove edge: {3,4}::{5,6} from: removeGraph;
 remove edge({3,4},{5,6}) from: removeGraph;
-list var <- removeGraph.vertices; 	// var equals [{3,4},{5,6}]
-list var <- removeGraph.edges; 	// var equals []
+list
+								var
+								
+								<-
+								removeGraph.vertices
+								; // var
+								
+								equals
+								[{3,4},{5,6}]
+list
+								var
+								
+								<-
+								removeGraph.edges
+								; // var
+								
+								equals
+								[]
 ```
 
 
