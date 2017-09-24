@@ -108,7 +108,7 @@
 4. [3D Tutorial](ThreeD)
 5. [Incremental Model](IncrementalModel)
 6. [Luneray's flu](LuneraysFlu)
-7. [Co-modeling](Co modeling tutorial)
+7. [Co-modeling](CoModelingTutorial)
 
 ## [Pedagogical materials](PedagogicalMaterials)
 
