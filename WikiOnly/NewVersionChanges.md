@@ -58,6 +58,7 @@ gives examples
  * Displays can now inherit from other displays (facets `parent` and `virtual` to describe abstract displays)
  * `on_change:` facet for attributes/parameters allows to define a sequence of statements to run whenever the value changes. 
  * `species` and `experiment` now support the `virtual` boolean facet (virtual species can not be instantiated, and virtual experiments do not show up).
+ * `experiment` now supports the `auto_run` boolean facet (to run automatically when launched)
 
 ## Data importation
  * draw of complex shapes through obj file
