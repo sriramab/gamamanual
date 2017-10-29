@@ -158,7 +158,7 @@ Note that due to the fact that actions are written by modelers, the general func
 ----
 
 ### Files-related operators
-[crs](OperatorsCH#crs), [evaluate_sub_model](OperatorsCH#evaluate_sub_model), [file](OperatorsCH#file), [file_exists](OperatorsCH#file_exists), [folder](OperatorsCH#folder), [get](OperatorsCH#get), [load_sub_model](OperatorsIN#load_sub_model), [new_folder](OperatorsIN#new_folder), [osm_file](OperatorsOS#osm_file), [read](OperatorsOS#read), [step_sub_model](OperatorsOS#step_sub_model), [writable](OperatorsTZ#writable), 
+[crs](OperatorsCH#crs), [file](OperatorsCH#file), [file_exists](OperatorsCH#file_exists), [folder](OperatorsCH#folder), [get](OperatorsCH#get), [new_folder](OperatorsIN#new_folder), [osm_file](OperatorsOS#osm_file), [read](OperatorsOS#read), [writable](OperatorsTZ#writable), 
 
 ----
 
@@ -321,8 +321,8 @@ Note that due to the fact that actions are written by modelers, the general func
 ### `tan`
 
 #### Possible use: 
-  *  **`tan`** (`float`) --->  `float`
-  *  **`tan`** (`int`) --->  `float` 
+  *  **`tan`** (`int`) --->  `float`
+  *  **`tan`** (`float`) --->  `float` 
 
 #### Result: 
 Returns the value (in [-1,1]) of the trigonometric tangent of the operand (in decimal degrees). The argument is casted to an int before being evaluated.
@@ -371,8 +371,8 @@ Returns the value (in [-1,1]) of the trigonometric tangent of the operand (in de
 ### `tanh`
 
 #### Possible use: 
-  *  **`tanh`** (`int`) --->  `float`
-  *  **`tanh`** (`float`) --->  `float` 
+  *  **`tanh`** (`float`) --->  `float`
+  *  **`tanh`** (`int`) --->  `float` 
 
 #### Result: 
 Returns the value (in the interval [-1,1]) of the hyperbolic tangent of the operand (which can be any real number, expressed in decimal degrees).
@@ -405,7 +405,7 @@ returns the target of the edge (right-hand operand) contained in the graph given
 ```
 graph graphEpidemio <- generate_barabasi_albert( ["edges_species"::edge,"vertices_specy"::node,"size"::3,"m"::5] );  
 unknown var1 <- graphEpidemio source_of(edge(3)); // var1 equals node1graph graphFromMap <-  as_edge_graph([{1,5}::{12,45},{12,45}::{34,56}]);  
-unknown var3 <- graphFromMap target_of(link({1,5}::{12,45})); // var3 equals {12,45}
+unknown var3 <- graphFromMap target_of(link({1,5},{12,45})); // var3 equals {12,45}
 
 ```
       
@@ -471,6 +471,7 @@ Constructs a file of type threeds. Allowed extensions are limited to 3ds, max
 
 [//]: # (keyword|operator_to)
 ### `to`
+Same signification as [until](OperatorsTZ#until)
 
 #### Possible use: 
   * `date` **`to`** `date` --->  `msi.gama.util.IList<msi.gama.util.GamaDate>`
@@ -505,19 +506,19 @@ date('2000-01-01') to date('2010-01-01') // builds an interval between these two
   *  **`to_GAMA_CRS`** (`geometry` , `string`) --->  `geometry`
 
 #### Special cases:     
-  * returns the geometry corresponding to the transformation of the given geometry to the GAMA CRS (Coordinate Reference System) assuming the given geometry is referenced by given CRS 
-  
-```
- 
-geometry var0 <- to_GAMA_CRS({121,14}, "EPSG:4326"); // var0 equals a geometry corresponding to the agent geometry transformed into the GAMA CRS
-``` 
-
-    
   * returns the geometry corresponding to the transformation of the given geometry to the GAMA CRS (Coordinate Reference System) assuming the given geometry is referenced by the current CRS, the one corresponding to the world's agent one 
   
 ```
  
-geometry var1 <- to_GAMA_CRS({121,14}); // var1 equals a geometry corresponding to the agent geometry transformed into the GAMA CRS
+geometry var0 <- to_GAMA_CRS({121,14}); // var0 equals a geometry corresponding to the agent geometry transformed into the GAMA CRS
+``` 
+
+    
+  * returns the geometry corresponding to the transformation of the given geometry to the GAMA CRS (Coordinate Reference System) assuming the given geometry is referenced by given CRS 
+  
+```
+ 
+geometry var1 <- to_GAMA_CRS({121,14}, "EPSG:4326"); // var1 equals a geometry corresponding to the agent geometry transformed into the GAMA CRS
 ``` 
 
 
@@ -556,6 +557,7 @@ string var11 <- to_gaml(node1); // var11 equals  1 as node
 
 [//]: # (keyword|operator_to_rectangles)
 ### `to_rectangles`
+Same signification as [split_geometry](OperatorsOS#split_geometry)
 
 #### Possible use: 
   *  **`to_rectangles`** (`geometry`, `point`, `bool`) --->  `list<geometry>`
@@ -578,22 +580,23 @@ list<geometry> var1 <- to_rectangles(self, {10.0, 15.0}, true); // var1 equals t
 
 [//]: # (keyword|operator_to_squares)
 ### `to_squares`
+Same signification as [split_geometry](OperatorsOS#split_geometry)
 
 #### Possible use: 
-  *  **`to_squares`** (`geometry`, `float`, `bool`) --->  `list<geometry>`
   *  **`to_squares`** (`geometry`, `int`, `bool`) --->  `list<geometry>`
+  *  **`to_squares`** (`geometry`, `float`, `bool`) --->  `list<geometry>`
   *  **`to_squares`** (`geometry`, `int`, `bool`, `float`) --->  `list<geometry>` 
 
 #### Result: 
-A list of squares of the size corresponding to the given size that result from the decomposition of the geometry into squares (geometry, size, overlaps), if overlaps = true, add the squares that overlap the border of the geometry
 A list of a given number of squares from the decomposition of the geometry into squares (geometry, nb_square, overlaps), if overlaps = true, add the squares that overlap the border of the geometry
+A list of squares of the size corresponding to the given size that result from the decomposition of the geometry into squares (geometry, size, overlaps), if overlaps = true, add the squares that overlap the border of the geometry
 A list of a given number of squares from the decomposition of the geometry into squares (geometry, nb_square, overlaps, precision_coefficient), if overlaps = true, add the squares that overlap the border of the geometry, coefficient_precision should be close to 1.0
 
 #### Examples: 
 ```
  
-list<geometry> var0 <- to_squares(self, 10.0, true); // var0 equals the list of squares of side size 10.0 corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept 
-list<geometry> var1 <- to_squares(self, 10, true); // var1 equals the list of 10 squares corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept 
+list<geometry> var0 <- to_squares(self, 10, true); // var0 equals the list of 10 squares corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept 
+list<geometry> var1 <- to_squares(self, 10.0, true); // var1 equals the list of squares of side size 10.0 corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept 
 list<geometry> var2 <- to_squares(self, 10, true, 0.99); // var2 equals the list of 10 squares corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept
 
 ```
@@ -862,7 +865,7 @@ list<geometry> var1 <- triangulate(self); // var1 equals the list of geometries 
 
 #### Possible use: 
   *  **`truncated_gauss`** (`point`) --->  `float`
-  *  **`truncated_gauss`** (`container`) --->  `float` 
+  *  **`truncated_gauss`** (`list`) --->  `float` 
 
 #### Result: 
 A random value from a normally distributed random variable in the interval ]mean - standardDeviation; mean + standardDeviation[.
@@ -920,26 +923,27 @@ the operator alters the operand graph, it does not create a new one.
 
 [//]: # (keyword|operator_union)
 ### `union`
+Same signification as [+](OperatorsAB#+)
 
 #### Possible use: 
   *  **`union`** (`container<geometry>`) --->  `geometry`
-  * `container` **`union`** `container` --->  `container`
-  *  **`union`** (`container` , `container`) --->  `container` 
+  * `container` **`union`** `container` --->  `list`
+  *  **`union`** (`container` , `container`) --->  `list` 
 
 #### Result: 
 returns a new list containing all the elements of both containers without duplicated elements.
 
 #### Special cases:     
-  * if the left or right operand is nil, union throws an error    
-  * if the right-operand is a container of points, geometries or agents, returns the geometry resulting from the union all the geometries
+  * if the right-operand is a container of points, geometries or agents, returns the geometry resulting from the union all the geometries    
+  * if the left or right operand is nil, union throws an error
 
 #### Examples: 
 ```
  
-container var0 <- [1,2,3,4,5,6] union [2,4,9]; // var0 equals [1,2,3,4,5,6,9] 
-container var1 <- [1,2,3,4,5,6] union [0,8]; // var1 equals [1,2,3,4,5,6,0,8] 
-container var2 <- [1,3,2,4,5,6,8,5,6] union [0,8]; // var2 equals [1,3,2,4,5,6,8,0] 
-geometry var3 <- union([geom1, geom2, geom3]); // var3 equals a geometry corresponding to union between geom1, geom2 and geom3
+geometry var0 <- union([geom1, geom2, geom3]); // var0 equals a geometry corresponding to union between geom1, geom2 and geom3 
+list var1 <- [1,2,3,4,5,6] union [2,4,9]; // var1 equals [1,2,3,4,5,6,9] 
+list var2 <- [1,2,3,4,5,6] union [0,8]; // var2 equals [1,2,3,4,5,6,0,8] 
+list var3 <- [1,3,2,4,5,6,8,5,6] union [0,8]; // var3 equals [1,3,2,4,5,6,8,0]
 
 ```
       
@@ -1042,7 +1046,7 @@ This operator takes a map [string::value] as argument, displays a dialog asking 
 
 #### Examples: 
 ```
-map<string,unknown> values <- user_input(["Number" :: 100, "Location" :: {10, 10}]); create bug number: int(values at "Number") with: [location:: (point(values at "Location"))]; map<string,unknown> values2 <- user_input("Enter numer of agents and locations",["Number" :: 100, "Location" :: {10, 10}]); create bug number: int(values2 at "Number") with: [location:: (point(values2 at "Location"))]; 
+map<string,unknown> values2 <- user_input("Enter numer of agents and locations",["Number" :: 100, "Location" :: {10, 10}]); create bug number: int(values2 at "Number") with: [location:: (point(values2 at "Location"))]; map<string,unknown> values <- user_input(["Number" :: 100, "Location" :: {10, 10}]); create bug number: int(values at "Number") with: [location:: (point(values at "Location"))]; 
 
 ```
   
@@ -1107,8 +1111,8 @@ float var0 <- variance ([4.5, 3.5, 5.5, 7.0]); // var0 equals 1.671875
   *  **`variance`** (`int`, `float`, `float`) --->  `float` 
 
 #### Result: 
-Returns the variance from a standard deviation.
 Returns the variance of a data sequence. That is (sumOfSquares - mean*sum) / size with mean = sum/size.
+Returns the variance from a standard deviation.
     	
 ----
 
@@ -1176,7 +1180,7 @@ In a localized graph, an edge has a weight by default (the distance between both
 #### Examples: 
 ```
 graph graphFromMap <-  as_edge_graph([{1,5}::{12,45},{12,45}::{34,56}]);  
-float var1 <- graphFromMap weight_of(link({1,5}::{12,45})); // var1 equals 1.0
+float var1 <- graphFromMap weight_of(link({1,5},{12,45})); // var1 equals 1.0
 
 ```
   
@@ -1215,8 +1219,8 @@ int var0 <- weighted_means_DM([[1.0, 7.0],[4.0,2.0],[3.0, 3.0]], [["name"::"util
 ### `where`
 
 #### Possible use: 
-  * `container` **`where`** `any expression` --->  `container`
-  *  **`where`** (`container` , `any expression`) --->  `container` 
+  * `container` **`where`** `any expression` --->  `list`
+  *  **`where`** (`container` , `any expression`) --->  `list` 
 
 #### Result: 
 a list containing all the elements of the left-hand operand that make the right-hand operand evaluate to true.  
@@ -1230,7 +1234,7 @@ in the right-hand operand, the keyword each can be used to represent, in turn, e
   
 ```
  
-container var4 <- [1::2, 3::4, 5::6] where (each >= 4); // var4 equals [4, 6]
+list var4 <- [1::2, 3::4, 5::6] where (each >= 4); // var4 equals [4, 6]
 ``` 
 
 
@@ -1238,9 +1242,9 @@ container var4 <- [1::2, 3::4, 5::6] where (each >= 4); // var4 equals [4, 6]
 #### Examples: 
 ```
  
-container var0 <- [1,2,3,4,5,6,7,8] where (each > 3); // var0 equals [4, 5, 6, 7, 8]  
-container var2 <- g2 where (length(g2 out_edges_of each) = 0 ); // var2 equals [node9, node7, node10, node8, node11] 
-container var3 <- (list(node) where (round(node(each).location.x) > 32); // var3 equals [node2, node3]
+list var0 <- [1,2,3,4,5,6,7,8] where (each > 3); // var0 equals [4, 5, 6, 7, 8]  
+list var2 <- g2 where (length(g2 out_edges_of each) = 0 ); // var2 equals [node9, node7, node10, node8, node11] 
+list var3 <- (list(node) where (round(node(each).location.x) > 32); // var3 equals [node2, node3]
 
 ```
       
@@ -1423,8 +1427,8 @@ predicate with_values ["time"::10]
 ### `with_weights`
 
 #### Possible use: 
-  * `graph` **`with_weights`** `container` --->  `graph`
-  *  **`with_weights`** (`graph` , `container`) --->  `graph`
+  * `graph` **`with_weights`** `list` --->  `graph`
+  *  **`with_weights`** (`graph` , `list`) --->  `graph`
   * `graph` **`with_weights`** `map` --->  `graph`
   *  **`with_weights`** (`graph` , `map`) --->  `graph` 
 

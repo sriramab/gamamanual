@@ -89,7 +89,7 @@ create cluster_builder returns: clusterer;
 	 
 #### **`select`**
 
-* returns: `container`
+* returns: `list`
  			
 * → **`select`** (`string`): select string 			
 * → **`values`** (`list`): List of values that are used to replace question marks  
@@ -166,3 +166,5 @@ This operator should never be called
 #### **`compute_forces`**
 
 * returns: `unknown`
+ 			
+* → **`step`** (`float`): 
