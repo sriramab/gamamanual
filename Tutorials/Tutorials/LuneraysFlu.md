@@ -19,15 +19,14 @@ Some data collected concerning Luneray and the disease:
 * The disease - non lethal - is spreading (by air) from people to people
 * Time to cure the disease: more than 100 days
 * Infection distance: 10 meters
-* Infection probability (when two people are at infection distance) : 0.05/minute
+* Infection probability (when two people are at infection distance) : 0.05/ 5 minutes
 
 From the data collected, we made some modeling choice:
-* Simulation step: 1 minute
+* Simulation step: 5 minutes
 * People are moving on the roads from building to building 
-* Most of time people are moving to meet their friend then go back home
 * People use the shortest path to move between buildings
 * All people move at constant speed
-* Each time, people arrived at a building they are staying a certain time : they are staying longer in their home than in their friend houses
+* Each time, people arrived at a building they are staying a certain time 
 * Infected people are never cured
 
 ![images/Luneray_model.png](resources/images/tutorials/Luneray_model.png)
