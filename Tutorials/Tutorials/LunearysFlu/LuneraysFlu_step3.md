@@ -35,16 +35,6 @@ species building {
 
 ```
 
-In addition, we add an attribute to the people species called *target* of type _point_.
-
-```
-species people skills:[moving]{		
-	//other attributes
-	point target; 
-        //reflexes and aspect 
-}
-```
-
 ### global section
 
 #### global variables
@@ -124,8 +114,6 @@ global {
 	file roads_shapefile <- file("../includes/roads.shp");
 	file buildings_shapefile <- file("../includes/buildings.shp");
 	geometry shape <- envelope(roads_shapefile);	
-	graph road_network;
-	
 	
 	int nb_people_infected <- nb_infected_init update: people count (each.is_infected);
 	int nb_people_not_infected <- nb_people - nb_infected_init update: nb_people - nb_people_infected;
@@ -134,7 +122,6 @@ global {
 	
 	init{
 		create road from: roads_shapefile;
-		road_network <- as_edge_graph(road);		
 		create building from: buildings_shapefile;
 		create people number:nb_people {
 			location <- any_location_in(one_of(building));				
@@ -148,7 +135,6 @@ global {
 species people skills:[moving]{		
 	float speed <- (2 + rnd(3)) #km/#h;
 	bool is_infected <- false;
-	point target;
 	
 	reflex move{
 		do wander;
