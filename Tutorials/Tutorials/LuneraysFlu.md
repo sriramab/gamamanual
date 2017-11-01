@@ -30,7 +30,7 @@ From the data collected, we made some modeling choice:
 * Each time, people arrived at a building they are staying a certain time : they are staying longer in their home than in their friend houses
 * Infected people are never cured
 
-![images/Luneray.png](resources/images/tutorials/Luneray.png)
+![images/Luneray_model.png](resources/images/tutorials/Luneray_model.png)
 
 ## Step List
 
