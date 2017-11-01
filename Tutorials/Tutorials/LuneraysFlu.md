@@ -3,7 +3,7 @@
 
 This tutorial has for goal to introduce how to build a model with GAMA and to use GIS data and graphs. In particular, this tutorial shows how to write a simple GAMA model (the structure of a model, the notion of species...) load gis data, to agentify them and to use a network of polylines to constraint the movement of agents. All the files related to this tutorial (shapefiles and models) are available [here](resources/other/models/Luneray_flu.zip). 
 
-The importation of models is described [here](https://github.com/gama-platform/gama/wiki/G__ImportingModels)
+The importation of models is described [here](ImportingModels)
 
 
 ## Model Overview
