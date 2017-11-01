@@ -8,7 +8,6 @@ This third step illustrates how load GIS data and to agentify them.
 
 ## Formulation
   * Define 2 new species that will just be displayed: *road* and *building*.
-  * Add a new *my_building* attribute to the _people_ agents.
   * Define new global attributes to load GIS data (shape file).
   * Use the GIS data to create the _road_ and _building_ agents.
   * Add the _road_ and _building_ agents to the display.
@@ -36,12 +35,12 @@ species building {
 
 ```
 
-In addition, we add an attribute to the people species called *my_builing* of type _building_. Note that agent species can be use as variable type.
+In addition, we add an attribute to the people species called *target* of type _point_.
 
 ```
 species people skills:[moving]{		
 	//other attributes
-	building my_house; 
+	point target; 
         //reflexes and aspect 
 }
 ```
@@ -68,7 +67,7 @@ global{
 
 In GAMA, the agentification of GIS data is very straightforward: it only requires to use the **create** command with the **from** facet to pass the shapefile. Each object of the shapefile will be directly used to instantiate an agent of the specified species. The reading of an attribute in a shapefile is also very simple. It only requires to use the **with** facet: the argument of this facet is a dictionary of which the keys are the names of the agent attributes and the value the **read** command followed by the name of the shapefile attribute.
 
-In our model, we modify the init section in order to first create the _road_ agents from the road shapefile, and the _building_ agents from the building shapefile. Then, when creating people agents, we choose for them one random building and a random location inside this building.
+In our model, we modify the init section in order to first create the _road_ agents from the road shapefile, and the _building_ agents from the building shapefile. Then, when creating people agents, we choose for them a random location inside a random building.
 Note that it is possible to execute a sequence of statements at the creation of agents by using a block ({...}) rather than a simple line (;) when using the _create_ statement. 
 
 ```
@@ -79,8 +78,7 @@ global {
 		create road from: roads_shapefile;
 		create building from: buildings_shapefile;
 		create people number:nb_people {
-			my_house <- one_of(building);
-			location <- any_location_in(my_house);		}		
+			location <- any_location_in(one_of(building));		}		
 		}
 		ask nb_infected_init among people {
 			is_infected <- true;
@@ -117,16 +115,18 @@ experiment main_experiment type: gui {
 ## Complete Model
 
 ```
-model SI_city3 
+model model3
 
-global{ 
+global {
 	int nb_people <- 2147;
 	int nb_infected_init <- 5;
-	float step <- 1 #mn;
+	float step <- 5 #mn;
 	file roads_shapefile <- file("../includes/roads.shp");
 	file buildings_shapefile <- file("../includes/buildings.shp");
-	geometry shape <- envelope(roads_shapefile);
-	int current_hour update: (time /#h) mod 24;
+	geometry shape <- envelope(roads_shapefile);	
+	graph road_network;
+	
+	
 	int nb_people_infected <- nb_infected_init update: people count (each.is_infected);
 	int nb_people_not_infected <- nb_people - nb_infected_init update: nb_people - nb_people_infected;
 	float infected_rate update: nb_people_infected/nb_people;
@@ -134,29 +134,35 @@ global{
 	
 	init{
 		create road from: roads_shapefile;
+		road_network <- as_edge_graph(road);		
 		create building from: buildings_shapefile;
 		create people number:nb_people {
-			my_house <- one_of(building);
-			location <- any_location_in(my_house);
+			location <- any_location_in(one_of(building));				
 		}
 		ask nb_infected_init among people {
 			is_infected <- true;
 		}
-	}
-	
-	reflex end_simulation when: infected_rate = 1.0 {
-		do pause;
 	}
 }
 
 species people skills:[moving]{		
 	float speed <- (2 + rnd(3)) #km/#h;
 	bool is_infected <- false;
-	building my_house;
+	point target;
 	
-	reflex move{
-		do wander;
+	reflex stay when: target = nil {
+		if flip(0.05) {
+			target <- any_location_in (one_of(building));
+		}
 	}
+		
+	reflex move when: target != nil{
+		do goto target:target on: road_network;
+		if (location = target) {
+			target <- nil;
+		} 
+	}
+
 	reflex infect when: is_infected{
 		ask people at_distance 10 #m {
 			if flip(0.05) {
@@ -164,7 +170,8 @@ species people skills:[moving]{
 			}
 		}
 	}
-	aspect circle{
+	
+	aspect circle {
 		draw circle(10) color:is_infected ? #red : #green;
 	}
 }
@@ -181,18 +188,19 @@ species building {
 	}
 }
 
-experiment main_experiment type:gui{
+experiment main type: gui {
 	parameter "Nb people infected at init" var: nb_infected_init min: 1 max: 2147;
+
 	output {
 		monitor "Infected people rate" value: infected_rate;
 		
-		display map type: opengl {
+		display map {
 			species road aspect:geom;
 			species building aspect:geom;
 			species people aspect:circle;			
 		}
 		
-		display chart refresh:every(10) {
+		display chart_display refresh: every(10 #cycle) {
 			chart "Disease spreading" type: series {
 				data "susceptible" value: nb_people_not_infected color: #green;
 				data "infected" value: nb_people_infected color: #red;
