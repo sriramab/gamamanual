@@ -150,17 +150,8 @@ species people skills:[moving]{
 	bool is_infected <- false;
 	point target;
 	
-	reflex stay when: target = nil {
-		if flip(0.05) {
-			target <- any_location_in (one_of(building));
-		}
-	}
-		
-	reflex move when: target != nil{
-		do goto target:target on: road_network;
-		if (location = target) {
-			target <- nil;
-		} 
+	reflex move{
+		do wander;
 	}
 
 	reflex infect when: is_infected{
