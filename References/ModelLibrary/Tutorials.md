@@ -10,3 +10,4 @@ This section is composed of the following sub-section :
 
 * [Road Traffic](references#RoadTraffic)
 
+* [BDI agents](BDIAgents)
