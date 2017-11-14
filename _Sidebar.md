@@ -109,6 +109,7 @@
 5. [Incremental Model](IncrementalModel)
 6. [Luneray's flu](LuneraysFlu)
 7. [Co-modeling](CoModelingTutorial)
+8. [BDI Agents](BDIAgents)
 
 ## [Pedagogical materials](PedagogicalMaterials)
 
