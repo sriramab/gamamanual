@@ -8,6 +8,6 @@ This section is composed of the following sub-section :
 
 * [Predator Prey](PredatorPrey)
 
-* [Road Traffic](references#RoadTraffic)
+* [Road Traffic](RoadTraffic)
 
 * [BDI agents](BDIAgents)
