@@ -9,8 +9,6 @@ If you are not familiar with agent-based models or GAMA we advice you to have a 
 ## Model Overview
 The model built in this tutorial concerns gold miners that try to find and sell gold nuggets. More precisely, we consider that several gold mines containing a certain amount of gold nuggets are located in the environnement. In the same way, a market where the miners can sell their gold nuggets is located in the environnment. The gold miners try to find gold mines, to extract gold nuggets from them and to sell the gold extracted nuggets at the market.
 
-![images/road_traffic.png](resources/images/tutorials/road_traffic.png)
-
 ## Step List
 
 This tutorial is composed of 4 steps corresponding to 4 models. For each step we present its purpose, an explicit formulation and the corresponding GAML code.
