@@ -65,7 +65,7 @@ global {
         ...
 }
 ```	
-### miner species
+### skeleton of the miner species
 We then define a miner species with the _moving_ skill and the _simple_bdi_ control architecture. The miner agents have 5 variables:
 * _viewdist_: distance of perception of the miner agent
 * _speed_: speed of the agent
@@ -74,6 +74,8 @@ We then define a miner species with the _moving_ skill and the _simple_bdi_ cont
 * _gold_sold_: the number of gold nuggets sold by the agent
 
 We define the init block of the species such as to add at the creation of the agent the desire to find gold nuggets (_find_gold_ predicate). we use for that the _add_desire_ action provides with the BDI architecture.
+
+At last, we define an aspect in which we draw the agent with its _mycolor_ color and with a depth that depends on the number of gold nuggets collected.
 
 ```	
 species miner skills: [moving] control:simple_bdi {
@@ -91,7 +93,101 @@ species miner skills: [moving] control:simple_bdi {
 	        draw circle(20) color: mycolor border: #black depth: gold_sold;
 	}
 }
-```	
+```
+
+### perception	
+We add a perceive statement for the miner agents. This perceive will allow to detect the gold mine that are not empty
+
+```
+species miner skills: [moving] control:simple_bdi {
+	...	
+	perceive target:goldmine where (each.quantity > 0) in:viewdist {
+		focus mine_at_location var:location;
+		ask myself {
+			do remove_intention(find_gold, false);
+		}
+	}
+}
+```
+### rules
+```
+species miner skills: [moving] control:simple_bdi {
+	...
+	rule belief: mine_location new_desire: extract_gold strength: 2.0;
+	rule belief: has_gold new_desire: sell_gold strength: 3.0;
+}
+```
+
+### plans
+```
+species miner skills: [moving] control:simple_bdi {
+        ...
+        plan letsWander intention:find_gold 
+	{
+		do wander;
+	}
+       ...
+}
+```
+
+```
+species miner skills: [moving] control:simple_bdi {
+        ...
+        plan getGold intention:extract_gold 
+	{
+		if (target = nil) {
+			do add_subintention(extract_gold,choose_goldmine, true);
+			do current_intention_on_hold();
+		} else {
+			do goto target: target ;
+			if (target = location)  {
+				goldmine current_mine<- goldmine first_with (target = each.location);
+				if current_mine.quantity > 0 {
+				 	do add_belief(has_gold);
+					ask current_mine {quantity <- quantity - 1;}	
+				} else {
+					do add_belief(new_predicate(empty_mine_location, ["location_value"::target]));
+				}
+				target <- nil;
+			}
+		}	
+	}
+       ...
+}
+```
+
+```
+species miner skills: [moving] control:simple_bdi {
+        ...
+        plan choose_closest_goldmine intention: choose_goldmine instantaneous: true{
+		list<point> possible_mines <- get_beliefs_with_name(mine_at_location) collect (point(get_predicate(mental_state (each)).values["location_value"]));
+		list<point> empty_mines <- get_beliefs_with_name(empty_mine_location) collect (point(get_predicate(mental_state (each)).values["location_value"]));
+		possible_mines <- possible_mines - empty_mines;
+		if (empty(possible_mines)) {
+			do remove_intention(extract_gold, true); 
+		} else {
+			target <- (possible_mines with_min_of (each distance_to self)).location;
+		}
+		do remove_intention(choose_goldmine, true); 
+	}
+       ...
+}
+```
+
+```
+species miner skills: [moving] control:simple_bdi {
+        ...
+        plan return_to_base intention: sell_gold {
+		do goto target: the_market ;
+		if (the_market.location = location)  {
+			do remove_belief(has_gold);
+			do remove_intention(sell_gold, true);
+			gold_sold <- gold_sold + 1;
+		}
+	}
+       ...
+}
+```
 
 ## Complete Model
 
