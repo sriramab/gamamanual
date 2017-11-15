@@ -1,4 +1,4 @@
-# 1. Loading of GIS Data
+# 3. Social relation
 This second step consists in adding social relation between agents and the possibility to share information about the known gold mines.
 
 ## Formulation
