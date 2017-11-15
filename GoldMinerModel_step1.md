@@ -1,4 +1,4 @@
-# 1. Loading of GIS Data
+# 1. Skeleton model
 This first step consists in defining the skeleton model with the gold mines and the gold market.
 
 
