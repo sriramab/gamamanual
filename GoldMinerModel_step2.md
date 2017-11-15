@@ -218,7 +218,47 @@ species miner skills: [moving] control:simple_bdi {
        ...
 }
 ```
+## Gobal section
+We define two new global variables:
+* _nbminer_: number of gold miners
+* _inequality_: recomputed at each simulation step: standard deviation of the number of gold nuggets extracted per miners.
 
+In the global init, after creating the gold mines and the market, we create the gold miner agents.
+
+At last, we define a global reflex _end_simulation_ that is activated when all the gold mines are empty and no more miner has a gold nuggets and that pauses the simulation.
+```
+global {
+	...
+	int nbminer<-5;
+	float inequality <- 0.0 update:standard_deviation(miner collect each.gold_sold);
+	...
+        init
+	{
+		...
+		create miner number:nbminer;
+	}
+	
+	reflex end_simulation when: sum(goldmine collect each.quantity) = 0 and empty(miner where each.has_belief(has_gold)){
+		do pause;
+	}
+}
+```
+
+## Map display
+We add to the map display the miner species.
+```
+experiment GoldBdi type: gui {
+
+	output {
+		display map type: opengl
+		{
+			species market ;
+			species goldmine ;
+			species miner;
+		}
+	}
+}
+```
 ## Complete Model
 
 ```
@@ -366,11 +406,4 @@ experiment GoldBdi type: gui {
 	}
 }
 
-experiment batch type: batch repeat: 30 until: sum(goldmine collect each.quantity) = 0 and empty(miner where each.has_belief(has_gold)) {
-	float seed <- 100.0;
-	reflex result {
-		write "result mean time: " + mean(simulations collect each.cycle);
-		write "result mean inequality: " + mean(simulations collect each.inequality);
-	}
-}
 ```
