@@ -1,4 +1,4 @@
-# 1. BDI Agents
+# 2. BDI Agents
 This second step consists in defining the gold miner agents using the GAMA BDI architecture.
 
 ## Formulation
