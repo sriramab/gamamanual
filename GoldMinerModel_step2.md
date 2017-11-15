@@ -1,4 +1,4 @@
-# 1. Loading of GIS Data
+# 1. BDI Agents
 This second step consists in defining the gold miner agents using the GAMA BDI architecture.
 
 ## Formulation
