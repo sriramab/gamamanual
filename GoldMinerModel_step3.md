@@ -92,20 +92,20 @@ global {
 	
 	string mine_at_location <- "mine_at_location";
 	string empty_mine_location <- "empty_mine_location";
-	//possible beliefs of miners
-	predicate mine_location <- new_predicate(mine_at_location) ;
-	predicate has_gold <- new_predicate("has gold");
 	
-	//possible desires of miners
+	float step <- 10#mn;
+	
+	//possible predicates concerning miners
+	predicate mine_location <- new_predicate(mine_at_location) ;
 	predicate choose_goldmine <- new_predicate("choose a gold mine");
-	predicate extract_gold <- new_predicate("extract gold");
+	predicate has_gold <- new_predicate("extract gold");
 	predicate find_gold <- new_predicate("find gold") ;
 	predicate sell_gold <- new_predicate("sell gold") ;
 	predicate share_information <- new_predicate("share information") ;
 	
 	float inequality <- 0.0 update:standard_deviation(miner collect each.gold_sold);
 	
-	geometry shape <- square(2000);
+	geometry shape <- square(20 #km);
 	init
 	{
 		create market {
@@ -125,9 +125,9 @@ species goldmine {
 	aspect default
 	{
 		if (quantity = 0) {
-			draw triangle(20) color: #gray border: #black;	
+			draw triangle(200) color: #gray border: #black;	
 		} else {
-			draw triangle(20 + quantity*5) color: #yellow border: #black;	
+			draw triangle(200 + quantity*50) color: #yellow border: #black;	
 		}
 	 
 	}
@@ -137,14 +137,14 @@ species market {
 	int golds;
 	aspect default
 	{
-	  draw square(100) color: #black ;
+	  draw square(1000) color: #black ;
 	}
 }
 
 species miner skills: [moving] control:simple_bdi {
 	
-	float viewdist<-100.0;
-	float speed <- 10.0;
+	float viewdist<-1000.0;
+	float speed <- 2#km/#h;
 	rgb mycolor<-rnd_color(255);
 	point target;
 	int gold_sold;
@@ -166,7 +166,7 @@ species miner skills: [moving] control:simple_bdi {
 		}
 	}
 	
-	rule belief: mine_location new_desire: extract_gold strength: 2.0;
+	rule belief: mine_location new_desire: has_gold strength: 2.0;
 	rule belief: has_gold new_desire: sell_gold strength: 3.0;
 	
 		
@@ -175,10 +175,10 @@ species miner skills: [moving] control:simple_bdi {
 		do wander;
 	}
 	
-	plan getGold intention:extract_gold 
+	plan getGold intention:has_gold 
 	{
 		if (target = nil) {
-			do add_subintention(extract_gold,choose_goldmine, true);
+			do add_subintention(has_gold,choose_goldmine, true);
 			do current_intention_on_hold();
 		} else {
 			do goto target: target ;
@@ -200,7 +200,7 @@ species miner skills: [moving] control:simple_bdi {
 		list<point> empty_mines <- get_beliefs_with_name(empty_mine_location) collect (point(get_predicate(mental_state (each)).values["location_value"]));
 		possible_mines <- possible_mines - empty_mines;
 		if (empty(possible_mines)) {
-			do remove_intention(extract_gold, true); 
+			do remove_intention(has_gold, true); 
 		} else {
 			target <- (possible_mines with_min_of (each distance_to self)).location;
 		}
@@ -232,13 +232,12 @@ species miner skills: [moving] control:simple_bdi {
 	}
 
 	aspect default {
-	  draw circle(20) color: mycolor border: #black depth: gold_sold;
+	  draw circle(200) color: mycolor border: #black depth: gold_sold;
 	}
 }
 
 
 experiment GoldBdi type: gui {
-
 	output {
 		display map type: opengl
 		{
@@ -248,5 +247,4 @@ experiment GoldBdi type: gui {
 		}
 	}
 }
-
 ```
