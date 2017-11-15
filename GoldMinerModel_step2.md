@@ -115,10 +115,11 @@ species miner skills: [moving] control:simple_bdi {
 		}
 	}
 }
+```
 
 Note that the perceive statement works as the ask statement: the instructions written in the statement are executed in the context of the perceive agents. It is for that that we have to use the _myself_ keyword to ask the miner agent to execute the _remove_intention_ action.
 
-```
+
 ### rules
 We define two rules for the miner agents:
 * if the agent believes that there is somewhere at least one gold mine with gold nuggets, the agent gets the new desire to extract gold nuggets with a strength of 2. 
@@ -130,15 +131,16 @@ species miner skills: [moving] control:simple_bdi {
 	rule belief: mine_location new_desire: extract_gold strength: 2.0;
 	rule belief: has_gold new_desire: sell_gold strength: 3.0;
 }
+```
 
 The strength of a desire will be used when selecting a desire as a new intention: the agent will choose as new intention the one with the highest strength. In our model, if the agent has the desires to find gold, to extract gold and to sell gold, it will choose as intention to sell gold as it is the one with the highest strength. It is possible to replace this deterministic choice by a probabilistic one by setting the _probabilistic_choice_ built-in varibale of the BDI agent to true (false by default).
 
-```
+
 ### plans
 
 The last (and most important) part of the definition of BDI agents consist in defining the plans that the agents can carry out to acheive its intention. 
 
-The first plan called _letsWander_ is defined to acheive the _find_gold_ intention. This plan will just consists in executing the _wander_ action of the _moving_ skill (random move).
+The first plan called _letsWander_ is defined to achieve the _find_gold_ intention. This plan will just consists in executing the _wander_ action of the _moving_ skill (random move).
 ```
 species miner skills: [moving] control:simple_bdi {
         ...
@@ -150,7 +152,8 @@ species miner skills: [moving] control:simple_bdi {
 }
 ```
 
-The second plan called _getGold_ is defined to acheive the _extract_gold_ intention.
+The second plan called _getGold_ is defined to achieve the _extract_gold_ intention. if the agent has no target (it does not know where to go), it adds a new sub-intention to choose a goldmine and put the current intention on hold (the agent will wait to select a gold mine to go before executing again this plan). The _add_subintention_ has 3 arguments: the sub-intention (choose_goldmine), the super intention (extract_gold) and a boolean that defines if the sub-intention should or not be added as well as a desire.
+If the agent has already a target, it moves toward this target using the _goto_ action of the _moving_ skill. If the agent reaches its target - goldmine - (target = location), the agent tries to extract gold nuggets from it. If the corresponding goldmine (that one located at the target location) is not empty, the agent extract a gold nugget from it: the agent adds the belief that it has a gold nugget, then the quantity of golds in the gold mine is reduced. Otherwise, if the gold mine is empty, the agent adds the belief that this gold mine is empty. then the target is set to nil.
 
 ```
 species miner skills: [moving] control:simple_bdi {
@@ -178,6 +181,8 @@ species miner skills: [moving] control:simple_bdi {
 }
 ```
 
+The third plan called _choose_closest_goldmine_ is defined to achieve the _choose_goldmine_ intention that is instantaneous. First, the agent defines the list of all the gold mines it knows (_mine_at_location_ beliefs), then removes the gold mines that it knows that they are empty (_empty_mine_location_ beliefs). If the list of the possible mines is empty, the agent removes the desire and the intention to _extract_gold_. We use for that the _remove_intention_ action, that remove an intention from the intention base; the second argument allows to define if the intention should be removed as well from the desire base. If the agent knows at least one gold mine that is not empty, it defines as its new target the closest gold mine.
+
 ```
 species miner skills: [moving] control:simple_bdi {
         ...
@@ -195,6 +200,9 @@ species miner skills: [moving] control:simple_bdi {
        ...
 }
 ```
+
+
+The last plan called _return_to_base_ is defined to achieve the _sell_gold_ intention. The agent moves in direction of the market using the _goto_ action. if the agent reaches the market, it sells its gold nugget to it: first, it removes the belief that it has a gold nugget, then it remove the intention and the desire to sell golds, at last it increment its _gold_sold_ variable. 
 
 ```
 species miner skills: [moving] control:simple_bdi {
