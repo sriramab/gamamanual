@@ -10,9 +10,7 @@ This second step consists in defining the gold miner agents using the GAMA BDI a
   * Creation and display of the gold miners
 
 
-## Model Definition
-
-### BDI agents
+## BDI agents
 A classic paradigm to formalize the internal architecture of cognitive agents in Agent-Oriented Software Engineering is the BDI (Belief-Desire-Intention) paradigm. This paradigm, based on the philosophy of action [(Bratman, 1987)](https://philpapers.org/rec/braipa), allows to design expressive and realistic agents. 
 
 The concepts of Belief-Desire-Intention can be summarized as follow for the the Gold Miner: the Miner agent has a general desire to find gold. As it is the only thing it wants at the beginning, it is its initial intention (what it is currently doing). To find gold, it wanders around (its plan is to wander). When it perceives some gold nuggets, it stores this information (it has a new belief about the existence and location of this gold nugget), and it adopts a new desire (it wants to extract the gold). When it perceives a gold nugget, the intention to find gold is put on hold and a new intention is selected (to extract gold). To achieve this intention, the plan has two steps, i.e. two new (sub)intentions: to choose a gold nugget to extract (among its known gold nuggets) and to go and take it. And so on.
@@ -40,6 +38,60 @@ To be more precise on the behavior of BDI agents (what the agent is going to do 
 1. _Was my plan instantaneous?_: Most multi-agent based simulation frameworks (GAMA included) are synchronous frameworks using steps. One consequence is that it may be useful to apply several plans during one single step. For example, if a step represents a day or a year, it would be unrealistic for an agent to spend one step to apply a plan like "choose a destination". This kind of plans (mostly reasoning plans) can be defined as instantaneous: in this case a new thinking loop is applied during the same agent step.
 
 
+The architecture introduces two new main types of variables related to cognition: 
+* **predicate**: a predicate unifies the representation of the information about the world. It can represent a situation, an event or an action. 
+
+* **mental_state**: it represents the element (belief, desire, intention) manipulated by the agent and the architecture to take a decision. A mental state is composed of a modality, a predicate or another mental state, a real value and a lifetime. The modality indicates the type of the mental state (e.g. a belief or a desire), the predicate indicates the fact about which is this mental state (a mental state can also be about another mental state like a belief about a belief, etc), the value has a different interpretation depending on the modality and finally, the lifetime indicate the duration of the mental state (it can be infinite).
+
+## Model Definition
+### predicates
+As a first step of the integration of the BDI agents in our model, we define a set of global predicate that will represent all the information that will be manipulated by the miner agents:
+* _mine_location_: represents the information about the location of a gold mine.
+* _has_gold_: represents the information that the miner has a gold nugget.
+* _choose_goldmine_: represents the information that the miner wants to choose a gold mine
+* _extract_gold_: represents the information that the miner wants to extract gold
+* _find_gold_: represents the information that the miner wants to find gold
+* _sell_gold_: represents the information that the miner wants to sell gold
+```
+global {
+        ...
+	predicate mine_location <- new_predicate(mine_at_location) ;
+	predicate has_gold <- new_predicate("has gold");
+	
+	predicate choose_goldmine <- new_predicate("choose a gold mine");
+	predicate extract_gold <- new_predicate("extract gold");
+	predicate find_gold <- new_predicate("find gold") ;
+	predicate sell_gold <- new_predicate("sell gold") ;
+        ...
+}
+```	
+### miner species
+We then define a miner species with the _moving_ skill and the _simple_bdi_ control architecture. The miner agents have 5 variables:
+* _viewdist_: distance of perception of the miner agent
+* _speed_: speed of the agent
+* _mycolor_: the color of the agent (random color)
+* _target_: where the agent wants to go
+* _gold_sold_: the number of gold nuggets sold by the agent
+
+We define the init block of the species such as to add at the creation of the agent the desire to find gold nuggets (_find_gold_ predicate). we use for that the _add_desire_ action provides with the BDI architecture.
+
+```	
+species miner skills: [moving] control:simple_bdi {
+	float viewdist<-100.0;
+	float speed <- 10.0;
+	rgb mycolor<-rnd_color(255);
+	point target;
+	int gold_sold;
+	
+	init
+	{
+		do add_desire(find_gold);
+	}
+	aspect default {
+	        draw circle(20) color: mycolor border: #black depth: gold_sold;
+	}
+}
+```	
 
 ## Complete Model
 
