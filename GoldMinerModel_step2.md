@@ -52,9 +52,14 @@ As a first step of the integration of the BDI agents in our model, we define a s
 * _extract_gold_: represents the information that the miner wants to extract gold
 * _find_gold_: represents the information that the miner wants to find gold
 * _sell_gold_: represents the information that the miner wants to sell gold
+
+We define as well two global string (_mine_at_location_ and _empty_mine_location_) for simplification purpose and to avoid misspellings.
 ```
 global {
         ...
+        string mine_at_location <- "mine_at_location";
+	string empty_mine_location <- "empty_mine_location";
+	
 	predicate mine_location <- new_predicate(mine_at_location) ;
 	predicate has_gold <- new_predicate("has gold");
 	
@@ -96,7 +101,9 @@ species miner skills: [moving] control:simple_bdi {
 ```
 
 ### perception	
-We add a perceive statement for the miner agents. This perceive will allow to detect the gold mine that are not empty
+We add a _perceive_ statement for the miner agents. This perceive will allow to detect the gold mine that are not empty (i.e. the quantity of gold is higher than 0) at a distance lower or equal to "viewdist". The use of the _focus_ statement allows to add for each detected goldmine to add a belief corresponding to the location of this goldmine. The name of the belief will be "mine_at_location" and the location value of the goldmine will be stored in the _values_ (a map) variable of the belief at the key "location_value". 
+In addition, we ask the miner agent to remove the intention to find gold, allowing the agent to choose a new intention. The boolean value of the _remove_intention_ action is used to specify if the agent should or not remove the given intention from the desire base as well. In our case, we choose to keep the desire to find golds.
+
 
 ```
 species miner skills: [moving] control:simple_bdi {
@@ -108,17 +115,30 @@ species miner skills: [moving] control:simple_bdi {
 		}
 	}
 }
+
+Note that the perceive statement works as the ask statement: the instructions written in the statement are executed in the context of the perceive agents. It is for that that we have to use the _myself_ keyword to ask the miner agent to execute the _remove_intention_ action.
+
 ```
 ### rules
+We define two rules for the miner agents:
+* if the agent believes that there is somewhere at least one gold mine with gold nuggets, the agent gets the new desire to extract gold nuggets with a strength of 2. 
+* if the agent believes that it carries a gold nugget, the agent gets the new desire to sell the gold nugget with a strength of 3. 
+
 ```
 species miner skills: [moving] control:simple_bdi {
 	...
 	rule belief: mine_location new_desire: extract_gold strength: 2.0;
 	rule belief: has_gold new_desire: sell_gold strength: 3.0;
 }
-```
 
+The strength of a desire will be used when selecting a desire as a new intention: the agent will choose as new intention the one with the highest strength. In our model, if the agent has the desires to find gold, to extract gold and to sell gold, it will choose as intention to sell gold as it is the one with the highest strength. It is possible to replace this deterministic choice by a probabilistic one by setting the _probabilistic_choice_ built-in varibale of the BDI agent to true (false by default).
+
+```
 ### plans
+
+The last (and most important) part of the definition of BDI agents consist in defining the plans that the agents can carry out to acheive its intention. 
+
+The first plan called _letsWander_ is defined to acheive the _find_gold_ intention. This plan will just consists in executing the _wander_ action of the _moving_ skill (random move).
 ```
 species miner skills: [moving] control:simple_bdi {
         ...
@@ -129,6 +149,8 @@ species miner skills: [moving] control:simple_bdi {
        ...
 }
 ```
+
+The second plan called _getGold_ is defined to acheive the _extract_gold_ intention.
 
 ```
 species miner skills: [moving] control:simple_bdi {
