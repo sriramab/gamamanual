@@ -47,24 +47,21 @@ The architecture introduces two new main types of variables related to cognition
 ### predicates
 As a first step of the integration of the BDI agents in our model, we define a set of global predicate that will represent all the information that will be manipulated by the miner agents:
 * _mine_location_: represents the information about the location of a gold mine.
+* _choose_goldmine_: represents the information that the miner wants to choose a gold mine.
 * _has_gold_: represents the information that the miner has a gold nugget.
-* _choose_goldmine_: represents the information that the miner wants to choose a gold mine
-* _extract_gold_: represents the information that the miner wants to extract gold
-* _find_gold_: represents the information that the miner wants to find gold
-* _sell_gold_: represents the information that the miner wants to sell gold
+* _find_gold_: represents the information that the miner wants to find gold.
+* _sell_gold_: represents the information that the miner wants to sell gold.
 
 We define as well two global string (_mine_at_location_ and _empty_mine_location_) for simplification purpose and to avoid misspellings.
 ```
 global {
         ...
-        string mine_at_location <- "mine_at_location";
+	string mine_at_location <- "mine_at_location";
 	string empty_mine_location <- "empty_mine_location";
 	
 	predicate mine_location <- new_predicate(mine_at_location) ;
-	predicate has_gold <- new_predicate("has gold");
-	
 	predicate choose_goldmine <- new_predicate("choose a gold mine");
-	predicate extract_gold <- new_predicate("extract gold");
+	predicate has_gold <- new_predicate("extract gold");
 	predicate find_gold <- new_predicate("find gold") ;
 	predicate sell_gold <- new_predicate("sell gold") ;
         ...
@@ -84,8 +81,8 @@ At last, we define an aspect in which we draw the agent with its _mycolor_ color
 
 ```	
 species miner skills: [moving] control:simple_bdi {
-	float viewdist<-100.0;
-	float speed <- 10.0;
+	float viewdist<-1000.0;
+	float speed <- 2#km/#h;
 	rgb mycolor<-rnd_color(255);
 	point target;
 	int gold_sold;
@@ -95,7 +92,7 @@ species miner skills: [moving] control:simple_bdi {
 		do add_desire(find_gold);
 	}
 	aspect default {
-	        draw circle(20) color: mycolor border: #black depth: gold_sold;
+	        draw circle(200) color: mycolor border: #black depth: gold_sold;
 	}
 }
 ```
@@ -122,18 +119,18 @@ Note that the perceive statement works as the ask statement: the instructions wr
 
 ### rules
 We define two rules for the miner agents:
-* if the agent believes that there is somewhere at least one gold mine with gold nuggets, the agent gets the new desire to extract gold nuggets with a strength of 2. 
-* if the agent believes that it carries a gold nugget, the agent gets the new desire to sell the gold nugget with a strength of 3. 
+* if the agent believes that there is somewhere at least one gold mine with gold nuggets, the agent gets the new desire to has a gold nugget with a strength of 2. 
+* if the agent believes that it has a gold nugget, the agent gets the new desire to sell the gold nugget with a strength of 3. 
 
 ```
 species miner skills: [moving] control:simple_bdi {
 	...
-	rule belief: mine_location new_desire: extract_gold strength: 2.0;
+	rule belief: mine_location new_desire: has_gold strength: 2.0;
 	rule belief: has_gold new_desire: sell_gold strength: 3.0;
 }
 ```
 
-The strength of a desire will be used when selecting a desire as a new intention: the agent will choose as new intention the one with the highest strength. In our model, if the agent has the desires to find gold, to extract gold and to sell gold, it will choose as intention to sell gold as it is the one with the highest strength. It is possible to replace this deterministic choice by a probabilistic one by setting the _probabilistic_choice_ built-in varibale of the BDI agent to true (false by default).
+The strength of a desire will be used when selecting a desire as a new intention: the agent will choose as new intention the one with the highest strength. In our model, if the agent has the desires to find gold, to has gold and to sell gold, it will choose as intention to sell gold as it is the one with the highest strength. It is possible to replace this deterministic choice by a probabilistic one by setting the _probabilistic_choice_ built-in varibale of the BDI agent to true (false by default).
 
 
 ### plans
@@ -152,16 +149,16 @@ species miner skills: [moving] control:simple_bdi {
 }
 ```
 
-The second plan called _getGold_ is defined to achieve the _extract_gold_ intention. if the agent has no target (it does not know where to go), it adds a new sub-intention to choose a goldmine and put the current intention on hold (the agent will wait to select a gold mine to go before executing again this plan). The _add_subintention_ has 3 arguments: the sub-intention (choose_goldmine), the super intention (extract_gold) and a boolean that defines if the sub-intention should or not be added as well as a desire.
+The second plan called _getGold_ is defined to achieve the _has_gold_ intention. if the agent has no target (it does not know where to go), it adds a new sub-intention to choose a goldmine and put the current intention on hold (the agent will wait to select a gold mine to go before executing again this plan). The _add_subintention_ has 3 arguments: the sub-intention (choose_goldmine), the super intention (extract_gold) and a boolean that defines if the sub-intention should or not be added as well as a desire.
 If the agent has already a target, it moves toward this target using the _goto_ action of the _moving_ skill. If the agent reaches its target - goldmine - (target = location), the agent tries to extract gold nuggets from it. If the corresponding goldmine (that one located at the target location) is not empty, the agent extract a gold nugget from it: the agent adds the belief that it has a gold nugget, then the quantity of golds in the gold mine is reduced. Otherwise, if the gold mine is empty, the agent adds the belief that this gold mine is empty. then the target is set to nil.
 
 ```
 species miner skills: [moving] control:simple_bdi {
         ...
-        plan getGold intention:extract_gold 
+        plan getGold intention:has_gold
 	{
 		if (target = nil) {
-			do add_subintention(extract_gold,choose_goldmine, true);
+			do add_subintention(has_gold,choose_goldmine, true);
 			do current_intention_on_hold();
 		} else {
 			do goto target: target ;
@@ -271,19 +268,22 @@ global {
 	
 	string mine_at_location <- "mine_at_location";
 	string empty_mine_location <- "empty_mine_location";
-	//possible beliefs of miners
-	predicate mine_location <- new_predicate(mine_at_location) ;
-	predicate has_gold <- new_predicate("has gold");
 	
-	//possible desires of miners
+	float step <- 10#mn;
+	
+	//possible predicates concerning miners
+	predicate mine_location <- new_predicate(mine_at_location) ;
 	predicate choose_goldmine <- new_predicate("choose a gold mine");
-	predicate extract_gold <- new_predicate("extract gold");
+	predicate has_gold <- new_predicate("extract gold");
 	predicate find_gold <- new_predicate("find gold") ;
 	predicate sell_gold <- new_predicate("sell gold") ;
 	
+	
+	
 	float inequality <- 0.0 update:standard_deviation(miner collect each.gold_sold);
 	
-	geometry shape <- square(2000);
+	geometry shape <- square(20 #km);
+	
 	init
 	{
 		create market {
@@ -303,9 +303,9 @@ species goldmine {
 	aspect default
 	{
 		if (quantity = 0) {
-			draw triangle(20) color: #gray border: #black;	
+			draw triangle(200) color: #gray border: #black;	
 		} else {
-			draw triangle(20 + quantity*5) color: #yellow border: #black;	
+			draw triangle(200 + quantity*50) color: #yellow border: #black;	
 		}
 	 
 	}
@@ -315,14 +315,14 @@ species market {
 	int golds;
 	aspect default
 	{
-	  draw square(100) color: #black ;
+	  draw square(1000) color: #black ;
 	}
 }
 
 species miner skills: [moving] control:simple_bdi {
 	
-	float viewdist<-100.0;
-	float speed <- 10.0;
+	float viewdist<-1000.0;
+	float speed <- 2#km/#h;
 	rgb mycolor<-rnd_color(255);
 	point target;
 	int gold_sold;
@@ -338,7 +338,7 @@ species miner skills: [moving] control:simple_bdi {
 			do remove_intention(find_gold, false);
 		}
 	}
-	rule belief: mine_location new_desire: extract_gold strength: 2.0;
+	rule belief: mine_location new_desire: has_gold strength: 2.0;
 	rule belief: has_gold new_desire: sell_gold strength: 3.0;
 	
 		
@@ -347,10 +347,10 @@ species miner skills: [moving] control:simple_bdi {
 		do wander;
 	}
 	
-	plan getGold intention:extract_gold 
+	plan getGold intention:has_gold 
 	{
 		if (target = nil) {
-			do add_subintention(extract_gold,choose_goldmine, true);
+			do add_subintention(has_gold,choose_goldmine, true);
 			do current_intention_on_hold();
 		} else {
 			do goto target: target ;
@@ -372,7 +372,7 @@ species miner skills: [moving] control:simple_bdi {
 		list<point> empty_mines <- get_beliefs_with_name(empty_mine_location) collect (point(get_predicate(mental_state (each)).values["location_value"]));
 		possible_mines <- possible_mines - empty_mines;
 		if (empty(possible_mines)) {
-			do remove_intention(extract_gold, true); 
+			do remove_intention(has_gold, true); 
 		} else {
 			target <- (possible_mines with_min_of (each distance_to self)).location;
 		}
@@ -389,10 +389,9 @@ species miner skills: [moving] control:simple_bdi {
 	}
 
 	aspect default {
-	  draw circle(20) color: mycolor border: #black depth: gold_sold;
+	  draw circle(200) color: mycolor border: #black depth: gold_sold;
 	}
 }
-
 
 experiment GoldBdi type: gui {
 
@@ -405,5 +404,4 @@ experiment GoldBdi type: gui {
 		}
 	}
 }
-
 ```
