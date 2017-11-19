@@ -248,3 +248,4 @@ experiment GoldBdi type: gui {
 	}
 }
 ```
+  4. [Use of emotions and personality for the miners](GoldMinerModel_step4)
