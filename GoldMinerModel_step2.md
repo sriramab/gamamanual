@@ -405,3 +405,5 @@ experiment GoldBdi type: gui {
 	}
 }
 ```
+  3. [Definition of social relations between miners](GoldMinerModel_step3)
+  4. [Use of emotions and personality for the miners](GoldMinerModel_step4)
