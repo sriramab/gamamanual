@@ -94,9 +94,8 @@ The species feature allows to define a species with a continuous topology. A spe
 
   * **source**: a species (macro-species)
   * **target**: -
-![images/graphical_editor/Frame_Speciesdef1.png](https://github.com/gama-platform/gama-platform.github.io/blob/master/resources/images/graphicalEditor/Frame_Speciesdef1.png)
+![images/graphical_editor/Frame_Speciesdef1.png](https://github.com/gama-platform/gama-platform.github.io/blob/master/resources/images/graphicalEditor/Frame_species.png)
 
-![images/graphical_editor/Frame_Speciesdef2.png](https://github.com/gama-platform/gama-platform.github.io/blob/master/resources/images/graphicalEditor/Frame_Speciesdef2.png)
 
 #### grid
 
