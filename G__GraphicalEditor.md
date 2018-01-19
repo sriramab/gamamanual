@@ -62,7 +62,7 @@ Skeleton and Example diagram types allow to add to the diagram some basic featur
 
 ## Status of models in editors
 
-Similarly to GAML editor, the graphical editor proposes a live display of errors and model statuses. A graphical model can actually be in three different states, which are visually accessible above the editing area: **Functional** (orange color), **Experimentable** (green color) and **InError** (red color). See [the section on model compilation](CompilingModels161) for more precise information about these statuses.
+Similarly to GAML editor, the graphical editor proposes a live display of errors and model statuses. A graphical model can actually be in three different states, which are visually accessible above the editing area: **Functional** (orange color), **Experimentable** (green color) and **InError** (red color). See [the section on model validation](ValidationOfModels) for more precise information about these statuses.
 
 In its initial state, a model is always in the **Functional** state, which means it compiles without problems, but cannot be used to launch experiments. The **InError** state occurs when the file contains errors (syntactic or semantic ones).
 
@@ -77,7 +77,7 @@ Experiment buttons are updated in real-time to reflect what's in your code. If m
 ## Diagram definition framework
 
 The following figure presents the editing framework:
-![images/graphical_editor/framework.png](resources/images/graphical_editor/framework.png)
+![images/graphical_editor/framework.png](resources/images/graphicalEditor/framework.png)
 
 
 
@@ -88,15 +88,15 @@ The following figure presents the editing framework:
 ### agents
 #### species
 
-![images/graphical_editor/species.png](resources/images/graphical_editor/species.png)
+![images/graphical_editor/species.png](resources/images/graphicalEditor/species.png)
 
 The species feature allows to define a species with a continuous topology. A species is always a micro-species of another species. The top level (macro-species of all species) is the world species.
 
   * **source**: a species (macro-species)
   * **target**: -
-![images/graphical_editor/Frame_Speciesdef1.png](resources/images/graphical_editor/Frame_Speciesdef1.png)
+![images/graphical_editor/Frame_Speciesdef1.png](resources/images/graphicalEditor/Frame_Speciesdef1.png)
 
-![images/graphical_editor/Frame_Speciesdef2.png](resources/images/graphical_editor/Frame_Speciesdef2.png)
+![images/graphical_editor/Frame_Speciesdef2.png](resources/images/graphicalEditor/Frame_Speciesdef2.png)
 
 #### grid
 
@@ -107,7 +107,7 @@ The grid feature allows to define a [species](Species151) with a [grid topology]
   * **source**: a species (macro-species)
   * **target**: -
 
-![images/graphical_editor/Frame_grid.png](resources/images/graphical_editor/Frame_grid.png)
+![images/graphical_editor/Frame_grid.png](resources/images/graphicalEditor/Frame_grid.png)
 
 #### Inheriting link
 The inheriting link feature allows to define an inheriting link between two species.
@@ -115,80 +115,80 @@ The inheriting link feature allows to define an inheriting link between two spec
   * **source**: a species (parent)
   * **target**: a species (child)
 
-![images/graphical_editor/inhereting_link.png](resources/images/graphical_editor/inhereting_link.png)
+![images/graphical_editor/inhereting_link.png](resources/images/graphicalEditor/inhereting_link.png)
 
 
 #### world
 
-![images/graphical_editor/world.png](resources/images/graphical_editor/world.png)
+![images/graphical_editor/world.png](resources/images/graphicalEditor/world.png)
 
 When a model is created, a world species is always defined. It represent the global part of the model. The world species, which is unique, is the top level species. All other species are micro-species of the world species.
 
-![images/graphical_editor/Frame_world.png](resources/images/graphical_editor/Frame_world.png)
+![images/graphical_editor/Frame_world.png](resources/images/graphicalEditor/Frame_world.png)
 
 ### agent features
 
 #### action
-![images/graphical_editor/action.png](resources/images/graphical_editor/action.png)
+![images/graphical_editor/action.png](resources/images/graphicalEditor/action.png)
 
 The action feature allows to define an action for a species.
 
   * **source**: a species (owner of the action)
   * **target**: -
 
-![images/graphical_editor/Frame_action.png](resources/images/graphical_editor/Frame_action.png)
+![images/graphical_editor/Frame_action.png](resources/images/graphicalEditor/Frame_action.png)
 
 #### reflex
-![images/graphical_editor/reflex.png](resources/images/graphical_editor/reflex.png)
+![images/graphical_editor/reflex.png](resources/images/graphicalEditor/reflex.png)
 
 The reflex feature allows to define a reflex for a species.
 
   * **source**: a species (owner of the reflex)
   * **target**: -
 
-![images/graphical_editor/Frame_reflex.png](resources/images/graphical_editor/Frame_reflex.png)
+![images/graphical_editor/Frame_reflex.png](resources/images/graphicalEditor/Frame_reflex.png)
 
 #### aspect
-![images/graphical_editor/aspect.png](resources/images/graphical_editor/aspect.png)
+![images/graphical_editor/aspect.png](resources/images/graphicalEditor/aspect.png)
 
 The aspect feature allows to define an aspect for a species.
 
   * **source**: a species (owner of the aspect)
   * **target**: -
 
-![images/graphical_editor/Frame_aspect.png](resources/images/graphical_editor/Frame_aspect.png)
+![images/graphical_editor/Frame_aspect.png](resources/images/graphicalEditor/Frame_aspect.png)
 
 
-![images/graphical_editor/Frame_Aspect_layer.png](resources/images/graphical_editor/Frame_Aspect_layer.png)
+![images/graphical_editor/Frame_Aspect_layer.png](resources/images/graphicalEditor/Frame_Aspect_layer.png)
 ### experiment
 #### GUI experiment
 
-![images/graphical_editor/guiXP.png](resources/images/graphical_editor/guiXP.png)
+![images/graphical_editor/guiXP.png](resources/images/graphicalEditor/guiXP.png)
 
 The GUI Experiment feature allows to define a GUI experiment.
 
   * **source**: world species
   * **target**: -
 
-![images/graphical_editor/Frame_Experiment.png](resources/images/graphical_editor/Frame_Experiment.png)
+![images/graphical_editor/Frame_Experiment.png](resources/images/graphicalEditor/Frame_Experiment.png)
 
 #### display
 
-![images/graphical_editor/display.png](resources/images/graphical_editor/display.png)
+![images/graphical_editor/display.png](resources/images/graphicalEditor/display.png)
 
 The display feature allows to define a display.
 
   * **source**: GUI experiment
   * **target**: -
 
-![images/graphical_editor/Frame_display.png](resources/images/graphical_editor/Frame_display.png)
+![images/graphical_editor/Frame_display.png](resources/images/graphicalEditor/Frame_display.png)
 
 
-![images/graphical_editor/Frame_layer_display.png](resources/images/graphical_editor/Frame_layer_display.png)
+![images/graphical_editor/Frame_layer_display.png](resources/images/graphicalEditor/Frame_layer_display.png)
 
 #### batch experiment
 
-![images/graphical_editor/batchxp.png](resources/images/graphical_editor/batchxp.png)
+![images/graphical_editor/batchxp.png](resources/images/graphicalEditor/batchxp.png)
 
 The Batch Experiment feature allows to define a Batch experiment.
 
