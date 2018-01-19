@@ -31,7 +31,7 @@ The graphical editor that allow to build diagram (gadl files) is based on the [G
 
 
 ## Installing the graphical editor
-Using the graphical editor requires to install the graphical modeling plug-in. See [here](G__InstallingPlugins) for information about plug-ins and their installation.
+Using the graphical editor requires to install the graphical modeling plug-in. See [here](InstallingPlugins) for information about plug-ins and their installation.
 
 The graphical editor plug-in is called **Graphical\_modeling** and is directly available from the GAMA update site **http://updates.gama-platform.org/graphical_modeling**
 
