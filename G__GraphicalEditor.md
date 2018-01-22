@@ -229,7 +229,7 @@ The Rule feature allows to define a rule for a BDI species, i.e. a function exec
   * **source**:  a species with a BDI architecture
   * **target**: -
 
-![images/graphical_editor/Rule_rule.png](https://github.com/gama-platform/gama-platform.github.io/blob/master/resources/images/graphicalEditor/Rule_rule.png)
+![images/graphical_editor/Frame_rule.png](https://github.com/gama-platform/gama-platform.github.io/blob/master/resources/images/graphicalEditor/Frame_rule.png)
 
 #### Perception
 
@@ -240,7 +240,7 @@ The Perception feature allows to define a perception for a BDI species, i.e. a f
   * **source**:  a species with a BDI architecture
   * **target**: -
 
-![images/graphical_editor/Rule_perception.png](https://github.com/gama-platform/gama-platform.github.io/blob/master/resources/images/graphicalEditor/Rule_perception.png)
+![images/graphical_editor/Frame_perception.png](https://github.com/gama-platform/gama-platform.github.io/blob/master/resources/images/graphicalEditor/Frame_perception.png)
 
 ### Finite State Machine Architecture
 #### State
