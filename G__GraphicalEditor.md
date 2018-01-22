@@ -159,6 +159,17 @@ The aspect feature allows to define an aspect for a species.
 
 
 ![images/graphical_editor/Frame_Aspect_layer.png](https://github.com/gama-platform/gama-platform.github.io/blob/master/resources/images/graphicalEditor/Frame_Aspect_layer.png)
+
+#### equation
+![images/graphical_editor/equation.png](https://github.com/gama-platform/gama-platform.github.io/blob/master/resources/images/graphicalEditor/equation.png)
+
+The equation feature allows to define an equation for a species.
+
+  * **source**: a species (owner of the equation)
+  * **target**: -
+
+![images/graphical_editor/Frame_Equation.png](https://github.com/gama-platform/gama-platform.github.io/blob/master/resources/images/graphicalEditor/Frame_Equation.png)
+
 ### experiment
 #### GUI experiment
 
