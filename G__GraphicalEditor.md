@@ -208,6 +208,65 @@ The Batch Experiment feature allows to define a Batch experiment.
 
 
 
+### BDI Architecture
+#### Plan
+
+![images/graphical_editor/plan.png](https://github.com/gama-platform/gama-platform.github.io/blob/master/resources/images/graphicalEditor/plan.png)
+
+The Plan feature allows to define a plan for a BDI species, i.e. a sequence of statements that will be executed in order to fulfill a particular intention.
+
+  * **source**:  a species with a BDI architecture
+  * **target**: -
+
+![images/graphical_editor/Frame_plan.png](https://github.com/gama-platform/gama-platform.github.io/blob/master/resources/images/graphicalEditor/Frame_plan.png)
+
+#### Rule
+
+![images/graphical_editor/rule.png](https://github.com/gama-platform/gama-platform.github.io/blob/master/resources/images/graphicalEditor/rule.png)
+
+The Rule feature allows to define a rule for a BDI species, i.e. a function executed at each iteration to infer new desires or beliefs from the agent’s current beliefs and desires.
+
+  * **source**:  a species with a BDI architecture
+  * **target**: -
+
+![images/graphical_editor/Rule_rule.png](https://github.com/gama-platform/gama-platform.github.io/blob/master/resources/images/graphicalEditor/Rule_rule.png)
+
+#### Perception
+
+![images/graphical_editor/perception.png](https://github.com/gama-platform/gama-platform.github.io/blob/master/resources/images/graphicalEditor/perception.png)
+
+The Perception feature allows to define a perception for a BDI species, i.e. a function executed at each iteration that updates the agent’s Belief base according to the agent perception.
+
+  * **source**:  a species with a BDI architecture
+  * **target**: -
+
+![images/graphical_editor/Rule_perception.png](https://github.com/gama-platform/gama-platform.github.io/blob/master/resources/images/graphicalEditor/Rule_perception.png)
+
+### Finite State Machine Architecture
+#### State
+
+![images/graphical_editor/state.png](https://github.com/gama-platform/gama-platform.github.io/blob/master/resources/images/graphicalEditor/state.png)
+
+The State feature allows to define a state for a FSM species, i.e. sequence of statements that will be executed if the agent is in this state (an agent has a unique state at a time).
+
+  * **source**:  a species with a finite state machine architecture
+  * **target**: -
+
+![images/graphical_editor/Frame_state.png](https://github.com/gama-platform/gama-platform.github.io/blob/master/resources/images/graphicalEditor/Frame_state.png)
+
+### Task-based Architecture
+#### Task
+
+![images/graphical_editor/task.png](https://github.com/gama-platform/gama-platform.github.io/blob/master/resources/images/graphicalEditor/task.png)
+
+The Task feature allows to define a task for a Tasked-based species, i.e. sequence of statements that can be executed, at each time step, by the agent. If an agent owns several tasks, the scheduler chooses a task to execute based on its current priority weight value.
+
+  * **source**:  a species with a task-based architecture
+  * **target**: -
+
+![images/graphical_editor/Frame_task.png](https://github.com/gama-platform/gama-platform.github.io/blob/master/resources/images/graphicalEditor/Frame_task.png)
+
+
 
 ## Pictogram color modification
 It is possible to change the color of a pictogram.
