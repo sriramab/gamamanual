@@ -426,8 +426,8 @@ Note that due to the fact that actions are written by modelers, the general func
 ### `tan`
 
 #### Possible use: 
-  *  **`tan`** (`int`) --->  `float`
-  *  **`tan`** (`float`) --->  `float` 
+  *  **`tan`** (`float`) --->  `float`
+  *  **`tan`** (`int`) --->  `float` 
 
 #### Result: 
 Returns the value (in [-1,1]) of the trigonometric tangent of the operand (in decimal degrees). The argument is casted to an int before being evaluated.
@@ -476,8 +476,8 @@ Returns the value (in [-1,1]) of the trigonometric tangent of the operand (in de
 ### `tanh`
 
 #### Possible use: 
-  *  **`tanh`** (`int`) --->  `float`
-  *  **`tanh`** (`float`) --->  `float` 
+  *  **`tanh`** (`float`) --->  `float`
+  *  **`tanh`** (`int`) --->  `float` 
 
 #### Result: 
 Returns the value (in the interval [-1,1]) of the hyperbolic tangent of the operand (which can be any real number, expressed in decimal degrees).
@@ -611,19 +611,19 @@ date('2000-01-01') to date('2010-01-01') // builds an interval between these two
   *  **`to_GAMA_CRS`** (`geometry` , `string`) --->  `geometry`
 
 #### Special cases:     
-  * returns the geometry corresponding to the transformation of the given geometry to the GAMA CRS (Coordinate Reference System) assuming the given geometry is referenced by given CRS 
-  
-```
- 
-geometry var0 <- to_GAMA_CRS({121,14}, "EPSG:4326"); // var0 equals a geometry corresponding to the agent geometry transformed into the GAMA CRS
-``` 
-
-    
   * returns the geometry corresponding to the transformation of the given geometry to the GAMA CRS (Coordinate Reference System) assuming the given geometry is referenced by the current CRS, the one corresponding to the world's agent one 
   
 ```
  
-geometry var1 <- to_GAMA_CRS({121,14}); // var1 equals a geometry corresponding to the agent geometry transformed into the GAMA CRS
+geometry var0 <- to_GAMA_CRS({121,14}); // var0 equals a geometry corresponding to the agent geometry transformed into the GAMA CRS
+``` 
+
+    
+  * returns the geometry corresponding to the transformation of the given geometry to the GAMA CRS (Coordinate Reference System) assuming the given geometry is referenced by given CRS 
+  
+```
+ 
+geometry var1 <- to_GAMA_CRS({121,14}, "EPSG:4326"); // var1 equals a geometry corresponding to the agent geometry transformed into the GAMA CRS
 ``` 
 
 
@@ -662,7 +662,6 @@ string var11 <- to_gaml(node1); // var11 equals  1 as node
 
 [//]: # (keyword|operator_to_rectangles)
 ### `to_rectangles`
-Same signification as [split_geometry](OperatorsOS#split_geometry)
 
 #### Possible use: 
   *  **`to_rectangles`** (`geometry`, `point`, `bool`) --->  `list<geometry>`
@@ -687,21 +686,21 @@ list<geometry> var1 <- to_rectangles(self, {10.0, 15.0}, true); // var1 equals t
 ### `to_squares`
 
 #### Possible use: 
-  *  **`to_squares`** (`geometry`, `int`, `bool`) --->  `list<geometry>`
   *  **`to_squares`** (`geometry`, `float`, `bool`) --->  `list<geometry>`
+  *  **`to_squares`** (`geometry`, `int`, `bool`) --->  `list<geometry>`
   *  **`to_squares`** (`geometry`, `int`, `bool`, `float`) --->  `list<geometry>` 
 
 #### Result: 
-A list of a given number of squares from the decomposition of the geometry into squares (geometry, nb_square, overlaps), if overlaps = true, add the squares that overlap the border of the geometry
-A list of squares of the size corresponding to the given size that result from the decomposition of the geometry into squares (geometry, size, overlaps), if overlaps = true, add the squares that overlap the border of the geometry
 A list of a given number of squares from the decomposition of the geometry into squares (geometry, nb_square, overlaps, precision_coefficient), if overlaps = true, add the squares that overlap the border of the geometry, coefficient_precision should be close to 1.0
+A list of squares of the size corresponding to the given size that result from the decomposition of the geometry into squares (geometry, size, overlaps), if overlaps = true, add the squares that overlap the border of the geometry
+A list of a given number of squares from the decomposition of the geometry into squares (geometry, nb_square, overlaps), if overlaps = true, add the squares that overlap the border of the geometry
 
 #### Examples: 
 ```
  
-list<geometry> var0 <- to_squares(self, 10, true); // var0 equals the list of 10 squares corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept 
+list<geometry> var0 <- to_squares(self, 10, true, 0.99); // var0 equals the list of 10 squares corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept 
 list<geometry> var1 <- to_squares(self, 10.0, true); // var1 equals the list of squares of side size 10.0 corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept 
-list<geometry> var2 <- to_squares(self, 10, true, 0.99); // var2 equals the list of 10 squares corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept
+list<geometry> var2 <- to_squares(self, 10, true); // var2 equals the list of 10 squares corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept
 
 ```
   
@@ -947,8 +946,8 @@ geometry var0 <- triangle(5); // var0 equals a geometry as a triangle with side_
 ### `triangulate`
 
 #### Possible use: 
-  *  **`triangulate`** (`geometry`) --->  `list<geometry>`
-  *  **`triangulate`** (`list<geometry>`) --->  `list<geometry>` 
+  *  **`triangulate`** (`list<geometry>`) --->  `list<geometry>`
+  *  **`triangulate`** (`geometry`) --->  `list<geometry>` 
 
 #### Result: 
 A list of geometries (triangles) corresponding to the Delaunay triangulation of the operand geometry (geometry, agent, point)
@@ -968,22 +967,22 @@ list<geometry> var1 <- triangulate(self); // var1 equals the list of geometries 
 ### `truncated_gauss`
 
 #### Possible use: 
-  *  **`truncated_gauss`** (`point`) --->  `float`
-  *  **`truncated_gauss`** (`list`) --->  `float` 
+  *  **`truncated_gauss`** (`list`) --->  `float`
+  *  **`truncated_gauss`** (`point`) --->  `float` 
 
 #### Result: 
 A random value from a normally distributed random variable in the interval ]mean - standardDeviation; mean + standardDeviation[.
 
 #### Special cases:     
-  * when the operand is a point, it is read as {mean, standardDeviation}    
   * if the operand is a list, only the two first elements are taken into account as [mean, standardDeviation]    
-  * when truncated_gauss is called with a list of only one element mean, it will always return 0.0
+  * when truncated_gauss is called with a list of only one element mean, it will always return 0.0    
+  * when the operand is a point, it is read as {mean, standardDeviation}
 
 #### Examples: 
 ```
  
-float var0 <- truncated_gauss ({0, 0.3}); // var0 equals a float between -0.3 and 0.3 
-float var1 <- truncated_gauss ([0.5, 0.0]); // var1 equals 0.5
+float var0 <- truncated_gauss ([0.5, 0.0]); // var0 equals 0.5 
+float var1 <- truncated_gauss ({0, 0.3}); // var1 equals a float between -0.3 and 0.3
 
 ```
       
@@ -1027,6 +1026,7 @@ the operator alters the operand graph, it does not create a new one.
 
 [//]: # (keyword|operator_union)
 ### `union`
+Same signification as [+](OperatorsAB#+)
 
 #### Possible use: 
   *  **`union`** (`container<geometry>`) --->  `geometry`
@@ -1168,7 +1168,7 @@ This operator takes a map [string::value] as argument, displays a dialog asking 
 
 #### Examples: 
 ```
-map<string,unknown> values2 <- user_input("Enter numer of agents and locations",["Number" :: 100, "Location" :: {10, 10}]); create bug number: int(values2 at "Number") with: [location:: (point(values2 at "Location"))]; map<string,unknown> values <- user_input(["Number" :: 100, "Location" :: {10, 10}]); create bug number: int(values at "Number") with: [location:: (point(values at "Location"))]; 
+map<string,unknown> values <- user_input(["Number" :: 100, "Location" :: {10, 10}]); create bug number: int(values at "Number") with: [location:: (point(values at "Location"))]; map<string,unknown> values2 <- user_input("Enter numer of agents and locations",["Number" :: 100, "Location" :: {10, 10}]); create bug number: int(values2 at "Number") with: [location:: (point(values2 at "Location"))]; 
 
 ```
   
@@ -1233,8 +1233,8 @@ float var0 <- variance ([4.5, 3.5, 5.5, 7.0]); // var0 equals 1.671875
   *  **`variance`** (`int`, `float`, `float`) --->  `float` 
 
 #### Result: 
-Returns the variance from a standard deviation.
 Returns the variance of a data sequence. That is (sumOfSquares - mean*sum) / size with mean = sum/size.
+Returns the variance from a standard deviation.
     	
 ----
 
@@ -1496,25 +1496,25 @@ graphEpidemio <- graphEpidemio with_optimizer_type "static";
 ### `with_precision`
 
 #### Possible use: 
+  * `geometry` **`with_precision`** `int` --->  `geometry`
+  *  **`with_precision`** (`geometry` , `int`) --->  `geometry`
   * `float` **`with_precision`** `int` --->  `float`
   *  **`with_precision`** (`float` , `int`) --->  `float`
   * `point` **`with_precision`** `int` --->  `point`
-  *  **`with_precision`** (`point` , `int`) --->  `point`
-  * `geometry` **`with_precision`** `int` --->  `geometry`
-  *  **`with_precision`** (`geometry` , `int`) --->  `geometry` 
+  *  **`with_precision`** (`point` , `int`) --->  `point` 
 
 #### Result: 
+A geometry corresponding to the rounding of points of the operand considering a given precison.
 Rounds off the value of left-hand operand to the precision given by the value of right-hand operand
 Rounds off the ordinates of the left-hand point to the precision given by the value of right-hand operand
-A geometry corresponding to the rounding of points of the operand considering a given precison.
 
 #### Examples: 
 ```
  
-float var0 <- 12345.78943 with_precision 2; // var0 equals 12345.79 
-float var1 <- 123 with_precision 2; // var1 equals 123.00 
-point var2 <- {12345.78943, 12345.78943, 12345.78943} with_precision 2 ; // var2 equals {12345.79, 12345.79, 12345.79} 
-geometry var3 <- self with_precision 2; // var3 equals the geometry resulting from the rounding of points of the geometry with a precision of 0.1.
+geometry var0 <- self with_precision 2; // var0 equals the geometry resulting from the rounding of points of the geometry with a precision of 0.1. 
+float var1 <- 12345.78943 with_precision 2; // var1 equals 12345.79 
+float var2 <- 123 with_precision 2; // var2 equals 123.00 
+point var3 <- {12345.78943, 12345.78943, 12345.78943} with_precision 2 ; // var3 equals {12345.79, 12345.79, 12345.79}
 
 ```
       
@@ -1549,10 +1549,10 @@ predicate with_values ["time"::10]
 ### `with_weights`
 
 #### Possible use: 
-  * `graph` **`with_weights`** `map` --->  `graph`
-  *  **`with_weights`** (`graph` , `map`) --->  `graph`
   * `graph` **`with_weights`** `list` --->  `graph`
-  *  **`with_weights`** (`graph` , `list`) --->  `graph` 
+  *  **`with_weights`** (`graph` , `list`) --->  `graph`
+  * `graph` **`with_weights`** `map` --->  `graph`
+  *  **`with_weights`** (`graph` , `map`) --->  `graph` 
 
 #### Result: 
 returns the graph (left-hand operand) with weight given in the map (right-hand operand).  
