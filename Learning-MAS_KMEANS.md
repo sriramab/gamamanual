@@ -10,7 +10,7 @@
 # Agent Based Clustering
 
 
-_Author : Jean-Danie Zucker with Patrick Taillandier's and Arnaud Grignard's Help_
+_Author : Jean-Daniel Zucker with Patrick Taillandier's and Arnaud Grignard's Help_
 
 Code of the model : 
 
