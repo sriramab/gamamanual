@@ -236,3 +236,7 @@ experiment GoldBdi type: gui {
 	}
 }
 ```
+[Back to the start of the tutorial](BDIAgents)
+  1. [Creation of the basic model: gold mines and market](GoldMinerModel_step1)
+  2. [Definition of the BDI miners](GoldMinerModel_step2)
+  3. [Definition of social relations between miners](GoldMinerModel_step3)
