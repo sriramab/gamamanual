@@ -29,7 +29,7 @@ Here are detailled steps to create and configure a new GAMA plug-in.
     * Name « Additions to GAML from Maelia project »
     * Uncheck "Generate an activator, a Java class that controls the plug-in's life cycle" ,
     * Uncheck "This plug-in will make contributions to the UI"
-    * Check "No" when its asks "Would you like to create a rich client application ?"
+    * Check "No" when it asks "Would you like to create a rich client application ?"
     * Click on "Next"
   * In the "New plug-in Project" / "Templates" window:
     * Uncheck "Create a plug-in using one of the templates"
