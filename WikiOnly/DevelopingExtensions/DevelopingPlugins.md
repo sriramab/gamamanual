@@ -50,7 +50,7 @@ Your plug-in has been created.
     * Save the file. This should create a "plugin.xml" file.
 
   * Select the project and in menu Project > Properties:
-    * Java Compiler  > Annotation Processing: check "Enable project specific settings", then in "Generated Source Directory", change ".apt\_generated" in "gaml",
+    * Java Compiler  > Annotation Processing: check "Enable project specific settings", then in "Generated Source Directory", change ".apt\_generated" to "gaml",
     * Java Compiler  > Annotation Processing > Factory path: check "Enable project specific settings", then "Add Jars" and choose "msi.gama.processor/processor/plugins/msi.gama.processor.1.4.0.jar"
     * Close the menu. It should compile the project and create the `gaml` directory.
     * Return in the Project > Properties Menu.
