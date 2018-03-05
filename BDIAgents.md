@@ -11,7 +11,7 @@ The model built in this tutorial concerns gold miners that try to find and sell 
 
 ## Step List
 
-This tutorial is composed of 4 steps corresponding to 4 models. For each step we present its purpose, an explicit formulation and the corresponding GAML code.
+This tutorial is composed of 5 steps corresponding to 5 models. For each step we present its purpose, an explicit formulation and the corresponding GAML code.
 
   1. [Creation of the basic model: gold mines and market](GoldMinerModel_step1)
   1. [Definition of the BDI miners](GoldMinerModel_step2)
