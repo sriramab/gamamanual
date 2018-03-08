@@ -148,7 +148,7 @@ species policeman skills: [moving] control:simple_bdi {
 	}
 	
 	aspect base{
-		draw square(viewdist) color: #blue depth:0.0;
+		draw circle(viewdist) color: #blue depth:0.0;
 	}
 }
 ```
@@ -268,7 +268,7 @@ species policeman skills: [moving] control:simple_bdi {
 	}
 	
 	aspect base{
-		draw square(viewdist) color: #blue depth:0.0;
+		draw circle(viewdist) color: #blue depth:0.0;
 	}
 }
 
