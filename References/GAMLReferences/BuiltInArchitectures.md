@@ -375,6 +375,11 @@ get the emotion in the emotion base (if several, returns the first one).
 * returns: emotion 			
 * **`emotion`** (546706): emotion to get  
 	 
+#### **`get_emotion_with_name`**
+get the emotion is in the emotion base (if several, returns the first one).
+* returns: emotion 			
+* **`name`** (string): name of the emotion to check  
+	 
 #### **`get_ideal`**
 get the predicates in the ideal base (if several, returns the first one).
 * returns: msi.gaml.architecture.simplebdi.MentalState 			
@@ -459,6 +464,11 @@ check if the mental state is in the belief base.
 * returns: bool 			
 * **`mental_state`** (546708): mental state to check  
 	 
+#### **`has_belief_with_name`**
+check if the predicate is in the belief base.
+* returns: bool 			
+* **`name`** (string): name of the predicate to check  
+	 
 #### **`has_desire`**
 check if the predicates is in the desire base.
 * returns: bool 			
@@ -469,10 +479,20 @@ check if the mental state is in the desire base.
 * returns: bool 			
 * **`mental_state`** (546708): mental state to check  
 	 
+#### **`has_desire_with_name`**
+check if the prediate is in the desire base.
+* returns: bool 			
+* **`name`** (string): name of the predicate to check  
+	 
 #### **`has_emotion`**
 check if the emotion is in the belief base.
 * returns: bool 			
 * **`emotion`** (546706): emotion to check  
+	 
+#### **`has_emotion_with_name`**
+check if the emotion is in the emotion base.
+* returns: bool 			
+* **`name`** (string): name of the emotion to check  
 	 
 #### **`has_ideal`**
 check if the predicates is in the ideal base.
@@ -483,6 +503,11 @@ check if the predicates is in the ideal base.
 check if the mental state is in the ideal base.
 * returns: bool 			
 * **`mental_state`** (546708): mental state to check  
+	 
+#### **`has_ideal_with_name`**
+check if the predicate is in the ideal base.
+* returns: bool 			
+* **`name`** (string): name of the predicate to check  
 	 
 #### **`has_obligation`**
 check if the predicates is in the obligation base.
@@ -508,6 +533,11 @@ check if the predicates is in the uncertainty base.
 check if the mental state is in the uncertainty base.
 * returns: bool 			
 * **`mental_state`** (546708): mental state to check  
+	 
+#### **`has_uncertainty_with_name`**
+check if the predicate is in the uncertainty base.
+* returns: bool 			
+* **`name`** (string): name of the uncertainty to check  
 	 
 #### **`is_current_intention`**
 check if the predicates is the current intention (last entry of intention base).

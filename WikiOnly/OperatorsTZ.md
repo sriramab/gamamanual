@@ -426,8 +426,8 @@ Note that due to the fact that actions are written by modelers, the general func
 ### `tan`
 
 #### Possible use: 
-  *  **`tan`** (`float`) --->  `float`
-  *  **`tan`** (`int`) --->  `float` 
+  *  **`tan`** (`int`) --->  `float`
+  *  **`tan`** (`float`) --->  `float` 
 
 #### Result: 
 Returns the value (in [-1,1]) of the trigonometric tangent of the operand (in decimal degrees). The argument is casted to an int before being evaluated.
@@ -649,7 +649,7 @@ string var4 <- to_gaml(5::34); // var4 equals '5::34'
 string var5 <- to_gaml(rgb(255,0,125)); // var5 equals 'rgb (255, 0, 125,255)' 
 string var6 <- to_gaml('hello'); // var6 equals "'hello'" 
 string var7 <- to_gaml([1,5,9,3]); // var7 equals '[1,5,9,3]' 
-string var8 <- to_gaml(['a'::345, 'b'::13, 'c'::12]); // var8 equals "(['a'::345,'b'::13,'c'::12] as map )" 
+string var8 <- to_gaml(['a'::345, 'b'::13, 'c'::12]); // var8 equals "map(['a'::345,'b'::13,'c'::12])" 
 string var9 <- to_gaml([[3,5,7,9],[2,4,6,8]]); // var9 equals '[[3,5,7,9],[2,4,6,8]]' 
 string var10 <- to_gaml(a_graph); // var10 equals ([((1 as node)::(3 as node))::(5 as edge),((0 as node)::(3 as node))::(3 as edge),((1 as node)::(2 as node))::(1 as edge),((0 as node)::(2 as node))::(2 as edge),((0 as node)::(1 as node))::(0 as edge),((2 as node)::(3 as node))::(4 as edge)] as map ) as graph 
 string var11 <- to_gaml(node1); // var11 equals  1 as node
@@ -905,7 +905,7 @@ The transposition of the given matrix
 #### Examples: 
 ```
  
-matrix var0 <- transpose(matrix([[5,-3],[6,-4]])); // var0 equals [[5,6],[-3,-4]]
+matrix var0 <- transpose(matrix([[5,-3],[6,-4]])); // var0 equals matrix([[5,6],[-3,-4]])
 
 ```
   
@@ -967,22 +967,22 @@ list<geometry> var1 <- triangulate(self); // var1 equals the list of geometries 
 ### `truncated_gauss`
 
 #### Possible use: 
-  *  **`truncated_gauss`** (`point`) --->  `float`
-  *  **`truncated_gauss`** (`list`) --->  `float` 
+  *  **`truncated_gauss`** (`list`) --->  `float`
+  *  **`truncated_gauss`** (`point`) --->  `float` 
 
 #### Result: 
 A random value from a normally distributed random variable in the interval ]mean - standardDeviation; mean + standardDeviation[.
 
 #### Special cases:     
-  * when the operand is a point, it is read as {mean, standardDeviation}    
   * if the operand is a list, only the two first elements are taken into account as [mean, standardDeviation]    
-  * when truncated_gauss is called with a list of only one element mean, it will always return 0.0
+  * when truncated_gauss is called with a list of only one element mean, it will always return 0.0    
+  * when the operand is a point, it is read as {mean, standardDeviation}
 
 #### Examples: 
 ```
  
-float var0 <- truncated_gauss ({0, 0.3}); // var0 equals a float between -0.3 and 0.3 
-float var1 <- truncated_gauss ([0.5, 0.0]); // var1 equals 0.5
+float var0 <- truncated_gauss ([0.5, 0.0]); // var0 equals 0.5 
+float var1 <- truncated_gauss ({0, 0.3}); // var1 equals a float between -0.3 and 0.3
 
 ```
       
@@ -1233,8 +1233,8 @@ float var0 <- variance ([4.5, 3.5, 5.5, 7.0]); // var0 equals 1.671875
   *  **`variance`** (`int`, `float`, `float`) --->  `float` 
 
 #### Result: 
-Returns the variance from a standard deviation.
 Returns the variance of a data sequence. That is (sumOfSquares - mean*sum) / size with mean = sum/size.
+Returns the variance from a standard deviation.
     	
 ----
 
@@ -1267,14 +1267,14 @@ in the right-hand operand, the keyword each can be used to represent, in turn, e
   *  **`voronoi`** (`list<point>` , `geometry`) --->  `list<geometry>` 
 
 #### Result: 
-A list of geometries corresponding to the Voronoi diagram built from the list of points according to the given clip
 A list of geometries corresponding to the Voronoi diagram built from the list of points
+A list of geometries corresponding to the Voronoi diagram built from the list of points according to the given clip
 
 #### Examples: 
 ```
  
-list<geometry> var0 <- voronoi([{10,10},{50,50},{90,90},{10,90},{90,10}], square(300)); // var0 equals the list of geometries corresponding to the Voronoi Diagram built from the list of points with a square of 300m side size as clip. 
-list<geometry> var1 <- voronoi([{10,10},{50,50},{90,90},{10,90},{90,10}]); // var1 equals the list of geometries corresponding to the Voronoi Diagram built from the list of points.
+list<geometry> var0 <- voronoi([{10,10},{50,50},{90,90},{10,90},{90,10}]); // var0 equals the list of geometries corresponding to the Voronoi Diagram built from the list of points. 
+list<geometry> var1 <- voronoi([{10,10},{50,50},{90,90},{10,90},{90,10}], square(300)); // var1 equals the list of geometries corresponding to the Voronoi Diagram built from the list of points with a square of 300m side size as clip.
 
 ```
   
@@ -1496,24 +1496,24 @@ graphEpidemio <- graphEpidemio with_optimizer_type "static";
 ### `with_precision`
 
 #### Possible use: 
-  * `geometry` **`with_precision`** `int` --->  `geometry`
-  *  **`with_precision`** (`geometry` , `int`) --->  `geometry`
   * `float` **`with_precision`** `int` --->  `float`
   *  **`with_precision`** (`float` , `int`) --->  `float`
+  * `geometry` **`with_precision`** `int` --->  `geometry`
+  *  **`with_precision`** (`geometry` , `int`) --->  `geometry`
   * `point` **`with_precision`** `int` --->  `point`
   *  **`with_precision`** (`point` , `int`) --->  `point` 
 
 #### Result: 
-A geometry corresponding to the rounding of points of the operand considering a given precison.
 Rounds off the value of left-hand operand to the precision given by the value of right-hand operand
+A geometry corresponding to the rounding of points of the operand considering a given precison.
 Rounds off the ordinates of the left-hand point to the precision given by the value of right-hand operand
 
 #### Examples: 
 ```
  
-geometry var0 <- self with_precision 2; // var0 equals the geometry resulting from the rounding of points of the geometry with a precision of 0.1. 
-float var1 <- 12345.78943 with_precision 2; // var1 equals 12345.79 
-float var2 <- 123 with_precision 2; // var2 equals 123.00 
+float var0 <- 12345.78943 with_precision 2; // var0 equals 12345.79 
+float var1 <- 123 with_precision 2; // var1 equals 123.00 
+geometry var2 <- self with_precision 2; // var2 equals the geometry resulting from the rounding of points of the geometry with a precision of 0.1. 
 point var3 <- {12345.78943, 12345.78943, 12345.78943} with_precision 2 ; // var3 equals {12345.79, 12345.79, 12345.79}
 
 ```
