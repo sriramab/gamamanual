@@ -73,9 +73,6 @@ _**Note:** contrarily to previous Eclipse versions, import project from the Git 
   * Click on Next,
   * In the newt window, select your Git repository,
   * Click on Next,
-
-![GIT Import projects](resources/images/developpingExtension/GIT_Import_projects.png)    
-
   * In the **Select a wizard to used to import projects**, check that 
     * Import existing Eclipse projects is selected
     * Working Tree is selected
