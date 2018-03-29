@@ -1,12 +1,12 @@
 # Installing the GIT version
 
-Tested on MacOS X (10.9 to 10.11), Windows (8 to 10) and Ubuntu 15.04 (Vivid)
+Tested on MacOS X (10.13)
 
 _**Important note:** the current Git version is **not** compatible with the **GAMA 1.6.1 release**: if you plan to create plugins for this release, please download the source at revision r11988 (on Google Code) and [Eclipse following this procedure](InstallingSvnOldVersions). It is **neither** compatible with the **GAMA 1.7RC2 release**: if you plan to create plugins for this release, please [download the source on the branch mars on the GitHub and install Eclipse Mars SR2](InstallingGitVersionMars17)._
 
-## Install Eclipse Mars SR2
+## Install Eclipse Oxygen
 
-Download the ["Eclipse IDE for Java and DSL Developers"](http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/mars2) version (If Java is not installed on your computer you can download it [here](http://www.oracle.com/technetwork/java/javase/downloads/index.html)). 
+Download the ["Eclipse IDE for Java and DSL Developers"](http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/oxygen3) version. As Java version, we recommend to install the Java Oracle 1.8 JDK [that can be downloaded here](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)). 
 
 Unpack it and launch it. Please refer to this [link](http://help.eclipse.org/mars/index.jsp?nav=%2F0) for more information on running Eclipse.
 
