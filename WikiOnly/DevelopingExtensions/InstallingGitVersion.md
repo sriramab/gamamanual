@@ -98,7 +98,7 @@ If errors continue to show on in the different projects, be sure to correctly se
 4. Click on Launch an Eclipse Application
 
 
-###GIT Tutorials
+### GIT Tutorials
 For those who want learn more about Git and Egit, please consult the following tutorials/papers
 
 1. EGIT/User Guide http://wiki.eclipse.org/EGit/User_Guide
