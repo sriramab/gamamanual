@@ -14,7 +14,7 @@ Unpack it and launch it. Please refer to this [link](http://help.eclipse.org/oxy
 
 If you install another version of Eclipse, please keep in mind that GAMA is compatible only, for the moment, with XText 2.13.0 (see [here](http://www.eclipse.org/Xtext/download.html) to obtain it).
 
-## Install additional requiered components to Eclipse 
+## Install additional required components to Eclipse 
 
 The MWE plugin provided with the Eclipse release should be updated.
 1. Open the install window:
