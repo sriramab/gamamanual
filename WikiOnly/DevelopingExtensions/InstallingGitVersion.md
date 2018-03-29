@@ -14,7 +14,7 @@ Unpack it and launch it. Please refer to this [link](http://help.eclipse.org/oxy
 
 If you install another version of Eclipse, please keep in mind that GAMA is compatible only, for the moment, with XText 2.13.0 (see [here](http://www.eclipse.org/Xtext/download.html) to obtain it).
 
-## Install additional components to Eclipse 
+## Install additional requiered components to Eclipse 
 
 The MWE plugin provided with the Eclipse release should be updated.
 1. Open the install window:
@@ -60,12 +60,14 @@ You have now to import projects into the workspace (notice that the folders down
 _**Note:** contrarily to previous Eclipse versions, import project from the Git perspective does not work properly for GAMA._
 
 1. In the **Java perspective**, choose:
-![Context Working tree](resources/images/developpingExtension/GIT_Context_WorkingDirectory.png)
-
   * `File` / `Import...`,
+![Context Working tree](resources/images/developpingExtension/dialog_install_EOxy_ImportProjects.png)
+
   * In the install window, select `Git` / `Projects from Git`,
   * Click on Next,
   * In the `Project from Git` window, select `Existing local repository.`,
+![Context Local Repository](resources/images/developpingExtension/dialog_install_EOxy_ImportRespositorySource.png)
+
   * Click on Next,
   * In the newt window, select your Git repository,
   * Click on Next,
@@ -74,6 +76,8 @@ _**Note:** contrarily to previous Eclipse versions, import project from the Git 
   * In the **Select a wizard to used to import projects**, check that 
     * Import existing Eclipse projects is selected
     * Working Tree is selected
+![GIT Import projects](resources/images/developpingExtension/dialog_install_EOxy_ImportSelectWizard.png)    
+
   * Click on Next,
   * In the **Import project** window,
     * **Uncheck Search for nested projects**
