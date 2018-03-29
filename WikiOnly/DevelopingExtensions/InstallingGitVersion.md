@@ -6,7 +6,7 @@ _**Important note:** the current Git version is **not** compatible with the **GA
 
 ## Install Eclipse Oxygen
 
-Download the ["Eclipse IDE for Java and DSL Developers"](http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/oxygen3) version. As Java version, we recommend to install the Java Oracle 1.8 JDK [that can be downloaded here](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)). 
+Download the ["Eclipse IDE for Java and DSL Developers"](http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/oxygen3) version. As Java version, we recommend to install the Java Oracle 1.8 JDK [that can be downloaded here](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). 
 
 Unpack it and launch it. Please refer to this [link](http://help.eclipse.org/oxygen/index.jsp?nav=%2F0) for more information on running Eclipse.
 
