@@ -29,7 +29,7 @@ The source is to be downloaded from GitHub in two steps: by creating a local clo
     * Other fields will be automatically filled in.
 ![Source GIT repository](resources/images/developpingExtension/GIT_source_git_repository.png)    
   * In **Branch Selection** windows, 
-    * check the master branch 
+    * check the mars branch 
     * Next
     * Note: If you are using Ubuntu 16 and you did not find any branch in this windows, may be your eclipse has a bug related with the OS. The workaround should be: 
         * Close eclipse
@@ -43,7 +43,6 @@ The source is to be downloaded from GitHub in two steps: by creating a local clo
         * Save and close eclipse.ini
         * Start eclipse and redo from step 1
 
-![Git branch selection](resources/images/developpingExtension/GIT_branch_selection.png)
   * In **Local Destination** windows,
     * Choose a Directory (where the source files will be downloaded).
     * Everything else should be unchecked 
