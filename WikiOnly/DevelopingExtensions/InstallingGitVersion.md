@@ -8,11 +8,24 @@ _**Important note:** the current Git version is **not** compatible with the **GA
 
 Download the ["Eclipse IDE for Java and DSL Developers"](http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/oxygen3) version. As Java version, we recommend to install the Java Oracle 1.8 JDK [that can be downloaded here](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)). 
 
-Unpack it and launch it. Please refer to this [link](http://help.eclipse.org/mars/index.jsp?nav=%2F0) for more information on running Eclipse.
+Unpack it and launch it. Please refer to this [link](http://help.eclipse.org/oxygen/index.jsp?nav=%2F0) for more information on running Eclipse.
 
 **One important step** required for GAMA to correctly produce its supporting files once it will have been installed is to set the default encoding of the workspace to UTF-8. It can be done by selecting, in the Preferences, "General", then "Workspace", then "Text file encoding" and choosing "UTF-8" in the drop-down menu available in "Other:".
 
-If you install another version of Eclipse, please keep in mind that GAMA is compatible only, for the moment, with XText 2.9.1 (see [here](http://www.eclipse.org/Xtext/download.html) to obtain it).
+If you install another version of Eclipse, please keep in mind that GAMA is compatible only, for the moment, with XText 2.13.0 (see [here](http://www.eclipse.org/Xtext/download.html) to obtain it).
+
+## Install additional components to Eclipse 
+
+The MWE plugin provided with the Eclipse release should be updated.
+1. Open the install window:
+  * Help > Install new softwares
+2. Choose the plugin to install
+  * Copy the following address in Work with field: `http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/`
+  * In `MWE`, select `MWE 2 language SDK    2.9.0.v201605261103`
+  * Next
+  * (Note: this will also update Xtext Complete SDK to 2.13.0v2017...)
+3. Accept the licence and restart.
+
 
 ## Install GAMA source code
 
