@@ -50,7 +50,9 @@ The source is to be downloaded from GitHub in two steps: by creating a local clo
     * Choose a Directory (where the source files will be downloaded).
     * Everything else should be unchecked 
     * Finish
+
 ![Local destination](resources/images/developpingExtension/GIT_local_destination.png)
+
 This can take a while...
 
 
