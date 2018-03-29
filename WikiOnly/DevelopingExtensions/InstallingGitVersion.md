@@ -61,22 +61,26 @@ _**Note:** contrarily to previous Eclipse versions, import project from the Git 
 
 1. In the **Java perspective**, choose:
   * `File` / `Import...`,
+
 ![Context Working tree](resources/images/developpingExtension/dialog_install_EOxy_ImportProjects.png)
 
   * In the install window, select `Git` / `Projects from Git`,
   * Click on Next,
   * In the `Project from Git` window, select `Existing local repository.`,
+
 ![Context Local Repository](resources/images/developpingExtension/dialog_install_EOxy_ImportRespositorySource.png)
 
   * Click on Next,
   * In the newt window, select your Git repository,
   * Click on Next,
+
 ![GIT Import projects](resources/images/developpingExtension/GIT_Import_projects.png)    
 
   * In the **Select a wizard to used to import projects**, check that 
     * Import existing Eclipse projects is selected
     * Working Tree is selected
-![GIT Import projects](resources/images/developpingExtension/dialog_install_EOxy_ImportSelectWizard.png)    
+
+![GIT Import projects](resources/images/developpingExtension/dialog_install_EOxy_ImportWizard.png)    
 
   * Click on Next,
   * In the **Import project** window,
