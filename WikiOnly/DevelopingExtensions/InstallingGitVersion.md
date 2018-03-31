@@ -6,7 +6,7 @@ _**Important note:** the current Git version is **not** compatible with the **GA
 
 ## Install Eclipse Oxygen
 
-Download the ["Eclipse IDE for Java and DSL Developers"](http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/oxygen3) version. As Java version, we recommend to install the Java Oracle 1.8 JDK [that can be downloaded here](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)). 
+Download the ["Eclipse IDE for Java and DSL Developers"](http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/oxygen3) version. As Java version, we recommend to install the Java Oracle 1.8 JDK [that can be downloaded here](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). 
 
 Unpack it and launch it. Please refer to this [link](http://help.eclipse.org/oxygen/index.jsp?nav=%2F0) for more information on running Eclipse.
 
@@ -14,7 +14,7 @@ Unpack it and launch it. Please refer to this [link](http://help.eclipse.org/oxy
 
 If you install another version of Eclipse, please keep in mind that GAMA is compatible only, for the moment, with XText 2.13.0 (see [here](http://www.eclipse.org/Xtext/download.html) to obtain it).
 
-## Install additional requiered components to Eclipse 
+## Install additional required components to Eclipse 
 
 The MWE plugin provided with the Eclipse release should be updated.
 1. Open the install window:
@@ -50,7 +50,9 @@ The source is to be downloaded from GitHub in two steps: by creating a local clo
     * Choose a Directory (where the source files will be downloaded).
     * Everything else should be unchecked 
     * Finish
+
 ![Local destination](resources/images/developpingExtension/GIT_local_destination.png)
+
 This can take a while...
 
 
@@ -61,22 +63,23 @@ _**Note:** contrarily to previous Eclipse versions, import project from the Git 
 
 1. In the **Java perspective**, choose:
   * `File` / `Import...`,
+
 ![Context Working tree](resources/images/developpingExtension/dialog_install_EOxy_ImportProjects.png)
 
   * In the install window, select `Git` / `Projects from Git`,
   * Click on Next,
   * In the `Project from Git` window, select `Existing local repository.`,
+
 ![Context Local Repository](resources/images/developpingExtension/dialog_install_EOxy_ImportRespositorySource.png)
 
   * Click on Next,
   * In the newt window, select your Git repository,
   * Click on Next,
-![GIT Import projects](resources/images/developpingExtension/GIT_Import_projects.png)    
-
   * In the **Select a wizard to used to import projects**, check that 
     * Import existing Eclipse projects is selected
     * Working Tree is selected
-![GIT Import projects](resources/images/developpingExtension/dialog_install_EOxy_ImportSelectWizard.png)    
+
+![GIT Import projects](resources/images/developpingExtension/dialog_install_EOxy_ImportWizard.png)    
 
   * Click on Next,
   * In the **Import project** window,
@@ -97,7 +100,7 @@ If errors continue to show on in the different projects, be sure to correctly se
 4. Click on Launch an Eclipse Application
 
 
-###GIT Tutorials
+### GIT Tutorials
 For those who want learn more about Git and Egit, please consult the following tutorials/papers
 
 1. EGIT/User Guide http://wiki.eclipse.org/EGit/User_Guide
