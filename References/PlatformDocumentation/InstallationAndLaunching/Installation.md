@@ -36,7 +36,7 @@ From now on, Gama should be fully functional.
 
 ## Installation of Java
 
-On all environments, the recommended Java Virtual Machine under which GAMA has been tested is the one distributed by Oracle ([http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html#javasejdk](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html#javasejdk)). 
+On all environments, the recommended Java Virtual Machine under which GAMA has been tested is the one distributed by Oracle ([http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)). 
 **Please make sure to install the JDK (Java Development Kit) and not the JRE (Java Runtime Environment)**.
 GAMA may work with the standard JRE, although it will be slower and may even crash (esp. under MacOS X).
 
