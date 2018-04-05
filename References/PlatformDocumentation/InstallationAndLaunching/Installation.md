@@ -17,7 +17,7 @@ You can then download the right version from the [Downloads page](http://vps2261
 
 ## System Requirements
 
-GAMA 1.7/1.8 requires that **Java 1.8** be installed on your machine, approximately 200MB of disk space and a minimum of 4GB of RAM (to increase the portion of memory usable by GAMA, please refer to [these instructions](Troubleshooting#Memory_problems)). **Please note that GAMA has not been tested under Java 1.9 and 1.10**. 
+GAMA 1.7/1.8 requires that **Java 1.8** be installed on your machine, approximately 200MB of disk space and a minimum of 4GB of RAM (to increase the portion of memory usable by GAMA, please refer to [these instructions](Troubleshooting#Memory_problems)). **Please note that GAMA is not considered as compatible with Java 1.9 and Java 1.10** as it has not been tested under these environments.
 
 ### MacOS 
 
