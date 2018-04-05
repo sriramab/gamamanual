@@ -143,6 +143,26 @@ adds the mental state is in the desire base.
 * **`lifetime`** (int): the lifetime of the desire 			
 * **`todo`** (546704): add the desire as a subintention of this parameter  
 	 
+#### **`add_directly_belief`**
+add the belief in the belief base.
+* returns: bool 			
+* **`belief`** (546708): belief to add in th belief base  
+	 
+#### **`add_directly_desire`**
+add the desire in the desire base.
+* returns: bool 			
+* **`desire`** (546708): desire to add in th belief base  
+	 
+#### **`add_directly_ideal`**
+add the ideal in the ideal base.
+* returns: bool 			
+* **`ideal`** (546708): ideal to add in the ideal base  
+	 
+#### **`add_directly_uncertainty`**
+add the uncertainty in the uncertainty base.
+* returns: bool 			
+* **`uncertainty`** (546708): uncertainty to add in the uncertainty base  
+	 
 #### **`add_emotion`**
 add the emotion to the emotion base.
 * returns: bool 			
@@ -381,9 +401,9 @@ get the emotion is in the emotion base (if several, returns the first one).
 * **`name`** (string): name of the emotion to check  
 	 
 #### **`get_ideal`**
-get the predicates in the ideal base (if several, returns the first one).
+get the ideal about the predicate in the ideal base (if several, returns the first one).
 * returns: msi.gaml.architecture.simplebdi.MentalState 			
-* **`predicate`** (546704): predicate to return  
+* **`predicate`** (546704): predicate to check ad an ideal  
 	 
 #### **`get_ideal_mental_state`**
 get the mental state in the ideal base (if several, returns the first one).
