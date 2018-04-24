@@ -4,8 +4,6 @@ This third step illustrates how load GIS data and to agentify them.
 ![images/luneray3.tiff](resources/images/tutorials/luneray3.tiff)
 
 
-
-
 ## Formulation
   * Define 2 new species that will just be displayed: *road* and *building*.
   * Define new global attributes to load GIS data (shape file).
