@@ -1,5 +1,5 @@
 # 4. Emotions and Personality
-This last step consists in adding emotions that will impact the gold miner agent behavior and defining the personality of the agents.
+This fourth step consists in adding emotions that will impact the gold miner agent behavior and defining the personality of the agents.
 
 ## Formulation
   * Definition of global emotions
