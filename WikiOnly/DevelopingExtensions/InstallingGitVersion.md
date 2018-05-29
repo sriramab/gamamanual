@@ -16,14 +16,16 @@ If you install another version of Eclipse, please keep in mind that GAMA is comp
 
 ## Install additional required components to Eclipse 
 
-The MWE plugin provided with the Eclipse release should be updated.
+The Xtext plugin provided with the Eclipse release should be updated.
 1. Open the install window:
   * Help > Install new softwares
 2. Choose the plugin to install
-  * Copy the following address in Work with field: `http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/`
-  * In `MWE`, select `MWE 2 language SDK    2.9.0.v201605261103`
+  * Copy the following address in `Work with` text field: `http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/`
+  * Uncheck `Show only the latest versions of available software`
+  * In `Xtext`, check:
+    * `Xtext Complete SDK	2.13.0.v20171020-0920`
+    * `Xtend IDE	        2.13.0.v20171020-0920`
   * Next
-  * (Note: this will also update Xtext Complete SDK to 2.13.0v2017...)
 3. Accept the licence and restart.
 
 
