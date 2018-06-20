@@ -319,22 +319,22 @@ puts the current intention on hold until the specified condition is reached or a
 	 
 #### **`get_belief`**
 return the belief about the predicate in the belief base (if several, returns the first one).
-* returns: msi.gaml.architecture.simplebdi.MentalState 			
+* returns: mental_state 			
 * **`predicate`** (546704): predicate to get  
 	 
 #### **`get_belief_emotion`**
 return the belief about the emotion in the belief base (if several, returns the first one).
-* returns: msi.gaml.architecture.simplebdi.MentalState 			
+* returns: mental_state 			
 * **`emotion`** (546706): emotion about which the belief to get is  
 	 
 #### **`get_belief_mental_state`**
 return the belief about the mental state in the belief base (if several, returns the first one).
-* returns: msi.gaml.architecture.simplebdi.MentalState 			
+* returns: mental_state 			
 * **`mental_state`** (546708): mental state to get  
 	 
 #### **`get_belief_with_name`**
 get the predicates is in the belief base (if several, returns the first one).
-* returns: msi.gaml.architecture.simplebdi.MentalState 			
+* returns: mental_state 			
 * **`name`** (string): name of the predicate to check  
 	 
 #### **`get_beliefs`**
@@ -354,7 +354,7 @@ get the list of predicates is in the belief base with the given name.
 	 
 #### **`get_current_intention`**
 returns the current intention (last entry of intention base).
-* returns: msi.gaml.architecture.simplebdi.MentalState  
+* returns: mental_state  
 	 
 #### **`get_current_plan`**
 get the current plan.
@@ -362,17 +362,17 @@ get the current plan.
 	 
 #### **`get_desire`**
 get the predicates is in the desire base (if several, returns the first one).
-* returns: msi.gaml.architecture.simplebdi.MentalState 			
+* returns: mental_state 			
 * **`predicate`** (546704): predicate to check  
 	 
 #### **`get_desire_mental_state`**
 get the mental state is in the desire base (if several, returns the first one).
-* returns: msi.gaml.architecture.simplebdi.MentalState 			
+* returns: mental_state 			
 * **`mental_state`** (546708): mental state to check  
 	 
 #### **`get_desire_with_name`**
 get the predicates is in the belief base (if several, returns the first one).
-* returns: msi.gaml.architecture.simplebdi.MentalState 			
+* returns: mental_state 			
 * **`name`** (string): name of the predicate to check  
 	 
 #### **`get_desires`**
@@ -402,27 +402,27 @@ get the emotion is in the emotion base (if several, returns the first one).
 	 
 #### **`get_ideal`**
 get the ideal about the predicate in the ideal base (if several, returns the first one).
-* returns: msi.gaml.architecture.simplebdi.MentalState 			
+* returns: mental_state 			
 * **`predicate`** (546704): predicate to check ad an ideal  
 	 
 #### **`get_ideal_mental_state`**
 get the mental state in the ideal base (if several, returns the first one).
-* returns: msi.gaml.architecture.simplebdi.MentalState 			
+* returns: mental_state 			
 * **`mental_state`** (546708): mental state to return  
 	 
 #### **`get_intention`**
 get the predicates in the intention base (if several, returns the first one).
-* returns: msi.gaml.architecture.simplebdi.MentalState 			
+* returns: mental_state 			
 * **`predicate`** (546704): predicate to check  
 	 
 #### **`get_intention_mental_state`**
 get the mental state is in the intention base (if several, returns the first one).
-* returns: msi.gaml.architecture.simplebdi.MentalState 			
+* returns: mental_state 			
 * **`mental_state`** (546708): mental state to check  
 	 
 #### **`get_intention_with_name`**
 get the predicates is in the belief base (if several, returns the first one).
-* returns: msi.gaml.architecture.simplebdi.MentalState 			
+* returns: mental_state 			
 * **`name`** (string): name of the predicate to check  
 	 
 #### **`get_intentions`**
@@ -442,7 +442,7 @@ get the list of predicates is in the belief base with the given name.
 	 
 #### **`get_obligation`**
 get the predicates in the obligation base (if several, returns the first one).
-* returns: msi.gaml.architecture.simplebdi.MentalState 			
+* returns: mental_state 			
 * **`predicate`** (546704): predicate to return  
 	 
 #### **`get_plan`**
@@ -466,12 +466,12 @@ get the social link with the agent concerned (if several, returns the first one)
 	 
 #### **`get_uncertainty`**
 get the predicates is in the uncertainty base (if several, returns the first one).
-* returns: msi.gaml.architecture.simplebdi.MentalState 			
+* returns: mental_state 			
 * **`predicate`** (546704): predicate to return  
 	 
 #### **`get_uncertainty_mental_state`**
 get the mental state is in the uncertainty base (if several, returns the first one).
-* returns: msi.gaml.architecture.simplebdi.MentalState 			
+* returns: mental_state 			
 * **`mental_state`** (546708): mental state to return  
 	 
 #### **`has_belief`**
