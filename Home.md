@@ -1,4 +1,4 @@
-<div style="text-align:center"><img src ="https://github.com/gama-platform/gama/wiki/resources/images/general/GamaPlatform.png" width="500"/></div>
+<div style="text-align:center"><img src ="https://github.com/gama-platform/gama/wiki/resources/images/general/GamaPlatform.png" width="100"/></div>
 
 GAMA is a modeling and simulation development environment for building spatially explicit agent-based simulations. 
 
