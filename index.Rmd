@@ -26,3 +26,11 @@ knitr::include_graphics('cover.png', dpi = NA)
 ```
 
 # Background {-}
+
+<blockquote id="bq_warn">
+Warning : The links do not work yet.
+</blockquote>
+
+<blockquote id="bq_tip">
+I am only modifying the content. Original content is from gama-platform.org 
+</blockquote>
