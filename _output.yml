@@ -5,8 +5,8 @@ bookdown::gitbook:
       before: |
         <li><a href="./">GAMA Manual</a></li>
       after: |
-        <li><a href="www.bhugole.nl" target="blank">Published @ bhugole</a></li>
-    edit: https://github.com/sriramab/gamamanual/edit/master/%s
+        <li><a href="www.bhugole.com" target="blank">Published @ bhugole</a></li>
+    #edit: https://github.com/sriramab/gamamanual/edit/master/%s
     download: ["pdf", "epub", "mobi"]
 bookdown::pdf_book:
   includes:

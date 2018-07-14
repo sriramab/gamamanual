@@ -4,4 +4,4 @@ language:
     chapter_name: "Chapter "
 output_dir: docs
 delete_merged_file: true
-rmd_files: ["index.Rmd", "WikiOnly/NewVersionChanges.md"]#"WikiOnly/OperatorsAA.md", "WikiOnly/OperatorsAA.md", "WikiOnly/OperatorsBC.md","WikiOnly/OperatorsDH.md","WikiOnly/OperatorsIM.md","WikiOnly/OperatorsNR.md","WikiOnly/OperatorsSZ.md"]
+rmd_files: ["index.Rmd", "WikiOnly/NewVersionChanges.md","WikiOnly/OperatorsAA.md", "WikiOnly/OperatorsAA.md", "WikiOnly/OperatorsBC.md","WikiOnly/OperatorsDH.md","WikiOnly/OperatorsIM.md","WikiOnly/OperatorsNR.md","WikiOnly/OperatorsSZ.md"]
