@@ -25,12 +25,11 @@ description: "Document describing the GAMA operators and their functions."
 knitr::include_graphics('cover.png', dpi = NA)
 ```
 
-# Background {-}
+# Notice {-}
+
+The content of this manual is from gama-platform.org website. I have only modified and edited very small portions of the content to give it a book format.
 
 <blockquote id="bq_warn">
 Warning : The links do not work yet.
 </blockquote>
 
-<blockquote id="bq_tip">
-I am only modifying the content. Original content is from gama-platform.org 
-</blockquote>
