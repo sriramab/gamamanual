@@ -618,874 +618,6 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\section{Table of Contents}\label{table-of-contents}
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\section{Operators by categories}\label{operators-by-categories}
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{3D}\label{d}
-
-\href{OperatorsBC\#box}{box}, \href{OperatorsBC\#cone3d}{cone3D},
-\href{OperatorsBC\#cube}{cube}, \href{OperatorsBC\#cylinder}{cylinder},
-\href{OperatorsDH\#dem}{dem}, \href{OperatorsDH\#hexagon}{hexagon},
-\href{OperatorsNR\#pyramid}{pyramid},
-\href{OperatorsNR\#rgb_to_xyz}{rgb\_to\_xyz},
-\href{OperatorsSZ\#set_z}{set\_z}, \href{OperatorsSZ\#sphere}{sphere},
-\href{OperatorsSZ\#teapot}{teapot},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Arithmetic operators}\label{arithmetic-operators}
-
-\href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
-{[}\textsuperscript{{]}(OperatorsAA\#}), \href{OperatorsAA\#*}{*},
-\href{OperatorsAA\#+}{+}, \href{OperatorsAA\#abs}{abs},
-\href{OperatorsAA\#acos}{acos}, \href{OperatorsAA\#asin}{asin},
-\href{OperatorsAA\#atan}{atan}, \href{OperatorsAA\#atan2}{atan2},
-\href{OperatorsBC\#ceil}{ceil}, \href{OperatorsBC\#cos}{cos},
-\href{OperatorsBC\#cos_rad}{cos\_rad}, \href{OperatorsDH\#div}{div},
-\href{OperatorsDH\#even}{even}, \href{OperatorsDH\#exp}{exp},
-\href{OperatorsDH\#fact}{fact}, \href{OperatorsDH\#floor}{floor},
-\href{OperatorsDH\#hypot}{hypot},
-\href{OperatorsIM\#is_finite}{is\_finite},
-\href{OperatorsIM\#is_number}{is\_number}, \href{OperatorsIM\#ln}{ln},
-\href{OperatorsIM\#log}{log}, \href{OperatorsIM\#mod}{mod},
-\href{OperatorsNR\#round}{round}, \href{OperatorsSZ\#signum}{signum},
-\href{OperatorsSZ\#sin}{sin}, \href{OperatorsSZ\#sin_rad}{sin\_rad},
-\href{OperatorsSZ\#sqrt}{sqrt}, \href{OperatorsSZ\#tan}{tan},
-\href{OperatorsSZ\#tan_rad}{tan\_rad}, \href{OperatorsSZ\#tanh}{tanh},
-\href{OperatorsSZ\#with_precision}{with\_precision},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{BDI}\label{bdi}
-
-\href{OperatorsAA\#and}{and}, \href{OperatorsDH\#eval_when}{eval\_when},
-\href{OperatorsDH\#get_about}{get\_about},
-\href{OperatorsDH\#get_agent}{get\_agent},
-\href{OperatorsDH\#get_agent_cause}{get\_agent\_cause},
-\href{OperatorsDH\#get_belief_op}{get\_belief\_op},
-\href{OperatorsDH\#get_belief_with_name_op}{get\_belief\_with\_name\_op},
-\href{OperatorsDH\#get_beliefs_op}{get\_beliefs\_op},
-\href{OperatorsDH\#get_beliefs_with_name_op}{get\_beliefs\_with\_name\_op},
-\href{OperatorsDH\#get_current_intention_op}{get\_current\_intention\_op},
-\href{OperatorsDH\#get_decay}{get\_decay},
-\href{OperatorsDH\#get_desire_op}{get\_desire\_op},
-\href{OperatorsDH\#get_desire_with_name_op}{get\_desire\_with\_name\_op},
-\href{OperatorsDH\#get_desires_op}{get\_desires\_op},
-\href{OperatorsDH\#get_desires_with_name_op}{get\_desires\_with\_name\_op},
-\href{OperatorsDH\#get_dominance}{get\_dominance},
-\href{OperatorsDH\#get_familiarity}{get\_familiarity},
-\href{OperatorsDH\#get_ideal_op}{get\_ideal\_op},
-\href{OperatorsDH\#get_ideal_with_name_op}{get\_ideal\_with\_name\_op},
-\href{OperatorsDH\#get_ideals_op}{get\_ideals\_op},
-\href{OperatorsDH\#get_ideals_with_name_op}{get\_ideals\_with\_name\_op},
-\href{OperatorsDH\#get_intensity}{get\_intensity},
-\href{OperatorsDH\#get_intention_op}{get\_intention\_op},
-\href{OperatorsDH\#get_intention_with_name_op}{get\_intention\_with\_name\_op},
-\href{OperatorsDH\#get_intentions_op}{get\_intentions\_op},
-\href{OperatorsDH\#get_intentions_with_name_op}{get\_intentions\_with\_name\_op},
-\href{OperatorsDH\#get_lifetime}{get\_lifetime},
-\href{OperatorsDH\#get_liking}{get\_liking},
-\href{OperatorsDH\#get_modality}{get\_modality},
-\href{OperatorsDH\#get_obligation_op}{get\_obligation\_op},
-\href{OperatorsDH\#get_obligation_with_name_op}{get\_obligation\_with\_name\_op},
-\href{OperatorsDH\#get_obligations_op}{get\_obligations\_op},
-\href{OperatorsDH\#get_obligations_with_name_op}{get\_obligations\_with\_name\_op},
-\href{OperatorsDH\#get_plan_name}{get\_plan\_name},
-\href{OperatorsDH\#get_predicate}{get\_predicate},
-\href{OperatorsDH\#get_solidarity}{get\_solidarity},
-\href{OperatorsDH\#get_strength}{get\_strength},
-\href{OperatorsDH\#get_super_intention}{get\_super\_intention},
-\href{OperatorsDH\#get_trust}{get\_trust},
-\href{OperatorsDH\#get_truth}{get\_truth},
-\href{OperatorsDH\#get_uncertainties_op}{get\_uncertainties\_op},
-\href{OperatorsDH\#get_uncertainties_with_name_op}{get\_uncertainties\_with\_name\_op},
-\href{OperatorsDH\#get_uncertainty_op}{get\_uncertainty\_op},
-\href{OperatorsDH\#get_uncertainty_with_name_op}{get\_uncertainty\_with\_name\_op},
-\href{OperatorsDH\#has_belief_op}{has\_belief\_op},
-\href{OperatorsDH\#has_belief_with_name_op}{has\_belief\_with\_name\_op},
-\href{OperatorsDH\#has_desire_op}{has\_desire\_op},
-\href{OperatorsDH\#has_desire_with_name_op}{has\_desire\_with\_name\_op},
-\href{OperatorsDH\#has_ideal_op}{has\_ideal\_op},
-\href{OperatorsDH\#has_ideal_with_name_op}{has\_ideal\_with\_name\_op},
-\href{OperatorsDH\#has_intention_op}{has\_intention\_op},
-\href{OperatorsDH\#has_intention_with_name_op}{has\_intention\_with\_name\_op},
-\href{OperatorsDH\#has_obligation_op}{has\_obligation\_op},
-\href{OperatorsDH\#has_obligation_with_name_op}{has\_obligation\_with\_name\_op},
-\href{OperatorsDH\#has_uncertainty_op}{has\_uncertainty\_op},
-\href{OperatorsDH\#has_uncertainty_with_name_op}{has\_uncertainty\_with\_name\_op},
-\href{OperatorsNR\#new_emotion}{new\_emotion},
-\href{OperatorsNR\#new_mental_state}{new\_mental\_state},
-\href{OperatorsNR\#new_predicate}{new\_predicate},
-\href{OperatorsNR\#new_social_link}{new\_social\_link},
-\href{OperatorsNR\#or}{or}, \href{OperatorsSZ\#set_about}{set\_about},
-\href{OperatorsSZ\#set_agent}{set\_agent},
-\href{OperatorsSZ\#set_agent_cause}{set\_agent\_cause},
-\href{OperatorsSZ\#set_decay}{set\_decay},
-\href{OperatorsSZ\#set_dominance}{set\_dominance},
-\href{OperatorsSZ\#set_familiarity}{set\_familiarity},
-\href{OperatorsSZ\#set_intensity}{set\_intensity},
-\href{OperatorsSZ\#set_lifetime}{set\_lifetime},
-\href{OperatorsSZ\#set_liking}{set\_liking},
-\href{OperatorsSZ\#set_modality}{set\_modality},
-\href{OperatorsSZ\#set_predicate}{set\_predicate},
-\href{OperatorsSZ\#set_solidarity}{set\_solidarity},
-\href{OperatorsSZ\#set_strength}{set\_strength},
-\href{OperatorsSZ\#set_trust}{set\_trust},
-\href{OperatorsSZ\#set_truth}{set\_truth},
-\href{OperatorsSZ\#with_lifetime}{with\_lifetime},
-\href{OperatorsSZ\#with_values}{with\_values},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Casting operators}\label{casting-operators}
-
-\href{OperatorsAA\#as}{as}, \href{OperatorsAA\#as_int}{as\_int},
-\href{OperatorsAA\#as_matrix}{as\_matrix},
-\href{OperatorsDH\#font}{font}, \href{OperatorsIM\#is}{is},
-\href{OperatorsIM\#is_skill}{is\_skill},
-\href{OperatorsIM\#list_with}{list\_with},
-\href{OperatorsIM\#matrix_with}{matrix\_with},
-\href{OperatorsSZ\#species}{species},
-\href{OperatorsSZ\#to_gaml}{to\_gaml},
-\href{OperatorsSZ\#topology}{topology},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Color-related operators}\label{color-related-operators}
-
-\href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
-\href{OperatorsAA\#*}{*}, \href{OperatorsAA\#+}{+},
-\href{OperatorsBC\#blend}{blend},
-\href{OperatorsBC\#brewer_colors}{brewer\_colors},
-\href{OperatorsBC\#brewer_palettes}{brewer\_palettes},
-\href{OperatorsDH\#grayscale}{grayscale}, \href{OperatorsDH\#hsb}{hsb},
-\href{OperatorsIM\#mean}{mean}, \href{OperatorsIM\#median}{median},
-\href{OperatorsNR\#rgb}{rgb}, \href{OperatorsNR\#rnd_color}{rnd\_color},
-\href{OperatorsSZ\#sum}{sum},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Comparison operators}\label{comparison-operators}
-
-\href{OperatorsAA\#!=}{!=}, \href{OperatorsAA\#\%3C}{\textless{}},
-\href{OperatorsAA\#\%3C=}{\textless{}=}, \href{OperatorsAA\#=}{=},
-\href{OperatorsAA\#\%3E}{\textgreater{}},
-\href{OperatorsAA\#\%3E=}{\textgreater{}=},
-\href{OperatorsBC\#between}{between},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Containers-related
-operators}\label{containers-related-operators}
-
-\href{OperatorsAA\#-}{-}, \href{OperatorsAA\#::}{::},
-\href{OperatorsAA\#+}{+}, \href{OperatorsAA\#accumulate}{accumulate},
-\href{OperatorsAA\#among}{among}, \href{OperatorsAA\#at}{at},
-\href{OperatorsBC\#collect}{collect},
-\href{OperatorsBC\#contains}{contains},
-\href{OperatorsBC\#contains_all}{contains\_all},
-\href{OperatorsBC\#contains_any}{contains\_any},
-\href{OperatorsBC\#count}{count},
-\href{OperatorsDH\#distinct}{distinct},
-\href{OperatorsDH\#empty}{empty}, \href{OperatorsDH\#every}{every},
-\href{OperatorsDH\#first}{first},
-\href{OperatorsDH\#first_with}{first\_with},
-\href{OperatorsDH\#get}{get}, \href{OperatorsDH\#group_by}{group\_by},
-\href{OperatorsIM\#in}{in}, \href{OperatorsIM\#index_by}{index\_by},
-\href{OperatorsIM\#inter}{inter},
-\href{OperatorsIM\#interleave}{interleave},
-\href{OperatorsIM\#internal_at}{internal\_at},
-\href{OperatorsIM\#internal_integrated_value}{internal\_integrated\_value},
-\href{OperatorsIM\#last}{last},
-\href{OperatorsIM\#last_with}{last\_with},
-\href{OperatorsIM\#length}{length}, \href{OperatorsIM\#max}{max},
-\href{OperatorsIM\#max_of}{max\_of}, \href{OperatorsIM\#mean}{mean},
-\href{OperatorsIM\#mean_of}{mean\_of},
-\href{OperatorsIM\#median}{median}, \href{OperatorsIM\#min}{min},
-\href{OperatorsIM\#min_of}{min\_of}, \href{OperatorsIM\#mul}{mul},
-\href{OperatorsNR\#one_of}{one\_of},
-\href{OperatorsNR\#product_of}{product\_of},
-\href{OperatorsNR\#range}{range}, \href{OperatorsNR\#reverse}{reverse},
-\href{OperatorsSZ\#shuffle}{shuffle},
-\href{OperatorsSZ\#sort_by}{sort\_by}, \href{OperatorsSZ\#split}{split},
-\href{OperatorsSZ\#split_in}{split\_in},
-\href{OperatorsSZ\#split_using}{split\_using},
-\href{OperatorsSZ\#sum}{sum}, \href{OperatorsSZ\#sum_of}{sum\_of},
-\href{OperatorsSZ\#union}{union},
-\href{OperatorsSZ\#variance_of}{variance\_of},
-\href{OperatorsSZ\#where}{where},
-\href{OperatorsSZ\#with_max_of}{with\_max\_of},
-\href{OperatorsSZ\#with_min_of}{with\_min\_of},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Date-related operators}\label{date-related-operators}
-
-\href{OperatorsAA\#-}{-}, \href{OperatorsAA\#!=}{!=},
-\href{OperatorsAA\#+}{+}, \href{OperatorsAA\#\%3C}{\textless{}},
-\href{OperatorsAA\#\%3C=}{\textless{}=}, \href{OperatorsAA\#=}{=},
-\href{OperatorsAA\#\%3E}{\textgreater{}},
-\href{OperatorsAA\#\%3E=}{\textgreater{}=},
-\href{OperatorsAA\#after}{after}, \href{OperatorsBC\#before}{before},
-\href{OperatorsBC\#between}{between}, \href{OperatorsDH\#every}{every},
-\href{OperatorsIM\#milliseconds_between}{milliseconds\_between},
-\href{OperatorsIM\#minus_days}{minus\_days},
-\href{OperatorsIM\#minus_hours}{minus\_hours},
-\href{OperatorsIM\#minus_minutes}{minus\_minutes},
-\href{OperatorsIM\#minus_months}{minus\_months},
-\href{OperatorsIM\#minus_ms}{minus\_ms},
-\href{OperatorsIM\#minus_weeks}{minus\_weeks},
-\href{OperatorsIM\#minus_years}{minus\_years},
-\href{OperatorsIM\#months_between}{months\_between},
-\href{OperatorsNR\#plus_days}{plus\_days},
-\href{OperatorsNR\#plus_hours}{plus\_hours},
-\href{OperatorsNR\#plus_minutes}{plus\_minutes},
-\href{OperatorsNR\#plus_months}{plus\_months},
-\href{OperatorsNR\#plus_ms}{plus\_ms},
-\href{OperatorsNR\#plus_weeks}{plus\_weeks},
-\href{OperatorsNR\#plus_years}{plus\_years},
-\href{OperatorsSZ\#since}{since}, \href{OperatorsSZ\#to}{to},
-\href{OperatorsSZ\#until}{until},
-\href{OperatorsSZ\#years_between}{years\_between},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Dates}\label{dates}
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{DescriptiveStatistics}\label{descriptivestatistics}
-
-\href{OperatorsAA\#auto_correlation}{auto\_correlation},
-\href{OperatorsBC\#correlation}{correlation},
-\href{OperatorsBC\#covariance}{covariance},
-\href{OperatorsDH\#durbin_watson}{durbin\_watson},
-\href{OperatorsIM\#kurtosis}{kurtosis},
-\href{OperatorsIM\#moment}{moment},
-\href{OperatorsNR\#quantile}{quantile},
-\href{OperatorsNR\#quantile_inverse}{quantile\_inverse},
-\href{OperatorsNR\#rank_interpolated}{rank\_interpolated},
-\href{OperatorsNR\#rms}{rms}, \href{OperatorsSZ\#skew}{skew},
-\href{OperatorsSZ\#variance}{variance},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Displays}\label{displays}
-
-\href{OperatorsDH\#horizontal}{horizontal},
-\href{OperatorsSZ\#stack}{stack},
-\href{OperatorsSZ\#vertical}{vertical},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Distributions}\label{distributions}
-
-\href{OperatorsBC\#binomial_coeff}{binomial\_coeff},
-\href{OperatorsBC\#binomial_complemented}{binomial\_complemented},
-\href{OperatorsBC\#binomial_sum}{binomial\_sum},
-\href{OperatorsBC\#chi_square}{chi\_square},
-\href{OperatorsBC\#chi_square_complemented}{chi\_square\_complemented},
-\href{OperatorsDH\#gamma_distribution}{gamma\_distribution},
-\href{OperatorsDH\#gamma_distribution_complemented}{gamma\_distribution\_complemented},
-\href{OperatorsNR\#normal_area}{normal\_area},
-\href{OperatorsNR\#normal_density}{normal\_density},
-\href{OperatorsNR\#normal_inverse}{normal\_inverse},
-\href{OperatorsNR\#pvalue_for_fstat}{pValue\_for\_fStat},
-\href{OperatorsNR\#pvalue_for_tstat}{pValue\_for\_tStat},
-\href{OperatorsSZ\#student_area}{student\_area},
-\href{OperatorsSZ\#student_t_inverse}{student\_t\_inverse},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Driving operators}\label{driving-operators}
-
-\href{OperatorsAA\#as_driving_graph}{as\_driving\_graph},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{edge}\label{edge}
-
-\href{OperatorsDH\#edge_between}{edge\_between},
-\href{OperatorsSZ\#strahler}{strahler},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{EDP-related operators}\label{edp-related-operators}
-
-\href{OperatorsDH\#diff}{diff}, \href{OperatorsDH\#diff2}{diff2},
-\href{OperatorsIM\#internal_zero_order_equation}{internal\_zero\_order\_equation},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Files-related operators}\label{files-related-operators}
-
-\href{OperatorsBC\#crs}{crs},
-\href{OperatorsDH\#evaluate_sub_model}{evaluate\_sub\_model},
-\href{OperatorsDH\#file}{file},
-\href{OperatorsDH\#file_exists}{file\_exists},
-\href{OperatorsDH\#folder}{folder}, \href{OperatorsDH\#get}{get},
-\href{OperatorsIM\#load_sub_model}{load\_sub\_model},
-\href{OperatorsNR\#new_folder}{new\_folder},
-\href{OperatorsNR\#osm_file}{osm\_file}, \href{OperatorsNR\#read}{read},
-\href{OperatorsSZ\#step_sub_model}{step\_sub\_model},
-\href{OperatorsSZ\#writable}{writable},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{FIPA-related operators}\label{fipa-related-operators}
-
-\href{OperatorsBC\#conversation}{conversation},
-\href{OperatorsIM\#message}{message},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{GamaMetaType}\label{gamametatype}
-
-\href{OperatorsSZ\#type_of}{type\_of},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{GammaFunction}\label{gammafunction}
-
-\href{OperatorsBC\#beta}{beta}, \href{OperatorsDH\#gamma}{gamma},
-\href{OperatorsIM\#incomplete_beta}{incomplete\_beta},
-\href{OperatorsIM\#incomplete_gamma}{incomplete\_gamma},
-\href{OperatorsIM\#incomplete_gamma_complement}{incomplete\_gamma\_complement},
-\href{OperatorsIM\#log_gamma}{log\_gamma},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Graphs-related operators}\label{graphs-related-operators}
-
-\href{OperatorsAA\#add_edge}{add\_edge},
-\href{OperatorsAA\#add_node}{add\_node},
-\href{OperatorsAA\#adjacency}{adjacency},
-\href{OperatorsAA\#agent_from_geometry}{agent\_from\_geometry},
-\href{OperatorsAA\#all_pairs_shortest_path}{all\_pairs\_shortest\_path},
-\href{OperatorsAA\#alpha_index}{alpha\_index},
-\href{OperatorsAA\#as_distance_graph}{as\_distance\_graph},
-\href{OperatorsAA\#as_edge_graph}{as\_edge\_graph},
-\href{OperatorsAA\#as_intersection_graph}{as\_intersection\_graph},
-\href{OperatorsAA\#as_path}{as\_path},
-\href{OperatorsBC\#beta_index}{beta\_index},
-\href{OperatorsBC\#betweenness_centrality}{betweenness\_centrality},
-\href{OperatorsBC\#biggest_cliques_of}{biggest\_cliques\_of},
-\href{OperatorsBC\#connected_components_of}{connected\_components\_of},
-\href{OperatorsBC\#connectivity_index}{connectivity\_index},
-\href{OperatorsBC\#contains_edge}{contains\_edge},
-\href{OperatorsBC\#contains_vertex}{contains\_vertex},
-\href{OperatorsDH\#degree_of}{degree\_of},
-\href{OperatorsDH\#directed}{directed}, \href{OperatorsDH\#edge}{edge},
-\href{OperatorsDH\#edge_between}{edge\_between},
-\href{OperatorsDH\#edge_betweenness}{edge\_betweenness},
-\href{OperatorsDH\#edges}{edges},
-\href{OperatorsDH\#gamma_index}{gamma\_index},
-\href{OperatorsDH\#generate_barabasi_albert}{generate\_barabasi\_albert},
-\href{OperatorsDH\#generate_complete_graph}{generate\_complete\_graph},
-\href{OperatorsDH\#generate_watts_strogatz}{generate\_watts\_strogatz},
-\href{OperatorsDH\#grid_cells_to_graph}{grid\_cells\_to\_graph},
-\href{OperatorsIM\#in_degree_of}{in\_degree\_of},
-\href{OperatorsIM\#in_edges_of}{in\_edges\_of},
-\href{OperatorsIM\#layout}{layout},
-\href{OperatorsIM\#load_graph_from_file}{load\_graph\_from\_file},
-\href{OperatorsIM\#load_shortest_paths}{load\_shortest\_paths},
-\href{OperatorsIM\#main_connected_component}{main\_connected\_component},
-\href{OperatorsIM\#max_flow_between}{max\_flow\_between},
-\href{OperatorsIM\#maximal_cliques_of}{maximal\_cliques\_of},
-\href{OperatorsNR\#nb_cycles}{nb\_cycles},
-\href{OperatorsNR\#neighbors_of}{neighbors\_of},
-\href{OperatorsNR\#node}{node}, \href{OperatorsNR\#nodes}{nodes},
-\href{OperatorsNR\#out_degree_of}{out\_degree\_of},
-\href{OperatorsNR\#out_edges_of}{out\_edges\_of},
-\href{OperatorsNR\#path_between}{path\_between},
-\href{OperatorsNR\#paths_between}{paths\_between},
-\href{OperatorsNR\#predecessors_of}{predecessors\_of},
-\href{OperatorsNR\#remove_node_from}{remove\_node\_from},
-\href{OperatorsNR\#rewire_n}{rewire\_n},
-\href{OperatorsSZ\#source_of}{source\_of},
-\href{OperatorsSZ\#spatial_graph}{spatial\_graph},
-\href{OperatorsSZ\#strahler}{strahler},
-\href{OperatorsSZ\#successors_of}{successors\_of},
-\href{OperatorsSZ\#sum}{sum}, \href{OperatorsSZ\#target_of}{target\_of},
-\href{OperatorsSZ\#undirected}{undirected},
-\href{OperatorsSZ\#use_cache}{use\_cache},
-\href{OperatorsSZ\#weight_of}{weight\_of},
-\href{OperatorsSZ\#with_optimizer_type}{with\_optimizer\_type},
-\href{OperatorsSZ\#with_weights}{with\_weights},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Grid-related operators}\label{grid-related-operators}
-
-\href{OperatorsAA\#as_4_grid}{as\_4\_grid},
-\href{OperatorsAA\#as_grid}{as\_grid},
-\href{OperatorsAA\#as_hexagonal_grid}{as\_hexagonal\_grid},
-\href{OperatorsDH\#grid_at}{grid\_at},
-\href{OperatorsNR\#path_between}{path\_between},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Iterator operators}\label{iterator-operators}
-
-\href{OperatorsAA\#accumulate}{accumulate},
-\href{OperatorsAA\#as_map}{as\_map},
-\href{OperatorsBC\#collect}{collect}, \href{OperatorsBC\#count}{count},
-\href{OperatorsBC\#create_map}{create\_map},
-\href{OperatorsDH\#distribution_of}{distribution\_of},
-\href{OperatorsDH\#distribution_of}{distribution\_of},
-\href{OperatorsDH\#distribution_of}{distribution\_of},
-\href{OperatorsDH\#distribution2d_of}{distribution2d\_of},
-\href{OperatorsDH\#distribution2d_of}{distribution2d\_of},
-\href{OperatorsDH\#distribution2d_of}{distribution2d\_of},
-\href{OperatorsDH\#first_with}{first\_with},
-\href{OperatorsDH\#frequency_of}{frequency\_of},
-\href{OperatorsDH\#group_by}{group\_by},
-\href{OperatorsIM\#index_by}{index\_by},
-\href{OperatorsIM\#last_with}{last\_with},
-\href{OperatorsIM\#max_of}{max\_of},
-\href{OperatorsIM\#mean_of}{mean\_of},
-\href{OperatorsIM\#min_of}{min\_of},
-\href{OperatorsNR\#product_of}{product\_of},
-\href{OperatorsSZ\#sort_by}{sort\_by},
-\href{OperatorsSZ\#sum_of}{sum\_of},
-\href{OperatorsSZ\#variance_of}{variance\_of},
-\href{OperatorsSZ\#where}{where},
-\href{OperatorsSZ\#with_max_of}{with\_max\_of},
-\href{OperatorsSZ\#with_min_of}{with\_min\_of},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{List-related operators}\label{list-related-operators}
-
-\href{OperatorsBC\#copy_between}{copy\_between},
-\href{OperatorsIM\#index_of}{index\_of},
-\href{OperatorsIM\#last_index_of}{last\_index\_of},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Logical operators}\label{logical-operators}
-
-\href{OperatorsAA\#:}{:}, \href{OperatorsAA\#!}{!},
-\href{OperatorsAA\#?}{?}, \href{OperatorsAA\#and}{and},
-\href{OperatorsNR\#or}{or}, \href{OperatorsSZ\#xor}{xor},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Map comparaison operators}\label{map-comparaison-operators}
-
-\href{OperatorsDH\#fuzzy_kappa}{fuzzy\_kappa},
-\href{OperatorsDH\#fuzzy_kappa_sim}{fuzzy\_kappa\_sim},
-\href{OperatorsIM\#kappa}{kappa},
-\href{OperatorsIM\#kappa_sim}{kappa\_sim},
-\href{OperatorsNR\#percent_absolute_deviation}{percent\_absolute\_deviation},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Map-related operators}\label{map-related-operators}
-
-\href{OperatorsAA\#as_map}{as\_map},
-\href{OperatorsBC\#create_map}{create\_map},
-\href{OperatorsIM\#index_of}{index\_of},
-\href{OperatorsIM\#last_index_of}{last\_index\_of},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Material}\label{material}
-
-\href{OperatorsIM\#material}{material},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Matrix-related operators}\label{matrix-related-operators}
-
-\href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
-\href{OperatorsAA\#.}{.}, \href{OperatorsAA\#*}{*},
-\href{OperatorsAA\#+}{+},
-\href{OperatorsAA\#append_horizontally}{append\_horizontally},
-\href{OperatorsAA\#append_vertically}{append\_vertically},
-\href{OperatorsBC\#column_at}{column\_at},
-\href{OperatorsBC\#columns_list}{columns\_list},
-\href{OperatorsDH\#determinant}{determinant},
-\href{OperatorsDH\#eigenvalues}{eigenvalues},
-\href{OperatorsIM\#index_of}{index\_of},
-\href{OperatorsIM\#inverse}{inverse},
-\href{OperatorsIM\#last_index_of}{last\_index\_of},
-\href{OperatorsNR\#row_at}{row\_at},
-\href{OperatorsNR\#rows_list}{rows\_list},
-\href{OperatorsSZ\#shuffle}{shuffle}, \href{OperatorsSZ\#trace}{trace},
-\href{OperatorsSZ\#transpose}{transpose},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{multicriteria operators}\label{multicriteria-operators}
-
-\href{OperatorsDH\#electre_dm}{electre\_DM},
-\href{OperatorsDH\#evidence_theory_dm}{evidence\_theory\_DM},
-\href{OperatorsDH\#fuzzy_choquet_dm}{fuzzy\_choquet\_DM},
-\href{OperatorsNR\#promethee_dm}{promethee\_DM},
-\href{OperatorsSZ\#weighted_means_dm}{weighted\_means\_DM},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Path-related operators}\label{path-related-operators}
-
-\href{OperatorsAA\#agent_from_geometry}{agent\_from\_geometry},
-\href{OperatorsAA\#all_pairs_shortest_path}{all\_pairs\_shortest\_path},
-\href{OperatorsAA\#as_path}{as\_path},
-\href{OperatorsIM\#load_shortest_paths}{load\_shortest\_paths},
-\href{OperatorsIM\#max_flow_between}{max\_flow\_between},
-\href{OperatorsNR\#path_between}{path\_between},
-\href{OperatorsNR\#path_to}{path\_to},
-\href{OperatorsNR\#paths_between}{paths\_between},
-\href{OperatorsSZ\#use_cache}{use\_cache},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Points-related operators}\label{points-related-operators}
-
-\href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
-\href{OperatorsAA\#*}{*}, \href{OperatorsAA\#+}{+},
-\href{OperatorsAA\#\%3C}{\textless{}},
-\href{OperatorsAA\#\%3C=}{\textless{}=},
-\href{OperatorsAA\#\%3E}{\textgreater{}},
-\href{OperatorsAA\#\%3E=}{\textgreater{}=},
-\href{OperatorsAA\#add_point}{add\_point},
-\href{OperatorsAA\#angle_between}{angle\_between},
-\href{OperatorsAA\#any_location_in}{any\_location\_in},
-\href{OperatorsBC\#centroid}{centroid},
-\href{OperatorsBC\#closest_points_with}{closest\_points\_with},
-\href{OperatorsDH\#farthest_point_to}{farthest\_point\_to},
-\href{OperatorsDH\#grid_at}{grid\_at}, \href{OperatorsNR\#norm}{norm},
-\href{OperatorsNR\#point}{point},
-\href{OperatorsNR\#points_along}{points\_along},
-\href{OperatorsNR\#points_at}{points\_at},
-\href{OperatorsNR\#points_on}{points\_on},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Random operators}\label{random-operators}
-
-\href{OperatorsBC\#binomial}{binomial}, \href{OperatorsDH\#flip}{flip},
-\href{OperatorsDH\#gauss}{gauss},
-\href{OperatorsIM\#improved_generator}{improved\_generator},
-\href{OperatorsNR\#open_simplex_generator}{open\_simplex\_generator},
-\href{OperatorsNR\#poisson}{poisson}, \href{OperatorsNR\#rnd}{rnd},
-\href{OperatorsNR\#rnd_choice}{rnd\_choice},
-\href{OperatorsSZ\#sample}{sample},
-\href{OperatorsSZ\#shuffle}{shuffle},
-\href{OperatorsSZ\#simplex_generator}{simplex\_generator},
-\href{OperatorsSZ\#skew_gauss}{skew\_gauss},
-\href{OperatorsSZ\#truncated_gauss}{truncated\_gauss},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{ReverseOperators}\label{reverseoperators}
-
-\href{OperatorsSZ\#savesimulation}{saveSimulation},
-\href{OperatorsSZ\#serialize}{serialize},
-\href{OperatorsSZ\#serializeagent}{serializeAgent},
-\href{OperatorsSZ\#unserializesimulation}{unSerializeSimulation},
-\href{OperatorsSZ\#unserializesimulationfromfile}{unSerializeSimulationFromFile},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Shape}\label{shape}
-
-\href{OperatorsAA\#arc}{arc}, \href{OperatorsBC\#box}{box},
-\href{OperatorsBC\#circle}{circle}, \href{OperatorsBC\#cone}{cone},
-\href{OperatorsBC\#cone3d}{cone3D}, \href{OperatorsBC\#cross}{cross},
-\href{OperatorsBC\#cube}{cube}, \href{OperatorsBC\#curve}{curve},
-\href{OperatorsBC\#cylinder}{cylinder},
-\href{OperatorsDH\#ellipse}{ellipse},
-\href{OperatorsDH\#envelope}{envelope},
-\href{OperatorsDH\#geometry_collection}{geometry\_collection},
-\href{OperatorsDH\#hexagon}{hexagon}, \href{OperatorsIM\#line}{line},
-\href{OperatorsIM\#link}{link}, \href{OperatorsNR\#plan}{plan},
-\href{OperatorsNR\#polygon}{polygon},
-\href{OperatorsNR\#polyhedron}{polyhedron},
-\href{OperatorsNR\#pyramid}{pyramid},
-\href{OperatorsNR\#rectangle}{rectangle},
-\href{OperatorsSZ\#sphere}{sphere}, \href{OperatorsSZ\#square}{square},
-\href{OperatorsSZ\#squircle}{squircle},
-\href{OperatorsSZ\#teapot}{teapot},
-\href{OperatorsSZ\#triangle}{triangle},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Spatial operators}\label{spatial-operators}
-
-\href{OperatorsAA\#-}{-}, \href{OperatorsAA\#*}{*},
-\href{OperatorsAA\#+}{+}, \href{OperatorsAA\#add_point}{add\_point},
-\href{OperatorsAA\#agent_closest_to}{agent\_closest\_to},
-\href{OperatorsAA\#agent_farthest_to}{agent\_farthest\_to},
-\href{OperatorsAA\#agents_at_distance}{agents\_at\_distance},
-\href{OperatorsAA\#agents_inside}{agents\_inside},
-\href{OperatorsAA\#agents_overlapping}{agents\_overlapping},
-\href{OperatorsAA\#angle_between}{angle\_between},
-\href{OperatorsAA\#any_location_in}{any\_location\_in},
-\href{OperatorsAA\#arc}{arc}, \href{OperatorsAA\#around}{around},
-\href{OperatorsAA\#as_4_grid}{as\_4\_grid},
-\href{OperatorsAA\#as_grid}{as\_grid},
-\href{OperatorsAA\#as_hexagonal_grid}{as\_hexagonal\_grid},
-\href{OperatorsAA\#at_distance}{at\_distance},
-\href{OperatorsAA\#at_location}{at\_location},
-\href{OperatorsBC\#box}{box}, \href{OperatorsBC\#centroid}{centroid},
-\href{OperatorsBC\#circle}{circle}, \href{OperatorsBC\#clean}{clean},
-\href{OperatorsBC\#clean_network}{clean\_network},
-\href{OperatorsBC\#closest_points_with}{closest\_points\_with},
-\href{OperatorsBC\#closest_to}{closest\_to},
-\href{OperatorsBC\#cone}{cone}, \href{OperatorsBC\#cone3d}{cone3D},
-\href{OperatorsBC\#convex_hull}{convex\_hull},
-\href{OperatorsBC\#covers}{covers}, \href{OperatorsBC\#cross}{cross},
-\href{OperatorsBC\#crosses}{crosses}, \href{OperatorsBC\#crs}{crs},
-\href{OperatorsBC\#crs_transform}{CRS\_transform},
-\href{OperatorsBC\#cube}{cube}, \href{OperatorsBC\#curve}{curve},
-\href{OperatorsBC\#cylinder}{cylinder}, \href{OperatorsDH\#dem}{dem},
-\href{OperatorsDH\#direction_between}{direction\_between},
-\href{OperatorsDH\#disjoint_from}{disjoint\_from},
-\href{OperatorsDH\#distance_between}{distance\_between},
-\href{OperatorsDH\#distance_to}{distance\_to},
-\href{OperatorsDH\#ellipse}{ellipse},
-\href{OperatorsDH\#envelope}{envelope},
-\href{OperatorsDH\#farthest_point_to}{farthest\_point\_to},
-\href{OperatorsDH\#farthest_to}{farthest\_to},
-\href{OperatorsDH\#geometry_collection}{geometry\_collection},
-\href{OperatorsDH\#gini}{gini}, \href{OperatorsDH\#hexagon}{hexagon},
-\href{OperatorsDH\#hierarchical_clustering}{hierarchical\_clustering},
-\href{OperatorsIM\#idw}{IDW}, \href{OperatorsIM\#inside}{inside},
-\href{OperatorsIM\#inter}{inter},
-\href{OperatorsIM\#intersects}{intersects},
-\href{OperatorsIM\#line}{line}, \href{OperatorsIM\#link}{link},
-\href{OperatorsIM\#masked_by}{masked\_by},
-\href{OperatorsIM\#moran}{moran},
-\href{OperatorsNR\#neighbors_at}{neighbors\_at},
-\href{OperatorsNR\#neighbors_of}{neighbors\_of},
-\href{OperatorsNR\#overlapping}{overlapping},
-\href{OperatorsNR\#overlaps}{overlaps},
-\href{OperatorsNR\#partially_overlaps}{partially\_overlaps},
-\href{OperatorsNR\#path_between}{path\_between},
-\href{OperatorsNR\#path_to}{path\_to}, \href{OperatorsNR\#plan}{plan},
-\href{OperatorsNR\#points_along}{points\_along},
-\href{OperatorsNR\#points_at}{points\_at},
-\href{OperatorsNR\#points_on}{points\_on},
-\href{OperatorsNR\#polygon}{polygon},
-\href{OperatorsNR\#polyhedron}{polyhedron},
-\href{OperatorsNR\#pyramid}{pyramid},
-\href{OperatorsNR\#rectangle}{rectangle},
-\href{OperatorsNR\#rgb_to_xyz}{rgb\_to\_xyz},
-\href{OperatorsNR\#rotated_by}{rotated\_by},
-\href{OperatorsNR\#round}{round},
-\href{OperatorsSZ\#scaled_to}{scaled\_to},
-\href{OperatorsSZ\#set_z}{set\_z},
-\href{OperatorsSZ\#simple_clustering_by_distance}{simple\_clustering\_by\_distance},
-\href{OperatorsSZ\#simplification}{simplification},
-\href{OperatorsSZ\#skeletonize}{skeletonize},
-\href{OperatorsSZ\#smooth}{smooth}, \href{OperatorsSZ\#sphere}{sphere},
-\href{OperatorsSZ\#split_at}{split\_at},
-\href{OperatorsSZ\#split_geometry}{split\_geometry},
-\href{OperatorsSZ\#split_lines}{split\_lines},
-\href{OperatorsSZ\#square}{square},
-\href{OperatorsSZ\#squircle}{squircle},
-\href{OperatorsSZ\#teapot}{teapot},
-\href{OperatorsSZ\#to_gama_crs}{to\_GAMA\_CRS},
-\href{OperatorsSZ\#to_rectangles}{to\_rectangles},
-\href{OperatorsSZ\#to_squares}{to\_squares},
-\href{OperatorsSZ\#to_sub_geometries}{to\_sub\_geometries},
-\href{OperatorsSZ\#touches}{touches},
-\href{OperatorsSZ\#towards}{towards},
-\href{OperatorsSZ\#transformed_by}{transformed\_by},
-\href{OperatorsSZ\#translated_by}{translated\_by},
-\href{OperatorsSZ\#triangle}{triangle},
-\href{OperatorsSZ\#triangulate}{triangulate},
-\href{OperatorsSZ\#union}{union}, \href{OperatorsSZ\#using}{using},
-\href{OperatorsSZ\#voronoi}{voronoi},
-\href{OperatorsSZ\#with_precision}{with\_precision},
-\href{OperatorsSZ\#without_holes}{without\_holes},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Spatial properties
-operators}\label{spatial-properties-operators}
-
-\href{OperatorsBC\#covers}{covers},
-\href{OperatorsBC\#crosses}{crosses},
-\href{OperatorsIM\#intersects}{intersects},
-\href{OperatorsNR\#partially_overlaps}{partially\_overlaps},
-\href{OperatorsSZ\#touches}{touches},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Spatial queries operators}\label{spatial-queries-operators}
-
-\href{OperatorsAA\#agent_closest_to}{agent\_closest\_to},
-\href{OperatorsAA\#agent_farthest_to}{agent\_farthest\_to},
-\href{OperatorsAA\#agents_at_distance}{agents\_at\_distance},
-\href{OperatorsAA\#agents_inside}{agents\_inside},
-\href{OperatorsAA\#agents_overlapping}{agents\_overlapping},
-\href{OperatorsAA\#at_distance}{at\_distance},
-\href{OperatorsBC\#closest_to}{closest\_to},
-\href{OperatorsDH\#farthest_to}{farthest\_to},
-\href{OperatorsIM\#inside}{inside},
-\href{OperatorsNR\#neighbors_at}{neighbors\_at},
-\href{OperatorsNR\#neighbors_of}{neighbors\_of},
-\href{OperatorsNR\#overlapping}{overlapping},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Spatial relations
-operators}\label{spatial-relations-operators}
-
-\href{OperatorsDH\#direction_between}{direction\_between},
-\href{OperatorsDH\#distance_between}{distance\_between},
-\href{OperatorsDH\#distance_to}{distance\_to},
-\href{OperatorsNR\#path_between}{path\_between},
-\href{OperatorsNR\#path_to}{path\_to},
-\href{OperatorsSZ\#towards}{towards},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Spatial statistical
-operators}\label{spatial-statistical-operators}
-
-\href{OperatorsDH\#hierarchical_clustering}{hierarchical\_clustering},
-\href{OperatorsSZ\#simple_clustering_by_distance}{simple\_clustering\_by\_distance},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Spatial transformations
-operators}\label{spatial-transformations-operators}
-
-\href{OperatorsAA\#-}{-}, \href{OperatorsAA\#*}{*},
-\href{OperatorsAA\#+}{+}, \href{OperatorsAA\#as_4_grid}{as\_4\_grid},
-\href{OperatorsAA\#as_grid}{as\_grid},
-\href{OperatorsAA\#as_hexagonal_grid}{as\_hexagonal\_grid},
-\href{OperatorsAA\#at_location}{at\_location},
-\href{OperatorsBC\#clean}{clean},
-\href{OperatorsBC\#clean_network}{clean\_network},
-\href{OperatorsBC\#convex_hull}{convex\_hull},
-\href{OperatorsBC\#crs_transform}{CRS\_transform},
-\href{OperatorsNR\#rotated_by}{rotated\_by},
-\href{OperatorsSZ\#scaled_to}{scaled\_to},
-\href{OperatorsSZ\#simplification}{simplification},
-\href{OperatorsSZ\#skeletonize}{skeletonize},
-\href{OperatorsSZ\#smooth}{smooth},
-\href{OperatorsSZ\#split_geometry}{split\_geometry},
-\href{OperatorsSZ\#split_lines}{split\_lines},
-\href{OperatorsSZ\#to_gama_crs}{to\_GAMA\_CRS},
-\href{OperatorsSZ\#to_rectangles}{to\_rectangles},
-\href{OperatorsSZ\#to_squares}{to\_squares},
-\href{OperatorsSZ\#to_sub_geometries}{to\_sub\_geometries},
-\href{OperatorsSZ\#transformed_by}{transformed\_by},
-\href{OperatorsSZ\#translated_by}{translated\_by},
-\href{OperatorsSZ\#triangulate}{triangulate},
-\href{OperatorsSZ\#voronoi}{voronoi},
-\href{OperatorsSZ\#with_precision}{with\_precision},
-\href{OperatorsSZ\#without_holes}{without\_holes},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Species-related operators}\label{species-related-operators}
-
-\href{OperatorsIM\#index_of}{index\_of},
-\href{OperatorsIM\#last_index_of}{last\_index\_of},
-\href{OperatorsNR\#of_generic_species}{of\_generic\_species},
-\href{OperatorsNR\#of_species}{of\_species},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Statistical operators}\label{statistical-operators}
-
-\href{OperatorsBC\#build}{build}, \href{OperatorsBC\#corr}{corR},
-\href{OperatorsDH\#dbscan}{dbscan},
-\href{OperatorsDH\#distribution_of}{distribution\_of},
-\href{OperatorsDH\#distribution2d_of}{distribution2d\_of},
-\href{OperatorsDH\#dtw}{dtw},
-\href{OperatorsDH\#frequency_of}{frequency\_of},
-\href{OperatorsDH\#gamma_rnd}{gamma\_rnd},
-\href{OperatorsDH\#geometric_mean}{geometric\_mean},
-\href{OperatorsDH\#gini}{gini},
-\href{OperatorsDH\#harmonic_mean}{harmonic\_mean},
-\href{OperatorsDH\#hierarchical_clustering}{hierarchical\_clustering},
-\href{OperatorsIM\#kmeans}{kmeans},
-\href{OperatorsIM\#kurtosis}{kurtosis}, \href{OperatorsIM\#max}{max},
-\href{OperatorsIM\#mean}{mean},
-\href{OperatorsIM\#mean_deviation}{mean\_deviation},
-\href{OperatorsIM\#meanr}{meanR}, \href{OperatorsIM\#median}{median},
-\href{OperatorsIM\#min}{min}, \href{OperatorsIM\#moran}{moran},
-\href{OperatorsIM\#mul}{mul}, \href{OperatorsNR\#predict}{predict},
-\href{OperatorsSZ\#simple_clustering_by_distance}{simple\_clustering\_by\_distance},
-\href{OperatorsSZ\#skewness}{skewness},
-\href{OperatorsSZ\#split}{split},
-\href{OperatorsSZ\#split_in}{split\_in},
-\href{OperatorsSZ\#split_using}{split\_using},
-\href{OperatorsSZ\#standard_deviation}{standard\_deviation},
-\href{OperatorsSZ\#sum}{sum}, \href{OperatorsSZ\#variance}{variance},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Strings-related operators}\label{strings-related-operators}
-
-\href{OperatorsAA\#+}{+}, \href{OperatorsAA\#\%3C}{\textless{}},
-\href{OperatorsAA\#\%3C=}{\textless{}=},
-\href{OperatorsAA\#\%3E}{\textgreater{}},
-\href{OperatorsAA\#\%3E=}{\textgreater{}=}, \href{OperatorsAA\#at}{at},
-\href{OperatorsBC\#char}{char}, \href{OperatorsBC\#contains}{contains},
-\href{OperatorsBC\#contains_all}{contains\_all},
-\href{OperatorsBC\#contains_any}{contains\_any},
-\href{OperatorsBC\#copy_between}{copy\_between},
-\href{OperatorsDH\#date}{date}, \href{OperatorsDH\#empty}{empty},
-\href{OperatorsDH\#first}{first}, \href{OperatorsIM\#in}{in},
-\href{OperatorsIM\#indented_by}{indented\_by},
-\href{OperatorsIM\#index_of}{index\_of},
-\href{OperatorsIM\#is_number}{is\_number},
-\href{OperatorsIM\#last}{last},
-\href{OperatorsIM\#last_index_of}{last\_index\_of},
-\href{OperatorsIM\#length}{length},
-\href{OperatorsIM\#lower_case}{lower\_case},
-\href{OperatorsNR\#replace}{replace},
-\href{OperatorsNR\#replace_regex}{replace\_regex},
-\href{OperatorsNR\#reverse}{reverse},
-\href{OperatorsSZ\#sample}{sample},
-\href{OperatorsSZ\#shuffle}{shuffle},
-\href{OperatorsSZ\#split_with}{split\_with},
-\href{OperatorsSZ\#string}{string},
-\href{OperatorsSZ\#upper_case}{upper\_case},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{System}\label{system}
-
-\href{OperatorsAA\#.}{.}, \href{OperatorsBC\#command}{command},
-\href{OperatorsBC\#copy}{copy}, \href{OperatorsDH\#dead}{dead},
-\href{OperatorsDH\#eval_gaml}{eval\_gaml},
-\href{OperatorsDH\#every}{every},
-\href{OperatorsIM\#is_error}{is\_error},
-\href{OperatorsIM\#is_warning}{is\_warning},
-\href{OperatorsSZ\#user_input}{user\_input},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Time-related operators}\label{time-related-operators}
-
-\href{OperatorsDH\#date}{date}, \href{OperatorsSZ\#string}{string},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Types-related operators}\label{types-related-operators}
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{User control operators}\label{user-control-operators}
-
-\href{OperatorsSZ\#user_input}{user\_input},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
 \section{Operators}\label{operators}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
@@ -5323,880 +4455,6 @@ Note that due to the fact that actions are written by modelers, the
 general functional contract is not respected in that case: actions might
 perfectly have side effects on their operands (including the agent).
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\section{Table of Contents}\label{table-of-contents-1}
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\section{Operators by categories}\label{operators-by-categories-1}
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{3D}\label{d-1}
-
-\href{OperatorsBC\#box}{box}, \href{OperatorsBC\#cone3d}{cone3D},
-\href{OperatorsBC\#cube}{cube}, \href{OperatorsBC\#cylinder}{cylinder},
-\href{OperatorsDH\#dem}{dem}, \href{OperatorsDH\#hexagon}{hexagon},
-\href{OperatorsNR\#pyramid}{pyramid},
-\href{OperatorsNR\#rgb_to_xyz}{rgb\_to\_xyz},
-\href{OperatorsSZ\#set_z}{set\_z}, \href{OperatorsSZ\#sphere}{sphere},
-\href{OperatorsSZ\#teapot}{teapot},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Arithmetic operators}\label{arithmetic-operators-1}
-
-\href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
-{[}\textsuperscript{{]}(OperatorsAA\#}), \href{OperatorsAA\#*}{*},
-\href{OperatorsAA\#+}{+}, \href{OperatorsAA\#abs}{abs},
-\href{OperatorsAA\#acos}{acos}, \href{OperatorsAA\#asin}{asin},
-\href{OperatorsAA\#atan}{atan}, \href{OperatorsAA\#atan2}{atan2},
-\href{OperatorsBC\#ceil}{ceil}, \href{OperatorsBC\#cos}{cos},
-\href{OperatorsBC\#cos_rad}{cos\_rad}, \href{OperatorsDH\#div}{div},
-\href{OperatorsDH\#even}{even}, \href{OperatorsDH\#exp}{exp},
-\href{OperatorsDH\#fact}{fact}, \href{OperatorsDH\#floor}{floor},
-\href{OperatorsDH\#hypot}{hypot},
-\href{OperatorsIM\#is_finite}{is\_finite},
-\href{OperatorsIM\#is_number}{is\_number}, \href{OperatorsIM\#ln}{ln},
-\href{OperatorsIM\#log}{log}, \href{OperatorsIM\#mod}{mod},
-\href{OperatorsNR\#round}{round}, \href{OperatorsSZ\#signum}{signum},
-\href{OperatorsSZ\#sin}{sin}, \href{OperatorsSZ\#sin_rad}{sin\_rad},
-\href{OperatorsSZ\#sqrt}{sqrt}, \href{OperatorsSZ\#tan}{tan},
-\href{OperatorsSZ\#tan_rad}{tan\_rad}, \href{OperatorsSZ\#tanh}{tanh},
-\href{OperatorsSZ\#with_precision}{with\_precision},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{BDI}\label{bdi-1}
-
-\href{OperatorsAA\#and}{and}, \href{OperatorsDH\#eval_when}{eval\_when},
-\href{OperatorsDH\#get_about}{get\_about},
-\href{OperatorsDH\#get_agent}{get\_agent},
-\href{OperatorsDH\#get_agent_cause}{get\_agent\_cause},
-\href{OperatorsDH\#get_belief_op}{get\_belief\_op},
-\href{OperatorsDH\#get_belief_with_name_op}{get\_belief\_with\_name\_op},
-\href{OperatorsDH\#get_beliefs_op}{get\_beliefs\_op},
-\href{OperatorsDH\#get_beliefs_with_name_op}{get\_beliefs\_with\_name\_op},
-\href{OperatorsDH\#get_current_intention_op}{get\_current\_intention\_op},
-\href{OperatorsDH\#get_decay}{get\_decay},
-\href{OperatorsDH\#get_desire_op}{get\_desire\_op},
-\href{OperatorsDH\#get_desire_with_name_op}{get\_desire\_with\_name\_op},
-\href{OperatorsDH\#get_desires_op}{get\_desires\_op},
-\href{OperatorsDH\#get_desires_with_name_op}{get\_desires\_with\_name\_op},
-\href{OperatorsDH\#get_dominance}{get\_dominance},
-\href{OperatorsDH\#get_familiarity}{get\_familiarity},
-\href{OperatorsDH\#get_ideal_op}{get\_ideal\_op},
-\href{OperatorsDH\#get_ideal_with_name_op}{get\_ideal\_with\_name\_op},
-\href{OperatorsDH\#get_ideals_op}{get\_ideals\_op},
-\href{OperatorsDH\#get_ideals_with_name_op}{get\_ideals\_with\_name\_op},
-\href{OperatorsDH\#get_intensity}{get\_intensity},
-\href{OperatorsDH\#get_intention_op}{get\_intention\_op},
-\href{OperatorsDH\#get_intention_with_name_op}{get\_intention\_with\_name\_op},
-\href{OperatorsDH\#get_intentions_op}{get\_intentions\_op},
-\href{OperatorsDH\#get_intentions_with_name_op}{get\_intentions\_with\_name\_op},
-\href{OperatorsDH\#get_lifetime}{get\_lifetime},
-\href{OperatorsDH\#get_liking}{get\_liking},
-\href{OperatorsDH\#get_modality}{get\_modality},
-\href{OperatorsDH\#get_obligation_op}{get\_obligation\_op},
-\href{OperatorsDH\#get_obligation_with_name_op}{get\_obligation\_with\_name\_op},
-\href{OperatorsDH\#get_obligations_op}{get\_obligations\_op},
-\href{OperatorsDH\#get_obligations_with_name_op}{get\_obligations\_with\_name\_op},
-\href{OperatorsDH\#get_plan_name}{get\_plan\_name},
-\href{OperatorsDH\#get_predicate}{get\_predicate},
-\href{OperatorsDH\#get_solidarity}{get\_solidarity},
-\href{OperatorsDH\#get_strength}{get\_strength},
-\href{OperatorsDH\#get_super_intention}{get\_super\_intention},
-\href{OperatorsDH\#get_trust}{get\_trust},
-\href{OperatorsDH\#get_truth}{get\_truth},
-\href{OperatorsDH\#get_uncertainties_op}{get\_uncertainties\_op},
-\href{OperatorsDH\#get_uncertainties_with_name_op}{get\_uncertainties\_with\_name\_op},
-\href{OperatorsDH\#get_uncertainty_op}{get\_uncertainty\_op},
-\href{OperatorsDH\#get_uncertainty_with_name_op}{get\_uncertainty\_with\_name\_op},
-\href{OperatorsDH\#has_belief_op}{has\_belief\_op},
-\href{OperatorsDH\#has_belief_with_name_op}{has\_belief\_with\_name\_op},
-\href{OperatorsDH\#has_desire_op}{has\_desire\_op},
-\href{OperatorsDH\#has_desire_with_name_op}{has\_desire\_with\_name\_op},
-\href{OperatorsDH\#has_ideal_op}{has\_ideal\_op},
-\href{OperatorsDH\#has_ideal_with_name_op}{has\_ideal\_with\_name\_op},
-\href{OperatorsDH\#has_intention_op}{has\_intention\_op},
-\href{OperatorsDH\#has_intention_with_name_op}{has\_intention\_with\_name\_op},
-\href{OperatorsDH\#has_obligation_op}{has\_obligation\_op},
-\href{OperatorsDH\#has_obligation_with_name_op}{has\_obligation\_with\_name\_op},
-\href{OperatorsDH\#has_uncertainty_op}{has\_uncertainty\_op},
-\href{OperatorsDH\#has_uncertainty_with_name_op}{has\_uncertainty\_with\_name\_op},
-\href{OperatorsNR\#new_emotion}{new\_emotion},
-\href{OperatorsNR\#new_mental_state}{new\_mental\_state},
-\href{OperatorsNR\#new_predicate}{new\_predicate},
-\href{OperatorsNR\#new_social_link}{new\_social\_link},
-\href{OperatorsNR\#or}{or}, \href{OperatorsSZ\#set_about}{set\_about},
-\href{OperatorsSZ\#set_agent}{set\_agent},
-\href{OperatorsSZ\#set_agent_cause}{set\_agent\_cause},
-\href{OperatorsSZ\#set_decay}{set\_decay},
-\href{OperatorsSZ\#set_dominance}{set\_dominance},
-\href{OperatorsSZ\#set_familiarity}{set\_familiarity},
-\href{OperatorsSZ\#set_intensity}{set\_intensity},
-\href{OperatorsSZ\#set_lifetime}{set\_lifetime},
-\href{OperatorsSZ\#set_liking}{set\_liking},
-\href{OperatorsSZ\#set_modality}{set\_modality},
-\href{OperatorsSZ\#set_predicate}{set\_predicate},
-\href{OperatorsSZ\#set_solidarity}{set\_solidarity},
-\href{OperatorsSZ\#set_strength}{set\_strength},
-\href{OperatorsSZ\#set_trust}{set\_trust},
-\href{OperatorsSZ\#set_truth}{set\_truth},
-\href{OperatorsSZ\#with_lifetime}{with\_lifetime},
-\href{OperatorsSZ\#with_values}{with\_values},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Casting operators}\label{casting-operators-1}
-
-\href{OperatorsAA\#as}{as}, \href{OperatorsAA\#as_int}{as\_int},
-\href{OperatorsAA\#as_matrix}{as\_matrix},
-\href{OperatorsDH\#font}{font}, \href{OperatorsIM\#is}{is},
-\href{OperatorsIM\#is_skill}{is\_skill},
-\href{OperatorsIM\#list_with}{list\_with},
-\href{OperatorsIM\#matrix_with}{matrix\_with},
-\href{OperatorsSZ\#species}{species},
-\href{OperatorsSZ\#to_gaml}{to\_gaml},
-\href{OperatorsSZ\#topology}{topology},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Color-related operators}\label{color-related-operators-1}
-
-\href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
-\href{OperatorsAA\#*}{*}, \href{OperatorsAA\#+}{+},
-\href{OperatorsBC\#blend}{blend},
-\href{OperatorsBC\#brewer_colors}{brewer\_colors},
-\href{OperatorsBC\#brewer_palettes}{brewer\_palettes},
-\href{OperatorsDH\#grayscale}{grayscale}, \href{OperatorsDH\#hsb}{hsb},
-\href{OperatorsIM\#mean}{mean}, \href{OperatorsIM\#median}{median},
-\href{OperatorsNR\#rgb}{rgb}, \href{OperatorsNR\#rnd_color}{rnd\_color},
-\href{OperatorsSZ\#sum}{sum},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Comparison operators}\label{comparison-operators-1}
-
-\href{OperatorsAA\#!=}{!=}, \href{OperatorsAA\#\%3C}{\textless{}},
-\href{OperatorsAA\#\%3C=}{\textless{}=}, \href{OperatorsAA\#=}{=},
-\href{OperatorsAA\#\%3E}{\textgreater{}},
-\href{OperatorsAA\#\%3E=}{\textgreater{}=},
-\href{OperatorsBC\#between}{between},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Containers-related
-operators}\label{containers-related-operators-1}
-
-\href{OperatorsAA\#-}{-}, \href{OperatorsAA\#::}{::},
-\href{OperatorsAA\#+}{+}, \href{OperatorsAA\#accumulate}{accumulate},
-\href{OperatorsAA\#among}{among}, \href{OperatorsAA\#at}{at},
-\href{OperatorsBC\#collect}{collect},
-\href{OperatorsBC\#contains}{contains},
-\href{OperatorsBC\#contains_all}{contains\_all},
-\href{OperatorsBC\#contains_any}{contains\_any},
-\href{OperatorsBC\#count}{count},
-\href{OperatorsDH\#distinct}{distinct},
-\href{OperatorsDH\#empty}{empty}, \href{OperatorsDH\#every}{every},
-\href{OperatorsDH\#first}{first},
-\href{OperatorsDH\#first_with}{first\_with},
-\href{OperatorsDH\#get}{get}, \href{OperatorsDH\#group_by}{group\_by},
-\href{OperatorsIM\#in}{in}, \href{OperatorsIM\#index_by}{index\_by},
-\href{OperatorsIM\#inter}{inter},
-\href{OperatorsIM\#interleave}{interleave},
-\href{OperatorsIM\#internal_at}{internal\_at},
-\href{OperatorsIM\#internal_integrated_value}{internal\_integrated\_value},
-\href{OperatorsIM\#last}{last},
-\href{OperatorsIM\#last_with}{last\_with},
-\href{OperatorsIM\#length}{length}, \href{OperatorsIM\#max}{max},
-\href{OperatorsIM\#max_of}{max\_of}, \href{OperatorsIM\#mean}{mean},
-\href{OperatorsIM\#mean_of}{mean\_of},
-\href{OperatorsIM\#median}{median}, \href{OperatorsIM\#min}{min},
-\href{OperatorsIM\#min_of}{min\_of}, \href{OperatorsIM\#mul}{mul},
-\href{OperatorsNR\#one_of}{one\_of},
-\href{OperatorsNR\#product_of}{product\_of},
-\href{OperatorsNR\#range}{range}, \href{OperatorsNR\#reverse}{reverse},
-\href{OperatorsSZ\#shuffle}{shuffle},
-\href{OperatorsSZ\#sort_by}{sort\_by}, \href{OperatorsSZ\#split}{split},
-\href{OperatorsSZ\#split_in}{split\_in},
-\href{OperatorsSZ\#split_using}{split\_using},
-\href{OperatorsSZ\#sum}{sum}, \href{OperatorsSZ\#sum_of}{sum\_of},
-\href{OperatorsSZ\#union}{union},
-\href{OperatorsSZ\#variance_of}{variance\_of},
-\href{OperatorsSZ\#where}{where},
-\href{OperatorsSZ\#with_max_of}{with\_max\_of},
-\href{OperatorsSZ\#with_min_of}{with\_min\_of},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Date-related operators}\label{date-related-operators-1}
-
-\href{OperatorsAA\#-}{-}, \href{OperatorsAA\#!=}{!=},
-\href{OperatorsAA\#+}{+}, \href{OperatorsAA\#\%3C}{\textless{}},
-\href{OperatorsAA\#\%3C=}{\textless{}=}, \href{OperatorsAA\#=}{=},
-\href{OperatorsAA\#\%3E}{\textgreater{}},
-\href{OperatorsAA\#\%3E=}{\textgreater{}=},
-\href{OperatorsAA\#after}{after}, \href{OperatorsBC\#before}{before},
-\href{OperatorsBC\#between}{between}, \href{OperatorsDH\#every}{every},
-\href{OperatorsIM\#milliseconds_between}{milliseconds\_between},
-\href{OperatorsIM\#minus_days}{minus\_days},
-\href{OperatorsIM\#minus_hours}{minus\_hours},
-\href{OperatorsIM\#minus_minutes}{minus\_minutes},
-\href{OperatorsIM\#minus_months}{minus\_months},
-\href{OperatorsIM\#minus_ms}{minus\_ms},
-\href{OperatorsIM\#minus_weeks}{minus\_weeks},
-\href{OperatorsIM\#minus_years}{minus\_years},
-\href{OperatorsIM\#months_between}{months\_between},
-\href{OperatorsNR\#plus_days}{plus\_days},
-\href{OperatorsNR\#plus_hours}{plus\_hours},
-\href{OperatorsNR\#plus_minutes}{plus\_minutes},
-\href{OperatorsNR\#plus_months}{plus\_months},
-\href{OperatorsNR\#plus_ms}{plus\_ms},
-\href{OperatorsNR\#plus_weeks}{plus\_weeks},
-\href{OperatorsNR\#plus_years}{plus\_years},
-\href{OperatorsSZ\#since}{since}, \href{OperatorsSZ\#to}{to},
-\href{OperatorsSZ\#until}{until},
-\href{OperatorsSZ\#years_between}{years\_between},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Dates}\label{dates-1}
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{DescriptiveStatistics}\label{descriptivestatistics-1}
-
-\href{OperatorsAA\#auto_correlation}{auto\_correlation},
-\href{OperatorsBC\#correlation}{correlation},
-\href{OperatorsBC\#covariance}{covariance},
-\href{OperatorsDH\#durbin_watson}{durbin\_watson},
-\href{OperatorsIM\#kurtosis}{kurtosis},
-\href{OperatorsIM\#moment}{moment},
-\href{OperatorsNR\#quantile}{quantile},
-\href{OperatorsNR\#quantile_inverse}{quantile\_inverse},
-\href{OperatorsNR\#rank_interpolated}{rank\_interpolated},
-\href{OperatorsNR\#rms}{rms}, \href{OperatorsSZ\#skew}{skew},
-\href{OperatorsSZ\#variance}{variance},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Displays}\label{displays-1}
-
-\href{OperatorsDH\#horizontal}{horizontal},
-\href{OperatorsSZ\#stack}{stack},
-\href{OperatorsSZ\#vertical}{vertical},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Distributions}\label{distributions-1}
-
-\href{OperatorsBC\#binomial_coeff}{binomial\_coeff},
-\href{OperatorsBC\#binomial_complemented}{binomial\_complemented},
-\href{OperatorsBC\#binomial_sum}{binomial\_sum},
-\href{OperatorsBC\#chi_square}{chi\_square},
-\href{OperatorsBC\#chi_square_complemented}{chi\_square\_complemented},
-\href{OperatorsDH\#gamma_distribution}{gamma\_distribution},
-\href{OperatorsDH\#gamma_distribution_complemented}{gamma\_distribution\_complemented},
-\href{OperatorsNR\#normal_area}{normal\_area},
-\href{OperatorsNR\#normal_density}{normal\_density},
-\href{OperatorsNR\#normal_inverse}{normal\_inverse},
-\href{OperatorsNR\#pvalue_for_fstat}{pValue\_for\_fStat},
-\href{OperatorsNR\#pvalue_for_tstat}{pValue\_for\_tStat},
-\href{OperatorsSZ\#student_area}{student\_area},
-\href{OperatorsSZ\#student_t_inverse}{student\_t\_inverse},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Driving operators}\label{driving-operators-1}
-
-\href{OperatorsAA\#as_driving_graph}{as\_driving\_graph},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{edge}\label{edge-1}
-
-\href{OperatorsDH\#edge_between}{edge\_between},
-\href{OperatorsSZ\#strahler}{strahler},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{EDP-related operators}\label{edp-related-operators-1}
-
-\href{OperatorsDH\#diff}{diff}, \href{OperatorsDH\#diff2}{diff2},
-\href{OperatorsIM\#internal_zero_order_equation}{internal\_zero\_order\_equation},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Files-related operators}\label{files-related-operators-1}
-
-\href{OperatorsBC\#crs}{crs},
-\href{OperatorsDH\#evaluate_sub_model}{evaluate\_sub\_model},
-\href{OperatorsDH\#file}{file},
-\href{OperatorsDH\#file_exists}{file\_exists},
-\href{OperatorsDH\#folder}{folder}, \href{OperatorsDH\#get}{get},
-\href{OperatorsIM\#load_sub_model}{load\_sub\_model},
-\href{OperatorsNR\#new_folder}{new\_folder},
-\href{OperatorsNR\#osm_file}{osm\_file}, \href{OperatorsNR\#read}{read},
-\href{OperatorsSZ\#step_sub_model}{step\_sub\_model},
-\href{OperatorsSZ\#writable}{writable},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{FIPA-related operators}\label{fipa-related-operators-1}
-
-\href{OperatorsBC\#conversation}{conversation},
-\href{OperatorsIM\#message}{message},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{GamaMetaType}\label{gamametatype-1}
-
-\href{OperatorsSZ\#type_of}{type\_of},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{GammaFunction}\label{gammafunction-1}
-
-\href{OperatorsBC\#beta}{beta}, \href{OperatorsDH\#gamma}{gamma},
-\href{OperatorsIM\#incomplete_beta}{incomplete\_beta},
-\href{OperatorsIM\#incomplete_gamma}{incomplete\_gamma},
-\href{OperatorsIM\#incomplete_gamma_complement}{incomplete\_gamma\_complement},
-\href{OperatorsIM\#log_gamma}{log\_gamma},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Graphs-related operators}\label{graphs-related-operators-1}
-
-\href{OperatorsAA\#add_edge}{add\_edge},
-\href{OperatorsAA\#add_node}{add\_node},
-\href{OperatorsAA\#adjacency}{adjacency},
-\href{OperatorsAA\#agent_from_geometry}{agent\_from\_geometry},
-\href{OperatorsAA\#all_pairs_shortest_path}{all\_pairs\_shortest\_path},
-\href{OperatorsAA\#alpha_index}{alpha\_index},
-\href{OperatorsAA\#as_distance_graph}{as\_distance\_graph},
-\href{OperatorsAA\#as_edge_graph}{as\_edge\_graph},
-\href{OperatorsAA\#as_intersection_graph}{as\_intersection\_graph},
-\href{OperatorsAA\#as_path}{as\_path},
-\href{OperatorsBC\#beta_index}{beta\_index},
-\href{OperatorsBC\#betweenness_centrality}{betweenness\_centrality},
-\href{OperatorsBC\#biggest_cliques_of}{biggest\_cliques\_of},
-\href{OperatorsBC\#connected_components_of}{connected\_components\_of},
-\href{OperatorsBC\#connectivity_index}{connectivity\_index},
-\href{OperatorsBC\#contains_edge}{contains\_edge},
-\href{OperatorsBC\#contains_vertex}{contains\_vertex},
-\href{OperatorsDH\#degree_of}{degree\_of},
-\href{OperatorsDH\#directed}{directed}, \href{OperatorsDH\#edge}{edge},
-\href{OperatorsDH\#edge_between}{edge\_between},
-\href{OperatorsDH\#edge_betweenness}{edge\_betweenness},
-\href{OperatorsDH\#edges}{edges},
-\href{OperatorsDH\#gamma_index}{gamma\_index},
-\href{OperatorsDH\#generate_barabasi_albert}{generate\_barabasi\_albert},
-\href{OperatorsDH\#generate_complete_graph}{generate\_complete\_graph},
-\href{OperatorsDH\#generate_watts_strogatz}{generate\_watts\_strogatz},
-\href{OperatorsDH\#grid_cells_to_graph}{grid\_cells\_to\_graph},
-\href{OperatorsIM\#in_degree_of}{in\_degree\_of},
-\href{OperatorsIM\#in_edges_of}{in\_edges\_of},
-\href{OperatorsIM\#layout}{layout},
-\href{OperatorsIM\#load_graph_from_file}{load\_graph\_from\_file},
-\href{OperatorsIM\#load_shortest_paths}{load\_shortest\_paths},
-\href{OperatorsIM\#main_connected_component}{main\_connected\_component},
-\href{OperatorsIM\#max_flow_between}{max\_flow\_between},
-\href{OperatorsIM\#maximal_cliques_of}{maximal\_cliques\_of},
-\href{OperatorsNR\#nb_cycles}{nb\_cycles},
-\href{OperatorsNR\#neighbors_of}{neighbors\_of},
-\href{OperatorsNR\#node}{node}, \href{OperatorsNR\#nodes}{nodes},
-\href{OperatorsNR\#out_degree_of}{out\_degree\_of},
-\href{OperatorsNR\#out_edges_of}{out\_edges\_of},
-\href{OperatorsNR\#path_between}{path\_between},
-\href{OperatorsNR\#paths_between}{paths\_between},
-\href{OperatorsNR\#predecessors_of}{predecessors\_of},
-\href{OperatorsNR\#remove_node_from}{remove\_node\_from},
-\href{OperatorsNR\#rewire_n}{rewire\_n},
-\href{OperatorsSZ\#source_of}{source\_of},
-\href{OperatorsSZ\#spatial_graph}{spatial\_graph},
-\href{OperatorsSZ\#strahler}{strahler},
-\href{OperatorsSZ\#successors_of}{successors\_of},
-\href{OperatorsSZ\#sum}{sum}, \href{OperatorsSZ\#target_of}{target\_of},
-\href{OperatorsSZ\#undirected}{undirected},
-\href{OperatorsSZ\#use_cache}{use\_cache},
-\href{OperatorsSZ\#weight_of}{weight\_of},
-\href{OperatorsSZ\#with_optimizer_type}{with\_optimizer\_type},
-\href{OperatorsSZ\#with_weights}{with\_weights},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Grid-related operators}\label{grid-related-operators-1}
-
-\href{OperatorsAA\#as_4_grid}{as\_4\_grid},
-\href{OperatorsAA\#as_grid}{as\_grid},
-\href{OperatorsAA\#as_hexagonal_grid}{as\_hexagonal\_grid},
-\href{OperatorsDH\#grid_at}{grid\_at},
-\href{OperatorsNR\#path_between}{path\_between},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Iterator operators}\label{iterator-operators-1}
-
-\href{OperatorsAA\#accumulate}{accumulate},
-\href{OperatorsAA\#as_map}{as\_map},
-\href{OperatorsBC\#collect}{collect}, \href{OperatorsBC\#count}{count},
-\href{OperatorsBC\#create_map}{create\_map},
-\href{OperatorsDH\#distribution_of}{distribution\_of},
-\href{OperatorsDH\#distribution_of}{distribution\_of},
-\href{OperatorsDH\#distribution_of}{distribution\_of},
-\href{OperatorsDH\#distribution2d_of}{distribution2d\_of},
-\href{OperatorsDH\#distribution2d_of}{distribution2d\_of},
-\href{OperatorsDH\#distribution2d_of}{distribution2d\_of},
-\href{OperatorsDH\#first_with}{first\_with},
-\href{OperatorsDH\#frequency_of}{frequency\_of},
-\href{OperatorsDH\#group_by}{group\_by},
-\href{OperatorsIM\#index_by}{index\_by},
-\href{OperatorsIM\#last_with}{last\_with},
-\href{OperatorsIM\#max_of}{max\_of},
-\href{OperatorsIM\#mean_of}{mean\_of},
-\href{OperatorsIM\#min_of}{min\_of},
-\href{OperatorsNR\#product_of}{product\_of},
-\href{OperatorsSZ\#sort_by}{sort\_by},
-\href{OperatorsSZ\#sum_of}{sum\_of},
-\href{OperatorsSZ\#variance_of}{variance\_of},
-\href{OperatorsSZ\#where}{where},
-\href{OperatorsSZ\#with_max_of}{with\_max\_of},
-\href{OperatorsSZ\#with_min_of}{with\_min\_of},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{List-related operators}\label{list-related-operators-1}
-
-\href{OperatorsBC\#copy_between}{copy\_between},
-\href{OperatorsIM\#index_of}{index\_of},
-\href{OperatorsIM\#last_index_of}{last\_index\_of},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Logical operators}\label{logical-operators-1}
-
-\href{OperatorsAA\#:}{:}, \href{OperatorsAA\#!}{!},
-\href{OperatorsAA\#?}{?}, \href{OperatorsAA\#and}{and},
-\href{OperatorsNR\#or}{or}, \href{OperatorsSZ\#xor}{xor},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Map comparaison
-operators}\label{map-comparaison-operators-1}
-
-\href{OperatorsDH\#fuzzy_kappa}{fuzzy\_kappa},
-\href{OperatorsDH\#fuzzy_kappa_sim}{fuzzy\_kappa\_sim},
-\href{OperatorsIM\#kappa}{kappa},
-\href{OperatorsIM\#kappa_sim}{kappa\_sim},
-\href{OperatorsNR\#percent_absolute_deviation}{percent\_absolute\_deviation},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Map-related operators}\label{map-related-operators-1}
-
-\href{OperatorsAA\#as_map}{as\_map},
-\href{OperatorsBC\#create_map}{create\_map},
-\href{OperatorsIM\#index_of}{index\_of},
-\href{OperatorsIM\#last_index_of}{last\_index\_of},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Material}\label{material-1}
-
-\href{OperatorsIM\#material}{material},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Matrix-related operators}\label{matrix-related-operators-1}
-
-\href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
-\href{OperatorsAA\#.}{.}, \href{OperatorsAA\#*}{*},
-\href{OperatorsAA\#+}{+},
-\href{OperatorsAA\#append_horizontally}{append\_horizontally},
-\href{OperatorsAA\#append_vertically}{append\_vertically},
-\href{OperatorsBC\#column_at}{column\_at},
-\href{OperatorsBC\#columns_list}{columns\_list},
-\href{OperatorsDH\#determinant}{determinant},
-\href{OperatorsDH\#eigenvalues}{eigenvalues},
-\href{OperatorsIM\#index_of}{index\_of},
-\href{OperatorsIM\#inverse}{inverse},
-\href{OperatorsIM\#last_index_of}{last\_index\_of},
-\href{OperatorsNR\#row_at}{row\_at},
-\href{OperatorsNR\#rows_list}{rows\_list},
-\href{OperatorsSZ\#shuffle}{shuffle}, \href{OperatorsSZ\#trace}{trace},
-\href{OperatorsSZ\#transpose}{transpose},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{multicriteria operators}\label{multicriteria-operators-1}
-
-\href{OperatorsDH\#electre_dm}{electre\_DM},
-\href{OperatorsDH\#evidence_theory_dm}{evidence\_theory\_DM},
-\href{OperatorsDH\#fuzzy_choquet_dm}{fuzzy\_choquet\_DM},
-\href{OperatorsNR\#promethee_dm}{promethee\_DM},
-\href{OperatorsSZ\#weighted_means_dm}{weighted\_means\_DM},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Path-related operators}\label{path-related-operators-1}
-
-\href{OperatorsAA\#agent_from_geometry}{agent\_from\_geometry},
-\href{OperatorsAA\#all_pairs_shortest_path}{all\_pairs\_shortest\_path},
-\href{OperatorsAA\#as_path}{as\_path},
-\href{OperatorsIM\#load_shortest_paths}{load\_shortest\_paths},
-\href{OperatorsIM\#max_flow_between}{max\_flow\_between},
-\href{OperatorsNR\#path_between}{path\_between},
-\href{OperatorsNR\#path_to}{path\_to},
-\href{OperatorsNR\#paths_between}{paths\_between},
-\href{OperatorsSZ\#use_cache}{use\_cache},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Points-related operators}\label{points-related-operators-1}
-
-\href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
-\href{OperatorsAA\#*}{*}, \href{OperatorsAA\#+}{+},
-\href{OperatorsAA\#\%3C}{\textless{}},
-\href{OperatorsAA\#\%3C=}{\textless{}=},
-\href{OperatorsAA\#\%3E}{\textgreater{}},
-\href{OperatorsAA\#\%3E=}{\textgreater{}=},
-\href{OperatorsAA\#add_point}{add\_point},
-\href{OperatorsAA\#angle_between}{angle\_between},
-\href{OperatorsAA\#any_location_in}{any\_location\_in},
-\href{OperatorsBC\#centroid}{centroid},
-\href{OperatorsBC\#closest_points_with}{closest\_points\_with},
-\href{OperatorsDH\#farthest_point_to}{farthest\_point\_to},
-\href{OperatorsDH\#grid_at}{grid\_at}, \href{OperatorsNR\#norm}{norm},
-\href{OperatorsNR\#point}{point},
-\href{OperatorsNR\#points_along}{points\_along},
-\href{OperatorsNR\#points_at}{points\_at},
-\href{OperatorsNR\#points_on}{points\_on},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Random operators}\label{random-operators-1}
-
-\href{OperatorsBC\#binomial}{binomial}, \href{OperatorsDH\#flip}{flip},
-\href{OperatorsDH\#gauss}{gauss},
-\href{OperatorsIM\#improved_generator}{improved\_generator},
-\href{OperatorsNR\#open_simplex_generator}{open\_simplex\_generator},
-\href{OperatorsNR\#poisson}{poisson}, \href{OperatorsNR\#rnd}{rnd},
-\href{OperatorsNR\#rnd_choice}{rnd\_choice},
-\href{OperatorsSZ\#sample}{sample},
-\href{OperatorsSZ\#shuffle}{shuffle},
-\href{OperatorsSZ\#simplex_generator}{simplex\_generator},
-\href{OperatorsSZ\#skew_gauss}{skew\_gauss},
-\href{OperatorsSZ\#truncated_gauss}{truncated\_gauss},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{ReverseOperators}\label{reverseoperators-1}
-
-\href{OperatorsSZ\#savesimulation}{saveSimulation},
-\href{OperatorsSZ\#serialize}{serialize},
-\href{OperatorsSZ\#serializeagent}{serializeAgent},
-\href{OperatorsSZ\#unserializesimulation}{unSerializeSimulation},
-\href{OperatorsSZ\#unserializesimulationfromfile}{unSerializeSimulationFromFile},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Shape}\label{shape-1}
-
-\href{OperatorsAA\#arc}{arc}, \href{OperatorsBC\#box}{box},
-\href{OperatorsBC\#circle}{circle}, \href{OperatorsBC\#cone}{cone},
-\href{OperatorsBC\#cone3d}{cone3D}, \href{OperatorsBC\#cross}{cross},
-\href{OperatorsBC\#cube}{cube}, \href{OperatorsBC\#curve}{curve},
-\href{OperatorsBC\#cylinder}{cylinder},
-\href{OperatorsDH\#ellipse}{ellipse},
-\href{OperatorsDH\#envelope}{envelope},
-\href{OperatorsDH\#geometry_collection}{geometry\_collection},
-\href{OperatorsDH\#hexagon}{hexagon}, \href{OperatorsIM\#line}{line},
-\href{OperatorsIM\#link}{link}, \href{OperatorsNR\#plan}{plan},
-\href{OperatorsNR\#polygon}{polygon},
-\href{OperatorsNR\#polyhedron}{polyhedron},
-\href{OperatorsNR\#pyramid}{pyramid},
-\href{OperatorsNR\#rectangle}{rectangle},
-\href{OperatorsSZ\#sphere}{sphere}, \href{OperatorsSZ\#square}{square},
-\href{OperatorsSZ\#squircle}{squircle},
-\href{OperatorsSZ\#teapot}{teapot},
-\href{OperatorsSZ\#triangle}{triangle},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Spatial operators}\label{spatial-operators-1}
-
-\href{OperatorsAA\#-}{-}, \href{OperatorsAA\#*}{*},
-\href{OperatorsAA\#+}{+}, \href{OperatorsAA\#add_point}{add\_point},
-\href{OperatorsAA\#agent_closest_to}{agent\_closest\_to},
-\href{OperatorsAA\#agent_farthest_to}{agent\_farthest\_to},
-\href{OperatorsAA\#agents_at_distance}{agents\_at\_distance},
-\href{OperatorsAA\#agents_inside}{agents\_inside},
-\href{OperatorsAA\#agents_overlapping}{agents\_overlapping},
-\href{OperatorsAA\#angle_between}{angle\_between},
-\href{OperatorsAA\#any_location_in}{any\_location\_in},
-\href{OperatorsAA\#arc}{arc}, \href{OperatorsAA\#around}{around},
-\href{OperatorsAA\#as_4_grid}{as\_4\_grid},
-\href{OperatorsAA\#as_grid}{as\_grid},
-\href{OperatorsAA\#as_hexagonal_grid}{as\_hexagonal\_grid},
-\href{OperatorsAA\#at_distance}{at\_distance},
-\href{OperatorsAA\#at_location}{at\_location},
-\href{OperatorsBC\#box}{box}, \href{OperatorsBC\#centroid}{centroid},
-\href{OperatorsBC\#circle}{circle}, \href{OperatorsBC\#clean}{clean},
-\href{OperatorsBC\#clean_network}{clean\_network},
-\href{OperatorsBC\#closest_points_with}{closest\_points\_with},
-\href{OperatorsBC\#closest_to}{closest\_to},
-\href{OperatorsBC\#cone}{cone}, \href{OperatorsBC\#cone3d}{cone3D},
-\href{OperatorsBC\#convex_hull}{convex\_hull},
-\href{OperatorsBC\#covers}{covers}, \href{OperatorsBC\#cross}{cross},
-\href{OperatorsBC\#crosses}{crosses}, \href{OperatorsBC\#crs}{crs},
-\href{OperatorsBC\#crs_transform}{CRS\_transform},
-\href{OperatorsBC\#cube}{cube}, \href{OperatorsBC\#curve}{curve},
-\href{OperatorsBC\#cylinder}{cylinder}, \href{OperatorsDH\#dem}{dem},
-\href{OperatorsDH\#direction_between}{direction\_between},
-\href{OperatorsDH\#disjoint_from}{disjoint\_from},
-\href{OperatorsDH\#distance_between}{distance\_between},
-\href{OperatorsDH\#distance_to}{distance\_to},
-\href{OperatorsDH\#ellipse}{ellipse},
-\href{OperatorsDH\#envelope}{envelope},
-\href{OperatorsDH\#farthest_point_to}{farthest\_point\_to},
-\href{OperatorsDH\#farthest_to}{farthest\_to},
-\href{OperatorsDH\#geometry_collection}{geometry\_collection},
-\href{OperatorsDH\#gini}{gini}, \href{OperatorsDH\#hexagon}{hexagon},
-\href{OperatorsDH\#hierarchical_clustering}{hierarchical\_clustering},
-\href{OperatorsIM\#idw}{IDW}, \href{OperatorsIM\#inside}{inside},
-\href{OperatorsIM\#inter}{inter},
-\href{OperatorsIM\#intersects}{intersects},
-\href{OperatorsIM\#line}{line}, \href{OperatorsIM\#link}{link},
-\href{OperatorsIM\#masked_by}{masked\_by},
-\href{OperatorsIM\#moran}{moran},
-\href{OperatorsNR\#neighbors_at}{neighbors\_at},
-\href{OperatorsNR\#neighbors_of}{neighbors\_of},
-\href{OperatorsNR\#overlapping}{overlapping},
-\href{OperatorsNR\#overlaps}{overlaps},
-\href{OperatorsNR\#partially_overlaps}{partially\_overlaps},
-\href{OperatorsNR\#path_between}{path\_between},
-\href{OperatorsNR\#path_to}{path\_to}, \href{OperatorsNR\#plan}{plan},
-\href{OperatorsNR\#points_along}{points\_along},
-\href{OperatorsNR\#points_at}{points\_at},
-\href{OperatorsNR\#points_on}{points\_on},
-\href{OperatorsNR\#polygon}{polygon},
-\href{OperatorsNR\#polyhedron}{polyhedron},
-\href{OperatorsNR\#pyramid}{pyramid},
-\href{OperatorsNR\#rectangle}{rectangle},
-\href{OperatorsNR\#rgb_to_xyz}{rgb\_to\_xyz},
-\href{OperatorsNR\#rotated_by}{rotated\_by},
-\href{OperatorsNR\#round}{round},
-\href{OperatorsSZ\#scaled_to}{scaled\_to},
-\href{OperatorsSZ\#set_z}{set\_z},
-\href{OperatorsSZ\#simple_clustering_by_distance}{simple\_clustering\_by\_distance},
-\href{OperatorsSZ\#simplification}{simplification},
-\href{OperatorsSZ\#skeletonize}{skeletonize},
-\href{OperatorsSZ\#smooth}{smooth}, \href{OperatorsSZ\#sphere}{sphere},
-\href{OperatorsSZ\#split_at}{split\_at},
-\href{OperatorsSZ\#split_geometry}{split\_geometry},
-\href{OperatorsSZ\#split_lines}{split\_lines},
-\href{OperatorsSZ\#square}{square},
-\href{OperatorsSZ\#squircle}{squircle},
-\href{OperatorsSZ\#teapot}{teapot},
-\href{OperatorsSZ\#to_gama_crs}{to\_GAMA\_CRS},
-\href{OperatorsSZ\#to_rectangles}{to\_rectangles},
-\href{OperatorsSZ\#to_squares}{to\_squares},
-\href{OperatorsSZ\#to_sub_geometries}{to\_sub\_geometries},
-\href{OperatorsSZ\#touches}{touches},
-\href{OperatorsSZ\#towards}{towards},
-\href{OperatorsSZ\#transformed_by}{transformed\_by},
-\href{OperatorsSZ\#translated_by}{translated\_by},
-\href{OperatorsSZ\#triangle}{triangle},
-\href{OperatorsSZ\#triangulate}{triangulate},
-\href{OperatorsSZ\#union}{union}, \href{OperatorsSZ\#using}{using},
-\href{OperatorsSZ\#voronoi}{voronoi},
-\href{OperatorsSZ\#with_precision}{with\_precision},
-\href{OperatorsSZ\#without_holes}{without\_holes},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Spatial properties
-operators}\label{spatial-properties-operators-1}
-
-\href{OperatorsBC\#covers}{covers},
-\href{OperatorsBC\#crosses}{crosses},
-\href{OperatorsIM\#intersects}{intersects},
-\href{OperatorsNR\#partially_overlaps}{partially\_overlaps},
-\href{OperatorsSZ\#touches}{touches},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Spatial queries
-operators}\label{spatial-queries-operators-1}
-
-\href{OperatorsAA\#agent_closest_to}{agent\_closest\_to},
-\href{OperatorsAA\#agent_farthest_to}{agent\_farthest\_to},
-\href{OperatorsAA\#agents_at_distance}{agents\_at\_distance},
-\href{OperatorsAA\#agents_inside}{agents\_inside},
-\href{OperatorsAA\#agents_overlapping}{agents\_overlapping},
-\href{OperatorsAA\#at_distance}{at\_distance},
-\href{OperatorsBC\#closest_to}{closest\_to},
-\href{OperatorsDH\#farthest_to}{farthest\_to},
-\href{OperatorsIM\#inside}{inside},
-\href{OperatorsNR\#neighbors_at}{neighbors\_at},
-\href{OperatorsNR\#neighbors_of}{neighbors\_of},
-\href{OperatorsNR\#overlapping}{overlapping},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Spatial relations
-operators}\label{spatial-relations-operators-1}
-
-\href{OperatorsDH\#direction_between}{direction\_between},
-\href{OperatorsDH\#distance_between}{distance\_between},
-\href{OperatorsDH\#distance_to}{distance\_to},
-\href{OperatorsNR\#path_between}{path\_between},
-\href{OperatorsNR\#path_to}{path\_to},
-\href{OperatorsSZ\#towards}{towards},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Spatial statistical
-operators}\label{spatial-statistical-operators-1}
-
-\href{OperatorsDH\#hierarchical_clustering}{hierarchical\_clustering},
-\href{OperatorsSZ\#simple_clustering_by_distance}{simple\_clustering\_by\_distance},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Spatial transformations
-operators}\label{spatial-transformations-operators-1}
-
-\href{OperatorsAA\#-}{-}, \href{OperatorsAA\#*}{*},
-\href{OperatorsAA\#+}{+}, \href{OperatorsAA\#as_4_grid}{as\_4\_grid},
-\href{OperatorsAA\#as_grid}{as\_grid},
-\href{OperatorsAA\#as_hexagonal_grid}{as\_hexagonal\_grid},
-\href{OperatorsAA\#at_location}{at\_location},
-\href{OperatorsBC\#clean}{clean},
-\href{OperatorsBC\#clean_network}{clean\_network},
-\href{OperatorsBC\#convex_hull}{convex\_hull},
-\href{OperatorsBC\#crs_transform}{CRS\_transform},
-\href{OperatorsNR\#rotated_by}{rotated\_by},
-\href{OperatorsSZ\#scaled_to}{scaled\_to},
-\href{OperatorsSZ\#simplification}{simplification},
-\href{OperatorsSZ\#skeletonize}{skeletonize},
-\href{OperatorsSZ\#smooth}{smooth},
-\href{OperatorsSZ\#split_geometry}{split\_geometry},
-\href{OperatorsSZ\#split_lines}{split\_lines},
-\href{OperatorsSZ\#to_gama_crs}{to\_GAMA\_CRS},
-\href{OperatorsSZ\#to_rectangles}{to\_rectangles},
-\href{OperatorsSZ\#to_squares}{to\_squares},
-\href{OperatorsSZ\#to_sub_geometries}{to\_sub\_geometries},
-\href{OperatorsSZ\#transformed_by}{transformed\_by},
-\href{OperatorsSZ\#translated_by}{translated\_by},
-\href{OperatorsSZ\#triangulate}{triangulate},
-\href{OperatorsSZ\#voronoi}{voronoi},
-\href{OperatorsSZ\#with_precision}{with\_precision},
-\href{OperatorsSZ\#without_holes}{without\_holes},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Species-related
-operators}\label{species-related-operators-1}
-
-\href{OperatorsIM\#index_of}{index\_of},
-\href{OperatorsIM\#last_index_of}{last\_index\_of},
-\href{OperatorsNR\#of_generic_species}{of\_generic\_species},
-\href{OperatorsNR\#of_species}{of\_species},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Statistical operators}\label{statistical-operators-1}
-
-\href{OperatorsBC\#build}{build}, \href{OperatorsBC\#corr}{corR},
-\href{OperatorsDH\#dbscan}{dbscan},
-\href{OperatorsDH\#distribution_of}{distribution\_of},
-\href{OperatorsDH\#distribution2d_of}{distribution2d\_of},
-\href{OperatorsDH\#dtw}{dtw},
-\href{OperatorsDH\#frequency_of}{frequency\_of},
-\href{OperatorsDH\#gamma_rnd}{gamma\_rnd},
-\href{OperatorsDH\#geometric_mean}{geometric\_mean},
-\href{OperatorsDH\#gini}{gini},
-\href{OperatorsDH\#harmonic_mean}{harmonic\_mean},
-\href{OperatorsDH\#hierarchical_clustering}{hierarchical\_clustering},
-\href{OperatorsIM\#kmeans}{kmeans},
-\href{OperatorsIM\#kurtosis}{kurtosis}, \href{OperatorsIM\#max}{max},
-\href{OperatorsIM\#mean}{mean},
-\href{OperatorsIM\#mean_deviation}{mean\_deviation},
-\href{OperatorsIM\#meanr}{meanR}, \href{OperatorsIM\#median}{median},
-\href{OperatorsIM\#min}{min}, \href{OperatorsIM\#moran}{moran},
-\href{OperatorsIM\#mul}{mul}, \href{OperatorsNR\#predict}{predict},
-\href{OperatorsSZ\#simple_clustering_by_distance}{simple\_clustering\_by\_distance},
-\href{OperatorsSZ\#skewness}{skewness},
-\href{OperatorsSZ\#split}{split},
-\href{OperatorsSZ\#split_in}{split\_in},
-\href{OperatorsSZ\#split_using}{split\_using},
-\href{OperatorsSZ\#standard_deviation}{standard\_deviation},
-\href{OperatorsSZ\#sum}{sum}, \href{OperatorsSZ\#variance}{variance},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Strings-related
-operators}\label{strings-related-operators-1}
-
-\href{OperatorsAA\#+}{+}, \href{OperatorsAA\#\%3C}{\textless{}},
-\href{OperatorsAA\#\%3C=}{\textless{}=},
-\href{OperatorsAA\#\%3E}{\textgreater{}},
-\href{OperatorsAA\#\%3E=}{\textgreater{}=}, \href{OperatorsAA\#at}{at},
-\href{OperatorsBC\#char}{char}, \href{OperatorsBC\#contains}{contains},
-\href{OperatorsBC\#contains_all}{contains\_all},
-\href{OperatorsBC\#contains_any}{contains\_any},
-\href{OperatorsBC\#copy_between}{copy\_between},
-\href{OperatorsDH\#date}{date}, \href{OperatorsDH\#empty}{empty},
-\href{OperatorsDH\#first}{first}, \href{OperatorsIM\#in}{in},
-\href{OperatorsIM\#indented_by}{indented\_by},
-\href{OperatorsIM\#index_of}{index\_of},
-\href{OperatorsIM\#is_number}{is\_number},
-\href{OperatorsIM\#last}{last},
-\href{OperatorsIM\#last_index_of}{last\_index\_of},
-\href{OperatorsIM\#length}{length},
-\href{OperatorsIM\#lower_case}{lower\_case},
-\href{OperatorsNR\#replace}{replace},
-\href{OperatorsNR\#replace_regex}{replace\_regex},
-\href{OperatorsNR\#reverse}{reverse},
-\href{OperatorsSZ\#sample}{sample},
-\href{OperatorsSZ\#shuffle}{shuffle},
-\href{OperatorsSZ\#split_with}{split\_with},
-\href{OperatorsSZ\#string}{string},
-\href{OperatorsSZ\#upper_case}{upper\_case},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{System}\label{system-1}
-
-\href{OperatorsAA\#.}{.}, \href{OperatorsBC\#command}{command},
-\href{OperatorsBC\#copy}{copy}, \href{OperatorsDH\#dead}{dead},
-\href{OperatorsDH\#eval_gaml}{eval\_gaml},
-\href{OperatorsDH\#every}{every},
-\href{OperatorsIM\#is_error}{is\_error},
-\href{OperatorsIM\#is_warning}{is\_warning},
-\href{OperatorsSZ\#user_input}{user\_input},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Time-related operators}\label{time-related-operators-1}
-
-\href{OperatorsDH\#date}{date}, \href{OperatorsSZ\#string}{string},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{Types-related operators}\label{types-related-operators-1}
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\subsection{User control operators}\label{user-control-operators-1}
-
-\href{OperatorsSZ\#user_input}{user\_input},
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
 \section{Operators}\label{operators-1}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
@@ -8679,15 +6937,15 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\section{Table of Contents}\label{table-of-contents-2}
+\section{Table of Contents}\label{table-of-contents}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\section{Operators by categories}\label{operators-by-categories-2}
+\section{Operators by categories}\label{operators-by-categories}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{3D}\label{d-2}
+\subsection{3D}\label{d}
 
 \href{OperatorsBC\#box}{box}, \href{OperatorsBC\#cone3d}{cone3D},
 \href{OperatorsBC\#cube}{cube}, \href{OperatorsBC\#cylinder}{cylinder},
@@ -8699,7 +6957,7 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Arithmetic operators}\label{arithmetic-operators-2}
+\subsection{Arithmetic operators}\label{arithmetic-operators}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
 {[}\textsuperscript{{]}(OperatorsAA\#}), \href{OperatorsAA\#*}{*},
@@ -8722,7 +6980,7 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{BDI}\label{bdi-2}
+\subsection{BDI}\label{bdi}
 
 \href{OperatorsAA\#and}{and}, \href{OperatorsDH\#eval_when}{eval\_when},
 \href{OperatorsDH\#get_about}{get\_about},
@@ -8803,7 +7061,7 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Casting operators}\label{casting-operators-2}
+\subsection{Casting operators}\label{casting-operators}
 
 \href{OperatorsAA\#as}{as}, \href{OperatorsAA\#as_int}{as\_int},
 \href{OperatorsAA\#as_matrix}{as\_matrix},
@@ -8817,7 +7075,7 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Color-related operators}\label{color-related-operators-2}
+\subsection{Color-related operators}\label{color-related-operators}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
 \href{OperatorsAA\#*}{*}, \href{OperatorsAA\#+}{+},
@@ -8831,7 +7089,7 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Comparison operators}\label{comparison-operators-2}
+\subsection{Comparison operators}\label{comparison-operators}
 
 \href{OperatorsAA\#!=}{!=}, \href{OperatorsAA\#\%3C}{\textless{}},
 \href{OperatorsAA\#\%3C=}{\textless{}=}, \href{OperatorsAA\#=}{=},
@@ -8842,7 +7100,7 @@ perfectly have side effects on their operands (including the agent).
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Containers-related
-operators}\label{containers-related-operators-2}
+operators}\label{containers-related-operators}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#::}{::},
 \href{OperatorsAA\#+}{+}, \href{OperatorsAA\#accumulate}{accumulate},
@@ -8885,7 +7143,7 @@ operators}\label{containers-related-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Date-related operators}\label{date-related-operators-2}
+\subsection{Date-related operators}\label{date-related-operators}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#!=}{!=},
 \href{OperatorsAA\#+}{+}, \href{OperatorsAA\#\%3C}{\textless{}},
@@ -8916,11 +7174,11 @@ operators}\label{containers-related-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Dates}\label{dates-2}
+\subsection{Dates}\label{dates}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{DescriptiveStatistics}\label{descriptivestatistics-2}
+\subsection{DescriptiveStatistics}\label{descriptivestatistics}
 
 \href{OperatorsAA\#auto_correlation}{auto\_correlation},
 \href{OperatorsBC\#correlation}{correlation},
@@ -8936,7 +7194,7 @@ operators}\label{containers-related-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Displays}\label{displays-2}
+\subsection{Displays}\label{displays}
 
 \href{OperatorsDH\#horizontal}{horizontal},
 \href{OperatorsSZ\#stack}{stack},
@@ -8944,7 +7202,7 @@ operators}\label{containers-related-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Distributions}\label{distributions-2}
+\subsection{Distributions}\label{distributions}
 
 \href{OperatorsBC\#binomial_coeff}{binomial\_coeff},
 \href{OperatorsBC\#binomial_complemented}{binomial\_complemented},
@@ -8963,27 +7221,27 @@ operators}\label{containers-related-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Driving operators}\label{driving-operators-2}
+\subsection{Driving operators}\label{driving-operators}
 
 \href{OperatorsAA\#as_driving_graph}{as\_driving\_graph},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{edge}\label{edge-2}
+\subsection{edge}\label{edge}
 
 \href{OperatorsDH\#edge_between}{edge\_between},
 \href{OperatorsSZ\#strahler}{strahler},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{EDP-related operators}\label{edp-related-operators-2}
+\subsection{EDP-related operators}\label{edp-related-operators}
 
 \href{OperatorsDH\#diff}{diff}, \href{OperatorsDH\#diff2}{diff2},
 \href{OperatorsIM\#internal_zero_order_equation}{internal\_zero\_order\_equation},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Files-related operators}\label{files-related-operators-2}
+\subsection{Files-related operators}\label{files-related-operators}
 
 \href{OperatorsBC\#crs}{crs},
 \href{OperatorsDH\#evaluate_sub_model}{evaluate\_sub\_model},
@@ -8998,20 +7256,20 @@ operators}\label{containers-related-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{FIPA-related operators}\label{fipa-related-operators-2}
+\subsection{FIPA-related operators}\label{fipa-related-operators}
 
 \href{OperatorsBC\#conversation}{conversation},
 \href{OperatorsIM\#message}{message},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{GamaMetaType}\label{gamametatype-2}
+\subsection{GamaMetaType}\label{gamametatype}
 
 \href{OperatorsSZ\#type_of}{type\_of},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{GammaFunction}\label{gammafunction-2}
+\subsection{GammaFunction}\label{gammafunction}
 
 \href{OperatorsBC\#beta}{beta}, \href{OperatorsDH\#gamma}{gamma},
 \href{OperatorsIM\#incomplete_beta}{incomplete\_beta},
@@ -9021,7 +7279,7 @@ operators}\label{containers-related-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Graphs-related operators}\label{graphs-related-operators-2}
+\subsection{Graphs-related operators}\label{graphs-related-operators}
 
 \href{OperatorsAA\#add_edge}{add\_edge},
 \href{OperatorsAA\#add_node}{add\_node},
@@ -9081,7 +7339,7 @@ operators}\label{containers-related-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Grid-related operators}\label{grid-related-operators-2}
+\subsection{Grid-related operators}\label{grid-related-operators}
 
 \href{OperatorsAA\#as_4_grid}{as\_4\_grid},
 \href{OperatorsAA\#as_grid}{as\_grid},
@@ -9091,7 +7349,7 @@ operators}\label{containers-related-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Iterator operators}\label{iterator-operators-2}
+\subsection{Iterator operators}\label{iterator-operators}
 
 \href{OperatorsAA\#accumulate}{accumulate},
 \href{OperatorsAA\#as_map}{as\_map},
@@ -9121,7 +7379,7 @@ operators}\label{containers-related-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{List-related operators}\label{list-related-operators-2}
+\subsection{List-related operators}\label{list-related-operators}
 
 \href{OperatorsBC\#copy_between}{copy\_between},
 \href{OperatorsIM\#index_of}{index\_of},
@@ -9129,7 +7387,7 @@ operators}\label{containers-related-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Logical operators}\label{logical-operators-2}
+\subsection{Logical operators}\label{logical-operators}
 
 \href{OperatorsAA\#:}{:}, \href{OperatorsAA\#!}{!},
 \href{OperatorsAA\#?}{?}, \href{OperatorsAA\#and}{and},
@@ -9137,8 +7395,7 @@ operators}\label{containers-related-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Map comparaison
-operators}\label{map-comparaison-operators-2}
+\subsection{Map comparaison operators}\label{map-comparaison-operators}
 
 \href{OperatorsDH\#fuzzy_kappa}{fuzzy\_kappa},
 \href{OperatorsDH\#fuzzy_kappa_sim}{fuzzy\_kappa\_sim},
@@ -9148,7 +7405,7 @@ operators}\label{map-comparaison-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Map-related operators}\label{map-related-operators-2}
+\subsection{Map-related operators}\label{map-related-operators}
 
 \href{OperatorsAA\#as_map}{as\_map},
 \href{OperatorsBC\#create_map}{create\_map},
@@ -9157,13 +7414,13 @@ operators}\label{map-comparaison-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Material}\label{material-2}
+\subsection{Material}\label{material}
 
 \href{OperatorsIM\#material}{material},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Matrix-related operators}\label{matrix-related-operators-2}
+\subsection{Matrix-related operators}\label{matrix-related-operators}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
 \href{OperatorsAA\#.}{.}, \href{OperatorsAA\#*}{*},
@@ -9184,7 +7441,7 @@ operators}\label{map-comparaison-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{multicriteria operators}\label{multicriteria-operators-2}
+\subsection{multicriteria operators}\label{multicriteria-operators}
 
 \href{OperatorsDH\#electre_dm}{electre\_DM},
 \href{OperatorsDH\#evidence_theory_dm}{evidence\_theory\_DM},
@@ -9194,7 +7451,7 @@ operators}\label{map-comparaison-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Path-related operators}\label{path-related-operators-2}
+\subsection{Path-related operators}\label{path-related-operators}
 
 \href{OperatorsAA\#agent_from_geometry}{agent\_from\_geometry},
 \href{OperatorsAA\#all_pairs_shortest_path}{all\_pairs\_shortest\_path},
@@ -9208,7 +7465,7 @@ operators}\label{map-comparaison-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Points-related operators}\label{points-related-operators-2}
+\subsection{Points-related operators}\label{points-related-operators}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
 \href{OperatorsAA\#*}{*}, \href{OperatorsAA\#+}{+},
@@ -9230,7 +7487,7 @@ operators}\label{map-comparaison-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Random operators}\label{random-operators-2}
+\subsection{Random operators}\label{random-operators}
 
 \href{OperatorsBC\#binomial}{binomial}, \href{OperatorsDH\#flip}{flip},
 \href{OperatorsDH\#gauss}{gauss},
@@ -9246,7 +7503,7 @@ operators}\label{map-comparaison-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{ReverseOperators}\label{reverseoperators-2}
+\subsection{ReverseOperators}\label{reverseoperators}
 
 \href{OperatorsSZ\#savesimulation}{saveSimulation},
 \href{OperatorsSZ\#serialize}{serialize},
@@ -9256,7 +7513,7 @@ operators}\label{map-comparaison-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Shape}\label{shape-2}
+\subsection{Shape}\label{shape}
 
 \href{OperatorsAA\#arc}{arc}, \href{OperatorsBC\#box}{box},
 \href{OperatorsBC\#circle}{circle}, \href{OperatorsBC\#cone}{cone},
@@ -9279,7 +7536,7 @@ operators}\label{map-comparaison-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Spatial operators}\label{spatial-operators-2}
+\subsection{Spatial operators}\label{spatial-operators}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#*}{*},
 \href{OperatorsAA\#+}{+}, \href{OperatorsAA\#add_point}{add\_point},
@@ -9372,7 +7629,7 @@ operators}\label{map-comparaison-operators-2}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Spatial properties
-operators}\label{spatial-properties-operators-2}
+operators}\label{spatial-properties-operators}
 
 \href{OperatorsBC\#covers}{covers},
 \href{OperatorsBC\#crosses}{crosses},
@@ -9382,8 +7639,7 @@ operators}\label{spatial-properties-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Spatial queries
-operators}\label{spatial-queries-operators-2}
+\subsection{Spatial queries operators}\label{spatial-queries-operators}
 
 \href{OperatorsAA\#agent_closest_to}{agent\_closest\_to},
 \href{OperatorsAA\#agent_farthest_to}{agent\_farthest\_to},
@@ -9401,7 +7657,7 @@ operators}\label{spatial-queries-operators-2}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Spatial relations
-operators}\label{spatial-relations-operators-2}
+operators}\label{spatial-relations-operators}
 
 \href{OperatorsDH\#direction_between}{direction\_between},
 \href{OperatorsDH\#distance_between}{distance\_between},
@@ -9413,7 +7669,7 @@ operators}\label{spatial-relations-operators-2}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Spatial statistical
-operators}\label{spatial-statistical-operators-2}
+operators}\label{spatial-statistical-operators}
 
 \href{OperatorsDH\#hierarchical_clustering}{hierarchical\_clustering},
 \href{OperatorsSZ\#simple_clustering_by_distance}{simple\_clustering\_by\_distance},
@@ -9421,7 +7677,7 @@ operators}\label{spatial-statistical-operators-2}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Spatial transformations
-operators}\label{spatial-transformations-operators-2}
+operators}\label{spatial-transformations-operators}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#*}{*},
 \href{OperatorsAA\#+}{+}, \href{OperatorsAA\#as_4_grid}{as\_4\_grid},
@@ -9452,8 +7708,7 @@ operators}\label{spatial-transformations-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Species-related
-operators}\label{species-related-operators-2}
+\subsection{Species-related operators}\label{species-related-operators}
 
 \href{OperatorsIM\#index_of}{index\_of},
 \href{OperatorsIM\#last_index_of}{last\_index\_of},
@@ -9462,7 +7717,7 @@ operators}\label{species-related-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Statistical operators}\label{statistical-operators-2}
+\subsection{Statistical operators}\label{statistical-operators}
 
 \href{OperatorsBC\#build}{build}, \href{OperatorsBC\#corr}{corR},
 \href{OperatorsDH\#dbscan}{dbscan},
@@ -9492,8 +7747,7 @@ operators}\label{species-related-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Strings-related
-operators}\label{strings-related-operators-2}
+\subsection{Strings-related operators}\label{strings-related-operators}
 
 \href{OperatorsAA\#+}{+}, \href{OperatorsAA\#\%3C}{\textless{}},
 \href{OperatorsAA\#\%3C=}{\textless{}=},
@@ -9523,7 +7777,7 @@ operators}\label{strings-related-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{System}\label{system-2}
+\subsection{System}\label{system}
 
 \href{OperatorsAA\#.}{.}, \href{OperatorsBC\#command}{command},
 \href{OperatorsBC\#copy}{copy}, \href{OperatorsDH\#dead}{dead},
@@ -9535,17 +7789,17 @@ operators}\label{strings-related-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Time-related operators}\label{time-related-operators-2}
+\subsection{Time-related operators}\label{time-related-operators}
 
 \href{OperatorsDH\#date}{date}, \href{OperatorsSZ\#string}{string},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Types-related operators}\label{types-related-operators-2}
+\subsection{Types-related operators}\label{types-related-operators}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{User control operators}\label{user-control-operators-2}
+\subsection{User control operators}\label{user-control-operators}
 
 \href{OperatorsSZ\#user_input}{user\_input},
 
@@ -10290,7 +8544,7 @@ Constructs a file of type dxf. Allowed extensions are limited to dxf
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{\texorpdfstring{\texttt{edge}}{edge}}\label{edge-3}
+\subsection{\texorpdfstring{\texttt{edge}}{edge}}\label{edge-1}
 
 \subsubsection{Possible use:}\label{possible-use-144}
 
@@ -14238,15 +12492,15 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\section{Table of Contents}\label{table-of-contents-3}
+\section{Table of Contents}\label{table-of-contents-1}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\section{Operators by categories}\label{operators-by-categories-3}
+\section{Operators by categories}\label{operators-by-categories-1}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{3D}\label{d-3}
+\subsection{3D}\label{d-1}
 
 \href{OperatorsBC\#box}{box}, \href{OperatorsBC\#cone3d}{cone3D},
 \href{OperatorsBC\#cube}{cube}, \href{OperatorsBC\#cylinder}{cylinder},
@@ -14258,7 +12512,7 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Arithmetic operators}\label{arithmetic-operators-3}
+\subsection{Arithmetic operators}\label{arithmetic-operators-1}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
 {[}\textsuperscript{{]}(OperatorsAA\#}), \href{OperatorsAA\#*}{*},
@@ -14281,7 +12535,7 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{BDI}\label{bdi-3}
+\subsection{BDI}\label{bdi-1}
 
 \href{OperatorsAA\#and}{and}, \href{OperatorsDH\#eval_when}{eval\_when},
 \href{OperatorsDH\#get_about}{get\_about},
@@ -14362,7 +12616,7 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Casting operators}\label{casting-operators-3}
+\subsection{Casting operators}\label{casting-operators-1}
 
 \href{OperatorsAA\#as}{as}, \href{OperatorsAA\#as_int}{as\_int},
 \href{OperatorsAA\#as_matrix}{as\_matrix},
@@ -14376,7 +12630,7 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Color-related operators}\label{color-related-operators-3}
+\subsection{Color-related operators}\label{color-related-operators-1}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
 \href{OperatorsAA\#*}{*}, \href{OperatorsAA\#+}{+},
@@ -14390,7 +12644,7 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Comparison operators}\label{comparison-operators-3}
+\subsection{Comparison operators}\label{comparison-operators-1}
 
 \href{OperatorsAA\#!=}{!=}, \href{OperatorsAA\#\%3C}{\textless{}},
 \href{OperatorsAA\#\%3C=}{\textless{}=}, \href{OperatorsAA\#=}{=},
@@ -14401,7 +12655,7 @@ perfectly have side effects on their operands (including the agent).
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Containers-related
-operators}\label{containers-related-operators-3}
+operators}\label{containers-related-operators-1}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#::}{::},
 \href{OperatorsAA\#+}{+}, \href{OperatorsAA\#accumulate}{accumulate},
@@ -14444,7 +12698,7 @@ operators}\label{containers-related-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Date-related operators}\label{date-related-operators-3}
+\subsection{Date-related operators}\label{date-related-operators-1}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#!=}{!=},
 \href{OperatorsAA\#+}{+}, \href{OperatorsAA\#\%3C}{\textless{}},
@@ -14475,11 +12729,11 @@ operators}\label{containers-related-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Dates}\label{dates-3}
+\subsection{Dates}\label{dates-1}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{DescriptiveStatistics}\label{descriptivestatistics-3}
+\subsection{DescriptiveStatistics}\label{descriptivestatistics-1}
 
 \href{OperatorsAA\#auto_correlation}{auto\_correlation},
 \href{OperatorsBC\#correlation}{correlation},
@@ -14495,7 +12749,7 @@ operators}\label{containers-related-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Displays}\label{displays-3}
+\subsection{Displays}\label{displays-1}
 
 \href{OperatorsDH\#horizontal}{horizontal},
 \href{OperatorsSZ\#stack}{stack},
@@ -14503,7 +12757,7 @@ operators}\label{containers-related-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Distributions}\label{distributions-3}
+\subsection{Distributions}\label{distributions-1}
 
 \href{OperatorsBC\#binomial_coeff}{binomial\_coeff},
 \href{OperatorsBC\#binomial_complemented}{binomial\_complemented},
@@ -14522,27 +12776,27 @@ operators}\label{containers-related-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Driving operators}\label{driving-operators-3}
+\subsection{Driving operators}\label{driving-operators-1}
 
 \href{OperatorsAA\#as_driving_graph}{as\_driving\_graph},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{edge}\label{edge-4}
+\subsection{edge}\label{edge-2}
 
 \href{OperatorsDH\#edge_between}{edge\_between},
 \href{OperatorsSZ\#strahler}{strahler},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{EDP-related operators}\label{edp-related-operators-3}
+\subsection{EDP-related operators}\label{edp-related-operators-1}
 
 \href{OperatorsDH\#diff}{diff}, \href{OperatorsDH\#diff2}{diff2},
 \href{OperatorsIM\#internal_zero_order_equation}{internal\_zero\_order\_equation},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Files-related operators}\label{files-related-operators-3}
+\subsection{Files-related operators}\label{files-related-operators-1}
 
 \href{OperatorsBC\#crs}{crs},
 \href{OperatorsDH\#evaluate_sub_model}{evaluate\_sub\_model},
@@ -14557,20 +12811,20 @@ operators}\label{containers-related-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{FIPA-related operators}\label{fipa-related-operators-3}
+\subsection{FIPA-related operators}\label{fipa-related-operators-1}
 
 \href{OperatorsBC\#conversation}{conversation},
 \href{OperatorsIM\#message}{message},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{GamaMetaType}\label{gamametatype-3}
+\subsection{GamaMetaType}\label{gamametatype-1}
 
 \href{OperatorsSZ\#type_of}{type\_of},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{GammaFunction}\label{gammafunction-3}
+\subsection{GammaFunction}\label{gammafunction-1}
 
 \href{OperatorsBC\#beta}{beta}, \href{OperatorsDH\#gamma}{gamma},
 \href{OperatorsIM\#incomplete_beta}{incomplete\_beta},
@@ -14580,7 +12834,7 @@ operators}\label{containers-related-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Graphs-related operators}\label{graphs-related-operators-3}
+\subsection{Graphs-related operators}\label{graphs-related-operators-1}
 
 \href{OperatorsAA\#add_edge}{add\_edge},
 \href{OperatorsAA\#add_node}{add\_node},
@@ -14640,7 +12894,7 @@ operators}\label{containers-related-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Grid-related operators}\label{grid-related-operators-3}
+\subsection{Grid-related operators}\label{grid-related-operators-1}
 
 \href{OperatorsAA\#as_4_grid}{as\_4\_grid},
 \href{OperatorsAA\#as_grid}{as\_grid},
@@ -14650,7 +12904,7 @@ operators}\label{containers-related-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Iterator operators}\label{iterator-operators-3}
+\subsection{Iterator operators}\label{iterator-operators-1}
 
 \href{OperatorsAA\#accumulate}{accumulate},
 \href{OperatorsAA\#as_map}{as\_map},
@@ -14680,7 +12934,7 @@ operators}\label{containers-related-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{List-related operators}\label{list-related-operators-3}
+\subsection{List-related operators}\label{list-related-operators-1}
 
 \href{OperatorsBC\#copy_between}{copy\_between},
 \href{OperatorsIM\#index_of}{index\_of},
@@ -14688,7 +12942,7 @@ operators}\label{containers-related-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Logical operators}\label{logical-operators-3}
+\subsection{Logical operators}\label{logical-operators-1}
 
 \href{OperatorsAA\#:}{:}, \href{OperatorsAA\#!}{!},
 \href{OperatorsAA\#?}{?}, \href{OperatorsAA\#and}{and},
@@ -14697,7 +12951,7 @@ operators}\label{containers-related-operators-3}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Map comparaison
-operators}\label{map-comparaison-operators-3}
+operators}\label{map-comparaison-operators-1}
 
 \href{OperatorsDH\#fuzzy_kappa}{fuzzy\_kappa},
 \href{OperatorsDH\#fuzzy_kappa_sim}{fuzzy\_kappa\_sim},
@@ -14707,7 +12961,7 @@ operators}\label{map-comparaison-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Map-related operators}\label{map-related-operators-3}
+\subsection{Map-related operators}\label{map-related-operators-1}
 
 \href{OperatorsAA\#as_map}{as\_map},
 \href{OperatorsBC\#create_map}{create\_map},
@@ -14716,13 +12970,13 @@ operators}\label{map-comparaison-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Material}\label{material-3}
+\subsection{Material}\label{material-1}
 
 \href{OperatorsIM\#material}{material},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Matrix-related operators}\label{matrix-related-operators-3}
+\subsection{Matrix-related operators}\label{matrix-related-operators-1}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
 \href{OperatorsAA\#.}{.}, \href{OperatorsAA\#*}{*},
@@ -14743,7 +12997,7 @@ operators}\label{map-comparaison-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{multicriteria operators}\label{multicriteria-operators-3}
+\subsection{multicriteria operators}\label{multicriteria-operators-1}
 
 \href{OperatorsDH\#electre_dm}{electre\_DM},
 \href{OperatorsDH\#evidence_theory_dm}{evidence\_theory\_DM},
@@ -14753,7 +13007,7 @@ operators}\label{map-comparaison-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Path-related operators}\label{path-related-operators-3}
+\subsection{Path-related operators}\label{path-related-operators-1}
 
 \href{OperatorsAA\#agent_from_geometry}{agent\_from\_geometry},
 \href{OperatorsAA\#all_pairs_shortest_path}{all\_pairs\_shortest\_path},
@@ -14767,7 +13021,7 @@ operators}\label{map-comparaison-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Points-related operators}\label{points-related-operators-3}
+\subsection{Points-related operators}\label{points-related-operators-1}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
 \href{OperatorsAA\#*}{*}, \href{OperatorsAA\#+}{+},
@@ -14789,7 +13043,7 @@ operators}\label{map-comparaison-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Random operators}\label{random-operators-3}
+\subsection{Random operators}\label{random-operators-1}
 
 \href{OperatorsBC\#binomial}{binomial}, \href{OperatorsDH\#flip}{flip},
 \href{OperatorsDH\#gauss}{gauss},
@@ -14805,7 +13059,7 @@ operators}\label{map-comparaison-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{ReverseOperators}\label{reverseoperators-3}
+\subsection{ReverseOperators}\label{reverseoperators-1}
 
 \href{OperatorsSZ\#savesimulation}{saveSimulation},
 \href{OperatorsSZ\#serialize}{serialize},
@@ -14815,7 +13069,7 @@ operators}\label{map-comparaison-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Shape}\label{shape-3}
+\subsection{Shape}\label{shape-1}
 
 \href{OperatorsAA\#arc}{arc}, \href{OperatorsBC\#box}{box},
 \href{OperatorsBC\#circle}{circle}, \href{OperatorsBC\#cone}{cone},
@@ -14838,7 +13092,7 @@ operators}\label{map-comparaison-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Spatial operators}\label{spatial-operators-3}
+\subsection{Spatial operators}\label{spatial-operators-1}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#*}{*},
 \href{OperatorsAA\#+}{+}, \href{OperatorsAA\#add_point}{add\_point},
@@ -14931,7 +13185,7 @@ operators}\label{map-comparaison-operators-3}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Spatial properties
-operators}\label{spatial-properties-operators-3}
+operators}\label{spatial-properties-operators-1}
 
 \href{OperatorsBC\#covers}{covers},
 \href{OperatorsBC\#crosses}{crosses},
@@ -14942,7 +13196,7 @@ operators}\label{spatial-properties-operators-3}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Spatial queries
-operators}\label{spatial-queries-operators-3}
+operators}\label{spatial-queries-operators-1}
 
 \href{OperatorsAA\#agent_closest_to}{agent\_closest\_to},
 \href{OperatorsAA\#agent_farthest_to}{agent\_farthest\_to},
@@ -14960,7 +13214,7 @@ operators}\label{spatial-queries-operators-3}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Spatial relations
-operators}\label{spatial-relations-operators-3}
+operators}\label{spatial-relations-operators-1}
 
 \href{OperatorsDH\#direction_between}{direction\_between},
 \href{OperatorsDH\#distance_between}{distance\_between},
@@ -14972,7 +13226,7 @@ operators}\label{spatial-relations-operators-3}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Spatial statistical
-operators}\label{spatial-statistical-operators-3}
+operators}\label{spatial-statistical-operators-1}
 
 \href{OperatorsDH\#hierarchical_clustering}{hierarchical\_clustering},
 \href{OperatorsSZ\#simple_clustering_by_distance}{simple\_clustering\_by\_distance},
@@ -14980,7 +13234,7 @@ operators}\label{spatial-statistical-operators-3}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Spatial transformations
-operators}\label{spatial-transformations-operators-3}
+operators}\label{spatial-transformations-operators-1}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#*}{*},
 \href{OperatorsAA\#+}{+}, \href{OperatorsAA\#as_4_grid}{as\_4\_grid},
@@ -15012,7 +13266,7 @@ operators}\label{spatial-transformations-operators-3}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Species-related
-operators}\label{species-related-operators-3}
+operators}\label{species-related-operators-1}
 
 \href{OperatorsIM\#index_of}{index\_of},
 \href{OperatorsIM\#last_index_of}{last\_index\_of},
@@ -15021,7 +13275,7 @@ operators}\label{species-related-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Statistical operators}\label{statistical-operators-3}
+\subsection{Statistical operators}\label{statistical-operators-1}
 
 \href{OperatorsBC\#build}{build}, \href{OperatorsBC\#corr}{corR},
 \href{OperatorsDH\#dbscan}{dbscan},
@@ -15052,7 +13306,7 @@ operators}\label{species-related-operators-3}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Strings-related
-operators}\label{strings-related-operators-3}
+operators}\label{strings-related-operators-1}
 
 \href{OperatorsAA\#+}{+}, \href{OperatorsAA\#\%3C}{\textless{}},
 \href{OperatorsAA\#\%3C=}{\textless{}=},
@@ -15082,7 +13336,7 @@ operators}\label{strings-related-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{System}\label{system-3}
+\subsection{System}\label{system-1}
 
 \href{OperatorsAA\#.}{.}, \href{OperatorsBC\#command}{command},
 \href{OperatorsBC\#copy}{copy}, \href{OperatorsDH\#dead}{dead},
@@ -15094,17 +13348,17 @@ operators}\label{strings-related-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Time-related operators}\label{time-related-operators-3}
+\subsection{Time-related operators}\label{time-related-operators-1}
 
 \href{OperatorsDH\#date}{date}, \href{OperatorsSZ\#string}{string},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Types-related operators}\label{types-related-operators-3}
+\subsection{Types-related operators}\label{types-related-operators-1}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{User control operators}\label{user-control-operators-3}
+\subsection{User control operators}\label{user-control-operators-1}
 
 \href{OperatorsSZ\#user_input}{user\_input},
 
@@ -17518,7 +15772,7 @@ geometry var1 <- perception_geom masked_by obstacle_list; // var1 equals the geo
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{\texorpdfstring{\texttt{material}}{material}}\label{material-4}
+\subsection{\texorpdfstring{\texttt{material}}{material}}\label{material-2}
 
 \subsubsection{Possible use:}\label{possible-use-335}
 
@@ -17548,7 +15802,7 @@ Returns
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{\texorpdfstring{\texttt{material}}{material}}\label{material-5}
+\subsection{\texorpdfstring{\texttt{material}}{material}}\label{material-3}
 
 \subsubsection{Possible use:}\label{possible-use-336}
 
@@ -18693,15 +16947,15 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\section{Table of Contents}\label{table-of-contents-4}
+\section{Table of Contents}\label{table-of-contents-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\section{Operators by categories}\label{operators-by-categories-4}
+\section{Operators by categories}\label{operators-by-categories-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{3D}\label{d-4}
+\subsection{3D}\label{d-2}
 
 \href{OperatorsBC\#box}{box}, \href{OperatorsBC\#cone3d}{cone3D},
 \href{OperatorsBC\#cube}{cube}, \href{OperatorsBC\#cylinder}{cylinder},
@@ -18713,7 +16967,7 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Arithmetic operators}\label{arithmetic-operators-4}
+\subsection{Arithmetic operators}\label{arithmetic-operators-2}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
 {[}\textsuperscript{{]}(OperatorsAA\#}), \href{OperatorsAA\#*}{*},
@@ -18736,7 +16990,7 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{BDI}\label{bdi-4}
+\subsection{BDI}\label{bdi-2}
 
 \href{OperatorsAA\#and}{and}, \href{OperatorsDH\#eval_when}{eval\_when},
 \href{OperatorsDH\#get_about}{get\_about},
@@ -18817,7 +17071,7 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Casting operators}\label{casting-operators-4}
+\subsection{Casting operators}\label{casting-operators-2}
 
 \href{OperatorsAA\#as}{as}, \href{OperatorsAA\#as_int}{as\_int},
 \href{OperatorsAA\#as_matrix}{as\_matrix},
@@ -18831,7 +17085,7 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Color-related operators}\label{color-related-operators-4}
+\subsection{Color-related operators}\label{color-related-operators-2}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
 \href{OperatorsAA\#*}{*}, \href{OperatorsAA\#+}{+},
@@ -18845,7 +17099,7 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Comparison operators}\label{comparison-operators-4}
+\subsection{Comparison operators}\label{comparison-operators-2}
 
 \href{OperatorsAA\#!=}{!=}, \href{OperatorsAA\#\%3C}{\textless{}},
 \href{OperatorsAA\#\%3C=}{\textless{}=}, \href{OperatorsAA\#=}{=},
@@ -18856,7 +17110,7 @@ perfectly have side effects on their operands (including the agent).
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Containers-related
-operators}\label{containers-related-operators-4}
+operators}\label{containers-related-operators-2}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#::}{::},
 \href{OperatorsAA\#+}{+}, \href{OperatorsAA\#accumulate}{accumulate},
@@ -18899,7 +17153,7 @@ operators}\label{containers-related-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Date-related operators}\label{date-related-operators-4}
+\subsection{Date-related operators}\label{date-related-operators-2}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#!=}{!=},
 \href{OperatorsAA\#+}{+}, \href{OperatorsAA\#\%3C}{\textless{}},
@@ -18930,11 +17184,11 @@ operators}\label{containers-related-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Dates}\label{dates-4}
+\subsection{Dates}\label{dates-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{DescriptiveStatistics}\label{descriptivestatistics-4}
+\subsection{DescriptiveStatistics}\label{descriptivestatistics-2}
 
 \href{OperatorsAA\#auto_correlation}{auto\_correlation},
 \href{OperatorsBC\#correlation}{correlation},
@@ -18950,7 +17204,7 @@ operators}\label{containers-related-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Displays}\label{displays-4}
+\subsection{Displays}\label{displays-2}
 
 \href{OperatorsDH\#horizontal}{horizontal},
 \href{OperatorsSZ\#stack}{stack},
@@ -18958,7 +17212,7 @@ operators}\label{containers-related-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Distributions}\label{distributions-4}
+\subsection{Distributions}\label{distributions-2}
 
 \href{OperatorsBC\#binomial_coeff}{binomial\_coeff},
 \href{OperatorsBC\#binomial_complemented}{binomial\_complemented},
@@ -18977,27 +17231,27 @@ operators}\label{containers-related-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Driving operators}\label{driving-operators-4}
+\subsection{Driving operators}\label{driving-operators-2}
 
 \href{OperatorsAA\#as_driving_graph}{as\_driving\_graph},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{edge}\label{edge-5}
+\subsection{edge}\label{edge-3}
 
 \href{OperatorsDH\#edge_between}{edge\_between},
 \href{OperatorsSZ\#strahler}{strahler},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{EDP-related operators}\label{edp-related-operators-4}
+\subsection{EDP-related operators}\label{edp-related-operators-2}
 
 \href{OperatorsDH\#diff}{diff}, \href{OperatorsDH\#diff2}{diff2},
 \href{OperatorsIM\#internal_zero_order_equation}{internal\_zero\_order\_equation},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Files-related operators}\label{files-related-operators-4}
+\subsection{Files-related operators}\label{files-related-operators-2}
 
 \href{OperatorsBC\#crs}{crs},
 \href{OperatorsDH\#evaluate_sub_model}{evaluate\_sub\_model},
@@ -19012,20 +17266,20 @@ operators}\label{containers-related-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{FIPA-related operators}\label{fipa-related-operators-4}
+\subsection{FIPA-related operators}\label{fipa-related-operators-2}
 
 \href{OperatorsBC\#conversation}{conversation},
 \href{OperatorsIM\#message}{message},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{GamaMetaType}\label{gamametatype-4}
+\subsection{GamaMetaType}\label{gamametatype-2}
 
 \href{OperatorsSZ\#type_of}{type\_of},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{GammaFunction}\label{gammafunction-4}
+\subsection{GammaFunction}\label{gammafunction-2}
 
 \href{OperatorsBC\#beta}{beta}, \href{OperatorsDH\#gamma}{gamma},
 \href{OperatorsIM\#incomplete_beta}{incomplete\_beta},
@@ -19035,7 +17289,7 @@ operators}\label{containers-related-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Graphs-related operators}\label{graphs-related-operators-4}
+\subsection{Graphs-related operators}\label{graphs-related-operators-2}
 
 \href{OperatorsAA\#add_edge}{add\_edge},
 \href{OperatorsAA\#add_node}{add\_node},
@@ -19095,7 +17349,7 @@ operators}\label{containers-related-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Grid-related operators}\label{grid-related-operators-4}
+\subsection{Grid-related operators}\label{grid-related-operators-2}
 
 \href{OperatorsAA\#as_4_grid}{as\_4\_grid},
 \href{OperatorsAA\#as_grid}{as\_grid},
@@ -19105,7 +17359,7 @@ operators}\label{containers-related-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Iterator operators}\label{iterator-operators-4}
+\subsection{Iterator operators}\label{iterator-operators-2}
 
 \href{OperatorsAA\#accumulate}{accumulate},
 \href{OperatorsAA\#as_map}{as\_map},
@@ -19135,7 +17389,7 @@ operators}\label{containers-related-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{List-related operators}\label{list-related-operators-4}
+\subsection{List-related operators}\label{list-related-operators-2}
 
 \href{OperatorsBC\#copy_between}{copy\_between},
 \href{OperatorsIM\#index_of}{index\_of},
@@ -19143,7 +17397,7 @@ operators}\label{containers-related-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Logical operators}\label{logical-operators-4}
+\subsection{Logical operators}\label{logical-operators-2}
 
 \href{OperatorsAA\#:}{:}, \href{OperatorsAA\#!}{!},
 \href{OperatorsAA\#?}{?}, \href{OperatorsAA\#and}{and},
@@ -19152,7 +17406,7 @@ operators}\label{containers-related-operators-4}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Map comparaison
-operators}\label{map-comparaison-operators-4}
+operators}\label{map-comparaison-operators-2}
 
 \href{OperatorsDH\#fuzzy_kappa}{fuzzy\_kappa},
 \href{OperatorsDH\#fuzzy_kappa_sim}{fuzzy\_kappa\_sim},
@@ -19162,7 +17416,7 @@ operators}\label{map-comparaison-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Map-related operators}\label{map-related-operators-4}
+\subsection{Map-related operators}\label{map-related-operators-2}
 
 \href{OperatorsAA\#as_map}{as\_map},
 \href{OperatorsBC\#create_map}{create\_map},
@@ -19171,13 +17425,13 @@ operators}\label{map-comparaison-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Material}\label{material-6}
+\subsection{Material}\label{material-4}
 
 \href{OperatorsIM\#material}{material},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Matrix-related operators}\label{matrix-related-operators-4}
+\subsection{Matrix-related operators}\label{matrix-related-operators-2}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
 \href{OperatorsAA\#.}{.}, \href{OperatorsAA\#*}{*},
@@ -19198,7 +17452,7 @@ operators}\label{map-comparaison-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{multicriteria operators}\label{multicriteria-operators-4}
+\subsection{multicriteria operators}\label{multicriteria-operators-2}
 
 \href{OperatorsDH\#electre_dm}{electre\_DM},
 \href{OperatorsDH\#evidence_theory_dm}{evidence\_theory\_DM},
@@ -19208,7 +17462,7 @@ operators}\label{map-comparaison-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Path-related operators}\label{path-related-operators-4}
+\subsection{Path-related operators}\label{path-related-operators-2}
 
 \href{OperatorsAA\#agent_from_geometry}{agent\_from\_geometry},
 \href{OperatorsAA\#all_pairs_shortest_path}{all\_pairs\_shortest\_path},
@@ -19222,7 +17476,7 @@ operators}\label{map-comparaison-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Points-related operators}\label{points-related-operators-4}
+\subsection{Points-related operators}\label{points-related-operators-2}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
 \href{OperatorsAA\#*}{*}, \href{OperatorsAA\#+}{+},
@@ -19244,7 +17498,7 @@ operators}\label{map-comparaison-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Random operators}\label{random-operators-4}
+\subsection{Random operators}\label{random-operators-2}
 
 \href{OperatorsBC\#binomial}{binomial}, \href{OperatorsDH\#flip}{flip},
 \href{OperatorsDH\#gauss}{gauss},
@@ -19260,7 +17514,7 @@ operators}\label{map-comparaison-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{ReverseOperators}\label{reverseoperators-4}
+\subsection{ReverseOperators}\label{reverseoperators-2}
 
 \href{OperatorsSZ\#savesimulation}{saveSimulation},
 \href{OperatorsSZ\#serialize}{serialize},
@@ -19270,7 +17524,7 @@ operators}\label{map-comparaison-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Shape}\label{shape-4}
+\subsection{Shape}\label{shape-2}
 
 \href{OperatorsAA\#arc}{arc}, \href{OperatorsBC\#box}{box},
 \href{OperatorsBC\#circle}{circle}, \href{OperatorsBC\#cone}{cone},
@@ -19293,7 +17547,7 @@ operators}\label{map-comparaison-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Spatial operators}\label{spatial-operators-4}
+\subsection{Spatial operators}\label{spatial-operators-2}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#*}{*},
 \href{OperatorsAA\#+}{+}, \href{OperatorsAA\#add_point}{add\_point},
@@ -19386,7 +17640,7 @@ operators}\label{map-comparaison-operators-4}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Spatial properties
-operators}\label{spatial-properties-operators-4}
+operators}\label{spatial-properties-operators-2}
 
 \href{OperatorsBC\#covers}{covers},
 \href{OperatorsBC\#crosses}{crosses},
@@ -19397,7 +17651,7 @@ operators}\label{spatial-properties-operators-4}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Spatial queries
-operators}\label{spatial-queries-operators-4}
+operators}\label{spatial-queries-operators-2}
 
 \href{OperatorsAA\#agent_closest_to}{agent\_closest\_to},
 \href{OperatorsAA\#agent_farthest_to}{agent\_farthest\_to},
@@ -19415,7 +17669,7 @@ operators}\label{spatial-queries-operators-4}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Spatial relations
-operators}\label{spatial-relations-operators-4}
+operators}\label{spatial-relations-operators-2}
 
 \href{OperatorsDH\#direction_between}{direction\_between},
 \href{OperatorsDH\#distance_between}{distance\_between},
@@ -19427,7 +17681,7 @@ operators}\label{spatial-relations-operators-4}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Spatial statistical
-operators}\label{spatial-statistical-operators-4}
+operators}\label{spatial-statistical-operators-2}
 
 \href{OperatorsDH\#hierarchical_clustering}{hierarchical\_clustering},
 \href{OperatorsSZ\#simple_clustering_by_distance}{simple\_clustering\_by\_distance},
@@ -19435,7 +17689,7 @@ operators}\label{spatial-statistical-operators-4}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Spatial transformations
-operators}\label{spatial-transformations-operators-4}
+operators}\label{spatial-transformations-operators-2}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#*}{*},
 \href{OperatorsAA\#+}{+}, \href{OperatorsAA\#as_4_grid}{as\_4\_grid},
@@ -19467,7 +17721,7 @@ operators}\label{spatial-transformations-operators-4}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Species-related
-operators}\label{species-related-operators-4}
+operators}\label{species-related-operators-2}
 
 \href{OperatorsIM\#index_of}{index\_of},
 \href{OperatorsIM\#last_index_of}{last\_index\_of},
@@ -19476,7 +17730,7 @@ operators}\label{species-related-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Statistical operators}\label{statistical-operators-4}
+\subsection{Statistical operators}\label{statistical-operators-2}
 
 \href{OperatorsBC\#build}{build}, \href{OperatorsBC\#corr}{corR},
 \href{OperatorsDH\#dbscan}{dbscan},
@@ -19507,7 +17761,7 @@ operators}\label{species-related-operators-4}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Strings-related
-operators}\label{strings-related-operators-4}
+operators}\label{strings-related-operators-2}
 
 \href{OperatorsAA\#+}{+}, \href{OperatorsAA\#\%3C}{\textless{}},
 \href{OperatorsAA\#\%3C=}{\textless{}=},
@@ -19537,7 +17791,7 @@ operators}\label{strings-related-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{System}\label{system-4}
+\subsection{System}\label{system-2}
 
 \href{OperatorsAA\#.}{.}, \href{OperatorsBC\#command}{command},
 \href{OperatorsBC\#copy}{copy}, \href{OperatorsDH\#dead}{dead},
@@ -19549,17 +17803,17 @@ operators}\label{strings-related-operators-4}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Time-related operators}\label{time-related-operators-4}
+\subsection{Time-related operators}\label{time-related-operators-2}
 
 \href{OperatorsDH\#date}{date}, \href{OperatorsSZ\#string}{string},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Types-related operators}\label{types-related-operators-4}
+\subsection{Types-related operators}\label{types-related-operators-2}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{User control operators}\label{user-control-operators-4}
+\subsection{User control operators}\label{user-control-operators-2}
 
 \href{OperatorsSZ\#user_input}{user\_input},
 
@@ -22939,15 +21193,15 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\section{Table of Contents}\label{table-of-contents-5}
+\section{Table of Contents}\label{table-of-contents-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\section{Operators by categories}\label{operators-by-categories-5}
+\section{Operators by categories}\label{operators-by-categories-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{3D}\label{d-5}
+\subsection{3D}\label{d-3}
 
 \href{OperatorsBC\#box}{box}, \href{OperatorsBC\#cone3d}{cone3D},
 \href{OperatorsBC\#cube}{cube}, \href{OperatorsBC\#cylinder}{cylinder},
@@ -22959,7 +21213,7 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Arithmetic operators}\label{arithmetic-operators-5}
+\subsection{Arithmetic operators}\label{arithmetic-operators-3}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
 {[}\textsuperscript{{]}(OperatorsAA\#}), \href{OperatorsAA\#*}{*},
@@ -22982,7 +21236,7 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{BDI}\label{bdi-5}
+\subsection{BDI}\label{bdi-3}
 
 \href{OperatorsAA\#and}{and}, \href{OperatorsDH\#eval_when}{eval\_when},
 \href{OperatorsDH\#get_about}{get\_about},
@@ -23063,7 +21317,7 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Casting operators}\label{casting-operators-5}
+\subsection{Casting operators}\label{casting-operators-3}
 
 \href{OperatorsAA\#as}{as}, \href{OperatorsAA\#as_int}{as\_int},
 \href{OperatorsAA\#as_matrix}{as\_matrix},
@@ -23077,7 +21331,7 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Color-related operators}\label{color-related-operators-5}
+\subsection{Color-related operators}\label{color-related-operators-3}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
 \href{OperatorsAA\#*}{*}, \href{OperatorsAA\#+}{+},
@@ -23091,7 +21345,7 @@ perfectly have side effects on their operands (including the agent).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Comparison operators}\label{comparison-operators-5}
+\subsection{Comparison operators}\label{comparison-operators-3}
 
 \href{OperatorsAA\#!=}{!=}, \href{OperatorsAA\#\%3C}{\textless{}},
 \href{OperatorsAA\#\%3C=}{\textless{}=}, \href{OperatorsAA\#=}{=},
@@ -23102,7 +21356,7 @@ perfectly have side effects on their operands (including the agent).
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Containers-related
-operators}\label{containers-related-operators-5}
+operators}\label{containers-related-operators-3}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#::}{::},
 \href{OperatorsAA\#+}{+}, \href{OperatorsAA\#accumulate}{accumulate},
@@ -23145,7 +21399,7 @@ operators}\label{containers-related-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Date-related operators}\label{date-related-operators-5}
+\subsection{Date-related operators}\label{date-related-operators-3}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#!=}{!=},
 \href{OperatorsAA\#+}{+}, \href{OperatorsAA\#\%3C}{\textless{}},
@@ -23176,11 +21430,11 @@ operators}\label{containers-related-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Dates}\label{dates-5}
+\subsection{Dates}\label{dates-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{DescriptiveStatistics}\label{descriptivestatistics-5}
+\subsection{DescriptiveStatistics}\label{descriptivestatistics-3}
 
 \href{OperatorsAA\#auto_correlation}{auto\_correlation},
 \href{OperatorsBC\#correlation}{correlation},
@@ -23196,7 +21450,7 @@ operators}\label{containers-related-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Displays}\label{displays-5}
+\subsection{Displays}\label{displays-3}
 
 \href{OperatorsDH\#horizontal}{horizontal},
 \href{OperatorsSZ\#stack}{stack},
@@ -23204,7 +21458,7 @@ operators}\label{containers-related-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Distributions}\label{distributions-5}
+\subsection{Distributions}\label{distributions-3}
 
 \href{OperatorsBC\#binomial_coeff}{binomial\_coeff},
 \href{OperatorsBC\#binomial_complemented}{binomial\_complemented},
@@ -23223,27 +21477,27 @@ operators}\label{containers-related-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Driving operators}\label{driving-operators-5}
+\subsection{Driving operators}\label{driving-operators-3}
 
 \href{OperatorsAA\#as_driving_graph}{as\_driving\_graph},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{edge}\label{edge-6}
+\subsection{edge}\label{edge-4}
 
 \href{OperatorsDH\#edge_between}{edge\_between},
 \href{OperatorsSZ\#strahler}{strahler},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{EDP-related operators}\label{edp-related-operators-5}
+\subsection{EDP-related operators}\label{edp-related-operators-3}
 
 \href{OperatorsDH\#diff}{diff}, \href{OperatorsDH\#diff2}{diff2},
 \href{OperatorsIM\#internal_zero_order_equation}{internal\_zero\_order\_equation},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Files-related operators}\label{files-related-operators-5}
+\subsection{Files-related operators}\label{files-related-operators-3}
 
 \href{OperatorsBC\#crs}{crs},
 \href{OperatorsDH\#evaluate_sub_model}{evaluate\_sub\_model},
@@ -23258,20 +21512,20 @@ operators}\label{containers-related-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{FIPA-related operators}\label{fipa-related-operators-5}
+\subsection{FIPA-related operators}\label{fipa-related-operators-3}
 
 \href{OperatorsBC\#conversation}{conversation},
 \href{OperatorsIM\#message}{message},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{GamaMetaType}\label{gamametatype-5}
+\subsection{GamaMetaType}\label{gamametatype-3}
 
 \href{OperatorsSZ\#type_of}{type\_of},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{GammaFunction}\label{gammafunction-5}
+\subsection{GammaFunction}\label{gammafunction-3}
 
 \href{OperatorsBC\#beta}{beta}, \href{OperatorsDH\#gamma}{gamma},
 \href{OperatorsIM\#incomplete_beta}{incomplete\_beta},
@@ -23281,7 +21535,7 @@ operators}\label{containers-related-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Graphs-related operators}\label{graphs-related-operators-5}
+\subsection{Graphs-related operators}\label{graphs-related-operators-3}
 
 \href{OperatorsAA\#add_edge}{add\_edge},
 \href{OperatorsAA\#add_node}{add\_node},
@@ -23341,7 +21595,7 @@ operators}\label{containers-related-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Grid-related operators}\label{grid-related-operators-5}
+\subsection{Grid-related operators}\label{grid-related-operators-3}
 
 \href{OperatorsAA\#as_4_grid}{as\_4\_grid},
 \href{OperatorsAA\#as_grid}{as\_grid},
@@ -23351,7 +21605,7 @@ operators}\label{containers-related-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Iterator operators}\label{iterator-operators-5}
+\subsection{Iterator operators}\label{iterator-operators-3}
 
 \href{OperatorsAA\#accumulate}{accumulate},
 \href{OperatorsAA\#as_map}{as\_map},
@@ -23381,7 +21635,7 @@ operators}\label{containers-related-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{List-related operators}\label{list-related-operators-5}
+\subsection{List-related operators}\label{list-related-operators-3}
 
 \href{OperatorsBC\#copy_between}{copy\_between},
 \href{OperatorsIM\#index_of}{index\_of},
@@ -23389,7 +21643,7 @@ operators}\label{containers-related-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Logical operators}\label{logical-operators-5}
+\subsection{Logical operators}\label{logical-operators-3}
 
 \href{OperatorsAA\#:}{:}, \href{OperatorsAA\#!}{!},
 \href{OperatorsAA\#?}{?}, \href{OperatorsAA\#and}{and},
@@ -23398,7 +21652,7 @@ operators}\label{containers-related-operators-5}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Map comparaison
-operators}\label{map-comparaison-operators-5}
+operators}\label{map-comparaison-operators-3}
 
 \href{OperatorsDH\#fuzzy_kappa}{fuzzy\_kappa},
 \href{OperatorsDH\#fuzzy_kappa_sim}{fuzzy\_kappa\_sim},
@@ -23408,7 +21662,7 @@ operators}\label{map-comparaison-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Map-related operators}\label{map-related-operators-5}
+\subsection{Map-related operators}\label{map-related-operators-3}
 
 \href{OperatorsAA\#as_map}{as\_map},
 \href{OperatorsBC\#create_map}{create\_map},
@@ -23417,13 +21671,13 @@ operators}\label{map-comparaison-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Material}\label{material-7}
+\subsection{Material}\label{material-5}
 
 \href{OperatorsIM\#material}{material},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Matrix-related operators}\label{matrix-related-operators-5}
+\subsection{Matrix-related operators}\label{matrix-related-operators-3}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
 \href{OperatorsAA\#.}{.}, \href{OperatorsAA\#*}{*},
@@ -23444,7 +21698,7 @@ operators}\label{map-comparaison-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{multicriteria operators}\label{multicriteria-operators-5}
+\subsection{multicriteria operators}\label{multicriteria-operators-3}
 
 \href{OperatorsDH\#electre_dm}{electre\_DM},
 \href{OperatorsDH\#evidence_theory_dm}{evidence\_theory\_DM},
@@ -23454,7 +21708,7 @@ operators}\label{map-comparaison-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Path-related operators}\label{path-related-operators-5}
+\subsection{Path-related operators}\label{path-related-operators-3}
 
 \href{OperatorsAA\#agent_from_geometry}{agent\_from\_geometry},
 \href{OperatorsAA\#all_pairs_shortest_path}{all\_pairs\_shortest\_path},
@@ -23468,7 +21722,7 @@ operators}\label{map-comparaison-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Points-related operators}\label{points-related-operators-5}
+\subsection{Points-related operators}\label{points-related-operators-3}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#/}{/},
 \href{OperatorsAA\#*}{*}, \href{OperatorsAA\#+}{+},
@@ -23490,7 +21744,7 @@ operators}\label{map-comparaison-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Random operators}\label{random-operators-5}
+\subsection{Random operators}\label{random-operators-3}
 
 \href{OperatorsBC\#binomial}{binomial}, \href{OperatorsDH\#flip}{flip},
 \href{OperatorsDH\#gauss}{gauss},
@@ -23506,7 +21760,7 @@ operators}\label{map-comparaison-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{ReverseOperators}\label{reverseoperators-5}
+\subsection{ReverseOperators}\label{reverseoperators-3}
 
 \href{OperatorsSZ\#savesimulation}{saveSimulation},
 \href{OperatorsSZ\#serialize}{serialize},
@@ -23516,7 +21770,7 @@ operators}\label{map-comparaison-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Shape}\label{shape-5}
+\subsection{Shape}\label{shape-3}
 
 \href{OperatorsAA\#arc}{arc}, \href{OperatorsBC\#box}{box},
 \href{OperatorsBC\#circle}{circle}, \href{OperatorsBC\#cone}{cone},
@@ -23539,7 +21793,7 @@ operators}\label{map-comparaison-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Spatial operators}\label{spatial-operators-5}
+\subsection{Spatial operators}\label{spatial-operators-3}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#*}{*},
 \href{OperatorsAA\#+}{+}, \href{OperatorsAA\#add_point}{add\_point},
@@ -23632,7 +21886,7 @@ operators}\label{map-comparaison-operators-5}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Spatial properties
-operators}\label{spatial-properties-operators-5}
+operators}\label{spatial-properties-operators-3}
 
 \href{OperatorsBC\#covers}{covers},
 \href{OperatorsBC\#crosses}{crosses},
@@ -23643,7 +21897,7 @@ operators}\label{spatial-properties-operators-5}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Spatial queries
-operators}\label{spatial-queries-operators-5}
+operators}\label{spatial-queries-operators-3}
 
 \href{OperatorsAA\#agent_closest_to}{agent\_closest\_to},
 \href{OperatorsAA\#agent_farthest_to}{agent\_farthest\_to},
@@ -23661,7 +21915,7 @@ operators}\label{spatial-queries-operators-5}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Spatial relations
-operators}\label{spatial-relations-operators-5}
+operators}\label{spatial-relations-operators-3}
 
 \href{OperatorsDH\#direction_between}{direction\_between},
 \href{OperatorsDH\#distance_between}{distance\_between},
@@ -23673,7 +21927,7 @@ operators}\label{spatial-relations-operators-5}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Spatial statistical
-operators}\label{spatial-statistical-operators-5}
+operators}\label{spatial-statistical-operators-3}
 
 \href{OperatorsDH\#hierarchical_clustering}{hierarchical\_clustering},
 \href{OperatorsSZ\#simple_clustering_by_distance}{simple\_clustering\_by\_distance},
@@ -23681,7 +21935,7 @@ operators}\label{spatial-statistical-operators-5}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Spatial transformations
-operators}\label{spatial-transformations-operators-5}
+operators}\label{spatial-transformations-operators-3}
 
 \href{OperatorsAA\#-}{-}, \href{OperatorsAA\#*}{*},
 \href{OperatorsAA\#+}{+}, \href{OperatorsAA\#as_4_grid}{as\_4\_grid},
@@ -23713,7 +21967,7 @@ operators}\label{spatial-transformations-operators-5}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Species-related
-operators}\label{species-related-operators-5}
+operators}\label{species-related-operators-3}
 
 \href{OperatorsIM\#index_of}{index\_of},
 \href{OperatorsIM\#last_index_of}{last\_index\_of},
@@ -23722,7 +21976,7 @@ operators}\label{species-related-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Statistical operators}\label{statistical-operators-5}
+\subsection{Statistical operators}\label{statistical-operators-3}
 
 \href{OperatorsBC\#build}{build}, \href{OperatorsBC\#corr}{corR},
 \href{OperatorsDH\#dbscan}{dbscan},
@@ -23753,7 +22007,7 @@ operators}\label{species-related-operators-5}
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Strings-related
-operators}\label{strings-related-operators-5}
+operators}\label{strings-related-operators-3}
 
 \href{OperatorsAA\#+}{+}, \href{OperatorsAA\#\%3C}{\textless{}},
 \href{OperatorsAA\#\%3C=}{\textless{}=},
@@ -23783,7 +22037,7 @@ operators}\label{strings-related-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{System}\label{system-5}
+\subsection{System}\label{system-3}
 
 \href{OperatorsAA\#.}{.}, \href{OperatorsBC\#command}{command},
 \href{OperatorsBC\#copy}{copy}, \href{OperatorsDH\#dead}{dead},
@@ -23795,17 +22049,17 @@ operators}\label{strings-related-operators-5}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Time-related operators}\label{time-related-operators-5}
+\subsection{Time-related operators}\label{time-related-operators-3}
 
 \href{OperatorsDH\#date}{date}, \href{OperatorsSZ\#string}{string},
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{Types-related operators}\label{types-related-operators-5}
+\subsection{Types-related operators}\label{types-related-operators-3}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsection{User control operators}\label{user-control-operators-5}
+\subsection{User control operators}\label{user-control-operators-3}
 
 \href{OperatorsSZ\#user_input}{user\_input},
 
