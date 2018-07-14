@@ -120,11 +120,12 @@ Due to changes in the libraries used by GAMA 1.7 and 1.8, this version
 now \textbf{requires JDK/JVM 1.8} to run. Please note that GAMA
 \textbf{has not been tested with JDK 1.9 and 1.10}.
 
-\chapter{Changes between 1.6.1 and 1.7/1.8 that can influence the
+\section{Changes between 1.6.1 and 1.7/1.8 that can influence the
 dynamics of
 models}\label{changes-between-1.6.1-and-1.71.8-that-can-influence-the-dynamics-of-models}
 
 \begin{itemize}
+\tightlist
 \item
   Initialization order between the initialization of variables and the
   execution of the \texttt{init} block in grids init -\textgreater{}
@@ -184,14 +185,13 @@ models}\label{changes-between-1.6.1-and-1.71.8-that-can-influence-the-dynamics-o
   dont begin at an hypothetical ``zero'' date, but at the epoch date
   defined by ISO 8601 (1970/1/1). It should not change models that dont
   rely on dates, except that:
-\item ~
-  \chapter{year (and its nicknames \#y, \#years) and \#month (and its
+\item
+  the \#year (and its nicknames \#y, \#years) and \#month (and its
   nickname \#month) do not longer have a default value (of resp. 30 days
   and 360 days). Instead, they are always evaluated against the
   current\_date of the model. If no starting\_date is defined, the
   values of \#month and \#year will then depend on the sequence of
-  months and year since epoch
-  day.}\label{year-and-its-nicknames-y-years-and-month-and-its-nickname-month-do-not-longer-have-a-default-value-of-resp.-30-days-and-360-days.-instead-they-are-always-evaluated-against-the-current_date-of-the-model.-if-no-starting_date-is-defined-the-values-of-month-and-year-will-then-depend-on-the-sequence-of-months-and-year-since-epoch-day.}
+  months and year since epoch day.
 \item
   \texttt{as\_time}, \texttt{as\_system\_time}, \texttt{as\_date} and
   \texttt{as\_system\_date} have been removed
