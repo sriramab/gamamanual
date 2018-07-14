@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 header-includes:
   - \usepackage{tikz}
   - \usetikzlibrary{shapes.geometric, arrows}}
-cover-image: cover.png
+cover-image: gamacover.png
 output: 
   bookdown::gitbook:
     lib_dir: "book_assets"
