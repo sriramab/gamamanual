@@ -1,0 +1,28 @@
+---
+title: "GAMA Manual"
+author: "Srirama Bhamidipati"
+date: "`r Sys.Date()`"
+header-includes:
+  - \usepackage{tikz}
+  - \usetikzlibrary{shapes.geometric, arrows}}
+cover-image: cover.png
+output: 
+  bookdown::gitbook:
+    lib_dir: "book_assets"
+    css: style.css
+    config:
+      sharing: null
+      toc:
+        collapse: section
+        scroll_highlight: true
+    download: ["book.pdf", "book.epub", "book.mobi"]
+site: bookdown::bookdown_site
+documentclass: book
+description: "Document describing the GAMA operators and their functions."
+---
+
+```{r fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), }
+knitr::include_graphics('cover.png', dpi = NA)
+```
+
+# Background {-}

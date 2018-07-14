@@ -1,0 +1,30 @@
+#foo {
+  font-weight: bold;
+  color: red;
+}
+
+.care{
+  color:red;
+}
+
+#bq_warn{
+  border-left: 10px solid #aaa;
+  border-left-color: orange;
+  padding: 1.5em 30px;
+  margin-bottom: 30px ;
+}
+
+
+#bq_tip{
+  border-left: 10px solid #aaa;
+  border-left-color: #98ff98 ;
+  padding: 1.5em 30px;
+  margin-bottom: 30px ;
+}
+
+#bq_error{
+  border-left: 10px solid #aaa;
+  border-left-color: red ;
+  padding: 1.5em 30px;
+  margin-bottom: 30px ;
+}

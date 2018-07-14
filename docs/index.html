@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>GAMA Manual</title>
+  <meta name="description" content="Document describing the GAMA operators and their functions.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="GAMA Manual" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="cover.png" />
+  <meta property="og:description" content="Document describing the GAMA operators and their functions." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="GAMA Manual" />
+  
+  <meta name="twitter:description" content="Document describing the GAMA operators and their functions." />
+  <meta name="twitter:image" content="cover.png" />
+
+<meta name="author" content="Srirama Bhamidipati">
+
+
+<meta name="date" content="2018-07-14">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+<link rel="next" href="java-version.html">
+<script src="book_assets/jquery-2.2.3/jquery.min.js"></script>
+<link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">GAMA Manual</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="1" data-path="java-version.html"><a href="java-version.html"><i class="fa fa-check"></i><b>1</b> Java version</a></li>
+<li class="chapter" data-level="2" data-path="changes-between-1-6-1-and-1-71-8-that-can-influence-the-dynamics-of-models.html"><a href="changes-between-1-6-1-and-1-71-8-that-can-influence-the-dynamics-of-models.html"><i class="fa fa-check"></i><b>2</b> Changes between 1.6.1 and 1.7/1.8 that can influence the dynamics of models</a></li>
+<li class="chapter" data-level="3" data-path="enhancements-in-1-71-8.html"><a href="enhancements-in-1-71-8.html"><i class="fa fa-check"></i><b>3</b> Enhancements in 1.7/1.8</a><ul>
+<li class="chapter" data-level="3.1" data-path="enhancements-in-1-71-8.html"><a href="enhancements-in-1-71-8.html#simulations"><i class="fa fa-check"></i><b>3.1</b> Simulations</a></li>
+<li class="chapter" data-level="3.2" data-path="enhancements-in-1-71-8.html"><a href="enhancements-in-1-71-8.html#language"><i class="fa fa-check"></i><b>3.2</b> Language</a></li>
+<li class="chapter" data-level="3.3" data-path="enhancements-in-1-71-8.html"><a href="enhancements-in-1-71-8.html#data-importation"><i class="fa fa-check"></i><b>3.3</b> Data importation</a></li>
+<li class="chapter" data-level="3.4" data-path="enhancements-in-1-71-8.html"><a href="enhancements-in-1-71-8.html#editor"><i class="fa fa-check"></i><b>3.4</b> Editor</a></li>
+<li class="chapter" data-level="3.5" data-path="enhancements-in-1-71-8.html"><a href="enhancements-in-1-71-8.html#headless"><i class="fa fa-check"></i><b>3.5</b> Headless</a></li>
+<li class="chapter" data-level="3.6" data-path="enhancements-in-1-71-8.html"><a href="enhancements-in-1-71-8.html#models-library"><i class="fa fa-check"></i><b>3.6</b> Models library:</a></li>
+<li class="chapter" data-level="3.7" data-path="enhancements-in-1-71-8.html"><a href="enhancements-in-1-71-8.html#preferences"><i class="fa fa-check"></i><b>3.7</b> Preferences</a></li>
+<li class="chapter" data-level="3.8" data-path="enhancements-in-1-71-8.html"><a href="enhancements-in-1-71-8.html#simulation-displays"><i class="fa fa-check"></i><b>3.8</b> Simulation displays</a></li>
+<li class="chapter" data-level="3.9" data-path="enhancements-in-1-71-8.html"><a href="enhancements-in-1-71-8.html#error-view"><i class="fa fa-check"></i><b>3.9</b> Error view</a></li>
+<li class="chapter" data-level="3.10" data-path="enhancements-in-1-71-8.html"><a href="enhancements-in-1-71-8.html#validation"><i class="fa fa-check"></i><b>3.10</b> Validation</a></li>
+<li class="chapter" data-level="3.11" data-path="enhancements-in-1-71-8.html"><a href="enhancements-in-1-71-8.html#console"><i class="fa fa-check"></i><b>3.11</b> Console</a></li>
+<li class="chapter" data-level="3.12" data-path="enhancements-in-1-71-8.html"><a href="enhancements-in-1-71-8.html#monitor-view"><i class="fa fa-check"></i><b>3.12</b> Monitor view</a></li>
+<li class="chapter" data-level="3.13" data-path="enhancements-in-1-71-8.html"><a href="enhancements-in-1-71-8.html#gama-wide-online-help-on-the-language"><i class="fa fa-check"></i><b>3.13</b> GAMA-wide online help on the language</a></li>
+<li class="chapter" data-level="3.14" data-path="enhancements-in-1-71-8.html"><a href="enhancements-in-1-71-8.html#serialization"><i class="fa fa-check"></i><b>3.14</b> Serialization</a></li>
+<li class="chapter" data-level="3.15" data-path="enhancements-in-1-71-8.html"><a href="enhancements-in-1-71-8.html#allow-tcp-udp-and-mqqt-communications-between-agents-in-different-simulations-to-come"><i class="fa fa-check"></i><b>3.15</b> Allow TCP, UDP and MQQT communications between agents in different simulations (to come)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html"><i class="fa fa-check"></i><b>4</b> Operators (A to A)</a><ul>
+<li class="chapter" data-level="4.1" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#definition"><i class="fa fa-check"></i><b>4.1</b> Definition</a></li>
+<li class="chapter" data-level="4.2" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#section"><i class="fa fa-check"></i><b>4.2</b> <br/></a></li>
+<li class="chapter" data-level="4.3" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#priority-between-operators"><i class="fa fa-check"></i><b>4.3</b> Priority between operators</a></li>
+<li class="chapter" data-level="4.4" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#using-actions-as-operators"><i class="fa fa-check"></i><b>4.4</b> Using actions as operators</a></li>
+<li class="chapter" data-level="4.5" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#table-of-contents"><i class="fa fa-check"></i><b>4.5</b> Table of Contents</a></li>
+<li class="chapter" data-level="4.6" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#operators-by-categories"><i class="fa fa-check"></i><b>4.6</b> Operators by categories</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#d"><i class="fa fa-check"></i><b>4.6.1</b> 3D</a></li>
+<li class="chapter" data-level="4.6.2" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#arithmetic-operators"><i class="fa fa-check"></i><b>4.6.2</b> Arithmetic operators</a></li>
+<li class="chapter" data-level="4.6.3" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#bdi"><i class="fa fa-check"></i><b>4.6.3</b> BDI</a></li>
+<li class="chapter" data-level="4.6.4" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#casting-operators"><i class="fa fa-check"></i><b>4.6.4</b> Casting operators</a></li>
+<li class="chapter" data-level="4.6.5" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#color-related-operators"><i class="fa fa-check"></i><b>4.6.5</b> Color-related operators</a></li>
+<li class="chapter" data-level="4.6.6" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#comparison-operators"><i class="fa fa-check"></i><b>4.6.6</b> Comparison operators</a></li>
+<li class="chapter" data-level="4.6.7" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#containers-related-operators"><i class="fa fa-check"></i><b>4.6.7</b> Containers-related operators</a></li>
+<li class="chapter" data-level="4.6.8" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#date-related-operators"><i class="fa fa-check"></i><b>4.6.8</b> Date-related operators</a></li>
+<li class="chapter" data-level="4.6.9" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#dates"><i class="fa fa-check"></i><b>4.6.9</b> Dates</a></li>
+<li class="chapter" data-level="4.6.10" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#descriptivestatistics"><i class="fa fa-check"></i><b>4.6.10</b> DescriptiveStatistics</a></li>
+<li class="chapter" data-level="4.6.11" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#displays"><i class="fa fa-check"></i><b>4.6.11</b> Displays</a></li>
+<li class="chapter" data-level="4.6.12" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#distributions"><i class="fa fa-check"></i><b>4.6.12</b> Distributions</a></li>
+<li class="chapter" data-level="4.6.13" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#driving-operators"><i class="fa fa-check"></i><b>4.6.13</b> Driving operators</a></li>
+<li class="chapter" data-level="4.6.14" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#edge"><i class="fa fa-check"></i><b>4.6.14</b> edge</a></li>
+<li class="chapter" data-level="4.6.15" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#edp-related-operators"><i class="fa fa-check"></i><b>4.6.15</b> EDP-related operators</a></li>
+<li class="chapter" data-level="4.6.16" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#files-related-operators"><i class="fa fa-check"></i><b>4.6.16</b> Files-related operators</a></li>
+<li class="chapter" data-level="4.6.17" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#fipa-related-operators"><i class="fa fa-check"></i><b>4.6.17</b> FIPA-related operators</a></li>
+<li class="chapter" data-level="4.6.18" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#gamametatype"><i class="fa fa-check"></i><b>4.6.18</b> GamaMetaType</a></li>
+<li class="chapter" data-level="4.6.19" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#gammafunction"><i class="fa fa-check"></i><b>4.6.19</b> GammaFunction</a></li>
+<li class="chapter" data-level="4.6.20" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#graphs-related-operators"><i class="fa fa-check"></i><b>4.6.20</b> Graphs-related operators</a></li>
+<li class="chapter" data-level="4.6.21" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#grid-related-operators"><i class="fa fa-check"></i><b>4.6.21</b> Grid-related operators</a></li>
+<li class="chapter" data-level="4.6.22" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#iterator-operators"><i class="fa fa-check"></i><b>4.6.22</b> Iterator operators</a></li>
+<li class="chapter" data-level="4.6.23" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#list-related-operators"><i class="fa fa-check"></i><b>4.6.23</b> List-related operators</a></li>
+<li class="chapter" data-level="4.6.24" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#logical-operators"><i class="fa fa-check"></i><b>4.6.24</b> Logical operators</a></li>
+<li class="chapter" data-level="4.6.25" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#map-comparaison-operators"><i class="fa fa-check"></i><b>4.6.25</b> Map comparaison operators</a></li>
+<li class="chapter" data-level="4.6.26" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#map-related-operators"><i class="fa fa-check"></i><b>4.6.26</b> Map-related operators</a></li>
+<li class="chapter" data-level="4.6.27" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#material"><i class="fa fa-check"></i><b>4.6.27</b> Material</a></li>
+<li class="chapter" data-level="4.6.28" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#matrix-related-operators"><i class="fa fa-check"></i><b>4.6.28</b> Matrix-related operators</a></li>
+<li class="chapter" data-level="4.6.29" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#multicriteria-operators"><i class="fa fa-check"></i><b>4.6.29</b> multicriteria operators</a></li>
+<li class="chapter" data-level="4.6.30" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#path-related-operators"><i class="fa fa-check"></i><b>4.6.30</b> Path-related operators</a></li>
+<li class="chapter" data-level="4.6.31" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#points-related-operators"><i class="fa fa-check"></i><b>4.6.31</b> Points-related operators</a></li>
+<li class="chapter" data-level="4.6.32" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#random-operators"><i class="fa fa-check"></i><b>4.6.32</b> Random operators</a></li>
+<li class="chapter" data-level="4.6.33" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#reverseoperators"><i class="fa fa-check"></i><b>4.6.33</b> ReverseOperators</a></li>
+<li class="chapter" data-level="4.6.34" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#shape"><i class="fa fa-check"></i><b>4.6.34</b> Shape</a></li>
+<li class="chapter" data-level="4.6.35" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#spatial-operators"><i class="fa fa-check"></i><b>4.6.35</b> Spatial operators</a></li>
+<li class="chapter" data-level="4.6.36" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#spatial-properties-operators"><i class="fa fa-check"></i><b>4.6.36</b> Spatial properties operators</a></li>
+<li class="chapter" data-level="4.6.37" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#spatial-queries-operators"><i class="fa fa-check"></i><b>4.6.37</b> Spatial queries operators</a></li>
+<li class="chapter" data-level="4.6.38" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#spatial-relations-operators"><i class="fa fa-check"></i><b>4.6.38</b> Spatial relations operators</a></li>
+<li class="chapter" data-level="4.6.39" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#spatial-statistical-operators"><i class="fa fa-check"></i><b>4.6.39</b> Spatial statistical operators</a></li>
+<li class="chapter" data-level="4.6.40" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#spatial-transformations-operators"><i class="fa fa-check"></i><b>4.6.40</b> Spatial transformations operators</a></li>
+<li class="chapter" data-level="4.6.41" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#species-related-operators"><i class="fa fa-check"></i><b>4.6.41</b> Species-related operators</a></li>
+<li class="chapter" data-level="4.6.42" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#statistical-operators"><i class="fa fa-check"></i><b>4.6.42</b> Statistical operators</a></li>
+<li class="chapter" data-level="4.6.43" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#strings-related-operators"><i class="fa fa-check"></i><b>4.6.43</b> Strings-related operators</a></li>
+<li class="chapter" data-level="4.6.44" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#system"><i class="fa fa-check"></i><b>4.6.44</b> System</a></li>
+<li class="chapter" data-level="4.6.45" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#time-related-operators"><i class="fa fa-check"></i><b>4.6.45</b> Time-related operators</a></li>
+<li class="chapter" data-level="4.6.46" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#types-related-operators"><i class="fa fa-check"></i><b>4.6.46</b> Types-related operators</a></li>
+<li class="chapter" data-level="4.6.47" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#user-control-operators"><i class="fa fa-check"></i><b>4.6.47</b> User control operators</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#operators"><i class="fa fa-check"></i><b>4.7</b> Operators</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#section-1"><i class="fa fa-check"></i><b>4.7.1</b> <code>-</code></a></li>
+<li class="chapter" data-level="4.7.2" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#section-2"><i class="fa fa-check"></i><b>4.7.2</b> <code>:</code></a></li>
+<li class="chapter" data-level="4.7.3" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#section-3"><i class="fa fa-check"></i><b>4.7.3</b> <code>::</code></a></li>
+<li class="chapter" data-level="4.7.4" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#section-4"><i class="fa fa-check"></i><b>4.7.4</b> <code>!</code></a></li>
+<li class="chapter" data-level="4.7.5" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#section-5"><i class="fa fa-check"></i><b>4.7.5</b> <code>!=</code></a></li>
+<li class="chapter" data-level="4.7.6" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#section-6"><i class="fa fa-check"></i><b>4.7.6</b> <code>?</code></a></li>
+<li class="chapter" data-level="4.7.7" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#section-7"><i class="fa fa-check"></i><b>4.7.7</b> <code>/</code></a></li>
+<li class="chapter" data-level="4.7.8" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#section-8"><i class="fa fa-check"></i><b>4.7.8</b> <code>.</code></a></li>
+<li class="chapter" data-level="4.7.9" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#section-9"><i class="fa fa-check"></i><b>4.7.9</b> <code>^</code></a></li>
+<li class="chapter" data-level="4.7.10" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#section-10"><i class="fa fa-check"></i><b>4.7.10</b> <code>@</code></a></li>
+<li class="chapter" data-level="4.7.11" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#section-11"><i class="fa fa-check"></i><b>4.7.11</b> <code>*</code></a></li>
+<li class="chapter" data-level="4.7.12" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#section-12"><i class="fa fa-check"></i><b>4.7.12</b> <code>+</code></a></li>
+<li class="chapter" data-level="4.7.13" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#section-13"><i class="fa fa-check"></i><b>4.7.13</b> <code>&lt;</code></a></li>
+<li class="chapter" data-level="4.7.14" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#section-14"><i class="fa fa-check"></i><b>4.7.14</b> <code>&lt;=</code></a></li>
+<li class="chapter" data-level="4.7.15" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#section-15"><i class="fa fa-check"></i><b>4.7.15</b> <code>&lt;&gt;</code></a></li>
+<li class="chapter" data-level="4.7.16" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#section-16"><i class="fa fa-check"></i><b>4.7.16</b> <code>=</code></a></li>
+<li class="chapter" data-level="4.7.17" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#section-17"><i class="fa fa-check"></i><b>4.7.17</b> <code>&gt;</code></a></li>
+<li class="chapter" data-level="4.7.18" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#section-18"><i class="fa fa-check"></i><b>4.7.18</b> <code>&gt;=</code></a></li>
+<li class="chapter" data-level="4.7.19" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#abs"><i class="fa fa-check"></i><b>4.7.19</b> <code>abs</code></a></li>
+<li class="chapter" data-level="4.7.20" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#accumulate"><i class="fa fa-check"></i><b>4.7.20</b> <code>accumulate</code></a></li>
+<li class="chapter" data-level="4.7.21" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#acos"><i class="fa fa-check"></i><b>4.7.21</b> <code>acos</code></a></li>
+<li class="chapter" data-level="4.7.22" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#action"><i class="fa fa-check"></i><b>4.7.22</b> <code>action</code></a></li>
+<li class="chapter" data-level="4.7.23" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#add_days"><i class="fa fa-check"></i><b>4.7.23</b> <code>add_days</code></a></li>
+<li class="chapter" data-level="4.7.24" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#add_edge"><i class="fa fa-check"></i><b>4.7.24</b> <code>add_edge</code></a></li>
+<li class="chapter" data-level="4.7.25" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#add_hours"><i class="fa fa-check"></i><b>4.7.25</b> <code>add_hours</code></a></li>
+<li class="chapter" data-level="4.7.26" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#add_minutes"><i class="fa fa-check"></i><b>4.7.26</b> <code>add_minutes</code></a></li>
+<li class="chapter" data-level="4.7.27" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#add_months"><i class="fa fa-check"></i><b>4.7.27</b> <code>add_months</code></a></li>
+<li class="chapter" data-level="4.7.28" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#add_ms"><i class="fa fa-check"></i><b>4.7.28</b> <code>add_ms</code></a></li>
+<li class="chapter" data-level="4.7.29" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#add_node"><i class="fa fa-check"></i><b>4.7.29</b> <code>add_node</code></a></li>
+<li class="chapter" data-level="4.7.30" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#add_point"><i class="fa fa-check"></i><b>4.7.30</b> <code>add_point</code></a></li>
+<li class="chapter" data-level="4.7.31" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#add_seconds"><i class="fa fa-check"></i><b>4.7.31</b> <code>add_seconds</code></a></li>
+<li class="chapter" data-level="4.7.32" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#add_weeks"><i class="fa fa-check"></i><b>4.7.32</b> <code>add_weeks</code></a></li>
+<li class="chapter" data-level="4.7.33" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#add_years"><i class="fa fa-check"></i><b>4.7.33</b> <code>add_years</code></a></li>
+<li class="chapter" data-level="4.7.34" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#adjacency"><i class="fa fa-check"></i><b>4.7.34</b> <code>adjacency</code></a></li>
+<li class="chapter" data-level="4.7.35" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#after"><i class="fa fa-check"></i><b>4.7.35</b> <code>after</code></a></li>
+<li class="chapter" data-level="4.7.36" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#agent"><i class="fa fa-check"></i><b>4.7.36</b> <code>agent</code></a></li>
+<li class="chapter" data-level="4.7.37" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#agent_closest_to"><i class="fa fa-check"></i><b>4.7.37</b> <code>agent_closest_to</code></a></li>
+<li class="chapter" data-level="4.7.38" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#agent_farthest_to"><i class="fa fa-check"></i><b>4.7.38</b> <code>agent_farthest_to</code></a></li>
+<li class="chapter" data-level="4.7.39" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#agent_from_geometry"><i class="fa fa-check"></i><b>4.7.39</b> <code>agent_from_geometry</code></a></li>
+<li class="chapter" data-level="4.7.40" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#agents_at_distance"><i class="fa fa-check"></i><b>4.7.40</b> <code>agents_at_distance</code></a></li>
+<li class="chapter" data-level="4.7.41" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#agents_inside"><i class="fa fa-check"></i><b>4.7.41</b> <code>agents_inside</code></a></li>
+<li class="chapter" data-level="4.7.42" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#agents_overlapping"><i class="fa fa-check"></i><b>4.7.42</b> <code>agents_overlapping</code></a></li>
+<li class="chapter" data-level="4.7.43" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#all_pairs_shortest_path"><i class="fa fa-check"></i><b>4.7.43</b> <code>all_pairs_shortest_path</code></a></li>
+<li class="chapter" data-level="4.7.44" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#alpha_index"><i class="fa fa-check"></i><b>4.7.44</b> <code>alpha_index</code></a></li>
+<li class="chapter" data-level="4.7.45" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#among"><i class="fa fa-check"></i><b>4.7.45</b> <code>among</code></a></li>
+<li class="chapter" data-level="4.7.46" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#and"><i class="fa fa-check"></i><b>4.7.46</b> <code>and</code></a></li>
+<li class="chapter" data-level="4.7.47" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#and-1"><i class="fa fa-check"></i><b>4.7.47</b> <code>and</code></a></li>
+<li class="chapter" data-level="4.7.48" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#angle_between"><i class="fa fa-check"></i><b>4.7.48</b> <code>angle_between</code></a></li>
+<li class="chapter" data-level="4.7.49" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#any"><i class="fa fa-check"></i><b>4.7.49</b> <code>any</code></a></li>
+<li class="chapter" data-level="4.7.50" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#any_location_in"><i class="fa fa-check"></i><b>4.7.50</b> <code>any_location_in</code></a></li>
+<li class="chapter" data-level="4.7.51" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#any_point_in"><i class="fa fa-check"></i><b>4.7.51</b> <code>any_point_in</code></a></li>
+<li class="chapter" data-level="4.7.52" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#append_horizontally"><i class="fa fa-check"></i><b>4.7.52</b> <code>append_horizontally</code></a></li>
+<li class="chapter" data-level="4.7.53" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#append_vertically"><i class="fa fa-check"></i><b>4.7.53</b> <code>append_vertically</code></a></li>
+<li class="chapter" data-level="4.7.54" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#arc"><i class="fa fa-check"></i><b>4.7.54</b> <code>arc</code></a></li>
+<li class="chapter" data-level="4.7.55" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#around"><i class="fa fa-check"></i><b>4.7.55</b> <code>around</code></a></li>
+<li class="chapter" data-level="4.7.56" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#as"><i class="fa fa-check"></i><b>4.7.56</b> <code>as</code></a></li>
+<li class="chapter" data-level="4.7.57" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#as_4_grid"><i class="fa fa-check"></i><b>4.7.57</b> <code>as_4_grid</code></a></li>
+<li class="chapter" data-level="4.7.58" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#as_distance_graph"><i class="fa fa-check"></i><b>4.7.58</b> <code>as_distance_graph</code></a></li>
+<li class="chapter" data-level="4.7.59" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#as_driving_graph"><i class="fa fa-check"></i><b>4.7.59</b> <code>as_driving_graph</code></a></li>
+<li class="chapter" data-level="4.7.60" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#as_edge_graph"><i class="fa fa-check"></i><b>4.7.60</b> <code>as_edge_graph</code></a></li>
+<li class="chapter" data-level="4.7.61" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#as_grid"><i class="fa fa-check"></i><b>4.7.61</b> <code>as_grid</code></a></li>
+<li class="chapter" data-level="4.7.62" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#as_hexagonal_grid"><i class="fa fa-check"></i><b>4.7.62</b> <code>as_hexagonal_grid</code></a></li>
+<li class="chapter" data-level="4.7.63" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#as_int"><i class="fa fa-check"></i><b>4.7.63</b> <code>as_int</code></a></li>
+<li class="chapter" data-level="4.7.64" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#as_intersection_graph"><i class="fa fa-check"></i><b>4.7.64</b> <code>as_intersection_graph</code></a></li>
+<li class="chapter" data-level="4.7.65" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#as_map"><i class="fa fa-check"></i><b>4.7.65</b> <code>as_map</code></a></li>
+<li class="chapter" data-level="4.7.66" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#as_matrix"><i class="fa fa-check"></i><b>4.7.66</b> <code>as_matrix</code></a></li>
+<li class="chapter" data-level="4.7.67" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#as_path"><i class="fa fa-check"></i><b>4.7.67</b> <code>as_path</code></a></li>
+<li class="chapter" data-level="4.7.68" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#asin"><i class="fa fa-check"></i><b>4.7.68</b> <code>asin</code></a></li>
+<li class="chapter" data-level="4.7.69" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#at"><i class="fa fa-check"></i><b>4.7.69</b> <code>at</code></a></li>
+<li class="chapter" data-level="4.7.70" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#at_distance"><i class="fa fa-check"></i><b>4.7.70</b> <code>at_distance</code></a></li>
+<li class="chapter" data-level="4.7.71" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#at_location"><i class="fa fa-check"></i><b>4.7.71</b> <code>at_location</code></a></li>
+<li class="chapter" data-level="4.7.72" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#atan"><i class="fa fa-check"></i><b>4.7.72</b> <code>atan</code></a></li>
+<li class="chapter" data-level="4.7.73" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#atan2"><i class="fa fa-check"></i><b>4.7.73</b> <code>atan2</code></a></li>
+<li class="chapter" data-level="4.7.74" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#attributes"><i class="fa fa-check"></i><b>4.7.74</b> <code>attributes</code></a></li>
+<li class="chapter" data-level="4.7.75" data-path="operators-a-to-a.html"><a href="operators-a-to-a.html#auto_correlation"><i class="fa fa-check"></i><b>4.7.75</b> <code>auto_correlation</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html"><i class="fa fa-check"></i><b>5</b> Operators (B to C)</a><ul>
+<li class="chapter" data-level="5.1" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#definition-1"><i class="fa fa-check"></i><b>5.1</b> Definition</a></li>
+<li class="chapter" data-level="5.2" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#section-19"><i class="fa fa-check"></i><b>5.2</b> <br/></a></li>
+<li class="chapter" data-level="5.3" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#priority-between-operators-1"><i class="fa fa-check"></i><b>5.3</b> Priority between operators</a></li>
+<li class="chapter" data-level="5.4" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#using-actions-as-operators-1"><i class="fa fa-check"></i><b>5.4</b> Using actions as operators</a></li>
+<li class="chapter" data-level="5.5" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#table-of-contents-1"><i class="fa fa-check"></i><b>5.5</b> Table of Contents</a></li>
+<li class="chapter" data-level="5.6" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#operators-by-categories-1"><i class="fa fa-check"></i><b>5.6</b> Operators by categories</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#d-1"><i class="fa fa-check"></i><b>5.6.1</b> 3D</a></li>
+<li class="chapter" data-level="5.6.2" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#arithmetic-operators-1"><i class="fa fa-check"></i><b>5.6.2</b> Arithmetic operators</a></li>
+<li class="chapter" data-level="5.6.3" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#bdi-1"><i class="fa fa-check"></i><b>5.6.3</b> BDI</a></li>
+<li class="chapter" data-level="5.6.4" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#casting-operators-1"><i class="fa fa-check"></i><b>5.6.4</b> Casting operators</a></li>
+<li class="chapter" data-level="5.6.5" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#color-related-operators-1"><i class="fa fa-check"></i><b>5.6.5</b> Color-related operators</a></li>
+<li class="chapter" data-level="5.6.6" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#comparison-operators-1"><i class="fa fa-check"></i><b>5.6.6</b> Comparison operators</a></li>
+<li class="chapter" data-level="5.6.7" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#containers-related-operators-1"><i class="fa fa-check"></i><b>5.6.7</b> Containers-related operators</a></li>
+<li class="chapter" data-level="5.6.8" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#date-related-operators-1"><i class="fa fa-check"></i><b>5.6.8</b> Date-related operators</a></li>
+<li class="chapter" data-level="5.6.9" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#dates-1"><i class="fa fa-check"></i><b>5.6.9</b> Dates</a></li>
+<li class="chapter" data-level="5.6.10" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#descriptivestatistics-1"><i class="fa fa-check"></i><b>5.6.10</b> DescriptiveStatistics</a></li>
+<li class="chapter" data-level="5.6.11" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#displays-1"><i class="fa fa-check"></i><b>5.6.11</b> Displays</a></li>
+<li class="chapter" data-level="5.6.12" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#distributions-1"><i class="fa fa-check"></i><b>5.6.12</b> Distributions</a></li>
+<li class="chapter" data-level="5.6.13" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#driving-operators-1"><i class="fa fa-check"></i><b>5.6.13</b> Driving operators</a></li>
+<li class="chapter" data-level="5.6.14" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#edge-1"><i class="fa fa-check"></i><b>5.6.14</b> edge</a></li>
+<li class="chapter" data-level="5.6.15" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#edp-related-operators-1"><i class="fa fa-check"></i><b>5.6.15</b> EDP-related operators</a></li>
+<li class="chapter" data-level="5.6.16" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#files-related-operators-1"><i class="fa fa-check"></i><b>5.6.16</b> Files-related operators</a></li>
+<li class="chapter" data-level="5.6.17" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#fipa-related-operators-1"><i class="fa fa-check"></i><b>5.6.17</b> FIPA-related operators</a></li>
+<li class="chapter" data-level="5.6.18" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#gamametatype-1"><i class="fa fa-check"></i><b>5.6.18</b> GamaMetaType</a></li>
+<li class="chapter" data-level="5.6.19" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#gammafunction-1"><i class="fa fa-check"></i><b>5.6.19</b> GammaFunction</a></li>
+<li class="chapter" data-level="5.6.20" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#graphs-related-operators-1"><i class="fa fa-check"></i><b>5.6.20</b> Graphs-related operators</a></li>
+<li class="chapter" data-level="5.6.21" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#grid-related-operators-1"><i class="fa fa-check"></i><b>5.6.21</b> Grid-related operators</a></li>
+<li class="chapter" data-level="5.6.22" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#iterator-operators-1"><i class="fa fa-check"></i><b>5.6.22</b> Iterator operators</a></li>
+<li class="chapter" data-level="5.6.23" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#list-related-operators-1"><i class="fa fa-check"></i><b>5.6.23</b> List-related operators</a></li>
+<li class="chapter" data-level="5.6.24" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#logical-operators-1"><i class="fa fa-check"></i><b>5.6.24</b> Logical operators</a></li>
+<li class="chapter" data-level="5.6.25" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#map-comparaison-operators-1"><i class="fa fa-check"></i><b>5.6.25</b> Map comparaison operators</a></li>
+<li class="chapter" data-level="5.6.26" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#map-related-operators-1"><i class="fa fa-check"></i><b>5.6.26</b> Map-related operators</a></li>
+<li class="chapter" data-level="5.6.27" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#material-1"><i class="fa fa-check"></i><b>5.6.27</b> Material</a></li>
+<li class="chapter" data-level="5.6.28" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#matrix-related-operators-1"><i class="fa fa-check"></i><b>5.6.28</b> Matrix-related operators</a></li>
+<li class="chapter" data-level="5.6.29" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#multicriteria-operators-1"><i class="fa fa-check"></i><b>5.6.29</b> multicriteria operators</a></li>
+<li class="chapter" data-level="5.6.30" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#path-related-operators-1"><i class="fa fa-check"></i><b>5.6.30</b> Path-related operators</a></li>
+<li class="chapter" data-level="5.6.31" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#points-related-operators-1"><i class="fa fa-check"></i><b>5.6.31</b> Points-related operators</a></li>
+<li class="chapter" data-level="5.6.32" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#random-operators-1"><i class="fa fa-check"></i><b>5.6.32</b> Random operators</a></li>
+<li class="chapter" data-level="5.6.33" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#reverseoperators-1"><i class="fa fa-check"></i><b>5.6.33</b> ReverseOperators</a></li>
+<li class="chapter" data-level="5.6.34" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#shape-1"><i class="fa fa-check"></i><b>5.6.34</b> Shape</a></li>
+<li class="chapter" data-level="5.6.35" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#spatial-operators-1"><i class="fa fa-check"></i><b>5.6.35</b> Spatial operators</a></li>
+<li class="chapter" data-level="5.6.36" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#spatial-properties-operators-1"><i class="fa fa-check"></i><b>5.6.36</b> Spatial properties operators</a></li>
+<li class="chapter" data-level="5.6.37" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#spatial-queries-operators-1"><i class="fa fa-check"></i><b>5.6.37</b> Spatial queries operators</a></li>
+<li class="chapter" data-level="5.6.38" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#spatial-relations-operators-1"><i class="fa fa-check"></i><b>5.6.38</b> Spatial relations operators</a></li>
+<li class="chapter" data-level="5.6.39" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#spatial-statistical-operators-1"><i class="fa fa-check"></i><b>5.6.39</b> Spatial statistical operators</a></li>
+<li class="chapter" data-level="5.6.40" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#spatial-transformations-operators-1"><i class="fa fa-check"></i><b>5.6.40</b> Spatial transformations operators</a></li>
+<li class="chapter" data-level="5.6.41" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#species-related-operators-1"><i class="fa fa-check"></i><b>5.6.41</b> Species-related operators</a></li>
+<li class="chapter" data-level="5.6.42" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#statistical-operators-1"><i class="fa fa-check"></i><b>5.6.42</b> Statistical operators</a></li>
+<li class="chapter" data-level="5.6.43" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#strings-related-operators-1"><i class="fa fa-check"></i><b>5.6.43</b> Strings-related operators</a></li>
+<li class="chapter" data-level="5.6.44" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#system-1"><i class="fa fa-check"></i><b>5.6.44</b> System</a></li>
+<li class="chapter" data-level="5.6.45" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#time-related-operators-1"><i class="fa fa-check"></i><b>5.6.45</b> Time-related operators</a></li>
+<li class="chapter" data-level="5.6.46" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#types-related-operators-1"><i class="fa fa-check"></i><b>5.6.46</b> Types-related operators</a></li>
+<li class="chapter" data-level="5.6.47" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#user-control-operators-1"><i class="fa fa-check"></i><b>5.6.47</b> User control operators</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#operators-1"><i class="fa fa-check"></i><b>5.7</b> Operators</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#bdiplan"><i class="fa fa-check"></i><b>5.7.1</b> <code>BDIPlan</code></a></li>
+<li class="chapter" data-level="5.7.2" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#before"><i class="fa fa-check"></i><b>5.7.2</b> <code>before</code></a></li>
+<li class="chapter" data-level="5.7.3" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#beta"><i class="fa fa-check"></i><b>5.7.3</b> <code>beta</code></a></li>
+<li class="chapter" data-level="5.7.4" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#beta_index"><i class="fa fa-check"></i><b>5.7.4</b> <code>beta_index</code></a></li>
+<li class="chapter" data-level="5.7.5" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#between"><i class="fa fa-check"></i><b>5.7.5</b> <code>between</code></a></li>
+<li class="chapter" data-level="5.7.6" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#betweenness_centrality"><i class="fa fa-check"></i><b>5.7.6</b> <code>betweenness_centrality</code></a></li>
+<li class="chapter" data-level="5.7.7" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#biggest_cliques_of"><i class="fa fa-check"></i><b>5.7.7</b> <code>biggest_cliques_of</code></a></li>
+<li class="chapter" data-level="5.7.8" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#binomial"><i class="fa fa-check"></i><b>5.7.8</b> <code>binomial</code></a></li>
+<li class="chapter" data-level="5.7.9" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#binomial_coeff"><i class="fa fa-check"></i><b>5.7.9</b> <code>binomial_coeff</code></a></li>
+<li class="chapter" data-level="5.7.10" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#binomial_complemented"><i class="fa fa-check"></i><b>5.7.10</b> <code>binomial_complemented</code></a></li>
+<li class="chapter" data-level="5.7.11" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#binomial_sum"><i class="fa fa-check"></i><b>5.7.11</b> <code>binomial_sum</code></a></li>
+<li class="chapter" data-level="5.7.12" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#blend"><i class="fa fa-check"></i><b>5.7.12</b> <code>blend</code></a></li>
+<li class="chapter" data-level="5.7.13" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#bool"><i class="fa fa-check"></i><b>5.7.13</b> <code>bool</code></a></li>
+<li class="chapter" data-level="5.7.14" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#box"><i class="fa fa-check"></i><b>5.7.14</b> <code>box</code></a></li>
+<li class="chapter" data-level="5.7.15" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#brewer_colors"><i class="fa fa-check"></i><b>5.7.15</b> <code>brewer_colors</code></a></li>
+<li class="chapter" data-level="5.7.16" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#brewer_palettes"><i class="fa fa-check"></i><b>5.7.16</b> <code>brewer_palettes</code></a></li>
+<li class="chapter" data-level="5.7.17" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#buffer"><i class="fa fa-check"></i><b>5.7.17</b> <code>buffer</code></a></li>
+<li class="chapter" data-level="5.7.18" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#build"><i class="fa fa-check"></i><b>5.7.18</b> <code>build</code></a></li>
+<li class="chapter" data-level="5.7.19" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#ceil"><i class="fa fa-check"></i><b>5.7.19</b> <code>ceil</code></a></li>
+<li class="chapter" data-level="5.7.20" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#centroid"><i class="fa fa-check"></i><b>5.7.20</b> <code>centroid</code></a></li>
+<li class="chapter" data-level="5.7.21" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#char"><i class="fa fa-check"></i><b>5.7.21</b> <code>char</code></a></li>
+<li class="chapter" data-level="5.7.22" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#chi_square"><i class="fa fa-check"></i><b>5.7.22</b> <code>chi_square</code></a></li>
+<li class="chapter" data-level="5.7.23" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#chi_square_complemented"><i class="fa fa-check"></i><b>5.7.23</b> <code>chi_square_complemented</code></a></li>
+<li class="chapter" data-level="5.7.24" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#circle"><i class="fa fa-check"></i><b>5.7.24</b> <code>circle</code></a></li>
+<li class="chapter" data-level="5.7.25" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#clean"><i class="fa fa-check"></i><b>5.7.25</b> <code>clean</code></a></li>
+<li class="chapter" data-level="5.7.26" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#clean_network"><i class="fa fa-check"></i><b>5.7.26</b> <code>clean_network</code></a></li>
+<li class="chapter" data-level="5.7.27" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#closest_points_with"><i class="fa fa-check"></i><b>5.7.27</b> <code>closest_points_with</code></a></li>
+<li class="chapter" data-level="5.7.28" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#closest_to"><i class="fa fa-check"></i><b>5.7.28</b> <code>closest_to</code></a></li>
+<li class="chapter" data-level="5.7.29" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#collect"><i class="fa fa-check"></i><b>5.7.29</b> <code>collect</code></a></li>
+<li class="chapter" data-level="5.7.30" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#column_at"><i class="fa fa-check"></i><b>5.7.30</b> <code>column_at</code></a></li>
+<li class="chapter" data-level="5.7.31" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#columns_list"><i class="fa fa-check"></i><b>5.7.31</b> <code>columns_list</code></a></li>
+<li class="chapter" data-level="5.7.32" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#command"><i class="fa fa-check"></i><b>5.7.32</b> <code>command</code></a></li>
+<li class="chapter" data-level="5.7.33" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#cone"><i class="fa fa-check"></i><b>5.7.33</b> <code>cone</code></a></li>
+<li class="chapter" data-level="5.7.34" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#cone3d"><i class="fa fa-check"></i><b>5.7.34</b> <code>cone3D</code></a></li>
+<li class="chapter" data-level="5.7.35" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#connected_components_of"><i class="fa fa-check"></i><b>5.7.35</b> <code>connected_components_of</code></a></li>
+<li class="chapter" data-level="5.7.36" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#connectivity_index"><i class="fa fa-check"></i><b>5.7.36</b> <code>connectivity_index</code></a></li>
+<li class="chapter" data-level="5.7.37" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#container"><i class="fa fa-check"></i><b>5.7.37</b> <code>container</code></a></li>
+<li class="chapter" data-level="5.7.38" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#contains"><i class="fa fa-check"></i><b>5.7.38</b> <code>contains</code></a></li>
+<li class="chapter" data-level="5.7.39" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#contains_all"><i class="fa fa-check"></i><b>5.7.39</b> <code>contains_all</code></a></li>
+<li class="chapter" data-level="5.7.40" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#contains_any"><i class="fa fa-check"></i><b>5.7.40</b> <code>contains_any</code></a></li>
+<li class="chapter" data-level="5.7.41" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#contains_edge"><i class="fa fa-check"></i><b>5.7.41</b> <code>contains_edge</code></a></li>
+<li class="chapter" data-level="5.7.42" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#contains_vertex"><i class="fa fa-check"></i><b>5.7.42</b> <code>contains_vertex</code></a></li>
+<li class="chapter" data-level="5.7.43" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#conversation"><i class="fa fa-check"></i><b>5.7.43</b> <code>conversation</code></a></li>
+<li class="chapter" data-level="5.7.44" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#convex_hull"><i class="fa fa-check"></i><b>5.7.44</b> <code>convex_hull</code></a></li>
+<li class="chapter" data-level="5.7.45" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#copy"><i class="fa fa-check"></i><b>5.7.45</b> <code>copy</code></a></li>
+<li class="chapter" data-level="5.7.46" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#copy_between"><i class="fa fa-check"></i><b>5.7.46</b> <code>copy_between</code></a></li>
+<li class="chapter" data-level="5.7.47" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#corr"><i class="fa fa-check"></i><b>5.7.47</b> <code>corR</code></a></li>
+<li class="chapter" data-level="5.7.48" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#correlation"><i class="fa fa-check"></i><b>5.7.48</b> <code>correlation</code></a></li>
+<li class="chapter" data-level="5.7.49" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#cos"><i class="fa fa-check"></i><b>5.7.49</b> <code>cos</code></a></li>
+<li class="chapter" data-level="5.7.50" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#cos_rad"><i class="fa fa-check"></i><b>5.7.50</b> <code>cos_rad</code></a></li>
+<li class="chapter" data-level="5.7.51" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#count"><i class="fa fa-check"></i><b>5.7.51</b> <code>count</code></a></li>
+<li class="chapter" data-level="5.7.52" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#covariance"><i class="fa fa-check"></i><b>5.7.52</b> <code>covariance</code></a></li>
+<li class="chapter" data-level="5.7.53" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#covers"><i class="fa fa-check"></i><b>5.7.53</b> <code>covers</code></a></li>
+<li class="chapter" data-level="5.7.54" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#create_map"><i class="fa fa-check"></i><b>5.7.54</b> <code>create_map</code></a></li>
+<li class="chapter" data-level="5.7.55" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#cross"><i class="fa fa-check"></i><b>5.7.55</b> <code>cross</code></a></li>
+<li class="chapter" data-level="5.7.56" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#crosses"><i class="fa fa-check"></i><b>5.7.56</b> <code>crosses</code></a></li>
+<li class="chapter" data-level="5.7.57" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#crs"><i class="fa fa-check"></i><b>5.7.57</b> <code>crs</code></a></li>
+<li class="chapter" data-level="5.7.58" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#crs_transform"><i class="fa fa-check"></i><b>5.7.58</b> <code>CRS_transform</code></a></li>
+<li class="chapter" data-level="5.7.59" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#csv_file"><i class="fa fa-check"></i><b>5.7.59</b> <code>csv_file</code></a></li>
+<li class="chapter" data-level="5.7.60" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#cube"><i class="fa fa-check"></i><b>5.7.60</b> <code>cube</code></a></li>
+<li class="chapter" data-level="5.7.61" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#curve"><i class="fa fa-check"></i><b>5.7.61</b> <code>curve</code></a></li>
+<li class="chapter" data-level="5.7.62" data-path="operators-b-to-c.html"><a href="operators-b-to-c.html#cylinder"><i class="fa fa-check"></i><b>5.7.62</b> <code>cylinder</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html"><i class="fa fa-check"></i><b>6</b> Operators (D to H)</a><ul>
+<li class="chapter" data-level="6.1" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#definition-2"><i class="fa fa-check"></i><b>6.1</b> Definition</a></li>
+<li class="chapter" data-level="6.2" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#section-20"><i class="fa fa-check"></i><b>6.2</b> <br/></a></li>
+<li class="chapter" data-level="6.3" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#priority-between-operators-2"><i class="fa fa-check"></i><b>6.3</b> Priority between operators</a></li>
+<li class="chapter" data-level="6.4" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#using-actions-as-operators-2"><i class="fa fa-check"></i><b>6.4</b> Using actions as operators</a></li>
+<li class="chapter" data-level="6.5" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#table-of-contents-2"><i class="fa fa-check"></i><b>6.5</b> Table of Contents</a></li>
+<li class="chapter" data-level="6.6" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#operators-by-categories-2"><i class="fa fa-check"></i><b>6.6</b> Operators by categories</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#d-2"><i class="fa fa-check"></i><b>6.6.1</b> 3D</a></li>
+<li class="chapter" data-level="6.6.2" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#arithmetic-operators-2"><i class="fa fa-check"></i><b>6.6.2</b> Arithmetic operators</a></li>
+<li class="chapter" data-level="6.6.3" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#bdi-2"><i class="fa fa-check"></i><b>6.6.3</b> BDI</a></li>
+<li class="chapter" data-level="6.6.4" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#casting-operators-2"><i class="fa fa-check"></i><b>6.6.4</b> Casting operators</a></li>
+<li class="chapter" data-level="6.6.5" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#color-related-operators-2"><i class="fa fa-check"></i><b>6.6.5</b> Color-related operators</a></li>
+<li class="chapter" data-level="6.6.6" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#comparison-operators-2"><i class="fa fa-check"></i><b>6.6.6</b> Comparison operators</a></li>
+<li class="chapter" data-level="6.6.7" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#containers-related-operators-2"><i class="fa fa-check"></i><b>6.6.7</b> Containers-related operators</a></li>
+<li class="chapter" data-level="6.6.8" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#date-related-operators-2"><i class="fa fa-check"></i><b>6.6.8</b> Date-related operators</a></li>
+<li class="chapter" data-level="6.6.9" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#dates-2"><i class="fa fa-check"></i><b>6.6.9</b> Dates</a></li>
+<li class="chapter" data-level="6.6.10" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#descriptivestatistics-2"><i class="fa fa-check"></i><b>6.6.10</b> DescriptiveStatistics</a></li>
+<li class="chapter" data-level="6.6.11" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#displays-2"><i class="fa fa-check"></i><b>6.6.11</b> Displays</a></li>
+<li class="chapter" data-level="6.6.12" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#distributions-2"><i class="fa fa-check"></i><b>6.6.12</b> Distributions</a></li>
+<li class="chapter" data-level="6.6.13" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#driving-operators-2"><i class="fa fa-check"></i><b>6.6.13</b> Driving operators</a></li>
+<li class="chapter" data-level="6.6.14" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#edge-2"><i class="fa fa-check"></i><b>6.6.14</b> edge</a></li>
+<li class="chapter" data-level="6.6.15" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#edp-related-operators-2"><i class="fa fa-check"></i><b>6.6.15</b> EDP-related operators</a></li>
+<li class="chapter" data-level="6.6.16" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#files-related-operators-2"><i class="fa fa-check"></i><b>6.6.16</b> Files-related operators</a></li>
+<li class="chapter" data-level="6.6.17" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#fipa-related-operators-2"><i class="fa fa-check"></i><b>6.6.17</b> FIPA-related operators</a></li>
+<li class="chapter" data-level="6.6.18" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#gamametatype-2"><i class="fa fa-check"></i><b>6.6.18</b> GamaMetaType</a></li>
+<li class="chapter" data-level="6.6.19" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#gammafunction-2"><i class="fa fa-check"></i><b>6.6.19</b> GammaFunction</a></li>
+<li class="chapter" data-level="6.6.20" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#graphs-related-operators-2"><i class="fa fa-check"></i><b>6.6.20</b> Graphs-related operators</a></li>
+<li class="chapter" data-level="6.6.21" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#grid-related-operators-2"><i class="fa fa-check"></i><b>6.6.21</b> Grid-related operators</a></li>
+<li class="chapter" data-level="6.6.22" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#iterator-operators-2"><i class="fa fa-check"></i><b>6.6.22</b> Iterator operators</a></li>
+<li class="chapter" data-level="6.6.23" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#list-related-operators-2"><i class="fa fa-check"></i><b>6.6.23</b> List-related operators</a></li>
+<li class="chapter" data-level="6.6.24" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#logical-operators-2"><i class="fa fa-check"></i><b>6.6.24</b> Logical operators</a></li>
+<li class="chapter" data-level="6.6.25" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#map-comparaison-operators-2"><i class="fa fa-check"></i><b>6.6.25</b> Map comparaison operators</a></li>
+<li class="chapter" data-level="6.6.26" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#map-related-operators-2"><i class="fa fa-check"></i><b>6.6.26</b> Map-related operators</a></li>
+<li class="chapter" data-level="6.6.27" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#material-2"><i class="fa fa-check"></i><b>6.6.27</b> Material</a></li>
+<li class="chapter" data-level="6.6.28" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#matrix-related-operators-2"><i class="fa fa-check"></i><b>6.6.28</b> Matrix-related operators</a></li>
+<li class="chapter" data-level="6.6.29" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#multicriteria-operators-2"><i class="fa fa-check"></i><b>6.6.29</b> multicriteria operators</a></li>
+<li class="chapter" data-level="6.6.30" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#path-related-operators-2"><i class="fa fa-check"></i><b>6.6.30</b> Path-related operators</a></li>
+<li class="chapter" data-level="6.6.31" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#points-related-operators-2"><i class="fa fa-check"></i><b>6.6.31</b> Points-related operators</a></li>
+<li class="chapter" data-level="6.6.32" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#random-operators-2"><i class="fa fa-check"></i><b>6.6.32</b> Random operators</a></li>
+<li class="chapter" data-level="6.6.33" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#reverseoperators-2"><i class="fa fa-check"></i><b>6.6.33</b> ReverseOperators</a></li>
+<li class="chapter" data-level="6.6.34" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#shape-2"><i class="fa fa-check"></i><b>6.6.34</b> Shape</a></li>
+<li class="chapter" data-level="6.6.35" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#spatial-operators-2"><i class="fa fa-check"></i><b>6.6.35</b> Spatial operators</a></li>
+<li class="chapter" data-level="6.6.36" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#spatial-properties-operators-2"><i class="fa fa-check"></i><b>6.6.36</b> Spatial properties operators</a></li>
+<li class="chapter" data-level="6.6.37" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#spatial-queries-operators-2"><i class="fa fa-check"></i><b>6.6.37</b> Spatial queries operators</a></li>
+<li class="chapter" data-level="6.6.38" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#spatial-relations-operators-2"><i class="fa fa-check"></i><b>6.6.38</b> Spatial relations operators</a></li>
+<li class="chapter" data-level="6.6.39" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#spatial-statistical-operators-2"><i class="fa fa-check"></i><b>6.6.39</b> Spatial statistical operators</a></li>
+<li class="chapter" data-level="6.6.40" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#spatial-transformations-operators-2"><i class="fa fa-check"></i><b>6.6.40</b> Spatial transformations operators</a></li>
+<li class="chapter" data-level="6.6.41" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#species-related-operators-2"><i class="fa fa-check"></i><b>6.6.41</b> Species-related operators</a></li>
+<li class="chapter" data-level="6.6.42" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#statistical-operators-2"><i class="fa fa-check"></i><b>6.6.42</b> Statistical operators</a></li>
+<li class="chapter" data-level="6.6.43" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#strings-related-operators-2"><i class="fa fa-check"></i><b>6.6.43</b> Strings-related operators</a></li>
+<li class="chapter" data-level="6.6.44" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#system-2"><i class="fa fa-check"></i><b>6.6.44</b> System</a></li>
+<li class="chapter" data-level="6.6.45" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#time-related-operators-2"><i class="fa fa-check"></i><b>6.6.45</b> Time-related operators</a></li>
+<li class="chapter" data-level="6.6.46" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#types-related-operators-2"><i class="fa fa-check"></i><b>6.6.46</b> Types-related operators</a></li>
+<li class="chapter" data-level="6.6.47" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#user-control-operators-2"><i class="fa fa-check"></i><b>6.6.47</b> User control operators</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#operators-2"><i class="fa fa-check"></i><b>6.7</b> Operators</a><ul>
+<li class="chapter" data-level="6.7.1" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#date"><i class="fa fa-check"></i><b>6.7.1</b> <code>date</code></a></li>
+<li class="chapter" data-level="6.7.2" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#dbscan"><i class="fa fa-check"></i><b>6.7.2</b> <code>dbscan</code></a></li>
+<li class="chapter" data-level="6.7.3" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#dead"><i class="fa fa-check"></i><b>6.7.3</b> <code>dead</code></a></li>
+<li class="chapter" data-level="6.7.4" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#degree_of"><i class="fa fa-check"></i><b>6.7.4</b> <code>degree_of</code></a></li>
+<li class="chapter" data-level="6.7.5" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#dem"><i class="fa fa-check"></i><b>6.7.5</b> <code>dem</code></a></li>
+<li class="chapter" data-level="6.7.6" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#det"><i class="fa fa-check"></i><b>6.7.6</b> <code>det</code></a></li>
+<li class="chapter" data-level="6.7.7" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#determinant"><i class="fa fa-check"></i><b>6.7.7</b> <code>determinant</code></a></li>
+<li class="chapter" data-level="6.7.8" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#diff"><i class="fa fa-check"></i><b>6.7.8</b> <code>diff</code></a></li>
+<li class="chapter" data-level="6.7.9" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#diff2"><i class="fa fa-check"></i><b>6.7.9</b> <code>diff2</code></a></li>
+<li class="chapter" data-level="6.7.10" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#directed"><i class="fa fa-check"></i><b>6.7.10</b> <code>directed</code></a></li>
+<li class="chapter" data-level="6.7.11" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#direction_between"><i class="fa fa-check"></i><b>6.7.11</b> <code>direction_between</code></a></li>
+<li class="chapter" data-level="6.7.12" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#direction_to"><i class="fa fa-check"></i><b>6.7.12</b> <code>direction_to</code></a></li>
+<li class="chapter" data-level="6.7.13" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#disjoint_from"><i class="fa fa-check"></i><b>6.7.13</b> <code>disjoint_from</code></a></li>
+<li class="chapter" data-level="6.7.14" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#distance_between"><i class="fa fa-check"></i><b>6.7.14</b> <code>distance_between</code></a></li>
+<li class="chapter" data-level="6.7.15" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#distance_to"><i class="fa fa-check"></i><b>6.7.15</b> <code>distance_to</code></a></li>
+<li class="chapter" data-level="6.7.16" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#distinct"><i class="fa fa-check"></i><b>6.7.16</b> <code>distinct</code></a></li>
+<li class="chapter" data-level="6.7.17" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#distribution_of"><i class="fa fa-check"></i><b>6.7.17</b> <code>distribution_of</code></a></li>
+<li class="chapter" data-level="6.7.18" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#distribution2d_of"><i class="fa fa-check"></i><b>6.7.18</b> <code>distribution2d_of</code></a></li>
+<li class="chapter" data-level="6.7.19" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#div"><i class="fa fa-check"></i><b>6.7.19</b> <code>div</code></a></li>
+<li class="chapter" data-level="6.7.20" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#dnorm"><i class="fa fa-check"></i><b>6.7.20</b> <code>dnorm</code></a></li>
+<li class="chapter" data-level="6.7.21" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#dtw"><i class="fa fa-check"></i><b>6.7.21</b> <code>dtw</code></a></li>
+<li class="chapter" data-level="6.7.22" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#durbin_watson"><i class="fa fa-check"></i><b>6.7.22</b> <code>durbin_watson</code></a></li>
+<li class="chapter" data-level="6.7.23" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#dxf_file"><i class="fa fa-check"></i><b>6.7.23</b> <code>dxf_file</code></a></li>
+<li class="chapter" data-level="6.7.24" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#edge-3"><i class="fa fa-check"></i><b>6.7.24</b> <code>edge</code></a></li>
+<li class="chapter" data-level="6.7.25" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#edge_between"><i class="fa fa-check"></i><b>6.7.25</b> <code>edge_between</code></a></li>
+<li class="chapter" data-level="6.7.26" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#edge_betweenness"><i class="fa fa-check"></i><b>6.7.26</b> <code>edge_betweenness</code></a></li>
+<li class="chapter" data-level="6.7.27" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#edges"><i class="fa fa-check"></i><b>6.7.27</b> <code>edges</code></a></li>
+<li class="chapter" data-level="6.7.28" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#eigenvalues"><i class="fa fa-check"></i><b>6.7.28</b> <code>eigenvalues</code></a></li>
+<li class="chapter" data-level="6.7.29" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#electre_dm"><i class="fa fa-check"></i><b>6.7.29</b> <code>electre_DM</code></a></li>
+<li class="chapter" data-level="6.7.30" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#ellipse"><i class="fa fa-check"></i><b>6.7.30</b> <code>ellipse</code></a></li>
+<li class="chapter" data-level="6.7.31" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#emotion"><i class="fa fa-check"></i><b>6.7.31</b> <code>emotion</code></a></li>
+<li class="chapter" data-level="6.7.32" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#empty"><i class="fa fa-check"></i><b>6.7.32</b> <code>empty</code></a></li>
+<li class="chapter" data-level="6.7.33" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#enlarged_by"><i class="fa fa-check"></i><b>6.7.33</b> <code>enlarged_by</code></a></li>
+<li class="chapter" data-level="6.7.34" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#envelope"><i class="fa fa-check"></i><b>6.7.34</b> <code>envelope</code></a></li>
+<li class="chapter" data-level="6.7.35" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#eval_gaml"><i class="fa fa-check"></i><b>6.7.35</b> <code>eval_gaml</code></a></li>
+<li class="chapter" data-level="6.7.36" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#eval_when"><i class="fa fa-check"></i><b>6.7.36</b> <code>eval_when</code></a></li>
+<li class="chapter" data-level="6.7.37" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#evaluate_sub_model"><i class="fa fa-check"></i><b>6.7.37</b> <code>evaluate_sub_model</code></a></li>
+<li class="chapter" data-level="6.7.38" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#even"><i class="fa fa-check"></i><b>6.7.38</b> <code>even</code></a></li>
+<li class="chapter" data-level="6.7.39" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#every"><i class="fa fa-check"></i><b>6.7.39</b> <code>every</code></a></li>
+<li class="chapter" data-level="6.7.40" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#every_cycle"><i class="fa fa-check"></i><b>6.7.40</b> <code>every_cycle</code></a></li>
+<li class="chapter" data-level="6.7.41" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#evidence_theory_dm"><i class="fa fa-check"></i><b>6.7.41</b> <code>evidence_theory_DM</code></a></li>
+<li class="chapter" data-level="6.7.42" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#exp"><i class="fa fa-check"></i><b>6.7.42</b> <code>exp</code></a></li>
+<li class="chapter" data-level="6.7.43" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#fact"><i class="fa fa-check"></i><b>6.7.43</b> <code>fact</code></a></li>
+<li class="chapter" data-level="6.7.44" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#farthest_point_to"><i class="fa fa-check"></i><b>6.7.44</b> <code>farthest_point_to</code></a></li>
+<li class="chapter" data-level="6.7.45" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#farthest_to"><i class="fa fa-check"></i><b>6.7.45</b> <code>farthest_to</code></a></li>
+<li class="chapter" data-level="6.7.46" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#file"><i class="fa fa-check"></i><b>6.7.46</b> <code>file</code></a></li>
+<li class="chapter" data-level="6.7.47" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#file-1"><i class="fa fa-check"></i><b>6.7.47</b> <code>file</code></a></li>
+<li class="chapter" data-level="6.7.48" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#file_exists"><i class="fa fa-check"></i><b>6.7.48</b> <code>file_exists</code></a></li>
+<li class="chapter" data-level="6.7.49" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#first"><i class="fa fa-check"></i><b>6.7.49</b> <code>first</code></a></li>
+<li class="chapter" data-level="6.7.50" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#first_of"><i class="fa fa-check"></i><b>6.7.50</b> <code>first_of</code></a></li>
+<li class="chapter" data-level="6.7.51" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#first_with"><i class="fa fa-check"></i><b>6.7.51</b> <code>first_with</code></a></li>
+<li class="chapter" data-level="6.7.52" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#flip"><i class="fa fa-check"></i><b>6.7.52</b> <code>flip</code></a></li>
+<li class="chapter" data-level="6.7.53" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#float"><i class="fa fa-check"></i><b>6.7.53</b> <code>float</code></a></li>
+<li class="chapter" data-level="6.7.54" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#floor"><i class="fa fa-check"></i><b>6.7.54</b> <code>floor</code></a></li>
+<li class="chapter" data-level="6.7.55" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#folder"><i class="fa fa-check"></i><b>6.7.55</b> <code>folder</code></a></li>
+<li class="chapter" data-level="6.7.56" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#font"><i class="fa fa-check"></i><b>6.7.56</b> <code>font</code></a></li>
+<li class="chapter" data-level="6.7.57" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#frequency_of"><i class="fa fa-check"></i><b>6.7.57</b> <code>frequency_of</code></a></li>
+<li class="chapter" data-level="6.7.58" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#from"><i class="fa fa-check"></i><b>6.7.58</b> <code>from</code></a></li>
+<li class="chapter" data-level="6.7.59" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#fuzzy_choquet_dm"><i class="fa fa-check"></i><b>6.7.59</b> <code>fuzzy_choquet_DM</code></a></li>
+<li class="chapter" data-level="6.7.60" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#fuzzy_kappa"><i class="fa fa-check"></i><b>6.7.60</b> <code>fuzzy_kappa</code></a></li>
+<li class="chapter" data-level="6.7.61" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#fuzzy_kappa_sim"><i class="fa fa-check"></i><b>6.7.61</b> <code>fuzzy_kappa_sim</code></a></li>
+<li class="chapter" data-level="6.7.62" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#gaml_file"><i class="fa fa-check"></i><b>6.7.62</b> <code>gaml_file</code></a></li>
+<li class="chapter" data-level="6.7.63" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#gaml_type"><i class="fa fa-check"></i><b>6.7.63</b> <code>gaml_type</code></a></li>
+<li class="chapter" data-level="6.7.64" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#gamma"><i class="fa fa-check"></i><b>6.7.64</b> <code>gamma</code></a></li>
+<li class="chapter" data-level="6.7.65" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#gamma_distribution"><i class="fa fa-check"></i><b>6.7.65</b> <code>gamma_distribution</code></a></li>
+<li class="chapter" data-level="6.7.66" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#gamma_distribution_complemented"><i class="fa fa-check"></i><b>6.7.66</b> <code>gamma_distribution_complemented</code></a></li>
+<li class="chapter" data-level="6.7.67" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#gamma_index"><i class="fa fa-check"></i><b>6.7.67</b> <code>gamma_index</code></a></li>
+<li class="chapter" data-level="6.7.68" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#gamma_rnd"><i class="fa fa-check"></i><b>6.7.68</b> <code>gamma_rnd</code></a></li>
+<li class="chapter" data-level="6.7.69" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#gauss"><i class="fa fa-check"></i><b>6.7.69</b> <code>gauss</code></a></li>
+<li class="chapter" data-level="6.7.70" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#generate_barabasi_albert"><i class="fa fa-check"></i><b>6.7.70</b> <code>generate_barabasi_albert</code></a></li>
+<li class="chapter" data-level="6.7.71" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#generate_complete_graph"><i class="fa fa-check"></i><b>6.7.71</b> <code>generate_complete_graph</code></a></li>
+<li class="chapter" data-level="6.7.72" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#generate_watts_strogatz"><i class="fa fa-check"></i><b>6.7.72</b> <code>generate_watts_strogatz</code></a></li>
+<li class="chapter" data-level="6.7.73" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#geojson_file"><i class="fa fa-check"></i><b>6.7.73</b> <code>geojson_file</code></a></li>
+<li class="chapter" data-level="6.7.74" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#geometric_mean"><i class="fa fa-check"></i><b>6.7.74</b> <code>geometric_mean</code></a></li>
+<li class="chapter" data-level="6.7.75" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#geometry"><i class="fa fa-check"></i><b>6.7.75</b> <code>geometry</code></a></li>
+<li class="chapter" data-level="6.7.76" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#geometry_collection"><i class="fa fa-check"></i><b>6.7.76</b> <code>geometry_collection</code></a></li>
+<li class="chapter" data-level="6.7.77" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get"><i class="fa fa-check"></i><b>6.7.77</b> <code>get</code></a></li>
+<li class="chapter" data-level="6.7.78" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_about"><i class="fa fa-check"></i><b>6.7.78</b> <code>get_about</code></a></li>
+<li class="chapter" data-level="6.7.79" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_agent"><i class="fa fa-check"></i><b>6.7.79</b> <code>get_agent</code></a></li>
+<li class="chapter" data-level="6.7.80" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_agent_cause"><i class="fa fa-check"></i><b>6.7.80</b> <code>get_agent_cause</code></a></li>
+<li class="chapter" data-level="6.7.81" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_belief_op"><i class="fa fa-check"></i><b>6.7.81</b> <code>get_belief_op</code></a></li>
+<li class="chapter" data-level="6.7.82" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_belief_with_name_op"><i class="fa fa-check"></i><b>6.7.82</b> <code>get_belief_with_name_op</code></a></li>
+<li class="chapter" data-level="6.7.83" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_beliefs_op"><i class="fa fa-check"></i><b>6.7.83</b> <code>get_beliefs_op</code></a></li>
+<li class="chapter" data-level="6.7.84" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_beliefs_with_name_op"><i class="fa fa-check"></i><b>6.7.84</b> <code>get_beliefs_with_name_op</code></a></li>
+<li class="chapter" data-level="6.7.85" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_current_intention_op"><i class="fa fa-check"></i><b>6.7.85</b> <code>get_current_intention_op</code></a></li>
+<li class="chapter" data-level="6.7.86" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_decay"><i class="fa fa-check"></i><b>6.7.86</b> <code>get_decay</code></a></li>
+<li class="chapter" data-level="6.7.87" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_desire_op"><i class="fa fa-check"></i><b>6.7.87</b> <code>get_desire_op</code></a></li>
+<li class="chapter" data-level="6.7.88" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_desire_with_name_op"><i class="fa fa-check"></i><b>6.7.88</b> <code>get_desire_with_name_op</code></a></li>
+<li class="chapter" data-level="6.7.89" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_desires_op"><i class="fa fa-check"></i><b>6.7.89</b> <code>get_desires_op</code></a></li>
+<li class="chapter" data-level="6.7.90" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_desires_with_name_op"><i class="fa fa-check"></i><b>6.7.90</b> <code>get_desires_with_name_op</code></a></li>
+<li class="chapter" data-level="6.7.91" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_dominance"><i class="fa fa-check"></i><b>6.7.91</b> <code>get_dominance</code></a></li>
+<li class="chapter" data-level="6.7.92" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_familiarity"><i class="fa fa-check"></i><b>6.7.92</b> <code>get_familiarity</code></a></li>
+<li class="chapter" data-level="6.7.93" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_ideal_op"><i class="fa fa-check"></i><b>6.7.93</b> <code>get_ideal_op</code></a></li>
+<li class="chapter" data-level="6.7.94" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_ideal_with_name_op"><i class="fa fa-check"></i><b>6.7.94</b> <code>get_ideal_with_name_op</code></a></li>
+<li class="chapter" data-level="6.7.95" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_ideals_op"><i class="fa fa-check"></i><b>6.7.95</b> <code>get_ideals_op</code></a></li>
+<li class="chapter" data-level="6.7.96" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_ideals_with_name_op"><i class="fa fa-check"></i><b>6.7.96</b> <code>get_ideals_with_name_op</code></a></li>
+<li class="chapter" data-level="6.7.97" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_intensity"><i class="fa fa-check"></i><b>6.7.97</b> <code>get_intensity</code></a></li>
+<li class="chapter" data-level="6.7.98" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_intention_op"><i class="fa fa-check"></i><b>6.7.98</b> <code>get_intention_op</code></a></li>
+<li class="chapter" data-level="6.7.99" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_intention_with_name_op"><i class="fa fa-check"></i><b>6.7.99</b> <code>get_intention_with_name_op</code></a></li>
+<li class="chapter" data-level="6.7.100" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_intentions_op"><i class="fa fa-check"></i><b>6.7.100</b> <code>get_intentions_op</code></a></li>
+<li class="chapter" data-level="6.7.101" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_intentions_with_name_op"><i class="fa fa-check"></i><b>6.7.101</b> <code>get_intentions_with_name_op</code></a></li>
+<li class="chapter" data-level="6.7.102" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_lifetime"><i class="fa fa-check"></i><b>6.7.102</b> <code>get_lifetime</code></a></li>
+<li class="chapter" data-level="6.7.103" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_liking"><i class="fa fa-check"></i><b>6.7.103</b> <code>get_liking</code></a></li>
+<li class="chapter" data-level="6.7.104" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_modality"><i class="fa fa-check"></i><b>6.7.104</b> <code>get_modality</code></a></li>
+<li class="chapter" data-level="6.7.105" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_obligation_op"><i class="fa fa-check"></i><b>6.7.105</b> <code>get_obligation_op</code></a></li>
+<li class="chapter" data-level="6.7.106" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_obligation_with_name_op"><i class="fa fa-check"></i><b>6.7.106</b> <code>get_obligation_with_name_op</code></a></li>
+<li class="chapter" data-level="6.7.107" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_obligations_op"><i class="fa fa-check"></i><b>6.7.107</b> <code>get_obligations_op</code></a></li>
+<li class="chapter" data-level="6.7.108" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_obligations_with_name_op"><i class="fa fa-check"></i><b>6.7.108</b> <code>get_obligations_with_name_op</code></a></li>
+<li class="chapter" data-level="6.7.109" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_plan_name"><i class="fa fa-check"></i><b>6.7.109</b> <code>get_plan_name</code></a></li>
+<li class="chapter" data-level="6.7.110" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_predicate"><i class="fa fa-check"></i><b>6.7.110</b> <code>get_predicate</code></a></li>
+<li class="chapter" data-level="6.7.111" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_solidarity"><i class="fa fa-check"></i><b>6.7.111</b> <code>get_solidarity</code></a></li>
+<li class="chapter" data-level="6.7.112" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_strength"><i class="fa fa-check"></i><b>6.7.112</b> <code>get_strength</code></a></li>
+<li class="chapter" data-level="6.7.113" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_super_intention"><i class="fa fa-check"></i><b>6.7.113</b> <code>get_super_intention</code></a></li>
+<li class="chapter" data-level="6.7.114" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_trust"><i class="fa fa-check"></i><b>6.7.114</b> <code>get_trust</code></a></li>
+<li class="chapter" data-level="6.7.115" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_truth"><i class="fa fa-check"></i><b>6.7.115</b> <code>get_truth</code></a></li>
+<li class="chapter" data-level="6.7.116" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_uncertainties_op"><i class="fa fa-check"></i><b>6.7.116</b> <code>get_uncertainties_op</code></a></li>
+<li class="chapter" data-level="6.7.117" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_uncertainties_with_name_op"><i class="fa fa-check"></i><b>6.7.117</b> <code>get_uncertainties_with_name_op</code></a></li>
+<li class="chapter" data-level="6.7.118" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_uncertainty_op"><i class="fa fa-check"></i><b>6.7.118</b> <code>get_uncertainty_op</code></a></li>
+<li class="chapter" data-level="6.7.119" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#get_uncertainty_with_name_op"><i class="fa fa-check"></i><b>6.7.119</b> <code>get_uncertainty_with_name_op</code></a></li>
+<li class="chapter" data-level="6.7.120" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#gif_file"><i class="fa fa-check"></i><b>6.7.120</b> <code>gif_file</code></a></li>
+<li class="chapter" data-level="6.7.121" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#gini"><i class="fa fa-check"></i><b>6.7.121</b> <code>gini</code></a></li>
+<li class="chapter" data-level="6.7.122" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#gml_file"><i class="fa fa-check"></i><b>6.7.122</b> <code>gml_file</code></a></li>
+<li class="chapter" data-level="6.7.123" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#graph"><i class="fa fa-check"></i><b>6.7.123</b> <code>graph</code></a></li>
+<li class="chapter" data-level="6.7.124" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#grayscale"><i class="fa fa-check"></i><b>6.7.124</b> <code>grayscale</code></a></li>
+<li class="chapter" data-level="6.7.125" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#grid_at"><i class="fa fa-check"></i><b>6.7.125</b> <code>grid_at</code></a></li>
+<li class="chapter" data-level="6.7.126" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#grid_cells_to_graph"><i class="fa fa-check"></i><b>6.7.126</b> <code>grid_cells_to_graph</code></a></li>
+<li class="chapter" data-level="6.7.127" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#grid_file"><i class="fa fa-check"></i><b>6.7.127</b> <code>grid_file</code></a></li>
+<li class="chapter" data-level="6.7.128" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#group_by"><i class="fa fa-check"></i><b>6.7.128</b> <code>group_by</code></a></li>
+<li class="chapter" data-level="6.7.129" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#harmonic_mean"><i class="fa fa-check"></i><b>6.7.129</b> <code>harmonic_mean</code></a></li>
+<li class="chapter" data-level="6.7.130" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#has_belief_op"><i class="fa fa-check"></i><b>6.7.130</b> <code>has_belief_op</code></a></li>
+<li class="chapter" data-level="6.7.131" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#has_belief_with_name_op"><i class="fa fa-check"></i><b>6.7.131</b> <code>has_belief_with_name_op</code></a></li>
+<li class="chapter" data-level="6.7.132" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#has_desire_op"><i class="fa fa-check"></i><b>6.7.132</b> <code>has_desire_op</code></a></li>
+<li class="chapter" data-level="6.7.133" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#has_desire_with_name_op"><i class="fa fa-check"></i><b>6.7.133</b> <code>has_desire_with_name_op</code></a></li>
+<li class="chapter" data-level="6.7.134" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#has_ideal_op"><i class="fa fa-check"></i><b>6.7.134</b> <code>has_ideal_op</code></a></li>
+<li class="chapter" data-level="6.7.135" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#has_ideal_with_name_op"><i class="fa fa-check"></i><b>6.7.135</b> <code>has_ideal_with_name_op</code></a></li>
+<li class="chapter" data-level="6.7.136" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#has_intention_op"><i class="fa fa-check"></i><b>6.7.136</b> <code>has_intention_op</code></a></li>
+<li class="chapter" data-level="6.7.137" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#has_intention_with_name_op"><i class="fa fa-check"></i><b>6.7.137</b> <code>has_intention_with_name_op</code></a></li>
+<li class="chapter" data-level="6.7.138" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#has_obligation_op"><i class="fa fa-check"></i><b>6.7.138</b> <code>has_obligation_op</code></a></li>
+<li class="chapter" data-level="6.7.139" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#has_obligation_with_name_op"><i class="fa fa-check"></i><b>6.7.139</b> <code>has_obligation_with_name_op</code></a></li>
+<li class="chapter" data-level="6.7.140" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#has_uncertainty_op"><i class="fa fa-check"></i><b>6.7.140</b> <code>has_uncertainty_op</code></a></li>
+<li class="chapter" data-level="6.7.141" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#has_uncertainty_with_name_op"><i class="fa fa-check"></i><b>6.7.141</b> <code>has_uncertainty_with_name_op</code></a></li>
+<li class="chapter" data-level="6.7.142" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#hexagon"><i class="fa fa-check"></i><b>6.7.142</b> <code>hexagon</code></a></li>
+<li class="chapter" data-level="6.7.143" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#hierarchical_clustering"><i class="fa fa-check"></i><b>6.7.143</b> <code>hierarchical_clustering</code></a></li>
+<li class="chapter" data-level="6.7.144" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#horizontal"><i class="fa fa-check"></i><b>6.7.144</b> <code>horizontal</code></a></li>
+<li class="chapter" data-level="6.7.145" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#hsb"><i class="fa fa-check"></i><b>6.7.145</b> <code>hsb</code></a></li>
+<li class="chapter" data-level="6.7.146" data-path="operators-d-to-h.html"><a href="operators-d-to-h.html#hypot"><i class="fa fa-check"></i><b>6.7.146</b> <code>hypot</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html"><i class="fa fa-check"></i><b>7</b> Operators (I to M)</a><ul>
+<li class="chapter" data-level="7.1" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#definition-3"><i class="fa fa-check"></i><b>7.1</b> Definition</a></li>
+<li class="chapter" data-level="7.2" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#section-21"><i class="fa fa-check"></i><b>7.2</b> <br/></a></li>
+<li class="chapter" data-level="7.3" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#priority-between-operators-3"><i class="fa fa-check"></i><b>7.3</b> Priority between operators</a></li>
+<li class="chapter" data-level="7.4" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#using-actions-as-operators-3"><i class="fa fa-check"></i><b>7.4</b> Using actions as operators</a></li>
+<li class="chapter" data-level="7.5" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#table-of-contents-3"><i class="fa fa-check"></i><b>7.5</b> Table of Contents</a></li>
+<li class="chapter" data-level="7.6" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#operators-by-categories-3"><i class="fa fa-check"></i><b>7.6</b> Operators by categories</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#d-3"><i class="fa fa-check"></i><b>7.6.1</b> 3D</a></li>
+<li class="chapter" data-level="7.6.2" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#arithmetic-operators-3"><i class="fa fa-check"></i><b>7.6.2</b> Arithmetic operators</a></li>
+<li class="chapter" data-level="7.6.3" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#bdi-3"><i class="fa fa-check"></i><b>7.6.3</b> BDI</a></li>
+<li class="chapter" data-level="7.6.4" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#casting-operators-3"><i class="fa fa-check"></i><b>7.6.4</b> Casting operators</a></li>
+<li class="chapter" data-level="7.6.5" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#color-related-operators-3"><i class="fa fa-check"></i><b>7.6.5</b> Color-related operators</a></li>
+<li class="chapter" data-level="7.6.6" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#comparison-operators-3"><i class="fa fa-check"></i><b>7.6.6</b> Comparison operators</a></li>
+<li class="chapter" data-level="7.6.7" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#containers-related-operators-3"><i class="fa fa-check"></i><b>7.6.7</b> Containers-related operators</a></li>
+<li class="chapter" data-level="7.6.8" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#date-related-operators-3"><i class="fa fa-check"></i><b>7.6.8</b> Date-related operators</a></li>
+<li class="chapter" data-level="7.6.9" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#dates-3"><i class="fa fa-check"></i><b>7.6.9</b> Dates</a></li>
+<li class="chapter" data-level="7.6.10" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#descriptivestatistics-3"><i class="fa fa-check"></i><b>7.6.10</b> DescriptiveStatistics</a></li>
+<li class="chapter" data-level="7.6.11" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#displays-3"><i class="fa fa-check"></i><b>7.6.11</b> Displays</a></li>
+<li class="chapter" data-level="7.6.12" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#distributions-3"><i class="fa fa-check"></i><b>7.6.12</b> Distributions</a></li>
+<li class="chapter" data-level="7.6.13" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#driving-operators-3"><i class="fa fa-check"></i><b>7.6.13</b> Driving operators</a></li>
+<li class="chapter" data-level="7.6.14" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#edge-4"><i class="fa fa-check"></i><b>7.6.14</b> edge</a></li>
+<li class="chapter" data-level="7.6.15" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#edp-related-operators-3"><i class="fa fa-check"></i><b>7.6.15</b> EDP-related operators</a></li>
+<li class="chapter" data-level="7.6.16" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#files-related-operators-3"><i class="fa fa-check"></i><b>7.6.16</b> Files-related operators</a></li>
+<li class="chapter" data-level="7.6.17" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#fipa-related-operators-3"><i class="fa fa-check"></i><b>7.6.17</b> FIPA-related operators</a></li>
+<li class="chapter" data-level="7.6.18" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#gamametatype-3"><i class="fa fa-check"></i><b>7.6.18</b> GamaMetaType</a></li>
+<li class="chapter" data-level="7.6.19" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#gammafunction-3"><i class="fa fa-check"></i><b>7.6.19</b> GammaFunction</a></li>
+<li class="chapter" data-level="7.6.20" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#graphs-related-operators-3"><i class="fa fa-check"></i><b>7.6.20</b> Graphs-related operators</a></li>
+<li class="chapter" data-level="7.6.21" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#grid-related-operators-3"><i class="fa fa-check"></i><b>7.6.21</b> Grid-related operators</a></li>
+<li class="chapter" data-level="7.6.22" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#iterator-operators-3"><i class="fa fa-check"></i><b>7.6.22</b> Iterator operators</a></li>
+<li class="chapter" data-level="7.6.23" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#list-related-operators-3"><i class="fa fa-check"></i><b>7.6.23</b> List-related operators</a></li>
+<li class="chapter" data-level="7.6.24" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#logical-operators-3"><i class="fa fa-check"></i><b>7.6.24</b> Logical operators</a></li>
+<li class="chapter" data-level="7.6.25" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#map-comparaison-operators-3"><i class="fa fa-check"></i><b>7.6.25</b> Map comparaison operators</a></li>
+<li class="chapter" data-level="7.6.26" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#map-related-operators-3"><i class="fa fa-check"></i><b>7.6.26</b> Map-related operators</a></li>
+<li class="chapter" data-level="7.6.27" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#material-3"><i class="fa fa-check"></i><b>7.6.27</b> Material</a></li>
+<li class="chapter" data-level="7.6.28" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#matrix-related-operators-3"><i class="fa fa-check"></i><b>7.6.28</b> Matrix-related operators</a></li>
+<li class="chapter" data-level="7.6.29" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#multicriteria-operators-3"><i class="fa fa-check"></i><b>7.6.29</b> multicriteria operators</a></li>
+<li class="chapter" data-level="7.6.30" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#path-related-operators-3"><i class="fa fa-check"></i><b>7.6.30</b> Path-related operators</a></li>
+<li class="chapter" data-level="7.6.31" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#points-related-operators-3"><i class="fa fa-check"></i><b>7.6.31</b> Points-related operators</a></li>
+<li class="chapter" data-level="7.6.32" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#random-operators-3"><i class="fa fa-check"></i><b>7.6.32</b> Random operators</a></li>
+<li class="chapter" data-level="7.6.33" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#reverseoperators-3"><i class="fa fa-check"></i><b>7.6.33</b> ReverseOperators</a></li>
+<li class="chapter" data-level="7.6.34" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#shape-3"><i class="fa fa-check"></i><b>7.6.34</b> Shape</a></li>
+<li class="chapter" data-level="7.6.35" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#spatial-operators-3"><i class="fa fa-check"></i><b>7.6.35</b> Spatial operators</a></li>
+<li class="chapter" data-level="7.6.36" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#spatial-properties-operators-3"><i class="fa fa-check"></i><b>7.6.36</b> Spatial properties operators</a></li>
+<li class="chapter" data-level="7.6.37" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#spatial-queries-operators-3"><i class="fa fa-check"></i><b>7.6.37</b> Spatial queries operators</a></li>
+<li class="chapter" data-level="7.6.38" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#spatial-relations-operators-3"><i class="fa fa-check"></i><b>7.6.38</b> Spatial relations operators</a></li>
+<li class="chapter" data-level="7.6.39" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#spatial-statistical-operators-3"><i class="fa fa-check"></i><b>7.6.39</b> Spatial statistical operators</a></li>
+<li class="chapter" data-level="7.6.40" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#spatial-transformations-operators-3"><i class="fa fa-check"></i><b>7.6.40</b> Spatial transformations operators</a></li>
+<li class="chapter" data-level="7.6.41" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#species-related-operators-3"><i class="fa fa-check"></i><b>7.6.41</b> Species-related operators</a></li>
+<li class="chapter" data-level="7.6.42" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#statistical-operators-3"><i class="fa fa-check"></i><b>7.6.42</b> Statistical operators</a></li>
+<li class="chapter" data-level="7.6.43" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#strings-related-operators-3"><i class="fa fa-check"></i><b>7.6.43</b> Strings-related operators</a></li>
+<li class="chapter" data-level="7.6.44" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#system-3"><i class="fa fa-check"></i><b>7.6.44</b> System</a></li>
+<li class="chapter" data-level="7.6.45" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#time-related-operators-3"><i class="fa fa-check"></i><b>7.6.45</b> Time-related operators</a></li>
+<li class="chapter" data-level="7.6.46" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#types-related-operators-3"><i class="fa fa-check"></i><b>7.6.46</b> Types-related operators</a></li>
+<li class="chapter" data-level="7.6.47" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#user-control-operators-3"><i class="fa fa-check"></i><b>7.6.47</b> User control operators</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#operators-3"><i class="fa fa-check"></i><b>7.7</b> Operators</a><ul>
+<li class="chapter" data-level="7.7.1" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#idw"><i class="fa fa-check"></i><b>7.7.1</b> <code>IDW</code></a></li>
+<li class="chapter" data-level="7.7.2" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#image_file"><i class="fa fa-check"></i><b>7.7.2</b> <code>image_file</code></a></li>
+<li class="chapter" data-level="7.7.3" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#improved_generator"><i class="fa fa-check"></i><b>7.7.3</b> <code>improved_generator</code></a></li>
+<li class="chapter" data-level="7.7.4" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#in"><i class="fa fa-check"></i><b>7.7.4</b> <code>in</code></a></li>
+<li class="chapter" data-level="7.7.5" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#in_degree_of"><i class="fa fa-check"></i><b>7.7.5</b> <code>in_degree_of</code></a></li>
+<li class="chapter" data-level="7.7.6" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#in_edges_of"><i class="fa fa-check"></i><b>7.7.6</b> <code>in_edges_of</code></a></li>
+<li class="chapter" data-level="7.7.7" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#incomplete_beta"><i class="fa fa-check"></i><b>7.7.7</b> <code>incomplete_beta</code></a></li>
+<li class="chapter" data-level="7.7.8" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#incomplete_gamma"><i class="fa fa-check"></i><b>7.7.8</b> <code>incomplete_gamma</code></a></li>
+<li class="chapter" data-level="7.7.9" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#incomplete_gamma_complement"><i class="fa fa-check"></i><b>7.7.9</b> <code>incomplete_gamma_complement</code></a></li>
+<li class="chapter" data-level="7.7.10" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#indented_by"><i class="fa fa-check"></i><b>7.7.10</b> <code>indented_by</code></a></li>
+<li class="chapter" data-level="7.7.11" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#index_by"><i class="fa fa-check"></i><b>7.7.11</b> <code>index_by</code></a></li>
+<li class="chapter" data-level="7.7.12" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#index_of"><i class="fa fa-check"></i><b>7.7.12</b> <code>index_of</code></a></li>
+<li class="chapter" data-level="7.7.13" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#inside"><i class="fa fa-check"></i><b>7.7.13</b> <code>inside</code></a></li>
+<li class="chapter" data-level="7.7.14" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#int"><i class="fa fa-check"></i><b>7.7.14</b> <code>int</code></a></li>
+<li class="chapter" data-level="7.7.15" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#inter"><i class="fa fa-check"></i><b>7.7.15</b> <code>inter</code></a></li>
+<li class="chapter" data-level="7.7.16" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#interleave"><i class="fa fa-check"></i><b>7.7.16</b> <code>interleave</code></a></li>
+<li class="chapter" data-level="7.7.17" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#internal_at"><i class="fa fa-check"></i><b>7.7.17</b> <code>internal_at</code></a></li>
+<li class="chapter" data-level="7.7.18" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#internal_integrated_value"><i class="fa fa-check"></i><b>7.7.18</b> <code>internal_integrated_value</code></a></li>
+<li class="chapter" data-level="7.7.19" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#internal_zero_order_equation"><i class="fa fa-check"></i><b>7.7.19</b> <code>internal_zero_order_equation</code></a></li>
+<li class="chapter" data-level="7.7.20" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#intersection"><i class="fa fa-check"></i><b>7.7.20</b> <code>intersection</code></a></li>
+<li class="chapter" data-level="7.7.21" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#intersects"><i class="fa fa-check"></i><b>7.7.21</b> <code>intersects</code></a></li>
+<li class="chapter" data-level="7.7.22" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#inverse"><i class="fa fa-check"></i><b>7.7.22</b> <code>inverse</code></a></li>
+<li class="chapter" data-level="7.7.23" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#inverse_distance_weighting"><i class="fa fa-check"></i><b>7.7.23</b> <code>inverse_distance_weighting</code></a></li>
+<li class="chapter" data-level="7.7.24" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is"><i class="fa fa-check"></i><b>7.7.24</b> <code>is</code></a></li>
+<li class="chapter" data-level="7.7.25" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_csv"><i class="fa fa-check"></i><b>7.7.25</b> <code>is_csv</code></a></li>
+<li class="chapter" data-level="7.7.26" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_dxf"><i class="fa fa-check"></i><b>7.7.26</b> <code>is_dxf</code></a></li>
+<li class="chapter" data-level="7.7.27" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_error"><i class="fa fa-check"></i><b>7.7.27</b> <code>is_error</code></a></li>
+<li class="chapter" data-level="7.7.28" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_finite"><i class="fa fa-check"></i><b>7.7.28</b> <code>is_finite</code></a></li>
+<li class="chapter" data-level="7.7.29" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_gaml"><i class="fa fa-check"></i><b>7.7.29</b> <code>is_gaml</code></a></li>
+<li class="chapter" data-level="7.7.30" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_geojson"><i class="fa fa-check"></i><b>7.7.30</b> <code>is_geojson</code></a></li>
+<li class="chapter" data-level="7.7.31" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_gif"><i class="fa fa-check"></i><b>7.7.31</b> <code>is_gif</code></a></li>
+<li class="chapter" data-level="7.7.32" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_gml"><i class="fa fa-check"></i><b>7.7.32</b> <code>is_gml</code></a></li>
+<li class="chapter" data-level="7.7.33" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_grid"><i class="fa fa-check"></i><b>7.7.33</b> <code>is_grid</code></a></li>
+<li class="chapter" data-level="7.7.34" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_image"><i class="fa fa-check"></i><b>7.7.34</b> <code>is_image</code></a></li>
+<li class="chapter" data-level="7.7.35" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_json"><i class="fa fa-check"></i><b>7.7.35</b> <code>is_json</code></a></li>
+<li class="chapter" data-level="7.7.36" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_number"><i class="fa fa-check"></i><b>7.7.36</b> <code>is_number</code></a></li>
+<li class="chapter" data-level="7.7.37" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_obj"><i class="fa fa-check"></i><b>7.7.37</b> <code>is_obj</code></a></li>
+<li class="chapter" data-level="7.7.38" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_osm"><i class="fa fa-check"></i><b>7.7.38</b> <code>is_osm</code></a></li>
+<li class="chapter" data-level="7.7.39" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_pgm"><i class="fa fa-check"></i><b>7.7.39</b> <code>is_pgm</code></a></li>
+<li class="chapter" data-level="7.7.40" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_property"><i class="fa fa-check"></i><b>7.7.40</b> <code>is_property</code></a></li>
+<li class="chapter" data-level="7.7.41" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_r"><i class="fa fa-check"></i><b>7.7.41</b> <code>is_R</code></a></li>
+<li class="chapter" data-level="7.7.42" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_shape"><i class="fa fa-check"></i><b>7.7.42</b> <code>is_shape</code></a></li>
+<li class="chapter" data-level="7.7.43" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_skill"><i class="fa fa-check"></i><b>7.7.43</b> <code>is_skill</code></a></li>
+<li class="chapter" data-level="7.7.44" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_svg"><i class="fa fa-check"></i><b>7.7.44</b> <code>is_svg</code></a></li>
+<li class="chapter" data-level="7.7.45" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_text"><i class="fa fa-check"></i><b>7.7.45</b> <code>is_text</code></a></li>
+<li class="chapter" data-level="7.7.46" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_threeds"><i class="fa fa-check"></i><b>7.7.46</b> <code>is_threeds</code></a></li>
+<li class="chapter" data-level="7.7.47" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_url"><i class="fa fa-check"></i><b>7.7.47</b> <code>is_URL</code></a></li>
+<li class="chapter" data-level="7.7.48" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_warning"><i class="fa fa-check"></i><b>7.7.48</b> <code>is_warning</code></a></li>
+<li class="chapter" data-level="7.7.49" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#is_xml"><i class="fa fa-check"></i><b>7.7.49</b> <code>is_xml</code></a></li>
+<li class="chapter" data-level="7.7.50" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#json_file"><i class="fa fa-check"></i><b>7.7.50</b> <code>json_file</code></a></li>
+<li class="chapter" data-level="7.7.51" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#kappa"><i class="fa fa-check"></i><b>7.7.51</b> <code>kappa</code></a></li>
+<li class="chapter" data-level="7.7.52" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#kappa_sim"><i class="fa fa-check"></i><b>7.7.52</b> <code>kappa_sim</code></a></li>
+<li class="chapter" data-level="7.7.53" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#kmeans"><i class="fa fa-check"></i><b>7.7.53</b> <code>kmeans</code></a></li>
+<li class="chapter" data-level="7.7.54" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#kurtosis"><i class="fa fa-check"></i><b>7.7.54</b> <code>kurtosis</code></a></li>
+<li class="chapter" data-level="7.7.55" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#kurtosis-1"><i class="fa fa-check"></i><b>7.7.55</b> <code>kurtosis</code></a></li>
+<li class="chapter" data-level="7.7.56" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#last"><i class="fa fa-check"></i><b>7.7.56</b> <code>last</code></a></li>
+<li class="chapter" data-level="7.7.57" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#last_index_of"><i class="fa fa-check"></i><b>7.7.57</b> <code>last_index_of</code></a></li>
+<li class="chapter" data-level="7.7.58" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#last_of"><i class="fa fa-check"></i><b>7.7.58</b> <code>last_of</code></a></li>
+<li class="chapter" data-level="7.7.59" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#last_with"><i class="fa fa-check"></i><b>7.7.59</b> <code>last_with</code></a></li>
+<li class="chapter" data-level="7.7.60" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#layout"><i class="fa fa-check"></i><b>7.7.60</b> <code>layout</code></a></li>
+<li class="chapter" data-level="7.7.61" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#length"><i class="fa fa-check"></i><b>7.7.61</b> <code>length</code></a></li>
+<li class="chapter" data-level="7.7.62" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#lgamma"><i class="fa fa-check"></i><b>7.7.62</b> <code>lgamma</code></a></li>
+<li class="chapter" data-level="7.7.63" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#line"><i class="fa fa-check"></i><b>7.7.63</b> <code>line</code></a></li>
+<li class="chapter" data-level="7.7.64" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#link"><i class="fa fa-check"></i><b>7.7.64</b> <code>link</code></a></li>
+<li class="chapter" data-level="7.7.65" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#list"><i class="fa fa-check"></i><b>7.7.65</b> <code>list</code></a></li>
+<li class="chapter" data-level="7.7.66" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#list_with"><i class="fa fa-check"></i><b>7.7.66</b> <code>list_with</code></a></li>
+<li class="chapter" data-level="7.7.67" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#ln"><i class="fa fa-check"></i><b>7.7.67</b> <code>ln</code></a></li>
+<li class="chapter" data-level="7.7.68" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#load_graph_from_file"><i class="fa fa-check"></i><b>7.7.68</b> <code>load_graph_from_file</code></a></li>
+<li class="chapter" data-level="7.7.69" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#load_shortest_paths"><i class="fa fa-check"></i><b>7.7.69</b> <code>load_shortest_paths</code></a></li>
+<li class="chapter" data-level="7.7.70" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#load_sub_model"><i class="fa fa-check"></i><b>7.7.70</b> <code>load_sub_model</code></a></li>
+<li class="chapter" data-level="7.7.71" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#log"><i class="fa fa-check"></i><b>7.7.71</b> <code>log</code></a></li>
+<li class="chapter" data-level="7.7.72" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#log_gamma"><i class="fa fa-check"></i><b>7.7.72</b> <code>log_gamma</code></a></li>
+<li class="chapter" data-level="7.7.73" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#lower_case"><i class="fa fa-check"></i><b>7.7.73</b> <code>lower_case</code></a></li>
+<li class="chapter" data-level="7.7.74" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#main_connected_component"><i class="fa fa-check"></i><b>7.7.74</b> <code>main_connected_component</code></a></li>
+<li class="chapter" data-level="7.7.75" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#map"><i class="fa fa-check"></i><b>7.7.75</b> <code>map</code></a></li>
+<li class="chapter" data-level="7.7.76" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#masked_by"><i class="fa fa-check"></i><b>7.7.76</b> <code>masked_by</code></a></li>
+<li class="chapter" data-level="7.7.77" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#material-4"><i class="fa fa-check"></i><b>7.7.77</b> <code>material</code></a></li>
+<li class="chapter" data-level="7.7.78" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#material-5"><i class="fa fa-check"></i><b>7.7.78</b> <code>material</code></a></li>
+<li class="chapter" data-level="7.7.79" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#matrix"><i class="fa fa-check"></i><b>7.7.79</b> <code>matrix</code></a></li>
+<li class="chapter" data-level="7.7.80" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#matrix_with"><i class="fa fa-check"></i><b>7.7.80</b> <code>matrix_with</code></a></li>
+<li class="chapter" data-level="7.7.81" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#max"><i class="fa fa-check"></i><b>7.7.81</b> <code>max</code></a></li>
+<li class="chapter" data-level="7.7.82" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#max_flow_between"><i class="fa fa-check"></i><b>7.7.82</b> <code>max_flow_between</code></a></li>
+<li class="chapter" data-level="7.7.83" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#max_of"><i class="fa fa-check"></i><b>7.7.83</b> <code>max_of</code></a></li>
+<li class="chapter" data-level="7.7.84" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#maximal_cliques_of"><i class="fa fa-check"></i><b>7.7.84</b> <code>maximal_cliques_of</code></a></li>
+<li class="chapter" data-level="7.7.85" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#mean"><i class="fa fa-check"></i><b>7.7.85</b> <code>mean</code></a></li>
+<li class="chapter" data-level="7.7.86" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#mean_deviation"><i class="fa fa-check"></i><b>7.7.86</b> <code>mean_deviation</code></a></li>
+<li class="chapter" data-level="7.7.87" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#mean_of"><i class="fa fa-check"></i><b>7.7.87</b> <code>mean_of</code></a></li>
+<li class="chapter" data-level="7.7.88" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#meanr"><i class="fa fa-check"></i><b>7.7.88</b> <code>meanR</code></a></li>
+<li class="chapter" data-level="7.7.89" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#median"><i class="fa fa-check"></i><b>7.7.89</b> <code>median</code></a></li>
+<li class="chapter" data-level="7.7.90" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#mental_state"><i class="fa fa-check"></i><b>7.7.90</b> <code>mental_state</code></a></li>
+<li class="chapter" data-level="7.7.91" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#message"><i class="fa fa-check"></i><b>7.7.91</b> <code>message</code></a></li>
+<li class="chapter" data-level="7.7.92" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#milliseconds_between"><i class="fa fa-check"></i><b>7.7.92</b> <code>milliseconds_between</code></a></li>
+<li class="chapter" data-level="7.7.93" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#min"><i class="fa fa-check"></i><b>7.7.93</b> <code>min</code></a></li>
+<li class="chapter" data-level="7.7.94" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#min_of"><i class="fa fa-check"></i><b>7.7.94</b> <code>min_of</code></a></li>
+<li class="chapter" data-level="7.7.95" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#minus_days"><i class="fa fa-check"></i><b>7.7.95</b> <code>minus_days</code></a></li>
+<li class="chapter" data-level="7.7.96" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#minus_hours"><i class="fa fa-check"></i><b>7.7.96</b> <code>minus_hours</code></a></li>
+<li class="chapter" data-level="7.7.97" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#minus_minutes"><i class="fa fa-check"></i><b>7.7.97</b> <code>minus_minutes</code></a></li>
+<li class="chapter" data-level="7.7.98" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#minus_months"><i class="fa fa-check"></i><b>7.7.98</b> <code>minus_months</code></a></li>
+<li class="chapter" data-level="7.7.99" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#minus_ms"><i class="fa fa-check"></i><b>7.7.99</b> <code>minus_ms</code></a></li>
+<li class="chapter" data-level="7.7.100" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#minus_seconds"><i class="fa fa-check"></i><b>7.7.100</b> <code>minus_seconds</code></a></li>
+<li class="chapter" data-level="7.7.101" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#minus_weeks"><i class="fa fa-check"></i><b>7.7.101</b> <code>minus_weeks</code></a></li>
+<li class="chapter" data-level="7.7.102" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#minus_years"><i class="fa fa-check"></i><b>7.7.102</b> <code>minus_years</code></a></li>
+<li class="chapter" data-level="7.7.103" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#mod"><i class="fa fa-check"></i><b>7.7.103</b> <code>mod</code></a></li>
+<li class="chapter" data-level="7.7.104" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#moment"><i class="fa fa-check"></i><b>7.7.104</b> <code>moment</code></a></li>
+<li class="chapter" data-level="7.7.105" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#months_between"><i class="fa fa-check"></i><b>7.7.105</b> <code>months_between</code></a></li>
+<li class="chapter" data-level="7.7.106" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#moran"><i class="fa fa-check"></i><b>7.7.106</b> <code>moran</code></a></li>
+<li class="chapter" data-level="7.7.107" data-path="operators-i-to-m.html"><a href="operators-i-to-m.html#mul"><i class="fa fa-check"></i><b>7.7.107</b> <code>mul</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html"><i class="fa fa-check"></i><b>8</b> Operators (N to R)</a><ul>
+<li class="chapter" data-level="8.1" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#definition-4"><i class="fa fa-check"></i><b>8.1</b> Definition</a></li>
+<li class="chapter" data-level="8.2" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#section-22"><i class="fa fa-check"></i><b>8.2</b> <br/></a></li>
+<li class="chapter" data-level="8.3" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#priority-between-operators-4"><i class="fa fa-check"></i><b>8.3</b> Priority between operators</a></li>
+<li class="chapter" data-level="8.4" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#using-actions-as-operators-4"><i class="fa fa-check"></i><b>8.4</b> Using actions as operators</a></li>
+<li class="chapter" data-level="8.5" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#table-of-contents-4"><i class="fa fa-check"></i><b>8.5</b> Table of Contents</a></li>
+<li class="chapter" data-level="8.6" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#operators-by-categories-4"><i class="fa fa-check"></i><b>8.6</b> Operators by categories</a><ul>
+<li class="chapter" data-level="8.6.1" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#d-4"><i class="fa fa-check"></i><b>8.6.1</b> 3D</a></li>
+<li class="chapter" data-level="8.6.2" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#arithmetic-operators-4"><i class="fa fa-check"></i><b>8.6.2</b> Arithmetic operators</a></li>
+<li class="chapter" data-level="8.6.3" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#bdi-4"><i class="fa fa-check"></i><b>8.6.3</b> BDI</a></li>
+<li class="chapter" data-level="8.6.4" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#casting-operators-4"><i class="fa fa-check"></i><b>8.6.4</b> Casting operators</a></li>
+<li class="chapter" data-level="8.6.5" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#color-related-operators-4"><i class="fa fa-check"></i><b>8.6.5</b> Color-related operators</a></li>
+<li class="chapter" data-level="8.6.6" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#comparison-operators-4"><i class="fa fa-check"></i><b>8.6.6</b> Comparison operators</a></li>
+<li class="chapter" data-level="8.6.7" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#containers-related-operators-4"><i class="fa fa-check"></i><b>8.6.7</b> Containers-related operators</a></li>
+<li class="chapter" data-level="8.6.8" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#date-related-operators-4"><i class="fa fa-check"></i><b>8.6.8</b> Date-related operators</a></li>
+<li class="chapter" data-level="8.6.9" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#dates-4"><i class="fa fa-check"></i><b>8.6.9</b> Dates</a></li>
+<li class="chapter" data-level="8.6.10" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#descriptivestatistics-4"><i class="fa fa-check"></i><b>8.6.10</b> DescriptiveStatistics</a></li>
+<li class="chapter" data-level="8.6.11" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#displays-4"><i class="fa fa-check"></i><b>8.6.11</b> Displays</a></li>
+<li class="chapter" data-level="8.6.12" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#distributions-4"><i class="fa fa-check"></i><b>8.6.12</b> Distributions</a></li>
+<li class="chapter" data-level="8.6.13" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#driving-operators-4"><i class="fa fa-check"></i><b>8.6.13</b> Driving operators</a></li>
+<li class="chapter" data-level="8.6.14" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#edge-5"><i class="fa fa-check"></i><b>8.6.14</b> edge</a></li>
+<li class="chapter" data-level="8.6.15" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#edp-related-operators-4"><i class="fa fa-check"></i><b>8.6.15</b> EDP-related operators</a></li>
+<li class="chapter" data-level="8.6.16" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#files-related-operators-4"><i class="fa fa-check"></i><b>8.6.16</b> Files-related operators</a></li>
+<li class="chapter" data-level="8.6.17" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#fipa-related-operators-4"><i class="fa fa-check"></i><b>8.6.17</b> FIPA-related operators</a></li>
+<li class="chapter" data-level="8.6.18" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#gamametatype-4"><i class="fa fa-check"></i><b>8.6.18</b> GamaMetaType</a></li>
+<li class="chapter" data-level="8.6.19" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#gammafunction-4"><i class="fa fa-check"></i><b>8.6.19</b> GammaFunction</a></li>
+<li class="chapter" data-level="8.6.20" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#graphs-related-operators-4"><i class="fa fa-check"></i><b>8.6.20</b> Graphs-related operators</a></li>
+<li class="chapter" data-level="8.6.21" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#grid-related-operators-4"><i class="fa fa-check"></i><b>8.6.21</b> Grid-related operators</a></li>
+<li class="chapter" data-level="8.6.22" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#iterator-operators-4"><i class="fa fa-check"></i><b>8.6.22</b> Iterator operators</a></li>
+<li class="chapter" data-level="8.6.23" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#list-related-operators-4"><i class="fa fa-check"></i><b>8.6.23</b> List-related operators</a></li>
+<li class="chapter" data-level="8.6.24" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#logical-operators-4"><i class="fa fa-check"></i><b>8.6.24</b> Logical operators</a></li>
+<li class="chapter" data-level="8.6.25" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#map-comparaison-operators-4"><i class="fa fa-check"></i><b>8.6.25</b> Map comparaison operators</a></li>
+<li class="chapter" data-level="8.6.26" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#map-related-operators-4"><i class="fa fa-check"></i><b>8.6.26</b> Map-related operators</a></li>
+<li class="chapter" data-level="8.6.27" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#material-6"><i class="fa fa-check"></i><b>8.6.27</b> Material</a></li>
+<li class="chapter" data-level="8.6.28" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#matrix-related-operators-4"><i class="fa fa-check"></i><b>8.6.28</b> Matrix-related operators</a></li>
+<li class="chapter" data-level="8.6.29" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#multicriteria-operators-4"><i class="fa fa-check"></i><b>8.6.29</b> multicriteria operators</a></li>
+<li class="chapter" data-level="8.6.30" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#path-related-operators-4"><i class="fa fa-check"></i><b>8.6.30</b> Path-related operators</a></li>
+<li class="chapter" data-level="8.6.31" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#points-related-operators-4"><i class="fa fa-check"></i><b>8.6.31</b> Points-related operators</a></li>
+<li class="chapter" data-level="8.6.32" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#random-operators-4"><i class="fa fa-check"></i><b>8.6.32</b> Random operators</a></li>
+<li class="chapter" data-level="8.6.33" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#reverseoperators-4"><i class="fa fa-check"></i><b>8.6.33</b> ReverseOperators</a></li>
+<li class="chapter" data-level="8.6.34" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#shape-4"><i class="fa fa-check"></i><b>8.6.34</b> Shape</a></li>
+<li class="chapter" data-level="8.6.35" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#spatial-operators-4"><i class="fa fa-check"></i><b>8.6.35</b> Spatial operators</a></li>
+<li class="chapter" data-level="8.6.36" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#spatial-properties-operators-4"><i class="fa fa-check"></i><b>8.6.36</b> Spatial properties operators</a></li>
+<li class="chapter" data-level="8.6.37" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#spatial-queries-operators-4"><i class="fa fa-check"></i><b>8.6.37</b> Spatial queries operators</a></li>
+<li class="chapter" data-level="8.6.38" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#spatial-relations-operators-4"><i class="fa fa-check"></i><b>8.6.38</b> Spatial relations operators</a></li>
+<li class="chapter" data-level="8.6.39" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#spatial-statistical-operators-4"><i class="fa fa-check"></i><b>8.6.39</b> Spatial statistical operators</a></li>
+<li class="chapter" data-level="8.6.40" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#spatial-transformations-operators-4"><i class="fa fa-check"></i><b>8.6.40</b> Spatial transformations operators</a></li>
+<li class="chapter" data-level="8.6.41" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#species-related-operators-4"><i class="fa fa-check"></i><b>8.6.41</b> Species-related operators</a></li>
+<li class="chapter" data-level="8.6.42" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#statistical-operators-4"><i class="fa fa-check"></i><b>8.6.42</b> Statistical operators</a></li>
+<li class="chapter" data-level="8.6.43" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#strings-related-operators-4"><i class="fa fa-check"></i><b>8.6.43</b> Strings-related operators</a></li>
+<li class="chapter" data-level="8.6.44" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#system-4"><i class="fa fa-check"></i><b>8.6.44</b> System</a></li>
+<li class="chapter" data-level="8.6.45" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#time-related-operators-4"><i class="fa fa-check"></i><b>8.6.45</b> Time-related operators</a></li>
+<li class="chapter" data-level="8.6.46" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#types-related-operators-4"><i class="fa fa-check"></i><b>8.6.46</b> Types-related operators</a></li>
+<li class="chapter" data-level="8.6.47" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#user-control-operators-4"><i class="fa fa-check"></i><b>8.6.47</b> User control operators</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#operators-4"><i class="fa fa-check"></i><b>8.7</b> Operators</a><ul>
+<li class="chapter" data-level="8.7.1" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#nb_cycles"><i class="fa fa-check"></i><b>8.7.1</b> <code>nb_cycles</code></a></li>
+<li class="chapter" data-level="8.7.2" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#neighbors_at"><i class="fa fa-check"></i><b>8.7.2</b> <code>neighbors_at</code></a></li>
+<li class="chapter" data-level="8.7.3" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#neighbors_of"><i class="fa fa-check"></i><b>8.7.3</b> <code>neighbors_of</code></a></li>
+<li class="chapter" data-level="8.7.4" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#new_emotion"><i class="fa fa-check"></i><b>8.7.4</b> <code>new_emotion</code></a></li>
+<li class="chapter" data-level="8.7.5" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#new_folder"><i class="fa fa-check"></i><b>8.7.5</b> <code>new_folder</code></a></li>
+<li class="chapter" data-level="8.7.6" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#new_mental_state"><i class="fa fa-check"></i><b>8.7.6</b> <code>new_mental_state</code></a></li>
+<li class="chapter" data-level="8.7.7" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#new_predicate"><i class="fa fa-check"></i><b>8.7.7</b> <code>new_predicate</code></a></li>
+<li class="chapter" data-level="8.7.8" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#new_social_link"><i class="fa fa-check"></i><b>8.7.8</b> <code>new_social_link</code></a></li>
+<li class="chapter" data-level="8.7.9" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#node"><i class="fa fa-check"></i><b>8.7.9</b> <code>node</code></a></li>
+<li class="chapter" data-level="8.7.10" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#nodes"><i class="fa fa-check"></i><b>8.7.10</b> <code>nodes</code></a></li>
+<li class="chapter" data-level="8.7.11" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#norm"><i class="fa fa-check"></i><b>8.7.11</b> <code>norm</code></a></li>
+<li class="chapter" data-level="8.7.12" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#norm-1"><i class="fa fa-check"></i><b>8.7.12</b> <code>Norm</code></a></li>
+<li class="chapter" data-level="8.7.13" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#normal_area"><i class="fa fa-check"></i><b>8.7.13</b> <code>normal_area</code></a></li>
+<li class="chapter" data-level="8.7.14" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#normal_density"><i class="fa fa-check"></i><b>8.7.14</b> <code>normal_density</code></a></li>
+<li class="chapter" data-level="8.7.15" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#normal_inverse"><i class="fa fa-check"></i><b>8.7.15</b> <code>normal_inverse</code></a></li>
+<li class="chapter" data-level="8.7.16" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#not"><i class="fa fa-check"></i><b>8.7.16</b> <code>not</code></a></li>
+<li class="chapter" data-level="8.7.17" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#obj_file"><i class="fa fa-check"></i><b>8.7.17</b> <code>obj_file</code></a></li>
+<li class="chapter" data-level="8.7.18" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#of"><i class="fa fa-check"></i><b>8.7.18</b> <code>of</code></a></li>
+<li class="chapter" data-level="8.7.19" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#of_generic_species"><i class="fa fa-check"></i><b>8.7.19</b> <code>of_generic_species</code></a></li>
+<li class="chapter" data-level="8.7.20" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#of_species"><i class="fa fa-check"></i><b>8.7.20</b> <code>of_species</code></a></li>
+<li class="chapter" data-level="8.7.21" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#one_of"><i class="fa fa-check"></i><b>8.7.21</b> <code>one_of</code></a></li>
+<li class="chapter" data-level="8.7.22" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#open_simplex_generator"><i class="fa fa-check"></i><b>8.7.22</b> <code>open_simplex_generator</code></a></li>
+<li class="chapter" data-level="8.7.23" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#or"><i class="fa fa-check"></i><b>8.7.23</b> <code>or</code></a></li>
+<li class="chapter" data-level="8.7.24" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#or-1"><i class="fa fa-check"></i><b>8.7.24</b> <code>or</code></a></li>
+<li class="chapter" data-level="8.7.25" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#osm_file"><i class="fa fa-check"></i><b>8.7.25</b> <code>osm_file</code></a></li>
+<li class="chapter" data-level="8.7.26" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#out_degree_of"><i class="fa fa-check"></i><b>8.7.26</b> <code>out_degree_of</code></a></li>
+<li class="chapter" data-level="8.7.27" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#out_edges_of"><i class="fa fa-check"></i><b>8.7.27</b> <code>out_edges_of</code></a></li>
+<li class="chapter" data-level="8.7.28" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#overlapping"><i class="fa fa-check"></i><b>8.7.28</b> <code>overlapping</code></a></li>
+<li class="chapter" data-level="8.7.29" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#overlaps"><i class="fa fa-check"></i><b>8.7.29</b> <code>overlaps</code></a></li>
+<li class="chapter" data-level="8.7.30" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#pair"><i class="fa fa-check"></i><b>8.7.30</b> <code>pair</code></a></li>
+<li class="chapter" data-level="8.7.31" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#partially_overlaps"><i class="fa fa-check"></i><b>8.7.31</b> <code>partially_overlaps</code></a></li>
+<li class="chapter" data-level="8.7.32" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#path"><i class="fa fa-check"></i><b>8.7.32</b> <code>path</code></a></li>
+<li class="chapter" data-level="8.7.33" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#path_between"><i class="fa fa-check"></i><b>8.7.33</b> <code>path_between</code></a></li>
+<li class="chapter" data-level="8.7.34" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#path_to"><i class="fa fa-check"></i><b>8.7.34</b> <code>path_to</code></a></li>
+<li class="chapter" data-level="8.7.35" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#paths_between"><i class="fa fa-check"></i><b>8.7.35</b> <code>paths_between</code></a></li>
+<li class="chapter" data-level="8.7.36" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#pbinom"><i class="fa fa-check"></i><b>8.7.36</b> <code>pbinom</code></a></li>
+<li class="chapter" data-level="8.7.37" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#pchisq"><i class="fa fa-check"></i><b>8.7.37</b> <code>pchisq</code></a></li>
+<li class="chapter" data-level="8.7.38" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#percent_absolute_deviation"><i class="fa fa-check"></i><b>8.7.38</b> <code>percent_absolute_deviation</code></a></li>
+<li class="chapter" data-level="8.7.39" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#percentile"><i class="fa fa-check"></i><b>8.7.39</b> <code>percentile</code></a></li>
+<li class="chapter" data-level="8.7.40" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#pgamma"><i class="fa fa-check"></i><b>8.7.40</b> <code>pgamma</code></a></li>
+<li class="chapter" data-level="8.7.41" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#pgm_file"><i class="fa fa-check"></i><b>8.7.41</b> <code>pgm_file</code></a></li>
+<li class="chapter" data-level="8.7.42" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#plan"><i class="fa fa-check"></i><b>8.7.42</b> <code>plan</code></a></li>
+<li class="chapter" data-level="8.7.43" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#plus_days"><i class="fa fa-check"></i><b>8.7.43</b> <code>plus_days</code></a></li>
+<li class="chapter" data-level="8.7.44" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#plus_hours"><i class="fa fa-check"></i><b>8.7.44</b> <code>plus_hours</code></a></li>
+<li class="chapter" data-level="8.7.45" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#plus_minutes"><i class="fa fa-check"></i><b>8.7.45</b> <code>plus_minutes</code></a></li>
+<li class="chapter" data-level="8.7.46" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#plus_months"><i class="fa fa-check"></i><b>8.7.46</b> <code>plus_months</code></a></li>
+<li class="chapter" data-level="8.7.47" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#plus_ms"><i class="fa fa-check"></i><b>8.7.47</b> <code>plus_ms</code></a></li>
+<li class="chapter" data-level="8.7.48" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#plus_seconds"><i class="fa fa-check"></i><b>8.7.48</b> <code>plus_seconds</code></a></li>
+<li class="chapter" data-level="8.7.49" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#plus_weeks"><i class="fa fa-check"></i><b>8.7.49</b> <code>plus_weeks</code></a></li>
+<li class="chapter" data-level="8.7.50" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#plus_years"><i class="fa fa-check"></i><b>8.7.50</b> <code>plus_years</code></a></li>
+<li class="chapter" data-level="8.7.51" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#pnorm"><i class="fa fa-check"></i><b>8.7.51</b> <code>pnorm</code></a></li>
+<li class="chapter" data-level="8.7.52" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#point"><i class="fa fa-check"></i><b>8.7.52</b> <code>point</code></a></li>
+<li class="chapter" data-level="8.7.53" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#points_along"><i class="fa fa-check"></i><b>8.7.53</b> <code>points_along</code></a></li>
+<li class="chapter" data-level="8.7.54" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#points_at"><i class="fa fa-check"></i><b>8.7.54</b> <code>points_at</code></a></li>
+<li class="chapter" data-level="8.7.55" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#points_on"><i class="fa fa-check"></i><b>8.7.55</b> <code>points_on</code></a></li>
+<li class="chapter" data-level="8.7.56" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#poisson"><i class="fa fa-check"></i><b>8.7.56</b> <code>poisson</code></a></li>
+<li class="chapter" data-level="8.7.57" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#polygon"><i class="fa fa-check"></i><b>8.7.57</b> <code>polygon</code></a></li>
+<li class="chapter" data-level="8.7.58" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#polyhedron"><i class="fa fa-check"></i><b>8.7.58</b> <code>polyhedron</code></a></li>
+<li class="chapter" data-level="8.7.59" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#polyline"><i class="fa fa-check"></i><b>8.7.59</b> <code>polyline</code></a></li>
+<li class="chapter" data-level="8.7.60" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#polyplan"><i class="fa fa-check"></i><b>8.7.60</b> <code>polyplan</code></a></li>
+<li class="chapter" data-level="8.7.61" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#predecessors_of"><i class="fa fa-check"></i><b>8.7.61</b> <code>predecessors_of</code></a></li>
+<li class="chapter" data-level="8.7.62" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#predicate"><i class="fa fa-check"></i><b>8.7.62</b> <code>predicate</code></a></li>
+<li class="chapter" data-level="8.7.63" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#predict"><i class="fa fa-check"></i><b>8.7.63</b> <code>predict</code></a></li>
+<li class="chapter" data-level="8.7.64" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#product"><i class="fa fa-check"></i><b>8.7.64</b> <code>product</code></a></li>
+<li class="chapter" data-level="8.7.65" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#product_of"><i class="fa fa-check"></i><b>8.7.65</b> <code>product_of</code></a></li>
+<li class="chapter" data-level="8.7.66" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#promethee_dm"><i class="fa fa-check"></i><b>8.7.66</b> <code>promethee_DM</code></a></li>
+<li class="chapter" data-level="8.7.67" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#property_file"><i class="fa fa-check"></i><b>8.7.67</b> <code>property_file</code></a></li>
+<li class="chapter" data-level="8.7.68" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#pvalue_for_fstat"><i class="fa fa-check"></i><b>8.7.68</b> <code>pValue_for_fStat</code></a></li>
+<li class="chapter" data-level="8.7.69" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#pvalue_for_tstat"><i class="fa fa-check"></i><b>8.7.69</b> <code>pValue_for_tStat</code></a></li>
+<li class="chapter" data-level="8.7.70" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#pyramid"><i class="fa fa-check"></i><b>8.7.70</b> <code>pyramid</code></a></li>
+<li class="chapter" data-level="8.7.71" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#quantile"><i class="fa fa-check"></i><b>8.7.71</b> <code>quantile</code></a></li>
+<li class="chapter" data-level="8.7.72" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#quantile_inverse"><i class="fa fa-check"></i><b>8.7.72</b> <code>quantile_inverse</code></a></li>
+<li class="chapter" data-level="8.7.73" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#r_correlation"><i class="fa fa-check"></i><b>8.7.73</b> <code>R_correlation</code></a></li>
+<li class="chapter" data-level="8.7.74" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#r_file"><i class="fa fa-check"></i><b>8.7.74</b> <code>R_file</code></a></li>
+<li class="chapter" data-level="8.7.75" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#r_mean"><i class="fa fa-check"></i><b>8.7.75</b> <code>R_mean</code></a></li>
+<li class="chapter" data-level="8.7.76" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#range"><i class="fa fa-check"></i><b>8.7.76</b> <code>range</code></a></li>
+<li class="chapter" data-level="8.7.77" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#rank_interpolated"><i class="fa fa-check"></i><b>8.7.77</b> <code>rank_interpolated</code></a></li>
+<li class="chapter" data-level="8.7.78" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#read"><i class="fa fa-check"></i><b>8.7.78</b> <code>read</code></a></li>
+<li class="chapter" data-level="8.7.79" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#rectangle"><i class="fa fa-check"></i><b>8.7.79</b> <code>rectangle</code></a></li>
+<li class="chapter" data-level="8.7.80" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#reduced_by"><i class="fa fa-check"></i><b>8.7.80</b> <code>reduced_by</code></a></li>
+<li class="chapter" data-level="8.7.81" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#regression"><i class="fa fa-check"></i><b>8.7.81</b> <code>regression</code></a></li>
+<li class="chapter" data-level="8.7.82" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#remove_duplicates"><i class="fa fa-check"></i><b>8.7.82</b> <code>remove_duplicates</code></a></li>
+<li class="chapter" data-level="8.7.83" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#remove_node_from"><i class="fa fa-check"></i><b>8.7.83</b> <code>remove_node_from</code></a></li>
+<li class="chapter" data-level="8.7.84" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#replace"><i class="fa fa-check"></i><b>8.7.84</b> <code>replace</code></a></li>
+<li class="chapter" data-level="8.7.85" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#replace_regex"><i class="fa fa-check"></i><b>8.7.85</b> <code>replace_regex</code></a></li>
+<li class="chapter" data-level="8.7.86" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#reverse"><i class="fa fa-check"></i><b>8.7.86</b> <code>reverse</code></a></li>
+<li class="chapter" data-level="8.7.87" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#rewire_n"><i class="fa fa-check"></i><b>8.7.87</b> <code>rewire_n</code></a></li>
+<li class="chapter" data-level="8.7.88" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#rgb"><i class="fa fa-check"></i><b>8.7.88</b> <code>rgb</code></a></li>
+<li class="chapter" data-level="8.7.89" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#rgb-1"><i class="fa fa-check"></i><b>8.7.89</b> <code>rgb</code></a></li>
+<li class="chapter" data-level="8.7.90" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#rgb_to_xyz"><i class="fa fa-check"></i><b>8.7.90</b> <code>rgb_to_xyz</code></a></li>
+<li class="chapter" data-level="8.7.91" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#rms"><i class="fa fa-check"></i><b>8.7.91</b> <code>rms</code></a></li>
+<li class="chapter" data-level="8.7.92" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#rnd"><i class="fa fa-check"></i><b>8.7.92</b> <code>rnd</code></a></li>
+<li class="chapter" data-level="8.7.93" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#rnd_choice"><i class="fa fa-check"></i><b>8.7.93</b> <code>rnd_choice</code></a></li>
+<li class="chapter" data-level="8.7.94" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#rnd_color"><i class="fa fa-check"></i><b>8.7.94</b> <code>rnd_color</code></a></li>
+<li class="chapter" data-level="8.7.95" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#rotated_by"><i class="fa fa-check"></i><b>8.7.95</b> <code>rotated_by</code></a></li>
+<li class="chapter" data-level="8.7.96" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#round"><i class="fa fa-check"></i><b>8.7.96</b> <code>round</code></a></li>
+<li class="chapter" data-level="8.7.97" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#row_at"><i class="fa fa-check"></i><b>8.7.97</b> <code>row_at</code></a></li>
+<li class="chapter" data-level="8.7.98" data-path="operators-n-to-r.html"><a href="operators-n-to-r.html#rows_list"><i class="fa fa-check"></i><b>8.7.98</b> <code>rows_list</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html"><i class="fa fa-check"></i><b>9</b> Operators (S to Z)</a><ul>
+<li class="chapter" data-level="9.1" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#definition-5"><i class="fa fa-check"></i><b>9.1</b> Definition</a></li>
+<li class="chapter" data-level="9.2" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#section-23"><i class="fa fa-check"></i><b>9.2</b> <br/></a></li>
+<li class="chapter" data-level="9.3" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#priority-between-operators-5"><i class="fa fa-check"></i><b>9.3</b> Priority between operators</a></li>
+<li class="chapter" data-level="9.4" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#using-actions-as-operators-5"><i class="fa fa-check"></i><b>9.4</b> Using actions as operators</a></li>
+<li class="chapter" data-level="9.5" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#table-of-contents-5"><i class="fa fa-check"></i><b>9.5</b> Table of Contents</a></li>
+<li class="chapter" data-level="9.6" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#operators-by-categories-5"><i class="fa fa-check"></i><b>9.6</b> Operators by categories</a><ul>
+<li class="chapter" data-level="9.6.1" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#d-5"><i class="fa fa-check"></i><b>9.6.1</b> 3D</a></li>
+<li class="chapter" data-level="9.6.2" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#arithmetic-operators-5"><i class="fa fa-check"></i><b>9.6.2</b> Arithmetic operators</a></li>
+<li class="chapter" data-level="9.6.3" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#bdi-5"><i class="fa fa-check"></i><b>9.6.3</b> BDI</a></li>
+<li class="chapter" data-level="9.6.4" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#casting-operators-5"><i class="fa fa-check"></i><b>9.6.4</b> Casting operators</a></li>
+<li class="chapter" data-level="9.6.5" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#color-related-operators-5"><i class="fa fa-check"></i><b>9.6.5</b> Color-related operators</a></li>
+<li class="chapter" data-level="9.6.6" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#comparison-operators-5"><i class="fa fa-check"></i><b>9.6.6</b> Comparison operators</a></li>
+<li class="chapter" data-level="9.6.7" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#containers-related-operators-5"><i class="fa fa-check"></i><b>9.6.7</b> Containers-related operators</a></li>
+<li class="chapter" data-level="9.6.8" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#date-related-operators-5"><i class="fa fa-check"></i><b>9.6.8</b> Date-related operators</a></li>
+<li class="chapter" data-level="9.6.9" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#dates-5"><i class="fa fa-check"></i><b>9.6.9</b> Dates</a></li>
+<li class="chapter" data-level="9.6.10" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#descriptivestatistics-5"><i class="fa fa-check"></i><b>9.6.10</b> DescriptiveStatistics</a></li>
+<li class="chapter" data-level="9.6.11" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#displays-5"><i class="fa fa-check"></i><b>9.6.11</b> Displays</a></li>
+<li class="chapter" data-level="9.6.12" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#distributions-5"><i class="fa fa-check"></i><b>9.6.12</b> Distributions</a></li>
+<li class="chapter" data-level="9.6.13" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#driving-operators-5"><i class="fa fa-check"></i><b>9.6.13</b> Driving operators</a></li>
+<li class="chapter" data-level="9.6.14" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#edge-6"><i class="fa fa-check"></i><b>9.6.14</b> edge</a></li>
+<li class="chapter" data-level="9.6.15" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#edp-related-operators-5"><i class="fa fa-check"></i><b>9.6.15</b> EDP-related operators</a></li>
+<li class="chapter" data-level="9.6.16" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#files-related-operators-5"><i class="fa fa-check"></i><b>9.6.16</b> Files-related operators</a></li>
+<li class="chapter" data-level="9.6.17" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#fipa-related-operators-5"><i class="fa fa-check"></i><b>9.6.17</b> FIPA-related operators</a></li>
+<li class="chapter" data-level="9.6.18" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#gamametatype-5"><i class="fa fa-check"></i><b>9.6.18</b> GamaMetaType</a></li>
+<li class="chapter" data-level="9.6.19" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#gammafunction-5"><i class="fa fa-check"></i><b>9.6.19</b> GammaFunction</a></li>
+<li class="chapter" data-level="9.6.20" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#graphs-related-operators-5"><i class="fa fa-check"></i><b>9.6.20</b> Graphs-related operators</a></li>
+<li class="chapter" data-level="9.6.21" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#grid-related-operators-5"><i class="fa fa-check"></i><b>9.6.21</b> Grid-related operators</a></li>
+<li class="chapter" data-level="9.6.22" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#iterator-operators-5"><i class="fa fa-check"></i><b>9.6.22</b> Iterator operators</a></li>
+<li class="chapter" data-level="9.6.23" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#list-related-operators-5"><i class="fa fa-check"></i><b>9.6.23</b> List-related operators</a></li>
+<li class="chapter" data-level="9.6.24" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#logical-operators-5"><i class="fa fa-check"></i><b>9.6.24</b> Logical operators</a></li>
+<li class="chapter" data-level="9.6.25" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#map-comparaison-operators-5"><i class="fa fa-check"></i><b>9.6.25</b> Map comparaison operators</a></li>
+<li class="chapter" data-level="9.6.26" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#map-related-operators-5"><i class="fa fa-check"></i><b>9.6.26</b> Map-related operators</a></li>
+<li class="chapter" data-level="9.6.27" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#material-7"><i class="fa fa-check"></i><b>9.6.27</b> Material</a></li>
+<li class="chapter" data-level="9.6.28" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#matrix-related-operators-5"><i class="fa fa-check"></i><b>9.6.28</b> Matrix-related operators</a></li>
+<li class="chapter" data-level="9.6.29" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#multicriteria-operators-5"><i class="fa fa-check"></i><b>9.6.29</b> multicriteria operators</a></li>
+<li class="chapter" data-level="9.6.30" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#path-related-operators-5"><i class="fa fa-check"></i><b>9.6.30</b> Path-related operators</a></li>
+<li class="chapter" data-level="9.6.31" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#points-related-operators-5"><i class="fa fa-check"></i><b>9.6.31</b> Points-related operators</a></li>
+<li class="chapter" data-level="9.6.32" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#random-operators-5"><i class="fa fa-check"></i><b>9.6.32</b> Random operators</a></li>
+<li class="chapter" data-level="9.6.33" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#reverseoperators-5"><i class="fa fa-check"></i><b>9.6.33</b> ReverseOperators</a></li>
+<li class="chapter" data-level="9.6.34" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#shape-5"><i class="fa fa-check"></i><b>9.6.34</b> Shape</a></li>
+<li class="chapter" data-level="9.6.35" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#spatial-operators-5"><i class="fa fa-check"></i><b>9.6.35</b> Spatial operators</a></li>
+<li class="chapter" data-level="9.6.36" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#spatial-properties-operators-5"><i class="fa fa-check"></i><b>9.6.36</b> Spatial properties operators</a></li>
+<li class="chapter" data-level="9.6.37" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#spatial-queries-operators-5"><i class="fa fa-check"></i><b>9.6.37</b> Spatial queries operators</a></li>
+<li class="chapter" data-level="9.6.38" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#spatial-relations-operators-5"><i class="fa fa-check"></i><b>9.6.38</b> Spatial relations operators</a></li>
+<li class="chapter" data-level="9.6.39" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#spatial-statistical-operators-5"><i class="fa fa-check"></i><b>9.6.39</b> Spatial statistical operators</a></li>
+<li class="chapter" data-level="9.6.40" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#spatial-transformations-operators-5"><i class="fa fa-check"></i><b>9.6.40</b> Spatial transformations operators</a></li>
+<li class="chapter" data-level="9.6.41" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#species-related-operators-5"><i class="fa fa-check"></i><b>9.6.41</b> Species-related operators</a></li>
+<li class="chapter" data-level="9.6.42" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#statistical-operators-5"><i class="fa fa-check"></i><b>9.6.42</b> Statistical operators</a></li>
+<li class="chapter" data-level="9.6.43" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#strings-related-operators-5"><i class="fa fa-check"></i><b>9.6.43</b> Strings-related operators</a></li>
+<li class="chapter" data-level="9.6.44" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#system-5"><i class="fa fa-check"></i><b>9.6.44</b> System</a></li>
+<li class="chapter" data-level="9.6.45" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#time-related-operators-5"><i class="fa fa-check"></i><b>9.6.45</b> Time-related operators</a></li>
+<li class="chapter" data-level="9.6.46" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#types-related-operators-5"><i class="fa fa-check"></i><b>9.6.46</b> Types-related operators</a></li>
+<li class="chapter" data-level="9.6.47" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#user-control-operators-5"><i class="fa fa-check"></i><b>9.6.47</b> User control operators</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#operators-5"><i class="fa fa-check"></i><b>9.7</b> Operators</a><ul>
+<li class="chapter" data-level="9.7.1" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#sample"><i class="fa fa-check"></i><b>9.7.1</b> <code>sample</code></a></li>
+<li class="chapter" data-level="9.7.2" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#sanction"><i class="fa fa-check"></i><b>9.7.2</b> <code>Sanction</code></a></li>
+<li class="chapter" data-level="9.7.3" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#savesimulation"><i class="fa fa-check"></i><b>9.7.3</b> <code>saveSimulation</code></a></li>
+<li class="chapter" data-level="9.7.4" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#scaled_by"><i class="fa fa-check"></i><b>9.7.4</b> <code>scaled_by</code></a></li>
+<li class="chapter" data-level="9.7.5" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#scaled_to"><i class="fa fa-check"></i><b>9.7.5</b> <code>scaled_to</code></a></li>
+<li class="chapter" data-level="9.7.6" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#select"><i class="fa fa-check"></i><b>9.7.6</b> <code>select</code></a></li>
+<li class="chapter" data-level="9.7.7" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#serialize"><i class="fa fa-check"></i><b>9.7.7</b> <code>serialize</code></a></li>
+<li class="chapter" data-level="9.7.8" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#serializeagent"><i class="fa fa-check"></i><b>9.7.8</b> <code>serializeAgent</code></a></li>
+<li class="chapter" data-level="9.7.9" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#set_about"><i class="fa fa-check"></i><b>9.7.9</b> <code>set_about</code></a></li>
+<li class="chapter" data-level="9.7.10" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#set_agent"><i class="fa fa-check"></i><b>9.7.10</b> <code>set_agent</code></a></li>
+<li class="chapter" data-level="9.7.11" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#set_agent_cause"><i class="fa fa-check"></i><b>9.7.11</b> <code>set_agent_cause</code></a></li>
+<li class="chapter" data-level="9.7.12" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#set_decay"><i class="fa fa-check"></i><b>9.7.12</b> <code>set_decay</code></a></li>
+<li class="chapter" data-level="9.7.13" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#set_dominance"><i class="fa fa-check"></i><b>9.7.13</b> <code>set_dominance</code></a></li>
+<li class="chapter" data-level="9.7.14" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#set_familiarity"><i class="fa fa-check"></i><b>9.7.14</b> <code>set_familiarity</code></a></li>
+<li class="chapter" data-level="9.7.15" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#set_intensity"><i class="fa fa-check"></i><b>9.7.15</b> <code>set_intensity</code></a></li>
+<li class="chapter" data-level="9.7.16" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#set_lifetime"><i class="fa fa-check"></i><b>9.7.16</b> <code>set_lifetime</code></a></li>
+<li class="chapter" data-level="9.7.17" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#set_liking"><i class="fa fa-check"></i><b>9.7.17</b> <code>set_liking</code></a></li>
+<li class="chapter" data-level="9.7.18" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#set_modality"><i class="fa fa-check"></i><b>9.7.18</b> <code>set_modality</code></a></li>
+<li class="chapter" data-level="9.7.19" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#set_predicate"><i class="fa fa-check"></i><b>9.7.19</b> <code>set_predicate</code></a></li>
+<li class="chapter" data-level="9.7.20" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#set_solidarity"><i class="fa fa-check"></i><b>9.7.20</b> <code>set_solidarity</code></a></li>
+<li class="chapter" data-level="9.7.21" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#set_strength"><i class="fa fa-check"></i><b>9.7.21</b> <code>set_strength</code></a></li>
+<li class="chapter" data-level="9.7.22" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#set_trust"><i class="fa fa-check"></i><b>9.7.22</b> <code>set_trust</code></a></li>
+<li class="chapter" data-level="9.7.23" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#set_truth"><i class="fa fa-check"></i><b>9.7.23</b> <code>set_truth</code></a></li>
+<li class="chapter" data-level="9.7.24" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#set_z"><i class="fa fa-check"></i><b>9.7.24</b> <code>set_z</code></a></li>
+<li class="chapter" data-level="9.7.25" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#shape_file"><i class="fa fa-check"></i><b>9.7.25</b> <code>shape_file</code></a></li>
+<li class="chapter" data-level="9.7.26" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#shuffle"><i class="fa fa-check"></i><b>9.7.26</b> <code>shuffle</code></a></li>
+<li class="chapter" data-level="9.7.27" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#signum"><i class="fa fa-check"></i><b>9.7.27</b> <code>signum</code></a></li>
+<li class="chapter" data-level="9.7.28" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#simple_clustering_by_distance"><i class="fa fa-check"></i><b>9.7.28</b> <code>simple_clustering_by_distance</code></a></li>
+<li class="chapter" data-level="9.7.29" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#simple_clustering_by_envelope_distance"><i class="fa fa-check"></i><b>9.7.29</b> <code>simple_clustering_by_envelope_distance</code></a></li>
+<li class="chapter" data-level="9.7.30" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#simplex_generator"><i class="fa fa-check"></i><b>9.7.30</b> <code>simplex_generator</code></a></li>
+<li class="chapter" data-level="9.7.31" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#simplification"><i class="fa fa-check"></i><b>9.7.31</b> <code>simplification</code></a></li>
+<li class="chapter" data-level="9.7.32" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#sin"><i class="fa fa-check"></i><b>9.7.32</b> <code>sin</code></a></li>
+<li class="chapter" data-level="9.7.33" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#sin_rad"><i class="fa fa-check"></i><b>9.7.33</b> <code>sin_rad</code></a></li>
+<li class="chapter" data-level="9.7.34" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#since"><i class="fa fa-check"></i><b>9.7.34</b> <code>since</code></a></li>
+<li class="chapter" data-level="9.7.35" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#skeletonize"><i class="fa fa-check"></i><b>9.7.35</b> <code>skeletonize</code></a></li>
+<li class="chapter" data-level="9.7.36" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#skew"><i class="fa fa-check"></i><b>9.7.36</b> <code>skew</code></a></li>
+<li class="chapter" data-level="9.7.37" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#skew_gauss"><i class="fa fa-check"></i><b>9.7.37</b> <code>skew_gauss</code></a></li>
+<li class="chapter" data-level="9.7.38" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#skewness"><i class="fa fa-check"></i><b>9.7.38</b> <code>skewness</code></a></li>
+<li class="chapter" data-level="9.7.39" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#skill"><i class="fa fa-check"></i><b>9.7.39</b> <code>skill</code></a></li>
+<li class="chapter" data-level="9.7.40" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#smooth"><i class="fa fa-check"></i><b>9.7.40</b> <code>smooth</code></a></li>
+<li class="chapter" data-level="9.7.41" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#social_link"><i class="fa fa-check"></i><b>9.7.41</b> <code>social_link</code></a></li>
+<li class="chapter" data-level="9.7.42" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#solid"><i class="fa fa-check"></i><b>9.7.42</b> <code>solid</code></a></li>
+<li class="chapter" data-level="9.7.43" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#sort"><i class="fa fa-check"></i><b>9.7.43</b> <code>sort</code></a></li>
+<li class="chapter" data-level="9.7.44" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#sort_by"><i class="fa fa-check"></i><b>9.7.44</b> <code>sort_by</code></a></li>
+<li class="chapter" data-level="9.7.45" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#source_of"><i class="fa fa-check"></i><b>9.7.45</b> <code>source_of</code></a></li>
+<li class="chapter" data-level="9.7.46" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#spatial_graph"><i class="fa fa-check"></i><b>9.7.46</b> <code>spatial_graph</code></a></li>
+<li class="chapter" data-level="9.7.47" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#species"><i class="fa fa-check"></i><b>9.7.47</b> <code>species</code></a></li>
+<li class="chapter" data-level="9.7.48" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#species_of"><i class="fa fa-check"></i><b>9.7.48</b> <code>species_of</code></a></li>
+<li class="chapter" data-level="9.7.49" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#sphere"><i class="fa fa-check"></i><b>9.7.49</b> <code>sphere</code></a></li>
+<li class="chapter" data-level="9.7.50" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#split"><i class="fa fa-check"></i><b>9.7.50</b> <code>split</code></a></li>
+<li class="chapter" data-level="9.7.51" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#split_at"><i class="fa fa-check"></i><b>9.7.51</b> <code>split_at</code></a></li>
+<li class="chapter" data-level="9.7.52" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#split_geometry"><i class="fa fa-check"></i><b>9.7.52</b> <code>split_geometry</code></a></li>
+<li class="chapter" data-level="9.7.53" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#split_in"><i class="fa fa-check"></i><b>9.7.53</b> <code>split_in</code></a></li>
+<li class="chapter" data-level="9.7.54" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#split_lines"><i class="fa fa-check"></i><b>9.7.54</b> <code>split_lines</code></a></li>
+<li class="chapter" data-level="9.7.55" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#split_using"><i class="fa fa-check"></i><b>9.7.55</b> <code>split_using</code></a></li>
+<li class="chapter" data-level="9.7.56" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#split_with"><i class="fa fa-check"></i><b>9.7.56</b> <code>split_with</code></a></li>
+<li class="chapter" data-level="9.7.57" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#sqrt"><i class="fa fa-check"></i><b>9.7.57</b> <code>sqrt</code></a></li>
+<li class="chapter" data-level="9.7.58" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#square"><i class="fa fa-check"></i><b>9.7.58</b> <code>square</code></a></li>
+<li class="chapter" data-level="9.7.59" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#squircle"><i class="fa fa-check"></i><b>9.7.59</b> <code>squircle</code></a></li>
+<li class="chapter" data-level="9.7.60" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#stack"><i class="fa fa-check"></i><b>9.7.60</b> <code>stack</code></a></li>
+<li class="chapter" data-level="9.7.61" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#standard_deviation"><i class="fa fa-check"></i><b>9.7.61</b> <code>standard_deviation</code></a></li>
+<li class="chapter" data-level="9.7.62" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#step_sub_model"><i class="fa fa-check"></i><b>9.7.62</b> <code>step_sub_model</code></a></li>
+<li class="chapter" data-level="9.7.63" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#strahler"><i class="fa fa-check"></i><b>9.7.63</b> <code>strahler</code></a></li>
+<li class="chapter" data-level="9.7.64" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#string"><i class="fa fa-check"></i><b>9.7.64</b> <code>string</code></a></li>
+<li class="chapter" data-level="9.7.65" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#student_area"><i class="fa fa-check"></i><b>9.7.65</b> <code>student_area</code></a></li>
+<li class="chapter" data-level="9.7.66" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#student_t_inverse"><i class="fa fa-check"></i><b>9.7.66</b> <code>student_t_inverse</code></a></li>
+<li class="chapter" data-level="9.7.67" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#subtract_days"><i class="fa fa-check"></i><b>9.7.67</b> <code>subtract_days</code></a></li>
+<li class="chapter" data-level="9.7.68" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#subtract_hours"><i class="fa fa-check"></i><b>9.7.68</b> <code>subtract_hours</code></a></li>
+<li class="chapter" data-level="9.7.69" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#subtract_minutes"><i class="fa fa-check"></i><b>9.7.69</b> <code>subtract_minutes</code></a></li>
+<li class="chapter" data-level="9.7.70" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#subtract_months"><i class="fa fa-check"></i><b>9.7.70</b> <code>subtract_months</code></a></li>
+<li class="chapter" data-level="9.7.71" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#subtract_ms"><i class="fa fa-check"></i><b>9.7.71</b> <code>subtract_ms</code></a></li>
+<li class="chapter" data-level="9.7.72" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#subtract_seconds"><i class="fa fa-check"></i><b>9.7.72</b> <code>subtract_seconds</code></a></li>
+<li class="chapter" data-level="9.7.73" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#subtract_weeks"><i class="fa fa-check"></i><b>9.7.73</b> <code>subtract_weeks</code></a></li>
+<li class="chapter" data-level="9.7.74" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#subtract_years"><i class="fa fa-check"></i><b>9.7.74</b> <code>subtract_years</code></a></li>
+<li class="chapter" data-level="9.7.75" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#successors_of"><i class="fa fa-check"></i><b>9.7.75</b> <code>successors_of</code></a></li>
+<li class="chapter" data-level="9.7.76" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#sum"><i class="fa fa-check"></i><b>9.7.76</b> <code>sum</code></a></li>
+<li class="chapter" data-level="9.7.77" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#sum_of"><i class="fa fa-check"></i><b>9.7.77</b> <code>sum_of</code></a></li>
+<li class="chapter" data-level="9.7.78" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#svg_file"><i class="fa fa-check"></i><b>9.7.78</b> <code>svg_file</code></a></li>
+<li class="chapter" data-level="9.7.79" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#tan"><i class="fa fa-check"></i><b>9.7.79</b> <code>tan</code></a></li>
+<li class="chapter" data-level="9.7.80" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#tan_rad"><i class="fa fa-check"></i><b>9.7.80</b> <code>tan_rad</code></a></li>
+<li class="chapter" data-level="9.7.81" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#tanh"><i class="fa fa-check"></i><b>9.7.81</b> <code>tanh</code></a></li>
+<li class="chapter" data-level="9.7.82" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#target_of"><i class="fa fa-check"></i><b>9.7.82</b> <code>target_of</code></a></li>
+<li class="chapter" data-level="9.7.83" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#teapot"><i class="fa fa-check"></i><b>9.7.83</b> <code>teapot</code></a></li>
+<li class="chapter" data-level="9.7.84" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#text_file"><i class="fa fa-check"></i><b>9.7.84</b> <code>text_file</code></a></li>
+<li class="chapter" data-level="9.7.85" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#tgauss"><i class="fa fa-check"></i><b>9.7.85</b> <code>TGauss</code></a></li>
+<li class="chapter" data-level="9.7.86" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#threeds_file"><i class="fa fa-check"></i><b>9.7.86</b> <code>threeds_file</code></a></li>
+<li class="chapter" data-level="9.7.87" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#to"><i class="fa fa-check"></i><b>9.7.87</b> <code>to</code></a></li>
+<li class="chapter" data-level="9.7.88" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#to_gama_crs"><i class="fa fa-check"></i><b>9.7.88</b> <code>to_GAMA_CRS</code></a></li>
+<li class="chapter" data-level="9.7.89" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#to_gaml"><i class="fa fa-check"></i><b>9.7.89</b> <code>to_gaml</code></a></li>
+<li class="chapter" data-level="9.7.90" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#to_rectangles"><i class="fa fa-check"></i><b>9.7.90</b> <code>to_rectangles</code></a></li>
+<li class="chapter" data-level="9.7.91" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#to_squares"><i class="fa fa-check"></i><b>9.7.91</b> <code>to_squares</code></a></li>
+<li class="chapter" data-level="9.7.92" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#to_sub_geometries"><i class="fa fa-check"></i><b>9.7.92</b> <code>to_sub_geometries</code></a></li>
+<li class="chapter" data-level="9.7.93" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#to_triangles"><i class="fa fa-check"></i><b>9.7.93</b> <code>to_triangles</code></a></li>
+<li class="chapter" data-level="9.7.94" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#tokenize"><i class="fa fa-check"></i><b>9.7.94</b> <code>tokenize</code></a></li>
+<li class="chapter" data-level="9.7.95" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#topology"><i class="fa fa-check"></i><b>9.7.95</b> <code>topology</code></a></li>
+<li class="chapter" data-level="9.7.96" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#topology-1"><i class="fa fa-check"></i><b>9.7.96</b> <code>topology</code></a></li>
+<li class="chapter" data-level="9.7.97" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#touches"><i class="fa fa-check"></i><b>9.7.97</b> <code>touches</code></a></li>
+<li class="chapter" data-level="9.7.98" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#towards"><i class="fa fa-check"></i><b>9.7.98</b> <code>towards</code></a></li>
+<li class="chapter" data-level="9.7.99" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#trace"><i class="fa fa-check"></i><b>9.7.99</b> <code>trace</code></a></li>
+<li class="chapter" data-level="9.7.100" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#transformed_by"><i class="fa fa-check"></i><b>9.7.100</b> <code>transformed_by</code></a></li>
+<li class="chapter" data-level="9.7.101" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#translated_by"><i class="fa fa-check"></i><b>9.7.101</b> <code>translated_by</code></a></li>
+<li class="chapter" data-level="9.7.102" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#translated_to"><i class="fa fa-check"></i><b>9.7.102</b> <code>translated_to</code></a></li>
+<li class="chapter" data-level="9.7.103" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#transpose"><i class="fa fa-check"></i><b>9.7.103</b> <code>transpose</code></a></li>
+<li class="chapter" data-level="9.7.104" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#triangle"><i class="fa fa-check"></i><b>9.7.104</b> <code>triangle</code></a></li>
+<li class="chapter" data-level="9.7.105" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#triangulate"><i class="fa fa-check"></i><b>9.7.105</b> <code>triangulate</code></a></li>
+<li class="chapter" data-level="9.7.106" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#truncated_gauss"><i class="fa fa-check"></i><b>9.7.106</b> <code>truncated_gauss</code></a></li>
+<li class="chapter" data-level="9.7.107" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#type_of"><i class="fa fa-check"></i><b>9.7.107</b> <code>type_of</code></a></li>
+<li class="chapter" data-level="9.7.108" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#undirected"><i class="fa fa-check"></i><b>9.7.108</b> <code>undirected</code></a></li>
+<li class="chapter" data-level="9.7.109" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#union"><i class="fa fa-check"></i><b>9.7.109</b> <code>union</code></a></li>
+<li class="chapter" data-level="9.7.110" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#unknown"><i class="fa fa-check"></i><b>9.7.110</b> <code>unknown</code></a></li>
+<li class="chapter" data-level="9.7.111" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#unserializesimulation"><i class="fa fa-check"></i><b>9.7.111</b> <code>unSerializeSimulation</code></a></li>
+<li class="chapter" data-level="9.7.112" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#unserializesimulationfromfile"><i class="fa fa-check"></i><b>9.7.112</b> <code>unSerializeSimulationFromFile</code></a></li>
+<li class="chapter" data-level="9.7.113" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#until"><i class="fa fa-check"></i><b>9.7.113</b> <code>until</code></a></li>
+<li class="chapter" data-level="9.7.114" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#upper_case"><i class="fa fa-check"></i><b>9.7.114</b> <code>upper_case</code></a></li>
+<li class="chapter" data-level="9.7.115" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#url_file"><i class="fa fa-check"></i><b>9.7.115</b> <code>URL_file</code></a></li>
+<li class="chapter" data-level="9.7.116" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#use_cache"><i class="fa fa-check"></i><b>9.7.116</b> <code>use_cache</code></a></li>
+<li class="chapter" data-level="9.7.117" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#user_input"><i class="fa fa-check"></i><b>9.7.117</b> <code>user_input</code></a></li>
+<li class="chapter" data-level="9.7.118" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#using"><i class="fa fa-check"></i><b>9.7.118</b> <code>using</code></a></li>
+<li class="chapter" data-level="9.7.119" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#variance"><i class="fa fa-check"></i><b>9.7.119</b> <code>variance</code></a></li>
+<li class="chapter" data-level="9.7.120" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#variance-1"><i class="fa fa-check"></i><b>9.7.120</b> <code>variance</code></a></li>
+<li class="chapter" data-level="9.7.121" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#variance_of"><i class="fa fa-check"></i><b>9.7.121</b> <code>variance_of</code></a></li>
+<li class="chapter" data-level="9.7.122" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#vertical"><i class="fa fa-check"></i><b>9.7.122</b> <code>vertical</code></a></li>
+<li class="chapter" data-level="9.7.123" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#voronoi"><i class="fa fa-check"></i><b>9.7.123</b> <code>voronoi</code></a></li>
+<li class="chapter" data-level="9.7.124" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#weight_of"><i class="fa fa-check"></i><b>9.7.124</b> <code>weight_of</code></a></li>
+<li class="chapter" data-level="9.7.125" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#weighted_means_dm"><i class="fa fa-check"></i><b>9.7.125</b> <code>weighted_means_DM</code></a></li>
+<li class="chapter" data-level="9.7.126" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#where"><i class="fa fa-check"></i><b>9.7.126</b> <code>where</code></a></li>
+<li class="chapter" data-level="9.7.127" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#with_lifetime"><i class="fa fa-check"></i><b>9.7.127</b> <code>with_lifetime</code></a></li>
+<li class="chapter" data-level="9.7.128" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#with_max_of"><i class="fa fa-check"></i><b>9.7.128</b> <code>with_max_of</code></a></li>
+<li class="chapter" data-level="9.7.129" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#with_min_of"><i class="fa fa-check"></i><b>9.7.129</b> <code>with_min_of</code></a></li>
+<li class="chapter" data-level="9.7.130" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#with_optimizer_type"><i class="fa fa-check"></i><b>9.7.130</b> <code>with_optimizer_type</code></a></li>
+<li class="chapter" data-level="9.7.131" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#with_precision"><i class="fa fa-check"></i><b>9.7.131</b> <code>with_precision</code></a></li>
+<li class="chapter" data-level="9.7.132" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#with_values"><i class="fa fa-check"></i><b>9.7.132</b> <code>with_values</code></a></li>
+<li class="chapter" data-level="9.7.133" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#with_weights"><i class="fa fa-check"></i><b>9.7.133</b> <code>with_weights</code></a></li>
+<li class="chapter" data-level="9.7.134" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#without_holes"><i class="fa fa-check"></i><b>9.7.134</b> <code>without_holes</code></a></li>
+<li class="chapter" data-level="9.7.135" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#writable"><i class="fa fa-check"></i><b>9.7.135</b> <code>writable</code></a></li>
+<li class="chapter" data-level="9.7.136" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#xml_file"><i class="fa fa-check"></i><b>9.7.136</b> <code>xml_file</code></a></li>
+<li class="chapter" data-level="9.7.137" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#xor"><i class="fa fa-check"></i><b>9.7.137</b> <code>xor</code></a></li>
+<li class="chapter" data-level="9.7.138" data-path="operators-s-to-z.html"><a href="operators-s-to-z.html#years_between"><i class="fa fa-check"></i><b>9.7.138</b> <code>years_between</code></a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="www.bhugole.nl" target="blank">Published @ bhugole</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">GAMA Manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">GAMA Manual</h1>
+<h4 class="author"><em>Srirama Bhamidipati</em></h4>
+<h4 class="date"><em>2018-07-14</em></h4>
+</div>
+<div id="background" class="section level1 unnumbered">
+<h1>Background</h1>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="java-version.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/sriramab/gamamanual/edit/master/index.Rmd",
+"text": "Edit"
+},
+"download": ["GAMA-Manual.pdf", "GAMA-Manual.epub", "GAMA-Manual.mobi"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

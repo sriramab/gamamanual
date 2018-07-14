@@ -1,0 +1,18 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      before: |
+        <li><a href="./">GAMA Manual</a></li>
+      after: |
+        <li><a href="www.bhugole.nl" target="blank">Published @ bhugole</a></li>
+    edit: https://github.com/sriramab/gamamanual/edit/master/%s
+    download: ["pdf", "epub", "mobi"]
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+    after_body: after_body.tex
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: yes
+bookdown::epub_book: default
