@@ -1,7 +1,7 @@
 ---
 title: "GAMA 1.8 User Manual"
 author: "Srirama Bhamidipati"
-date: "Updated: `r Sys.Date()`"
+date: "Updated: `r Sys.time()` (Amsterdam)"
 header-includes:
   - \usepackage{tikz}
   - \usetikzlibrary{shapes.geometric, arrows}}
