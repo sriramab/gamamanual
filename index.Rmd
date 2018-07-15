@@ -29,7 +29,11 @@ knitr::include_graphics('cover.png', dpi = NA)
 
 The content of this manual is from gama-platform.org website. I have only modified and edited very small portions of the content to give it a book format.
 
-<blockquote id="bq_warn">
-Warning : The links do not work yet.
-</blockquote>
+This is a modified content and is not a 100% reproduction. If you do not find what you are looking for, go to the main website.
+
+Cheers ! \
+**Srirama Bhamidipati** \
+**Delft, Netherlands** \
+**2018**
+
 
