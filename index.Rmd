@@ -1,7 +1,7 @@
 ---
-title: "GAMA Manual"
+title: "GAMA 1.8 User Manual"
 author: "Srirama Bhamidipati"
-date: "`r Sys.Date()`"
+date: "Updated: `r Sys.Date()`"
 header-includes:
   - \usepackage{tikz}
   - \usetikzlibrary{shapes.geometric, arrows}}
@@ -25,15 +25,21 @@ description: "Document describing the GAMA operators and their functions."
 knitr::include_graphics('cover.png', dpi = NA)
 ```
 
+
+
 # Notice {-}
 
-The content of this manual is from gama-platform.org website. I have only modified and edited very small portions of the content to give it a book format.
+ * The content of this manual is from gama-platform.org website. I have only modified and edited very small portions of the content to give it a book format.
 
-This is a modified content and is not a 100% reproduction. If you do not find what you are looking for, go to the main website.
+* This is a modified content and is not a 100% reproduction. If you do not find what you are looking for, go to the main website.
+
+* I thank the Team of GAMA-Platform for giving me the permission to reproduce their content.
 
 Cheers ! \
+\
 **Srirama Bhamidipati** \
-**Delft, Netherlands** \
-**2018**
+*Delft, Netherlands* \
+*2018*
 
+![](gamacover.png)
 
