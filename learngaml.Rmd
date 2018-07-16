@@ -1,9 +1,9 @@
 # Learn GAML (Beginner -I)
 
-If you are a beginner, the next 5 chapters will introduce you to the GAML language. To learn the language, follow this recommended sequence:
+If you are a beginner, the next 4 chapters will introduce you to the GAML language. To learn the language, follow this recommended sequence:
 
 * Literals
 * Types or Data Types
 * File Types
 * Pseudo-variables
-* Statements
+
