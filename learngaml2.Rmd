@@ -1,0 +1,8 @@
+# Learn GAML (Beginner -II)
+
+If you are a beginner, the next 7 chapters will introduce you to the GAML language. To learn the language, follow this recommended sequence:
+
+
+
+* Operators : This includes 6 chapters introducing you to all the operators (A to Z) in GAMA. Go first to the chapter **opeators by categories** to get a feel of the scope of operators available.
+* Statements

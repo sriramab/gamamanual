@@ -23,6 +23,7 @@ description: "Document describing the GAMA operators and their functions."
 
 ```{r fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), }
 knitr::include_graphics('cover.png', dpi = NA)
+options(width = 90)
 ```
 
 
