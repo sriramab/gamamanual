@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="learn-gaml-beginner-i.html">
-<link rel="next" href="types.html">
+<link rel="prev" href="index.html">
+<link rel="next" href="java-version.html">
 <script src="book_assets/jquery-2.2.3/jquery.min.js"></script>
 <link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="book_assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -959,57 +959,24 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="literals" class="section level1">
-<h1><span class="header-section-number">Chapter 4</span> Literals</h1>
-<p><em>(some literal expressions are also described in <a href="DataTypes">data types</a>)</em></p>
-<p>A literal is a way to specify an unnamed constant value corresponding to a given data type. GAML supports various types of literals for often — or less often — used data types.</p>
-<div id="table-of-contents" class="section level2">
-<h2><span class="header-section-number">4.1</span> Table of contents</h2>
+<div id="report-errors-give-feedback" class="section level1 unnumbered">
+<h1>Report Errors/ Give Feedback</h1>
+<p>If you find any problems/typos/errors related to this book, you can report issues on this <a href="https://github.com/sriramab/gama_books/issues">page</a>. On this page you can click the big green button “New Issue” and fill in the details. Typically, you should fill</p>
 <ul>
-<li><a href="literals.html#literals">Literals</a>
-<ul>
-<li><a href="literals.html#simple-types">Simple Types</a></li>
-<li><a href="literals.html#literal-constructors">Literal Constructors</a></li>
-<li><a href="literals.html#universal-literal">Universal Literal</a></li>
-</ul></li>
+<li>name of the book</li>
+<li>a link to the book</li>
+<li>page or section number that has the error</li>
 </ul>
-</div>
-<div id="simple-types" class="section level2">
-<h2><span class="header-section-number">4.2</span> Simple Types</h2>
-<p>Values of simple (i.e. not composed) types can all be expressed using literal expressions. Namely:</p>
-<ul>
-<li><strong>bool</strong>: <code>true</code> and <code>false</code>.</li>
-<li><strong>int</strong>: decimal value, such as <code>100</code>, or hexadecimal value if preceded by <code>'#'</code> (e.g. <code>#AAAAAA</code>, which returns the int <code>11184810</code>)</li>
-<li><strong>float</strong>: the value in plain digits, using <code>'.'</code> for the decimal point (e.g. <code>123.297</code>)</li>
-<li><strong>string</strong>: a sequence of characters enclosed between quotes (<code>'my string'</code>) or double quotes (<code>&quot;my string&quot;</code>)</li>
-</ul>
-</div>
-<div id="literal-constructors" class="section level2">
-<h2><span class="header-section-number">4.3</span> Literal Constructors</h2>
-<p>Although they are not strictly literals in the sense given above, some special constructs (called <em>literal constructors</em>) allow the modeler to declare constants of other data types. They are actually <a href="Operators">operators</a> but can be thought of literals when used with constant operands.</p>
-<ul>
-<li><strong>pair</strong>: the key and the value separated by <code>::</code> (e.g. <code>12::'abc'</code>)</li>
-<li><strong>list</strong>: the elements, separated by commas, enclosed inside square brackets (e.g. <code>[12,15,15]</code>)</li>
-<li><strong>map</strong>: a list of pairs (e.g. <code>[12::'abc', 13::'def']</code>)</li>
-<li><strong>point</strong>: 2 or 3 int or float ordinates enclosed inside curly brackets (e.g. <code>{10.0,10.0,10.0}</code>)</li>
-</ul>
-</div>
-<div id="universal-literal" class="section level2">
-<h2><span class="header-section-number">4.4</span> Universal Literal</h2>
-<p>Finally, a special literal, of type <code>unknown</code>, is shared between the data types and all the agent types (aka species). Only <code>bool</code>, <code>int</code> and <code>float</code>, which do not derive from <code>unknown</code>, do not accept this literal. All the others will accept it (e.g. <code>string s &lt;- nil;</code> is ok).</p>
-<ul>
-<li><strong>unknown</strong>: <code>nil</code>, which represents the non-initialized (or, literally, <em>unknown</em>) value.</li>
-</ul>
+<p>You can also leave a feedback on the same <a href="https://github.com/sriramab/gama_books/issues">page</a>, just select the label for “feedback”.</p>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="learn-gaml-beginner-i.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="types.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="java-version.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>

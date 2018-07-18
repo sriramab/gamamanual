@@ -1,4 +1,4 @@
-# Report Errors {-}
+# Report Errors/ Give Feedback {-}
 
 If you find any problems/typos/errors related to this book, you can report issues on this [page](https://github.com/sriramab/gama_books/issues). 
 On this page you can click the big green button "New Issue" and fill in the details. Typically, you should fill
@@ -6,4 +6,6 @@ On this page you can click the big green button "New Issue" and fill in the deta
 * name of the book
 * a link to the book
 * page or section number that has the error
+
+You can also leave a feedback on the same [page](https://github.com/sriramab/gama_books/issues), just select the label for "feedback". 
 
