@@ -1,5 +1,5 @@
 ---
-title: "GAMA 1.8 - User Manual for Beginners"
+title: "GAMA 1.8 - GAML User Manual for Beginners"
 author: "Srirama Bhamidipati"
 date: "Updated: `r Sys.Date()` (Amsterdam)"
 header-includes:

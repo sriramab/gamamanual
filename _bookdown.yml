@@ -5,6 +5,6 @@ language:
 output_dir: docs
 delete_merged_file: true
 #rmd_files: ["index.Rmd", "NewVersionChanges.md","OperatorsAA.md", "OperatorsAA.md", "OperatorsBC.md","OperatorsDH.md","OperatorsIM.md","OperatorsNR.md","OperatorsSZ.md"]
-rmd_files: ["index.Rmd", "reportproblems.Rmd","links/NewVersionChanges.md", "learngaml.Rmd" , "References/GAMLReferences/Literals.md","References/GAMLReferences/DataTypes.md","References/GAMLReferences/FileTypes.md","References/GAMLReferences/PseudoVariables.md",
+rmd_files: ["index.Rmd", "reportproblems.Rmd","downloads.md","links/NewVersionChanges.md", "learngaml.Rmd" , "References/GAMLReferences/Literals.md","References/GAMLReferences/DataTypes.md","References/GAMLReferences/FileTypes.md","References/GAMLReferences/PseudoVariables.md",
 "learngaml2.Rmd","links/operators.md","links/OperatorsAA.md", "links/OperatorsAA.md", "links/OperatorsBC.md","links/OperatorsDH.md",
 "links/OperatorsIM.md","links/OperatorsNR.md","links/OperatorsSZ.md" ,"References/GAMLReferences/Statements.md"]
