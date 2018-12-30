@@ -5,23 +5,23 @@ If you are a beginner, the next 7 chapters will introduce you to  functions and 
 
 
 * Operators (9-15) : This includes 6 chapters introducing you to all the operators (A to Z) in GAMA. Go first to the chapter **opeators by categories** to get a feel of the scope of operators available.
-Operators are typically like functions or methods in other languages. They accept one or more arguments of the basic or complex data types and return a result in one of the data types.
+Operators are typically like functions in other languages. They accept one or more arguments of the basic or complex data types and return a result in one of the data types.
 
 * Statements (16) : Statement is a one-line sequence of keywords (commands) guided with controlling arguments (facets) that operate on one of the data types or a combination of operators and data types. A typical example is:
 
-- if you want an agent1 at location A to go to a location B, then the following is a valid statement
+- if you want an agent1 at location A to go to a location B, then the following is a valid GAML statement
 
 ```php
 do goto target:B
 ```
 
-- if you want an agent1 at location A to go to a location B with a speed of S, then the following is a valid statement
+- if you want an agent1 at location A to go to a location B with a speed of S, then the following is a GAML valid statement
 
 ```php
 do goto target:B speed:S
 ```
 
-- if you want an agent1 at location A to go to a location B with a speed of S on a graph G, then the following is a valid statement
+- if you want an agent1 at location A to go to a location B with a speed of S on a graph G, then the following is a GAML valid statement
 
 ```php
 do goto target:B speed:S on:G
