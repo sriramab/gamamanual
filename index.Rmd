@@ -33,7 +33,7 @@ options(width = 90)
 
 * The main purpose of this book is to provide a simple introduction with bare minimum content that helps the reader to get started with GAMA Language (GAML).
 
- * The content of this manual is from gama-platform.org website. I have only modified and edited portions of the content to give it a book format.
+ * The content of this manual is from gama-platform.org website. I have  modified and edited portions of the content to give a cleaner format.
 
 * This is a modified content and is not a 100% reproduction. If you do not find what you are looking for, go to the main website.
 

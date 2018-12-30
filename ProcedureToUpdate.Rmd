@@ -1,0 +1,23 @@
+---
+title: "Procedure to update GAMA Manual on Bhugole"
+author: "Sriram"
+date: "12/30/2018"
+output: html_document
+---
+ 
+ 
+ # Procedure to update
+ 
+ - goto gamawiki folder, cd into gama.wiki and fetch and pull
+ - update the help documents operator documents from GAMA website
+ - copy all pages of operators into gamamanual/links 
+ - remove java warning from pages
+ - remove bullet 10 that is coming twice
+ - publish a kindle version with this command at prompt> bookdown::kindlegen()
+ - push to bhugole.com
+ 
+ 
+ After the book is built, all the html goes into docs folder, this docs folder is what is pushed to the website
+ 
+ 
+ 
