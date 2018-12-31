@@ -1,0 +1,69 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Additionnal Plugins/FIPA Skill/FIPA Skill FIPA Request (2) --><head><meta charset="utf-8"><title>FIPA Skill FIPA Request (2)</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="fipa-skill-fipa-request-2">FIPA Skill FIPA Request (2)</h1>
+<h1 id="fipa-request-2">FIPA Request (2)</h1>
+<p>This model demontrates a usecase of the FIPA Request interaction protocol. (Please see <a href="http://www.fipa.org/specs/fipa00026/index.html">http://www.fipa.org/specs/fipa00026/index.html</a> for the detail description of this protocol).</p>
+<p>The Initiator agent begins the 'fipa-request' conversation/interaction protocol by sending a 'request' message to the Participant agent with 'go sleeping' as content.
+On receiving the 'request' message, the Participant agent replies with two consecutive messages : 
+(1) an 'agree' message indicating that the Participant agent accepts to execute the request of the Initiator agent, 
+(2) a 'failure' message indicating that the Participant agent fails to (can not) execute the requestion of the Initiator agent (in this case, the Participant agent says that it can not go sleeping because the bed is broken!).
+After the Initiator reads the 'failure' message from the Participant, the corresponding conversation ends.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">model</span> fipa_request_2
+
+global {
+    <span class="hljs-attribute">Participant</span> p;
+    
+    <span class="hljs-section">init</span> {
+        <span class="hljs-attribute">create</span> Initiator;
+        <span class="hljs-attribute">create</span> Participant returns: ps;
+        
+         <span class="hljs-attribute">p</span> &lt;- ps at <span class="hljs-number">0</span>;
+        
+        <span class="hljs-attribute">write</span> <span class="hljs-string">'Step the simulation to observe the outcome in the console'</span>;
+    }
+}
+
+<span class="hljs-attribute">species</span> Initiator skills: [fipa] {
+    <span class="hljs-attribute">reflex</span> print_debug_infor {
+        <span class="hljs-attribute">write</span> name + <span class="hljs-string">' with conversations: '</span> + (string(conversations)) + <span class="hljs-string">'; messages: '</span> + (string(mailbox));
+    }
+    
+    <span class="hljs-attribute">reflex</span> send_request when: (time = <span class="hljs-number">1</span>) {
+        <span class="hljs-attribute">write</span> <span class="hljs-string">'send message'</span>;
+        <span class="hljs-attribute">do</span> start_conversation (to :: [p], protocol :: <span class="hljs-string">'fipa-request'</span>, performative :: <span class="hljs-string">'request'</span>, contents :: [<span class="hljs-string">'go sleeping'</span>] );
+    }
+    
+    <span class="hljs-attribute">reflex</span> read_agree_message when: !(empty(agrees)) {
+        <span class="hljs-attribute">write</span> <span class="hljs-string">'read agree messages'</span>;
+        <span class="hljs-attribute">loop</span> a over: agrees {
+            <span class="hljs-attribute">write</span> <span class="hljs-string">'agree message with content: '</span> + string(a.contents);
+        }
+    }
+    
+    <span class="hljs-attribute">reflex</span> read_failure_message when: !(empty(failures)) {
+        <span class="hljs-attribute">write</span> <span class="hljs-string">'read failure messages'</span>;
+        <span class="hljs-attribute">loop</span> f over: failures {
+            <span class="hljs-attribute">write</span> <span class="hljs-string">'failure message with content: '</span> + (string(f.contents));
+        }
+    }
+}
+
+<span class="hljs-attribute">species</span> Participant skills: [fipa] {
+    <span class="hljs-attribute">reflex</span> print_debug_infor {
+        <span class="hljs-attribute">write</span> name + <span class="hljs-string">' with conversations: '</span> + (string(conversations)) + <span class="hljs-string">'; messages: '</span> + (string(mailbox));
+    }
+
+    <span class="hljs-attribute">reflex</span> reply_messages when: (!empty(mailbox)) {
+        <span class="hljs-attribute">message</span> requestFromInitiator &lt;- (mailbox at <span class="hljs-number">0</span>);
+        <span class="hljs-attribute">write</span> <span class="hljs-string">'agree message'</span>;
+        <span class="hljs-attribute">do</span> agree with: (message: requestFromInitiator, contents: [<span class="hljs-string">'I will'</span>]);
+        
+        <span class="hljs-attribute">write</span> <span class="hljs-string">'inform the initiator of the failure'</span>;
+        <span class="hljs-attribute">do</span> failure (message: requestFromInitiator, contents: [<span class="hljs-string">'The bed is broken'</span>]);
+    }
+}
+
+
+
+<span class="hljs-attribute">experiment</span> test_request_interaction_protocol type: gui {}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

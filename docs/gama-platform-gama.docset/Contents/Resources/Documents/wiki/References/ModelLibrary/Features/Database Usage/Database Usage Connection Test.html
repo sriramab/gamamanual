@@ -1,0 +1,35 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Database Usage/Database Usage Connection Test --><head><meta charset="utf-8"><title>Database Usage Connection Test</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="database-usage-connection-test">Database Usage Connection Test</h1>
+<h1 id="sqlconnection">SQLConnection</h1>
+<p><em>Author : thaitruongminh</em></p>
+<p>How to create a connection to a database in GAMA</p>
+<p>Code of the model : </p>
+<pre><code class="hljs arduino">model test_connection
+
+global {
+    <span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">string</span>, <span class="hljs-keyword">string</span>&gt; SQLSERVER &lt;- [<span class="hljs-string">'host'</span>::<span class="hljs-string">'localhost'</span>, <span class="hljs-string">'dbtype'</span>::<span class="hljs-string">'sqlserver'</span>, <span class="hljs-string">'database'</span>::<span class="hljs-string">''</span>, <span class="hljs-string">'port'</span>::<span class="hljs-string">'1433'</span>, <span class="hljs-string">'user'</span>::<span class="hljs-string">'sa'</span>, <span class="hljs-string">'passwd'</span>::<span class="hljs-string">'tmt'</span>];
+    <span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">string</span>, <span class="hljs-keyword">string</span>&gt; MySQL &lt;- [<span class="hljs-string">'host'</span>::<span class="hljs-string">'localhost'</span>, <span class="hljs-string">'dbtype'</span>::<span class="hljs-string">'MySQL'</span>, <span class="hljs-string">'database'</span>::<span class="hljs-string">''</span>, <span class="hljs-string">'port'</span>::<span class="hljs-string">'8889'</span>, <span class="hljs-string">'user'</span>::<span class="hljs-string">'root'</span>, <span class="hljs-string">'passwd'</span>::<span class="hljs-string">'root'</span>];
+    <span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">string</span>, <span class="hljs-keyword">string</span>&gt; ORACLE &lt;- [<span class="hljs-string">'host'</span>::<span class="hljs-string">'localhost'</span>, <span class="hljs-string">'dbtype'</span>::<span class="hljs-string">'Oracle'</span>, <span class="hljs-string">'database'</span>::<span class="hljs-string">''</span>, <span class="hljs-string">'port'</span>::<span class="hljs-string">'1433'</span>, <span class="hljs-string">'user'</span>::<span class="hljs-string">'sa'</span>, <span class="hljs-string">'passwd'</span>::<span class="hljs-string">'tmt'</span>];
+    <span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">string</span>, <span class="hljs-keyword">string</span>&gt; POSTGRES &lt;- [<span class="hljs-string">'host'</span>::<span class="hljs-string">'localhost'</span>, <span class="hljs-string">'dbtype'</span>::<span class="hljs-string">'Postgres'</span>, <span class="hljs-string">'database'</span>::<span class="hljs-string">'bgaudou'</span>, <span class="hljs-string">'port'</span>::<span class="hljs-string">'5432'</span>, <span class="hljs-string">'user'</span>::<span class="hljs-string">'bgaudou'</span>, <span class="hljs-string">'passwd'</span>::<span class="hljs-string">''</span>];
+    <span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">string</span>, <span class="hljs-keyword">string</span>&gt; SQLITE &lt;- [<span class="hljs-string">'dbtype'</span>::<span class="hljs-string">'sqlite'</span>, <span class="hljs-string">'database'</span>::<span class="hljs-string">'../../includes/meteo.db'</span>];
+    init {
+        create DB_connection_tester;
+    }
+
+}
+
+species DB_connection_tester skills: [SQLSKILL] {
+    init {
+        <span class="hljs-built_in">write</span> <span class="hljs-string">"Current Time "</span> + self timeStamp [];
+        <span class="hljs-built_in">write</span> <span class="hljs-string">"Connection to SQLSERVER is "</span> + self testConnection [params::SQLSERVER];
+        <span class="hljs-built_in">write</span> <span class="hljs-string">"Connection to MySQL is "</span> + self testConnection [params::MySQL];
+        <span class="hljs-built_in">write</span> <span class="hljs-string">"Connection to SQLITE is "</span> + self testConnection [params::SQLITE];
+        <span class="hljs-built_in">write</span> <span class="hljs-string">"Connection to ORACLE is "</span> + self testConnection [params::ORACLE];
+        <span class="hljs-built_in">write</span> <span class="hljs-string">"Connection to POSTGRESQL is "</span> + self testConnection [params::POSTGRES];
+    }
+
+}
+
+experiment default_expr type: gui {
+}  
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

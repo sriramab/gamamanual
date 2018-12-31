@@ -1,0 +1,54 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Additionnal Plugins/FIPA Skill/FIPA Skill FIPA CFP (1) --><head><meta charset="utf-8"><title>FIPA Skill FIPA CFP (1)</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="fipa-skill-fipa-cfp-1">FIPA Skill FIPA CFP (1)</h1>
+<h1 id="fipa-contract-net">FIPA Contract Net</h1>
+<p>This model demonstrates a use-case of the FIPA Contract Net interaction protocol. One initiator sends a 'cfp' message to other participants. All participants reply with a 'refuse' messages which end the interaction protocol.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs xl">
+model cfp_cfp_1
+
+global {
+    int nbOfParticipants &lt;- <span class="hljs-number">5</span>;
+    
+    init {
+        create initiator;
+        create participant number: nbOfParticipants;
+
+        write <span class="hljs-string">'Please step the simulation to observe the outcome in the console'</span>;
+    }
+}
+
+species initiator skills: [fipa] { 
+    
+    reflex send_cfp_to_participants <span class="hljs-keyword">when</span>: (<span class="hljs-built_in">time</span> = <span class="hljs-number">1</span>) {
+        <span class="hljs-comment">//list&lt;participant&gt; participants &lt;- list(participant);</span>
+        
+        write <span class="hljs-string">'(Time '</span> + <span class="hljs-built_in">time</span> + <span class="hljs-string">'): '</span> + <span class="hljs-keyword">name</span> + <span class="hljs-string">' sends a cfp message to all participants'</span>;
+        <span class="hljs-keyword">do</span> start_conversation (to: list(participant), protocol: <span class="hljs-string">'fipa-contract-net'</span>, performative: <span class="hljs-string">'cfp'</span>, <span class="hljs-built_in">contents</span>: [<span class="hljs-string">'Go swimming'</span>]);
+    }
+    
+    reflex receive_refuse_messages <span class="hljs-keyword">when</span>: !empty(refuses) {
+        write <span class="hljs-string">'(Time '</span> + <span class="hljs-built_in">time</span> + <span class="hljs-string">'): '</span> + <span class="hljs-keyword">name</span> + <span class="hljs-string">' receives refuse messages'</span>;
+        
+        <span class="hljs-keyword">loop</span> r over: refuses {
+            write <span class="hljs-string">'\t'</span> + <span class="hljs-keyword">name</span> + <span class="hljs-string">' receives a refuse message from '</span> + r.sender + <span class="hljs-string">' with content '</span> + r.<span class="hljs-built_in">contents</span> ;
+        }
+    }
+}
+
+species participant skills: [fipa] {
+    
+    reflex receive_cfp_from_initiator <span class="hljs-keyword">when</span>: !empty(cfps) {
+        
+        message proposalFromInitiator &lt;- cfps[<span class="hljs-number">0</span>];
+        write <span class="hljs-string">'(Time '</span> + <span class="hljs-built_in">time</span> + <span class="hljs-string">'): '</span> + <span class="hljs-keyword">name</span> + <span class="hljs-string">' receives a cfp message from '</span> + agent(proposalFromInitiator.sender).<span class="hljs-keyword">name</span> + <span class="hljs-string">' and replies with a refuse message'</span>;
+        <span class="hljs-keyword">do</span> refuse (message: proposalFromInitiator, <span class="hljs-built_in">contents</span>: [<span class="hljs-string">'I am busy today'</span>] );
+        
+    }
+}
+
+experiment test type: gui { 
+    output {
+        
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

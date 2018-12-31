@@ -1,0 +1,132 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Tutorials/LearnGAMLStepByStep/ManipulateBasicSpecies/DefiningActionsAndBehaviors --><head><meta charset="utf-8"><title>DefiningActionsAndBehaviors</title><script src="../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="definingactionsandbehaviors">DefiningActionsAndBehaviors</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Defining%20actions%20and%20behaviors"></a><h1 id="defining-actions-and-behaviors">Defining actions and behaviors</h1>
+<p>Both actions and behaviors can be seen as methods in OOP. They can be defined in any species.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Index"></a><h2 id="index">Index</h2>
+<ul>
+<li><a href="#action">Action</a>
+<ul>
+<li><a href="#declare-an-action">Declare an action</a></li>
+<li><a href="#call-an-action">Call an action</a></li>
+</ul>
+</li>
+<li><a href="#behavior">Behavior</a></li>
+<li><a href="#example">Example</a></li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Action"></a><h2 id="action">Action</h2>
+<a class="dashAnchor" name="//apple_ref/Section/Declare%20an%20action"></a><h3 id="declare-an-action">Declare an action</h3>
+<p>An action is a function run by an instance of species. An action can return a value (in that case, the type of return has to be specify just before the name of the action), or not (in that case, you just have to put the keyword <code>action</code> before the name of the action).</p>
+<pre><code class="hljs ceylon">species my<span class="hljs-number"><span class="hljs-number">_</span></span>species {
+    int action<span class="hljs-number"><span class="hljs-number">_</span></span>with<span class="hljs-number"><span class="hljs-number">_</span></span><span class="hljs-keyword"><span class="hljs-keyword">return</span></span><span class="hljs-number"><span class="hljs-number">_</span></span><span class="hljs-keyword"><span class="hljs-keyword">value</span></span> {
+        <span class="hljs-comment"><span class="hljs-comment">// statements...</span></span>
+        <span class="hljs-keyword"><span class="hljs-keyword">return</span></span> <span class="hljs-number"><span class="hljs-number">1</span></span>;
+    }
+    action action<span class="hljs-number"><span class="hljs-number">_</span></span>without<span class="hljs-number"><span class="hljs-number">_</span></span><span class="hljs-keyword"><span class="hljs-keyword">return</span></span><span class="hljs-number"><span class="hljs-number">_</span></span><span class="hljs-keyword"><span class="hljs-keyword">value</span></span> {
+        <span class="hljs-comment"><span class="hljs-comment">// statements...</span></span>
+    }
+}
+</code></pre>
+<p>Arguments can also be mandated in your action. You have to specify the type and the name of the argument:</p>
+<pre><code class="hljs aspectj"><span class="hljs-function"><span class="hljs-function">action </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">action_without_return_value</span></span></span><span class="hljs-function"> </span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">(</span></span><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-params"><span class="hljs-keyword">int</span></span></span></span><span class="hljs-function"><span class="hljs-params"> argA, </span></span><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-params"><span class="hljs-keyword">float</span></span></span></span><span class="hljs-function"><span class="hljs-params"> argB)</span></span></span><span class="hljs-function"> </span></span>{
+    <span class="hljs-comment"><span class="hljs-comment">// statements...</span></span>
+}
+</code></pre>
+<p>If you want to have some optional arguments in the list, you can give some by default values to turn them optional. Nb: it is better to define the optional arguments at the end of the list of argument.</p>
+<pre><code class="hljs aspectj"><span class="hljs-function"><span class="hljs-function">action </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">my_action</span></span></span><span class="hljs-function"> </span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">(</span></span><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-params"><span class="hljs-keyword">int</span></span></span></span><span class="hljs-function"><span class="hljs-params"> argA, </span></span><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-params"><span class="hljs-keyword">float</span></span></span></span><span class="hljs-function"><span class="hljs-params"> argB &lt;- </span></span><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">5.1</span></span></span></span><span class="hljs-function"><span class="hljs-params">, point argC &lt;- {</span></span><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">0</span></span></span></span><span class="hljs-function"><span class="hljs-params">,</span></span><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">0</span></span></span></span><span class="hljs-function"><span class="hljs-params">})</span></span></span><span class="hljs-function"> </span></span>{
+    <span class="hljs-comment"><span class="hljs-comment">// statements...</span></span>
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Call%20an%20action"></a><h3 id="call-an-action">Call an action</h3>
+<p>To call an action, you have to use the statement <code>do</code>. You can use the statement do different ways:</p>
+<ul>
+<li>With facets : after specifying the name of your action, you can specify the values of your arguments as if the name of your arguments were facets:</li>
+</ul>
+<pre><code class="hljs groovy">do my_action <span class="hljs-string"><span class="hljs-string">argA:</span></span><span class="hljs-number"><span class="hljs-number">5</span></span> <span class="hljs-string"><span class="hljs-string">argB:</span></span><span class="hljs-number"><span class="hljs-number">5.1</span></span>;
+</code></pre>
+<ul>
+<li>With parenthesis : after specifying the name of your action, you can specify the values of your arguments in the same order they were declared, between parenthesis:</li>
+</ul>
+<pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">my_action</span></span></span><span class="hljs-function"> </span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">(</span></span><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">5</span></span></span></span><span class="hljs-function"><span class="hljs-params">,</span></span><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">5.1</span></span></span></span><span class="hljs-function"><span class="hljs-params">)</span></span></span></span>;
+</code></pre>
+<p>We incite you to promote the second writing. To catch the returned value, you can also skip the do statement, and store the value directly in a temporary variable:</p>
+<pre><code class="hljs axapta"><span class="hljs-keyword"><span class="hljs-keyword">int</span></span> var1 &lt;- my_action(<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">5.1</span></span>);
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Behavior"></a><h2 id="behavior">Behavior</h2>
+<p>A behavior, or reflex, is an action which is called automatically at each time step by an agent.</p>
+<pre><code class="hljs cos">reflex my_reflex {
+    <span class="hljs-keyword"><span class="hljs-keyword">write</span></span> (<span class="hljs-string"><span class="hljs-string">"Executing the inconditional reflex"</span></span>)<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+<span class="hljs-comment"><span class="hljs-comment">// statements...</span></span>
+}
+</code></pre>
+<p>With the facet when, this reflex is only executed when the boolean expression evaluates to true. It is a convenient way to specify the behavior of agents.</p>
+<pre><code class="hljs kotlin">reflex my_reflex <span class="hljs-keyword"><span class="hljs-keyword">when</span></span>:flip(<span class="hljs-number"><span class="hljs-number">0.5</span></span>) {
+    write (<span class="hljs-string"><span class="hljs-string">"Executing the conditional reflex"</span></span>);
+<span class="hljs-comment"><span class="hljs-comment">// statements...</span></span>
+}
+</code></pre>
+<p>Reflex, unlike actions, cannot be called from another context. But a reflex can, of course, call actions.</p>
+<p>Nb : Init is a special reflex, that occurs only when the agent is created.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Example"></a><h2 id="example">Example</h2>
+<p>To practice a bit with those notions, we will build an easy example. Let's build a model with a species balloon that has 2 attributes: balloon_size (float) and balloon_color (rgb). Each balloon has a random position and color, his aspect is a sphere. Each step, a balloon has a probability to spawn in the environment. Once a balloon is created, its size is 10cm, and each step, the size increases by 1cm. Once the balloon size reaches 50cm, the balloon has a probability to burst. Once 10 balloons are destroyed, the simulation stops. The volume of each balloon is displayed in the balloon position.</p>
+<p><img src="../../../../github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/ManipulateBasicSpecies/resources/images/manipulateBasicSpecies/burst_the_baloon.png" alt="images/burst_the_baloon.png"> </p>
+<p>Here is one of the multiple possible implementation:</p>
+<pre><code class="hljs armasm"><span class="hljs-symbol"><span class="hljs-symbol">model</span></span> <span class="hljs-keyword"><span class="hljs-keyword">burst_the_baloon
+</span></span>
+<span class="hljs-symbol"><span class="hljs-symbol">global</span></span>{
+    float worldDimension &lt;- <span class="hljs-number"><span class="hljs-number">5</span></span><span class="hljs-symbol"><span class="hljs-symbol">#m</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    geometry shape &lt;- square(worldDimension)<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    int nbBaloonDead &lt;- <span class="hljs-number"><span class="hljs-number">0</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+
+    reflex <span class="hljs-keyword"><span class="hljs-keyword">buildBaloon </span></span>when:(flip(<span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">1</span></span>)) {
+        create species:<span class="hljs-keyword"><span class="hljs-keyword">balloon </span></span>number:<span class="hljs-number"><span class="hljs-number">1</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    }
+    
+    reflex endSimulation when:nbBaloonDead&gt;<span class="hljs-number"><span class="hljs-number">10</span></span> {
+        do halt<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    }
+}
+
+<span class="hljs-symbol"><span class="hljs-symbol">species</span></span> <span class="hljs-keyword"><span class="hljs-keyword">balloon </span></span>{
+    float <span class="hljs-keyword"><span class="hljs-keyword">balloon_size;
+</span></span>    rgb <span class="hljs-keyword"><span class="hljs-keyword">balloon_color;
+</span></span>    init {
+        <span class="hljs-keyword"><span class="hljs-keyword">balloon_size </span></span>&lt;- <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">1</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        <span class="hljs-keyword"><span class="hljs-keyword">balloon_color </span></span>&lt;- rgb(rnd(<span class="hljs-number"><span class="hljs-number">255</span></span>),rnd(<span class="hljs-number"><span class="hljs-number">255</span></span>),rnd(<span class="hljs-number"><span class="hljs-number">255</span></span>))<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    }
+
+    reflex <span class="hljs-keyword"><span class="hljs-keyword">balloon_grow </span></span>{
+        <span class="hljs-keyword"><span class="hljs-keyword">balloon_size </span></span>&lt;- <span class="hljs-keyword"><span class="hljs-keyword">balloon_size </span></span>+ <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">01</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        <span class="hljs-meta"><span class="hljs-meta">if</span></span> (<span class="hljs-keyword"><span class="hljs-keyword">balloon_size </span></span>&gt; <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">5</span></span>) {
+            <span class="hljs-meta"><span class="hljs-meta">if</span></span> (flip(<span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">2</span></span>)) {
+                do <span class="hljs-keyword"><span class="hljs-keyword">balloon_burst;
+</span></span>            }
+        }
+    }
+    
+    float <span class="hljs-keyword"><span class="hljs-keyword">balloon_volume </span></span>(float diameter) {
+        float exact_value &lt;- <span class="hljs-number"><span class="hljs-number">2</span></span>/<span class="hljs-number"><span class="hljs-number">3</span></span>*<span class="hljs-symbol"><span class="hljs-symbol">#pi</span></span>*diameter^<span class="hljs-number"><span class="hljs-number">3</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        float round_value &lt;- (round(exact_value*<span class="hljs-number"><span class="hljs-number">1000</span></span>))/<span class="hljs-number"><span class="hljs-number">1000</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        return round_value<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    }
+    
+    action <span class="hljs-keyword"><span class="hljs-keyword">balloon_burst </span></span>{
+        write <span class="hljs-string"><span class="hljs-string">"the baloon is dead !"</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        nbBaloonDead &lt;- nbBaloonDead + <span class="hljs-number"><span class="hljs-number">1</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        do die<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    }
+    
+    aspect <span class="hljs-keyword"><span class="hljs-keyword">balloon_aspect </span></span>{
+        draw circle(<span class="hljs-keyword"><span class="hljs-keyword">balloon_size) </span></span>color:<span class="hljs-keyword"><span class="hljs-keyword">balloon_color;
+</span></span>        draw text:<span class="hljs-keyword"><span class="hljs-keyword">string(balloon_volume(balloon_size)) </span></span>color:<span class="hljs-symbol"><span class="hljs-symbol">#black</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    }
+}
+
+<span class="hljs-symbol"><span class="hljs-symbol">experiment</span></span> my_experiment type:gui
+{
+    output{
+        display myDisplay {
+            species <span class="hljs-keyword"><span class="hljs-keyword">balloon </span></span>aspect:<span class="hljs-keyword"><span class="hljs-keyword">balloon_aspect;
+</span></span>        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

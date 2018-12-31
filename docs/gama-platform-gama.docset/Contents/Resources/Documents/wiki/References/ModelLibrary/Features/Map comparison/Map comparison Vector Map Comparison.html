@@ -1,0 +1,116 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Map comparison/Map comparison Vector Map Comparison --><head><meta charset="utf-8"><title>Map comparison Vector Map Comparison</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="map-comparison-vector-map-comparison">Map comparison Vector Map Comparison</h1>
+<h1 id="vector-map-comparison">Vector Map Comparison</h1>
+<p><em>Author : Patrick Taillandier</em></p>
+<p>This model shows how to use different comparators to know the accuracy of a prediction model. Four comparators are used :</p>
+<ul>
+<li>kappa, comparing the map observed and the map simulation ; kappa simulation comparing the initial map, the map observed and the map simulation;</li>
+<li>fuzzy kappa, comparing the map observed and the map simulation but being more permissive by using fuzzy logic;</li>
+<li>fuzzy kappa simulation, comparing the map observed, the map simulation and the map initial but being more permissive by using fuzzy logic
+For each comparator, two comparisons are made : one without taking into account the weights of an area, just computing with each area having the same importance, and an other using weights related to the area of the region</li>
+</ul>
+<p>Code of the model : </p>
+<pre><code class="hljs gradle">
+model mapcomparison
+
+global {
+    list&lt;string&gt; categories ;
+    map&lt;string,rgb&gt; color_cat ;
+    matrix&lt;<span class="hljs-keyword">float</span>&gt; fuzzy_categories;
+    matrix&lt;<span class="hljs-keyword">float</span>&gt; fuzzy_transitions;
+    list&lt;<span class="hljs-keyword">float</span>&gt; nb_per_cat_obs;
+    list&lt;<span class="hljs-keyword">float</span>&gt; nb_per_cat_sim;
+    <span class="hljs-keyword">file</span> data &lt;- <span class="hljs-keyword">file</span>(<span class="hljs-string">"../includes/CLC00_06.shp"</span>);
+    
+    geometry shape &lt;- envelope(data);
+     
+    init {
+        create areaclc <span class="hljs-keyword">from</span>: data with: [init_cover::string(<span class="hljs-keyword">read</span>(<span class="hljs-string">"CODE_00"</span>)),obs_cover::string(<span class="hljs-keyword">read</span>(<span class="hljs-string">"CODE_06"</span>))] ;
+        ask areaclc {
+            <span class="hljs-keyword">if</span> (not (init_cover in categories)) {categories &lt;&lt; init_cover; }
+            <span class="hljs-keyword">if</span> (not (obs_cover in categories)) {categories &lt;&lt; obs_cover;}
+            
+        }
+        loop cat over: categories {
+            color_cat[cat] &lt;- rgb(rnd(<span class="hljs-number">255</span>),rnd(<span class="hljs-number">255</span>),rnd(<span class="hljs-number">255</span>));
+        }
+        ask areaclc {
+            sim_cover &lt;- flip(<span class="hljs-number">0.7</span>) ? obs_cover : one_of (categories);
+        }
+        
+        fuzzy_categories &lt;- <span class="hljs-number">0.0</span> as_matrix {length(categories),length(categories)};
+        loop i <span class="hljs-keyword">from</span>: <span class="hljs-number">0</span> to: length(categories) - <span class="hljs-number">1</span> {
+            fuzzy_categories[i,i] &lt;- <span class="hljs-number">1.0</span>;
+        }
+        fuzzy_transitions &lt;- <span class="hljs-number">0.0</span> as_matrix {length(categories)*length(categories),length(categories)*length(categories)};
+        loop i <span class="hljs-keyword">from</span>: <span class="hljs-number">0</span> to: (length(categories) * length(categories)) - <span class="hljs-number">1</span> {
+            fuzzy_transitions[i,i] &lt;- <span class="hljs-number">1.0</span>;  
+        }
+        list&lt;<span class="hljs-keyword">float</span>&gt; similarity_per_agents ;
+        <span class="hljs-keyword">write</span> <span class="hljs-string">"kappa(map observed, map simulation, categories): "</span> + kappa( areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.obs_cover),areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.sim_cover),categories);
+        <span class="hljs-keyword">write</span> <span class="hljs-string">"kappa(map observed, map simulation,categories, weights): "</span> + kappa( areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.obs_cover),areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.sim_cover),categories,areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.shape.area));
+        
+        <span class="hljs-keyword">write</span> <span class="hljs-string">"kappa simulation(map init, map observed, map simulation, categories): "</span> + kappa_sim( areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.init_cover), areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.obs_cover),areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.sim_cover),categories);
+        <span class="hljs-keyword">write</span> <span class="hljs-string">"kappa simulation(map init, map observed, map simulation, categories, weights): "</span> + kappa_sim( areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.init_cover), areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.obs_cover),areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.sim_cover),categories,areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.shape.area));
+        
+        <span class="hljs-keyword">write</span> <span class="hljs-string">"fuzzy kappa(map observed, map simulation,categories): "</span> + fuzzy_kappa(areaclc, areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.obs_cover),areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.sim_cover), similarity_per_agents,categories,fuzzy_categories, <span class="hljs-number">3000</span>);
+        <span class="hljs-keyword">write</span> <span class="hljs-string">"fuzzy kappa(map observed, map simulation,categories,weights): "</span> + fuzzy_kappa(areaclc, areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.obs_cover),areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.sim_cover), similarity_per_agents,categories,fuzzy_categories, <span class="hljs-number">3000</span>,areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.shape.area));
+        
+        <span class="hljs-keyword">write</span> <span class="hljs-string">"fuzzy kappa sim(map init, map observed, map simulation,categories): "</span> + fuzzy_kappa_sim(areaclc, areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.init_cover), areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.obs_cover),areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.sim_cover), similarity_per_agents,categories,fuzzy_transitions, <span class="hljs-number">3000</span>);
+        <span class="hljs-keyword">write</span> <span class="hljs-string">"fuzzy kappa sim(map init, map observed, map simulation,categories,weights): "</span> + fuzzy_kappa_sim(areaclc, areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.init_cover), areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.obs_cover),areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.sim_cover), similarity_per_agents,categories,fuzzy_transitions, <span class="hljs-number">3000</span>,areaclc <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.shape.area));
+        
+        loop i <span class="hljs-keyword">from</span>: <span class="hljs-number">0</span> to: length(areaclc) - <span class="hljs-number">1</span> {
+            <span class="hljs-keyword">int</span> val &lt;- <span class="hljs-keyword">int</span>(<span class="hljs-number">255</span> * similarity_per_agents[i]);
+            ask areaclc[i] {color_fuzzy &lt;- rgb(val, val, val);}
+            
+        }
+        loop c over: categories {
+            list&lt;areaclc&gt; area_c &lt;- areaclc where (<span class="hljs-keyword">each</span>.obs_cover = c);
+            list&lt;<span class="hljs-keyword">float</span>&gt; area_shape_c &lt;- area_c <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.shape.area);
+            nb_per_cat_obs &lt;&lt; sum(area_shape_c );
+            nb_per_cat_sim &lt;&lt; sum((areaclc where (<span class="hljs-keyword">each</span>.sim_cover = c)) <span class="hljs-keyword">collect</span> (<span class="hljs-keyword">each</span>.shape.area)); 
+        }
+        <span class="hljs-keyword">write</span> <span class="hljs-string">"percent_absolute_deviation : "</span> + percent_absolute_deviation(nb_per_cat_obs,nb_per_cat_sim) + <span class="hljs-string">"%"</span>;
+        
+    }
+    
+}
+ 
+species areaclc {
+    string init_cover;
+    string obs_cover;
+    string sim_cover;
+    rgb color_fuzzy;
+    
+    aspect init {
+        draw shape color: color_cat[init_cover];
+    }
+    aspect simulation {
+        draw shape color: color_cat[sim_cover];
+    }
+    aspect observed {
+        draw shape color: color_cat[obs_cover];
+    }
+    aspect fuzzy_sim {
+        draw shape color: color_fuzzy;
+    }
+}
+
+
+experiment mapcomparison type: gui {
+    output {
+        display map_sim type: opengl{
+            species areaclc aspect: simulation;
+        }
+        display map_observed type: opengl{
+            species areaclc aspect: observed refresh: <span class="hljs-keyword">false</span>;
+        }
+        display map_init type: opengl{
+            species areaclc aspect: init refresh: <span class="hljs-keyword">false</span>;
+        }
+        display map_fuzzy type: opengl background: #pink{
+            species areaclc aspect: fuzzy_sim ;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

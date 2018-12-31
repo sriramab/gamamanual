@@ -1,0 +1,458 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/GoldMinerModel_step5 --><head><meta charset="utf-8"><title>GoldMinerModel_step5</title><script src="../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="goldminermodel_step5">GoldMinerModel_step5</h1>
+<a class="dashAnchor" name="//apple_ref/Section/5.%20Norms,%20obligation%20and%20enforcement"></a><h1 id="5-norms-obligation-and-enforcement">5. Norms, obligation and enforcement</h1>
+<p>This last step consists in adding social norms, obligations and enforcement into the agents 'behavior.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Formulation"></a><h2 id="formulation">Formulation</h2>
+<ul>
+<li>Definition of global predicates
+<ul>
+<li>Definition of the policeman species</li>
+<li>Definition of the enforcement done by policeman species</li>
+<li>Definition of the law agents have to follow</li>
+<li>Definition of a gold miner norm to fulfill its obligation and its social norms</li>
+<li>Definition of the enforcement done by gold miners</li>
+</ul>
+</li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Norms,%20obligations,%20and%20enforcement"></a><h2 id="norms-obligations-and-enforcement">Norms, obligations, and enforcement</h2>
+<p>The BDI architecture of GAMA allows defining explicit social norms, laws that lead to obligations and an enforcement process to sanction or reward the other agent depending on their behavior toward norms. 
+A social norm is a set of actions executed under certain conditions which are known by the people has the right things to do in that conditions. As it is, it can be assimilated into a plan. However, a norm can be violated which mean an agent chose to disobey and do not execute it while it should. To do this, each agent has an obedient value, between 0 and 1 ad computed from its personality and each norm has a threshold. If the obedient value of the agent is above the threshold, the norm is executed.
+An obligation is a mental state that can be assimilated with a desire. It is created by a law that indicates under which conditions the agent has to follow a particular obligation. Once again, the law can have a threshold value to be activated or not depending on the obedient value of the agent. If an agent has an obligation, it will give up its current intention and current plan to get this obligation as its intention. Then, it will choose a specific norm to answer this obligation, once again with a threshold on the obedient value.
+Finally, an enforcement mechanism can be defined during the perception process. Norms, laws, and obligation can be enforced. If a violation is detected, a sanction can be executed. If the norm/law/obligation is fulfilled, a reward can be executed.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Model%20Definition"></a><h2 id="model-definition">Model Definition</h2>
+<a class="dashAnchor" name="//apple_ref/Section/law"></a><h3 id="law">law</h3>
+<p>We add a law to the gold miner species that will create the obligation to get a gold if a gold nugget is perceived. This law replaces a rule and expresses the fact that miners are working or not, depending on their obedience value.</p>
+<pre><code class="hljs less"><span class="hljs-selector-tag"><span class="hljs-selector-tag">species</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">miner</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">skills</span></span>: <span class="hljs-selector-attr"><span class="hljs-selector-attr">[moving]</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">control</span></span><span class="hljs-selector-pseudo"><span class="hljs-selector-pseudo">:simple_bdi</span></span> {
+    ...
+    <span class="hljs-selector-tag"><span class="hljs-selector-tag">law</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">working</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">belief</span></span>: <span class="hljs-selector-tag"><span class="hljs-selector-tag">mine_location</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">new_obligation</span></span>: <span class="hljs-selector-tag"><span class="hljs-selector-tag">has_gold</span></span> 
+   <span class="hljs-keyword"><span class="hljs-keyword">when</span></span>:<span class="hljs-keyword"><span class="hljs-keyword">not</span></span> has_obligation(has_gold) <span class="hljs-keyword"><span class="hljs-keyword">and</span></span> <span class="hljs-keyword"><span class="hljs-keyword">not</span></span> has_belief(has_gold) <span class="hljs-attribute"><span class="hljs-attribute">strength</span></span>: <span class="hljs-number"><span class="hljs-number">2.0</span></span> <span class="hljs-attribute"><span class="hljs-attribute">threshold</span></span>:thresholdLaw;
+    
+        ...
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/norms"></a><h3 id="norms">norms</h3>
+<p>The miners will have two norms. A first one to answer the obligation to collect gold. This norms replaces the previous plan created for this purpose. However, a new plan is declared to get 3 pieces of gold at each time. This plan will be considered illegal by the policeman species.</p>
+<pre><code class="hljs cs">species miner skills: [moving] control:simple_bdi {
+    ...
+        norm doingJob obligation:has_gold finished_when: has_belief(has_gold) threshold:thresholdObligation{
+        <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (target = nil) {
+            <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">add_subintention</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">has_gold,choose_goldmine, </span></span><span class="hljs-literal"><span class="hljs-function"><span class="hljs-params"><span class="hljs-literal">true</span></span></span></span></span><span class="hljs-function">)</span></span>;
+            <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">current_intention_on_hold</span></span></span><span class="hljs-function">(</span><span class="hljs-params"></span><span class="hljs-function"><span class="hljs-params"></span>)</span></span>;
+        } <span class="hljs-keyword"><span class="hljs-keyword">else</span></span> {
+            <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> <span class="hljs-keyword"><span class="hljs-keyword">goto</span></span> target: target ;
+            <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (target = location)  {
+                goldmine current_mine&lt;- <span class="hljs-function"><span class="hljs-function">goldmine </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">first_with</span></span></span><span class="hljs-function"> (</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">target = each.location</span></span></span><span class="hljs-function">)</span></span>;
+                <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> current_mine.quantity &gt; <span class="hljs-number"><span class="hljs-number">0</span></span> {
+                    gold_transported &lt;- gold_transported+<span class="hljs-number"><span class="hljs-number">1</span></span>;
+                    <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">add_belief</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">has_gold</span></span></span><span class="hljs-function">)</span></span>;
+                    ask current_mine {quantity &lt;- quantity - <span class="hljs-number"><span class="hljs-number">1</span></span>;}    
+                } <span class="hljs-keyword"><span class="hljs-keyword">else</span></span> {
+                    <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">add_belief</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">new_predicate(empty_mine_location, [</span></span><span class="hljs-string"><span class="hljs-function"><span class="hljs-params"><span class="hljs-string">"location_value"</span></span></span></span><span class="hljs-function"><span class="hljs-params">::target]</span></span></span><span class="hljs-function">))</span></span>;
+                    <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">remove_belief</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">new_predicate(mine_at_location, [</span></span><span class="hljs-string"><span class="hljs-function"><span class="hljs-params"><span class="hljs-string">"location_value"</span></span></span></span><span class="hljs-function"><span class="hljs-params">::target]</span></span></span><span class="hljs-function">))</span></span>;
+                }
+                target &lt;- nil;
+            }
+        }   
+    }
+}
+</code></pre>
+<p>The second norm is a social norm to communicate the list of known mines to one's friends. It replaces the previous plan that did this action, while a new plan is added to give a wrong list of mines to one's friend.</p>
+<pre><code class="hljs cpp">species miner skills: [moving] control:simple_bdi {
+    ...
+    norm share_information intention:share_information threshold:thresholdNorm instantaneous: <span class="hljs-literal"><span class="hljs-literal">true</span></span>{
+        <span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;miner&gt; my_friends &lt;- <span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;miner&gt;((social_link_base where (each.liking &gt; <span class="hljs-number"><span class="hljs-number">0</span></span>)) collect each.agent);
+        loop known_goldmine over: get_beliefs_with_name(mine_at_location) {
+            ask my_friends {
+                <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">add_belief</span></span></span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">(known_goldmine)</span></span></span></span>;
+            }
+        }
+        loop known_empty_goldmine over: get_beliefs_with_name(empty_mine_location) {
+            ask my_friends {
+                <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">add_belief</span></span></span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">(known_empty_goldmine)</span></span></span></span>;
+            }
+        }
+        
+        <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">remove_intention</span></span></span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">(share_information, </span></span><span class="hljs-literal"><span class="hljs-function"><span class="hljs-params"><span class="hljs-literal">true</span></span></span></span><span class="hljs-function"><span class="hljs-params">)</span></span></span></span>; 
+    }
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/enforcement%20of%20the%20social%20norm"></a><h3 id="enforcement-of-the-social-norm">enforcement of the social norm</h3>
+<p>Finally for the gold-miner agent, an enforcement is defined about the social norm to communicate the location of mines to other agents. A sanction and a reward are declared to change the liking value with the agent controlled, depending if the norm is violated or fulfilled.</p>
+<pre><code class="hljs groovy">species miner <span class="hljs-string"><span class="hljs-string">skills:</span></span> [moving] <span class="hljs-string"><span class="hljs-string">control:</span></span>simple_bdi {
+    ...
+    perceive <span class="hljs-string"><span class="hljs-string">target:</span></span>miner <span class="hljs-string"><span class="hljs-string">in:</span></span>viewdist {
+        myself.agent_perceived&lt;-self;
+        enforcement <span class="hljs-string"><span class="hljs-string">norm:</span></span><span class="hljs-string"><span class="hljs-string">"share_information"</span></span> <span class="hljs-string"><span class="hljs-string">sanction:</span></span><span class="hljs-string"><span class="hljs-string">"sanctionToNorm"</span></span> <span class="hljs-string"><span class="hljs-string">reward:</span></span><span class="hljs-string"><span class="hljs-string">"rewardToNorm"</span></span>;
+    }
+        
+    sanction sanctionToNorm{
+        do change_liking(agent_perceived,<span class="hljs-number"><span class="hljs-number">-0.1</span></span>);
+    }   
+    
+    sanction rewardToNorm{
+        do change_liking(agent_perceived,<span class="hljs-number"><span class="hljs-number">0.1</span></span>);
+    }
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Definition%20of%20policeman%20species"></a><h3 id="definition-of-policeman-species">Definition of policeman species</h3>
+<p>Finally, we define a policeman species that will wander through the map and enforce the miners about the law and the obligation. The sanctions will be a fine collected by policemen.</p>
+<pre><code class="hljs mipsasm">species policeman skills: [moving] control:simple_bdi {
+    predicate patroling &lt;- new_predicate(<span class="hljs-string"><span class="hljs-string">"patrolling"</span></span>)<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    float viewdist &lt;- <span class="hljs-number"><span class="hljs-number">1000</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    miner agent_perceived &lt;- nil<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    
+    init {
+        do <span class="hljs-keyword"><span class="hljs-keyword">add_desire(patroling);
+</span></span>    }
+    
+    perceive target:miner in: viewdist{
+        myself.agent_perceived &lt;- self<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        enforcement law:<span class="hljs-string"><span class="hljs-string">"working"</span></span> sanction:<span class="hljs-string"><span class="hljs-string">"sanctionToLaw"</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        enforcement obligation:has_gold sanction: <span class="hljs-string"><span class="hljs-string">"sanctionToObligation"</span></span> reward:<span class="hljs-string"><span class="hljs-string">"rewardToObligation"</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    }
+    
+    sanction sanctionToLaw{
+        ask agent_perceived{
+            thresholdLaw &lt;- <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+            gold_sold &lt;- gold_sold-5<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        }
+        fine &lt;- fine +<span class="hljs-number"><span class="hljs-number">5</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    }
+    
+    sanction sanctionToObligation {
+        ask agent_perceived{
+            gold_sold &lt;- gold_sold-3<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+            do remove_intention(sell_gold,true)<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+            thresholdObligation &lt;- self.thresholdObligation - <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">1</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        }
+        fine &lt;- fine + <span class="hljs-number"><span class="hljs-number">3</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    }
+    
+    sanction rewardToObligation{
+        ask agent_perceived{
+            gold_sold &lt;- gold_sold+<span class="hljs-number"><span class="hljs-number">2</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        }
+        fine &lt;- fine -<span class="hljs-number"><span class="hljs-number">2</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    }
+    
+    plan patrol intention: patroling{
+        do wander<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    }
+    
+    aspect <span class="hljs-keyword"><span class="hljs-keyword">base{
+</span></span>        draw circle(viewdist) color: <span class="hljs-comment"><span class="hljs-comment">#blue depth:0.0;</span></span>
+    }
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Complete%20Model"></a><h2 id="complete-model">Complete Model</h2>
+<pre><code class="hljs cs">model GoldBdi
+
+global {
+    <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> nb_mines &lt;- <span class="hljs-number"><span class="hljs-number">10</span></span>; 
+    <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> nbminer&lt;<span class="hljs-number"><span class="hljs-number">-5</span></span>;
+    <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> nb_police &lt;- <span class="hljs-number"><span class="hljs-number">1</span></span>;
+    <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> fine &lt;<span class="hljs-number"><span class="hljs-number">-0</span></span>;
+    market the_market;
+    
+    <span class="hljs-keyword"><span class="hljs-keyword">string</span></span> mine_at_location &lt;- <span class="hljs-string"><span class="hljs-string">"mine_at_location"</span></span>;
+    <span class="hljs-keyword"><span class="hljs-keyword">string</span></span> empty_mine_location &lt;- <span class="hljs-string"><span class="hljs-string">"empty_mine_location"</span></span>;
+    
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> step &lt;- <span class="hljs-number"><span class="hljs-number">10</span></span><span class="hljs-meta"><span class="hljs-meta">#mn;</span></span>
+    
+    <span class="hljs-comment"><span class="hljs-comment">//possible predicates concerning miners</span></span>
+    predicate mine_location &lt;- new_predicate(mine_at_location) ;
+    predicate choose_goldmine &lt;- new_predicate(<span class="hljs-string"><span class="hljs-string">"choose a gold mine"</span></span>);
+    predicate has_gold &lt;- new_predicate(<span class="hljs-string"><span class="hljs-string">"extract gold"</span></span>);
+    predicate find_gold &lt;- new_predicate(<span class="hljs-string"><span class="hljs-string">"find gold"</span></span>) ;
+    predicate sell_gold &lt;- new_predicate(<span class="hljs-string"><span class="hljs-string">"sell gold"</span></span>) ;
+    predicate share_information &lt;- new_predicate(<span class="hljs-string"><span class="hljs-string">"share information"</span></span>) ;
+    
+    
+    emotion joy &lt;- new_emotion(<span class="hljs-string"><span class="hljs-string">"joy"</span></span>);
+    
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> inequality &lt;- <span class="hljs-number"><span class="hljs-number">0.0</span></span> update:standard_deviation(miner collect each.gold_sold);
+    
+    geometry shape &lt;- square(<span class="hljs-number"><span class="hljs-number">20</span></span> <span class="hljs-meta"><span class="hljs-meta">#km);</span></span>
+    init
+    {
+        create market {
+            the_market &lt;- self; 
+        }
+        create goldmine number:nb_mines;
+        create miner number:nbminer;
+        create policeman number:nb_police;
+    }
+    
+    reflex end_simulation <span class="hljs-keyword"><span class="hljs-keyword">when</span></span>: sum(goldmine collect each.quantity) = <span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-function"><span class="hljs-function">and </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">empty</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">miner </span></span><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-params"><span class="hljs-keyword">where</span></span></span></span><span class="hljs-function"><span class="hljs-params"> each.has_belief(has_gold</span></span></span><span class="hljs-function">))</span></span>{
+        <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> pause;
+        ask miner{
+            write name + <span class="hljs-string"><span class="hljs-string">" : "</span></span> +gold_sold;
+        }
+        write <span class="hljs-string"><span class="hljs-string">"**********************"</span></span>;
+        write <span class="hljs-string"><span class="hljs-string">"fine : "</span></span> + fine;
+    }
+}
+
+species goldmine {
+    <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> quantity &lt;- rnd(<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">20</span></span>);
+    aspect <span class="hljs-keyword"><span class="hljs-keyword">default</span></span>
+    {
+        <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (quantity = <span class="hljs-number"><span class="hljs-number">0</span></span>) {
+            <span class="hljs-function"><span class="hljs-function">draw </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">triangle</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">200</span></span></span></span></span><span class="hljs-function">) color: #gray border: #black</span></span>; 
+        } <span class="hljs-keyword"><span class="hljs-keyword">else</span></span> {
+            <span class="hljs-function"><span class="hljs-function">draw </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">triangle</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">200</span></span></span></span><span class="hljs-function"><span class="hljs-params"> + quantity*</span></span><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">50</span></span></span></span></span><span class="hljs-function">) color: #yellow border: #black</span></span>; 
+        }
+     
+    }
+}
+
+species market {
+    <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> golds;
+    aspect <span class="hljs-keyword"><span class="hljs-keyword">default</span></span>
+    {
+      <span class="hljs-function"><span class="hljs-function">draw </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">square</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">1000</span></span></span></span></span><span class="hljs-function">) color: #black </span></span>;
+    }
+}
+
+species policeman skills: [moving] control:simple_bdi {
+    predicate patroling &lt;- new_predicate(<span class="hljs-string"><span class="hljs-string">"patrolling"</span></span>);
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> viewdist &lt;- <span class="hljs-number"><span class="hljs-number">1000.0</span></span>;
+    miner agent_perceived &lt;- nil;
+    
+    init {
+        <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">add_desire</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">patroling</span></span></span><span class="hljs-function">)</span></span>;
+    }
+    
+    perceive target:miner <span class="hljs-keyword"><span class="hljs-keyword">in</span></span>: viewdist{
+        enforcement law:<span class="hljs-string"><span class="hljs-string">"working"</span></span> sanction:<span class="hljs-string"><span class="hljs-string">"sanctionToLaw"</span></span>;
+        enforcement obligation:has_gold <span class="hljs-comment"><span class="hljs-comment">/*when:has_belief(has_gold)*/</span></span> sanction: <span class="hljs-string"><span class="hljs-string">"sanctionToObligation"</span></span> reward:<span class="hljs-string"><span class="hljs-string">"rewardToObligation"</span></span>;
+    }
+    
+    sanction sanctionToLaw{
+        ask agent_perceived{
+            thresholdLaw &lt;- <span class="hljs-number"><span class="hljs-number">0.0</span></span>;
+            gold_sold &lt;- gold_sold<span class="hljs-number"><span class="hljs-number">-5</span></span>;
+        }
+        fine &lt;- fine +<span class="hljs-number"><span class="hljs-number">5</span></span>;
+    }
+    
+    sanction sanctionToObligation {
+        ask agent_perceived{
+            gold_sold &lt;- gold_sold<span class="hljs-number"><span class="hljs-number">-3</span></span>;
+            <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">remove_intention</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">sell_gold,</span></span><span class="hljs-literal"><span class="hljs-function"><span class="hljs-params"><span class="hljs-literal">true</span></span></span></span></span><span class="hljs-function">)</span></span>;
+            thresholdObligation &lt;- self.thresholdObligation - <span class="hljs-number"><span class="hljs-number">0.1</span></span>;
+        }
+        fine &lt;- fine + <span class="hljs-number"><span class="hljs-number">3</span></span>;
+    }
+    
+    sanction rewardToObligation{
+        ask agent_perceived{
+            gold_sold &lt;- gold_sold+<span class="hljs-number"><span class="hljs-number">2</span></span>;
+        }
+        fine &lt;- fine <span class="hljs-number"><span class="hljs-number">-2</span></span>;
+    }
+    
+    plan patrol intention: patroling{
+        <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> wander;
+    }
+    
+    aspect <span class="hljs-keyword"><span class="hljs-keyword">base</span></span>{
+        <span class="hljs-function"><span class="hljs-function">draw </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">circle</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">viewdist</span></span></span><span class="hljs-function">) color: #blue depth:0.0</span></span>;
+    }
+}
+
+species miner skills: [moving] control:simple_bdi {
+    
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> viewdist&lt;<span class="hljs-number"><span class="hljs-number">-1000.0</span></span>;
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> speed &lt;- <span class="hljs-number"><span class="hljs-number">2</span></span><span class="hljs-meta"><span class="hljs-meta">#km/#h;</span></span>
+    rgb mycolor&lt;-rnd_color(<span class="hljs-number"><span class="hljs-number">255</span></span>);
+    point target;
+    <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> gold_sold;
+    <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> gold_transported&lt;<span class="hljs-number"><span class="hljs-number">-0</span></span>;
+    agent agent_perceived&lt;-nil;
+    
+    <span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> use_social_architecture &lt;- <span class="hljs-literal"><span class="hljs-literal">true</span></span>;
+    <span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> use_emotions_architecture &lt;- <span class="hljs-literal"><span class="hljs-literal">true</span></span>;
+    <span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> use_personality &lt;- <span class="hljs-literal"><span class="hljs-literal">true</span></span>;
+    
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> openness &lt;- gauss(<span class="hljs-number"><span class="hljs-number">0.5</span></span>,<span class="hljs-number"><span class="hljs-number">0.12</span></span>);
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> conscientiousness &lt;- gauss(<span class="hljs-number"><span class="hljs-number">0.5</span></span>,<span class="hljs-number"><span class="hljs-number">0.12</span></span>);
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> extraversion &lt;- gauss(<span class="hljs-number"><span class="hljs-number">0.5</span></span>,<span class="hljs-number"><span class="hljs-number">0.12</span></span>);
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> agreeableness &lt;- gauss(<span class="hljs-number"><span class="hljs-number">0.5</span></span>,<span class="hljs-number"><span class="hljs-number">0.12</span></span>);
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> neurotism &lt;- gauss(<span class="hljs-number"><span class="hljs-number">0.5</span></span>,<span class="hljs-number"><span class="hljs-number">0.12</span></span>);
+    
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> plan_persistence &lt;- <span class="hljs-number"><span class="hljs-number">1.0</span></span>;
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> intention_persistence &lt;- <span class="hljs-number"><span class="hljs-number">1.0</span></span>;
+    
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> thresholdLaw &lt;- <span class="hljs-number"><span class="hljs-number">1.0</span></span>;
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> thresholdObligation &lt;- <span class="hljs-number"><span class="hljs-number">1.0</span></span>;
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> thresholdNorm &lt;- <span class="hljs-number"><span class="hljs-number">0.5</span></span>;
+    
+    init
+    {
+        <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">add_desire</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">find_gold</span></span></span><span class="hljs-function">)</span></span>;
+    }
+    
+    perceive target:self{
+        <span class="hljs-keyword"><span class="hljs-keyword">if</span></span>(gold_transported&gt;<span class="hljs-number"><span class="hljs-number">0</span></span>){
+            <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">add_belief</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">has_gold</span></span></span><span class="hljs-function">)</span></span>;
+        } <span class="hljs-keyword"><span class="hljs-keyword">else</span></span> {
+            <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">remove_belief</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">has_gold</span></span></span><span class="hljs-function">)</span></span>;
+        }
+    }
+    
+    perceive target:miner <span class="hljs-keyword"><span class="hljs-keyword">in</span></span>:viewdist {
+        myself.agent_perceived&lt;-self;
+        socialize liking: point(mycolor.red, mycolor.green, mycolor.blue) <span class="hljs-function"><span class="hljs-function">distance_to </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">point</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">myself.mycolor.red, myself.mycolor.green, myself.mycolor.blue</span></span></span><span class="hljs-function">) / (</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params"> </span></span><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">255</span></span></span></span></span><span class="hljs-function">) - 1</span></span>;
+        enforcement norm:<span class="hljs-string"><span class="hljs-string">"share_information"</span></span> sanction:<span class="hljs-string"><span class="hljs-string">"sanctionToNorm"</span></span> reward:<span class="hljs-string"><span class="hljs-string">"rewardToNorm"</span></span>;
+    }
+        
+    sanction sanctionToNorm{
+        <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">change_liking</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">agent_perceived,</span></span><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">-0.1</span></span></span></span></span><span class="hljs-function">)</span></span>;
+    }   
+    
+    sanction rewardToNorm{
+        <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">change_liking</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">agent_perceived,</span></span><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">0.1</span></span></span></span></span><span class="hljs-function">)</span></span>;
+    }
+        
+    perceive target:<span class="hljs-function"><span class="hljs-function">goldmine </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">where</span></span></span><span class="hljs-function"> (</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">each.quantity &gt; </span></span><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">0</span></span></span></span></span><span class="hljs-function">) </span><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">in</span></span></span><span class="hljs-function">:viewdist </span></span>{
+        focus id:mine_at_location <span class="hljs-keyword"><span class="hljs-keyword">var</span></span>:location;
+        ask myself {
+            <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (has_emotion(joy)) {<span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">add_desire</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">predicate:share_information, strength: </span></span><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">5.0</span></span></span></span></span><span class="hljs-function">)</span></span>;}
+            <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">remove_intention</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">find_gold, </span></span><span class="hljs-literal"><span class="hljs-function"><span class="hljs-params"><span class="hljs-literal">false</span></span></span></span></span><span class="hljs-function">)</span></span>;
+        }
+    }
+    
+    rule belief: has_gold new_desire: sell_gold strength: <span class="hljs-number"><span class="hljs-number">3.0</span></span>;
+    
+    law working belief: mine_location new_obligation: has_gold <span class="hljs-keyword"><span class="hljs-keyword">when</span></span>:<span class="hljs-function"><span class="hljs-function">not </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">has_obligation</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">has_gold</span></span></span><span class="hljs-function">) and not </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">has_belief</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">has_gold</span></span></span><span class="hljs-function">) strength: 2.0 threshold:thresholdLaw</span></span>;
+    
+    plan letsWander intention:find_gold 
+    {
+        <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> wander;
+    }
+    
+    norm doingJob obligation:has_gold finished_when: has_belief(has_gold) threshold:thresholdObligation{
+        <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (target = nil) {
+            <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">add_subintention</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">has_gold,choose_goldmine, </span></span><span class="hljs-literal"><span class="hljs-function"><span class="hljs-params"><span class="hljs-literal">true</span></span></span></span></span><span class="hljs-function">)</span></span>;
+            <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">current_intention_on_hold</span></span></span><span class="hljs-function">(</span><span class="hljs-params"></span><span class="hljs-function"><span class="hljs-params"></span>)</span></span>;
+        } <span class="hljs-keyword"><span class="hljs-keyword">else</span></span> {
+            <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> <span class="hljs-keyword"><span class="hljs-keyword">goto</span></span> target: target ;
+            <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (target = location)  {
+                goldmine current_mine&lt;- <span class="hljs-function"><span class="hljs-function">goldmine </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">first_with</span></span></span><span class="hljs-function"> (</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">target = each.location</span></span></span><span class="hljs-function">)</span></span>;
+                <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> current_mine.quantity &gt; <span class="hljs-number"><span class="hljs-number">0</span></span> {
+                    gold_transported &lt;- gold_transported+<span class="hljs-number"><span class="hljs-number">1</span></span>;
+                    <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">add_belief</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">has_gold</span></span></span><span class="hljs-function">)</span></span>;
+                    ask current_mine {quantity &lt;- quantity - <span class="hljs-number"><span class="hljs-number">1</span></span>;}    
+                } <span class="hljs-keyword"><span class="hljs-keyword">else</span></span> {
+                    <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">add_belief</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">new_predicate(empty_mine_location, [</span></span><span class="hljs-string"><span class="hljs-function"><span class="hljs-params"><span class="hljs-string">"location_value"</span></span></span></span><span class="hljs-function"><span class="hljs-params">::target]</span></span></span><span class="hljs-function">))</span></span>;
+                    <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">remove_belief</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">new_predicate(mine_at_location, [</span></span><span class="hljs-string"><span class="hljs-function"><span class="hljs-params"><span class="hljs-string">"location_value"</span></span></span></span><span class="hljs-function"><span class="hljs-params">::target]</span></span></span><span class="hljs-function">))</span></span>;
+                }
+                target &lt;- nil;
+            }
+        }   
+    }
+    
+    plan getMoreGold intention:has_gold
+    {
+        <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (target = nil) {
+            <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">add_subintention</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">has_gold,choose_goldmine, </span></span><span class="hljs-literal"><span class="hljs-function"><span class="hljs-params"><span class="hljs-literal">true</span></span></span></span></span><span class="hljs-function">)</span></span>;
+            <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">current_intention_on_hold</span></span></span><span class="hljs-function">(</span><span class="hljs-params"></span><span class="hljs-function"><span class="hljs-params"></span>)</span></span>;
+        } <span class="hljs-keyword"><span class="hljs-keyword">else</span></span> {
+            <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> <span class="hljs-keyword"><span class="hljs-keyword">goto</span></span> target: target ;
+            <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (target = location)  {
+                goldmine current_mine&lt;- <span class="hljs-function"><span class="hljs-function">goldmine </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">first_with</span></span></span><span class="hljs-function"> (</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">target = each.location</span></span></span><span class="hljs-function">)</span></span>;
+                <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> current_mine.quantity &gt; <span class="hljs-number"><span class="hljs-number">0</span></span> {
+                    gold_transported &lt;- <span class="hljs-number"><span class="hljs-number">3</span></span>;
+                    <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">add_belief</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">has_gold</span></span></span><span class="hljs-function">)</span></span>;
+                    ask current_mine {<span class="hljs-keyword"><span class="hljs-keyword">if</span></span>(quantity&gt;=<span class="hljs-number"><span class="hljs-number">3</span></span>) {
+                        quantity &lt;- quantity - <span class="hljs-number"><span class="hljs-number">3</span></span>;
+                    }<span class="hljs-keyword"><span class="hljs-keyword">else</span></span> {
+                        quantity &lt;- <span class="hljs-number"><span class="hljs-number">0</span></span>;
+                    } 
+                    }   
+                } <span class="hljs-keyword"><span class="hljs-keyword">else</span></span> {
+                    <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">add_belief</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">new_predicate(empty_mine_location, [</span></span><span class="hljs-string"><span class="hljs-function"><span class="hljs-params"><span class="hljs-string">"location_value"</span></span></span></span><span class="hljs-function"><span class="hljs-params">::target]</span></span></span><span class="hljs-function">))</span></span>;
+                    <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">remove_belief</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">new_predicate(mine_at_location, [</span></span><span class="hljs-string"><span class="hljs-function"><span class="hljs-params"><span class="hljs-string">"location_value"</span></span></span></span><span class="hljs-function"><span class="hljs-params">::target]</span></span></span><span class="hljs-function">))</span></span>;
+                }
+                target &lt;- nil;
+            }
+        }   
+    }
+    
+    plan choose_closest_goldmine intention: choose_goldmine instantaneous: <span class="hljs-literal"><span class="hljs-literal">true</span></span>{
+        list&lt;point&gt; possible_mines &lt;- get_beliefs_with_name(mine_at_location) collect (point(get_predicate(mental_state (each)).values[<span class="hljs-string"><span class="hljs-string">"location_value"</span></span>]));
+        list&lt;point&gt; empty_mines &lt;- get_beliefs_with_name(empty_mine_location) collect (point(get_predicate(mental_state (each)).values[<span class="hljs-string"><span class="hljs-string">"location_value"</span></span>]));
+        possible_mines &lt;- possible_mines - empty_mines;
+        <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (empty(possible_mines)) {
+            <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">remove_intention</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">has_gold, </span></span><span class="hljs-literal"><span class="hljs-function"><span class="hljs-params"><span class="hljs-literal">true</span></span></span></span></span><span class="hljs-function">)</span></span>; 
+        } <span class="hljs-keyword"><span class="hljs-keyword">else</span></span> {
+            target &lt;- (<span class="hljs-function"><span class="hljs-function">possible_mines </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">with_min_of</span></span></span><span class="hljs-function"> (</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">each distance_to self</span></span></span><span class="hljs-function">)).location</span></span>;
+        }
+        <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">remove_intention</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">choose_goldmine, </span></span><span class="hljs-literal"><span class="hljs-function"><span class="hljs-params"><span class="hljs-literal">true</span></span></span></span></span><span class="hljs-function">)</span></span>; 
+    }
+    
+    plan return_to_base intention: sell_gold <span class="hljs-keyword"><span class="hljs-keyword">when</span></span>: has_belief(has_gold){
+        <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> <span class="hljs-keyword"><span class="hljs-keyword">goto</span></span> target: the_market ;
+        <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (the_market.location = location)  {
+            <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">remove_belief</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">has_gold</span></span></span><span class="hljs-function">)</span></span>;
+            <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">remove_intention</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">sell_gold, </span></span><span class="hljs-literal"><span class="hljs-function"><span class="hljs-params"><span class="hljs-literal">true</span></span></span></span></span><span class="hljs-function">)</span></span>;
+            gold_sold &lt;- gold_sold + gold_transported;
+            gold_transported &lt;- <span class="hljs-number"><span class="hljs-number">0</span></span>;
+        }
+    }
+    
+    norm share_information intention:share_information threshold:thresholdNorm instantaneous: <span class="hljs-literal"><span class="hljs-literal">true</span></span>{
+        list&lt;miner&gt; my_friends &lt;- list&lt;miner&gt;((<span class="hljs-function"><span class="hljs-function">social_link_base </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">where</span></span></span><span class="hljs-function"> (</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">each.liking &gt; </span></span><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">0</span></span></span></span></span><span class="hljs-function">)) collect each.agent)</span></span>;
+        loop known_goldmine over: get_beliefs_with_name(mine_at_location) {
+            ask my_friends {
+                <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">add_belief</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">known_goldmine</span></span></span><span class="hljs-function">)</span></span>;
+            }
+        }
+        loop known_empty_goldmine over: get_beliefs_with_name(empty_mine_location) {
+            ask my_friends {
+                <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">add_belief</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">known_empty_goldmine</span></span></span><span class="hljs-function">)</span></span>;
+            }
+        }
+        
+        <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">remove_intention</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">share_information, </span></span><span class="hljs-literal"><span class="hljs-function"><span class="hljs-params"><span class="hljs-literal">true</span></span></span></span></span><span class="hljs-function">)</span></span>; 
+    }
+    
+    plan share_information_to_friends intention: share_information instantaneous: <span class="hljs-literal"><span class="hljs-literal">true</span></span>{
+        list&lt;miner&gt; my_friends &lt;- list&lt;miner&gt;((<span class="hljs-function"><span class="hljs-function">social_link_base </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">where</span></span></span><span class="hljs-function"> (</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">each.liking &gt; </span></span><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">0</span></span></span></span></span><span class="hljs-function">)) collect each.agent)</span></span>;
+        loop known_goldmine over: get_beliefs_with_name(empty_mine_location) {
+            ask my_friends {
+                <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">add_belief</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">known_goldmine</span></span></span><span class="hljs-function">)</span></span>;
+            }
+        }       
+        <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">remove_intention</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">share_information, </span></span><span class="hljs-literal"><span class="hljs-function"><span class="hljs-params"><span class="hljs-literal">true</span></span></span></span></span><span class="hljs-function">)</span></span>; 
+    }
+
+    aspect <span class="hljs-keyword"><span class="hljs-keyword">default</span></span> {
+      <span class="hljs-function"><span class="hljs-function">draw </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">circle</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">200</span></span></span></span></span><span class="hljs-function">) color: mycolor border: #black depth: gold_sold</span></span>;
+    }
+}
+
+
+experiment GoldBdi type: gui {
+    output {
+        display map type: opengl
+        {
+            species market ;
+            species goldmine ;
+            species miner;
+            species policeman aspect:<span class="hljs-keyword"><span class="hljs-keyword">base</span></span>;
+        }
+        
+    }
+}
+</code></pre>
+<p><a href="BDIAgents.html">Back to the start of the tutorial</a></p>
+<ol>
+<li><a href="GoldMinerModel_step1.html">Creation of the basic model: gold mines and market</a>
+<ol>
+<li><a href="GoldMinerModel_step2.html">Definition of the BDI miners</a></li>
+<li><a href="GoldMinerModel_step3.html">Definition of social relations between miners</a></li>
+<li><a href="GoldMinerModel_step4.html">Use of emotions and personality for the miners</a></li>
+</ol>
+</li>
+</ol>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

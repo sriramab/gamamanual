@@ -1,0 +1,47 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Additionnal Plugins/Diffusion Statement/Diffusion Statement Anisotropic Diffusion (Toroidal) --><head><meta charset="utf-8"><title>Diffusion Statement Anisotropic Diffusion (Toroidal)</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="diffusion-statement-anisotropic-diffusion-toroidal">Diffusion Statement Anisotropic Diffusion (Toroidal)</h1>
+<h1 id="anisotropic-diffusion-toroidal">Anisotropic diffusion (Toroidal)</h1>
+<p><em>Author : Benoit Gaudou</em></p>
+<p>This model is used to show how to construct an anisotropic diffusion through a grid. The cell at the center of the grid emit a pheromon at each step, which is spread through the grid thanks to the diffusion mechanism, using a particular matrix of diffusion, in a toroidal world.</p>
+<p><img src="../../../../../github.com/wiki/gama-platform/gama/References/ModelLibrary/Additionnal Plugins/Diffusion Statement/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Diffusion Statement/Diffusion Statement Anisotropic Diffusion (Toroidal)/a-10.png" alt="Eclipse folder." title="" class="img-responsive"> == $0</p><p>Code of the model : </p>
+<pre><code class="hljs groovy">
+model anisotropic_diffusion_torus
+
+global <span class="hljs-string">torus:</span> <span class="hljs-literal">true</span> {
+    <span class="hljs-keyword">int</span> size &lt;- <span class="hljs-number">64</span>; <span class="hljs-comment">// better to have a pow of 2 for the size of the grid</span>
+    geometry shape &lt;- envelope(square(size) * <span class="hljs-number">10</span>);
+    cells selected_cells;
+    matrix&lt;<span class="hljs-keyword">float</span>&gt; mat_diff &lt;- matrix([
+                                    [<span class="hljs-number">4</span><span class="hljs-regexp">/9,2/</span><span class="hljs-number">9</span>,<span class="hljs-number">0</span>/<span class="hljs-number">9</span>],
+                                    [<span class="hljs-number">2</span><span class="hljs-regexp">/9,1/</span><span class="hljs-number">9</span>,<span class="hljs-number">0.0</span>],
+                                    [<span class="hljs-number">0</span>/<span class="hljs-number">9</span>,<span class="hljs-number">0.0</span>,<span class="hljs-number">0.0</span>]]);
+    init {
+        selected_cells &lt;- location <span class="hljs-keyword">as</span> cells;
+    }
+    reflex new_Value {
+        ask selected_cells{
+            phero &lt;- <span class="hljs-number">1.0</span>;
+        }  
+    }
+
+    reflex diff {
+        diffuse <span class="hljs-string">var:</span> phero <span class="hljs-string">on:</span> cells <span class="hljs-string">matrix:</span> mat_diff <span class="hljs-string">method:</span>dot_product;   
+    }
+}
+
+
+grid cells <span class="hljs-string">height:</span> size <span class="hljs-string">width:</span> size  {
+    <span class="hljs-keyword">float</span> phero  &lt;- <span class="hljs-number">0.0</span>;
+    rgb color &lt;- hsb(phero,<span class="hljs-number">1.0</span>,<span class="hljs-number">1.0</span>) <span class="hljs-string">update:</span> hsb(phero,<span class="hljs-number">1.0</span>,<span class="hljs-number">1.0</span>);
+    <span class="hljs-keyword">float</span> grid_value <span class="hljs-string">update:</span> phero * <span class="hljs-number">100</span>;
+} 
+
+
+experiment diffusion <span class="hljs-string">type:</span> gui {
+    output {
+        display a <span class="hljs-string">type:</span> opengl {
+            grid cells <span class="hljs-string">elevation:</span> <span class="hljs-literal">true</span> <span class="hljs-string">triangulation:</span> <span class="hljs-literal">true</span>;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

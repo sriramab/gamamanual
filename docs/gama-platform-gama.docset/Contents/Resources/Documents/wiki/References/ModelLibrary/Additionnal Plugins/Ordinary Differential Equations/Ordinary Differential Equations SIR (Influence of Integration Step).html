@@ -1,0 +1,80 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Influence of Integration Step) --><head><meta charset="utf-8"><title>Ordinary Differential Equations SIR (Influence of Integration Step)</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="ordinary-differential-equations-sir-influence-of-integration-step">Ordinary Differential Equations SIR (Influence of Integration Step)</h1>
+<h1 id="sir-influence-of-integration-stepgaml">SIR (Influence of Integration Step).gaml</h1>
+<p><em>Author : hqnghi</em></p>
+<p>A SIR model to illustrate the impact of the change of the integration parameters.</p>
+<p><img src="../../../../../github.com/wiki/gama-platform/gama/References/ModelLibrary/Additionnal Plugins/Ordinary Differential Equations/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Influence of Integration Step)/SIR_1-10.png" alt="Eclipse folder." title="" class="img-responsive"> == $0</p><p></p><p><img src="../../../../../github.com/wiki/gama-platform/gama/References/ModelLibrary/Additionnal Plugins/Ordinary Differential Equations/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Influence of Integration Step)/SIR_10-10.png" alt="Eclipse folder." title="" class="img-responsive"> == $0</p><p><img src="../../../../../github.com/wiki/gama-platform/gama/References/ModelLibrary/Additionnal Plugins/Ordinary Differential Equations/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Influence of Integration Step)/SIR_100-10.png" alt="Eclipse folder." title="" class="img-responsive"> == $0</p>Code of the model : <p></p>
+<pre><code class="hljs rsl">
+model SIR_influence_of_integration_step
+
+global { 
+    <span class="hljs-keyword">float</span> <span class="hljs-built_in">step</span>&lt;<span class="hljs-number">-1</span><span class="hljs-meta">#s;</span>
+    <span class="hljs-keyword">float</span> beta &lt;- <span class="hljs-number">0.8</span> ;     
+    <span class="hljs-keyword">float</span> delta &lt;- <span class="hljs-number">0.01</span> ; 
+    
+    <span class="hljs-keyword">float</span> s1 &lt;- <span class="hljs-number">1</span><span class="hljs-meta">#s;</span>
+    <span class="hljs-keyword">float</span> s2 &lt;- <span class="hljs-number">1.5</span><span class="hljs-meta">#s;</span>
+    <span class="hljs-keyword">float</span> s3 &lt;- <span class="hljs-number">2</span><span class="hljs-meta">#s;</span>
+    
+    init {
+        create SIR_agt with: [h::<span class="hljs-number">1</span>,myUnit::s1];
+        create SIR_agt with: [h::<span class="hljs-number">0.1</span>,myUnit::s2];
+        create SIR_agt with: [h::<span class="hljs-number">0.01</span>,myUnit::s3];  
+    }  
+}
+
+
+
+species SIR_agt {
+    int N &lt;- <span class="hljs-number">500</span>;
+    <span class="hljs-keyword">float</span> t;    
+
+    <span class="hljs-keyword">float</span> I &lt;- <span class="hljs-number">1.0</span>; 
+    <span class="hljs-keyword">float</span> S &lt;- N - I; 
+    <span class="hljs-keyword">float</span> R &lt;- <span class="hljs-number">0.0</span>; 
+        
+    <span class="hljs-keyword">float</span> h;        
+    <span class="hljs-keyword">float</span> myUnit&lt;<span class="hljs-number">-1</span><span class="hljs-meta">#s;</span>
+    equation SIR{ 
+        diff(S,t) =myUnit* (- beta  * S * I / N);
+        diff(I,t) =myUnit* (beta * S * I / N) - (delta * I);
+        diff(R,t) =myUnit* (delta * I);
+    } 
+
+    reflex solving {
+        solve SIR method: <span class="hljs-string">"rk4"</span> <span class="hljs-built_in">step</span>: h;<span class="hljs-comment">// cycle_length:mycycle ;</span>
+<span class="hljs-comment">//      S&lt;-S*myUnit;</span>
+<span class="hljs-comment">//      I&lt;-I*myUnit;</span>
+<span class="hljs-comment">//      R&lt;-R*myUnit;</span>
+    }      
+}
+
+
+experiment mysimulation1 type: gui { 
+    output { 
+        display SIR_1  {
+            chart <span class="hljs-string">"SI - h=1"</span> type: series background: <span class="hljs-meta">#white {</span>
+                data <span class="hljs-string">'S'</span> value: first(SIR_agt where (each.myUnit = s1)).S <span class="hljs-keyword">color</span>: <span class="hljs-meta">#green;                </span>
+                data <span class="hljs-string">'I'</span> value: first(SIR_agt where (each.myUnit = s1)).I <span class="hljs-keyword">color</span>: <span class="hljs-meta">#red ;</span>
+                data <span class="hljs-string">'R'</span> value: first(SIR_agt where (each.myUnit = s1)).R <span class="hljs-keyword">color</span>: <span class="hljs-meta">#blue ;                </span>
+            }
+        }
+        
+        display SIR_10 {
+            chart <span class="hljs-string">"SI - h=0.1"</span> type: series background: <span class="hljs-meta">#white{</span>
+                data <span class="hljs-string">'S'</span> value: first(SIR_agt where (each.myUnit = s2)).S <span class="hljs-keyword">color</span>: <span class="hljs-meta">#green;                </span>
+                data <span class="hljs-string">'I'</span> value: first(SIR_agt where (each.myUnit = s2)).I <span class="hljs-keyword">color</span>: <span class="hljs-meta">#red ;</span>
+                data <span class="hljs-string">'R'</span> value: first(SIR_agt where (each.myUnit = s2)).R <span class="hljs-keyword">color</span>: <span class="hljs-meta">#blue ;                </span>
+            }
+        }
+        
+        display SIR_100  {
+            chart <span class="hljs-string">"SI - h=0.01"</span> type: series background: <span class="hljs-meta">#white {</span>
+                data <span class="hljs-string">'S'</span> value: first(SIR_agt where (each.myUnit = s3)).S <span class="hljs-keyword">color</span>: <span class="hljs-meta">#green;                </span>
+                data <span class="hljs-string">'I'</span> value: first(SIR_agt where (each.myUnit = s3)).I <span class="hljs-keyword">color</span>: <span class="hljs-meta">#red ;</span>
+                data <span class="hljs-string">'R'</span> value: first(SIR_agt where (each.myUnit = s3)).R <span class="hljs-keyword">color</span>: <span class="hljs-meta">#blue ;                </span>
+            }
+        }   
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

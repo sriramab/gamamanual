@@ -1,0 +1,42 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Toy Models/Articles/Articles ville_1 --><head><meta charset="utf-8"><title>Articles ville_1</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="articles-ville_1">Articles ville_1</h1>
+<h1 id="ville-1">Ville 1</h1>
+<p>_Author : _</p>
+<p>This is a simple model showing different circle with a color according to the income of the house.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">model</span> ville
+
+global {
+    <span class="hljs-section">init</span> {
+        <span class="hljs-attribute">create</span> foyer number: <span class="hljs-number">500</span>;
+    }
+}
+
+<span class="hljs-attribute">species</span> batiment {
+    <span class="hljs-attribute">string</span> type;
+    <span class="hljs-attribute">int</span> capacite;
+}
+
+<span class="hljs-attribute">species</span> route {
+}
+
+<span class="hljs-attribute">species</span> foyer {
+    <span class="hljs-attribute">float</span> revenu &lt;- gauss(<span class="hljs-number">1500</span>, <span class="hljs-number">500</span>);
+    <span class="hljs-attribute">bool</span> est_satisfait ;
+    <span class="hljs-attribute">batiment</span> habitation;
+    <span class="hljs-attribute">batiment</span> lieu_travail;
+    
+    <span class="hljs-attribute">aspect</span> revenu {
+        <span class="hljs-attribute">int</span> val &lt;- int(<span class="hljs-number">255</span> * (revenu / <span class="hljs-number">3000</span>));
+        <span class="hljs-attribute">draw</span> circle(<span class="hljs-number">5</span>) color: rgb(<span class="hljs-number">255</span> - val, val, <span class="hljs-number">0</span>);
+    }
+}
+
+<span class="hljs-attribute">experiment</span> ville type: gui { 
+    <span class="hljs-section">output</span> {
+        <span class="hljs-attribute">display</span> carte_principale {
+            <span class="hljs-attribute">species</span> foyer aspect: revenu;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

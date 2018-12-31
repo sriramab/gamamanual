@@ -1,0 +1,97 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Agent movement/Agent movement Goto Network --><head><meta charset="utf-8"><title>Agent movement Goto Network</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="agent-movement-goto-network">Agent movement Goto Network</h1>
+<h1 id="shortest-path-computation-on-a-graph">Shortest Path Computation on a Graph</h1>
+<p><em>Author :  Patrick Taillandier</em></p>
+<p>Model to show how to use the optimizer methods to compute the shortest path for the agents placed on a network with all of them having the same goal location. It also shows how to save these paths computed into a text file.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs mel">
+model Network
+
+<span class="hljs-keyword">global</span> {
+    <span class="hljs-keyword">file</span> shape_file_in &lt;- <span class="hljs-keyword">file</span>(<span class="hljs-string">'../includes/gis/roads.shp'</span>) ;
+    graph the_graph; 
+    geometry shape &lt;- envelope(shape_file_in);
+    bool save_shortest_paths &lt;- false;
+    bool load_shortest_paths &lt;- false;
+    <span class="hljs-keyword">string</span> shortest_paths_file &lt;- <span class="hljs-string">"../includes/shortest_paths.csv"</span>;
+    bool memorize_shortest_paths &lt;- true;
+    
+    <span class="hljs-comment">/*4 type of optimizer can be used for the shortest path computation:
+     *    - Djikstra: the default one - ensure to find the best shortest path - compute one shortest path at a time (by default, memorise the shortest path found)
+     *    - Bellmann: ensure to find the best shortest path - compute one shortest path at a time (by default, memorise the shortest path found)
+     *    - AStar: do not ensure to find the best shortest path - compute one shortest path at a time (by default, memorise the shortest path found)
+     *    - Floyd Warshall: ensure to find the best shortest path - compute all the shortest pathes at the same time (and keep them in memory)
+     */</span>
+    <span class="hljs-keyword">string</span> optimizer_type &lt;- <span class="hljs-string">"Djikstra"</span>;
+    <span class="hljs-keyword">int</span> nb_people &lt;- <span class="hljs-number">100</span>;
+    init {    
+        create road from: shape_file_in ;
+        the_graph &lt;- as_edge_graph(list(road));
+        
+        <span class="hljs-comment">//allows to choose the type of algorithm to use compute the shortest paths</span>
+        the_graph &lt;- the_graph with_optimizer_type optimizer_type;
+        
+        <span class="hljs-comment">//allows to define if the shortest paths computed should be memorized (in a cache) or not</span>
+        the_graph &lt;- the_graph use_cache memorize_shortest_paths;
+        
+        <span class="hljs-comment">//computes all the shortest paths, puts them in a matrix, then saves the matrix in a file</span>
+        <span class="hljs-keyword">if</span> save_shortest_paths {
+            <span class="hljs-keyword">matrix</span> ssp &lt;- all_pairs_shortest_path(the_graph);
+            save ssp type:<span class="hljs-string">"text"</span> to:shortest_paths_file;
+            
+        <span class="hljs-comment">//loads the file of the shortest paths as a matrix and uses it to initialize all the shortest paths of the graph</span>
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> load_shortest_paths {
+            the_graph &lt;- the_graph load_shortest_paths <span class="hljs-keyword">matrix</span>(<span class="hljs-keyword">file</span>(shortest_paths_file));
+        }
+        
+        create <span class="hljs-keyword">goal</span> number: <span class="hljs-number">1</span> {
+            location &lt;- any_location_in (one_of(road));
+        }
+        create people number: nb_people {
+            target &lt;- one_of (<span class="hljs-keyword">goal</span>) ;
+            location &lt;- any_location_in (one_of(road));
+        } 
+    }
+}
+
+species road  {
+    <span class="hljs-keyword">float</span> speed_coef ;
+    aspect <span class="hljs-keyword">default</span> {
+        draw shape <span class="hljs-keyword">color</span>: #black ;
+    }
+} 
+    
+species <span class="hljs-keyword">goal</span> {
+    aspect <span class="hljs-keyword">default</span> {
+        draw <span class="hljs-keyword">circle</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">color</span>: #red;
+    }
+}
+    
+species people skills: [moving] {
+    <span class="hljs-keyword">goal</span> target;
+    path my_path; 
+    
+    aspect <span class="hljs-keyword">default</span> {
+        draw <span class="hljs-keyword">circle</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">color</span>: #green;
+    }
+    reflex movement {
+        <span class="hljs-keyword">do</span> goto on:the_graph target:target speed:<span class="hljs-number">1</span>;
+    }
+}
+
+
+experiment goto_network type: gui {
+    parameter <span class="hljs-string">"Type of optimizer"</span> var: optimizer_type among: [<span class="hljs-string">"Djikstra"</span>, <span class="hljs-string">"AStar"</span>, <span class="hljs-string">"Bellmann"</span>, <span class="hljs-string">"Floyd Warshall"</span>];
+    parameter <span class="hljs-string">"Number of people"</span> var: nb_people <span class="hljs-keyword">min</span>: <span class="hljs-number">1</span> <span class="hljs-keyword">max</span>: <span class="hljs-number">1000000</span>;
+    parameter <span class="hljs-string">"Computed all the shortest paths and save the results"</span> var: save_shortest_paths;
+    parameter <span class="hljs-string">"Load the shortest paths from the file"</span> var: load_shortest_paths;
+    
+    output {
+        display objects_display {
+            species road aspect: <span class="hljs-keyword">default</span> ;
+            species people aspect: <span class="hljs-keyword">default</span> ;
+            species <span class="hljs-keyword">goal</span> aspect: <span class="hljs-keyword">default</span> ;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

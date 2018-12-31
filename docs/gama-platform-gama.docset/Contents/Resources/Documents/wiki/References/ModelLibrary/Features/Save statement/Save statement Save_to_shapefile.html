@@ -1,0 +1,39 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Save statement/Save statement Save_to_shapefile --><head><meta charset="utf-8"><title>Save statement Save_to_shapefile</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="save-statement-save_to_shapefile">Save statement Save_to_shapefile</h1>
+<h1 id="save-to-shapefile">Save to Shapefile</h1>
+<p><em>Author : Patrick Taillandier</em></p>
+<p>This is a model that shows how to save agents inside a Shapefile to reuse it later or to keep it.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs gauss">
+model Savetoshapefile
+
+global {
+    init {
+        geometry free_space &lt;- copy(shape);
+        
+        <span class="hljs-comment">//creation of the building agents that will be saved</span>
+        <span class="hljs-keyword">create</span> building number: <span class="hljs-number">50</span> {
+            shape &lt;- square(<span class="hljs-number">5.0</span>);
+            location &lt;- any_location_in (free_space - <span class="hljs-number">5.0</span>);
+            free_space &lt;- free_space - shape;
+        }
+        <span class="hljs-comment">//save building geometry into the shapefile: add the attribute TYPE which value is set by the type variable of the building agent</span>
+        <span class="hljs-keyword">save</span> building to:<span class="hljs-string">"../results/buildings.shp"</span> <span class="hljs-built_in">type</span>:<span class="hljs-string">"shp"</span> with:[<span class="hljs-built_in">type</span>::<span class="hljs-string">"TYPE"</span>];
+    }
+}
+
+<span class="hljs-comment">//species that represent the building agents that will be saved</span>
+species building {
+    <span class="hljs-keyword">string</span> <span class="hljs-built_in">type</span> &lt;- flip(<span class="hljs-number">0.8</span>) ? <span class="hljs-string">"residential"</span> : <span class="hljs-string">"industrial"</span>;
+    aspect default {
+        <span class="hljs-built_in">draw</span> shape color: <span class="hljs-built_in">type</span> = <span class="hljs-string">"residential"</span> ? <span class="hljs-meta">#gray : #pink;</span>
+    }
+}
+experiment main <span class="hljs-built_in">type</span>: gui {
+    <span class="hljs-keyword">output</span> {
+        display map {
+            species building;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

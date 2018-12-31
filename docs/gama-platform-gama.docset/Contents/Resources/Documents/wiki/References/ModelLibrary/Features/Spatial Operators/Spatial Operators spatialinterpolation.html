@@ -1,0 +1,92 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Spatial Operators/Spatial Operators spatialinterpolation --><head><meta charset="utf-8"><title>Spatial Operators spatialinterpolation</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="spatial-operators-spatialinterpolation">Spatial Operators spatialinterpolation</h1>
+<h1 id="spatial-interpolation">Spatial Interpolation</h1>
+<p><em>Author : Patrick Taillandier</em></p>
+<p>A model which shows how to use spatial interpolation</p>
+<p>Code of the model : </p>
+<pre><code class="hljs arduino">
+model spatialinterpolation
+
+global {
+    <span class="hljs-built_in">map</span>&lt;<span class="hljs-built_in">point</span>, <span class="hljs-keyword">float</span>&gt; pts;
+    <span class="hljs-keyword">float</span> max_val; 
+    <span class="hljs-keyword">float</span> min_val ; 
+    
+    <span class="hljs-comment">//power parameter</span>
+    <span class="hljs-keyword">int</span> power &lt;- <span class="hljs-number">2</span>;
+    
+    <span class="hljs-comment">//cell properties</span>
+    <span class="hljs-keyword">int</span> nb_rows &lt;- <span class="hljs-number">50</span>;
+    <span class="hljs-keyword">int</span> nb_columns &lt;- <span class="hljs-number">50</span>;
+    
+    init {
+        <span class="hljs-comment">//creation of random point for demo puporse</span>
+        <span class="hljs-built_in">loop</span> times: <span class="hljs-number">50</span> {
+            <span class="hljs-built_in">point</span> pt &lt;- any_location_in(world);
+            pts[pt] &lt;-pt.x ^<span class="hljs-number">2</span> + pt.y ^<span class="hljs-number">2</span>;
+        }
+        
+        <span class="hljs-comment">//computation of the min and max values of the points (just use to define the color of the cells).</span>
+        max_val &lt;- <span class="hljs-built_in">max</span>(pts.values);  
+        min_val &lt;- <span class="hljs-built_in">min</span>(pts.values); 
+        
+        <span class="hljs-comment">//computation of the value for each cell</span>
+        <span class="hljs-built_in">map</span>&lt;cell_shape, <span class="hljs-keyword">float</span>&gt; results_shape &lt;- <span class="hljs-built_in">map</span>&lt;cell_shape, <span class="hljs-keyword">float</span>&gt;(IDW(cell_shape, pts, power));
+        
+        <span class="hljs-comment">//setting of the value and color of each cell</span>
+        ask cell_shape {
+            val &lt;- results_shape[self];
+            <span class="hljs-keyword">float</span> val_col &lt;- <span class="hljs-number">255</span> * (val - min_val) / (max_val - min_val);
+            color &lt;- rgb(val_col,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>);
+        }
+        
+        <span class="hljs-comment">//same computation, but in this case, we consider only the centroid (location) of the cell for the computation of the distance</span>
+        <span class="hljs-built_in">map</span>&lt;<span class="hljs-built_in">point</span>, <span class="hljs-keyword">float</span>&gt; results_location &lt;- <span class="hljs-built_in">map</span>&lt;<span class="hljs-built_in">point</span>, <span class="hljs-keyword">float</span>&gt;(IDW(cell_location collect each.location, pts, power));
+            
+        ask cell_location {
+            val &lt;- results_location[self.location];
+            <span class="hljs-keyword">float</span> val_col &lt;- <span class="hljs-number">255</span> * (val - min_val) / (max_val - min_val);
+            color &lt;- rgb(val_col,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>);
+        }
+    }
+}
+
+<span class="hljs-comment">//cells where the distance is based on the shape of the cell (min distance between the rectangle and the points)</span>
+grid cell_shape <span class="hljs-built_in">width</span>: nb_columns <span class="hljs-built_in">height</span>: nb_rows {
+    <span class="hljs-keyword">float</span> val;
+}
+
+<span class="hljs-comment">//cells where the distance is based on the centroid of the cell (distance between the centroid and the points)</span>
+grid cell_location <span class="hljs-built_in">width</span>: nb_columns <span class="hljs-built_in">height</span>: nb_rows {
+    <span class="hljs-keyword">float</span> val;
+}
+
+
+experiment spatialinterpolation type: gui {
+    parameter <span class="hljs-string">"nb of columns"</span> var: nb_columns;
+    parameter <span class="hljs-string">"nb of rows"</span> var: nb_rows;
+    parameter <span class="hljs-string">"power parameter"</span> var: power;
+    output {
+        <span class="hljs-built_in">display</span> map_shape {
+            grid cell_shape;
+            graphics <span class="hljs-string">"points"</span> {
+                <span class="hljs-built_in">loop</span> pt over: pts.keys {
+                    <span class="hljs-keyword">float</span> val &lt;- pts[pt];
+                    <span class="hljs-keyword">float</span> val_col &lt;- <span class="hljs-number">255</span> * (val - min_val) / (max_val - min_val);
+                    draw <span class="hljs-built_in">circle</span>(<span class="hljs-number">1</span>) at: pt color: rgb(val_col,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>) border: <span class="hljs-meta">#white;</span>
+                }
+            }
+        }
+        <span class="hljs-built_in">display</span> map_location {
+            grid cell_location;
+            graphics <span class="hljs-string">"points"</span> {
+                <span class="hljs-built_in">loop</span> pt over: pts.keys {
+                    <span class="hljs-keyword">float</span> val &lt;- pts[pt];
+                    <span class="hljs-keyword">float</span> val_col &lt;- <span class="hljs-number">255</span> * (val - min_val) / (max_val - min_val);
+                    draw <span class="hljs-built_in">circle</span>(<span class="hljs-number">1</span>) at: pt color: rgb(val_col,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>) border: <span class="hljs-meta">#white;</span>
+                }
+            }
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

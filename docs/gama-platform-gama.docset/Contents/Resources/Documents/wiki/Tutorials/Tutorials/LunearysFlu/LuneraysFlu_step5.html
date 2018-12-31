@@ -1,0 +1,179 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Tutorials/Tutorials/LunearysFlu/LuneraysFlu_step5 --><head><meta charset="utf-8"><title>LuneraysFlu_step5</title><script src="../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="luneraysflu_step5">LuneraysFlu_step5</h1>
+<a class="dashAnchor" name="//apple_ref/Section/5.%20Definition%20of%203D%20displays"></a><h1 id="5-definition-of-3d-displays">5. Definition of 3D displays</h1>
+<p>This fifth step illustrates how to define 3D displays</p>
+<p><img src="../../../../github.com/wiki/gama-platform/gama/Tutorials/Tutorials/LunearysFlu/resources/images/tutorials/luneray5.png" alt="images/luneray5.png"></p>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Formulation"></a><h2 id="formulation">Formulation</h2>
+<ul>
+<li>Define a new 3D aspect for roads.
+<ul>
+<li>Define a new 3D aspect for buildings</li>
+<li>Define a new 3D aspect for people</li>
+<li>Define a new 3D display </li>
+</ul>
+</li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Model%20Definition"></a><h2 id="model-definition">Model Definition</h2>
+<a class="dashAnchor" name="//apple_ref/Section/species"></a><h3 id="species">species</h3>
+<p>We define a new aspect for the road species called <em>geom3D</em> that draw the road agent that as a black tube of 2m radius built from its geometry. Note that it is possible to get the list of points composing a geometry by using the <em>points</em> variable of the geometry. </p>
+<p><img src="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/LunearysFlu/resources/images/tutorials/roads_display.tiff" alt="images/roads_display.tiff"></p>
+<pre><code class="hljs scss">species road {
+    <span class="hljs-comment"><span class="hljs-comment">//....</span></span>
+    aspect geom3D {
+        draw line(shape<span class="hljs-selector-class"><span class="hljs-selector-class">.points</span></span>, 2<span class="hljs-selector-class"><span class="hljs-selector-class">.0</span></span>) <span class="hljs-attribute"><span class="hljs-attribute">color</span></span>: <span class="hljs-number"><span class="hljs-number">#b</span></span>lack;
+    }
+}
+</code></pre>
+<p>Concerning the building species, we define an aspect called <em>geom3D</em> that draws the shape of the building with a depth of 20 meters and with using a texture "texture.jpg" for the face and a texture for the roof "roof_top.png".</p>
+<p><img src="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/LunearysFlu/resources/images/tutorials/buildings_display.tiff" alt="images/buildings_display.tiff"></p>
+<pre><code class="hljs less"><span class="hljs-selector-tag"><span class="hljs-selector-tag">species</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">building</span></span> {
+    <span class="hljs-comment"><span class="hljs-comment">//....</span></span>
+    <span class="hljs-selector-tag"><span class="hljs-selector-tag">aspect</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">geom3D</span></span> {
+        draw shape <span class="hljs-attribute"><span class="hljs-attribute">depth</span></span>: <span class="hljs-number"><span class="hljs-number">20</span></span> #m <span class="hljs-attribute"><span class="hljs-attribute">border</span></span>: #black <span class="hljs-attribute"><span class="hljs-attribute">texture</span></span>:[<span class="hljs-string"><span class="hljs-string">"../includes/roof_top.png"</span></span>,<span class="hljs-string"><span class="hljs-string">"../includes/texture.jpg"</span></span>];
+    }
+}
+</code></pre>
+<p>At last, we define a new aspect called <em>geom3D</em> for the people species that displays the agent only if it is on a road (target != nil). In this aspect, we use an obj file that contains a 3D object. The use of the <em>obj_file</em> operator allows to apply an initial rotation to an obj file. In our case, we add a rotation of -90° along the x axis. We specify with the <em>size</em> facet that we want to draw the 3D object inside a bounding box of 5m. As the location of the 3D object is its centroid and as we want to draw the 3D object on the top of the ground, we use the <em>at</em> facet to put an offset along the z axis. We use also the rotate facet to change the orientation of the 3D object according to the heading of the agent. At last, we choose to draw the 3D object in green if the agent is not infected; in red otherwise.</p>
+<p><img src="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/LunearysFlu/resources/images/tutorials/people_display.tiff" alt="images/people_display.tiff"></p>
+<pre><code class="hljs processing">species people skills:[moving]{     
+    <span class="hljs-comment"><span class="hljs-comment">//....</span></span>
+    aspect geom3D {
+        <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> target != nil {
+            <span class="hljs-title"><span class="hljs-title">draw</span></span> obj_file(<span class="hljs-string"><span class="hljs-string">"../includes/people.obj"</span></span>, <span class="hljs-number"><span class="hljs-number">90</span></span>::{<span class="hljs-number"><span class="hljs-number">-1</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>}) <span class="hljs-built_in"><span class="hljs-built_in">size</span></span>: <span class="hljs-number"><span class="hljs-number">5</span></span>
+            at: location + {<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">7</span></span>} <span class="hljs-built_in"><span class="hljs-built_in">rotate</span></span>: heading - <span class="hljs-number"><span class="hljs-number">90</span></span> <span class="hljs-built_in"><span class="hljs-built_in">color</span></span>: is_infected ? #<span class="hljs-built_in"><span class="hljs-built_in">red</span></span> : #<span class="hljs-built_in"><span class="hljs-built_in">green</span></span>;
+        }
+    }
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/output"></a><h3 id="output">output</h3>
+<p>We define a new display called <em>view3D</em> of type <em>opengl</em> with an <em>ambient_light</em> of 80. Inside this display, we first draw a background image representing the satellite image of the Luneray. Note that GAMA is able to manage world files to georeferenced images. In our case, as a pgw file exists in the includes folder, the satellite image will be well localized in the display. After drawing the background image, we display first the building species with their geom3D aspect, then the road species with their geom3D aspect and finally the people species with their geom3D aspect. Only the people agents will be redrawn at each simulation step.</p>
+<pre><code class="hljs groovy">experiment main_experiment <span class="hljs-string"><span class="hljs-string">type:</span></span> gui {
+    output {
+    <span class="hljs-comment"><span class="hljs-comment">// monitor and other displays   </span></span>
+        display view3D <span class="hljs-string"><span class="hljs-string">type:</span></span> opengl <span class="hljs-string"><span class="hljs-string">ambient_light:</span></span> <span class="hljs-number"><span class="hljs-number">80</span></span> {
+            image <span class="hljs-string"><span class="hljs-string">"../includes/luneray.png"</span></span> <span class="hljs-string"><span class="hljs-string">refresh:</span></span><span class="hljs-literal"><span class="hljs-literal">false</span></span>; 
+            species building <span class="hljs-string"><span class="hljs-string">aspect:</span></span>geom3D <span class="hljs-string"><span class="hljs-string">refresh:</span></span> <span class="hljs-literal"><span class="hljs-literal">false</span></span>;
+            species road <span class="hljs-string"><span class="hljs-string">aspect:</span></span> geom3D <span class="hljs-string"><span class="hljs-string">refresh:</span></span> <span class="hljs-literal"><span class="hljs-literal">false</span></span>;
+            species people <span class="hljs-string"><span class="hljs-string">aspect:</span></span> geom3D ; 
+        }
+    }
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Complete%20Model"></a><h2 id="complete-model">Complete Model</h2>
+<pre><code class="hljs processing">
+model model4
+
+global {
+    <span class="hljs-built_in"><span class="hljs-built_in">int</span></span> nb_people &lt;- <span class="hljs-number"><span class="hljs-number">2147</span></span>;
+    <span class="hljs-built_in"><span class="hljs-built_in">int</span></span> nb_infected_init &lt;- <span class="hljs-number"><span class="hljs-number">5</span></span>;
+    <span class="hljs-built_in"><span class="hljs-built_in">float</span></span> step &lt;- <span class="hljs-number"><span class="hljs-number">5</span></span> #mn;
+    file roads_shapefile &lt;- file(<span class="hljs-string"><span class="hljs-string">"../includes/roads.shp"</span></span>);
+    file buildings_shapefile &lt;- file(<span class="hljs-string"><span class="hljs-string">"../includes/buildings.shp"</span></span>);
+    geometry <span class="hljs-built_in"><span class="hljs-built_in">shape</span></span> &lt;- envelope(roads_shapefile);    
+    graph road_network;
+    
+    
+    <span class="hljs-built_in"><span class="hljs-built_in">int</span></span> nb_people_infected &lt;- nb_infected_init update: people count (each.is_infected);
+    <span class="hljs-built_in"><span class="hljs-built_in">int</span></span> nb_people_not_infected &lt;- nb_people - nb_infected_init update: nb_people - nb_people_infected;
+    <span class="hljs-built_in"><span class="hljs-built_in">float</span></span> infected_rate update: nb_people_infected/nb_people;
+    
+    
+    init{
+        create road from: roads_shapefile;
+        road_network &lt;- as_edge_graph(road);        
+        create building from: buildings_shapefile;
+        create people number:nb_people {
+            location &lt;- any_location_in(one_of(building));              
+        }
+        ask nb_infected_init among people {
+            is_infected &lt;- <span class="hljs-keyword"><span class="hljs-keyword">true</span></span>;
+        }
+    }
+}
+
+species people skills:[moving]{     
+    <span class="hljs-built_in"><span class="hljs-built_in">float</span></span> speed &lt;- (<span class="hljs-number"><span class="hljs-number">2</span></span> + rnd(<span class="hljs-number"><span class="hljs-number">3</span></span>)) #km/#h;
+    bool is_infected &lt;- <span class="hljs-keyword"><span class="hljs-keyword">false</span></span>;
+    <span class="hljs-built_in"><span class="hljs-built_in">point</span></span> target;
+    
+    reflex stay when: target = nil {
+        <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> flip(<span class="hljs-number"><span class="hljs-number">0.05</span></span>) {
+            target &lt;- any_location_in (one_of(building));
+        }
+    }
+        
+    reflex move when: target != nil{
+        do goto target:target on: road_network;
+        <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (location = target) {
+            target &lt;- nil;
+        } 
+    }
+
+    reflex infect when: is_infected{
+        ask people at_distance <span class="hljs-number"><span class="hljs-number">10</span></span> #m {
+            <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> flip(<span class="hljs-number"><span class="hljs-number">0.05</span></span>) {
+                is_infected &lt;- <span class="hljs-keyword"><span class="hljs-keyword">true</span></span>;
+            }
+        }
+    }
+    
+    aspect circle {
+        <span class="hljs-title"><span class="hljs-title">draw</span></span> circle(<span class="hljs-number"><span class="hljs-number">10</span></span>) <span class="hljs-built_in"><span class="hljs-built_in">color</span></span>:is_infected ? #<span class="hljs-built_in"><span class="hljs-built_in">red</span></span> : #<span class="hljs-built_in"><span class="hljs-built_in">green</span></span>;
+    }
+    
+    aspect geom3D {
+        <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> target != nil {
+            <span class="hljs-title"><span class="hljs-title">draw</span></span> obj_file(<span class="hljs-string"><span class="hljs-string">"../includes/people.obj"</span></span>, <span class="hljs-number"><span class="hljs-number">90</span></span>::{<span class="hljs-number"><span class="hljs-number">-1</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>}) <span class="hljs-built_in"><span class="hljs-built_in">size</span></span>: <span class="hljs-number"><span class="hljs-number">5</span></span>
+            at: location + {<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">7</span></span>} <span class="hljs-built_in"><span class="hljs-built_in">rotate</span></span>: heading - <span class="hljs-number"><span class="hljs-number">90</span></span> <span class="hljs-built_in"><span class="hljs-built_in">color</span></span>: is_infected ? #<span class="hljs-built_in"><span class="hljs-built_in">red</span></span> : #<span class="hljs-built_in"><span class="hljs-built_in">green</span></span>;
+        }
+    }
+    
+}
+
+species road {
+    aspect geom {
+        <span class="hljs-title"><span class="hljs-title">draw</span></span> <span class="hljs-built_in"><span class="hljs-built_in">shape</span></span> <span class="hljs-built_in"><span class="hljs-built_in">color</span></span>: #black;
+    }
+    aspect geom3D {
+        <span class="hljs-title"><span class="hljs-title">draw</span></span> <span class="hljs-built_in"><span class="hljs-built_in">line</span></span>(<span class="hljs-built_in"><span class="hljs-built_in">shape</span></span>.points, <span class="hljs-number"><span class="hljs-number">2.0</span></span>) <span class="hljs-built_in"><span class="hljs-built_in">color</span></span>: #black;
+    }
+}
+
+species building {
+    aspect geom {
+        <span class="hljs-title"><span class="hljs-title">draw</span></span> <span class="hljs-built_in"><span class="hljs-built_in">shape</span></span> <span class="hljs-built_in"><span class="hljs-built_in">color</span></span>: #gray;
+    }
+    aspect geom3D {
+        <span class="hljs-title"><span class="hljs-title">draw</span></span> <span class="hljs-built_in"><span class="hljs-built_in">shape</span></span> depth: <span class="hljs-number"><span class="hljs-number">20</span></span> #m border: #black <span class="hljs-built_in"><span class="hljs-built_in">texture</span></span>:[<span class="hljs-string"><span class="hljs-string">"../includes/roof_top.png"</span></span>,<span class="hljs-string"><span class="hljs-string">"../includes/texture.jpg"</span></span>];
+    }
+}
+
+experiment main type: gui {
+    parameter <span class="hljs-string"><span class="hljs-string">"Nb people infected at init"</span></span> var: nb_infected_init <span class="hljs-built_in"><span class="hljs-built_in">min</span></span>: <span class="hljs-number"><span class="hljs-number">1</span></span> <span class="hljs-built_in"><span class="hljs-built_in">max</span></span>: <span class="hljs-number"><span class="hljs-number">2147</span></span>;
+
+    output {
+        monitor <span class="hljs-string"><span class="hljs-string">"Infected people rate"</span></span> value: infected_rate;
+        
+        display <span class="hljs-built_in"><span class="hljs-built_in">map</span></span> {
+            species road aspect:geom;
+            species building aspect:geom;
+            species people aspect:circle;           
+        }
+        
+        
+        
+        display chart_display refresh: every(<span class="hljs-number"><span class="hljs-number">10</span></span> #cycle) {
+            chart <span class="hljs-string"><span class="hljs-string">"Disease spreading"</span></span> type: series {
+                data <span class="hljs-string"><span class="hljs-string">"susceptible"</span></span> value: nb_people_not_infected <span class="hljs-built_in"><span class="hljs-built_in">color</span></span>: #<span class="hljs-built_in"><span class="hljs-built_in">green</span></span>;
+                data <span class="hljs-string"><span class="hljs-string">"infected"</span></span> value: nb_people_infected <span class="hljs-built_in"><span class="hljs-built_in">color</span></span>: #<span class="hljs-built_in"><span class="hljs-built_in">red</span></span>;
+            }
+        }
+        display view3D type: opengl ambient_light: <span class="hljs-number"><span class="hljs-number">80</span></span> {
+            <span class="hljs-built_in"><span class="hljs-built_in">image</span></span> <span class="hljs-string"><span class="hljs-string">"../includes/luneray.png"</span></span> refresh:<span class="hljs-keyword"><span class="hljs-keyword">false</span></span>; 
+            species building aspect:geom3D refresh: <span class="hljs-keyword"><span class="hljs-keyword">false</span></span>;
+            species road aspect: geom3D refresh: <span class="hljs-keyword"><span class="hljs-keyword">false</span></span>;
+            species people aspect: geom3D ; 
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,0 +1,86 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Agent movement/Agent movement Goto Directed Graph --><head><meta charset="utf-8"><title>Agent movement Goto Directed Graph</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="agent-movement-goto-directed-graph">Agent movement Goto Directed Graph</h1>
+<h1 id="directed-graph-model">Directed Graph Model</h1>
+<p><em>Author :  Patrick Taillandier</em></p>
+<p>Model representing how to directed graph using GIS Data for the road networks : the GIS contains a column defining the direction of the roads and people moving from one random point to another on this graph</p>
+<p>Code of the model : </p>
+<pre><code class="hljs processing">
+model simplemodel
+
+global {
+    file road_file &lt;- file(<span class="hljs-string">"../includes/gis/roads.shp"</span>);
+    geometry <span class="hljs-built_in">shape</span> &lt;- envelope(road_file);
+    graph the_graph; 
+    
+    init {
+        create road from: road_file with:[direction::<span class="hljs-built_in">int</span>(read(<span class="hljs-string">"DIRECTION"</span>))] {
+            <span class="hljs-keyword">switch</span> direction {
+                <span class="hljs-built_in">match</span> <span class="hljs-number">0</span> {<span class="hljs-built_in">color</span> &lt;- #<span class="hljs-built_in">green</span>;}
+                <span class="hljs-built_in">match</span> <span class="hljs-number">1</span> {<span class="hljs-built_in">color</span> &lt;- #<span class="hljs-built_in">red</span>;
+                    <span class="hljs-comment">//inversion of the road geometry</span>
+                    <span class="hljs-built_in">shape</span> &lt;- polyline(<span class="hljs-built_in">reverse</span>(<span class="hljs-built_in">shape</span>.points));
+                }
+                <span class="hljs-built_in">match</span> <span class="hljs-number">2</span> {<span class="hljs-built_in">color</span> &lt;- #<span class="hljs-built_in">blue</span>;
+                    <span class="hljs-comment">//bidirectional: creation of the inverse road</span>
+                    create road {
+                        <span class="hljs-built_in">shape</span> &lt;- polyline(<span class="hljs-built_in">reverse</span>(myself.<span class="hljs-built_in">shape</span>.points));
+                        direction &lt;- <span class="hljs-number">2</span>;
+                        <span class="hljs-built_in">color</span> &lt;- #<span class="hljs-built_in">blue</span>;
+                    }
+                } 
+            }
+        }
+        <span class="hljs-comment">//The operator directed modify the graph created by as_edge_graph(road) to a directed graph</span>
+        the_graph &lt;- directed(as_edge_graph(road)) ;
+        
+        
+        create people number: <span class="hljs-number">1000</span> {
+            <span class="hljs-comment">//The operator any_location_in returns a random point located in one of the road agents</span>
+            target &lt;- any_location_in(one_of (road)) ;
+            location &lt;- any_location_in (one_of(road));
+            source &lt;- location;
+        } 
+    }
+}
+
+species road {
+    <span class="hljs-built_in">int</span> direction;
+    rgb <span class="hljs-built_in">color</span>;
+    aspect geom {
+        <span class="hljs-title">draw</span> <span class="hljs-built_in">shape</span> <span class="hljs-built_in">color</span>: <span class="hljs-built_in">color</span>;
+    }
+}
+<span class="hljs-comment">//The people agents use the skill moving which have built-in variables such as speed, target, location, heading and built-in operators</span>
+species people skills: [moving] {
+    <span class="hljs-built_in">point</span> target;
+    path my_path; 
+    <span class="hljs-built_in">point</span> source;
+    string r_s;
+    string r_t; 
+    aspect circle {
+        <span class="hljs-title">draw</span> circle(<span class="hljs-number">10</span>) <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">green</span>;
+    }
+    
+    reflex movement {
+        
+        <span class="hljs-comment">//The operator goto is a built-in operator derivated from the moving skill, moving the agent from its location to its target, </span>
+        <span class="hljs-comment">//   restricted by the on variable, with the speed and returning the path followed</span>
+        my_path &lt;- self goto (on:the_graph, target:target, speed:<span class="hljs-number">10</span>, return_path: <span class="hljs-keyword">true</span>);
+        
+        <span class="hljs-comment">//If the agent arrived to its target location, then it choose randomly an other target on the road</span>
+        <span class="hljs-keyword">if</span> (target = location) {            
+            target &lt;- any_location_in(one_of (road)) ;
+            source &lt;- location;
+        }
+    }
+}
+
+experiment simplemodel type: gui {
+    output {
+        display <span class="hljs-built_in">map</span> {
+            species road aspect: geom;
+            species people aspect: circle;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

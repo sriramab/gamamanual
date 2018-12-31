@@ -1,0 +1,68 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Statistics/Statistics Regression --><head><meta charset="utf-8"><title>Statistics Regression</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="statistics-regression">Statistics Regression</h1>
+<h1 id="regression">Regression</h1>
+<p><em>Author : Patrick Taillandier</em></p>
+<p>A model which shows how to use the regression </p>
+<p>Code of the model : </p>
+<pre><code class="hljs gauss">
+model example_regression
+
+global {
+    <span class="hljs-comment">//Regression variable that will store the function</span>
+    regression location_fct;
+    float x_val &lt;- <span class="hljs-number">50.0</span>;
+    float y_val &lt;- <span class="hljs-number">50.0</span>;
+    
+    float val &lt;- <span class="hljs-number">-1.0</span>;
+    init {
+        loop i from: <span class="hljs-number">0</span> to: <span class="hljs-number">18</span>{
+            <span class="hljs-keyword">if</span> (i != <span class="hljs-number">10</span>) {
+                <span class="hljs-keyword">create</span> <span class="hljs-built_in">dummy</span> with:[location::{i * <span class="hljs-number">5</span> + <span class="hljs-number">2</span> - rnd(<span class="hljs-number">4</span>), i*<span class="hljs-number">5</span> + <span class="hljs-number">2</span> - rnd(<span class="hljs-number">4</span>), i*<span class="hljs-number">5</span> + <span class="hljs-number">2</span> - rnd(<span class="hljs-number">4</span>)}]; 
+            }
+        }
+    }
+    
+    <span class="hljs-comment">//Reflex to compute the regression</span>
+    reflex do_regression {
+        <span class="hljs-keyword">matrix</span>&lt;float&gt; instances &lt;- <span class="hljs-number">0.0</span> as_matrix {<span class="hljs-number">3</span>,length(<span class="hljs-built_in">dummy</span>)};
+        loop i from: <span class="hljs-number">0</span> to: length(<span class="hljs-built_in">dummy</span>) <span class="hljs-number">-1</span> {
+            <span class="hljs-built_in">dummy</span> ag &lt;- <span class="hljs-built_in">dummy</span>[i];
+            instances[<span class="hljs-number">1</span>,i] &lt;- ag.location.x;
+            instances[<span class="hljs-number">2</span>,i] &lt;- ag.location.y;
+            instances[<span class="hljs-number">0</span>,i] &lt;- ag.location.z;
+        }
+        <span class="hljs-comment">//Compute the function of regression</span>
+        location_fct  &lt;- build(instances);
+        write <span class="hljs-string">"learnt function: "</span> + location_fct;
+        
+        <span class="hljs-comment">//Predict the value using the function resulting before</span>
+        val &lt;-  predict(location_fct, [x_val, y_val]);
+        write <span class="hljs-string">"value : "</span> + val;
+    }
+}
+
+species <span class="hljs-built_in">dummy</span> {
+    aspect default {
+        <span class="hljs-built_in">draw</span> sphere(<span class="hljs-number">2</span>) color: <span class="hljs-meta">#blue;</span>
+    }
+}
+
+experiment main <span class="hljs-built_in">type</span>: gui {
+    parameter <span class="hljs-string">"Point to test, x value"</span> var: x_val ;
+    parameter <span class="hljs-string">"Point to test, y value"</span> var: y_val ;
+    <span class="hljs-keyword">output</span> {
+        display map <span class="hljs-built_in">type</span>: opengl {
+            species <span class="hljs-built_in">dummy</span>;
+            graphics <span class="hljs-string">"new Point "</span> {
+                <span class="hljs-keyword">if</span> (location_fct != nil) {
+                    <span class="hljs-built_in">draw</span> sphere(<span class="hljs-number">2</span>) color: <span class="hljs-meta">#red at: {x_val,y_val,val};</span>
+                    
+                    <span class="hljs-comment">//Draw the function as a line</span>
+                    <span class="hljs-built_in">draw</span> <span class="hljs-keyword">line</span>([{<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,predict(location_fct, [<span class="hljs-number">100</span>,<span class="hljs-number">100</span>])},{<span class="hljs-number">-10</span>,<span class="hljs-number">-10</span>,predict(location_fct, [<span class="hljs-number">-10</span>,<span class="hljs-number">-10</span>])}]) color: <span class="hljs-meta">#black;</span>
+                }
+                
+            }
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

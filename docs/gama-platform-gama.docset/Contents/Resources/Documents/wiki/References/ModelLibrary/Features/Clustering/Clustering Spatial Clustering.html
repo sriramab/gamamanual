@@ -1,0 +1,135 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Clustering/Clustering Spatial Clustering --><head><meta charset="utf-8"><title>Clustering Spatial Clustering</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="clustering-spatial-clustering">Clustering Spatial Clustering</h1>
+<h1 id="clustering-of-agents-by-their-distance">Clustering of agents by their distance</h1>
+<p><em>Author :  Patrick Taillandier</em></p>
+<p>A model to show how to use clustering operators with simple_clustering_by_distance to take into account the distances between agents or between cells to create the clusters,  and showing the relations between the people from the same cluster. </p>
+<p>Code of the model : </p>
+<pre><code class="hljs processing">
+model clustering
+
+global {
+    <span class="hljs-comment">//define the maximal distance between people in the continuous environement (in meters): if the distance between 2 people is lower than this value, they will be in the same group</span>
+    <span class="hljs-built_in">float</span> max_dist_people &lt;- <span class="hljs-number">20.0</span>;
+    
+    <span class="hljs-comment">//define the maximal distance between cells (in number of cells): if the distance between 2 cells is lower than this value, they will be in the same group</span>
+    <span class="hljs-built_in">int</span> max_dist_cell &lt;- <span class="hljs-number">1</span>;
+    
+    <span class="hljs-comment">//probability for a cell to have vegetation</span>
+    <span class="hljs-built_in">float</span> proba_vegetation &lt;- <span class="hljs-number">0.2</span>;
+    
+    <span class="hljs-comment">//create the people agents</span>
+    init {
+        create people number:<span class="hljs-number">20</span>; 
+    }
+    
+    <span class="hljs-comment">//reflex that builds the people clusters</span>
+    reflex people_clustering {
+        <span class="hljs-comment">//clustering by using the simple clustering operator: two people agents are in the same groups if their distance is lower than max_dist_people (in meters)</span>
+        <span class="hljs-comment">//returns a list of lists (i.e. a list of groups, a group is a list of people agents)</span>
+        list&lt;list&lt;people&gt;&gt; clusters &lt;- list&lt;list&lt;people&gt;&gt;(simple_clustering_by_distance(people, max_dist_people));
+        
+        <span class="hljs-comment">//We give a random color to each group (i.e. to each people agents of the group)</span>
+        <span class="hljs-built_in">loop</span> cluster over: clusters {
+            rgb rnd_color &lt;- rnd_color(<span class="hljs-number">255</span>);
+            ask cluster {
+                color_cluster &lt;- rnd_color;
+            }
+        }
+        
+        <span class="hljs-comment">//build the hierchical clustering (https://en.wikipedia.org/wiki/Hierarchical_clustering)</span>
+        list clustering_tree &lt;- hierarchical_clustering (people, max_dist_people);
+        
+        <span class="hljs-comment">//create groups from the results of the hierarchical clustering</span>
+        do create_groups(clustering_tree, nil);
+    }
+    
+    <span class="hljs-comment">//recursive action that create group_people agents from the list of group.</span>
+    action create_groups (list group, group_people parent_gp) {
+        bool compute_shape &lt;- <span class="hljs-keyword">false</span>;
+        <span class="hljs-built_in">loop</span> el over: group {
+            <span class="hljs-keyword">if</span> (el is people) {
+                parent_gp.<span class="hljs-built_in">shape</span> &lt;- people(el).<span class="hljs-built_in">shape</span>;
+            }
+            <span class="hljs-keyword">else</span> {
+                create group_people returns: created_g{
+                    <span class="hljs-keyword">if</span> (parent_gp != nil) {
+                        <span class="hljs-built_in">add</span> self to: parent_gp.sub_groups;
+                    }
+                    parent &lt;- parent_gp;
+                }
+                do create_groups(el, first(created_g));
+                compute_shape &lt;- <span class="hljs-keyword">true</span>;
+            }
+        }
+        <span class="hljs-keyword">if</span> (compute_shape and parent_gp != nil) {
+            ask parent_gp {
+                <span class="hljs-built_in">shape</span> &lt;- polyline (sub_groups collect each.location);
+            }
+            
+        }
+    }
+    <span class="hljs-comment">//reflex that builds the cell clusters</span>
+    reflex forest_clustering {
+        list&lt;list&lt;vegetation_cell&gt;&gt; clusters &lt;- list&lt;list&lt;vegetation_cell&gt;&gt;(simple_clustering_by_distance(vegetation_cell where (each.<span class="hljs-built_in">color</span> = #<span class="hljs-built_in">green</span>), max_dist_cell));
+        <span class="hljs-built_in">loop</span> cluster over: clusters {
+            create forest {
+                cells &lt;- cluster;
+                <span class="hljs-built_in">shape</span> &lt;- union (cells);
+            }
+        }
+        list clustering_tree &lt;- hierarchical_clustering (people, max_dist_people);
+    }
+    
+}
+grid vegetation_cell <span class="hljs-built_in">width</span>: <span class="hljs-number">25</span> <span class="hljs-built_in">height</span>: <span class="hljs-number">25</span> neighbors: <span class="hljs-number">4</span>{
+    rgb <span class="hljs-built_in">color</span> &lt;- flip (proba_vegetation) ? #<span class="hljs-built_in">green</span> : #white;
+}
+
+species forest {
+    list&lt;vegetation_cell&gt; cells;
+    aspect <span class="hljs-keyword">default</span> {
+        <span class="hljs-title">draw</span> <span class="hljs-built_in">shape</span>.contour + <span class="hljs-number">0.5</span> <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">red</span>;
+    }
+}
+
+species people {
+    rgb color_cluster &lt;- #black;
+    rgb color_tree &lt;- #black;
+    aspect cluster {
+        <span class="hljs-title">draw</span> circle(<span class="hljs-number">2</span>) <span class="hljs-built_in">color</span>: color_cluster;
+    }
+    aspect tree {
+        <span class="hljs-title">draw</span> circle(<span class="hljs-number">2</span>) <span class="hljs-built_in">color</span>: color_tree;
+    }
+}
+
+species group_people {
+    list&lt;group_people&gt; sub_groups;
+    group_people parent;
+    aspect <span class="hljs-keyword">default</span> {
+        <span class="hljs-title">draw</span> <span class="hljs-built_in">shape</span> + <span class="hljs-number">0.2</span> <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">red</span>;
+        <span class="hljs-keyword">if</span> (parent != nil) {
+            <span class="hljs-title">draw</span> <span class="hljs-built_in">line</span> ([location, parent.location]) end_arrow: <span class="hljs-number">2</span> <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">red</span>;
+        }
+    }
+}
+
+experiment clustering type: gui {
+    parameter <span class="hljs-string">"Maximal distance for people clustering"</span> var: max_dist_people <span class="hljs-built_in">min</span>: <span class="hljs-number">0.0</span> <span class="hljs-built_in">max</span>: <span class="hljs-number">100.0</span> category: <span class="hljs-string">"People"</span>;
+    parameter <span class="hljs-string">"Maximal distance for vegetation cell clustering"</span> var: max_dist_cell <span class="hljs-built_in">min</span>: <span class="hljs-number">0</span> <span class="hljs-built_in">max</span>: <span class="hljs-number">5</span> category: <span class="hljs-string">"Forest"</span>;
+    parameter <span class="hljs-string">"Probability for vegetation cells"</span> var: proba_vegetation <span class="hljs-built_in">min</span>: <span class="hljs-number">0.1</span> <span class="hljs-built_in">max</span>: <span class="hljs-number">1.0</span> category: <span class="hljs-string">"Forest"</span>;
+    output {
+        display map_people_clusters {
+            species people aspect: cluster;
+        }
+        display map_people_tree {
+            species people aspect: tree;
+            species group_people;
+        }
+        display map_forest_clusters {
+            grid vegetation_cell lines: #black;
+            species forest;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

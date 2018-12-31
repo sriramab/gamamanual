@@ -1,0 +1,191 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Tutorials/Tutorials/PredatorPrey/PredatorPrey_step1 --><head><meta charset="utf-8"><title>PredatorPrey_step1</title><script src="../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="predatorprey_step1">PredatorPrey_step1</h1>
+<a class="dashAnchor" name="//apple_ref/Section/1.%20Basic%20Model"></a><h1 id="1-basic-model">1. Basic Model</h1>
+<p>This first step Illustrates how to write a model in GAMA. In particular, it describes how to structure a model and how to define species - that are the key components of GAMA models.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Content"></a><h2 id="content">Content</h2>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Formulation"></a><h2 id="formulation">Formulation</h2>
+<ul>
+<li>Definition of the <strong>prey</strong> species
+<ul>
+<li>Definition of a <strong>nb_prey_init</strong> parameter</li>
+<li>Creation of <strong>nb_prey_init</strong> <strong>prey</strong> agents randomly located in the environment (size: 100x100)</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Model%20Definition"></a><h2 id="model-definition">Model Definition</h2>
+<a class="dashAnchor" name="//apple_ref/Section/model%20structure"></a><h3 id="model-structure">model structure</h3>
+<p>A GAMA model is composed of three type of sections:</p>
+<ul>
+<li><strong>global</strong> : this section, that is unique, defines the "world" agent, a special agent of a GAMA model. It represents all that is global to the model: dynamics, variables, actions. In addition, it allows to initialize the simulation (init block).
+<ul>
+<li><strong>species</strong> and <strong>grid</strong>: these sections define the species of agents composing the model. Grid are defined in the following model step "vegetation dynamic";</li>
+<li><strong>experiment</strong> : these sections define a context of execution of the simulations. In particular, it defines the input (parameters) and output (displays, files...) of a model.</li>
+</ul>
+</li>
+</ul>
+<p>More details about the different sections of a GAMA model can be found <a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/PredatorPrey/ModelOrganization.html">here</a>.</p>
+<a class="dashAnchor" name="//apple_ref/Section/species"></a><h3 id="species">species</h3>
+<p>A <a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/PredatorPrey/RegularSpecies.html">species</a> represents a «prototype» of agents: it defines their common properties.</p>
+<p>A species definition requires the definition of three different elements :</p>
+<ul>
+<li>the internal state of its agents (attributes)
+<ul>
+<li>their behavior</li>
+<li>how they are displayed (aspects)</li>
+</ul>
+</li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Internal%20state"></a><h4 id="internal-state">Internal state</h4>
+<p>An <a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/PredatorPrey/RegularSpecies#declaration.html">attribute</a> is defined as follows: type of the attribute  and name. Numerous types of attributes are available: <em>int (integer), float (floating point number), string, bool (boolean, true or false), point (coordinates), list, pair, map, file, matrix, espèce d’agents, rgb (color), graph, path...</em></p>
+<ul>
+<li>Optional facets: &lt;- (initial value), update (value recomputed at each step of the simulation), function:{..} (value computed each time the variable is used), min, max</li>
+</ul>
+<p>In addition to the attributes the modeler explicitly defines, species "inherits" other attributes called "built-in" variables:</p>
+<ul>
+<li>A name (<em>name</em>): the identifier of the species
+<ul>
+<li>A shape (<em>shape</em>): the default shape of the agents to be construct after the species. It can be <em>a point, a polygon, etc.</em></li>
+<li>A location (<em>location</em>) : the centroid of its shape.</li>
+</ul>
+</li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Behavior"></a><h4 id="behavior">Behavior</h4>
+<p>In this first model, we define one species of agents: the <strong>prey</strong> agents. For the moment, these agents will not have a particular behavior, they will just exist and be displayed.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Display"></a><h4 id="display">Display</h4>
+<p>An agent <a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/PredatorPrey/RegularSpecies#the-aspect-statement.html">aspects</a> have to be defined. An aspect is a way to display the agents of a species : aspect aspect_name {...}
+In the block of an aspect, it is possible to draw :</p>
+<ul>
+<li>A geometry :  for instance, the shape of the agent (but it may be a different one, for instance a disk instead of a complex polygon)
+<ul>
+<li>An image : to draw icons</li>
+<li>A text : to draw a text</li>
+</ul>
+</li>
+</ul>
+<p>In order to display our prey agents we define two attributes:</p>
+<ul>
+<li><strong>size</strong> of type float, with for initial value: 1.0
+<ul>
+<li><strong>color</strong> of type <em>rgb</em>, with for initial value: "blue". It is possible to get a color value by using the symbol <em>#</em> + color name: e.g. #blue, #red, #white, #yellow, #magenta, #pink...</li>
+</ul>
+</li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Prey%20species%20code"></a><h4 id="prey-species-code">Prey species code</h4>
+<p>For the moment, we only define an aspect for this species. We want to display for each prey agent a circle of radius <em>size</em> and color <em>color</em>. We then use the keyword <strong>draw</strong> with a circle shape.</p>
+<pre><code class="hljs processing">species prey {
+    <span class="hljs-built_in"><span class="hljs-built_in">float</span></span> <span class="hljs-built_in"><span class="hljs-built_in">size</span></span> &lt;- <span class="hljs-number"><span class="hljs-number">1.0</span></span> ;
+    rgb <span class="hljs-built_in"><span class="hljs-built_in">color</span></span> &lt;- #<span class="hljs-built_in"><span class="hljs-built_in">blue</span></span>;
+        
+    aspect base {
+        <span class="hljs-title"><span class="hljs-title">draw</span></span> circle(<span class="hljs-built_in"><span class="hljs-built_in">size</span></span>) <span class="hljs-built_in"><span class="hljs-built_in">color</span></span>: <span class="hljs-built_in"><span class="hljs-built_in">color</span></span> ;
+    }
+} 
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/global%20section"></a><h3 id="global-section">global section</h3>
+<p>The global section represents a specific agent, called world. Defining this agent follows the same principle as any agent and is, thus, defined after a species.
+The world agent represents everything that is global to the model : dynamics, variables...
+It allows to initialize simulations (init block): the world is always created and initialized first when a simulation is launched (before any other agents). The geometry (shape) of the world agent is by default a square with 100m for side size, but can be redefined if necessary (see the <a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/PredatorPrey/RoadTrafficModel.html">Road traffic tutorial</a>).</p>
+<a class="dashAnchor" name="//apple_ref/Section/global%20variable"></a><h4 id="global-variable">global variable</h4>
+<p>In the current model, we will only have a certain numbers of preys thus we need to hold this number in a global or world's variable of type integer (<em>int</em>) which can be done as follows:</p>
+<pre><code class="hljs mel"><span class="hljs-keyword"><span class="hljs-keyword">global</span></span> {
+   <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> nb_preys_init &lt;- <span class="hljs-number"><span class="hljs-number">200</span></span>;
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Model%20initialization"></a><h4 id="model-initialization">Model initialization</h4>
+<p>The init section of the global block allows to initialize the model which is executing certain commands, here we will create <em>nb_preys_init</em> number of prey agents. We use the statement <em>create</em>  to create agents of a specific species: <strong>create</strong> species_name + :</p>
+<ul>
+<li>number : number of agents to create (int, 1 by default)
+<ul>
+<li>from : GIS file to use to create the agents (optional, string or file)</li>
+<li>returns: list of created agents (list)</li>
+</ul>
+</li>
+</ul>
+<p>Definition of the init block in order to create <em>nb_preys_init</em> <em>prey</em> agents:</p>
+<pre><code class="hljs nginx">   <span class="hljs-section"><span class="hljs-section">init</span></span> {
+      <span class="hljs-attribute"><span class="hljs-attribute">create</span></span> prey number: nb_preys_init ;
+   }
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/experiment"></a><h3 id="experiment">experiment</h3>
+<p>An experiment block defines how a model can be simulated (executed). Several experiments can be defined for a given model. They are defined using : <strong>experiment</strong> exp_name type: gui/batch {<code>[input]</code> <code>[output]</code>}</p>
+<ul>
+<li>gui : experiment with a graphical interface, which displays its input parameters and outputs.
+<ul>
+<li>batch : Allows to setup a series of simulations (w/o graphical interface).</li>
+</ul>
+</li>
+</ul>
+<p>In our model, we define a gui experiment called <em>prey_predator</em>  :</p>
+<pre><code class="hljs elm"><span class="hljs-title"><span class="hljs-title">experiment</span></span> prey_predator <span class="hljs-keyword"><span class="hljs-keyword">type</span></span>: gui {
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/input"></a><h4 id="input">input</h4>
+<p>Experiments can define (input) parameters. A parameter definition allows to make the value of a global variable definable by the user through the graphic interface.</p>
+<p>A parameter is defined as follows:
+<strong>parameter</strong> title var: global_var category: cat;</p>
+<ul>
+<li><strong>title</strong> : string to display
+<ul>
+<li><strong>var</strong> : reference to a global variable (defined in the global section)</li>
+<li><strong>category</strong> : string used to «store» the operators on the UI - optional</li>
+<li><strong>&lt;-</strong> : init value - optional</li>
+<li><strong>min</strong> : min value - optional</li>
+<li><strong>max</strong> : min value - optional</li>
+</ul>
+</li>
+</ul>
+<p>Note that the init, min and max values can be defined in the global variable definition.</p>
+<p>In the experiment, definition of a parameter from the the global variable <em>nb_preys_init</em> :</p>
+<pre><code class="hljs groovy">experiment prey_predator <span class="hljs-string"><span class="hljs-string">type:</span></span> gui {
+   parameter <span class="hljs-string"><span class="hljs-string">"Initial number of preys: "</span></span> <span class="hljs-string"><span class="hljs-string">var:</span></span> nb_preys_init <span class="hljs-string"><span class="hljs-string">min:</span></span> <span class="hljs-number"><span class="hljs-number">1</span></span> <span class="hljs-string"><span class="hljs-string">max:</span></span> <span class="hljs-number"><span class="hljs-number">1000</span></span> <span class="hljs-string"><span class="hljs-string">category:</span></span> <span class="hljs-string"><span class="hljs-string">"Prey"</span></span> ;
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/output"></a><h4 id="output">output</h4>
+<p>Output blocks are defined in an experiment and define how to visualize a simulation (with one or more display blocks that define separate windows). Each display can be refreshed independently by defining the facet <strong>refresh_every:</strong> nb (int) (the display will be refreshed every nb steps of the simulation).</p>
+<p>Each display can include different layers (like in a GIS) :</p>
+<ul>
+<li>Agents lists : <strong>agents</strong> layer_name value: agents_list aspect: my_aspect;
+<ul>
+<li>Agents species : <strong>species</strong>  my_species aspect: my_aspect</li>
+<li>Images: <strong>image</strong> layer_name file: image_file;</li>
+<li>Texts : <strong>texte</strong> layer_name value: my_text;</li>
+<li>Charts : see later.</li>
+</ul>
+</li>
+</ul>
+<p>Note that it is possible to define a <a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/PredatorPrey/Defining3DDisplays.html">opengl display</a> (for 3D display) by using the facet <strong>type: opengl</strong>.</p>
+<p>In our model, we define a display to draw the <em>prey</em> agents.</p>
+<pre><code class="hljs mipsasm"> output {
+      <span class="hljs-keyword"><span class="hljs-keyword">display </span></span>main_display {
+         species prey aspect: <span class="hljs-keyword"><span class="hljs-keyword">base </span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+      }
+   }
+</code></pre>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Complete%20Model"></a><h2 id="complete-model">Complete Model</h2>
+<pre><code class="hljs nginx"><span class="hljs-attribute"><span class="hljs-attribute">model</span></span> prey_predator
+
+global {
+    <span class="hljs-attribute"><span class="hljs-attribute">int</span></span> nb_preys_init &lt;- <span class="hljs-number"><span class="hljs-number">200</span></span>;
+    <span class="hljs-section"><span class="hljs-section">init</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">create</span></span> prey number: nb_preys_init ;
+    }
+}
+
+<span class="hljs-attribute"><span class="hljs-attribute">species</span></span> prey {
+    <span class="hljs-attribute"><span class="hljs-attribute">float</span></span> size &lt;- <span class="hljs-number"><span class="hljs-number">1</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> ;
+    <span class="hljs-attribute"><span class="hljs-attribute">rgb</span></span> color &lt;- <span class="hljs-comment"><span class="hljs-comment">#blue;</span></span>
+        
+    aspect base {
+        <span class="hljs-attribute"><span class="hljs-attribute">draw</span></span> circle(size) color: color ;
+    }
+} 
+
+<span class="hljs-attribute"><span class="hljs-attribute">experiment</span></span> prey_predator type: gui {
+    <span class="hljs-attribute"><span class="hljs-attribute">parameter</span></span> <span class="hljs-string"><span class="hljs-string">"Initial number of preys: "</span></span> var: nb_preys_init min: <span class="hljs-number"><span class="hljs-number">1</span></span> max: <span class="hljs-number"><span class="hljs-number">1000</span></span> category: <span class="hljs-string"><span class="hljs-string">"Prey"</span></span> ;
+    <span class="hljs-section"><span class="hljs-section">output</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">display</span></span> main_display {
+            <span class="hljs-attribute"><span class="hljs-attribute">species</span></span> prey aspect: base ;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

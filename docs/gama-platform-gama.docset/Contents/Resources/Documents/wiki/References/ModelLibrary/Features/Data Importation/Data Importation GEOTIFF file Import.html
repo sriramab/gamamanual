@@ -1,0 +1,39 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Data Importation/Data Importation GEOTIFF file Import --><head><meta charset="utf-8"><title>Data Importation GEOTIFF file Import</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="data-importation-geotiff-file-import">Data Importation GEOTIFF file Import</h1>
+<h1 id="geotiff-file-to-grid-of-cells">GeoTIFF file to Grid of Cells</h1>
+<p><em>Author :  Patrick Taillandier</em></p>
+<p>Model which shows how to create a grid of cells by using a GeoTIFF File. </p>
+<p>Code of the model : </p>
+<pre><code class="hljs ceylon">
+model geotiffimport
+
+global {
+    <span class="hljs-comment">//definiton of the file to import</span>
+    file grid<span class="hljs-number">_</span>data &lt;- file(<span class="hljs-string">'../includes/bogota_grid.tif'</span>) ;
+    
+    <span class="hljs-comment">//computation of the environment size from the geotiff file</span>
+    geometry shape &lt;- envelope(grid<span class="hljs-number">_</span>data);  
+    
+    float max<span class="hljs-number">_</span><span class="hljs-keyword">value</span>;
+    float min<span class="hljs-number">_</span><span class="hljs-keyword">value</span>;
+    init {
+        max<span class="hljs-number">_</span><span class="hljs-keyword">value</span> &lt;- cell max<span class="hljs-number">_</span><span class="hljs-keyword">of</span> (each.grid<span class="hljs-number">_</span><span class="hljs-keyword">value</span>);
+        min<span class="hljs-number">_</span><span class="hljs-keyword">value</span> &lt;- cell min<span class="hljs-number">_</span><span class="hljs-keyword">of</span> (each.grid<span class="hljs-number">_</span><span class="hljs-keyword">value</span>);
+        ask cell {
+            int val &lt;- int(<span class="hljs-number">255</span> * ( <span class="hljs-number">1</span>  - (grid<span class="hljs-number">_</span><span class="hljs-keyword">value</span> - min<span class="hljs-number">_</span><span class="hljs-keyword">value</span>) /(max<span class="hljs-number">_</span><span class="hljs-keyword">value</span> - min<span class="hljs-number">_</span><span class="hljs-keyword">value</span>)));
+            color &lt;- rgb(val,val,val);
+        }
+    }
+}
+
+<span class="hljs-comment">//definition of the grid from the geotiff file: the width and height of the grid are directly read from the asc file. The values of the asc file are stored in the grid_value attribute of the cells.</span>
+grid cell file: grid<span class="hljs-number">_</span>data;
+
+experiment show<span class="hljs-number">_</span>example type: gui {
+    output {
+        display test {
+            grid cell lines: <span class="hljs-number">#b</span>lack;
+        }
+    } 
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

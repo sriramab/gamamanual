@@ -1,0 +1,55 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Tutorials/Incremental Model/Incremental Model Incremental Model 1 --><head><meta charset="utf-8"><title>Incremental Model Incremental Model 1</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="incremental-model-incremental-model-1">Incremental Model Incremental Model 1</h1>
+<h1 id="simple-si-model">Simple SI Model</h1>
+<p>First part of the tutorial : Incremental Model</p>
+<p>Code of the model : </p>
+<pre><code class="hljs nginx">
+<span class="hljs-attribute">model</span> SI_city
+
+global{ 
+    <span class="hljs-attribute">int</span> nb_people &lt;- <span class="hljs-number">500</span>;
+    <span class="hljs-attribute">float</span> infection_distance &lt;- <span class="hljs-number">2</span>.<span class="hljs-number">0</span> <span class="hljs-comment">#m;</span>
+    float proba_infection &lt;- <span class="hljs-number">0</span>.<span class="hljs-number">05</span>;
+    <span class="hljs-attribute">int</span> nb_infected_init &lt;- <span class="hljs-number">5</span>;
+    <span class="hljs-attribute">float</span> step &lt;- <span class="hljs-number">1</span> <span class="hljs-comment">#minutes;</span>
+    geometry shape&lt;-envelope(square(<span class="hljs-number">500</span> <span class="hljs-comment">#m));</span>
+    
+    init{
+        <span class="hljs-attribute">create</span> people number:nb_people {
+            <span class="hljs-attribute">speed</span> &lt;- <span class="hljs-number">5</span>.<span class="hljs-number">0</span> <span class="hljs-comment">#km/#h;</span>
+        }
+        ask nb_infected_init among people {
+            <span class="hljs-attribute">is_infected</span> &lt;- <span class="hljs-literal">true</span>;
+        }
+    }
+    
+}
+
+<span class="hljs-attribute">species</span> people skills:[moving]{     
+    <span class="hljs-attribute">bool</span> is_infected &lt;- <span class="hljs-literal">false</span>;
+    <span class="hljs-attribute">reflex</span> move{
+        <span class="hljs-attribute">do</span> wander;
+    }
+    <span class="hljs-attribute">reflex</span> infect when: is_infected{
+        <span class="hljs-attribute">ask</span> people at_distance infection_distance {
+            <span class="hljs-attribute">if</span> flip(proba_infection) {
+                <span class="hljs-attribute">is_infected</span> &lt;- <span class="hljs-literal">true</span>;
+            }
+        }
+    }
+    <span class="hljs-attribute">aspect</span> circle{
+        <span class="hljs-attribute">draw</span> circle(<span class="hljs-number">5</span>) color:is_infected ? <span class="hljs-comment">#red : #green;</span>
+    }
+}
+
+experiment main_experiment type:gui{
+    <span class="hljs-attribute">parameter</span> <span class="hljs-string">"Infection distance"</span> var: infection_distance;
+    <span class="hljs-attribute">parameter</span> <span class="hljs-string">"Proba infection"</span> var: proba_infection min: <span class="hljs-number">0</span>.<span class="hljs-number">0</span> max: <span class="hljs-number">1</span>.<span class="hljs-number">0</span>;
+    <span class="hljs-attribute">parameter</span> <span class="hljs-string">"Nb people infected at init"</span> var: nb_infected_init ;
+    <span class="hljs-section">output</span> {
+        <span class="hljs-attribute">display</span> map {
+            <span class="hljs-attribute">species</span> people aspect:circle;           
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,0 +1,87 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Graphs/Graphs Shortest paths --><head><meta charset="utf-8"><title>Graphs Shortest paths</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="graphs-shortest-paths">Graphs Shortest paths</h1>
+<h1 id="shortestpath">ShortestPath</h1>
+<p><em>Author : Patrick Taillandier</em></p>
+<p>This model shows how get the shortest path from one point to another on a graph. The experiment proposes two displays : one to show the shortest path, an other to show the first k shortest paths. </p>
+<p>Code of the model : </p>
+<pre><code class="hljs processing">
+model ShortestPath
+
+global {
+    file shape_file_in &lt;- file(<span class="hljs-string">'../includes/road.shp'</span>) ;
+    file shape_file_bounds &lt;- file(<span class="hljs-string">'../includes/bounds.shp'</span>) ;
+    geometry <span class="hljs-built_in">shape</span> &lt;- envelope(shape_file_bounds);
+    graph road_graph; 
+    <span class="hljs-built_in">point</span> source;
+    <span class="hljs-built_in">point</span> target;
+    path shortest_path;
+    list&lt;path&gt; k_shortest_paths;
+    <span class="hljs-built_in">int</span> k &lt;- <span class="hljs-number">3</span>; 
+    list&lt;rgb&gt; colors &lt;- [#<span class="hljs-built_in">red</span>,#<span class="hljs-built_in">green</span>,#<span class="hljs-built_in">blue</span>,#pink,#cyan,#magenta,#yellow];
+    bool save_shortest_paths &lt;- <span class="hljs-keyword">false</span>;
+    bool load_shortest_paths &lt;- <span class="hljs-keyword">false</span>;
+    string shortest_paths_file &lt;- <span class="hljs-string">"../includes/shortest_paths.csv"</span>;
+    
+    init {
+        create road from: shape_file_in;
+        road_graph &lt;- as_edge_graph(road);
+        
+        <span class="hljs-comment">//computes all the shortest paths, puts them in a matrix, then saves the matrix in a file</span>
+        <span class="hljs-keyword">if</span> save_shortest_paths {
+            matrix ssp &lt;- all_pairs_shortest_path(road_graph);
+            write <span class="hljs-string">"Matrix of all shortest paths: "</span> + ssp;
+            <span class="hljs-built_in">save</span> ssp type:<span class="hljs-string">"text"</span> to:shortest_paths_file;
+            
+        <span class="hljs-comment">//loads the file of the shortest paths as a matrix and uses it to initialize all the shortest paths of the graph</span>
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> load_shortest_paths {
+            road_graph &lt;- road_graph load_shortest_paths matrix(file(shortest_paths_file));
+        }
+    }
+    
+    reflex compute_shortest_paths {
+        source &lt;- <span class="hljs-built_in">point</span>(one_of(road_graph.vertices));
+        target &lt;- <span class="hljs-built_in">point</span>(one_of(road_graph.vertices));
+        <span class="hljs-keyword">if</span> (source != target) {
+            shortest_path &lt;- path_between (road_graph, source,target);
+            k_shortest_paths &lt;- list&lt;path&gt;(paths_between(road_graph,source::target,k)); 
+        }
+    }
+}
+
+species road  {
+    aspect base {
+        <span class="hljs-title">draw</span> <span class="hljs-built_in">shape</span> <span class="hljs-built_in">color</span>: #black ;
+    } 
+}
+
+experiment ShortestPath type: gui {
+    parameter <span class="hljs-string">"number of shortest paths (k)"</span> var: k <span class="hljs-built_in">min</span>: <span class="hljs-number">1</span> <span class="hljs-built_in">max</span>: <span class="hljs-number">7</span>;
+    parameter <span class="hljs-string">"Computed all the shortest paths and save the results"</span> var: save_shortest_paths;
+    parameter <span class="hljs-string">"Load the shortest paths from the file"</span> var: load_shortest_paths;
+    
+    output {
+        display map_shortest_path {
+            species road aspect: base;
+            graphics <span class="hljs-string">"shortest path"</span> {
+                <span class="hljs-keyword">if</span> (shortest_path != nil) {
+                    <span class="hljs-title">draw</span> circle(<span class="hljs-number">5</span>) at: source <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">green</span>;
+                    <span class="hljs-title">draw</span> circle(<span class="hljs-number">5</span>) at: target <span class="hljs-built_in">color</span>: #cyan;
+                    <span class="hljs-title">draw</span> (shortest_path.<span class="hljs-built_in">shape</span> + <span class="hljs-number">2.0</span>) <span class="hljs-built_in">color</span>: #magenta;
+                }
+            }
+        }
+        display map_k_shortest_paths {
+            species road aspect: base;
+            graphics <span class="hljs-string">"k shortest paths"</span> {
+                <span class="hljs-keyword">if</span> (shortest_path != nil) {
+                    <span class="hljs-title">draw</span> circle(<span class="hljs-number">5</span>) at: source <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">green</span>;
+                    <span class="hljs-title">draw</span> circle(<span class="hljs-number">5</span>) at: target <span class="hljs-built_in">color</span>: #cyan;
+                    <span class="hljs-built_in">loop</span> i from: <span class="hljs-number">0</span> to: length(k_shortest_paths) - <span class="hljs-number">1</span>{
+                        <span class="hljs-title">draw</span> ((k_shortest_paths[i]).<span class="hljs-built_in">shape</span> + <span class="hljs-number">2.0</span>) <span class="hljs-built_in">color</span>: colors[i];
+                    }
+                }
+            }
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

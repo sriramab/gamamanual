@@ -1,0 +1,333 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Toy Models/Co-model Example/Co-model Example Comodel_SIR_Switch --><head><meta charset="utf-8"><title>Co model Example Comodel_SIR_Switch</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="co-model-example-comodel_sir_switch">Co model Example Comodel_SIR_Switch</h1>
+<h1 id="comodel-sir-switch">Comodel SIR Switch</h1>
+<p><em>Author : HUYNH Quang Nghi</em></p>
+<p>This is a comodel that implement the dynamic of SIR_switch: it will use the EBM when the density of population is big and ABM when the density of population is low. It demonstrate the capability of using dynamically the legacy models.
+SIR_ABM_coupling is the coupling that manipulates the elements inside SIR_ABM model and proposes the function would be used from outside. SIR_ABM is a simple example of SIR that use the agents to represent the spreading of disease..
+SIR_EBM_coupling is the coupling that manipulates the elements inside SIR_EBM model and proposes the function would be used from outside. SIR_EBM is a simple example of ODE use into agents with the example of the SIR equation system.</p>
+<p>Imported models : </p>
+<pre><code class="hljs mipsasm">model SIR_ABM 
+
+global{
+    geometry <span class="hljs-keyword">shape&lt;-envelope(square(100));
+</span>    float <span class="hljs-keyword">beta </span>&lt;- <span class="hljs-number">0</span>.<span class="hljs-number">5</span> <span class="hljs-comment">;      </span>
+    float nu &lt;- <span class="hljs-number">0</span>.<span class="hljs-number">001</span> <span class="hljs-comment">;</span>
+    float delta &lt;- <span class="hljs-number">0</span>.<span class="hljs-number">01</span><span class="hljs-comment">;</span>
+    init{
+        create Host number:<span class="hljs-number">495</span> <span class="hljs-comment">;</span>
+        create Host number:<span class="hljs-number">5</span>{state&lt;-<span class="hljs-number">1</span><span class="hljs-comment">;}</span>
+        
+    }
+}
+
+species Host skills:[moving]{
+    int state&lt;-<span class="hljs-number">0</span><span class="hljs-comment">;</span>
+    list&lt;rgb&gt; color&lt;-[<span class="hljs-comment">#green, #red, #yellow];</span>
+    reflex moving{
+        do wander<span class="hljs-comment">;</span>
+    }
+
+
+    
+    reflex <span class="hljs-keyword">become_infected </span>when: state=<span class="hljs-number">1</span> {
+        list n&lt;- self neighbors_at(<span class="hljs-number">1</span>)<span class="hljs-comment">;</span>
+        ask n{          
+            if (flip(<span class="hljs-keyword">beta)) </span>{
+                state&lt;-<span class="hljs-number">1</span><span class="hljs-comment">;    </span>
+            }
+        }
+    }
+    
+    reflex <span class="hljs-keyword">become_immune </span>when: (state=<span class="hljs-number">1</span> <span class="hljs-keyword">and </span>flip(delta)) {
+        state&lt;-<span class="hljs-number">2</span><span class="hljs-comment">;</span>
+    }
+    
+            
+    aspect <span class="hljs-keyword">base{
+</span>        draw circle(<span class="hljs-number">1</span>) color: color[state]<span class="hljs-comment">;</span>
+    }
+}
+experiment SIR_ABM_exp type:gui{
+    output {
+        <span class="hljs-keyword">display </span>gridDisp{
+            species Host aspect:<span class="hljs-keyword">base;
+</span>        }
+    }
+}
+</code></pre>
+<pre><code class="hljs irpf90">model SIR_ABM_coupling
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">"SIR_ABM.gaml"</span>
+experiment SIR_ABM_coupling_exp <span class="hljs-keyword">type</span>: gui parent: SIR_ABM_exp
+{
+    <span class="hljs-built_in">int</span> get_num_S
+    {
+        <span class="hljs-keyword">return</span> length(Host <span class="hljs-keyword">where</span> (each.state = <span class="hljs-number">0</span>));
+    }
+
+    <span class="hljs-built_in">int</span> get_num_I
+    {
+        <span class="hljs-keyword">return</span> length(Host <span class="hljs-keyword">where</span> (each.state = <span class="hljs-number">1</span>));
+    }
+
+    <span class="hljs-built_in">int</span> get_num_R
+    {
+        <span class="hljs-keyword">return</span> length(Host <span class="hljs-keyword">where</span> (each.state = <span class="hljs-number">2</span>));
+    }
+
+    <span class="hljs-keyword">action</span> set_num_S_I_R (<span class="hljs-built_in">int</span> numS, <span class="hljs-built_in">int</span> numI, <span class="hljs-built_in">int</span> numR)
+    {
+        unknown <span class="hljs-keyword">call</span>;
+        <span class="hljs-keyword">call</span> &lt;- set_num_S(numS);
+        <span class="hljs-keyword">call</span> &lt;- set_num_I(numI);
+        <span class="hljs-keyword">call</span> &lt;- set_num_R(numR);
+    }
+
+    <span class="hljs-keyword">action</span> set_num_S (<span class="hljs-built_in">int</span> num)
+    {
+        ask (Host <span class="hljs-keyword">where</span> (each.state = <span class="hljs-number">0</span>))
+        {
+            <span class="hljs-keyword">do</span> die;
+        }
+
+        create Host <span class="hljs-keyword">number</span>: num
+        {
+            state &lt;- <span class="hljs-number">0</span>;
+        }
+
+    }
+
+    <span class="hljs-keyword">action</span> set_num_I (<span class="hljs-built_in">int</span> num)
+    {
+        ask (Host <span class="hljs-keyword">where</span> (each.state = <span class="hljs-number">1</span>))
+        {
+            <span class="hljs-keyword">do</span> die;
+        }
+
+        create Host <span class="hljs-keyword">number</span>: num
+        {
+            state &lt;- <span class="hljs-number">1</span>;
+        }
+
+    }
+
+    <span class="hljs-keyword">action</span> set_num_R (<span class="hljs-built_in">int</span> num)
+    {
+        ask (Host <span class="hljs-keyword">where</span> (each.state = <span class="hljs-number">2</span>))
+        {
+            <span class="hljs-keyword">do</span> die;
+        }
+
+        create Host <span class="hljs-keyword">number</span>: num
+        {
+            state &lt;- <span class="hljs-number">2</span>;
+        }
+
+    }
+
+    output
+    {
+    }
+
+}
+</code></pre>
+<pre><code class="hljs processing">model SIR_EBM
+
+global {
+    init{
+        create agent_with_SIR_dynamic;
+    } 
+}
+
+
+species agent_with_SIR_dynamic {
+    <span class="hljs-built_in">int</span> N &lt;- <span class="hljs-number">495</span> ;
+    <span class="hljs-built_in">int</span> iInit &lt;- <span class="hljs-number">5</span>;     
+
+    <span class="hljs-built_in">float</span> t;  
+    <span class="hljs-built_in">float</span> S &lt;- N - <span class="hljs-built_in">float</span>(iInit);          
+    <span class="hljs-built_in">float</span> I &lt;- <span class="hljs-built_in">float</span>(iInit); 
+    <span class="hljs-built_in">float</span> R &lt;- <span class="hljs-number">0.0</span>; 
+    
+    <span class="hljs-built_in">float</span> <span class="hljs-built_in">alpha</span> &lt;- <span class="hljs-number">0.2</span>;
+    <span class="hljs-built_in">float</span> beta &lt;- <span class="hljs-number">0.8</span>; 
+
+    <span class="hljs-built_in">float</span> h &lt;- <span class="hljs-number">0.01</span>;
+   
+    equation SIR{ 
+        diff(S,t) = (- beta *   S * I / N);
+        diff(I,t) = (  beta*  S * I / N) - (<span class="hljs-built_in">alpha</span> * I)  ;
+        diff(R,t) = (  <span class="hljs-built_in">alpha</span>  *  I) ;
+    }
+                
+    reflex solving {
+<span class="hljs-comment">//      write S;</span>
+        solve SIR method: <span class="hljs-string">"rk4"</span> step: h;<span class="hljs-comment">// cycle_length: 1/h ;</span>
+    }    
+}
+
+
+experiment SIR_EBM_exp type: gui {
+    output { 
+        display display_charts {
+            chart <span class="hljs-string">"SIR_agent"</span> type: series <span class="hljs-built_in">background</span>: #white {
+                data <span class="hljs-string">'S'</span> value: first(list(agent_with_SIR_dynamic)).S <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">green</span> ;               
+                data <span class="hljs-string">'I'</span> value: first(list(agent_with_SIR_dynamic)).I <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">red</span> ;
+                data <span class="hljs-string">'R'</span> value: first(list(agent_with_SIR_dynamic)).R <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">blue</span> ;
+            }
+        }
+    }
+}
+</code></pre>
+<pre><code class="hljs irpf90">model SIR_EBM_coupling
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">"SIR_EBM.gaml"</span>
+experiment SIR_EBM_coupling_exp <span class="hljs-keyword">type</span>: gui parent: SIR_EBM_exp
+{
+    <span class="hljs-built_in">int</span> get_num_S
+    {
+        <span class="hljs-keyword">return</span> first(agent_with_SIR_dynamic).S;
+    }
+
+    <span class="hljs-built_in">int</span> get_num_I
+    {
+        <span class="hljs-keyword">return</span> first(agent_with_SIR_dynamic).I;
+    }
+
+    <span class="hljs-built_in">int</span> get_num_R
+    {
+        <span class="hljs-keyword">return</span> first(agent_with_SIR_dynamic).R;
+    }
+
+    <span class="hljs-keyword">action</span> set_num_S_I_R (<span class="hljs-built_in">int</span> numS, <span class="hljs-built_in">int</span> numI, <span class="hljs-built_in">int</span> numR)
+    {
+        unknown <span class="hljs-keyword">call</span>;
+        <span class="hljs-keyword">call</span> &lt;- set_num_S(numS);
+        <span class="hljs-keyword">call</span> &lt;- set_num_I(numI);
+        <span class="hljs-keyword">call</span> &lt;- set_num_R(numR);
+    }
+
+    <span class="hljs-keyword">action</span> set_num_S (<span class="hljs-built_in">int</span> num)
+    {
+        first(agent_with_SIR_dynamic).S &lt;- <span class="hljs-built_in">float</span>(num);
+    }
+
+    <span class="hljs-keyword">action</span> set_num_I (<span class="hljs-built_in">int</span> num)
+    {
+        first(agent_with_SIR_dynamic).I &lt;- <span class="hljs-built_in">float</span>(num);
+    }
+
+    <span class="hljs-keyword">action</span> set_num_R (<span class="hljs-built_in">int</span> num)
+    {
+        first(agent_with_SIR_dynamic).R &lt;- <span class="hljs-built_in">float</span>(num);
+    }
+
+    output
+    {
+    }
+
+}
+</code></pre>
+<p>Code of the model : </p>
+<pre><code class="hljs haskell"><span class="hljs-title">model</span> <span class="hljs-type">Comodel_SIR_Switch</span>
+
+<span class="hljs-keyword">import</span> "Legacy_models/SIR_EBM_coupling.gaml" <span class="hljs-keyword">as</span> SIR_1
+<span class="hljs-keyword">import</span> "Legacy_models/SIR_ABM_coupling.gaml" <span class="hljs-keyword">as</span> SIR_2
+
+
+<span class="hljs-title">global</span>
+{
+    geometry shape &lt;- envelope(square(<span class="hljs-number">100</span>));
+    int switch_threshold &lt;- <span class="hljs-number">120</span>; // threshold for switching models
+    int threshold_to_IBM &lt;- <span class="hljs-number">220</span>; // threshold under which the model swith to <span class="hljs-type">IBM</span>
+    int threshold_to_Maths &lt;- <span class="hljs-number">20</span>;
+    init
+    {
+        create <span class="hljs-type">SIR_1</span>.<span class="hljs-type">SIR_EBM_coupling_exp</span>;
+        create <span class="hljs-type">SIR_2</span>.<span class="hljs-type">SIR_ABM_coupling_exp</span>;
+        create <span class="hljs-type">Switch</span>;
+    }
+
+}
+
+<span class="hljs-title">species</span> <span class="hljs-type">Switch</span>
+{
+    int <span class="hljs-type">S</span> &lt;- <span class="hljs-number">495</span>;
+    int <span class="hljs-type">I</span> &lt;- <span class="hljs-number">5</span>;
+    int <span class="hljs-type">R</span> &lt;- <span class="hljs-number">0</span>;
+    reflex request_from_micro_model
+    {
+        //<span class="hljs-keyword">if</span> the size <span class="hljs-keyword">of</span> <span class="hljs-type">S</span> population and <span class="hljs-type">I</span> population are bigger than a threshold, use the <span class="hljs-type">EBM</span>
+        <span class="hljs-keyword">if</span> (<span class="hljs-type">S</span> &gt; threshold_to_Maths and <span class="hljs-type">I</span> &gt; threshold_to_Maths)
+        {
+            ask world
+            {
+                unknown call;
+                call &lt;- first(<span class="hljs-type">SIR_1</span>.<span class="hljs-type">SIR_EBM_coupling_exp</span>).set_num_S_I_R(myself.<span class="hljs-type">S</span>, myself.<span class="hljs-type">I</span>, myself.<span class="hljs-type">R</span>);
+                ask first(<span class="hljs-type">SIR_1</span>.<span class="hljs-type">SIR_EBM_coupling_exp</span>).simulation
+                {
+                    loop times: <span class="hljs-number">5</span>
+                    {
+                        <span class="hljs-keyword">do</span> _step_;
+                    }
+
+                }
+
+                myself.<span class="hljs-type">S</span> &lt;- first(<span class="hljs-type">SIR_1</span>.<span class="hljs-type">SIR_EBM_coupling_exp</span>).get_num_S();
+                myself.<span class="hljs-type">I</span> &lt;- first(<span class="hljs-type">SIR_1</span>.<span class="hljs-type">SIR_EBM_coupling_exp</span>).get_num_I();
+                myself.<span class="hljs-type">R</span> &lt;- first(<span class="hljs-type">SIR_1</span>.<span class="hljs-type">SIR_EBM_coupling_exp</span>).get_num_R();
+            }
+
+        }
+        
+        //<span class="hljs-keyword">if</span> the size <span class="hljs-keyword">of</span> <span class="hljs-type">S</span> population or  <span class="hljs-type">I</span> population are smaller  than a threshold, use the <span class="hljs-type">ABM</span>
+        <span class="hljs-keyword">if</span> (<span class="hljs-type">I</span> &lt; threshold_to_IBM or <span class="hljs-type">S</span> &lt; threshold_to_IBM)
+        {
+            ask world
+            {
+                unknown call;
+                call &lt;- first(<span class="hljs-type">SIR_2</span>.<span class="hljs-type">SIR_ABM_coupling_exp</span>).set_num_S_I_R(myself.<span class="hljs-type">S</span>, myself.<span class="hljs-type">I</span>, myself.<span class="hljs-type">R</span>);
+                ask first(<span class="hljs-type">SIR_2</span>.<span class="hljs-type">SIR_ABM_coupling_exp</span>).simulation
+                {
+                    loop times: <span class="hljs-number">1</span>
+                    {
+                        <span class="hljs-keyword">do</span> _step_;
+                    }
+
+                }
+
+                myself.<span class="hljs-type">S</span> &lt;- first(<span class="hljs-type">SIR_2</span>.<span class="hljs-type">SIR_ABM_coupling_exp</span>).get_num_S();
+                myself.<span class="hljs-type">I</span> &lt;- first(<span class="hljs-type">SIR_2</span>.<span class="hljs-type">SIR_ABM_coupling_exp</span>).get_num_I();
+                myself.<span class="hljs-type">R</span> &lt;- first(<span class="hljs-type">SIR_2</span>.<span class="hljs-type">SIR_ABM_coupling_exp</span>).get_num_R();
+            }
+
+        }
+
+    }
+
+    aspect base
+    {
+        draw square(<span class="hljs-number">100</span>);
+    }
+
+}
+
+<span class="hljs-title">experiment</span> <span class="hljs-type">Simple_exp</span> <span class="hljs-class"><span class="hljs-keyword">type</span>: gui</span>
+{
+    output
+    {
+        display co_SIR_chart
+        {
+            chart <span class="hljs-string">"SIR_agent"</span> <span class="hljs-class"><span class="hljs-keyword">type</span>: series background: # white</span>
+            {
+                <span class="hljs-class"><span class="hljs-keyword">data</span> '<span class="hljs-type">S'</span> value: first(<span class="hljs-type">Switch</span>).<span class="hljs-type">S</span> color: # green;</span>
+                <span class="hljs-class"><span class="hljs-keyword">data</span> '<span class="hljs-type">I'</span> value: first(<span class="hljs-type">Switch</span>).<span class="hljs-type">I</span> color: # red;</span>
+                <span class="hljs-class"><span class="hljs-keyword">data</span> '<span class="hljs-type">R'</span> value: first(<span class="hljs-type">Switch</span>).<span class="hljs-type">R</span> color: # yellow;</span>
+            }
+
+        }
+
+    }
+
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

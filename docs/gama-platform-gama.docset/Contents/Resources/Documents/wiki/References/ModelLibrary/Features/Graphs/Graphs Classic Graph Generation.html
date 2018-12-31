@@ -1,0 +1,67 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Graphs/Graphs Classic Graph Generation --><head><meta charset="utf-8"><title>Graphs Classic Graph Generation</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="graphs-classic-graph-generation">Graphs Classic Graph Generation</h1>
+<h1 id="graph-generation">Graph Generation</h1>
+<p><em>Author : Patrick Taillandier</em></p>
+<p>Model which shows how to create three kind of graphs : a scale-free graph, a small-world graph, a complete graph and a complete graph with a radius.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs nginx">
+<span class="hljs-attribute">model</span> classicgraphgeneration
+
+global {
+    <span class="hljs-attribute">graph</span> the_graph ;
+    <span class="hljs-attribute">string</span> graph_type &lt;- <span class="hljs-string">"small-world"</span>;
+    <span class="hljs-attribute">int</span> nb_nodes &lt;- <span class="hljs-number">500</span>;
+    <span class="hljs-attribute">float</span> p &lt;- <span class="hljs-number">0</span>.<span class="hljs-number">0</span>;
+    <span class="hljs-attribute">int</span> k &lt;- <span class="hljs-number">4</span>;
+    <span class="hljs-attribute">int</span> m &lt;- <span class="hljs-number">4</span>;
+    <span class="hljs-attribute">int</span> radius &lt;- <span class="hljs-number">20</span>;
+    
+    <span class="hljs-section">init</span> {
+        <span class="hljs-attribute">switch</span> graph_type {
+            <span class="hljs-attribute">match</span> <span class="hljs-string">"scale-free"</span> {
+                <span class="hljs-attribute">the_graph</span> &lt;- generate_barabasi_albert(node_agent, edge_agent, nb_nodes,m, <span class="hljs-literal">true</span>);    
+            }
+            <span class="hljs-attribute">match</span> <span class="hljs-string">"small-world"</span> {
+                <span class="hljs-attribute">the_graph</span> &lt;- generate_watts_strogatz(node_agent, edge_agent, nb_nodes, p, k, <span class="hljs-literal">true</span>); 
+            }
+            <span class="hljs-attribute">match</span> <span class="hljs-string">"complete"</span> {
+                <span class="hljs-attribute">the_graph</span> &lt;- generate_complete_graph(node_agent, edge_agent, nb_nodes,<span class="hljs-literal">true</span>);    
+            }
+            <span class="hljs-attribute">match</span> <span class="hljs-string">"complete-with-radius"</span> {
+                <span class="hljs-attribute">the_graph</span> &lt;- generate_complete_graph(node_agent, edge_agent, nb_nodes, radius,<span class="hljs-literal">true</span>);    
+            }       
+        }
+        <span class="hljs-attribute">write</span> the_graph;
+        <span class="hljs-attribute">write</span> <span class="hljs-string">"Edges : "</span>+length(the_graph.edges);
+        <span class="hljs-attribute">write</span> <span class="hljs-string">"Nodes : "</span>+length(the_graph.vertices);
+    }
+    
+}
+
+<span class="hljs-attribute">species</span> edge_agent {
+    <span class="hljs-attribute">aspect</span> default {    
+        <span class="hljs-attribute">draw</span> shape color: <span class="hljs-comment">#black;</span>
+    }
+}
+
+species node_agent {
+    <span class="hljs-attribute">aspect</span> default {    
+        <span class="hljs-attribute">draw</span> circle(<span class="hljs-number">1</span>) color: <span class="hljs-comment">#red;</span>
+    }
+}
+
+experiment loadgraph type: gui {
+    <span class="hljs-attribute">parameter</span> <span class="hljs-string">"Graph type"</span> var: graph_type among: [ <span class="hljs-string">"scale-free"</span>, <span class="hljs-string">"small-world"</span>, <span class="hljs-string">"complete"</span>];
+    <span class="hljs-attribute">parameter</span> <span class="hljs-string">"Number of nodes"</span> var: nb_nodes min: <span class="hljs-number">5</span> ;
+    <span class="hljs-attribute">parameter</span> <span class="hljs-string">"Probability to rewire an edge (beta)"</span> var: p min: <span class="hljs-number">0</span>.<span class="hljs-number">0</span> max: <span class="hljs-number">1</span>.<span class="hljs-number">0</span> category: <span class="hljs-string">"small-world"</span>;
+    <span class="hljs-attribute">parameter</span> <span class="hljs-string">"Base degree of each node. k must be even"</span> var: k min: <span class="hljs-number">2</span> max: <span class="hljs-number">10</span> category: <span class="hljs-string">"small-world"</span>;
+    <span class="hljs-attribute">parameter</span> <span class="hljs-string">"Number of edges added per novel node"</span> var: m min: <span class="hljs-number">1</span> max: <span class="hljs-number">10</span> category: <span class="hljs-string">"scale-free"</span>;
+    
+    <span class="hljs-section">output</span> {
+        <span class="hljs-attribute">display</span> map type: opengl{
+            <span class="hljs-attribute">species</span> edge_agent ;
+            <span class="hljs-attribute">species</span> node_agent ;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

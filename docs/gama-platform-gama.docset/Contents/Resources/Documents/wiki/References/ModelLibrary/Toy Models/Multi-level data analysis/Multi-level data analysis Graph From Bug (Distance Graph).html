@@ -1,0 +1,54 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Toy Models/Multi-level data analysis/Multi-level data analysis Graph From Bug (Distance Graph) --><head><meta charset="utf-8"><title>Multi level data analysis Graph From Bug (Distance Graph)</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="multi-level-data-analysis-graph-from-bug-distance-graph">Multi level data analysis Graph From Bug (Distance Graph)</h1>
+<h1 id="spatialgraph">SpatialGraph</h1>
+<p><em>Author : Arnaud Grignard</em></p>
+<p>From the reference model "bug.gaml" a spatial graph is created. We create a species node that mirrors the species bug and then a spatial graph is creating using as_distance_graph operator.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs processing">
+model SpatialGraph
+<span class="hljs-comment">//Import the model Common Bug Species model</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">'../includes/Common Bug Species.gaml'</span>
+
+
+global { 
+    <span class="hljs-comment">//Graph that will be computed at each step linking the bug agents according to their distance</span>
+    graph myGraph;
+    <span class="hljs-comment">//Minimal distance to consider two nodes agents (ie the bug) as connected</span>
+    <span class="hljs-built_in">float</span> distance parameter: <span class="hljs-string">'Distance'</span> <span class="hljs-built_in">min</span>: <span class="hljs-number">1.0</span> &lt;- <span class="hljs-number">10.0</span> category: <span class="hljs-string">'Model'</span>;
+    
+    <span class="hljs-comment">//Reflex to update the graph when cycle is greater than 0. Important because the mirroring has one step late from</span>
+    <span class="hljs-comment">//the original species, and at step 0, the mirroring species aren't created</span>
+    reflex updateGraph when:(cycle&gt;<span class="hljs-number">0</span>){
+        <span class="hljs-comment">//Kill all the edge agent to create a new graph</span>
+        ask edge_agent {
+            do die;
+        }
+        <span class="hljs-comment">//Create a new graph using the distance to compute the edges</span>
+        myGraph &lt;- as_distance_graph(node_agent, [<span class="hljs-string">"distance"</span>::distance, <span class="hljs-string">"species"</span>::edge_agent]);
+    }
+}
+<span class="hljs-comment">//Species node_agent mirroring the bug species</span>
+species node_agent mirrors: list(bug) {
+    <span class="hljs-comment">//Each location will be the one of the bug at the previous step</span>
+    <span class="hljs-built_in">point</span> location &lt;- target.location update: target.location;
+    aspect base {
+        <span class="hljs-title">draw</span> <span class="hljs-built_in">sphere</span>(<span class="hljs-number">1.1</span>) <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">green</span>; 
+    }
+}
+<span class="hljs-comment">//Species to represent the edge of the graph</span>
+species edge_agent {
+    aspect base {
+        <span class="hljs-title">draw</span> <span class="hljs-built_in">shape</span> <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">green</span>;
+    }
+}
+
+experiment spatialGraph type: gui {
+    output {    
+     display graph_view type: opengl {
+            species bug aspect:base;
+            species node_agent aspect: base position:{<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0.1</span>};
+            species edge_agent aspect: base position:{<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0.1</span>};
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

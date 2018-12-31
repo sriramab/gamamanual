@@ -1,0 +1,149 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Syntax/Syntax models/Syntax models Casting --><head><meta charset="utf-8"><title>Syntax models Casting</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="syntax-models-casting">Syntax models Casting</h1>
+<h1 id="casting-syntax">Casting Syntax</h1>
+<p><em>Author : A. Drogoul &amp; P. Taillandier</em></p>
+<p>different ways of transforming objects and agents in GAML.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs arduino">
+model Casting
+
+species to_int {
+    init {
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">int</span>(<span class="hljs-number">1</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">int</span>(<span class="hljs-number">1.0</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">int</span>(<span class="hljs-string">"1"</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">int</span>(<span class="hljs-string">"1.0"</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">int</span>(°pink));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">int</span>(true));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">int</span>(self));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">int</span>([]));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">int</span>([<span class="hljs-number">0</span>]));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">int</span>({<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>}));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">int</span>(<span class="hljs-number">0</span>::<span class="hljs-number">0</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">int</span>([<span class="hljs-number">0</span>::<span class="hljs-number">0</span>]));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">int</span>(<span class="hljs-meta">#AABBCC));</span>
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">int</span>(°meter));              
+    }
+}
+
+
+species to_float{
+    init {
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">float</span>(<span class="hljs-number">1</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">float</span>(<span class="hljs-number">1.0</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">float</span>(<span class="hljs-string">"1"</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">float</span>(<span class="hljs-string">"1.0"</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">float</span>(°pink));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">float</span>(true));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">float</span>(self));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">float</span>([]));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">float</span>([<span class="hljs-number">0</span>]));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">float</span>(<span class="hljs-number">0</span>::<span class="hljs-number">0</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">float</span>([<span class="hljs-number">0</span>::<span class="hljs-number">0</span>]));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">float</span>({<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>}));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">float</span>(<span class="hljs-meta">#AABBCC));</span>
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">float</span>(°meter));                
+    }
+}
+
+
+species to_string{
+    init {
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">string</span>(<span class="hljs-number">1</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">string</span>(<span class="hljs-number">1.0</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">string</span>(<span class="hljs-string">"1"</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">string</span>(<span class="hljs-string">"1.0"</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">string</span>(°pink));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">string</span>(true));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">string</span>(self));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">string</span>([]));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">string</span>([<span class="hljs-number">0</span>]));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">string</span>({<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>}));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">string</span>(<span class="hljs-meta">#AABBCC));</span>
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-keyword">string</span>(°meter));               
+    }
+}
+
+species to_point{
+    init {
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">point</span>(<span class="hljs-number">1</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">point</span>(<span class="hljs-number">1.0</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">point</span>(<span class="hljs-string">"1"</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">point</span>(<span class="hljs-string">"1.0"</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">point</span>(°pink));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">point</span>(true));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">point</span>(self));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">point</span>([]));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">point</span>([<span class="hljs-number">0</span>]));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">point</span>(<span class="hljs-number">0</span>::<span class="hljs-number">0</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">point</span>([<span class="hljs-number">0</span>::<span class="hljs-number">0</span>]));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">point</span>({<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>}));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">point</span>(<span class="hljs-meta">#AABBCC));</span>
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">point</span>(°meter));                
+    }
+}
+species to_list{
+    init {
+        <span class="hljs-built_in">write</span> sample(list(<span class="hljs-number">1</span>));
+        <span class="hljs-built_in">write</span> sample(list(<span class="hljs-number">1.0</span>));
+        <span class="hljs-built_in">write</span> sample(list(<span class="hljs-string">"1"</span>));
+        <span class="hljs-built_in">write</span> sample(list(<span class="hljs-string">"1.0"</span>));
+        <span class="hljs-built_in">write</span> sample(list(°pink));
+        <span class="hljs-built_in">write</span> sample(list(true));
+        <span class="hljs-built_in">write</span> sample(list(self));
+        <span class="hljs-built_in">write</span> sample(list([]));
+        <span class="hljs-built_in">write</span> sample(list([<span class="hljs-number">0</span>]));
+        <span class="hljs-built_in">write</span> sample(list(<span class="hljs-number">0</span>::<span class="hljs-number">0</span>));
+        <span class="hljs-built_in">write</span> sample(list([<span class="hljs-number">0</span>::<span class="hljs-number">0</span>])); 
+        <span class="hljs-built_in">write</span> sample(list({<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>}));
+        <span class="hljs-built_in">write</span> sample(list(<span class="hljs-meta">#AABBCC));</span>
+        <span class="hljs-built_in">write</span> sample(list(°meter));             
+    }
+}
+species to_pair{
+    init {
+        <span class="hljs-built_in">write</span> sample(pair(<span class="hljs-number">1</span>));
+        <span class="hljs-built_in">write</span> sample(pair(<span class="hljs-number">1.0</span>));
+        <span class="hljs-built_in">write</span> sample(pair(<span class="hljs-string">"1"</span>));
+        <span class="hljs-built_in">write</span> sample(pair(<span class="hljs-string">"1.0"</span>));
+        <span class="hljs-built_in">write</span> sample(pair(°pink));
+        <span class="hljs-built_in">write</span> sample(pair(true));
+        <span class="hljs-built_in">write</span> sample(pair(self));
+        <span class="hljs-built_in">write</span> sample(pair([]));
+        <span class="hljs-built_in">write</span> sample(pair([<span class="hljs-number">0</span>]));
+        <span class="hljs-built_in">write</span> sample(pair(<span class="hljs-number">0</span>::<span class="hljs-number">0</span>));
+        <span class="hljs-built_in">write</span> sample(pair([<span class="hljs-number">0</span>::<span class="hljs-number">0</span>]));
+        <span class="hljs-built_in">write</span> sample(pair({<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>}));
+        <span class="hljs-built_in">write</span> sample(pair(<span class="hljs-meta">#AABBCC));</span>
+        <span class="hljs-built_in">write</span> sample(pair(°meter));             
+    }
+}
+species to_map{
+    init {
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">float</span>, <span class="hljs-keyword">int</span>&gt;(°meter));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">map</span>(<span class="hljs-number">1</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">map</span>(<span class="hljs-number">1.0</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">map</span>(<span class="hljs-string">"1"</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">map</span>(<span class="hljs-string">"1.0"</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">map</span>(°pink));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">map</span>(true));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">map</span>(self));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">map</span>([]));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">map</span>([<span class="hljs-number">0</span>]));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">map</span>(<span class="hljs-number">0</span>::<span class="hljs-number">0</span>));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">map</span>([<span class="hljs-number">0</span>::<span class="hljs-number">0</span>]));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">map</span>({<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>}));
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">map</span>(<span class="hljs-meta">#AABBCC));</span>
+        <span class="hljs-built_in">write</span> sample(<span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">int</span>,<span class="hljs-keyword">string</span>&gt;(<span class="hljs-number">1</span>));               
+    }
+}
+experiment Casting type: gui{
+    user_command <span class="hljs-string">"to int"</span> {create to_int;}
+    user_command <span class="hljs-string">"to float"</span> {create to_float;}
+    user_command <span class="hljs-string">"to string"</span> {create to_string;}
+    user_command <span class="hljs-string">"to point"</span> {create to_point;}
+    user_command <span class="hljs-string">"to list"</span> {create to_list;}
+    user_command <span class="hljs-string">"to pair"</span> {create to_pair;}
+    user_command <span class="hljs-string">"to map"</span> {create to_map;}
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

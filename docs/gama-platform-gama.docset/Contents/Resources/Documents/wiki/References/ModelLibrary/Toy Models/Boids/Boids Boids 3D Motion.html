@@ -1,0 +1,162 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Toy Models/Boids/Boids Boids 3D Motion --><head><meta charset="utf-8"><title>Boids Boids 3D Motion</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="boids-boids-3d-motion">Boids Boids 3D Motion</h1>
+<h1 id="boids-3d-motion">Boids 3D Motion</h1>
+<p>_Author : _</p>
+<p>This model shows the movement of boids following a goal, and creating without their own volonty, a flock .  The goal agent and the boids will move within the 3D space.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs sqf">model boids_3D 
+global torus: torus_environment{ 
+    <span class="hljs-comment">//Number of boids to create</span>
+    int number_of_agents parameter: <span class="hljs-string">'Number of agents'</span> &lt;- <span class="hljs-number">100</span> <span class="hljs-built_in">min</span>: <span class="hljs-number">1</span> <span class="hljs-built_in">max</span>: <span class="hljs-number">1000000</span>;
+    <span class="hljs-comment">//Number of obstacles to create</span>
+    int number_of_obstacles parameter: <span class="hljs-string">'Number of obstacles'</span> &lt;- <span class="hljs-number">0</span> <span class="hljs-built_in">min</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-comment">//Size of the boids</span>
+    int boids_size parameter: <span class="hljs-string">'Boids size'</span> &lt;- <span class="hljs-number">50</span> <span class="hljs-built_in">min</span>: <span class="hljs-number">1</span>;
+    <span class="hljs-comment">//Maximal speed of the boids</span>
+    float maximal_speed parameter: <span class="hljs-string">'Maximal speed'</span> &lt;- <span class="hljs-number">15.0</span> <span class="hljs-built_in">min</span>: <span class="hljs-number">0.1</span> <span class="hljs-built_in">max</span>: <span class="hljs-number">15.0</span>;
+    <span class="hljs-comment">//Factor for the boids flock</span>
+    int cohesion_factor parameter: <span class="hljs-string">'Cohesion Factor'</span> &lt;- <span class="hljs-number">100</span>; 
+    int alignment_factor parameter: <span class="hljs-string">'Alignment Factor'</span> &lt;- <span class="hljs-number">100</span>; 
+    float minimal_distance parameter: <span class="hljs-string">'Minimal Distance'</span> &lt;- <span class="hljs-number">10.0</span>; 
+    <span class="hljs-comment">//MAximal angle of turn for the boids</span>
+    int maximal_turn parameter: <span class="hljs-string">'Maximal Turn'</span> &lt;- <span class="hljs-number">90</span> <span class="hljs-built_in">min</span>: <span class="hljs-number">0</span> <span class="hljs-built_in">max</span>: <span class="hljs-number">359</span>; 
+    <span class="hljs-comment">//environment parameters</span>
+    int width_and_height_of_environment parameter: <span class="hljs-string">'Width/Height of the Environment'</span> &lt;- <span class="hljs-number">800</span>;  
+    int z_max parameter: <span class="hljs-string">'Z max of the Environment'</span> &lt;- <span class="hljs-number">400</span>;  
+    bool torus_environment parameter: <span class="hljs-string">'Toroidal Environment ?'</span> &lt;- <span class="hljs-literal">false</span>; 
+    <span class="hljs-comment">//Experiment parameter</span>
+    bool apply_cohesion &lt;- <span class="hljs-literal">true</span> parameter: <span class="hljs-string">'Apply Cohesion ?'</span>;
+    bool apply_alignment &lt;- <span class="hljs-literal">true</span> parameter: <span class="hljs-string">'Apply Alignment ?'</span>;   
+    bool apply_separation &lt;- <span class="hljs-literal">true</span> parameter: <span class="hljs-string">'Apply Separation ?'</span>;   
+    bool apply_goal &lt;- <span class="hljs-literal">true</span> parameter: <span class="hljs-string">'Follow Goal ?'</span>; 
+    bool apply_wind &lt;- <span class="hljs-literal">true</span> parameter: <span class="hljs-string">'Apply Wind ?'</span>;     
+    <span class="hljs-comment">//Wind variable</span>
+    point wind_vector &lt;- {<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>}  parameter: <span class="hljs-string">'Direction of the wind'</span>;   
+    <span class="hljs-comment">//Duration of the goal</span>
+    int goal_duration &lt;- <span class="hljs-number">30</span> update: (goal_duration - <span class="hljs-number">1</span>); 
+    <span class="hljs-comment">//Location of the goal</span>
+    point goal &lt;- {rnd (width_and_height_of_environment - <span class="hljs-number">2</span>) + <span class="hljs-number">1</span>, rnd (width_and_height_of_environment -<span class="hljs-number">2</span>) + <span class="hljs-number">1</span> ,(rnd(z_max - <span class="hljs-number">2</span>) + <span class="hljs-number">1</span>)}; 
+    <span class="hljs-built_in">list</span> images &lt;- [file(<span class="hljs-string">'../images/bird1.png'</span>),file(<span class="hljs-string">'../images/bird2.png'</span>),file(<span class="hljs-string">'../images/bird3.png'</span>)]; 
+    geometry shape &lt;- cube(width_and_height_of_environment);
+    init {
+        <span class="hljs-comment">//Creation of the boids agents that will be placed randomly within the environment</span>
+        create boids number: number_of_agents { 
+            <span class="hljs-built_in">location</span> &lt;- {rnd (width_and_height_of_environment - <span class="hljs-number">2</span>) + <span class="hljs-number">1</span>, rnd (width_and_height_of_environment -<span class="hljs-number">2</span>) + <span class="hljs-number">1</span> , (rnd(z_max - <span class="hljs-number">2</span>) + <span class="hljs-number">1</span>)};
+        } 
+        <span class="hljs-comment">//Creation of the goal</span>
+        create boids_goal {
+            <span class="hljs-built_in">location</span> &lt;- goal;
+        }
+    }
+}
+
+<span class="hljs-comment">//Species boids_goal that will represent the goal agent, using the skill moving</span>
+species boids_goal skills: [moving3D] {
+    float range init: <span class="hljs-number">20.0</span>;
+    
+    <span class="hljs-comment">//Reflex to make the goal agent wander in a certain amplitude and a certain speed, </span>
+    <span class="hljs-comment">//Respecting the minimal and maximal z values</span>
+    reflex wander { 
+        <span class="hljs-keyword">do</span>  wander amplitude: <span class="hljs-number">45</span> <span class="hljs-built_in">speed</span>: <span class="hljs-number">20</span>; 
+        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">location</span>.z) &lt; <span class="hljs-number">0</span> {
+            <span class="hljs-built_in">location</span> &lt;- {<span class="hljs-built_in">location</span>.x,<span class="hljs-built_in">location</span>.y,<span class="hljs-number">0</span>};
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">location</span>.z) &gt; z_max {
+            <span class="hljs-built_in">location</span> &lt;- {<span class="hljs-built_in">location</span>.x,<span class="hljs-built_in">location</span>.y,z_max};
+        }
+        goal &lt;- <span class="hljs-built_in">location</span>;
+    }
+    
+    aspect <span class="hljs-keyword">default</span> { 
+        draw sphere(<span class="hljs-number">10</span>) color: <span class="hljs-meta">#red ;</span>
+    }
+} 
+
+<span class="hljs-comment">//Species boids that will represent the boids agents, using the skill moving</span>
+species boids skills: [moving] {
+    <span class="hljs-comment">//Attribute for the speed of the boids</span>
+    float <span class="hljs-built_in">speed</span> <span class="hljs-built_in">max</span>: maximal_speed &lt;- maximal_speed;
+    <span class="hljs-comment">//Range of sensing of the boids</span>
+    float range &lt;- minimal_distance * <span class="hljs-number">2</span>;
+    point <span class="hljs-built_in">velocity</span> &lt;- {<span class="hljs-number">0</span>,<span class="hljs-number">0</span>, <span class="hljs-number">0</span>} ;
+    
+    <span class="hljs-comment">//List of the others boids in the range distance of the agent</span>
+    <span class="hljs-built_in">list</span> others update: ((boids at_distance range)  - self);
+    <span class="hljs-comment">//Mass center of the "flock" represented as the other boids in the sensing range</span>
+    point mass_center update:  (length(others) &gt; <span class="hljs-number">0</span>) ? (mean (others collect (each.<span class="hljs-built_in">location</span>)) )  : <span class="hljs-built_in">location</span>;
+    
+    <span class="hljs-comment">//Reflex to apply separation</span>
+    reflex separation when: apply_separation {
+        point acc &lt;- {<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>};
+        loop boid over: (boids at_distance (minimal_distance))  {
+            acc &lt;- acc - ((<span class="hljs-built_in">location</span> of boid) - <span class="hljs-built_in">location</span>);
+        }  
+        <span class="hljs-built_in">velocity</span> &lt;- <span class="hljs-built_in">velocity</span> + acc;
+    }
+    <span class="hljs-comment">//Reflex to apply alignment</span>
+    reflex alignment when: apply_alignment {
+        point acc &lt;- (length(others) &gt; <span class="hljs-number">0</span>) ? (mean (others collect (each.<span class="hljs-built_in">velocity</span>))) : {<span class="hljs-number">0.0</span>,<span class="hljs-number">0.0</span>,<span class="hljs-number">0.0</span>};
+        acc &lt;- acc - <span class="hljs-built_in">velocity</span>;
+        <span class="hljs-built_in">velocity</span> &lt;- <span class="hljs-built_in">velocity</span> + (acc / alignment_factor);
+    }
+    <span class="hljs-comment">//Reflex to apply cohesion</span>
+    reflex cohesion when: apply_cohesion {
+        point acc &lt;- mass_center - <span class="hljs-built_in">location</span>;
+        acc &lt;- acc / cohesion_factor;
+        <span class="hljs-built_in">velocity</span> &lt;- <span class="hljs-built_in">velocity</span> + acc; 
+    }
+    <span class="hljs-comment">//Action to make the agent location within the environment</span>
+    <span class="hljs-built_in">action</span> bounding {
+        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">location</span>.z) &lt; <span class="hljs-number">0</span> {
+            <span class="hljs-built_in">location</span> &lt;- {<span class="hljs-built_in">location</span>.x,<span class="hljs-built_in">location</span>.y,<span class="hljs-number">0</span>};
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">location</span>.z) &gt; z_max {
+            <span class="hljs-built_in">location</span> &lt;- {<span class="hljs-built_in">location</span>.x,<span class="hljs-built_in">location</span>.y,z_max};
+        }
+    }
+    <span class="hljs-comment">//Reflex to make the agent follow the goal</span>
+    reflex follow_goal when: apply_goal {
+        <span class="hljs-built_in">velocity</span> &lt;- <span class="hljs-built_in">velocity</span> + ((goal - <span class="hljs-built_in">location</span>) / cohesion_factor);
+    }
+    <span class="hljs-comment">//Reflex to apply the wind by using the vector of wind</span>
+    reflex <span class="hljs-built_in">wind</span> when: apply_wind {
+        <span class="hljs-built_in">velocity</span> &lt;- <span class="hljs-built_in">velocity</span> + wind_vector;
+    }
+    <span class="hljs-comment">//Action to make the agent moving</span>
+    <span class="hljs-built_in">action</span> do_move {  
+        <span class="hljs-keyword">if</span> (((<span class="hljs-built_in">velocity</span>.x) as int) = <span class="hljs-number">0</span>) <span class="hljs-built_in">and</span> (((<span class="hljs-built_in">velocity</span>.y) as int) = <span class="hljs-number">0</span>) <span class="hljs-built_in">and</span> (((<span class="hljs-built_in">velocity</span>.z) as int) = <span class="hljs-number">0</span>) {
+            <span class="hljs-built_in">velocity</span> &lt;- {(rnd(<span class="hljs-number">4</span>)) -<span class="hljs-number">2</span>, (rnd(<span class="hljs-number">4</span>)) - <span class="hljs-number">2</span>,  ((rnd(<span class="hljs-number">4</span>)) - <span class="hljs-number">2</span>)} ; 
+        }
+        point old_location &lt;- <span class="hljs-built_in">location</span>;
+        <span class="hljs-keyword">do</span> <span class="hljs-built_in">goto</span> target: <span class="hljs-built_in">location</span> + <span class="hljs-built_in">velocity</span>;
+        <span class="hljs-built_in">velocity</span> &lt;- <span class="hljs-built_in">location</span> - old_location;
+    }
+    <span class="hljs-comment">//Reflex to move the agent, calling both bounding and do_move action</span>
+    reflex movement {
+        <span class="hljs-keyword">do</span> bounding;
+        <span class="hljs-keyword">do</span> do_move;
+    }
+    
+    aspect sphere {
+        draw sphere(<span class="hljs-number">10</span>) color: <span class="hljs-meta">#green;</span>
+    }
+    
+    aspect <span class="hljs-built_in">image</span> {
+        draw (images at (rnd(<span class="hljs-number">2</span>))) <span class="hljs-built_in">size</span>: boids_size rotate: heading color: <span class="hljs-meta">#black ;      </span>
+    }
+}
+
+
+experiment boids_3D <span class="hljs-built_in">type</span>: gui {
+    
+    
+    output {
+        
+        display Sky1 <span class="hljs-built_in">type</span>:opengl  z_fighting:<span class="hljs-literal">false</span>{
+            <span class="hljs-built_in">image</span> <span class="hljs-string">'background'</span> file:<span class="hljs-string">'../images/ocean.jpg'</span> ;
+            species boids aspect: <span class="hljs-built_in">image</span>;
+            species boids_goal; 
+        }
+        
+
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

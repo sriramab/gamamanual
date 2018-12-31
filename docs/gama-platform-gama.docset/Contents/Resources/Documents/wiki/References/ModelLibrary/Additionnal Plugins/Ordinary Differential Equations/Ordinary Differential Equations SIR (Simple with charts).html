@@ -1,0 +1,114 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts) --><head><meta charset="utf-8"><title>Ordinary Differential Equations SIR (Simple with charts)</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="ordinary-differential-equations-sir-simple-with-charts">Ordinary Differential Equations SIR (Simple with charts)</h1>
+<h1 id="sir-simple">SIR (Simple)</h1>
+<p><em>Author : hqnghi</em></p>
+<p>A simple example of ODE use into agents with the example of the SIR equation system.</p>
+<p><img src="../../../../../github.com/wiki/gama-platform/gama/References/ModelLibrary/Additionnal Plugins/Ordinary Differential Equations/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_charts-10.png" alt="Eclipse folder." title="" class="img-responsive"> == $0</p><p></p><p><img src="../../../../../github.com/wiki/gama-platform/gama/References/ModelLibrary/Additionnal Plugins/Ordinary Differential Equations/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_chartsH-10.png" alt="Eclipse folder." title="" class="img-responsive"> == $0</p><p><img src="../../../../../github.com/wiki/gama-platform/gama/References/ModelLibrary/Additionnal Plugins/Ordinary Differential Equations/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Ordinary Differential Equations/Ordinary Differential Equations SIR (Simple with charts)/display_charts_radar-10.png" alt="Eclipse folder." title="" class="img-responsive"> == $0</p>Code of the model : <p></p>
+<pre><code class="hljs processing">
+model simple_ODE_SIR
+
+global {
+    init{
+        create aSIR number:<span class="hljs-number">10</span>{
+            S&lt;-S-(<span class="hljs-built_in">int</span>(self)*<span class="hljs-number">10000</span>);
+        }
+    }
+    list S_3d-&gt;{aSIR collect each.S};
+    list I_3d-&gt;{aSIR collect each.I};
+    list R_3d-&gt;{aSIR collect each.R};
+    reflex ss when: cycle&gt;=<span class="hljs-number">40</span>{
+        do pause;
+        
+    }
+}
+
+
+species aSIR {
+    <span class="hljs-built_in">int</span> N &lt;- <span class="hljs-number">150000</span> ;
+    <span class="hljs-built_in">int</span> iInit &lt;- <span class="hljs-number">1000</span>;      
+
+    <span class="hljs-built_in">float</span> t;  
+    <span class="hljs-built_in">float</span> S &lt;- N - <span class="hljs-built_in">float</span>(iInit);          
+    <span class="hljs-built_in">float</span> I &lt;- <span class="hljs-built_in">float</span>(iInit); 
+    <span class="hljs-built_in">float</span> R &lt;- <span class="hljs-number">0.0</span>; 
+    
+    <span class="hljs-built_in">float</span> <span class="hljs-built_in">alpha</span> &lt;- <span class="hljs-number">0.2</span> <span class="hljs-built_in">min</span>: <span class="hljs-number">0.0</span> <span class="hljs-built_in">max</span>: <span class="hljs-number">1.0</span>;
+    <span class="hljs-built_in">float</span> beta &lt;- <span class="hljs-number">0.8</span>  <span class="hljs-built_in">min</span>: <span class="hljs-number">0.0</span> <span class="hljs-built_in">max</span>: <span class="hljs-number">1.0</span>;
+
+    <span class="hljs-built_in">float</span> h &lt;- <span class="hljs-number">0.1</span>;
+   
+    equation SIR{ 
+        diff(S,t) = (- beta * S * I / N);
+        diff(I,t) = (beta * S * I / N) - (<span class="hljs-built_in">alpha</span> * I);
+        diff(R,t) = (<span class="hljs-built_in">alpha</span> * I);
+    }
+                
+    reflex solving {
+        solve SIR method: <span class="hljs-string">"rk4"</span> step: h ;<span class="hljs-comment">//cycle_length: 1/h ;</span>
+    }    
+}
+
+
+experiment maths type: gui {
+        <span class="hljs-built_in">float</span> minimum_cycle_duration&lt;<span class="hljs-number">-0.2</span>;
+    
+    output { 
+        display display_charts {
+            chart <span class="hljs-string">"SIR_agent"</span> type: series <span class="hljs-built_in">background</span>: #white {
+                data <span class="hljs-string">'S0'</span> value: (aSIR[<span class="hljs-number">0</span>]).S <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">green</span> ;                
+                data <span class="hljs-string">'S1'</span> value: (aSIR[<span class="hljs-number">1</span>]).S <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">green</span> ;                
+                data <span class="hljs-string">'S2'</span> value: (aSIR[<span class="hljs-number">2</span>]).S <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">green</span> ;                
+                data <span class="hljs-string">'S3'</span> value: (aSIR[<span class="hljs-number">3</span>]).S <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">green</span> ;                
+                data <span class="hljs-string">'S4'</span> value: (aSIR[<span class="hljs-number">4</span>]).S <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">green</span> ;                
+                data <span class="hljs-string">'S5'</span> value: (aSIR[<span class="hljs-number">5</span>]).S <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">green</span> ;                
+                data <span class="hljs-string">'S6'</span> value: (aSIR[<span class="hljs-number">6</span>]).S <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">green</span> ;                
+                data <span class="hljs-string">'S7'</span> value: (aSIR[<span class="hljs-number">7</span>]).S <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">green</span> ;                
+                data <span class="hljs-string">'S8'</span> value: (aSIR[<span class="hljs-number">8</span>]).S <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">green</span> ;        
+                data <span class="hljs-string">'S9'</span> value: (aSIR[<span class="hljs-number">9</span>]).S <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">green</span> ;                
+                        
+                data <span class="hljs-string">'I0'</span> value: (aSIR[<span class="hljs-number">0</span>]).I <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">red</span> ;              
+                data <span class="hljs-string">'I1'</span> value: (aSIR[<span class="hljs-number">1</span>]).I <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">red</span> ;              
+                data <span class="hljs-string">'I2'</span> value: (aSIR[<span class="hljs-number">2</span>]).I <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">red</span> ;              
+                data <span class="hljs-string">'I3'</span> value: (aSIR[<span class="hljs-number">3</span>]).I <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">red</span> ;              
+                data <span class="hljs-string">'I4'</span> value: (aSIR[<span class="hljs-number">4</span>]).I <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">red</span> ;              
+                data <span class="hljs-string">'I5'</span> value: (aSIR[<span class="hljs-number">5</span>]).I <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">red</span> ;              
+                data <span class="hljs-string">'I6'</span> value: (aSIR[<span class="hljs-number">6</span>]).I <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">red</span> ;              
+                data <span class="hljs-string">'I7'</span> value: (aSIR[<span class="hljs-number">7</span>]).I <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">red</span> ;              
+                data <span class="hljs-string">'I8'</span> value: (aSIR[<span class="hljs-number">8</span>]).I <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">red</span> ;      
+                data <span class="hljs-string">'I9'</span> value: (aSIR[<span class="hljs-number">9</span>]).I <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">red</span> ;              
+                        
+                data <span class="hljs-string">'R0'</span> value: (aSIR[<span class="hljs-number">0</span>]).R <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">blue</span> ;             
+                data <span class="hljs-string">'R1'</span> value: (aSIR[<span class="hljs-number">1</span>]).R <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">blue</span> ;             
+                data <span class="hljs-string">'R2'</span> value: (aSIR[<span class="hljs-number">2</span>]).R <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">blue</span> ;             
+                data <span class="hljs-string">'R3'</span> value: (aSIR[<span class="hljs-number">3</span>]).R <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">blue</span> ;             
+                data <span class="hljs-string">'R4'</span> value: (aSIR[<span class="hljs-number">4</span>]).R <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">blue</span> ;             
+                data <span class="hljs-string">'R5'</span> value: (aSIR[<span class="hljs-number">5</span>]).R <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">blue</span> ;             
+                data <span class="hljs-string">'R6'</span> value: (aSIR[<span class="hljs-number">6</span>]).R <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">blue</span> ;             
+                data <span class="hljs-string">'R7'</span> value: (aSIR[<span class="hljs-number">7</span>]).R <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">blue</span> ;             
+                data <span class="hljs-string">'R8'</span> value: (aSIR[<span class="hljs-number">8</span>]).R <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">blue</span> ;     
+                data <span class="hljs-string">'R9'</span> value: (aSIR[<span class="hljs-number">9</span>]).R <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">blue</span> ;         
+            }
+        }
+        
+        display display_charts_radar {
+            chart <span class="hljs-string">"SIR_agent"</span> type: radar <span class="hljs-built_in">background</span>: #white axes:#white {
+                data <span class="hljs-string">'S0'</span> value: (aSIR[<span class="hljs-number">0</span>]).S[] <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">green</span> ;          
+                data <span class="hljs-string">'I0'</span> value: (aSIR[<span class="hljs-number">0</span>]).I[] <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">red</span> ;    
+                data <span class="hljs-string">'R0'</span> value: (aSIR[<span class="hljs-number">0</span>]).R[] <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">blue</span> ;       
+            }
+        }
+        
+        
+        
+        display display_chartsH {
+            chart <span class="hljs-string">"SIR_agent"</span> type: heatmap <span class="hljs-built_in">background</span>: #white
+            reverse_axes: <span class="hljs-keyword">true</span>
+             {
+                data <span class="hljs-string">'S0'</span> value: S_3d <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">green</span> ;   
+                data <span class="hljs-string">'I0'</span> value: I_3d <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">red</span> ; 
+                data <span class="hljs-string">'R0'</span> value: R_3d <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">blue</span> ;    
+            }
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,0 +1,42 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/GAMLReferences/Literals --><head><meta charset="utf-8"><title>Literals</title><script src="../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="literals">Literals</h1>
+<h1 dash_ignored="yes" id="literals-2">Literals</h1>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><p><em>(some literal expressions are also described in <a href="DataTypes.html">data types</a>)</em></p>
+<p>A literal is a way to specify an unnamed constant value corresponding to a given data type. GAML supports various types of literals for often — or less often — used data types.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Table%20of%20contents"></a><h2 id="table-of-contents">Table of contents</h2>
+<ul>
+<li><a href="#literals">Literals</a>
+<ul>
+<li><a href="#simple-types">Simple Types</a></li>
+<li><a href="#literal-constructors">Literal Constructors</a></li>
+<li><a href="#universal-literal">Universal Literal</a></li>
+</ul>
+</li>
+</ul>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Simple%20Types"></a><h2 id="simple-types">Simple Types</h2>
+<p>Values of simple (i.e. not composed) types can all be expressed using literal expressions. Namely:</p>
+<ul>
+<li><strong>bool</strong>: <code>true</code> and <code>false</code>.
+<ul>
+<li><strong>int</strong>: decimal value, such as <code>100</code>, or hexadecimal value if preceded by <code>'#'</code> (e.g. <code>#AAAAAA</code>, which returns the int <code>11184810</code>)</li>
+<li><strong>float</strong>: the value in plain digits, using <code>'.'</code> for the decimal point (e.g. <code>123.297</code>)</li>
+<li><strong>string</strong>: a sequence of characters enclosed between quotes (<code>'my string'</code>) or double quotes (<code>"my string"</code>)</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Literal%20Constructors"></a><h2 id="literal-constructors">Literal Constructors</h2>
+<p>Although they are not strictly literals in the sense given above, some special constructs (called <em>literal constructors</em>) allow the modeler to declare constants of other data types. They are actually <a href="Operators.html">operators</a> but can be thought of literals when used with constant operands.</p>
+<ul>
+<li><strong>pair</strong>: the key and the value separated by <code>::</code> (e.g. <code>12::'abc'</code>)
+<ul>
+<li><strong>list</strong>: the elements, separated by commas, enclosed inside square brackets (e.g. <code>[12,15,15]</code>)</li>
+<li><strong>map</strong>: a list of pairs (e.g. <code>[12::'abc', 13::'def']</code>)</li>
+<li><strong>point</strong>: 2 or 3 int or float ordinates enclosed inside curly brackets (e.g. <code>{10.0,10.0,10.0}</code>)</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Universal%20Literal"></a><h2 id="universal-literal">Universal Literal</h2>
+<p>Finally, a special literal, of type <code>unknown</code>, is shared between the data types and all the agent types (aka species). Only <code>bool</code>, <code>int</code> and <code>float</code>, which do not derive from <code>unknown</code>, do not accept this literal. All the others will accept it (e.g. <code>string s &lt;- nil;</code> is ok).</p>
+<ul>
+<li><strong>unknown</strong>: <code>nil</code>, which represents the non-initialized (or, literally, <em>unknown</em>) value.</li>
+</ul>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,0 +1,76 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Data Importation/Data Importation OSM Loading --><head><meta charset="utf-8"><title>Data Importation OSM Loading</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="data-importation-osm-loading">Data Importation OSM Loading</h1>
+<h1 id="osm-file-to-agents">OSM file to Agents</h1>
+<p><em>Author :  Patrick Taillandier</em></p>
+<p>Model which shows how to import a OSM File in GAMA and use it to create Agents. In this model, a filter is done to take only into account the roads and the buildings contained in the file. </p>
+<p>Code of the model : </p>
+<pre><code class="hljs processing">
+model simpleOSMLoading 
+ 
+global{
+    
+    <span class="hljs-comment">//map used to filter the object to build from the OSM file according to attributes. for an exhaustive list, see: http://wiki.openstreetmap.org/wiki/Map_Features</span>
+    <span class="hljs-built_in">map</span> filtering &lt;- <span class="hljs-built_in">map</span>([<span class="hljs-string">"highway"</span>::[<span class="hljs-string">"primary"</span>, <span class="hljs-string">"secondary"</span>, <span class="hljs-string">"tertiary"</span>, <span class="hljs-string">"motorway"</span>, <span class="hljs-string">"living_street"</span>,<span class="hljs-string">"residential"</span>, <span class="hljs-string">"unclassified"</span>], <span class="hljs-string">"building"</span>::[<span class="hljs-string">"yes"</span>]]);
+    <span class="hljs-comment">//OSM file to load</span>
+    file&lt;geometry&gt; osmfile &lt;-  file&lt;geometry&gt;(osm_file(<span class="hljs-string">"../includes/rouen.gz"</span>, filtering))  ;
+    
+    <span class="hljs-comment">//compute the size of the environment from the envelope of the OSM file</span>
+    geometry <span class="hljs-built_in">shape</span> &lt;- envelope(osmfile);
+    
+    init {
+        <span class="hljs-comment">//possibility to load all of the attibutes of the OSM data: for an exhaustive list, see: http://wiki.openstreetmap.org/wiki/Map_Features</span>
+        create osm_agent from:osmfile with: [highway_str::string(read(<span class="hljs-string">"highway"</span>)), building_str::string(read(<span class="hljs-string">"building"</span>))];
+        
+        <span class="hljs-comment">//from the created generic agents, creation of the selected agents</span>
+        ask osm_agent {
+            <span class="hljs-keyword">if</span> (length(<span class="hljs-built_in">shape</span>.points) = <span class="hljs-number">1</span> and highway_str != nil ) {
+                create node_agent with: [<span class="hljs-built_in">shape</span> ::<span class="hljs-built_in">shape</span>, type:: highway_str]; 
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">if</span> (highway_str != nil ) {
+                    create road with: [<span class="hljs-built_in">shape</span> ::<span class="hljs-built_in">shape</span>, type:: highway_str];
+                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (building_str != nil){
+                    create building with: [<span class="hljs-built_in">shape</span> ::<span class="hljs-built_in">shape</span>];
+                }  
+            }
+            <span class="hljs-comment">//do the generic agent die</span>
+            do die;
+        }
+    }   
+}
+
+species osm_agent {
+    string highway_str;
+    string building_str;
+} 
+    
+species road {
+    rgb <span class="hljs-built_in">color</span> &lt;- rnd_color(<span class="hljs-number">255</span>);
+    string type;
+    aspect <span class="hljs-keyword">default</span> {
+        <span class="hljs-title">draw</span> <span class="hljs-built_in">shape</span> <span class="hljs-built_in">color</span>: <span class="hljs-built_in">color</span>; 
+    }
+} 
+    
+species node_agent {
+    string type;
+    aspect <span class="hljs-keyword">default</span> { 
+        <span class="hljs-title">draw</span> square(<span class="hljs-number">3</span>) <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">red</span> ;
+    }
+} 
+    
+species building {
+    aspect <span class="hljs-keyword">default</span> { 
+        <span class="hljs-title">draw</span> <span class="hljs-built_in">shape</span> <span class="hljs-built_in">color</span>: rgb(<span class="hljs-number">200</span>,<span class="hljs-number">200</span>,<span class="hljs-number">200</span>);
+    }
+}  
+
+experiment load_OSM type: gui {
+    output {
+        display <span class="hljs-built_in">map</span> type: opengl {
+            species building refresh: <span class="hljs-keyword">false</span>;
+            species road refresh: <span class="hljs-keyword">false</span>  ;
+            species node_agent refresh: <span class="hljs-keyword">false</span> ;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

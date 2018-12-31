@@ -1,0 +1,162 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Tutorials/Tutorials/IncrementalModel/IncrementalModel_step3 --><head><meta charset="utf-8"><title>IncrementalModel_step3</title><script src="../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="incrementalmodel_step3">IncrementalModel_step3</h1>
+<a class="dashAnchor" name="//apple_ref/Section/3.%20Integration%20of%20GIS%20Data"></a><h1 id="3-integration-of-gis-data">3. Integration of GIS Data</h1>
+<p>This step Illustrates how load and agentry GIS data.</p>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Formulation"></a><h2 id="formulation">Formulation</h2>
+<ul>
+<li>Load, agentify and display two layers of GIS data (building and road)
+<ul>
+<li>Modify the initialization of the people agents to put them inside buildings</li>
+</ul>
+</li>
+</ul>
+<p><img src="../../../../github.com/wiki/gama-platform/gama/Tutorials/Tutorials/IncrementalModel/resources/images/tutorials/Incremental_model3.jpg" alt="resources/images/tutorials/Incremental_model3.jpg"></p>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Model%20Definition"></a><h2 id="model-definition">Model Definition</h2>
+<a class="dashAnchor" name="//apple_ref/Section/species"></a><h3 id="species">species</h3>
+<p>We have to define two species of agents: the <strong>building</strong> agents and the <strong>road</strong> ones. These agents will not have a particular behavior, they will just be displayed.
+We define an aspect for these species. In this model, we want to represent the geometry of the agent, we then use the keyword <strong>draw</strong> that allow to draw a given geometry. In order to draw the geometry of the agent we use the attribute <strong>shape</strong> (which is a built-in attribute of all agents).</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute"><span class="hljs-attribute">species</span></span> building {
+    <span class="hljs-attribute"><span class="hljs-attribute">aspect</span></span> geom {
+        <span class="hljs-attribute"><span class="hljs-attribute">draw</span></span> shape color: <span class="hljs-comment"><span class="hljs-comment">#gray;</span></span>
+    }
+}
+
+species road {
+    <span class="hljs-attribute"><span class="hljs-attribute">aspect</span></span> geom {
+        <span class="hljs-attribute"><span class="hljs-attribute">draw</span></span> shape color: <span class="hljs-comment"><span class="hljs-comment">#black;</span></span>
+    }
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/parameters"></a><h3 id="parameters">parameters</h3>
+<p>GAMA allows to automatically read GIS data that are formatted as shapefiles. In order to let the user chooses his/her shapefiles, we define two parameters. One allowing the user to choose the road shapefile, one allowing him/her to choose the building shapefile.</p>
+<p>Definition of the two global variables of type <em>file</em> concerning the GIS files:</p>
+<pre><code class="hljs stata"><span class="hljs-keyword"><span class="hljs-keyword">global</span></span> {
+   <span class="hljs-keyword"><span class="hljs-keyword">file</span></span> shape_file_buildings &lt;- <span class="hljs-keyword"><span class="hljs-keyword">file</span></span>(<span class="hljs-string"><span class="hljs-string">"../includes/building.shp"</span></span>);
+   <span class="hljs-keyword"><span class="hljs-keyword">file</span></span> shape_file_roads &lt;- <span class="hljs-keyword"><span class="hljs-keyword">file</span></span>(<span class="hljs-string"><span class="hljs-string">"../includes/road.shp"</span></span>);
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/agentification%20of%20GIS%20data"></a><h3 id="agentification-of-gis-data">agentification of GIS data</h3>
+<p>In GAMA, the agentification of GIS data is very straightforward: it only requires to use the <strong>create</strong> command with the <strong>from</strong> facet to pass the shapefile. Each object of the shapefile will be directly used to instantiate an agent of the specified species.</p>
+<p>We modify the init section of the global block in order to create road and building agents from the shape files. Then, we define the initial location of people as a point inside one of the building.</p>
+<pre><code class="hljs mipsasm">global {
+  ...
+       init {
+        create road from: roads_shapefile<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        create <span class="hljs-keyword"><span class="hljs-keyword">building </span></span>from: <span class="hljs-keyword"><span class="hljs-keyword">buildings_shapefile;
+</span></span>        create people number:nb_people {
+            speed &lt;- <span class="hljs-number"><span class="hljs-number">5</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-comment"><span class="hljs-comment">#km/#h;</span></span>
+            <span class="hljs-keyword"><span class="hljs-keyword">building </span></span><span class="hljs-keyword"><span class="hljs-keyword">bd </span></span>&lt;- one_of(<span class="hljs-keyword"><span class="hljs-keyword">building);
+</span></span>            location &lt;- any_location_in(<span class="hljs-keyword"><span class="hljs-keyword">bd);
+</span></span>        }
+        ask nb_infected_init among people {
+            is_infected &lt;- true<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        }
+        }
+} 
+</code></pre>
+<p>We defined here a local variable called <strong>bd</strong> of type building that is a one of the building (randomly chosen). Note that the name of a species can be used to obtain all the agents of this species (here <strong>building</strong> returns the list of all the buildings). The <strong>any_location_in</strong> returns a random point inside a geometry or an agent geometry.</p>
+<a class="dashAnchor" name="//apple_ref/Section/environment"></a><h3 id="environment">environment</h3>
+<p>Building a GIS environment in GAMA requires nothing special, just to define the bounds of the environment, i.e. the geometry of the world agent. It is possible to use a shapefile to automatically define it by computing its envelope. In this model, we use the road shapefile to define it.</p>
+<pre><code class="hljs lasso"><span class="hljs-built_in"><span class="hljs-built_in">global</span></span> {
+  <span class="hljs-attr"><span class="hljs-attr">...</span></span>
+  geometry shape &lt;- envelope(shape_file_roads); 
+  <span class="hljs-attr"><span class="hljs-attr">...</span></span>
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/display"></a><h3 id="display">display</h3>
+<p>We add to the <strong>map</strong> display the road and building agents.</p>
+<p>In the <strong>experiment</strong> block:</p>
+<pre><code class="hljs less"><span class="hljs-selector-tag"><span class="hljs-selector-tag">output</span></span> {
+   <span class="hljs-selector-tag"><span class="hljs-selector-tag">display</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">map</span></span> {
+    species road <span class="hljs-attribute"><span class="hljs-attribute">aspect</span></span>:geom;
+    species building <span class="hljs-attribute"><span class="hljs-attribute">aspect</span></span>:geom;
+    species people <span class="hljs-attribute"><span class="hljs-attribute">aspect</span></span>:circle;           
+    }
+    ...
+}
+</code></pre>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Complete%20Model"></a><h2 id="complete-model">Complete Model</h2>
+<pre><code class="hljs nginx"><span class="hljs-attribute"><span class="hljs-attribute">model</span></span> model3 
+ 
+global {
+    <span class="hljs-attribute"><span class="hljs-attribute">int</span></span> nb_people &lt;- <span class="hljs-number"><span class="hljs-number">500</span></span>;
+    <span class="hljs-attribute"><span class="hljs-attribute">float</span></span> step &lt;- <span class="hljs-number"><span class="hljs-number">1</span></span> <span class="hljs-comment"><span class="hljs-comment">#minutes;</span></span>
+    float infection_distance &lt;- <span class="hljs-number"><span class="hljs-number">2</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-comment"><span class="hljs-comment">#m;</span></span>
+    float proba_infection &lt;- <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">05</span></span>;
+    <span class="hljs-attribute"><span class="hljs-attribute">int</span></span> nb_infected_init &lt;- <span class="hljs-number"><span class="hljs-number">5</span></span>;
+    <span class="hljs-attribute"><span class="hljs-attribute">file</span></span> roads_shapefile &lt;- file(<span class="hljs-string"><span class="hljs-string">"../includes/road.shp"</span></span>);
+    <span class="hljs-attribute"><span class="hljs-attribute">file</span></span> buildings_shapefile &lt;- file(<span class="hljs-string"><span class="hljs-string">"../includes/building.shp"</span></span>);
+    <span class="hljs-attribute"><span class="hljs-attribute">geometry</span></span> shape &lt;- envelope(roads_shapefile);
+    <span class="hljs-attribute"><span class="hljs-attribute">int</span></span> current_hour update: (cycle / <span class="hljs-number"><span class="hljs-number">60</span></span>) mod <span class="hljs-number"><span class="hljs-number">24</span></span>;
+    <span class="hljs-attribute"><span class="hljs-attribute">int</span></span> nb_people_infected &lt;- nb_infected_init update: people count (each.is_infected);
+    <span class="hljs-attribute"><span class="hljs-attribute">int</span></span> nb_people_not_infected &lt;- nb_people - nb_infected_init update: nb_people - nb_people_infected;
+    
+    <span class="hljs-attribute"><span class="hljs-attribute">float</span></span> infected_rate update: nb_people_infected/length(people);
+    <span class="hljs-section"><span class="hljs-section">init</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">create</span></span> road from: roads_shapefile;
+        <span class="hljs-attribute"><span class="hljs-attribute">create</span></span> building from: buildings_shapefile;
+        <span class="hljs-attribute"><span class="hljs-attribute">create</span></span> people number:nb_people {
+            <span class="hljs-attribute"><span class="hljs-attribute">speed</span></span> &lt;- <span class="hljs-number"><span class="hljs-number">5</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-comment"><span class="hljs-comment">#km/#h;</span></span>
+            building bd &lt;- one_of(building);
+            <span class="hljs-attribute"><span class="hljs-attribute">location</span></span> &lt;- any_location_in(bd);
+        }
+        <span class="hljs-attribute"><span class="hljs-attribute">ask</span></span> nb_infected_init among people {
+            <span class="hljs-attribute"><span class="hljs-attribute">is_infected</span></span> &lt;- <span class="hljs-literal"><span class="hljs-literal">true</span></span>;
+        }
+    }
+    <span class="hljs-attribute"><span class="hljs-attribute">reflex</span></span> end_simulation when: infected_rate = <span class="hljs-number"><span class="hljs-number">1</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">do</span></span> halt;
+    }
+}
+
+<span class="hljs-attribute"><span class="hljs-attribute">species</span></span> people skills:[moving]{     
+    <span class="hljs-attribute"><span class="hljs-attribute">bool</span></span> is_infected &lt;- <span class="hljs-literal"><span class="hljs-literal">false</span></span>;
+        
+    <span class="hljs-attribute"><span class="hljs-attribute">reflex</span></span> move{
+        <span class="hljs-attribute"><span class="hljs-attribute">do</span></span> wander;
+    }
+    <span class="hljs-attribute"><span class="hljs-attribute">reflex</span></span> infect when: is_infected{
+        <span class="hljs-attribute"><span class="hljs-attribute">ask</span></span> people at_distance infection_distance {
+            <span class="hljs-attribute"><span class="hljs-attribute">if</span></span> flip(proba_infection) {
+                <span class="hljs-attribute"><span class="hljs-attribute">is_infected</span></span> &lt;- <span class="hljs-literal"><span class="hljs-literal">true</span></span>;
+            }
+        }
+    }
+    <span class="hljs-attribute"><span class="hljs-attribute">aspect</span></span> circle{
+        <span class="hljs-attribute"><span class="hljs-attribute">draw</span></span> circle(<span class="hljs-number"><span class="hljs-number">5</span></span>) color:is_infected ? <span class="hljs-comment"><span class="hljs-comment">#red : #green;</span></span>
+    }
+}
+
+species road {
+    <span class="hljs-attribute"><span class="hljs-attribute">aspect</span></span> geom {
+        <span class="hljs-attribute"><span class="hljs-attribute">draw</span></span> shape color: <span class="hljs-comment"><span class="hljs-comment">#black;</span></span>
+    }
+}
+
+species building {
+    <span class="hljs-attribute"><span class="hljs-attribute">aspect</span></span> geom {
+        <span class="hljs-attribute"><span class="hljs-attribute">draw</span></span> shape color: <span class="hljs-comment"><span class="hljs-comment">#gray;</span></span>
+    }
+}
+
+experiment main_experiment type:gui{
+    <span class="hljs-attribute"><span class="hljs-attribute">parameter</span></span> <span class="hljs-string"><span class="hljs-string">"Infection distance"</span></span> var: infection_distance;
+    <span class="hljs-attribute"><span class="hljs-attribute">parameter</span></span> <span class="hljs-string"><span class="hljs-string">"Proba infection"</span></span> var: proba_infection min: <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> max: <span class="hljs-number"><span class="hljs-number">1</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>;
+    <span class="hljs-attribute"><span class="hljs-attribute">parameter</span></span> <span class="hljs-string"><span class="hljs-string">"Nb people infected at init"</span></span> var: nb_infected_init ;
+    <span class="hljs-section"><span class="hljs-section">output</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">monitor</span></span> <span class="hljs-string"><span class="hljs-string">"Current hour"</span></span> value: current_hour;
+        <span class="hljs-attribute"><span class="hljs-attribute">monitor</span></span> <span class="hljs-string"><span class="hljs-string">"Infected people rate"</span></span> value: infected_rate;
+        <span class="hljs-attribute"><span class="hljs-attribute">display</span></span> map {
+            <span class="hljs-attribute"><span class="hljs-attribute">species</span></span> road aspect:geom;
+            <span class="hljs-attribute"><span class="hljs-attribute">species</span></span> building aspect:geom;
+            <span class="hljs-attribute"><span class="hljs-attribute">species</span></span> people aspect:circle;           
+        }
+        <span class="hljs-attribute"><span class="hljs-attribute">display</span></span> chart refresh:every(<span class="hljs-number"><span class="hljs-number">10</span></span>) {
+            <span class="hljs-attribute"><span class="hljs-attribute">chart</span></span> <span class="hljs-string"><span class="hljs-string">"Disease spreading"</span></span> type: series {
+                <span class="hljs-attribute"><span class="hljs-attribute">data</span></span> <span class="hljs-string"><span class="hljs-string">"susceptible"</span></span> value: nb_people_not_infected color: <span class="hljs-comment"><span class="hljs-comment">#green;</span></span>
+                data <span class="hljs-string"><span class="hljs-string">"infected"</span></span> value: nb_people_infected color: <span class="hljs-comment"><span class="hljs-comment">#red;</span></span>
+            }
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

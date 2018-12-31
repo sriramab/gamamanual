@@ -1,0 +1,208 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Tutorials/LearnGAMLStepByStep/DefiningAdvancedSpecies/MultiLevelArchitecture --><head><meta charset="utf-8"><title>MultiLevelArchitecture</title><script src="../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="multilevelarchitecture">MultiLevelArchitecture</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Multi-level%20architecture"></a><h1 id="multi-level-architecture">Multi-level architecture</h1>
+<p>The multi-level architecture offers the modeler the following possibilities: the declaration of a species as a micro-species of another species, the representation of an entity as different types of agent (i.e., GAML species), the dynamic migration of agents between populations.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Index"></a><h2 id="index">Index</h2>
+<ul>
+<li><a href="#declaration-of-micro-species">Declaration of micro-species</a></li>
+<li><a href="#access-to-micro-agents-host-agent">Access to micro-agents / host agent</a></li>
+<li><a href="#representation-of-an-entity-as-different-types-of-agent">Representation of an entity as different types of agent</a></li>
+<li><a href="#dynamic-migration-of-agents">Dynamic migration of agents</a></li>
+<li><a href="#example">Example</a></li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Declaration%20of%20micro-species"></a><h2 id="declaration-of-micro-species">Declaration of micro-species</h2>
+<p>A species can have other species as micro-species. The micro-species of a species is declared inside the species' declaration.</p>
+<pre><code class="hljs dts">species <span class="hljs-class"><span class="hljs-class">macro_species </span></span>{
+      species <span class="hljs-class"><span class="hljs-class">micro_species_in_group </span></span>{
+      }
+}
+</code></pre>
+<p>In the above example, "micro_species_in_group" is a micro-species of "macro_species". An agent of "macro_species" can have agents "micro_species_in_group" as micro-agents. Agents of "micro_species_in_group" have an agent of "macro_species" as "host" agent.</p>
+<p>As the species "micro_species_in_group" is declared inside the species "macro_species", "micro_species_in_group" will return a list of "micro_species_in_group" agent inside the given "macro_species" agent.</p>
+<pre><code class="hljs nginx"><span class="hljs-section"><span class="hljs-section">global</span></span>
+{
+    <span class="hljs-section"><span class="hljs-section">init</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">create</span></span> macro_species number:<span class="hljs-number"><span class="hljs-number">5</span></span>;
+    }
+}
+
+<span class="hljs-attribute"><span class="hljs-attribute">species</span></span> macro_species 
+{   
+    <span class="hljs-section"><span class="hljs-section">init</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">create</span></span> micro_species_in_group number:rnd(<span class="hljs-number"><span class="hljs-number">10</span></span>);
+        <span class="hljs-attribute"><span class="hljs-attribute">write</span></span> <span class="hljs-string"><span class="hljs-string">"the macro species named "</span></span>+name+<span class="hljs-string"><span class="hljs-string">" contains "</span></span>+length(micro_species_in_group)+<span class="hljs-string"><span class="hljs-string">" micro-species."</span></span>;
+    }
+    
+    <span class="hljs-attribute"><span class="hljs-attribute">species</span></span> micro_species_in_group {
+    }
+}
+
+<span class="hljs-attribute"><span class="hljs-attribute">experiment</span></span> my_experiment type: gui {
+}
+</code></pre>
+<p>In this above example, we create 5 macro-species, and each one of these macro-species create a random number of inner micro-species. We can see that "micro_species_in_group" refers to the list of micro-species inside the given macro-species.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Access%20to%20micro-agents,%20host%20agent"></a><h2 id="access-to-micro-agents-host-agent">Access to micro-agents, host agent</h2>
+<p>To access to micro-agents (from a macro-agent), and to host agent (from a micro-agents), you have to use two built-in attributes.</p>
+<p>The <code>members</code> built-in attribute is used inside the macro-agent, to get the list of all its micro-agents.</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute"><span class="hljs-attribute">species</span></span> macro_species 
+{
+    <span class="hljs-section"><span class="hljs-section">init</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">create</span></span> first_micro_species number:<span class="hljs-number"><span class="hljs-number">3</span></span>;
+        <span class="hljs-attribute"><span class="hljs-attribute">create</span></span> second_micro_species number:<span class="hljs-number"><span class="hljs-number">6</span></span>;
+        <span class="hljs-attribute"><span class="hljs-attribute">write</span></span> <span class="hljs-string"><span class="hljs-string">"the macro species named "</span></span>+name+<span class="hljs-string"><span class="hljs-string">" contains "</span></span>+length(members)+<span class="hljs-string"><span class="hljs-string">" micro-species."</span></span>;
+    }
+    
+    <span class="hljs-attribute"><span class="hljs-attribute">species</span></span> first_micro_species {
+    }
+    
+    <span class="hljs-attribute"><span class="hljs-attribute">species</span></span> second_micro_species {
+    }
+}
+</code></pre>
+<p>The <code>host</code> built-in attribute is used inside the micro-agent to get the host macro-agent.</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute"><span class="hljs-attribute">species</span></span> macro_species {
+    
+    <span class="hljs-attribute"><span class="hljs-attribute">micro_species_in_group</span></span> micro_agent;
+    
+    <span class="hljs-section"><span class="hljs-section">init</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">create</span></span> micro_species_in_group number:rnd(<span class="hljs-number"><span class="hljs-number">10</span></span>);
+        <span class="hljs-attribute"><span class="hljs-attribute">write</span></span> <span class="hljs-string"><span class="hljs-string">"the macro species named "</span></span>+name+<span class="hljs-string"><span class="hljs-string">" contains "</span></span>+length(members)+<span class="hljs-string"><span class="hljs-string">" micro-species."</span></span>;
+    }
+    
+    <span class="hljs-attribute"><span class="hljs-attribute">species</span></span> micro_species_in_group {
+        <span class="hljs-section"><span class="hljs-section">init</span></span> {
+            <span class="hljs-attribute"><span class="hljs-attribute">write</span></span> <span class="hljs-string"><span class="hljs-string">"the micro species named "</span></span>+name+<span class="hljs-string"><span class="hljs-string">" is hosted by "</span></span>+host;
+        }
+    }
+}
+</code></pre>
+<p>NB: We already said that the world agent is a particular agent, instantiated just once. In fact, the world agent is the host of all the agents. You can try to get the host for a regular species, you will get the world agent itself (named as you named your model). You can also try to get the members of your world (from the global scope for example), and you will get the list of the agents presents in the world.</p>
+<pre><code class="hljs nginx"><span class="hljs-section"><span class="hljs-section">global</span></span>
+{
+    <span class="hljs-section"><span class="hljs-section">init</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">create</span></span> macro_species number:<span class="hljs-number"><span class="hljs-number">5</span></span>;
+        <span class="hljs-attribute"><span class="hljs-attribute">write</span></span> <span class="hljs-string"><span class="hljs-string">"the world has "</span></span>+length(members)+<span class="hljs-string"><span class="hljs-string">" members."</span></span>;
+    }
+}
+
+<span class="hljs-attribute"><span class="hljs-attribute">species</span></span> macro_species 
+{   
+    <span class="hljs-section"><span class="hljs-section">init</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">write</span></span> <span class="hljs-string"><span class="hljs-string">"the macro species named "</span></span>+name+<span class="hljs-string"><span class="hljs-string">" is hosted by "</span></span>+host;
+    }
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Representation%20of%20an%20entity%20as%20different%20types%20of%20agent"></a><h2 id="representation-of-an-entity-as-different-types-of-agent">Representation of an entity as different types of agent</h2>
+<p>The multi-level architecture is often used in order to represent an entity through different types of agent. For example, an agent "bee" can have a behavior when it is alone, but when the agent is near from a lot of agents, he can changes his type to "bee_in_swarm", defined as a micro-species of a macro-species "swarm". Other example: an agent "pedestrian" can have a certain behavior when walking on the street, and then change his type to "pedestrian_in_building" when he is in a macro-species "building".
+You have then to distinguish two different species to define your micro-species:</p>
+<ul>
+<li>The first can be seen as a regular species (it is the "bee" or the "pedestrian" for instance). We will name this species as "micro_species".</li>
+<li>The second is the real micro-species, defined inside the macro-species (it is the "bee_in_swarm" or the "pedestrian_in_building" for instance). We will name this species as "micro_species_in_group". This species has to inherit from the "micro_species".</li>
+</ul>
+<pre><code class="hljs nginx"><span class="hljs-attribute"><span class="hljs-attribute">species</span></span> micro_species {
+}
+
+<span class="hljs-attribute"><span class="hljs-attribute">species</span></span> macro_species 
+{   
+    <span class="hljs-attribute"><span class="hljs-attribute">species</span></span> micro_species_in_group parent: micro_species {
+    }
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Dynamic%20migration%20of%20agents"></a><h2 id="dynamic-migration-of-agents">Dynamic migration of agents</h2>
+<p>In our example about bees, a "swarm" entity is composed of nearby flying "bee" entities. When a "bee" entity approaches a "swarm" entity, this "bee" entity will become a member of the group. To represent this, the modeler lets the "bee" agent change its species to "bee_in_swarm" species. The "bee" agent hence becomes a "bee_in_swarm" agent. To change species of agent, we can use one of the following statements: <code>capture</code>, <code>release</code>, <code>migrate</code>.</p>
+<p>The statement <code>capture</code> is used by the "macro_species" to capture one (or several) "micro_species" agent(s), and turn it (them) to a "micro_species_in_group". You can specify which agent (or list of agents) you want to capture by using the facet <code>target</code>. The facet <code>as</code> is used to cast the agent from "micro_species" to "micro_species_in_group". You can use the facet <code>return</code> to get the newly captured agent(s).</p>
+<pre><code class="hljs stata"><span class="hljs-keyword"><span class="hljs-keyword">capture</span></span> target:micro_species <span class="hljs-keyword"><span class="hljs-keyword">as</span></span>:micro_species_in_group;
+</code></pre>
+<p>The statement <code>release</code> is used by the "macro_species" to release one (or several) "micro_species_in_group" agent(s), and turn it (them) to a "micro_species". You can specify which agent (or list of agents) you want to release by using the facet <code>target</code>. The facet <code>as</code> is used to cast the agent from "micro_species_in_group" to "micro_species". The facet <code>in</code> is used to specify the new host (by default, it is the host of the "macro_species"). You can use the facet <code>return</code> to get the newly released agent(s).</p>
+<pre><code class="hljs sql"><span class="hljs-keyword"><span class="hljs-keyword">release</span></span> target:<span class="hljs-keyword"><span class="hljs-keyword">list</span></span>(micro_species_in_group) <span class="hljs-keyword"><span class="hljs-keyword">as</span></span>:micro_species <span class="hljs-keyword"><span class="hljs-keyword">in</span></span>:world;
+</code></pre>
+<p>The statement <code>migrate</code>, less used, permits agents to migrate from one population/species to another population/species and stay in the same host after the migration. Read the GAML Reference to learn more about this statement.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Example:"></a><h2 id="example">Example:</h2>
+<p>Here is an example of micro_species that gather together in macro_species when they are close enough.</p>
+<p><img src="../../../../github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/DefiningAdvancedSpecies/resources/images/definingAdvancedSpecies/multilevel_model.png" alt="images/multilevel_model.png"></p>
+<pre><code class="hljs mipsasm">model <span class="hljs-keyword"><span class="hljs-keyword">multilevel
+</span></span>
+global {
+    int release_time &lt;- <span class="hljs-number"><span class="hljs-number">20</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    int capture_time &lt;- <span class="hljs-number"><span class="hljs-number">100</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    int remaining_release_time &lt;- <span class="hljs-number"><span class="hljs-number">0</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    int remaining_capture_time &lt;- capture_time<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    init {
+        create micro_species number:<span class="hljs-number"><span class="hljs-number">200</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    }
+    reflex reflex_timer {
+        if (remaining_release_time=<span class="hljs-number"><span class="hljs-number">1</span></span>)
+        {
+            remaining_release_time &lt;- <span class="hljs-number"><span class="hljs-number">0</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+            remaining_capture_time &lt;- capture_time<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        }
+        else if (remaining_capture_time=<span class="hljs-number"><span class="hljs-number">1</span></span>)
+        {
+            remaining_capture_time &lt;- <span class="hljs-number"><span class="hljs-number">0</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+            remaining_release_time &lt;- release_time<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        }
+        remaining_release_time &lt;- remaining_release_time - <span class="hljs-number"><span class="hljs-number">1</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        remaining_capture_time &lt;- remaining_capture_time - <span class="hljs-number"><span class="hljs-number">1</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    }
+    reflex capture_micro_species when:(remaining_capture_time&gt;<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">and </span></span>flip(<span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">1</span></span>)) {
+        ask macro_species {
+            list&lt;micro_species&gt; micro_species_in_range &lt;- micro_species at_distance <span class="hljs-number"><span class="hljs-number">1</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+            if (micro_species_in_range != []) {
+                do capture_micro_species(micro_species_in_range)<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+            }
+        }
+        ask micro_species {
+            list&lt;micro_species&gt; micro_species_list_to_be_captured &lt;- micro_species at_distance <span class="hljs-number"><span class="hljs-number">1</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+            if(micro_species_list_to_be_captured != []) {
+                create macro_species {
+                    location &lt;- myself.location<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+                    <span class="hljs-keyword"><span class="hljs-keyword">add </span></span>item:myself to:micro_species_list_to_be_captured<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+                    do capture_micro_species(micro_species_list_to_be_captured)<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+                }
+            }
+        }
+    }
+}
+
+species micro_species skills:[moving] {
+    geometry <span class="hljs-keyword"><span class="hljs-keyword">shape </span></span>&lt;- circle(<span class="hljs-number"><span class="hljs-number">1</span></span>)<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    aspect <span class="hljs-keyword"><span class="hljs-keyword">base </span></span>{
+        draw <span class="hljs-keyword"><span class="hljs-keyword">shape;
+</span></span>    }
+    reflex <span class="hljs-keyword"><span class="hljs-keyword">move{
+</span></span>        do wander<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    }
+}
+
+species macro_species {
+    geometry <span class="hljs-keyword"><span class="hljs-keyword">shape </span></span>&lt;- circle(<span class="hljs-number"><span class="hljs-number">1</span></span>) update:circle(length(members))<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    
+    species micro_species_in_group parent:micro_species {
+    }
+    
+    action capture_micro_species(list&lt;micro_species&gt; micro_list) {
+        loop mic_sp over:micro_list {
+            capture mic_sp as:micro_species_in_group<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        }
+    }
+    
+    reflex release_reflex when:(remaining_release_time&gt;<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">and </span></span>flip(<span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">1</span></span>)) {
+        release members as:micro_species <span class="hljs-comment"><span class="hljs-comment">/*in:world*/</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        do <span class="hljs-keyword"><span class="hljs-keyword">die;
+</span></span>    }
+    
+    aspect <span class="hljs-keyword"><span class="hljs-keyword">base </span></span>{
+        draw <span class="hljs-keyword"><span class="hljs-keyword">shape;
+</span></span>        draw text:string(length(members)) color:<span class="hljs-comment"><span class="hljs-comment">#black size:4;</span></span>
+    }
+}
+
+experiment MyExperiment type: gui {
+    output {
+        <span class="hljs-keyword"><span class="hljs-keyword">display </span></span>MyDisplay type: <span class="hljs-keyword"><span class="hljs-keyword">java2D </span></span>{
+            species macro_species aspect: <span class="hljs-keyword"><span class="hljs-keyword">base;
+</span></span>            species micro_species aspect: <span class="hljs-keyword"><span class="hljs-keyword">base;
+</span></span>        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

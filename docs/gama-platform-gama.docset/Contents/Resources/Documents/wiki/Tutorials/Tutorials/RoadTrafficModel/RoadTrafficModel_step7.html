@@ -1,0 +1,180 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Tutorials/Tutorials/RoadTrafficModel/RoadTrafficModel_step7 --><head><meta charset="utf-8"><title>RoadTrafficModel_step7</title><script src="../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="roadtrafficmodel_step7">RoadTrafficModel_step7</h1>
+<a class="dashAnchor" name="//apple_ref/Section/7.%20Automatic%20Road%20Repair"></a><h1 id="7-automatic-road-repair">7. Automatic Road Repair</h1>
+<p>This 7th step illustrates how how to select in a list an element that optimize a given function.</p>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Formulation"></a><h2 id="formulation">Formulation</h2>
+<ul>
+<li>Add a new parameter, <strong>repair_time</strong>, that is equal to 2.
+<ul>
+<li>Every <strong>repair_time</strong>, the <strong>road</strong> with the highest <strong>destruction_coeff</strong> value is repaired (set its <strong>destruction_coeff</strong> to 1).</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Model%20Definition"></a><h2 id="model-definition">Model Definition</h2>
+<a class="dashAnchor" name="//apple_ref/Section/parameters"></a><h3 id="parameters">parameters</h3>
+<p>We add a new parameter: the <strong>repair_time</strong>.</p>
+<p>In the global section, definition of the <strong>repair_time</strong> variable:</p>
+<pre><code class="hljs axapta">   <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> repair_time &lt;- <span class="hljs-number"><span class="hljs-number">2</span></span> ;
+</code></pre>
+<p>In the experiment section, definition of the parameter:</p>
+<pre><code class="hljs gams">   <span class="hljs-keyword"><span class="hljs-keyword">parameter</span></span> <span class="hljs-string"><span class="hljs-string">"Number of steps between two road repairs"</span></span> var: repair_time <span class="hljs-comment"><span class="hljs-comment">category:</span></span> <span class="hljs-comment"><span class="hljs-comment">"Road"</span></span> ;
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/road%20repairing"></a><h3 id="road-repairing">road repairing</h3>
+<p>We have to add a reflex method in the global section that is triggered every <strong>repair_time</strong> hours / step. This method selects, thanks to the <strong>with_max_of</strong> operation the <strong>road</strong> agent with the highest <strong>destruction_coeff</strong> value, then sets this value at 1.</p>
+<pre><code class="hljs mipsasm">global {
+   ...
+   reflex repair_road when: every(repair_time <span class="hljs-comment"><span class="hljs-comment">#hour / step) {</span></span>
+    road the_road_to_repair &lt;- road with_max_of (each.destruction_coeff) <span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    ask the_road_to_repair {
+        destruction_coeff &lt;- <span class="hljs-number"><span class="hljs-number">1</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    }
+   }
+}
+</code></pre>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Complete%20Model"></a><h2 id="complete-model">Complete Model</h2>
+<pre><code class="hljs q">model tutorial_gis_city_traffic
+
+global {
+    file shape_file_buildings &lt;- file(<span class="hljs-string"><span class="hljs-string">"../includes/building.shp"</span></span>);
+    file shape_file_roads &lt;- file(<span class="hljs-string"><span class="hljs-string">"../includes/road.shp"</span></span>);
+    file shape_file_bounds &lt;- file(<span class="hljs-string"><span class="hljs-string">"../includes/bounds.shp"</span></span>);
+    geometry shape &lt;- envelope(shape_file_bounds);
+    float step &lt;- <span class="hljs-number"><span class="hljs-number">10</span></span> #mn;
+    <span class="hljs-type"><span class="hljs-type">int</span></span> nb_people &lt;- <span class="hljs-number"><span class="hljs-number">100</span></span>;
+    <span class="hljs-type"><span class="hljs-type">int</span></span> current_hour <span class="hljs-keyword"><span class="hljs-keyword">update</span></span>: (time / #hour) <span class="hljs-built_in"><span class="hljs-built_in">mod</span></span> <span class="hljs-number"><span class="hljs-number">24</span></span>;
+    <span class="hljs-type"><span class="hljs-type">int</span></span> min_work_start &lt;- <span class="hljs-number"><span class="hljs-number">6</span></span>;
+    <span class="hljs-type"><span class="hljs-type">int</span></span> max_work_start &lt;- <span class="hljs-number"><span class="hljs-number">8</span></span>;
+    <span class="hljs-type"><span class="hljs-type">int</span></span> min_work_end &lt;- <span class="hljs-number"><span class="hljs-number">16</span></span>; 
+    <span class="hljs-type"><span class="hljs-type">int</span></span> max_work_end &lt;- <span class="hljs-number"><span class="hljs-number">20</span></span>; 
+    float min_speed &lt;- <span class="hljs-number"><span class="hljs-number">1.0</span></span> #km / #h;
+    float max_speed &lt;- <span class="hljs-number"><span class="hljs-number">5.0</span></span> #km / #h; 
+    float destroy &lt;- <span class="hljs-number"><span class="hljs-number">0.02</span></span>;
+    <span class="hljs-type"><span class="hljs-type">int</span></span> repair_time &lt;- <span class="hljs-number"><span class="hljs-number">2</span></span> ;
+    graph the_graph;
+    
+    init {
+        create building <span class="hljs-keyword"><span class="hljs-keyword">from</span></span>: shape_file_buildings with: [<span class="hljs-built_in"><span class="hljs-built_in">type</span></span>::<span class="hljs-built_in"><span class="hljs-built_in">string</span></span>(read (<span class="hljs-string"><span class="hljs-string">"NATURE"</span></span>))] {
+            if <span class="hljs-built_in"><span class="hljs-built_in">type</span></span>=<span class="hljs-string"><span class="hljs-string">"Industrial"</span></span> {
+                color &lt;- #blue ;
+            }
+        }
+        create road <span class="hljs-keyword"><span class="hljs-keyword">from</span></span>: shape_file_roads ;
+        map&lt;road,float&gt; weights_map &lt;- road as_map (<span class="hljs-built_in"><span class="hljs-built_in">each</span></span>:: (<span class="hljs-built_in"><span class="hljs-built_in">each</span></span>.destruction_coeff * <span class="hljs-built_in"><span class="hljs-built_in">each</span></span>.shape.perimeter));
+        the_graph &lt;- as_edge_graph(road) with_weights weights_map;
+        
+        
+        list&lt;building&gt; residential_buildings &lt;- building <span class="hljs-built_in"><span class="hljs-built_in">where</span></span> (<span class="hljs-built_in"><span class="hljs-built_in">each</span></span>.<span class="hljs-built_in"><span class="hljs-built_in">type</span></span>=<span class="hljs-string"><span class="hljs-string">"Residential"</span></span>);
+        list&lt;building&gt;  industrial_buildings &lt;- building  <span class="hljs-built_in"><span class="hljs-built_in">where</span></span> (<span class="hljs-built_in"><span class="hljs-built_in">each</span></span>.<span class="hljs-built_in"><span class="hljs-built_in">type</span></span>=<span class="hljs-string"><span class="hljs-string">"Industrial"</span></span>) ;
+        create people number: nb_people {
+            speed &lt;- min_speed + rnd (max_speed - min_speed) ;
+            start_work &lt;- min_work_start + rnd (max_work_start - min_work_start) ;
+            end_work &lt;- min_work_end + rnd (max_work_end - min_work_end) ;
+            living_place &lt;- one_of(residential_buildings) ;
+            working_place &lt;- one_of(industrial_buildings) ;
+            objective &lt;- <span class="hljs-string"><span class="hljs-string">"resting"</span></span>;
+            location &lt;- any_location_in (living_place); 
+        }
+    }
+    
+    reflex update_graph{
+        map&lt;road,float&gt; weights_map &lt;- road as_map (<span class="hljs-built_in"><span class="hljs-built_in">each</span></span>:: (<span class="hljs-built_in"><span class="hljs-built_in">each</span></span>.destruction_coeff * <span class="hljs-built_in"><span class="hljs-built_in">each</span></span>.shape.perimeter));
+        the_graph &lt;- the_graph with_weights weights_map;
+    }
+    reflex repair_road when: every(repair_time #hour / step) {
+        road the_road_to_repair &lt;- road with_max_of (<span class="hljs-built_in"><span class="hljs-built_in">each</span></span>.destruction_coeff) ;
+        ask the_road_to_repair {
+            destruction_coeff &lt;- <span class="hljs-number"><span class="hljs-number">1.0</span></span> ;
+        }
+    }
+}
+
+species building {
+    <span class="hljs-built_in"><span class="hljs-built_in">string</span></span> <span class="hljs-built_in"><span class="hljs-built_in">type</span></span>; 
+    rgb color &lt;- #gray  ;
+    
+    aspect base {
+        draw shape color: color ;
+    }
+}
+
+species road  {
+    float destruction_coeff &lt;- <span class="hljs-number"><span class="hljs-number">1</span></span> + ((rnd(<span class="hljs-number"><span class="hljs-number">100</span></span>))/ <span class="hljs-number"><span class="hljs-number">100.0</span></span>) <span class="hljs-built_in"><span class="hljs-built_in">max</span></span>: <span class="hljs-number"><span class="hljs-number">2.0</span></span>;
+    <span class="hljs-type"><span class="hljs-type">int</span></span> colorValue &lt;- <span class="hljs-type"><span class="hljs-type">int</span></span>(<span class="hljs-number"><span class="hljs-number">255</span></span>*(destruction_coeff - <span class="hljs-number"><span class="hljs-number">1</span></span>)) <span class="hljs-keyword"><span class="hljs-keyword">update</span></span>: <span class="hljs-type"><span class="hljs-type">int</span></span>(<span class="hljs-number"><span class="hljs-number">255</span></span>*(destruction_coeff - <span class="hljs-number"><span class="hljs-number">1</span></span>));
+    rgb color &lt;- rgb(<span class="hljs-built_in"><span class="hljs-built_in">min</span></span>([<span class="hljs-number"><span class="hljs-number">255</span></span>, colorValue]),<span class="hljs-built_in"><span class="hljs-built_in">max</span></span> ([<span class="hljs-number"><span class="hljs-number">0</span></span>, <span class="hljs-number"><span class="hljs-number">255</span></span> - colorValue]),<span class="hljs-number"><span class="hljs-number">0</span></span>)  <span class="hljs-keyword"><span class="hljs-keyword">update</span></span>: rgb(<span class="hljs-built_in"><span class="hljs-built_in">min</span></span>([<span class="hljs-number"><span class="hljs-number">255</span></span>, colorValue]),<span class="hljs-built_in"><span class="hljs-built_in">max</span></span> ([<span class="hljs-number"><span class="hljs-number">0</span></span>, <span class="hljs-number"><span class="hljs-number">255</span></span> - colorValue]),<span class="hljs-number"><span class="hljs-number">0</span></span>) ;
+    
+    aspect base {
+        draw shape color: color ;
+    }
+}
+
+species people skills:[moving] {
+    rgb color &lt;- #yellow ;
+    building living_place &lt;- nil ;
+    building working_place &lt;- nil ;
+    <span class="hljs-type"><span class="hljs-type">int</span></span> start_work ;
+    <span class="hljs-type"><span class="hljs-type">int</span></span> end_work  ;
+    <span class="hljs-built_in"><span class="hljs-built_in">string</span></span> objective ; 
+    point the_target &lt;- nil ;
+        
+    reflex time_to_work when: current_hour = start_work <span class="hljs-built_in"><span class="hljs-built_in">and</span></span> objective = <span class="hljs-string"><span class="hljs-string">"resting"</span></span>{
+        objective &lt;- <span class="hljs-string"><span class="hljs-string">"working"</span></span> ;
+        the_target &lt;- any_location_in (working_place);
+    }
+        
+    reflex time_to_go_home when: current_hour = end_work <span class="hljs-built_in"><span class="hljs-built_in">and</span></span> objective = <span class="hljs-string"><span class="hljs-string">"working"</span></span>{
+        objective &lt;- <span class="hljs-string"><span class="hljs-string">"resting"</span></span> ;
+        the_target &lt;- any_location_in (living_place); 
+    } 
+     
+    reflex move when: the_target != nil {
+        path path_followed &lt;- self goto [target::the_target, on::the_graph, return_path:: true];
+        list&lt;geometry&gt; segments &lt;- path_followed.segments;
+        loop line <span class="hljs-built_in"><span class="hljs-built_in">over</span></span>: segments {
+            float dist &lt;- line.perimeter;
+            ask road(path_followed agent_from_geometry line) { 
+                destruction_coeff &lt;- destruction_coeff + (destroy * dist / shape.perimeter);
+            }
+        }
+        if the_target = location {
+            the_target &lt;- nil ;
+        }
+    }
+    
+    aspect base {
+        draw circle(<span class="hljs-number"><span class="hljs-number">10</span></span>) color: color;
+    }
+}
+
+experiment road_traffic <span class="hljs-built_in"><span class="hljs-built_in">type</span></span>: gui {
+    parameter <span class="hljs-string"><span class="hljs-string">"Shapefile for the buildings:"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">var</span></span>: shape_file_buildings category: <span class="hljs-string"><span class="hljs-string">"GIS"</span></span> ;
+    parameter <span class="hljs-string"><span class="hljs-string">"Shapefile for the roads:"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">var</span></span>: shape_file_roads category: <span class="hljs-string"><span class="hljs-string">"GIS"</span></span> ;
+    parameter <span class="hljs-string"><span class="hljs-string">"Shapefile for the bounds:"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">var</span></span>: shape_file_bounds category: <span class="hljs-string"><span class="hljs-string">"GIS"</span></span> ;
+    parameter <span class="hljs-string"><span class="hljs-string">"Number of people agents"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">var</span></span>: nb_people category: <span class="hljs-string"><span class="hljs-string">"People"</span></span> ;
+    parameter <span class="hljs-string"><span class="hljs-string">"Earliest hour to start work"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">var</span></span>: min_work_start category: <span class="hljs-string"><span class="hljs-string">"People"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">min</span></span>: <span class="hljs-number"><span class="hljs-number">2</span></span> <span class="hljs-built_in"><span class="hljs-built_in">max</span></span>: <span class="hljs-number"><span class="hljs-number">8</span></span>;
+    parameter <span class="hljs-string"><span class="hljs-string">"Latest hour to start work"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">var</span></span>: max_work_start category: <span class="hljs-string"><span class="hljs-string">"People"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">min</span></span>: <span class="hljs-number"><span class="hljs-number">8</span></span> <span class="hljs-built_in"><span class="hljs-built_in">max</span></span>: <span class="hljs-number"><span class="hljs-number">12</span></span>;
+    parameter <span class="hljs-string"><span class="hljs-string">"Earliest hour to end work"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">var</span></span>: min_work_end category: <span class="hljs-string"><span class="hljs-string">"People"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">min</span></span>: <span class="hljs-number"><span class="hljs-number">12</span></span> <span class="hljs-built_in"><span class="hljs-built_in">max</span></span>: <span class="hljs-number"><span class="hljs-number">16</span></span>;
+    parameter <span class="hljs-string"><span class="hljs-string">"Latest hour to end work"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">var</span></span>: max_work_end category: <span class="hljs-string"><span class="hljs-string">"People"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">min</span></span>: <span class="hljs-number"><span class="hljs-number">16</span></span> <span class="hljs-built_in"><span class="hljs-built_in">max</span></span>: <span class="hljs-number"><span class="hljs-number">23</span></span>;
+    parameter <span class="hljs-string"><span class="hljs-string">"minimal speed"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">var</span></span>: min_speed category: <span class="hljs-string"><span class="hljs-string">"People"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">min</span></span>: <span class="hljs-number"><span class="hljs-number">0.1</span></span> #km/#h ;
+    parameter <span class="hljs-string"><span class="hljs-string">"maximal speed"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">var</span></span>: max_speed category: <span class="hljs-string"><span class="hljs-string">"People"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">max</span></span>: <span class="hljs-number"><span class="hljs-number">10</span></span> #km/#h;
+    parameter <span class="hljs-string"><span class="hljs-string">"Value of destruction when a people agent takes a road"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">var</span></span>: destroy category: <span class="hljs-string"><span class="hljs-string">"Road"</span></span> ;
+    parameter <span class="hljs-string"><span class="hljs-string">"Number of hours between two road repairs"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">var</span></span>: repair_time category: <span class="hljs-string"><span class="hljs-string">"Road"</span></span> ;
+    
+    output {
+        display city_display <span class="hljs-built_in"><span class="hljs-built_in">type</span></span>:opengl {
+            species building aspect: base ;
+            species road aspect: base ;
+            species people aspect: base ;
+        }
+        display chart_display refresh:every(<span class="hljs-number"><span class="hljs-number">10</span></span>) { 
+            chart <span class="hljs-string"><span class="hljs-string">"Road Status"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">type</span></span>: series size: {<span class="hljs-number"><span class="hljs-number">1</span></span>, <span class="hljs-number"><span class="hljs-number">0.5</span></span>} position: {<span class="hljs-number"><span class="hljs-number">0</span></span>, <span class="hljs-number"><span class="hljs-number">0</span></span>} {
+                data <span class="hljs-string"><span class="hljs-string">"Mean road destruction"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">value</span></span>: mean (road collect <span class="hljs-built_in"><span class="hljs-built_in">each</span></span>.destruction_coeff) style: line color: #green ;
+                data <span class="hljs-string"><span class="hljs-string">"Max road destruction"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">value</span></span>: road max_of <span class="hljs-built_in"><span class="hljs-built_in">each</span></span>.destruction_coeff style: line color: #red ;
+            }
+            chart <span class="hljs-string"><span class="hljs-string">"People Objectif"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">type</span></span>: pie style: exploded size: {<span class="hljs-number"><span class="hljs-number">1</span></span>, <span class="hljs-number"><span class="hljs-number">0.5</span></span>} position: {<span class="hljs-number"><span class="hljs-number">0</span></span>, <span class="hljs-number"><span class="hljs-number">0.5</span></span>}{
+                data <span class="hljs-string"><span class="hljs-string">"Working"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">value</span></span>: people <span class="hljs-built_in"><span class="hljs-built_in">count</span></span> (<span class="hljs-built_in"><span class="hljs-built_in">each</span></span>.objective=<span class="hljs-string"><span class="hljs-string">"working"</span></span>) color: #magenta ;
+                data <span class="hljs-string"><span class="hljs-string">"Resting"</span></span> <span class="hljs-built_in"><span class="hljs-built_in">value</span></span>: people <span class="hljs-built_in"><span class="hljs-built_in">count</span></span> (<span class="hljs-built_in"><span class="hljs-built_in">each</span></span>.objective=<span class="hljs-string"><span class="hljs-string">"resting"</span></span>) color: #blue ;
+            }
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

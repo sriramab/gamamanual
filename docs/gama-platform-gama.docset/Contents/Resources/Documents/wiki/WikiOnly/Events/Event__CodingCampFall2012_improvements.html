@@ -1,0 +1,158 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/WikiOnly/Events/Event__CodingCampFall2012_improvements --><head><meta charset="utf-8"><title>Event__CodingCampFall2012_improvements</title><script src="../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="event__codingcampfall2012_improvements">Event__CodingCampFall2012_improvements</h1>
+<p>Improvements and Enhancements</p>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Possibility%20to%20directly%20create%20agents%20from%20a%20CSV%20file"></a><h1 id="possibility-to-directly-create-agents-from-a-csv-file">Possibility to directly create agents from a CSV file</h1>
+<p>The create statement has been extended in order to let the possibility to create agents of specified species directly from a CSV file.
+An agent is created by line of the CSV file. It is also possible to read the different column of the file using the read operator: <strong>read (column_index) (start at 0)</strong></p>
+<pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">read</span></span></span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">(</span></span><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">1</span></span></span></span><span class="hljs-function"><span class="hljs-params">)</span></span></span></span>
+</code></pre>
+<p>For example:</p>
+<pre><code class="hljs sql"><span class="hljs-keyword"><span class="hljs-keyword">create</span></span> people <span class="hljs-keyword"><span class="hljs-keyword">from</span></span>: <span class="hljs-string"><span class="hljs-string">"data_file.csv"</span></span> <span class="hljs-keyword"><span class="hljs-keyword">with</span></span>: [speed::<span class="hljs-keyword"><span class="hljs-keyword">read</span></span>(<span class="hljs-number"><span class="hljs-number">0</span></span>), age:: <span class="hljs-keyword"><span class="hljs-keyword">read</span></span>(<span class="hljs-number"><span class="hljs-number">1</span></span>)];
+</code></pre>
+<p>It is also possible to specify that the CSV file has a header that can give the name of the different column using the <strong>header</strong> facet (<strong>boolean</strong>). It this case, it is possible to directly use this name to read the column value: <strong>read("attribute1")</strong>.</p>
+<p>For example:</p>
+<pre><code class="hljs sql"><span class="hljs-keyword"><span class="hljs-keyword">create</span></span> people <span class="hljs-keyword"><span class="hljs-keyword">from</span></span>: <span class="hljs-string"><span class="hljs-string">"data_file.csv"</span></span> <span class="hljs-keyword"><span class="hljs-keyword">with</span></span>: [speed::<span class="hljs-keyword"><span class="hljs-keyword">read</span></span>(<span class="hljs-string"><span class="hljs-string">"SPEED"</span></span>), age:: <span class="hljs-keyword"><span class="hljs-keyword">read</span></span>(<span class="hljs-string"><span class="hljs-string">"AGE"</span></span>)] header: <span class="hljs-literal"><span class="hljs-literal">true</span></span>;
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Improving%20and%20simplifying%20the%20syntax%20of%20GAML"></a><h1 id="improving-and-simplifying-the-syntax-of-gaml">Improving and simplifying the syntax of GAML</h1>
+<p>New features:</p>
+<ul>
+<li>Possibility to define 3D points with the <strong>{x,y,z}</strong> syntax:
+<code>
+let pt type: point &lt;- {2, 5, 3};
+</code>
+# Documenting and enhancing the command line version</li>
+</ul>
+<p>#summary One-sentence summary of this page.</p>
+<p>The aim of this feature is to run models and experiments on a grid or a cluster without GUI and to take advantages of High Performance Computing. It promises efficient running by accelerating each simulation and experiment plan computing. The GUI is not loaded and managed. Several simulations could be run in parallel, at same time.</p>
+<p>There is two ways to run a GAMA experiment in headless mode: using command-line launcher or Java command line. These commands take 2 arguments: an experiment file and an output directory.</p>
+<p>For the command-line :</p>
+<pre><code class="hljs stata"> <span class="hljs-keyword"><span class="hljs-keyword">sh</span></span> gamaHeadless.<span class="hljs-keyword"><span class="hljs-keyword">sh</span></span> <span class="hljs-variable"><span class="hljs-variable">$1</span></span> <span class="hljs-variable"><span class="hljs-variable">$2</span></span>
+</code></pre>
+<ul>
+<li>with:
+<ul>
+<li>$1 input parameter file : an xml file determining experiment parameters and attended outputs</li>
+<li>$2 output directory path : a directory which contains simulation results (numerical data and simulation snapshot)</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://github.com/wiki/gama-platform/gama/WikiOnly/Events/Headless.html">go to headless documentation</a></p>
+<a class="dashAnchor" name="//apple_ref/Section/Torus%20environment"></a><h1 id="torus-environment">Torus environment</h1>
+<p>It is now possible to use toroidal environment for grid and continuous environments (even with complex GIS geometries).  The only thing to do is to use the <strong>torus</strong> facet.</p>
+<p>For a grid:</p>
+<pre><code class="hljs groovy">grid cell <span class="hljs-string"><span class="hljs-string">width:</span></span> <span class="hljs-number"><span class="hljs-number">5</span></span> <span class="hljs-string"><span class="hljs-string">height:</span></span> <span class="hljs-number"><span class="hljs-number">5</span></span> <span class="hljs-string"><span class="hljs-string">neighbours:</span></span> <span class="hljs-number"><span class="hljs-number">8</span></span> <span class="hljs-string"><span class="hljs-string">torus:</span></span> <span class="hljs-literal"><span class="hljs-literal">true</span></span> 
+</code></pre>
+<p>For the continuous environment:</p>
+<pre><code class="hljs groovy">environment <span class="hljs-string"><span class="hljs-string">bounds:</span></span> {<span class="hljs-number"><span class="hljs-number">50</span></span>,<span class="hljs-number"><span class="hljs-number">50</span></span>} <span class="hljs-string"><span class="hljs-string">torus:</span></span> <span class="hljs-literal"><span class="hljs-literal">true</span></span>;
+</code></pre>
+<p>Be careful concerning toroidal continuous environment: the computation required by these environment is high, thus they should be used only when they are really necessary.</p>
+<p>A demonstration of a continuous toroidal environment is given in the experimental model: testTorus-&gt; continuous_torus.</p>
+<p><img src="../../../gama-platform.googlecode.com/files/toroidalEnv.png" alt="http://gama-platform.googlecode.com/files/toroidalEnv.png"></p>
+<a class="dashAnchor" name="//apple_ref/Section/Communication%20Skill"></a><h1 id="communication-skill">Communication Skill</h1>
+<p>Plugin-needed: msi.gaml.extensions.fipa</p>
+<p>The communicating skill now re-works on GAMA 1.5. Sample toy models are found in "models/fipa".</p>
+<a class="dashAnchor" name="//apple_ref/Section/Update%20of%20the%20Trust%20Skill%20to%20Gama%201.5"></a><h1 id="update-of-the-trust-skill-to-gama-15">Update of the Trust Skill to Gama 1.5</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Hexgonal%20geometry%20and%20grid"></a><h1 id="hexgonal-geometry-and-grid">Hexgonal geometry and grid</h1>
+<p>It is now possible to create a hexagon of with the given width and height (point) thanks to the operator <strong>hexagon({width, height})</strong></p>
+<pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">hexagon</span></span></span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">({</span></span><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">3</span></span></span></span><span class="hljs-function"><span class="hljs-params">,</span></span><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">4</span></span></span></span><span class="hljs-function"><span class="hljs-params">})</span></span></span></span>
+</code></pre>
+<p>In the same way, an operator has been defined in order to decomposed a geometry into a set of hexagons of a given a number of columns and rows. This operator returns a set of hexagons: geometry as_hexagonal_grid({nb_cols, nb_rows})</p>
+<pre><code class="hljs less"><span class="hljs-selector-tag"><span class="hljs-selector-tag">shape</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">as_hexagonal_grid</span></span>({50, 40})
+</code></pre>
+<p>At last, it is now possible to define a hexagonal grid. To do so, the neighbors should is set to <strong>6</strong>. It is possible to use torus environment with hexagonal grid.</p>
+<pre><code class="hljs groovy">grid cell <span class="hljs-string"><span class="hljs-string">width:</span></span> <span class="hljs-number"><span class="hljs-number">20</span></span> <span class="hljs-string"><span class="hljs-string">height:</span></span> <span class="hljs-number"><span class="hljs-number">20</span></span> <span class="hljs-string"><span class="hljs-string">neighbours:</span></span> <span class="hljs-number"><span class="hljs-number">6</span></span> <span class="hljs-string"><span class="hljs-string">torus:</span></span> <span class="hljs-literal"><span class="hljs-literal">true</span></span>;
+</code></pre>
+<p><img src="../../../gama-platform.googlecode.com/files/imageHexGrid.png" alt="http://gama-platform.googlecode.com/files/imageHexGrid.png"></p>
+<a class="dashAnchor" name="//apple_ref/Section/Using%20HSB%20color"></a><h1 id="using-hsb-color">Using HSB color</h1>
+<p>Add <a href="http://en.wikipedia.org/wiki/HSL_and_HSV">HSB</a> color to be able to iterate through colors and use it to represent qualitative data.</p>
+<p>Example:</p>
+<p>The association of the orientation of agents is enhanced by mapping the orientation of the agent to a hue.</p>
+<pre><code class="hljs scss"><span class="hljs-attribute"><span class="hljs-attribute">color</span></span> hsb_to_rgb (<span class="hljs-selector-attr"><span class="hljs-selector-attr">[heading/360,1.0,1.0]</span></span>);
+</code></pre>
+<p>In the following example boids are represented by a triangle with the colors depending on their heading. <a href="http://gama-platform.googlecode.com/files/Dynamic_Color_HSB.mov"><img src="../../../gama-platform.googlecode.com/files/HSB_Color.png" alt=""></a></p>
+<a class="dashAnchor" name="//apple_ref/Section/Multicore%20runner%20in%20Headless%20Mode"></a><h1 id="multicore-runner-in-headless-mode">Multicore runner in Headless Mode</h1>
+<p>Results: distribution of command-line version on multicore machine, integration with GAMA interface, visualisation of outputs.</p>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Defining%20interaction%20in%20a%20model"></a><h1 id="defining-interaction-in-a-model">Defining interaction in a model</h1>
+<p>One statement have been added to facilitate the proposal of serious game on which user could interact through a map. It is now possible to catch event done on 2D display in order to do an action and to modify clicked agent attributes.</p>
+<h2 id="attributes">Attributes</h2>
+<ul>
+<li><strong>name</strong> (omissible) <code>[mouse_down , mouse_up]</code>
+<ul>
+<li><strong>action</strong> name of the action to be run</li>
+</ul>
+</li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Definition"></a><h2 id="definition">Definition</h2>
+<p>Allows to interact with the simulation by capturing mouse event and do an action. This action could apply a change on environment or on agents, according to the goal.</p>
+<p>Events are determine for a display. Thus, they can be play a different behavior</p>
+<pre><code class="hljs elm"><span class="hljs-title"><span class="hljs-title">event</span></span> [event_<span class="hljs-keyword"><span class="hljs-keyword">type</span></span>] action: myAction
+</code></pre>
+<ul>
+<li>event_type (mouse_down or mouse_up
+<ul>
+<li>myAction is an action written in the global block. This action have to follow the specification below.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="hljs groovy">
+ global
+ {
+   ...
+   action myAction 
+   {
+     arg location <span class="hljs-string"><span class="hljs-string">type:</span></span> point; <span class="hljs-comment"><span class="hljs-comment">// contains le location of the click in the environment</span></span>
+     arg selected_agents <span class="hljs-string"><span class="hljs-string">type:</span></span> list; <span class="hljs-comment"><span class="hljs-comment">// contains agents clicked by the event</span></span>
+    
+    ... <span class="hljs-comment"><span class="hljs-comment">//code written by the authors ...</span></span>
+   } 
+ }
+
+ experiment Simple <span class="hljs-string"><span class="hljs-string">type:</span></span>gui {
+    parameter <span class="hljs-string"><span class="hljs-string">'Evaporation Rate:'</span></span> <span class="hljs-string"><span class="hljs-string">var:</span></span> evaporation_rate;
+    parameter <span class="hljs-string"><span class="hljs-string">'Diffusion Rate:'</span></span> <span class="hljs-string"><span class="hljs-string">var:</span></span> diffusion_rate;
+    output { 
+        display Ants <span class="hljs-string"><span class="hljs-string">refresh_every:</span></span> <span class="hljs-number"><span class="hljs-number">2</span></span> { 
+            grid ant_grid;
+            species ant <span class="hljs-string"><span class="hljs-string">aspect:</span></span> <span class="hljs-keyword"><span class="hljs-keyword">default</span></span>;
+            text tt <span class="hljs-string"><span class="hljs-string">value:</span></span> string ( food_remaining ) <span class="hljs-string"><span class="hljs-string">size:</span></span> <span class="hljs-number"><span class="hljs-number">24.0</span></span> <span class="hljs-string"><span class="hljs-string">position:</span></span> { <span class="hljs-number"><span class="hljs-number">20</span></span> , <span class="hljs-number"><span class="hljs-number">20</span></span> } <span class="hljs-string"><span class="hljs-string">color:</span></span> rgb ( <span class="hljs-string"><span class="hljs-string">'white'</span></span> );
+            event mouse_up <span class="hljs-string"><span class="hljs-string">action:</span></span> myAction;
+        }  
+
+...
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Driving%20skill%20in%202D%20(skill:%20driving2d)"></a><h1 id="driving-skill-in-2d-skill-driving2d">Driving skill in 2D (skill: driving2d)</h1>
+<p>A skill (inherited from moving skill) permits agent to move to the target and avoid the others.</p>
+<h2 dash_ignored="yes" id="attributes-2">Attributes</h2>
+<ul>
+<li><strong>heading</strong> initial heading of agent
+<ul>
+<li><strong>obstacle_species</strong> list of species to avoid</li>
+<li><strong>background_species</strong> list of species on which agent move</li>
+</ul>
+</li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Action"></a><h2 id="action">Action</h2>
+<p>The action inherits the "goto" action of moving skill.</p>
+<pre><code class="hljs groovy">do vehicle_goto <span class="hljs-string"><span class="hljs-string">target:</span></span> target <span class="hljs-string"><span class="hljs-string">on:</span></span> the_graph <span class="hljs-string"><span class="hljs-string">speed:</span></span> speed <span class="hljs-string"><span class="hljs-string">target_type:</span></span> <span class="hljs-literal"><span class="hljs-literal">true</span></span> <span class="hljs-string"><span class="hljs-string">returns:</span></span> moving_status;
+</code></pre>
+<ul>
+<li><strong>target</strong> the goal (in type of location) for agent to go
+<ul>
+<li><strong>speed</strong> maximum of moving distance for each step</li>
+<li><strong>on</strong> the topology on which agent moves. By default, the topology is the graph and agent uses the shortest path algorithm to move</li>
+<li><strong>target_type</strong> if "true", agent goes to the exact location of the target. Otherwise (in the case of false target), agent go to an point on the topology that is nearest to the target.</li>
+<li><strong>returns</strong> the action returns an integer with the meaning: -1: failed to move; 0: success to move closer and closer to the target; 1: arrive the false target; 2: arrive the target</li>
+</ul>
+</li>
+</ul>
+<pre><code class="hljs groovy">
+ reflex move_with_vehicle_goto <span class="hljs-string"><span class="hljs-string">when:</span></span> target != nil{
+            let moving_status <span class="hljs-string"><span class="hljs-string">type:</span></span> <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> &lt;- <span class="hljs-number"><span class="hljs-number">-1</span></span>;
+            do vehicle_goto <span class="hljs-string"><span class="hljs-string">target:</span></span> target <span class="hljs-string"><span class="hljs-string">on:</span></span> the_graph <span class="hljs-string"><span class="hljs-string">speed:</span></span> speed <span class="hljs-string"><span class="hljs-string">target_type:</span></span> <span class="hljs-literal"><span class="hljs-literal">true</span></span> <span class="hljs-string"><span class="hljs-string">returns:</span></span> moving_status;
+            <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (<span class="hljs-keyword"><span class="hljs-keyword">int</span></span>(moving_status) &gt; <span class="hljs-number"><span class="hljs-number">0</span></span>){
+                let temp_targets &lt;- list(targetpoint) - target;
+                set target &lt;- one_of(temp_targets);
+            }
+            
+        }
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

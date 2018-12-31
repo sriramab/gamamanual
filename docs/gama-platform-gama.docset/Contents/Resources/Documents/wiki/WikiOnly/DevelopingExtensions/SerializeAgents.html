@@ -1,0 +1,42 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/WikiOnly/DevelopingExtensions/SerializeAgents --><head><meta charset="utf-8"><title>SerializeAgents</title><script src="../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="serializeagents">SerializeAgents</h1>
+<p>Using SavedAgent kind of GamlAgent, it is now possible to serialize and unserialize agents and simulations as a string. It can be done using the operators: <code>serializeSimulation</code>, <code>unserializeSimulation</code>, <code>saveSimulation</code> of <code>ummisco.gama.serialize</code>.</p>
+<p>Need to be improved:</p>
+<ul>
+<li>serialization of random generator</li>
+<li>serialization of shapes</li>
+<li>to allow any agent to be serialized</li>
+</ul>
+<p>Example of use of the two operators:</p>
+<pre><code class="hljs ocaml">experiment toto {
+    <span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;<span class="hljs-built_in"><span class="hljs-built_in">string</span></span>&gt; history &lt;- <span class="hljs-literal"><span class="hljs-literal">[]</span></span>;
+
+    reflex store <span class="hljs-keyword"><span class="hljs-keyword">when</span></span>: (cycle &lt; <span class="hljs-number"><span class="hljs-number">6</span></span>){
+        add serializeSimulation(cycle) <span class="hljs-keyword"><span class="hljs-keyword">to</span></span>: history;
+    }
+    
+    reflex restore <span class="hljs-keyword"><span class="hljs-keyword">when</span></span>: (cycle = <span class="hljs-number"><span class="hljs-number">6</span></span>){
+        <span class="hljs-built_in"><span class="hljs-built_in">int</span></span> i &lt;- unSerializeSimulation(<span class="hljs-built_in"><span class="hljs-built_in">string</span></span>(history[<span class="hljs-number"><span class="hljs-number">0</span></span>]));
+    } 
+    
+    reflex store22 <span class="hljs-keyword"><span class="hljs-keyword">when</span></span>: cycle=<span class="hljs-number"><span class="hljs-number">2</span></span>{
+        write <span class="hljs-string"><span class="hljs-string">"Sauvegarde de la simulation "</span></span> + saveSimulation(<span class="hljs-string"><span class="hljs-string">"file.xml"</span></span>);
+    }
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Syntax%20in%20GAML"></a><h2 id="syntax-in-gaml">Syntax in GAML</h2>
+<p>How to make it as simple as possible for the modeler to save and restore simulation states, or come back in time ?
+(like the creation of new simulations, for instance, which reuses exactly the same syntax than the creation of agents) ? </p>
+<a class="dashAnchor" name="//apple_ref/Section/Statements"></a><h3 id="statements">Statements</h3>
+<p><code>store</code> (to differentiate it from <code>save</code>) ?</p>
+<ul>
+<li><code>to:</code> a file </li>
+</ul>
+<p><code>restore</code> with facets that could allow to precise:</p>
+<ul>
+<li><code>at:</code> a cycle number (to come back at a certain point in time)</li>
+<li><code>at:</code> a negative number (to come back relatively in time)</li>
+<li><code>at:</code> a date ? </li>
+<li><code>from:</code> a file</li>
+<li>`</li>
+</ul>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

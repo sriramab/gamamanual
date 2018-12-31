@@ -1,0 +1,69 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/3D Visualization/3D Visualization Procedural City --><head><meta charset="utf-8"><title>3D Visualization Procedural City</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="3d-visualization-procedural-city">3D Visualization Procedural City</h1>
+<h1 id="procedural-city">Procedural City</h1>
+<p><em>Author : Arnaud Grignard</em></p>
+<p>Model with a 3D Display representing buildings with a random size. The model proposes two experiments : the first one represents the buildings with 3D shapes with textures, the second one without textures but the color of the buildings depends on the rotation of a ball-shaped light</p>
+<p>Code of the model : </p>
+<pre><code class="hljs processing">
+model procedural_city   
+
+global {
+    <span class="hljs-built_in">int</span> number_of_building parameter: <span class="hljs-string">'Number of Agents'</span> <span class="hljs-built_in">min</span>: <span class="hljs-number">1</span> &lt;- <span class="hljs-number">300</span> category: <span class="hljs-string">'Initialization'</span>;
+    <span class="hljs-built_in">int</span> width_and_height_of_environment parameter: <span class="hljs-string">'Dimensions'</span> <span class="hljs-built_in">min</span>: <span class="hljs-number">10</span> &lt;- <span class="hljs-number">500</span> category: <span class="hljs-string">'Initialization'</span>;
+    
+    geometry <span class="hljs-built_in">shape</span> &lt;- square(width_and_height_of_environment);
+        
+    file roof_texture &lt;- file(<span class="hljs-string">'../images/building_texture/roof_top.png'</span>) ;      
+    list textures &lt;- [file(<span class="hljs-string">'../images/building_texture/texture1.jpg'</span>),file(<span class="hljs-string">'../images/building_texture/texture2.jpg'</span>),file(<span class="hljs-string">'../images/building_texture/texture3.jpg'</span>),file(<span class="hljs-string">'../images/building_texture/texture4.jpg'</span>),file(<span class="hljs-string">'../images/building_texture/texture5.jpg'</span>),
+    file(<span class="hljs-string">'../images/building_texture/texture6.jpg'</span>),file(<span class="hljs-string">'../images/building_texture/texture7.jpg'</span>),file(<span class="hljs-string">'../images/building_texture/texture8.jpg'</span>),file(<span class="hljs-string">'../images/building_texture/texture9.jpg'</span>),file(<span class="hljs-string">'../images/building_texture/texture10.jpg'</span>)];
+
+    init { 
+      create Building number:number_of_building{
+             <span class="hljs-built_in">width</span> &lt;- (rnd(<span class="hljs-number">100</span>)/<span class="hljs-number">100</span>)*(rnd(<span class="hljs-number">100</span>)/<span class="hljs-number">100</span>)*(rnd(<span class="hljs-number">100</span>)/<span class="hljs-number">100</span>)*<span class="hljs-number">50</span>+<span class="hljs-number">10</span>;
+             depth &lt;-   (rnd(<span class="hljs-number">100</span>)/<span class="hljs-number">100</span>)*(rnd(<span class="hljs-number">100</span>)/<span class="hljs-number">100</span>)*(rnd(<span class="hljs-number">100</span>)/<span class="hljs-number">100</span>*<span class="hljs-built_in">width</span>)*<span class="hljs-number">10</span>+<span class="hljs-number">10</span>;
+            <span class="hljs-built_in">shape</span> &lt;- <span class="hljs-built_in">box</span>(<span class="hljs-built_in">width</span>, <span class="hljs-built_in">width</span>, depth) rotated_by rnd(<span class="hljs-number">360</span>);
+            <span class="hljs-built_in">texture</span> &lt;- textures[rnd(<span class="hljs-number">9</span>)];
+        }
+    }  
+
+} 
+
+species Building{
+    <span class="hljs-built_in">float</span> <span class="hljs-built_in">width</span>;
+    <span class="hljs-built_in">float</span> <span class="hljs-built_in">height</span>;
+    <span class="hljs-built_in">float</span> depth;
+    <span class="hljs-built_in">int</span> angle;          
+    file <span class="hljs-built_in">texture</span>;
+    
+    reflex shuffle{
+         <span class="hljs-built_in">width</span> &lt;- (rnd(<span class="hljs-number">100</span>)/<span class="hljs-number">100</span>)*(rnd(<span class="hljs-number">100</span>)/<span class="hljs-number">100</span>)*(rnd(<span class="hljs-number">100</span>)/<span class="hljs-number">100</span>)*<span class="hljs-number">50</span>+<span class="hljs-number">10</span>;
+         depth &lt;-   (rnd(<span class="hljs-number">100</span>)/<span class="hljs-number">100</span>)*(rnd(<span class="hljs-number">100</span>)/<span class="hljs-number">100</span>)*(rnd(<span class="hljs-number">100</span>)/<span class="hljs-number">100</span>*<span class="hljs-built_in">width</span>)*<span class="hljs-number">10</span>+<span class="hljs-number">10</span>;
+        <span class="hljs-built_in">shape</span> &lt;- <span class="hljs-built_in">box</span>(<span class="hljs-built_in">width</span>, <span class="hljs-built_in">width</span>, depth) rotated_by rnd(<span class="hljs-number">360</span>);
+    }
+    
+    aspect base {
+        <span class="hljs-title">draw</span> <span class="hljs-built_in">shape</span> <span class="hljs-built_in">color</span>:#white;
+    }
+    
+    aspect textured {
+        <span class="hljs-title">draw</span> <span class="hljs-built_in">shape</span> <span class="hljs-built_in">texture</span>:[roof_texture.path,<span class="hljs-built_in">texture</span>.path] ;
+    }
+}   
+
+
+experiment DisplayTextured  type: gui {
+    output {
+      display City type:opengl <span class="hljs-built_in">background</span>:rgb(<span class="hljs-number">10</span>,<span class="hljs-number">40</span>,<span class="hljs-number">55</span>){
+            species Building aspect:textured;                           
+        }
+    }
+}
+experiment DisplayWithDynamicDiffuseLight  type: gui {
+    output {
+      display City type:opengl <span class="hljs-built_in">background</span>:rgb(<span class="hljs-number">10</span>,<span class="hljs-number">40</span>,<span class="hljs-number">55</span>){
+            light <span class="hljs-number">1</span> type:<span class="hljs-built_in">point</span> <span class="hljs-built_in">color</span>:hsb((time mod <span class="hljs-number">255</span>) /<span class="hljs-number">255</span>,<span class="hljs-number">1.0</span> ,<span class="hljs-number">0.5</span>) position:{world.<span class="hljs-built_in">shape</span>.<span class="hljs-built_in">width</span>*<span class="hljs-number">0.5</span>+ world.<span class="hljs-built_in">shape</span>.<span class="hljs-built_in">width</span>*<span class="hljs-number">1.5</span>*<span class="hljs-built_in">sin</span>(time*<span class="hljs-number">2</span>),world.<span class="hljs-built_in">shape</span>.<span class="hljs-built_in">width</span>*<span class="hljs-number">0.5</span>,world.<span class="hljs-built_in">shape</span>.<span class="hljs-built_in">width</span>*<span class="hljs-built_in">cos</span>(time*<span class="hljs-number">2</span>)} draw_light:<span class="hljs-keyword">true</span> update:<span class="hljs-keyword">true</span>;
+            species Building aspect:base;                                   
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

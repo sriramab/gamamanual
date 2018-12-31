@@ -1,0 +1,29 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Tutorials/Tutorials/PredatorPrey --><head><meta charset="utf-8"><title>PredatorPrey</title><script src="../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="predatorprey">PredatorPrey</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Predator%20Prey"></a><h1 id="predator-prey">Predator Prey</h1>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><p>This tutorial presents the structure of a GAMA model as well as the use of a grid topology. In particular, this tutorial shows how to define a basic model, to define "grid agents" which are able to move within the constraints. It also introduce the displays and agents' aspect.</p>
+<p>All the files related to this tutorial (images and models) are available in the Models Library (project Tutorials/Predator Prey).</p>
+<a class="dashAnchor" name="//apple_ref/Section/Content"></a><h2 id="content">Content</h2>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Model%20Overview"></a><h2 id="model-overview">Model Overview</h2>
+<p>In this model, three types of entities are considered: preys, predators and vegetation cells. Preys
+eat grass on the vegetation cells and predators eat preys. At each simulation step, grass grows on the vegetation cells. Concerning the predators and preys, at each simulation step, they move (to a neighbor cell), eat, die if they do not have enough energy, and eventually reproduce.</p>
+<p><img src="../../../github.com/wiki/gama-platform/gama/Tutorials/Tutorials/resources/images/tutorials/predator_prey.png" alt="images/predator_prey.png"></p>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Step%20List"></a><h2 id="step-list">Step List</h2>
+<p>This tutorial is composed of 12 incremental steps corresponding to 12 models. For each step we present its purpose, an explicit formulation and the corresponding GAML code of the model.</p>
+<ol>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/PredatorPrey_step1.html">Basic model (prey agents)</a>
+<ol>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/PredatorPrey_step2.html">Dynamic of the vegetation (grid)</a></li>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/PredatorPrey_step3.html">Behavior of the prey agent</a></li>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/PredatorPrey_step4.html">Use of Inspectors/monitors</a></li>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/PredatorPrey_step5.html">predator agents (parent species)</a></li>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/PredatorPrey_step6.html">Breeding of prey and predator agents</a></li>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/PredatorPrey_step7.html">Agent display (aspect)</a></li>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/PredatorPrey_step8.html">Complex behaviors for the preys and predators</a></li>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/PredatorPrey_step9.html">Adding of a stopping condition</a></li>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/PredatorPrey_step10.html">Definition of charts</a></li>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/PredatorPrey_step11.html">Writing files</a></li>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/PredatorPrey_step12.html">Image loading (raster data)</a></li>
+</ol>
+</li>
+</ol>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

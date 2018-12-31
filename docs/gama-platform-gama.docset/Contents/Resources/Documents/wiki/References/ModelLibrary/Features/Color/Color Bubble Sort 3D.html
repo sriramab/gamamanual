@@ -1,0 +1,125 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Color/Color Bubble Sort 3D --><head><meta charset="utf-8"><title>Color Bubble Sort 3D</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="color-bubble-sort-3d">Color Bubble Sort 3D</h1>
+<h1 id="creating-color-and-sort-cubes-by-color">Creating color and sort cubes by color</h1>
+<p><em>Author :  Arnaud Grignard</em></p>
+<p>A model to show how to create color by using the rgb operator, the color depending on the position of cube in the xyz space. The cubes are randomly mixed to finally be sorted according to the color of each vertix of the whole big cube, using the bubble sort algorithm (<a href="https://en.wikipedia.org/wiki/Bubble_sort">https://en.wikipedia.org/wiki/Bubble_sort</a>). </p>
+<p>Code of the model : </p>
+<pre><code class="hljs processing">
+model bubblesort3D
+
+
+global {
+
+<span class="hljs-comment">//Number of cubes by faces of the whole big cube</span>
+<span class="hljs-built_in">int</span> nb_cells&lt;<span class="hljs-number">-15</span>;
+
+geometry <span class="hljs-built_in">shape</span> &lt;- cube(nb_cells) ;
+
+
+bool change &lt;- <span class="hljs-keyword">true</span>;
+
+init {
+    <span class="hljs-comment">//We create nb_cells^3 cubes and we define their color depending on their position in XYZ</span>
+    <span class="hljs-built_in">loop</span> i from:<span class="hljs-number">0</span> to:nb_cells<span class="hljs-number">-1</span>{
+        <span class="hljs-built_in">loop</span> j from:<span class="hljs-number">0</span> to: nb_cells<span class="hljs-number">-1</span>{
+            <span class="hljs-built_in">loop</span> k from:<span class="hljs-number">0</span> to:nb_cells<span class="hljs-number">-1</span>{
+              create cells{
+                location &lt;-{i mod nb_cells,j mod nb_cells, k mod nb_cells};
+                
+                <span class="hljs-comment">//The canal RGB limit color to 255 by canal</span>
+                <span class="hljs-built_in">red</span> &lt;- <span class="hljs-built_in">float</span>((i mod nb_cells)* <span class="hljs-built_in">int</span>(<span class="hljs-number">255</span> / nb_cells));
+                <span class="hljs-built_in">green</span> &lt;- <span class="hljs-built_in">float</span>((j mod nb_cells) * <span class="hljs-built_in">int</span>(<span class="hljs-number">255</span> / nb_cells));
+                <span class="hljs-built_in">blue</span> &lt;- <span class="hljs-built_in">float</span>((k mod nb_cells) * <span class="hljs-built_in">int</span>(<span class="hljs-number">255</span> / nb_cells));
+                
+                <span class="hljs-comment">//We create the color according to the value of the red, green and blue canals</span>
+                <span class="hljs-built_in">color</span> &lt;- rgb(<span class="hljs-built_in">red</span>,<span class="hljs-built_in">green</span>,<span class="hljs-built_in">blue</span>);
+              } 
+            }   
+        }
+    }
+    
+    <span class="hljs-comment">//We mix all the cubes randomly by permuting two randomly chosen cubes</span>
+    <span class="hljs-built_in">loop</span> times: <span class="hljs-number">10000</span> {
+            ask one_of(cells) {
+                cells one_cells &lt;- one_of(cells);
+                <span class="hljs-keyword">if</span> (self != one_cells) {
+                    <span class="hljs-built_in">point</span> loc &lt;- <span class="hljs-built_in">copy</span>(location);
+                    location &lt;- one_cells.location;
+                    one_cells.location &lt;- loc;
+                }
+            }
+        }
+    
+        
+
+}
+
+<span class="hljs-comment">//Reflex to finish the execution of the model when nothing has changed during the cycle</span>
+reflex end {
+    <span class="hljs-keyword">if</span> (not change) {
+        do pause;   
+    } 
+    change &lt;- <span class="hljs-keyword">false</span>;
+    }
+}
+
+
+species cells{
+
+    rgb <span class="hljs-built_in">color</span>;
+    <span class="hljs-built_in">float</span> <span class="hljs-built_in">red</span>;
+    <span class="hljs-built_in">float</span> <span class="hljs-built_in">green</span>;
+    <span class="hljs-built_in">float</span> <span class="hljs-built_in">blue</span>;
+    list&lt;cells&gt; neigbhours update: cells at_distance (<span class="hljs-number">1.1</span>);
+    
+    <span class="hljs-comment">//Update of the neighbours cubes at each cycle of the simulation according to their location</span>
+    cells upper_cell_y update: neigbhours first_with (<span class="hljs-built_in">shape</span>.location.y &gt; each.<span class="hljs-built_in">shape</span>.location.y);
+    cells upper_cell_x update: neigbhours first_with (<span class="hljs-built_in">shape</span>.location.x &gt; each.<span class="hljs-built_in">shape</span>.location.x);
+    cells upper_cell_z update: neigbhours first_with (<span class="hljs-built_in">shape</span>.location.z &gt; each.<span class="hljs-built_in">shape</span>.location.z);
+    
+    <span class="hljs-comment">//We permute the cube agent with its neighbour if its intensity is greater according to the canal related to its axis (z for canal blue, y for green and x for red)</span>
+    reflex swap_z when: upper_cell_z != nil and <span class="hljs-built_in">blue</span> &lt; upper_cell_z.<span class="hljs-built_in">blue</span>{ 
+        <span class="hljs-built_in">point</span> tmp1Loc &lt;-location;
+        location &lt;- upper_cell_z.location;  
+        upper_cell_z.location&lt;-tmp1Loc;     
+        change &lt;- <span class="hljs-keyword">true</span>; 
+    }
+    
+    reflex swap_y when: upper_cell_y != nil and <span class="hljs-built_in">green</span> &lt; upper_cell_y.<span class="hljs-built_in">green</span>{ 
+        <span class="hljs-built_in">point</span> tmp1Loc &lt;-location;
+        location &lt;- upper_cell_y.location;  
+        upper_cell_y.location&lt;-tmp1Loc;     
+        change &lt;- <span class="hljs-keyword">true</span>; 
+    }
+    
+    reflex swap_x when: upper_cell_x != nil and <span class="hljs-built_in">red</span> &lt; upper_cell_x.<span class="hljs-built_in">red</span>{ 
+        <span class="hljs-built_in">point</span> tmp1Loc &lt;-location;
+        location &lt;- upper_cell_x.location;  
+        upper_cell_x.location&lt;-tmp1Loc;     
+        change &lt;- <span class="hljs-keyword">true</span>; 
+    }
+
+    aspect <span class="hljs-keyword">default</span> {
+        <span class="hljs-title">draw</span> cube(<span class="hljs-number">1</span>) <span class="hljs-built_in">color</span>:<span class="hljs-built_in">color</span> border:<span class="hljs-built_in">color</span> at:location;
+    }   
+}
+
+
+experiment Display type: gui {
+    output {
+        display View1 type:opengl draw_env:<span class="hljs-keyword">false</span>{
+            species cells transparency:<span class="hljs-number">0.1</span>;
+            graphics <span class="hljs-string">"di"</span>{
+             <span class="hljs-title">draw</span> <span class="hljs-string">"black(0,0,0)"</span> at:{<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>} <span class="hljs-built_in">color</span>:°black <span class="hljs-built_in">perspective</span>:<span class="hljs-keyword">false</span>;
+             <span class="hljs-title">draw</span> <span class="hljs-string">"red(1,0,0)"</span> at:{world.<span class="hljs-built_in">shape</span>.<span class="hljs-built_in">width</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>} <span class="hljs-built_in">color</span>:°<span class="hljs-built_in">red</span> <span class="hljs-built_in">perspective</span>:<span class="hljs-keyword">false</span>;
+             <span class="hljs-title">draw</span> <span class="hljs-string">"green(0,1,0)"</span> at:{<span class="hljs-number">0</span>,world.<span class="hljs-built_in">shape</span>.<span class="hljs-built_in">height</span>,<span class="hljs-number">0</span>} <span class="hljs-built_in">color</span>:°<span class="hljs-built_in">green</span> <span class="hljs-built_in">perspective</span>:<span class="hljs-keyword">false</span>;
+             <span class="hljs-title">draw</span> <span class="hljs-string">"blue(0,0,1)"</span> at:{<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,world.<span class="hljs-built_in">shape</span>.<span class="hljs-built_in">width</span>} <span class="hljs-built_in">color</span>:°<span class="hljs-built_in">blue</span> <span class="hljs-built_in">perspective</span>:<span class="hljs-keyword">false</span>;
+             <span class="hljs-title">draw</span> <span class="hljs-string">"yellow(1,1,0)"</span> at:{world.<span class="hljs-built_in">shape</span>.<span class="hljs-built_in">width</span>,world.<span class="hljs-built_in">shape</span>.<span class="hljs-built_in">height</span>,<span class="hljs-number">0</span>} <span class="hljs-built_in">color</span>:°yellow <span class="hljs-built_in">perspective</span>:<span class="hljs-keyword">false</span>;
+             <span class="hljs-title">draw</span> <span class="hljs-string">"magenta(1,0,1)"</span> at:{world.<span class="hljs-built_in">shape</span>.<span class="hljs-built_in">width</span>,<span class="hljs-number">0</span>,world.<span class="hljs-built_in">shape</span>.depth} <span class="hljs-built_in">color</span>:°magenta <span class="hljs-built_in">perspective</span>:<span class="hljs-keyword">false</span>;
+             <span class="hljs-title">draw</span> <span class="hljs-string">"cyan(0,1,1)"</span> at:{<span class="hljs-number">0</span>,world.<span class="hljs-built_in">shape</span>.<span class="hljs-built_in">height</span>,world.<span class="hljs-built_in">shape</span>.depth} <span class="hljs-built_in">color</span>:°cyan <span class="hljs-built_in">perspective</span>:<span class="hljs-keyword">false</span>;
+             <span class="hljs-title">draw</span> <span class="hljs-string">"white(1,1,1)"</span> at:{world.<span class="hljs-built_in">shape</span>.<span class="hljs-built_in">width</span>,world.<span class="hljs-built_in">shape</span>.<span class="hljs-built_in">height</span>,world.<span class="hljs-built_in">shape</span>.depth} <span class="hljs-built_in">color</span>:°white <span class="hljs-built_in">perspective</span>:<span class="hljs-keyword">false</span>;    
+            }
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

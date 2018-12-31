@@ -1,0 +1,28 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Data Importation/Data Importation CSV File Loading --><head><meta charset="utf-8"><title>Data Importation CSV File Loading</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="data-importation-csv-file-loading">Data Importation CSV File Loading</h1>
+<h1 id="convertion-of-csv-data-to-matrix">Convertion of CSV data to Matrix</h1>
+<p><em>Author :  Patrick Taillandier</em></p>
+<p>Model which shows how to initialize a matrix by using the content of a CSV File. The model load a CSV File, and write its content in the console. </p>
+<p>Code of the model : </p>
+<pre><code class="hljs http">
+
+<span class="lasso">model CSVfileloading
+
+<span class="hljs-built_in">global</span> {
+    file my_csv_file &lt;- csv_file(<span class="hljs-string">"../includes/iris.csv"</span>,<span class="hljs-string">","</span>);
+    
+    init {
+        <span class="hljs-comment">//convert the file into a matrix</span>
+        matrix <span class="hljs-built_in">data</span> &lt;- matrix(my_csv_file);
+        <span class="hljs-comment">//loop on the matrix rows (skip the first header line)</span>
+        <span class="hljs-keyword">loop</span> i from: <span class="hljs-number">1</span> <span class="hljs-keyword">to</span>: <span class="hljs-built_in">data</span>.<span class="hljs-keyword">rows</span> <span class="hljs-number">-1</span>{
+            <span class="hljs-comment">//loop on the matrix columns</span>
+            <span class="hljs-keyword">loop</span> j from: <span class="hljs-number">0</span> <span class="hljs-keyword">to</span>: <span class="hljs-built_in">data</span>.columns <span class="hljs-number">-1</span>{
+                write <span class="hljs-string">"data rows:"</span>+ i +<span class="hljs-string">" colums:"</span> + j + <span class="hljs-string">" = "</span> + <span class="hljs-built_in">data</span><span class="hljs-meta">[</span>j,i<span class="hljs-meta">]</span>;
+            }   
+        }       
+    }
+}
+
+experiment main type: gui;
+</span></code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

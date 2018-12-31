@@ -26,7 +26,7 @@ bookdown::kindlegen()
 ```
 
 ```{r fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), }
-options(width = 90)
+options(out.width = 90)
 knitr::include_graphics('cover.png', dpi = NA)
 options(width = 90)
 ```

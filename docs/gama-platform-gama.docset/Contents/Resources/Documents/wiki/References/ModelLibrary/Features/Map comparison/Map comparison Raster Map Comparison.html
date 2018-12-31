@@ -1,0 +1,107 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Map comparison/Map comparison Raster Map Comparison --><head><meta charset="utf-8"><title>Map comparison Raster Map Comparison</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="map-comparison-raster-map-comparison">Map comparison Raster Map Comparison</h1>
+<h1 id="raster-map-comparison">Raster Map Comparison</h1>
+<p><em>Author : Patrick Taillandier</em></p>
+<p>This model shows how to use different comparators to know the accuracy of a prediction model. Four comparators are used :</p>
+<ul>
+<li>kappa, comparing the map observed and the map simulation ; kappa simulation comparing the initial map, the map observed and the map simulation;</li>
+<li>fuzzy kappa, comparing the map observed and the map simulation but being more permissive by using fuzzy logic;</li>
+<li>fuzzy kappa simulation, comparing the map observed, the map simulation and the map initial but being more permissive by using fuzzy logic</li>
+</ul>
+<p>Code of the model : </p>
+<pre><code class="hljs stata">
+model mapcomparison
+
+<span class="hljs-keyword">global</span> {
+    <span class="hljs-keyword">list</span>&lt;string&gt; categories &lt;- [<span class="hljs-string">"type 1"</span>, <span class="hljs-string">"type 2"</span>, <span class="hljs-string">"type 3"</span>, <span class="hljs-string">"type 4"</span>];
+    map&lt;string,rgb&gt; color_cat &lt;- [<span class="hljs-string">"type 1"</span>::#blue, <span class="hljs-string">"type 2"</span>::#green, <span class="hljs-string">"type 3"</span>::#yellow, <span class="hljs-string">"type 4"</span>::#red];
+    <span class="hljs-keyword">matrix</span>&lt;float&gt; fuzzy_categories;
+    <span class="hljs-keyword">matrix</span>&lt;float&gt; fuzzy_transitions;
+    <span class="hljs-keyword">list</span>&lt;float&gt; nb_per_cat_obs;
+    <span class="hljs-keyword">list</span>&lt;float&gt; nb_per_cat_sim;
+     
+    init {
+        <span class="hljs-comment">//Initialize randomly the category of each cell</span>
+        ask shuffle(cell) {
+            string neigh_cat &lt;-one_of(neighbours).cat_observed;
+            cat_init &lt;- neigh_cat <span class="hljs-keyword">in</span> categories ? neigh_cat : one_of(categories);
+            color_init &lt;- color_cat[cat_init];
+        }
+        
+        <span class="hljs-comment">//Initialize the category observed and the cat attributes of the cells according to probability : </span>
+        <span class="hljs-comment">// 60% of cases, the category observed will be the same than the category initialized</span>
+        <span class="hljs-comment">//60% of cases, the category will be the same than the category observed</span>
+        ask cell {
+            cat_observed &lt;- flip(0.6) ?  cat_init : one_of(categories);
+            <span class="hljs-keyword">cat</span> &lt;- flip(0.6) ?  cat_observed : one_of(categories);
+            color &lt;- color_cat[<span class="hljs-keyword">cat</span>];
+            color_obs &lt;- color_cat[cat_observed];
+        }
+        fuzzy_categories &lt;- 0.0 as_matrix {<span class="hljs-built_in">length</span>(categories),<span class="hljs-built_in">length</span>(categories)};
+        loop i from: 0 to: <span class="hljs-built_in">length</span>(categories) - 1 {
+            fuzzy_categories[i,i] &lt;- 1.0;
+        }
+        fuzzy_transitions &lt;- 0.0 as_matrix {<span class="hljs-built_in">length</span>(categories)*<span class="hljs-built_in">length</span>(categories),<span class="hljs-built_in">length</span>(categories)*<span class="hljs-built_in">length</span>(categories)};
+        loop i from: 0 to: (<span class="hljs-built_in">length</span>(categories) * <span class="hljs-built_in">length</span>(categories)) - 1 {
+            fuzzy_transitions[i,i] &lt;- 1.0;  
+        }
+        <span class="hljs-keyword">list</span>&lt;float&gt; similarity_per_agents ;
+        write <span class="hljs-string">"kappa(map observed, map simulation, categories): "</span> + <span class="hljs-keyword">kappa</span>( cell collect (each.cat_observed),cell collect (each.<span class="hljs-keyword">cat</span>),categories);
+        write <span class="hljs-string">"kappa simulation(map init, map observed, map simulation,categories): "</span> + kappa_sim( cell collect (each.cat_init), cell collect (each.cat_observed),cell collect (each.<span class="hljs-keyword">cat</span>),categories);
+        using topology(cell) {
+            write <span class="hljs-string">"fuzzy kappa(map observed, map simulation,categories): "</span> + fuzzy_kappa(<span class="hljs-keyword">list</span>(cell), cell collect (each.cat_observed),cell collect (each.<span class="hljs-keyword">cat</span>), similarity_per_agents,categories,fuzzy_categories, 10);
+            write <span class="hljs-string">"fuzzy kappa sim(map init, map observed, map simulation,categories): "</span> + fuzzy_kappa_sim(<span class="hljs-keyword">list</span>(cell), cell collect (each.cat_init), cell collect (each.cat_observed),cell collect (each.<span class="hljs-keyword">cat</span>), similarity_per_agents,categories,fuzzy_transitions, 10);
+        }
+        loop i from: 0 to: <span class="hljs-built_in">length</span>(cell) - 1 {
+            int val &lt;- int(255 * similarity_per_agents[i]);
+            ask cell[i] {color_fuzzy &lt;- rgb(val, val, val);}
+            
+        }
+        loop c over: categories {
+            nb_per_cat_obs &lt;&lt; cell <span class="hljs-keyword">count</span> (each.cat_observed = c);
+            nb_per_cat_sim &lt;&lt; cell <span class="hljs-keyword">count</span> (each.<span class="hljs-keyword">cat</span> = c); 
+        }
+        write <span class="hljs-string">"percent_absolute_deviation : "</span> + percent_absolute_deviation(nb_per_cat_obs,nb_per_cat_sim) + <span class="hljs-string">"%"</span>;
+        
+    }
+    
+}
+
+grid cell width: 50 height: 50 {
+    string cat_init;
+    string cat_observed;
+    string <span class="hljs-keyword">cat</span> ;
+    rgb color;
+    rgb color_init;
+    rgb color_obs;
+    rgb color_fuzzy &lt;- #white;
+    <span class="hljs-keyword">list</span>&lt;cell&gt; neighbours &lt;- self neighbors_at 1;
+    
+    aspect fuzzy_sim {
+        draw shape color:color_fuzzy border: color_fuzzy;
+    }
+    aspect init {
+        draw shape color:color_init border: color_init;
+    }
+    aspect observed {
+        draw shape color:color_obs border: color_obs;
+    }
+}
+
+experiment mapcomparison <span class="hljs-keyword">type</span>: gui {
+    output {
+        <span class="hljs-keyword">display</span> map_sim <span class="hljs-keyword">type</span>: opengl{
+            grid cell;
+        }
+        <span class="hljs-keyword">display</span> map_observed <span class="hljs-keyword">type</span>: opengl{
+            species cell aspect: observed refresh: false;
+        }
+        <span class="hljs-keyword">display</span> map_init <span class="hljs-keyword">type</span>: opengl{
+            species cell aspect: init refresh: false;
+        }
+        <span class="hljs-keyword">display</span> map_fuzzy <span class="hljs-keyword">type</span>: opengl{
+            species cell aspect: fuzzy_sim ;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

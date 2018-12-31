@@ -1,0 +1,142 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Batch-Batch --><head><meta charset="utf-8"><title>Batch Batch</title><script src="../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="batch-batch">Batch Batch</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Model%20using%20Batch%20mode"></a><h1 id="model-using-batch-mode">Model using Batch mode</h1>
+<p><em>Author :  Patrick Taillandier</em></p>
+<p>A model showing how to use batch experiments to find the best combination of parameters to minimize the numbers of infected people in a SIR infection model where agents infect others and become immune for a certain time. The batch mode uses three different methods : Exhaustive, GA and Tabu Search. The model proposes five experiments : one simple with a User Interface, one running 5 experiments and saving the data, and one for each strategy. </p>
+<p>Code of the model : </p>
+<pre><code class="php hljs">
+
+model batch_example
+
+<span class="hljs-keyword"><span class="hljs-keyword">global</span></span> {
+    int number_people &lt;- <span class="hljs-number"><span class="hljs-number">300</span></span>;  <span class="hljs-comment"><span class="hljs-comment">// The init number of people</span></span>
+    int number_I &lt;- <span class="hljs-number"><span class="hljs-number">1</span></span> ; <span class="hljs-comment"><span class="hljs-comment">// The init number of infected</span></span>
+    float infection_rate &lt;- <span class="hljs-number"><span class="hljs-number">0.1</span></span> ; <span class="hljs-comment"><span class="hljs-comment">// The infection rate</span></span>
+    float infection_distance &lt;- <span class="hljs-number"><span class="hljs-number">5.0</span></span> ; <span class="hljs-comment"><span class="hljs-comment">// infection distance (in meters)</span></span>
+    int immune_step &lt;- <span class="hljs-number"><span class="hljs-number">30</span></span> ; <span class="hljs-comment"><span class="hljs-comment">// number of steps before becoming immune after infection</span></span>
+    int end_immunity_step &lt;<span class="hljs-number"><span class="hljs-number">-50</span></span>; <span class="hljs-comment"><span class="hljs-comment">// number of steps before not being immune anymore</span></span>
+    float speed_people &lt;- <span class="hljs-number"><span class="hljs-number">5.0</span></span> ; <span class="hljs-comment"><span class="hljs-comment">// speed of the Host</span></span>
+
+    int nb_infected &lt;- <span class="hljs-number"><span class="hljs-number">0</span></span>;
+    init {
+        create people number: number_people ;
+        ask (number_I among people) {
+            is_infected &lt;- <span class="hljs-keyword"><span class="hljs-keyword">true</span></span>;
+            color &lt;- <span class="hljs-comment"><span class="hljs-comment">#red;</span></span>
+        }
+    }
+}
+
+species people skills:[moving] {
+    bool is_infected &lt;- <span class="hljs-keyword"><span class="hljs-keyword">false</span></span>;
+    bool is_immune &lt;- <span class="hljs-keyword"><span class="hljs-keyword">false</span></span>;
+    rgb color &lt;- <span class="hljs-comment"><span class="hljs-comment">#green;</span></span>
+    int cpt &lt;- <span class="hljs-number"><span class="hljs-number">0</span></span>;
+    reflex basic_move {
+        <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> wander speed: speed_people;
+    }
+
+    reflex end_of_immunity when: is_immune {
+        <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (cpt &gt; end_immunity_step) {
+            cpt &lt;- <span class="hljs-number"><span class="hljs-number">0</span></span>;
+            is_immune &lt;- <span class="hljs-keyword"><span class="hljs-keyword">false</span></span>;
+            color &lt;-  <span class="hljs-comment"><span class="hljs-comment">#green;</span></span>
+        } <span class="hljs-keyword"><span class="hljs-keyword">else</span></span> {
+            cpt &lt;- cpt + <span class="hljs-number"><span class="hljs-number">1</span></span>;
+        }
+    }
+    reflex become_immune when: is_infected {
+        <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (cpt &gt; immune_step) {
+            cpt &lt;- <span class="hljs-number"><span class="hljs-number">0</span></span>;
+            is_immune &lt;- <span class="hljs-keyword"><span class="hljs-keyword">true</span></span>;
+            is_infected &lt;- <span class="hljs-keyword"><span class="hljs-keyword">false</span></span>;
+            color &lt;-  <span class="hljs-comment"><span class="hljs-comment">#blue;</span></span>
+        } <span class="hljs-keyword"><span class="hljs-keyword">else</span></span> {
+            cpt &lt;- cpt + <span class="hljs-number"><span class="hljs-number">1</span></span>;
+        }
+    }
+    reflex become_infected when: not is_infected <span class="hljs-keyword"><span class="hljs-keyword">and</span></span> not is_immune{
+        <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (flip(infection_rate) <span class="hljs-keyword"><span class="hljs-keyword">and</span></span> not <span class="hljs-keyword"><span class="hljs-keyword">empty</span></span>(people at_distance infection_distance where each.is_infected)) {
+            is_infected &lt;- <span class="hljs-keyword"><span class="hljs-keyword">true</span></span>;
+            color &lt;-  <span class="hljs-comment"><span class="hljs-comment">#red;</span></span>
+            nb_infected &lt;- nb_infected + <span class="hljs-number"><span class="hljs-number">1</span></span>;
+        }
+    }
+
+    aspect <span class="hljs-keyword"><span class="hljs-keyword">default</span></span> { 
+        draw circle(<span class="hljs-number"><span class="hljs-number">1</span></span>) color: color;
+    }
+}
+
+experiment Simple type:gui {
+    parameter <span class="hljs-string"><span class="hljs-string">'Infection Rate:'</span></span> <span class="hljs-keyword"><span class="hljs-keyword">var</span></span>: infection_rate;
+    parameter <span class="hljs-string"><span class="hljs-string">'Infection Distance:'</span></span> <span class="hljs-keyword"><span class="hljs-keyword">var</span></span>: infection_distance;
+    output {
+        monitor <span class="hljs-string"><span class="hljs-string">"nb of infected people"</span></span> value: nb_infected;
+        display map {
+            species people aspect: <span class="hljs-keyword"><span class="hljs-keyword">default</span></span>;
+        }
+    }
+}
+
+
+<span class="hljs-comment"><span class="hljs-comment">// This experiment runs the simulation 5 times.</span></span>
+<span class="hljs-comment"><span class="hljs-comment">// At the end of each simulation, the people agents are saved in a shapefile</span></span>
+experiment <span class="hljs-string"><span class="hljs-string">'Run 5 simulations'</span></span> type: batch repeat: <span class="hljs-number"><span class="hljs-number">5</span></span> keep_seed: <span class="hljs-keyword"><span class="hljs-keyword">true</span></span> until: ( time &gt; <span class="hljs-number"><span class="hljs-number">1000</span></span> ) {
+    
+    <span class="hljs-comment"><span class="hljs-comment">// the reflex will be activated at the end of each run; in this experiment a run consists of the execution of 5 simulations (repeat: 5)</span></span>
+    reflex end_of_runs
+    {
+        int cpt &lt;- <span class="hljs-number"><span class="hljs-number">0</span></span>;
+        <span class="hljs-comment"><span class="hljs-comment">// each simulation of the run is an agent; it is possible to access to the list of these agents by using the variable "simulations" of the experiment. </span></span>
+        <span class="hljs-comment"><span class="hljs-comment">// Another way of accessing to the simulations consists in using the name of model + _model: here "batch_example_model"</span></span>
+        <span class="hljs-comment"><span class="hljs-comment">//in this example, we ask all the simulation agents of the run to save (at the end of the simulation) the people population in a shapefile with their is_infected and is_immune attributes </span></span>
+        ask simulations
+        {
+            save people type: <span class="hljs-string"><span class="hljs-string">"shp"</span></span> to: <span class="hljs-string"><span class="hljs-string">"people_shape"</span></span> + cpt + <span class="hljs-string"><span class="hljs-string">".shp"</span></span> with: [is_infected::<span class="hljs-string"><span class="hljs-string">"INFECTED"</span></span>, is_immune::<span class="hljs-string"><span class="hljs-string">"IMMUNE"</span></span>];
+            cpt &lt;- cpt + <span class="hljs-number"><span class="hljs-number">1</span></span>;
+        }
+    }
+}
+
+<span class="hljs-comment"><span class="hljs-comment">// This experiment explores two parameters with an exhaustive strategy,</span></span>
+<span class="hljs-comment"><span class="hljs-comment">// repeating each simulation three times (the aggregated fitness correspond to the mean fitness), </span></span>
+<span class="hljs-comment"><span class="hljs-comment">// in order to find the best combination of parameters to minimize the number of infected people</span></span>
+experiment <span class="hljs-string"><span class="hljs-string">'Exhaustive optimization'</span></span> type: batch repeat: <span class="hljs-number"><span class="hljs-number">5</span></span> keep_seed: <span class="hljs-keyword"><span class="hljs-keyword">true</span></span> until: ( time &gt; <span class="hljs-number"><span class="hljs-number">1000</span></span> ) {
+    parameter <span class="hljs-string"><span class="hljs-string">'Infection rate'</span></span> <span class="hljs-keyword"><span class="hljs-keyword">var</span></span>: infection_rate among: [ <span class="hljs-number"><span class="hljs-number">0.1</span></span> , <span class="hljs-number"><span class="hljs-number">0.5</span></span> , <span class="hljs-number"><span class="hljs-number">1.0</span></span> ];
+    parameter <span class="hljs-string"><span class="hljs-string">'Speed of people:'</span></span> <span class="hljs-keyword"><span class="hljs-keyword">var</span></span>: speed_people min: <span class="hljs-number"><span class="hljs-number">1.0</span></span> max: <span class="hljs-number"><span class="hljs-number">3.0</span></span> step:<span class="hljs-number"><span class="hljs-number">1.0</span></span>;
+    method exhaustive minimize: nb_infected;
+    
+    <span class="hljs-comment"><span class="hljs-comment">//the permanent section allows to define a output section that will be kept during all the batch experiment</span></span>
+    permanent {
+        display Comparison {
+            chart <span class="hljs-string"><span class="hljs-string">"Number of people infected"</span></span> type: series {
+                <span class="hljs-comment"><span class="hljs-comment">//we can access to all the simulations of a run (here composed of 5 simulation -&gt; repeat: 5) by the variable "simulations" of the experiment.</span></span>
+                <span class="hljs-comment"><span class="hljs-comment">//here we display for the 5 simulations, the mean, min and max values of the nb_infected variable.</span></span>
+                data <span class="hljs-string"><span class="hljs-string">"Mean"</span></span> value: mean(simulations collect each.nb_infected ) style: spline color: <span class="hljs-comment"><span class="hljs-comment">#blue ;</span></span>
+                data <span class="hljs-string"><span class="hljs-string">"Min"</span></span> value:  min(simulations collect each.nb_infected ) style: spline color: <span class="hljs-comment"><span class="hljs-comment">#darkgreen ;</span></span>
+                data <span class="hljs-string"><span class="hljs-string">"Max"</span></span> value:  max(simulations collect each.nb_infected ) style: spline color: <span class="hljs-comment"><span class="hljs-comment">#red ;</span></span>
+            }
+        }   
+    }
+}
+
+<span class="hljs-comment"><span class="hljs-comment">// This experiment explores two parameters with a GA strategy,</span></span>
+<span class="hljs-comment"><span class="hljs-comment">// repeating each simulation three times (the aggregated fitness correspond to the min fitness), </span></span>
+<span class="hljs-comment"><span class="hljs-comment">// in order to find the best combination of parameters to minimize the number of infected people</span></span>
+experiment Genetic type: batch keep_seed: <span class="hljs-keyword"><span class="hljs-keyword">true</span></span> repeat: <span class="hljs-number"><span class="hljs-number">3</span></span> until: ( time &gt; <span class="hljs-number"><span class="hljs-number">1000</span></span> ) {
+    parameter <span class="hljs-string"><span class="hljs-string">'Infection rate'</span></span> <span class="hljs-keyword"><span class="hljs-keyword">var</span></span>: infection_rate among: [ <span class="hljs-number"><span class="hljs-number">0.1</span></span> ,<span class="hljs-number"><span class="hljs-number">0.2</span></span>, <span class="hljs-number"><span class="hljs-number">0.5</span></span> , <span class="hljs-number"><span class="hljs-number">0.6</span></span>,<span class="hljs-number"><span class="hljs-number">0.8</span></span>, <span class="hljs-number"><span class="hljs-number">1.0</span></span> ];
+    parameter <span class="hljs-string"><span class="hljs-string">'Speed of people:'</span></span> <span class="hljs-keyword"><span class="hljs-keyword">var</span></span>: speed_people min: <span class="hljs-number"><span class="hljs-number">1.0</span></span> max: <span class="hljs-number"><span class="hljs-number">10.0</span></span> step:<span class="hljs-number"><span class="hljs-number">1.0</span></span>;
+    method genetic pop_dim: <span class="hljs-number"><span class="hljs-number">3</span></span> crossover_prob: <span class="hljs-number"><span class="hljs-number">0.7</span></span> mutation_prob: <span class="hljs-number"><span class="hljs-number">0.1</span></span>
+    nb_prelim_gen: <span class="hljs-number"><span class="hljs-number">1</span></span> max_gen: <span class="hljs-number"><span class="hljs-number">5</span></span>  minimize: nb_infected  aggregation: <span class="hljs-string"><span class="hljs-string">"min"</span></span>;
+}
+
+<span class="hljs-comment"><span class="hljs-comment">// This experiment explores two parameters with a Tabu Search strategy,</span></span>
+<span class="hljs-comment"><span class="hljs-comment">// repeating each simulation three times (the aggregated fitness correspond to the max fitness), </span></span>
+<span class="hljs-comment"><span class="hljs-comment">// in order to find the best combination of parameters to minimize the number of infected people</span></span>
+experiment Tabu_Search type: batch keep_seed: <span class="hljs-keyword"><span class="hljs-keyword">true</span></span> repeat: <span class="hljs-number"><span class="hljs-number">3</span></span> until: ( time &gt; <span class="hljs-number"><span class="hljs-number">1000</span></span> ) {
+    parameter <span class="hljs-string"><span class="hljs-string">'Infection rate'</span></span> <span class="hljs-keyword"><span class="hljs-keyword">var</span></span>: infection_rate among: [ <span class="hljs-number"><span class="hljs-number">0.1</span></span> ,<span class="hljs-number"><span class="hljs-number">0.2</span></span>, <span class="hljs-number"><span class="hljs-number">0.5</span></span> , <span class="hljs-number"><span class="hljs-number">0.6</span></span>,<span class="hljs-number"><span class="hljs-number">0.8</span></span>, <span class="hljs-number"><span class="hljs-number">1.0</span></span> ];
+    parameter <span class="hljs-string"><span class="hljs-string">'Speed of people:'</span></span> <span class="hljs-keyword"><span class="hljs-keyword">var</span></span>: speed_people min: <span class="hljs-number"><span class="hljs-number">1.0</span></span> max: <span class="hljs-number"><span class="hljs-number">10.0</span></span> step:<span class="hljs-number"><span class="hljs-number">1.0</span></span>;
+    method tabu iter_max: <span class="hljs-number"><span class="hljs-number">10</span></span> tabu_list_size: <span class="hljs-number"><span class="hljs-number">5</span></span> minimize: nb_infected aggregation: <span class="hljs-string"><span class="hljs-string">"max"</span></span>;
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

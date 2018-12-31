@@ -1,0 +1,180 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Tutorials/Tutorials/IncrementalModel/IncrementalModel_step4 --><head><meta charset="utf-8"><title>IncrementalModel_step4</title><script src="../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="incrementalmodel_step4">IncrementalModel_step4</h1>
+<a class="dashAnchor" name="//apple_ref/Section/4.%20Movement%20on%20Graph"></a><h1 id="4-movement-on-graph">4. Movement on Graph</h1>
+<p>This step illustrates how load a graph and use it for the displacement of our species.</p>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Formulation"></a><h2 id="formulation">Formulation</h2>
+<ul>
+<li>definition of a global graph to represent the road network
+<ul>
+<li>definition of a new global variable: <strong>staying_coeff</strong> to represent the fact that people move more near 9h, 12h and 18h</li>
+<li>definition of two new variables for the people agents: <strong>target</strong> and <strong>staying_counter</strong></li>
+<li>definition of a new reflex for people agents: <strong>stay</strong></li>
+<li>modification of the <strong>move</strong> reflex of the people agents</li>
+</ul>
+</li>
+</ul>
+<p><img src="../../../../github.com/wiki/gama-platform/gama/Tutorials/Tutorials/IncrementalModel/resources/images/tutorials/Incremental_model4.jpg" alt="images/Incremental_model4.jpg"></p>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Model%20Definition"></a><h2 id="model-definition">Model Definition</h2>
+<a class="dashAnchor" name="//apple_ref/Section/global%20variables"></a><h3 id="global-variables">global variables</h3>
+<p>We define two new global variables:</p>
+<ul>
+<li><strong>road_network</strong> (graph) : represents the graph that will be built from the road network
+<ul>
+<li><strong>staying_coeff</strong> (float) : represents the fact that people have more chance to move from their current building near 9h (go to work), 12h (lunch time) and 18h (go home). This variable is updated at each simulation step (use of the <strong>update</strong> facet).</li>
+</ul>
+</li>
+</ul>
+<pre><code class="hljs stata"> <span class="hljs-keyword"><span class="hljs-keyword">global</span></span>{
+    ....
+        <span class="hljs-keyword"><span class="hljs-keyword">graph</span></span> road_network;
+    float staying_coeff <span class="hljs-keyword"><span class="hljs-keyword">update</span></span>: 10.0 ^ (1 + <span class="hljs-built_in"><span class="hljs-built_in">min</span></span>([<span class="hljs-built_in"><span class="hljs-built_in">abs</span></span>(current_hour - 9), <span class="hljs-built_in"><span class="hljs-built_in">abs</span></span>(current_hour - 12), 
+<span class="hljs-built_in"><span class="hljs-built_in">abs</span></span>(current_hour - 18)]));
+    ....
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/initialization"></a><h3 id="initialization">initialization</h3>
+<p>We need to compute from the <strong>road</strong> agents, a graph for the moving of the <strong>people</strong> agents. The operator <strong>as_edge_graph</strong> allows to do that. It automatically builds from a set of agents or geometries a graph where the agents are the edges of the graph, a node represent the extremities of the agent geometry. The weight of each edge corresponds to the length of the road.</p>
+<pre><code class="hljs lasso"><span class="hljs-built_in"><span class="hljs-built_in">global</span></span> {
+   <span class="hljs-attr"><span class="hljs-attr">...</span></span>
+   init {
+      <span class="hljs-attr"><span class="hljs-attr">...</span></span>
+      create road from: roads_shapefile;
+      road_network &lt;- as_edge_graph(road);  
+      <span class="hljs-attr"><span class="hljs-attr">...</span></span>
+   }
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/people%20agent"></a><h3 id="people-agent">people agent</h3>
+<p>First, we add two new variables for the people agents:</p>
+<ul>
+<li><strong>target</strong> (point): the target location that the people want to reach (a point inside a building)
+<ul>
+<li><strong>staying_counter</strong> (int): the number of cycles since the agent arrived at its building</li>
+</ul>
+</li>
+</ul>
+<p>We define a new reflex called <strong>stay</strong> that is activated when the agent has no target (target = nil), i.e. when the agent is inside a building. This reflex increments the <strong>staying_counter</strong>, then it test the probability to leave that is computed from the <strong>staying_counter</strong> (longer the agent is inside the building, more it has a chance to leave) and the staying_coeff (closer to 9h, 12h and 18h, more the agent has a chance to leave).
+If the agents decide to leave, it computes a new target as a random point inside one of the buildings (randomly chosen).</p>
+<pre><code class="hljs irpf90">species people skills:[moving]{     
+    ...
+    reflex stay when: <span class="hljs-keyword"><span class="hljs-keyword">target</span></span> = nil {
+        staying_counter &lt;- staying_counter + <span class="hljs-number"><span class="hljs-number">1</span></span>;
+        <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> flip(staying_counter / staying_coeff) {
+            <span class="hljs-keyword"><span class="hljs-keyword">target</span></span> &lt;- any_location_in (one_of(building));
+        }
+    }
+    ...
+}
+</code></pre>
+<p>We modify the <strong>move</strong> reflex. Now, this reflex is activated only when the agent has a target (target != nil). In this case the agent moves in direction to its target using the <strong>goto</strong> action. Note that we specified a graph (<strong>road_network</strong>) to constraint the moving of the agents on the road network with the facet <strong>on</strong>. The agent uses the shortest path (according to the graph) to go to the target point. When the agent arrives at destination (location = location), the target is set to nil (the agent will stop moving) and the staying_counter is set to 0.</p>
+<pre><code class="hljs irpf90">species people skills:[moving]{     
+    ...
+    reflex move when: <span class="hljs-keyword"><span class="hljs-keyword">target</span></span> <span class="hljs-comment"><span class="hljs-comment">!= nil{</span></span>
+        <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> <span class="hljs-keyword"><span class="hljs-keyword">goto</span></span> <span class="hljs-keyword"><span class="hljs-keyword">target</span></span>:<span class="hljs-keyword"><span class="hljs-keyword">target</span></span> on: road_network;
+        <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (location = <span class="hljs-keyword"><span class="hljs-keyword">target</span></span>) {
+            <span class="hljs-keyword"><span class="hljs-keyword">target</span></span> &lt;- nil;
+            staying_counter &lt;- <span class="hljs-number"><span class="hljs-number">0</span></span>;
+        } 
+    }
+}
+</code></pre>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Complete%20Model"></a><h2 id="complete-model">Complete Model</h2>
+<pre><code class="hljs nginx"><span class="hljs-attribute"><span class="hljs-attribute">model</span></span> model4 
+ 
+global {
+    <span class="hljs-attribute"><span class="hljs-attribute">int</span></span> nb_people &lt;- <span class="hljs-number"><span class="hljs-number">500</span></span>;
+    <span class="hljs-attribute"><span class="hljs-attribute">float</span></span> step &lt;- <span class="hljs-number"><span class="hljs-number">1</span></span> <span class="hljs-comment"><span class="hljs-comment">#minutes;</span></span>
+    float infection_distance &lt;- <span class="hljs-number"><span class="hljs-number">2</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-comment"><span class="hljs-comment">#m;</span></span>
+    float proba_infection &lt;- <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">05</span></span>;
+    <span class="hljs-attribute"><span class="hljs-attribute">int</span></span> nb_infected_init &lt;- <span class="hljs-number"><span class="hljs-number">5</span></span>;
+    <span class="hljs-attribute"><span class="hljs-attribute">file</span></span> roads_shapefile &lt;- file(<span class="hljs-string"><span class="hljs-string">"../includes/road.shp"</span></span>);
+    <span class="hljs-attribute"><span class="hljs-attribute">file</span></span> buildings_shapefile &lt;- file(<span class="hljs-string"><span class="hljs-string">"../includes/building.shp"</span></span>);
+    <span class="hljs-attribute"><span class="hljs-attribute">geometry</span></span> shape &lt;- envelope(roads_shapefile);
+    <span class="hljs-attribute"><span class="hljs-attribute">int</span></span> current_hour update: (cycle / <span class="hljs-number"><span class="hljs-number">60</span></span>) mod <span class="hljs-number"><span class="hljs-number">24</span></span>;
+    <span class="hljs-attribute"><span class="hljs-attribute">graph</span></span> road_network;
+    <span class="hljs-attribute"><span class="hljs-attribute">float</span></span> staying_coeff update: <span class="hljs-number"><span class="hljs-number">10</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span><span class="hljs-regexp"><span class="hljs-regexp"> ^</span></span> (<span class="hljs-number"><span class="hljs-number">1</span></span> + min([abs(current_hour - <span class="hljs-number"><span class="hljs-number">9</span></span>), abs(current_hour - <span class="hljs-number"><span class="hljs-number">12</span></span>), abs(current_hour - <span class="hljs-number"><span class="hljs-number">18</span></span>)]));
+    <span class="hljs-attribute"><span class="hljs-attribute">int</span></span> nb_people_infected &lt;- nb_infected_init update: people count (each.is_infected);
+    <span class="hljs-attribute"><span class="hljs-attribute">int</span></span> nb_people_not_infected &lt;- nb_people - nb_infected_init update: nb_people - nb_people_infected;
+    
+    <span class="hljs-attribute"><span class="hljs-attribute">float</span></span> infected_rate update: nb_people_infected/length(people);
+    <span class="hljs-section"><span class="hljs-section">init</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">create</span></span> road from: roads_shapefile;
+        <span class="hljs-attribute"><span class="hljs-attribute">road_network</span></span> &lt;- as_edge_graph(road);
+        <span class="hljs-attribute"><span class="hljs-attribute">create</span></span> building from: buildings_shapefile;
+        <span class="hljs-attribute"><span class="hljs-attribute">create</span></span> people number:nb_people {
+            <span class="hljs-attribute"><span class="hljs-attribute">speed</span></span> &lt;- <span class="hljs-number"><span class="hljs-number">5</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-comment"><span class="hljs-comment">#km/#h;</span></span>
+            building bd &lt;- one_of(building);
+            <span class="hljs-attribute"><span class="hljs-attribute">location</span></span> &lt;- any_location_in(bd);
+        }
+        <span class="hljs-attribute"><span class="hljs-attribute">ask</span></span> nb_infected_init among people {
+            <span class="hljs-attribute"><span class="hljs-attribute">is_infected</span></span> &lt;- <span class="hljs-literal"><span class="hljs-literal">true</span></span>;
+        }
+    }
+    <span class="hljs-attribute"><span class="hljs-attribute">reflex</span></span> end_simulation when: infected_rate = <span class="hljs-number"><span class="hljs-number">1</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">do</span></span> halt;
+    }
+}
+
+<span class="hljs-attribute"><span class="hljs-attribute">species</span></span> people skills:[moving]{     
+    <span class="hljs-attribute"><span class="hljs-attribute">bool</span></span> is_infected &lt;- <span class="hljs-literal"><span class="hljs-literal">false</span></span>;
+    <span class="hljs-attribute"><span class="hljs-attribute">point</span></span> target;
+    <span class="hljs-attribute"><span class="hljs-attribute">int</span></span> staying_counter;
+    <span class="hljs-attribute"><span class="hljs-attribute">reflex</span></span> staying when: target = nil {
+        <span class="hljs-attribute"><span class="hljs-attribute">staying_counter</span></span> &lt;- staying_counter + <span class="hljs-number"><span class="hljs-number">1</span></span>;
+        <span class="hljs-attribute"><span class="hljs-attribute">if</span></span> flip(staying_counter / staying_coeff) {
+            <span class="hljs-attribute"><span class="hljs-attribute">target</span></span> &lt;- any_location_in (one_of(building));
+        }
+    }
+        
+    <span class="hljs-attribute"><span class="hljs-attribute">reflex</span></span> move when: target != nil{
+        <span class="hljs-attribute"><span class="hljs-attribute">do</span></span> goto target:target <span class="hljs-literal"><span class="hljs-literal">on</span></span>: road_network;
+        <span class="hljs-attribute"><span class="hljs-attribute">if</span></span> (location = target) {
+            <span class="hljs-attribute"><span class="hljs-attribute">target</span></span> &lt;- nil;
+            <span class="hljs-attribute"><span class="hljs-attribute">staying_counter</span></span> &lt;- <span class="hljs-number"><span class="hljs-number">0</span></span>;
+        } 
+    }
+    <span class="hljs-attribute"><span class="hljs-attribute">reflex</span></span> infect when: is_infected{
+        <span class="hljs-attribute"><span class="hljs-attribute">ask</span></span> people at_distance infection_distance {
+            <span class="hljs-attribute"><span class="hljs-attribute">if</span></span> flip(proba_infection) {
+                <span class="hljs-attribute"><span class="hljs-attribute">is_infected</span></span> &lt;- <span class="hljs-literal"><span class="hljs-literal">true</span></span>;
+            }
+        }
+    }
+    <span class="hljs-attribute"><span class="hljs-attribute">aspect</span></span> circle{
+        <span class="hljs-attribute"><span class="hljs-attribute">draw</span></span> circle(<span class="hljs-number"><span class="hljs-number">5</span></span>) color:is_infected ? <span class="hljs-comment"><span class="hljs-comment">#red : #green;</span></span>
+    }
+}
+
+species road {
+    <span class="hljs-attribute"><span class="hljs-attribute">aspect</span></span> geom {
+        <span class="hljs-attribute"><span class="hljs-attribute">draw</span></span> shape color: <span class="hljs-comment"><span class="hljs-comment">#black;</span></span>
+    }
+}
+
+species building {
+    <span class="hljs-attribute"><span class="hljs-attribute">aspect</span></span> geom {
+        <span class="hljs-attribute"><span class="hljs-attribute">draw</span></span> shape color: <span class="hljs-comment"><span class="hljs-comment">#gray;</span></span>
+    }
+}
+
+experiment main_experiment type:gui{
+    <span class="hljs-attribute"><span class="hljs-attribute">parameter</span></span> <span class="hljs-string"><span class="hljs-string">"Infection distance"</span></span> var: infection_distance;
+    <span class="hljs-attribute"><span class="hljs-attribute">parameter</span></span> <span class="hljs-string"><span class="hljs-string">"Proba infection"</span></span> var: proba_infection min: <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> max: <span class="hljs-number"><span class="hljs-number">1</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>;
+    <span class="hljs-attribute"><span class="hljs-attribute">parameter</span></span> <span class="hljs-string"><span class="hljs-string">"Nb people infected at init"</span></span> var: nb_infected_init ;
+    <span class="hljs-section"><span class="hljs-section">output</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">monitor</span></span> <span class="hljs-string"><span class="hljs-string">"Current hour"</span></span> value: current_hour;
+        <span class="hljs-attribute"><span class="hljs-attribute">monitor</span></span> <span class="hljs-string"><span class="hljs-string">"Infected people rate"</span></span> value: infected_rate;
+        <span class="hljs-attribute"><span class="hljs-attribute">display</span></span> map {
+            <span class="hljs-attribute"><span class="hljs-attribute">species</span></span> road aspect:geom;
+            <span class="hljs-attribute"><span class="hljs-attribute">species</span></span> building aspect:geom;
+            <span class="hljs-attribute"><span class="hljs-attribute">species</span></span> people aspect:circle;           
+        }
+        <span class="hljs-attribute"><span class="hljs-attribute">display</span></span> chart refresh:every(<span class="hljs-number"><span class="hljs-number">10</span></span>) {
+            <span class="hljs-attribute"><span class="hljs-attribute">chart</span></span> <span class="hljs-string"><span class="hljs-string">"Disease spreading"</span></span> type: series {
+                <span class="hljs-attribute"><span class="hljs-attribute">data</span></span> <span class="hljs-string"><span class="hljs-string">"susceptible"</span></span> value: nb_people_not_infected color: <span class="hljs-comment"><span class="hljs-comment">#green;</span></span>
+                data <span class="hljs-string"><span class="hljs-string">"infected"</span></span> value: nb_people_infected color: <span class="hljs-comment"><span class="hljs-comment">#red;</span></span>
+            }
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

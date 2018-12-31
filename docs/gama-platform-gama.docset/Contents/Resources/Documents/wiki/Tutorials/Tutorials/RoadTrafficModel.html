@@ -1,0 +1,22 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Tutorials/Tutorials/RoadTrafficModel --><head><meta charset="utf-8"><title>RoadTrafficModel</title><script src="../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="roadtrafficmodel">RoadTrafficModel</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Road%20Traffic"></a><h1 id="road-traffic">Road Traffic</h1>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><p>This tutorial has for goal to present the use of GIS data and complex geometries. In particular, this tutorial shows how to load gis data, to agentify them and to use a network of polylines to constraint the movement of agents. All the files related to this tutorial (shapefiles and models) are available in the Models Library (project road_traffic_tutorial).</p>
+<p>If you are not familiar with agent-based models or GAMA we advice you to have a look at the <a href="PredatorPrey.html">prey-predator</a> model first.</p>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Model%20Overview"></a><h2 id="model-overview">Model Overview</h2>
+<p>The model built in this tutorial concerns the study of the road traffic in a small city. Two layers of GIS data are used: a road layer (polylines) and a building layer (polygons). The building GIS data contain an attribute: the 'NATURE' of each building: a building can be either 'Residential' or 'Industrial'. In this model, people agents are moving along the road network. Each morning, they are going to an industrial building to work, and each night they are coming back home. Each time a people agent takes a road, it wears it out. More a road is worn out, more a people agent takes time to go all over it. The town council is able to repair some roads.</p>
+<p><img src="../../../github.com/wiki/gama-platform/gama/Tutorials/Tutorials/resources/images/tutorials/road_traffic.png" alt="images/road_traffic.png"></p>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Step%20List"></a><h2 id="step-list">Step List</h2>
+<p>This tutorial is composed of 7 steps corresponding to 7 models. For each step we present its purpose, an explicit formulation and the corresponding GAML code.</p>
+<ol>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/RoadTrafficModel_step1.html">Loading of GIS data (buildings and roads)</a>
+<ol>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/RoadTrafficModel_step2.html">Definition of people agents</a></li>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/RoadTrafficModel_step3.html">Movement of the people agents</a></li>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/RoadTrafficModel_step4.html">Definition of weight for the road network</a></li>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/RoadTrafficModel_step5.html">Dynamic update of the road network</a></li>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/RoadTrafficModel_step6.html">Definition of a chart display</a></li>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/RoadTrafficModel_step7.html">Automatic repair of roads</a></li>
+</ol>
+</li>
+</ol>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

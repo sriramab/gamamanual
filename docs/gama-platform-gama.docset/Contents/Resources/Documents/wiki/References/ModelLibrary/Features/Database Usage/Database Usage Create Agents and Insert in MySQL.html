@@ -1,0 +1,98 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Database Usage/Database Usage Create Agents and Insert in MySQL --><head><meta charset="utf-8"><title>Database Usage Create Agents and Insert in MySQL</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="database-usage-create-agents-and-insert-in-mysql">Database Usage Create Agents and Insert in MySQL</h1>
+<h1 id="create_agents_insert_result_mysql">create_agents_Insert_result_MySQL</h1>
+<p><em>Author : Benoit Gaudou</em></p>
+<p>This model illustrates the use of the MySQL DBMS to: </p>
+<ul>
+<li></li>
+<li><p>create agents from a database</p>
+</li>
+<li></li>
+<li><p>store every cycle some results into a database</p>
+</li>
+<li><p>Note: this model could be used with any DBMS just by changing the PARAMS variable.</p>
+</li>
+<li><p>NOTE: YOU SHOULD HAVE ALREADY CREATED YOUR DATABASE (meteo_DB here) AND IMPORTED THE FILE (../../includes/meteo_DB_dump.sql)</p>
+</li>
+<li>IN ORDER THAT THE MODEL CAN RUN PROPERLY.</li>
+</ul>
+<p>Code of the model : </p>
+<pre><code class="hljs zephir">model create_agents_Insert_result_MySQL 
+
+<span class="hljs-keyword">global</span> {
+    string res_DB &lt;- <span class="hljs-string">'`result_DB`'</span>;
+    map&lt;string, string&gt; PARAMS &lt;- [<span class="hljs-string">'host'</span>::<span class="hljs-string">'localhost'</span>, <span class="hljs-string">'dbtype'</span>::<span class="hljs-string">'MySQL'</span>, <span class="hljs-string">'database'</span>::<span class="hljs-string">'meteo_DB'</span>, <span class="hljs-string">'port'</span>::<span class="hljs-string">'8889'</span>, <span class="hljs-string">'user'</span>::<span class="hljs-string">'root'</span>, <span class="hljs-string">'passwd'</span>::<span class="hljs-string">'root'</span>];
+    string SQLquery_idPoint &lt;- <span class="hljs-string">"SELECT `idPointgrille`, AVG(`RRmm`) AS RR, AVG(`Tmin`) AS Tmin, AVG(`Tmax`) AS Tmax, AVG(`Rglot`) AS Rglot, AVG(`ETPmm`) AS ETPmm
+                FROM meteo_table GROUP BY `idPointgrille`"</span>;
+    init {
+        create DB_accessor;
+        ask DB_accessor {
+            <span class="hljs-keyword">do</span> executeUpdate params: PARAMS updateComm: <span class="hljs-string">"CREATE TABLE `result_DB` (
+                                          `idPoint` varchar(16) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+                                          `valRnd` float NOT NULL DEFAULT '0',
+                                          `cycle` int(16) NOT NULL DEFAULT '0'
+                                        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;"</span>;
+        }
+
+        create idPoint from: <span class="hljs-keyword">list</span>(first(DB_accessor) select [params::PARAMS, select::SQLquery_idPoint]) with:
+        [name:: <span class="hljs-string">"idPointgrille"</span>, RRmm::float(<span class="hljs-string">"RR"</span>), Tmin::float(<span class="hljs-string">"Tmin"</span>), Tmax::float(<span class="hljs-string">"Tmax"</span>), Rglot::float(<span class="hljs-string">"Rglot"</span>), ETPmm::float(<span class="hljs-string">"ETPmm"</span>)];
+    }
+
+    reflex endSimu when: (cycle = <span class="hljs-number">10</span>) {
+        ask DB_accessor {
+            write <span class="hljs-string">"Data: "</span> + (<span class="hljs-keyword">self</span> select [params::PARAMS, select::<span class="hljs-string">"select * FROM "</span> + res_DB]);
+            <span class="hljs-keyword">do</span> executeUpdate params: PARAMS updateComm: <span class="hljs-string">"DROP TABLE "</span> + res_DB;
+        }
+
+        write <span class="hljs-string">"DROP the result table"</span>;
+        <span class="hljs-keyword">do</span> halt; 
+    }
+
+}
+
+species idPoint {
+    <span class="hljs-keyword">float</span> RRmm;
+    <span class="hljs-keyword">float</span> Tmin;
+    <span class="hljs-keyword">float</span> Tmax;
+    <span class="hljs-keyword">float</span> Rglot;
+    <span class="hljs-keyword">float</span> ETPmm;
+    <span class="hljs-keyword">float</span> valRnd;
+    reflex compute_new_random_value {
+        valRnd &lt;- <span class="hljs-keyword">float</span>(rnd(RRmm + Tmin + Tmax + Rglot + ETPmm));
+    }
+
+    reflex store_valRnd {
+        write <span class="hljs-string">" "</span> + <span class="hljs-keyword">self</span> + <span class="hljs-string">" inserts value "</span> + valRnd;
+        ask (first(DB_accessor)) {
+            <span class="hljs-keyword">do</span> executeUpdate params: PARAMS updateComm: <span class="hljs-string">"INSERT INTO "</span> + res_DB + <span class="hljs-string">" VALUES(?, ?, ?);"</span> values: [myself.name, myself.valRnd, cycle];
+        }
+
+        write <span class="hljs-string">" "</span> + <span class="hljs-keyword">self</span> + <span class="hljs-string">" inserts value "</span> + valRnd;
+    }
+
+}
+
+species DB_accessor skills: [SQLSKILL] {
+    <span class="hljs-keyword">list</span> listRes &lt;- [];
+    init {
+    <span class="hljs-comment">// Test of the connection to the database</span>
+        <span class="hljs-keyword">if</span> (not (<span class="hljs-keyword">self</span> testConnection [params::PARAMS])) {
+            write <span class="hljs-string">"Connection impossible"</span>;
+            ask (world) {
+                <span class="hljs-keyword">do</span> halt;
+            }
+
+        } <span class="hljs-keyword">else</span> {
+            write <span class="hljs-string">"Connection Database OK."</span>;
+        }
+
+        write <span class="hljs-string">""</span> + <span class="hljs-keyword">list</span>(<span class="hljs-keyword">self</span> select [params::PARAMS, select::<span class="hljs-string">"SELECT * FROM meteo_table"</span>]);
+        write <span class="hljs-string">""</span> + <span class="hljs-keyword">list</span>(<span class="hljs-keyword">self</span> select [params::PARAMS, select::SQLquery_idPoint]);
+    }
+
+}
+
+experiment createInsertMySQL type: gui {
+}
+   
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,0 +1,55 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Toy Models/Articles/Articles ville_2 --><head><meta charset="utf-8"><title>Articles ville_2</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="articles-ville_2">Articles ville_2</h1>
+<h1 id="ville-2">Ville 2</h1>
+<p>_Author : _</p>
+<p>Creation of buildings and roads thanks to a shape file. The color of the building depends on the type of the building, while the color of a house depend on its income. </p>
+<p>Code of the model : </p>
+<pre><code class="hljs nginx">
+<span class="hljs-attribute">model</span> ville
+
+global {
+    <span class="hljs-attribute">file</span> shape_file_batiments &lt;- file(<span class="hljs-string">"../includes/batiments.shp"</span>);
+    <span class="hljs-attribute">file</span> shape_file_routes &lt;- file(<span class="hljs-string">"../includes/routes.shp"</span>);
+    <span class="hljs-attribute">geometry</span> shape &lt;- envelope(shape_file_routes);
+    <span class="hljs-section">init</span> {
+        <span class="hljs-attribute">create</span> route from: shape_file_routes;
+        <span class="hljs-attribute">create</span> batiment from: shape_file_batiments with: [type:: string(read(<span class="hljs-string">"NATURE"</span>))];
+        <span class="hljs-attribute">create</span> foyer number: <span class="hljs-number">500</span>;
+    }
+}
+
+<span class="hljs-attribute">species</span> batiment {
+    <span class="hljs-attribute">string</span> type;
+    <span class="hljs-attribute">int</span> capacite &lt;- type = <span class="hljs-string">"Industrial"</span> ? <span class="hljs-number">0</span> : int(shape.area / <span class="hljs-number">60</span>.<span class="hljs-number">0</span>);
+    <span class="hljs-attribute">aspect</span> geometrie {
+        <span class="hljs-attribute">draw</span> shape color: type = <span class="hljs-string">"Industrial"</span> ? <span class="hljs-comment">#pink : #gray;</span>
+    }
+}
+
+species route {
+    <span class="hljs-attribute">aspect</span> geometrie {
+        <span class="hljs-attribute">draw</span> shape color: <span class="hljs-comment">#black;</span>
+    }
+}
+
+species foyer {
+    <span class="hljs-attribute">float</span> revenu &lt;- gauss(<span class="hljs-number">1500</span>, <span class="hljs-number">500</span>);
+    <span class="hljs-attribute">batiment</span> habitation;
+    <span class="hljs-attribute">batiment</span> lieu_travail;
+    
+    <span class="hljs-attribute">aspect</span> revenu {
+        <span class="hljs-attribute">int</span> val &lt;- int(<span class="hljs-number">255</span> * (revenu / <span class="hljs-number">3000</span>));
+        <span class="hljs-attribute">draw</span> circle(<span class="hljs-number">5</span>) color: rgb(<span class="hljs-number">255</span> - val, val, <span class="hljs-number">0</span>);
+    }
+}
+
+<span class="hljs-attribute">experiment</span> ville type: gui {
+    <span class="hljs-section">output</span> {
+        <span class="hljs-attribute">display</span> carte_principale {
+            <span class="hljs-attribute">species</span> batiment aspect: geometrie;
+            <span class="hljs-attribute">species</span> route aspect: geometrie;
+            <span class="hljs-attribute">species</span> foyer aspect: revenu;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

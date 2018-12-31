@@ -1,0 +1,180 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment/DefiningUserInteraction --><head><meta charset="utf-8"><title>DefiningUserInteraction</title><script src="../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="defininguserinteraction">DefiningUserInteraction</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Defining%20user%20interaction"></a><h1 id="defining-user-interaction">Defining user interaction</h1>
+<p>During the simulation, GAML provides you the possibility to define some function the user can execute during the execution. In this chapter, we will see how to define buttons to execute action during the simulation, how to catch click event, and how to use the user control architecture.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Index"></a><h2 id="index">Index</h2>
+<ul>
+<li><a href="#catch-mouse-event">Catch Mouse Event</a></li>
+<li><a href="#define-user-command">Define User command</a>
+<ul>
+<li><a href="#defining-user-command-in-gui-experiment-scope">... in the GUI Experiment scope</a></li>
+<li><a href="#defining-user-command-in-a-global-or-regular-species">... in global or regular species</a></li>
+<li><a href="#user_location">user_location</a></li>
+<li><a href="#user_input">user_input</a></li>
+</ul>
+</li>
+<li><a href="#user-control-architecture">User Control Architecture</a></li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Catch%20Mouse%20Event"></a><h2 id="catch-mouse-event">Catch Mouse Event</h2>
+<p>You can catch mouse event during the simulation using the statement <code>event</code>. This statement has 2 required facets:</p>
+<ul>
+<li><strong><code>name</code></strong> (identifier) : Specify which event do you want to trigger (among the following values : <code>mouse_down</code>, <code>mouse_up</code>, <code>mouse_move</code>, <code>mouse_enter</code>, <code>mouse_exit</code> or any alphanumeric symbol/key of the keyboard, such as, <code>'a'</code>, <code>'b'</code>...).</li>
+<li><strong><code>action</code></strong> (identifier) : Specify the name of the global action to call.</li>
+</ul>
+<pre><code class="hljs irpf90">event mouse_down <span class="hljs-keyword"><span class="hljs-keyword">action</span></span>: my_action;
+</code></pre>
+<p>The <code>event</code> statement has to be defined in the <code>experiment</code>/<code>output</code>/<code>display</code> scope. Once the event is triggered, the global action linked will be called. The action linked cannot have arguments. To get the location of the mouse click, the <code>#user_location</code> can be used; to get the agents on which the mouse has clicked, you can use spatial query (e.g. <code>my_species overlapping #user_location</code>).</p>
+<pre><code class="hljs nginx"><span class="hljs-section"><span class="hljs-section">global</span></span>
+{
+    <span class="hljs-attribute"><span class="hljs-attribute">action</span></span> my_action
+    {
+        <span class="hljs-attribute"><span class="hljs-attribute">write</span></span> <span class="hljs-string"><span class="hljs-string">"do action"</span></span>;
+    }
+
+}
+
+<span class="hljs-attribute"><span class="hljs-attribute">species</span></span> my_species
+{
+}
+
+<span class="hljs-attribute"><span class="hljs-attribute">experiment</span></span> my_experiment type: gui
+{
+    <span class="hljs-section"><span class="hljs-section">output</span></span>
+    {
+        <span class="hljs-attribute"><span class="hljs-attribute">display</span></span> my_display
+        {
+            <span class="hljs-attribute"><span class="hljs-attribute">species</span></span> my_species;
+            <span class="hljs-attribute"><span class="hljs-attribute">event</span></span> mouse_down action: my_action;
+        }
+    }
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Define%20User%20command"></a><h2 id="define-user-command">Define User command</h2>
+<p>Anywhere in the global block, in a species or in an (GUI) experiment, <code>user_command</code> statements can be implemented. They can either call directly an existing action (with or without arguments) or be followed by a block that describes what to do when this command is run.</p>
+<p>Their syntax can be (depending of the modeler needs) either:</p>
+<pre><code class="hljs less">user_command cmd_name <span class="hljs-attribute"><span class="hljs-attribute">action</span></span>: action_without_arg_name;
+<span class="hljs-comment"><span class="hljs-comment">//or</span></span>
+user_command cmd_name <span class="hljs-attribute"><span class="hljs-attribute">action</span></span>: action_name <span class="hljs-attribute"><span class="hljs-attribute">with</span></span>: [<span class="hljs-attribute"><span class="hljs-attribute">arg1</span></span>::val1, <span class="hljs-attribute"><span class="hljs-attribute">arg2</span></span>::val2];
+<span class="hljs-comment"><span class="hljs-comment">//or</span></span>
+<span class="hljs-selector-tag"><span class="hljs-selector-tag">user_command</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">cmd_name</span></span> {
+   <span class="hljs-comment"><span class="hljs-comment">// statements</span></span>
+}
+</code></pre>
+<p>For instance:</p>
+<pre><code class="hljs less">user_command kill_myself <span class="hljs-attribute"><span class="hljs-attribute">action</span></span>: die;
+<span class="hljs-comment"><span class="hljs-comment">//or</span></span>
+user_command kill_myself <span class="hljs-attribute"><span class="hljs-attribute">action</span></span>: some_action <span class="hljs-attribute"><span class="hljs-attribute">with</span></span>: [<span class="hljs-attribute"><span class="hljs-attribute">arg1</span></span>::<span class="hljs-number"><span class="hljs-number">5</span></span>, <span class="hljs-attribute"><span class="hljs-attribute">arg2</span></span>::<span class="hljs-number"><span class="hljs-number">3</span></span>];
+<span class="hljs-comment"><span class="hljs-comment">//or</span></span>
+<span class="hljs-selector-tag"><span class="hljs-selector-tag">user_command</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">kill_myself</span></span> {
+    do die;
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Defining%20User%20command%20in%20GUI%20Experiment%20scope"></a><h3 id="defining-user-command-in-gui-experiment-scope">Defining User command in GUI Experiment scope</h3>
+<p>The user command can be defined directly inside the GUI experiment scope. In that case, the implemented action appears as a button in the top of the parameter view.</p>
+<p>Here is a very short code example :</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute"><span class="hljs-attribute">model</span></span> quick_user_command_model
+
+global {
+    <span class="hljs-attribute"><span class="hljs-attribute">action</span></span> createAgent
+    {
+        <span class="hljs-attribute"><span class="hljs-attribute">create</span></span> my_species;
+    }
+}
+
+<span class="hljs-attribute"><span class="hljs-attribute">species</span></span> my_species {
+    <span class="hljs-attribute"><span class="hljs-attribute">aspect</span></span> base {
+        <span class="hljs-attribute"><span class="hljs-attribute">draw</span></span> circle(<span class="hljs-number"><span class="hljs-number">1</span></span>) color:<span class="hljs-comment"><span class="hljs-comment">#blue;</span></span>
+    }
+}
+
+experiment expe type:gui {
+    <span class="hljs-attribute"><span class="hljs-attribute">user_command</span></span> cmd_inside_experiment action:createAgent;
+    <span class="hljs-section"><span class="hljs-section">output</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">display</span></span> my_display {
+            <span class="hljs-attribute"><span class="hljs-attribute">species</span></span> my_species aspect:base;
+        }
+    }
+}
+</code></pre>
+<p>And here is screenshots of the execution :</p>
+<p><img src="../../../../github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment/resources/images/definingGUIExperiment/user_command_inside_expe.png" alt="images/user_command_inside_expe.png"></p>
+<a class="dashAnchor" name="//apple_ref/Section/Defining%20User%20command%20in%20a%20global%20or%20regular%20species"></a><h3 id="defining-user-command-in-a-global-or-regular-species">Defining User command in a global or regular species</h3>
+<p>The user command can also be defined inside a species scope (either global or regular one). Here is a quick example of model :</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute"><span class="hljs-attribute">model</span></span> quick_user_command_model
+
+global {
+    <span class="hljs-section"><span class="hljs-section">init</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">create</span></span> my_species number:<span class="hljs-number"><span class="hljs-number">10</span></span>;
+    }
+}
+
+<span class="hljs-attribute"><span class="hljs-attribute">species</span></span> my_species {
+    <span class="hljs-attribute"><span class="hljs-attribute">user_command</span></span> cmd_inside_experiment action:die;
+    <span class="hljs-attribute"><span class="hljs-attribute">aspect</span></span> base {
+        <span class="hljs-attribute"><span class="hljs-attribute">draw</span></span> circle(<span class="hljs-number"><span class="hljs-number">1</span></span>) color:<span class="hljs-comment"><span class="hljs-comment">#blue;</span></span>
+    }
+}
+
+experiment expe type:gui {
+    <span class="hljs-section"><span class="hljs-section">output</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">display</span></span> my_display {
+            <span class="hljs-attribute"><span class="hljs-attribute">species</span></span> my_species aspect:base;
+        }
+    }
+}
+</code></pre>
+<p>During the execution, you have 2 ways to access to the action :</p>
+<ul>
+<li>When the agent is inspected, they appear as buttons above the agents' attributes</li>
+</ul>
+<p><img src="../../../../github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment/resources/images/definingGUIExperiment/user_command_inside_species1.png" alt="images/user_command_inside_species1.png"></p>
+<ul>
+<li>When the agent is selected by a right-click in a display, these command appear under the usual "Inspect", "Focus" and "Highlight" commands in the pop-up menu.</li>
+</ul>
+<p><img src="../../../../github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment/resources/images/definingGUIExperiment/user_command_inside_species2.png" alt="images/user_command_inside_species2.png"></p>
+<p>Remark: The execution of a command obeys the following rules:</p>
+<ul>
+<li>when the command is called from right-click pop-menu, it is executed immediately</li>
+<li>when the command is called from panels, its execution is postponed until the end of the current step and then executed at that time.</li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/user_location"></a><h3 id="user_location">user_location</h3>
+<p>In the special case when the <code>user_command</code> is called from the pop-up menu (from a right-click on an agent in a display), the location chosen by the user (translated into the model coordinates) is passed to the execution scope under the name <code>user_location</code>.</p>
+<p>Example:</p>
+<pre><code class="hljs groovy">global {
+   user_command <span class="hljs-string"><span class="hljs-string">"Create agents here"</span></span> {
+      create my_species <span class="hljs-string"><span class="hljs-string">number:</span></span> <span class="hljs-number"><span class="hljs-number">10</span></span> <span class="hljs-string"><span class="hljs-string">with:</span></span> [<span class="hljs-string"><span class="hljs-string">location:</span></span>:user_location];
+   }
+}
+</code></pre>
+<p>This will allow the user to click on a display, choose the world (always present now), and select the menu item "Create agents here".</p>
+<p>Note that if the world is inspected (this <code>user_command</code> appears thus as a button) and the user chooses to push the button, the agent will be created at a random location.</p>
+<a class="dashAnchor" name="//apple_ref/Section/user_input"></a><h3 id="user_input">user_input</h3>
+<p>As it is also, sometimes, necessary to ask the user for some values (not defined as parameters), the <code>user_input</code> unary operator has been introduced. This operator takes a map [string::value] as argument (the key is the name of the chosen parameter, the value is the default value), displays a dialog asking the user for these values, and returns the same map with the modified values (if any). You can also add a text as first argument of the operator, which will be displayed as a title for your dialog popup. The dialog is modal and will interrupt the execution of the simulation until the user has either dismissed or accepted it. It can be used, for instance, in an init section like the following one to force the user to input new values instead of relying on the initial values of parameters.</p>
+<p>Here is an example of implementation:</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute"><span class="hljs-attribute">model</span></span> quick_user_command_model
+
+global {
+   <span class="hljs-section"><span class="hljs-section">init</span></span> {
+      <span class="hljs-attribute"><span class="hljs-attribute">map</span></span> values &lt;- user_input(<span class="hljs-string"><span class="hljs-string">"choose a number of agent to create"</span></span>,[<span class="hljs-string"><span class="hljs-string">"Number"</span></span> :: <span class="hljs-number"><span class="hljs-number">100</span></span>]);
+      <span class="hljs-attribute"><span class="hljs-attribute">create</span></span> my_species number : int(values at <span class="hljs-string"><span class="hljs-string">"Number"</span></span>);
+   }
+}
+
+<span class="hljs-attribute"><span class="hljs-attribute">species</span></span> my_species {
+    <span class="hljs-attribute"><span class="hljs-attribute">aspect</span></span> base {
+        <span class="hljs-attribute"><span class="hljs-attribute">draw</span></span> circle(<span class="hljs-number"><span class="hljs-number">1</span></span>) color:<span class="hljs-comment"><span class="hljs-comment">#blue;</span></span>
+    }
+}
+
+experiment expe type:gui {
+    <span class="hljs-section"><span class="hljs-section">output</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">display</span></span> my_display {
+            <span class="hljs-attribute"><span class="hljs-attribute">species</span></span> my_species aspect:base;
+        }
+    }
+}
+</code></pre>
+<p>When running this model, you will first have to input a number:</p>
+<p><img src="../../../../github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment/resources/images/definingGUIExperiment/input_cmd.png" alt="images/input_cmd.png"></p>
+<a class="dashAnchor" name="//apple_ref/Section/User%20Control%20Architecture"></a><h2 id="user-control-architecture">User Control Architecture</h2>
+<p>An other way to define user interaction is to use the user control architecture. Please jump directly to the section <a href="https://github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment/ControlArchitecture#user-control-architecture.html">user control architecture</a> if you want to learn more about this point.</p>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,0 +1,35 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Tutorials/Predator Prey/Predator Prey Model 01 --><head><meta charset="utf-8"><title>Predator Prey Model 01</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="predator-prey-model-01">Predator Prey Model 01</h1>
+<h1 id="basic-model-prey-agents">Basic model (prey agents)</h1>
+<p>First part of the tutorial : Predator Prey</p>
+<p>Code of the model : </p>
+<pre><code class="hljs nginx">
+<span class="hljs-attribute">model</span> prey_predator
+
+global {
+    <span class="hljs-attribute">int</span> nb_preys_init &lt;- <span class="hljs-number">200</span>;
+    <span class="hljs-section">init</span> {
+        <span class="hljs-attribute">create</span> prey number: nb_preys_init ;
+    }
+}
+
+<span class="hljs-attribute">species</span> prey {
+    <span class="hljs-attribute">float</span> size &lt;- <span class="hljs-number">1</span>.<span class="hljs-number">0</span> ;
+    <span class="hljs-attribute">rgb</span> color &lt;- <span class="hljs-comment">#blue;</span>
+        
+    aspect base {
+        <span class="hljs-attribute">draw</span> circle(size) color: color ;
+    }
+} 
+
+<span class="hljs-attribute">experiment</span> prey_predator type: gui {
+    <span class="hljs-attribute">parameter</span> <span class="hljs-string">"Initial number of preys: "</span> var: nb_preys_init min: <span class="hljs-number">1</span> max: <span class="hljs-number">1000</span> category: <span class="hljs-string">"Prey"</span> ;
+    <span class="hljs-section">output</span> {
+        <span class="hljs-attribute">display</span> main_display {
+            <span class="hljs-attribute">species</span> prey aspect: base ;
+        }
+    }
+}
+
+ 
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

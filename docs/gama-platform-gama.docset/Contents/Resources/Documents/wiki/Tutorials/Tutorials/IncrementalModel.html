@@ -1,0 +1,35 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Tutorials/Tutorials/IncrementalModel --><head><meta charset="utf-8"><title>IncrementalModel</title><script src="../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="incrementalmodel">IncrementalModel</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Incremental%20Model"></a><h1 id="incremental-model">Incremental Model</h1>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><p>This tutorial has for goal to give an overview all most of the capabilities of GAMA. In particular, it presents how to build a simple model and the use of GIS data, graphs, 3D visualization, multi-level modeling and differential equations. All the files related to this tutorial (images and models) are available in the Models Library (project Tutorials/Incremental Model).</p>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Model%20Overview"></a><h2 id="model-overview">Model Overview</h2>
+<p>The model built in this tutorial concerns the study of the spreading of a disease in a small city.
+Three type of entities are taken into account: the people, the buildings and the roads.</p>
+<p>We made the following modeling choice:</p>
+<ul>
+<li>Simulation step: 1 minute
+<ul>
+<li>People are moving on the roads from building to building</li>
+<li>People use the shortest path to move between buildings</li>
+<li>All people have the same speed and move at constant speed</li>
+<li>Each time, people arrived at a building they are staying a certain time</li>
+<li>The staying time depends on the current hour (lower at 9h - go to work - at 12h go to lunch - at 18h - go back home)</li>
+<li>Infected people are never cured</li>
+</ul>
+</li>
+</ul>
+<p><img src="../../../github.com/wiki/gama-platform/gama/Tutorials/Tutorials/resources/images/tutorials/incremental_model.jpg" alt="images/incremental_model.jpg"></p>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Step%20List"></a><h2 id="step-list">Step List</h2>
+<p>This tutorial is composed of 7 steps corresponding to 7 models. For each step we present its purpose, an explicit formulation and the corresponding GAML code.</p>
+<ol>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/IncrementalModel_step1.html">Simple SI Model</a>
+<ol>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/IncrementalModel_step2.html">Charts</a></li>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/IncrementalModel_step3.html">Integration of GIS Data</a></li>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/IncrementalModel_step4.html">Movement on Graph</a></li>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/IncrementalModel_step5.html">Visualizing in 3D</a></li>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/IncrementalModel_step6.html">Multi-Level</a></li>
+<li><a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/IncrementalModel_step7.html">Differential Equations</a></li>
+</ol>
+</li>
+</ol>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

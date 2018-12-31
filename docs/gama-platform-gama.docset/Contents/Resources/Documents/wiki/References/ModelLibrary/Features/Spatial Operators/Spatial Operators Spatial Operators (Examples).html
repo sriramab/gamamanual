@@ -1,0 +1,113 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Spatial Operators/Spatial Operators Spatial Operators (Examples) --><head><meta charset="utf-8"><title>Spatial Operators Spatial Operators (Examples)</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="spatial-operators-spatial-operators-examples">Spatial Operators Spatial Operators (Examples)</h1>
+<h1 id="spatial-operators">Spatial Operators</h1>
+<p><em>Author : Patrick Taillandier</em></p>
+<p>A model which shows how to use spatial operators like rotated_by, scaled_by and convex_hull</p>
+<p>Code of the model : </p>
+<pre><code class="hljs gams"><span class="hljs-keyword">model</span> example_spatial_operators
+
+global {
+    <span class="hljs-comment">// Parameters for the shapefiles</span>
+    <span class="hljs-keyword">file</span> shape_file_name_init  &lt;- <span class="hljs-keyword">file</span>(<span class="hljs-string">'../gis/init.shp'</span>) ;
+    <span class="hljs-keyword">file</span> shape_file_name_background  &lt;- <span class="hljs-keyword">file</span>(<span class="hljs-string">'../gis/background.shp'</span>);
+    
+    <span class="hljs-comment">//Parameters for the agents     </span>
+    float dying_size <span class="hljs-built-in">min</span>: <span class="hljs-number">100.0</span>  &lt;<span class="hljs-number">-10000.0</span> ; 
+    float crossover_size <span class="hljs-built-in">min</span>: <span class="hljs-number">100.0</span>  &lt;- <span class="hljs-number">1000.0</span>;
+    float minimum_size <span class="hljs-built-in">min</span>: <span class="hljs-number">100.0</span> &lt;- <span class="hljs-number">500.0</span>; 
+    int time_wthout_co <span class="hljs-built-in">min</span>: <span class="hljs-number">1</span> &lt;- <span class="hljs-number">7</span>;
+    float speed <span class="hljs-built-in">min</span>: <span class="hljs-number">1.0</span>  &lt;- <span class="hljs-number">10.0</span>; 
+    float crossover_rate <span class="hljs-built-in">min</span>: <span class="hljs-number">0.1</span>  &lt;- <span class="hljs-number">0.95</span>; 
+    float scaling_factor <span class="hljs-built-in">min</span>: <span class="hljs-number">1.001</span> &lt;- <span class="hljs-number">1.05</span>;
+    float angle_rotation_max <span class="hljs-built-in">min</span>: <span class="hljs-number">0.0</span> &lt;- <span class="hljs-number">45.0</span>;
+    int nb_partners_max <span class="hljs-built-in">min</span>: <span class="hljs-number">1</span>  &lt;- <span class="hljs-number">1</span>;
+    int max_side_size <span class="hljs-built-in">min</span>: <span class="hljs-number">1</span> &lt;- <span class="hljs-number">5</span>;  
+    int background_size_side <span class="hljs-built-in">min</span>: <span class="hljs-number">20</span> <span class="hljs-built-in">max</span>: <span class="hljs-number">100</span> &lt;- <span class="hljs-number">80</span> ;
+    
+    <span class="hljs-comment">// Environment</span>
+    geometry shape &lt;- envelope(shape_file_name_background);
+    
+
+    reflex stop when: empty ( object ) {
+        do halt;
+    } 
+
+}
+
+species object topology: topology(shape_file_name_init) {
+    rgb color &lt;- rgb ( [ rnd ( <span class="hljs-number">255</span> ) , rnd ( <span class="hljs-number">255</span> ) , rnd ( <span class="hljs-number">255</span> ) ]);
+    point location_new_Ag &lt;- nil;
+    rgb color_new_Ag &lt;- nil;
+    int nb_last_rep &lt;- <span class="hljs-number">0</span>;
+        
+    <span class="hljs-comment">//Reflex making the shape of the agent growing and rotate it randomly</span>
+    reflex evolve {
+        nb_last_rep &lt;- nb_last_rep + <span class="hljs-number">1</span>;
+        shape &lt;- shape scaled_by scaling_factor;
+        shape &lt;- shape rotated_by ((rnd ( <span class="hljs-number">100</span> * angle_rotation_max))/ <span class="hljs-number">100.0</span>);       
+    }
+    
+    <span class="hljs-comment">//Make the agent move, kill it if is area is greater than the dying size or intersecting contours of the world</span>
+    reflex move {
+        location &lt;- location + { speed * ( <span class="hljs-number">1</span> - rnd ( <span class="hljs-number">2</span> ) ) , speed * ( <span class="hljs-number">1</span> - rnd ( <span class="hljs-number">2</span> ) ) };
+        <span class="hljs-keyword">if</span> ( (shape.area &gt; dying_size) <span class="hljs-keyword">or</span> (shape intersects world.shape.contour)) {
+            do die; 
+        }
+            
+    }
+    
+    
+    <span class="hljs-comment">//Reflex to change the shape of the agent intersects an other agent and create a convex hull of the shape of the new agent resulting in the intersection of the shapes of the agent and an other one</span>
+    reflex crossover when: ( shape.area &gt; crossover_size ) <span class="hljs-keyword">and</span> ( nb_last_rep &gt; time_wthout_co ) { 
+        int nb_partners  &lt;- <span class="hljs-number">0</span>;
+        list&lt;object&gt; list_people &lt;- shuffle ( object );
+        <span class="hljs-keyword">loop</span> p over: list_people {
+            <span class="hljs-keyword">if</span> ( p != self ) <span class="hljs-keyword">and</span> ( nb_partners &lt;= nb_partners_max ) <span class="hljs-keyword">and</span> (rnd ( <span class="hljs-number">100</span> ) &lt; ( crossover_rate * <span class="hljs-number">100</span> ) ) <span class="hljs-keyword">and</span> ( (p.shape).area &gt; crossover_size ) <span class="hljs-keyword">and</span> ( p . nb_last_rep &gt; time_wthout_co ) <span class="hljs-keyword">and</span> (shape intersects p.shape) {
+                nb_partners &lt;- nb_partners + <span class="hljs-number">1</span>;
+                geometry new_ag &lt;- (shape inter p.shape);
+                <span class="hljs-keyword">if</span> ( new_ag != nil ) <span class="hljs-keyword">and</span> ( new_ag.area &gt; minimum_size ) {
+                    nb_last_rep &lt;- <span class="hljs-number">0</span>;
+                    ask p {
+                        nb_last_rep &lt;- <span class="hljs-number">0</span>;
+                    }
+                    create object  {
+                        color &lt;- (myself.color + p.color) / <span class="hljs-number">2</span>;
+                        shape &lt;-  convex_hull(new_ag);
+                    }
+                }
+            }
+        }   
+    }
+    
+    aspect geometry {
+        draw shape color: color;
+    }
+}
+
+
+
+experiment example_spatial_operators type: gui {
+    <span class="hljs-keyword">parameter</span> <span class="hljs-string">'Path of shapefile to load for the initial agent:'</span> var: shape_file_name_init  <span class="hljs-comment">category:</span> <span class="hljs-comment">'GIS specific'</span> ;
+    <span class="hljs-keyword">parameter</span> <span class="hljs-string">'Path of shapefile to load for the background:'</span> var: shape_file_name_background <span class="hljs-comment">category:</span> <span class="hljs-comment">'GIS specific'</span>;
+    <span class="hljs-keyword">parameter</span> <span class="hljs-string">'Size (area) from which an agent dies:'</span> var: dying_size <span class="hljs-comment">min: 100.0  category:</span> <span class="hljs-comment">'Population'</span>; 
+    <span class="hljs-keyword">parameter</span> <span class="hljs-string">'Min size (area) for crossover:'</span> var:crossover_size <span class="hljs-comment">category:</span> <span class="hljs-comment">'Population'</span>;
+    <span class="hljs-keyword">parameter</span> <span class="hljs-string">'Minimum size (area) of a agent produced by a crossover:'</span> var:minimum_size <span class="hljs-comment">category:</span> <span class="hljs-comment">'Population'</span>;
+    <span class="hljs-keyword">parameter</span> <span class="hljs-string">'Number of steps without crossing-over for an agent:'</span> var:time_wthout_co <span class="hljs-comment">category:</span> <span class="hljs-comment">'Population'</span>;
+    <span class="hljs-keyword">parameter</span> <span class="hljs-string">'Agent deplacement speed:'</span> var:speed <span class="hljs-comment">category:</span> <span class="hljs-comment">'Population'</span> ; 
+    <span class="hljs-keyword">parameter</span> <span class="hljs-string">'Rate of crossover'</span> var:crossover_rate <span class="hljs-comment">category:</span> <span class="hljs-comment">'Population'</span>; 
+    <span class="hljs-keyword">parameter</span> <span class="hljs-string">'Scaling factor for agent geometry (at each step):'</span> var:scaling_factor <span class="hljs-comment">category:</span> <span class="hljs-comment">'Population'</span>;
+    <span class="hljs-keyword">parameter</span> <span class="hljs-string">'Max rotation angle for agent geometry (at each step):'</span> var:angle_rotation_max <span class="hljs-comment">category:</span><span class="hljs-comment">'Population'</span>;
+    <span class="hljs-keyword">parameter</span> <span class="hljs-string">'Max number of possible partners for crossing-overs (per step)'</span> var:nb_partners_max <span class="hljs-comment">category:</span> <span class="hljs-comment">'Population'</span> ;
+    <span class="hljs-keyword">parameter</span> <span class="hljs-string">'Size max of the initiale side of an agent:'</span> var:max_side_size <span class="hljs-comment">category:</span> <span class="hljs-comment">'Population'</span>; 
+    <span class="hljs-keyword">parameter</span> <span class="hljs-string">'Size background side:'</span> var: background_size_side <span class="hljs-comment">category:</span> <span class="hljs-comment">'Population'</span> ;
+
+    output {
+        <span class="hljs-keyword">display</span> space_display {
+            graphics <span class="hljs-string">"background"</span> {
+                draw world.shape color: rgb ([ <span class="hljs-number">255</span> , <span class="hljs-number">240</span> , <span class="hljs-number">240</span> ]);
+            }
+            species object aspect: geometry;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

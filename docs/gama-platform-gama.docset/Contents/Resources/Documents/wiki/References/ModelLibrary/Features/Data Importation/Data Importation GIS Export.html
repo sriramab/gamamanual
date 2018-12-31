@@ -1,0 +1,48 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Data Importation/Data Importation GIS Export --><head><meta charset="utf-8"><title>Data Importation GIS Export</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="data-importation-gis-export">Data Importation GIS Export</h1>
+<h1 id="shapefiles-import-and-save">Shapefiles Import and Save</h1>
+<p><em>Author : Patrick Taillandier</em></p>
+<p>Model using shapefiles to create buildings, linking their height and type attributes to the height and nature columns of the shapefiles to finally save the data in an other shapefile.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs http">  
+
+<span class="nimrod">model saveGIS
+
+global {
+    file shape_file_buildings &lt;- file(<span class="hljs-string">"../includes/buildings_simple.shp"</span>);
+    <span class="hljs-built_in">string</span> new_shape_file_buildings &lt;- <span class="hljs-string">"../results/buildings_final.shp"</span>;
+    
+    //definition <span class="hljs-keyword">of</span> the geometry <span class="hljs-keyword">of</span> the world agent (environment) <span class="hljs-keyword">as</span> the envelope <span class="hljs-keyword">of</span> the shapefile
+    geometry shape &lt;- envelope(shape_file_buildings);
+    
+    init {
+        //creation <span class="hljs-keyword">of</span> the building agents <span class="hljs-keyword">from</span> the shapefile: the height <span class="hljs-keyword">and</span> <span class="hljs-keyword">type</span> attributes <span class="hljs-keyword">of</span> the building agents are initialized according to the <span class="hljs-type">HEIGHT</span> <span class="hljs-keyword">and</span> <span class="hljs-type">NATURE</span> attributes <span class="hljs-keyword">of</span> the shapefile
+        create building <span class="hljs-keyword">from</span>: shape_file_buildings <span class="hljs-keyword">with</span>:[height::<span class="hljs-built_in">float</span>(get(<span class="hljs-string">"HEIGHT"</span>)), <span class="hljs-keyword">type</span>::<span class="hljs-built_in">string</span>(get(<span class="hljs-string">"NATURE"</span>))];
+    }
+    
+    //<span class="hljs-keyword">when</span> cycle = <span class="hljs-number">5</span>, save <span class="hljs-keyword">of</span> the building agents <span class="hljs-keyword">in</span> a shapefile <span class="hljs-keyword">with</span> the attributes height, <span class="hljs-keyword">type</span> <span class="hljs-keyword">and</span> price.
+    reflex save_data <span class="hljs-keyword">when</span>: cycle = <span class="hljs-number">5</span> {
+        save building to: new_shape_file_buildings <span class="hljs-keyword">type</span>:<span class="hljs-string">"shp"</span> <span class="hljs-keyword">with</span>:[height::<span class="hljs-string">"HEIGHT"</span>, <span class="hljs-keyword">type</span>::<span class="hljs-string">"NATURE"</span>, price::<span class="hljs-string">"PRICE"</span>];
+    }
+}
+
+species building {
+    <span class="hljs-built_in">float</span> height;
+    <span class="hljs-built_in">string</span> <span class="hljs-keyword">type</span>;
+    <span class="hljs-built_in">float</span> price &lt;- (shape.area * height) * (<span class="hljs-keyword">type</span> = <span class="hljs-string">"Industrial"</span> ? <span class="hljs-number">0</span>.<span class="hljs-number">5</span>: <span class="hljs-number">1</span>) update: price * (<span class="hljs-number">90</span> +rnd(<span class="hljs-number">20</span>)) / <span class="hljs-number">100</span>; 
+    rgb color &lt;- <span class="hljs-keyword">type</span> = <span class="hljs-string">"Industrial"</span> ? <span class="hljs-comment">#pink : #gray;</span>
+    
+    aspect default {
+        draw shape depth: height color: color;
+    }
+    
+}
+
+experiment <span class="hljs-type">GIS_agentification</span> <span class="hljs-keyword">type</span>: gui {
+    output {
+        display city_display <span class="hljs-keyword">type</span>: opengl {
+            species building;
+        }
+    }
+}
+</span></code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

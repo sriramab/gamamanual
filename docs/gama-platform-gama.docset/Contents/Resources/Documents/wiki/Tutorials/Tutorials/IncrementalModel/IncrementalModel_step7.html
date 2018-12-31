@@ -1,0 +1,244 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Tutorials/Tutorials/IncrementalModel/IncrementalModel_step7 --><head><meta charset="utf-8"><title>IncrementalModel_step7</title><script src="../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="incrementalmodel_step7">IncrementalModel_step7</h1>
+<a class="dashAnchor" name="//apple_ref/Section/7.%20Differential%20Equations"></a><h1 id="7-differential-equations">7. Differential Equations</h1>
+<p>This step Illustrates how to use differential equations</p>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Formulation"></a><h2 id="formulation">Formulation</h2>
+<p>We are interested by the spreading of the disease inside the buildings. In order to model it, we will use differential equations. So, we will need to:</p>
+<ul>
+<li>add two global variables to define the building epidemic properties (<strong>beta</strong> and <strong>h</strong>).
+<ul>
+<li>add new variables for the buildings (<strong>I</strong>, <strong>S</strong>, <strong>T</strong>, <strong>t</strong>, <strong>I_to_1</strong>);</li>
+<li>define differential equations for disease spreading inside buildings</li>
+<li>add a behavior for buildings for the spreading of the disease.</li>
+</ul>
+</li>
+</ul>
+<p><img src="../../../../github.com/wiki/gama-platform/gama/Tutorials/Tutorials/IncrementalModel/resources/images/tutorials/incremental_model.jpg" alt="images/incremental_model.jpg"></p>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Model%20Definition"></a><h2 id="model-definition">Model Definition</h2>
+<a class="dashAnchor" name="//apple_ref/Section/global%20variables"></a><h3 id="global-variables">global variables</h3>
+<p>We define two new global variables that will be used disease spreading dynamic inside the buildings.</p>
+<pre><code class="hljs mel"><span class="hljs-keyword"><span class="hljs-keyword">global</span></span>  {
+    ...
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> beta &lt;- <span class="hljs-number"><span class="hljs-number">0.01</span></span>;
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> h&lt;<span class="hljs-number"><span class="hljs-number">-0.1</span></span>;
+        ...
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/building"></a><h3 id="building">building</h3>
+<p>In order to define the disease spreading dynamic, we define several variables that will be used by the differential equations:</p>
+<ul>
+<li><strong>I</strong> : float, number of people infected in the building
+<ul>
+<li><strong>S</strong> : float, number of people not infected in the building</li>
+<li><strong>T</strong> : float, total number of people in the building</li>
+<li><strong>t</strong> : float, current time
+<ul>
+<li><strong>I_to1</strong> : float, remaining number of people infected (float number lower between 0 and 1 according to the differential equations).
+<code>
+species building {
+    ....
+    float I;
+    float S;
+    float T;
+    float t;   
+    float I_to1; 
+        ...
+}
+</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Then, we define the differential equations that will use for the disease spreading dynamic. Note that to define a differential equation system we use the block <strong>equation</strong> + name. These equations are the classic ones used by SI mathematical models.</p>
+<pre><code class="hljs gams">species building {
+    ....
+    <span class="hljs-keyword"><span class="hljs-keyword">equation</span></span> SI{ 
+        diff(S,t) <span class="hljs-comment"><span class="hljs-comment">= (- beta * S * I</span></span> / T) ;
+        diff(I,t) = (  <span class="hljs-built-in"><span class="hljs-built-in">beta</span></span> * S * I /<span class="hljs-comment"><span class="hljs-comment"> T)</span></span> ;
+    }
+       ...
+}
+</code></pre>
+<p>At last, we define a new reflex for the building called <strong>epidemic</strong> that will be activated only when there is someone inside the building. This reflex first compute the number of people inside the building (<strong>T</strong>), then the number of not infected people (<strong>S</strong>) and finally the number of infected ones (<strong>I</strong>).</p>
+<p>If there is at least one people infected and one people not infected, the differential equations is integrated (according to the discretisation step value <strong>h</strong>) with the method Runge-Kutta 4 to compute the new value of infected people. We then sum the old value of <strong>I_to_1</strong> with the number of people newly infected (this value is a float and not an integer). Finally, we cast this value as an integer, ask the corresponding number of not infected people to become infected, and decrement this integer value to <strong>I_to1</strong>.</p>
+<pre><code class="hljs maxima">species building {
+    ....
+    reflex epidemic when: <span class="hljs-keyword"><span class="hljs-keyword">not</span></span> empty(members){   
+        T &lt;- <span class="hljs-built_in"><span class="hljs-built_in">float</span></span>(<span class="hljs-built_in"><span class="hljs-built_in">length</span></span>(members));
+        list&lt;people_in_building&gt; S_members &lt;- list&lt;people_in_building&gt;(members where <span class="hljs-keyword"><span class="hljs-keyword">not</span></span> (people_in_building(each).is_infected));
+                S &lt;- <span class="hljs-built_in"><span class="hljs-built_in">float</span></span>(<span class="hljs-built_in"><span class="hljs-built_in">length</span></span>(S_members));
+                I &lt;- T-S;
+                <span class="hljs-built_in"><span class="hljs-built_in">float</span></span> I0 &lt;- I;
+                <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (I &gt; <span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">and</span></span> S &gt; <span class="hljs-number"><span class="hljs-number">0</span></span>) {
+                   <span class="hljs-built_in"><span class="hljs-built_in">solve</span></span> SI <span class="hljs-built_in"><span class="hljs-built_in">method</span></span>: <span class="hljs-string"><span class="hljs-string">"rk4"</span></span> <span class="hljs-keyword"><span class="hljs-keyword">step</span></span>: h;
+                   I_to1 &lt;- I_to1 + (I - I0);
+                   int I_int &lt;- <span class="hljs-built_in"><span class="hljs-built_in">min</span></span>([int(S),int(I_to1)]);
+                   I_to1 &lt;- I_to1 - I_int;
+                   ask(I_int among S_members){
+                     is_infected &lt;- <span class="hljs-literal"><span class="hljs-literal">true</span></span>;
+                  }
+               }
+        }
+       ...
+}
+</code></pre>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Complete%20Model"></a><h2 id="complete-model">Complete Model</h2>
+<pre><code class="hljs cs">model model7 
+global  {
+    <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> nb_people &lt;- <span class="hljs-number"><span class="hljs-number">500</span></span>;
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> step &lt;- <span class="hljs-number"><span class="hljs-number">1</span></span> <span class="hljs-meta"><span class="hljs-meta">#minutes;</span></span>
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> infection_distance &lt;- <span class="hljs-number"><span class="hljs-number">2.0</span></span> <span class="hljs-meta"><span class="hljs-meta">#m;</span></span>
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> proba_infection &lt;- <span class="hljs-number"><span class="hljs-number">0.05</span></span>;
+    <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> nb_infected_init &lt;- <span class="hljs-number"><span class="hljs-number">5</span></span>;
+    file roads_shapefile &lt;- file(<span class="hljs-string"><span class="hljs-string">"../includes/road.shp"</span></span>);
+    file buildings_shapefile &lt;- file(<span class="hljs-string"><span class="hljs-string">"../includes/building.shp"</span></span>);
+    geometry shape &lt;- envelope(roads_shapefile);
+    graph road_network;
+    <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> current_hour update: (cycle / <span class="hljs-number"><span class="hljs-number">60</span></span>) mod <span class="hljs-number"><span class="hljs-number">24</span></span>;
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> staying_coeff update: <span class="hljs-number"><span class="hljs-number">10.0</span></span> ^ (<span class="hljs-number"><span class="hljs-number">1</span></span> + min([abs(current_hour - <span class="hljs-number"><span class="hljs-number">9</span></span>), abs(current_hour - <span class="hljs-number"><span class="hljs-number">12</span></span>), abs(current_hour - <span class="hljs-number"><span class="hljs-number">18</span></span>)]));
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> beta &lt;- <span class="hljs-number"><span class="hljs-number">0.01</span></span>;
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> h&lt;<span class="hljs-number"><span class="hljs-number">-0.1</span></span>;
+    list&lt;people_in_building&gt; list_people_in_buildings update: (building accumulate each.people_inside) <span class="hljs-keyword"><span class="hljs-keyword">where</span></span> (<span class="hljs-function"><span class="hljs-function">not </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">dead</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">each</span></span></span><span class="hljs-function">))</span></span>;
+    <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> nb_people_infected &lt;- nb_infected_init update: <span class="hljs-function"><span class="hljs-function">people </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">count</span></span></span><span class="hljs-function"> (</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">each.is_infected</span></span></span><span class="hljs-function">) + (</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">empty(list_people_in_buildings</span></span></span><span class="hljs-function">) ? 0 : list_people_in_buildings </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">count</span></span></span><span class="hljs-function"> (</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">each.is_infected</span></span></span><span class="hljs-function">))</span></span>;
+    
+    <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> nb_people_not_infected &lt;- nb_people - nb_infected_init update: nb_people - nb_people_infected;
+    <span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> is_night &lt;- <span class="hljs-literal"><span class="hljs-literal">true</span></span> update: current_hour &lt; <span class="hljs-number"><span class="hljs-number">7</span></span> or current_hour &gt; <span class="hljs-number"><span class="hljs-number">20</span></span>;
+    
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> infected_rate update: nb_people_infected/nb_people;
+    init {
+        create road <span class="hljs-keyword"><span class="hljs-keyword">from</span></span>: roads_shapefile;
+        road_network &lt;- as_edge_graph(road);
+        create building <span class="hljs-keyword"><span class="hljs-keyword">from</span></span>: buildings_shapefile;
+        create people number:nb_people {
+            speed &lt;- <span class="hljs-number"><span class="hljs-number">5.0</span></span> <span class="hljs-meta"><span class="hljs-meta">#km/#h;</span></span>
+            building bd &lt;- one_of(building);
+            location &lt;- any_location_in(bd);
+        }
+        ask nb_infected_init among people {
+            is_infected &lt;- <span class="hljs-literal"><span class="hljs-literal">true</span></span>;
+        }
+        
+    }
+    reflex end_simulation <span class="hljs-keyword"><span class="hljs-keyword">when</span></span>: infected_rate = <span class="hljs-number"><span class="hljs-number">1.0</span></span> {       
+        <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> halt;
+    }
+}
+
+species people skills:[moving]{     
+    <span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> is_infected &lt;- <span class="hljs-literal"><span class="hljs-literal">false</span></span>;
+    point target;
+    <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> staying_counter;
+        
+    reflex move <span class="hljs-keyword"><span class="hljs-keyword">when</span></span>: target != nil{
+        <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> <span class="hljs-keyword"><span class="hljs-keyword">goto</span></span> target:target on: road_network;
+        <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (location = target) {
+            target &lt;- any_location_in (one_of(building));
+            target &lt;- nil;
+            staying_counter &lt;- <span class="hljs-number"><span class="hljs-number">0</span></span>;
+        } 
+    }
+    reflex infect <span class="hljs-keyword"><span class="hljs-keyword">when</span></span>: is_infected{
+        ask people at_distance infection_distance {
+            <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">if</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">flip</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">proba_infection</span></span></span><span class="hljs-function">) </span></span>{
+                is_infected &lt;- <span class="hljs-literal"><span class="hljs-literal">true</span></span>;
+            }
+        }
+    }
+    aspect circle{
+        <span class="hljs-function"><span class="hljs-function">draw </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">circle</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">5</span></span></span></span></span><span class="hljs-function">) color:is_infected ? #red : #green</span></span>;
+    }
+    aspect sphere3D{
+        <span class="hljs-function"><span class="hljs-function">draw </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">sphere</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-number"><span class="hljs-function"><span class="hljs-params"><span class="hljs-number">3</span></span></span></span></span><span class="hljs-function">) at: </span></span>{location.x,location.y,location.z + <span class="hljs-number"><span class="hljs-number">3</span></span>} color:is_infected ? <span class="hljs-meta"><span class="hljs-meta">#red : #green;</span></span>
+    }
+}
+
+species road {
+    geometry display_shape &lt;- shape + <span class="hljs-number"><span class="hljs-number">2.0</span></span>;
+    aspect geom {
+        draw display_shape color: <span class="hljs-meta"><span class="hljs-meta">#black depth: 3.0;</span></span>
+    }
+}
+
+species building {
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> height &lt;- <span class="hljs-number"><span class="hljs-number">10</span></span><span class="hljs-meta"><span class="hljs-meta">#m + rnd(10) #m;</span></span>
+    list&lt;people_in_building&gt; people_inside -&gt; {<span class="hljs-function"><span class="hljs-function">members collect </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">people_in_building</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">each</span></span></span><span class="hljs-function">)}</span></span>;
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> I;
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> S;
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> T;
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> t;   
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> I_to1; 
+    
+    aspect geom {
+        <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> nbI &lt;- <span class="hljs-function"><span class="hljs-function">members count </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">people_in_building</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">each</span></span></span><span class="hljs-function">).is_infected</span></span>;
+        <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> nbT &lt;- length(members);
+        draw shape color:nbT = <span class="hljs-number"><span class="hljs-number">0</span></span> ? <span class="hljs-meta"><span class="hljs-meta">#gray : (float(nbI)/nbT &gt; 0.5 ? #red : #green) depth: height;</span></span>
+    }
+    
+    species people_in_building parent: people schedules: [] {
+    }
+    
+    reflex let_people_leave  {
+        ask members <span class="hljs-keyword"><span class="hljs-keyword">as</span></span>: people_in_building{
+            staying_counter &lt;- staying_counter + <span class="hljs-number"><span class="hljs-number">1</span></span>;
+        }
+        list&lt;people_in_building&gt; leaving_people &lt;- list&lt;people_in_building&gt;(<span class="hljs-function"><span class="hljs-function">members </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">where</span></span></span><span class="hljs-function"> (</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">flip(people_in_building(each</span></span></span><span class="hljs-function">).staying_counter / staying_coeff)))</span></span>;
+        <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">if</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">not</span></span></span><span class="hljs-function"> (</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">empty (leaving_people</span></span></span><span class="hljs-function">)) </span></span>{
+            release leaving_people <span class="hljs-keyword"><span class="hljs-keyword">as</span></span>: people <span class="hljs-keyword"><span class="hljs-keyword">in</span></span>: world returns: released_people;
+            ask released_people {
+                target &lt;- any_location_in (one_of(building));
+            }
+        }
+    }
+    reflex let_people_enter {
+        list&lt;people&gt; entering_people &lt;- <span class="hljs-function"><span class="hljs-function">people inside self </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">where</span></span></span><span class="hljs-function"> (</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">each.target = nil</span></span></span><span class="hljs-function">)</span></span>;
+        <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">if</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">not</span></span></span><span class="hljs-function"> (</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">empty (entering_people</span></span></span><span class="hljs-function">)) </span></span>{
+            capture entering_people <span class="hljs-keyword"><span class="hljs-keyword">as</span></span>: people_in_building ;
+        }
+    }
+    equation SI{ 
+        diff(S,t) = (- beta * S * I / T) ;
+        diff(I,t) = (  beta * S * I / T) ;
+    }
+
+    reflex epidemic <span class="hljs-keyword"><span class="hljs-keyword">when</span></span>: <span class="hljs-function"><span class="hljs-function">not </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">empty</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">members</span></span></span><span class="hljs-function">)</span></span>{   
+        T &lt;- <span class="hljs-keyword"><span class="hljs-keyword">float</span></span>(length(members));
+        list&lt;people_in_building&gt; S_members &lt;- list&lt;people_in_building&gt;(<span class="hljs-function"><span class="hljs-function">members </span><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">where</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">not</span></span></span><span class="hljs-function"> (</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">people_in_building(each</span></span></span><span class="hljs-function">).is_infected))</span></span>;
+        S &lt;- <span class="hljs-keyword"><span class="hljs-keyword">float</span></span>(length(S_members));
+        I &lt;- T-S;
+        <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> I0 &lt;- I;
+        <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (I &gt; <span class="hljs-number"><span class="hljs-number">0</span></span> and S &gt; <span class="hljs-number"><span class="hljs-number">0</span></span>) {
+            solve SI method: <span class="hljs-string"><span class="hljs-string">"rk4"</span></span> step: h;
+            I_to1 &lt;- I_to1 + (I - I0);
+            <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> I_int &lt;- min([<span class="hljs-keyword"><span class="hljs-keyword">int</span></span>(S),<span class="hljs-keyword"><span class="hljs-keyword">int</span></span>(I_to1)]);
+            I_to1 &lt;- I_to1 - I_int;
+            ask(I_int among S_members){
+                is_infected &lt;- <span class="hljs-literal"><span class="hljs-literal">true</span></span>;
+            }
+        }
+    }  
+}
+
+experiment main_experiment type:gui{
+    parameter <span class="hljs-string"><span class="hljs-string">"Infection distance"</span></span> <span class="hljs-keyword"><span class="hljs-keyword">var</span></span>: infection_distance;
+    parameter <span class="hljs-string"><span class="hljs-string">"Proba infection"</span></span> <span class="hljs-keyword"><span class="hljs-keyword">var</span></span>: proba_infection min: <span class="hljs-number"><span class="hljs-number">0.0</span></span> max: <span class="hljs-number"><span class="hljs-number">1.0</span></span>;
+    parameter <span class="hljs-string"><span class="hljs-string">"Nb people infected at init"</span></span> <span class="hljs-keyword"><span class="hljs-keyword">var</span></span>: nb_infected_init ;
+    output {
+        monitor <span class="hljs-string"><span class="hljs-string">"Current hour"</span></span> <span class="hljs-keyword"><span class="hljs-keyword">value</span></span>: current_hour;
+        monitor <span class="hljs-string"><span class="hljs-string">"Infected people rate"</span></span> <span class="hljs-keyword"><span class="hljs-keyword">value</span></span>: infected_rate;
+        display map_3D type: opengl {
+            light <span class="hljs-number"><span class="hljs-number">1</span></span> color:(is_night ? <span class="hljs-number"><span class="hljs-number">50</span></span> : <span class="hljs-number"><span class="hljs-number">255</span></span>);
+            image <span class="hljs-string"><span class="hljs-string">"../includes/soil.jpg"</span></span>;
+            species road aspect:geom;
+            species people aspect:sphere3D;         
+            species building aspect:geom transparency: <span class="hljs-number"><span class="hljs-number">0.5</span></span>;
+        }
+        display chart refresh:every(<span class="hljs-number"><span class="hljs-number">10</span></span>) {
+            chart <span class="hljs-string"><span class="hljs-string">"Disease spreading"</span></span> type: series {
+                data <span class="hljs-string"><span class="hljs-string">"susceptible"</span></span> <span class="hljs-keyword"><span class="hljs-keyword">value</span></span>: nb_people_not_infected color: <span class="hljs-meta"><span class="hljs-meta">#green;</span></span>
+                data <span class="hljs-string"><span class="hljs-string">"infected"</span></span> <span class="hljs-keyword"><span class="hljs-keyword">value</span></span>: nb_people_infected color: <span class="hljs-meta"><span class="hljs-meta">#red;</span></span>
+            }
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

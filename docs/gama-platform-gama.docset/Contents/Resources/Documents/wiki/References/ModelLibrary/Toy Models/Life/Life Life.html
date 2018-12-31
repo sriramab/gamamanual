@@ -1,0 +1,112 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Toy Models/Life/Life Life --><head><meta charset="utf-8"><title>Life Life</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="life-life">Life Life</h1>
+<h1 id="life">Life</h1>
+<p>_Author : _</p>
+<p>A model using a cellular automata to represent the Game of Life, the most famous example of cellular automata. Each cell will see if the number of living neighbours meets the condition to emerge or to live.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs groovy">model life
+
+<span class="hljs-comment">//Declare the world as a torus or not torus environment</span>
+global <span class="hljs-string">torus:</span> torus_environment {
+    <span class="hljs-comment">//Size of the environment</span>
+    <span class="hljs-keyword">int</span> environment_width &lt;- <span class="hljs-number">200</span> <span class="hljs-string">min:</span> <span class="hljs-number">10</span> <span class="hljs-string">max:</span> <span class="hljs-number">1000</span>;
+    <span class="hljs-keyword">int</span> environment_height &lt;- <span class="hljs-number">200</span> <span class="hljs-string">min:</span> <span class="hljs-number">10</span> <span class="hljs-string">max:</span> <span class="hljs-number">1000</span>;
+    
+    <span class="hljs-comment">//Declare as torus or not</span>
+    bool torus_environment &lt;- <span class="hljs-literal">true</span>;
+    <span class="hljs-comment">//Density </span>
+    <span class="hljs-keyword">int</span> density &lt;- <span class="hljs-number">25</span> <span class="hljs-string">min:</span> <span class="hljs-number">1</span> <span class="hljs-string">max:</span> <span class="hljs-number">99</span>;
+    <span class="hljs-comment">//Conditions to live</span>
+    list&lt;<span class="hljs-keyword">int</span>&gt; living_conditions &lt;- [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+    <span class="hljs-comment">//Conditions to birth</span>
+    list&lt;<span class="hljs-keyword">int</span>&gt; birth_conditions &lt;- [<span class="hljs-number">3</span>];
+    <span class="hljs-comment">//Color for living cells</span>
+    rgb livingcolor &lt;- °white;
+    <span class="hljs-comment">//Color for dying cells</span>
+    rgb dyingcolor &lt;- °red;
+    <span class="hljs-comment">//Color for emerging cells</span>
+    rgb emergingcolor &lt;- °orange;
+    <span class="hljs-comment">//Color for dead cells</span>
+    rgb deadcolor &lt;- °black;
+    <span class="hljs-comment">//Shape of the environment</span>
+    geometry shape &lt;- rectangle(environment_width, environment_height);
+    
+    <span class="hljs-comment">//Initialization of the model by writing the description of the model in the console</span>
+    init {
+        do description;
+    }
+    
+    <span class="hljs-comment">//Ask at each life_cell to evolve and update</span>
+    reflex generation {
+        ask life_cell {
+            do evolve;
+        }
+
+        ask life_cell {
+            do update;
+        }
+
+    }
+    <span class="hljs-comment">//Write the description of the model in the console</span>
+    action description {
+        write
+        <span class="hljs-string">'Description. The Game of Life is a cellular automaton devised by the British mathematician John Horton Conway in 1970. It is the best-known example of a cellular automaton. The game is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input from humans. One interacts with the Game of Life by creating an initial configuration and observing how it evolves.  The universe of the Game of Life is an infinite two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, live or dead. Every cell interacts with its eight neighbors, which are the cells that are directly horizontally, vertically, or diagonally adjacent. At each step in time, the following transitions occur: \\n\\t 1.Any live cell with fewer than two live neighbours dies, as if caused by underpopulation. \\n\\t 2.Any live cell with more than three live neighbours dies, as if by overcrowding. \\n\\t 3.Any live cell with two or three live neighbours lives on to the next generation. \\n\\t 4.Any dead cell with exactly three live neighbours becomes a live cell. The initial pattern constitutes the seed of the system. The first(generation) is created by applying the above rules simultaneously to every cell in the seed�births and deaths happen simultaneously, and the discrete moment at which this happens is sometimes called a tick (in other words, each generation is a pure function of the one before). The rules continue to be applied repeatedly to create further generations.'</span>;
+    }
+
+}
+
+<span class="hljs-comment">//Grid species representing a cellular automata</span>
+grid life_cell <span class="hljs-string">width:</span> environment_width <span class="hljs-string">height:</span> environment_height <span class="hljs-string">neighbors:</span> <span class="hljs-number">8</span>  <span class="hljs-string">use_individual_shapes:</span> <span class="hljs-literal">false</span> <span class="hljs-string">use_regular_agents:</span> <span class="hljs-literal">false</span> <span class="hljs-string">frequency:</span> <span class="hljs-number">0</span>
+<span class="hljs-string">use_neighbors_cache:</span> <span class="hljs-literal">false</span> {
+    <span class="hljs-comment">//Boolean to know if it is the new state of the cell</span>
+    bool new_state;
+    <span class="hljs-comment">//List of all the neighbours</span>
+    list&lt;life_cell&gt; neighbours &lt;- self neighbors_at <span class="hljs-number">1</span>;
+    <span class="hljs-comment">//Boolean  to know if it is a living or dead cell</span>
+    bool alive &lt;- (rnd(<span class="hljs-number">100</span>)) &lt; density;
+    
+    rgb color &lt;- alive ? livingcolor : deadcolor;
+    
+    <span class="hljs-comment">//Action to evolve the cell considering its neighbours</span>
+    action evolve {
+        <span class="hljs-comment">//Count the number of living neighbours of the cells</span>
+        <span class="hljs-keyword">int</span> living &lt;- neighbours count each.alive;
+        <span class="hljs-keyword">if</span> alive {
+            <span class="hljs-comment">//If the number of living respect the conditions, the cell is still alive</span>
+            new_state &lt;- living <span class="hljs-keyword">in</span> living_conditions;
+            color &lt;- new_state ? livingcolor : dyingcolor;
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">//If the number of living meets the conditions, the cell go to born</span>
+            new_state &lt;- living <span class="hljs-keyword">in</span> birth_conditions;
+            color &lt;- new_state ? emergingcolor : deadcolor;
+        }
+
+    }
+    <span class="hljs-comment">//Action to update the new state of the cell</span>
+    action update {
+        alive &lt;- new_state;
+    }
+
+}
+
+
+experiment <span class="hljs-string">"Game of Life"</span> <span class="hljs-string">type:</span> gui {
+    parameter <span class="hljs-string">'Width:'</span> <span class="hljs-string">var:</span> environment_width <span class="hljs-string">category:</span> <span class="hljs-string">'Board'</span>;
+    parameter <span class="hljs-string">'Height:'</span> <span class="hljs-string">var:</span> environment_height <span class="hljs-string">category:</span> <span class="hljs-string">'Board'</span>;
+    parameter <span class="hljs-string">'Torus?:'</span> <span class="hljs-string">var:</span> torus_environment <span class="hljs-string">category:</span> <span class="hljs-string">'Board'</span>;
+    parameter <span class="hljs-string">'Initial density of live cells:'</span> <span class="hljs-string">var:</span> density <span class="hljs-string">category:</span> <span class="hljs-string">'Cells'</span>;
+    parameter <span class="hljs-string">'Numbers of live neighbours required to stay alive:'</span> <span class="hljs-string">var:</span> living_conditions <span class="hljs-string">category:</span> <span class="hljs-string">'Cells'</span>;
+    parameter <span class="hljs-string">'Numbers of live neighbours required to become alive:'</span> <span class="hljs-string">var:</span> birth_conditions <span class="hljs-string">category:</span> <span class="hljs-string">'Cells'</span>;
+    parameter <span class="hljs-string">'Color of live cells:'</span> <span class="hljs-string">var:</span> livingcolor <span class="hljs-string">category:</span> <span class="hljs-string">'Colors'</span>;
+    parameter <span class="hljs-string">'Color of dying cells:'</span> <span class="hljs-string">var:</span> dyingcolor <span class="hljs-string">category:</span> <span class="hljs-string">'Colors'</span>;
+    parameter <span class="hljs-string">'Color of emerging cells:'</span> <span class="hljs-string">var:</span> emergingcolor <span class="hljs-string">category:</span> <span class="hljs-string">'Colors'</span>;
+    parameter <span class="hljs-string">'Color of dead cells:'</span> <span class="hljs-string">var:</span> deadcolor <span class="hljs-string">category:</span> <span class="hljs-string">'Colors'</span>;
+    output {
+        display Life <span class="hljs-string">type:</span> opengl{
+            grid life_cell;
+        }
+
+    }
+
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

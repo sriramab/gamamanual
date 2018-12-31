@@ -1,0 +1,30 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Save statement/Save statement Save_to_asc --><head><meta charset="utf-8"><title>Save statement Save_to_asc</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="save-statement-save_to_asc">Save statement Save_to_asc</h1>
+<h1 id="save-to-ascii">Save to Ascii</h1>
+<p><em>Author : Patrick Taillandier</em></p>
+<p>This is a model that shows how to save a grid inside a ASCII File to reuse it later or to keep it.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs maxima">
+model SavetoAsc
+
+global {
+    init {  
+        //<span class="hljs-built_in">save</span> <span class="hljs-built_in">grid</span> <span class="hljs-string">"grid_value"</span> attribute into the asc file.
+        <span class="hljs-built_in">save</span> cell to:<span class="hljs-string">"../results/grid.asc"</span> type:<span class="hljs-string">"asc"</span>;
+    }
+}
+
+//Grid that will be saved <span class="hljs-keyword">in</span> the ASC File
+<span class="hljs-built_in">grid</span> cell <span class="hljs-built_in">width</span>: <span class="hljs-number">50</span> <span class="hljs-built_in">height</span>: <span class="hljs-number">50</span> {
+    <span class="hljs-built_in">float</span> grid_value &lt;- self distance_to world.location;
+    rgb <span class="hljs-built_in">color</span> &lt;- rgb(<span class="hljs-number">255</span> * (<span class="hljs-number">1</span> - grid_value / <span class="hljs-number">50</span>), <span class="hljs-number">0</span>,<span class="hljs-number">0</span>);
+}
+
+experiment main type: gui {
+    output {
+        <span class="hljs-built_in">display</span> <span class="hljs-built_in">map</span> {
+            <span class="hljs-built_in">grid</span> cell lines: #black;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

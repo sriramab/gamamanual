@@ -1,0 +1,46 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Database Usage/Database Usage Create Spatial Table in PostGIS --><head><meta charset="utf-8"><title>Database Usage Create Spatial Table in PostGIS</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="database-usage-create-spatial-table-in-postgis">Database Usage Create Spatial Table in PostGIS</h1>
+<h1 id="createbuildingtablepostgis">CreateBuildingTablePostGIS</h1>
+<p><em>Author : Truong Minh Thai</em></p>
+<p>This model shows how to create a database and a table in PostGIS using GAMA</p>
+<p>Code of the model : </p>
+<pre><code class="hljs groovy">model CreateBuildingTablePostGIS
+
+
+global
+{
+    map&lt;string, string&gt; PARAMS &lt;- [<span class="hljs-string">'host'</span>::<span class="hljs-string">'localhost'</span>, <span class="hljs-string">'dbtype'</span>::<span class="hljs-string">'Postgres'</span>, <span class="hljs-string">'database'</span>::<span class="hljs-string">''</span>, <span class="hljs-string">'port'</span>::<span class="hljs-string">'5433'</span>, <span class="hljs-string">'user'</span>::<span class="hljs-string">'postgres'</span>, <span class="hljs-string">'passwd'</span>::<span class="hljs-string">'tmt'</span>];
+    init
+    {
+        create dummy;
+        ask dummy
+        {
+            <span class="hljs-keyword">if</span> (self testConnection [<span class="hljs-string">params:</span>:PARAMS])
+            {
+                do executeUpdate <span class="hljs-string">params:</span> PARAMS <span class="hljs-string">updateComm:</span> <span class="hljs-string">"CREATE DATABASE spatial_db with TEMPLATE = template_postgis;"</span>;
+                write <span class="hljs-string">"spatial_BD database was created "</span>;
+                remove <span class="hljs-string">"database"</span> <span class="hljs-string">from:</span> PARAMS;
+                put <span class="hljs-string">"spatial_db"</span> <span class="hljs-string">key:</span> <span class="hljs-string">"database"</span> <span class="hljs-string">in:</span> PARAMS;
+                do executeUpdate <span class="hljs-string">params:</span> PARAMS <span class="hljs-string">updateComm:</span> <span class="hljs-string">"CREATE TABLE bounds"</span> + <span class="hljs-string">"( "</span> + <span class="hljs-string">" geom GEOMETRY "</span> + <span class="hljs-string">")"</span>;
+                write <span class="hljs-string">"bounds table was created "</span>;
+                do executeUpdate <span class="hljs-string">params:</span> PARAMS <span class="hljs-string">updateComm:</span> <span class="hljs-string">"CREATE TABLE buildings "</span> + <span class="hljs-string">"( "</span> + <span class="hljs-string">" name character varying(255), "</span> + <span class="hljs-string">" type character varying(255), "</span> + <span class="hljs-string">" geom GEOMETRY "</span> + <span class="hljs-string">")"</span>;
+                write <span class="hljs-string">"buildings table was created "</span>;
+            } <span class="hljs-keyword">else</span>
+            {
+                write <span class="hljs-string">"Connection to MySQL can not be established "</span>;
+            }
+
+        }
+
+    }
+
+}
+
+species dummy <span class="hljs-string">skills:</span> [SQLSKILL]
+{
+}
+
+experiment default_expr <span class="hljs-string">type:</span> gui
+{
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

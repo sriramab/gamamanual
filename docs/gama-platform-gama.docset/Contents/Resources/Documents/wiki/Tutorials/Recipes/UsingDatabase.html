@@ -1,0 +1,594 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Tutorials/Recipes/UsingDatabase --><head><meta charset="utf-8"><title>UsingDatabase</title><script src="../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="usingdatabase">UsingDatabase</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Using%20Database%20Access"></a><h1 id="using-database-access">Using Database Access</h1>
+<p>Database features of GAMA provide a set of actions on Database Management Systems (DBMS) and Multi-Dimensional Database for agents in GAMA. Database features are implemented in the irit.gaml.extensions.database plug-in with these features:</p>
+<ul>
+<li>Agents can execute SQL queries (create, Insert, select, update, drop, delete) to various kinds of DBMS.
+<ul>
+<li>Agents can execute MDX (Multidimensional Expressions) queries to select multidimensional objects, such as cubes, and return multidimensional cellsets that contain the cube's data .
+These features are implemented in two kinds of component: <em>skills</em> (SQLSKILL, MDXSKILL) and agent (AgentDB)</li>
+</ul>
+</li>
+</ul>
+<p>SQLSKILL and AgentDB provide almost the same features (a same set of actions on DBMS) but with certain slight differences:</p>
+<ul>
+<li>An agent of species AgentDB will maintain a unique connection to the database during the whole simulation. The connection is thus initialized when the agent is created.
+<ul>
+<li>In contrast, an agent of a species with the SQLSKILL skill will open a connection each time he wants to execute a query. This means that each action will be composed of three running steps:
+<ul>
+<li>Make a database connection.</li>
+<li>Execute SQL statement.</li>
+<li>Close database connection.
+&gt; An agent with the SQLSKILL spends lot of time to create/close the connection each time it needs to send a query; it saves the database connection (DBMS often limit the number of simultaneous connections). In contrast, an AgentDB agent only needs to establish one database connection and it can be used for any actions. Because it does not need to create and close database connection for each action: therefore, actions of AgentDB agents are executed faster than actions of SQLSKILL ones but we must pay a connection for each agent.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>With an inheritance agent of species AgentDB  or an agent of a species using SQLSKILL, we can query data from relational database for creating species, defining environment or analyzing or storing simulation results into RDBMS. On the other hand, an agent of species with MDXKILL supports the OLAP technology to query data from data marts (multidimensional database).
+The database features help us to have more flexibility in management of simulation models and analysis of simulation results.</p>
+</li>
+</ul>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Description"></a><h2 id="description">Description</h2>
+<ul>
+<li><strong>Plug-in</strong>: <em>irit.gaml.extensions.database</em>
+<ul>
+<li><strong>Author</strong>: TRUONG Minh Thai, Frederic AMBLARD, Benoit GAUDOU, Christophe SIBERTIN-BLANC</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Supported%20DBMS"></a><h2 id="supported-dbms">Supported DBMS</h2>
+<p>The following DBMS are currently supported:</p>
+<ul>
+<li>SQLite
+<ul>
+<li>MySQL Server</li>
+<li>PostgreSQL Server</li>
+<li>SQL Server</li>
+<li>Mondrian OLAP Server</li>
+<li>SQL Server Analysis Services</li>
+</ul>
+</li>
+</ul>
+<p>Note that, other DBMSs require a dedicated server to work while SQLite on only needs a file to be accessed.
+All the actions can be used independently from the chosen DBMS. Only the connection parameters are DBMS-dependent.</p>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/SQLSKILL"></a><h2 id="sqlskill">SQLSKILL</h2>
+<a class="dashAnchor" name="//apple_ref/Section/Define%20a%20species%20that%20uses%20the%20SQLSKILL%20skill"></a><h3 id="define-a-species-that-uses-the-sqlskill-skill">Define a species that uses the SQLSKILL skill</h3>
+<p>Example of declaration:</p>
+<pre><code class="hljs less"><span class="hljs-selector-tag"><span class="hljs-selector-tag">species</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">toto</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">skills</span></span>: <span class="hljs-selector-attr"><span class="hljs-selector-attr">[SQLSKILL]</span></span> {
+    <span class="hljs-comment"><span class="hljs-comment">//insert your descriptions here</span></span>
+}
+</code></pre>
+<p>Agents with such a skill can use additional actions (defined in the skill)</p>
+<a class="dashAnchor" name="//apple_ref/Section/Map%20of%20connection%20parameters%20for%20SQL"></a><h3 id="map-of-connection-parameters-for-sql">Map of connection parameters for SQL</h3>
+<p>In the actions defined in the SQLSkill, a parameter containing the connection parameters is required. It is a map with the following <em>key::value</em> pairs:</p>
+<table><thead><tr><th align="left"><strong>Key</strong></th><th align="left"><strong>Optional</strong></th><th align="left"><strong>Description</strong></th></tr></thead><tbody><tr><td align="left"><em>dbtype</em></td><td align="left">No</td><td align="left">DBMS type value. Its value is a string. We must use "mysql" when we want to connect to a MySQL. That is the same for "postgres", "sqlite" or "sqlserver" (ignore case sensitive)</td></tr><tr><td align="left"><em>host</em></td><td align="left">Yes</td><td align="left">Host name or IP address of data server. It is absent when we work with SQlite.</td></tr><tr><td align="left"><em>port</em></td><td align="left">Yes</td><td align="left">Port of connection. It is not required when we work with SQLite.</td></tr><tr><td align="left"><em>database</em></td><td align="left">No</td><td align="left">Name of database. It is the file name including the path when we work with SQLite.</td></tr><tr><td align="left"><em>user</em></td><td align="left">Yes</td><td align="left">Username. It is not required when we work with SQLite.</td></tr><tr><td align="left"><em>passwd</em></td><td align="left">Yes</td><td align="left">Password. It is not required when we work with SQLite.</td></tr><tr><td align="left">srid</td><td align="left">Yes</td><td align="left">srid (Spatial Reference Identifier)  corresponds to a spatial reference system. This value is specified when GAMA connects to spatial database. If it is absent then GAMA uses spatial reference system defined in <em>Preferences-&gt;External</em> configuration.</td></tr></tbody></table><p><strong>Table 1</strong>: Connection parameter description</p>
+<p><strong>Example</strong>: Definitions of connection parameter</p>
+<pre><code class="hljs arduino"><span class="hljs-comment"><span class="hljs-comment">// POSTGRES connection parameter</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">map</span></span> &lt;<span class="hljs-keyword"><span class="hljs-keyword">string</span></span>, <span class="hljs-keyword"><span class="hljs-keyword">string</span></span>&gt;  POSTGRES &lt;- [
+     <span class="hljs-string"><span class="hljs-string">'host'</span></span>::<span class="hljs-string"><span class="hljs-string">'localhost'</span></span>,
+     <span class="hljs-string"><span class="hljs-string">'dbtype'</span></span>::<span class="hljs-string"><span class="hljs-string">'postgres'</span></span>,
+     <span class="hljs-string"><span class="hljs-string">'database'</span></span>::<span class="hljs-string"><span class="hljs-string">'BPH'</span></span>,
+     <span class="hljs-string"><span class="hljs-string">'port'</span></span>::<span class="hljs-string"><span class="hljs-string">'5433'</span></span>,
+     <span class="hljs-string"><span class="hljs-string">'user'</span></span>::<span class="hljs-string"><span class="hljs-string">'postgres'</span></span>,
+     <span class="hljs-string"><span class="hljs-string">'passwd'</span></span>::<span class="hljs-string"><span class="hljs-string">'abc'</span></span>];
+
+<span class="hljs-comment"><span class="hljs-comment">//SQLite</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">map</span></span> &lt;<span class="hljs-keyword"><span class="hljs-keyword">string</span></span>, <span class="hljs-keyword"><span class="hljs-keyword">string</span></span>&gt;  SQLITE &lt;- [
+    <span class="hljs-string"><span class="hljs-string">'dbtype'</span></span>::<span class="hljs-string"><span class="hljs-string">'sqlite'</span></span>,
+    <span class="hljs-string"><span class="hljs-string">'database'</span></span>::<span class="hljs-string"><span class="hljs-string">'../includes/meteo.db'</span></span>];
+
+<span class="hljs-comment"><span class="hljs-comment">// SQLSERVER connection parameter</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">map</span></span> &lt;<span class="hljs-keyword"><span class="hljs-keyword">string</span></span>, <span class="hljs-keyword"><span class="hljs-keyword">string</span></span>&gt; SQLSERVER &lt;- [
+    <span class="hljs-string"><span class="hljs-string">'host'</span></span>::<span class="hljs-string"><span class="hljs-string">'localhost'</span></span>,
+    <span class="hljs-string"><span class="hljs-string">'dbtype'</span></span>::<span class="hljs-string"><span class="hljs-string">'sqlserver'</span></span>,
+    <span class="hljs-string"><span class="hljs-string">'database'</span></span>::<span class="hljs-string"><span class="hljs-string">'BPH'</span></span>,
+    <span class="hljs-string"><span class="hljs-string">'port'</span></span>::<span class="hljs-string"><span class="hljs-string">'1433'</span></span>,
+    <span class="hljs-string"><span class="hljs-string">'user'</span></span>::<span class="hljs-string"><span class="hljs-string">'sa'</span></span>,
+    <span class="hljs-string"><span class="hljs-string">'passwd'</span></span>::<span class="hljs-string"><span class="hljs-string">'abc'</span></span>];
+
+<span class="hljs-comment"><span class="hljs-comment">// MySQL connection parameter</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">map</span></span> &lt;<span class="hljs-keyword"><span class="hljs-keyword">string</span></span>, <span class="hljs-keyword"><span class="hljs-keyword">string</span></span>&gt;  MySQL &lt;- [
+    <span class="hljs-string"><span class="hljs-string">'host'</span></span>::<span class="hljs-string"><span class="hljs-string">'localhost'</span></span>,
+    <span class="hljs-string"><span class="hljs-string">'dbtype'</span></span>::<span class="hljs-string"><span class="hljs-string">'MySQL'</span></span>,
+    <span class="hljs-string"><span class="hljs-string">'database'</span></span>::<span class="hljs-string"><span class="hljs-string">''</span></span>, <span class="hljs-comment"><span class="hljs-comment">// it may be a null string</span></span>
+    <span class="hljs-string"><span class="hljs-string">'port'</span></span>::<span class="hljs-string"><span class="hljs-string">'3306'</span></span>,
+    <span class="hljs-string"><span class="hljs-string">'user'</span></span>::<span class="hljs-string"><span class="hljs-string">'root'</span></span>,
+    <span class="hljs-string"><span class="hljs-string">'passwd'</span></span>::<span class="hljs-string"><span class="hljs-string">'abc'</span></span>];
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Test%20a%20connection%20to%20database"></a><h3 id="test-a-connection-to-database">Test a connection to database</h3>
+<p><strong>Syntax</strong>:</p>
+<blockquote>
+<p><em><strong>testConnection</strong> (params: connection<code>_</code>parameter)</em>
+The action tests the connection to a given database.</p>
+<ul>
+<li><strong>Return</strong>: boolean. It is:</li>
+<li><em>true</em>: the agent can connect to the DBMS (to the given Database with given name and password)</li>
+<li><em>false</em>: the agent cannot connect</li>
+<li><strong>Arguments</strong>:</li>
+<li><em>params</em>: (type = map) map of connection parameters</li>
+<li><strong>Exceptions</strong>: <em>GamaRuntimeException</em></li>
+</ul>
+</blockquote>
+<p><strong>Example</strong>: Check a connection to MySQL</p>
+<pre><code class="hljs cos"><span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (self testConnection(params:MySQL)){
+    <span class="hljs-keyword"><span class="hljs-keyword">write</span></span> <span class="hljs-string"><span class="hljs-string">"Connection is OK"</span></span> <span class="hljs-comment"><span class="hljs-comment">;</span></span>
+}<span class="hljs-keyword"><span class="hljs-keyword">else</span></span>{
+    <span class="hljs-keyword"><span class="hljs-keyword">write</span></span> <span class="hljs-string"><span class="hljs-string">"Connection is false"</span></span> <span class="hljs-comment"><span class="hljs-comment">;</span></span>
+}   
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Select%20data%20from%20database"></a><h3 id="select-data-from-database">Select data from database</h3>
+<p><strong>Syntax</strong>:</p>
+<blockquote>
+<p><em><strong>select</strong> (param: connection<code>_</code>parameter, select: selection<code>_</code>string,values: value<code>_</code>list)</em>
+The action creates a connection to a DBMS and executes the select statement. If the connection or selection fails then it throws a GamaRuntimeException.</p>
+<ul>
+<li><strong>Return</strong>: list &lt; list &gt;. If the selection succeeds, it returns a list with three elements:</li>
+<li>The first element is a list of column name.</li>
+<li>The second element is a list of column type.</li>
+<li>The third element is a data set.</li>
+<li><strong>Arguments</strong>:</li>
+<li><em>params</em>: (type = map) map containing the connection parameters</li>
+<li><em>select</em>: (type = string) select string. The selection string can contain question marks.</li>
+<li><em>values</em>: List of values that are used to replace question marks in appropriate. This is an optional parameter.</li>
+<li><strong>Exceptions</strong>: <em>GamaRuntimeException</em></li>
+</ul>
+</blockquote>
+<p><strong>Example</strong>: select data from table points</p>
+<pre><code class="hljs qml">map &lt;<span class="hljs-built_in"><span class="hljs-built_in">string</span></span>, <span class="hljs-built_in"><span class="hljs-built_in">string</span></span>&gt;   PARAMS &lt;- [<span class="hljs-string"><span class="hljs-string">'dbtype'</span></span>::<span class="hljs-string"><span class="hljs-string">'sqlite'</span></span>, <span class="hljs-string"><span class="hljs-string">'database'</span></span>::<span class="hljs-string"><span class="hljs-string">'../includes/meteo.db'</span></span>];
+<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&gt; t &lt;- <span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&gt; (self select(<span class="hljs-attribute"><span class="hljs-attribute">params</span></span>:<span class="hljs-attribute"><span class="hljs-attribute">PARAMS, 
+                         select</span></span>:<span class="hljs-string"><span class="hljs-string">"SELECT * FROM points ;"</span></span>));
+</code></pre>
+<p><strong>Example</strong>: select data from table point with question marks from table points</p>
+<pre><code class="hljs qml">map &lt;<span class="hljs-built_in"><span class="hljs-built_in">string</span></span>, <span class="hljs-built_in"><span class="hljs-built_in">string</span></span>&gt;   PARAMS &lt;- [<span class="hljs-string"><span class="hljs-string">'dbtype'</span></span>::<span class="hljs-string"><span class="hljs-string">'sqlite'</span></span>, <span class="hljs-string"><span class="hljs-string">'database'</span></span>::<span class="hljs-string"><span class="hljs-string">'../includes/meteo.db'</span></span>];
+<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&gt; t &lt;- <span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&gt; (self select(<span class="hljs-attribute"><span class="hljs-attribute">params</span></span>: PARAMS, 
+                                           <span class="hljs-attribute"><span class="hljs-attribute">select</span></span>: <span class="hljs-string"><span class="hljs-string">"SELECT temp_min FROM points where (day&gt;? and day&lt;?);"</span></span>
+                                           <span class="hljs-attribute"><span class="hljs-attribute">values</span></span>: [<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">20</span></span>] ));
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Insert%20data%20into%20database"></a><h3 id="insert-data-into-database">Insert data into database</h3>
+<p><strong>Syntax</strong>:</p>
+<blockquote>
+<p><em><strong>insert</strong> (param: connection<code>_</code>parameter,  into:  table<code>_</code>name, columns: column<code>_</code>list, values: value`_list)_The action creates a connection to a DBMS and executes the insert statement. If the connection or insertion fails then it throws a_GamaRuntimeException</em>.</p>
+<ul>
+<li><strong>Return</strong>: int
+If the insertion succeeds, it returns a number of records inserted by the insert.</li>
+<li><strong>Arguments</strong>:
+*<em>params</em>: (type = map) map containing the connection parameters.
+*<em>into</em>: (type = string) table name.
+*<em>columns</em>: (type=list)  list of column names of table. It is an optional argument. If it is not applicable then all columns of table are selected.
+*<em>values</em>: (type=list) list of values that are used to insert into table corresponding to columns. Hence the columns and values must have same size.</li>
+<li><strong>Exceptions</strong>:_GamaRuntimeException</li>
+</ul>
+</blockquote>
+<p><strong>Example</strong>: Insert data into table registration</p>
+<pre><code class="hljs perl"><span class="hljs-keyword"><span class="hljs-keyword">map</span></span>&lt;string, string&gt; PARAMS &lt;- [<span class="hljs-string"><span class="hljs-string">'dbtype'</span></span>::<span class="hljs-string"><span class="hljs-string">'sqlite'</span></span>, <span class="hljs-string"><span class="hljs-string">'database'</span></span>::<span class="hljs-string"><span class="hljs-string">'../../includes/Student.db'</span></span>];
+
+<span class="hljs-keyword"><span class="hljs-keyword">do</span></span> insert (params: PARAMS, 
+               into: <span class="hljs-string"><span class="hljs-string">"registration"</span></span>, 
+               <span class="hljs-keyword"><span class="hljs-keyword">values</span></span>: [<span class="hljs-number"><span class="hljs-number">102</span></span>, <span class="hljs-string"><span class="hljs-string">'Mahnaz'</span></span>, <span class="hljs-string"><span class="hljs-string">'Fatma'</span></span>, <span class="hljs-number"><span class="hljs-number">25</span></span>]);
+
+<span class="hljs-keyword"><span class="hljs-keyword">do</span></span> insert (params: PARAMS, 
+                into: <span class="hljs-string"><span class="hljs-string">"registration"</span></span>, 
+                columns: [<span class="hljs-string"><span class="hljs-string">"id"</span></span>, <span class="hljs-string"><span class="hljs-string">"first"</span></span>, <span class="hljs-string"><span class="hljs-string">"last"</span></span>], 
+                <span class="hljs-keyword"><span class="hljs-keyword">values</span></span>: [<span class="hljs-number"><span class="hljs-number">103</span></span>, <span class="hljs-string"><span class="hljs-string">'Zaid tim'</span></span>, <span class="hljs-string"><span class="hljs-string">'Kha'</span></span>]);
+
+<span class="hljs-keyword"><span class="hljs-keyword">int</span></span> n &lt;- insert (params: PARAMS, 
+                        into: <span class="hljs-string"><span class="hljs-string">"registration"</span></span>, 
+                       columns: [<span class="hljs-string"><span class="hljs-string">"id"</span></span>, <span class="hljs-string"><span class="hljs-string">"first"</span></span>, <span class="hljs-string"><span class="hljs-string">"last"</span></span>], 
+                       <span class="hljs-keyword"><span class="hljs-keyword">values</span></span>: [<span class="hljs-number"><span class="hljs-number">104</span></span>, <span class="hljs-string"><span class="hljs-string">'Bill'</span></span>, <span class="hljs-string"><span class="hljs-string">'Clark'</span></span>]);
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Execution%20update%20commands"></a><h3 id="execution-update-commands">Execution update commands</h3>
+<p><strong>Syntax</strong>:</p>
+<blockquote>
+<p><em><strong>executeUpdate</strong> (param: connection<code>_</code>parameter,  updateComm:  table<code>_</code>name, values: value<code>_</code>list)</em>
+The action executeUpdate executes an update command (create/insert/delete/drop) by using the current database connection of the agent. If the database connection does not exist or the update command fails then it throws a GamaRuntimeException. Otherwise it returns an integer value.</p>
+<ul>
+<li><strong>Return</strong>: int. If the insertion succeeds, it returns a number of records inserted by the insert.</li>
+<li><strong>Arguments</strong>:</li>
+<li><em>params</em>: (type = map) map containing the connection parameters</li>
+<li><em>updateComm</em>: (type = string) SQL command string. It may be commands: <em>create</em>, <em>update</em>, <em>delete</em> and <em>drop</em> with or without question marks.</li>
+<li><em>columns</em>: (type=list)  list of column names of table.</li>
+<li><em>values</em>: (type=list) list of values that are used to replace question marks if appropriate. This is an optional parameter.</li>
+<li><strong>Exceptions</strong>: <em>GamaRuntimeException</em></li>
+</ul>
+</blockquote>
+<p><strong>Examples</strong>: Using action executeUpdate do sql commands (create, insert, update, delete and drop).</p>
+<pre><code class="hljs groovy">map&lt;string, string&gt; PARAMS &lt;- [<span class="hljs-string"><span class="hljs-string">'dbtype'</span></span>::<span class="hljs-string"><span class="hljs-string">'sqlite'</span></span>,  <span class="hljs-string"><span class="hljs-string">'database'</span></span>::<span class="hljs-string"><span class="hljs-string">'../../includes/Student.db'</span></span>];
+<span class="hljs-comment"><span class="hljs-comment">// Create table</span></span>
+do executeUpdate (<span class="hljs-string"><span class="hljs-string">params:</span></span> PARAMS, 
+<span class="hljs-symbol"><span class="hljs-symbol">                              updateComm:</span></span> <span class="hljs-string"><span class="hljs-string">"CREATE TABLE registration"</span></span> 
+                                             + <span class="hljs-string"><span class="hljs-string">"(id INTEGER PRIMARY KEY, "</span></span> 
+                                             + <span class="hljs-string"><span class="hljs-string">" first TEXT NOT NULL, "</span></span> + <span class="hljs-string"><span class="hljs-string">" last TEXT NOT NULL, "</span></span> 
+                                             + <span class="hljs-string"><span class="hljs-string">" age INTEGER);"</span></span>);
+
+<span class="hljs-comment"><span class="hljs-comment">// Insert into </span></span>
+do executeUpdate (<span class="hljs-string"><span class="hljs-string">params:</span></span> PARAMS ,  
+<span class="hljs-symbol"><span class="hljs-symbol">                             updateComm:</span></span> <span class="hljs-string"><span class="hljs-string">"INSERT INTO registration "</span></span> + <span class="hljs-string"><span class="hljs-string">"VALUES(100, 'Zara', 'Ali', 18);"</span></span>);
+do insert (<span class="hljs-string"><span class="hljs-string">params:</span></span> PARAMS, <span class="hljs-string"><span class="hljs-string">into:</span></span> <span class="hljs-string"><span class="hljs-string">"registration"</span></span>, 
+<span class="hljs-symbol"><span class="hljs-symbol">               columns:</span></span> [<span class="hljs-string"><span class="hljs-string">"id"</span></span>, <span class="hljs-string"><span class="hljs-string">"first"</span></span>, <span class="hljs-string"><span class="hljs-string">"last"</span></span>], 
+<span class="hljs-symbol"><span class="hljs-symbol">               values:</span></span> [<span class="hljs-number"><span class="hljs-number">103</span></span>, <span class="hljs-string"><span class="hljs-string">'Zaid tim'</span></span>, <span class="hljs-string"><span class="hljs-string">'Kha'</span></span>]);
+
+<span class="hljs-comment"><span class="hljs-comment">// executeUpdate with question marks</span></span>
+do executeUpdate (<span class="hljs-string"><span class="hljs-string">params:</span></span> PARAMS,
+<span class="hljs-symbol"><span class="hljs-symbol">                             updateComm:</span></span> <span class="hljs-string"><span class="hljs-string">"INSERT INTO registration "</span></span> + <span class="hljs-string"><span class="hljs-string">"VALUES(?, ?, ?, ?);"</span></span> ,  
+<span class="hljs-symbol"><span class="hljs-symbol">                             values:</span></span> [<span class="hljs-number"><span class="hljs-number">101</span></span>, <span class="hljs-string"><span class="hljs-string">'Mr'</span></span>, <span class="hljs-string"><span class="hljs-string">'Mme'</span></span>, <span class="hljs-number"><span class="hljs-number">45</span></span>]);
+
+<span class="hljs-comment"><span class="hljs-comment">//update </span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">int</span></span> n &lt;-  executeUpdate (<span class="hljs-string"><span class="hljs-string">params:</span></span> PARAMS, 
+<span class="hljs-symbol"><span class="hljs-symbol">                                       updateComm:</span></span> <span class="hljs-string"><span class="hljs-string">"UPDATE registration SET age = 30 WHERE id IN (100, 101)"</span></span> );
+
+<span class="hljs-comment"><span class="hljs-comment">// delete</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">int</span></span> n &lt;- executeUpdate (<span class="hljs-string"><span class="hljs-string">params:</span></span> PARAMS, 
+<span class="hljs-symbol"><span class="hljs-symbol">                                      updateComm:</span></span> <span class="hljs-string"><span class="hljs-string">"DELETE FROM registration where id=? "</span></span>,  
+<span class="hljs-symbol"><span class="hljs-symbol">                                      values:</span></span> [<span class="hljs-number"><span class="hljs-number">101</span></span>] );
+
+<span class="hljs-comment"><span class="hljs-comment">// Drop table</span></span>
+do executeUpdate (<span class="hljs-string"><span class="hljs-string">params:</span></span> PARAMS, <span class="hljs-string"><span class="hljs-string">updateComm:</span></span> <span class="hljs-string"><span class="hljs-string">"DROP TABLE registration"</span></span>);
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/MDXSKILL"></a><h2 id="mdxskill">MDXSKILL</h2>
+<p>MDXSKILL plays the role of an OLAP tool using select to query data from OLAP server to GAMA environment and then species can use the queried data for any analysis purposes.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Define%20a%20species%20that%20uses%20the%20MDXSKILL%20skill"></a><h3 id="define-a-species-that-uses-the-mdxskill-skill">Define a species that uses the MDXSKILL skill</h3>
+<p>Example of declaration:</p>
+<pre><code class="hljs less">    <span class="hljs-selector-tag"><span class="hljs-selector-tag">species</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">olap</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">skills</span></span>: <span class="hljs-selector-attr"><span class="hljs-selector-attr">[MDXSKILL]</span></span>
+     {  
+        <span class="hljs-comment"><span class="hljs-comment">//insert your descriptions here</span></span>
+        
+     } 
+      ...
+</code></pre>
+<p>Agents with such a skill can use additional actions (defined in the skill)</p>
+<a class="dashAnchor" name="//apple_ref/Section/Map%20of%20connection%20parameters%20for%20MDX"></a><h3 id="map-of-connection-parameters-for-mdx">Map of connection parameters for MDX</h3>
+<p>In the actions defined in the SQLSkill, a parameter containing the connection parameters is required. It is a map with following key::value pairs:</p>
+<table><thead><tr><th align="left"><strong>Key</strong></th><th align="left"><strong>Optional</strong></th><th align="left"><strong>Description</strong></th></tr></thead><tbody><tr><td align="left"><em>olaptype</em></td><td align="left">No</td><td align="left">OLAP Server type value. Its value is a string. We must use "SSAS/XMLA" when we want to connect to an SQL Server Analysis Services by using XML for Analysis. That is the same for "MONDRIAN/XML" or "MONDRIAN" (ignore case sensitive)</td></tr><tr><td align="left"><em>dbtype</em></td><td align="left">No</td><td align="left">DBMS type value. Its value is a string. We must use "mysql" when we want to connect to a MySQL. That is the same for "postgres" or "sqlserver" (ignore case sensitive)</td></tr><tr><td align="left"><em>host</em></td><td align="left">No</td><td align="left">Host name or IP address of data server.</td></tr><tr><td align="left"><em>port</em></td><td align="left">No</td><td align="left">Port of connection. It is no required when we work with SQLite.</td></tr><tr><td align="left"><em>database</em></td><td align="left">No</td><td align="left">Name of database. It is file name include path when we work with SQLite.</td></tr><tr><td align="left"><em>catalog</em></td><td align="left">Yes</td><td align="left">Name of catalog. It is an optional parameter. We do not need to use it when we connect to SSAS via XMLA and its file name includes the path when we connect a ROLAP database directly by using Mondrian API (see Example as below)</td></tr><tr><td align="left"><em>user</em></td><td align="left">No</td><td align="left">Username.</td></tr><tr><td align="left"><em>passwd</em></td><td align="left">No</td><td align="left">Password.</td></tr></tbody></table><p><strong>Table 2</strong>: OLAP Connection parameter description</p>
+<p><strong>Example</strong>: Definitions of OLAP connection parameter</p>
+<pre><code class="hljs go"><span class="hljs-comment"><span class="hljs-comment">//Connect SQL Server Analysis Services via XMLA</span></span>
+    <span class="hljs-keyword"><span class="hljs-keyword">map</span></span>&lt;<span class="hljs-keyword"><span class="hljs-keyword">string</span></span>,<span class="hljs-keyword"><span class="hljs-keyword">string</span></span>&gt; SSAS &lt;- [
+                <span class="hljs-string"><span class="hljs-string">'olaptype'</span></span>::<span class="hljs-string"><span class="hljs-string">'SSAS/XMLA'</span></span>,
+                <span class="hljs-string"><span class="hljs-string">'dbtype'</span></span>::<span class="hljs-string"><span class="hljs-string">'sqlserver'</span></span>,
+                <span class="hljs-string"><span class="hljs-string">'host'</span></span>::<span class="hljs-string"><span class="hljs-string">'172.17.88.166'</span></span>,
+                <span class="hljs-string"><span class="hljs-string">'port'</span></span>::<span class="hljs-string"><span class="hljs-string">'80'</span></span>,
+                <span class="hljs-string"><span class="hljs-string">'database'</span></span>::<span class="hljs-string"><span class="hljs-string">'olap'</span></span>,
+                <span class="hljs-string"><span class="hljs-string">'user'</span></span>::<span class="hljs-string"><span class="hljs-string">'test'</span></span>,
+                <span class="hljs-string"><span class="hljs-string">'passwd'</span></span>::<span class="hljs-string"><span class="hljs-string">'abc'</span></span>];
+
+<span class="hljs-comment"><span class="hljs-comment">//Connect Mondriam server via XMLA</span></span>
+    <span class="hljs-keyword"><span class="hljs-keyword">map</span></span>&lt;<span class="hljs-keyword"><span class="hljs-keyword">string</span></span>,<span class="hljs-keyword"><span class="hljs-keyword">string</span></span>&gt;  MONDRIANXMLA &lt;- [
+                <span class="hljs-string"><span class="hljs-string">'olaptype'</span></span>::<span class="hljs-string"><span class="hljs-string">"MONDRIAN/XMLA"</span></span>,
+                <span class="hljs-string"><span class="hljs-string">'dbtype'</span></span>::<span class="hljs-string"><span class="hljs-string">'postgres'</span></span>,
+                <span class="hljs-string"><span class="hljs-string">'host'</span></span>::<span class="hljs-string"><span class="hljs-string">'localhost'</span></span>,
+                <span class="hljs-string"><span class="hljs-string">'port'</span></span>::<span class="hljs-string"><span class="hljs-string">'8080'</span></span>,
+                <span class="hljs-string"><span class="hljs-string">'database'</span></span>::<span class="hljs-string"><span class="hljs-string">'MondrianFoodMart'</span></span>,
+                <span class="hljs-string"><span class="hljs-string">'catalog'</span></span>::<span class="hljs-string"><span class="hljs-string">'FoodMart'</span></span>,
+                <span class="hljs-string"><span class="hljs-string">'user'</span></span>::<span class="hljs-string"><span class="hljs-string">'test'</span></span>,
+                <span class="hljs-string"><span class="hljs-string">'passwd'</span></span>::<span class="hljs-string"><span class="hljs-string">'abc'</span></span>];
+
+<span class="hljs-comment"><span class="hljs-comment">//Connect a ROLAP server using Mondriam API </span></span>
+    <span class="hljs-keyword"><span class="hljs-keyword">map</span></span>&lt;<span class="hljs-keyword"><span class="hljs-keyword">string</span></span>,<span class="hljs-keyword"><span class="hljs-keyword">string</span></span>&gt;  MONDRIAN &lt;- [
+                <span class="hljs-string"><span class="hljs-string">'olaptype'</span></span>::<span class="hljs-string"><span class="hljs-string">'MONDRIAN'</span></span>,
+                <span class="hljs-string"><span class="hljs-string">'dbtype'</span></span>::<span class="hljs-string"><span class="hljs-string">'postgres'</span></span>,
+                <span class="hljs-string"><span class="hljs-string">'host'</span></span>::<span class="hljs-string"><span class="hljs-string">'localhost'</span></span>,
+                <span class="hljs-string"><span class="hljs-string">'port'</span></span>::<span class="hljs-string"><span class="hljs-string">'5433'</span></span>,
+                <span class="hljs-string"><span class="hljs-string">'database'</span></span>::<span class="hljs-string"><span class="hljs-string">'foodmart'</span></span>,
+                <span class="hljs-string"><span class="hljs-string">'catalog'</span></span>::<span class="hljs-string"><span class="hljs-string">'../includes/FoodMart.xml'</span></span>,
+                <span class="hljs-string"><span class="hljs-string">'user'</span></span>::<span class="hljs-string"><span class="hljs-string">'test'</span></span>,
+                                <span class="hljs-string"><span class="hljs-string">'passwd'</span></span>::<span class="hljs-string"><span class="hljs-string">'abc'</span></span>];
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Test%20a%20connection%20to%20OLAP%20database"></a><h3 id="test-a-connection-to-olap-database">Test a connection to OLAP database</h3>
+<p><strong>Syntax</strong>:</p>
+<blockquote>
+<p><em><strong>testConnection</strong> (params: connection<code>_</code>parameter)</em>
+The action tests the connection to a given OLAP database.</p>
+<ul>
+<li><strong>Return</strong>: boolean.  It is:</li>
+<li><em>true</em>: the agent can connect to the DBMS (to the given Database with given name and password)</li>
+<li><em>false</em>: the agent cannot connect</li>
+<li><strong>Arguments</strong>:</li>
+<li><em>params</em>: (type = map) map of connection parameters</li>
+<li><strong>Exceptions</strong>: <em>GamaRuntimeException</em></li>
+</ul>
+</blockquote>
+<p><strong>Example</strong>: Check a connection to MySQL</p>
+<pre><code class="hljs cos"><span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (self testConnection(params:MONDIRANXMLA)){
+    <span class="hljs-keyword"><span class="hljs-keyword">write</span></span> <span class="hljs-string"><span class="hljs-string">"Connection is OK"</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+}<span class="hljs-keyword"><span class="hljs-keyword">else</span></span>{
+    <span class="hljs-keyword"><span class="hljs-keyword">write</span></span> <span class="hljs-string"><span class="hljs-string">"Connection is false"</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+}   
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Select%20data%20from%20OLAP%20database"></a><h3 id="select-data-from-olap-database">Select data from OLAP database</h3>
+<p><strong>Syntax</strong>:</p>
+<blockquote>
+<p><em><strong>select</strong> (param: connection<code>_</code>parameter, onColumns: column<code>_</code>string, onRows: row<code>_</code>string from: cube<code>_</code>string, where: condition<code>_</code>string, values: value<code>_</code>list)</em>
+The action creates a connection to an OLAP database and executes the select statement. If the connection or selection fails then it throws a <em>GamaRuntimeException</em>.</p>
+<ul>
+<li><strong>Return</strong>: list &lt; list &gt;.  If the selection succeeds, it returns a list with three elements:</li>
+<li>The first element is a list of column name.</li>
+<li>The second element is a list of column type.</li>
+<li>The third element is a data set.</li>
+<li><strong>Arguments</strong>:</li>
+<li><em>params</em>: (type = map) map containing the connection parameters</li>
+<li><em>onColumns</em>: (type = string) declare  the select string on columns. The selection string can contain question marks.</li>
+<li><em>onRows</em>: (type = string) declare the selection string on rows. The selection string can contain question marks.</li>
+<li><em>from</em>: (type = string) specify cube where data is selected. The cube_string can contain question marks.</li>
+<li>where_: (type = string) specify the selection conditions. The condiction_string can contains question marks. This is an optional parameter.
+*<em>values</em>: List of values that are used to replace question marks if appropriate. This is an optional parameter.</li>
+<li><strong>Exceptions</strong>:_GamaRuntimeException</li>
+</ul>
+</blockquote>
+<p><strong>Example</strong>: select data from SQL Server Analysis Service via XMLA</p>
+<pre><code class="hljs inform7">if (self testConnection<span class="hljs-comment"><span class="hljs-comment">[ params::SSAS]</span></span>){
+    list l1  &lt;- list(self select (params: SSAS ,
+        onColumns: <span class="hljs-string"><span class="hljs-string">" { </span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Measures]</span></span></span><span class="hljs-string">.</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Quantity]</span></span></span><span class="hljs-string">, </span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Measures]</span></span></span><span class="hljs-string">.</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Price]</span></span></span><span class="hljs-string"> }"</span></span>,
+        onRows:<span class="hljs-string"><span class="hljs-string">" { { { </span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Time]</span></span></span><span class="hljs-string">.</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Year]</span></span></span><span class="hljs-string">.</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[All]</span></span></span><span class="hljs-string">.CHILDREN } * "</span></span>
+        + <span class="hljs-string"><span class="hljs-string">" { </span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Product]</span></span></span><span class="hljs-string">.</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Product Category]</span></span></span><span class="hljs-string">.</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[All]</span></span></span><span class="hljs-string">.CHILDREN } * "</span></span>
+        +<span class="hljs-string"><span class="hljs-string">"{ </span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Customer]</span></span></span><span class="hljs-string">.</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Company Name]</span></span></span><span class="hljs-string">.&amp;</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Alfreds Futterkiste]</span></span></span><span class="hljs-string">, "</span></span> 
+        +<span class="hljs-string"><span class="hljs-string">"</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Customer]</span></span></span><span class="hljs-string">.</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Company Name]</span></span></span><span class="hljs-string">.&amp;</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Ana Trujillo Emparedadosy helados]</span></span></span><span class="hljs-string">, "</span></span> 
+        + <span class="hljs-string"><span class="hljs-string">"</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Customer]</span></span></span><span class="hljs-string">.</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Company Name]</span></span></span><span class="hljs-string">.&amp;</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Antonio Moreno Taquería]</span></span></span><span class="hljs-string"> } } } "</span></span> ,
+        from : <span class="hljs-string"><span class="hljs-string">"FROM </span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Northwind Star]</span></span></span><span class="hljs-string"> "</span></span>));
+    write <span class="hljs-string"><span class="hljs-string">"result1:"</span></span>+ l1;
+}else {
+    write <span class="hljs-string"><span class="hljs-string">"Connect error"</span></span>;
+}
+</code></pre>
+<p><strong>Example</strong>: select data from Mondrian via XMLA with question marks in selection</p>
+<pre><code class="hljs inform7">if (self testConnection(params:MONDRIANXMLA)){
+    list&lt;list&gt; l2  &lt;- list&lt;list&gt; (self select(params: MONDRIANXMLA, 
+    onColumns:<span class="hljs-string"><span class="hljs-string">" {</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Measures]</span></span></span><span class="hljs-string">.</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Unit Sales]</span></span></span><span class="hljs-string">, </span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Measures]</span></span></span><span class="hljs-string">.</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Store Cost]</span></span></span><span class="hljs-string">, </span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Measures]</span></span></span><span class="hljs-string">.</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Store Sales]</span></span></span><span class="hljs-string">} "</span></span>,
+    onRows:<span class="hljs-string"><span class="hljs-string">"  Hierarchize(Union(Union(Union({(</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Promotion Media]</span></span></span><span class="hljs-string">.</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[All Media]</span></span></span><span class="hljs-string">,"</span></span>
+    +<span class="hljs-string"><span class="hljs-string">" </span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Product]</span></span></span><span class="hljs-string">.</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[All Products]</span></span></span><span class="hljs-string">)}, "</span></span>
+    +<span class="hljs-string"><span class="hljs-string">" Crossjoin(</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Promotion Media]</span></span></span><span class="hljs-string">.</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[All Media]</span></span></span><span class="hljs-string">.Children, "</span></span>
+    +<span class="hljs-string"><span class="hljs-string">" {</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Product]</span></span></span><span class="hljs-string">.</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[All Products]</span></span></span><span class="hljs-string">})), "</span></span>
+    +<span class="hljs-string"><span class="hljs-string">" Crossjoin({</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Promotion Media]</span></span></span><span class="hljs-string">.</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Daily Paper, Radio, TV]</span></span></span><span class="hljs-string">}, "</span></span>
+    +<span class="hljs-string"><span class="hljs-string">" </span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Product]</span></span></span><span class="hljs-string">.</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[All Products]</span></span></span><span class="hljs-string">.Children)), "</span></span>
+    +<span class="hljs-string"><span class="hljs-string">" Crossjoin({</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Promotion Media]</span></span></span><span class="hljs-string">.</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Street Handout]</span></span></span><span class="hljs-string">}, "</span></span> 
+    +<span class="hljs-string"><span class="hljs-string">" </span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Product]</span></span></span><span class="hljs-string">.</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[All Products]</span></span></span><span class="hljs-string">.Children)))  "</span></span>,
+    from:<span class="hljs-string"><span class="hljs-string">" from </span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[?]</span></span></span><span class="hljs-string"> "</span></span> ,
+    where :<span class="hljs-string"><span class="hljs-string">" where </span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[Time]</span></span></span><span class="hljs-string">.</span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">[?]</span></span></span><span class="hljs-string"> "</span></span> ,
+    values:<span class="hljs-comment"><span class="hljs-comment">["Sales",1997]</span></span>));
+    write <span class="hljs-string"><span class="hljs-string">"result2:"</span></span>+ l2;
+}else {
+    write <span class="hljs-string"><span class="hljs-string">"Connect error"</span></span>;
+}
+</code></pre>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/AgentDB"></a><h2 id="agentdb">AgentDB</h2>
+<p>AgentBD is a built-in species, which supports behaviors that look like actions in SQLSKILL but differs slightly with SQLSKILL in that it uses  only one connection for several actions. It means that AgentDB makes a connection to DBMS and keeps that connection for its later operations with DBMS.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Define%20a%20species%20that%20is%20an%20inheritance%20of%20agentDB"></a><h3 id="define-a-species-that-is-an-inheritance-of-agentdb">Define a species that is an inheritance of agentDB</h3>
+<p>Example of declaration:</p>
+<pre><code class="hljs mel">species agentDB <span class="hljs-keyword"><span class="hljs-keyword">parent</span></span>: AgentDB {  
+    <span class="hljs-comment"><span class="hljs-comment">//insert your descriptions here</span></span>
+} 
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Connect%20to%20database"></a><h3 id="connect-to-database">Connect to database</h3>
+<p><strong>Syntax</strong>:</p>
+<blockquote>
+<p><em><strong>Connect</strong> (param: connection<code>_</code>parameter)</em>
+This action makes a connection to DBMS. If a connection is established then it will assign the connection object into a built-in attribute of species (conn) otherwise it throws a GamaRuntimeException.</p>
+<ul>
+<li><strong>Return</strong>: connection</li>
+<li><strong>Arguments</strong>:</li>
+<li><em>params</em>: (type = map) map containing the connection parameters</li>
+<li><strong>Exceptions</strong>: GamaRuntimeException
+<strong>Example</strong>: Connect to PostgreSQL</li>
+</ul>
+</blockquote>
+<pre><code class="hljs arduino"><span class="hljs-comment"><span class="hljs-comment">// POSTGRES connection parameter</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">map</span></span> &lt;<span class="hljs-keyword"><span class="hljs-keyword">string</span></span>, <span class="hljs-keyword"><span class="hljs-keyword">string</span></span>&gt;  POSTGRES &lt;- [
+                                        <span class="hljs-string"><span class="hljs-string">'host'</span></span>::<span class="hljs-string"><span class="hljs-string">'localhost'</span></span>,
+                                        <span class="hljs-string"><span class="hljs-string">'dbtype'</span></span>::<span class="hljs-string"><span class="hljs-string">'postgres'</span></span>,
+                                        <span class="hljs-string"><span class="hljs-string">'database'</span></span>::<span class="hljs-string"><span class="hljs-string">'BPH'</span></span>,
+                                        <span class="hljs-string"><span class="hljs-string">'port'</span></span>::<span class="hljs-string"><span class="hljs-string">'5433'</span></span>,
+                                        <span class="hljs-string"><span class="hljs-string">'user'</span></span>::<span class="hljs-string"><span class="hljs-string">'postgres'</span></span>,
+                                        <span class="hljs-string"><span class="hljs-string">'passwd'</span></span>::<span class="hljs-string"><span class="hljs-string">'abc'</span></span>];
+ask agentDB {
+      <span class="hljs-built_in"><span class="hljs-built_in">do</span></span> <span class="hljs-built_in"><span class="hljs-built_in">connect</span></span> (params: POSTGRES);
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Check%20agent%20connected%20a%20database%20or%20not"></a><h3 id="check-agent-connected-a-database-or-not">Check agent connected a database or not</h3>
+<p><strong>Syntax</strong>:</p>
+<blockquote>
+<p><em><strong>isConnected</strong> (param: connection<code>_</code>parameter)</em>
+This action checks if an agent is connecting to database or not.</p>
+<ul>
+<li><strong>Return</strong>: Boolean.   If agent is connecting to a database then isConnected returns true; otherwise it returns false.</li>
+<li><strong>Arguments</strong>:</li>
+<li><em>params</em>: (type = map) map containing the connection parameters</li>
+</ul>
+</blockquote>
+<p><strong>Example</strong>: Using action executeUpdate do sql commands (create, insert, update, delete and drop).</p>
+<pre><code class="hljs perl">ask agentDB {
+    <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (self isConnected){
+              <span class="hljs-keyword"><span class="hljs-keyword">write</span></span> <span class="hljs-string"><span class="hljs-string">"It already has a connection"</span></span>;
+    }<span class="hljs-keyword"><span class="hljs-keyword">else</span></span>{
+              <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> <span class="hljs-keyword"><span class="hljs-keyword">connect</span></span> (params: POSTGRES);
+        } 
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Close%20the%20current%20connection"></a><h3 id="close-the-current-connection">Close the current connection</h3>
+<p><strong>Syntax</strong>:</p>
+<blockquote>
+<p><em><strong>close</strong></em>
+This action closes the current database connection of species. If species does not has a database connection then it throws a GamaRuntimeException.</p>
+<ul>
+<li><strong>Return</strong>: null
+If the current connection of species is close then the action return null value; otherwise it throws a GamaRuntimeException.</li>
+</ul>
+</blockquote>
+<p><strong>Example</strong>:</p>
+<pre><code class="hljs cos">ask agentDB {
+    <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (self isConnected){
+          <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> <span class="hljs-keyword"><span class="hljs-keyword">close</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    }
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Get%20connection%20parameter"></a><h3 id="get-connection-parameter">Get connection parameter</h3>
+<p><strong>Syntax</strong>:</p>
+<blockquote>
+<p><em><strong>getParameter</strong></em>
+This action returns the connection parameter of species.</p>
+<ul>
+<li><strong>Return</strong>: map &lt; string, string &gt;</li>
+</ul>
+</blockquote>
+<p><strong>Example</strong>:</p>
+<pre><code class="hljs monkey">ask agentDB {
+    <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (<span class="hljs-built_in"><span class="hljs-built_in">self</span></span> isConnected){
+        write <span class="hljs-string"><span class="hljs-string">"the connection parameter: "</span></span> +(<span class="hljs-built_in"><span class="hljs-built_in">self</span></span> getParameter);
+        }
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Set%20connection%20parameter"></a><h3 id="set-connection-parameter">Set connection parameter</h3>
+<p><strong>Syntax</strong>:</p>
+<blockquote>
+<p><em><strong>setParameter</strong> (param: connection<code>_</code>parameter)</em>
+This action sets the new values for connection parameter and closes the current connection of species. If it can not close the current connection then it will throw GamaRuntimeException. If the species wants to make the connection to database with the new values then action connect must be called.</p>
+<ul>
+<li><strong>Return</strong>: null</li>
+<li><strong>Arguments</strong>:</li>
+<li><em>params</em>: (type = map) map containing the connection parameters</li>
+<li><strong>Exceptions</strong>: <em>GamaRuntimeException</em></li>
+</ul>
+</blockquote>
+<p><strong>Example</strong>:</p>
+<pre><code class="hljs lasso">ask agentDB {
+    <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (<span class="hljs-built_in"><span class="hljs-built_in">self</span></span> isConnected){
+             <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> setParameter(<span class="hljs-keyword"><span class="hljs-keyword">params</span></span>: MySQL);
+             <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> connect(<span class="hljs-keyword"><span class="hljs-keyword">params</span></span>: (<span class="hljs-built_in"><span class="hljs-built_in">self</span></span> getParameter));
+        }
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Retrieve%20data%20from%20database%20by%20using%20AgentDB"></a><h3 id="retrieve-data-from-database-by-using-agentdb">Retrieve data from database by using AgentDB</h3>
+<p>Because of the connection to database of AgentDB is kept alive then AgentDB can execute several SQL queries with only one connection. Hence AgentDB can do actions such as <strong>select</strong>, <strong>insert</strong>, <strong>executeUpdate</strong> with the same parameters of those actions of SQLSKILL <em>except <strong>params</strong> parameter is always absent</em>.</p>
+<p><strong>Examples</strong>:</p>
+<pre><code class="hljs qml">map&lt;<span class="hljs-built_in"><span class="hljs-built_in">string</span></span>, <span class="hljs-built_in"><span class="hljs-built_in">string</span></span>&gt; PARAMS &lt;- [<span class="hljs-string"><span class="hljs-string">'dbtype'</span></span>::<span class="hljs-string"><span class="hljs-string">'sqlite'</span></span>, <span class="hljs-string"><span class="hljs-string">'database'</span></span>::<span class="hljs-string"><span class="hljs-string">'../../includes/Student.db'</span></span>];
+ask <span class="hljs-title"><span class="hljs-title">agentDB</span></span> {
+   <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> connect (<span class="hljs-attribute"><span class="hljs-attribute">params</span></span>: PARAMS);
+   <span class="hljs-comment"><span class="hljs-comment">// Create table</span></span>
+   <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> executeUpdate (<span class="hljs-attribute"><span class="hljs-attribute">updateComm</span></span>: <span class="hljs-string"><span class="hljs-string">"CREATE TABLE registration"</span></span> 
+    + <span class="hljs-string"><span class="hljs-string">"(id INTEGER PRIMARY KEY, "</span></span> 
+        + <span class="hljs-string"><span class="hljs-string">" first TEXT NOT NULL, "</span></span> + <span class="hljs-string"><span class="hljs-string">" last TEXT NOT NULL, "</span></span> 
+        + <span class="hljs-string"><span class="hljs-string">" age INTEGER);"</span></span>);
+   <span class="hljs-comment"><span class="hljs-comment">// Insert into </span></span>
+   <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> executeUpdate ( <span class="hljs-attribute"><span class="hljs-attribute">updateComm</span></span>: <span class="hljs-string"><span class="hljs-string">"INSERT INTO registration "</span></span> 
+        + <span class="hljs-string"><span class="hljs-string">"VALUES(100, 'Zara', 'Ali', 18);"</span></span>);
+   <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> insert (<span class="hljs-attribute"><span class="hljs-attribute">into</span></span>: <span class="hljs-string"><span class="hljs-string">"registration"</span></span>, 
+     <span class="hljs-attribute"><span class="hljs-attribute">columns</span></span>: [<span class="hljs-string"><span class="hljs-string">"id"</span></span>, <span class="hljs-string"><span class="hljs-string">"first"</span></span>, <span class="hljs-string"><span class="hljs-string">"last"</span></span>], 
+     <span class="hljs-attribute"><span class="hljs-attribute">values</span></span>: [<span class="hljs-number"><span class="hljs-number">103</span></span>, <span class="hljs-string"><span class="hljs-string">'Zaid tim'</span></span>, <span class="hljs-string"><span class="hljs-string">'Kha'</span></span>]);
+   <span class="hljs-comment"><span class="hljs-comment">// executeUpdate with question marks</span></span>
+   <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> executeUpdate (<span class="hljs-attribute"><span class="hljs-attribute">updateComm</span></span>: <span class="hljs-string"><span class="hljs-string">"INSERT INTO registration VALUES(?, ?, ?, ?);"</span></span>,  
+     <span class="hljs-attribute"><span class="hljs-attribute">values</span></span>: [<span class="hljs-number"><span class="hljs-number">101</span></span>, <span class="hljs-string"><span class="hljs-string">'Mr'</span></span>, <span class="hljs-string"><span class="hljs-string">'Mme'</span></span>, <span class="hljs-number"><span class="hljs-number">45</span></span>]);
+   <span class="hljs-comment"><span class="hljs-comment">//select</span></span>
+    <span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&gt; t &lt;- <span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&gt; (self select( 
+     <span class="hljs-attribute"><span class="hljs-attribute">select</span></span>:<span class="hljs-string"><span class="hljs-string">"SELECT * FROM registration;"</span></span>));
+    <span class="hljs-comment"><span class="hljs-comment">//update </span></span>
+    <span class="hljs-built_in"><span class="hljs-built_in">int</span></span> n &lt;-  executeUpdate (<span class="hljs-attribute"><span class="hljs-attribute">updateComm</span></span>: <span class="hljs-string"><span class="hljs-string">"UPDATE registration SET age = 30 WHERE id IN (100, 101)"</span></span>);
+     <span class="hljs-comment"><span class="hljs-comment">// delete</span></span>
+     <span class="hljs-built_in"><span class="hljs-built_in">int</span></span> n &lt;- executeUpdate ( <span class="hljs-attribute"><span class="hljs-attribute">updateComm</span></span>: <span class="hljs-string"><span class="hljs-string">"DELETE FROM registration where id=? "</span></span>,  <span class="hljs-attribute"><span class="hljs-attribute">values</span></span>: [<span class="hljs-number"><span class="hljs-number">101</span></span>] );
+     <span class="hljs-comment"><span class="hljs-comment">// Drop table</span></span>
+      <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> executeUpdate (<span class="hljs-attribute"><span class="hljs-attribute">updateComm</span></span>: <span class="hljs-string"><span class="hljs-string">"DROP TABLE registration"</span></span>);
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Using%20database%20features%20to%20define%20environment%20or%20create%20species"></a><h2 id="using-database-features-to-define-environment-or-create-species">Using database features to define environment or create species</h2>
+<p>In Gama, we can use results of select action of SQLSKILL or AgentDB to create species or define boundary of environment in the same way we do with shape files. Further more, we can also save simulation data that are generated by simulation including geometry data to database.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Define%20the%20boundary%20of%20the%20environment%20from%20database"></a><h3 id="define-the-boundary-of-the-environment-from-database">Define the boundary of the environment from database</h3>
+<ul>
+<li><strong>Step 1</strong>: specify select query by declaration a map object with keys as below:</li>
+</ul>
+<table><thead><tr><th align="left"><strong>Key</strong></th><th align="left"><strong>Optional</strong></th><th align="left"><strong>Description</strong></th></tr></thead><tbody><tr><td align="left"><em>dbtype</em></td><td align="left">No</td><td align="left">DBMS type value. Its value is a string. We must use "mysql" when we want to connect to a MySQL. That is the same for "postgres", "sqlite" or "sqlserver" (ignore case sensitive)</td></tr><tr><td align="left"><em>host</em></td><td align="left">Yes</td><td align="left">Host name or IP address of data server. It is absent when we work with SQlite.</td></tr><tr><td align="left"><em>port</em></td><td align="left">Yes</td><td align="left">Port of connection. It is not required when we work with SQLite.</td></tr><tr><td align="left"><em>database</em></td><td align="left">No</td><td align="left">Name of database. It is the file name including the path when we work with SQLite.</td></tr><tr><td align="left"><em>user</em></td><td align="left">Yes</td><td align="left">Username. It is  not required when we work with SQLite.</td></tr><tr><td align="left"><em>passwd</em></td><td align="left">Yes</td><td align="left">Password. It is  not required when we work with SQLite.</td></tr><tr><td align="left"><em>srid</em></td><td align="left">Yes</td><td align="left">srid (Spatial Reference Identifier)  corresponds to a spatial reference system. This value is specified when GAMA connects to spatial database. If it is absent then GAMA uses spatial reference system defined in Preferences-&gt;External configuration.</td></tr><tr><td align="left"><em>select</em></td><td align="left">No</td><td align="left">Selection string</td></tr></tbody></table><p><strong>Table 3</strong>: Select boundary parameter description</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="hljs tcl">map&lt;<span class="hljs-keyword"><span class="hljs-keyword">string</span></span>,<span class="hljs-keyword"><span class="hljs-keyword">string</span></span>&gt; BOUNDS &lt;- [  
+    //<span class="hljs-string"><span class="hljs-string">'srid'</span></span>::<span class="hljs-string"><span class="hljs-string">'32648'</span></span>,
+    <span class="hljs-string"><span class="hljs-string">'host'</span></span>::<span class="hljs-string"><span class="hljs-string">'localhost'</span></span>,                                
+        <span class="hljs-string"><span class="hljs-string">'dbtype'</span></span>::<span class="hljs-string"><span class="hljs-string">'postgres'</span></span>,
+    <span class="hljs-string"><span class="hljs-string">'database'</span></span>::<span class="hljs-string"><span class="hljs-string">'spatial_DB'</span></span>,
+    <span class="hljs-string"><span class="hljs-string">'port'</span></span>::<span class="hljs-string"><span class="hljs-string">'5433'</span></span>,                             
+        <span class="hljs-string"><span class="hljs-string">'user'</span></span>::<span class="hljs-string"><span class="hljs-string">'postgres'</span></span>,
+    <span class="hljs-string"><span class="hljs-string">'passwd'</span></span>::<span class="hljs-string"><span class="hljs-string">'tmt'</span></span>,
+    <span class="hljs-string"><span class="hljs-string">'select'</span></span>::<span class="hljs-string"><span class="hljs-string">'SELECT ST_AsBinary(geom) as geom FROM bounds;'</span></span> ];
+</code></pre>
+<ul>
+<li><strong>Step 2</strong>: define boundary of environment by using the map object in first step.</li>
+</ul>
+<pre><code class="hljs mipsasm">geometry <span class="hljs-keyword"><span class="hljs-keyword">shape </span></span>&lt;- envelope(<span class="hljs-keyword"><span class="hljs-keyword">BOUNDS);
+</span></span></code></pre>
+<p>Note: We can do the same way if we work with MySQL, SQLite, or SQLServer and we must convert Geometry format in GIS database to binary format.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Create%20agents%20from%20the%20result%20of%20a%20select%20action"></a><h3 id="create-agents-from-the-result-of-a-select-action">Create agents from the result of a select action</h3>
+<p>If we are familiar with how to create agents from a shapefile then it becomes very simple to create agents from select result. We can do as below:</p>
+<ul>
+<li><strong>Step 1</strong>: Define a species with SQLSKILL or AgentDB</li>
+</ul>
+<pre><code class="hljs groovy">species toto <span class="hljs-string"><span class="hljs-string">skills:</span></span> SQLSKILL {
+    <span class="hljs-comment"><span class="hljs-comment">//insert your descriptions here </span></span>
+}   
+</code></pre>
+<ul>
+<li><strong>Step 2</strong>: Define a connection and selection parameters</li>
+</ul>
+<pre><code class="hljs tcl"><span class="hljs-keyword"><span class="hljs-keyword">global</span></span> {
+    map&lt;<span class="hljs-keyword"><span class="hljs-keyword">string</span></span>,<span class="hljs-keyword"><span class="hljs-keyword">string</span></span>&gt;  PARAMS &lt;- [<span class="hljs-string"><span class="hljs-string">'dbtype'</span></span>::<span class="hljs-string"><span class="hljs-string">'sqlite'</span></span>,<span class="hljs-string"><span class="hljs-string">'database'</span></span>::<span class="hljs-string"><span class="hljs-string">'../includes/bph.sqlite'</span></span>];
+    <span class="hljs-keyword"><span class="hljs-keyword">string</span></span> location &lt;- <span class="hljs-string"><span class="hljs-string">'select ID_4, Name_4, ST_AsBinary(geometry) as geom from vnm_adm4 
+                                      where id_2=38253 or id_2=38254;'</span></span>;
+    ...
+}      
+</code></pre>
+<ul>
+<li><strong>Step 3</strong>: Create species by using selected results</li>
+</ul>
+<pre><code class="hljs less"><span class="hljs-selector-tag"><span class="hljs-selector-tag">init</span></span> {
+   <span class="hljs-selector-tag"><span class="hljs-selector-tag">create</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">toto</span></span> { 
+      create locations <span class="hljs-attribute"><span class="hljs-attribute">from</span></span>: list(self select (<span class="hljs-attribute"><span class="hljs-attribute">params</span></span>: PARAMS, 
+                                                           <span class="hljs-attribute"><span class="hljs-attribute">select</span></span>: LOCATIONS)) 
+                                   <span class="hljs-attribute"><span class="hljs-attribute">with</span></span>:[ <span class="hljs-attribute"><span class="hljs-attribute">id</span></span>:: <span class="hljs-string"><span class="hljs-string">"id_4"</span></span>, <span class="hljs-attribute"><span class="hljs-attribute">custom_name</span></span>:: <span class="hljs-string"><span class="hljs-string">"name_4"</span></span>, <span class="hljs-attribute"><span class="hljs-attribute">shape</span></span>::<span class="hljs-string"><span class="hljs-string">"geom"</span></span>];
+    }
+   ...
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Save%20Geometry%20data%20to%20database"></a><h3 id="save-geometry-data-to-database">Save Geometry data to database</h3>
+<p>If we are familiar with how to create agents from a shapefile then it becomes very simple to create agents from select result. We can do as below:</p>
+<ul>
+<li><strong>Step 1</strong>: Define a species with SQLSKILL or AgentDB</li>
+</ul>
+<pre><code class="hljs groovy">species toto <span class="hljs-string"><span class="hljs-string">skills:</span></span> SQLSKILL {  
+    <span class="hljs-comment"><span class="hljs-comment">//insert your descriptions here</span></span>
+} 
+</code></pre>
+<ul>
+<li><strong>Step 2</strong>: Define a connection and create GIS database and tables</li>
+</ul>
+<pre><code class="hljs groovy">global {
+    map&lt;string,string&gt; PARAMS &lt;-  [<span class="hljs-string"><span class="hljs-string">'host'</span></span>::<span class="hljs-string"><span class="hljs-string">'localhost'</span></span>, <span class="hljs-string"><span class="hljs-string">'dbtype'</span></span>::<span class="hljs-string"><span class="hljs-string">'Postgres'</span></span>, <span class="hljs-string"><span class="hljs-string">'database'</span></span>::<span class="hljs-string"><span class="hljs-string">''</span></span>, 
+                                                            <span class="hljs-string"><span class="hljs-string">'port'</span></span>::<span class="hljs-string"><span class="hljs-string">'5433'</span></span>, <span class="hljs-string"><span class="hljs-string">'user'</span></span>::<span class="hljs-string"><span class="hljs-string">'postgres'</span></span>, <span class="hljs-string"><span class="hljs-string">'passwd'</span></span>::<span class="hljs-string"><span class="hljs-string">'tmt'</span></span>];
+
+    init {
+        create toto ;
+        ask toto {
+            <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (self testConnection[ <span class="hljs-string"><span class="hljs-string">params:</span></span>:PARAMS]){
+                <span class="hljs-comment"><span class="hljs-comment">// create GIS database  </span></span>
+                do executeUpdate(<span class="hljs-string"><span class="hljs-string">params:</span></span>PARAMS, 
+<span class="hljs-symbol"><span class="hljs-symbol">                        updateComm:</span></span> <span class="hljs-string"><span class="hljs-string">"CREATE DATABASE spatial_db with TEMPLATE = template_postgis;"</span></span>); 
+                    remove <span class="hljs-string"><span class="hljs-string">key:</span></span> <span class="hljs-string"><span class="hljs-string">"database"</span></span> <span class="hljs-string"><span class="hljs-string">from:</span></span> PARAMS;
+                put <span class="hljs-string"><span class="hljs-string">"spatial_db"</span></span> <span class="hljs-string"><span class="hljs-string">key:</span></span><span class="hljs-string"><span class="hljs-string">"database"</span></span> <span class="hljs-string"><span class="hljs-string">in:</span></span> PARAMS;
+                <span class="hljs-comment"><span class="hljs-comment">//create table</span></span>
+                            do executeUpdate <span class="hljs-string"><span class="hljs-string">params:</span></span> PARAMS 
+                  <span class="hljs-string"><span class="hljs-string">updateComm :</span></span> <span class="hljs-string"><span class="hljs-string">"CREATE TABLE buildings "</span></span>+
+                  <span class="hljs-string"><span class="hljs-string">"( "</span></span>  +
+                                   <span class="hljs-string"><span class="hljs-string">" name character varying(255), "</span></span> + 
+                                       <span class="hljs-string"><span class="hljs-string">" type character varying(255), "</span></span> + 
+                                       <span class="hljs-string"><span class="hljs-string">" geom GEOMETRY "</span></span> + 
+                                   <span class="hljs-string"><span class="hljs-string">")"</span></span>;
+            }<span class="hljs-keyword"><span class="hljs-keyword">else</span></span> {
+                write <span class="hljs-string"><span class="hljs-string">"Connection to MySQL can not be established "</span></span>;
+            }   
+        }
+    }
+}
+</code></pre>
+<ul>
+<li><strong>Step 3</strong>: Insert geometry data to GIS database</li>
+</ul>
+<pre><code class="hljs dts">ask <span class="hljs-class"><span class="hljs-class">building </span></span>{
+   ask <span class="hljs-class"><span class="hljs-class">DB_Accessor </span></span>{
+    do insert(params: PARAMS, 
+<span class="hljs-symbol"><span class="hljs-symbol">                        into:</span></span> <span class="hljs-string"><span class="hljs-string">"buildings"</span></span>,
+<span class="hljs-symbol"><span class="hljs-symbol">            columns:</span></span> [<span class="hljs-string"><span class="hljs-string">"name"</span></span>, <span class="hljs-string"><span class="hljs-string">"type"</span></span>,<span class="hljs-string"><span class="hljs-string">"geom"</span></span>],
+<span class="hljs-symbol"><span class="hljs-symbol">            values:</span></span> [myself.name,myself.type,myself.shape];
+   }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

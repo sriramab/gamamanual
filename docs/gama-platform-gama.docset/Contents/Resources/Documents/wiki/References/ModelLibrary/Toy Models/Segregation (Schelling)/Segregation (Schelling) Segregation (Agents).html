@@ -1,0 +1,165 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Toy Models/Segregation (Schelling)/Segregation (Schelling) Segregation (Agents) --><head><meta charset="utf-8"><title>Segregation (Schelling) Segregation (Agents)</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="segregation-schelling-segregation-agents">Segregation (Schelling) Segregation (Agents)</h1>
+<h1 id="segregationagents">segregationAgents</h1>
+<p>_Author : _</p>
+<p>A model showing the segregation of the people just by putting a similarity wanted parameter using agents to represent the individuals</p>
+<p>Imported model : </p>
+<pre><code class="hljs groovy">model segregation_base
+
+global {
+    <span class="hljs-comment">//Different colors for the group</span>
+    rgb color_1 &lt;- rgb (<span class="hljs-string">"yellow"</span>) <span class="hljs-string">parameter:</span> <span class="hljs-string">"Color of group 1:"</span> <span class="hljs-string">category:</span> <span class="hljs-string">"User interface"</span>;
+    rgb color_2 &lt;- rgb (<span class="hljs-string">"red"</span>) <span class="hljs-string">parameter:</span> <span class="hljs-string">"Color of group 2:"</span> <span class="hljs-string">category:</span> <span class="hljs-string">"User interface"</span>;
+    rgb color_3 &lt;- rgb (<span class="hljs-string">"blue"</span>) <span class="hljs-string">parameter:</span> <span class="hljs-string">"Color of group 3:"</span> <span class="hljs-string">category:</span> <span class="hljs-string">"User interface"</span>;
+    rgb color_4 &lt;- rgb (<span class="hljs-string">"orange"</span>) <span class="hljs-string">parameter:</span> <span class="hljs-string">"Color of group 4:"</span> <span class="hljs-string">category:</span> <span class="hljs-string">"User interface"</span>;
+    rgb color_5 &lt;- rgb (<span class="hljs-string">"green"</span>) <span class="hljs-string">parameter:</span> <span class="hljs-string">"Color of group 5:"</span> <span class="hljs-string">category:</span> <span class="hljs-string">"User interface"</span>;
+    rgb color_6 &lt;- rgb (<span class="hljs-string">"pink"</span>) <span class="hljs-string">parameter:</span> <span class="hljs-string">"Color of group 6:"</span> <span class="hljs-string">category:</span> <span class="hljs-string">"User interface"</span>;   
+    rgb color_7 &lt;- rgb (<span class="hljs-string">"magenta"</span>) <span class="hljs-string">parameter:</span> <span class="hljs-string">"Color of group 7:"</span> <span class="hljs-string">category:</span> <span class="hljs-string">"User interface"</span>;
+    rgb color_8 &lt;- rgb (<span class="hljs-string">"cyan"</span>) <span class="hljs-string">parameter:</span> <span class="hljs-string">"Color of group 8:"</span> <span class="hljs-string">category:</span> <span class="hljs-string">"User interface"</span>;
+    list colors &lt;- [color_1, color_2, color_3, color_4, color_5, color_6, color_7, color_8] <span class="hljs-string">of:</span> rgb;
+
+    
+    <span class="hljs-comment">//Number of groups</span>
+    <span class="hljs-keyword">int</span> number_of_groups &lt;- <span class="hljs-number">2</span> <span class="hljs-string">max:</span> <span class="hljs-number">8</span> <span class="hljs-string">parameter:</span> <span class="hljs-string">"Number of groups:"</span> <span class="hljs-string">category:</span> <span class="hljs-string">"Population"</span>;
+    <span class="hljs-comment">//Density of the people</span>
+    <span class="hljs-keyword">float</span> density_of_people &lt;- <span class="hljs-number">0.7</span> <span class="hljs-string">parameter:</span> <span class="hljs-string">"Density of people:"</span> <span class="hljs-string">category:</span> <span class="hljs-string">"Population"</span> <span class="hljs-string">min:</span> <span class="hljs-number">0.01</span> <span class="hljs-string">max:</span> <span class="hljs-number">0.99</span>;
+    <span class="hljs-comment">//Percentage of similar wanted for segregation</span>
+    <span class="hljs-keyword">float</span> percent_similar_wanted &lt;- <span class="hljs-number">0.5</span> <span class="hljs-string">min:</span> <span class="hljs-keyword">float</span> (<span class="hljs-number">0</span>) <span class="hljs-string">max:</span> <span class="hljs-keyword">float</span> (<span class="hljs-number">1</span>) <span class="hljs-string">parameter:</span> <span class="hljs-string">"Desired percentage of similarity:"</span> <span class="hljs-string">category:</span> <span class="hljs-string">"Population"</span>;
+    <span class="hljs-comment">//Dimension of the grid</span>
+    <span class="hljs-keyword">int</span> dimensions &lt;- <span class="hljs-number">40</span> <span class="hljs-string">max:</span> <span class="hljs-number">400</span> <span class="hljs-string">min:</span> <span class="hljs-number">10</span> <span class="hljs-string">parameter:</span> <span class="hljs-string">"Width and height of the environment:"</span> <span class="hljs-string">category:</span> <span class="hljs-string">"Environment"</span>;
+    <span class="hljs-comment">//Neighbours distance for the perception of the agents</span>
+    <span class="hljs-keyword">int</span> neighbours_distance &lt;- <span class="hljs-number">2</span> <span class="hljs-string">max:</span> <span class="hljs-number">10</span> <span class="hljs-string">min:</span> <span class="hljs-number">1</span> <span class="hljs-string">parameter:</span> <span class="hljs-string">"Distance of perception:"</span> <span class="hljs-string">category:</span> <span class="hljs-string">"Population"</span>;
+    <span class="hljs-comment">//Number of people agents</span>
+    <span class="hljs-keyword">int</span> number_of_people &lt;- <span class="hljs-number">0</span>;
+    <span class="hljs-comment">//Number of happy people</span>
+    <span class="hljs-keyword">int</span> sum_happy_people &lt;- <span class="hljs-number">0</span> <span class="hljs-string">update:</span> all_people count (each.is_happy);
+    <span class="hljs-comment">//Number of similar neighbours</span>
+    <span class="hljs-keyword">int</span> sum_similar_neighbours &lt;- <span class="hljs-number">0</span> <span class="hljs-string">update:</span> sum (all_people collect each.similar_nearby);
+    <span class="hljs-comment">//Number of neighbours</span>
+    <span class="hljs-keyword">int</span> sum_total_neighbours &lt;- <span class="hljs-number">1</span> <span class="hljs-string">update:</span> sum (all_people collect each.total_nearby) <span class="hljs-string">min:</span> <span class="hljs-number">1</span>;
+    <span class="hljs-comment">//List of all the places</span>
+    list&lt;agent&gt; all_places;
+    <span class="hljs-comment">//List of all the people</span>
+    list&lt;base&gt; all_people;  
+    
+    <span class="hljs-comment">//Action to write the description of the model in the console</span>
+    action description {
+        write
+        <span class="hljs-string">"\\n\\u25B6 Description. \\n\\u25B6 Thomas Schelling model of residential segregation is a classic study of the effects of local decisions on global dynamics. Agents with mild preferences for same-type neighbors, but without preferences for segregated neighborhoods, can wind up producing complete segregation.\\n\\u25B6 In this model, agents populate a grid with a given *density*. They are in two different states : happy when the percentage of same-color neighbours is above their *desired percentage of similarity*; unhappy otherwise. In the latter case, they change their location randomly until they find a neighbourhood that fits their desire. \\n\\u25B6 In addition to the previous parameter, one can adjust the *distance of perception* (i.e.  the distance at which they consider other agents as neighbours) of the agents to see how it affects the global process. "</span>;
+    }
+    <span class="hljs-comment">//Initialization of the model</span>
+    init {
+        <span class="hljs-comment">//Write the description of the model </span>
+        do description;
+        <span class="hljs-comment">//Initialization of the places</span>
+        do initialize_places;
+        <span class="hljs-comment">//Computation of the number of people according to the density of people</span>
+        number_of_people &lt;- <span class="hljs-keyword">int</span>( length (all_places) * density_of_people);
+        <span class="hljs-comment">//Initialization of the people</span>
+        do initialize_people;
+    }
+    <span class="hljs-comment">//Action to initialize places defined in the subclasses</span>
+    action initialize_places <span class="hljs-string">virtual:</span> <span class="hljs-literal">true</span>;
+    <span class="hljs-comment">//Action to initialize people in the subclasses</span>
+    action initialize_people <span class="hljs-string">virtual:</span> <span class="hljs-literal">true</span>;
+}
+
+<span class="hljs-comment">//Species base representing the people agents</span>
+species base {
+    rgb color;
+    <span class="hljs-comment">//List of all the neighbours agents</span>
+    list&lt;base&gt; my_neighbours;
+    <span class="hljs-comment">//computation of the similar neighbours</span>
+    <span class="hljs-keyword">int</span> similar_nearby -&gt; {
+        (my_neighbours count (each.color = color))
+    };
+    <span class="hljs-comment">//Computation of the total neighbours nearby</span>
+    <span class="hljs-keyword">int</span> total_nearby -&gt; {
+        length (my_neighbours)
+    };
+    <span class="hljs-comment">//Boolean to know if the agent is happy or not</span>
+    bool is_happy -&gt; {similar_nearby &gt;= (percent_similar_wanted * total_nearby )} ;
+}
+</code></pre>
+<p>Code of the model : </p>
+<pre><code class="hljs lasso">
+model segregation
+
+<span class="hljs-comment">//import the Common Schelling Segregation model</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">"../include/Common Schelling Segregation.gaml"</span>
+
+<span class="hljs-built_in">global</span> {
+    <span class="hljs-comment">//List of all the free places</span>
+    <span class="hljs-built_in">list</span>&lt;space&gt; free_places ;
+    <span class="hljs-comment">//List of all the places</span>
+    <span class="hljs-built_in">list</span>&lt;space&gt; all_places ;
+    <span class="hljs-comment">//Shape of the world</span>
+    geometry shape &lt;- square(dimensions);
+    
+    <span class="hljs-comment">//Action to initialize the people agents</span>
+    action initialize_people { 
+        create people number: number_of_people; 
+        all_people &lt;- people as <span class="hljs-built_in">list</span> ;  
+    } 
+    <span class="hljs-comment">//Action to initialize the places</span>
+    action initialize_places { 
+        all_places &lt;- shuffle (space);
+        free_places &lt;- all_places;  
+    } 
+}
+<span class="hljs-comment">//Grid to discretize space, each cell representing a free space for the people agents</span>
+grid space width: dimensions height: dimensions neighbors: <span class="hljs-number">8</span> use_regular_agents: <span class="hljs-literal">false</span> frequency: <span class="hljs-number">0</span>{
+    rgb color  &lt;- #black;
+}
+
+<span class="hljs-comment">//Species representing the people agents</span>
+species people <span class="hljs-keyword">parent</span>: base  {
+    <span class="hljs-comment">//Color of the people agent</span>
+    rgb color &lt;- colors at (rnd (number_of_groups - <span class="hljs-number">1</span>));
+    <span class="hljs-comment">//List of all the neighbours of the agent</span>
+    <span class="hljs-built_in">list</span>&lt;people&gt; my_neighbours -&gt; {people at_distance neighbours_distance} ;
+    <span class="hljs-comment">//Cell representing the place of the agent</span>
+    space my_place;
+    init {
+        <span class="hljs-comment">//The agent will be located on one of the free places</span>
+        my_place &lt;- one_of(free_places);
+        location &lt;- my_place.location; 
+        <span class="hljs-comment">//As one agent is in the place, the place is removed from the free places</span>
+        free_places &gt;&gt; my_place;
+    } 
+    <span class="hljs-comment">//Reflex to migrate the people agent when it is not happy </span>
+    reflex migrate when: !is_happy {
+        <span class="hljs-comment">//Add the place to the free places as it will move to another place</span>
+        free_places &lt;&lt; my_place;
+        <span class="hljs-comment">//Change the place of the agent</span>
+        my_place &lt;- one_of(free_places);
+        location &lt;- my_place.location; 
+        <span class="hljs-comment">//Remove the new place from the free places</span>
+        free_places &gt;&gt; my_place;
+    }
+    
+    aspect default{ 
+        draw circle (<span class="hljs-number">0.5</span>) color: color; 
+    }
+}
+
+
+
+experiment schelling <span class="hljs-keyword">type</span>: gui {    
+    output {
+        display Segregation {
+            species people;
+        }   
+        display Charts {
+            chart <span class="hljs-string">"Proportion of happiness"</span> <span class="hljs-keyword">type</span>: pie background: #gray style: exploded position: {<span class="hljs-number">0</span>,<span class="hljs-number">0</span>} size: {<span class="hljs-number">1.0</span>,<span class="hljs-number">0.5</span>}{
+                <span class="hljs-built_in">data</span> <span class="hljs-string">"Unhappy"</span> value: number_of_people - sum_happy_people color: #green;
+                <span class="hljs-built_in">data</span> <span class="hljs-string">"Happy"</span> value: sum_happy_people color: #yellow;
+            }
+            chart <span class="hljs-string">"Global happiness and similarity"</span> <span class="hljs-keyword">type</span>: series background: #gray axes: #white position: {<span class="hljs-number">0</span>,<span class="hljs-number">0.5</span>} size: {<span class="hljs-number">1.0</span>,<span class="hljs-number">0.5</span>} {
+                <span class="hljs-built_in">data</span> <span class="hljs-string">"happy"</span> color: #blue value:  (sum_happy_people / number_of_people) * <span class="hljs-number">100</span> style: spline ;
+                <span class="hljs-built_in">data</span> <span class="hljs-string">"similarity"</span> color: #red value:  (sum_similar_neighbours / sum_total_neighbours) * <span class="hljs-number">100</span> style: step ;
+            }
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

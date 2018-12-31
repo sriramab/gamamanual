@@ -1,0 +1,79 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/WikiOnly/DevelopingExtensions/DevelopingTypes --><head><meta charset="utf-8"><title>DevelopingTypes</title><script src="../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="developingtypes">DevelopingTypes</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Developing%20Types"></a><h1 id="developing-types">Developing Types</h1>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><p>GAML provides a given number of built-in simple types (int, bool...) and more complex ones (path, graph...).
+Developing a new type allows, then, to add a new data structure to GAML.</p>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Implementation"></a><h2 id="implementation">Implementation</h2>
+<p>Developing a new type requiers the implementation of 2 Java files:</p>
+<ul>
+<li>the first one that describes the data structure (e.g.: <code>GamaColor.java</code> to define a type color)
+<ul>
+<li>the second one that implements the type itself, wrapping the data structure file (e.g.: <code>GamaColorType.java</code>), and providing accessors to data structure attributes.</li>
+</ul>
+</li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/The%20data%20structure%20file"></a><h2 id="the-data-structure-file">The data structure file</h2>
+<p>The class representing the data structure is a Java class annotated by:</p>
+<ul>
+<li>a <a href="https://github.com/wiki/gama-platform/gama/WikiOnly/DevelopingExtensions/DevelopingIndexAnnotations#@vars.html">@vars</a> annotation to describe the attributes of a complex type. The <code>@vars</code> annotation contains a set of <code>@var</code> elements.
+<code>
+@vars({ @var(name = IKeyword.COLOR_RED, type = IType.INT), @var(name = IKeyword.COLOR_GREEN, type = IType.INT),
+    @var(name = IKeyword.COLOR_BLUE, type = IType.INT), @var(name = IKeyword.ALPHA, type = IType.INT),
+    @var(name = IKeyword.BRIGHTER, type = IType.COLOR), @var(name = IKeyword.DARKER, type = IType.COLOR) })
+public class GamaColor extends Color implements IValue {
+</code></li>
+</ul>
+<p>It can contain setter and/or getter for each of its attributes. Setters and getters are methods annotated by the <a href="https://github.com/wiki/gama-platform/gama/WikiOnly/DevelopingExtensions/DevelopingIndexAnnotations#@getter.html">@getter</a> or <a href="https://github.com/wiki/gama-platform/gama/WikiOnly/DevelopingExtensions/DevelopingIndexAnnotations#@setter.html">@setter</a> annotations.</p>
+<pre><code class="hljs kotlin"><span class="hljs-meta"><span class="hljs-meta">@getter(IKeyword.COLOR_RED)</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">public</span></span> Integer red() {
+    <span class="hljs-keyword"><span class="hljs-keyword">return</span></span> <span class="hljs-keyword"><span class="hljs-keyword">super</span></span>.getRed();
+}
+</code></pre>
+<p>In addition it is recommended that this class implements the <code>IValue</code> interface. It provides a clean way to give a string representation of the type and thus eases good serialization of the object.
+To this purpose the following method needs to be implemented:</p>
+<pre><code class="hljs aspectj"><span class="hljs-keyword"><span class="hljs-keyword">public</span></span> <span class="hljs-keyword"><span class="hljs-keyword">abstract</span></span> <span class="hljs-function"><span class="hljs-function">String </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">stringValue</span></span></span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">(IScope scope)</span></span></span><span class="hljs-function"> </span><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">throws</span></span></span><span class="hljs-function"> GamaRuntimeException</span></span>;
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/The%20type%20file"></a><h2 id="the-type-file">The type file</h2>
+<p>The class representing the type is a Java class such that:</p>
+<ul>
+<li>the class should be annotated by the <a href="https://github.com/wiki/gama-platform/gama/WikiOnly/DevelopingExtensions/DevelopingIndexAnnotations#@type.html">@type</a> annotation,
+<ul>
+<li>the class should extend the class <code>GamaType&lt;DataStructureFile&gt;</code> (and thus implement its 3 methods),</li>
+</ul>
+</li>
+</ul>
+<p>Example (from <a href="https://github.com/gama-platform/gama/tree/master/msi.gama.core/src/msi/gaml/types/GamaFloatType.java">GamaFloatType.java</a>):</p>
+<pre><code class="hljs elm">@<span class="hljs-keyword"><span class="hljs-keyword">type</span></span>(name = <span class="hljs-type"><span class="hljs-type">IKeyword</span></span>.<span class="hljs-type"><span class="hljs-type">FLOAT</span></span>, id = <span class="hljs-type"><span class="hljs-type">IType</span></span>.<span class="hljs-type"><span class="hljs-type">FLOAT</span></span>, wraps = { <span class="hljs-type"><span class="hljs-type">Double</span></span>.class, double.class }, kind = <span class="hljs-type"><span class="hljs-type">ISymbolKind</span></span>.<span class="hljs-type"><span class="hljs-type">Variable</span></span>.<span class="hljs-type"><span class="hljs-type">NUMBER</span></span>)
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Inheritance%20from%20the%20GamaType%3CT%3E%20class"></a><h3 id="inheritance-from-the-gamatypet-class">Inheritance from the <code>GamaType&lt;T&gt;</code> class</h3>
+<p>Each java class aiming at implement a type should inherit from the GamaType abstract class.
+Example (from <a href="https://github.com/gama-platform/gama/tree/master/msi.gama.core/src/msi/gaml/types/GamaColorType.java">GamaColorType.java</a>):</p>
+<pre><code class="hljs scala">public <span class="hljs-class"><span class="hljs-keyword"><span class="hljs-class"><span class="hljs-keyword">class</span></span></span><span class="hljs-class"> </span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">GamaColorType</span></span></span><span class="hljs-class"> </span><span class="hljs-keyword"><span class="hljs-class"><span class="hljs-keyword">extends</span></span></span><span class="hljs-class"> </span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">GamaType&lt;GamaColor&gt;</span></span></span></span>
+</code></pre>
+<p>This class imposes to implement the three following methods (with the example of the GamaColorType):</p>
+<ul>
+<li><code>public boolean canCastToConst()</code>
+<ul>
+<li><code>public GamaColor cast(IScope scope, Object obj, Object param)</code>: the way to cast any object in the type,</li>
+<li><code>public GamaColor getDefault()</code>: to define the default value of a variable of the current type.</li>
+</ul>
+</li>
+</ul>
+<p>Remark: for each type, an unary operator is created with the exact name of the type. It can be used to cast any expression in the given type.
+This operator calls the previous <code>cast</code> method.</p>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Annotations"></a><h2 id="annotations">Annotations</h2>
+<a class="dashAnchor" name="//apple_ref/Section/@type"></a><h3 id="type">@type</h3>
+<p>It provides information necessary to the processor to identify a type.</p>
+<p>This annotation contains:</p>
+<ul>
+<li><strong>name</strong> (String, "" by default): <em>a String representing the type name in GAML</em>.
+<ul>
+<li><strong>id</strong> (int, 0 by default): <em>the unique identifier for this type. User-added types can be chosen between IType.AVAILABLE_TYPE and IType.SPECIES_TYPE (exclusive) (cf. <a href="https://github.com/gama-platform/gama/tree/master/msi.gama.core/src/msi/gaml/types/IType.java">IType.java</a>)</em>.</li>
+<li><strong>wraps</strong> (tab of Class, null by default): <em>the list of Java Classes this type is "wrapping" (i.e. representing). The first one is the one that will be used preferentially throughout GAMA. The other ones are to ensure compatibility, in operators, with compatible Java classes (for instance, List and GamaList)</em>.</li>
+<li><strong>kind</strong> (int, ISymbolKind.Variable.REGULAR by default): <em>the kind of Variable used to store this type. See <a href="https://github.com/gama-platform/gama/tree/master/msi.gama.processor/src/msi/gama/precompiler/ISymbolKind.java">ISymbolKind.Variable</a></em>.</li>
+<li><strong>internal</strong> (boolean, false by default): <em>whether this type is for internal use only</em>.</li>
+<li><strong>doc</strong> (set of @doc, empty by default): <em>the documentation associated to the facet</em>.</li>
+</ul>
+</li>
+</ul>
+<p>All these annotations are defined in the file <a href="https://github.com/gama-platform/gama/tree/master/msi.gama.processor/src/msi/gama/precompiler/GamlAnnotations.java">GamlAnnotations.java</a>.</p>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

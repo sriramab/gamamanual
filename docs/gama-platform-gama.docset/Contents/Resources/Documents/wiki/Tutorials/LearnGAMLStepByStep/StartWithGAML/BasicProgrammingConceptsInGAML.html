@@ -1,0 +1,293 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Tutorials/LearnGAMLStepByStep/StartWithGAML/BasicProgrammingConceptsInGAML --><head><meta charset="utf-8"><title>BasicProgrammingConceptsInGAML</title><script src="../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="basicprogrammingconceptsingaml">BasicProgrammingConceptsInGAML</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Basic%20programming%20concepts%20in%20GAML"></a><h1 id="basic-programming-concepts-in-gaml">Basic programming concepts in GAML</h1>
+<p>In this part, we will focus on the very basic structures in GAML, such as how to declare a variable, how to use loops, or how to manipulate lists. 
+We will overfly quickly all those basic programming concepts, admitting that you already have some basics in coding.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Index"></a><h2 id="index">Index</h2>
+<ul>
+<li><a href="#variables">Variables</a>
+<ul>
+<li><a href="#basic-types">Basic types</a></li>
+<li><a href="#the-point-type">The point type</a></li>
+<li><a href="#a-word-about-dimensions">A word about dimensions</a></li>
+</ul>
+</li>
+<li><a href="#declare-variables-using-facet">Declare variables using facet</a></li>
+<li><a href="#operators-in-gama">Operators in GAMA</a>
+<ul>
+<li><a href="#logical-operators">Logical operators</a></li>
+<li><a href="#comparison-operators">Comparison operators</a></li>
+<li><a href="#type-casting-operators">Type casting operators</a></li>
+<li><a href="#other-operators">Other operators</a></li>
+</ul>
+</li>
+<li><a href="#conditional-structures">Conditional structures</a></li>
+<li><a href="#loop">Loop</a></li>
+<li><a href="#manipulate-containers">Manipulate containers</a></li>
+<li><a href="#random-values">Random values</a></li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Variables"></a><h2 id="variables">Variables</h2>
+<p>Variables are declared very easily in GAML, starting with the keyword for the type, following by the name you want for your variable. 
+NB: The declaration has to be inside the <code>global</code> scope, or inside the <code>species</code> scope.</p>
+<pre><code class="hljs sqf"><span class="hljs-built_in"><span class="hljs-built_in">typeName</span></span> myVariableName;
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Basic%20types"></a><h3 id="basic-types">Basic types</h3>
+<p>All the "basic" types are present in GAML:<code>int</code>, <code>float</code>, <code>string</code>, <code>bool</code>.
+The operator for the affectation in GAML is <code>&lt;-</code> (the operator <code>=</code> is used to test the equality).</p>
+<pre><code class="hljs vala"><span class="hljs-keyword"><span class="hljs-keyword">int</span></span> integerVariable &lt;- <span class="hljs-number"><span class="hljs-number">3</span></span>;
+<span class="hljs-keyword"><span class="hljs-keyword">float</span></span> floatVariable &lt;- <span class="hljs-number"><span class="hljs-number">2.5</span></span>;
+<span class="hljs-keyword"><span class="hljs-keyword">string</span></span> stringVariable &lt;- <span class="hljs-string"><span class="hljs-string">"test"</span></span>; <span class="hljs-comment"><span class="hljs-comment">// you can also write simple ' : &lt;- 'test'</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> booleanVariable &lt;- <span class="hljs-literal"><span class="hljs-literal">true</span></span>; <span class="hljs-comment"><span class="hljs-comment">// or false</span></span>
+</code></pre>
+<p>To follow the behavior of variable, we can write their value in the console. Let's go back to our basic skeleton of a model, and let's create a reflex in the global scope (to be short, a reflex is a function that is executed in each step. We will come back to this concept later). The <code>write</code> function works very easily, simply writing down the keyword <code>write</code> and the name of the variable we want to be displayed.</p>
+<pre><code class="hljs mipsasm">model firstModel
+
+global {
+    int integerVariable &lt;- <span class="hljs-number"><span class="hljs-number">3</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    float floatVariable &lt;- <span class="hljs-number"><span class="hljs-number">2</span></span>.<span class="hljs-number"><span class="hljs-number">5</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    string stringVariable &lt;- <span class="hljs-string"><span class="hljs-string">"test"</span></span><span class="hljs-comment"><span class="hljs-comment">; // you can also write simple ' : &lt;- 'test'</span></span>
+    <span class="hljs-keyword"><span class="hljs-keyword">bool </span></span><span class="hljs-keyword"><span class="hljs-keyword">booleanVariable </span></span>&lt;- true<span class="hljs-comment"><span class="hljs-comment">; // or false</span></span>
+    reflex writeDebug {
+        write integerVariable<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        write floatVariable<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        write stringVariable<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        write <span class="hljs-keyword"><span class="hljs-keyword">booleanVariable;
+</span></span>    }
+}
+
+experiment myExperiment
+{
+}
+</code></pre>
+<p>The function <code>write</code> is overloaded for each type of variable (even for the more complex type, such as containers).</p>
+<p>Note that before being initialized, a variable has the value <code>nil</code>.</p>
+<pre><code class="hljs arduino">reflex update {
+    <span class="hljs-keyword"><span class="hljs-keyword">string</span></span> my_string;
+    <span class="hljs-built_in"><span class="hljs-built_in">write</span></span> my_string; <span class="hljs-comment"><span class="hljs-comment">// this will write "nil".</span></span>
+    <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> my_int;
+    <span class="hljs-built_in"><span class="hljs-built_in">write</span></span> my_int; <span class="hljs-comment"><span class="hljs-comment">// this will write "0", which is the default value for int.</span></span>
+}
+</code></pre>
+<p><code>nil</code> is also a literal you can use to initialize your variable (you can learn more about the concept of literal in this <a href="https://github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/StartWithGAML/Literals.html">page</a>).</p>
+<pre><code class="hljs mipsasm">reflex update {
+    string my_string &lt;- <span class="hljs-string"><span class="hljs-string">"a string"</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    my_string &lt;- nil<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    write my_string<span class="hljs-comment"><span class="hljs-comment">; // this will write "nil".</span></span>
+    int my_int &lt;- <span class="hljs-number"><span class="hljs-number">6</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    my_int &lt;- nil<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    write my_int<span class="hljs-comment"><span class="hljs-comment">; // this will write "0", which is the default value for int.</span></span>
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/The%20point%20type"></a><h3 id="the-point-type">The point type</h3>
+<p>Another variable type you should know is the point variable. This type of variable is used to describe coordinates. It is in fact a complex variable, composed of two float variables (or three if you are working in 3D). To declare it, you have to use the curly bracket <code>{</code>:</p>
+<pre><code class="hljs dns">point p &lt;- {<span class="hljs-number"><span class="hljs-number">0.2,2.4</span></span>}<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+</code></pre>
+<p>The first field is related to the x value, and the second, to the y value. You can easily get this value as following:</p>
+<pre><code class="hljs arduino"><span class="hljs-built_in"><span class="hljs-built_in">point</span></span> p &lt;- {<span class="hljs-number"><span class="hljs-number">0.2</span></span>,<span class="hljs-number"><span class="hljs-number">2.4</span></span>};
+<span class="hljs-built_in"><span class="hljs-built_in">write</span></span> p.x; <span class="hljs-comment"><span class="hljs-comment">// the output will be 0.2</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">write</span></span> p.y; <span class="hljs-comment"><span class="hljs-comment">// the output will be 2.4</span></span>
+</code></pre>
+<p>You can't modify directly the value. But if you want, you can do a simple operation to get what you want:</p>
+<pre><code class="hljs dns">point p &lt;- {<span class="hljs-number"><span class="hljs-number">0.2,2.4</span></span>}<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+p &lt;- p + {<span class="hljs-number"><span class="hljs-number">0.0,1.0</span></span>}<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+write p.y<span class="hljs-comment"><span class="hljs-comment">; // the output will be 3.4</span></span>
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/A%20world%20about%20dimensions"></a><h3 id="a-world-about-dimensions">A world about dimensions</h3>
+<p>When manipulating float values, you can specify the dimension of your value. Dimensions are preceded by # or ° (exactly the same).</p>
+<pre><code class="hljs nimrod"><span class="hljs-built_in"><span class="hljs-built_in">float</span></span> a &lt;- <span class="hljs-number"><span class="hljs-number">5</span></span>°m;
+<span class="hljs-built_in"><span class="hljs-built_in">float</span></span> b &lt;- <span class="hljs-number"><span class="hljs-number">4</span></span><span class="hljs-comment"><span class="hljs-comment">#cm;</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">float</span></span> c &lt;- a + b; // c <span class="hljs-keyword"><span class="hljs-keyword">is</span></span> equal to <span class="hljs-number"><span class="hljs-number">5</span></span>.<span class="hljs-number"><span class="hljs-number">0399999</span></span> (it's <span class="hljs-keyword"><span class="hljs-keyword">not</span></span> equal to <span class="hljs-number"><span class="hljs-number">5</span></span>.<span class="hljs-number"><span class="hljs-number">04</span></span> because it <span class="hljs-keyword"><span class="hljs-keyword">is</span></span> a <span class="hljs-built_in"><span class="hljs-built_in">float</span></span> value, <span class="hljs-keyword"><span class="hljs-keyword">not</span></span> <span class="hljs-keyword"><span class="hljs-keyword">as</span></span> precise <span class="hljs-keyword"><span class="hljs-keyword">as</span></span> <span class="hljs-built_in"><span class="hljs-built_in">int</span></span>)
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Declare%20variables%20using%20facet"></a><h2 id="declare-variables-using-facet">Declare variables using facet</h2>
+<p>Facets are used to describe the behavior of a variable during its declaration, by adding the keyword <code>facet</code> just after the variable name, followed by the value you want for the facet (or also just after the initial value).</p>
+<pre><code class="hljs rust"><span class="hljs-class"><span class="hljs-keyword"><span class="hljs-class"><span class="hljs-keyword">type</span></span></span><span class="hljs-class"> </span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">variableName</span></span></span></span> &lt;- initialValue facet1:valueForFacet1 facet2:valueForFacet2;
+<span class="hljs-comment"><span class="hljs-comment">// or:</span></span>
+<span class="hljs-class"><span class="hljs-keyword"><span class="hljs-class"><span class="hljs-keyword">type</span></span></span><span class="hljs-class"> </span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">variableName</span></span></span></span> facet1:valueForFacet1 facet2:valueForFacet2;
+variableName &lt;- initialValue;
+</code></pre>
+<p>You can use the facet <code>update</code> if you want to change the value of your variable. For example, to increment your integer variable each step, you can do as follow:</p>
+<pre><code class="hljs groovy"><span class="hljs-keyword"><span class="hljs-keyword">int</span></span> integerVariable &lt;- <span class="hljs-number"><span class="hljs-number">3</span></span> <span class="hljs-string"><span class="hljs-string">min:</span></span><span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-string"><span class="hljs-string">max:</span></span><span class="hljs-number"><span class="hljs-number">10</span></span> <span class="hljs-string"><span class="hljs-string">update:</span></span>integerVariable+<span class="hljs-number"><span class="hljs-number">1</span></span>;
+<span class="hljs-comment"><span class="hljs-comment">// nb: the operator "++" doesn't exist in gaml.</span></span>
+</code></pre>
+<p>You can use the facet <code>min</code> and <code>max</code> to constraint the value in a specific range of values:</p>
+<pre><code class="hljs groovy"><span class="hljs-keyword"><span class="hljs-keyword">int</span></span> integerVariable &lt;- <span class="hljs-number"><span class="hljs-number">3</span></span> <span class="hljs-string"><span class="hljs-string">min:</span></span><span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-string"><span class="hljs-string">max:</span></span><span class="hljs-number"><span class="hljs-number">10</span></span> <span class="hljs-string"><span class="hljs-string">update:</span></span>integerVariable+<span class="hljs-number"><span class="hljs-number">1</span></span>;
+<span class="hljs-comment"><span class="hljs-comment">// the result will be 3 - 4 - 5 - 6 - 7 - 8 - 9 - 10 - 10 - 10 - ...</span></span>
+</code></pre>
+<p>The facet <code>among</code> can also be useful (that can be seen as an enum):</p>
+<pre><code class="hljs thrift"><span class="hljs-built_in"><span class="hljs-built_in">string</span></span> fruits &lt;- <span class="hljs-string"><span class="hljs-string">"banana"</span></span> among:[<span class="hljs-string"><span class="hljs-string">"pear"</span></span>,<span class="hljs-string"><span class="hljs-string">"apple"</span></span>,<span class="hljs-string"><span class="hljs-string">"banana"</span></span>];
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Operators%20in%20GAMA"></a><h2 id="operators-in-gama">Operators in GAMA</h2>
+<p>In GAML language, you can use a lot of different operators. They are all listed in this <a href="https://github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/StartWithGAML/Operators.html">page</a>, but here are the most useful ones:</p>
+<p><strong>- Mathematical operators</strong></p>
+<p>The basic arithmetical operators, such as <code>+</code>(add), <code>-</code>(substract), <code>*</code>(multiply), <code>/</code>(divide), <code>^</code>(power) are used this way: </p>
+<p>FirstOperand Operator SecondOperand --&gt; ex: 5 * 3; // return 15</p>
+<p>Some other operators, such as <code>cos</code>(cosinus), <code>sin</code>(sinus), <code>tan</code>(tangent), <code>sqrt</code>(square root), <code>round</code>(rounding) etc... are used this way:</p>
+<pre><code class="hljs xl">O<span class="hljs-function"><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">perator</span></span></span><span class="hljs-function">(Operand) --&gt;</span></span> ex: <span class="hljs-built_in"><span class="hljs-built_in">sqrt</span></span>(<span class="hljs-number"><span class="hljs-number">49</span></span>); <span class="hljs-comment"><span class="hljs-comment">// return 7</span></span>
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Logical%20operators"></a><h3 id="logical-operators">Logical operators</h3>
+<p>Logical operators such as <code>and</code>(and), <code>or</code>(inclusive or) are used the same way as basic arithmetical operators. The operator <code>!</code>(negation) has to be placed just before the operand. They return a boolean result.</p>
+<pre><code class="hljs elixir">FirstOperand Operator SecondOperand --&gt; <span class="hljs-symbol"><span class="hljs-symbol">ex:</span></span> <span class="hljs-keyword"><span class="hljs-keyword">true</span></span> <span class="hljs-keyword"><span class="hljs-keyword">or</span></span> <span class="hljs-keyword"><span class="hljs-keyword">false</span></span>; <span class="hljs-regexp"><span class="hljs-regexp">//</span></span> <span class="hljs-keyword"><span class="hljs-keyword">return</span></span> <span class="hljs-keyword"><span class="hljs-keyword">true</span></span>
+NegationOperator Operand --&gt; <span class="hljs-symbol"><span class="hljs-symbol">ex:</span></span> !(<span class="hljs-keyword"><span class="hljs-keyword">true</span></span> <span class="hljs-keyword"><span class="hljs-keyword">or</span></span> <span class="hljs-keyword"><span class="hljs-keyword">false</span></span>); <span class="hljs-regexp"><span class="hljs-regexp">//</span></span> <span class="hljs-keyword"><span class="hljs-keyword">return</span></span> <span class="hljs-keyword"><span class="hljs-keyword">false</span></span>
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Comparison%20operators"></a><h3 id="comparison-operators">Comparison operators</h3>
+<p>The comparison operators <code>!=</code>(different than), <code>&lt;</code>(smaller than), <code>&lt;=</code>(smaller of equal), <code>=</code>(equal), <code>&gt;</code>(bigger than), <code>&gt;=</code>(bigger or equal) are used the same way as basic arithmetical operators:</p>
+<pre><code class="hljs elixir">FirstOperand Operator SecondOperand --&gt; <span class="hljs-symbol"><span class="hljs-symbol">ex:</span></span> <span class="hljs-number"><span class="hljs-number">5</span></span> &lt; <span class="hljs-number"><span class="hljs-number">3</span></span>; <span class="hljs-regexp"><span class="hljs-regexp">//</span></span> <span class="hljs-keyword"><span class="hljs-keyword">return</span></span> <span class="hljs-keyword"><span class="hljs-keyword">false</span></span>
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Type%20casting%20operators"></a><h3 id="type-casting-operators">Type casting operators</h3>
+<p>You can cast an operand to a special type using casting operator:</p>
+<pre><code class="hljs rust">Operator(Operand); --&gt; ex: <span class="hljs-keyword"><span class="hljs-keyword">int</span></span>(<span class="hljs-number"><span class="hljs-number">2.1</span></span>); <span class="hljs-comment"><span class="hljs-comment">// return 2</span></span>
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Other%20operators"></a><h3 id="other-operators">Other operators</h3>
+<p>A lot of other operators exist in GAML. The standard way to use those operators is as followed:</p>
+<pre><code class="hljs livescript">Operator<span class="hljs-function"><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">(FirstOperand,SecondOperand,...)</span></span></span><span class="hljs-function"> --&gt;</span></span> ex: rnd(<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">8</span></span>);
+</code></pre>
+<p>Some others are used in a more intuitive way:</p>
+<pre><code class="hljs xl">F<span class="hljs-function"><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">irstOperand</span></span></span><span class="hljs-function"> Operator SecondOperand --&gt;</span></span> ex: <span class="hljs-number"><span class="hljs-number">2</span></span>[<span class="hljs-number"><span class="hljs-number">6</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>] <span class="hljs-built_in"><span class="hljs-built_in">contains</span></span>(<span class="hljs-number"><span class="hljs-number">5</span></span>);
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Conditional%20structures"></a><h2 id="conditional-structures">Conditional structures</h2>
+<p>You can write if/else if/else in GAML:</p>
+<pre><code class="hljs bash"><span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (<span class="hljs-built_in"><span class="hljs-built_in">integer</span></span>Variable&lt;0) {
+    write <span class="hljs-string"><span class="hljs-string">"my value is negative !! The exact value is "</span></span> + <span class="hljs-built_in"><span class="hljs-built_in">integer</span></span>Variable;
+}
+<span class="hljs-keyword"><span class="hljs-keyword">else</span></span> <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (<span class="hljs-built_in"><span class="hljs-built_in">integer</span></span>Variable&gt;0) {
+    write <span class="hljs-string"><span class="hljs-string">"my value is positive !! The exact value is "</span></span> + <span class="hljs-built_in"><span class="hljs-built_in">integer</span></span>Variable;
+}
+<span class="hljs-keyword"><span class="hljs-keyword">else</span></span> <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (<span class="hljs-built_in"><span class="hljs-built_in">integer</span></span>Variable=0) {
+    write <span class="hljs-string"><span class="hljs-string">"my value is equal to 0 !!"</span></span>;
+}
+<span class="hljs-keyword"><span class="hljs-keyword">else</span></span> {
+    write <span class="hljs-string"><span class="hljs-string">"hey... This is not possible, right ?"</span></span>;
+}
+</code></pre>
+<p>GAML also accepts ternary operator:</p>
+<pre><code class="hljs armasm"><span class="hljs-keyword"><span class="hljs-keyword">stringVariable </span></span>&lt;- (<span class="hljs-keyword"><span class="hljs-keyword">booleanVariable) </span></span>? <span class="hljs-string"><span class="hljs-string">"booleanVariable = true"</span></span> : <span class="hljs-string"><span class="hljs-string">"booleanVariable = false"</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Loop"></a><h2 id="loop">Loop</h2>
+<p>Loops in GAML are designed by the keyword <code>loop</code>. As for variables, a loop have multiple facet to determine its behavior:</p>
+<ul>
+<li>The facet <code>times</code>, to repeat a fixed number of times a set of statements:</li>
+</ul>
+<pre><code class="hljs gradle">loop <span class="hljs-keyword"><span class="hljs-keyword">times</span></span>: <span class="hljs-number"><span class="hljs-number">2</span></span> {
+<span class="hljs-keyword"><span class="hljs-keyword">write</span></span> <span class="hljs-string"><span class="hljs-string">"helloWorld"</span></span>;
+} 
+<span class="hljs-comment"><span class="hljs-comment">// the output will be helloWorld - helloWorld</span></span>
+</code></pre>
+<ul>
+<li>The facet <code>while</code>, to repeat a set of statements while a condition is true:</li>
+</ul>
+<pre><code class="hljs rust"><span class="hljs-keyword"><span class="hljs-keyword">loop</span></span> <span class="hljs-keyword"><span class="hljs-keyword">while</span></span>: (<span class="hljs-literal"><span class="hljs-literal">true</span></span>) {
+}
+<span class="hljs-comment"><span class="hljs-comment">// infinity loop</span></span>
+</code></pre>
+<ul>
+<li>The facet <code>from</code> / <code>to</code>, to repeat a set of statements while an index iterates over a range of values with a fixed step of 1:</li>
+</ul>
+<pre><code class="hljs xl"><span class="hljs-function"><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">loop</span></span></span><span class="hljs-function"> i from:0 to: 5 { // </span><span class="hljs-built_in"><span class="hljs-function"><span class="hljs-built_in">or</span></span></span><span class="hljs-function"> </span><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">loop</span></span></span><span class="hljs-function"> </span><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">name</span></span></span><span class="hljs-function">:i from:0 to:5 -&gt;</span></span> the <span class="hljs-keyword"><span class="hljs-keyword">name</span></span> <span class="hljs-keyword"><span class="hljs-keyword">is</span></span> also a facet
+    write i;
+}
+<span class="hljs-comment"><span class="hljs-comment">// the output will be 0 - 1 - 2 - 3 - 4 - 5</span></span>
+</code></pre>
+<ul>
+<li>The facet <code>from</code> / <code>to</code> combine with the facet <code>step</code> to choose the step:</li>
+</ul>
+<pre><code class="hljs oxygene"><span class="hljs-keyword"><span class="hljs-keyword">loop</span></span> i <span class="hljs-keyword"><span class="hljs-keyword">from</span></span>:<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span>: <span class="hljs-number"><span class="hljs-number">5</span></span> <span class="hljs-keyword"><span class="hljs-keyword">step</span></span>: <span class="hljs-number"><span class="hljs-number">2</span></span> <span class="hljs-comment"><span class="hljs-comment">{
+    write i;
+}</span></span>
+<span class="hljs-comment"><span class="hljs-comment">// the output will be 0 - 2 - 4</span></span>
+</code></pre>
+<ul>
+<li>The facet over to browse containers, as we will see in the next part.</li>
+</ul>
+<p>Nb: you can interrupt a loop at any time by using the <code>break</code> statement.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Manipulate%20containers"></a><h2 id="manipulate-containers">Manipulate containers</h2>
+<p>We saw in the previous parts "simple" types of variable. You also have a multiple containers types, such as list, matrix, map, pair... In this section, we will only focus on the container <code>list</code> (you can learn the other by reading the <a href="https://github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/StartWithGAML/DataTypes#complex-built-in-types.html">section about datatypes</a>).</p>
+<p><strong>How to declare a list?</strong></p>
+<p>To declare a list, you can either or not specify the type of the data of its elements:</p>
+<pre><code class="hljs cpp"><span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;<span class="hljs-keyword"><span class="hljs-keyword">int</span></span>&gt; listOfInt &lt;- [<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">9</span></span>,<span class="hljs-number"><span class="hljs-number">8</span></span>];
+<span class="hljs-built_in"><span class="hljs-built_in">list</span></span> listWithoutType &lt;- [<span class="hljs-number"><span class="hljs-number">2</span></span>,<span class="hljs-number"><span class="hljs-number">4.6</span></span>,<span class="hljs-string"><span class="hljs-string">"oij"</span></span>,[<span class="hljs-string"><span class="hljs-string">"hoh"</span></span>,<span class="hljs-number"><span class="hljs-number">0.0</span></span>]];
+</code></pre>
+<p><strong>How to know the number of elements of a list?</strong></p>
+<p>To know the number of element of a list, you can use the operator <code>length</code> that returns the number of elements (note that this operator also works with strings).</p>
+<pre><code class="hljs axapta"><span class="hljs-keyword"><span class="hljs-keyword">int</span></span> numberOfElements &lt;- length([<span class="hljs-number"><span class="hljs-number">12</span></span>,<span class="hljs-number"><span class="hljs-number">13</span></span>]); <span class="hljs-comment"><span class="hljs-comment">// will return 2</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">int</span></span> numberOfElements &lt;- length([]); <span class="hljs-comment"><span class="hljs-comment">// will return 0</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">int</span></span> numberOfElements &lt;- length(<span class="hljs-string"><span class="hljs-string">"stuff"</span></span>); <span class="hljs-comment"><span class="hljs-comment">// will return 5</span></span>
+</code></pre>
+<p>There is an other operator, <code>empty</code>, that returns you a boolean telling you if the list is empty or not.</p>
+<pre><code class="hljs zephir"><span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> isEmpty &lt;- <span class="hljs-keyword"><span class="hljs-keyword">empty</span></span>([<span class="hljs-number"><span class="hljs-number">12</span></span>,<span class="hljs-number"><span class="hljs-number">13</span></span>]); <span class="hljs-comment"><span class="hljs-comment">// will return false</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> isEmpty &lt;- <span class="hljs-keyword"><span class="hljs-keyword">empty</span></span>([]); <span class="hljs-comment"><span class="hljs-comment">// will return true</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> isEmpty &lt;- <span class="hljs-keyword"><span class="hljs-keyword">empty</span></span>(<span class="hljs-string"><span class="hljs-string">"stuff"</span></span>); <span class="hljs-comment"><span class="hljs-comment">// will return false</span></span>
+</code></pre>
+<p><strong>How to get an element from a list?</strong></p>
+<p>To get an element from a list by its index, you have to use the operator <code>at</code> (nb: it is indeed an operator, and not a facet, so no ":" after the keyword).</p>
+<pre><code class="hljs axapta"><span class="hljs-keyword"><span class="hljs-keyword">int</span></span> theFirstElementOfTheList &lt;- [<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">9</span></span>,<span class="hljs-number"><span class="hljs-number">8</span></span>] at <span class="hljs-number"><span class="hljs-number">0</span></span>; <span class="hljs-comment"><span class="hljs-comment">// this will return 5</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">int</span></span> theThirdElementOfTheList &lt;- [<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">9</span></span>,<span class="hljs-number"><span class="hljs-number">8</span></span>] at <span class="hljs-number"><span class="hljs-number">2</span></span>; <span class="hljs-comment"><span class="hljs-comment">// this will return 9</span></span>
+</code></pre>
+<p><strong>How to know the index of an element of a list?</strong></p>
+<p>You can know the index of the first occurrence of a value in a list using the operator <code>index_of</code>.
+You can know the index of the last occurrence of a value in a list using the operator <code>last_index_of</code>.</p>
+<pre><code class="hljs nimrod"><span class="hljs-built_in"><span class="hljs-built_in">int</span></span> <span class="hljs-literal"><span class="hljs-literal">result</span></span> &lt;- [<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>,<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>] last_index_of <span class="hljs-number"><span class="hljs-number">4</span></span>;  // <span class="hljs-literal"><span class="hljs-literal">result</span></span> equals <span class="hljs-number"><span class="hljs-number">5</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">int</span></span> <span class="hljs-literal"><span class="hljs-literal">result</span></span> &lt;- [<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>,<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>] index_of <span class="hljs-number"><span class="hljs-number">4</span></span>;  // <span class="hljs-literal"><span class="hljs-literal">result</span></span> equals <span class="hljs-number"><span class="hljs-number">0</span></span>
+</code></pre>
+<p><strong>How to know if an element exists in a list?</strong></p>
+<p>You can use the operator <code>contains</code> (return a boolean):</p>
+<pre><code class="hljs xquery">bool result &lt;- [{<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>}, {<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>}, {<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">6</span></span>}] contains {<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>};  // result equals <span class="hljs-literal"><span class="hljs-literal">true</span></span>
+</code></pre>
+<p><strong>How to insert/remove an element to/from a list?</strong></p>
+<p>For those operation, no operator are available, but you can use a statement instead. The statements <code>add</code> and <code>put</code> are used to insert/modify an element, while the statement <code>remove</code> is used to remove an element. Here are some example of how to use those 3 statements with the most common facets:</p>
+<pre><code class="hljs oxygene">list&lt;int&gt; list_int &lt;- [<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">7</span></span>,<span class="hljs-number"><span class="hljs-number">6</span></span>,<span class="hljs-number"><span class="hljs-number">7</span></span>];
+<span class="hljs-keyword"><span class="hljs-keyword">remove</span></span> <span class="hljs-keyword"><span class="hljs-keyword">from</span></span>:list_int <span class="hljs-keyword"><span class="hljs-keyword">index</span></span>:<span class="hljs-number"><span class="hljs-number">1</span></span>; <span class="hljs-comment"><span class="hljs-comment">// remove the 2nd element of the list</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">write</span></span> list_int; <span class="hljs-comment"><span class="hljs-comment">// the output is : [1,7,6,7]</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">remove</span></span> item:<span class="hljs-number"><span class="hljs-number">7</span></span> <span class="hljs-keyword"><span class="hljs-keyword">from</span></span>:list_int; <span class="hljs-comment"><span class="hljs-comment">// remove the 1st occurrence of 7</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">write</span></span> list_int; <span class="hljs-comment"><span class="hljs-comment">// the output is : [1,6,7]</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">add</span></span> item:<span class="hljs-number"><span class="hljs-number">9</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span>: list_int at: <span class="hljs-number"><span class="hljs-number">2</span></span>; <span class="hljs-comment"><span class="hljs-comment">// add 9 in the 3rd position</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">write</span></span> list_int; <span class="hljs-comment"><span class="hljs-comment">// the output is : [1,6,9,7]</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">add</span></span> <span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span>: list_int; <span class="hljs-comment"><span class="hljs-comment">// add 0 in the last position</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">write</span></span> list_int; <span class="hljs-comment"><span class="hljs-comment">// the output is : [1,6,9,7,0]</span></span>
+put <span class="hljs-number"><span class="hljs-number">3</span></span> <span class="hljs-keyword"><span class="hljs-keyword">in</span></span>: list_int at: <span class="hljs-number"><span class="hljs-number">0</span></span>; <span class="hljs-comment"><span class="hljs-comment">// put 3 in the 1st position</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">write</span></span> list_int; <span class="hljs-comment"><span class="hljs-comment">// the output is : [3,6,9,7,0]</span></span>
+put <span class="hljs-number"><span class="hljs-number">2</span></span> <span class="hljs-keyword"><span class="hljs-keyword">in</span></span>: list_int key: <span class="hljs-number"><span class="hljs-number">2</span></span>; <span class="hljs-comment"><span class="hljs-comment">// put 2 in the 3rd position</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">write</span></span> list_int; <span class="hljs-comment"><span class="hljs-comment">// the output is : [3,6,2,7,0]</span></span>
+</code></pre>
+<p><strong>How to add 2 lists?</strong></p>
+<p>You can add 2 lists by creating a third one and browsing the 2 first one, but you can do it much easily by using the operator <code>+</code> : </p>
+<pre><code class="hljs cpp"><span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;<span class="hljs-keyword"><span class="hljs-keyword">int</span></span>&gt; list_int1 &lt;- [<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">7</span></span>,<span class="hljs-number"><span class="hljs-number">6</span></span>,<span class="hljs-number"><span class="hljs-number">7</span></span>];
+<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;<span class="hljs-keyword"><span class="hljs-keyword">int</span></span>&gt; list_int2 &lt;- [<span class="hljs-number"><span class="hljs-number">6</span></span>,<span class="hljs-number"><span class="hljs-number">9</span></span>];
+<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;<span class="hljs-keyword"><span class="hljs-keyword">int</span></span>&gt; list_int_result &lt;- list_int1 + list_int2;
+</code></pre>
+<p><strong>How to browse a list?</strong></p>
+<p>You can use the facet <code>over</code> of a loop:</p>
+<pre><code class="hljs cpp"><span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;<span class="hljs-keyword"><span class="hljs-keyword">int</span></span>&gt; exampleOfList &lt;- [<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>,<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>];
+loop i over:exampleOfList {
+    write i;
+}
+<span class="hljs-comment"><span class="hljs-comment">// the output will be 4 - 2 - 3 - 4 - 5 - 4</span></span>
+</code></pre>
+<p><strong>How to filter a list?</strong></p>
+<p>If you want to get all the elements of a list that fulfill a particular condition, you need the operator where. In the condition, you can design all the element of a particular list by using the pseudo variable <strong><code>each</code></strong> as followed:</p>
+<pre><code class="hljs cpp"><span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;<span class="hljs-keyword"><span class="hljs-keyword">int</span></span>&gt; exampleOfList &lt;- [<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>,<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>] where (each &lt;= <span class="hljs-number"><span class="hljs-number">3</span></span>); 
+<span class="hljs-comment"><span class="hljs-comment">// the list is now [2,3]</span></span>
+</code></pre>
+<p>Other useful operators for the manipulation of lists:</p>
+<p>Here are some other operators which can be useful to manipulate lists: <code>sort</code>, <code>sort_by</code>, <code>shuffle</code>, <code>reverse</code>, <code>collect</code>, <code>accumulate</code>, <code>among</code>. Please read the GAML Reference if you want to know more about those operators.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Random%20values"></a><h2 id="random-values">Random values</h2>
+<p>When you will implement your model, you will have to manipulate some random values quite often. </p>
+<p>To get a random value in a range of value, use the operator <a href="https://github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/StartWithGAML/Operators#rnd.html"><code>rnd</code></a>. You can use this operator in many ways:</p>
+<pre><code class="hljs nimrod"><span class="hljs-built_in"><span class="hljs-built_in">int</span></span> var0 &lt;- rnd (<span class="hljs-number"><span class="hljs-number">2</span></span>);    // var0 equals <span class="hljs-number"><span class="hljs-number">0</span></span>, <span class="hljs-number"><span class="hljs-number">1</span></span> <span class="hljs-keyword"><span class="hljs-keyword">or</span></span> <span class="hljs-number"><span class="hljs-number">2</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">float</span></span> var1 &lt;- rnd (<span class="hljs-number"><span class="hljs-number">1000</span></span>) / <span class="hljs-number"><span class="hljs-number">1000</span></span>;    // var1 equals a <span class="hljs-built_in"><span class="hljs-built_in">float</span></span> between <span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">and</span></span> <span class="hljs-number"><span class="hljs-number">1</span></span> <span class="hljs-keyword"><span class="hljs-keyword">with</span></span> a precision <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">001</span></span>
+point var2 &lt;- rnd ({<span class="hljs-number"><span class="hljs-number">2</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>, <span class="hljs-number"><span class="hljs-number">4</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>}, {<span class="hljs-number"><span class="hljs-number">2</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>, <span class="hljs-number"><span class="hljs-number">5</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>, <span class="hljs-number"><span class="hljs-number">10</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>}, <span class="hljs-number"><span class="hljs-number">1</span></span>);    // var2 equals a point <span class="hljs-keyword"><span class="hljs-keyword">with</span></span> x = <span class="hljs-number"><span class="hljs-number">2</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>, y equal to <span class="hljs-number"><span class="hljs-number">2</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>, <span class="hljs-number"><span class="hljs-number">3</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">or</span></span> <span class="hljs-number"><span class="hljs-number">4</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">and</span></span> z between <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">and</span></span> <span class="hljs-number"><span class="hljs-number">10</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> every <span class="hljs-number"><span class="hljs-number">1</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">float</span></span> var3 &lt;- rnd (<span class="hljs-number"><span class="hljs-number">2</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>, <span class="hljs-number"><span class="hljs-number">4</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>, <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">5</span></span>);  // var3 equals a <span class="hljs-built_in"><span class="hljs-built_in">float</span></span> number between <span class="hljs-number"><span class="hljs-number">2</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">and</span></span> <span class="hljs-number"><span class="hljs-number">4</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> every <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">5</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">float</span></span> var4 &lt;- rnd(<span class="hljs-number"><span class="hljs-number">3</span></span>.<span class="hljs-number"><span class="hljs-number">4</span></span>);     // var4 equals a random <span class="hljs-built_in"><span class="hljs-built_in">float</span></span> between <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">and</span></span> <span class="hljs-number"><span class="hljs-number">3</span></span>.<span class="hljs-number"><span class="hljs-number">4</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">int</span></span> var5 &lt;- rnd (<span class="hljs-number"><span class="hljs-number">2</span></span>, <span class="hljs-number"><span class="hljs-number">12</span></span>, <span class="hljs-number"><span class="hljs-number">4</span></span>);     // var5 equals <span class="hljs-number"><span class="hljs-number">2</span></span>, <span class="hljs-number"><span class="hljs-number">6</span></span> <span class="hljs-keyword"><span class="hljs-keyword">or</span></span> <span class="hljs-number"><span class="hljs-number">10</span></span>
+point var6 &lt;- rnd ({<span class="hljs-number"><span class="hljs-number">2</span></span>.<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">3</span></span>, <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>});   // var6 equals {x,y} <span class="hljs-keyword"><span class="hljs-keyword">with</span></span> x <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> [<span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>], y <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> [<span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">3</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>], z = <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">int</span></span> var7 &lt;- rnd (<span class="hljs-number"><span class="hljs-number">2</span></span>, <span class="hljs-number"><span class="hljs-number">4</span></span>);     // var7 equals <span class="hljs-number"><span class="hljs-number">2</span></span>, <span class="hljs-number"><span class="hljs-number">3</span></span> <span class="hljs-keyword"><span class="hljs-keyword">or</span></span> <span class="hljs-number"><span class="hljs-number">4</span></span>
+point var8 &lt;- rnd ({<span class="hljs-number"><span class="hljs-number">2</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>, <span class="hljs-number"><span class="hljs-number">4</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>}, {<span class="hljs-number"><span class="hljs-number">2</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>, <span class="hljs-number"><span class="hljs-number">5</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>, <span class="hljs-number"><span class="hljs-number">10</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>});   // var8 equals a point <span class="hljs-keyword"><span class="hljs-keyword">with</span></span> x = <span class="hljs-number"><span class="hljs-number">2</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>, y between <span class="hljs-number"><span class="hljs-number">2</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">and</span></span> <span class="hljs-number"><span class="hljs-number">4</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">and</span></span> z between <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">and</span></span> <span class="hljs-number"><span class="hljs-number">10</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">float</span></span> var9 &lt;- rnd (<span class="hljs-number"><span class="hljs-number">2</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>, <span class="hljs-number"><span class="hljs-number">4</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>);   // var9 equals a <span class="hljs-built_in"><span class="hljs-built_in">float</span></span> number between <span class="hljs-number"><span class="hljs-number">2</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">and</span></span> <span class="hljs-number"><span class="hljs-number">4</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>
+</code></pre>
+<p>Use the operator <a href="https://github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/StartWithGAML/Operators#flip.html"><code>flip</code></a> if you want to pick a boolean value with a certain probability:</p>
+<pre><code class="hljs nimrod"><span class="hljs-built_in"><span class="hljs-built_in">bool</span></span> <span class="hljs-literal"><span class="hljs-literal">result</span></span> &lt;- flip(<span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">2</span></span>); // <span class="hljs-literal"><span class="hljs-literal">result</span></span> will have <span class="hljs-number"><span class="hljs-number">20</span></span>% <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> chance to be <span class="hljs-literal"><span class="hljs-literal">true</span></span>
+</code></pre>
+<p>You can use randomness in list, by using the operator <a href="https://github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/StartWithGAML/Operators#shuffle.html"><code>shuffle</code></a>, or also by using the operator <a href="https://github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/StartWithGAML/Operators#among.html"><code>among</code></a> to pick randomly one (or several) element of your list:</p>
+<pre><code class="hljs thrift"><span class="hljs-keyword"><span class="hljs-keyword">list</span></span> TwoRandomValuesFromTheList &lt;- <span class="hljs-number"><span class="hljs-number">2</span></span> among [<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">9</span></span>,<span class="hljs-number"><span class="hljs-number">8</span></span>];
+<span class="hljs-comment"><span class="hljs-comment">// the list will be for example [5,9].</span></span>
+</code></pre>
+<p>You can use probabilistic laws, using operators such as <a href="https://github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/StartWithGAML/Operators#gauss.html"><code>gauss</code></a>, <a href="https://github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/StartWithGAML/Operators#poisson.html"><code>poisson</code></a>, <a href="https://github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/StartWithGAML/Operators#binomial.html"><code>binomial</code></a>, or <a href="https://github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/StartWithGAML/Operators#truncated_gauss.html"><code>truncated_gauss</code></a> (we invite you to read the documentation for those operators).</p>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

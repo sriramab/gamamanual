@@ -1,0 +1,53 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Data Importation/Data Importation DXF Agents --><head><meta charset="utf-8"><title>Data Importation DXF Agents</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="data-importation-dxf-agents">Data Importation DXF Agents</h1>
+<h1 id="dxf-to-agents-model">DXF to Agents Model</h1>
+<p><em>Author :  Patrick Taillandier</em></p>
+<p>Model which shows how to create agents by importing data of a DXF file</p>
+<p>Code of the model : </p>
+<pre><code class="hljs processing">
+model DXFAgents 
+
+global {
+    file house_file &lt;- file(<span class="hljs-string">"../includes/house.dxf"</span>);
+    
+    <span class="hljs-comment">//compute the environment size from the dxf file envelope</span>
+    geometry <span class="hljs-built_in">shape</span> &lt;- envelope(house_file);
+    
+    init {
+        <span class="hljs-comment">//create house_element agents from the dxf file and initialized the layer attribute of the agents from the the file</span>
+        create house_element from: house_file with: [layer::string(<span class="hljs-built_in">get</span>(<span class="hljs-string">"layer"</span>))];
+                create house_element from: house_file with: [layer::string(<span class="hljs-built_in">get</span>(<span class="hljs-string">"layer"</span>))];
+                        create house_element from: house_file with: [layer::string(<span class="hljs-built_in">get</span>(<span class="hljs-string">"layer"</span>))];
+        <span class="hljs-comment">//define a random color for each layer</span>
+        <span class="hljs-built_in">map</span> layers &lt;- list(house_element) group_by each.layer;
+        <span class="hljs-built_in">loop</span> la over: layers.keys {
+            rgb col &lt;- rnd_color(<span class="hljs-number">255</span>);
+            ask layers[la] {<span class="hljs-built_in">color</span> &lt;- col;}
+        }
+    }
+}
+
+species house_element {
+    string layer;
+    rgb <span class="hljs-built_in">color</span>;
+    aspect <span class="hljs-keyword">default</span> {
+        <span class="hljs-title">draw</span> <span class="hljs-built_in">shape</span> <span class="hljs-built_in">color</span>: <span class="hljs-built_in">color</span>;
+    }
+} 
+
+experiment DXFAgents type: gui {
+    output {
+        display <span class="hljs-built_in">map</span> {
+            species house_element;
+        }
+        
+        display <span class="hljs-string">"As_Image"</span> {
+            graphics <span class="hljs-string">"House"</span> {
+                <span class="hljs-title">draw</span> house_file <span class="hljs-built_in">color</span>: #brown ;
+            }
+        }
+    }
+    
+    
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

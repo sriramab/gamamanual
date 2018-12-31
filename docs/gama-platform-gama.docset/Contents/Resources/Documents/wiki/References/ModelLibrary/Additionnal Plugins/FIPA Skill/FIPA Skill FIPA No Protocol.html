@@ -1,0 +1,69 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Additionnal Plugins/FIPA Skill/FIPA Skill FIPA No Protocol --><head><meta charset="utf-8"><title>FIPA Skill FIPA No Protocol</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="fipa-skill-fipa-no-protocol">FIPA Skill FIPA No Protocol</h1>
+<h1 id="fipa-no-protocol">FIPA no protocol</h1>
+<p>This model demonstrates a usecase of 'no-protocol' interaction protocol.
+'no-protocol' is a freestyle intecraction protocol in which the modeller
+(1) can send whatever type of message (i.e., message performative) in the corresponding conversation
+(2) is responsible for marking the end of the conversation by sending a message with 'end_conversation' performative. </p>
+<p>Code of the model : </p>
+<pre><code class="hljs applescript">model no_protocol_1
+
+<span class="hljs-keyword">global</span> {
+    Participant p;
+    
+    init {
+        create Initiator;
+        create Participant returns: ps;
+        
+        p &lt;- ps <span class="hljs-keyword">at</span> <span class="hljs-number">0</span>;
+        
+        <span class="hljs-built_in">write</span> 'Step <span class="hljs-keyword">the</span> simulation <span class="hljs-keyword">to</span> observe <span class="hljs-keyword">the</span> outcome <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> console';
+    }
+}
+
+species Initiator skills: [fipa] {
+    reflex print_debug_infor {
+        <span class="hljs-built_in">write</span> <span class="hljs-built_in">name</span> + ' <span class="hljs-keyword">with</span> conversations: ' + (<span class="hljs-built_in">string</span>(conversations)) + '; mailbox: ' + (<span class="hljs-built_in">string</span>(mailbox));
+    }
+
+    reflex say_hello when: (<span class="hljs-built_in">time</span> = <span class="hljs-number">1</span>) {
+        do start_conversation <span class="hljs-keyword">with</span>: [ <span class="hljs-keyword">to</span> :: [p], protocol :: 'no-protocol', performative :: 'inform', <span class="hljs-built_in">contents</span> :: [ ('Hello <span class="hljs-keyword">from</span> ' + <span class="hljs-built_in">name</span>)] ];
+    }
+    
+    reflex read_hello_from_participant when: (<span class="hljs-built_in">time</span> = <span class="hljs-number">3</span>) {
+        loop i <span class="hljs-keyword">over</span>: informs {
+            <span class="hljs-built_in">write</span> <span class="hljs-built_in">name</span> + ' receives message <span class="hljs-keyword">with</span> content: ' + (<span class="hljs-built_in">string</span>(i.<span class="hljs-built_in">contents</span>));
+            do inform <span class="hljs-keyword">with</span>: [ message :: i, <span class="hljs-built_in">contents</span> :: [ ('Goodbye <span class="hljs-keyword">from</span> ' + <span class="hljs-built_in">name</span>)] ];
+        }
+    }
+    
+    reflex read_rebound_goodbye when: (<span class="hljs-built_in">time</span> = <span class="hljs-number">5</span>) {
+        loop i <span class="hljs-keyword">over</span>: mailbox {
+            <span class="hljs-built_in">write</span> <span class="hljs-built_in">name</span> + ' receives message <span class="hljs-keyword">with</span> content: ' + (<span class="hljs-built_in">string</span>(i.<span class="hljs-built_in">contents</span>));
+        }
+    }
+}
+
+species Participant skills: [fipa] {
+    reflex print_debug_infor {
+        <span class="hljs-built_in">write</span> <span class="hljs-built_in">name</span> + ' <span class="hljs-keyword">with</span> conversations: ' + (<span class="hljs-built_in">string</span>(conversations)) + '; mailbox: ' + (<span class="hljs-built_in">string</span>(mailbox));
+    }
+
+    reflex reply_hello when: (<span class="hljs-built_in">time</span> = <span class="hljs-number">2</span>) {
+        loop m <span class="hljs-keyword">over</span>: informs {
+            <span class="hljs-built_in">write</span> <span class="hljs-built_in">name</span> + ' receives message <span class="hljs-keyword">with</span> content: ' + (<span class="hljs-built_in">string</span>(m.<span class="hljs-built_in">contents</span>));
+            do inform <span class="hljs-keyword">with</span>: [ message :: m, <span class="hljs-built_in">contents</span> :: [ ('Rebound hello <span class="hljs-keyword">from</span> ' + <span class="hljs-built_in">name</span>) ] ];
+        }
+    }
+    
+    reflex read_goodbye when: (<span class="hljs-built_in">time</span> = <span class="hljs-number">4</span>) {
+        loop i <span class="hljs-keyword">over</span>: informs {
+            <span class="hljs-built_in">write</span> <span class="hljs-built_in">name</span> + ' receives message <span class="hljs-keyword">with</span> content: ' + (<span class="hljs-built_in">string</span>(i.<span class="hljs-built_in">contents</span>));
+            do end_conversation <span class="hljs-keyword">with</span>: [ message :: i, <span class="hljs-built_in">contents</span> :: [ ('Rebound goodbye <span class="hljs-keyword">from</span>' + <span class="hljs-built_in">name</span>) ] ];
+        }
+    }
+}
+
+
+experiment test_no_protocol type: gui {}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

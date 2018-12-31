@@ -1,0 +1,40 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Color/Color RGB to XYZ --><head><meta charset="utf-8"><title>Color RGB to XYZ</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="color-rgb-to-xyz">Color RGB to XYZ</h1>
+<h1 id="rgb-color-to-xyz-position">RGB color to XYZ position</h1>
+<p><em>Author :  Arnaud Grignard</em></p>
+<p>A model to show how to convert rgb values in xyz position using the operator rgb_to_xyz. Each pixel of a given image is used to create a point with its coordinates depending on its color : red value for x coordinate, green value for y coordinate and blue value for the z coordinate.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs groovy">
+model rgbCube
+
+global {
+    <span class="hljs-comment">//import an image</span>
+    file imageRaster &lt;- file(<span class="hljs-string">'images/RGB.jpg'</span>);
+    
+    <span class="hljs-comment">//list of points  create from the image </span>
+    list&lt;point&gt; p;
+    
+    <span class="hljs-comment">//geometry of the world (environment)</span>
+    geometry shape &lt;- square(<span class="hljs-number">255</span>);
+    
+    <span class="hljs-comment">//create the list of points from the image: a point is defined per pixel, its coordinate correspond to the value of the red,green,blue color</span>
+    init {
+        p &lt;- list&lt;point&gt; (rgb_to_xyz(imageRaster));
+    }
+}
+
+
+experiment Display <span class="hljs-string">type:</span> gui {
+    output {
+        display RGB_to_XYZ <span class="hljs-string">type:</span> opengl { 
+            image imageRaster.path <span class="hljs-string">refresh:</span> <span class="hljs-literal">false</span>;
+            graphics <span class="hljs-string">"pts"</span> <span class="hljs-string">refresh:</span> <span class="hljs-literal">false</span>{
+                loop pt <span class="hljs-string">over:</span> p {
+                    draw cube(<span class="hljs-number">1</span>) <span class="hljs-string">at:</span> pt <span class="hljs-string">color:</span> rgb(pt.x, pt.y, pt.z);
+                }
+            }
+        }
+    }
+
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

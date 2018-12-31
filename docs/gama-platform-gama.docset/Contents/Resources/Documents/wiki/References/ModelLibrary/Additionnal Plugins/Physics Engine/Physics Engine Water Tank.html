@@ -1,0 +1,140 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Additionnal Plugins/Physics Engine/Physics Engine Water Tank --><head><meta charset="utf-8"><title>Physics Engine Water Tank</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="physics-engine-water-tank">Physics Engine Water Tank</h1>
+<h1 id="water-tank">Water Tank</h1>
+<p><em>Author : Arnaud Grignard</em></p>
+<p>This is a model that shows how the physics engine works using a tank, with a floor and 4 walls, and balls falling into it. The floor doesn't have any mass, </p>
+<p>Code of the model : </p>
+<pre><code class="hljs groovy">model Tank
+
+global {
+    
+    <span class="hljs-comment">//Dimensions of the environment</span>
+    <span class="hljs-keyword">int</span> width_of_environment <span class="hljs-string">parameter:</span> <span class="hljs-string">'Dimensions'</span> <span class="hljs-string">init:</span> <span class="hljs-number">100</span>;
+    <span class="hljs-keyword">int</span> height_of_environment <span class="hljs-string">parameter:</span> <span class="hljs-string">'Dimensions'</span> <span class="hljs-string">init:</span> <span class="hljs-number">100</span>;
+    
+    <span class="hljs-comment">//Parameters for the ball species</span>
+    <span class="hljs-keyword">int</span> nb_balls <span class="hljs-string">parameter:</span> <span class="hljs-string">'Number of Agents'</span> <span class="hljs-string">min:</span> <span class="hljs-number">1</span> &lt;- <span class="hljs-number">500</span>;
+    <span class="hljs-keyword">int</span> size_of_agents <span class="hljs-string">parameter:</span> <span class="hljs-string">'Size of Agents'</span> <span class="hljs-string">min:</span> <span class="hljs-number">1</span> &lt;- <span class="hljs-number">1</span>;
+    
+    
+    <span class="hljs-keyword">int</span> wall_height <span class="hljs-string">parameter:</span> <span class="hljs-string">'Wall height'</span> <span class="hljs-string">min:</span> <span class="hljs-number">1</span> &lt;- <span class="hljs-number">25</span>;
+    geometry shape &lt;- rectangle(width_of_environment, height_of_environment);
+    
+    <span class="hljs-comment">//Physics engine</span>
+    physic_world world2;
+    
+    
+    init {
+        
+        <span class="hljs-comment">//Creation of the ball agents</span>
+        create ball <span class="hljs-string">number:</span> nb_balls {
+            location &lt;- { rnd(width_of_environment - size_of_agents), rnd(height_of_environment - size_of_agents), rnd(height_of_environment - size_of_agents) };
+            radius &lt;- <span class="hljs-keyword">float</span>(size_of_agents);
+            
+            <span class="hljs-comment">//Attributes to know the collision bounds of the agent</span>
+            collisionBound &lt;- [<span class="hljs-string">"shape"</span>::<span class="hljs-string">"sphere"</span>, <span class="hljs-string">"radius"</span>::radius];
+        }
+
+        <span class="hljs-comment">//Create the ground of the tank</span>
+        create ground {
+            location &lt;- { width_of_environment <span class="hljs-regexp">/ 2, height_of_environment /</span> <span class="hljs-number">2</span>, <span class="hljs-number">0</span> };
+            collisionBound &lt;- [<span class="hljs-string">"shape"</span>::<span class="hljs-string">"floor"</span>, <span class="hljs-string">"x"</span>::width_of_environment <span class="hljs-regexp">/ 2, "y"::height_of_environment /</span> <span class="hljs-number">2</span>, <span class="hljs-string">"z"</span>::<span class="hljs-number">0</span>];
+            shape &lt;- rectangle({ width_of_environment, height_of_environment });
+            mass &lt;- <span class="hljs-number">0.0</span>;
+        }
+        <span class="hljs-comment">//down wall</span>
+        create wall {
+            location &lt;- { width_of_environment / <span class="hljs-number">2</span>, height_of_environment, <span class="hljs-number">0</span> };
+            shape &lt;- rectangle({ width_of_environment, <span class="hljs-number">2</span> });
+            collisionBound &lt;- [<span class="hljs-string">"shape"</span>::<span class="hljs-string">"floor"</span>, <span class="hljs-string">"x"</span>::width_of_environment / <span class="hljs-number">2</span>, <span class="hljs-string">"y"</span>::<span class="hljs-number">1</span>, <span class="hljs-string">"z"</span>::wall_height];
+            mass &lt;- <span class="hljs-number">0.0</span>;
+        }
+        <span class="hljs-comment">//upper wall</span>
+        create wall {
+            location &lt;- { width_of_environment / <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span> };
+            shape &lt;- rectangle({ width_of_environment, <span class="hljs-number">2</span> });
+            collisionBound &lt;- [<span class="hljs-string">"shape"</span>::<span class="hljs-string">"floor"</span>, <span class="hljs-string">"x"</span>::width_of_environment / <span class="hljs-number">2</span>, <span class="hljs-string">"y"</span>::<span class="hljs-number">1</span>, <span class="hljs-string">"z"</span>::wall_height];
+            mass &lt;- <span class="hljs-number">0.0</span>;
+        }
+        <span class="hljs-comment">//left wall</span>
+        create wall {
+            location &lt;- { <span class="hljs-number">0</span>, height_of_environment / <span class="hljs-number">2</span>, <span class="hljs-number">0</span> };
+            shape &lt;- rectangle({ <span class="hljs-number">2</span>, height_of_environment });
+            collisionBound &lt;- [<span class="hljs-string">"shape"</span>::<span class="hljs-string">"floor"</span>, <span class="hljs-string">"x"</span>::<span class="hljs-number">1</span>, <span class="hljs-string">"y"</span>::height_of_environment / <span class="hljs-number">2</span>, <span class="hljs-string">"z"</span>::wall_height];
+            mass &lt;- <span class="hljs-number">0.0</span>;
+        }
+        <span class="hljs-comment">//right wall</span>
+        create wall {
+            location &lt;- { width_of_environment, height_of_environment / <span class="hljs-number">2</span>, <span class="hljs-number">0</span> };
+            shape &lt;- rectangle({ <span class="hljs-number">2</span>, height_of_environment });
+            collisionBound &lt;- [<span class="hljs-string">"shape"</span>::<span class="hljs-string">"floor"</span>, <span class="hljs-string">"x"</span>::<span class="hljs-number">1</span>, <span class="hljs-string">"y"</span>::height_of_environment / <span class="hljs-number">2</span>, <span class="hljs-string">"z"</span>::wall_height];
+            mass &lt;- <span class="hljs-number">0.0</span>;
+        }
+        <span class="hljs-comment">//Initialisation of the physic engine</span>
+        create physic_world {
+            world2 &lt;- self;
+        }
+        
+        <span class="hljs-comment">//The physic engine agent gets all the other agents of the world to compute their forces</span>
+        ask world2 {
+            agents &lt;- (ball <span class="hljs-keyword">as</span> list) + (ground <span class="hljs-keyword">as</span> list) + (wall <span class="hljs-keyword">as</span> list);
+        }
+
+        world2.gravity &lt;- <span class="hljs-literal">true</span>;
+    }
+
+    <span class="hljs-comment">//Reflex to compute the forces at each step</span>
+    reflex computeForces {
+        ask world2 {
+            do compute_forces <span class="hljs-string">step:</span> <span class="hljs-number">1</span>;
+        }
+
+    }
+
+}
+
+<span class="hljs-comment">//Species that will represent the physic engine, derivated from builti-in species Physical3DWorld</span>
+species physic_world <span class="hljs-string">parent:</span> physical_world ;
+
+<span class="hljs-comment">//Species that will represent the ground of the tank, using the skill physical 3D</span>
+species ground <span class="hljs-string">skills:</span> [physics] {
+    aspect <span class="hljs-keyword">default</span> {
+        draw shape <span class="hljs-string">color:</span> rgb(<span class="hljs-number">60</span>, <span class="hljs-number">60</span>, <span class="hljs-number">60</span>);
+    }
+
+}
+
+
+<span class="hljs-comment">//Species that will represent the walls of the tank, using the skill physical 3D</span>
+species wall <span class="hljs-string">skills:</span> [physics] {
+    rgb color;
+    aspect <span class="hljs-keyword">default</span> {
+        draw shape <span class="hljs-string">color:</span> rgb(<span class="hljs-number">40</span>, <span class="hljs-number">40</span>, <span class="hljs-number">40</span>) <span class="hljs-string">depth:</span> wall_height;
+    }
+
+}
+
+
+<span class="hljs-comment">//Species that will represent the balls falling in the tank, using the skill physical 3D</span>
+species ball <span class="hljs-string">skills:</span> [physics] {
+    <span class="hljs-keyword">float</span> radius;
+    aspect <span class="hljs-keyword">default</span> {
+        draw sphere(radius) <span class="hljs-string">color:</span> rgb(<span class="hljs-number">4</span>, <span class="hljs-number">158</span>, <span class="hljs-number">189</span>);
+    }
+
+}
+
+experiment tank <span class="hljs-string">type:</span> gui {
+    init{
+        minimum_cycle_duration &lt;<span class="hljs-number">-0.001</span>;
+    }
+    output {
+        display Circle <span class="hljs-string">type:</span> opengl <span class="hljs-string">background:</span> rgb(<span class="hljs-number">230</span>, <span class="hljs-number">230</span>, <span class="hljs-number">230</span>) { 
+            species ground;
+            species wall;
+            species ball;
+        }
+    }
+
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,0 +1,79 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Toy Models/Articles/Articles Prima_model3 --><head><meta charset="utf-8"><title>Articles Prima_model3</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="articles-prima_model3">Articles Prima_model3</h1>
+<h1 id="prima-3">Prima 3</h1>
+<p>_Author : _</p>
+<p>This model shows how to create agent and make them move randomly in the world.Some agents are infected, and others can gain the infection if they are in a certain range. The people are now placed in buildings at the initial state. Those buildings are created thanks toa shapefile. Roads are also created thanks to an other shapefile. A graph is now created fromthe road agents, and the people move from their location to a targent on the graph.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs gauss">model model3 
+ 
+global {
+    <span class="hljs-comment">//Shapefile for the roads</span>
+    file roads_shapefile &lt;- file(<span class="hljs-string">"../includes/road.shp"</span>);
+    <span class="hljs-comment">//Shapefile for the buildings</span>
+    file buildings_shapefile &lt;- file(<span class="hljs-string">"../includes/building.shp"</span>);
+    <span class="hljs-comment">//The bounds of the world are the same as the bounds of the roads shapefile</span>
+    geometry shape &lt;- envelope(roads_shapefile);
+    <span class="hljs-comment">//We need now a graph on which people will move</span>
+    <span class="hljs-keyword">graph</span> road_network;
+    init {
+        <span class="hljs-comment">//Create the roads using the shapefiles</span>
+        <span class="hljs-keyword">create</span> roads from: roads_shapefile;
+        <span class="hljs-comment">//Create the graph using the road agents as edges of the graph</span>
+        road_network &lt;- as_edge_graph(roads);
+        <span class="hljs-comment">//Create the buildings using the shapefiles</span>
+        <span class="hljs-keyword">create</span> buildings from: buildings_shapefile;
+        <span class="hljs-comment">//Create the people agents and choose their location and target</span>
+        <span class="hljs-keyword">create</span> people number:<span class="hljs-number">1000</span> {
+            location &lt;- any_location_in(one_of(buildings));
+            target &lt;- any_location_in(one_of(buildings));
+        }
+    }
+}
+<span class="hljs-comment">//Species people that will move from a location to a target</span>
+species people skills:[moving]{     
+    float speed &lt;- <span class="hljs-number">5.0</span> + rnd(<span class="hljs-number">5</span>);
+    <span class="hljs-keyword">bool</span> is_infected &lt;- flip(<span class="hljs-number">0.01</span>);
+    point target;
+    <span class="hljs-comment">//Reflex to make the agent move to a target</span>
+    reflex move {
+        <span class="hljs-keyword">do</span> <span class="hljs-keyword">goto</span> target:target on: road_network;
+        <span class="hljs-comment">//Each time the agent is at the target's location, chose an other target</span>
+        <span class="hljs-keyword">if</span> (location = target) {
+            target &lt;- any_location_in(one_of(buildings));
+        }
+    }
+    <span class="hljs-comment">//check if the agent is infected if it is not infected already and if there are infected people nearby</span>
+    reflex infect when: is_infected{
+        ask people at_distance <span class="hljs-number">10</span> {
+            <span class="hljs-keyword">if</span> flip(<span class="hljs-number">0.01</span>) {
+                is_infected &lt;- true;
+            }
+        }
+    }
+    aspect circle{
+        <span class="hljs-built_in">draw</span> circle(<span class="hljs-number">5</span>) color:is_infected ? <span class="hljs-meta">#red : #green;</span>
+    }
+}
+
+species roads {
+    aspect geom {
+        <span class="hljs-built_in">draw</span> shape color: <span class="hljs-meta">#black;</span>
+    }
+}
+
+species buildings {
+    aspect geom {
+        <span class="hljs-built_in">draw</span> shape color: <span class="hljs-meta">#gray;</span>
+    }
+}
+
+experiment main_experiment <span class="hljs-built_in">type</span>:gui{
+    <span class="hljs-keyword">output</span> {
+        display map {
+            species roads aspect:geom;
+            species buildings aspect:geom;
+            species people aspect:circle;           
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

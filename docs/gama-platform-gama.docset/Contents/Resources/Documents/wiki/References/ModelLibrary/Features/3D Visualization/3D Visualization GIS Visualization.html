@@ -1,0 +1,37 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/3D Visualization/3D Visualization GIS Visualization --><head><meta charset="utf-8"><title>3D Visualization GIS Visualization</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="3d-visualization-gis-visualization">3D Visualization GIS Visualization</h1>
+<h1 id="visualization-of-gis-data">Visualization of GIS data</h1>
+<p><em>Author :  Patrick Taillandier</em></p>
+<p>this model shows how to visualize GIS data without having to create agents  </p>
+<p>Code of the model : </p>
+<pre><code class="hljs nimrod">
+model <span class="hljs-type">GIS_visualization</span>
+
+global {
+    file shape_file_buildings &lt;- shape_file(<span class="hljs-string">"../includes/building.shp"</span>);
+    geometry shape &lt;- envelope(shape_file_buildings);
+    <span class="hljs-built_in">string</span> texture &lt;- <span class="hljs-string">"../images/building_texture/texture1.jpg"</span>;
+    <span class="hljs-built_in">string</span> roof_texture &lt;- <span class="hljs-string">"../images/building_texture/roof_top.png"</span>;   
+}
+
+experiment <span class="hljs-type">GIS_visualization</span> <span class="hljs-keyword">type</span>: gui {
+    <span class="hljs-built_in">float</span> minimum_cycle_duration &lt;- <span class="hljs-number">1</span><span class="hljs-comment">#s;</span>
+
+    
+    output {
+        // display <span class="hljs-keyword">of</span> buildings <span class="hljs-keyword">in</span> <span class="hljs-number">3</span>D <span class="hljs-keyword">with</span> texture <span class="hljs-keyword">and</span> <span class="hljs-keyword">with</span> reading their <span class="hljs-type">HEIGHT</span> attribute <span class="hljs-keyword">from</span> the shapefile
+        display gis_displays_graphics <span class="hljs-keyword">type</span>: opengl  {
+            graphics <span class="hljs-string">"Buildings as shapes"</span> refresh: <span class="hljs-literal">false</span> {
+                loop bd over: shape_file_buildings {
+                    draw bd depth: rnd(<span class="hljs-number">50</span>) + <span class="hljs-number">50</span> texture:[roof_texture,texture] border:<span class="hljs-literal">false</span>;
+                }
+            }
+        }
+        
+        //display <span class="hljs-keyword">of</span> the building <span class="hljs-keyword">as</span> an image
+        display gis_displays_image <span class="hljs-keyword">type</span>: opengl {
+            image <span class="hljs-string">"Buildings as images"</span> gis: shape_file_buildings.path color: rgb(<span class="hljs-string">"gray"</span>) refresh: <span class="hljs-literal">false</span>;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

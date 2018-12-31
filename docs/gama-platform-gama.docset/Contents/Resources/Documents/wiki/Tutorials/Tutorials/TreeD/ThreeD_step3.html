@@ -1,0 +1,76 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Tutorials/Tutorials/TreeD/ThreeD_step3 --><head><meta charset="utf-8"><title>ThreeD_step3</title><script src="../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="threed_step3">ThreeD_step3</h1>
+<a class="dashAnchor" name="//apple_ref/Section/3.%20Connections"></a><h1 id="3-connections">3. Connections</h1>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Formulation"></a><h2 id="formulation">Formulation</h2>
+<ul>
+<li>Mapping the network of connection</li>
+</ul>
+<p><a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=6ZlBU6xTcfw" target="_blank"><img src="../../../../img.youtube.com/vi/6ZlBU6xTcfw/0.jpg" width="425" height="344"></a></p>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Model%20Definition"></a><h2 id="model-definition">Model Definition</h2>
+<p>In this final step we will display edges between cells that are within a given distance.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Cells%20update"></a><h3 id="cells-update">Cells update</h3>
+<p>We add a new reflex to collect the neighbours of the cell that are within a certain distance :</p>
+<pre><code class="hljs armasm"><span class="hljs-symbol"><span class="hljs-symbol">species</span></span> cells skills:[<span class="hljs-keyword"><span class="hljs-keyword">moving3D]{
+</span></span><span class="hljs-symbol"><span class="hljs-symbol">...</span></span>
+<span class="hljs-symbol"><span class="hljs-symbol">reflex</span></span> computeNeighbours {
+                neighbours &lt;- cells <span class="hljs-keyword"><span class="hljs-keyword">select </span></span>((each distance_to <span class="hljs-keyword"><span class="hljs-keyword">self) </span></span>&lt; <span class="hljs-number"><span class="hljs-number">10</span></span>)<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        }   
+}
+</code></pre>
+<p>Then we update the cell aspect as follows. For each elements (cells) of the <strong>neighbours</strong> list we draw a line between this neighbour's location and the current cell's location.</p>
+<pre><code class="hljs processing">aspect <span class="hljs-keyword"><span class="hljs-keyword">default</span></span> {
+  <span class="hljs-title"><span class="hljs-title">draw</span></span> <span class="hljs-built_in"><span class="hljs-built_in">sphere</span></span>(environmentSize*<span class="hljs-number"><span class="hljs-number">0.01</span></span>) <span class="hljs-built_in"><span class="hljs-built_in">color</span></span>:#orange;
+  <span class="hljs-built_in"><span class="hljs-built_in">loop</span></span> pp over: neighbors {
+    <span class="hljs-title"><span class="hljs-title">draw</span></span> <span class="hljs-built_in"><span class="hljs-built_in">line</span></span>([self.location,pp.location]);
+  } 
+}
+</code></pre>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Complete%20Model"></a><h2 id="complete-model">Complete Model</h2>
+<p>The GIT version of the model can be found here [Model 03.gaml](<a href="https://github.com/gama-platform/gama/tree/master/msi.gama.models/models/Tutorials/3D/models/Model">https://github.com/gama-platform/gama/tree/master/msi.gama.models/models/Tutorials/3D/models/Model</a> 03.gaml)</p>
+<pre><code class="hljs mipsasm">model Tuto3D
+
+global {
+  int nb_cells &lt;-<span class="hljs-number"><span class="hljs-number">100</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+  int environmentSize &lt;-<span class="hljs-number"><span class="hljs-number">100</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+  geometry <span class="hljs-keyword"><span class="hljs-keyword">shape </span></span>&lt;- cube(environmentSize)<span class="hljs-comment"><span class="hljs-comment">;  </span></span>
+  init { 
+    create cells number: nb_cells { 
+      location &lt;- {rnd(environmentSize), rnd(environmentSize), rnd(environmentSize)}<span class="hljs-comment"><span class="hljs-comment">;       </span></span>
+    } 
+  }  
+} 
+    
+species cells skills: [moving3D] {  
+    rgb color<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    list&lt;cells&gt; neighbors<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    int offset<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    
+    reflex <span class="hljs-keyword"><span class="hljs-keyword">move </span></span>{
+      do wander<span class="hljs-comment"><span class="hljs-comment">;    </span></span>
+    }   
+    
+    reflex computeNeighbors {
+      neighbors &lt;- cells select ((each <span class="hljs-keyword"><span class="hljs-keyword">distance_to </span></span>self) &lt; <span class="hljs-number"><span class="hljs-number">10</span></span>)<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    }
+        
+    aspect default {
+        draw sphere(environmentSize*<span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">01</span></span>) color:<span class="hljs-comment"><span class="hljs-comment">#orange;</span></span>
+        loop pp over: neighbors {
+            draw line([self.location,pp.location])<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+        }   
+    }
+}
+
+
+experiment Tuto3D  type: gui {
+  parameter <span class="hljs-string"><span class="hljs-string">"Initial number of cells: "</span></span> var: nb_cells min: <span class="hljs-number"><span class="hljs-number">1</span></span> max: <span class="hljs-number"><span class="hljs-number">1000</span></span> category: <span class="hljs-string"><span class="hljs-string">"Cells"</span></span> <span class="hljs-comment"><span class="hljs-comment">;</span></span>
+  output {
+    <span class="hljs-keyword"><span class="hljs-keyword">display </span></span>View1 type:opengl <span class="hljs-keyword"><span class="hljs-keyword">background:rgb(10,40,55){
+</span></span>      graphics <span class="hljs-string"><span class="hljs-string">"env"</span></span>{
+        draw cube(environmentSize) color: <span class="hljs-comment"><span class="hljs-comment">#black empty:true;    </span></span>
+      }
+      species cells<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    }
+  }  
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

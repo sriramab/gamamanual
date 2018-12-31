@@ -1,0 +1,59 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Data Importation/Data Importation Contour Lines --><head><meta charset="utf-8"><title>Data Importation Contour Lines</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="data-importation-contour-lines">Data Importation Contour Lines</h1>
+<h1 id="contour-lines-import">Contour Lines Import</h1>
+<p><em>Author : Patrick Taillandier</em></p>
+<p>Model which imports a shapefile of contour lines, build triangles from these contour lines, compute their elevation by using the elevation attribute of the contour lines which had been linked to the elevation column of the shapefile. </p>
+<p>Code of the model : </p>
+<pre><code class="hljs http">
+
+<span class="processing">model contour_lines_import
+
+global {
+    <span class="hljs-comment">//the contour lines shapefile</span>
+    file shape_file_cl &lt;- file(<span class="hljs-string">'../includes/contourLines.shp'</span>) ;
+    
+    <span class="hljs-comment">//define the size of the world from the countour line shapefile</span>
+    geometry <span class="hljs-built_in">shape</span> &lt;- envelope(shape_file_cl);
+    
+    init {
+        <span class="hljs-comment">//create the contour line agents from the shapefile, and init the elevation for each agent</span>
+        create contour_line from: shape_file_cl with: [elevation:: <span class="hljs-built_in">float</span>(read(<span class="hljs-string">"ELEVATION"</span>))];
+        
+        <span class="hljs-comment">//triangulate the contour lines</span>
+        list&lt;geometry&gt; triangles  &lt;- triangulate (list(contour_line));
+        
+        <span class="hljs-comment">//for each triangle geometry, create a triangle_ag agent and compute the elevation of each of its points (and modified their z value)</span>
+        <span class="hljs-built_in">loop</span> tr over: triangles {
+            create triangle_ag {
+                <span class="hljs-built_in">shape</span> &lt;- tr;
+                <span class="hljs-built_in">loop</span> i from: <span class="hljs-number">0</span> to: length(<span class="hljs-built_in">shape</span>.points) - <span class="hljs-number">1</span>{ 
+                    <span class="hljs-built_in">float</span> val &lt;- (contour_line closest_to (<span class="hljs-built_in">shape</span>.points at i)).elevation;
+                    <span class="hljs-built_in">shape</span> &lt;- <span class="hljs-built_in">shape</span> set_z (i,val);
+                }
+            }
+        }   
+    }
+}
+
+species contour_line {
+    <span class="hljs-built_in">float</span> elevation;
+    aspect <span class="hljs-keyword">default</span> {
+        <span class="hljs-title">draw</span> <span class="hljs-built_in">shape</span> + <span class="hljs-number">5.0</span> <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">red</span> depth: <span class="hljs-number">10</span> at: {location.x,location.y, elevation}; 
+    }
+}
+species triangle_ag {
+    aspect <span class="hljs-keyword">default</span> {
+        <span class="hljs-title">draw</span> <span class="hljs-built_in">shape</span> <span class="hljs-built_in">color</span>: #grey ; 
+    }
+}
+
+
+experiment contour_lines_import type: gui {
+    output {
+        display <span class="hljs-built_in">map</span> type: opengl {
+            species triangle_ag refresh: <span class="hljs-keyword">false</span>;
+            species contour_line refresh: <span class="hljs-keyword">false</span>;
+        }
+    }
+}
+</span></code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

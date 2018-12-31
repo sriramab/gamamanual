@@ -1,0 +1,35 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/WikiOnly/DevelopingExtensions/DevelopingControlArchitectures --><head><meta charset="utf-8"><title>DevelopingControlArchitectures</title><script src="../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="developingcontrolarchitectures">DevelopingControlArchitectures</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Developing%20architecture"></a><h1 id="developing-architecture">Developing architecture</h1>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><p>In addition to existing <a href="https://github.com/wiki/gama-platform/gama/WikiOnly/DevelopingExtensions/BuiltInArchitectures.html">control architectures</a>, developers can add new ones.</p>
+<p>Defining a new control architecture needs to <a href="DevelopingStatements.html">create new statements of type behavior</a> and included in species statements and to define how to manage their execution.</p>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Implementation"></a><h2 id="implementation">Implementation</h2>
+<p>A control architecture is a Java class, that:</p>
+<ul>
+<li>is annotated by the <a href="https://github.com/wiki/gama-platform/gama/WikiOnly/DevelopingExtensions/DevelopingIndexAnnotations#@skill.html">@skill</a> annotation,
+<ul>
+<li>extends the <code>AbstractArchitecture</code> class (to get benefits of everything from the <code>reflex</code>-based control architecture, the <code>ReflexArchitecture</code> class can be extended instead).</li>
+</ul>
+</li>
+</ul>
+<p>The <code>AbstractArchitecture</code> extends the <code>ISkill</code> and <code>IStatement</code> interfaces and add the 2 following methods:</p>
+<ul>
+<li><code>public abstract boolean init(IScope scope) throws GamaRuntimeException;</code>
+<ul>
+<li><code>public abstract void verifyBehaviors(ISpecies context);</code></li>
+</ul>
+</li>
+</ul>
+<p>The three main methods to implement are thus:</p>
+<ul>
+<li><code>public void setChildren(final List&lt;? extends ISymbol&gt; children)</code>: this method will be called at the compilation of the model. It allows to manage all the embeded statements (in <code>children</code>) and for example separate the statements that should be executed at the initialization only from the ones that should be executed at each simulation step. Following example allows to test the name of the all the embedded statements:
+<code>
+for ( final ISymbol c : children ) {
+   if( IKeyword.INIT.equals(c.getFacet(IKeyword.KEYWORD).literalValue()) ) {
+</code>
+<ul>
+<li><code>public abstract boolean init(IScope scope) throws GamaRuntimeException</code>: this method is called only once, at the initialization of the agent.</li>
+<li><code>public Object executeOn(final IScope scope) throws GamaRuntimeException</code>: this method is executed at each simulation step. It should manage the execution of the various embedded behaviors (e.g. their order or choose which one will be executed...)</li>
+</ul>
+</li>
+</ul>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

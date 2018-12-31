@@ -1,0 +1,39 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Init Action/Init Action Init Action --><head><meta charset="utf-8"><title>Init Action Init Action</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="init-action-init-action">Init Action Init Action</h1>
+<h1 id="initaction">InitAction</h1>
+<p><em>Author : Alexis Drogoul</em></p>
+<p>This simple example shows how to use the <em>init</em> callback action to build a simulation with some parameters, without declaring them as parameters</p>
+<p>Code of the model : </p>
+<pre><code class="hljs processing">
+model InitAction
+
+global {
+    <span class="hljs-built_in">int</span> agent_number &lt;- <span class="hljs-number">100</span>;
+    rgb agent_color &lt;- #<span class="hljs-built_in">red</span>;
+    
+    init {
+        create my_agents number: agent_number;
+    }
+}
+
+species my_agents {
+    aspect <span class="hljs-keyword">default</span> {
+        <span class="hljs-title">draw</span> square(<span class="hljs-number">5</span>) <span class="hljs-built_in">color</span>: agent_color;
+    }
+}
+
+experiment InitAction type: gui {
+    
+    action _init_ {
+        <span class="hljs-built_in">map</span>&lt;string, <span class="hljs-built_in">int</span>&gt; params &lt;- user_input([<span class="hljs-string">"Number of agents"</span>::<span class="hljs-number">100</span>, <span class="hljs-string">"Color"</span>::#<span class="hljs-built_in">red</span>, <span class="hljs-string">"2D"</span>::<span class="hljs-keyword">true</span>]);
+        create InitAction_model with: [agent_number::params[<span class="hljs-string">"Number of agents"</span>], agent_color::rgb(params[<span class="hljs-string">"Color"</span>])];
+    }
+    
+    output {
+        display Simple {
+            species my_agents;
+        }
+    }
+    
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

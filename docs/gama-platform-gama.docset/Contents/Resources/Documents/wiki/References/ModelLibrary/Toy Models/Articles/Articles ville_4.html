@@ -1,0 +1,83 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Toy Models/Articles/Articles ville_4 --><head><meta charset="utf-8"><title>Articles ville_4</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="articles-ville_4">Articles ville_4</h1>
+<h1 id="ville-4">Ville 4</h1>
+<p>_Author : _</p>
+<p>Creation of buildings and roads thanks to a shape file. The color of the building depends on the type of the building, while the color of a house depend on its income. People among the world will try to find the best building according to the mean income of their neighbors and their own income, but also to their working place.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs nimrod">model ville
+
+global {
+    file shape_file_batiments &lt;- file(<span class="hljs-string">"../includes/batiments.shp"</span>);
+    file shape_file_routes &lt;- file(<span class="hljs-string">"../includes/routes.shp"</span>);
+    geometry shape &lt;- envelope(shape_file_routes);
+    graph&lt;point, route&gt; reseau_route;
+    init {
+        create route <span class="hljs-keyword">from</span>: shape_file_routes;
+        reseau_route &lt;- as_edge_graph(route);
+        create batiment <span class="hljs-keyword">from</span>: shape_file_batiments <span class="hljs-keyword">with</span>: [<span class="hljs-keyword">type</span>:: <span class="hljs-built_in">string</span>(read(<span class="hljs-string">"NATURE"</span>))];
+        create foyer number: <span class="hljs-number">500</span>;
+    }
+}
+species foyer {
+    <span class="hljs-built_in">float</span> revenu &lt;- gauss(<span class="hljs-number">1500</span>, <span class="hljs-number">500</span>);
+    <span class="hljs-built_in">bool</span> est_satisfait update: calculer_satisfaction();
+    batiment habitation;
+    batiment lieu_travail;
+    init {
+        lieu_travail &lt;- one_of(batiment where (each.<span class="hljs-keyword">type</span> = <span class="hljs-string">"Industrial"</span>));
+        habitation &lt;- choisir_batiment(); 
+        <span class="hljs-keyword">do</span> emmenager;
+    }
+    <span class="hljs-built_in">bool</span> calculer_satisfaction {
+        list&lt;foyer&gt; voisins &lt;- foyer at_distance <span class="hljs-number">50</span>.<span class="hljs-number">0</span>;
+        <span class="hljs-built_in">float</span> revenu_moyen &lt;- mean(voisins collect (each.revenu));
+        <span class="hljs-keyword">return</span> empty(voisins) <span class="hljs-keyword">or</span> (revenu_moyen &gt; (revenu * <span class="hljs-number">0</span>.<span class="hljs-number">7</span>) <span class="hljs-keyword">and</span> revenu_moyen &lt; (revenu / <span class="hljs-number">0</span>.<span class="hljs-number">7</span>));
+    }
+    action emmenager {
+        habitation.capacite &lt;- habitation.capacite - <span class="hljs-number">1</span>;
+        location &lt;- any_location_in(habitation.shape);
+    }
+    action demenager {
+        habitation.capacite &lt;- habitation.capacite + <span class="hljs-number">1</span>;
+    }
+    batiment choisir_batiment {
+        <span class="hljs-keyword">return</span> one_of(batiment where ((each.capacite &gt;<span class="hljs-number">0</span>) <span class="hljs-keyword">and</span> ( each.distances[lieu_travail]&lt; <span class="hljs-number">1000</span>.<span class="hljs-number">0</span>)));
+    }
+    reflex demenagement <span class="hljs-keyword">when</span>: !est_satisfait {
+        <span class="hljs-keyword">do</span> demenager;
+        habitation &lt;- choisir_batiment();
+        <span class="hljs-keyword">do</span> emmenager;
+    }
+    aspect revenu {
+        <span class="hljs-built_in">int</span> val &lt;- <span class="hljs-built_in">int</span>(<span class="hljs-number">255</span> * (revenu / <span class="hljs-number">3000</span>));
+        draw circle(<span class="hljs-number">5</span>) color: rgb(<span class="hljs-number">255</span> - val, val, <span class="hljs-number">0</span>);
+    }
+}
+species batiment {
+    <span class="hljs-built_in">string</span> <span class="hljs-keyword">type</span>;
+    <span class="hljs-built_in">int</span> capacite &lt;- <span class="hljs-keyword">type</span> = <span class="hljs-string">"Industrial"</span> ? <span class="hljs-number">0</span> : <span class="hljs-built_in">int</span>(shape.area / <span class="hljs-number">70</span>.<span class="hljs-number">0</span>);
+    map&lt;batiment,<span class="hljs-built_in">float</span>&gt; distances;
+    init {
+        loop bat over: batiment where (each.<span class="hljs-keyword">type</span> = <span class="hljs-string">"Industrial"</span>) {
+            put (topology(reseau_route) distance_between [self,bat]) at: bat <span class="hljs-keyword">in</span>: distances;
+        }
+    }
+    aspect geometrie {
+        draw shape color: <span class="hljs-keyword">type</span> = <span class="hljs-string">"Industrial"</span> ? <span class="hljs-comment">#pink : #gray;</span>
+    }
+}
+species route {
+    aspect geometrie {
+        draw shape color: <span class="hljs-comment">#black;</span>
+    }
+}
+experiment ville <span class="hljs-keyword">type</span>: gui {
+    output {
+        display carte_principale {
+            species batiment aspect: geometrie;
+            species route aspect: geometrie;
+            species foyer aspect: revenu;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

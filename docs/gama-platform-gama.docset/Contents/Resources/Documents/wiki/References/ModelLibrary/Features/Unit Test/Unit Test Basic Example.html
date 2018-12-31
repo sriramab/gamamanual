@@ -1,0 +1,58 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Unit Test/Unit Test Basic Example --><head><meta charset="utf-8"><title>Unit Test Basic Example</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="unit-test-basic-example">Unit Test Basic Example</h1>
+<h1 id="example-of-unit-test">Example of Unit Test</h1>
+<p><em>Author : Benoit Gaudou</em></p>
+<p>A model which shows how to use the unit test to show the possible errors you have to go in the Views, Preferences, Simulation, in "Errors" Uncheck "stop at the first error", to show all the errors.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs groovy">
+model test_unitTest_framework
+
+global {
+    init {
+        create test_species <span class="hljs-string">number:</span> <span class="hljs-number">1</span>;
+    }
+}
+
+<span class="hljs-comment">//Species to do the different unit tests</span>
+species test_species {
+    <span class="hljs-keyword">int</span> a &lt;- <span class="hljs-number">0</span>;
+    
+    <span class="hljs-comment">//Setup a to 10 launched before each test</span>
+    setup {
+        a &lt;- <span class="hljs-number">10</span>;
+        write <span class="hljs-string">"SetUp : a = "</span> + a;
+    }
+
+    <span class="hljs-comment">//First test executing comparison between numbers</span>
+    test t1 {
+        <span class="hljs-keyword">assert</span> <span class="hljs-number">100</span> + <span class="hljs-number">100</span> <span class="hljs-string">equals:</span> <span class="hljs-number">200</span>;
+            <span class="hljs-keyword">assert</span> <span class="hljs-number">100</span> + <span class="hljs-number">100</span> <span class="hljs-string">equals:</span> <span class="hljs-number">201</span>;
+    }
+    
+    <span class="hljs-comment">//Second test executing comparison between list and type</span>
+    test t2 {
+        <span class="hljs-keyword">assert</span> any([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]) <span class="hljs-string">is_not:</span> nil;
+        <span class="hljs-keyword">assert</span> any([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]) is <span class="hljs-keyword">int</span>;
+        <span class="hljs-keyword">assert</span> any([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]) <span class="hljs-string">is_not:</span> <span class="hljs-number">5</span>;
+        <span class="hljs-keyword">assert</span> any([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]) is <span class="hljs-keyword">float</span>;
+        <span class="hljs-keyword">assert</span> any([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]) is string;
+    }
+
+    <span class="hljs-comment">//test the incrementation of a</span>
+    test incement_a {
+        a&lt;- a + <span class="hljs-number">10</span>;
+            write <span class="hljs-string">"a: "</span> + a;
+    }
+    
+    <span class="hljs-comment">//Third test for lists</span>
+    test t3 {
+        list&lt;<span class="hljs-keyword">int</span>&gt; aa;
+        <span class="hljs-keyword">assert</span> aa[<span class="hljs-number">0</span>] <span class="hljs-string">raises:</span> <span class="hljs-string">"error"</span>;
+        <span class="hljs-keyword">assert</span> aa[<span class="hljs-number">0</span>] <span class="hljs-string">raises:</span> <span class="hljs-string">""</span>;
+        <span class="hljs-keyword">assert</span> a <span class="hljs-string">raises:</span> <span class="hljs-string">"error"</span>;
+    }
+}
+
+
+experiment <span class="hljs-keyword">new</span> <span class="hljs-string">type:</span> gui {}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

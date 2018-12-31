@@ -1,0 +1,105 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Tutorials/Incremental Model/Incremental Model Incremental Model 4 --><head><meta charset="utf-8"><title>Incremental Model Incremental Model 4</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="incremental-model-incremental-model-4">Incremental Model Incremental Model 4</h1>
+<h1 id="movement-on-graph">Movement on Graph</h1>
+<p>4th part of the tutorial : Incremental Model</p>
+<p>Code of the model : </p>
+<pre><code class="hljs nginx"> 
+<span class="hljs-attribute">model</span> model4 
+ 
+global {
+    <span class="hljs-attribute">int</span> nb_people &lt;- <span class="hljs-number">500</span>;
+    <span class="hljs-attribute">float</span> step &lt;- <span class="hljs-number">1</span> <span class="hljs-comment">#minutes;</span>
+    float infection_distance &lt;- <span class="hljs-number">2</span>.<span class="hljs-number">0</span> <span class="hljs-comment">#m; </span>
+    float proba_infection &lt;- <span class="hljs-number">0</span>.<span class="hljs-number">05</span>;
+    <span class="hljs-attribute">int</span> nb_infected_init &lt;- <span class="hljs-number">5</span>;
+    <span class="hljs-attribute">file</span> roads_shapefile &lt;- file(<span class="hljs-string">"../includes/road.shp"</span>);
+    <span class="hljs-attribute">file</span> buildings_shapefile &lt;- file(<span class="hljs-string">"../includes/building.shp"</span>);
+    <span class="hljs-attribute">geometry</span> shape &lt;- envelope(roads_shapefile);
+    <span class="hljs-attribute">int</span> current_hour update: (cycle / <span class="hljs-number">60</span>) mod <span class="hljs-number">24</span>;
+    <span class="hljs-attribute">graph</span> road_network;
+    <span class="hljs-attribute">float</span> staying_coeff update: <span class="hljs-number">10</span>.<span class="hljs-number">0</span><span class="hljs-regexp"> ^</span> (<span class="hljs-number">1</span> + min([abs(current_hour - <span class="hljs-number">9</span>), abs(current_hour - <span class="hljs-number">12</span>), abs(current_hour - <span class="hljs-number">18</span>)]));
+    <span class="hljs-attribute">int</span> nb_people_infected &lt;- nb_infected_init update: people count (each.is_infected);
+    <span class="hljs-attribute">int</span> nb_people_not_infected &lt;- nb_people - nb_infected_init update: nb_people - nb_people_infected;
+    
+    <span class="hljs-attribute">float</span> infected_rate update: nb_people_infected/length(people);
+    <span class="hljs-section">init</span> {
+        <span class="hljs-attribute">create</span> road from: roads_shapefile;
+        <span class="hljs-attribute">road_network</span> &lt;- as_edge_graph(road);
+        <span class="hljs-attribute">create</span> building from: buildings_shapefile; 
+        <span class="hljs-attribute">create</span> people number:nb_people {
+            <span class="hljs-attribute">speed</span> &lt;- <span class="hljs-number">5</span>.<span class="hljs-number">0</span> <span class="hljs-comment">#km/#h;</span>
+            building bd &lt;- one_of(building); 
+            <span class="hljs-attribute">location</span> &lt;- any_location_in(bd);
+        }
+        <span class="hljs-attribute">ask</span> nb_infected_init among people {
+            <span class="hljs-attribute">is_infected</span> &lt;- <span class="hljs-literal">true</span>;
+        }
+    }
+    <span class="hljs-attribute">reflex</span> end_simulation when: infected_rate = <span class="hljs-number">1</span>.<span class="hljs-number">0</span> {
+        <span class="hljs-attribute">do</span> halt;
+    }  
+}
+
+<span class="hljs-attribute">species</span> people skills:[moving]{     
+    <span class="hljs-attribute">bool</span> is_infected &lt;- <span class="hljs-literal">false</span>;
+    <span class="hljs-attribute">point</span> target;
+    <span class="hljs-attribute">int</span> staying_counter;
+    <span class="hljs-attribute">reflex</span> staying when: target = nil {
+        <span class="hljs-attribute">staying_counter</span> &lt;- staying_counter + <span class="hljs-number">1</span>;
+        <span class="hljs-attribute">if</span> flip(staying_counter / staying_coeff) {
+            <span class="hljs-attribute">target</span> &lt;- any_location_in (one_of(building));
+        }
+    }
+        
+    <span class="hljs-attribute">reflex</span> move when: target != nil{
+        <span class="hljs-attribute">do</span> goto target:target <span class="hljs-literal">on</span>: road_network;
+        <span class="hljs-attribute">if</span> (location = target) {
+            <span class="hljs-attribute">target</span> &lt;- nil;
+            <span class="hljs-attribute">staying_counter</span> &lt;- <span class="hljs-number">0</span>;
+        } 
+    }
+    <span class="hljs-attribute">reflex</span> infect when: is_infected{
+        <span class="hljs-attribute">ask</span> people at_distance infection_distance {
+            <span class="hljs-attribute">if</span> flip(proba_infection) {
+                <span class="hljs-attribute">is_infected</span> &lt;- <span class="hljs-literal">true</span>;
+            }
+        }
+    }
+    <span class="hljs-attribute">aspect</span> circle{
+        <span class="hljs-attribute">draw</span> circle(<span class="hljs-number">5</span>) color:is_infected ? <span class="hljs-comment">#red : #green;</span>
+    }
+}
+
+species road {
+    <span class="hljs-attribute">aspect</span> geom {
+        <span class="hljs-attribute">draw</span> shape color: <span class="hljs-comment">#black;</span>
+    }
+}
+
+species building {
+    <span class="hljs-attribute">aspect</span> geom {
+        <span class="hljs-attribute">draw</span> shape color: <span class="hljs-comment">#gray;</span>
+    }
+}
+
+experiment main_experiment type:gui{
+    <span class="hljs-attribute">parameter</span> <span class="hljs-string">"Infection distance"</span> var: infection_distance;
+    <span class="hljs-attribute">parameter</span> <span class="hljs-string">"Proba infection"</span> var: proba_infection min: <span class="hljs-number">0</span>.<span class="hljs-number">0</span> max: <span class="hljs-number">1</span>.<span class="hljs-number">0</span>;
+    <span class="hljs-attribute">parameter</span> <span class="hljs-string">"Nb people infected at init"</span> var: nb_infected_init ;
+    <span class="hljs-section">output</span> {
+        <span class="hljs-attribute">monitor</span> <span class="hljs-string">"Current hour"</span> value: current_hour;
+        <span class="hljs-attribute">monitor</span> <span class="hljs-string">"Infected people rate"</span> value: infected_rate;
+        <span class="hljs-attribute">display</span> map {
+            <span class="hljs-attribute">species</span> road aspect:geom;
+            <span class="hljs-attribute">species</span> building aspect:geom;
+            <span class="hljs-attribute">species</span> people aspect:circle;           
+        }
+        <span class="hljs-attribute">display</span> chart refresh: every(<span class="hljs-number">10</span>) {
+            <span class="hljs-attribute">chart</span> <span class="hljs-string">"Disease spreading"</span> type: series {
+                <span class="hljs-attribute">data</span> <span class="hljs-string">"susceptible"</span> value: nb_people_not_infected color: <span class="hljs-comment">#green;</span>
+                data <span class="hljs-string">"infected"</span> value: nb_people_infected color: <span class="hljs-comment">#red;</span>
+            }
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

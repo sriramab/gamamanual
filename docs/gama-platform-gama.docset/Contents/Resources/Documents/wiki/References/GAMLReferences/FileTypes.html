@@ -1,0 +1,691 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/GAMLReferences/FileTypes --><head><meta charset="utf-8"><title>FileTypes</title><script src="../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="filetypes">FileTypes</h1>
+<a class="dashAnchor" name="//apple_ref/Section/File%20Types"></a><h1 id="file-types">File Types</h1>
+<p>GAMA provides modelers with a generic type for files called <strong>file</strong>. It is possible to load a file using the <em>file</em> operator:</p>
+<pre><code class="hljs stata"><span class="hljs-keyword"><span class="hljs-keyword">file</span></span> my_file &lt;- <span class="hljs-keyword"><span class="hljs-keyword">file</span></span>(<span class="hljs-string"><span class="hljs-string">"../includes/data.csv"</span></span>);
+</code></pre>
+<p>However, internally, GAMA makes the difference between the different types of files.
+Indeed, for instance:</p>
+<pre><code class="hljs nginx"><span class="hljs-section"><span class="hljs-section">global</span></span> {
+    <span class="hljs-section"><span class="hljs-section">init</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">file</span></span> my_file &lt;- file(<span class="hljs-string"><span class="hljs-string">"../includes/data.csv"</span></span>);
+        <span class="hljs-attribute"><span class="hljs-attribute">loop</span></span> el over: my_file {
+            <span class="hljs-attribute"><span class="hljs-attribute">write</span></span> el;
+        }
+    }
+}
+</code></pre>
+<p>will give:</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag"><span class="hljs-selector-tag">sepallength</span></span>
+<span class="hljs-selector-tag"><span class="hljs-selector-tag">sepalwidth</span></span>
+<span class="hljs-selector-tag"><span class="hljs-selector-tag">petallength</span></span>
+<span class="hljs-selector-tag"><span class="hljs-selector-tag">petalwidth</span></span>
+<span class="hljs-selector-tag"><span class="hljs-selector-tag">type</span></span>
+5<span class="hljs-selector-class"><span class="hljs-selector-class">.1</span></span>
+3<span class="hljs-selector-class"><span class="hljs-selector-class">.5</span></span>
+1<span class="hljs-selector-class"><span class="hljs-selector-class">.4</span></span>
+0<span class="hljs-selector-class"><span class="hljs-selector-class">.2</span></span>
+<span class="hljs-selector-tag"><span class="hljs-selector-tag">Iris-setosa</span></span>
+4<span class="hljs-selector-class"><span class="hljs-selector-class">.9</span></span>
+3<span class="hljs-selector-class"><span class="hljs-selector-class">.0</span></span>
+1<span class="hljs-selector-class"><span class="hljs-selector-class">.4</span></span>
+0<span class="hljs-selector-class"><span class="hljs-selector-class">.2</span></span>
+<span class="hljs-selector-tag"><span class="hljs-selector-tag">Iris-setosa</span></span>
+...
+</code></pre>
+<p>Indeed, the content of CSV file is a matrix: each row of the matrix is a line of the file; each column of the matrix is value delimited by the separator (by default ",").</p>
+<p>In contrary:</p>
+<pre><code class="hljs nginx"><span class="hljs-section"><span class="hljs-section">global</span></span> {
+    <span class="hljs-section"><span class="hljs-section">init</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">file</span></span> my_file &lt;- file(<span class="hljs-string"><span class="hljs-string">"../includes/data.shp"</span></span>);
+        <span class="hljs-attribute"><span class="hljs-attribute">loop</span></span> el over: my_file {
+            <span class="hljs-attribute"><span class="hljs-attribute">write</span></span> el;
+        }
+    }
+}
+</code></pre>
+<p>will give:</p>
+<pre><code class="hljs rib"><span class="hljs-keyword"><span class="hljs-keyword">Polygon</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">Polygon</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">Polygon</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">Polygon</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">Polygon</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">Polygon</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">Polygon</span></span>
+</code></pre>
+<p>The content of a shapefile is a list of geometries corresponding to the objects of the shapefile.</p>
+<p>In order to know how to load a file, GAMA analyzes its extension. For instance for a file with a ".csv" extension, GAMA knows that the file is a <strong>csv</strong> one and will try to split each line with the <em>,</em> separator. However, if the modeler wants to split each line with a different separator (for instance <strong>;</strong>) or load it as a text file, he/she will have to use a specific file operator.</p>
+<p>Indeed, GAMA integrates specific operators corresponding to different types of files.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Table%20of%20contents"></a><h2 id="table-of-contents">Table of contents</h2>
+<ul>
+<li><a href="#file-types">File Types</a>
+<ul>
+<li><a href="#text-file">Text File</a>
+<ul>
+<li><a href="#extensions">Extensions</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#operators">Operators</a></li>
+</ul>
+</li>
+<li><a href="#csv-file">CSV File</a>
+<ul>
+<li><a href="#extensions">Extensions</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#operators">Operators</a></li>
+</ul>
+</li>
+<li><a href="#shapefile">Shapefile</a>
+<ul>
+<li><a href="#extensions">Extensions</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#operators">Operators</a></li>
+</ul>
+</li>
+<li><a href="#osm-file">OSM File</a>
+<ul>
+<li><a href="#extensions">Extensions</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#operators">Operators</a></li>
+</ul>
+</li>
+<li><a href="#grid-file">Grid File</a>
+<ul>
+<li><a href="#extensions">Extensions</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#operators">Operators</a></li>
+</ul>
+</li>
+<li><a href="#image-file">Image File</a>
+<ul>
+<li><a href="#extensions">Extensions</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#operators">Operators</a></li>
+</ul>
+</li>
+<li><a href="#svg-file">SVG File</a>
+<ul>
+<li><a href="#extensions">Extensions</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#operators">Operators</a></li>
+</ul>
+</li>
+<li><a href="#property-file">Property File</a>
+<ul>
+<li><a href="#extensions">Extensions</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#operators">Operators</a></li>
+</ul>
+</li>
+<li><a href="#r-file">R File</a>
+<ul>
+<li><a href="#extensions">Extensions</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#operators">Operators</a></li>
+</ul>
+</li>
+<li><a href="#3ds-file">3DS File</a>
+<ul>
+<li><a href="#extensions">Extensions</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#operators">Operators</a></li>
+</ul>
+</li>
+<li><a href="#obj-file">OBJ File</a>
+<ul>
+<li><a href="#extensions">Extensions</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#operators">Operators</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Text%20File"></a><h2 id="text-file">Text File</h2>
+<h3 id="extensions">Extensions</h3>
+<p>Here the list of possible extensions for text file:</p>
+<ul>
+<li>"txt"
+<ul>
+<li>"data"</li>
+<li>"csv"</li>
+<li>"text"</li>
+<li>"tsv"</li>
+<li>"xml"</li>
+</ul>
+</li>
+</ul>
+<p>Note that when trying to define the type of a file with the default file loading operator (<strong>file</strong>), GAMA will first try to test the other type of file. For example, for files with ".csv" extension, GAMA will cast them as csv file and not as text file.</p>
+<h3 id="content">Content</h3>
+<p>The content of a text file is a list of string corresponding to each line of the text file.
+For example:</p>
+<pre><code class="hljs nginx"><span class="hljs-section"><span class="hljs-section">global</span></span> {
+    <span class="hljs-section"><span class="hljs-section">init</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">file</span></span> my_file &lt;- text_file(<span class="hljs-string"><span class="hljs-string">"../includes/data.txt"</span></span>);
+        <span class="hljs-attribute"><span class="hljs-attribute">loop</span></span> el over: my_file {
+            <span class="hljs-attribute"><span class="hljs-attribute">write</span></span> el;
+        }
+    }
+}
+</code></pre>
+<p>will give:</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag"><span class="hljs-selector-tag">sepallength</span></span>,<span class="hljs-selector-tag"><span class="hljs-selector-tag">sepalwidth</span></span>,<span class="hljs-selector-tag"><span class="hljs-selector-tag">petallength</span></span>,<span class="hljs-selector-tag"><span class="hljs-selector-tag">petalwidth</span></span>,<span class="hljs-selector-tag"><span class="hljs-selector-tag">type</span></span>
+5<span class="hljs-selector-class"><span class="hljs-selector-class">.1</span></span>,3<span class="hljs-selector-class"><span class="hljs-selector-class">.5</span></span>,1<span class="hljs-selector-class"><span class="hljs-selector-class">.4</span></span>,0<span class="hljs-selector-class"><span class="hljs-selector-class">.2</span></span>,<span class="hljs-selector-tag"><span class="hljs-selector-tag">Iris-setosa</span></span>
+4<span class="hljs-selector-class"><span class="hljs-selector-class">.9</span></span>,3<span class="hljs-selector-class"><span class="hljs-selector-class">.0</span></span>,1<span class="hljs-selector-class"><span class="hljs-selector-class">.4</span></span>,0<span class="hljs-selector-class"><span class="hljs-selector-class">.2</span></span>,<span class="hljs-selector-tag"><span class="hljs-selector-tag">Iris-setosa</span></span>
+4<span class="hljs-selector-class"><span class="hljs-selector-class">.7</span></span>,3<span class="hljs-selector-class"><span class="hljs-selector-class">.2</span></span>,1<span class="hljs-selector-class"><span class="hljs-selector-class">.3</span></span>,0<span class="hljs-selector-class"><span class="hljs-selector-class">.2</span></span>,<span class="hljs-selector-tag"><span class="hljs-selector-tag">Iris-setosa</span></span>
+</code></pre>
+<h3 id="operators">Operators</h3>
+<p>List of operators related to text files:</p>
+<ul>
+<li><strong>text_file(string path)</strong>: load a file (with an authorized extension) as a text file.
+<ul>
+<li><strong>text_file(string path, list content)</strong>: load a file (with an authorized extension) as a text file and fill it with the given content.</li>
+<li><strong>is_text(op)</strong>: tests whether the operand is a text file</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/CSV%20File"></a><h2 id="csv-file">CSV File</h2>
+<h3 dash_ignored="yes" id="extensions-2">Extensions</h3>
+<p>Here the list of possible extensions for csv file:</p>
+<ul>
+<li>"csv"
+<ul>
+<li>"tsv"</li>
+</ul>
+</li>
+</ul>
+<h3 dash_ignored="yes" id="content-2">Content</h3>
+<p>The content of a csv file is a matrix of string: each row of the matrix is a line of the file; each column of the matrix is value delimited by the separator (by default ",").
+For example:</p>
+<pre><code class="hljs nginx"><span class="hljs-section"><span class="hljs-section">global</span></span> {
+    <span class="hljs-section"><span class="hljs-section">init</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">file</span></span> my_file &lt;- csv_file(<span class="hljs-string"><span class="hljs-string">"../includes/data.csv"</span></span>);
+        <span class="hljs-attribute"><span class="hljs-attribute">loop</span></span> el over: my_file {
+            <span class="hljs-attribute"><span class="hljs-attribute">write</span></span> el;
+        }
+    }
+}
+</code></pre>
+<p>will give:</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag"><span class="hljs-selector-tag">sepallength</span></span>
+<span class="hljs-selector-tag"><span class="hljs-selector-tag">sepalwidth</span></span>
+<span class="hljs-selector-tag"><span class="hljs-selector-tag">petallength</span></span>
+<span class="hljs-selector-tag"><span class="hljs-selector-tag">petalwidth</span></span>
+<span class="hljs-selector-tag"><span class="hljs-selector-tag">type</span></span>
+5<span class="hljs-selector-class"><span class="hljs-selector-class">.1</span></span>
+3<span class="hljs-selector-class"><span class="hljs-selector-class">.5</span></span>
+1<span class="hljs-selector-class"><span class="hljs-selector-class">.4</span></span>
+0<span class="hljs-selector-class"><span class="hljs-selector-class">.2</span></span>
+<span class="hljs-selector-tag"><span class="hljs-selector-tag">Iris-setosa</span></span>
+4<span class="hljs-selector-class"><span class="hljs-selector-class">.9</span></span>
+3<span class="hljs-selector-class"><span class="hljs-selector-class">.0</span></span>
+1<span class="hljs-selector-class"><span class="hljs-selector-class">.4</span></span>
+0<span class="hljs-selector-class"><span class="hljs-selector-class">.2</span></span>
+<span class="hljs-selector-tag"><span class="hljs-selector-tag">Iris-setosa</span></span>
+...
+</code></pre>
+<h3 dash_ignored="yes" id="operators-2">Operators</h3>
+<p>List of operators related to csv files:</p>
+<ul>
+<li><strong>csv_file(string path)</strong>: load a file (with an authorized extension) as a csv file with default separator (",").
+<ul>
+<li><strong>csv_file(string path, string separator)</strong>: load a file (with an authorized extension) as a csv file with the given separator.
+<code>
+file my_file &lt;- csv_file("../includes/data.csv", ";");
+</code></li>
+</ul>
+</li>
+<li><p><strong>csv_file(string path, matrix content)</strong>: load a file (with an authorized extension) as a csv file and fill it with the given content.</p>
+<ul>
+<li><strong>is_csv(op)</strong>: tests whether the operand is a csv file</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Shapefile"></a><h2 id="shapefile">Shapefile</h2>
+<p>Shapefiles are classical GIS data files. A shapefile is not simple file, but a set of several files (source: wikipedia):</p>
+<ul>
+<li>Mandatory files :
+<ul>
+<li>.shp — shape format; the feature geometry itself</li>
+<li>.shx — shape index format; a positional index of the feature geometry to allow seeking forwards and backwards quickly</li>
+<li>.dbf — attribute format; columnar attributes for each shape, in dBase IV format</li>
+</ul>
+</li>
+<li><p>Optional files :</p>
+<ul>
+<li>.prj — projection format; the coordinate system and projection information, a plain text file describing the projection using well-known text format</li>
+<li>.sbn and .sbx — a spatial index of the features</li>
+<li>.fbn and .fbx — a spatial index of the features for shapefiles that are read-only</li>
+<li>.ain and .aih — an attribute index of the active fields in a table</li>
+<li>.ixs — a geocoding index for read-write shapefiles</li>
+<li>.mxs — a geocoding index for read-write shapefiles (ODB format)</li>
+<li>.atx — an attribute index for the .dbf file in the form of shapefile.columnname.atx (ArcGIS 8 and later)</li>
+<li>.shp.xml — geospatial metadata in XML format, such as ISO 19115 or other XML schema</li>
+<li>.cpg — used to specify the code page (only for .dbf) for identifying the character encoding to be used</li>
+</ul>
+</li>
+</ul>
+<p>More details about shapefiles can be found <a href="http://en.wikipedia.org/wiki/Shapefile">here</a>.</p>
+<h3 dash_ignored="yes" id="extensions-3">Extensions</h3>
+<p>Here the list of possible extension for shapefile:</p>
+<ul>
+<li>"shp"</li>
+</ul>
+<h3 dash_ignored="yes" id="content-3">Content</h3>
+<p>The content of a shapefile is a list of geometries corresponding to the objects of the shapefile.
+For example:</p>
+<pre><code class="hljs nginx"><span class="hljs-section"><span class="hljs-section">global</span></span> {
+    <span class="hljs-section"><span class="hljs-section">init</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">file</span></span> my_file &lt;- shape_file(<span class="hljs-string"><span class="hljs-string">"../includes/data.shp"</span></span>);
+        <span class="hljs-attribute"><span class="hljs-attribute">loop</span></span> el over: my_file {
+            <span class="hljs-attribute"><span class="hljs-attribute">write</span></span> el;
+        }
+    }
+}
+</code></pre>
+<p>will give:</p>
+<pre><code class="hljs rib"><span class="hljs-keyword"><span class="hljs-keyword">Polygon</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">Polygon</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">Polygon</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">Polygon</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">Polygon</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">Polygon</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">Polygon</span></span>
+...
+</code></pre>
+<p>Note that the attributes of each object of the shapefile is stored in their corresponding GAMA geometry. The operator "get" (or "read") allows to get the value of a corresponding attributes.</p>
+<p>For example:</p>
+<pre><code class="hljs applescript"><span class="hljs-built_in"><span class="hljs-built_in">file</span></span> my_file &lt;- shape_file(<span class="hljs-string"><span class="hljs-string">"../includes/data.shp"</span></span>);
+<span class="hljs-built_in"><span class="hljs-built_in">write</span></span> <span class="hljs-string"><span class="hljs-string">"my_file: "</span></span> + my_file.<span class="hljs-built_in"><span class="hljs-built_in">contents</span></span>;
+loop el <span class="hljs-keyword"><span class="hljs-keyword">over</span></span>: my_file {
+    <span class="hljs-built_in"><span class="hljs-built_in">write</span></span> (el <span class="hljs-keyword"><span class="hljs-keyword">get</span></span> <span class="hljs-string"><span class="hljs-string">"TYPE"</span></span>);
+}
+</code></pre>
+<h3 dash_ignored="yes" id="operators-3">Operators</h3>
+<p>List of operators related to shapefiles:</p>
+<ul>
+<li><strong>shape_file(string path)</strong>: load a file (with an authorized extension) as a shapefile with default projection (if a prj file is defined, use it, otherwise use the default projection defined in the preference).
+<ul>
+<li><strong>shape_file(string path, string code)</strong>: load a file (with an authorized extension) as a shapefile with the given projection (GAMA will automatically decode the code. For a list of the possible projections see: <a href="http://spatialreference.org/ref/">http://spatialreference.org/ref/</a>)</li>
+<li><strong>shape_file(string path, int EPSG_ID)</strong>: load a file (with an authorized extension) as a shapefile with the given projection (GAMA will automatically decode the epsg code. For a list of the possible projections see: <a href="http://spatialreference.org/ref/">http://spatialreference.org/ref/</a>)
+<code>
+file my_file &lt;- shape_file("../includes/data.shp", "EPSG:32601");
+</code></li>
+</ul>
+</li>
+<li><p><strong>shape_file(string path, list content)</strong>: load a file (with an authorized extension) as a shapefile and fill it with the given content.</p>
+<ul>
+<li><strong>is_shape(op)</strong>: tests whether the operand is a shapefile</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/OSM%20File"></a><h2 id="osm-file">OSM File</h2>
+<p>OSM (Open Street Map) is a collaborative project to create a free editable map of the world. The data produced in this project (OSM File)  represent physical features on the ground (e.g., roads or buildings) using tags attached to its basic data structures (its nodes, ways, and relations). Each tag describes a geographic attribute of the feature being shown by that specific node, way or relation (source: openstreetmap.org).</p>
+<p>More details about OSM data can be found <a href="http://wiki.openstreetmap.org/wiki/Map_Features">here</a>.</p>
+<h3 dash_ignored="yes" id="extensions-4">Extensions</h3>
+<p>Here the list of possible extension for shapefile:</p>
+<ul>
+<li>"osm"
+<ul>
+<li>"pbf"</li>
+<li>"bz2"</li>
+<li>"gz"</li>
+</ul>
+</li>
+</ul>
+<h3 dash_ignored="yes" id="content-4">Content</h3>
+<p>The content of a OSM data is a list of geometries corresponding to the objects of the OSM file.
+For example:</p>
+<pre><code class="hljs nginx"><span class="hljs-section"><span class="hljs-section">global</span></span> {
+    <span class="hljs-section"><span class="hljs-section">init</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">file</span></span> my_file &lt;- osm_file(<span class="hljs-string"><span class="hljs-string">"../includes/data.gz"</span></span>);
+        <span class="hljs-attribute"><span class="hljs-attribute">loop</span></span> el over: my_file {
+            <span class="hljs-attribute"><span class="hljs-attribute">write</span></span> el;
+        }
+    }
+}
+</code></pre>
+<p>will give:</p>
+<pre><code class="hljs mathematica"><span class="hljs-keyword"><span class="hljs-keyword">Point</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">Point</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">Point</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">Point</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">Point</span></span>
+LineString
+LineString
+<span class="hljs-keyword"><span class="hljs-keyword">Polygon</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">Polygon</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">Polygon</span></span>
+...
+</code></pre>
+<p>Note that like for shapefiles, the attributes of each object of the osm file is stored in their corresponding GAMA geometry. The operator "get" (or "read") allows to get the value of a corresponding attributes.</p>
+<h3 dash_ignored="yes" id="operators-4">Operators</h3>
+<p>List of operators related to osm file:</p>
+<ul>
+<li><strong>osm_file(string path)</strong>: load a file (with an authorized extension) as a osm file with default projection (if a prj file is defined, use it, otherwise use the default projection defined in the preference). In this case, all the nodes and ways of the OSM file will becomes a geometry.
+<ul>
+<li><strong>osm_file(string path, string code)</strong>: load a file (with an authorized extension) as a osm file with the given projection (GAMA will automatically decode the code. For a list of the possible projections see: <a href="http://spatialreference.org/ref/">http://spatialreference.org/ref/</a>). In this case, all the nodes and ways of the OSM file will becomes a geometry.</li>
+<li><strong>osm_file(string path, int EPSG_ID)</strong>: load a file (with an authorized extension) as a osm file with the given projection (GAMA will automatically decode the epsg code. For a list of the possible projections see: <a href="http://spatialreference.org/ref/">http://spatialreference.org/ref/</a>). In this case, all the nodes and ways of the OSM file will becomes a geometry.
+<code>
+file my_file &lt;- osm_file("../includes/data.gz", "EPSG:32601");
+</code></li>
+<li><strong>osm_file(string path, map filter)</strong>: load a file (with an authorized extension) as a osm file with default projection (if a prj file is defined, use it, otherwise use the default projection defined in the preference). In this case, only the elements with the defined values are loaded from the file.
+```
+//map used to filter the object to build from the OSM file according to attributes. 
+map filtering &lt;- map(["highway"::["primary", "secondary", "tertiary", "motorway", "living_street","residential", "unclassified"], "building"::["yes"]]);</li>
+</ul>
+</li>
+</ul>
+<p>//OSM file to load
+file<geometry> osmfile &lt;-  file&lt;geometry (osm_file("../includes/rouen.gz", filtering))  ;</geometry></p>
+<pre><code class="hljs livecodeserver">  * **osm\<span class="hljs-title"><span class="hljs-title">_file</span></span>(<span class="hljs-keyword"><span class="hljs-keyword">string</span></span> path, map <span class="hljs-built_in"><span class="hljs-built_in">filter</span></span>, <span class="hljs-keyword"><span class="hljs-keyword">string</span></span> code)**: <span class="hljs-built_in"><span class="hljs-built_in">load</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> (<span class="hljs-keyword"><span class="hljs-keyword">with</span></span> <span class="hljs-keyword"><span class="hljs-keyword">an</span></span> authorized extension) <span class="hljs-keyword"><span class="hljs-keyword">as</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> osm <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> <span class="hljs-keyword"><span class="hljs-keyword">with</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> given projection (GAMA will automatically decode <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> code. For <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> list <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> possible projections see: <span class="hljs-keyword"><span class="hljs-keyword">http</span></span>://spatialreference.org/ref/). In this <span class="hljs-keyword"><span class="hljs-keyword">case</span></span>, only <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> elements <span class="hljs-keyword"><span class="hljs-keyword">with</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> defined values are loaded <span class="hljs-built_in"><span class="hljs-built_in">from</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>.
+  * **osm\<span class="hljs-title"><span class="hljs-title">_file</span></span>(<span class="hljs-keyword"><span class="hljs-keyword">string</span></span> path, map <span class="hljs-built_in"><span class="hljs-built_in">filter</span></span>, int EPSG\_ID)**: <span class="hljs-built_in"><span class="hljs-built_in">load</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> (<span class="hljs-keyword"><span class="hljs-keyword">with</span></span> <span class="hljs-keyword"><span class="hljs-keyword">an</span></span> authorized extension) <span class="hljs-keyword"><span class="hljs-keyword">as</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> osm <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> <span class="hljs-keyword"><span class="hljs-keyword">with</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> given projection (GAMA will automatically decode <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> epsg code. For <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> list <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> possible projections see: <span class="hljs-keyword"><span class="hljs-keyword">http</span></span>://spatialreference.org/ref/). In this <span class="hljs-keyword"><span class="hljs-keyword">case</span></span>, only <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> elements <span class="hljs-keyword"><span class="hljs-keyword">with</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> defined values are loaded <span class="hljs-built_in"><span class="hljs-built_in">from</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>.
+  * **is\<span class="hljs-title"><span class="hljs-title">_osm</span></span>(op)**: tests whether <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> operand is <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> osm <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>
+
+
+
+
+
+<span class="hljs-comment"><span class="hljs-comment">## Grid File</span></span>
+Esri ASCII Grid <span class="hljs-built_in"><span class="hljs-built_in">files</span></span> are classic <span class="hljs-keyword"><span class="hljs-keyword">text</span></span> raster GIS data.
+
+More details about Esri ASCII grid <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> can be found [here](<span class="hljs-keyword"><span class="hljs-keyword">http</span></span>://en.wikipedia.org/wiki/Esri_grid).
+
+Note that grid <span class="hljs-built_in"><span class="hljs-built_in">files</span></span> can be used <span class="hljs-built_in"><span class="hljs-built_in">to</span></span> initialize <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> grid species. The <span class="hljs-built_in"><span class="hljs-built_in">number</span></span> <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> rows <span class="hljs-keyword"><span class="hljs-keyword">and</span></span> columns will be <span class="hljs-built_in"><span class="hljs-built_in">read</span></span> <span class="hljs-built_in"><span class="hljs-built_in">from</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>. Similarly, <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> values <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-keyword"><span class="hljs-keyword">each</span></span> cell contained <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> grid <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> will be accessible through <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> **grid\<span class="hljs-title"><span class="hljs-title">_value</span></span>** attribute.
+</code></pre>
+<p>grid cell file: grid_file {
+}</p>
+<pre><code class="hljs livecodeserver">
+<span class="hljs-comment"><span class="hljs-comment">### Extensions</span></span>
+Here <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> list <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> possible extension <span class="hljs-keyword"><span class="hljs-keyword">for</span></span> grid <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>:
+  * <span class="hljs-string"><span class="hljs-string">"asc"</span></span>
+
+<span class="hljs-comment"><span class="hljs-comment">### Content</span></span>
+The content <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> grid <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> is <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> list <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> geometries corresponding <span class="hljs-built_in"><span class="hljs-built_in">to</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> cells <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> grid.
+For example:
+</code></pre>
+<p>global {
+init {
+file my_file &lt;- grid_file("../includes/data.asc");
+loop el over: my_file {
+write el;
+}
+}
+}</p>
+<pre><code class="hljs groovy">
+will <span class="hljs-string"><span class="hljs-string">give:</span></span>
+</code></pre>
+<p>Polygon
+Polygon
+Polygon
+Polygon
+Polygon
+Polygon
+Polygon
+...</p>
+<pre><code class="hljs livecodeserver">
+Note that <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> values <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-keyword"><span class="hljs-keyword">each</span></span> cell <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> grid <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> is stored <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> their corresponding GAMA geometry (**grid\<span class="hljs-title"><span class="hljs-title">_value</span></span>** attribute). The operator <span class="hljs-string"><span class="hljs-string">"get"</span></span> (<span class="hljs-keyword"><span class="hljs-keyword">or</span></span> <span class="hljs-string"><span class="hljs-string">"read"</span></span>) allows <span class="hljs-built_in"><span class="hljs-built_in">to</span></span> <span class="hljs-built_in"><span class="hljs-built_in">get</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> <span class="hljs-built_in"><span class="hljs-built_in">value</span></span> <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> this attribute.
+
+For example:
+</code></pre>
+<p>file my_file &lt;- grid_file("../includes/data.asc");
+write "my_file: " + my_file.contents;
+loop el over: my_file {
+write el get "grid_value";
+}</p>
+<pre><code class="hljs http">
+
+<span class="livecodeserver"><span class="hljs-comment"><span class="livecodeserver"><span class="hljs-comment">### Operators</span></span></span><span class="livecodeserver">
+List </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">of</span></span></span><span class="livecodeserver"> operators related </span><span class="hljs-built_in"><span class="livecodeserver"><span class="hljs-built_in">to</span></span></span><span class="livecodeserver"> shapefiles:
+  * **grid\</span><span class="hljs-title"><span class="livecodeserver"><span class="hljs-title">_file</span></span></span><span class="livecodeserver">(</span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">string</span></span></span><span class="livecodeserver"> path)**: </span><span class="hljs-built_in"><span class="livecodeserver"><span class="hljs-built_in">load</span></span></span><span class="livecodeserver"> </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">a</span></span></span><span class="livecodeserver"> </span><span class="hljs-built_in"><span class="livecodeserver"><span class="hljs-built_in">file</span></span></span><span class="livecodeserver"> (</span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">with</span></span></span><span class="livecodeserver"> </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">an</span></span></span><span class="livecodeserver"> authorized extension) </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">as</span></span></span><span class="livecodeserver"> </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">a</span></span></span><span class="livecodeserver"> grid </span><span class="hljs-built_in"><span class="livecodeserver"><span class="hljs-built_in">file</span></span></span><span class="livecodeserver"> </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">with</span></span></span><span class="livecodeserver"> default projection (</span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">if</span></span></span><span class="livecodeserver"> </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">a</span></span></span><span class="livecodeserver"> prj </span><span class="hljs-built_in"><span class="livecodeserver"><span class="hljs-built_in">file</span></span></span><span class="livecodeserver"> is defined, use </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">it</span></span></span><span class="livecodeserver">, otherwise use </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">the</span></span></span><span class="livecodeserver"> default projection defined </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">in</span></span></span><span class="livecodeserver"> </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">the</span></span></span><span class="livecodeserver"> preference).
+  * **grid\</span><span class="hljs-title"><span class="livecodeserver"><span class="hljs-title">_file</span></span></span><span class="livecodeserver">(</span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">string</span></span></span><span class="livecodeserver"> path, </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">string</span></span></span><span class="livecodeserver"> code)**: </span><span class="hljs-built_in"><span class="livecodeserver"><span class="hljs-built_in">load</span></span></span><span class="livecodeserver"> </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">a</span></span></span><span class="livecodeserver"> </span><span class="hljs-built_in"><span class="livecodeserver"><span class="hljs-built_in">file</span></span></span><span class="livecodeserver"> (</span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">with</span></span></span><span class="livecodeserver"> </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">an</span></span></span><span class="livecodeserver"> authorized extension) </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">as</span></span></span><span class="livecodeserver"> </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">a</span></span></span><span class="livecodeserver"> grid </span><span class="hljs-built_in"><span class="livecodeserver"><span class="hljs-built_in">file</span></span></span><span class="livecodeserver"> </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">with</span></span></span><span class="livecodeserver"> </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">the</span></span></span><span class="livecodeserver"> given projection (GAMA will automatically decode </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">the</span></span></span><span class="livecodeserver"> code. For </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">a</span></span></span><span class="livecodeserver"> list </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">of</span></span></span><span class="livecodeserver"> </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">the</span></span></span><span class="livecodeserver"> possible projections see: </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">http</span></span></span><span class="livecodeserver">://spatialreference.org/ref/)
+  * **grid\</span><span class="hljs-title"><span class="livecodeserver"><span class="hljs-title">_file</span></span></span><span class="livecodeserver">(</span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">string</span></span></span><span class="livecodeserver"> path, int EPSG\_ID)**: </span><span class="hljs-built_in"><span class="livecodeserver"><span class="hljs-built_in">load</span></span></span><span class="livecodeserver"> </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">a</span></span></span><span class="livecodeserver"> </span><span class="hljs-built_in"><span class="livecodeserver"><span class="hljs-built_in">file</span></span></span><span class="livecodeserver"> (</span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">with</span></span></span><span class="livecodeserver"> </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">an</span></span></span><span class="livecodeserver"> authorized extension) </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">as</span></span></span><span class="livecodeserver"> </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">a</span></span></span><span class="livecodeserver"> grid </span><span class="hljs-built_in"><span class="livecodeserver"><span class="hljs-built_in">file</span></span></span><span class="livecodeserver"> </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">with</span></span></span><span class="livecodeserver"> </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">the</span></span></span><span class="livecodeserver"> given projection (GAMA will automatically decode </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">the</span></span></span><span class="livecodeserver"> epsg code. For </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">a</span></span></span><span class="livecodeserver"> list </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">of</span></span></span><span class="livecodeserver"> </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">the</span></span></span><span class="livecodeserver"> possible projections see: </span><span class="hljs-keyword"><span class="livecodeserver"><span class="hljs-keyword">http</span></span></span><span class="livecodeserver">://spatialreference.org/ref/)
+</span></span></code></pre>
+<p>file my_file &lt;- grid_file("../includes/data.shp", "EPSG:32601");</p>
+<pre><code class="hljs livecodeserver">
+  * **is\<span class="hljs-title"><span class="hljs-title">_grid</span></span>(op)**: tests whether <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> operand is <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> grid <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>.
+
+
+
+
+
+
+<span class="hljs-comment"><span class="hljs-comment">## Image File</span></span>
+<span class="hljs-comment"><span class="hljs-comment">### Extensions</span></span>
+Here <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> list <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> possible extensions <span class="hljs-keyword"><span class="hljs-keyword">for</span></span> image <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>:
+  * <span class="hljs-string"><span class="hljs-string">"tif"</span></span>
+  * <span class="hljs-string"><span class="hljs-string">"tiff"</span></span>
+  * <span class="hljs-string"><span class="hljs-string">"jpg"</span></span>
+  * <span class="hljs-string"><span class="hljs-string">"jpeg"</span></span>
+  * <span class="hljs-string"><span class="hljs-string">"png"</span></span>
+  * <span class="hljs-string"><span class="hljs-string">"gif"</span></span>
+  * <span class="hljs-string"><span class="hljs-string">"pict"</span></span>
+  * <span class="hljs-string"><span class="hljs-string">"bmp"</span></span>
+
+<span class="hljs-comment"><span class="hljs-comment">### Content</span></span>
+The content <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-keyword"><span class="hljs-keyword">an</span></span> image <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> is <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> matrix <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> int: <span class="hljs-keyword"><span class="hljs-keyword">each</span></span> pixel is <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> <span class="hljs-built_in"><span class="hljs-built_in">value</span></span> <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> matrix.
+
+For example:
+</code></pre>
+<p>global {
+init {
+file my_file &lt;- image_file("../includes/DEM.png");
+loop el over: my_file {
+write el;
+}
+}
+}</p>
+<pre><code class="hljs groovy">
+will <span class="hljs-string"><span class="hljs-string">give:</span></span>
+</code></pre>
+<p>-9671572
+-9671572
+-9671572
+-9671572
+-9934744
+-9934744
+-9868951
+-9868951
+-10000537
+-10000537
+...</p>
+<pre><code class="hljs livecodeserver">
+<span class="hljs-comment"><span class="hljs-comment">### Operators</span></span>
+List <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> operators related <span class="hljs-built_in"><span class="hljs-built_in">to</span></span> csv <span class="hljs-built_in"><span class="hljs-built_in">files</span></span>:
+  * **image\<span class="hljs-title"><span class="hljs-title">_file</span></span>(<span class="hljs-keyword"><span class="hljs-keyword">string</span></span> path)**: <span class="hljs-built_in"><span class="hljs-built_in">load</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> (<span class="hljs-keyword"><span class="hljs-keyword">with</span></span> <span class="hljs-keyword"><span class="hljs-keyword">an</span></span> authorized extension) <span class="hljs-keyword"><span class="hljs-keyword">as</span></span> <span class="hljs-keyword"><span class="hljs-keyword">an</span></span> image <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>.
+  * **image\<span class="hljs-title"><span class="hljs-title">_file</span></span>(<span class="hljs-keyword"><span class="hljs-keyword">string</span></span> path, matrix content)**: <span class="hljs-built_in"><span class="hljs-built_in">load</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> (<span class="hljs-keyword"><span class="hljs-keyword">with</span></span> <span class="hljs-keyword"><span class="hljs-keyword">an</span></span> authorized extension) <span class="hljs-keyword"><span class="hljs-keyword">as</span></span> <span class="hljs-keyword"><span class="hljs-keyword">an</span></span> image <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> <span class="hljs-keyword"><span class="hljs-keyword">and</span></span> fill <span class="hljs-keyword"><span class="hljs-keyword">it</span></span> <span class="hljs-keyword"><span class="hljs-keyword">with</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> given content.
+  * **is\<span class="hljs-title"><span class="hljs-title">_image</span></span>(op)**: tests whether <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> operand is <span class="hljs-keyword"><span class="hljs-keyword">an</span></span> image <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>
+
+
+
+
+
+<span class="hljs-comment"><span class="hljs-comment">## SVG File</span></span>
+
+Scalable Vector Graphics (SVG) is <span class="hljs-keyword"><span class="hljs-keyword">an</span></span> XML-based vector image <span class="hljs-built_in"><span class="hljs-built_in">format</span></span> <span class="hljs-keyword"><span class="hljs-keyword">for</span></span> <span class="hljs-literal"><span class="hljs-literal">two</span></span>-dimensional graphics <span class="hljs-keyword"><span class="hljs-keyword">with</span></span> support <span class="hljs-keyword"><span class="hljs-keyword">for</span></span> interactivity <span class="hljs-keyword"><span class="hljs-keyword">and</span></span> animation. Note that interactivity <span class="hljs-keyword"><span class="hljs-keyword">and</span></span> animation features are <span class="hljs-keyword"><span class="hljs-keyword">not</span></span> supported <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> GAMA.
+
+More details about SVG <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> can be found [here](<span class="hljs-keyword"><span class="hljs-keyword">http</span></span>://en.wikipedia.org/wiki/Scalable_Vector_Graphics).
+
+<span class="hljs-comment"><span class="hljs-comment">### Extensions</span></span>
+Here <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> list <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> possible extension <span class="hljs-keyword"><span class="hljs-keyword">for</span></span> SVG <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>:
+  * <span class="hljs-string"><span class="hljs-string">"svg"</span></span>
+
+<span class="hljs-comment"><span class="hljs-comment">### Content</span></span>
+The content <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> SVG <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> is <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> list <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> geometries.
+For example:
+</code></pre>
+<p>global {
+init {
+file my_file &lt;- svg_file("../includes/data.svg");
+loop el over: my_file {
+write el;
+}
+}
+}</p>
+<pre><code class="hljs groovy">
+will <span class="hljs-string"><span class="hljs-string">give:</span></span>
+</code></pre>
+<p>Polygon</p>
+<pre><code class="hljs livecodeserver">
+<span class="hljs-comment"><span class="hljs-comment">### Operators</span></span>
+List <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> operators related <span class="hljs-built_in"><span class="hljs-built_in">to</span></span> svg <span class="hljs-built_in"><span class="hljs-built_in">files</span></span>:
+  * **shape\<span class="hljs-title"><span class="hljs-title">_file</span></span>(<span class="hljs-keyword"><span class="hljs-keyword">string</span></span> path)**: <span class="hljs-built_in"><span class="hljs-built_in">load</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> (<span class="hljs-keyword"><span class="hljs-keyword">with</span></span> <span class="hljs-keyword"><span class="hljs-keyword">an</span></span> authorized extension) <span class="hljs-keyword"><span class="hljs-keyword">as</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> SVG <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>.
+  * **shape\<span class="hljs-title"><span class="hljs-title">_file</span></span>(<span class="hljs-keyword"><span class="hljs-keyword">string</span></span> path, point size)**: <span class="hljs-built_in"><span class="hljs-built_in">load</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> (<span class="hljs-keyword"><span class="hljs-keyword">with</span></span> <span class="hljs-keyword"><span class="hljs-keyword">an</span></span> authorized extension) <span class="hljs-keyword"><span class="hljs-keyword">as</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> SVG <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> <span class="hljs-keyword"><span class="hljs-keyword">with</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> given size:
+</code></pre>
+<p>file my_file &lt;- svg_file("../includes/data.svg", {5.0,5.0});</p>
+<pre><code class="hljs livecodeserver">
+  * **is\<span class="hljs-title"><span class="hljs-title">_svg</span></span>(op)**: tests whether <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> operand is <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> SVG <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>
+
+
+
+
+
+<span class="hljs-comment"><span class="hljs-comment">## Property File</span></span>
+<span class="hljs-comment"><span class="hljs-comment">### Extensions</span></span>
+Here <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> list <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> possible extensions <span class="hljs-keyword"><span class="hljs-keyword">for</span></span> property <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>:
+  * <span class="hljs-string"><span class="hljs-string">"properties"</span></span>
+
+<span class="hljs-comment"><span class="hljs-comment">### Content</span></span>
+The content <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> property <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> is <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> map <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-keyword"><span class="hljs-keyword">string</span></span> corresponding <span class="hljs-built_in"><span class="hljs-built_in">to</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> content <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>.
+For example:
+</code></pre>
+<p>global {
+init {
+file my_file &lt;- property_file("../includes/data.properties");
+loop el over: my_file {
+write el;
+}
+}
+}</p>
+<pre><code class="hljs applescript"><span class="hljs-keyword"><span class="hljs-keyword">with</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> <span class="hljs-keyword"><span class="hljs-keyword">given</span></span> <span class="hljs-keyword"><span class="hljs-keyword">property</span></span> <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>:
+</code></pre>
+<p>sepallength = 5.0
+sepalwidth = 3.0
+petallength = 4.0
+petalwidth = 2.5
+type = Iris-setosa</p>
+<pre><code class="hljs groovy">
+will <span class="hljs-string"><span class="hljs-string">give:</span></span>
+</code></pre>
+<p>3.0
+4.0
+5.0
+Iris-setosa
+2.5</p>
+<pre><code class="hljs livecodeserver">
+<span class="hljs-comment"><span class="hljs-comment">### Operators</span></span>
+List <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> operators related <span class="hljs-built_in"><span class="hljs-built_in">to</span></span> <span class="hljs-keyword"><span class="hljs-keyword">text</span></span> <span class="hljs-built_in"><span class="hljs-built_in">files</span></span>:
+  * **property\<span class="hljs-title"><span class="hljs-title">_file</span></span>(<span class="hljs-keyword"><span class="hljs-keyword">string</span></span> path)**: <span class="hljs-built_in"><span class="hljs-built_in">load</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> (<span class="hljs-keyword"><span class="hljs-keyword">with</span></span> <span class="hljs-keyword"><span class="hljs-keyword">an</span></span> authorized extension) <span class="hljs-keyword"><span class="hljs-keyword">as</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> property <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>.
+  * **is\<span class="hljs-title"><span class="hljs-title">_property</span></span>(op)**: tests whether <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> operand is <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> property <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>
+
+
+
+
+
+<span class="hljs-comment"><span class="hljs-comment">## R File</span></span>
+R is <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> free software environment <span class="hljs-keyword"><span class="hljs-keyword">for</span></span> statistical computing <span class="hljs-keyword"><span class="hljs-keyword">and</span></span> graphics. GAMA allows <span class="hljs-built_in"><span class="hljs-built_in">to</span></span> execute R script (<span class="hljs-keyword"><span class="hljs-keyword">if</span></span> R is installed <span class="hljs-keyword"><span class="hljs-keyword">on</span></span> <span class="hljs-title"><span class="hljs-title">the</span></span> <span class="hljs-title"><span class="hljs-title">computer</span></span>).
+
+More details about R can be found [here](<span class="hljs-keyword"><span class="hljs-keyword">http</span></span>://www.r-project.org/).
+
+Note that GAMA also integrates some operators <span class="hljs-built_in"><span class="hljs-built_in">to</span></span> manage R scripts:
+  * [R\<span class="hljs-title"><span class="hljs-title">_compute</span></span>](Operators<span class="hljs-comment"><span class="hljs-comment">#R_compute)</span></span>
+  * [R\<span class="hljs-title"><span class="hljs-title">_compute</span></span>\<span class="hljs-title"><span class="hljs-title">_param</span></span>](Operators<span class="hljs-comment"><span class="hljs-comment">#R_compute_param)</span></span>
+
+<span class="hljs-comment"><span class="hljs-comment">### Extensions</span></span>
+Here <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> list <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> possible extensions <span class="hljs-keyword"><span class="hljs-keyword">for</span></span> R <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>:
+  * <span class="hljs-string"><span class="hljs-string">"r"</span></span>
+
+<span class="hljs-comment"><span class="hljs-comment">### Content</span></span>
+The content <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> R <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> corresponds <span class="hljs-built_in"><span class="hljs-built_in">to</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> results <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> application <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> script contained <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>.
+
+For example:
+</code></pre>
+<p>global {
+init {
+file my_file &lt;- R_file("../includes/data.r");
+loop el over: my_file {
+write el;
+}
+}
+}</p>
+<pre><code class="hljs groovy">
+will <span class="hljs-string"><span class="hljs-string">give:</span></span>
+</code></pre>
+<p>3.0</p>
+<pre><code class="hljs livecodeserver">
+<span class="hljs-comment"><span class="hljs-comment">### Operators</span></span>
+List <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> operators related <span class="hljs-built_in"><span class="hljs-built_in">to</span></span> R <span class="hljs-built_in"><span class="hljs-built_in">files</span></span>:
+  * **R\<span class="hljs-title"><span class="hljs-title">_file</span></span>(<span class="hljs-keyword"><span class="hljs-keyword">string</span></span> path)**: <span class="hljs-built_in"><span class="hljs-built_in">load</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> (<span class="hljs-keyword"><span class="hljs-keyword">with</span></span> <span class="hljs-keyword"><span class="hljs-keyword">an</span></span> authorized extension) <span class="hljs-keyword"><span class="hljs-keyword">as</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> R <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>.
+  * **is\_R(op)**: tests whether <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> operand is <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> R <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>.
+
+
+
+
+<span class="hljs-comment"><span class="hljs-comment">## 3DS File</span></span>
+
+<span class="hljs-number"><span class="hljs-number">3</span></span>DS is <span class="hljs-literal"><span class="hljs-literal">one</span></span> <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> formats used <span class="hljs-keyword"><span class="hljs-keyword">by</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> Autodesk <span class="hljs-number"><span class="hljs-number">3</span></span>ds Max <span class="hljs-number"><span class="hljs-number">3</span></span>D modeling, animation <span class="hljs-keyword"><span class="hljs-keyword">and</span></span> rendering software. <span class="hljs-number"><span class="hljs-number">3</span></span>DS <span class="hljs-built_in"><span class="hljs-built_in">files</span></span> can be used <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> GAMA <span class="hljs-built_in"><span class="hljs-built_in">to</span></span> <span class="hljs-built_in"><span class="hljs-built_in">load</span></span> <span class="hljs-number"><span class="hljs-number">3</span></span>D geometries.
+
+More details about <span class="hljs-number"><span class="hljs-number">3</span></span>DS <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> can be found [here](<span class="hljs-keyword"><span class="hljs-keyword">http</span></span>://en.wikipedia.org/wiki/<span class="hljs-number"><span class="hljs-number">.3</span></span>ds).
+
+<span class="hljs-comment"><span class="hljs-comment">### Extensions</span></span>
+Here <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> list <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> possible extension <span class="hljs-keyword"><span class="hljs-keyword">for</span></span> <span class="hljs-number"><span class="hljs-number">3</span></span>DS <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>:
+  * <span class="hljs-string"><span class="hljs-string">"3ds"</span></span>
+  * <span class="hljs-string"><span class="hljs-string">"max"</span></span>
+
+<span class="hljs-comment"><span class="hljs-comment">### Content</span></span>
+The content <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> <span class="hljs-number"><span class="hljs-number">3</span></span>DS <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> is <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> list <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> geometries.
+For example:
+</code></pre>
+<p>global {
+init {
+file my_file &lt;- threeds_file("../includes/data.3ds");
+loop el over: my_file {
+write el;
+}
+}
+}</p>
+<pre><code class="hljs groovy">
+will <span class="hljs-string"><span class="hljs-string">give:</span></span>
+</code></pre>
+<p>Polygon</p>
+<pre><code class="hljs livecodeserver">
+<span class="hljs-comment"><span class="hljs-comment">### Operators</span></span>
+List <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> operators related <span class="hljs-built_in"><span class="hljs-built_in">to</span></span> <span class="hljs-number"><span class="hljs-number">3</span></span>ds <span class="hljs-built_in"><span class="hljs-built_in">files</span></span>:
+  * **threeds\<span class="hljs-title"><span class="hljs-title">_file</span></span>(<span class="hljs-keyword"><span class="hljs-keyword">string</span></span> path)**: <span class="hljs-built_in"><span class="hljs-built_in">load</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> (<span class="hljs-keyword"><span class="hljs-keyword">with</span></span> <span class="hljs-keyword"><span class="hljs-keyword">an</span></span> authorized extension) <span class="hljs-keyword"><span class="hljs-keyword">as</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> <span class="hljs-number"><span class="hljs-number">3</span></span>ds <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>.
+  * **is\<span class="hljs-title"><span class="hljs-title">_threeds</span></span>(op)**: tests whether <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> operand is <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> <span class="hljs-number"><span class="hljs-number">3</span></span>DS <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>
+
+
+
+
+
+<span class="hljs-comment"><span class="hljs-comment">## OBJ File</span></span>
+OBJ <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> is <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> geometry definition <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> <span class="hljs-built_in"><span class="hljs-built_in">format</span></span> <span class="hljs-keyword"><span class="hljs-keyword">first</span></span> developed <span class="hljs-keyword"><span class="hljs-keyword">by</span></span> Wavefront Technologies <span class="hljs-keyword"><span class="hljs-keyword">for</span></span> its Advanced Visualizer animation package. The <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> <span class="hljs-built_in"><span class="hljs-built_in">format</span></span> is <span class="hljs-built_in"><span class="hljs-built_in">open</span></span> <span class="hljs-keyword"><span class="hljs-keyword">and</span></span> has been adopted <span class="hljs-keyword"><span class="hljs-keyword">by</span></span> other <span class="hljs-number"><span class="hljs-number">3</span></span>D graphics application vendors.
+
+More details about Obj <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> can be found [here](<span class="hljs-keyword"><span class="hljs-keyword">http</span></span>://en.wikipedia.org/wiki/Wavefront_.obj_file).
+
+<span class="hljs-comment"><span class="hljs-comment">### Extensions</span></span>
+Here <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> list <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> possible extension <span class="hljs-keyword"><span class="hljs-keyword">for</span></span> OBJ <span class="hljs-built_in"><span class="hljs-built_in">files</span></span>:
+  * <span class="hljs-string"><span class="hljs-string">"obj"</span></span>
+
+<span class="hljs-comment"><span class="hljs-comment">### Content</span></span>
+The content <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> OBJ <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> is <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> list <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> geometries.
+For example:
+</code></pre>
+<p>global {
+init {
+file my_file &lt;- obj_file("../includes/data.obj");
+loop el over: my_file {
+write el;
+}
+}
+}</p>
+<pre><code class="hljs groovy">
+will <span class="hljs-string"><span class="hljs-string">give:</span></span>
+</code></pre>
+<p>Polygon</p>
+<pre><code class="hljs livecodeserver">
+<span class="hljs-comment"><span class="hljs-comment">### Operators</span></span>
+List <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> operators related <span class="hljs-built_in"><span class="hljs-built_in">to</span></span> obj <span class="hljs-built_in"><span class="hljs-built_in">files</span></span>:
+  * **obj\<span class="hljs-title"><span class="hljs-title">_file</span></span>(<span class="hljs-keyword"><span class="hljs-keyword">string</span></span> path)**: <span class="hljs-built_in"><span class="hljs-built_in">load</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> <span class="hljs-built_in"><span class="hljs-built_in">file</span></span> (<span class="hljs-keyword"><span class="hljs-keyword">with</span></span> <span class="hljs-keyword"><span class="hljs-keyword">an</span></span> authorized extension) <span class="hljs-keyword"><span class="hljs-keyword">as</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> obj <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>.
+  * **is\<span class="hljs-title"><span class="hljs-title">_obj</span></span>(op)**: tests whether <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> operand is <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> OBJ <span class="hljs-built_in"><span class="hljs-built_in">file</span></span>
+<span class="hljs-comment"><span class="hljs-comment">[//]: # (endConcept|load_complex_datas)</span></span>
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

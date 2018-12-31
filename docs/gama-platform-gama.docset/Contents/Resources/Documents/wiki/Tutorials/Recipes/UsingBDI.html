@@ -1,0 +1,159 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Tutorials/Recipes/UsingBDI --><head><meta charset="utf-8"><title>UsingBDI</title><script src="../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="usingbdi">UsingBDI</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Using%20BDI"></a><h1 id="using-bdi">Using BDI</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Install"></a><h2 id="install">Install</h2>
+<p>You need to run the Git version.</p>
+<p>The plugin need to be add with Eclipse doing the following:</p>
+<ul>
+<li>In ummisco.gama.feature.core open the feature.xml file.
+<ul>
+<li>In plug-ins click add the msi.gaml.architecture.simplebdi</li>
+</ul>
+</li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Acteur%20Projet"></a><h2 id="acteur-projet">Acteur Projet</h2>
+<p>A website (still in construction) of the ACTEUR project can be found here <a href="http://acteur-anr.fr/">http://acteur-anr.fr/</a></p>
+<a class="dashAnchor" name="//apple_ref/Section/An%20introduction%20to%20cognitive%20agent"></a><h2 id="an-introduction-to-cognitive-agent">An introduction to cognitive agent</h2>
+<p>The belief-desire-intention software model (usually referred to simply, but ambiguously, as BDI) is a software model developed for programming intelligent agents.</p>
+<ul>
+<li><strong>Belief</strong>: State of the agent.
+<ul>
+<li><strong>Desire</strong>: Objectives that the agent would like to accomplish.</li>
+<li><strong>Intention</strong>: What the agent has chosen to do.
+<ul>
+<li><strong>Plan</strong>: Sequences of actions that an agent can perform to achieve one or more of its intensions.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Basic%20Example:%20A%20fire%20rescue%20model%20using%20cognitive%20agent"></a><h2 id="basic-example-a-fire-rescue-model-using-cognitive-agent">Basic Example: A fire rescue model using cognitive agent</h2>
+<p>We introduce a simple example to illustrate the use of the BDI architecture.</p>
+<p>This simple model consists in creating "cognitive" agent whose goal is to extinguish a fire. In a first approximation we consider only one static water area and fire area. The aim is not to have a realistic model but to illustrate how to give a "cognitive" behavior to an agent using the BDI architecture.</p>
+<p>First let's create a BDI agent using the key control <strong>simple_bdi</strong> (A description of all existing control architectures is available <a href="https://github.com/wiki/gama-platform/gama/Tutorials/Recipes/BuiltInArchitectures.html">here</a>.)</p>
+<a class="dashAnchor" name="//apple_ref/Section/Species%20Helicopter%20creation"></a><h3 id="species-helicopter-creation">Species Helicopter creation</h3>
+<pre><code class="hljs less"><span class="hljs-selector-tag"><span class="hljs-selector-tag">species</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">helicopter</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">skills</span></span>:<span class="hljs-selector-attr"><span class="hljs-selector-attr">[moving]</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">control</span></span>: <span class="hljs-selector-tag"><span class="hljs-selector-tag">simple_bdi</span></span>{
+...
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Attributes"></a><h4 id="attributes">Attributes</h4>
+<p>The species <code>helicopter</code> needs 2 attributes to represent the water value and its speed.</p>
+<pre><code class="hljs irpf90"><span class="hljs-built_in"><span class="hljs-built_in">float</span></span> waterValue;
+<span class="hljs-built_in"><span class="hljs-built_in">float</span></span> speed &lt;- <span class="hljs-number"><span class="hljs-number">10.0</span></span>;
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Predicates"></a><h4 id="predicates">Predicates</h4>
+<p>The predicate are the structure that are used to define a belief, a desire or an intention.
+In this model we choose to declare 3 different predicates.</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute"><span class="hljs-attribute">predicate</span></span> patrol_desire &lt;- new_predicate(<span class="hljs-string"><span class="hljs-string">"patrol"</span></span>) with_priority <span class="hljs-number"><span class="hljs-number">1</span></span>;
+<span class="hljs-attribute"><span class="hljs-attribute">predicate</span></span> water_predicate &lt;- new_predicate(<span class="hljs-string"><span class="hljs-string">"has water"</span></span>, <span class="hljs-literal"><span class="hljs-literal">true</span></span>) with_priority <span class="hljs-number"><span class="hljs-number">3</span></span>;
+<span class="hljs-attribute"><span class="hljs-attribute">predicate</span></span> no_water_predicate &lt;- new_predicate(<span class="hljs-string"><span class="hljs-string">"has water"</span></span>, <span class="hljs-literal"><span class="hljs-literal">false</span></span>) ;
+</code></pre>
+<p>The <strong>new_predicate()</strong> tool creates a predicate. It needs a name (string type) and it can contain a map of values, a priority (double type) or a truth value (boolean type).
+The <strong>with_priority</strong> tool add a priority to a predicate. The priority is used as an argument when the agent has to choose between two predicates (to choose an intention for example).</p>
+<a class="dashAnchor" name="//apple_ref/Section/Initialization"></a><h4 id="initialization">Initialization</h4>
+<p>The initialization consists in setting the attribute <strong>waterValue</strong> to 1 and to add one desire. Three optional parameters are also set. The first desire added in the desire base is the <strong>patrol_desire</strong> saying that the helicopter wants to patrol. The optional parameters are specific to the BDI plug-in. You can specify the commitment of an agent to his intentions and his plans with the variables intention_persistence and plan_persistence that are floats between 0.0 (no commitment) and 1.0. The variable probabilistic_choice is a boolean that enables the agent to use a probabilistic choice (when true) or a deterministic choice (when false) when trying to find a plan or an intention.</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute"><span class="hljs-attribute">waterValue</span></span> &lt;-<span class="hljs-number"><span class="hljs-number">1</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>;
+<span class="hljs-attribute"><span class="hljs-attribute">do</span></span> add_desire(patrol_desire);
+<span class="hljs-attribute"><span class="hljs-attribute">intention_persistence</span></span> &lt;- <span class="hljs-number"><span class="hljs-number">1</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>;
+<span class="hljs-attribute"><span class="hljs-attribute">plan_persistence</span></span> &lt;- <span class="hljs-number"><span class="hljs-number">1</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>;
+<span class="hljs-attribute"><span class="hljs-attribute">probabilistic_choice</span></span> &lt;- <span class="hljs-literal"><span class="hljs-literal">false</span></span>;  
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Perception"></a><h4 id="perception">Perception</h4>
+<p>At each iteration, the helicopter has two perceptions to do. The first one is about itself. The helicopter needs to perceive if it has water or not. If it has water, it adds the belief corresponding belief and removes the belief that it does not have water. And if it does not have water, that is the contrary.</p>
+<pre><code class="hljs gcode">perceive target:self{
+    <span class="hljs-keyword"><span class="hljs-keyword">if</span></span><span class="hljs-comment"><span class="hljs-comment">(waterValue&gt;0)</span></span>{
+        <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> add_belief<span class="hljs-comment"><span class="hljs-comment">(water_predicate)</span></span>;
+        <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> remove_belief<span class="hljs-comment"><span class="hljs-comment">(no_water_predicate)</span></span>;
+    }
+    <span class="hljs-keyword"><span class="hljs-keyword">if</span></span><span class="hljs-comment"><span class="hljs-comment">(waterValue&lt;=0)</span></span>{
+        <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> add_belief<span class="hljs-comment"><span class="hljs-comment">(no_water_predicate)</span></span>;
+        <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> remove_belief<span class="hljs-comment"><span class="hljs-comment">(water_predicate)</span></span>;
+    }
+}
+</code></pre>
+<p>The second perception is about the fires. Here, the fires are represented with the species <strong>fireArea</strong>. The helicopter has a radius of perception of 10 meters. If it perceives a fire, it will focus on the location of this fire. The <strong>focus</strong> tool create a belief with the same name as the focus (here, "fireLocation") and will store the value of the focused variable (here, the variable location from the specie fireArea) with a priority of 10 in this example. Once the fire is perceived, the helicopter removes its intention of patrolling.</p>
+<pre><code class="hljs crmsh">perceive target:fireArea <span class="hljs-keyword"><span class="hljs-keyword">in</span></span>: <span class="hljs-number"><span class="hljs-number">10</span></span>{
+    focus fireLocation var:<span class="hljs-keyword"><span class="hljs-keyword">location</span></span> <span class="hljs-title"><span class="hljs-title">priority</span></span>:<span class="hljs-number"><span class="hljs-number">10</span></span>;
+    ask myself{
+        do remove_intention(patrol_desire, <span class="hljs-literal"><span class="hljs-literal">true</span></span>);
+    }
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Rules"></a><h4 id="rules">Rules</h4>
+<p>The agent can use rules to create desires from beliefs. In this example, the agent has two rules. The first <strong>rule</strong> is to have a desire corresponding to the belief of a location of a fire. It means that when the agent has the belief that there is a fire in a particular location, it will have the desire to extinguish it. This permits to have the location value in the desire base.
+The second rule is to create the desire to have water when the agent has the belief that it not has water.</p>
+<pre><code class="hljs groovy">rule <span class="hljs-string"><span class="hljs-string">belief:</span></span> new_predicate(<span class="hljs-string"><span class="hljs-string">"fireLocation"</span></span>) <span class="hljs-string"><span class="hljs-string">new_desire:</span></span> get_belief_with_name(<span class="hljs-string"><span class="hljs-string">"fireLocation"</span></span>);
+rule <span class="hljs-string"><span class="hljs-string">belief:</span></span> no_water_predicate <span class="hljs-string"><span class="hljs-string">new_desire:</span></span> water_predicate;
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Plan"></a><h4 id="plan">Plan</h4>
+<h5>Patrolling</h5>
+<p>This plan will be used when the agent has the intention to patrol.</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute"><span class="hljs-attribute">plan</span></span> patrolling intention: patrol_desire{
+  <span class="hljs-attribute"><span class="hljs-attribute">do</span></span> wander;
+}
+</code></pre>
+<h5>stopFire</h5>
+<p>This plan is executed when the agent has the intention to extinguish a fire.</p>
+<pre><code class="hljs cs">plan stopFire intention: new_predicate(<span class="hljs-string"><span class="hljs-string">"fireLocation"</span></span>) {
+    point target_fire &lt;- point(get_current_intention().values[<span class="hljs-string"><span class="hljs-string">"location_value"</span></span>] );
+    <span class="hljs-keyword"><span class="hljs-keyword">if</span></span>(waterValue&gt;<span class="hljs-number"><span class="hljs-number">0</span></span>){
+        <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (self distance_to target_fire &lt;= <span class="hljs-number"><span class="hljs-number">1</span></span>) {
+            fireArea current_fire &lt;- <span class="hljs-function"><span class="hljs-function">fireArea </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">first_with</span></span></span><span class="hljs-function"> (</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">each.location = target_fire</span></span></span><span class="hljs-function">)</span></span>;
+            <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (current_fire != nil) {
+                 waterValue &lt;- waterValue - <span class="hljs-number"><span class="hljs-number">1.0</span></span>;
+                 current_fire.size &lt;-  current_fire.size - <span class="hljs-number"><span class="hljs-number">1</span></span>;
+                 <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> ( current_fire.size &lt;= <span class="hljs-number"><span class="hljs-number">0</span></span>) {
+                    ask  current_fire {<span class="hljs-keyword"><span class="hljs-keyword">do</span></span> die;}
+                    <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">remove_belief</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">get_current_intention(</span></span></span><span class="hljs-function">))</span></span>;
+                    <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">remove_intention</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">get_current_intention(</span></span></span><span class="hljs-function">), </span><span class="hljs-literal"><span class="hljs-function"><span class="hljs-literal">true</span></span></span><span class="hljs-function">)</span></span>;
+                    <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">add_desire</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">patrol_desire</span></span></span><span class="hljs-function">)</span></span>;
+                }
+            } <span class="hljs-keyword"><span class="hljs-keyword">else</span></span> {
+                <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">remove_belief</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">get_current_intention(</span></span></span><span class="hljs-function">))</span></span>;
+                <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">remove_intention</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">get_current_intention(</span></span></span><span class="hljs-function">), </span><span class="hljs-literal"><span class="hljs-function"><span class="hljs-literal">true</span></span></span><span class="hljs-function">)</span></span>;
+                <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">add_desire</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">patrol_desire</span></span></span><span class="hljs-function">)</span></span>;
+            }
+        } <span class="hljs-keyword"><span class="hljs-keyword">else</span></span> {
+            <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> <span class="hljs-keyword"><span class="hljs-keyword">goto</span></span> target: target_fire;
+        }
+    } <span class="hljs-keyword"><span class="hljs-keyword">else</span></span> {
+        <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">add_subintention</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">get_current_intention(</span></span></span><span class="hljs-function">),water_predicate,</span><span class="hljs-literal"><span class="hljs-function"><span class="hljs-literal">true</span></span></span><span class="hljs-function">)</span></span>;
+        <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">do</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">current_intention_on_hold</span></span></span><span class="hljs-function">(</span><span class="hljs-params"></span><span class="hljs-function"><span class="hljs-params"></span>)</span></span>;
+    }
+}
+</code></pre>
+<h5>gotoTakeWater</h5>
+<p>This plan is executed when the agent has the intention to have water.</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute"><span class="hljs-attribute">plan</span></span> gotoTakeWater intention: water_predicate {
+        <span class="hljs-attribute"><span class="hljs-attribute">waterArea</span></span> wa &lt;- first(waterArea);
+        <span class="hljs-attribute"><span class="hljs-attribute">do</span></span> goto target: wa);
+        <span class="hljs-attribute"><span class="hljs-attribute">if</span></span> (self distance_to wa &lt;= <span class="hljs-number"><span class="hljs-number">1</span></span>) {
+            <span class="hljs-attribute"><span class="hljs-attribute">waterValue</span></span> &lt;- waterValue + <span class="hljs-number"><span class="hljs-number">2</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>;
+    }
+}
+</code></pre>
+<p>Plans can have other options. They can have a priority (with the facet priority), a boolean condition to start (with the facet when) or a boolean condition to stop (with the facet finished_when).</p>
+<a class="dashAnchor" name="//apple_ref/Section/Rest%20of%20the%20code"></a><h4 id="rest-of-the-code">Rest of the code</h4>
+<h5>Aspect of the helicopter</h5>
+<pre><code class="hljs scss">aspect <span class="hljs-selector-tag"><span class="hljs-selector-tag">base</span></span> {
+    draw circle(1) <span class="hljs-attribute"><span class="hljs-attribute">color</span></span>: <span class="hljs-number"><span class="hljs-number">#b</span></span>lack;   
+}
+</code></pre>
+<h5>FireArea Species</h5>
+<pre><code class="hljs processing">species fireArea{
+        <span class="hljs-built_in"><span class="hljs-built_in">float</span></span> <span class="hljs-built_in"><span class="hljs-built_in">size</span></span> &lt;<span class="hljs-number"><span class="hljs-number">-1.0</span></span>;   
+
+        aspect base {
+          <span class="hljs-title"><span class="hljs-title">draw</span></span> circle(<span class="hljs-built_in"><span class="hljs-built_in">size</span></span>) <span class="hljs-built_in"><span class="hljs-built_in">color</span></span>: #<span class="hljs-built_in"><span class="hljs-built_in">red</span></span>;
+        }
+}
+</code></pre>
+<h5>WaterArea Species</h5>
+<pre><code class="hljs processing">species waterArea{
+    <span class="hljs-built_in"><span class="hljs-built_in">float</span></span> <span class="hljs-built_in"><span class="hljs-built_in">size</span></span> &lt;<span class="hljs-number"><span class="hljs-number">-10.0</span></span>;
+
+    aspect base {
+      <span class="hljs-title"><span class="hljs-title">draw</span></span> circle(<span class="hljs-built_in"><span class="hljs-built_in">size</span></span>) <span class="hljs-built_in"><span class="hljs-built_in">color</span></span>: #<span class="hljs-built_in"><span class="hljs-built_in">blue</span></span>;       
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

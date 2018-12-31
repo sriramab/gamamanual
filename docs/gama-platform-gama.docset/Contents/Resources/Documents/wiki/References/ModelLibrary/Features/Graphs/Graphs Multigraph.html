@@ -1,0 +1,95 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Graphs/Graphs Multigraph --><head><meta charset="utf-8"><title>Graphs Multigraph</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="graphs-multigraph">Graphs Multigraph</h1>
+<h1 id="multigraph">Multigraph</h1>
+<p><em>Author : Patrick Taillandier</em></p>
+<p>This model shows how to build a graph on which people agents will move with GIS Shapefile, but also to generate an other graph representing the friendship between the people agents, people agents trying to be closer spatially to each other</p>
+<p>Code of the model : </p>
+<pre><code class="hljs processing">
+model multigraph
+
+global {
+    file shape_file_in &lt;- file(<span class="hljs-string">'../includes/road.shp'</span>) ;
+    file shape_file_bounds &lt;- file(<span class="hljs-string">'../includes/bounds.shp'</span>) ;
+    geometry <span class="hljs-built_in">shape</span> &lt;- envelope(shape_file_bounds);
+    
+    <span class="hljs-comment">//spatial graph representing the road network</span>
+    graph road_graph; 
+    
+    <span class="hljs-comment">//social graph (not spatial) representing the frienship links between people</span>
+    graph friendship_graph &lt;- graph([]);
+    
+    init {
+        create road from: shape_file_in;
+        
+        <span class="hljs-comment">//creation of th road graph from the road agents</span>
+        road_graph &lt;- as_edge_graph(road);
+        
+        <span class="hljs-comment">//creation of 50 people agent, and add each people agent as a node in the friendship graph</span>
+        create people number: <span class="hljs-number">50</span> {
+            <span class="hljs-built_in">add</span> node(self) to: friendship_graph;
+        }
+        
+        <span class="hljs-comment">//creation of 50 friendship link between people agents</span>
+        <span class="hljs-built_in">loop</span> times: <span class="hljs-number">50</span> {
+            people p1 &lt;- one_of(people);
+            people p2 &lt;- one_of(list(people) - p1);
+            create friendship_link  {
+                <span class="hljs-built_in">add</span> edge (p1, p2, self) to: friendship_graph;
+                <span class="hljs-built_in">shape</span> &lt;- link(p1,p2);
+            }
+        }
+    }
+}
+
+species people skills: [moving]{
+    <span class="hljs-built_in">point</span> location &lt;- any_location_in(one_of(road));
+    people target_people &lt;- one_of(people);
+    <span class="hljs-built_in">point</span> target &lt;- target_people.location;
+    <span class="hljs-built_in">float</span> <span class="hljs-built_in">size</span> &lt;- <span class="hljs-number">3.0</span>;
+    
+    <span class="hljs-comment">//action that make recompute the size of the agents as the distance between it and its target people in the friendship graph (the farthest, the biggest)</span>
+    action updateSize {
+        path friendship_path &lt;- path_between(friendship_graph,self,target_people);
+        <span class="hljs-keyword">if</span> (friendship_path != nil) {
+            <span class="hljs-built_in">size</span> &lt;-<span class="hljs-built_in">max</span>([<span class="hljs-number">2</span>,length( friendship_path.edges)]) as <span class="hljs-built_in">float</span>;
+        }
+    }
+    
+    <span class="hljs-comment">//the agent moves toward its target, when reaching it, it chooses another target as the location of one of the people agent</span>
+    reflex movement {
+        <span class="hljs-keyword">if</span> (location distance_to target &lt; <span class="hljs-number">5.0</span>) {
+            target_people &lt;- one_of(people);
+            target &lt;- target_people.location;
+            do updateSize;
+        }
+        do goto on:road_graph target:target speed:<span class="hljs-number">1</span> + rnd(<span class="hljs-number">2</span>);
+    }
+    aspect <span class="hljs-keyword">default</span> {
+        <span class="hljs-title">draw</span> circle(<span class="hljs-built_in">size</span>) <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">red</span>;
+    }   
+}
+    
+species friendship_link {
+    
+    aspect <span class="hljs-keyword">default</span> {
+        <span class="hljs-title">draw</span> <span class="hljs-built_in">shape</span> <span class="hljs-built_in">color</span>: #<span class="hljs-built_in">blue</span>;
+    }
+}
+    
+species road  {
+    aspect <span class="hljs-keyword">default</span> {
+        <span class="hljs-title">draw</span> <span class="hljs-built_in">shape</span> <span class="hljs-built_in">color</span>:#black ;
+    }
+} 
+
+
+experiment multigraph type: gui {
+    output {
+        display friendship type: opengl{
+            species road ;
+            species friendship_link ;
+            species people;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

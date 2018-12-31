@@ -1,0 +1,86 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/PluginDocumentation/Extension_cenres.gaml.extensions.hydro --><head><meta charset="utf-8"><title>Extension_cenres.gaml.extensions.hydro</title><script src="../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="extension_cenresgamlextensionshydro">Extension_cenres.gaml.extensions.hydro</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Extension"></a><h1 id="extension">Extension</h1>
+
+<hr>
+<p>cenres.gaml.extensions.hydro</p>
+<a class="dashAnchor" name="//apple_ref/Section/Table%20of%20Contents"></a><h2 id="table-of-contents">Table of Contents</h2>
+<h3 dash_ignored="yes" id="operators-2">Operators</h3>
+<p><a href="#water_area_for">water_area_for</a>, <a href="#water_level_for">water_level_for</a>, <a href="#water_polylines_for">water_polylines_for</a>, </p>
+<h3 dash_ignored="yes" id="statements-2">Statements</h3>
+<h3 dash_ignored="yes" id="skills-2">Skills</h3>
+<h3 dash_ignored="yes" id="architectures-2">Architectures</h3>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><h3 dash_ignored="yes" id="species-2">Species</h3>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table>
+<hr>
+<h2 id="operators">Operators</h2>
+<pre><code class="hljs"></code></pre>
+
+<hr>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/water_area_for"></a><h3 id="water_area_for"><code>water_area_for</code></h3>
+<h4 id="possible-use">Possible use:</h4>
+<ul>
+<li><code>geometry</code> <strong><code>water_area_for</code></strong> <code>float</code> ---&gt;  <code>float</code>
+<ul>
+<li><strong><code>water_area_for</code></strong> (<code>geometry</code> , <code>float</code>) ---&gt;  <code>float</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="special-cases">Special cases:</h4>
+<ul>
+<li>if the left operand is a polyline and the right operand a float for the water y coordinate, returrns the area of the water (water flow area)</li>
+</ul>
+<h4 id="examples">Examples:</h4>
+<pre><code class="hljs ceylon">waterarea &lt;- my<span class="hljs-number"><span class="hljs-number">_</span></span>river<span class="hljs-number"><span class="hljs-number">_p</span></span>olyline water<span class="hljs-number"><span class="hljs-number">_</span></span>area<span class="hljs-number"><span class="hljs-number">_f</span></span>or my<span class="hljs-number"><span class="hljs-number">_</span></span>height<span class="hljs-number"><span class="hljs-number">_</span></span><span class="hljs-keyword"><span class="hljs-keyword">value</span></span>
+</code></pre>
+<pre><code class="hljs"></code></pre>
+
+<hr>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/water_level_for"></a><h3 id="water_level_for"><code>water_level_for</code></h3>
+<h4 dash_ignored="yes" id="possible-use-2">Possible use:</h4>
+<ul>
+<li><code>geometry</code> <strong><code>water_level_for</code></strong> <code>float</code> ---&gt;  <code>float</code>
+<ul>
+<li><strong><code>water_level_for</code></strong> (<code>geometry</code> , <code>float</code>) ---&gt;  <code>float</code></li>
+</ul>
+</li>
+</ul>
+<h4 dash_ignored="yes" id="special-cases-2">Special cases:</h4>
+<ul>
+<li>if the left operand is a polyline and the right operand a float for the area, returrns the y coordinate of the water (water level)</li>
+</ul>
+<h4 dash_ignored="yes" id="examples-2">Examples:</h4>
+<pre><code class="hljs ceylon">waterlevel &lt;- my<span class="hljs-number"><span class="hljs-number">_</span></span>river<span class="hljs-number"><span class="hljs-number">_p</span></span>olyline water<span class="hljs-number"><span class="hljs-number">_</span></span>level<span class="hljs-number"><span class="hljs-number">_f</span></span>or my<span class="hljs-number"><span class="hljs-number">_</span></span>area<span class="hljs-number"><span class="hljs-number">_</span></span><span class="hljs-keyword"><span class="hljs-keyword">value</span></span>
+</code></pre>
+<pre><code class="hljs"></code></pre>
+
+<hr>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/water_polylines_for"></a><h3 id="water_polylines_for"><code>water_polylines_for</code></h3>
+<h4 dash_ignored="yes" id="possible-use-3">Possible use:</h4>
+<ul>
+<li><code>geometry</code> <strong><code>water_polylines_for</code></strong> <code>float</code> ---&gt;  <code>msi.gama.util.IList&lt;msi.gama.util.IList&lt;msi.gama.metamodel.shape.GamaPoint&gt;&gt;</code>
+<ul>
+<li><strong><code>water_polylines_for</code></strong> (<code>geometry</code> , <code>float</code>) ---&gt;  <code>msi.gama.util.IList&lt;msi.gama.util.IList&lt;msi.gama.metamodel.shape.GamaPoint&gt;&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h4 dash_ignored="yes" id="special-cases-3">Special cases:</h4>
+<ul>
+<li>if the left operand is a polyline and the right operand a float for the water y coordinate, returrns the shapes of the river sections (list of list of points)</li>
+</ul>
+<h4 dash_ignored="yes" id="examples-3">Examples:</h4>
+<pre><code class="hljs ceylon">waterarea &lt;- my<span class="hljs-number"><span class="hljs-number">_</span></span>river<span class="hljs-number"><span class="hljs-number">_p</span></span>olyline water<span class="hljs-number"><span class="hljs-number">_</span></span>area<span class="hljs-number"><span class="hljs-number">_f</span></span>or my<span class="hljs-number"><span class="hljs-number">_</span></span>height<span class="hljs-number"><span class="hljs-number">_</span></span><span class="hljs-keyword"><span class="hljs-keyword">value</span></span>
+</code></pre>
+
+<hr>
+<h2 id="skills">Skills</h2>
+
+<hr>
+<h2 id="statements">Statements</h2>
+<pre><code class="hljs"></code></pre>
+
+<hr>
+<h2 id="species">Species</h2>
+
+<hr>
+<h2 id="architectures">Architectures</h2>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

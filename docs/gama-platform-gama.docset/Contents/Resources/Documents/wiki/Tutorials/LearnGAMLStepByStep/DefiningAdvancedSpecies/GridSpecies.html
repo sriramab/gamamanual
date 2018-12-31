@@ -1,0 +1,264 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Tutorials/LearnGAMLStepByStep/DefiningAdvancedSpecies/GridSpecies --><head><meta charset="utf-8"><title>GridSpecies</title><script src="../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="gridspecies">GridSpecies</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Grid%20Species"></a><h1 id="grid-species">Grid Species</h1>
+<p>A grid is a particular species of agents. Indeed, a grid is a set of agents that share a grid topology (until now, we only saw species with continuous topology). As other agents, a grid species can have attributes, attributes, behaviors, aspects
+However, contrary to regular species, grid agents are created automatically at the beginning of the simulation. It is thus not necessary to use the create statement to create them.
+Moreover, in addition to classic built-in variables, grid a provided with a set of additional built-in variables.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Index"></a><h2 id="index">Index</h2>
+<ul>
+<li><a href="#declaration">Declaration</a></li>
+<li><a href="#built-in-attributes">Built-in attributes</a></li>
+<li><a href="#access-to-cells">Access to cells</a></li>
+<li><a href="#display-grid">Display grid</a></li>
+<li><a href="#grid-with-matrix">Grid with matrix</a></li>
+<li><a href="#example">Example</a></li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Declaration"></a><h2 id="declaration">Declaration</h2>
+<p>Instead of using the <code>species</code> keyword, use the keyword <code>grid</code> to declare a grid species. The grid species has exactly the same facets of the regular species, plus some others.
+To declare a grid, you have to specify the number of columns and rows first. You can do it two different ways:</p>
+<p>Using the two facets <code>width:</code> and <code>height:</code> to fix the number of cells (the size of each cells will be determined thanks to the environment dimension).</p>
+<pre><code class="hljs maxima"><span class="hljs-built_in"><span class="hljs-built_in">grid</span></span> my_grid <span class="hljs-built_in"><span class="hljs-built_in">width</span></span>:<span class="hljs-number"><span class="hljs-number">8</span></span> <span class="hljs-built_in"><span class="hljs-built_in">height</span></span>:<span class="hljs-number"><span class="hljs-number">10</span></span> {
+// my_grid has <span class="hljs-number"><span class="hljs-number">8</span></span> <span class="hljs-built_in"><span class="hljs-built_in">columns</span></span> <span class="hljs-keyword"><span class="hljs-keyword">and</span></span> <span class="hljs-number"><span class="hljs-number">10</span></span> rows
+}
+</code></pre>
+<p>Using the two facets <code>cell_width:</code> and <code>cell_height:</code> to fix the size of each cells (the number cells will be determined thanks to the environment dimension).</p>
+<pre><code class="hljs maxima"><span class="hljs-built_in"><span class="hljs-built_in">grid</span></span> my_grid cell_width:<span class="hljs-number"><span class="hljs-number">3</span></span> cell_height:<span class="hljs-number"><span class="hljs-number">2</span></span> {
+// my_grid has cells with <span class="hljs-built_in"><span class="hljs-built_in">dimension</span></span> 3m <span class="hljs-built_in"><span class="hljs-built_in">width</span></span> by 2m <span class="hljs-built_in"><span class="hljs-built_in">height</span></span>
+}
+</code></pre>
+<p>By default, a grid is composed by 100 rows and 100 columns.</p>
+<p>Another facet exists for grid only, very useful. It is the <code>neighbors</code> facet, used to determine how many neighbors has each cell. You can choose among 3 values: 4 (Von Neumann), 6 (hexagon) or 8 (Moore).</p>
+<p><img src="../../../../github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/DefiningAdvancedSpecies/resources/images/definingAdvancedSpecies/grid_neighbors.png" alt="images/grid_neighbors.png"></p>
+<p>A grid can also be provided with specific facets that allows to optimize the computation time and the memory space, such as <code>use_regular_agents</code>, <code>use_indivitual_shapes</code> and <code>use_neighbours_cache</code>. Please refer to the GAML Reference for more explanation about those particular facets.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Built-in%20attributes"></a><h2 id="built-in-attributes">Built-in attributes</h2>
+<a class="dashAnchor" name="//apple_ref/Section/grid_x"></a><h3 id="grid_x">grid_x</h3>
+<p>This variable stores the column index of a cell.</p>
+<pre><code class="hljs maxima">   <span class="hljs-built_in"><span class="hljs-built_in">grid</span></span> cell <span class="hljs-built_in"><span class="hljs-built_in">width</span></span>: <span class="hljs-number"><span class="hljs-number">10</span></span> <span class="hljs-built_in"><span class="hljs-built_in">height</span></span>: <span class="hljs-number"><span class="hljs-number">10</span></span> <span class="hljs-built_in"><span class="hljs-built_in">neighbors</span></span>: <span class="hljs-number"><span class="hljs-number">4</span></span> {
+        init {
+             write <span class="hljs-string"><span class="hljs-string">"my column index is:"</span></span> + grid_x;
+        }
+   }
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/grid_y"></a><h3 id="grid_y">grid_y</h3>
+<p>This variable stores the row index of a cell.</p>
+<pre><code class="hljs maxima">   <span class="hljs-built_in"><span class="hljs-built_in">grid</span></span> cell <span class="hljs-built_in"><span class="hljs-built_in">width</span></span>: <span class="hljs-number"><span class="hljs-number">10</span></span> <span class="hljs-built_in"><span class="hljs-built_in">height</span></span>: <span class="hljs-number"><span class="hljs-number">10</span></span> <span class="hljs-built_in"><span class="hljs-built_in">neighbors</span></span>: <span class="hljs-number"><span class="hljs-number">4</span></span> {
+        init {
+             write <span class="hljs-string"><span class="hljs-string">"my row index is:"</span></span> + grid_y;
+        }
+   }
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/agents"></a><h3 id="agents">agents</h3>
+<p>return the set of agents located inside the cell. Note the use of this variable is deprecated.
+It is preferable to use the <code>inside</code> operator:</p>
+<pre><code class="hljs mipsasm"> grid cell width: <span class="hljs-number"><span class="hljs-number">10</span></span> height: <span class="hljs-number"><span class="hljs-number">10</span></span> neighbors: <span class="hljs-number"><span class="hljs-number">4</span></span> { 
+        list&lt;<span class="hljs-keyword"><span class="hljs-keyword">bug&gt; </span></span><span class="hljs-keyword"><span class="hljs-keyword">bugs_inside </span></span>-&gt; {<span class="hljs-keyword"><span class="hljs-keyword">bug </span></span><span class="hljs-keyword"><span class="hljs-keyword">inside </span></span>self}<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+   }
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/color"></a><h3 id="color">color</h3>
+<p>The <strong>color</strong> built-in variable is used by the optimized grid display. Indeed, it is possible to use for grid agents an optimized aspect by using in a display the <strong>grid</strong> keyword. In this case, the grid will be displayed using the color defined by the <strong>color</strong> variable. The border of the cells can be displayed with a specific color by using the <strong>lines</strong> facet.</p>
+<p>Here an example of the display of a grid species named <strong>cell</strong> with black border.</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute"><span class="hljs-attribute">experiment</span></span> main_xp type: gui{
+    <span class="hljs-section"><span class="hljs-section">output</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">display</span></span> map {
+            <span class="hljs-attribute"><span class="hljs-attribute">grid</span></span> cell lines: rgb(<span class="hljs-string"><span class="hljs-string">"black"</span></span>) ;
+        }
+    }
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/neighbors"></a><h3 id="neighbors">neighbors</h3>
+<p>The <strong>neighbors</strong> built-in variable returns the list of cells at a distance of 1.</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute"><span class="hljs-attribute">grid</span></span> my_grid {
+  <span class="hljs-attribute"><span class="hljs-attribute">reflex</span></span> writeNeighbors {
+    <span class="hljs-attribute"><span class="hljs-attribute">write</span></span> neighbors;
+  }
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/grid_value"></a><h3 id="grid_value">grid_value</h3>
+<p>The <strong>grid_value</strong> built-in variable is used when initializing a grid from grid file (see later). It is also used for the 3D representation of DEM.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Access%20to%20a%20cell"></a><h2 id="access-to-a-cell">Access to a cell</h2>
+<p>there are several ways to access to a specific cell:</p>
+<ul>
+<li>by a location: by casting a location to a cell (the unity (<code>#m</code>, <code>#cm</code>, etc...) is defined when you choose your environment size, in the <a href="https://github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/DefiningAdvancedSpecies/GlobalSpecies.html">global species</a>.</li>
+</ul>
+<pre><code class="hljs xquery">   global {
+         init {
+             write <span class="hljs-string"><span class="hljs-string">"cell at {57.5, 45} :"</span></span> + cell({<span class="hljs-number"><span class="hljs-number">57.5</span></span>, <span class="hljs-number"><span class="hljs-number">45</span></span>});
+         }
+   }
+
+   grid cell width: <span class="hljs-number"><span class="hljs-number">10</span></span> height: <span class="hljs-number"><span class="hljs-number">10</span></span> neighbors: <span class="hljs-number"><span class="hljs-number">4</span></span> {
+   }
+</code></pre>
+<ul>
+<li>by the row and column indexes: like matrix, it is possible to directly access to a cell from its indexes</li>
+</ul>
+<pre><code class="hljs nginx">   <span class="hljs-section"><span class="hljs-section">global</span></span> {
+         <span class="hljs-section"><span class="hljs-section">init</span></span> {
+             <span class="hljs-attribute"><span class="hljs-attribute">write</span></span> <span class="hljs-string"><span class="hljs-string">"cell [5,8] :"</span></span> + cell[<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">8</span></span>];
+         }
+   }
+   <span class="hljs-attribute"><span class="hljs-attribute">grid</span></span> cell width: <span class="hljs-number"><span class="hljs-number">10</span></span> height: <span class="hljs-number"><span class="hljs-number">10</span></span> neighbors: <span class="hljs-number"><span class="hljs-number">4</span></span> {
+   }
+</code></pre>
+<p>The operator <code>grid_at</code> also exists to get a particular cell. You just have to specify the index of the cell you want (in x and y):</p>
+<pre><code class="hljs xquery">   global {
+         init {
+             agent cellAgent &lt;- cell grid_at {<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">8</span></span>};
+             write <span class="hljs-string"><span class="hljs-string">"cell [5,8] :"</span></span> + cellAgent;
+         }
+   }
+   grid cell width: <span class="hljs-number"><span class="hljs-number">10</span></span> height: <span class="hljs-number"><span class="hljs-number">10</span></span> neighbors: <span class="hljs-number"><span class="hljs-number">4</span></span> {
+   }
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Display%20Grid"></a><h2 id="display-grid">Display Grid</h2>
+<p>You can easily display your grid in your experiment as followed :</p>
+<pre><code class="hljs elm"><span class="hljs-title"><span class="hljs-title">experiment</span></span> <span class="hljs-type"><span class="hljs-type">MyExperiment</span></span> <span class="hljs-keyword"><span class="hljs-keyword">type</span></span>: gui {
+    output {
+        display <span class="hljs-type"><span class="hljs-type">MyDisplay</span></span> type: opengl {
+            grid <span class="hljs-type"><span class="hljs-type">MyGrid</span></span>;
+        }
+    }
+}
+</code></pre>
+<p>The grid will be displayed, using the color you defined for each cell (with the "color" built-in attribute). You can also show border of each cell by using the facet "line:" and choosing a rgb color:</p>
+<pre><code class="hljs scss">grid MyGrid line:<span class="hljs-number"><span class="hljs-number">#b</span></span>lack;
+</code></pre>
+<p>An other way to display a grid will be to define an aspect in your grid agent (the same way as for a <a href="https://github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/DefiningAdvancedSpecies/RegularSpecies.html">regular species</a>), and define your grid as a regular species then in your experiment, choosing your aspect : </p>
+<pre><code class="hljs nginx"><span class="hljs-attribute"><span class="hljs-attribute">grid</span></span> MyGrid {
+    <span class="hljs-attribute"><span class="hljs-attribute">aspect</span></span> firstAspect {
+        <span class="hljs-attribute"><span class="hljs-attribute">draw</span></span> square(<span class="hljs-number"><span class="hljs-number">1</span></span>);
+    }
+    <span class="hljs-attribute"><span class="hljs-attribute">aspect</span></span> secondAspect {
+        <span class="hljs-attribute"><span class="hljs-attribute">draw</span></span> circle(<span class="hljs-number"><span class="hljs-number">1</span></span>);
+    }
+}
+
+<span class="hljs-attribute"><span class="hljs-attribute">experiment</span></span> MyExperiment type: gui {
+    <span class="hljs-section"><span class="hljs-section">output</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">display</span></span> MyDisplay type: opengl {
+            <span class="hljs-attribute"><span class="hljs-attribute">species</span></span> MyGrid aspect:firstAspect;
+        }
+    }
+}
+</code></pre>
+<p>Beware : don't use this second display when you have large grids : it's much slower.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Grid%20from%20a%20matrix"></a><h2 id="grid-from-a-matrix">Grid from a matrix</h2>
+<p>An easy way to load some values in a grid is to use matrix data. A <code>matrix</code> is a type of container (we invite you to learn some more about this useful type <a href="https://github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/DefiningAdvancedSpecies/DataTypes#matrix.html">here</a>). Once you have declared your matrix, you can set the values of your cells using the <code>ask</code> statement :</p>
+<pre><code class="hljs haskell"><span class="hljs-title"><span class="hljs-title">global</span></span> {
+  init {
+    matrix <span class="hljs-class"><span class="hljs-keyword"><span class="hljs-class"><span class="hljs-keyword">data</span></span></span><span class="hljs-class"> &lt;- matrix([[0,1,1],[1,2,0]]);</span></span>
+    ask cell {
+      grid_value &lt;- float(<span class="hljs-class"><span class="hljs-keyword"><span class="hljs-class"><span class="hljs-keyword">data</span></span></span><span class="hljs-class">[grid_x, grid_y]);</span></span>
+    } 
+  }
+}
+</code></pre>
+<p>Declaring larger matrix in GAML can be boring as you can imagine. You can load your matrix directly from a csv file with the operator <code>matrix</code> (used for the contruction of the matrix).</p>
+<pre><code class="hljs stata"><span class="hljs-keyword"><span class="hljs-keyword">file</span></span> my_file &lt;- csv_file(<span class="hljs-string"><span class="hljs-string">"path/file.csv"</span></span>,<span class="hljs-string"><span class="hljs-string">"separator"</span></span>);
+<span class="hljs-keyword"><span class="hljs-keyword">matrix</span></span> my_matrix &lt;- <span class="hljs-built_in"><span class="hljs-built_in">matrix</span></span>(my_file);
+</code></pre>
+<p>You can try to read the following csv :</p>
+<pre><code class="hljs dns"><span class="hljs-number"><span class="hljs-number">0,0,0,0</span></span>,<span class="hljs-number"><span class="hljs-number">0,0,0,0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>
+<span class="hljs-number"><span class="hljs-number">0,0,0,1</span></span>,<span class="hljs-number"><span class="hljs-number">1,1,1,1</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>
+<span class="hljs-number"><span class="hljs-number">0,0,1,1</span></span>,<span class="hljs-number"><span class="hljs-number">0,0,0,1</span></span>,<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>
+<span class="hljs-number"><span class="hljs-number">0,1,1,0</span></span>,<span class="hljs-number"><span class="hljs-number">0,0,0,0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>
+<span class="hljs-number"><span class="hljs-number">0,1,1,0</span></span>,<span class="hljs-number"><span class="hljs-number">0,1,1,1</span></span>,<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>
+<span class="hljs-number"><span class="hljs-number">0,0,1,1</span></span>,<span class="hljs-number"><span class="hljs-number">0,0,1,1</span></span>,<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>
+<span class="hljs-number"><span class="hljs-number">0,0,0,1</span></span>,<span class="hljs-number"><span class="hljs-number">1,1,1,0</span></span>,<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>
+<span class="hljs-number"><span class="hljs-number">0,0,0,0</span></span>,<span class="hljs-number"><span class="hljs-number">0,0,0,0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>
+</code></pre>
+<p>With the following model :</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute"><span class="hljs-attribute">model</span></span> import_csv
+
+global {
+  <span class="hljs-attribute"><span class="hljs-attribute">file</span></span> my_csv_file &lt;- csv_file(<span class="hljs-string"><span class="hljs-string">"../includes/test.csv"</span></span>,<span class="hljs-string"><span class="hljs-string">","</span></span>);
+  <span class="hljs-section"><span class="hljs-section">init</span></span> {
+    <span class="hljs-attribute"><span class="hljs-attribute">matrix</span></span> data &lt;- matrix(my_csv_file);
+    <span class="hljs-attribute"><span class="hljs-attribute">ask</span></span> my_gama_grid {
+      <span class="hljs-attribute"><span class="hljs-attribute">grid_value</span></span> &lt;- float(data[grid_x,grid_y]);
+      <span class="hljs-attribute"><span class="hljs-attribute">write</span></span> data[grid_x,grid_y];
+    }
+  }
+}
+
+<span class="hljs-attribute"><span class="hljs-attribute">grid</span></span> my_gama_grid width: <span class="hljs-number"><span class="hljs-number">11</span></span> height: <span class="hljs-number"><span class="hljs-number">8</span></span> {
+  <span class="hljs-attribute"><span class="hljs-attribute">reflex</span></span> update_color {
+    <span class="hljs-attribute"><span class="hljs-attribute">write</span></span> grid_value;
+    <span class="hljs-attribute"><span class="hljs-attribute">color</span></span> &lt;- (grid_value = <span class="hljs-number"><span class="hljs-number">1</span></span>) ? <span class="hljs-comment"><span class="hljs-comment">#blue : #white;</span></span>
+  }
+}
+
+experiment main type: gui{
+  <span class="hljs-section"><span class="hljs-section">output</span></span> {
+    <span class="hljs-attribute"><span class="hljs-attribute">display</span></span> display_grid {
+      <span class="hljs-attribute"><span class="hljs-attribute">grid</span></span> my_gama_grid;
+    }
+  }
+}
+</code></pre>
+<p>For more complicated models, you can read some other files, such as ASCII files (asc), DEM files...</p>
+<a class="dashAnchor" name="//apple_ref/Section/Example"></a><h2 id="example">Example</h2>
+<p>To practice a bit those notions, we will build a quick model. A "regular" species will move randomly on the environment. A grid is displayed, and its cells becomes red when an instance of the regular species is waking inside this cell, and yellow when the regular agent is in the surrounding of this cell. If no regular agent is on the surrounding, the cell turns green.</p>
+<p><img src="../../../../github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/DefiningAdvancedSpecies/resources/images/definingAdvancedSpecies/my_grid_model.png" alt="images/my_grid_model.png"></p>
+<p>Here is an example of implementation:</p>
+<pre><code class="hljs haskell"><span class="hljs-title"><span class="hljs-title">model</span></span> my_grid_model
+
+<span class="hljs-title"><span class="hljs-title">global</span></span>{
+    float max_range &lt;- <span class="hljs-number"><span class="hljs-number">5.0</span></span>;
+    int number_of_agents &lt;- <span class="hljs-number"><span class="hljs-number">5</span></span>;
+    init {
+        create my_species number:number_of_agents;
+    }
+    reflex update {
+        ask my_species {
+            <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> wander amplitude:<span class="hljs-number"><span class="hljs-number">180</span></span>;    
+            ask my_grid at_distance(max_range)
+            {
+                <span class="hljs-keyword"><span class="hljs-keyword">if</span></span>(self overlaps myself)
+                {
+                    self.color_value &lt;- <span class="hljs-number"><span class="hljs-number">2</span></span>;
+                }
+                <span class="hljs-keyword"><span class="hljs-keyword">else</span></span> <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (self.color_value != <span class="hljs-number"><span class="hljs-number">2</span></span>)
+                {
+                    self.color_value &lt;- <span class="hljs-number"><span class="hljs-number">1</span></span>;
+                }
+            }
+        }
+        ask my_grid {
+            <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> update_color;
+        }   
+    }
+}
+
+<span class="hljs-title"><span class="hljs-title">species</span></span> my_species skills:[moving] {
+    float speed &lt;- <span class="hljs-number"><span class="hljs-number">2.0</span></span>;
+    aspect <span class="hljs-keyword"><span class="hljs-keyword">default</span></span> {
+        draw circle(<span class="hljs-number"><span class="hljs-number">1</span></span>) color:#blue;
+    }
+}
+
+<span class="hljs-title"><span class="hljs-title">grid</span></span> my_grid width:<span class="hljs-number"><span class="hljs-number">30</span></span> height:<span class="hljs-number"><span class="hljs-number">30</span></span> {
+    int color_value &lt;- <span class="hljs-number"><span class="hljs-number">0</span></span>;
+    action update_color {
+        <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (color_value = <span class="hljs-number"><span class="hljs-number">0</span></span>) {
+            color &lt;- #green;
+        }
+        <span class="hljs-keyword"><span class="hljs-keyword">else</span></span> <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (color_value = <span class="hljs-number"><span class="hljs-number">1</span></span>) {
+            color &lt;- #yellow;
+        }
+        <span class="hljs-keyword"><span class="hljs-keyword">else</span></span> <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (color_value = <span class="hljs-number"><span class="hljs-number">2</span></span>) {
+            color &lt;- #red;
+        }
+        color_value &lt;- <span class="hljs-number"><span class="hljs-number">0</span></span>;
+    }
+}
+
+<span class="hljs-title"><span class="hljs-title">experiment</span></span> <span class="hljs-type"><span class="hljs-type">MyExperiment</span></span> <span class="hljs-class"><span class="hljs-keyword"><span class="hljs-class"><span class="hljs-keyword">type</span></span></span><span class="hljs-class">: gui {
+    </span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">output</span></span></span><span class="hljs-class"> {
+        </span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">display</span></span></span><span class="hljs-class"> </span><span class="hljs-type"><span class="hljs-class"><span class="hljs-type">MyDisplay</span></span></span><span class="hljs-class"> </span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">type</span></span></span><span class="hljs-class">: </span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">java2D</span></span></span><span class="hljs-class"> {
+            </span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">grid</span></span></span><span class="hljs-class"> </span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">my_grid</span></span></span><span class="hljs-class"> </span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">lines</span></span></span><span class="hljs-class">:#</span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">black</span></span></span><span class="hljs-class">;
+            </span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">species</span></span></span><span class="hljs-class"> </span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">my_species</span></span></span><span class="hljs-class"> </span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">aspect</span></span></span><span class="hljs-class">:</span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">default</span></span></span><span class="hljs-class">; 
+        }</span></span>
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

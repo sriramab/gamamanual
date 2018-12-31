@@ -1,0 +1,73 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/User Interaction/User Interaction User Control Architecture --><head><meta charset="utf-8"><title>User Interaction User Control Architecture</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="user-interaction-user-control-architecture">User Interaction User Control Architecture</h1>
+<h1 id="user-command">User Command</h1>
+<p><em>Author : Patrick Taillandier</em></p>
+<p>Model which shows how to use the advanced user control, to create and kill agents. </p>
+<p>Code of the model : </p>
+<pre><code class="hljs http">
+
+<span class="nginx"><span class="hljs-attribute">model</span> user_control
+
+global {
+
+    <span class="hljs-attribute">int</span> nbAgent &lt;- <span class="hljs-number">10</span>;
+    <span class="hljs-attribute">bool</span> advanced_user_control &lt;- <span class="hljs-literal">false</span>;
+    <span class="hljs-section">init</span> {
+        <span class="hljs-attribute">create</span> cell number: nbAgent {
+            <span class="hljs-attribute">color</span> &lt;-°green;
+        }
+        <span class="hljs-attribute">create</span> user;
+    }
+}
+
+<span class="hljs-attribute">species</span> cell {
+    <span class="hljs-attribute">rgb</span> color;  
+    <span class="hljs-attribute">aspect</span> default {
+        <span class="hljs-attribute">draw</span> circle(<span class="hljs-number">1</span>) color: color;
+    }
+}
+
+<span class="hljs-attribute">species</span> user control:user_only {
+   <span class="hljs-attribute">user_panel</span> <span class="hljs-string">"Default"</span> initial: <span class="hljs-literal">true</span> {
+      <span class="hljs-attribute">transition</span> to: <span class="hljs-string">"Basic Control"</span> when: every (<span class="hljs-number">10</span>) and !advanced_user_control;
+      <span class="hljs-attribute">transition</span> to: <span class="hljs-string">"Advanced Control"</span> when: every(<span class="hljs-number">10</span>) and advanced_user_control;
+   }
+   
+   <span class="hljs-attribute">user_panel</span> <span class="hljs-string">"Basic Control"</span> {
+      <span class="hljs-attribute">user_command</span> <span class="hljs-string">"Kill one cell"</span> {
+         <span class="hljs-attribute">ask</span> (one_of(cell)){
+            <span class="hljs-attribute">do</span> die;
+         }
+      }
+      <span class="hljs-attribute">user_command</span> <span class="hljs-string">"Create one cell"</span> {
+        <span class="hljs-attribute">create</span> cell { 
+            <span class="hljs-attribute">color</span> &lt;-°green; 
+        }
+      } 
+      <span class="hljs-attribute">transition</span> to: <span class="hljs-string">"Default"</span> when: <span class="hljs-literal">true</span>;                    
+   }
+   <span class="hljs-attribute">user_panel</span> <span class="hljs-string">"Advanced Control"</span> {
+      <span class="hljs-attribute">user_command</span> <span class="hljs-string">"Kill cells"</span> color: <span class="hljs-comment">#red continue: true{</span>
+        user_input <span class="hljs-string">"Number"</span> returns: number type: int &lt;- <span class="hljs-number">10</span>;
+        <span class="hljs-attribute">ask</span> (number among list(cell)){
+           <span class="hljs-attribute">do</span> die;
+        }
+      }
+      <span class="hljs-attribute">user_command</span> <span class="hljs-string">"Create cells"</span> color: <span class="hljs-comment">#green {</span>
+        user_input <span class="hljs-string">"Number"</span> returns: number type: int &lt;- <span class="hljs-number">10</span>;
+        <span class="hljs-attribute">create</span> cell number: number ;
+      } 
+      <span class="hljs-attribute">transition</span> to: <span class="hljs-string">"Default"</span> when: <span class="hljs-literal">true</span>;        
+   }
+}
+
+
+<span class="hljs-attribute">experiment</span> Displays type: gui {
+    <span class="hljs-attribute">parameter</span> <span class="hljs-string">"advanced user control"</span> var: advanced_user_control &lt;- <span class="hljs-literal">false</span>;
+    <span class="hljs-section">output</span> { 
+        <span class="hljs-attribute">display</span> map { 
+            <span class="hljs-attribute">species</span> cell;
+        }
+    }
+}
+</span></code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

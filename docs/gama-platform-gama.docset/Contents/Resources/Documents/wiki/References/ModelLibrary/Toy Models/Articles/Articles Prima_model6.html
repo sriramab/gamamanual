@@ -1,0 +1,145 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Toy Models/Articles/Articles Prima_model6 --><head><meta charset="utf-8"><title>Articles Prima_model6</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="articles-prima_model6">Articles Prima_model6</h1>
+<h1 id="prima-5">Prima 5</h1>
+<p>_Author : _</p>
+<p>This model shows how to create agent and make them move randomly in the world.Some agents are infected, and others can gain the infection if they are in a certain range. The people are now placed in buildings at the initial state. Those buildings are created thanks toa shapefile. Roads are also created thanks to an other shapefile. A graph is now created fromthe road agents, and the people move from their location to a targent on the graph. The displayis now a 3D display. The model adds a new level as people going inside a building will be nowa new species belonging to the building and that will be manage by the building agent concernedThe people_in_building agent will be infected inside a building respecting an ordinary differentialequation system.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs zephir">model model6 
+
+<span class="hljs-keyword">global</span> {
+    <span class="hljs-comment">//Shapefile of roads</span>
+    file roads_shapefile &lt;- file(<span class="hljs-string">"../includes/road.shp"</span>);
+    <span class="hljs-comment">//Shapefile of buildings</span>
+    file buildings_shapefile &lt;- file(<span class="hljs-string">"../includes/building.shp"</span>);
+    <span class="hljs-comment">//Bounds of the world will be the bounds of the shapefile of roads</span>
+    geometry shape &lt;- envelope(roads_shapefile);
+    <span class="hljs-comment">//The graph of roads on which people agents will move</span>
+    graph road_network;
+    
+    <span class="hljs-comment">//The beta used for the ODE system</span>
+    <span class="hljs-keyword">float</span> beta &lt;- <span class="hljs-number">0.4</span>;
+    
+    init {
+        <span class="hljs-comment">//Creation of the roads using the shapefile</span>
+        create roads from: roads_shapefile;
+        <span class="hljs-comment">//Creation of the graph using the road agents as edge</span>
+        road_network &lt;- as_edge_graph(roads);
+        <span class="hljs-comment">//Creation of the buildings using the shapefile</span>
+        create buildings from: buildings_shapefile;
+        <span class="hljs-comment">//Creation of the people that will be placed in a building randomly chosen</span>
+        create people number:<span class="hljs-number">1000</span> {
+            buildings init_place &lt;- one_of(buildings);
+            location &lt;- any_location_in(init_place) + {<span class="hljs-number">0</span>,<span class="hljs-number">0</span>, init_place.height};
+            target &lt;- any_location_in(one_of(buildings));
+        }
+    }
+}
+
+<span class="hljs-comment">//Species people that can be infected and will move from a location to a target</span>
+species people skills:[moving]{     
+    <span class="hljs-keyword">float</span> speed &lt;- <span class="hljs-number">5.0</span> + rnd(<span class="hljs-number">5</span>);
+    <span class="hljs-keyword">bool</span> is_infected &lt;- flip(<span class="hljs-number">0.01</span>);
+    point target;
+    <span class="hljs-comment">//Reflex to make the agent move from its location to its target on the graph</span>
+    reflex move {
+        <span class="hljs-keyword">do</span> <span class="hljs-keyword">goto</span> target:target on: road_network;
+        <span class="hljs-comment">//Change the target once it has been reached</span>
+        <span class="hljs-keyword">if</span> (location = target) {
+            target &lt;- any_location_in(one_of(buildings));
+        }
+    }
+    <span class="hljs-comment">//Reflex to know if a non-infected agent is infected by the agents nearby</span>
+    reflex infect when: is_infected{
+        ask people at_distance <span class="hljs-number">10</span> {
+            <span class="hljs-keyword">if</span> flip(<span class="hljs-number">0.01</span>) {
+                is_infected &lt;- <span class="hljs-keyword">true</span>;
+            }
+        }
+    }
+    aspect circle{
+        draw sphere(<span class="hljs-number">5</span>) color:is_infected ? <span class="hljs-comment">#red : #green;</span>
+    }
+}
+
+species roads {
+    aspect geom {
+        draw shape color: <span class="hljs-comment">#black;</span>
+    }
+}
+
+<span class="hljs-comment">//Species buildings that will change the people agents inside it to people in building agent</span>
+<span class="hljs-comment">//Managing them once they have been captured, and releasing them once they reached a</span>
+<span class="hljs-comment">//leaving time</span>
+species buildings {
+    <span class="hljs-keyword">float</span> height &lt;- <span class="hljs-number">10.0</span>+ rnd(<span class="hljs-number">10</span>);
+    <span class="hljs-comment">//Variable to know the number of people infected inside the buildings</span>
+    <span class="hljs-keyword">int</span> nb_I -&gt; {members count (people_in_building(each).is_infected)};
+    <span class="hljs-comment">//Variable to know the number of people inside the building</span>
+    <span class="hljs-keyword">int</span> nbInhabitants update: length(members);
+    <span class="hljs-comment">//List of all the people_in_building agents not infected                </span>
+    <span class="hljs-keyword">list</span>&lt;people_in_building&gt; membersS update: <span class="hljs-keyword">list</span>&lt;people_in_building&gt;(members) where (!each.is_infected);
+    <span class="hljs-comment">//List of all the people_in_building agents infected                </span>
+    <span class="hljs-keyword">list</span>&lt;people_in_building&gt; membersI update: <span class="hljs-keyword">list</span>&lt;people_in_building&gt;(members) where (each.is_infected);
+    <span class="hljs-keyword">float</span> t;
+    <span class="hljs-comment">//Float used in the ODE system representing the number of non infected agents    </span>
+    <span class="hljs-keyword">float</span> S update: length(membersS) <span class="hljs-keyword">as</span> <span class="hljs-keyword">float</span>; 
+    <span class="hljs-comment">//Float used in the ODE system representing the number of infected agents </span>
+    <span class="hljs-keyword">float</span> I update: length(membersI) <span class="hljs-keyword">as</span> <span class="hljs-keyword">float</span>;
+    <span class="hljs-keyword">float</span> I_to_1 &lt;- <span class="hljs-number">0.0</span>;
+    <span class="hljs-keyword">float</span> h&lt;<span class="hljs-number">-0.1</span>;
+    
+    aspect geom {
+        draw shape color: <span class="hljs-keyword">empty</span>(members) ? <span class="hljs-comment">#gray : (nb_I/length(members) &gt; 0.5 ? #red : #green) depth: height;</span>
+    }
+    <span class="hljs-comment">//Species people in building that will be managed by the building agents</span>
+    species people_in_building <span class="hljs-keyword">parent</span>: people schedules: [] {
+        <span class="hljs-keyword">int</span> leaving_time;
+        aspect circle{}
+    }
+    <span class="hljs-comment">//Reflex to capture the people entering inside the building, changing them in people in building species and puting a leaving time to know when lettiing</span>
+    <span class="hljs-comment">// them out</span>
+    reflex let_people_enter {
+        <span class="hljs-keyword">list</span>&lt;people&gt; entering_people &lt;- (people inside <span class="hljs-keyword">self</span>);
+        <span class="hljs-keyword">if</span> !(<span class="hljs-keyword">empty</span> (entering_people)) {
+            capture entering_people <span class="hljs-keyword">as</span>: people_in_building returns: people_captured;
+            ask people_captured {
+                leaving_time &lt;- <span class="hljs-keyword">int</span>(time + <span class="hljs-number">50</span> + rnd(<span class="hljs-number">50</span>));
+            }
+        }
+    }
+    <span class="hljs-comment">//Reflex to let the people_in_building agents go out if there leaving time is reached, releasing them in the world as people agent</span>
+    reflex let_people_leave  {
+        <span class="hljs-keyword">list</span>&lt;people_in_building&gt; leaving_people &lt;- <span class="hljs-keyword">list</span>&lt;people_in_building&gt;(members) where (time &gt;= each.leaving_time);
+        <span class="hljs-keyword">if</span> !(<span class="hljs-keyword">empty</span> (leaving_people)) {
+            release leaving_people <span class="hljs-keyword">as</span>: people in: world;
+        }
+    }
+    <span class="hljs-comment">//ODE system to represent the infection among the building</span>
+    equation SIR{ 
+        diff(S,t) = (- beta * S * I / nbInhabitants) ;
+        diff(I,t) = (  beta * S * I / nbInhabitants) ;
+    }
+    <span class="hljs-comment">//Make the computation of the ODE System only when they are people inside</span>
+    reflex epidemic when:(S&gt;<span class="hljs-number">0</span> <span class="hljs-keyword">and</span> I&gt;<span class="hljs-number">0</span>){     
+        <span class="hljs-keyword">float</span> I0 &lt;- I;
+        solve SIR method: <span class="hljs-string">"rk4"</span> step: h ;
+        I_to_1 &lt;- I_to_1 + (I - I0);
+        <span class="hljs-keyword">if</span>(I_to_1 &gt; <span class="hljs-number">1</span>) {
+            ask(membersS){
+                is_infected &lt;- <span class="hljs-keyword">true</span>;
+                myself.I_to_1 &lt;- myself.I_to_1 - <span class="hljs-number">1</span>;
+            }
+        }
+    }    
+}
+
+experiment main_experiment type:gui{
+    output {
+        display map type: opengl {
+            species roads aspect:geom;
+            species buildings aspect:geom;
+            species people aspect:circle;           
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

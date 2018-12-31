@@ -1,0 +1,45 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Save-and-restore-simulations --><head><meta charset="utf-8"><title>Save and restore simulations</title><script src="../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="save-and-restore-simulations">Save and restore simulations</h1>
+<h1 dash_ignored="yes" id="save-and-restore-simulations-2">Save and Restore simulations</h1>
+<p>Last version of GAMA has introduced new features to save the state of a simulation at a given simulation cycle. This has two main applications:</p>
+<ul>
+<li>The possibility to step forward and backward in a simulation,
+<ul>
+<li>The possibility to save the state of a simulation in a file and to restore a simulation from this file.</li>
+</ul>
+</li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Save%20a%20simulation"></a><h2 id="save-a-simulation">Save a simulation</h2>
+<pre><code class="hljs nginx"><span class="hljs-attribute"><span class="hljs-attribute">experiment</span></span> saveSimu type: gui {
+
+    <span class="hljs-attribute"><span class="hljs-attribute">reflex</span></span> store when: cycle = <span class="hljs-number"><span class="hljs-number">5</span></span> {      
+        <span class="hljs-attribute"><span class="hljs-attribute">write</span></span> <span class="hljs-string"><span class="hljs-string">"================ START SAVE + self "</span></span> + <span class="hljs-string"><span class="hljs-string">" - "</span></span> + cycle ;       
+        <span class="hljs-attribute"><span class="hljs-attribute">write</span></span> <span class="hljs-string"><span class="hljs-string">"Save of simulation : "</span></span> + saveSimulation(<span class="hljs-string"><span class="hljs-string">'saveSimu.gsim'</span></span>);
+        <span class="hljs-attribute"><span class="hljs-attribute">write</span></span> <span class="hljs-string"><span class="hljs-string">"================ END SAVE + self "</span></span> + <span class="hljs-string"><span class="hljs-string">" - "</span></span> + cycle ;         
+    }   
+    
+    <span class="hljs-section"><span class="hljs-section">output</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">display</span></span> main_display {
+            <span class="hljs-attribute"><span class="hljs-attribute">species</span></span> road aspect: geom;
+            <span class="hljs-attribute"><span class="hljs-attribute">species</span></span> people aspect: base;                        
+        }
+    }   
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Restore%20a%20simulation"></a><h2 id="restore-a-simulation">Restore a simulation</h2>
+<pre><code class="hljs nginx"><span class="hljs-attribute"><span class="hljs-attribute">experiment</span></span> reloadSavedSimuOnly type: gui {
+    
+    <span class="hljs-attribute"><span class="hljs-attribute">action</span></span> _init_ {
+        <span class="hljs-attribute"><span class="hljs-attribute">create</span></span> simulation from: saved_simulation_file(<span class="hljs-string"><span class="hljs-string">"saveSimu.gsim"</span></span>); 
+    }
+
+    <span class="hljs-section"><span class="hljs-section">output</span></span> {
+        <span class="hljs-attribute"><span class="hljs-attribute">display</span></span> main_display {
+            <span class="hljs-attribute"><span class="hljs-attribute">species</span></span> road aspect: geom;
+            <span class="hljs-attribute"><span class="hljs-attribute">species</span></span> people aspect: base;                        
+        }
+    }   
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Saved%20simulation%20file%20type:%20gsim"></a><h2 id="saved-simulation-file-type-gsim">Saved simulation file type: gsim</h2>
+<a class="dashAnchor" name="//apple_ref/Section/Other%20serialization%20operators"></a><h2 id="other-serialization-operators">Other serialization operators</h2>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

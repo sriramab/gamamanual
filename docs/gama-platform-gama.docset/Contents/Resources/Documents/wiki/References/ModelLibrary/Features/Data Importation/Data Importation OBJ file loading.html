@@ -1,0 +1,37 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Data Importation/Data Importation OBJ file loading --><head><meta charset="utf-8"><title>Data Importation OBJ file loading</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="data-importation-obj-file-loading">Data Importation OBJ file loading</h1>
+<h1 id="complex-object-loading">Complex Object Loading</h1>
+<p><em>Author :  Arnaud Grignard</em></p>
+<p>Provides a  complex geometry to agents (svg,obj or 3ds are accepted). The geometry becomes that of the agents.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs nginx">
+<span class="hljs-attribute">model</span> obj_loading   
+
+global {
+
+    <span class="hljs-section">init</span> { 
+        <span class="hljs-attribute">create</span> object;
+    }  
+} 
+
+<span class="hljs-attribute">species</span> object skills:[moving]{
+    
+    <span class="hljs-attribute">geometry</span> shape &lt;- obj_file(<span class="hljs-string">"../includes/teapot.obj"</span>) as geometry;
+    
+    <span class="hljs-attribute">reflex</span> move{
+        <span class="hljs-attribute">do</span> wander;
+    }
+    <span class="hljs-attribute">aspect</span> obj {
+        <span class="hljs-attribute">draw</span> shape;
+    }
+            
+}   
+
+<span class="hljs-attribute">experiment</span> Display  type: gui {
+    <span class="hljs-section">output</span> {
+        <span class="hljs-attribute">display</span> complex  background:<span class="hljs-comment">#gray type: opengl{</span>
+          species object aspect:obj;                
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

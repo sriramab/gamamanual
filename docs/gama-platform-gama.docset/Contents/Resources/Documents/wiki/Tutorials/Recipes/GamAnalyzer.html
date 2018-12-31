@@ -1,0 +1,84 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Tutorials/Recipes/GamAnalyzer --><head><meta charset="utf-8"><title>GamAnalyzer</title><script src="../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="gamanalyzer">GamAnalyzer</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Using%20GAMAnalyzer"></a><h1 id="using-gamanalyzer">Using GAMAnalyzer</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Install"></a><h2 id="install">Install</h2>
+<p>Go to Git View -&gt; Click on Import Projects
+Add the dependencies in ummisco.gama.feature.dependencies</p>
+<p>GamAnalyzer is a tool to monitor several multi-agents simulation</p>
+<p>The "agent_group_follower" goal is to monitor and analyze a group of agent during several simulation. This group of agent can be chosen by the user according to criteria chosen by the user. The monitoring process and analysis of these agents involves the extraction, processing and visualization of their data at every step of the simulation.  The data for each simulation are pooled and treated commonly for their graphic representation or clusters.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Built-in%20Variable"></a><h2 id="built-in-variable">Built-in Variable</h2>
+<table><thead><tr></tr></thead><tbody><tr></tr><tr></tr></tbody></table><ul>
+<li><p><strong>varmap</strong>: All variable that can be analyzed or displayed in a graph.</p>
+</li>
+<li><p><strong>numvarmap</strong>: Numerical variable (on this variable all the aggregator numeric are computed). </p>
+</li>
+<li><p><strong>qualivarmap</strong>: All non numerical variable. Could be used for BDI to analyze beliefs.</p>
+</li>
+<li><p><strong>metadatahistory</strong>: See updateMetaDataHistory. This matrice store all the metadata like getSimulationScope(), getClock().getCycle(), getUniqueSimName(scope), rule, scope.getAgentScope().getName(), this.getName(), this.agentsCourants.copy(scope), this.agentsCourants.size(), this.getGeometry().</p>
+</li>
+<li><p><strong>lastdetailedvarvalues</strong>: store all the value (in varmap) for all the followed agent for the last iteration.</p>
+</li>
+<li><p><strong>averagehistory</strong>: Average value for each of the numvar </p>
+</li>
+<li><strong>stdevhistory</strong>: Std deviation value for each of the numvar </li>
+<li><strong>minhistory</strong>: Min deviation value for each of the numvar </li>
+<li><strong>maxhistory</strong>: Max deviation value for each of the numvar</li>
+<li><strong>distribhistoryparams</strong>: Gives the interval of the distribution described in distribhistory</li>
+<li><p><strong>distribhistory</strong>: Distribution of numvarmap</p>
+</li>
+<li><p><strong>multi_metadatahistory</strong>: Aggregate each metadatahistory for each experiment </p>
+</li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Example"></a><h2 id="example">Example</h2>
+<p>This example is based on a toy model which is only composed of wandering people. In this example we will use GamAnalyzer to follow the agent people. </p>
+<h3></h3>
+<pre><code class="hljs mipsasm">agent_group_follower peoplefollower<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+</code></pre>
+<pre><code class="hljs rust">create agentfollower 
+{
+  <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> analyse_cluster species_to_analyse:<span class="hljs-string"><span class="hljs-string">"people"</span></span>;
+  peoplefollower&lt;-<span class="hljs-keyword"><span class="hljs-keyword">self</span></span>;
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/expGlobalNone"></a><h3 id="expglobalnone">expGlobalNone</h3>
+<p>No clustering only the current agent follower is displayed</p>
+<pre><code class="hljs mipsasm">aspect <span class="hljs-keyword"><span class="hljs-keyword">base </span></span>{
+  <span class="hljs-keyword"><span class="hljs-keyword">display_mode </span></span>&lt;-<span class="hljs-string"><span class="hljs-string">"global"</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+  clustering_mode &lt;-<span class="hljs-string"><span class="hljs-string">"none"</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+  draw <span class="hljs-keyword"><span class="hljs-keyword">shape </span></span>color: <span class="hljs-comment"><span class="hljs-comment">#red;</span></span>
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/expSimGlobalNone"></a><h3 id="expsimglobalnone">expSimGlobalNone</h3>
+<p>The agent_group_follower corresponding to the current iteration and all the already launch experiments are displayed. </p>
+<pre><code class="hljs mipsasm">aspect simglobal{
+  <span class="hljs-keyword"><span class="hljs-keyword">display_mode </span></span>&lt;-<span class="hljs-string"><span class="hljs-string">"simglobal"</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+  clustering_mode &lt;-<span class="hljs-string"><span class="hljs-string">"none"</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+  draw <span class="hljs-keyword"><span class="hljs-keyword">shape </span></span>color: <span class="hljs-comment"><span class="hljs-comment">#red;</span></span>
+  int curColor &lt;-<span class="hljs-number"><span class="hljs-number">0</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+  loop geom over: allSimShape{
+    draw geom color:SequentialColors[curColor] <span class="hljs-built_in"><span class="hljs-built_in">at</span></span>:{location.x,location.y,curColor*<span class="hljs-number"><span class="hljs-number">10</span></span>}<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    curColor &lt;- curColor+<span class="hljs-number"><span class="hljs-number">1</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+  }
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/expCluster"></a><h3 id="expcluster">expCluster</h3>
+<p>The agent group follower is divided in cluster computed thanks to a dbscan algorithm. Only the current agent_group_follower is displayed</p>
+<pre><code class="hljs mipsasm">aspect cluster {
+  <span class="hljs-keyword"><span class="hljs-keyword">display_mode </span></span>&lt;-<span class="hljs-string"><span class="hljs-string">"global"</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+  clustering_mode &lt;-<span class="hljs-string"><span class="hljs-string">"dbscan"</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+  draw <span class="hljs-keyword"><span class="hljs-keyword">shape </span></span>color: <span class="hljs-comment"><span class="hljs-comment">#red;</span></span>
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/expClusterSimGlobal"></a><h3 id="expclustersimglobal">expClusterSimGlobal</h3>
+<p>The agent_group_follower (made of different cluster) corresponding to the current iteration and all the already launch experiments are displayed. </p>
+<pre><code class="hljs mipsasm">aspect clusterSimGlobal {
+  <span class="hljs-keyword"><span class="hljs-keyword">display_mode </span></span>&lt;-<span class="hljs-string"><span class="hljs-string">"simglobal"</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+  clustering_mode &lt;-<span class="hljs-string"><span class="hljs-string">"dbscan"</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+  draw <span class="hljs-keyword"><span class="hljs-keyword">shape </span></span>color: <span class="hljs-comment"><span class="hljs-comment">#red;</span></span>
+  int curColor &lt;-<span class="hljs-number"><span class="hljs-number">0</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+  loop geom over: allSimShape{
+    draw geom color:SequentialColors[curColor] <span class="hljs-built_in"><span class="hljs-built_in">at</span></span>:{location.x,location.y,curColor*<span class="hljs-number"><span class="hljs-number">10</span></span>}<span class="hljs-comment"><span class="hljs-comment">;</span></span>
+    curColor &lt;- curColor+<span class="hljs-number"><span class="hljs-number">1</span></span><span class="hljs-comment"><span class="hljs-comment">;</span></span>
+  } 
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,0 +1,85 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Additionnal Plugins/Diffusion Statement/Diffusion Statement Diffusion in a cuve (Cycle length) --><head><meta charset="utf-8"><title>Diffusion Statement Diffusion in a cuve (Cycle length)</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="diffusion-statement-diffusion-in-a-cuve-cycle-length">Diffusion Statement Diffusion in a cuve (Cycle length)</h1>
+<h1 id="diffusion-in-a-cuve-cycle-length">Diffusion in a cuve (Cycle length)</h1>
+<p><em>Author : Julien Mazars</em></p>
+<p>This model is used to show how to use diffusion on a grid, and how to accelerate the process by computing several times the diffusion at each step. The cells at the center of the grid emit a pheromon at the cycle 0, which is spread through the grid thanks to the diffusion mechanism, using a particular matrix of diffusion. The "avoid_mask" facet is used in order to have a constant sum of pheromon. </p>
+<p><img src="../../../../../github.com/wiki/gama-platform/gama/References/ModelLibrary/Additionnal Plugins/Diffusion Statement/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Diffusion Statement/Diffusion Statement Diffusion in a cuve (Cycle length)/a-10.png" alt="Eclipse folder." title="" class="img-responsive"> == $0</p><p></p><p><img src="../../../../../github.com/wiki/gama-platform/gama/References/ModelLibrary/Additionnal Plugins/Diffusion Statement/gm_wiki/resources/images/modelLibraryScreenshots/Additionnal Plugins/Diffusion Statement/Diffusion Statement Diffusion in a cuve (Cycle length)/quick-10.png" alt="Eclipse folder." title="" class="img-responsive"> == $0</p>Code of the model : <p></p>
+<pre><code class="hljs sqf">
+model cycle_length
+
+global {
+    int <span class="hljs-built_in">size</span> &lt;- <span class="hljs-number">64</span>; <span class="hljs-comment">// better to have a pow of 2 for the size of the grid</span>
+    int cycle_length &lt;- <span class="hljs-number">5</span>;
+    geometry shape &lt;- envelope(square(<span class="hljs-built_in">size</span>));
+    <span class="hljs-built_in">list</span>&lt;cells&gt; selected_cells;
+    <span class="hljs-built_in">list</span>&lt;quick_cells&gt; selected_quick_cells;
+    <span class="hljs-comment">// Declare an uniform diffusion matrix</span>
+    matrix&lt;float&gt; mat_diff &lt;- matrix([
+                                    [<span class="hljs-number">1</span>/<span class="hljs-number">9</span>,<span class="hljs-number">1</span>/<span class="hljs-number">9</span>,<span class="hljs-number">1</span>/<span class="hljs-number">9</span>],
+                                    [<span class="hljs-number">1</span>/<span class="hljs-number">9</span>,<span class="hljs-number">1</span>/<span class="hljs-number">9</span>,<span class="hljs-number">1</span>/<span class="hljs-number">9</span>],
+                                    [<span class="hljs-number">1</span>/<span class="hljs-number">9</span>,<span class="hljs-number">1</span>/<span class="hljs-number">9</span>,<span class="hljs-number">1</span>/<span class="hljs-number">9</span>]]);
+                                    
+    int impulse_area_size &lt;- <span class="hljs-number">6</span>;
+
+    <span class="hljs-comment">// Initialize the emiter cells as the cells at the center of the word</span>
+    init {
+        selected_cells &lt;- <span class="hljs-built_in">list</span>&lt;cells&gt;(cells where (each.grid_x &lt; <span class="hljs-built_in">location</span>.x+impulse_area_size
+            <span class="hljs-built_in">and</span> each.grid_x &gt; <span class="hljs-built_in">location</span>.x-impulse_area_size
+            <span class="hljs-built_in">and</span> each.grid_y &lt; <span class="hljs-built_in">location</span>.y+impulse_area_size
+            <span class="hljs-built_in">and</span> each.grid_y &gt; <span class="hljs-built_in">location</span>.y-impulse_area_size
+        ));
+        selected_quick_cells &lt;- <span class="hljs-built_in">list</span>&lt;quick_cells&gt;(quick_cells where (each.grid_x &lt; <span class="hljs-built_in">location</span>.x+impulse_area_size
+            <span class="hljs-built_in">and</span> each.grid_x &gt; <span class="hljs-built_in">location</span>.x-impulse_area_size
+            <span class="hljs-built_in">and</span> each.grid_y &lt; <span class="hljs-built_in">location</span>.y+impulse_area_size
+            <span class="hljs-built_in">and</span> each.grid_y &gt; <span class="hljs-built_in">location</span>.y-impulse_area_size
+        ));
+    }
+    reflex init_value when:cycle=<span class="hljs-number">0</span> {
+        ask(selected_cells){
+            phero &lt;- <span class="hljs-number">1.0</span>;
+        }
+        ask(selected_quick_cells){
+            phero &lt;- <span class="hljs-number">1.0</span>;
+        }       
+    }
+
+    reflex diff {
+        <span class="hljs-comment">// Declare a diffusion on the grid "cells" and on "quick_cells". The diffusion declared on "quick_cells" will make 5 computations at each step to accelerate the process. </span>
+        <span class="hljs-comment">// The value of the diffusion will be store in the new variable "phero" of the cell.</span>
+        <span class="hljs-comment">// In order to not loosing phero value, we apply a hand made mask (with the operator "where") and we turn the "avoid_mask" facet to true.</span>
+        <span class="hljs-built_in">list</span> cells_where_diffuse &lt;- cells where (each.grid_x &lt; <span class="hljs-built_in">size</span>-cycle_length <span class="hljs-built_in">and</span> each.grid_x &gt; cycle_length <span class="hljs-built_in">and</span> each.grid_y &lt; <span class="hljs-built_in">size</span>-cycle_length <span class="hljs-built_in">and</span> each.grid_y &gt; cycle_length);
+        diffuse var: phero on: cells_where_diffuse matrix: mat_diff avoid_mask: <span class="hljs-literal">true</span> method:dot_product;    
+        <span class="hljs-built_in">list</span> quick_cells_where_diffuse &lt;- quick_cells where (each.grid_x &lt; <span class="hljs-built_in">size</span>-cycle_length <span class="hljs-built_in">and</span> each.grid_x &gt; cycle_length <span class="hljs-built_in">and</span> each.grid_y &lt; <span class="hljs-built_in">size</span>-cycle_length <span class="hljs-built_in">and</span> each.grid_y &gt; cycle_length);
+        diffuse var: phero on: quick_cells_where_diffuse matrix: mat_diff avoid_mask: <span class="hljs-literal">true</span> cycle_length: <span class="hljs-number">10</span> method:dot_product;
+    }
+}
+
+
+grid cells height: <span class="hljs-built_in">size</span> width: <span class="hljs-built_in">size</span> {
+    <span class="hljs-comment">// "phero" is the variable storing the value of the diffusion</span>
+    float phero  &lt;- <span class="hljs-number">0.0</span>;
+    <span class="hljs-comment">// The color of the cell is linked to the value of "phero".</span>
+    rgb color &lt;- (phero = <span class="hljs-number">0</span>) ? <span class="hljs-meta">#black : hsb(phero,<span class="hljs-number">1.0</span>,<span class="hljs-number">1.0</span>) update: (phero = <span class="hljs-number">0</span>) ? #black : hsb(phero,<span class="hljs-number">1.0</span>,<span class="hljs-number">1.0</span>);</span>
+} 
+
+grid quick_cells height: <span class="hljs-built_in">size</span> width: <span class="hljs-built_in">size</span> {
+    <span class="hljs-comment">// "phero" is the variable storing the value of the diffusion</span>
+    float phero  &lt;- <span class="hljs-number">0.0</span>;
+    <span class="hljs-comment">// The color of the cell is linked to the value of "phero".</span>
+    rgb color &lt;- (phero = <span class="hljs-number">0</span>) ? <span class="hljs-meta">#black : hsb(phero,<span class="hljs-number">1.0</span>,<span class="hljs-number">1.0</span>) update: (phero = <span class="hljs-number">0</span>) ? #black : hsb(phero,<span class="hljs-number">1.0</span>,<span class="hljs-number">1.0</span>);</span>
+} 
+
+
+experiment diffusion <span class="hljs-built_in">type</span>: gui {
+    output {
+        display a <span class="hljs-built_in">type</span>: opengl {
+            <span class="hljs-comment">// Display the grid with elevation</span>
+            grid cells elevation: phero*<span class="hljs-number">10</span> triangulation: <span class="hljs-literal">true</span>;
+        }
+        display quick <span class="hljs-built_in">type</span>: opengl {
+            <span class="hljs-comment">// Display the grid with elevation</span>
+            grid quick_cells elevation: phero*<span class="hljs-number">10</span> triangulation: <span class="hljs-literal">true</span>;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

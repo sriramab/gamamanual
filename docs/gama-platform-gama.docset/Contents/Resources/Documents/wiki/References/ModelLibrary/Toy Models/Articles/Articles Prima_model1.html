@@ -1,0 +1,46 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Toy Models/Articles/Articles Prima_model1 --><head><meta charset="utf-8"><title>Articles Prima_model1</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="articles-prima_model1">Articles Prima_model1</h1>
+<h1 id="prima-1">Prima 1</h1>
+<p>_Author : _</p>
+<p>This model shows how to create agent and make them move randomly in the world. Some agents are infected, and others can gain the infection if they are in a certain range.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs arduino">
+model SI_city
+
+global{
+    geometry shape&lt;-envelope(square(<span class="hljs-number">500</span>));
+    
+    <span class="hljs-comment">//Creation of the people agents</span>
+    init{
+        create people number:<span class="hljs-number">1000</span>;
+    }
+}
+<span class="hljs-comment">//People species with agents moving and can be infected</span>
+species people skills:[moving]{     
+    <span class="hljs-keyword">float</span> speed &lt;- <span class="hljs-number">5.0</span> + rnd(<span class="hljs-number">5</span>);
+    <span class="hljs-keyword">bool</span> is_infected &lt;- flip(<span class="hljs-number">0.01</span>);
+    <span class="hljs-comment">//Make the agent wander at each step with a certain speed.</span>
+    reflex <span class="hljs-built_in">move</span>{
+        <span class="hljs-built_in">do</span> wander;
+    }
+    <span class="hljs-comment">//Infect the agent if it is not already infected, and according to the infected people in a range</span>
+    reflex infect when: is_infected{
+        ask people at_distance <span class="hljs-number">10</span> {
+            <span class="hljs-built_in">if</span> flip(<span class="hljs-number">0.01</span>) {
+                is_infected &lt;- true;
+            }
+        }
+    }
+    aspect <span class="hljs-built_in">circle</span>{
+        draw <span class="hljs-built_in">circle</span>(<span class="hljs-number">5</span>) color:is_infected ? <span class="hljs-meta">#red : #green;</span>
+    }
+}
+
+experiment main_experiment type:gui{
+    output {
+        <span class="hljs-built_in">display</span> <span class="hljs-built_in">map</span>  {
+            species people aspect:<span class="hljs-built_in">circle</span>;           
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,0 +1,74 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Date and Time/Date and Time Date type and real dates --><head><meta charset="utf-8"><title>Date and Time Date type and real dates</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="date-and-time-date-type-and-real-dates">Date and Time Date type and real dates</h1>
+<h1 id="use-of-the-date-variables">Use of the Date variables</h1>
+<p><em>Author :  Patrick Taillandier</em></p>
+<p>A model to show how to use date variables and more particularly the starting_date and current_date global variables.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs arduino">model date_model 
+
+global {
+    
+    <span class="hljs-comment">//definition of the date of begining of the simulation - defining this date will allows to change the normal date management of the simulation by a more realistic one (using calendar) </span>
+    date starting_date &lt;- date([<span class="hljs-number">2011</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">30</span>]);
+    
+    <span class="hljs-comment">//be careful, when real dates are used, modelers should not use the #month and #year values that are not consistent with them</span>
+    <span class="hljs-keyword">float</span> <span class="hljs-built_in">step</span> &lt;- <span class="hljs-number">1</span><span class="hljs-meta">#h;</span>
+        
+    init {
+        <span class="hljs-built_in">write</span> <span class="hljs-string">"starting_date: "</span> + starting_date;
+        
+        <span class="hljs-comment">//there are several ways to define a date.</span>
+        <span class="hljs-comment">//The simplest consists in using a list of int values: [year,month of the year,day of the month, hour of the day, minute of the hour, second of the minute]</span>
+        date my_date &lt;- date([<span class="hljs-number">2010</span>,<span class="hljs-number">3</span>,<span class="hljs-number">23</span>,<span class="hljs-number">17</span>,<span class="hljs-number">30</span>,<span class="hljs-number">10</span>]); <span class="hljs-comment">//correspond the 23th of March 2010, at 17:30:10</span>
+        
+        <span class="hljs-comment">//It is also possible to define a date through a string:</span>
+        date my_date2 &lt;- date(<span class="hljs-string">"2010-3-23T17:30:10+07:00"</span>); 
+        <span class="hljs-built_in">write</span> (my_date2);
+    
+        <span class="hljs-comment">//it is possible to get the current date by using the "now" string:</span>
+        date today &lt;- date(<span class="hljs-string">"now"</span>); 
+        <span class="hljs-built_in">write</span> (today);
+        
+        <span class="hljs-built_in">write</span> <span class="hljs-string">"\n ----------------------------------------------- "</span> ;
+        
+        <span class="hljs-comment">//GAMA provides several operator to manipulate dates:   </span>
+            
+        <span class="hljs-comment">//for instance, it is possible to compute the duration in seconds between 2 dates:</span>
+        <span class="hljs-keyword">float</span> d &lt;- starting_date - my_date;
+        <span class="hljs-built_in">write</span> <span class="hljs-string">"duration between "</span> + my_date + <span class="hljs-string">" and "</span> + starting_date + <span class="hljs-string">" : "</span> + d + <span class="hljs-string">"s"</span>;
+        
+        <span class="hljs-built_in">write</span> <span class="hljs-string">"\n ----------------------------------------------- "</span> ;
+        
+        <span class="hljs-comment">//to add or subtract a duration (in secondes) to a date:</span>
+         <span class="hljs-built_in">write</span> <span class="hljs-string">"my_date2 + 10: "</span> + (my_date2 + <span class="hljs-number">10</span>);
+         <span class="hljs-built_in">write</span> <span class="hljs-string">"my_date2 - 10: "</span> + (my_date2 - <span class="hljs-number">10</span>);
+         
+         <span class="hljs-built_in">write</span> <span class="hljs-string">"\n ----------------------------------------------- "</span> ;
+         
+         
+         <span class="hljs-comment">//to add or subtract a duration (in years, months, weeks, days, hours, minutes,  secondes) to a date:</span>
+          <span class="hljs-built_in">write</span> <span class="hljs-string">"my_date2 add_years 1: "</span> + (my_date2 add_years <span class="hljs-number">1</span>);
+          <span class="hljs-built_in">write</span> <span class="hljs-string">"my_date2 add_months 1: "</span> + (my_date2 add_months <span class="hljs-number">1</span>);
+          <span class="hljs-built_in">write</span> <span class="hljs-string">"my_date2 add_weeks 1: "</span> + (my_date2 add_weeks <span class="hljs-number">1</span>);
+          <span class="hljs-built_in">write</span> <span class="hljs-string">"my_date2 add_days 1: "</span> + (my_date2 add_days <span class="hljs-number">1</span>);
+          <span class="hljs-built_in">write</span> <span class="hljs-string">"my_date2 add_hours 1: "</span> + (my_date2 add_hours <span class="hljs-number">1</span>);
+          <span class="hljs-built_in">write</span> <span class="hljs-string">"my_date2 add_minutes 1: "</span> + (my_date2 add_minutes <span class="hljs-number">1</span>);
+          <span class="hljs-built_in">write</span> <span class="hljs-string">"my_date2 add_seconds 1: "</span> + (my_date2 add_seconds <span class="hljs-number">1</span>);
+          
+          <span class="hljs-built_in">write</span> <span class="hljs-string">"my_date2 subtract_years 1: "</span> + (my_date2 subtract_years <span class="hljs-number">1</span>);
+          <span class="hljs-built_in">write</span> <span class="hljs-string">"my_date2 subtract_months 1: "</span> + (my_date2 subtract_months <span class="hljs-number">1</span>);
+          <span class="hljs-built_in">write</span> <span class="hljs-string">"my_date2 subtract_weeks 1: "</span> + (my_date2 subtract_weeks <span class="hljs-number">1</span>);
+          <span class="hljs-built_in">write</span> <span class="hljs-string">"my_date2 subtract_days 1: "</span> + (my_date2 subtract_days <span class="hljs-number">1</span>);
+          <span class="hljs-built_in">write</span> <span class="hljs-string">"my_date2 subtract_hours 1: "</span> + (my_date2 subtract_hours <span class="hljs-number">1</span>);
+          <span class="hljs-built_in">write</span> <span class="hljs-string">"my_date2 subtract_minutes 1: "</span> + (my_date2 subtract_minutes <span class="hljs-number">1</span>);
+          <span class="hljs-built_in">write</span> <span class="hljs-string">"my_date2 subtract_seconds 1: "</span> + (my_date2 subtract_seconds <span class="hljs-number">1</span>);
+    }
+    
+    reflex info_date {
+        <span class="hljs-comment">//at each simulation step, the current_date is updated - its value can be seen in the top-left green info panel.</span>
+        <span class="hljs-built_in">write</span> <span class="hljs-string">"current_date at cycle "</span> + cycle + <span class="hljs-string">" : "</span> + current_date;
+    }
+}
+
+experiment main type: gui;
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

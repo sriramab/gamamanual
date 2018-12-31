@@ -1,0 +1,86 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/UsingNetwork --><head><meta charset="utf-8"><title>UsingNetwork</title><script src="../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="usingnetwork">UsingNetwork</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Using%20network"></a><h1 id="using-network">Using network</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Introduction"></a><h2 id="introduction">Introduction</h2>
+<p>GAMA provides features to allow agents to communicate with other agents (and other applications) through network and to exchange messages of various types (from simple number to agents). To this purpose, the <code>network</code> skill should be used on agents intending to use these capabilities.</p>
+<p>Notice that in this communication, roles are asymetric: the simulations should contain a server and some clients to communicate. Message exchanges are made between agents through this server. 3 protocols are supported (TCP, UDP and MQTT):</p>
+<ul>
+<li><strong>when TCP or UDP protocols are used:</strong> one agent of the simulation is the server and the other ones are the clients.</li>
+<li><strong>when the MQTT protocol is used:</strong> all the agents are clients and the server is an external software. A free solution (ActiveMQ) can be freely downloaded from: <a href="http://activemq.apache.org/">http://activemq.apache.org</a>.</li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Which%20protocol%20to%20use%20?"></a><h2 id="which-protocol-to-use-">Which protocol to use ?</h2>
+<p>In the GAMA network, 3 kinds of protocol can be used. Each of them has a particular purpose.</p>
+<ul>
+<li><strong>MQTT</strong>: this is the default protocol that should be used to make agents of various GAMA instances to communicate through a MQTT server (that should be run as an external application, e.g. ActiveMQ that can be downloaded from: <a href="http://activemq.apache.org/">http://activemq.apache.org/</a>),</li>
+<li><strong>UDP</strong>: this protocol should be limited to fast (and unsecured) exchanges of small pieces of data from GAMA to an external application (for example, mouse location from a Processing application to GAMA, c.f. model library),</li>
+<li><strong>TCP</strong>: this protocol can be used both to communicate between GAMA applications or between GAMA and an external application.</li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Disclaimer"></a><h2 id="disclaimer">Disclaimer</h2>
+<p><strong>In all the models using any network communication, the server should be launched before the clients.</strong>
+As a consequence, when TCP or UDP protocols are used, a model creating a server agent should always be run first. Using MQTT protocol, the external software server should be launched before running any model using it.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Declaring%20a%20network%20species"></a><h2 id="declaring-a-network-species">Declaring a network species</h2>
+<p>To create agents able to communicate through a network, their species should have the skill <code>network</code>:</p>
+<pre><code class="hljs less"><span class="hljs-selector-tag"><span class="hljs-selector-tag">species</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">Networking_Client</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">skills</span></span>: <span class="hljs-selector-attr"><span class="hljs-selector-attr">[network]</span></span> {
+   ...
+}
+</code></pre>
+<p>A list exhaustive of the additional attributes and available actions provided by this skill are described here:
+<a href="https://github.com/gama-platform/gama/wiki/BuiltInSkills#network">network skill preference page</a>.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Creation%20of%20a%20network%20agent"></a><h2 id="creation-of-a-network-agent">Creation of a network agent</h2>
+<p>The network agents are created as any other agents, but (in general) at the creation of the agents, the connection is also created, using the <code>connect</code> built-in action:</p>
+<pre><code class="hljs less"><span class="hljs-selector-tag"><span class="hljs-selector-tag">create</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">Networking_Client</span></span> {
+    do connect <span class="hljs-attribute"><span class="hljs-attribute">to</span></span>: <span class="hljs-string"><span class="hljs-string">"localhost"</span></span> <span class="hljs-attribute"><span class="hljs-attribute">protocol</span></span>: <span class="hljs-string"><span class="hljs-string">"tcp_client"</span></span> <span class="hljs-attribute"><span class="hljs-attribute">port</span></span>: <span class="hljs-number"><span class="hljs-number">3001</span></span> <span class="hljs-attribute"><span class="hljs-attribute">with_name</span></span>: <span class="hljs-string"><span class="hljs-string">"Client"</span></span>;
+}
+</code></pre>
+<p>Each protocol has its specificities regarding the connection:</p>
+<ul>
+<li><strong>TCP</strong>: 
+<ul>
+<li><strong>protocol</strong>: the 2 possibles keywords are <code>tcp_server</code> or <code>tcp_client</code>, depending on the wanted role of the agent in the communication.</li>
+<li><strong>port</strong>: traditionally the port <code>3001</code> is used.</li>
+</ul>
+</li>
+<li><strong>UDP</strong>: 
+<ul>
+<li><strong>protocol</strong>: the 2 possibles keywords are <code>udp_server</code> or <code>udp_emitter</code>, depending on the wanted role of the agent in the communication.</li>
+<li><strong>port</strong>: traditionally the port <code>9876</code> is used.</li>
+</ul>
+</li>
+<li><strong>MQTT</strong>: 
+<ul>
+<li><strong>protocol</strong>: MQTT is the default protocol value (if no value is given, MQTT will be used)</li>
+</ul>
+</li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Sending%20messages"></a><h2 id="sending-messages">Sending messages</h2>
+<p>To send any message, the agent has to use the <code>send</code> action:</p>
+<pre><code class="hljs sql">    <span class="hljs-keyword"><span class="hljs-keyword">do</span></span> send <span class="hljs-keyword"><span class="hljs-keyword">to</span></span>: <span class="hljs-string"><span class="hljs-string">"send"</span></span> <span class="hljs-keyword"><span class="hljs-keyword">contents</span></span>: <span class="hljs-keyword"><span class="hljs-keyword">name</span></span> + <span class="hljs-string"><span class="hljs-string">" "</span></span> + <span class="hljs-keyword"><span class="hljs-keyword">cycle</span></span> + <span class="hljs-string"><span class="hljs-string">" sent to server"</span></span>;
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Receiving%20messages"></a><h2 id="receiving-messages">Receiving messages</h2>
+<p>The messages sent by other agents are received in the <code>mailbox</code> attribute of each agent. So to get its new message, the agent has simply to check whether it has new messages (with action <code>has_more_message()</code> ) and fetch it (that is get it and remove it from the mailing box) with the action <code>fetch_message()</code>.</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute"><span class="hljs-attribute">reflex</span></span> fetch when: has_more_message() { 
+    <span class="hljs-attribute"><span class="hljs-attribute">message</span></span> mess &lt;- fetch_message();
+    <span class="hljs-attribute"><span class="hljs-attribute">write</span></span> name + <span class="hljs-string"><span class="hljs-string">" fecth this message: "</span></span> + mess.contents;   
+}
+</code></pre>
+<p>Alternatively, the <code>mailbox</code> attribute can be directly accessed (notice that the <code>mailbox</code> is a list of messages):</p>
+<pre><code class="hljs perl">reflex receive {  
+    <span class="hljs-keyword"><span class="hljs-keyword">if</span></span> (<span class="hljs-keyword"><span class="hljs-keyword">length</span></span>(mailbox) &gt; <span class="hljs-number"><span class="hljs-number">0</span></span>) {
+        <span class="hljs-keyword"><span class="hljs-keyword">write</span></span> mailbox;
+    }
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Broadcasting%20a%20message%20to%20all%20the%20agents%20members%20of%20a%20given%20group"></a><h2 id="broadcasting-a-message-to-all-the-agents-members-of-a-given-group">Broadcasting a message to all the agents members of a given group</h2>
+<p>Each time an agent create a connection to another agent as a client, a way to communicate with it is stored in the <code>network_groups</code> attribute. 
+So an agent can use this attribute to broadcast messages to all the agents with whose it can communicate: </p>
+<pre><code class="hljs applescript">reflex broad {
+    loop <span class="hljs-built_in"><span class="hljs-built_in">id</span></span> <span class="hljs-keyword"><span class="hljs-keyword">over</span></span>: network_groups {
+        do send <span class="hljs-keyword"><span class="hljs-keyword">to</span></span>: <span class="hljs-built_in"><span class="hljs-built_in">id</span></span> <span class="hljs-built_in"><span class="hljs-built_in">contents</span></span>: <span class="hljs-string"><span class="hljs-string">"I am Server "</span></span> + <span class="hljs-built_in"><span class="hljs-built_in">name</span></span> + <span class="hljs-string"><span class="hljs-string">" I give order to "</span></span> + <span class="hljs-built_in"><span class="hljs-built_in">id</span></span>;
+    }
+}
+</code></pre>
+<p>To go further:</p>
+<ul>
+<li><a href="https://github.com/gama-platform/gama/wiki/BuiltInSkills#network">network skill peference page</a>.</li>
+<li>examples model can be found in the GAMA model library, in: <code>Plugin models &gt; Network</code>.</li>
+</ul>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

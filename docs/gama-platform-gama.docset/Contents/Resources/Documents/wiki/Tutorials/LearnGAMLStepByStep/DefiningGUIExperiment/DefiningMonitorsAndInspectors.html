@@ -1,0 +1,68 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment/DefiningMonitorsAndInspectors --><head><meta charset="utf-8"><title>DefiningMonitorsAndInspectors</title><script src="../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="definingmonitorsandinspectors">DefiningMonitorsAndInspectors</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Defining%20monitors%20and%20inspectors"></a><h1 id="defining-monitors-and-inspectors">Defining monitors and inspectors</h1>
+<p>Other outputs can be very useful to study better the behavior of your agents.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Index"></a><h2 id="index">Index</h2>
+<ul>
+<li><a href="#define-a-monitor">Define a monitor</a></li>
+<li><a href="#define-an-inspector">Define an inspector</a></li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Define%20a%20monitor"></a><h2 id="define-a-monitor">Define a monitor</h2>
+<p>A <a href="https://github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment/InspectorsAndMonitors#monitor.html">monitor</a> allows to follow the value of an arbitrary expression in GAML. It will appear, in the User Interface, in a small window on its own and be recomputed every time step (or according to its refresh facet). </p>
+<p>Definition of a monitor: </p>
+<pre><code class="hljs groovy">monitor monitor_name <span class="hljs-string"><span class="hljs-string">value:</span></span> an_expression <span class="hljs-string"><span class="hljs-string">refresh:</span></span>boolean_statement;
+</code></pre>
+<p>with:</p>
+<ul>
+<li><code>value:</code> mandatory, the expression whose value will be displayed by the monitor.</li>
+<li><code>refresh:</code> bool statement, optional : the new value is computed if the bool statement returns true.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="hljs smali">experiment my_experiment type: gui {
+    output {
+       <span class="hljs-built_in"><span class="hljs-built_in"> monitor </span></span>monitor_name value: cycle refresh:every(1);
+    }
+}
+</code></pre>
+<p>NB : you can also declare monitors during the simulation, by clicking on the button "Add new monitor", and specifying the name of the variable you want to follow.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Define%20an%20inspector"></a><h2 id="define-an-inspector">Define an inspector</h2>
+<p>During the simulation, the user interface of GAMA provides the user the possibility to <a href="https://github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment/InspectorsAndMonitors.html">inspect an agent</a>, or a group of agents. But you can also define the inspector you want directly from your model, as an output of the experiment.</p>
+<p>Use the statement <code>inspect</code> to define your inspector, in the output scope of your gui experiment. The inspector has to be named (using the facet <code>name</code>), a value has to be specified (with the <code>value</code> facet).</p>
+<pre><code class="hljs groovy">inspect <span class="hljs-string"><span class="hljs-string">name:</span></span><span class="hljs-string"><span class="hljs-string">"inspector_name"</span></span> <span class="hljs-string"><span class="hljs-string">value:</span></span>the_value_you_want_to_display;
+</code></pre>
+<p>Note that you can inspect any type of species (regular species, grid species, even the world...).</p>
+<p>The optional facet <code>type</code> is used to specify the type of your inspector. 2 values are possible : </p>
+<ul>
+<li><em>agent</em> (default value) if you want to display the information as a regular <a href="https://github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment/InspectorsAndMonitors#agent-inspector.html">agent inspector</a>. Note that if you want to inspect a large number of agents, this can take a lot of time. In this case, prefer the other type <em>table</em></li>
+<li><em>table</em> if you want to display the information as an <a href="https://github.com/wiki/gama-platform/gama/Tutorials/LearnGAMLStepByStep/DefiningGUIExperiment/InspectorsAndMonitors#agent-browser.html">agent browser</a></li>
+</ul>
+<p>The optional facet <code>attribute</code> is used to filter the attributes you want to be displayed in your inspector.</p>
+<p><strong>Beware</strong> : only one agent inspector (<code>type:agent</code>) can be used for an experiment. Beside, you can add as many agent browser (<code>type:table</code>) as you want for your experiment.</p>
+<p>Example of implementation :</p>
+<pre><code class="hljs groovy">model <span class="hljs-keyword"><span class="hljs-keyword">new</span></span>
+
+global {
+    init {
+        create my_species <span class="hljs-string"><span class="hljs-string">number:</span></span><span class="hljs-number"><span class="hljs-number">3</span></span>;
+    }
+}
+
+species my_species {
+    <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> int_attr &lt;- <span class="hljs-number"><span class="hljs-number">6</span></span>;
+    string str_attr &lt;- <span class="hljs-string"><span class="hljs-string">"my_value"</span></span>;
+    string str_attr_not_important &lt;- <span class="hljs-string"><span class="hljs-string">"blabla"</span></span>;
+}
+
+grid my_grid_species <span class="hljs-string"><span class="hljs-string">width:</span></span> <span class="hljs-number"><span class="hljs-number">10</span></span> <span class="hljs-string"><span class="hljs-string">height:</span></span> <span class="hljs-number"><span class="hljs-number">10</span></span> {
+    <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> rnd_value &lt;- rnd(<span class="hljs-number"><span class="hljs-number">5</span></span>);
+}
+
+experiment my_experiment <span class="hljs-string"><span class="hljs-string">type:</span></span>gui {
+    output {
+        inspect <span class="hljs-string"><span class="hljs-string">name:</span></span><span class="hljs-string"><span class="hljs-string">"my_species_inspector"</span></span> <span class="hljs-string"><span class="hljs-string">value:</span></span>my_species <span class="hljs-string"><span class="hljs-string">attributes:</span></span>[<span class="hljs-string"><span class="hljs-string">"int_attr"</span></span>,<span class="hljs-string"><span class="hljs-string">"str_attr"</span></span>];
+        inspect <span class="hljs-string"><span class="hljs-string">name:</span></span><span class="hljs-string"><span class="hljs-string">"my_species_browser"</span></span> <span class="hljs-string"><span class="hljs-string">value:</span></span>my_species <span class="hljs-string"><span class="hljs-string">type:</span></span>table;
+        inspect <span class="hljs-string"><span class="hljs-string">name:</span></span><span class="hljs-string"><span class="hljs-string">"my_grid_species_browser"</span></span> <span class="hljs-string"><span class="hljs-string">value:</span></span><span class="hljs-number"><span class="hljs-number">5</span></span> among my_grid_species <span class="hljs-string"><span class="hljs-string">type:</span></span>table;
+    }
+}
+</code></pre>
+<p>Another statement, <code>browse</code>, is doing a similar thing, but preferring the <em>table</em> type (if you want to browse an agent species, the default type will be the <em>table</em> type).</p>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

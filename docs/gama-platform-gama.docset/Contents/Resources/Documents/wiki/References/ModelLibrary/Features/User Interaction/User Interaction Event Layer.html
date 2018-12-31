@@ -1,0 +1,92 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/User Interaction/User Interaction Event Layer --><head><meta charset="utf-8"><title>User Interaction Event Layer</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="user-interaction-event-layer">User Interaction Event Layer</h1>
+<h1 id="event-feature">Event Feature</h1>
+<p><em>Author : Arnaud Grignard &amp; Patrick Taillandier</em></p>
+<p>Model which shows how to use the event layer to trigger an action according to an event occuring in the display. The experiment has two displays : one for the changing color event, one for the changing shape event.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs processing">model event_layer_model
+
+
+global
+{
+
+<span class="hljs-comment">//number of agents to create</span>
+    <span class="hljs-built_in">int</span> nbAgent &lt;- <span class="hljs-number">500</span>;
+    init
+    {
+
+    <span class="hljs-comment">//creation of the agents</span>
+        create cell number: nbAgent
+        {
+            <span class="hljs-built_in">color</span> &lt;- °<span class="hljs-built_in">green</span>;
+        }
+
+    }
+
+    <span class="hljs-comment">//Action to change the color of the agents, according to the point to know which agents we're in intersection with the point</span>
+    action change_color (<span class="hljs-built_in">point</span> loc, list&lt;cell&gt; selected_agents)
+    {
+
+    <span class="hljs-comment">//change the color of the agents</span>
+        ask selected_agents
+        {
+            <span class="hljs-built_in">color</span> &lt;- <span class="hljs-built_in">color</span> = °<span class="hljs-built_in">green</span> ? °pink : °<span class="hljs-built_in">green</span>;
+        }
+
+    }
+
+    <span class="hljs-comment">//Action to change the shape of the agents, according to the point to know which agents we're in intersection with the point</span>
+    action change_shape (<span class="hljs-built_in">point</span> loc, list&lt;cell&gt; selected_agents)
+    {
+        ask selected_agents
+        {
+
+        <span class="hljs-comment">//change the bool attribute is_square to change the shape in the display</span>
+            is_square &lt;- not (is_square);
+        }
+
+    }
+
+}
+
+<span class="hljs-comment">//Species cells moving randomly</span>
+species cell skills: [moving]
+{
+    rgb <span class="hljs-built_in">color</span>;
+    bool is_square &lt;- <span class="hljs-keyword">false</span>;
+    reflex mm
+    {
+        do wander amplitude: <span class="hljs-number">30</span>;
+    }
+
+    aspect <span class="hljs-keyword">default</span>
+    {
+        <span class="hljs-title">draw</span> is_square ? square(<span class="hljs-number">2</span>) : circle(<span class="hljs-number">1</span>) <span class="hljs-built_in">color</span>: <span class="hljs-built_in">color</span>;
+    }
+
+}
+
+experiment Displays type: gui
+{
+    output
+    {
+        display View_change_color
+        {
+            species cell aspect: <span class="hljs-keyword">default</span>;
+
+            <span class="hljs-comment">//event, launches the action change_color if the event mouse_down (ie. the user clicks on the layer event) is triggered</span>
+            event [mouse_down] action: change_color;
+        }
+
+        display View_change_shape type: opengl
+        {
+            species cell;
+
+            <span class="hljs-comment">//event, launches the action change_shape if the event mouse_down (ie. the user clicks on the layer event) is triggered</span>
+            event [mouse_down] action: change_shape;
+        }
+
+    }
+
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,0 +1,34 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Data Importation/Data Importation 3D shapefile Loading --><head><meta charset="utf-8"><title>Data Importation 3D shapefile Loading</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="data-importation-3d-shapefile-loading">Data Importation 3D shapefile Loading</h1>
+<h1 id="3d-shapefile-loading">3D shapefile loading</h1>
+<p>_Author :  _</p>
+<p>Model which shows how to create a shape using a 3D Shapefile after this one has been loaded. </p>
+<p>Code of the model : </p>
+<pre><code class="hljs groovy">model shapefile_loading
+
+global {
+    
+    <span class="hljs-comment">//file variable that will store the shape file</span>
+    file shape_file_gis_3d_objects &lt;- shape_file(<span class="hljs-string">'../includes/Mobilier.shp'</span>, <span class="hljs-number">0</span>);
+    geometry shape &lt;- envelope(shape_file_gis_3d_objects);
+    init {
+        create gis_3d_object <span class="hljs-string">from:</span> shape_file_gis_3d_objects;
+    }
+}
+
+species gis_3d_object {
+    aspect base {
+        draw shape <span class="hljs-string">at:</span>{world.shape.width<span class="hljs-regexp">/2,world.shape.height/</span><span class="hljs-number">2</span>,<span class="hljs-number">0</span>};
+    }
+}
+
+experiment display_shape <span class="hljs-string">type:</span> gui {
+
+    output {
+        display city_display <span class="hljs-string">type:</span> opengl <span class="hljs-string">draw_env:</span><span class="hljs-literal">false</span>{
+            species gis_3d_object <span class="hljs-string">aspect:</span> base;
+        }
+
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

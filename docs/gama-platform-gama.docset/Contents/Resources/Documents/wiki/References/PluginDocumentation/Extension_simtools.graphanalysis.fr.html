@@ -1,0 +1,82 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/PluginDocumentation/Extension_simtools.graphanalysis.fr --><head><meta charset="utf-8"><title>Extension_simtools.graphanalysis.fr</title><script src="../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="extension_simtoolsgraphanalysisfr">Extension_simtools.graphanalysis.fr</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Extension"></a><h1 id="extension">Extension</h1>
+
+<hr>
+<p>simtools.graphanalysis.fr</p>
+<a class="dashAnchor" name="//apple_ref/Section/Table%20of%20Contents"></a><h2 id="table-of-contents">Table of Contents</h2>
+<h3 dash_ignored="yes" id="operators-2">Operators</h3>
+<h3 dash_ignored="yes" id="statements-2">Statements</h3>
+<p><a href="#layout_forceatlas2">layout_forceatlas2</a>, <a href="#layout_yifanhu">layout_yifanhu</a>, </p>
+<h3 dash_ignored="yes" id="skills-2">Skills</h3>
+<h3 dash_ignored="yes" id="architectures-2">Architectures</h3>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><h3 dash_ignored="yes" id="species-2">Species</h3>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table>
+<hr>
+<h2 id="operators">Operators</h2>
+
+<hr>
+<h2 id="skills">Skills</h2>
+
+<hr>
+<h2 id="statements">Statements</h2>
+
+<hr>
+<a class="dashAnchor" name="//apple_ref/Section/layout_forceatlas2"></a><h3 id="layout_forceatlas2">layout_forceatlas2</h3>
+<h4 id="facets">Facets</h4>
+<ul>
+<li><strong><code>graph</code></strong> (graph), (omissible) : the graph to apply the layout.
+<ul>
+<li><code>approximate_repulsion</code> (boolean): Barnes Hut optimization: n2 complexity to n.ln(n); allows larger graphs. default: false</li>
+<li><code>approximation</code> (float): Theta of the Barnes Hut optimization. default: 1.2</li>
+<li><code>bounded_point1</code> (point): The new nodes positions are bounded within the two bound points if both are not null. default: null</li>
+<li><code>bounded_point2</code> (point): The new nodes positions are bounded within the two bound points if both are not null. default: null</li>
+<li><code>dissuade_hubs</code> (boolean): Distributes attraction along outbound edges. Hubs attract less and thus are pushed to the borders (default: false).</li>
+<li><code>edge_weight_influence</code> (float): How much influence you give to the edges wight. 0 is no influence, 1 is normal. default: 1.0</li>
+<li><code>gravity</code> (float): Attracts nodes to the center. Prevents islands from drifting away. default: 1.0</li>
+<li><code>linlog_mode</code> (boolean): Switch model from lin-lin to lin-log. Makes clusters more tight (default: false).</li>
+<li><code>nb_steps</code> (int): The number of steps of the algorithm to perform (default 1).</li>
+<li><code>prevent_overlap</code> (boolean): Should not be used with approximate_repulsion default: false</li>
+<li><code>scaling</code> (float): How much repulsion you want. More makes a more sparse graph. default: 2.0</li>
+<li><code>stronger_gravity</code> (boolean): A stronger gravity law default: false</li>
+<li><code>thread_number</code> (int): More threads means more speed (default: 1).</li>
+<li><code>tolerance</code> (float): How much swinging you allow. Above 1 discouraged. Lower gives less speed and more precision. default: 0.1</li>
+</ul>
+</li>
+</ul>
+<h4 id="embedments">Embedments</h4>
+<ul>
+<li>The <code>layout_forceatlas2</code> statement is of type: <strong>Single statement</strong></li>
+<li>The <code>layout_forceatlas2</code> statement can be embedded into: Behavior, Sequence of statements or action, </li>
+<li>The <code>layout_forceatlas2</code> statement embeds statements: </li>
+</ul>
+
+<hr>
+<a class="dashAnchor" name="//apple_ref/Section/layout_yifanhu"></a><h3 id="layout_yifanhu">layout_yifanhu</h3>
+<h4 dash_ignored="yes" id="facets-2">Facets</h4>
+<ul>
+<li><strong><code>graph</code></strong> (graph), (omissible) : the graph to apply the layout.
+<ul>
+<li><code>bounded_point1</code> (point): The new nodes positions are bounded within the two bound points if both are not null. default: null</li>
+<li><code>bounded_point2</code> (point): The new nodes positions are bounded within the two bound points if both are not null. default: null</li>
+<li><code>nb_steps</code> (int): The number of steps of the algorithm to perform (default 1).</li>
+<li><code>optimal_distance</code> (float): the natural length of the springs. Bigger values mean nodes will be farther apart (default: 100).</li>
+<li><code>quadtree_max_level</code> (int): The maximum level to be used in the quadtree representation. Greater values mean more accuracy (default: 10).</li>
+<li><code>relative_strength</code> (float): The relative strength between electrical force (repulsion) and spring force (attriaction). default: 0.2</li>
+<li><code>step_size</code> (float): The step size used in the algorithm. It has to be a meaningful size compared to the optimal distance (e.g. 10%). default: 10</li>
+<li><code>theta</code> (float): The theta parameter for Barnes-Hut opening criteria. Smaller values mean more accuracy (default: 1.2).</li>
+</ul>
+</li>
+</ul>
+<h4 dash_ignored="yes" id="embedments-2">Embedments</h4>
+<ul>
+<li>The <code>layout_yifanhu</code> statement is of type: <strong>Single statement</strong></li>
+<li>The <code>layout_yifanhu</code> statement can be embedded into: Behavior, Sequence of statements or action, </li>
+<li>The <code>layout_yifanhu</code> statement embeds statements:     </li>
+</ul>
+
+<hr>
+<h2 id="species">Species</h2>
+
+<hr>
+<h2 id="architectures">Architectures</h2>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

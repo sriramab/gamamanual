@@ -1,0 +1,109 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Toy Models/Articles/Articles Prima_model5 --><head><meta charset="utf-8"><title>Articles Prima_model5</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="articles-prima_model5">Articles Prima_model5</h1>
+<h1 id="prima-5">Prima 5</h1>
+<p>_Author : _</p>
+<p>This model shows how to create agent and make them move randomly in the world.Some agents are infected, and others can gain the infection if they are in a certain range. The people are now placed in buildings at the initial state. Those buildings are created thanks toa shapefile. Roads are also created thanks to an other shapefile. A graph is now created fromthe road agents, and the people move from their location to a targent on the graph. The displayis now a 3D display. The model adds a new level as people going inside a building will be nowa new species belonging to the building and that will be manage by the building agent concerned</p>
+<p>Code of the model : </p>
+<pre><code class="hljs processing">model model5 
+
+global {
+    <span class="hljs-comment">//Shapefile of the roads</span>
+    file roads_shapefile &lt;- file(<span class="hljs-string">"../includes/road.shp"</span>);
+    <span class="hljs-comment">//Shapefile of the buildings</span>
+    file buildings_shapefile &lt;- file(<span class="hljs-string">"../includes/building.shp"</span>);
+    <span class="hljs-comment">//The bounds of the world are the bounds of the roads shapefile</span>
+    geometry <span class="hljs-built_in">shape</span> &lt;- envelope(roads_shapefile);
+    <span class="hljs-comment">//The graph of road on which people agents will move</span>
+    graph road_network;
+    init {
+        <span class="hljs-comment">//Creation of the roads using the road shapefile</span>
+        create roads from: roads_shapefile;
+        <span class="hljs-comment">//Creation of the graph using the road agents as edge</span>
+        road_network &lt;- as_edge_graph(roads);
+        <span class="hljs-comment">//Creation of the building using the building shapefile</span>
+        create buildings from: buildings_shapefile;
+        <span class="hljs-comment">//Creation of the people that will be placed in a building randomly chosen</span>
+        create people number:<span class="hljs-number">1000</span> {
+            buildings init_place &lt;- one_of(buildings);
+            location &lt;- any_location_in(init_place) + {<span class="hljs-number">0</span>,<span class="hljs-number">0</span>, init_place.<span class="hljs-built_in">height</span>};
+            target &lt;- any_location_in(one_of(buildings));
+        }
+    }
+}
+<span class="hljs-comment">//Species people that can be infected and will move from a location to a target</span>
+species people skills:[moving]{     
+    <span class="hljs-built_in">float</span> speed &lt;- <span class="hljs-number">5.0</span> + rnd(<span class="hljs-number">5</span>);
+    bool is_infected &lt;- flip(<span class="hljs-number">0.01</span>);
+    <span class="hljs-built_in">point</span> target;
+    <span class="hljs-comment">//Make the agent move to its target</span>
+    reflex move {
+        do goto target:target on: road_network;
+        <span class="hljs-comment">//Change the target once it has been reached</span>
+        <span class="hljs-keyword">if</span> (location = target) {
+            target &lt;- any_location_in(one_of(buildings));
+        }
+    }
+    <span class="hljs-comment">//Reflex to infect the people agent if it is not infected already and if there are infected people nearby</span>
+    reflex infect when: is_infected{
+        ask people at_distance <span class="hljs-number">10</span> {
+            <span class="hljs-keyword">if</span> flip(<span class="hljs-number">0.01</span>) {
+                is_infected &lt;- <span class="hljs-keyword">true</span>;
+            }
+        }
+    }
+    aspect circle{
+        <span class="hljs-title">draw</span> <span class="hljs-built_in">sphere</span>(<span class="hljs-number">5</span>) <span class="hljs-built_in">color</span>:is_infected ? #<span class="hljs-built_in">red</span> : #<span class="hljs-built_in">green</span>;
+    }
+}
+
+species roads {
+    aspect geom {
+        <span class="hljs-title">draw</span> <span class="hljs-built_in">shape</span> <span class="hljs-built_in">color</span>: #black;
+    }
+}
+<span class="hljs-comment">//Species buildings that will change the people agents inside it to people in building agent</span>
+<span class="hljs-comment">//Managing them once they have been captured, and releasing them once they reached a</span>
+<span class="hljs-comment">//leaving time</span>
+species buildings {
+    <span class="hljs-built_in">float</span> <span class="hljs-built_in">height</span> &lt;- <span class="hljs-number">10.0</span>+ rnd(<span class="hljs-number">10</span>);
+    <span class="hljs-built_in">int</span> nb_I -&gt; {members count (people_in_building(each).is_infected)};
+    
+    aspect geom {
+        <span class="hljs-title">draw</span> <span class="hljs-built_in">shape</span> <span class="hljs-built_in">color</span>: empty(members) ? #gray : (nb_I/length(members) &gt; <span class="hljs-number">0.5</span> ? #<span class="hljs-built_in">red</span> : #<span class="hljs-built_in">green</span>) depth: <span class="hljs-built_in">height</span>;
+    }
+    <span class="hljs-comment">//Species people in building that will be managed by the building agents</span>
+    species people_in_building parent: people schedules: [] {
+        <span class="hljs-built_in">int</span> leaving_time;
+        aspect circle{}
+    }
+    <span class="hljs-comment">//Reflex to capture the people entering inside the building, changing them in people in building species and puting a leaving time to know when lettiing</span>
+    <span class="hljs-comment">// them out</span>
+    reflex let_people_enter {
+        list&lt;people&gt; entering_people &lt;- (people inside self);
+        <span class="hljs-keyword">if</span> !(empty (entering_people)) {
+            <span class="hljs-comment">//Change the species of the people captured from people species to people_in_building species</span>
+            capture entering_people as: people_in_building returns: people_captured;
+            ask people_captured {
+                leaving_time &lt;- <span class="hljs-built_in">int</span>(time + <span class="hljs-number">50</span> + rnd(<span class="hljs-number">50</span>));
+            }
+        }
+    }
+    <span class="hljs-comment">//Reflex to let the people_in_building agents go out if there leaving time is reached, releasing them in the world as people agent</span>
+    reflex let_people_leave  {
+        list&lt;people_in_building&gt; leaving_people &lt;- members of_species people_in_building where (time &gt;= each.leaving_time);
+        <span class="hljs-keyword">if</span> !(empty (leaving_people)) {
+            release leaving_people as: people in: world;
+        }
+    }
+}
+
+experiment main_experiment type:gui{
+    output {
+        display <span class="hljs-built_in">map</span> type: opengl {
+            species roads aspect:geom;
+            species buildings aspect:geom;
+            species people aspect:circle;           
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,0 +1,214 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/PlatformDocumentation/InstallationAndLaunching/Headless --><head><meta charset="utf-8"><title>Headless</title><script src="../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="headless">Headless</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Headless%20Mode"></a><h1 id="headless-mode">Headless Mode</h1>
+<p>The aim of this feature is to be able to run one or multiple instances of GAMA without any user interface, so that models and experiments can be launched on a grid or a cluster. Without GUI, the memory footprint, as well as the speed of the simulations, are usually greatly improved.</p>
+<p>In this mode, GAMA can only be used to run experiments and that editing or managing models is not possible. In order to launch experiments and still benefit from a user interface (which can be used to prepare headless experiments), launch GAMA normally (see <a href="https://github.com/wiki/gama-platform/gama/References/PlatformDocumentation/InstallationAndLaunching/G__Launching.html">here</a>) and refer to this <a href="https://github.com/wiki/gama-platform/gama/References/PlatformDocumentation/InstallationAndLaunching/G__RunningExperiments.html">page</a> for instructions.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Table%20of%20contents"></a><h2 id="table-of-contents">Table of contents</h2>
+<ul>
+<li><a href="#headless-mode">Headless Mode</a>
+<ul>
+<li><a href="#command">Command</a>
+<ul>
+<li><a href="#shell-script">Shell Script</a></li>
+<li><a href="#java-command">Java Command</a></li>
+</ul>
+</li>
+<li><a href="#experiment-input-file">Experiment Input File</a>
+<ul>
+<li><a href="#heading">Heading</a></li>
+<li><a href="#parameters">Parameters</a></li>
+<li><a href="#outputs">Outputs</a></li>
+</ul>
+</li>
+<li><a href="#output-directory">Output Directory</a></li>
+<li><a href="#simulation-output">Simulation Output</a>
+<ul>
+<li><a href="#step">Step</a></li>
+<li><a href="#variable">Variable</a></li>
+</ul>
+</li>
+<li><a href="#snapshot-files">Snapshot files</a></li>
+</ul>
+</li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Command"></a><h2 id="command">Command</h2>
+<p>There are two ways to run a GAMA experiment in headless mode: using a dedicated shell script (recommended) or directly from the command line. These commands take 2 arguments: an experiment file and an output directory.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Shell%20Script"></a><h3 id="shell-script">Shell Script</h3>
+<p>It can be found in the <code>headless</code> directory located inside <code>Gama</code>. Its name is <code>gama-headless.sh</code> on MacOSX and Linux, and <code>gama-headless.bat</code> on Windows.</p>
+<pre><code class="hljs stata"> <span class="hljs-keyword"><span class="hljs-keyword">sh</span></span> gama-headless.<span class="hljs-keyword"><span class="hljs-keyword">sh</span></span> [<span class="hljs-keyword"><span class="hljs-keyword">m</span></span>/c/t/hpc/v] <span class="hljs-variable"><span class="hljs-variable">$1</span></span> <span class="hljs-variable"><span class="hljs-variable">$2</span></span>
+</code></pre>
+<ul>
+<li><p>with:</p>
+<ul>
+<li>$1 input parameter file : an xml file determining experiment parameters and attended outputs</li>
+<li>$2 output directory path : a directory which contains simulation results (numerical data and simulation snapshot)</li>
+<li>options [-m/c/t/hpc/v]
+<ul>
+<li>-m memory : memory allocated to gama</li>
+<li>-c : console mode, the simulation description could be written with the stdin</li>
+<li>-t : tunneling mode, simulation description are read from the stdin, simulation results are printed out in stdout</li>
+<li>-hpc nb_of_cores : allocate a specific number of cores for the experiment plan</li>
+<li>-v : verbose mode. trace are displayed in the console </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>For example (using the provided sample), navigate in your terminal to the <code>headless</code> folder inside your GAMA root folder and type:</p>
+</li>
+</ul>
+<pre><code class="hljs stylus">sh gama-headless<span class="hljs-selector-class"><span class="hljs-selector-class">.sh</span></span> samples/predatorPrey<span class="hljs-selector-class"><span class="hljs-selector-class">.xml</span></span> outputHeadLess
+</code></pre>
+<p>As specified in <strong>predatorPrey.xml</strong>, this command runs the prey - predator model for 1000 steps and record a screenshot of the main display every 5 steps. The screenshots are recorded in the directory <code>outputHeadLess</code> (under the GAMA root folder).</p>
+<p>Note that the current directory to run gama-headless command must be $GAMA_PATH/headless</p>
+<a class="dashAnchor" name="//apple_ref/Section/Java%20Command"></a><h3 id="java-command">Java Command</h3>
+<pre><code class="hljs stylus">java -cp <span class="hljs-variable"><span class="hljs-variable">$GAMA_CLASSPATH</span></span> -Xms512m -Xmx2048m -Djava<span class="hljs-selector-class"><span class="hljs-selector-class">.awt</span></span><span class="hljs-selector-class"><span class="hljs-selector-class">.headless</span></span>=true org<span class="hljs-selector-class"><span class="hljs-selector-class">.eclipse</span></span><span class="hljs-selector-class"><span class="hljs-selector-class">.core</span></span><span class="hljs-selector-class"><span class="hljs-selector-class">.launcher</span></span><span class="hljs-selector-class"><span class="hljs-selector-class">.Main</span></span> -application msi<span class="hljs-selector-class"><span class="hljs-selector-class">.gama</span></span><span class="hljs-selector-class"><span class="hljs-selector-class">.headless</span></span><span class="hljs-selector-class"><span class="hljs-selector-class">.id4</span></span> $<span class="hljs-number"><span class="hljs-number">1</span></span> $<span class="hljs-number"><span class="hljs-number">2</span></span>
+</code></pre>
+<ul>
+<li>with:
+<ul>
+<li>$GAMA_CLASSPATH gama classpath: contains relative or absolute path of jars inside the gama plugin directory and jars created by users</li>
+<li>$1 input parameter file: an xml file determining experiment parameters and attended outputs</li>
+<li>$2 output directory path: a directory which contains simulation results (numerical data and simulation snapshot)</li>
+</ul>
+</li>
+</ul>
+<p>Note that the output directory is created during the experiment and should not exist before.</p>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Experiment%20Input%20File"></a><h2 id="experiment-input-file">Experiment Input File</h2>
+<p>The XML input file contains for example:</p>
+<pre><code class="hljs gams">&lt;?xml version=<span class="hljs-string"><span class="hljs-string">"1.0"</span></span> encoding=<span class="hljs-string"><span class="hljs-string">"UTF-8"</span></span>?&gt;
+&lt;Experiment_plan&gt;
+ &lt;Simulation id=<span class="hljs-string"><span class="hljs-string">"2"</span></span> sourcePath=<span class="hljs-string"><span class="hljs-string">"./predatorPrey/predatorPrey.gaml"</span></span> finalStep=<span class="hljs-string"><span class="hljs-string">"1000"</span></span> experiment=<span class="hljs-string"><span class="hljs-string">"predPrey"</span></span>&gt;
+  &lt;<span class="hljs-keyword"><span class="hljs-keyword">Parameters</span></span>&gt;
+    &lt;<span class="hljs-keyword"><span class="hljs-keyword">Parameter</span></span> <span class="hljs-comment"><span class="hljs-comment">name=</span></span><span class="hljs-comment"><span class="hljs-comment">"nb_predator_init"</span></span><span class="hljs-comment"><span class="hljs-comment"> type=</span></span><span class="hljs-comment"><span class="hljs-comment">"INT"</span></span><span class="hljs-comment"><span class="hljs-comment"> value=</span></span><span class="hljs-comment"><span class="hljs-comment">"53"</span></span> /&gt;
+    &lt;Parameter name=<span class="hljs-comment"><span class="hljs-comment">"nb_preys_init"</span></span> type=<span class="hljs-comment"><span class="hljs-comment">"INT"</span></span> value=<span class="hljs-comment"><span class="hljs-comment">"621"</span></span> /<span class="hljs-comment"><span class="hljs-comment">&gt;</span></span>
+  &lt;/Parameters&gt;
+  &lt;Outputs&gt;
+    &lt;Output id=<span class="hljs-comment"><span class="hljs-comment">"1"</span></span> name=<span class="hljs-comment"><span class="hljs-comment">"main_display"</span></span> framerate=<span class="hljs-comment"><span class="hljs-comment">"10"</span></span> /&gt;
+    &lt;Output <span class="hljs-comment"><span class="hljs-comment">id=</span></span><span class="hljs-comment"><span class="hljs-comment">"2"</span></span><span class="hljs-comment"><span class="hljs-comment"> name=</span></span><span class="hljs-comment"><span class="hljs-comment">"number_of_preys"</span></span><span class="hljs-comment"><span class="hljs-comment"> framerate=</span></span><span class="hljs-comment"><span class="hljs-comment">"1"</span></span> /&gt;
+    &lt;Output id=<span class="hljs-comment"><span class="hljs-comment">"3"</span></span> name=<span class="hljs-comment"><span class="hljs-comment">"number_of_predators"</span></span> framerate=<span class="hljs-comment"><span class="hljs-comment">"1"</span></span> /<span class="hljs-comment"><span class="hljs-comment">&gt;</span></span>
+    &lt;Output <span class="hljs-comment"><span class="hljs-comment">id=</span></span><span class="hljs-comment"><span class="hljs-comment">"4"</span></span><span class="hljs-comment"><span class="hljs-comment"> name=</span></span><span class="hljs-comment"><span class="hljs-comment">"duration"</span></span><span class="hljs-comment"><span class="hljs-comment"> framerate=</span></span><span class="hljs-comment"><span class="hljs-comment">"1"</span></span> /&gt;
+  &lt;/<span class="hljs-comment"><span class="hljs-comment">Outputs&gt;</span></span>
+ &lt;/Simulation&gt;
+&lt;/Experiment_plan&gt;
+</code></pre>
+<p>Note that several simulations could be determined in one experiment plan. These simulations are run in parallel according to the number of allocated cores.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Heading"></a><h3 id="heading">Heading</h3>
+<pre><code class="hljs dust"><span class="xml"><span class="hljs-tag"><span class="xml"><span class="hljs-tag">&lt;</span></span><span class="hljs-name"><span class="xml"><span class="hljs-tag"><span class="hljs-name">Simulation</span></span></span></span><span class="xml"><span class="hljs-tag"> </span></span><span class="hljs-attr"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">id</span></span></span></span><span class="xml"><span class="hljs-tag">=</span></span><span class="hljs-string"><span class="xml"><span class="hljs-tag"><span class="hljs-string">"2"</span></span></span></span><span class="xml"><span class="hljs-tag"> </span></span><span class="hljs-attr"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">sourcePath</span></span></span></span><span class="xml"><span class="hljs-tag">=</span></span><span class="hljs-string"><span class="xml"><span class="hljs-tag"><span class="hljs-string">"./predatorPrey/predatorPrey.gaml"</span></span></span></span><span class="xml"><span class="hljs-tag"> </span></span><span class="hljs-attr"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">finalStep</span></span></span></span><span class="xml"><span class="hljs-tag">=</span></span><span class="hljs-string"><span class="xml"><span class="hljs-tag"><span class="hljs-string">"1000"</span></span></span></span><span class="xml"><span class="hljs-tag"> </span></span><span class="hljs-attr"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">experiment</span></span></span></span><span class="xml"><span class="hljs-tag">=</span></span><span class="hljs-string"><span class="xml"><span class="hljs-tag"><span class="hljs-string">"predPrey"</span></span></span></span><span class="xml"><span class="hljs-tag">&gt;</span></span></span><span class="xml">
+</span></span></code></pre>
+<ul>
+<li>with:
+<ul>
+<li><code>id</code>: permits to prefix output files for experiment plan with huge simulations.</li>
+<li><code>sourcePath</code>: contains the relative or absolute path to read the gaml model.</li>
+<li><code>finalStep</code>: determines the number of simulation step you want to run.</li>
+<li><code>experiment</code>: determines which experiment should be run on the model. This experiment should exist, otherwise the headless mode will exit.</li>
+</ul>
+</li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Parameters"></a><h3 id="parameters">Parameters</h3>
+<p>One line per parameter you want to specify a value to:</p>
+<pre><code class="hljs scala">&lt;<span class="hljs-type"><span class="hljs-type">Parameter</span></span> name=<span class="hljs-string"><span class="hljs-string">"nb_predator_init"</span></span> <span class="hljs-class"><span class="hljs-keyword"><span class="hljs-class"><span class="hljs-keyword">type</span></span></span></span>=<span class="hljs-string"><span class="hljs-string">"INT"</span></span> value=<span class="hljs-string"><span class="hljs-string">"53"</span></span> /&gt;
+</code></pre>
+<ul>
+<li>with:
+<ul>
+<li><code>name</code>:  name of the parameter in the gaml model</li>
+<li><code>type</code>:  type of the parameter (INT, FLOAT, BOOLEAN, STRING)</li>
+<li><code>value</code>: the chosen value</li>
+</ul>
+</li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Outputs"></a><h3 id="outputs">Outputs</h3>
+<p>One line per output value you want to retrieve. Outputs can be names of monitors or displays defined in the 'output' section of experiments, or the names of attributes defined in the experiment or the model itself (in the 'global' section).</p>
+<pre><code class="hljs livecodeserver">    ... <span class="hljs-keyword"><span class="hljs-keyword">with</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> name <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> monitor defined <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> <span class="hljs-string"><span class="hljs-string">'output'</span></span> section <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> experiment...
+    &lt;Output id=<span class="hljs-string"><span class="hljs-string">"2"</span></span> name=<span class="hljs-string"><span class="hljs-string">"number_of_preys"</span></span> framerate=<span class="hljs-string"><span class="hljs-string">"1"</span></span> /&gt;
+    ... <span class="hljs-keyword"><span class="hljs-keyword">with</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> name <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-keyword"><span class="hljs-keyword">a</span></span> (built-<span class="hljs-keyword"><span class="hljs-keyword">in</span></span>) <span class="hljs-built_in"><span class="hljs-built_in">variable</span></span> defined <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> <span class="hljs-keyword"><span class="hljs-keyword">the</span></span> experiment itself...
+    &lt;Output id=<span class="hljs-string"><span class="hljs-string">"4"</span></span> name=<span class="hljs-string"><span class="hljs-string">"duration"</span></span> framerate=<span class="hljs-string"><span class="hljs-string">"1"</span></span> /&gt;
+</code></pre>
+<ul>
+<li><p>with:</p>
+<ul>
+<li><code>name</code> : name of the output in the 'output'/'permanent' section in the experiment or name of the experiment/model attribute to retrieve</li>
+<li><code>framerate</code> : the frequency of the monitoring (each step, each 2 steps,  each 100 steps...).</li>
+</ul>
+</li>
+<li><p>Note that :</p>
+<ul>
+<li>the lower the framerate value the longer the experiment.</li>
+<li>if the chosen output is a display, an image is produced and the output file contains the path to access this image</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Output%20Directory"></a><h2 id="output-directory">Output Directory</h2>
+<p>During headless experiments, a directory is created with the following structure:</p>
+<pre><code class="hljs 1c">Outputed-directory-path/
+    <span class="hljs-string"><span class="hljs-string">|-simulation-output.xml</span></span>
+    <span class="hljs-string"><span class="hljs-string">|- snapshot</span></span>
+          <span class="hljs-string"><span class="hljs-string">|- main_display2-0.png</span></span>
+          <span class="hljs-string"><span class="hljs-string">|- main_display2-10.png</span></span>
+          <span class="hljs-string"><span class="hljs-string">|- ...</span></span>
+</code></pre>
+<ul>
+<li>with:
+<ul>
+<li><code>simulation-output.xml</code>: containing the results</li>
+<li><code>snapshot</code>: containing the snapshots produced during the simulation</li>
+</ul>
+</li>
+</ul>
+<p>Is it possible to change the output directory for the images by adding the attribute "output_path" in the xml : </p>
+<p>If we write <code>&lt;Output id="1" name="my_display" file:"/F:/path/imageName" framerate="10" /&gt;</code>, then the display "my_display" will have the name "imageName-stepNb.png" and will be written in the folder "/F:/path/"</p>
+<a class="dashAnchor" name="//apple_ref/Section/Simulation%20Output"></a><h2 id="simulation-output">Simulation Output</h2>
+<p>A file named <code>simulation-output.xml</code> is created with the following contents when the experiment runs.</p>
+<pre><code class="hljs gams">&lt;?xml version=<span class="hljs-string"><span class="hljs-string">"1.0"</span></span> encoding=<span class="hljs-string"><span class="hljs-string">"UTF-8"</span></span>?&gt;
+&lt;Simulation id=<span class="hljs-string"><span class="hljs-string">"2"</span></span> &gt;
+    &lt;Step id=<span class="hljs-string"><span class="hljs-string">'0'</span></span> &gt;
+        &lt;<span class="hljs-keyword"><span class="hljs-keyword">Variable</span></span> name=<span class="hljs-string"><span class="hljs-string">'main_display'</span></span> value=<span class="hljs-string"><span class="hljs-string">'main_display2-0.png'</span></span>/&gt;
+        &lt;Variable name=<span class="hljs-comment"><span class="hljs-comment">'number_of_preys'</span></span> value=<span class="hljs-comment"><span class="hljs-comment">'613'</span></span>/&gt;
+        &lt;<span class="hljs-keyword"><span class="hljs-keyword">Variable</span></span> <span class="hljs-comment"><span class="hljs-comment">name=</span></span><span class="hljs-comment"><span class="hljs-comment">'number_of_predators'</span></span><span class="hljs-comment"><span class="hljs-comment"> value=</span></span><span class="hljs-comment"><span class="hljs-comment">'51'</span></span>/&gt;
+                &lt;Variable name=<span class="hljs-comment"><span class="hljs-comment">'duration'</span></span> value=<span class="hljs-comment"><span class="hljs-comment">'6'</span></span> /<span class="hljs-comment"><span class="hljs-comment">&gt;</span></span>
+    &lt;/Step&gt;
+    &lt;Step id=<span class="hljs-comment"><span class="hljs-comment">'1'</span></span> &gt;
+        &lt;Variable name=<span class="hljs-comment"><span class="hljs-comment">'main_display'</span></span> value=<span class="hljs-comment"><span class="hljs-comment">'main_display2-0.png'</span></span>/&gt;
+        &lt;<span class="hljs-keyword"><span class="hljs-keyword">Variable</span></span> <span class="hljs-comment"><span class="hljs-comment">name=</span></span><span class="hljs-comment"><span class="hljs-comment">'number_of_preys'</span></span><span class="hljs-comment"><span class="hljs-comment"> value=</span></span><span class="hljs-comment"><span class="hljs-comment">'624'</span></span>/&gt;
+        &lt;Variable name=<span class="hljs-comment"><span class="hljs-comment">'number_of_predators'</span></span> value=<span class="hljs-comment"><span class="hljs-comment">'51'</span></span>/<span class="hljs-comment"><span class="hljs-comment">&gt;</span></span>
+                &lt;<span class="hljs-keyword"><span class="hljs-keyword">Variable</span></span> <span class="hljs-comment"><span class="hljs-comment">name=</span></span><span class="hljs-comment"><span class="hljs-comment">'duration'</span></span><span class="hljs-comment"><span class="hljs-comment"> value=</span></span><span class="hljs-comment"><span class="hljs-comment">'5'</span></span> /&gt;
+    &lt;/<span class="hljs-comment"><span class="hljs-comment">Step&gt;</span></span>
+        &lt;Step <span class="hljs-comment"><span class="hljs-comment">id=</span></span><span class="hljs-comment"><span class="hljs-comment">'2'</span></span><span class="hljs-comment"><span class="hljs-comment">&gt;</span></span>
+
+...
+</code></pre>
+<ul>
+<li>With:
+<ul>
+<li><code>&lt;Simulation id="2" &gt;</code> : block containing results of the simulation 2 (this Id is identified in the Input Experiment File)</li>
+<li><code>&lt;Step id='1' &gt; ... &lt;/Step&gt;</code>: one block per step done. The id corresponds to the step number</li>
+</ul>
+</li>
+</ul>
+<a class="dashAnchor" name="//apple_ref/Section/Step"></a><h3 id="step">Step</h3>
+<pre><code class="hljs gams">    &lt;Step id=<span class="hljs-string"><span class="hljs-string">'1'</span></span> &gt;
+        &lt;<span class="hljs-keyword"><span class="hljs-keyword">Variable</span></span> name=<span class="hljs-string"><span class="hljs-string">'main_display'</span></span> value=<span class="hljs-string"><span class="hljs-string">'main_display2-0.png'</span></span>/&gt;
+        &lt;Variable name=<span class="hljs-comment"><span class="hljs-comment">'number_of_preys'</span></span> value=<span class="hljs-comment"><span class="hljs-comment">'624'</span></span>/&gt;
+        &lt;<span class="hljs-keyword"><span class="hljs-keyword">Variable</span></span> <span class="hljs-comment"><span class="hljs-comment">name=</span></span><span class="hljs-comment"><span class="hljs-comment">'number_of_predators'</span></span><span class="hljs-comment"><span class="hljs-comment"> value=</span></span><span class="hljs-comment"><span class="hljs-comment">'51'</span></span>/&gt;
+                &lt;Variable name=<span class="hljs-comment"><span class="hljs-comment">'duration'</span></span> value=<span class="hljs-comment"><span class="hljs-comment">'6'</span></span> /<span class="hljs-comment"><span class="hljs-comment">&gt;</span></span>
+    &lt;/Step&gt;
+</code></pre>
+<p>There is one Variable block per Output identified in the output experiment file.</p>
+<a class="dashAnchor" name="//apple_ref/Section/Variable"></a><h3 id="variable">Variable</h3>
+<pre><code class="hljs sml"> &lt;<span class="hljs-type"><span class="hljs-type">Variable</span></span> name=<span class="hljs-symbol"><span class="hljs-symbol">'main_display'</span></span> value=<span class="hljs-symbol"><span class="hljs-symbol">'main_display2</span></span>-<span class="hljs-number"><span class="hljs-number">0.</span></span>png'/&gt;
+</code></pre>
+<ul>
+<li>with:
+<ul>
+<li><code>name</code>: name of the output, the model variable</li>
+<li><code>value</code>: the current value of model variable.</li>
+</ul>
+</li>
+</ul>
+<p>Note that the value of an output is repeated according to the framerate defined in the input experiment file.</p>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Snapshot%20files"></a><h2 id="snapshot-files">Snapshot files</h2>
+<p>This directory contains images generated during the experiment. There is one image per displayed output per step (according to the framerate). File names follow a naming convention, e.g:</p>
+<pre><code class="hljs markdown">   [<span class="hljs-string"><span class="hljs-string">outputName</span></span>][<span class="hljs-symbol"><span class="hljs-symbol">SimulationID</span></span>]<span class="hljs-emphasis"><span class="hljs-emphasis">_[stepID].png -&gt; main_</span></span>display2-20.png
+</code></pre>
+<p>Note that images are saved in '.png' format.</p>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

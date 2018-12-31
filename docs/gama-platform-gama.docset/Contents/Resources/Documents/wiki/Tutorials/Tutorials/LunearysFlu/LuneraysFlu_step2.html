@@ -1,0 +1,170 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/Tutorials/Tutorials/LunearysFlu/LuneraysFlu_step2 --><head><meta charset="utf-8"><title>LuneraysFlu_step2</title><script src="../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="luneraysflu_step2">LuneraysFlu_step2</h1>
+<a class="dashAnchor" name="//apple_ref/Section/2.%20Definition%20of%20monitors%20and%20chart%20outputs"></a><h1 id="2-definition-of-monitors-and-chart-outputs">2. Definition of monitors and chart outputs</h1>
+<p>This second step illustrates how to create monitors and charts to follows the evolution of variables and to add an ending condition to the simulation.</p>
+<p><img src="../../../../github.com/wiki/gama-platform/gama/Tutorials/Tutorials/LunearysFlu/resources/images/tutorials/luneray2.png" alt="images/Luneray.jpg"></p>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Formulation"></a><h2 id="formulation">Formulation</h2>
+<ul>
+<li>Add three new global dynamic variables to follow the evolution of the number of infected people agents, of not infected people agents and of the rate of infected people.
+<ul>
+<li>Define an ending condition for the simulation</li>
+<li>Define a monitor to follow the rate of infected people agents</li>
+<li>Define a chart to follow the rate of infected people agents</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><a class="dashAnchor" name="//apple_ref/Section/Model%20Definition"></a><h2 id="model-definition">Model Definition</h2>
+<a class="dashAnchor" name="//apple_ref/Section/global%20section"></a><h3 id="global-section">global section</h3>
+<a class="dashAnchor" name="//apple_ref/Section/global%20variables"></a><h4 id="global-variables">global variables</h4>
+<p>GAMA offers the possibility to define dynamic variable that will be recomputed at each simulation step by using the <em>update</em> facet when defining a variable. When an agent is activated, first, it recomputes each of its variables with a update facet (in their definition order), then it activates each of its reflexes (in their definition order).</p>
+<p>To better follow the evolution of sick people, we add three new global variables to the model:</p>
+<ul>
+<li>nb_people_infected of type <em>int</em> with <em>nb_infected_init</em> as init value and updated at each simulation step by the number of infected people
+<ul>
+<li>nb_people_not_infected of type <em>int</em> with <em>(nb_people - nb_infected_init)</em> as init value and updated at each simulation step by the number of not infected people</li>
+<li>infected_rate of type <em>float</em> updated at each simulation step by the number of infected people divided by the number of people.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="hljs q">global{
+    <span class="hljs-comment"><span class="hljs-comment">//... other attributes</span></span>
+    <span class="hljs-type"><span class="hljs-type">int</span></span> nb_people_infected &lt;- nb_infected_init <span class="hljs-keyword"><span class="hljs-keyword">update</span></span>: people <span class="hljs-built_in"><span class="hljs-built_in">count</span></span> (<span class="hljs-built_in"><span class="hljs-built_in">each</span></span>.is_infected);
+    <span class="hljs-type"><span class="hljs-type">int</span></span> nb_people_not_infected &lt;- nb_people - nb_infected_init <span class="hljs-keyword"><span class="hljs-keyword">update</span></span>: nb_people - nb_people_infected;
+    float infected_rate <span class="hljs-keyword"><span class="hljs-keyword">update</span></span>: nb_people_infected/nb_people;
+    <span class="hljs-comment"><span class="hljs-comment">//... init</span></span>
+}
+</code></pre>
+<p>We used the <a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/LunearysFlu/Operators#count.html">count</a> operator that allows to count the number of elements of a list for which the left condition is true. The keyword <em>each</em> represents each element of the list.</p>
+<a class="dashAnchor" name="//apple_ref/Section/ending%20condition"></a><h4 id="ending-condition">ending condition</h4>
+<p>The simplest way to add an ending condition to a model is to add a global reflex that is activated at the end of the simulation that will pause the simulation (use of the <em>pause</em> global action).</p>
+<p>In our model, we add a new reflex called <em>end_simulation</em> that will be activated when the infected rate is 1.0 (i.e. all the people agents are infected) and that will apply the <em>pause</em> action. </p>
+<pre><code class="hljs less"><span class="hljs-selector-tag"><span class="hljs-selector-tag">global</span></span> {
+    <span class="hljs-comment"><span class="hljs-comment">//.. variable and init definition</span></span>
+    
+    <span class="hljs-selector-tag"><span class="hljs-selector-tag">reflex</span></span> <span class="hljs-selector-tag"><span class="hljs-selector-tag">end_simulation</span></span> <span class="hljs-keyword"><span class="hljs-keyword">when</span></span>: infected_rate = <span class="hljs-number"><span class="hljs-number">1.0</span></span> {
+        do pause;
+    }
+} 
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/experiment"></a><h3 id="experiment">experiment</h3>
+<a class="dashAnchor" name="//apple_ref/Section/monitor"></a><h4 id="monitor">monitor</h4>
+<p>GAMA provides modelers with the possibility to define <a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/LunearysFlu/DefiningMonitorsAndInspectors#monitors.html">monitors</a>. A monitor allows to follow the value of an arbitrary expression in GAML. It will appear, in the User Interface, in a small window on its own and be recomputed every time step (or according to its 'refresh' facet). </p>
+<p>Definition of a monitor:</p>
+<ul>
+<li><em>value</em>: mandatory, the expression whose value will be displayed by the monitor.
+<ul>
+<li><em>refresh</em>: bool, optional : if the expression is true, compute (default is true).</li>
+</ul>
+</li>
+</ul>
+<p>For our model, we define a monitor to follow the value of the <em>infected_rate</em> variable:</p>
+<pre><code class="hljs smali">experiment main_experiment type:gui{
+    //...parameters
+    output {
+       <span class="hljs-built_in"><span class="hljs-built_in"> monitor </span></span><span class="hljs-string"><span class="hljs-string">"Infected people rate"</span></span> value: infected_rate;
+        
+               //...display
+    }
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Chart"></a><h4 id="chart">Chart</h4>
+<p>In GAMA, <a href="https://github.com/wiki/gama-platform/gama/Tutorials/Tutorials/LunearysFlu/G__DefiningChartLayers.html">charts</a> are considered as a display layer. 
+GAMA can display 3 main types of charts using the <em>type</em> facet:</p>
+<ul>
+<li>histogram
+<ul>
+<li>pie</li>
+<li>series/xy/scatter: both display series with lines or dots, with 3 subtypes :
+<ul>
+<li>series: to display the evolution of one/several variable (vs time or not).</li>
+<li>xy: to specify both x and y value. To allow stacked plots, only one y value for each x value.</li>
+<li>scatter: free x and y values for each serie.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>In our model, we define a new display called <em> chart_display</em> that will be refresh every 10 simulation steps. In this display, we add a series charts with 2 layers of data:</p>
+<ul>
+<li><p>susceptible: the number of people that are not infected (in green)</p>
+<ul>
+<li><p>infected: the number of people that are infected (in red)</p>
+<pre><code class="hljs lasso">experiment main_experiment <span class="hljs-keyword"><span class="hljs-keyword">type</span></span>:gui{
+ <span class="hljs-comment"><span class="hljs-comment">//...parameters</span></span>
+ output {
+     <span class="hljs-comment"><span class="hljs-comment">//...display and monitors</span></span>
+
+display chart_display refresh:every(<span class="hljs-number"><span class="hljs-number">10</span></span> #cycle) {
+         chart <span class="hljs-string"><span class="hljs-string">"Disease spreading"</span></span> <span class="hljs-keyword"><span class="hljs-keyword">type</span></span>: series {
+             <span class="hljs-built_in"><span class="hljs-built_in">data</span></span> <span class="hljs-string"><span class="hljs-string">"susceptible"</span></span> value: nb_people_not_infected color: #green;
+             <span class="hljs-built_in"><span class="hljs-built_in">data</span></span> <span class="hljs-string"><span class="hljs-string">"infected"</span></span> value: nb_people_infected color: #red;
+         }
+     }
+ }
+}
+</code></pre>
+<a class="dashAnchor" name="//apple_ref/Section/Complete%20Model"></a><h2 id="complete-model">Complete Model</h2>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="hljs arduino">model model2
+
+global {
+    <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> nb_people &lt;- <span class="hljs-number"><span class="hljs-number">2147</span></span>;
+    <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> nb_infected_init &lt;- <span class="hljs-number"><span class="hljs-number">5</span></span>;
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> <span class="hljs-built_in"><span class="hljs-built_in">step</span></span> &lt;- <span class="hljs-number"><span class="hljs-number">5</span></span> <span class="hljs-meta"><span class="hljs-meta">#mn;</span></span>
+    geometry shape&lt;-square(<span class="hljs-number"><span class="hljs-number">1500</span></span> <span class="hljs-meta"><span class="hljs-meta">#m);</span></span>
+    
+    <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> nb_people_infected &lt;- nb_infected_init update: people count (each.is_infected);
+    <span class="hljs-keyword"><span class="hljs-keyword">int</span></span> nb_people_not_infected &lt;- nb_people - nb_infected_init update: nb_people - nb_people_infected;
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> infected_rate update: nb_people_infected/nb_people;
+    
+    init{
+        create people number:nb_people;
+        ask nb_infected_init among people {
+            is_infected &lt;- true;
+        }
+    }
+}
+
+species people skills:[moving]{     
+    <span class="hljs-keyword"><span class="hljs-keyword">float</span></span> speed &lt;- (<span class="hljs-number"><span class="hljs-number">2</span></span> + rnd(<span class="hljs-number"><span class="hljs-number">3</span></span>)) <span class="hljs-meta"><span class="hljs-meta">#km/#h;</span></span>
+    <span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> is_infected &lt;- false;
+    
+    reflex <span class="hljs-built_in"><span class="hljs-built_in">move</span></span>{
+        <span class="hljs-built_in"><span class="hljs-built_in">do</span></span> wander;
+    }
+    reflex infect when: is_infected{
+        ask people at_distance <span class="hljs-number"><span class="hljs-number">10</span></span> <span class="hljs-meta"><span class="hljs-meta">#m {</span></span>
+            <span class="hljs-built_in"><span class="hljs-built_in">if</span></span> flip(<span class="hljs-number"><span class="hljs-number">0.05</span></span>) {
+                is_infected &lt;- true;
+            }
+        }
+    }
+    
+    aspect <span class="hljs-built_in"><span class="hljs-built_in">circle</span></span> {
+        draw <span class="hljs-built_in"><span class="hljs-built_in">circle</span></span>(<span class="hljs-number"><span class="hljs-number">10</span></span>) color:is_infected ? <span class="hljs-meta"><span class="hljs-meta">#red : #green;</span></span>
+    }
+}
+
+experiment main type: gui {
+    parameter <span class="hljs-string"><span class="hljs-string">"Nb people infected at init"</span></span> var: nb_infected_init <span class="hljs-built_in"><span class="hljs-built_in">min</span></span>: <span class="hljs-number"><span class="hljs-number">1</span></span> <span class="hljs-built_in"><span class="hljs-built_in">max</span></span>: <span class="hljs-number"><span class="hljs-number">2147</span></span>;
+
+    output {
+        monitor <span class="hljs-string"><span class="hljs-string">"Infected people rate"</span></span> value: infected_rate;
+        
+        <span class="hljs-built_in"><span class="hljs-built_in">display</span></span> <span class="hljs-built_in"><span class="hljs-built_in">map</span></span> {
+            species people aspect:<span class="hljs-built_in"><span class="hljs-built_in">circle</span></span>;   
+        }
+        
+        <span class="hljs-built_in"><span class="hljs-built_in">display</span></span> chart_display refresh: every(<span class="hljs-number"><span class="hljs-number">10</span></span> <span class="hljs-meta"><span class="hljs-meta">#cycle) {</span></span>
+            chart <span class="hljs-string"><span class="hljs-string">"Disease spreading"</span></span> type: series {
+                data <span class="hljs-string"><span class="hljs-string">"susceptible"</span></span> value: nb_people_not_infected color: <span class="hljs-meta"><span class="hljs-meta">#green;</span></span>
+                data <span class="hljs-string"><span class="hljs-string">"infected"</span></span> value: nb_people_infected color: <span class="hljs-meta"><span class="hljs-meta">#red;</span></span>
+            }
+        }
+    }
+}
+</code></pre>
+<p><a href="LuneraysFlu_step3.html">Next step: Importation of GIS data</a></p>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

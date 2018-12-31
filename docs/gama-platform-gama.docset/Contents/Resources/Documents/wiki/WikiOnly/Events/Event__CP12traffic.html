@@ -1,0 +1,30 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/WikiOnly/Events/Event__CP12traffic --><head><meta charset="utf-8"><title>Event__CP12traffic</title><script src="../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="event__cp12traffic">Event__CP12traffic</h1>
+<a class="dashAnchor" name="//apple_ref/Section/Traffic%20simulation%20and%20Physics%20constraints%20operators"></a><h1 id="traffic-simulation-and-physics-constraints-operators">Traffic simulation and Physics constraints operators</h1>
+<p><strong>Traffic simulation</strong></p>
+<p>A first task that we done was to define a new plug-in in order to take into account the fact that a road has a limited number of lanes.</p>
+<p>We propose a plug-in that contains the driving plug-in. This plug-in extends the moving skill. In particular, it proposes a new primitive "gotoTraffic" that integrates a collision avoiding algorithm.
+2 models (in "models/experimental models") were proposed to illustrate the use of our plug-in.</p>
+<p>DrivingSkill.java implements a new skill in <code>package msi.gaml.extensions.traffic</code></p>
+<pre><code class="hljs scala"><span class="hljs-meta"><span class="hljs-meta">@skill</span></span>(<span class="hljs-string"><span class="hljs-string">"driving"</span></span>)
+public <span class="hljs-class"><span class="hljs-keyword"><span class="hljs-class"><span class="hljs-keyword">class</span></span></span><span class="hljs-class"> </span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">DrivingSkill</span></span></span><span class="hljs-class"> </span><span class="hljs-keyword"><span class="hljs-class"><span class="hljs-keyword">extends</span></span></span><span class="hljs-class"> </span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">MovingSkill</span></span></span></span>{
+...
+}
+</code></pre>
+<p>New model in <code>msi.gama.models/experimental_models/traffic</code></p>
+<p><strong>Physics constraints operators</strong></p>
+<p>A second plugin is under development concerning physic computation. In particular, it allows to handle collisions between two convex polygons. A first toy model concerning pool game was developed.
+Library used: <a href="http://www.jbox2d.org/">http://www.jbox2d.org/</a></p>
+<p><code>src/msi/gaml/extensions/physics/PhysicsSkill.java</code> implements a new skill in <code>package msi.gaml.extensions.physics</code></p>
+<pre><code class="hljs scala"><span class="hljs-meta"><span class="hljs-meta">@skill</span></span>(<span class="hljs-string"><span class="hljs-string">"physical"</span></span>)
+public <span class="hljs-class"><span class="hljs-keyword"><span class="hljs-class"><span class="hljs-keyword">class</span></span></span><span class="hljs-class"> </span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">PhysicsSkill</span></span></span><span class="hljs-class"> </span><span class="hljs-keyword"><span class="hljs-class"><span class="hljs-keyword">extends</span></span></span><span class="hljs-class"> </span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">Skill</span></span></span></span>{
+        <span class="hljs-meta"><span class="hljs-meta">@setter</span></span>(<span class="hljs-string"><span class="hljs-string">"physical_world"</span></span>)
+        public void setWorldAgent(<span class="hljs-keyword"><span class="hljs-keyword">final</span></span> <span class="hljs-type"><span class="hljs-type">IAgent</span></span> _agent, <span class="hljs-keyword"><span class="hljs-keyword">final</span></span> <span class="hljs-type"><span class="hljs-type">IAgent</span></span> _world){
+                <span class="hljs-keyword"><span class="hljs-keyword">if</span></span>(_world == <span class="hljs-literal"><span class="hljs-literal">null</span></span>)
+                        <span class="hljs-keyword"><span class="hljs-keyword">return</span></span>;
+                        
+                <span class="hljs-type"><span class="hljs-type">PhysicalWorldAgent</span></span> pwa = (<span class="hljs-type"><span class="hljs-type">PhysicalWorldAgent</span></span>)_world;
+                pwa.registerAgent(_agent);
+        }
+
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,0 +1,54 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Database Usage/Database Usage Agents from Database in MySQL --><head><meta charset="utf-8"><title>Database Usage Agents from Database in MySQL</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="database-usage-agents-from-database-in-mysql">Database Usage Agents from Database in MySQL</h1>
+<h1 id="agents-from-database-in-mysql">Agents from Database in MySQL</h1>
+<p><em>Author : Benoit Gaudou</em></p>
+<p>This model does SQl query commands and create agents using the results</p>
+<p>Code of the model : </p>
+<pre><code class="hljs autoit">model DB2agentMySQL
+
+<span class="hljs-keyword">global</span> {
+    map&lt;<span class="hljs-built_in">string</span>,<span class="hljs-built_in">string</span>&gt; BOUNDS &lt;- [  //<span class="hljs-string">'srid'</span>::<span class="hljs-string">'32648'</span>, // optinal
+                                    <span class="hljs-string">'host'</span>::<span class="hljs-string">'localhost'</span>,
+                                    <span class="hljs-string">'dbtype'</span>::<span class="hljs-string">'MySQL'</span>,
+                                    <span class="hljs-string">'database'</span>::<span class="hljs-string">'spatial_DB'</span>,
+                                    <span class="hljs-string">'port'</span>::<span class="hljs-string">'8889'</span>,
+                                    <span class="hljs-string">'user'</span>::<span class="hljs-string">'root'</span>,
+                                    <span class="hljs-string">'passwd'</span>::<span class="hljs-string">'root'</span>,
+                                    <span class="hljs-string">"select"</span>::<span class="hljs-string">"SELECT geom FROM bounds;"</span> ]<span class="hljs-comment">;</span>
+    map&lt;<span class="hljs-built_in">string</span>,<span class="hljs-built_in">string</span>&gt; PARAMS &lt;- [  //<span class="hljs-string">'srid'</span>::<span class="hljs-string">'32648'</span>, // optinal
+                                    <span class="hljs-string">'host'</span>::<span class="hljs-string">'localhost'</span>,
+                                    <span class="hljs-string">'dbtype'</span>::<span class="hljs-string">'MySQL'</span>,
+                                    <span class="hljs-string">'database'</span>::<span class="hljs-string">'spatial_DB'</span>,
+                                    <span class="hljs-string">'port'</span>::<span class="hljs-string">'8889'</span>,
+                                    <span class="hljs-string">'user'</span>::<span class="hljs-string">'root'</span>,
+                                    <span class="hljs-string">'passwd'</span>::<span class="hljs-string">'root'</span>]<span class="hljs-comment">;</span>
+    
+    <span class="hljs-built_in">string</span> QUERY &lt;- <span class="hljs-string">"SELECT name, type, geom FROM buildings ;"</span><span class="hljs-comment">;</span>
+    geometry shape &lt;- envelope(BOUNDS)<span class="hljs-comment">;         </span>
+        
+    init {
+        create DB_accessor {
+            create buildings from: list(self <span class="hljs-keyword">select</span> [params:: PARAMS, <span class="hljs-keyword">select</span>:: QUERY]) 
+                             <span class="hljs-keyword">with</span>:[ <span class="hljs-string">'name'</span>::<span class="hljs-string">"name"</span>,<span class="hljs-string">'type'</span>::<span class="hljs-string">"type"</span>, <span class="hljs-string">'shape'</span>:: geometry(<span class="hljs-string">"geom"</span>)]<span class="hljs-comment">;</span>
+         }
+    }
+}
+
+
+species DB_accessor skills: [SQLSKILL]<span class="hljs-comment">;</span>
+
+species buildings {
+    <span class="hljs-built_in">string</span> type<span class="hljs-comment">;</span>
+    aspect <span class="hljs-keyword">default</span> {
+        draw shape color: <span class="hljs-meta">#gray <span class="hljs-comment">;</span></span>
+    }   
+}   
+
+experiment DB2agentSQLite type: gui {
+    output {
+        display fullView {
+            species buildings aspect: <span class="hljs-keyword">default</span><span class="hljs-comment">;</span>
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

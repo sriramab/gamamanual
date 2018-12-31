@@ -1,0 +1,41 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Tutorials/3D/3D Model 02 --><head><meta charset="utf-8"><title>3D Model 02</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="3d-model-02">3D Model 02</h1>
+<h1 id="moving-cells">Moving cells</h1>
+<p><em>Author : Arnaud Grignard</em></p>
+<p>Second part of the tutorial : Tuto3D</p>
+<p>Code of the model : </p>
+<pre><code class="hljs processing">model Tuto3D   
+
+global {
+  <span class="hljs-built_in">int</span> nb_cells &lt;<span class="hljs-number">-100</span>;
+  <span class="hljs-built_in">int</span> environmentSize &lt;<span class="hljs-number">-100</span>;
+  geometry <span class="hljs-built_in">shape</span> &lt;- cube(environmentSize);  
+  init { 
+    create cells number: nb_cells { 
+      location &lt;- {rnd(environmentSize), rnd(environmentSize), rnd(environmentSize)};       
+    } 
+  }  
+} 
+  
+species cells skills:[moving3D]{  
+    
+  reflex move{
+    do move;
+  }                     
+  aspect <span class="hljs-keyword">default</span> {
+    <span class="hljs-title">draw</span> <span class="hljs-built_in">sphere</span>(environmentSize*<span class="hljs-number">0.01</span>) <span class="hljs-built_in">color</span>:#<span class="hljs-built_in">blue</span>;   
+  }
+}
+
+experiment Tuto3D  type: gui {
+  parameter <span class="hljs-string">"Initial number of cells: "</span> var: nb_cells <span class="hljs-built_in">min</span>: <span class="hljs-number">1</span> <span class="hljs-built_in">max</span>: <span class="hljs-number">1000</span> category: <span class="hljs-string">"Cells"</span> ;
+  output {
+    display View1 type:opengl{
+      graphics <span class="hljs-string">"env"</span>{
+        <span class="hljs-title">draw</span> cube(environmentSize) <span class="hljs-built_in">color</span>: #black empty:<span class="hljs-keyword">true</span>;    
+      }
+      species cells;
+    }
+  }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

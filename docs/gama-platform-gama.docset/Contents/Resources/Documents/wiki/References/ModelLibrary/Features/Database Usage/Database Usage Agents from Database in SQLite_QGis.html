@@ -1,0 +1,54 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Database Usage/Database Usage Agents from Database in SQLite_QGis --><head><meta charset="utf-8"><title>Database Usage Agents from Database in SQLite_QGis</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="database-usage-agents-from-database-in-sqlite_qgis">Database Usage Agents from Database in SQLite_QGis</h1>
+<h1 id="agents-from-database-in-sqlite-qgis">Agents from Database in SQLite QGIS</h1>
+<p><em>Author : Truong Minh Thai</em></p>
+<p>This model loads data from vnm_adm2 that is created by QGis.</p>
+<ul>
+<li><p>In this case we do not need using AsBinary() to convert blob data to WKB format.  </p>
+</li>
+<li><p>In other case, if we load Geometry data that is created by using libspatialite library then we must use Asbinary() </p>
+</li>
+<li>to convert geometry to WKB format (see SQLite_libspatialite model)</li>
+</ul>
+<p>Code of the model : </p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">model</span> Sqlite_QGis
+ 
+  
+global { 
+    <span class="hljs-attribute">map</span> BOUNDS &lt;- [//<span class="hljs-string">'srid'</span>::<span class="hljs-string">'4326'</span>, // optinal
+                  <span class="hljs-string">"dbtype"</span>::<span class="hljs-string">"sqlite"</span>,
+                  <span class="hljs-string">"database"</span>::<span class="hljs-string">"../../includes/spatialite.db"</span>
+                  ,<span class="hljs-string">"select"</span>::   <span class="hljs-string">"select geom  from bounds;"</span> 
+                                                        
+                              ]; 
+    <span class="hljs-attribute">map</span> PARAMS &lt;- [//<span class="hljs-string">'srid'</span>::<span class="hljs-string">'4326'</span>, // optinal
+                    <span class="hljs-string">"dbtype"</span>::<span class="hljs-string">"sqlite"</span>,
+                    <span class="hljs-string">"database"</span>::<span class="hljs-string">"../../includes/bph.db"</span>];
+    <span class="hljs-attribute">string</span> QUERY &lt;- <span class="hljs-string">"SELECT name, type, geom as geom FROM buildings ;"</span>;
+    <span class="hljs-attribute">geometry</span> shape &lt;- envelope(BOUNDS);         
+            
+    <span class="hljs-section">init</span> {
+        <span class="hljs-attribute">create</span> DB_accessor {
+            <span class="hljs-attribute">create</span> buildings from: (self <span class="hljs-literal">select</span> [params:: PARAMS, <span class="hljs-literal">select</span>:: QUERY]) 
+                             with:[ <span class="hljs-string">'name'</span>::<span class="hljs-string">"name"</span>,<span class="hljs-string">'type'</span>::<span class="hljs-string">"type"</span>, <span class="hljs-string">'shape'</span>:: geometry(<span class="hljs-string">"geom"</span>)];
+         }
+    }
+}
+
+<span class="hljs-attribute">species</span> DB_accessor skills: [SQLSKILL];
+
+<span class="hljs-attribute">species</span> buildings {
+    <span class="hljs-attribute">string</span> type;
+    <span class="hljs-attribute">aspect</span> default {
+        <span class="hljs-attribute">draw</span> shape color: <span class="hljs-comment">#gray ;</span>
+    }   
+}   
+
+experiment DB2agentSQLite type: gui {
+    <span class="hljs-section">output</span> {
+        <span class="hljs-attribute">display</span> fullView {
+            <span class="hljs-attribute">species</span> buildings aspect: default;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

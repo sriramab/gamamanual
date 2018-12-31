@@ -1,0 +1,52 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Database Usage/Database Usage Agents from Database in SQLite --><head><meta charset="utf-8"><title>Database Usage Agents from Database in SQLite</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="database-usage-agents-from-database-in-sqlite">Database Usage Agents from Database in SQLite</h1>
+<h1 id="agents-from-database-in-sqlite">Agents from Database in SQLite</h1>
+<p><em>Author : Benoit Gaudou</em></p>
+<p>This model creates buildings agents from the sqlite database using the result of a query</p>
+<p>Code of the model : </p>
+<pre><code class="hljs go">model DB2agentSQLite
+
+global {
+<span class="hljs-comment">//  file buildingsShp &lt;- file('../../includes/building.shp');</span>
+<span class="hljs-comment">//  file boundsShp &lt;- file('../../includes/bounds.shp');</span>
+<span class="hljs-comment">//  geometry shape &lt;- envelope(boundsShp);</span>
+
+    
+    <span class="hljs-keyword">map</span>&lt;<span class="hljs-keyword">string</span>,<span class="hljs-keyword">string</span>&gt; BOUNDS &lt;- [<span class="hljs-string">"dbtype"</span>::<span class="hljs-string">"sqlite"</span>,
+                                  <span class="hljs-string">'database'</span>::<span class="hljs-string">'../../includes/spatialite.db'</span>,
+                                 <span class="hljs-comment">//'srid'::'32648',</span>
+                                  <span class="hljs-string">"select"</span>::<span class="hljs-string">"SELECT AsBinary(geom) as geom FROM bounds;"</span>                
+                                 ];
+    <span class="hljs-keyword">map</span>&lt;<span class="hljs-keyword">string</span>,<span class="hljs-keyword">string</span>&gt; PARAMS &lt;- [<span class="hljs-string">"dbtype"</span>::<span class="hljs-string">"sqlite"</span>,
+                                  <span class="hljs-comment">//'srid'::'32648',</span>
+                                  <span class="hljs-string">'database'</span>::<span class="hljs-string">'../../includes/spatialite.db'</span>
+                                  ];
+    
+    <span class="hljs-keyword">string</span> QUERY &lt;- <span class="hljs-string">"SELECT name, type, AsBinary(geom) as geom FROM buildings ;"</span>;
+    geometry shape &lt;- envelope(BOUNDS);         
+        
+    init {
+        create DB_accessor {
+            create buildings from: list(self <span class="hljs-keyword">select</span> [params:: PARAMS, <span class="hljs-keyword">select</span>:: QUERY]) 
+                             with:[ <span class="hljs-string">'name'</span>::<span class="hljs-string">"name"</span>,<span class="hljs-string">'type'</span>::<span class="hljs-string">"type"</span>, <span class="hljs-string">'shape'</span>:: geometry(<span class="hljs-string">"geom"</span>)];
+         }
+    }
+}
+
+species DB_accessor skills: [SQLSKILL];
+
+species buildings {
+    <span class="hljs-keyword">string</span> <span class="hljs-keyword">type</span>;
+    aspect <span class="hljs-keyword">default</span> {
+        draw shape color: #gray ;
+    }   
+}   
+
+experiment DB2agentSQLite <span class="hljs-keyword">type</span>: gui {
+    output {
+        display fullView {
+            species buildings aspect: <span class="hljs-keyword">default</span>;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

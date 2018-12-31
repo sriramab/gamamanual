@@ -1,0 +1,54 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Features/Save statement/Save statement Save_to_CSV --><head><meta charset="utf-8"><title>Save statement Save_to_CSV</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="save-statement-save_to_csv">Save statement Save_to_CSV</h1>
+<h1 id="save-to-csv">Save to CSV</h1>
+<p><em>Author : Patrick Taillandier</em></p>
+<p>This is a model that shows how to save agents inside a CSV File to reuse it later or to keep it.</p>
+<p>Code of the model : </p>
+<pre><code class="hljs mel">model SavetoCSV
+
+<span class="hljs-keyword">global</span> {
+    init {
+        <span class="hljs-comment">//Create all the agents</span>
+        create bug number: <span class="hljs-number">50</span>;
+    }
+    <span class="hljs-comment">//Save the agents bug when the cycle is equals to 100</span>
+    reflex save_bug_attribute when: cycle = <span class="hljs-number">100</span>{
+        ask bug {
+            <span class="hljs-comment">// save the values of the variables name, speed and size to the csv file</span>
+            save [name,speed, <span class="hljs-keyword">size</span>] to: <span class="hljs-string">"../results/bug.csv"</span> type:<span class="hljs-string">"csv"</span>;
+        }
+        <span class="hljs-comment">//Pause the model as the data are saved</span>
+        <span class="hljs-keyword">do</span> <span class="hljs-keyword">pause</span>;
+    }
+}
+
+<span class="hljs-comment">//Species that will be saved</span>
+species bug skills:[moving]{
+    <span class="hljs-keyword">float</span> <span class="hljs-keyword">size</span> &lt;- <span class="hljs-number">1.0</span> + rnd(<span class="hljs-number">4</span>) <span class="hljs-keyword">min</span>: <span class="hljs-number">1.0</span> <span class="hljs-keyword">max</span>: <span class="hljs-number">5.0</span>;
+    <span class="hljs-keyword">float</span> speed &lt;- <span class="hljs-number">1.0</span> + rnd(<span class="hljs-number">4.0</span>);
+    
+    reflex update_size {
+        <span class="hljs-keyword">int</span> nb_neigh &lt;- length(bug at_distance <span class="hljs-number">20.0</span>);
+        <span class="hljs-keyword">if</span> (nb_neigh &gt; <span class="hljs-number">5</span>) {
+            <span class="hljs-keyword">size</span> &lt;- <span class="hljs-keyword">size</span> + <span class="hljs-number">1</span>;
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">size</span> &lt;- <span class="hljs-keyword">size</span> - <span class="hljs-number">1</span>;
+        }
+    }   
+    reflex <span class="hljs-keyword">move</span> {
+        <span class="hljs-keyword">do</span> wander;
+    }
+    
+    aspect <span class="hljs-keyword">default</span> {
+        draw <span class="hljs-keyword">circle</span>(<span class="hljs-keyword">size</span>) <span class="hljs-keyword">color</span>: #red;
+    }
+}
+
+experiment main type: gui {
+    output {
+        display map {
+            species bug;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

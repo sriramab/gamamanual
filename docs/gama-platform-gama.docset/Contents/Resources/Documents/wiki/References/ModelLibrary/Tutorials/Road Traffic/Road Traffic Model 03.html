@@ -1,0 +1,112 @@
+<html><!-- Online page at https://github.com/gama-platform/gama/wiki/References/ModelLibrary/Tutorials/Road Traffic/Road Traffic Model 03 --><head><meta charset="utf-8"><title>Road Traffic Model 03</title><script src="../../../../../dash_resources/highlight.all.js"></script><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/github-markdown.css"><link rel="stylesheet" type="text/css" href="../../../../../dash_resources/highlightjs.github.css"></head><body class="markdown-body" style="padding-bottom:20px; margin: 8px 13px;"><h1 id="road-traffic-model-03">Road Traffic Model 03</h1>
+<h1 id="movement-of-the-people-agents">Movement of the people agents</h1>
+<p>third part of the tutorial: Road Traffic</p>
+<p>Code of the model : </p>
+<pre><code class="hljs nimrod">
+model tutorial_gis_city_traffic
+
+
+global {
+    file shape_file_buildings &lt;- file(<span class="hljs-string">"../includes/building.shp"</span>);
+    file shape_file_roads &lt;- file(<span class="hljs-string">"../includes/road.shp"</span>);
+    file shape_file_bounds &lt;- file(<span class="hljs-string">"../includes/bounds.shp"</span>);
+    geometry shape &lt;- envelope(shape_file_bounds);
+    <span class="hljs-built_in">float</span> step &lt;- <span class="hljs-number">10</span> <span class="hljs-comment">#mn;</span>
+    <span class="hljs-built_in">int</span> nb_people &lt;- <span class="hljs-number">100</span>;
+    <span class="hljs-built_in">int</span> current_hour update: (time / <span class="hljs-comment">#hour) mod 24;</span>
+    <span class="hljs-built_in">int</span> min_work_start &lt;- <span class="hljs-number">6</span>;
+    <span class="hljs-built_in">int</span> max_work_start &lt;- <span class="hljs-number">8</span>;
+    <span class="hljs-built_in">int</span> min_work_end &lt;- <span class="hljs-number">16</span>; 
+    <span class="hljs-built_in">int</span> max_work_end &lt;- <span class="hljs-number">20</span>; 
+    <span class="hljs-built_in">float</span> min_speed &lt;- <span class="hljs-number">1</span>.<span class="hljs-number">0</span> <span class="hljs-comment">#km / #h;</span>
+    <span class="hljs-built_in">float</span> max_speed &lt;- <span class="hljs-number">5</span>.<span class="hljs-number">0</span> <span class="hljs-comment">#km / #h; </span>
+    graph the_graph;
+    
+    init {
+        create building <span class="hljs-keyword">from</span>: shape_file_buildings <span class="hljs-keyword">with</span>: [<span class="hljs-keyword">type</span>::<span class="hljs-built_in">string</span>(read (<span class="hljs-string">"NATURE"</span>))] {
+            <span class="hljs-keyword">if</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">"Industrial"</span> {
+                color &lt;- <span class="hljs-comment">#blue ;</span>
+            }
+        }
+        create road <span class="hljs-keyword">from</span>: shape_file_roads ;
+        the_graph &lt;- as_edge_graph(road);
+        
+        
+        list&lt;building&gt; residential_buildings &lt;- building where (each.<span class="hljs-keyword">type</span>=<span class="hljs-string">"Residential"</span>);
+        list&lt;building&gt;  industrial_buildings &lt;- building  where (each.<span class="hljs-keyword">type</span>=<span class="hljs-string">"Industrial"</span>) ;
+        create people number: nb_people {
+            speed &lt;- min_speed + rnd (max_speed - min_speed) ;
+            start_work &lt;- min_work_start + rnd (max_work_start - min_work_start) ;
+            end_work &lt;- min_work_end + rnd (max_work_end - min_work_end) ;
+            living_place &lt;- one_of(residential_buildings) ;
+            working_place &lt;- one_of(industrial_buildings) ;
+            objective &lt;- <span class="hljs-string">"resting"</span>;
+            location &lt;- any_location_in (living_place); 
+        }
+    }
+}
+
+
+species building {
+    <span class="hljs-built_in">string</span> <span class="hljs-keyword">type</span>; 
+    rgb color &lt;- <span class="hljs-comment">#gray  ;</span>
+    
+    aspect base {
+        draw shape color: color ;
+    }
+}
+
+species road  {
+    rgb color &lt;- <span class="hljs-comment">#black ;</span>
+    aspect base {
+        draw shape color: color ;
+    }
+}
+
+species people skills:[moving] {
+    rgb color &lt;- <span class="hljs-comment">#yellow ;</span>
+    building living_place &lt;- <span class="hljs-keyword">nil</span> ;
+    building working_place &lt;- <span class="hljs-keyword">nil</span> ;
+    <span class="hljs-built_in">int</span> start_work ;
+    <span class="hljs-built_in">int</span> end_work  ;
+    <span class="hljs-built_in">string</span> objective ; 
+    point the_target &lt;- <span class="hljs-keyword">nil</span> ;
+        
+    reflex time_to_work <span class="hljs-keyword">when</span>: current_hour = start_work <span class="hljs-keyword">and</span> objective = <span class="hljs-string">"resting"</span>{
+        objective &lt;- <span class="hljs-string">"working"</span> ;
+        the_target &lt;- any_location_in (working_place);
+    }
+        
+    reflex time_to_go_home <span class="hljs-keyword">when</span>: current_hour = end_work <span class="hljs-keyword">and</span> objective = <span class="hljs-string">"working"</span>{
+        objective &lt;- <span class="hljs-string">"resting"</span> ;
+        the_target &lt;- any_location_in (living_place); 
+    } 
+     
+    reflex move <span class="hljs-keyword">when</span>: the_target != <span class="hljs-keyword">nil</span> {
+        <span class="hljs-keyword">do</span> goto target: the_target on: the_graph ; 
+        <span class="hljs-keyword">if</span> the_target = location {
+            the_target &lt;- <span class="hljs-keyword">nil</span> ;
+        }
+    }
+    
+    aspect base {
+        draw circle(<span class="hljs-number">10</span>) color: color;
+    }
+}
+
+
+experiment road_traffic <span class="hljs-keyword">type</span>: gui {
+    parameter <span class="hljs-string">"Number of people agents"</span> <span class="hljs-keyword">var</span>: nb_people category: <span class="hljs-string">"People"</span> ;
+    parameter <span class="hljs-string">"minimal speed"</span> <span class="hljs-keyword">var</span>: min_speed category: <span class="hljs-string">"People"</span> min: <span class="hljs-number">0</span>.<span class="hljs-number">1</span> <span class="hljs-comment">#km/#h ;</span>
+    parameter <span class="hljs-string">"maximal speed"</span> <span class="hljs-keyword">var</span>: max_speed category: <span class="hljs-string">"People"</span> max: <span class="hljs-number">50</span> <span class="hljs-comment">#km/#h;</span>
+    
+    output {
+        display city_display <span class="hljs-keyword">type</span>: opengl {
+            species building aspect: base refresh: <span class="hljs-literal">false</span>;
+            species road aspect: base refresh: <span class="hljs-literal">false</span>;
+            species people aspect: base ;
+        }
+    }
+}
+</code></pre>
+<script>hljs.initHighlightingOnLoad();</script></body></html>
