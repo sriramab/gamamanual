@@ -1,7 +1,7 @@
 ---
 title: "GAMA 1.8 - GAML Quick Reference for Beginners"
 author: "Srirama Bhamidipati"
-date: "Updated: `r Sys.Date()` (Amsterdam)"
+date: "Updated: `r Sys.time()` (Amsterdam)"
 header-includes:
   - \usepackage{tikz}
   - \usetikzlibrary{shapes.geometric, arrows}}
@@ -41,13 +41,15 @@ options(width = 90)
 
 * This is a modified content and is not a 100% reproduction. If you do not find what you are looking for, go to the main website.
 
+* See downloads section for a different way to obtain full GAMA documentation.
+
 * I thank the Team of GAMA-Platform for giving me the permission to reproduce their content.
 
 Cheers ! \
 \
 **Srirama Bhamidipati** \
 *Delft, Netherlands* \
-*2018*
+*2019*
 
 ![](gamacover.png)
 
