@@ -314,33 +314,33 @@ float var1 &lt;- beta_index(graphEpidemio); <span class="hljs-comment"><span cla
 <li><code>date</code> <strong><code>between</code></strong> <code>date</code> ---&gt;  <code>bool</code>
 <ul>
 <li><strong><code>between</code></strong> (<code>date</code> , <code>date</code>) ---&gt;  <code>bool</code></li>
-<li><strong><code>between</code></strong> (<code>any expression</code>, <code>date</code>, <code>date</code>) ---&gt;  <code>bool</code></li>
 <li><strong><code>between</code></strong> (<code>int</code>, <code>int</code>, <code>int</code>) ---&gt;  <code>bool</code></li>
-<li><strong><code>between</code></strong> (<code>float</code>, <code>float</code>, <code>float</code>) ---&gt;  <code>bool</code></li>
-<li><strong><code>between</code></strong> (<code>date</code>, <code>date</code>, <code>date</code>) ---&gt;  <code>bool</code> </li>
+<li><strong><code>between</code></strong> (<code>date</code>, <code>date</code>, <code>date</code>) ---&gt;  <code>bool</code></li>
+<li><strong><code>between</code></strong> (<code>any expression</code>, <code>date</code>, <code>date</code>) ---&gt;  <code>bool</code></li>
+<li><strong><code>between</code></strong> (<code>float</code>, <code>float</code>, <code>float</code>) ---&gt;  <code>bool</code> </li>
 </ul>
 </li>
 </ul>
 <h4 dash_ignored="yes" id="result-5">Result:</h4>
-<p>returns true the first integer operand is bigger than the second integer operand and smaller than the third integer operand
-returns true if the first float operand is bigger than the second float operand and smaller than the third float operand</p>
+<p>returns true the first integer operand is bigger than the second integer operand and smaller than the third integer operand</p>
+<p>returns true if the first float operand is bigger than the second float operand and smaller than the third float operand</p>
 <h4 id="special-cases">Special cases:</h4>
-<ul>
-<li>returns true if the first operand is between the two dates passed in arguments (both exclusive). The version with 2 arguments compares the current_date with the 2 others </li>
-</ul>
-<pre><code class="hljs qml"> 
-<span class="hljs-built_in"><span class="hljs-built_in">bool</span></span> var2 &lt;- (<span class="hljs-built_in"><span class="hljs-built_in">date</span></span>(<span class="hljs-string"><span class="hljs-string">'2016-01-01'</span></span>) between(<span class="hljs-built_in"><span class="hljs-built_in">date</span></span>(<span class="hljs-string"><span class="hljs-string">'2000-01-01'</span></span>), <span class="hljs-built_in"><span class="hljs-built_in">date</span></span>(<span class="hljs-string"><span class="hljs-string">'2020-02-02'</span></span>))); <span class="hljs-comment"><span class="hljs-comment">// var2 equals true// // will return true if the current_date of the model is in_between the 2 between(date('2000-01-01'), date('2020-02-02')) </span></span>
-</code></pre>
 <ul>
 <li>returns true if the first operand is between the two dates passed in arguments (both exclusive). Can be combined with 'every' to express a frequency between two dates </li>
 </ul>
 <pre><code class="hljs qml"> 
-<span class="hljs-built_in"><span class="hljs-built_in">bool</span></span> var5 &lt;- (<span class="hljs-built_in"><span class="hljs-built_in">date</span></span>(<span class="hljs-string"><span class="hljs-string">'2016-01-01'</span></span>) between(<span class="hljs-built_in"><span class="hljs-built_in">date</span></span>(<span class="hljs-string"><span class="hljs-string">'2000-01-01'</span></span>), <span class="hljs-built_in"><span class="hljs-built_in">date</span></span>(<span class="hljs-string"><span class="hljs-string">'2020-02-02'</span></span>))); <span class="hljs-comment"><span class="hljs-comment">// var5 equals true// will return true every new day between these two dates, taking the first one as the starting point every(#day between(date('2000-01-01'), date('2020-02-02')))  </span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">bool</span></span> var0 &lt;- (<span class="hljs-built_in"><span class="hljs-built_in">date</span></span>(<span class="hljs-string"><span class="hljs-string">'2016-01-01'</span></span>) between(<span class="hljs-built_in"><span class="hljs-built_in">date</span></span>(<span class="hljs-string"><span class="hljs-string">'2000-01-01'</span></span>), <span class="hljs-built_in"><span class="hljs-built_in">date</span></span>(<span class="hljs-string"><span class="hljs-string">'2020-02-02'</span></span>))); <span class="hljs-comment"><span class="hljs-comment">// var0 equals true// will return true every new day between these two dates, taking the first one as the starting point every(#day between(date('2000-01-01'), date('2020-02-02')))  </span></span>
+</code></pre>
+<ul>
+<li>returns true if the first operand is between the two dates passed in arguments (both exclusive). The version with 2 arguments compares the current_date with the 2 others </li>
+</ul>
+<pre><code class="hljs qml"> 
+<span class="hljs-built_in"><span class="hljs-built_in">bool</span></span> var3 &lt;- (<span class="hljs-built_in"><span class="hljs-built_in">date</span></span>(<span class="hljs-string"><span class="hljs-string">'2016-01-01'</span></span>) between(<span class="hljs-built_in"><span class="hljs-built_in">date</span></span>(<span class="hljs-string"><span class="hljs-string">'2000-01-01'</span></span>), <span class="hljs-built_in"><span class="hljs-built_in">date</span></span>(<span class="hljs-string"><span class="hljs-string">'2020-02-02'</span></span>))); <span class="hljs-comment"><span class="hljs-comment">// var3 equals true// // will return true if the current_date of the model is in_between the 2 between(date('2000-01-01'), date('2020-02-02')) </span></span>
 </code></pre>
 <table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><h4 dash_ignored="yes" id="examples-3">Examples:</h4>
 <pre><code class="hljs mipsasm"> 
-<span class="hljs-keyword"><span class="hljs-keyword">bool </span></span>var0 &lt;- <span class="hljs-keyword"><span class="hljs-keyword">between(5, </span></span><span class="hljs-number"><span class="hljs-number">1</span></span>, <span class="hljs-number"><span class="hljs-number">10</span></span>)<span class="hljs-comment"><span class="hljs-comment">; // var0 equals true </span></span>
-<span class="hljs-keyword"><span class="hljs-keyword">bool </span></span>var1 &lt;- <span class="hljs-keyword"><span class="hljs-keyword">between(5.0, </span></span><span class="hljs-number"><span class="hljs-number">1</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>, <span class="hljs-number"><span class="hljs-number">10</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>)<span class="hljs-comment"><span class="hljs-comment">; // var1 equals true</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">bool </span></span>var6 &lt;- <span class="hljs-keyword"><span class="hljs-keyword">between(5, </span></span><span class="hljs-number"><span class="hljs-number">1</span></span>, <span class="hljs-number"><span class="hljs-number">10</span></span>)<span class="hljs-comment"><span class="hljs-comment">; // var6 equals true </span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">bool </span></span>var7 &lt;- <span class="hljs-keyword"><span class="hljs-keyword">between(5.0, </span></span><span class="hljs-number"><span class="hljs-number">1</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>, <span class="hljs-number"><span class="hljs-number">10</span></span>.<span class="hljs-number"><span class="hljs-number">0</span></span>)<span class="hljs-comment"><span class="hljs-comment">; // var7 equals true</span></span>
 </code></pre>
 <pre><code class="hljs"></code></pre>
 
@@ -445,11 +445,11 @@ map var1 &lt;- betweenness_centrality(graphEpidemio); <span class="hljs-comment"
 <li>If the ratio is omitted, an even blend is done </li>
 </ul>
 <pre><code class="hljs processing"> 
-rgb var1 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">blend</span></span>(#<span class="hljs-built_in"><span class="hljs-built_in">red</span></span>, #<span class="hljs-built_in"><span class="hljs-built_in">blue</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var1 equals to a color very close to the purple</span></span>
+rgb var3 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">blend</span></span>(#<span class="hljs-built_in"><span class="hljs-built_in">red</span></span>, #<span class="hljs-built_in"><span class="hljs-built_in">blue</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var3 equals to a color very close to the purple</span></span>
 </code></pre>
 <table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><h4 dash_ignored="yes" id="examples-7">Examples:</h4>
 <pre><code class="hljs processing"> 
-rgb var3 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">blend</span></span>(#<span class="hljs-built_in"><span class="hljs-built_in">red</span></span>, #<span class="hljs-built_in"><span class="hljs-built_in">blue</span></span>, <span class="hljs-number"><span class="hljs-number">0.3</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var3 equals to a color between the purple and the blue</span></span>
+rgb var1 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">blend</span></span>(#<span class="hljs-built_in"><span class="hljs-built_in">red</span></span>, #<span class="hljs-built_in"><span class="hljs-built_in">blue</span></span>, <span class="hljs-number"><span class="hljs-number">0.3</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var1 equals to a color between the purple and the blue</span></span>
 </code></pre>
 <pre><code class="hljs"></code></pre>
 <h4 dash_ignored="yes" id="see-also-4">See also:</h4>
@@ -488,8 +488,8 @@ rgb var3 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">blend</sp
 </ul>
 <h4 dash_ignored="yes" id="examples-8">Examples:</h4>
 <pre><code class="hljs maxima"> 
-geometry var0 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">box</span></span>({<span class="hljs-number"><span class="hljs-number">10</span></span>, <span class="hljs-number"><span class="hljs-number">5</span></span> , <span class="hljs-number"><span class="hljs-number">5</span></span>}); // var0 equals a geometry as a <span class="hljs-built_in"><span class="hljs-built_in">rectangle</span></span> with <span class="hljs-built_in"><span class="hljs-built_in">width</span></span> = <span class="hljs-number"><span class="hljs-number">10</span></span>, <span class="hljs-built_in"><span class="hljs-built_in">height</span></span> = <span class="hljs-number"><span class="hljs-number">5</span></span> depth= <span class="hljs-number"><span class="hljs-number">5</span></span>. 
-geometry <span class="hljs-built_in"><span class="hljs-built_in">var1</span></span> &lt;- <span class="hljs-built_in"><span class="hljs-built_in">box</span></span>(<span class="hljs-number"><span class="hljs-number">10</span></span>, <span class="hljs-number"><span class="hljs-number">5</span></span> , <span class="hljs-number"><span class="hljs-number">5</span></span>); // <span class="hljs-built_in"><span class="hljs-built_in">var1</span></span> equals a geometry as a <span class="hljs-built_in"><span class="hljs-built_in">rectangle</span></span> with <span class="hljs-built_in"><span class="hljs-built_in">width</span></span> = <span class="hljs-number"><span class="hljs-number">10</span></span>, <span class="hljs-built_in"><span class="hljs-built_in">height</span></span> = <span class="hljs-number"><span class="hljs-number">5</span></span> depth= <span class="hljs-number"><span class="hljs-number">5</span></span>.
+geometry var0 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">box</span></span>(<span class="hljs-number"><span class="hljs-number">10</span></span>, <span class="hljs-number"><span class="hljs-number">5</span></span> , <span class="hljs-number"><span class="hljs-number">5</span></span>); // var0 equals a geometry as a <span class="hljs-built_in"><span class="hljs-built_in">rectangle</span></span> with <span class="hljs-built_in"><span class="hljs-built_in">width</span></span> = <span class="hljs-number"><span class="hljs-number">10</span></span>, <span class="hljs-built_in"><span class="hljs-built_in">height</span></span> = <span class="hljs-number"><span class="hljs-number">5</span></span> depth= <span class="hljs-number"><span class="hljs-number">5</span></span>. 
+geometry <span class="hljs-built_in"><span class="hljs-built_in">var1</span></span> &lt;- <span class="hljs-built_in"><span class="hljs-built_in">box</span></span>({<span class="hljs-number"><span class="hljs-number">10</span></span>, <span class="hljs-number"><span class="hljs-number">5</span></span> , <span class="hljs-number"><span class="hljs-number">5</span></span>}); // <span class="hljs-built_in"><span class="hljs-built_in">var1</span></span> equals a geometry as a <span class="hljs-built_in"><span class="hljs-built_in">rectangle</span></span> with <span class="hljs-built_in"><span class="hljs-built_in">width</span></span> = <span class="hljs-number"><span class="hljs-number">10</span></span>, <span class="hljs-built_in"><span class="hljs-built_in">height</span></span> = <span class="hljs-number"><span class="hljs-number">5</span></span> depth= <span class="hljs-number"><span class="hljs-number">5</span></span>.
 </code></pre>
 <pre><code class="hljs"></code></pre>
 <h4 dash_ignored="yes" id="see-also-5">See also:</h4>
@@ -507,12 +507,12 @@ geometry <span class="hljs-built_in"><span class="hljs-built_in">var1</span></sp
 </li>
 </ul>
 <h4 dash_ignored="yes" id="result-15">Result:</h4>
-<p>Build a list of colors of a given type (see website <a href="http://colorbrewer2.org/">http://colorbrewer2.org/</a>). The list of palettes can be obtained by calling brewer_palettes
-Build a list of colors of a given type (see website <a href="http://colorbrewer2.org/">http://colorbrewer2.org/</a>) with a given number of classes</p>
+<p>Build a list of colors of a given type (see website <a href="http://colorbrewer2.org/">http://colorbrewer2.org/</a>) with a given number of classes
+Build a list of colors of a given type (see website <a href="http://colorbrewer2.org/">http://colorbrewer2.org/</a>). The list of palettes can be obtained by calling brewer_palettes</p>
 <h4 dash_ignored="yes" id="examples-9">Examples:</h4>
 <pre><code class="hljs cpp"> 
-<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;rgb&gt; var0 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;rgb&gt; colors &lt;- brewer_colors(<span class="hljs-string"><span class="hljs-string">"OrRd"</span></span>);; <span class="hljs-comment"><span class="hljs-comment">// var0 equals a list of 6 blue colors </span></span>
-<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;rgb&gt; var1 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;rgb&gt; colors &lt;- brewer_colors(<span class="hljs-string"><span class="hljs-string">"Pastel1"</span></span>, <span class="hljs-number"><span class="hljs-number">5</span></span>);; <span class="hljs-comment"><span class="hljs-comment">// var1 equals a list of 5 sequential colors in the palette named 'Pastel1'. The list of palettes can be obtained by calling brewer_palettes</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;rgb&gt; var0 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;rgb&gt; colors &lt;- brewer_colors(<span class="hljs-string"><span class="hljs-string">"Pastel1"</span></span>, <span class="hljs-number"><span class="hljs-number">5</span></span>);; <span class="hljs-comment"><span class="hljs-comment">// var0 equals a list of 5 sequential colors in the palette named 'Pastel1'. The list of palettes can be obtained by calling brewer_palettes </span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;rgb&gt; var1 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;rgb&gt; colors &lt;- brewer_colors(<span class="hljs-string"><span class="hljs-string">"OrRd"</span></span>);; <span class="hljs-comment"><span class="hljs-comment">// var1 equals a list of 6 blue colors</span></span>
 </code></pre>
 <pre><code class="hljs"></code></pre>
 <h4 dash_ignored="yes" id="see-also-6">See also:</h4>
@@ -530,12 +530,12 @@ Build a list of colors of a given type (see website <a href="http://colorbrewer2
 </li>
 </ul>
 <h4 dash_ignored="yes" id="result-16">Result:</h4>
-<p>returns the list a palette with a given min number of classes)
-returns the list a palette with a given min number of classes and max number of classes)</p>
+<p>returns the list a palette with a given min number of classes and max number of classes)
+returns the list a palette with a given min number of classes)</p>
 <h4 dash_ignored="yes" id="examples-10">Examples:</h4>
 <pre><code class="hljs cpp"> 
-<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;<span class="hljs-built_in"><span class="hljs-built_in">string</span></span>&gt; var0 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;<span class="hljs-built_in"><span class="hljs-built_in">string</span></span>&gt; palettes &lt;- brewer_palettes(<span class="hljs-number"><span class="hljs-number">3</span></span>);; <span class="hljs-comment"><span class="hljs-comment">// var0 equals a list of palettes that are composed of a min of 3 colors </span></span>
-<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;<span class="hljs-built_in"><span class="hljs-built_in">string</span></span>&gt; var1 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;<span class="hljs-built_in"><span class="hljs-built_in">string</span></span>&gt; palettes &lt;- brewer_palettes(<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>);; <span class="hljs-comment"><span class="hljs-comment">// var1 equals a list of palettes that are composed of a min of 5 colors and a max of 10 colors</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;<span class="hljs-built_in"><span class="hljs-built_in">string</span></span>&gt; var0 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;<span class="hljs-built_in"><span class="hljs-built_in">string</span></span>&gt; palettes &lt;- brewer_palettes(<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>);; <span class="hljs-comment"><span class="hljs-comment">// var0 equals a list of palettes that are composed of a min of 5 colors and a max of 10 colors </span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;<span class="hljs-built_in"><span class="hljs-built_in">string</span></span>&gt; var1 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;<span class="hljs-built_in"><span class="hljs-built_in">string</span></span>&gt; palettes &lt;- brewer_palettes(<span class="hljs-number"><span class="hljs-number">3</span></span>);; <span class="hljs-comment"><span class="hljs-comment">// var1 equals a list of palettes that are composed of a min of 3 colors</span></span>
 </code></pre>
 <pre><code class="hljs"></code></pre>
 <h4 dash_ignored="yes" id="see-also-7">See also:</h4>
@@ -650,8 +650,8 @@ returns the regression build from the matrix data (a row = an instance, the last
 </li>
 </ul>
 <h4 dash_ignored="yes" id="result-22">Result:</h4>
-<p>A circle geometry which radius is equal to the first operand, and the center has the location equal to the second operand.
-A circle geometry which radius is equal to the operand.  </p>
+<p>A circle geometry which radius is equal to the operand.
+A circle geometry which radius is equal to the first operand, and the center has the location equal to the second operand.  </p>
 <h4 dash_ignored="yes" id="comment-3">Comment:</h4>
 <p>the center of the circle is by default the location of the current agent in which has been called this operator.</p>
 <h4 dash_ignored="yes" id="special-cases-5">Special cases:</h4>
@@ -664,8 +664,8 @@ A circle geometry which radius is equal to the operand.  </p>
 </ul>
 <h4 dash_ignored="yes" id="examples-14">Examples:</h4>
 <pre><code class="hljs mel"> 
-geometry var0 &lt;- <span class="hljs-keyword"><span class="hljs-keyword">circle</span></span>(<span class="hljs-number"><span class="hljs-number">10</span></span>,{<span class="hljs-number"><span class="hljs-number">80</span></span>,<span class="hljs-number"><span class="hljs-number">30</span></span>}); <span class="hljs-comment"><span class="hljs-comment">// var0 equals a geometry as a circle of radius 10, the center will be in the location {80,30}. </span></span>
-geometry var1 &lt;- <span class="hljs-keyword"><span class="hljs-keyword">circle</span></span>(<span class="hljs-number"><span class="hljs-number">10</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var1 equals a geometry as a circle of radius 10.</span></span>
+geometry var0 &lt;- <span class="hljs-keyword"><span class="hljs-keyword">circle</span></span>(<span class="hljs-number"><span class="hljs-number">10</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var0 equals a geometry as a circle of radius 10. </span></span>
+geometry var1 &lt;- <span class="hljs-keyword"><span class="hljs-keyword">circle</span></span>(<span class="hljs-number"><span class="hljs-number">10</span></span>,{<span class="hljs-number"><span class="hljs-number">80</span></span>,<span class="hljs-number"><span class="hljs-number">30</span></span>}); <span class="hljs-comment"><span class="hljs-comment">// var1 equals a geometry as a circle of radius 10, the center will be in the location {80,30}.</span></span>
 </code></pre>
 <pre><code class="hljs"></code></pre>
 <h4 dash_ignored="yes" id="see-also-10">See also:</h4>
@@ -941,11 +941,11 @@ float var1 &lt;- connectivity_index(graphEpidemio); <span class="hljs-comment"><
 <a class="dashAnchor" name="//apple_ref/Section/contains"></a><h3 id="contains"><code>contains</code></h3>
 <h4 dash_ignored="yes" id="possible-use-37">Possible use:</h4>
 <ul>
-<li><code>container&lt;KeyType,ValueType&gt;</code> <strong><code>contains</code></strong> <code>unknown</code> ---&gt;  <code>bool</code>
+<li><code>string</code> <strong><code>contains</code></strong> <code>string</code> ---&gt;  <code>bool</code>
 <ul>
-<li><strong><code>contains</code></strong> (<code>container&lt;KeyType,ValueType&gt;</code> , <code>unknown</code>) ---&gt;  <code>bool</code></li>
-<li><code>string</code> <strong><code>contains</code></strong> <code>string</code> ---&gt;  <code>bool</code></li>
-<li><strong><code>contains</code></strong> (<code>string</code> , <code>string</code>) ---&gt;  <code>bool</code> </li>
+<li><strong><code>contains</code></strong> (<code>string</code> , <code>string</code>) ---&gt;  <code>bool</code></li>
+<li><code>container&lt;KeyType,ValueType&gt;</code> <strong><code>contains</code></strong> <code>unknown</code> ---&gt;  <code>bool</code></li>
+<li><strong><code>contains</code></strong> (<code>container&lt;KeyType,ValueType&gt;</code> , <code>unknown</code>) ---&gt;  <code>bool</code> </li>
 </ul>
 </li>
 </ul>
@@ -955,23 +955,23 @@ float var1 &lt;- connectivity_index(graphEpidemio); <span class="hljs-comment"><
 <p>the contains operator behavior depends on the nature of the operand</p>
 <h4 dash_ignored="yes" id="special-cases-9">Special cases:</h4>
 <ul>
-<li>if it is a map, contains returns true if the operand is a key of the map <br>
+<li>if both operands are strings, returns true if the right-hand operand contains the right-hand pattern; <br>
 <ul>
+<li>if it is a map, contains returns true if the operand is a key of the map    </li>
 <li>if it is a file, contains returns true it the operand is contained in the file content    </li>
 <li>if it is a population, contains returns true if the operand is an agent of the population, false otherwise    </li>
 <li>if it is a graph, contains returns true if the operand is a node or an edge of the graph, false otherwise    </li>
-<li>if both operands are strings, returns true if the right-hand operand contains the right-hand pattern;    </li>
 <li>if it is a list or a matrix, contains returns true if the list or matrix contains the right operand </li>
 </ul>
 </li>
 </ul>
 <pre><code class="hljs xquery"> 
-bool var<span class="hljs-number"><span class="hljs-number">0</span></span> &lt;- [<span class="hljs-number"><span class="hljs-number">1</span></span>, <span class="hljs-number"><span class="hljs-number">2</span></span>, <span class="hljs-number"><span class="hljs-number">3</span></span>] contains <span class="hljs-number"><span class="hljs-number">2</span></span>; // var<span class="hljs-number"><span class="hljs-number">0</span></span> equals <span class="hljs-literal"><span class="hljs-literal">true</span></span> 
-bool var1 &lt;- [{<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>}, {<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>}, {<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">6</span></span>}] contains {<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>}; // var1 equals <span class="hljs-literal"><span class="hljs-literal">true</span></span>
+bool var1 &lt;- [<span class="hljs-number"><span class="hljs-number">1</span></span>, <span class="hljs-number"><span class="hljs-number">2</span></span>, <span class="hljs-number"><span class="hljs-number">3</span></span>] contains <span class="hljs-number"><span class="hljs-number">2</span></span>; // var1 equals <span class="hljs-literal"><span class="hljs-literal">true</span></span> 
+bool var2 &lt;- [{<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>}, {<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>}, {<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">6</span></span>}] contains {<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>}; // var2 equals <span class="hljs-literal"><span class="hljs-literal">true</span></span>
 </code></pre>
 <table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><h4 dash_ignored="yes" id="examples-26">Examples:</h4>
 <pre><code class="hljs qml"> 
-<span class="hljs-built_in"><span class="hljs-built_in">bool</span></span> var2 &lt;- <span class="hljs-string"><span class="hljs-string">'abcded'</span></span> contains <span class="hljs-string"><span class="hljs-string">'bc'</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var2 equals true</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">bool</span></span> var0 &lt;- <span class="hljs-string"><span class="hljs-string">'abcded'</span></span> contains <span class="hljs-string"><span class="hljs-string">'bc'</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var0 equals true</span></span>
 </code></pre>
 <pre><code class="hljs"></code></pre>
 <h4 dash_ignored="yes" id="see-also-20">See also:</h4>
@@ -981,11 +981,11 @@ bool var1 &lt;- [{<span class="hljs-number"><span class="hljs-number">1</span></
 <a class="dashAnchor" name="//apple_ref/Section/contains_all"></a><h3 id="contains_all"><code>contains_all</code></h3>
 <h4 dash_ignored="yes" id="possible-use-38">Possible use:</h4>
 <ul>
-<li><code>string</code> <strong><code>contains_all</code></strong> <code>list</code> ---&gt;  <code>bool</code>
+<li><code>container</code> <strong><code>contains_all</code></strong> <code>container</code> ---&gt;  <code>bool</code>
 <ul>
-<li><strong><code>contains_all</code></strong> (<code>string</code> , <code>list</code>) ---&gt;  <code>bool</code></li>
-<li><code>container</code> <strong><code>contains_all</code></strong> <code>container</code> ---&gt;  <code>bool</code></li>
-<li><strong><code>contains_all</code></strong> (<code>container</code> , <code>container</code>) ---&gt;  <code>bool</code> </li>
+<li><strong><code>contains_all</code></strong> (<code>container</code> , <code>container</code>) ---&gt;  <code>bool</code></li>
+<li><code>string</code> <strong><code>contains_all</code></strong> <code>list</code> ---&gt;  <code>bool</code></li>
+<li><strong><code>contains_all</code></strong> (<code>string</code> , <code>list</code>) ---&gt;  <code>bool</code> </li>
 </ul>
 </li>
 </ul>
@@ -1002,14 +1002,14 @@ bool var1 &lt;- [{<span class="hljs-number"><span class="hljs-number">1</span></
 </li>
 </ul>
 <pre><code class="hljs thrift"> 
-<span class="hljs-built_in"><span class="hljs-built_in">bool</span></span> var0 &lt;- <span class="hljs-string"><span class="hljs-string">"abcabcabc"</span></span> contains_all [<span class="hljs-string"><span class="hljs-string">"ca"</span></span>,<span class="hljs-string"><span class="hljs-string">"xy"</span></span>]; <span class="hljs-comment"><span class="hljs-comment">// var0 equals false</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">bool</span></span> var4 &lt;- <span class="hljs-string"><span class="hljs-string">"abcabcabc"</span></span> contains_all [<span class="hljs-string"><span class="hljs-string">"ca"</span></span>,<span class="hljs-string"><span class="hljs-string">"xy"</span></span>]; <span class="hljs-comment"><span class="hljs-comment">// var4 equals false</span></span>
 </code></pre>
 <table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><h4 dash_ignored="yes" id="examples-27">Examples:</h4>
 <pre><code class="hljs scss"> 
-bool var1 &lt;- <span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,2,3,4,5,6]</span></span> contains_all <span class="hljs-selector-attr"><span class="hljs-selector-attr">[2,4]</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var1 equals true  </span></span>
-bool var2 &lt;- <span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,2,3,4,5,6]</span></span> contains_all <span class="hljs-selector-attr"><span class="hljs-selector-attr">[2,8]</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var2 equals false </span></span>
-bool var3 &lt;- <span class="hljs-selector-attr"><span class="hljs-selector-attr">[1::2, 3::4, 5::6]</span></span> contains_all <span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,3]</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var3 equals false  </span></span>
-bool var4 &lt;- <span class="hljs-selector-attr"><span class="hljs-selector-attr">[1::2, 3::4, 5::6]</span></span> contains_all <span class="hljs-selector-attr"><span class="hljs-selector-attr">[2,4]</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var4 equals true</span></span>
+bool var0 &lt;- <span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,2,3,4,5,6]</span></span> contains_all <span class="hljs-selector-attr"><span class="hljs-selector-attr">[2,4]</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var0 equals true  </span></span>
+bool var1 &lt;- <span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,2,3,4,5,6]</span></span> contains_all <span class="hljs-selector-attr"><span class="hljs-selector-attr">[2,8]</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var1 equals false </span></span>
+bool var2 &lt;- <span class="hljs-selector-attr"><span class="hljs-selector-attr">[1::2, 3::4, 5::6]</span></span> contains_all <span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,3]</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var2 equals false  </span></span>
+bool var3 &lt;- <span class="hljs-selector-attr"><span class="hljs-selector-attr">[1::2, 3::4, 5::6]</span></span> contains_all <span class="hljs-selector-attr"><span class="hljs-selector-attr">[2,4]</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var3 equals true</span></span>
 </code></pre>
 <pre><code class="hljs"></code></pre>
 <h4 dash_ignored="yes" id="see-also-21">See also:</h4>
@@ -1019,11 +1019,11 @@ bool var4 &lt;- <span class="hljs-selector-attr"><span class="hljs-selector-attr
 <a class="dashAnchor" name="//apple_ref/Section/contains_any"></a><h3 id="contains_any"><code>contains_any</code></h3>
 <h4 dash_ignored="yes" id="possible-use-39">Possible use:</h4>
 <ul>
-<li><code>container</code> <strong><code>contains_any</code></strong> <code>container</code> ---&gt;  <code>bool</code>
+<li><code>string</code> <strong><code>contains_any</code></strong> <code>list</code> ---&gt;  <code>bool</code>
 <ul>
-<li><strong><code>contains_any</code></strong> (<code>container</code> , <code>container</code>) ---&gt;  <code>bool</code></li>
-<li><code>string</code> <strong><code>contains_any</code></strong> <code>list</code> ---&gt;  <code>bool</code></li>
-<li><strong><code>contains_any</code></strong> (<code>string</code> , <code>list</code>) ---&gt;  <code>bool</code> </li>
+<li><strong><code>contains_any</code></strong> (<code>string</code> , <code>list</code>) ---&gt;  <code>bool</code></li>
+<li><code>container</code> <strong><code>contains_any</code></strong> <code>container</code> ---&gt;  <code>bool</code></li>
+<li><strong><code>contains_any</code></strong> (<code>container</code> , <code>container</code>) ---&gt;  <code>bool</code> </li>
 </ul>
 </li>
 </ul>
@@ -1037,11 +1037,11 @@ bool var4 &lt;- <span class="hljs-selector-attr"><span class="hljs-selector-attr
 </ul>
 <h4 dash_ignored="yes" id="examples-28">Examples:</h4>
 <pre><code class="hljs scss"> 
-bool var0 &lt;- <span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,2,3,4,5,6]</span></span> contains_any <span class="hljs-selector-attr"><span class="hljs-selector-attr">[2,4]</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var0 equals true  </span></span>
-bool var1 &lt;- <span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,2,3,4,5,6]</span></span> contains_any <span class="hljs-selector-attr"><span class="hljs-selector-attr">[2,8]</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var1 equals true </span></span>
-bool var2 &lt;- <span class="hljs-selector-attr"><span class="hljs-selector-attr">[1::2, 3::4, 5::6]</span></span> contains_any <span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,3]</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var2 equals false </span></span>
-bool var3 &lt;- <span class="hljs-selector-attr"><span class="hljs-selector-attr">[1::2, 3::4, 5::6]</span></span> contains_any <span class="hljs-selector-attr"><span class="hljs-selector-attr">[2,4]</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var3 equals true </span></span>
-bool var4 &lt;- "abcabcabc" contains_any <span class="hljs-selector-attr"><span class="hljs-selector-attr">["ca","xy"]</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var4 equals true</span></span>
+bool var0 &lt;- "abcabcabc" contains_any <span class="hljs-selector-attr"><span class="hljs-selector-attr">["ca","xy"]</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var0 equals true </span></span>
+bool var1 &lt;- <span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,2,3,4,5,6]</span></span> contains_any <span class="hljs-selector-attr"><span class="hljs-selector-attr">[2,4]</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var1 equals true  </span></span>
+bool var2 &lt;- <span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,2,3,4,5,6]</span></span> contains_any <span class="hljs-selector-attr"><span class="hljs-selector-attr">[2,8]</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var2 equals true </span></span>
+bool var3 &lt;- <span class="hljs-selector-attr"><span class="hljs-selector-attr">[1::2, 3::4, 5::6]</span></span> contains_any <span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,3]</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var3 equals false </span></span>
+bool var4 &lt;- <span class="hljs-selector-attr"><span class="hljs-selector-attr">[1::2, 3::4, 5::6]</span></span> contains_any <span class="hljs-selector-attr"><span class="hljs-selector-attr">[2,4]</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var4 equals true</span></span>
 </code></pre>
 <pre><code class="hljs"></code></pre>
 <h4 dash_ignored="yes" id="see-also-22">See also:</h4>
@@ -1051,11 +1051,11 @@ bool var4 &lt;- "abcabcabc" contains_any <span class="hljs-selector-attr"><span 
 <a class="dashAnchor" name="//apple_ref/Section/contains_edge"></a><h3 id="contains_edge"><code>contains_edge</code></h3>
 <h4 dash_ignored="yes" id="possible-use-40">Possible use:</h4>
 <ul>
-<li><code>graph</code> <strong><code>contains_edge</code></strong> <code>pair</code> ---&gt;  <code>bool</code>
+<li><code>graph</code> <strong><code>contains_edge</code></strong> <code>unknown</code> ---&gt;  <code>bool</code>
 <ul>
-<li><strong><code>contains_edge</code></strong> (<code>graph</code> , <code>pair</code>) ---&gt;  <code>bool</code></li>
-<li><code>graph</code> <strong><code>contains_edge</code></strong> <code>unknown</code> ---&gt;  <code>bool</code></li>
-<li><strong><code>contains_edge</code></strong> (<code>graph</code> , <code>unknown</code>) ---&gt;  <code>bool</code> </li>
+<li><strong><code>contains_edge</code></strong> (<code>graph</code> , <code>unknown</code>) ---&gt;  <code>bool</code></li>
+<li><code>graph</code> <strong><code>contains_edge</code></strong> <code>pair</code> ---&gt;  <code>bool</code></li>
+<li><strong><code>contains_edge</code></strong> (<code>graph</code> , <code>pair</code>) ---&gt;  <code>bool</code> </li>
 </ul>
 </li>
 </ul>
@@ -1070,11 +1070,11 @@ bool var4 &lt;- "abcabcabc" contains_any <span class="hljs-selector-attr"><span 
 </li>
 </ul>
 <pre><code class="hljs lisp"> 
-bool var0 &lt;- graphEpidemio contains_edge (<span class="hljs-name"><span class="hljs-name">node</span></span>(<span class="hljs-number"><span class="hljs-number">0</span></span>):<span class="hljs-symbol"><span class="hljs-symbol">:node</span></span>(<span class="hljs-number"><span class="hljs-number">3</span></span>))<span class="hljs-comment"><span class="hljs-comment">; // var0 equals true</span></span>
+bool var2 &lt;- graphEpidemio contains_edge (<span class="hljs-name"><span class="hljs-name">node</span></span>(<span class="hljs-number"><span class="hljs-number">0</span></span>):<span class="hljs-symbol"><span class="hljs-symbol">:node</span></span>(<span class="hljs-number"><span class="hljs-number">3</span></span>))<span class="hljs-comment"><span class="hljs-comment">; // var2 equals true</span></span>
 </code></pre>
 <table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><h4 dash_ignored="yes" id="examples-29">Examples:</h4>
 <pre><code class="hljs xquery">graph graphFromMap &lt;-  as_edge_graph([{<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>}::{<span class="hljs-number"><span class="hljs-number">12</span></span>,<span class="hljs-number"><span class="hljs-number">45</span></span>},{<span class="hljs-number"><span class="hljs-number">12</span></span>,<span class="hljs-number"><span class="hljs-number">45</span></span>}::{<span class="hljs-number"><span class="hljs-number">34</span></span>,<span class="hljs-number"><span class="hljs-number">56</span></span>}]);  
-bool var2 &lt;- graphFromMap contains_edge link({<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>},{<span class="hljs-number"><span class="hljs-number">12</span></span>,<span class="hljs-number"><span class="hljs-number">45</span></span>}); // var2 equals <span class="hljs-literal"><span class="hljs-literal">true</span></span>
+bool var1 &lt;- graphFromMap contains_edge link({<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>},{<span class="hljs-number"><span class="hljs-number">12</span></span>,<span class="hljs-number"><span class="hljs-number">45</span></span>}); // var1 equals <span class="hljs-literal"><span class="hljs-literal">true</span></span>
 </code></pre>
 <pre><code class="hljs"></code></pre>
 <h4 dash_ignored="yes" id="see-also-23">See also:</h4>
@@ -1139,9 +1139,9 @@ geometry var0 &lt;- convex_hull(<span class="hljs-keyword"><span class="hljs-key
 <a class="dashAnchor" name="//apple_ref/Section/copy_between"></a><h3 id="copy_between"><code>copy_between</code></h3>
 <h4 dash_ignored="yes" id="possible-use-45">Possible use:</h4>
 <ul>
-<li><strong><code>copy_between</code></strong> (<code>list</code>, <code>int</code>, <code>int</code>) ---&gt;  <code>list</code>
+<li><strong><code>copy_between</code></strong> (<code>string</code>, <code>int</code>, <code>int</code>) ---&gt;  <code>string</code>
 <ul>
-<li><strong><code>copy_between</code></strong> (<code>string</code>, <code>int</code>, <code>int</code>) ---&gt;  <code>string</code> </li>
+<li><strong><code>copy_between</code></strong> (<code>list</code>, <code>int</code>, <code>int</code>) ---&gt;  <code>list</code> </li>
 </ul>
 </li>
 </ul>
@@ -1158,8 +1158,8 @@ geometry var0 &lt;- convex_hull(<span class="hljs-keyword"><span class="hljs-key
 </ul>
 <h4 dash_ignored="yes" id="examples-32">Examples:</h4>
 <pre><code class="hljs thrift"> 
-<span class="hljs-keyword"><span class="hljs-keyword">list</span></span> var0 &lt;-  copy_between ([<span class="hljs-number"><span class="hljs-number">4</span></span>, <span class="hljs-number"><span class="hljs-number">1</span></span>, <span class="hljs-number"><span class="hljs-number">6</span></span>, <span class="hljs-number"><span class="hljs-number">9</span></span> ,<span class="hljs-number"><span class="hljs-number">7</span></span>], <span class="hljs-number"><span class="hljs-number">1</span></span>, <span class="hljs-number"><span class="hljs-number">3</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var0 equals [1, 6] </span></span>
-<span class="hljs-built_in"><span class="hljs-built_in">string</span></span> var1 &lt;- copy_between(<span class="hljs-string"><span class="hljs-string">"abcabcabc"</span></span>, <span class="hljs-number"><span class="hljs-number">2</span></span>,<span class="hljs-number"><span class="hljs-number">6</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var1 equals "cabc"</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">string</span></span> var0 &lt;- copy_between(<span class="hljs-string"><span class="hljs-string">"abcabcabc"</span></span>, <span class="hljs-number"><span class="hljs-number">2</span></span>,<span class="hljs-number"><span class="hljs-number">6</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var0 equals "cabc" </span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">list</span></span> var1 &lt;-  copy_between ([<span class="hljs-number"><span class="hljs-number">4</span></span>, <span class="hljs-number"><span class="hljs-number">1</span></span>, <span class="hljs-number"><span class="hljs-number">6</span></span>, <span class="hljs-number"><span class="hljs-number">9</span></span> ,<span class="hljs-number"><span class="hljs-number">7</span></span>], <span class="hljs-number"><span class="hljs-number">1</span></span>, <span class="hljs-number"><span class="hljs-number">3</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var1 equals [1, 6]</span></span>
 </code></pre>
 <pre><code class="hljs"></code></pre>
 
@@ -1344,12 +1344,12 @@ bool var0 &lt;- square(5) covers square(2); <span class="hljs-comment"><span cla
 </li>
 </ul>
 <h4 dash_ignored="yes" id="result-52">Result:</h4>
-<p>A cross, which radius is equal to the first operand
-A cross, which radius is equal to the first operand and the width of the lines for the second</p>
+<p>A cross, which radius is equal to the first operand and the width of the lines for the second
+A cross, which radius is equal to the first operand</p>
 <h4 dash_ignored="yes" id="examples-38">Examples:</h4>
 <pre><code class="hljs stata"> 
-geometry var0 &lt;- <span class="hljs-keyword"><span class="hljs-keyword">cross</span></span>(10); <span class="hljs-comment"><span class="hljs-comment">// var0 equals a geometry as a cross of radius 10 </span></span>
-geometry var1 &lt;- <span class="hljs-keyword"><span class="hljs-keyword">cross</span></span>(10,2); <span class="hljs-comment"><span class="hljs-comment">// var1 equals a geometry as a cross of radius 10, and with a width of 2 for the lines </span></span>
+geometry var0 &lt;- <span class="hljs-keyword"><span class="hljs-keyword">cross</span></span>(10,2); <span class="hljs-comment"><span class="hljs-comment">// var0 equals a geometry as a cross of radius 10, and with a width of 2 for the lines  </span></span>
+geometry var1 &lt;- <span class="hljs-keyword"><span class="hljs-keyword">cross</span></span>(10); <span class="hljs-comment"><span class="hljs-comment">// var1 equals a geometry as a cross of radius 10</span></span>
 </code></pre>
 <pre><code class="hljs"></code></pre>
 <h4 dash_ignored="yes" id="see-also-29">See also:</h4>
@@ -1459,40 +1459,40 @@ geometry var<span class="hljs-number"><span class="hljs-number">0</span></span> 
 <a class="dashAnchor" name="//apple_ref/Section/curve"></a><h3 id="curve"><code>curve</code></h3>
 <h4 dash_ignored="yes" id="possible-use-60">Possible use:</h4>
 <ul>
-<li><strong><code>curve</code></strong> (<code>point</code>, <code>point</code>, <code>float</code>) ---&gt;  <code>geometry</code>
+<li><strong><code>curve</code></strong> (<code>point</code>, <code>point</code>, <code>point</code>) ---&gt;  <code>geometry</code>
 <ul>
-<li><strong><code>curve</code></strong> (<code>point</code>, <code>point</code>, <code>point</code>) ---&gt;  <code>geometry</code></li>
-<li><strong><code>curve</code></strong> (<code>point</code>, <code>point</code>, <code>float</code>, <code>float</code>) ---&gt;  <code>geometry</code></li>
-<li><strong><code>curve</code></strong> (<code>point</code>, <code>point</code>, <code>point</code>, <code>int</code>) ---&gt;  <code>geometry</code></li>
+<li><strong><code>curve</code></strong> (<code>point</code>, <code>point</code>, <code>float</code>) ---&gt;  <code>geometry</code></li>
 <li><strong><code>curve</code></strong> (<code>point</code>, <code>point</code>, <code>float</code>, <code>bool</code>) ---&gt;  <code>geometry</code></li>
+<li><strong><code>curve</code></strong> (<code>point</code>, <code>point</code>, <code>float</code>, <code>float</code>) ---&gt;  <code>geometry</code></li>
 <li><strong><code>curve</code></strong> (<code>point</code>, <code>point</code>, <code>point</code>, <code>point</code>) ---&gt;  <code>geometry</code></li>
+<li><strong><code>curve</code></strong> (<code>point</code>, <code>point</code>, <code>point</code>, <code>int</code>) ---&gt;  <code>geometry</code></li>
+<li><strong><code>curve</code></strong> (<code>point</code>, <code>point</code>, <code>point</code>, <code>point</code>, <code>int</code>) ---&gt;  <code>geometry</code></li>
 <li><strong><code>curve</code></strong> (<code>point</code>, <code>point</code>, <code>float</code>, <code>int</code>, <code>float</code>) ---&gt;  <code>geometry</code></li>
 <li><strong><code>curve</code></strong> (<code>point</code>, <code>point</code>, <code>float</code>, <code>bool</code>, <code>int</code>) ---&gt;  <code>geometry</code></li>
-<li><strong><code>curve</code></strong> (<code>point</code>, <code>point</code>, <code>point</code>, <code>point</code>, <code>int</code>) ---&gt;  <code>geometry</code></li>
 <li><strong><code>curve</code></strong> (<code>point</code>, <code>point</code>, <code>float</code>, <code>bool</code>, <code>int</code>, <code>float</code>) ---&gt;  <code>geometry</code></li>
 <li><strong><code>curve</code></strong> (<code>point</code>, <code>point</code>, <code>float</code>, <code>int</code>, <code>float</code>, <code>float</code>) ---&gt;  <code>geometry</code> </li>
 </ul>
 </li>
 </ul>
 <h4 dash_ignored="yes" id="result-57">Result:</h4>
-<p>A cubic Bezier curve geometry built from the two given points with the given coefficient for the radius and composed of 10 points.
-A cubic Bezier curve geometry built from the two given points with the given coefficient for the radius considering the given rotation angle (90 = along the z axis).
-A quadratic Bezier curve geometry built from the three given points composed of a given numnber of points.
+<p>A cubic Bezier curve geometry built from the four given points composed of a given number of points.
 A cubic Bezier curve geometry built from the two given points with the given coefficient for the radius and composed of the given number of points - the boolean is used to specified if it is the right side and the last value to indicate where is the inflection point (between 0.0 and 1.0 - default 0.5).
-A cubic Bezier curve geometry built from the two given points with the given coefficient for the radius and composed of the given number of points, considering the given rotation angle (90 = along the z axis).
-A cubic Bezier curve geometry built from the two given points with the given coefficient for the radius and composed of the given number of points, considering the given inflection point (between 0.0 and 1.0 - default 0.5), and the given rotation angle (90 = along the z axis).
-A cubic Bezier curve geometry built from the two given points with the given coefficient for the radius and composed of 10 points - the last boolean is used to specified if it is the right side.
-A cubic Bezier curve geometry built from the four given points composed of 10 points.
 A quadratic Bezier curve geometry built from the three given points composed of 10 points.
+A cubic Bezier curve geometry built from the two given points with the given coefficient for the radius and composed of the given number of points, considering the given rotation angle (90 = along the z axis).
+A cubic Bezier curve geometry built from the two given points with the given coefficient for the radius and composed of 10 points - the last boolean is used to specified if it is the right side.
+A cubic Bezier curve geometry built from the two given points with the given coefficient for the radius considering the given rotation angle (90 = along the z axis).
+A cubic Bezier curve geometry built from the two given points with the given coefficient for the radius and composed of the given number of points, considering the given inflection point (between 0.0 and 1.0 - default 0.5), and the given rotation angle (90 = along the z axis).
+A cubic Bezier curve geometry built from the two given points with the given coefficient for the radius and composed of 10 points.
 A cubic Bezier curve geometry built from the two given points with the given coefficient for the radius and composed of the given number of points - the boolean is used to specified if it is the right side.
-A cubic Bezier curve geometry built from the four given points composed of a given number of points.</p>
+A cubic Bezier curve geometry built from the four given points composed of 10 points.
+A quadratic Bezier curve geometry built from the three given points composed of a given numnber of points.</p>
 <h4 dash_ignored="yes" id="special-cases-24">Special cases:</h4>
 <ul>
 <li>if the operand is nil, returns nil <br>
 <ul>
-<li>if the operand is nil, returns nil    </li>
-<li>if the operand is nil, returns nil    </li>
 <li>if the last operand (number of points) is inferior to 2, returns nil    </li>
+<li>if the operand is nil, returns nil    </li>
+<li>if the operand is nil, returns nil    </li>
 <li>if the operand is nil, returns nil    </li>
 <li>if the operand is nil, returns nil    </li>
 <li>if the operand is nil, returns nil    </li>
@@ -1507,17 +1507,17 @@ A cubic Bezier curve geometry built from the four given points composed of a giv
 </ul>
 <h4 dash_ignored="yes" id="examples-42">Examples:</h4>
 <pre><code class="hljs xquery"> 
-geometry var<span class="hljs-number"><span class="hljs-number">0</span></span> &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>},{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">5</span></span>); // var<span class="hljs-number"><span class="hljs-number">0</span></span> equals a cubic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">10</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p1. 
-geometry var1 &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>},{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">5</span></span>, <span class="hljs-number"><span class="hljs-number">90</span></span>); // var1 equals a cubic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">100</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p1 at the right side. 
-geometry var2 &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>}, {<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, {<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, <span class="hljs-number"><span class="hljs-number">20</span></span>); // var2 equals a quadratic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">20</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p2. 
-geometry var3 &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>},{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">5</span></span>, <span class="hljs-literal"><span class="hljs-literal">false</span></span>, <span class="hljs-number"><span class="hljs-number">100</span></span>, <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">8</span></span>); // var3 equals a cubic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">100</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p1 at the right side. 
-geometry var4 &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>},{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">5</span></span>, <span class="hljs-number"><span class="hljs-number">100</span></span>, <span class="hljs-number"><span class="hljs-number">90</span></span>); // var4 equals a cubic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">100</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p1 at the right side. 
-geometry var5 &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>},{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">5</span></span>, <span class="hljs-number"><span class="hljs-number">100</span></span>, <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">8</span></span>, <span class="hljs-number"><span class="hljs-number">90</span></span>); // var5 equals a cubic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">100</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p1 at the right side. 
-geometry var6 &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>},{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">5</span></span>, <span class="hljs-literal"><span class="hljs-literal">false</span></span>); // var6 equals a cubic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">10</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p1 at the left side. 
-geometry var7 &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>}, {<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, {<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}); // var7 equals a cubic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">10</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p3. 
-geometry var8 &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>}, {<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, {<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}); // var8 equals a quadratic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">10</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p2. 
-geometry var9 &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>},{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">5</span></span>, <span class="hljs-literal"><span class="hljs-literal">false</span></span>, <span class="hljs-number"><span class="hljs-number">100</span></span>); // var9 equals a cubic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">100</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p1 at the right side. 
-geometry var1<span class="hljs-number"><span class="hljs-number">0</span></span> &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>}, {<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, {<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}); // var1<span class="hljs-number"><span class="hljs-number">0</span></span> equals a cubic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">10</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p3.
+geometry var<span class="hljs-number"><span class="hljs-number">0</span></span> &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>}, {<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, {<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}); // var<span class="hljs-number"><span class="hljs-number">0</span></span> equals a cubic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">10</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p3. 
+geometry var1 &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>},{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">5</span></span>, <span class="hljs-literal"><span class="hljs-literal">false</span></span>, <span class="hljs-number"><span class="hljs-number">100</span></span>, <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">8</span></span>); // var1 equals a cubic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">100</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p1 at the right side. 
+geometry var2 &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>}, {<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, {<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}); // var2 equals a quadratic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">10</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p2. 
+geometry var3 &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>},{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">5</span></span>, <span class="hljs-number"><span class="hljs-number">100</span></span>, <span class="hljs-number"><span class="hljs-number">90</span></span>); // var3 equals a cubic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">100</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p1 at the right side. 
+geometry var4 &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>},{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">5</span></span>, <span class="hljs-literal"><span class="hljs-literal">false</span></span>); // var4 equals a cubic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">10</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p1 at the left side. 
+geometry var5 &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>},{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">5</span></span>, <span class="hljs-number"><span class="hljs-number">90</span></span>); // var5 equals a cubic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">100</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p1 at the right side. 
+geometry var6 &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>},{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">5</span></span>, <span class="hljs-number"><span class="hljs-number">100</span></span>, <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">8</span></span>, <span class="hljs-number"><span class="hljs-number">90</span></span>); // var6 equals a cubic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">100</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p1 at the right side. 
+geometry var7 &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>},{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">5</span></span>); // var7 equals a cubic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">10</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p1. 
+geometry var8 &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>},{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, <span class="hljs-number"><span class="hljs-number">0</span></span>.<span class="hljs-number"><span class="hljs-number">5</span></span>, <span class="hljs-literal"><span class="hljs-literal">false</span></span>, <span class="hljs-number"><span class="hljs-number">100</span></span>); // var8 equals a cubic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">100</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p1 at the right side. 
+geometry var9 &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>}, {<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, {<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}); // var9 equals a cubic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">10</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p3. 
+geometry var1<span class="hljs-number"><span class="hljs-number">0</span></span> &lt;- curve({<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>}, {<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, {<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}, <span class="hljs-number"><span class="hljs-number">20</span></span>); // var1<span class="hljs-number"><span class="hljs-number">0</span></span> equals a quadratic Bezier curve geometry composed <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">20</span></span> points from p<span class="hljs-number"><span class="hljs-number">0</span></span> <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> p2.
 </code></pre>
 <pre><code class="hljs"></code></pre>
 <h4 dash_ignored="yes" id="see-also-32">See also:</h4>

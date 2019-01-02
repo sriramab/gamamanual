@@ -393,19 +393,19 @@ geometry var0 &lt;- <span class="hljs-keyword"><span class="hljs-keyword">shape 
 <a class="dashAnchor" name="//apple_ref/Section/set_agent_cause"></a><h3 id="set_agent_cause"><code>set_agent_cause</code></h3>
 <h4 dash_ignored="yes" id="possible-use-11">Possible use:</h4>
 <ul>
-<li><code>predicate</code> <strong><code>set_agent_cause</code></strong> <code>agent</code> ---&gt;  <code>predicate</code>
+<li><code>emotion</code> <strong><code>set_agent_cause</code></strong> <code>agent</code> ---&gt;  <code>emotion</code>
 <ul>
-<li><strong><code>set_agent_cause</code></strong> (<code>predicate</code> , <code>agent</code>) ---&gt;  <code>predicate</code></li>
-<li><code>emotion</code> <strong><code>set_agent_cause</code></strong> <code>agent</code> ---&gt;  <code>emotion</code></li>
-<li><strong><code>set_agent_cause</code></strong> (<code>emotion</code> , <code>agent</code>) ---&gt;  <code>emotion</code> </li>
+<li><strong><code>set_agent_cause</code></strong> (<code>emotion</code> , <code>agent</code>) ---&gt;  <code>emotion</code></li>
+<li><code>predicate</code> <strong><code>set_agent_cause</code></strong> <code>agent</code> ---&gt;  <code>predicate</code></li>
+<li><strong><code>set_agent_cause</code></strong> (<code>predicate</code> , <code>agent</code>) ---&gt;  <code>predicate</code> </li>
 </ul>
 </li>
 </ul>
 <h4 dash_ignored="yes" id="result-8">Result:</h4>
-<p>change the agentCause value of the given predicate
-change the agentCause value of the given emotion</p>
+<p>change the agentCause value of the given emotion
+change the agentCause value of the given predicate</p>
 <h4 dash_ignored="yes" id="examples-5">Examples:</h4>
-<pre><code class="hljs bash">predicate <span class="hljs-built_in"><span class="hljs-built_in">set</span></span>_agent_cause agentA emotion <span class="hljs-built_in"><span class="hljs-built_in">set</span></span>_agent_cause agentA 
+<pre><code class="hljs bash">emotion <span class="hljs-built_in"><span class="hljs-built_in">set</span></span>_agent_cause agentA predicate <span class="hljs-built_in"><span class="hljs-built_in">set</span></span>_agent_cause agentA 
 </code></pre>
 <pre><code class="hljs"></code></pre>
 
@@ -627,7 +627,7 @@ change the agentCause value of the given emotion</p>
 <h4 dash_ignored="yes" id="result-21">Result:</h4>
 <p>Sets the z ordinate of the n-th point of a geometry to the value provided by the third argument</p>
 <h4 dash_ignored="yes" id="examples-18">Examples:</h4>
-<pre><code class="hljs processing"><span class="hljs-built_in"><span class="hljs-built_in">shape</span></span> &lt;- <span class="hljs-built_in"><span class="hljs-built_in">triangle</span></span>(<span class="hljs-number"><span class="hljs-number">3</span></span>) set_z [<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">14</span></span>]; <span class="hljs-built_in"><span class="hljs-built_in">loop</span></span> i from: <span class="hljs-number"><span class="hljs-number">0</span></span> to: length(<span class="hljs-built_in"><span class="hljs-built_in">shape</span></span>.points) - <span class="hljs-number"><span class="hljs-number">1</span></span>{<span class="hljs-built_in"><span class="hljs-built_in">set</span></span> <span class="hljs-built_in"><span class="hljs-built_in">shape</span></span> &lt;-  set_z (<span class="hljs-built_in"><span class="hljs-built_in">shape</span></span>, i, <span class="hljs-number"><span class="hljs-number">3.0</span></span>);} 
+<pre><code class="hljs processing"><span class="hljs-built_in"><span class="hljs-built_in">loop</span></span> i from: <span class="hljs-number"><span class="hljs-number">0</span></span> to: length(<span class="hljs-built_in"><span class="hljs-built_in">shape</span></span>.points) - <span class="hljs-number"><span class="hljs-number">1</span></span>{<span class="hljs-built_in"><span class="hljs-built_in">set</span></span> <span class="hljs-built_in"><span class="hljs-built_in">shape</span></span> &lt;-  set_z (<span class="hljs-built_in"><span class="hljs-built_in">shape</span></span>, i, <span class="hljs-number"><span class="hljs-number">3.0</span></span>);} <span class="hljs-built_in"><span class="hljs-built_in">shape</span></span> &lt;- <span class="hljs-built_in"><span class="hljs-built_in">triangle</span></span>(<span class="hljs-number"><span class="hljs-number">3</span></span>) set_z [<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">14</span></span>]; 
 </code></pre>
 <pre><code class="hljs"></code></pre>
 
@@ -644,10 +644,10 @@ change the agentCause value of the given emotion</p>
 <a class="dashAnchor" name="//apple_ref/Section/shuffle"></a><h3 id="shuffle"><code>shuffle</code></h3>
 <h4 dash_ignored="yes" id="possible-use-26">Possible use:</h4>
 <ul>
-<li><strong><code>shuffle</code></strong> (<code>matrix</code>) ---&gt;  <code>matrix</code>
+<li><strong><code>shuffle</code></strong> (<code>container</code>) ---&gt;  <code>list</code>
 <ul>
 <li><strong><code>shuffle</code></strong> (<code>string</code>) ---&gt;  <code>string</code></li>
-<li><strong><code>shuffle</code></strong> (<code>container</code>) ---&gt;  <code>list</code> </li>
+<li><strong><code>shuffle</code></strong> (<code>matrix</code>) ---&gt;  <code>matrix</code> </li>
 </ul>
 </li>
 </ul>
@@ -659,9 +659,9 @@ change the agentCause value of the given emotion</p>
 </ul>
 <h4 dash_ignored="yes" id="examples-19">Examples:</h4>
 <pre><code class="hljs maxima"> 
-<span class="hljs-built_in"><span class="hljs-built_in">matrix</span></span> var0 &lt;- shuffle (<span class="hljs-built_in"><span class="hljs-built_in">matrix</span></span>([[<span class="hljs-string"><span class="hljs-string">"c11"</span></span>,<span class="hljs-string"><span class="hljs-string">"c12"</span></span>,<span class="hljs-string"><span class="hljs-string">"c13"</span></span>],[<span class="hljs-string"><span class="hljs-string">"c21"</span></span>,<span class="hljs-string"><span class="hljs-string">"c22"</span></span>,<span class="hljs-string"><span class="hljs-string">"c23"</span></span>]])); // var0 equals <span class="hljs-built_in"><span class="hljs-built_in">matrix</span></span>([[<span class="hljs-string"><span class="hljs-string">"c12"</span></span>,<span class="hljs-string"><span class="hljs-string">"c21"</span></span>,<span class="hljs-string"><span class="hljs-string">"c11"</span></span>],[<span class="hljs-string"><span class="hljs-string">"c13"</span></span>,<span class="hljs-string"><span class="hljs-string">"c22"</span></span>,<span class="hljs-string"><span class="hljs-string">"c23"</span></span>]]) (<span class="hljs-keyword"><span class="hljs-keyword">for</span></span> <span class="hljs-built_in"><span class="hljs-built_in">example</span></span>) 
+list var0 &lt;- shuffle ([<span class="hljs-number"><span class="hljs-number">12</span></span>, <span class="hljs-number"><span class="hljs-number">13</span></span>, <span class="hljs-number"><span class="hljs-number">14</span></span>]); // var0 equals [<span class="hljs-number"><span class="hljs-number">14</span></span>,<span class="hljs-number"><span class="hljs-number">12</span></span>,<span class="hljs-number"><span class="hljs-number">13</span></span>] (<span class="hljs-keyword"><span class="hljs-keyword">for</span></span> <span class="hljs-built_in"><span class="hljs-built_in">example</span></span>) 
 <span class="hljs-built_in"><span class="hljs-built_in">string</span></span> <span class="hljs-built_in"><span class="hljs-built_in">var1</span></span> &lt;- shuffle ('abc'); // <span class="hljs-built_in"><span class="hljs-built_in">var1</span></span> equals 'bac' (<span class="hljs-keyword"><span class="hljs-keyword">for</span></span> <span class="hljs-built_in"><span class="hljs-built_in">example</span></span>) 
-list var2 &lt;- shuffle ([<span class="hljs-number"><span class="hljs-number">12</span></span>, <span class="hljs-number"><span class="hljs-number">13</span></span>, <span class="hljs-number"><span class="hljs-number">14</span></span>]); // var2 equals [<span class="hljs-number"><span class="hljs-number">14</span></span>,<span class="hljs-number"><span class="hljs-number">12</span></span>,<span class="hljs-number"><span class="hljs-number">13</span></span>] (<span class="hljs-keyword"><span class="hljs-keyword">for</span></span> <span class="hljs-built_in"><span class="hljs-built_in">example</span></span>)
+<span class="hljs-built_in"><span class="hljs-built_in">matrix</span></span> var2 &lt;- shuffle (<span class="hljs-built_in"><span class="hljs-built_in">matrix</span></span>([[<span class="hljs-string"><span class="hljs-string">"c11"</span></span>,<span class="hljs-string"><span class="hljs-string">"c12"</span></span>,<span class="hljs-string"><span class="hljs-string">"c13"</span></span>],[<span class="hljs-string"><span class="hljs-string">"c21"</span></span>,<span class="hljs-string"><span class="hljs-string">"c22"</span></span>,<span class="hljs-string"><span class="hljs-string">"c23"</span></span>]])); // var2 equals <span class="hljs-built_in"><span class="hljs-built_in">matrix</span></span>([[<span class="hljs-string"><span class="hljs-string">"c12"</span></span>,<span class="hljs-string"><span class="hljs-string">"c21"</span></span>,<span class="hljs-string"><span class="hljs-string">"c11"</span></span>],[<span class="hljs-string"><span class="hljs-string">"c13"</span></span>,<span class="hljs-string"><span class="hljs-string">"c22"</span></span>,<span class="hljs-string"><span class="hljs-string">"c23"</span></span>]]) (<span class="hljs-keyword"><span class="hljs-keyword">for</span></span> <span class="hljs-built_in"><span class="hljs-built_in">example</span></span>)
 </code></pre>
 <pre><code class="hljs"></code></pre>
 <h4 id="see-also">See also:</h4>
@@ -745,9 +745,9 @@ geometry var0 &lt;- <span class="hljs-keyword"><span class="hljs-keyword">self</
 <a class="dashAnchor" name="//apple_ref/Section/sin"></a><h3 id="sin"><code>sin</code></h3>
 <h4 dash_ignored="yes" id="possible-use-31">Possible use:</h4>
 <ul>
-<li><strong><code>sin</code></strong> (<code>float</code>) ---&gt;  <code>float</code>
+<li><strong><code>sin</code></strong> (<code>int</code>) ---&gt;  <code>float</code>
 <ul>
-<li><strong><code>sin</code></strong> (<code>int</code>) ---&gt;  <code>float</code> </li>
+<li><strong><code>sin</code></strong> (<code>float</code>) ---&gt;  <code>float</code> </li>
 </ul>
 </li>
 </ul>
@@ -759,8 +759,8 @@ geometry var0 &lt;- <span class="hljs-keyword"><span class="hljs-keyword">self</
 </ul>
 <h4 dash_ignored="yes" id="examples-24">Examples:</h4>
 <pre><code class="hljs glsl"> 
-<span class="hljs-type"><span class="hljs-type">float</span></span> var0 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">sin</span></span>(<span class="hljs-number"><span class="hljs-number">360</span></span>) with_precision <span class="hljs-number"><span class="hljs-number">10</span></span> with_precision <span class="hljs-number"><span class="hljs-number">10</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var0 equals 0.0 </span></span>
-<span class="hljs-type"><span class="hljs-type">float</span></span> var1 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">sin</span></span> (<span class="hljs-number"><span class="hljs-number">0</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var1 equals 0.0</span></span>
+<span class="hljs-type"><span class="hljs-type">float</span></span> var0 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">sin</span></span> (<span class="hljs-number"><span class="hljs-number">0</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var0 equals 0.0 </span></span>
+<span class="hljs-type"><span class="hljs-type">float</span></span> var1 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">sin</span></span>(<span class="hljs-number"><span class="hljs-number">360</span></span>) with_precision <span class="hljs-number"><span class="hljs-number">10</span></span> with_precision <span class="hljs-number"><span class="hljs-number">10</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var1 equals 0.0</span></span>
 </code></pre>
 <pre><code class="hljs"></code></pre>
 <h4 dash_ignored="yes" id="see-also-3">See also:</h4>
@@ -814,8 +814,8 @@ geometry var0 &lt;- <span class="hljs-keyword"><span class="hljs-keyword">self</
 </li>
 </ul>
 <h4 dash_ignored="yes" id="result-31">Result:</h4>
-<p>A list of geometries (polylines) corresponding to the skeleton of the operand geometry (geometry, agent) with the given tolerance for the clipping and for the triangulation
-A list of geometries (polylines) corresponding to the skeleton of the operand geometry (geometry, agent) with the given tolerance for the clipping
+<p>A list of geometries (polylines) corresponding to the skeleton of the operand geometry (geometry, agent) with the given tolerance for the clipping
+A list of geometries (polylines) corresponding to the skeleton of the operand geometry (geometry, agent) with the given tolerance for the clipping and for the triangulation
 A list of geometries (polylines) corresponding to the skeleton of the operand geometry (geometry, agent)
 A list of geometries (polylines) corresponding to the skeleton of the operand geometry (geometry, agent) with the given tolerance for the clipping and for the triangulation</p>
 <h4 dash_ignored="yes" id="examples-27">Examples:</h4>
@@ -1108,8 +1108,8 @@ A list of geometries that result from the decomposition of the geometry by recta
 </li>
 </ul>
 <h4 dash_ignored="yes" id="result-46">Result:</h4>
-<p>Splits a list of numbers into n bins defined by n-1 bounds between the minimum and maximum values found in the first argument. The boolean argument controls whether or not the splitting is strict (if true, elements are in the ith bin if they are strictly smaller than the ith bound
-Splits a list of numbers into n bins defined by n-1 bounds between the minimum and maximum values found in the first argument. The splitting is strict (i.e. elements are in the ith bin if they are strictly smaller than the ith bound    </p>
+<p>Splits a list of numbers into n bins defined by n-1 bounds between the minimum and maximum values found in the first argument. The splitting is strict (i.e. elements are in the ith bin if they are strictly smaller than the ith bound
+Splits a list of numbers into n bins defined by n-1 bounds between the minimum and maximum values found in the first argument. The boolean argument controls whether or not the splitting is strict (if true, elements are in the ith bin if they are strictly smaller than the ith bound    </p>
 <h4 dash_ignored="yes" id="see-also-11">See also:</h4>
 <p><a href="https://github.com/wiki/gama-platform/gama/WikiOnly/OperatorsSZ#split.html">split</a>, <a href="https://github.com/wiki/gama-platform/gama/WikiOnly/OperatorsSZ#split_using.html">split_using</a>, </p>
 
@@ -1125,8 +1125,8 @@ Splits a list of numbers into n bins defined by n-1 bounds between the minimum a
 </li>
 </ul>
 <h4 dash_ignored="yes" id="result-47">Result:</h4>
-<p>A list of geometries resulting after cutting the lines at their intersections. if the last boolean operand is set to true, the split lines will import the attributes of the initial lines
-A list of geometries resulting after cutting the lines at their intersections.</p>
+<p>A list of geometries resulting after cutting the lines at their intersections.
+A list of geometries resulting after cutting the lines at their intersections. if the last boolean operand is set to true, the split lines will import the attributes of the initial lines</p>
 <h4 dash_ignored="yes" id="examples-37">Examples:</h4>
 <pre><code class="hljs dust"><span class="xml"><span class="xml"> 
 list</span><span class="hljs-tag"><span class="xml"><span class="hljs-tag">&lt;</span></span><span class="hljs-name"><span class="xml"><span class="hljs-tag"><span class="hljs-name">geometry</span></span></span></span><span class="xml"><span class="hljs-tag">&gt;</span></span></span><span class="xml"> var0 </span><span class="hljs-tag"><span class="xml"><span class="hljs-tag">&lt;</span></span><span class="hljs-name"><span class="xml"><span class="hljs-tag"><span class="hljs-name">-</span></span></span></span><span class="xml"><span class="hljs-tag"> </span></span><span class="hljs-attr"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">split_lines</span></span></span></span><span class="xml"><span class="hljs-tag">([</span></span><span class="hljs-attr"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">line</span></span></span></span><span class="xml"><span class="hljs-tag">([</span></span></span></span><span class="hljs-template-variable"><span class="hljs-template-variable">{0,10}</span></span><span class="xml"><span class="hljs-tag"><span class="xml"><span class="hljs-tag">, </span></span></span></span><span class="hljs-template-variable"><span class="hljs-template-variable">{20,10}</span></span><span class="xml"><span class="hljs-tag"><span class="xml"><span class="hljs-tag">]), </span></span><span class="hljs-attr"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">line</span></span></span></span><span class="xml"><span class="hljs-tag">([</span></span></span></span><span class="hljs-template-variable"><span class="hljs-template-variable">{0,10}</span></span><span class="xml"><span class="hljs-tag"><span class="xml"><span class="hljs-tag">, </span></span></span></span><span class="hljs-template-variable"><span class="hljs-template-variable">{20,10}</span></span><span class="xml"><span class="hljs-tag"><span class="xml"><span class="hljs-tag">])]); // </span></span><span class="hljs-attr"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">var0</span></span></span></span><span class="xml"><span class="hljs-tag"> </span></span><span class="hljs-attr"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">equals</span></span></span></span><span class="xml"><span class="hljs-tag"> </span></span><span class="hljs-attr"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">a</span></span></span></span><span class="xml"><span class="hljs-tag"> </span></span><span class="hljs-attr"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">list</span></span></span></span><span class="xml"><span class="hljs-tag"> </span></span><span class="hljs-attr"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">of</span></span></span></span><span class="xml"><span class="hljs-tag"> </span></span><span class="hljs-attr"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">four</span></span></span></span><span class="xml"><span class="hljs-tag"> </span></span><span class="hljs-attr"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">polylines:</span></span></span></span><span class="xml"><span class="hljs-tag"> </span></span><span class="hljs-attr"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">line</span></span></span></span><span class="xml"><span class="hljs-tag">([</span></span></span></span><span class="hljs-template-variable"><span class="hljs-template-variable">{0,10}</span></span><span class="xml"><span class="hljs-tag"><span class="xml"><span class="hljs-tag">, </span></span></span></span><span class="hljs-template-variable"><span class="hljs-template-variable">{10,10}</span></span><span class="xml"><span class="hljs-tag"><span class="xml"><span class="hljs-tag">]), </span></span><span class="hljs-attr"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">line</span></span></span></span><span class="xml"><span class="hljs-tag">([</span></span></span></span><span class="hljs-template-variable"><span class="hljs-template-variable">{10,10}</span></span><span class="xml"><span class="hljs-tag"><span class="xml"><span class="hljs-tag">, </span></span></span></span><span class="hljs-template-variable"><span class="hljs-template-variable">{20,10}</span></span><span class="xml"><span class="hljs-tag"><span class="xml"><span class="hljs-tag">]), </span></span><span class="hljs-attr"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">line</span></span></span></span><span class="xml"><span class="hljs-tag">([</span></span></span></span><span class="hljs-template-variable"><span class="hljs-template-variable">{10,0}</span></span><span class="xml"><span class="hljs-tag"><span class="xml"><span class="hljs-tag">, </span></span></span></span><span class="hljs-template-variable"><span class="hljs-template-variable">{10,10}</span></span><span class="xml"><span class="hljs-tag"><span class="xml"><span class="hljs-tag">]) </span></span><span class="hljs-attr"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">and</span></span></span></span><span class="xml"><span class="hljs-tag"> </span></span><span class="hljs-attr"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">line</span></span></span></span><span class="xml"><span class="hljs-tag">([</span></span></span></span><span class="hljs-template-variable"><span class="hljs-template-variable">{10,10}</span></span><span class="xml"><span class="hljs-tag"><span class="xml"><span class="hljs-tag">, </span></span></span></span><span class="hljs-template-variable"><span class="hljs-template-variable">{10,20}</span></span><span class="xml"><span class="hljs-tag"><span class="xml"><span class="hljs-tag">]) 
@@ -1163,14 +1163,14 @@ Splits a list of numbers into n+1 bins using a set of n bounds passed as the sec
 </li>
 </ul>
 <h4 dash_ignored="yes" id="result-49">Result:</h4>
-<p>Returns a list containing the sub-strings (tokens) of the left-hand operand delimited by each of the characters of the right-hand operand.
-Returns a list containing the sub-strings (tokens) of the left-hand operand delimited either by each of the characters of the right-hand operand (false) or by the whole right-hand operand (true).  </p>
+<p>Returns a list containing the sub-strings (tokens) of the left-hand operand delimited either by each of the characters of the right-hand operand (false) or by the whole right-hand operand (true).
+Returns a list containing the sub-strings (tokens) of the left-hand operand delimited by each of the characters of the right-hand operand.  </p>
 <h4 dash_ignored="yes" id="comment-4">Comment:</h4>
 <p>Delimiters themselves are excluded from the resulting list.Delimiters themselves are excluded from the resulting list.</p>
 <h4 dash_ignored="yes" id="examples-38">Examples:</h4>
 <pre><code class="hljs ruby"> 
-list var<span class="hljs-number"><span class="hljs-number">0</span></span> &lt;- <span class="hljs-string"><span class="hljs-string">'to be or not to be,that is the question'</span></span> split_with <span class="hljs-string"><span class="hljs-string">' ,'</span></span>; <span class="hljs-regexp"><span class="hljs-regexp">//</span></span> var<span class="hljs-number"><span class="hljs-number">0</span></span> equals [<span class="hljs-string"><span class="hljs-string">'to'</span></span>,<span class="hljs-string"><span class="hljs-string">'be'</span></span>,<span class="hljs-string"><span class="hljs-string">'or'</span></span>,<span class="hljs-string"><span class="hljs-string">'not'</span></span>,<span class="hljs-string"><span class="hljs-string">'to'</span></span>,<span class="hljs-string"><span class="hljs-string">'be'</span></span>,<span class="hljs-string"><span class="hljs-string">'that'</span></span>,<span class="hljs-string"><span class="hljs-string">'is'</span></span>,<span class="hljs-string"><span class="hljs-string">'the'</span></span>,<span class="hljs-string"><span class="hljs-string">'question'</span></span>] 
-list var1 &lt;- <span class="hljs-string"><span class="hljs-string">'aa::bb:cc'</span></span> split_with (<span class="hljs-string"><span class="hljs-string">'::'</span></span>, <span class="hljs-literal"><span class="hljs-literal">true</span></span>); <span class="hljs-regexp"><span class="hljs-regexp">//</span></span> var1 equals [<span class="hljs-string"><span class="hljs-string">'aa'</span></span>,<span class="hljs-string"><span class="hljs-string">'bb:cc'</span></span>]
+list var<span class="hljs-number"><span class="hljs-number">0</span></span> &lt;- <span class="hljs-string"><span class="hljs-string">'aa::bb:cc'</span></span> split_with (<span class="hljs-string"><span class="hljs-string">'::'</span></span>, <span class="hljs-literal"><span class="hljs-literal">true</span></span>); <span class="hljs-regexp"><span class="hljs-regexp">//</span></span> var<span class="hljs-number"><span class="hljs-number">0</span></span> equals [<span class="hljs-string"><span class="hljs-string">'aa'</span></span>,<span class="hljs-string"><span class="hljs-string">'bb:cc'</span></span>] 
+list var1 &lt;- <span class="hljs-string"><span class="hljs-string">'to be or not to be,that is the question'</span></span> split_with <span class="hljs-string"><span class="hljs-string">' ,'</span></span>; <span class="hljs-regexp"><span class="hljs-regexp">//</span></span> var1 equals [<span class="hljs-string"><span class="hljs-string">'to'</span></span>,<span class="hljs-string"><span class="hljs-string">'be'</span></span>,<span class="hljs-string"><span class="hljs-string">'or'</span></span>,<span class="hljs-string"><span class="hljs-string">'not'</span></span>,<span class="hljs-string"><span class="hljs-string">'to'</span></span>,<span class="hljs-string"><span class="hljs-string">'be'</span></span>,<span class="hljs-string"><span class="hljs-string">'that'</span></span>,<span class="hljs-string"><span class="hljs-string">'is'</span></span>,<span class="hljs-string"><span class="hljs-string">'the'</span></span>,<span class="hljs-string"><span class="hljs-string">'question'</span></span>]
 </code></pre>
 <pre><code class="hljs"></code></pre>
 
@@ -1303,8 +1303,8 @@ geometry var<span class="hljs-number"><span class="hljs-number">0</span></span> 
 </li>
 </ul>
 <h4 dash_ignored="yes" id="result-56">Result:</h4>
-<p>converts a date to astring following a custom pattern. The pattern can use "%Y %M %N %D %E %h %m %s %z" for outputting years, months, name of month, days, name of days, hours, minutes, seconds and the time-zone. A null or empty pattern will return the complete date as defined by the ISO date &amp; time format. The pattern can also follow the pattern definition found here, which gives much more control over the format of the date: <a href="https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#patterns">https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#patterns</a>. Different patterns are available by default as constants: #iso_local, #iso_simple, #iso_offset, #iso_zoned and #custom, which can be changed in the preferences
-converts a date to astring following a custom pattern and using a specific locale (e.g.: 'fr', 'en', etc.). The pattern can use "%Y %M %N %D %E %h %m %s %z" for outputting years, months, name of month, days, name of days, hours, minutes, seconds and the time-zone. A null or empty pattern will return the complete date as defined by the ISO date &amp; time format. The pattern can also follow the pattern definition found here, which gives much more control over the format of the date: <a href="https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#patterns">https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#patterns</a>. Different patterns are available by default as constants: #iso_local, #iso_simple, #iso_offset, #iso_zoned and #custom, which can be changed in the preferences</p>
+<p>converts a date to astring following a custom pattern and using a specific locale (e.g.: 'fr', 'en', etc.). The pattern can use "%Y %M %N %D %E %h %m %s %z" for outputting years, months, name of month, days, name of days, hours, minutes, seconds and the time-zone. A null or empty pattern will return the complete date as defined by the ISO date &amp; time format. The pattern can also follow the pattern definition found here, which gives much more control over the format of the date: <a href="https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#patterns">https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#patterns</a>. Different patterns are available by default as constants: #iso_local, #iso_simple, #iso_offset, #iso_zoned and #custom, which can be changed in the preferences
+converts a date to astring following a custom pattern. The pattern can use "%Y %M %N %D %E %h %m %s %z" for outputting years, months, name of month, days, name of days, hours, minutes, seconds and the time-zone. A null or empty pattern will return the complete date as defined by the ISO date &amp; time format. The pattern can also follow the pattern definition found here, which gives much more control over the format of the date: <a href="https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#patterns">https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#patterns</a>. Different patterns are available by default as constants: #iso_local, #iso_simple, #iso_offset, #iso_zoned and #custom, which can be changed in the preferences</p>
 <h4 dash_ignored="yes" id="examples-43">Examples:</h4>
 <pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">format</span></span></span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">(#now, </span></span><span class="hljs-string"><span class="hljs-function"><span class="hljs-params"><span class="hljs-string">'yyyy-MM-dd'</span></span></span></span><span class="hljs-function"><span class="hljs-params">)</span></span></span></span> format(<span class="hljs-selector-id"><span class="hljs-selector-id">#now</span></span>, <span class="hljs-string"><span class="hljs-string">'yyyy-MM-dd'</span></span>) 
 </code></pre>
@@ -1471,9 +1471,9 @@ unknown var0 &lt;- [<span class="hljs-number"><span class="hljs-number">1</span>
 <a class="dashAnchor" name="//apple_ref/Section/tan"></a><h3 id="tan"><code>tan</code></h3>
 <h4 dash_ignored="yes" id="possible-use-67">Possible use:</h4>
 <ul>
-<li><strong><code>tan</code></strong> (<code>float</code>) ---&gt;  <code>float</code>
+<li><strong><code>tan</code></strong> (<code>int</code>) ---&gt;  <code>float</code>
 <ul>
-<li><strong><code>tan</code></strong> (<code>int</code>) ---&gt;  <code>float</code> </li>
+<li><strong><code>tan</code></strong> (<code>float</code>) ---&gt;  <code>float</code> </li>
 </ul>
 </li>
 </ul>
@@ -1669,7 +1669,6 @@ string var11 &lt;- to_gaml(node1); // var11 equals  <span class="hljs-number"><s
 
 <hr>
 <a class="dashAnchor" name="//apple_ref/Section/to_rectangles"></a><h3 id="to_rectangles"><code>to_rectangles</code></h3>
-<p>Same signification as <a href="https://github.com/wiki/gama-platform/gama/WikiOnly/OperatorsSZ#split_geometry.html">split_geometry</a></p>
 <h4 dash_ignored="yes" id="possible-use-77">Possible use:</h4>
 <ul>
 <li><strong><code>to_rectangles</code></strong> (<code>geometry</code>, <code>point</code>, <code>bool</code>) ---&gt;  <code>list&lt;geometry&gt;</code>
@@ -1693,21 +1692,21 @@ A list of rectangles corresponding to the given dimension that result from the d
 <p>Same signification as <a href="https://github.com/wiki/gama-platform/gama/WikiOnly/OperatorsSZ#split_geometry.html">split_geometry</a></p>
 <h4 dash_ignored="yes" id="possible-use-78">Possible use:</h4>
 <ul>
-<li><strong><code>to_squares</code></strong> (<code>geometry</code>, <code>float</code>, <code>bool</code>) ---&gt;  <code>list&lt;geometry&gt;</code>
+<li><strong><code>to_squares</code></strong> (<code>geometry</code>, <code>int</code>, <code>bool</code>) ---&gt;  <code>list&lt;geometry&gt;</code>
 <ul>
-<li><strong><code>to_squares</code></strong> (<code>geometry</code>, <code>int</code>, <code>bool</code>) ---&gt;  <code>list&lt;geometry&gt;</code></li>
+<li><strong><code>to_squares</code></strong> (<code>geometry</code>, <code>float</code>, <code>bool</code>) ---&gt;  <code>list&lt;geometry&gt;</code></li>
 <li><strong><code>to_squares</code></strong> (<code>geometry</code>, <code>int</code>, <code>bool</code>, <code>float</code>) ---&gt;  <code>list&lt;geometry&gt;</code> </li>
 </ul>
 </li>
 </ul>
 <h4 dash_ignored="yes" id="result-73">Result:</h4>
-<p>A list of squares of the size corresponding to the given size that result from the decomposition of the geometry into squares (geometry, size, overlaps), if overlaps = true, add the squares that overlap the border of the geometry
-A list of a given number of squares from the decomposition of the geometry into squares (geometry, nb_square, overlaps), if overlaps = true, add the squares that overlap the border of the geometry
+<p>A list of a given number of squares from the decomposition of the geometry into squares (geometry, nb_square, overlaps), if overlaps = true, add the squares that overlap the border of the geometry
+A list of squares of the size corresponding to the given size that result from the decomposition of the geometry into squares (geometry, size, overlaps), if overlaps = true, add the squares that overlap the border of the geometry
 A list of a given number of squares from the decomposition of the geometry into squares (geometry, nb_square, overlaps, precision_coefficient), if overlaps = true, add the squares that overlap the border of the geometry, coefficient_precision should be close to 1.0</p>
 <h4 dash_ignored="yes" id="examples-53">Examples:</h4>
 <pre><code class="hljs cpp"> 
-<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;geometry&gt; var0 &lt;- to_squares(self, <span class="hljs-number"><span class="hljs-number">10.0</span></span>, <span class="hljs-literal"><span class="hljs-literal">true</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var0 equals the list of squares of side size 10.0 corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept </span></span>
-<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;geometry&gt; var1 &lt;- to_squares(self, <span class="hljs-number"><span class="hljs-number">10</span></span>, <span class="hljs-literal"><span class="hljs-literal">true</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var1 equals the list of 10 squares corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept </span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;geometry&gt; var0 &lt;- to_squares(self, <span class="hljs-number"><span class="hljs-number">10</span></span>, <span class="hljs-literal"><span class="hljs-literal">true</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var0 equals the list of 10 squares corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept </span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;geometry&gt; var1 &lt;- to_squares(self, <span class="hljs-number"><span class="hljs-number">10.0</span></span>, <span class="hljs-literal"><span class="hljs-literal">true</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var1 equals the list of squares of side size 10.0 corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept </span></span>
 <span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;geometry&gt; var2 &lt;- to_squares(self, <span class="hljs-number"><span class="hljs-number">10</span></span>, <span class="hljs-literal"><span class="hljs-literal">true</span></span>, <span class="hljs-number"><span class="hljs-number">0.99</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var2 equals the list of 10 squares corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept</span></span>
 </code></pre>
 <pre><code class="hljs"></code></pre>
@@ -1945,17 +1944,17 @@ geometry var0 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">tria
 </ul>
 <h4 dash_ignored="yes" id="result-84">Result:</h4>
 <p>A list of geometries (triangles) corresponding to the Delaunay triangulation of the operand geometry (geometry, agent, point, use_approx_clipping) with the given tolerance for the clipping and for the triangulation with using an approximate clipping is the last operand is true
-A list of geometries (triangles) corresponding to the Delaunay triangulation of the operand geometry (geometry, agent, point) with the given tolerance for the clipping and for the triangulation
 A list of geometries (triangles) corresponding to the Delaunay triangulation computed from the list of polylines
+A list of geometries (triangles) corresponding to the Delaunay triangulation of the operand geometry (geometry, agent, point)
 A list of geometries (triangles) corresponding to the Delaunay triangulation of the operand geometry (geometry, agent, point) with the given tolerance for the clipping
-A list of geometries (triangles) corresponding to the Delaunay triangulation of the operand geometry (geometry, agent, point)</p>
+A list of geometries (triangles) corresponding to the Delaunay triangulation of the operand geometry (geometry, agent, point) with the given tolerance for the clipping and for the triangulation</p>
 <h4 dash_ignored="yes" id="examples-63">Examples:</h4>
 <pre><code class="hljs cpp"> 
 <span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;geometry&gt; var0 &lt;- triangulate(self,<span class="hljs-number"><span class="hljs-number">0.1</span></span>, <span class="hljs-number"><span class="hljs-number">1.0</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var0 equals the list of geometries (triangles) corresponding to the Delaunay triangulation of the geometry of the agent applying the operator. </span></span>
-<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;geometry&gt; var1 &lt;- triangulate(self,<span class="hljs-number"><span class="hljs-number">0.1</span></span>, <span class="hljs-number"><span class="hljs-number">1.0</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var1 equals the list of geometries (triangles) corresponding to the Delaunay triangulation of the geometry of the agent applying the operator. </span></span>
-<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;geometry&gt; var2 &lt;- triangulate([line([{<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">50</span></span>},{<span class="hljs-number"><span class="hljs-number">100</span></span>,<span class="hljs-number"><span class="hljs-number">50</span></span>}]), line([{<span class="hljs-number"><span class="hljs-number">50</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>},{<span class="hljs-number"><span class="hljs-number">50</span></span>,<span class="hljs-number"><span class="hljs-number">100</span></span>}])); <span class="hljs-comment"><span class="hljs-comment">// var2 equals the list of geometries (triangles) corresponding to the Delaunay triangulation of the geometry of the agent applying the operator. </span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;geometry&gt; var1 &lt;- triangulate([line([{<span class="hljs-number"><span class="hljs-number">0</span></span>,<span class="hljs-number"><span class="hljs-number">50</span></span>},{<span class="hljs-number"><span class="hljs-number">100</span></span>,<span class="hljs-number"><span class="hljs-number">50</span></span>}]), line([{<span class="hljs-number"><span class="hljs-number">50</span></span>,<span class="hljs-number"><span class="hljs-number">0</span></span>},{<span class="hljs-number"><span class="hljs-number">50</span></span>,<span class="hljs-number"><span class="hljs-number">100</span></span>}])); <span class="hljs-comment"><span class="hljs-comment">// var1 equals the list of geometries (triangles) corresponding to the Delaunay triangulation of the geometry of the agent applying the operator. </span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;geometry&gt; var2 &lt;- triangulate(self); <span class="hljs-comment"><span class="hljs-comment">// var2 equals the list of geometries (triangles) corresponding to the Delaunay triangulation of the geometry of the agent applying the operator. </span></span>
 <span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;geometry&gt; var3 &lt;- triangulate(self, <span class="hljs-number"><span class="hljs-number">0.1</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var3 equals the list of geometries (triangles) corresponding to the Delaunay triangulation of the geometry of the agent applying the operator. </span></span>
-<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;geometry&gt; var4 &lt;- triangulate(self); <span class="hljs-comment"><span class="hljs-comment">// var4 equals the list of geometries (triangles) corresponding to the Delaunay triangulation of the geometry of the agent applying the operator.</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">list</span></span>&lt;geometry&gt; var4 &lt;- triangulate(self,<span class="hljs-number"><span class="hljs-number">0.1</span></span>, <span class="hljs-number"><span class="hljs-number">1.0</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var4 equals the list of geometries (triangles) corresponding to the Delaunay triangulation of the geometry of the agent applying the operator.</span></span>
 </code></pre>
 <pre><code class="hljs"></code></pre>
 
@@ -1963,9 +1962,9 @@ A list of geometries (triangles) corresponding to the Delaunay triangulation of 
 <a class="dashAnchor" name="//apple_ref/Section/truncated_gauss"></a><h3 id="truncated_gauss"><code>truncated_gauss</code></h3>
 <h4 dash_ignored="yes" id="possible-use-90">Possible use:</h4>
 <ul>
-<li><strong><code>truncated_gauss</code></strong> (<code>list</code>) ---&gt;  <code>float</code>
+<li><strong><code>truncated_gauss</code></strong> (<code>point</code>) ---&gt;  <code>float</code>
 <ul>
-<li><strong><code>truncated_gauss</code></strong> (<code>point</code>) ---&gt;  <code>float</code> </li>
+<li><strong><code>truncated_gauss</code></strong> (<code>list</code>) ---&gt;  <code>float</code> </li>
 </ul>
 </li>
 </ul>
@@ -1973,17 +1972,17 @@ A list of geometries (triangles) corresponding to the Delaunay triangulation of 
 <p>A random value from a normally distributed random variable in the interval ]mean - standardDeviation; mean + standardDeviation[.</p>
 <h4 dash_ignored="yes" id="special-cases-21">Special cases:</h4>
 <ul>
-<li>if the operand is a list, only the two first elements are taken into account as [mean, standardDeviation] <br>
+<li>when the operand is a point, it is read as {mean, standardDeviation} <br>
 <ul>
-<li>when truncated_gauss is called with a list of only one element mean, it will always return 0.0    </li>
-<li>when the operand is a point, it is read as {mean, standardDeviation}</li>
+<li>if the operand is a list, only the two first elements are taken into account as [mean, standardDeviation]    </li>
+<li>when truncated_gauss is called with a list of only one element mean, it will always return 0.0</li>
 </ul>
 </li>
 </ul>
 <h4 dash_ignored="yes" id="examples-64">Examples:</h4>
 <pre><code class="hljs scss"> 
-<span class="hljs-attribute"><span class="hljs-attribute">float</span></span> var0 &lt;- truncated_gauss (<span class="hljs-selector-attr"><span class="hljs-selector-attr">[0.5, 0.0]</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var0 equals 0.5 </span></span>
-<span class="hljs-attribute"><span class="hljs-attribute">float</span></span> var1 &lt;- truncated_gauss ({0, 0<span class="hljs-selector-class"><span class="hljs-selector-class">.3</span></span>}); <span class="hljs-comment"><span class="hljs-comment">// var1 equals a float between -0.3 and 0.3</span></span>
+<span class="hljs-attribute"><span class="hljs-attribute">float</span></span> var0 &lt;- truncated_gauss ({0, 0<span class="hljs-selector-class"><span class="hljs-selector-class">.3</span></span>}); <span class="hljs-comment"><span class="hljs-comment">// var0 equals a float between -0.3 and 0.3 </span></span>
+<span class="hljs-attribute"><span class="hljs-attribute">float</span></span> var1 &lt;- truncated_gauss (<span class="hljs-selector-attr"><span class="hljs-selector-attr">[0.5, 0.0]</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var1 equals 0.5</span></span>
 </code></pre>
 <pre><code class="hljs"></code></pre>
 <h4 dash_ignored="yes" id="see-also-30">See also:</h4>
@@ -2012,7 +2011,6 @@ A list of geometries (triangles) corresponding to the Delaunay triangulation of 
 
 <hr>
 <a class="dashAnchor" name="//apple_ref/Section/union"></a><h3 id="union"><code>union</code></h3>
-<p>Same signification as <a href="https://github.com/wiki/gama-platform/gama/WikiOnly/OperatorsAA#+.html">+</a></p>
 <h4 dash_ignored="yes" id="possible-use-93">Possible use:</h4>
 <ul>
 <li><strong><code>union</code></strong> (<code>container&lt;geometry&gt;</code>) ---&gt;  <code>geometry</code>
@@ -2026,18 +2024,18 @@ A list of geometries (triangles) corresponding to the Delaunay triangulation of 
 <p>returns a new list containing all the elements of both containers without duplicated elements.</p>
 <h4 dash_ignored="yes" id="special-cases-22">Special cases:</h4>
 <ul>
-<li>if the right-operand is a container of points, geometries or agents, returns the geometry resulting from the union all the geometries <br>
+<li>if the left or right operand is nil, union throws an error <br>
 <ul>
-<li>if the left or right operand is nil, union throws an error</li>
+<li>if the right-operand is a container of points, geometries or agents, returns the geometry resulting from the union all the geometries</li>
 </ul>
 </li>
 </ul>
 <h4 dash_ignored="yes" id="examples-65">Examples:</h4>
 <pre><code class="hljs crystal"> 
-geometry var0 &lt;- <span class="hljs-class"><span class="hljs-keyword"><span class="hljs-class"><span class="hljs-keyword">union</span></span></span><span class="hljs-class">([</span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">geom1</span></span></span><span class="hljs-class">, </span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">geom2</span></span></span><span class="hljs-class">, </span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">geom3</span></span></span><span class="hljs-class">]);</span></span> /<span class="hljs-regexp"><span class="hljs-regexp">/ var0 equals a geometry corresponding to union between geom1, geom2 and geom3 
-list var1 &lt;- [1,2,3,4,5,6] union [2,4,9]; /</span></span><span class="hljs-regexp"><span class="hljs-regexp">/ var1 equals [1,2,3,4,5,6,9] 
-list var2 &lt;- [1,2,3,4,5,6] union [0,8]; /</span></span><span class="hljs-regexp"><span class="hljs-regexp">/ var2 equals [1,2,3,4,5,6,0,8] 
-list var3 &lt;- [1,3,2,4,5,6,8,5,6] union [0,8]; /</span></span><span class="hljs-regexp"><span class="hljs-regexp">/ var3 equals [1,3,2,4,5,6,8,0]
+list var0 &lt;- [<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>,<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">6</span></span>] <span class="hljs-class"><span class="hljs-keyword"><span class="hljs-class"><span class="hljs-keyword">union</span></span></span><span class="hljs-class"> [2,4,9];</span></span> /<span class="hljs-regexp"><span class="hljs-regexp">/ var0 equals [1,2,3,4,5,6,9] 
+list var1 &lt;- [1,2,3,4,5,6] union [0,8]; /</span></span><span class="hljs-regexp"><span class="hljs-regexp">/ var1 equals [1,2,3,4,5,6,0,8] 
+list var2 &lt;- [1,3,2,4,5,6,8,5,6] union [0,8]; /</span></span><span class="hljs-regexp"><span class="hljs-regexp">/ var2 equals [1,3,2,4,5,6,8,0] 
+geometry var3 &lt;- union([geom1, geom2, geom3]); /</span></span><span class="hljs-regexp"><span class="hljs-regexp">/ var3 equals a geometry corresponding to union between geom1, geom2 and geom3
 </span></span></code></pre>
 <pre><code class="hljs"></code></pre>
 <h4 dash_ignored="yes" id="see-also-32">See also:</h4>
@@ -2128,7 +2126,7 @@ list var3 &lt;- [1,3,2,4,5,6,8,5,6] union [0,8]; /</span></span><span class="hlj
 <h4 dash_ignored="yes" id="comment-17">Comment:</h4>
 <p>This operator takes a map [string::value] as argument, displays a dialog asking the user for these values, and returns the same map with the modified values (if any). The dialog is modal and will interrupt the execution of the simulation until the user has either dismissed or accepted it. It can be used, for instance, in an init section to force the user to input new values instead of relying on the initial values of parameters :</p>
 <h4 dash_ignored="yes" id="examples-68">Examples:</h4>
-<pre><code class="hljs maxima"><span class="hljs-built_in"><span class="hljs-built_in">map</span></span>&lt;<span class="hljs-built_in"><span class="hljs-built_in">string</span></span>,<span class="hljs-literal"><span class="hljs-literal">unknown</span></span>&gt; <span class="hljs-built_in"><span class="hljs-built_in">values</span></span> &lt;- user_input([<span class="hljs-string"><span class="hljs-string">"Number"</span></span> :: <span class="hljs-number"><span class="hljs-number">100</span></span>, <span class="hljs-string"><span class="hljs-string">"Location"</span></span> :: {<span class="hljs-number"><span class="hljs-number">10</span></span>, <span class="hljs-number"><span class="hljs-number">10</span></span>}]); create bug number: int(<span class="hljs-built_in"><span class="hljs-built_in">values</span></span> <span class="hljs-built_in"><span class="hljs-built_in">at</span></span> <span class="hljs-string"><span class="hljs-string">"Number"</span></span>) with: [location:: (point(<span class="hljs-built_in"><span class="hljs-built_in">values</span></span> <span class="hljs-built_in"><span class="hljs-built_in">at</span></span> <span class="hljs-string"><span class="hljs-string">"Location"</span></span>))]; <span class="hljs-built_in"><span class="hljs-built_in">map</span></span>&lt;<span class="hljs-built_in"><span class="hljs-built_in">string</span></span>,<span class="hljs-literal"><span class="hljs-literal">unknown</span></span>&gt; values2 &lt;- user_input(<span class="hljs-string"><span class="hljs-string">"Enter numer of agents and locations"</span></span>,[<span class="hljs-string"><span class="hljs-string">"Number"</span></span> :: <span class="hljs-number"><span class="hljs-number">100</span></span>, <span class="hljs-string"><span class="hljs-string">"Location"</span></span> :: {<span class="hljs-number"><span class="hljs-number">10</span></span>, <span class="hljs-number"><span class="hljs-number">10</span></span>}]); create bug number: int(values2 <span class="hljs-built_in"><span class="hljs-built_in">at</span></span> <span class="hljs-string"><span class="hljs-string">"Number"</span></span>) with: [location:: (point(values2 <span class="hljs-built_in"><span class="hljs-built_in">at</span></span> <span class="hljs-string"><span class="hljs-string">"Location"</span></span>))]; 
+<pre><code class="hljs maxima"><span class="hljs-built_in"><span class="hljs-built_in">map</span></span>&lt;<span class="hljs-built_in"><span class="hljs-built_in">string</span></span>,<span class="hljs-literal"><span class="hljs-literal">unknown</span></span>&gt; values2 &lt;- user_input(<span class="hljs-string"><span class="hljs-string">"Enter numer of agents and locations"</span></span>,[<span class="hljs-string"><span class="hljs-string">"Number"</span></span> :: <span class="hljs-number"><span class="hljs-number">100</span></span>, <span class="hljs-string"><span class="hljs-string">"Location"</span></span> :: {<span class="hljs-number"><span class="hljs-number">10</span></span>, <span class="hljs-number"><span class="hljs-number">10</span></span>}]); create bug number: int(values2 <span class="hljs-built_in"><span class="hljs-built_in">at</span></span> <span class="hljs-string"><span class="hljs-string">"Number"</span></span>) with: [location:: (point(values2 <span class="hljs-built_in"><span class="hljs-built_in">at</span></span> <span class="hljs-string"><span class="hljs-string">"Location"</span></span>))]; <span class="hljs-built_in"><span class="hljs-built_in">map</span></span>&lt;<span class="hljs-built_in"><span class="hljs-built_in">string</span></span>,<span class="hljs-literal"><span class="hljs-literal">unknown</span></span>&gt; <span class="hljs-built_in"><span class="hljs-built_in">values</span></span> &lt;- user_input([<span class="hljs-string"><span class="hljs-string">"Number"</span></span> :: <span class="hljs-number"><span class="hljs-number">100</span></span>, <span class="hljs-string"><span class="hljs-string">"Location"</span></span> :: {<span class="hljs-number"><span class="hljs-number">10</span></span>, <span class="hljs-number"><span class="hljs-number">10</span></span>}]); create bug number: int(<span class="hljs-built_in"><span class="hljs-built_in">values</span></span> <span class="hljs-built_in"><span class="hljs-built_in">at</span></span> <span class="hljs-string"><span class="hljs-string">"Number"</span></span>) with: [location:: (point(<span class="hljs-built_in"><span class="hljs-built_in">values</span></span> <span class="hljs-built_in"><span class="hljs-built_in">at</span></span> <span class="hljs-string"><span class="hljs-string">"Location"</span></span>))]; 
 </code></pre>
 <pre><code class="hljs"></code></pre>
 
@@ -2223,12 +2221,12 @@ Returns the variance of a data sequence. That is (sumOfSquares - mean*sum) / siz
 </li>
 </ul>
 <h4 dash_ignored="yes" id="result-98">Result:</h4>
-<p>A list of geometries corresponding to the Voronoi diagram built from the list of points
-A list of geometries corresponding to the Voronoi diagram built from the list of points according to the given clip</p>
+<p>A list of geometries corresponding to the Voronoi diagram built from the list of points according to the given clip
+A list of geometries corresponding to the Voronoi diagram built from the list of points</p>
 <h4 dash_ignored="yes" id="examples-71">Examples:</h4>
 <pre><code class="hljs xquery"> 
-list&lt;geometry&gt; var<span class="hljs-number"><span class="hljs-number">0</span></span> &lt;- voronoi([{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>},{<span class="hljs-number"><span class="hljs-number">50</span></span>,<span class="hljs-number"><span class="hljs-number">50</span></span>},{<span class="hljs-number"><span class="hljs-number">90</span></span>,<span class="hljs-number"><span class="hljs-number">90</span></span>},{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">90</span></span>},{<span class="hljs-number"><span class="hljs-number">90</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}]); // var<span class="hljs-number"><span class="hljs-number">0</span></span> equals the list <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> geometries corresponding <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> the Voronoi Diagram built from the list <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> points. 
-list&lt;geometry&gt; var1 &lt;- voronoi([{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>},{<span class="hljs-number"><span class="hljs-number">50</span></span>,<span class="hljs-number"><span class="hljs-number">50</span></span>},{<span class="hljs-number"><span class="hljs-number">90</span></span>,<span class="hljs-number"><span class="hljs-number">90</span></span>},{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">90</span></span>},{<span class="hljs-number"><span class="hljs-number">90</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}], square(<span class="hljs-number"><span class="hljs-number">300</span></span>)); // var1 equals the list <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> geometries corresponding <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> the Voronoi Diagram built from the list <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> points with a square <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">300</span></span>m side size <span class="hljs-keyword"><span class="hljs-keyword">as</span></span> clip.
+list&lt;geometry&gt; var<span class="hljs-number"><span class="hljs-number">0</span></span> &lt;- voronoi([{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>},{<span class="hljs-number"><span class="hljs-number">50</span></span>,<span class="hljs-number"><span class="hljs-number">50</span></span>},{<span class="hljs-number"><span class="hljs-number">90</span></span>,<span class="hljs-number"><span class="hljs-number">90</span></span>},{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">90</span></span>},{<span class="hljs-number"><span class="hljs-number">90</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}], square(<span class="hljs-number"><span class="hljs-number">300</span></span>)); // var<span class="hljs-number"><span class="hljs-number">0</span></span> equals the list <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> geometries corresponding <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> the Voronoi Diagram built from the list <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> points with a square <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> <span class="hljs-number"><span class="hljs-number">300</span></span>m side size <span class="hljs-keyword"><span class="hljs-keyword">as</span></span> clip. 
+list&lt;geometry&gt; var1 &lt;- voronoi([{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>},{<span class="hljs-number"><span class="hljs-number">50</span></span>,<span class="hljs-number"><span class="hljs-number">50</span></span>},{<span class="hljs-number"><span class="hljs-number">90</span></span>,<span class="hljs-number"><span class="hljs-number">90</span></span>},{<span class="hljs-number"><span class="hljs-number">10</span></span>,<span class="hljs-number"><span class="hljs-number">90</span></span>},{<span class="hljs-number"><span class="hljs-number">90</span></span>,<span class="hljs-number"><span class="hljs-number">10</span></span>}]); // var1 equals the list <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> geometries corresponding <span class="hljs-keyword"><span class="hljs-keyword">to</span></span> the Voronoi Diagram built from the list <span class="hljs-keyword"><span class="hljs-keyword">of</span></span> points.
 </code></pre>
 <pre><code class="hljs"></code></pre>
 

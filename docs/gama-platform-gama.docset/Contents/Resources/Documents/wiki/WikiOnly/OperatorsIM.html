@@ -292,11 +292,11 @@ map&lt;agent,float&gt; var0 &lt;- IDW([ag1, ag2, ag3, ag4, ag5],[{<span class="h
 <a class="dashAnchor" name="//apple_ref/Section/in"></a><h3 id="in"><code>in</code></h3>
 <h4 dash_ignored="yes" id="possible-use-4">Possible use:</h4>
 <ul>
-<li><code>string</code> <strong><code>in</code></strong> <code>string</code> ---&gt;  <code>bool</code>
+<li><code>unknown</code> <strong><code>in</code></strong> <code>container</code> ---&gt;  <code>bool</code>
 <ul>
-<li><strong><code>in</code></strong> (<code>string</code> , <code>string</code>) ---&gt;  <code>bool</code></li>
-<li><code>unknown</code> <strong><code>in</code></strong> <code>container</code> ---&gt;  <code>bool</code></li>
-<li><strong><code>in</code></strong> (<code>unknown</code> , <code>container</code>) ---&gt;  <code>bool</code> </li>
+<li><strong><code>in</code></strong> (<code>unknown</code> , <code>container</code>) ---&gt;  <code>bool</code></li>
+<li><code>string</code> <strong><code>in</code></strong> <code>string</code> ---&gt;  <code>bool</code></li>
+<li><strong><code>in</code></strong> (<code>string</code> , <code>string</code>) ---&gt;  <code>bool</code> </li>
 </ul>
 </li>
 </ul>
@@ -306,19 +306,19 @@ map&lt;agent,float&gt; var0 &lt;- IDW([ag1, ag2, ag3, ag4, ag5],[{<span class="h
 <p>the definition of in depends on the container</p>
 <h4 id="special-cases">Special cases:</h4>
 <ul>
-<li>if both operands are strings, returns true if the left-hand operand patterns is included in to the right-hand string; <br>
+<li>if the right operand is nil or empty, in returns false <br>
 <ul>
-<li>if the right operand is nil or empty, in returns false</li>
+<li>if both operands are strings, returns true if the left-hand operand patterns is included in to the right-hand string;</li>
 </ul>
 </li>
 </ul>
 <h4 dash_ignored="yes" id="examples-3">Examples:</h4>
 <pre><code class="hljs qml"> 
-<span class="hljs-built_in"><span class="hljs-built_in">bool</span></span> var0 &lt;-  <span class="hljs-string"><span class="hljs-string">'bc'</span></span> <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> <span class="hljs-string"><span class="hljs-string">'abcded'</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var0 equals true </span></span>
-<span class="hljs-built_in"><span class="hljs-built_in">bool</span></span> var1 &lt;- <span class="hljs-number"><span class="hljs-number">2</span></span> <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> [<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>,<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">6</span></span>]; <span class="hljs-comment"><span class="hljs-comment">// var1 equals true </span></span>
-<span class="hljs-built_in"><span class="hljs-built_in">bool</span></span> var2 &lt;- <span class="hljs-number"><span class="hljs-number">7</span></span> <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> [<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>,<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">6</span></span>]; <span class="hljs-comment"><span class="hljs-comment">// var2 equals false </span></span>
-<span class="hljs-built_in"><span class="hljs-built_in">bool</span></span> var3 &lt;- <span class="hljs-number"><span class="hljs-number">3</span></span> <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> [<span class="hljs-number"><span class="hljs-number">1</span></span>::<span class="hljs-number"><span class="hljs-number">2</span></span>, <span class="hljs-number"><span class="hljs-number">3</span></span>::<span class="hljs-number"><span class="hljs-number">4</span></span>, <span class="hljs-number"><span class="hljs-number">5</span></span>::<span class="hljs-number"><span class="hljs-number">6</span></span>]; <span class="hljs-comment"><span class="hljs-comment">// var3 equals false </span></span>
-<span class="hljs-built_in"><span class="hljs-built_in">bool</span></span> var4 &lt;- <span class="hljs-number"><span class="hljs-number">6</span></span> <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> [<span class="hljs-number"><span class="hljs-number">1</span></span>::<span class="hljs-number"><span class="hljs-number">2</span></span>, <span class="hljs-number"><span class="hljs-number">3</span></span>::<span class="hljs-number"><span class="hljs-number">4</span></span>, <span class="hljs-number"><span class="hljs-number">5</span></span>::<span class="hljs-number"><span class="hljs-number">6</span></span>]; <span class="hljs-comment"><span class="hljs-comment">// var4 equals true</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">bool</span></span> var0 &lt;- <span class="hljs-number"><span class="hljs-number">2</span></span> <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> [<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>,<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">6</span></span>]; <span class="hljs-comment"><span class="hljs-comment">// var0 equals true </span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">bool</span></span> var1 &lt;- <span class="hljs-number"><span class="hljs-number">7</span></span> <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> [<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>,<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">6</span></span>]; <span class="hljs-comment"><span class="hljs-comment">// var1 equals false </span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">bool</span></span> var2 &lt;- <span class="hljs-number"><span class="hljs-number">3</span></span> <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> [<span class="hljs-number"><span class="hljs-number">1</span></span>::<span class="hljs-number"><span class="hljs-number">2</span></span>, <span class="hljs-number"><span class="hljs-number">3</span></span>::<span class="hljs-number"><span class="hljs-number">4</span></span>, <span class="hljs-number"><span class="hljs-number">5</span></span>::<span class="hljs-number"><span class="hljs-number">6</span></span>]; <span class="hljs-comment"><span class="hljs-comment">// var2 equals false </span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">bool</span></span> var3 &lt;- <span class="hljs-number"><span class="hljs-number">6</span></span> <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> [<span class="hljs-number"><span class="hljs-number">1</span></span>::<span class="hljs-number"><span class="hljs-number">2</span></span>, <span class="hljs-number"><span class="hljs-number">3</span></span>::<span class="hljs-number"><span class="hljs-number">4</span></span>, <span class="hljs-number"><span class="hljs-number">5</span></span>::<span class="hljs-number"><span class="hljs-number">6</span></span>]; <span class="hljs-comment"><span class="hljs-comment">// var3 equals true </span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">bool</span></span> var4 &lt;-  <span class="hljs-string"><span class="hljs-string">'bc'</span></span> <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> <span class="hljs-string"><span class="hljs-string">'abcded'</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var4 equals true</span></span>
 </code></pre>
 <pre><code class="hljs"></code></pre>
 <h4 id="see-also">See also:</h4>
@@ -438,17 +438,17 @@ map var0 &lt;- [<span class="hljs-number"><span class="hljs-number">1</span></sp
 <a class="dashAnchor" name="//apple_ref/Section/index_of"></a><h3 id="index_of"><code>index_of</code></h3>
 <h4 dash_ignored="yes" id="possible-use-12">Possible use:</h4>
 <ul>
-<li><code>species</code> <strong><code>index_of</code></strong> <code>unknown</code> ---&gt;  <code>int</code>
+<li><code>string</code> <strong><code>index_of</code></strong> <code>string</code> ---&gt;  <code>int</code>
 <ul>
-<li><strong><code>index_of</code></strong> (<code>species</code> , <code>unknown</code>) ---&gt;  <code>int</code></li>
-<li><code>string</code> <strong><code>index_of</code></strong> <code>string</code> ---&gt;  <code>int</code></li>
 <li><strong><code>index_of</code></strong> (<code>string</code> , <code>string</code>) ---&gt;  <code>int</code></li>
-<li><code>map</code> <strong><code>index_of</code></strong> <code>unknown</code> ---&gt;  <code>unknown</code></li>
-<li><strong><code>index_of</code></strong> (<code>map</code> , <code>unknown</code>) ---&gt;  <code>unknown</code></li>
 <li><code>list</code> <strong><code>index_of</code></strong> <code>unknown</code> ---&gt;  <code>int</code></li>
 <li><strong><code>index_of</code></strong> (<code>list</code> , <code>unknown</code>) ---&gt;  <code>int</code></li>
 <li><code>matrix</code> <strong><code>index_of</code></strong> <code>unknown</code> ---&gt;  <code>point</code></li>
-<li><strong><code>index_of</code></strong> (<code>matrix</code> , <code>unknown</code>) ---&gt;  <code>point</code> </li>
+<li><strong><code>index_of</code></strong> (<code>matrix</code> , <code>unknown</code>) ---&gt;  <code>point</code></li>
+<li><code>map</code> <strong><code>index_of</code></strong> <code>unknown</code> ---&gt;  <code>unknown</code></li>
+<li><strong><code>index_of</code></strong> (<code>map</code> , <code>unknown</code>) ---&gt;  <code>unknown</code></li>
+<li><code>species</code> <strong><code>index_of</code></strong> <code>unknown</code> ---&gt;  <code>int</code></li>
+<li><strong><code>index_of</code></strong> (<code>species</code> , <code>unknown</code>) ---&gt;  <code>int</code> </li>
 </ul>
 </li>
 </ul>
@@ -459,32 +459,32 @@ the index of the first occurence of the right operand in the left operand contai
 <p>The definition of index_of and the type of the index depend on the container</p>
 <h4 dash_ignored="yes" id="special-cases-3">Special cases:</h4>
 <ul>
-<li>if the left operator is a species, returns the index of an agent in a species. If the argument is not an agent of this species, returns -1. Use int(agent) instead <br>
+<li>if the left operand is a map, index_of returns the index of a value or nil if the value is not mapped <br>
 <ul>
-<li>if the left operand is a map, index_of returns the index of a value or nil if the value is not mapped    </li>
+<li>if the left operator is a species, returns the index of an agent in a species. If the argument is not an agent of this species, returns -1. Use int(agent) instead    </li>
 <li>if both operands are strings, returns the index within the left-hand string of the first occurrence of the given right-hand string </li>
 </ul>
 </li>
 </ul>
 <pre><code class="hljs axapta"> 
-<span class="hljs-keyword"><span class="hljs-keyword">int</span></span> var1 &lt;-  <span class="hljs-string"><span class="hljs-string">"abcabcabc"</span></span> index_of <span class="hljs-string"><span class="hljs-string">"ca"</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var1 equals 2</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">int</span></span> var0 &lt;-  <span class="hljs-string"><span class="hljs-string">"abcabcabc"</span></span> index_of <span class="hljs-string"><span class="hljs-string">"ca"</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var0 equals 2</span></span>
 </code></pre>
 <ul>
 <li>if the left operand is a list, index_of returns the index as an integer </li>
 </ul>
 <pre><code class="hljs axapta"> 
-<span class="hljs-keyword"><span class="hljs-keyword">int</span></span> var2 &lt;- [<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>,<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">6</span></span>] index_of <span class="hljs-number"><span class="hljs-number">4</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var2 equals 3 </span></span>
-<span class="hljs-keyword"><span class="hljs-keyword">int</span></span> var3 &lt;- [<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>,<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>] index_of <span class="hljs-number"><span class="hljs-number">4</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var3 equals 0</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">int</span></span> var1 &lt;- [<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>,<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">6</span></span>] index_of <span class="hljs-number"><span class="hljs-number">4</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var1 equals 3 </span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">int</span></span> var2 &lt;- [<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>,<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>] index_of <span class="hljs-number"><span class="hljs-number">4</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var2 equals 0</span></span>
 </code></pre>
 <ul>
 <li>if the left operand is a matrix, index_of returns the index as a point </li>
 </ul>
 <pre><code class="hljs lua"> 
-point var4 &lt;- matrix(<span class="hljs-string"><span class="hljs-string">[[1,2,3],[4,5,6]]</span></span>) index_of <span class="hljs-number"><span class="hljs-number">4</span></span>; // var4 equals {<span class="hljs-number"><span class="hljs-number">1.0</span></span>,<span class="hljs-number"><span class="hljs-number">0.0</span></span>}
+point var3 &lt;- matrix(<span class="hljs-string"><span class="hljs-string">[[1,2,3],[4,5,6]]</span></span>) index_of <span class="hljs-number"><span class="hljs-number">4</span></span>; // var3 equals {<span class="hljs-number"><span class="hljs-number">1.0</span></span>,<span class="hljs-number"><span class="hljs-number">0.0</span></span>}
 </code></pre>
 <table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><h4 dash_ignored="yes" id="examples-7">Examples:</h4>
 <pre><code class="hljs dns"> 
-unknown var0 &lt;- [<span class="hljs-number"><span class="hljs-number">1::2</span></span>, <span class="hljs-number"><span class="hljs-number">3::4</span></span>, <span class="hljs-number"><span class="hljs-number">5::6</span></span>] index_of <span class="hljs-number"><span class="hljs-number">4</span></span><span class="hljs-comment"><span class="hljs-comment">; // var0 equals 3</span></span>
+unknown var4 &lt;- [<span class="hljs-number"><span class="hljs-number">1::2</span></span>, <span class="hljs-number"><span class="hljs-number">3::4</span></span>, <span class="hljs-number"><span class="hljs-number">5::6</span></span>] index_of <span class="hljs-number"><span class="hljs-number">4</span></span><span class="hljs-comment"><span class="hljs-comment">; // var4 equals 3</span></span>
 </code></pre>
 <pre><code class="hljs"></code></pre>
 <h4 dash_ignored="yes" id="see-also-4">See also:</h4>
@@ -587,20 +587,20 @@ list var1 &lt;- interleave([[<span class="hljs-string"><span class="hljs-string"
 <a class="dashAnchor" name="//apple_ref/Section/internal_at"></a><h3 id="internal_at"><code>internal_at</code></h3>
 <h4 dash_ignored="yes" id="possible-use-17">Possible use:</h4>
 <ul>
-<li><code>container&lt;KeyType,ValueType&gt;</code> <strong><code>internal_at</code></strong> <code>list&lt;KeyType&gt;</code> ---&gt;  <code>ValueType</code>
+<li><code>geometry</code> <strong><code>internal_at</code></strong> <code>list</code> ---&gt;  <code>unknown</code>
 <ul>
+<li><strong><code>internal_at</code></strong> (<code>geometry</code> , <code>list</code>) ---&gt;  <code>unknown</code></li>
+<li><code>container&lt;KeyType,ValueType&gt;</code> <strong><code>internal_at</code></strong> <code>list&lt;KeyType&gt;</code> ---&gt;  <code>ValueType</code></li>
 <li><strong><code>internal_at</code></strong> (<code>container&lt;KeyType,ValueType&gt;</code> , <code>list&lt;KeyType&gt;</code>) ---&gt;  <code>ValueType</code></li>
 <li><code>agent</code> <strong><code>internal_at</code></strong> <code>list</code> ---&gt;  <code>unknown</code></li>
-<li><strong><code>internal_at</code></strong> (<code>agent</code> , <code>list</code>) ---&gt;  <code>unknown</code></li>
-<li><code>geometry</code> <strong><code>internal_at</code></strong> <code>list</code> ---&gt;  <code>unknown</code></li>
-<li><strong><code>internal_at</code></strong> (<code>geometry</code> , <code>list</code>) ---&gt;  <code>unknown</code> </li>
+<li><strong><code>internal_at</code></strong> (<code>agent</code> , <code>list</code>) ---&gt;  <code>unknown</code> </li>
 </ul>
 </li>
 </ul>
 <h4 dash_ignored="yes" id="result-17">Result:</h4>
-<p>For internal use only. Corresponds to the implementation of the access to containers with [index]
-For internal use only. Corresponds to the implementation, for agents, of the access to containers with [index]
-For internal use only. Corresponds to the implementation, for geometries, of the access to containers with [index]    </p>
+<p>For internal use only. Corresponds to the implementation, for geometries, of the access to containers with [index]
+For internal use only. Corresponds to the implementation of the access to containers with [index]
+For internal use only. Corresponds to the implementation, for agents, of the access to containers with [index]    </p>
 <h4 dash_ignored="yes" id="see-also-7">See also:</h4>
 <p><a href="https://github.com/wiki/gama-platform/gama/WikiOnly/OperatorsAA#at.html">at</a>, </p>
 
@@ -801,27 +801,27 @@ matrix&lt;float&gt; var0 &lt;- inverse(matrix(<span class="hljs-string"><span cl
 <a class="dashAnchor" name="//apple_ref/Section/is_number"></a><h3 id="is_number"><code>is_number</code></h3>
 <h4 dash_ignored="yes" id="possible-use-34">Possible use:</h4>
 <ul>
-<li><strong><code>is_number</code></strong> (<code>string</code>) ---&gt;  <code>bool</code>
+<li><strong><code>is_number</code></strong> (<code>float</code>) ---&gt;  <code>bool</code>
 <ul>
-<li><strong><code>is_number</code></strong> (<code>float</code>) ---&gt;  <code>bool</code> </li>
+<li><strong><code>is_number</code></strong> (<code>string</code>) ---&gt;  <code>bool</code> </li>
 </ul>
 </li>
 </ul>
 <h4 dash_ignored="yes" id="result-34">Result:</h4>
-<p>tests whether the operand represents a numerical value
-Returns whether the argument is a real number or not  </p>
+<p>Returns whether the argument is a real number or not
+tests whether the operand represents a numerical value  </p>
 <h4 dash_ignored="yes" id="comment-5">Comment:</h4>
 <p>Note that the symbol . should be used for a float value (a string with , will not be considered as a numeric value). Symbols e and E are also accepted. A hexadecimal value should begin with #.</p>
 <h4 dash_ignored="yes" id="examples-15">Examples:</h4>
 <pre><code class="hljs gauss"> 
-<span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> var0 &lt;- is_number(<span class="hljs-string"><span class="hljs-string">"test"</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var0 equals false </span></span>
-<span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> var1 &lt;- is_number(<span class="hljs-string"><span class="hljs-string">"123.56"</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var1 equals true </span></span>
-<span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> var2 &lt;- is_number(<span class="hljs-string"><span class="hljs-string">"-1.2e5"</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var2 equals true </span></span>
-<span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> var3 &lt;- is_number(<span class="hljs-string"><span class="hljs-string">"1,2"</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var3 equals false </span></span>
-<span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> var4 &lt;- is_number(<span class="hljs-string"><span class="hljs-string">"#12FA"</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var4 equals true </span></span>
-<span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> var5 &lt;- is_number(<span class="hljs-number"><span class="hljs-number">4.66</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var5 equals true </span></span>
-<span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> var6 &lt;- is_number(<span class="hljs-meta"><span class="hljs-meta">#infinity); </span><span class="hljs-comment"><span class="hljs-meta"><span class="hljs-comment">// var6 equals true </span></span></span></span>
-<span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> var7 &lt;- is_number(<span class="hljs-meta"><span class="hljs-meta">#nan); </span><span class="hljs-comment"><span class="hljs-meta"><span class="hljs-comment">// var7 equals false</span></span></span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> var0 &lt;- is_number(<span class="hljs-number"><span class="hljs-number">4.66</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var0 equals true </span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> var1 &lt;- is_number(<span class="hljs-meta"><span class="hljs-meta">#infinity); </span><span class="hljs-comment"><span class="hljs-meta"><span class="hljs-comment">// var1 equals true </span></span></span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> var2 &lt;- is_number(<span class="hljs-meta"><span class="hljs-meta">#nan); </span><span class="hljs-comment"><span class="hljs-meta"><span class="hljs-comment">// var2 equals false </span></span></span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> var3 &lt;- is_number(<span class="hljs-string"><span class="hljs-string">"test"</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var3 equals false </span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> var4 &lt;- is_number(<span class="hljs-string"><span class="hljs-string">"123.56"</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var4 equals true </span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> var5 &lt;- is_number(<span class="hljs-string"><span class="hljs-string">"-1.2e5"</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var5 equals true </span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> var6 &lt;- is_number(<span class="hljs-string"><span class="hljs-string">"1,2"</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var6 equals false </span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">bool</span></span> var7 &lt;- is_number(<span class="hljs-string"><span class="hljs-string">"#12FA"</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var7 equals true</span></span>
 </code></pre>
 <pre><code class="hljs"></code></pre>
 
@@ -980,12 +980,12 @@ Returns whether the argument is a real number or not  </p>
 </li>
 </ul>
 <h4 dash_ignored="yes" id="result-50">Result:</h4>
-<p>kappa indicator for 2 map comparisons: kappa(list_vals1,list_vals2,categories). Reference: Cohen, J. A coefficient of agreement for nominal scales. Educ. Psychol. Meas. 1960, 20.
-kappa indicator for 2 map comparisons: kappa(list_vals1,list_vals2,categories, weights). Reference: Cohen, J. A coefficient of agreement for nominal scales. Educ. Psychol. Meas. 1960, 20.</p>
+<p>kappa indicator for 2 map comparisons: kappa(list_vals1,list_vals2,categories, weights). Reference: Cohen, J. A coefficient of agreement for nominal scales. Educ. Psychol. Meas. 1960, 20. 
+kappa indicator for 2 map comparisons: kappa(list_vals1,list_vals2,categories). Reference: Cohen, J. A coefficient of agreement for nominal scales. Educ. Psychol. Meas. 1960, 20.</p>
 <h4 dash_ignored="yes" id="examples-17">Examples:</h4>
-<pre><code class="hljs scss">kappa(<span class="hljs-selector-attr"><span class="hljs-selector-attr">[cat1,cat1,cat2,cat3,cat2]</span></span>,<span class="hljs-selector-attr"><span class="hljs-selector-attr">[cat2,cat1,cat2,cat1,cat2]</span></span>,<span class="hljs-selector-attr"><span class="hljs-selector-attr">[cat1,cat2,cat3]</span></span>)  
-<span class="hljs-attribute"><span class="hljs-attribute">float</span></span> var1 &lt;- kappa(<span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,3,5,1,5]</span></span>,<span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,1,1,1,5]</span></span>,<span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,3,5]</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var1 equals the similarity between 0 and 1 </span></span>
-<span class="hljs-attribute"><span class="hljs-attribute">float</span></span> var2 &lt;- kappa(<span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,1,1,1,5]</span></span>,<span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,1,1,1,5]</span></span>,<span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,3,5]</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var2 equals 1.0kappa([cat1,cat1,cat2,cat3,cat2],[cat2,cat1,cat2,cat1,cat2],[cat1,cat2,cat3], [1.0, 2.0, 3.0, 1.0, 5.0]) </span></span>
+<pre><code class="hljs scss">kappa(<span class="hljs-selector-attr"><span class="hljs-selector-attr">[cat1,cat1,cat2,cat3,cat2]</span></span>,<span class="hljs-selector-attr"><span class="hljs-selector-attr">[cat2,cat1,cat2,cat1,cat2]</span></span>,<span class="hljs-selector-attr"><span class="hljs-selector-attr">[cat1,cat2,cat3]</span></span>, <span class="hljs-selector-attr"><span class="hljs-selector-attr">[1.0, 2.0, 3.0, 1.0, 5.0]</span></span>) kappa(<span class="hljs-selector-attr"><span class="hljs-selector-attr">[cat1,cat1,cat2,cat3,cat2]</span></span>,<span class="hljs-selector-attr"><span class="hljs-selector-attr">[cat2,cat1,cat2,cat1,cat2]</span></span>,<span class="hljs-selector-attr"><span class="hljs-selector-attr">[cat1,cat2,cat3]</span></span>)  
+<span class="hljs-attribute"><span class="hljs-attribute">float</span></span> var2 &lt;- kappa(<span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,3,5,1,5]</span></span>,<span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,1,1,1,5]</span></span>,<span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,3,5]</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var2 equals the similarity between 0 and 1 </span></span>
+<span class="hljs-attribute"><span class="hljs-attribute">float</span></span> var3 &lt;- kappa(<span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,1,1,1,5]</span></span>,<span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,1,1,1,5]</span></span>,<span class="hljs-selector-attr"><span class="hljs-selector-attr">[1,3,5]</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var3 equals 1.0</span></span>
 </code></pre>
 <pre><code class="hljs"></code></pre>
 
@@ -1000,10 +1000,10 @@ kappa indicator for 2 map comparisons: kappa(list_vals1,list_vals2,categories, w
 </li>
 </ul>
 <h4 dash_ignored="yes" id="result-51">Result:</h4>
-<p>kappa simulation indicator for 2 map comparisons: kappa(list_valsInits,list_valsObs,list_valsSim, categories, weights). Reference: van Vliet, J., Bregt, A.K. &amp; Hagen-Zanker, A. (2011). Revisiting Kappa to account for change in the accuracy assessment of land-use change models, Ecological Modelling 222(8)
-kappa simulation indicator for 2 map comparisons: kappa(list_valsInits,list_valsObs,list_valsSim, categories). Reference: van Vliet, J., Bregt, A.K. &amp; Hagen-Zanker, A. (2011). Revisiting Kappa to account for change in the accuracy assessment of land-use change models, Ecological Modelling 222(8).</p>
+<p>kappa simulation indicator for 2 map comparisons: kappa(list_valsInits,list_valsObs,list_valsSim, categories). Reference: van Vliet, J., Bregt, A.K. &amp; Hagen-Zanker, A. (2011). Revisiting Kappa to account for change in the accuracy assessment of land-use change models, Ecological Modelling 222(8).
+kappa simulation indicator for 2 map comparisons: kappa(list_valsInits,list_valsObs,list_valsSim, categories, weights). Reference: van Vliet, J., Bregt, A.K. &amp; Hagen-Zanker, A. (2011). Revisiting Kappa to account for change in the accuracy assessment of land-use change models, Ecological Modelling 222(8)</p>
 <h4 dash_ignored="yes" id="examples-18">Examples:</h4>
-<pre><code class="hljs inform7">kappa(<span class="hljs-comment"><span class="hljs-comment">[cat1,cat1,cat2,cat2,cat2]</span></span>,<span class="hljs-comment"><span class="hljs-comment">[cat2,cat1,cat2,cat1,cat3]</span></span>,<span class="hljs-comment"><span class="hljs-comment">[cat2,cat1,cat2,cat3,cat3]</span></span>, <span class="hljs-comment"><span class="hljs-comment">[cat1,cat2,cat3]</span></span>,<span class="hljs-comment"><span class="hljs-comment">[1.0, 2.0, 3.0, 1.0, 5.0]</span></span>) kappa(<span class="hljs-comment"><span class="hljs-comment">[cat1,cat1,cat2,cat2,cat2]</span></span>,<span class="hljs-comment"><span class="hljs-comment">[cat2,cat1,cat2,cat1,cat3]</span></span>,<span class="hljs-comment"><span class="hljs-comment">[cat2,cat1,cat2,cat3,cat3]</span></span>, <span class="hljs-comment"><span class="hljs-comment">[cat1,cat2,cat3]</span></span>) 
+<pre><code class="hljs inform7">kappa(<span class="hljs-comment"><span class="hljs-comment">[cat1,cat1,cat2,cat2,cat2]</span></span>,<span class="hljs-comment"><span class="hljs-comment">[cat2,cat1,cat2,cat1,cat3]</span></span>,<span class="hljs-comment"><span class="hljs-comment">[cat2,cat1,cat2,cat3,cat3]</span></span>, <span class="hljs-comment"><span class="hljs-comment">[cat1,cat2,cat3]</span></span>) kappa(<span class="hljs-comment"><span class="hljs-comment">[cat1,cat1,cat2,cat2,cat2]</span></span>,<span class="hljs-comment"><span class="hljs-comment">[cat2,cat1,cat2,cat1,cat3]</span></span>,<span class="hljs-comment"><span class="hljs-comment">[cat2,cat1,cat2,cat3,cat3]</span></span>, <span class="hljs-comment"><span class="hljs-comment">[cat1,cat2,cat3]</span></span>,<span class="hljs-comment"><span class="hljs-comment">[1.0, 2.0, 3.0, 1.0, 5.0]</span></span>) 
 </code></pre>
 <pre><code class="hljs"></code></pre>
 
@@ -1081,9 +1081,9 @@ Returns the kurtosis (aka excess) of a data sequence</p>
 <a class="dashAnchor" name="//apple_ref/Section/last"></a><h3 id="last"><code>last</code></h3>
 <h4 dash_ignored="yes" id="possible-use-56">Possible use:</h4>
 <ul>
-<li><strong><code>last</code></strong> (<code>string</code>) ---&gt;  <code>string</code>
+<li><strong><code>last</code></strong> (<code>container&lt;KeyType,ValueType&gt;</code>) ---&gt;  <code>ValueType</code>
 <ul>
-<li><strong><code>last</code></strong> (<code>container&lt;KeyType,ValueType&gt;</code>) ---&gt;  <code>ValueType</code></li>
+<li><strong><code>last</code></strong> (<code>string</code>) ---&gt;  <code>string</code></li>
 <li><code>int</code> <strong><code>last</code></strong> <code>container</code> ---&gt;  <code>list</code></li>
 <li><strong><code>last</code></strong> (<code>int</code> , <code>container</code>) ---&gt;  <code>list</code> </li>
 </ul>
@@ -1103,18 +1103,18 @@ Returns the kurtosis (aka excess) of a data sequence</p>
 <li>if it is a matrix, last returns the element at {length-1,length-1} in the matrix    </li>
 <li>for a matrix of int or float, it will return 0 if the matrix is empty    </li>
 <li>for a matrix of object or geometry, it will return nil if the matrix is empty    </li>
-<li>if it is a string, last returns a string composed of its last character, or an empty string if the operand is empty </li>
+<li>if it is a list, last returns the last element of the list, or nil if the list is empty </li>
 </ul>
 </li>
 </ul>
-<pre><code class="hljs livecodeserver"> 
-<span class="hljs-keyword"><span class="hljs-keyword">string</span></span> var0 &lt;- <span class="hljs-keyword"><span class="hljs-keyword">last</span></span> (<span class="hljs-string"><span class="hljs-string">'abce'</span></span>);<span class="hljs-comment"><span class="hljs-comment"> // var0 equals 'e'</span></span>
+<pre><code class="hljs axapta"> 
+<span class="hljs-keyword"><span class="hljs-keyword">int</span></span> var0 &lt;- last ([<span class="hljs-number"><span class="hljs-number">1</span></span>, <span class="hljs-number"><span class="hljs-number">2</span></span>, <span class="hljs-number"><span class="hljs-number">3</span></span>]); <span class="hljs-comment"><span class="hljs-comment">// var0 equals 3</span></span>
 </code></pre>
 <ul>
-<li>if it is a list, last returns the last element of the list, or nil if the list is empty </li>
+<li>if it is a string, last returns a string composed of its last character, or an empty string if the operand is empty </li>
 </ul>
-<pre><code class="hljs maxima"> 
-int <span class="hljs-built_in"><span class="hljs-built_in">var1</span></span> &lt;- <span class="hljs-built_in"><span class="hljs-built_in">last</span></span> ([<span class="hljs-number"><span class="hljs-number">1</span></span>, <span class="hljs-number"><span class="hljs-number">2</span></span>, <span class="hljs-number"><span class="hljs-number">3</span></span>]); // <span class="hljs-built_in"><span class="hljs-built_in">var1</span></span> equals <span class="hljs-number"><span class="hljs-number">3</span></span>
+<pre><code class="hljs livecodeserver"> 
+<span class="hljs-keyword"><span class="hljs-keyword">string</span></span> var1 &lt;- <span class="hljs-keyword"><span class="hljs-keyword">last</span></span> (<span class="hljs-string"><span class="hljs-string">'abce'</span></span>);<span class="hljs-comment"><span class="hljs-comment"> // var1 equals 'e'</span></span>
 </code></pre>
 <table><thead><tr></tr></thead><tbody><tr></tr><tr></tr></tbody></table><h4 dash_ignored="yes" id="see-also-9">See also:</h4>
 <p><a href="https://github.com/wiki/gama-platform/gama/WikiOnly/OperatorsDH#first.html">first</a>, </p>
@@ -1123,17 +1123,17 @@ int <span class="hljs-built_in"><span class="hljs-built_in">var1</span></span> &
 <a class="dashAnchor" name="//apple_ref/Section/last_index_of"></a><h3 id="last_index_of"><code>last_index_of</code></h3>
 <h4 dash_ignored="yes" id="possible-use-57">Possible use:</h4>
 <ul>
-<li><code>map</code> <strong><code>last_index_of</code></strong> <code>unknown</code> ---&gt;  <code>unknown</code>
+<li><code>string</code> <strong><code>last_index_of</code></strong> <code>string</code> ---&gt;  <code>int</code>
 <ul>
-<li><strong><code>last_index_of</code></strong> (<code>map</code> , <code>unknown</code>) ---&gt;  <code>unknown</code></li>
-<li><code>string</code> <strong><code>last_index_of</code></strong> <code>string</code> ---&gt;  <code>int</code></li>
 <li><strong><code>last_index_of</code></strong> (<code>string</code> , <code>string</code>) ---&gt;  <code>int</code></li>
+<li><code>map</code> <strong><code>last_index_of</code></strong> <code>unknown</code> ---&gt;  <code>unknown</code></li>
+<li><strong><code>last_index_of</code></strong> (<code>map</code> , <code>unknown</code>) ---&gt;  <code>unknown</code></li>
+<li><code>list</code> <strong><code>last_index_of</code></strong> <code>unknown</code> ---&gt;  <code>int</code></li>
+<li><strong><code>last_index_of</code></strong> (<code>list</code> , <code>unknown</code>) ---&gt;  <code>int</code></li>
 <li><code>species</code> <strong><code>last_index_of</code></strong> <code>unknown</code> ---&gt;  <code>int</code></li>
 <li><strong><code>last_index_of</code></strong> (<code>species</code> , <code>unknown</code>) ---&gt;  <code>int</code></li>
 <li><code>matrix</code> <strong><code>last_index_of</code></strong> <code>unknown</code> ---&gt;  <code>point</code></li>
-<li><strong><code>last_index_of</code></strong> (<code>matrix</code> , <code>unknown</code>) ---&gt;  <code>point</code></li>
-<li><code>list</code> <strong><code>last_index_of</code></strong> <code>unknown</code> ---&gt;  <code>int</code></li>
-<li><strong><code>last_index_of</code></strong> (<code>list</code> , <code>unknown</code>) ---&gt;  <code>int</code> </li>
+<li><strong><code>last_index_of</code></strong> (<code>matrix</code> , <code>unknown</code>) ---&gt;  <code>point</code> </li>
 </ul>
 </li>
 </ul>
@@ -1145,34 +1145,34 @@ int <span class="hljs-built_in"><span class="hljs-built_in">var1</span></span> &
 <ul>
 <li>if the left operand is a species, the last index of an agent is the same as its index <br>
 <ul>
-<li>if the left operand is a map, last_index_of returns the index as an int (the key of the pair) </li>
+<li>if both operands are strings, returns the index within the left-hand string of the rightmost occurrence of the given right-hand string </li>
 </ul>
 </li>
 </ul>
-<pre><code class="hljs dns"> 
-unknown var0 &lt;- [<span class="hljs-number"><span class="hljs-number">1::2</span></span>, <span class="hljs-number"><span class="hljs-number">3::4</span></span>, <span class="hljs-number"><span class="hljs-number">5::4</span></span>] last_index_of <span class="hljs-number"><span class="hljs-number">4</span></span><span class="hljs-comment"><span class="hljs-comment">; // var0 equals 5</span></span>
-</code></pre>
-<ul>
-<li>if both operands are strings, returns the index within the left-hand string of the rightmost occurrence of the given right-hand string </li>
-</ul>
 <pre><code class="hljs axapta"> 
-<span class="hljs-keyword"><span class="hljs-keyword">int</span></span> var1 &lt;- <span class="hljs-string"><span class="hljs-string">"abcabcabc"</span></span> last_index_of <span class="hljs-string"><span class="hljs-string">"ca"</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var1 equals 5</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">int</span></span> var0 &lt;- <span class="hljs-string"><span class="hljs-string">"abcabcabc"</span></span> last_index_of <span class="hljs-string"><span class="hljs-string">"ca"</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var0 equals 5</span></span>
 </code></pre>
 <ul>
-<li>if the left operand is a matrix, last_index_of returns the index as a point </li>
+<li>if the left operand is a map, last_index_of returns the index as an int (the key of the pair) </li>
 </ul>
-<pre><code class="hljs lua"> 
-point var2 &lt;- matrix(<span class="hljs-string"><span class="hljs-string">[[1,2,3],[4,5,4]]</span></span>) last_index_of <span class="hljs-number"><span class="hljs-number">4</span></span>; // var2 equals {<span class="hljs-number"><span class="hljs-number">1.0</span></span>,<span class="hljs-number"><span class="hljs-number">2.0</span></span>}
+<pre><code class="hljs dns"> 
+unknown var1 &lt;- [<span class="hljs-number"><span class="hljs-number">1::2</span></span>, <span class="hljs-number"><span class="hljs-number">3::4</span></span>, <span class="hljs-number"><span class="hljs-number">5::4</span></span>] last_index_of <span class="hljs-number"><span class="hljs-number">4</span></span><span class="hljs-comment"><span class="hljs-comment">; // var1 equals 5</span></span>
 </code></pre>
 <ul>
 <li>if the left operand is a list, last_index_of returns the index as an integer </li>
 </ul>
 <pre><code class="hljs axapta"> 
-<span class="hljs-keyword"><span class="hljs-keyword">int</span></span> var3 &lt;- [<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>,<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">6</span></span>] last_index_of <span class="hljs-number"><span class="hljs-number">4</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var3 equals 3 </span></span>
-<span class="hljs-keyword"><span class="hljs-keyword">int</span></span> var4 &lt;- [<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>,<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>] last_index_of <span class="hljs-number"><span class="hljs-number">4</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var4 equals 5</span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">int</span></span> var2 &lt;- [<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>,<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">6</span></span>] last_index_of <span class="hljs-number"><span class="hljs-number">4</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var2 equals 3 </span></span>
+<span class="hljs-keyword"><span class="hljs-keyword">int</span></span> var3 &lt;- [<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>,<span class="hljs-number"><span class="hljs-number">3</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">5</span></span>,<span class="hljs-number"><span class="hljs-number">4</span></span>] last_index_of <span class="hljs-number"><span class="hljs-number">4</span></span>; <span class="hljs-comment"><span class="hljs-comment">// var3 equals 5</span></span>
+</code></pre>
+<ul>
+<li>if the left operand is a matrix, last_index_of returns the index as a point </li>
+</ul>
+<pre><code class="hljs lua"> 
+point var4 &lt;- matrix(<span class="hljs-string"><span class="hljs-string">[[1,2,3],[4,5,4]]</span></span>) last_index_of <span class="hljs-number"><span class="hljs-number">4</span></span>; // var4 equals {<span class="hljs-number"><span class="hljs-number">1.0</span></span>,<span class="hljs-number"><span class="hljs-number">2.0</span></span>}
 </code></pre>
 <table><thead><tr></tr></thead><tbody><tr></tr><tr></tr></tbody></table><h4 dash_ignored="yes" id="see-also-10">See also:</h4>
-<p><a href="https://github.com/wiki/gama-platform/gama/WikiOnly/OperatorsAA#at.html">at</a>, <a href="https://github.com/wiki/gama-platform/gama/WikiOnly/OperatorsIM#index_of.html">index_of</a>, <a href="https://github.com/wiki/gama-platform/gama/WikiOnly/OperatorsIM#last_index_of.html">last_index_of</a>, </p>
+<p><a href="https://github.com/wiki/gama-platform/gama/WikiOnly/OperatorsAA#at.html">at</a>, <a href="https://github.com/wiki/gama-platform/gama/WikiOnly/OperatorsIM#last_index_of.html">last_index_of</a>, <a href="https://github.com/wiki/gama-platform/gama/WikiOnly/OperatorsIM#index_of.html">index_of</a>, </p>
 
 <hr>
 <a class="dashAnchor" name="//apple_ref/Section/last_of"></a><h3 id="last_of"><code>last_of</code></h3>
@@ -1366,9 +1366,9 @@ geometry var<span class="hljs-number"><span class="hljs-number">0</span></span> 
 <a class="dashAnchor" name="//apple_ref/Section/ln"></a><h3 id="ln"><code>ln</code></h3>
 <h4 dash_ignored="yes" id="possible-use-65">Possible use:</h4>
 <ul>
-<li><strong><code>ln</code></strong> (<code>float</code>) ---&gt;  <code>float</code>
+<li><strong><code>ln</code></strong> (<code>int</code>) ---&gt;  <code>float</code>
 <ul>
-<li><strong><code>ln</code></strong> (<code>int</code>) ---&gt;  <code>float</code> </li>
+<li><strong><code>ln</code></strong> (<code>float</code>) ---&gt;  <code>float</code> </li>
 </ul>
 </li>
 </ul>
@@ -1380,8 +1380,8 @@ geometry var<span class="hljs-number"><span class="hljs-number">0</span></span> 
 </ul>
 <h4 dash_ignored="yes" id="examples-24">Examples:</h4>
 <pre><code class="hljs sqf"> 
-float var0 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">ln</span></span>(<span class="hljs-built_in"><span class="hljs-built_in">exp</span></span>(<span class="hljs-number"><span class="hljs-number">1</span></span>)); <span class="hljs-comment"><span class="hljs-comment">// var0 equals 1.0 </span></span>
-float var1 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">ln</span></span>(<span class="hljs-number"><span class="hljs-number">1</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var1 equals 0.0</span></span>
+float var0 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">ln</span></span>(<span class="hljs-number"><span class="hljs-number">1</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var0 equals 0.0 </span></span>
+float var1 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">ln</span></span>(<span class="hljs-built_in"><span class="hljs-built_in">exp</span></span>(<span class="hljs-number"><span class="hljs-number">1</span></span>)); <span class="hljs-comment"><span class="hljs-comment">// var1 equals 1.0</span></span>
 </code></pre>
 <pre><code class="hljs"></code></pre>
 <h4 dash_ignored="yes" id="see-also-15">See also:</h4>
@@ -1393,10 +1393,10 @@ float var1 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">ln</spa
 <ul>
 <li><strong><code>load_graph_from_file</code></strong> (<code>string</code>) ---&gt;  <code>graph</code>
 <ul>
-<li><code>string</code> <strong><code>load_graph_from_file</code></strong> <code>string</code> ---&gt;  <code>graph</code></li>
-<li><strong><code>load_graph_from_file</code></strong> (<code>string</code> , <code>string</code>) ---&gt;  <code>graph</code></li>
 <li><code>string</code> <strong><code>load_graph_from_file</code></strong> <code>file</code> ---&gt;  <code>graph</code></li>
 <li><strong><code>load_graph_from_file</code></strong> (<code>string</code> , <code>file</code>) ---&gt;  <code>graph</code></li>
+<li><code>string</code> <strong><code>load_graph_from_file</code></strong> <code>string</code> ---&gt;  <code>graph</code></li>
+<li><strong><code>load_graph_from_file</code></strong> (<code>string</code> , <code>string</code>) ---&gt;  <code>graph</code></li>
 <li><strong><code>load_graph_from_file</code></strong> (<code>string</code>, <code>species</code>, <code>species</code>) ---&gt;  <code>graph</code></li>
 <li><strong><code>load_graph_from_file</code></strong> (<code>string</code>, <code>string</code>, <code>species</code>, <code>species</code>) ---&gt;  <code>graph</code></li>
 <li><strong><code>load_graph_from_file</code></strong> (<code>string</code>, <code>file</code>, <code>species</code>, <code>species</code>) ---&gt;  <code>graph</code></li>
@@ -1420,9 +1420,14 @@ loads a graph from a file  </p>
 <li>"filename": the filename of the file containing the network    </li>
 <li>"edges_species": the species of edges    </li>
 <li>"vertices_specy": the species of vertices    </li>
-<li>"format": the format of the file, "file": the file containing the network, "edges_species": the species of edges, "vertices_specy": the species of vertices </li>
+<li>"format": the format of the file, "file": the file containing the network </li>
 </ul>
 </li>
+</ul>
+<pre><code class="hljs stata"><span class="hljs-keyword"><span class="hljs-keyword">graph</span></span>&lt;myVertexSpecy,myEdgeSpecy&gt; myGraph &lt;- load_graph_from_file(           <span class="hljs-string"><span class="hljs-string">"pajek"</span></span>,            <span class="hljs-string"><span class="hljs-string">"example_of_Pajek_file"</span></span>); 
+</code></pre>
+<ul>
+<li>"format": the format of the file, "file": the file containing the network, "edges_species": the species of edges, "vertices_specy": the species of vertices </li>
 </ul>
 <pre><code class="hljs stata"><span class="hljs-keyword"><span class="hljs-keyword">graph</span></span>&lt;myVertexSpecy,myEdgeSpecy&gt; myGraph &lt;- load_graph_from_file(           <span class="hljs-string"><span class="hljs-string">"pajek"</span></span>,            <span class="hljs-string"><span class="hljs-string">"example_of_Pajek_file"</span></span>,            myVertexSpecy,          myEdgeSpecy ); 
 </code></pre>
@@ -1432,22 +1437,17 @@ loads a graph from a file  </p>
 <pre><code class="hljs stata"><span class="hljs-keyword"><span class="hljs-keyword">graph</span></span>&lt;myVertexSpecy,myEdgeSpecy&gt; myGraph &lt;- load_graph_from_file(           <span class="hljs-string"><span class="hljs-string">"pajek"</span></span>,            <span class="hljs-string"><span class="hljs-string">"example_of_Pajek_file"</span></span>); 
 </code></pre>
 <ul>
-<li>"filename": the filename of the file containing the network, "edges_species": the species of edges, "vertices_specy": the species of vertices </li>
-</ul>
-<pre><code class="hljs stata"><span class="hljs-keyword"><span class="hljs-keyword">graph</span></span>&lt;myVertexSpecy,myEdgeSpecy&gt; myGraph &lt;- load_graph_from_file(           <span class="hljs-string"><span class="hljs-string">"pajek"</span></span>,            <span class="hljs-string"><span class="hljs-string">"./example_of_Pajek_file"</span></span>,          myVertexSpecy,          myEdgeSpecy ); 
-</code></pre>
-<ul>
 <li>"format": the format of the file, "filename": the filename of the file containing the network </li>
 </ul>
 <pre><code class="hljs stata"><span class="hljs-keyword"><span class="hljs-keyword">graph</span></span>&lt;myVertexSpecy,myEdgeSpecy&gt; myGraph &lt;- load_graph_from_file(           <span class="hljs-string"><span class="hljs-string">"pajek"</span></span>,            <span class="hljs-string"><span class="hljs-string">"example_of_Pajek_file"</span></span>); 
 </code></pre>
 <ul>
-<li>"format": the format of the file, "file": the file containing the network </li>
+<li>"filename": the filename of the file containing the network, "edges_species": the species of edges, "vertices_specy": the species of vertices </li>
 </ul>
-<pre><code class="hljs stata"><span class="hljs-keyword"><span class="hljs-keyword">graph</span></span>&lt;myVertexSpecy,myEdgeSpecy&gt; myGraph &lt;- load_graph_from_file(           <span class="hljs-string"><span class="hljs-string">"pajek"</span></span>,            <span class="hljs-string"><span class="hljs-string">"example_of_Pajek_file"</span></span>); 
+<pre><code class="hljs stata"><span class="hljs-keyword"><span class="hljs-keyword">graph</span></span>&lt;myVertexSpecy,myEdgeSpecy&gt; myGraph &lt;- load_graph_from_file(           <span class="hljs-string"><span class="hljs-string">"pajek"</span></span>,            <span class="hljs-string"><span class="hljs-string">"./example_of_Pajek_file"</span></span>,          myVertexSpecy,          myEdgeSpecy ); 
 </code></pre>
 <table><thead><tr></tr></thead><tbody><tr></tr></tbody></table><h4 dash_ignored="yes" id="examples-25">Examples:</h4>
-<pre><code class="hljs stata"><span class="hljs-keyword"><span class="hljs-keyword">graph</span></span>&lt;myVertexSpecy,myEdgeSpecy&gt; myGraph &lt;- load_graph_from_file(           <span class="hljs-string"><span class="hljs-string">"pajek"</span></span>,            <span class="hljs-string"><span class="hljs-string">"./example_of_Pajek_file"</span></span>,          myVertexSpecy,          myEdgeSpecy , true); <span class="hljs-keyword"><span class="hljs-keyword">graph</span></span>&lt;myVertexSpecy,myEdgeSpecy&gt; myGraph &lt;- load_graph_from_file(          <span class="hljs-string"><span class="hljs-string">"pajek"</span></span>,            <span class="hljs-string"><span class="hljs-string">"./example_of_Pajek_file"</span></span>,          myVertexSpecy,          myEdgeSpecy); 
+<pre><code class="hljs stata"><span class="hljs-keyword"><span class="hljs-keyword">graph</span></span>&lt;myVertexSpecy,myEdgeSpecy&gt; myGraph &lt;- load_graph_from_file(           <span class="hljs-string"><span class="hljs-string">"pajek"</span></span>,            <span class="hljs-string"><span class="hljs-string">"./example_of_Pajek_file"</span></span>,          myVertexSpecy,          myEdgeSpecy); <span class="hljs-keyword"><span class="hljs-keyword">graph</span></span>&lt;myVertexSpecy,myEdgeSpecy&gt; myGraph &lt;- load_graph_from_file(             <span class="hljs-string"><span class="hljs-string">"pajek"</span></span>,            <span class="hljs-string"><span class="hljs-string">"./example_of_Pajek_file"</span></span>,          myVertexSpecy,          myEdgeSpecy , true); 
 </code></pre>
 <pre><code class="hljs"></code></pre>
 
@@ -1488,9 +1488,9 @@ loads a graph from a file  </p>
 <a class="dashAnchor" name="//apple_ref/Section/log"></a><h3 id="log"><code>log</code></h3>
 <h4 dash_ignored="yes" id="possible-use-69">Possible use:</h4>
 <ul>
-<li><strong><code>log</code></strong> (<code>int</code>) ---&gt;  <code>float</code>
+<li><strong><code>log</code></strong> (<code>float</code>) ---&gt;  <code>float</code>
 <ul>
-<li><strong><code>log</code></strong> (<code>float</code>) ---&gt;  <code>float</code> </li>
+<li><strong><code>log</code></strong> (<code>int</code>) ---&gt;  <code>float</code> </li>
 </ul>
 </li>
 </ul>
@@ -1502,8 +1502,8 @@ loads a graph from a file  </p>
 </ul>
 <h4 dash_ignored="yes" id="examples-27">Examples:</h4>
 <pre><code class="hljs glsl"> 
-<span class="hljs-type"><span class="hljs-type">float</span></span> var0 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">log</span></span>(<span class="hljs-number"><span class="hljs-number">1</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var0 equals 0.0 </span></span>
-<span class="hljs-type"><span class="hljs-type">float</span></span> var1 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">log</span></span>(<span class="hljs-number"><span class="hljs-number">10</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var1 equals 1.0</span></span>
+<span class="hljs-type"><span class="hljs-type">float</span></span> var0 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">log</span></span>(<span class="hljs-number"><span class="hljs-number">10</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var0 equals 1.0 </span></span>
+<span class="hljs-type"><span class="hljs-type">float</span></span> var1 &lt;- <span class="hljs-built_in"><span class="hljs-built_in">log</span></span>(<span class="hljs-number"><span class="hljs-number">1</span></span>); <span class="hljs-comment"><span class="hljs-comment">// var1 equals 0.0</span></span>
 </code></pre>
 <pre><code class="hljs"></code></pre>
 <h4 dash_ignored="yes" id="see-also-16">See also:</h4>
