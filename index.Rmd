@@ -21,9 +21,9 @@ documentclass: book
 description: "Document describing the GAMA operators and their functions."
 ---
 
-```{r echo=FALSE}
-bookdown::kindlegen()
-```
+#```{r echo=FALSE}
+#bookdown::kindlegen()
+#```
 
 ```{r fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), }
 options(out.width = 90)
