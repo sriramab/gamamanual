@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{Updated: 2019-01-02 11:17:37 (Amsterdam)}
+    \date{Updated: 2019-01-02 12:56:14 (Amsterdam)}
 
 \usepackage{makeidx}
 \makeindex
@@ -137,8 +137,6 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\#\texttt{\{r\ echo=FALSE\}\ \#bookdown::kindlegen()\ \#}
-
 \hypertarget{notice}{%
 \chapter*{Notice}\label{notice}}
 \addcontentsline{toc}{chapter}{Notice}
@@ -2881,8 +2879,7 @@ All of these alternative syntaxes are completely equivalent.
 
 Operators in GAML are purely functional, i.e.~they are guaranteed to not have any side effects on their operands. For instance, the \texttt{shuffle} operator, which randomizes the positions of elements in a list, does not modify its list operand but returns a new shuffled list.
 
-\hypertarget{section}{%
-\section{\texorpdfstring{}{ }}\label{section}}
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \hypertarget{priority-between-operators}{%
 \section{Priority between operators}\label{priority-between-operators}}
@@ -3274,8 +3271,8 @@ Note that due to the fact that actions are written by modelers, the general func
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\hypertarget{section-1}{%
-\subsection{\texorpdfstring{\texttt{-}}{-}}\label{section-1}}
+\hypertarget{section}{%
+\subsection{\texorpdfstring{\texttt{-}}{-}}\label{section}}
 
 \hypertarget{possible-use}{%
 \subsubsection{Possible use:}\label{possible-use}}
@@ -3578,8 +3575,8 @@ float var25 <- 3 - 1.2; // var25 equals 1.8
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\hypertarget{section-2}{%
-\subsection{\texorpdfstring{\texttt{:}}{:}}\label{section-2}}
+\hypertarget{section-1}{%
+\subsection{\texorpdfstring{\texttt{:}}{:}}\label{section-1}}
 
 \hypertarget{possible-use-1}{%
 \subsubsection{Possible use:}\label{possible-use-1}}
@@ -3599,8 +3596,8 @@ float var25 <- 3 - 1.2; // var25 equals 1.8
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\hypertarget{section-3}{%
-\subsection{\texorpdfstring{\texttt{::}}{::}}\label{section-3}}
+\hypertarget{section-2}{%
+\subsection{\texorpdfstring{\texttt{::}}{::}}\label{section-2}}
 
 \hypertarget{possible-use-2}{%
 \subsubsection{Possible use:}\label{possible-use-2}}
@@ -3629,8 +3626,8 @@ produces a new pair combining the left and the right operands
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\hypertarget{section-4}{%
-\subsection{\texorpdfstring{\texttt{!}}{!}}\label{section-4}}
+\hypertarget{section-3}{%
+\subsection{\texorpdfstring{\texttt{!}}{!}}\label{section-3}}
 
 \hypertarget{possible-use-3}{%
 \subsubsection{Possible use:}\label{possible-use-3}}
@@ -3670,8 +3667,8 @@ bool var0 <- ! (true); // var0 equals false
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\hypertarget{section-5}{%
-\subsection{\texorpdfstring{\texttt{!=}}{!=}}\label{section-5}}
+\hypertarget{section-4}{%
+\subsection{\texorpdfstring{\texttt{!=}}{!=}}\label{section-4}}
 
 \hypertarget{possible-use-4}{%
 \subsubsection{Possible use:}\label{possible-use-4}}
@@ -3728,8 +3725,8 @@ bool var8 <- #now != #now minus_hours 1; // var8 equals true
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\hypertarget{section-6}{%
-\subsection{\texorpdfstring{\texttt{?}}{?}}\label{section-6}}
+\hypertarget{section-5}{%
+\subsection{\texorpdfstring{\texttt{?}}{?}}\label{section-5}}
 
 \hypertarget{possible-use-5}{%
 \subsubsection{Possible use:}\label{possible-use-5}}
@@ -3767,8 +3764,8 @@ list<string> var0 <- [10, 19, 43, 12, 7, 22] collect ((each > 20) ? 'above' : 'b
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\hypertarget{section-7}{%
-\subsection{\texorpdfstring{\texttt{/}}{/}}\label{section-7}}
+\hypertarget{section-6}{%
+\subsection{\texorpdfstring{\texttt{/}}{/}}\label{section-6}}
 
 \hypertarget{possible-use-6}{%
 \subsubsection{Possible use:}\label{possible-use-6}}
@@ -3883,8 +3880,8 @@ float var4 <- 3 / 5.0; // var4 equals 0.6
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\hypertarget{section-8}{%
-\subsection{\texorpdfstring{\texttt{.}}{.}}\label{section-8}}
+\hypertarget{section-7}{%
+\subsection{\texorpdfstring{\texttt{.}}{.}}\label{section-7}}
 
 \hypertarget{possible-use-7}{%
 \subsubsection{Possible use:}\label{possible-use-7}}
@@ -3935,8 +3932,8 @@ unknown var1 <- agent1.location; // var1 equals the location of the agent agent1
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\hypertarget{section-9}{%
-\subsection{\texorpdfstring{\texttt{\^{}}}{\^{}}}\label{section-9}}
+\hypertarget{section-8}{%
+\subsection{\texorpdfstring{\texttt{\^{}}}{\^{}}}\label{section-8}}
 
 \hypertarget{possible-use-8}{%
 \subsubsection{Possible use:}\label{possible-use-8}}
@@ -3999,15 +3996,15 @@ float var1 <- 4.84 ^ 0.5; // var1 equals 2.2
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\hypertarget{section-10}{%
-\subsection{\texorpdfstring{\texttt{@}}{@}}\label{section-10}}
+\hypertarget{section-9}{%
+\subsection{\texorpdfstring{\texttt{@}}{@}}\label{section-9}}
 
 Same signification as \href{OperatorsAA\#at}{at}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\hypertarget{section-11}{%
-\subsection{\texorpdfstring{\texttt{*}}{*}}\label{section-11}}
+\hypertarget{section-10}{%
+\subsection{\texorpdfstring{\texttt{*}}{*}}\label{section-10}}
 
 \hypertarget{possible-use-9}{%
 \subsubsection{Possible use:}\label{possible-use-9}}
@@ -4178,8 +4175,8 @@ float var0 <- 2.5 * 2; // var0 equals 5.0
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\hypertarget{section-12}{%
-\subsection{\texorpdfstring{\texttt{+}}{+}}\label{section-12}}
+\hypertarget{section-11}{%
+\subsection{\texorpdfstring{\texttt{+}}{+}}\label{section-11}}
 
 \hypertarget{possible-use-10}{%
 \subsubsection{Possible use:}\label{possible-use-10}}
@@ -4481,8 +4478,8 @@ map var22 <- ['a'::1,'b'::2] + [5::3.0]; // var22 equals ['a'::1,'b'::2,5::3.0]
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\hypertarget{section-13}{%
-\subsection{\texorpdfstring{\texttt{\textless{}}}{\textless{}}}\label{section-13}}
+\hypertarget{section-12}{%
+\subsection{\texorpdfstring{\texttt{\textless{}}}{\textless{}}}\label{section-12}}
 
 \hypertarget{possible-use-11}{%
 \subsubsection{Possible use:}\label{possible-use-11}}
@@ -4571,8 +4568,8 @@ bool var4 <- 3 < 2.5; // var4 equals false
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\hypertarget{section-14}{%
-\subsection{\texorpdfstring{\texttt{\textless{}=}}{\textless{}=}}\label{section-14}}
+\hypertarget{section-13}{%
+\subsection{\texorpdfstring{\texttt{\textless{}=}}{\textless{}=}}\label{section-13}}
 
 \hypertarget{possible-use-12}{%
 \subsubsection{Possible use:}\label{possible-use-12}}
@@ -4661,15 +4658,15 @@ bool var4 <- 3 <= 2.5; // var4 equals false
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\hypertarget{section-15}{%
-\subsection{\texorpdfstring{\texttt{\textless{}\textgreater{}}}{\textless{}\textgreater{}}}\label{section-15}}
+\hypertarget{section-14}{%
+\subsection{\texorpdfstring{\texttt{\textless{}\textgreater{}}}{\textless{}\textgreater{}}}\label{section-14}}
 
 Same signification as \href{OperatorsAA\#!=}{!=}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\hypertarget{section-16}{%
-\subsection{\texorpdfstring{\texttt{=}}{=}}\label{section-16}}
+\hypertarget{section-15}{%
+\subsection{\texorpdfstring{\texttt{=}}{=}}\label{section-15}}
 
 \hypertarget{possible-use-13}{%
 \subsubsection{Possible use:}\label{possible-use-13}}
@@ -4742,8 +4739,8 @@ bool var6 <- #now = #now minus_hours 1; // var6 equals false
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\hypertarget{section-17}{%
-\subsection{\texorpdfstring{\texttt{\textgreater{}}}{\textgreater{}}}\label{section-17}}
+\hypertarget{section-16}{%
+\subsection{\texorpdfstring{\texttt{\textgreater{}}}{\textgreater{}}}\label{section-16}}
 
 \hypertarget{possible-use-14}{%
 \subsubsection{Possible use:}\label{possible-use-14}}
@@ -4832,8 +4829,8 @@ bool var4 <- 3 > 7; // var4 equals false
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\hypertarget{section-18}{%
-\subsection{\texorpdfstring{\texttt{\textgreater{}=}}{\textgreater{}=}}\label{section-18}}
+\hypertarget{section-17}{%
+\subsection{\texorpdfstring{\texttt{\textgreater{}=}}{\textgreater{}=}}\label{section-17}}
 
 \hypertarget{possible-use-15}{%
 \subsubsection{Possible use:}\label{possible-use-15}}
@@ -6767,8 +6764,7 @@ All of these alternative syntaxes are completely equivalent.
 
 Operators in GAML are purely functional, i.e.~they are guaranteed to not have any side effects on their operands. For instance, the \texttt{shuffle} operator, which randomizes the positions of elements in a list, does not modify its list operand but returns a new shuffled list.
 
-\hypertarget{section-19}{%
-\section{\texorpdfstring{}{ }}\label{section-19}}
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \hypertarget{priority-between-operators-1}{%
 \section{Priority between operators}\label{priority-between-operators-1}}
@@ -9457,8 +9453,7 @@ All of these alternative syntaxes are completely equivalent.
 
 Operators in GAML are purely functional, i.e.~they are guaranteed to not have any side effects on their operands. For instance, the \texttt{shuffle} operator, which randomizes the positions of elements in a list, does not modify its list operand but returns a new shuffled list.
 
-\hypertarget{section-20}{%
-\section{\texorpdfstring{}{ }}\label{section-20}}
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \hypertarget{priority-between-operators-2}{%
 \section{Priority between operators}\label{priority-between-operators-2}}
@@ -14349,8 +14344,7 @@ All of these alternative syntaxes are completely equivalent.
 
 Operators in GAML are purely functional, i.e.~they are guaranteed to not have any side effects on their operands. For instance, the \texttt{shuffle} operator, which randomizes the positions of elements in a list, does not modify its list operand but returns a new shuffled list.
 
-\hypertarget{section-21}{%
-\section{\texorpdfstring{}{ }}\label{section-21}}
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \hypertarget{priority-between-operators-3}{%
 \section{Priority between operators}\label{priority-between-operators-3}}
@@ -18217,8 +18211,7 @@ All of these alternative syntaxes are completely equivalent.
 
 Operators in GAML are purely functional, i.e.~they are guaranteed to not have any side effects on their operands. For instance, the \texttt{shuffle} operator, which randomizes the positions of elements in a list, does not modify its list operand but returns a new shuffled list.
 
-\hypertarget{section-22}{%
-\section{\texorpdfstring{}{ }}\label{section-22}}
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \hypertarget{priority-between-operators-4}{%
 \section{Priority between operators}\label{priority-between-operators-4}}
@@ -21742,8 +21735,7 @@ All of these alternative syntaxes are completely equivalent.
 
 Operators in GAML are purely functional, i.e.~they are guaranteed to not have any side effects on their operands. For instance, the \texttt{shuffle} operator, which randomizes the positions of elements in a list, does not modify its list operand but returns a new shuffled list.
 
-\hypertarget{section-23}{%
-\section{\texorpdfstring{}{ }}\label{section-23}}
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \hypertarget{priority-between-operators-5}{%
 \section{Priority between operators}\label{priority-between-operators-5}}
@@ -26759,8 +26751,8 @@ statement_keyword1 expression1 facet2: expression2... { // a sequence statement
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\hypertarget{section-24}{%
-\subsection{=}\label{section-24}}
+\hypertarget{section-18}{%
+\subsection{=}\label{section-18}}
 
 \hypertarget{facets}{%
 \subsubsection{Facets}\label{facets}}

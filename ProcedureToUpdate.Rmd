@@ -12,7 +12,7 @@ output: html_document
  - update the help documents operator documents from GAMA website
  - copy all pages of operators into gamamanual/links 
  - remove java warning from pages
- - remove bullet 10 that is coming twice
+ - remove bullet <br/> just before second section : Priority...
  - publish a kindle version with this command at prompt> bookdown::kindlegen()
  - push to bhugole.com
  

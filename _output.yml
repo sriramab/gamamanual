@@ -8,6 +8,15 @@ bookdown::gitbook:
         <li><a href="" target="blank">Published @ bhugole</a></li>
     #edit: https://github.com/sriramab/gamamanual/edit/master/%s
     download: ["pdf", "epub", "mobi"]
+    sharing:
+      facebook: yes
+      twitter: yes
+      google: no
+      linkedin: yes
+      weibo: no
+      instapaper: no
+      vk: no
+      all: ['facebook', 'google', 'twitter', 'linkedin', 'weibo', 'instapaper']
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex

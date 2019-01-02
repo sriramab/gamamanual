@@ -15,15 +15,13 @@ output:
       toc:
         collapse: section
         scroll_highlight: true
-    download: ["book.pdf", "book.epub", "book.mobi"]
+    download: ["GAML.pdf", "GAML.epub", "GAML.mobi"]
 site: bookdown::bookdown_site
 documentclass: book
 description: "Document describing the GAMA operators and their functions."
 ---
 
-#```{r echo=FALSE}
-#bookdown::kindlegen()
-#```
+
 
 ```{r fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), }
 options(out.width = 90)
