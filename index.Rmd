@@ -31,7 +31,7 @@ options(width = 90)
 
 
 
-# Notice {-}
+# Foreword {-}
 
 * The main purpose of this book is to provide a simple introduction with bare minimum content that helps the reader to get started with GAMA Language (GAML).
 
