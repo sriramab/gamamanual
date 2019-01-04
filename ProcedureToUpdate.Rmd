@@ -13,6 +13,8 @@ output: html_document
  - copy all pages of operators into gamamanual/links 
  - remove java warning from pages
  - remove bullet <br/> just before second section : Priority...
+ - copy statements.md from References/GAMLReferences/ to gamamanual/links/
+ - modify java warning from statements.md
  - publish a kindle version with this command at prompt> bookdown::kindlegen()
  - push to bhugole.com
  

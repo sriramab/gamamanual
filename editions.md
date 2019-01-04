@@ -1,6 +1,6 @@
 # Editions {-}
 
-- **Second Edition**: January 2019
+- **Second Edition**: 19 January 2019
   - Syntax Highlighting (pdf)
   - Formatted code (pdf)
 
