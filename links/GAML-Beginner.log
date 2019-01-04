@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2018.9.15)  4 JAN 2019 08:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2018.9.15)  4 JAN 2019 10:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1019,28 +1019,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 159--164
 
  []
 
+<gamacover.png, id=28, 597.73312pt x 845.40843pt>
+File: gamacover.png Graphic file (type png)
+ <use gamacover.png>
+Package pdftex.def Info: gamacover.png used on input line 165.
+(pdftex.def)             Requested size: 459.8911pt x 650.4505pt.
 
-LaTeX Warning: File `gamacover.png' not found on input line 165.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [5] [6 <./gamacover.png (PNG copy)>] [7
 
-/Users/Ram/gitprojects/gamamanual/links/GAML-Beginner.tex:165: Package pdftex.def Error: File `gamacover.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.165 \includegraphics{gamacover.png}
-                                     
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 165.
-(/usr/local/texlive/2016/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [5] [6
-
-] [7] [8
+] [8
 
 ] [9] [10
 
@@ -1082,7 +1071,10 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 ]
 Chapter 1.
-[13] [14]
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 255.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [13] [14]
 Chapter 2.
 [15
 
@@ -1122,18 +1114,56 @@ If that doesn't work, type  X <return>  to quit.
 
 [23
 
-] [24] [25] [26] [27]
+] [24] [25]
+Overfull \hbox (13.24358pt too wide) in paragraph at lines 933--933
+[]                            \T1/lmtt/m/n/10 // (if it exists, contents will be appended unless it is cleared[] 
+ []
+
+[26]
+Overfull \hbox (370.24254pt too wide) in paragraph at lines 1043--1043
+[]\T1/lmtt/m/n/10 graph([\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 a\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::345, \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 b\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::13])  --:  ([b: in[] + out[b::13], a: in[] + out[a::345], 13: in[b::13] + out[], 345: in[a::345] + out[]], [a::345=(a,345), b::13=(b,13)])[] 
+ []
+
+
+Underfull \vbox (badness 1460) has occurred while \output is active []
+
+ [27]
 
 Package hyperref Warning: Suppressing empty link on input line 1059.
 
 
 Package hyperref Warning: Suppressing empty link on input line 1099.
 
-[28] [29] [30] [31] [32] [33] [34
+[28]
+Overfull \hbox (55.24345pt too wide) in paragraph at lines 1135--1135
+[]\T1/lmtt/m/n/10 //  builds a two-dimensions matrix with 10 columns and 5 rows, where each cell is initialized to 0.0[] 
+ []
+
+[29]
+Overfull \hbox (91.99335pt too wide) in paragraph at lines 1233--1233
+[]                                            \T1/lmtt/m/n/10 // of the current agent (i.e. a line in a& continuous topology,[] 
+ []
+
+
+Overfull \hbox (65.74342pt too wide) in paragraph at lines 1233--1233
+[]\T1/lmtt/m/n/10 a_topology path_between a_container_of_geometries // idem with an explicit topology and the possiblity[] 
+ []
+
+
+Overfull \hbox (7.99359pt too wide) in paragraph at lines 1233--1233
+[]                                                  \T1/lmtt/m/n/10 // (the path is then built incrementally)[] 
+ []
+
+[30] [31] [32] [33] [34
 
 ]
 Chapter 6.
-[35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46]
+[35] [36] [37] [38] [39] [40]
+Overfull \hbox (328.24266pt too wide) in paragraph at lines 2004--2004
+[]\T1/lmtt/m/n/10 map filtering <- map(["highway"::["primary", "secondary", "tertiary", "motorway", "living_street","residential", "unclassified"], "building"::["yes"]]);[] 
+ []
+
+[41] [42] [43] [44] [45] [46]
 
 Package hyperref Warning: Suppressing link with empty target on input line 2394.
 
@@ -1251,7 +1281,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 3439--3441
 
  []
 
-[71] [72] [73] [74] [75]
+
+Overfull \hbox (2.7436pt too wide) in paragraph at lines 3469--3469
+[]\T1/lmtt/m/n/10 matrix var2 <- 3.5 - matrix([[2,5],[3,4]]); // var2 equals matrix([[1.5,-1.5],[0.5,-0.5]])[] 
+ []
+
+
+Overfull \hbox (102.49332pt too wide) in paragraph at lines 3503--3503
+[]\T1/lmtt/m/n/10 geometry var6 <- geom1 - geom2; // var6 equals a geometry corresponding to difference between geom1 and geom2[] 
+ []
+
+[71]
+Overfull \hbox (291.49277pt too wide) in paragraph at lines 3536--3536
+[]\T1/lmtt/m/n/10 geometry var9 <- shape - 5; // var9 equals a geometry corresponding to the geometry of the agent applying the operator reduced by a distance of 5[] 
+ []
+
+
+Overfull \hbox (154.99316pt too wide) in paragraph at lines 3547--3547
+[]\T1/lmtt/m/n/10 geometry var10 <- rectangle(10,10) - [circle(2), square(2)]; // var10 equals rectangle(10,10) - (circle(2) + square(2))[] 
+ []
+
+[72] [73] [74]
+Overfull \hbox (674.74165pt too wide) in paragraph at lines 3788--3788
+[]\T1/lmtt/m/n/10 list<string> var0 <- [10, 19, 43, 12, 7, 22] collect ((each > 20) ? \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 above\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 : \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 below\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ); // var0 equals [\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 below\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 below\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 above\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 below\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 below\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 above\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ]rgb col <- (flip(0.3) ? #red : (flip(0.9) ? #blue : #green));[] 
+ []
+
+[75]
 Underfull \hbox (badness 10000) in paragraph at lines 3862--3864
 
  []
@@ -1261,7 +1316,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 3942--3944
 
  []
 
-[77]
+
+Overfull \hbox (44.74348pt too wide) in paragraph at lines 3950--3950
+[]\T1/lmtt/m/n/10 matrix var0 <- matrix([[1,1],[1,2]]) . matrix([[1,1],[1,2]]); // var0 equals matrix([[2,3],[3,5]])[] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 4002--4004
 
  []
@@ -1271,7 +1331,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 4004--4006
 
  []
 
-[78] [79] [80]
+[77] [78]
+Overfull \hbox (18.49356pt too wide) in paragraph at lines 4133--4133
+[]\T1/lmtt/m/n/10 matrix<float> m <- (3.5 * matrix([[2,5],[3,4]]));   //m equals matrix([[7.0,17.5],[10.5,14]])[] 
+ []
+
+
+Overfull \hbox (128.74324pt too wide) in paragraph at lines 4168--4168
+[]\T1/lmtt/m/n/10 geometry var6 <- (circle(10) * 2).location with_precision 9; // var6 equals (circle(20)).location with_precision 9[] 
+ []
+
+
+Overfull \hbox (91.99335pt too wide) in paragraph at lines 4168--4168
+[]\T1/lmtt/m/n/10 float var7 <- (circle(10) * 2).height with_precision 9; // var7 equals (circle(20)).height with_precision 9[] 
+ []
+
+
+Overfull \hbox (511.99213pt too wide) in paragraph at lines 4191--4191
+[]\T1/lmtt/m/n/10 geometry var10 <- shape * {0.5,0.5,2}; // var10 equals a geometry corresponding to the geometry of the agent applying the operator scaled by a coefficient of 0.5 in x, 0.5 in y and 2 in z[] 
+ []
+
+[79] [80]
 Underfull \hbox (badness 10000) in paragraph at lines 4333--4335
 
  []
@@ -1281,32 +1361,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 4335--4337
 
  []
 
-[81] [82] [83]
+
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 4377--4377
+[]\T1/lmtt/m/n/10 geometry var4 <- geom1 + geom2; // var4 equals a geometry corresponding to union between geom1 and geom2[] 
+ []
+
+[81] [82]
 Underfull \hbox (badness 10000) in paragraph at lines 4560--4562
 
  []
 
-[84]
+[83]
 Underfull \hbox (badness 10000) in paragraph at lines 4650--4652
 
  []
 
-[85] [86]
+[84] [85]
 Underfull \hbox (badness 10000) in paragraph at lines 4821--4823
 
  []
 
-[87]
+[86]
 Underfull \hbox (badness 10000) in paragraph at lines 4911--4913
 
  []
 
-[88] [89] [90]
+[87] [88]
+Overfull \hbox (202.24303pt too wide) in paragraph at lines 5016--5016
+[]\T1/lmtt/m/n/10 list var0 <- [a1,a2,a3] accumulate (each neighbors_at 10); // var0 equals a flat list of all the neighbors of these three agents[] 
+ []
+
+[89]
 Overfull \hbox (69.62177pt too wide) in paragraph at lines 5096--5098
 []\T1/lmtt/b/n/10 add_3Dmodel \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 msi.gaml.types.GamaKmlExport\T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 point\T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 float\T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 float\T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 string\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gaml.types.GamaKmlExport 
  []
 
-[91]
+[90]
 Overfull \hbox (43.45518pt too wide) in paragraph at lines 5168--5170
 []\T1/lmtt/b/n/10 add_geometry \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 msi.gaml.types.GamaKmlExport\T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 geometry\T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 float\T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 rgb\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gaml.types.GamaKmlExport 
  []
@@ -1331,141 +1421,152 @@ Overfull \hbox (53.87181pt too wide) in paragraph at lines 5211--5213
 []\T1/lmtt/b/n/10 add_icon \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 msi.gaml.types.GamaKmlExport\T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 point\T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 float\T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 float\T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 string\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gaml.types.GamaKmlExport 
  []
 
-[92]
+[91]
 Underfull \hbox (badness 1107) in paragraph at lines 5213--5214
 []\T1/lmtt/b/n/10 add_icon \T1/lmr/m/n/10 (+20) (\T1/lmtt/m/n/10 msi.gaml.types.GamaKmlExport\T1/lmr/m/n/10 (+20) , \T1/lmtt/m/n/10 point\T1/lmr/m/n/10 (+20) , \T1/lmtt/m/n/10 float\T1/lmr/m/n/10 (+20) , \T1/lmtt/m/n/10 float\T1/lmr/m/n/10 (+20) , \T1/lmtt/m/n/10 string\T1/lmr/m/n/10 (+20) , \T1/lmtt/m/n/10 date\T1/lmr/m/n/10 (+20) , \T1/lmtt/m/n/10 date\T1/lmr/m/n/10 (+20) ) --->
  []
 
-[93] [94] [95]
+[92]
+Overfull \hbox (202.24303pt too wide) in paragraph at lines 5309--5309
+[]\T1/lmtt/m/n/10 geometry var0 <- polygon([{10,10},{10,20},{20,20}]) add_point {20,10}; // var0 equals polygon([{10,10},{10,20},{20,20},{20,10}])[] 
+ []
+
+[93]
+Overfull \hbox (1966.2379pt too wide) in paragraph at lines 5379--5379
+[]\T1/lmtt/m/n/10 reflex when: after(starting_date) {}    // this reflex will always be run after the first step reflex when: false after(starting date + #10days) {}     // This reflex will not be run after this date. Better to use \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 until\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 or \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 before\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 in that case every(2#days) after (starting_date + 1#day)  // the computation will return true every two days (using the starting_date of the model as the starting point) only for the dates strictly after this starting_date + 1#day[] 
+ []
+
+[94]
+Overfull \hbox (86.74336pt too wide) in paragraph at lines 5430--5430
+[]\T1/lmtt/m/n/10 agent var0 <- agent_closest_to(self); // var0 equals the closest agent to the agent applying the operator.[] 
+ []
+
+
+Overfull \hbox (97.24333pt too wide) in paragraph at lines 5467--5467
+[]\T1/lmtt/m/n/10 agent var0 <- agent_farthest_to(self); // var0 equals the farthest agent to the agent applying the operator.[] 
+ []
+
+
 Underfull \hbox (badness 3930) in paragraph at lines 5472--5473
 []\T1/lmr/m/n/10 (+20) neighbors_at[], []neigh-bors_of[], []agents_inside[], []agents_overlapping[], []clos-est_to[], []in-side[], []over-lap-ping[],
  []
 
-[96] [97] [98] [99]
+[95]
+Overfull \hbox (81.49338pt too wide) in paragraph at lines 5509--5509
+[]\T1/lmtt/m/n/10 geometry line <- one_of(path_followed.segments); road ag <- road(path_followed agent_from_geometry line);[] 
+ []
+
+
+Overfull \hbox (238.99292pt too wide) in paragraph at lines 5541--5541
+[]\T1/lmtt/m/n/10 list var0 <- agents_at_distance(20); // var0 equals all the agents (excluding the caller) which distance to the caller is lower than 20[] 
+ []
+
+[96]
+Overfull \hbox (223.24297pt too wide) in paragraph at lines 5573--5573
+[]\T1/lmtt/m/n/10 list<agent> var0 <- agents_inside(self); // var0 equals the agents that are covered by the shape of the agent applying the operator.[] 
+ []
+
+
+Overfull \hbox (212.743pt too wide) in paragraph at lines 5605--5605
+[]\T1/lmtt/m/n/10 list<agent> var0 <- agents_overlapping(self); // var0 equals the agents that overlap the shape of the agent applying the operator.[] 
+ []
+
+[97]
+Overfull \hbox (228.49295pt too wide) in paragraph at lines 5637--5637
+[]\T1/lmtt/m/n/10 matrix<int> var0 <- all_pairs_shortest_paths(my_graph); // var0 equals shortest_paths_matrix will contain all pairs of shortest paths[] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 5698--5700
 
  []
 
-[100] [101] [102]
+[98] [99]
+Overfull \hbox (65.74342pt too wide) in paragraph at lines 5832--5832
+[]\T1/lmtt/m/n/10 point var0 <- any_location_in(square(5)); // var0 equals a point in the square, for example : {3,4.6}.[] 
+ []
+
+[100]
+Overfull \hbox (328.24266pt too wide) in paragraph at lines 5877--5877
+[]\T1/lmtt/m/n/10 matrix var0 <- matrix([[1.0,2.0],[3.0,4.0]]) append_horizontally matrix([[1,2],[3,4]]); // var0 equals matrix([[1.0,2.0],[3.0,4.0],[1.0,2.0],[3.0,4.0]])[] 
+ []
+
+
+Overfull \hbox (170.74312pt too wide) in paragraph at lines 5910--5910
+[]\T1/lmtt/m/n/10 matrix var0 <- matrix([[1,2],[3,4]]) append_vertically matrix([[1,2],[3,4]]); // var0 equals matrix([[1,2,1,2],[3,4,3,4]])[] 
+ []
+
+[101]
 Underfull \hbox (badness 10000) in paragraph at lines 5945--5947
 
  []
 
-[103]
 
-/Users/Ram/gitprojects/gamamanual/links/GAML-Beginner.tex:5955: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5A9)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5955 ...rc of radius 4, in a direction of 45Â°
-                                                   and an amplitude of 90Â°
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+Overfull \hbox (196.99304pt too wide) in paragraph at lines 5957--5957
+[]\T1/lmtt/m/n/10 geometry var0 <- arc(4,45,90); // var0 equals a geometry as an arc of radius 4, in a direction of 45�\TS1/lmtt/m/n/10 � \T1/lmtt/m/n/10 and an amplitude of 90�\TS1/lmtt/m/n/10 �[] 
+ []
 
 
-/Users/Ram/gitprojects/gamamanual/links/GAML-Beginner.tex:5955: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
+Overfull \hbox (459.49228pt too wide) in paragraph at lines 5957--5957
+[]\T1/lmtt/m/n/10 geometry var1 <- arc(4,45,90, false); // var1 equals a geometry as an arc of radius 4, in a direction of 45�\TS1/lmtt/m/n/10 � \T1/lmtt/m/n/10 and an amplitude of 90�\TS1/lmtt/m/n/10 �\T1/lmtt/m/n/10 , which only contains the points on the arc[] 
+ []
 
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5955 ...rc of radius 4, in a direction of 45Â°
-                                                   and an amplitude of 90Â°
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
+[102] [103]
+Overfull \hbox (753.49142pt too wide) in paragraph at lines 6068--6068
+[]\T1/lmtt/m/n/10 matrix var0 <- self as_4_grid {10, 5}; // var0 equals the matrix of square geometries (grid with 4-neighborhood) with 10 columns and 5 lines corresponding to the square tessellation of the geometry of the agent applying the operator.[] 
+ []
 
-
-/Users/Ram/gitprojects/gamamanual/links/GAML-Beginner.tex:5955: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5A9)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5955 ...ion of 45Â° and an amplitude of 90Â°
-                                                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+[104]
+Overfull \hbox (123.49326pt too wide) in paragraph at lines 6145--6145
+[]\T1/lmtt/m/n/10 as_driving_graph(road,node)  --:  build a graph while using the road agents as edges and the node agents as nodes[] 
+ []
 
 
-/Users/Ram/gitprojects/gamamanual/links/GAML-Beginner.tex:5955: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5955 ...ion of 45Â° and an amplitude of 90Â°
-                                                  
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
+Overfull \hbox (191.74306pt too wide) in paragraph at lines 6189--6189
+[]\T1/lmtt/m/n/10 graph var0 <- as_edge_graph([{1,5}::{12,45},{12,45}::{34,56}]); // var0 equals a graph with these three vertices and two edges[] 
+ []
 
 
-/Users/Ram/gitprojects/gamamanual/links/GAML-Beginner.tex:5956: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5A9)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5956 ...rc of radius 4, in a direction of 45Â°
-                                                   and an amplitude of 90Â�...
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+Overfull \hbox (244.2429pt too wide) in paragraph at lines 6200--6200
+[]\T1/lmtt/m/n/10 graph var1 <- as_edge_graph([line([{1,5},{12,45}]),line([{13,45},{34,56}])],1); // var1 equals a graph with two edges and three vertices[] 
+ []
 
 
-/Users/Ram/gitprojects/gamamanual/links/GAML-Beginner.tex:5956: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
+Overfull \hbox (233.74294pt too wide) in paragraph at lines 6211--6211
+[]\T1/lmtt/m/n/10 graph var2 <- as_edge_graph([line([{1,5},{12,45}]),line([{12,45},{34,56}])]); // var2 equals a graph with two edges and three vertices[] 
+ []
 
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5956 ...rc of radius 4, in a direction of 45Â°
-                                                   and an amplitude of 90Â�...
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
+[105]
+Overfull \hbox (732.49149pt too wide) in paragraph at lines 6245--6245
+[]\T1/lmtt/m/n/10 matrix var0 <- self as_grid {10, 5}; // var0 equals a matrix of square geometries (grid with 8-neighborhood) with 10 columns and 5 lines corresponding to the square tessellation of the geometry of the agent applying the operator.[] 
+ []
 
 
-/Users/Ram/gitprojects/gamamanual/links/GAML-Beginner.tex:5956: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5A9)
-(inputenc)                not set up for use with LaTeX.
+Overfull \hbox (438.49234pt too wide) in paragraph at lines 6279--6279
+[]\T1/lmtt/m/n/10 list<geometry> var0 <- self as_hexagonal_grid {10, 5}; // var0 equals list of geometries (hexagonal) corresponding to the hexagonal tesselation of the first operand geometry[] 
+ []
 
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5956 ...ion of 45Â° and an amplitude of 90Â°
-                                                  , which only contains the ...
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-/Users/Ram/gitprojects/gamamanual/links/GAML-Beginner.tex:5956: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5956 ...ion of 45Â° and an amplitude of 90Â°
-                                                  , which only contains the ...
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-[104] [105] [106] [107] [108]
+[106]
 Underfull \hbox (badness 10000) in paragraph at lines 6313--6315
 
  []
 
-[109] [110] [111]
+[107]
+Overfull \hbox (228.49295pt too wide) in paragraph at lines 6415--6415
+[]\T1/lmtt/m/n/10 map<int,int> var0 <- [1,2,3,4,5,6,7,8] as_map (each::(each * 2)); // var0 equals [1::2, 2::4, 3::6, 4::8, 5::10, 6::12, 7::14, 8::16][] 
+ []
+
+
+Overfull \hbox (49.99347pt too wide) in paragraph at lines 6415--6415
+[]\T1/lmtt/m/n/10 map<int,int> var1 <- [1::2,3::4,5::6] as_map (each::(each * 2)); // var1 equals [2::4, 4::8, 6::12][] 
+ []
+
+[108]
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 6484--6484
+[]\T1/lmtt/m/n/10 path var0 <- [road1,road2,road3] as_path my_graph; // var0 equals a path road1->road2->road3 of my_graph[] 
+ []
+
+[109]
 Underfull \hbox (badness 10000) in paragraph at lines 6566--6568
 
  []
@@ -1485,19 +1586,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 6572--6574
 
  []
 
-[112]
+
 Underfull \hbox (badness 10000) in paragraph at lines 6574--6576
 
  []
 
-[113] [114] [115] [116]
+[110]
+Overfull \hbox (385.9925pt too wide) in paragraph at lines 6625--6625
+[]\T1/lmtt/m/n/10 list<geometry> var0 <- [ag1, ag2, ag3] at_distance 20; // var0 equals the agents of the list located at a distance <= 20 from the caller agent (in the same order).[] 
+ []
+
+
+Overfull \hbox (385.9925pt too wide) in paragraph at lines 6659--6659
+[]\T1/lmtt/m/n/10 geometry var0 <- self at_location {10, 20}; // var0 equals the geometry resulting from a translation to the location {10, 20} of the left-hand geometry (or agent).[] 
+ []
+
+[111] [112] [113] [114
+
+]
 Chapter 11.
 
 Underfull \vbox (badness 2809) has occurred while \output is active []
 
- [117
-
-] [118]
+ [115] [116]
 Underfull \hbox (badness 1226) in paragraph at lines 6876--6877
 []\T1/lmr/m/n/10 (+20) get_beliefs_op[], []get_beliefs_with_name_op[], []get_current_intention_op[], []get_decay[], []get_desire_op[],
  []
@@ -1517,42 +1628,177 @@ Underfull \hbox (badness 4229) in paragraph at lines 6876--6877
 []\T1/lmr/m/n/10 (+20) get_uncertainty_op[], []get_uncertainty_with_name_op[], []has_belief_op[], []has_belief_with_name_op[],
  []
 
-[119]
+[117]
 Underfull \hbox (badness 6284) in paragraph at lines 6937--6938
 []\T1/lmr/m/n/10 (+20) binomial_coeff[], []bi-no-mial_complemented[], []bi-no-mial_sum[], []chi_square[], []chi_square_complemented[],
  []
 
-[120]
+[118]
 Underfull \hbox (badness 4217) in paragraph at lines 6993--6994
 []\T1/lmr/m/n/10 (+20) add_edge[], []add_node[], []ad-ja-cency[], []agent_from_geometry[], []all_pairs_shortest_path[], []al-pha_index[],
  []
 
-[121] [122]
+[119] [120]
 Underfull \hbox (badness 4608) in paragraph at lines 7098--7099
 []\T1/lmr/m/n/10 (+20) -[], []*[], []+[], []add_point[], []agent_closest_to[], []agent_farthest_to[], []agents_at_distance[], []agents_inside[],
  []
 
-[123]
+[121]
 Underfull \hbox (badness 2020) in paragraph at lines 7133--7134
 []\T1/lmr/m/n/10 (+20) to_GAMA_CRS[], []to_rectangles[], []to_squares[], []to_sub_geometries[], []trans-formed_by[], []trans-lated_by[],
  []
 
-[124] [125] [126] [127] [128] [129] [130]
+[122] [123] [124]
+Overfull \hbox (711.49155pt too wide) in paragraph at lines 7332--7332
+[]\T1/lmtt/m/n/10 bool var0 <- (date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2016-01-01\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ) between(date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2000-01-01\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ), date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2020-02-02\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ))); // var0 equals true// // will return true if the current_date of the model is in_between the 2 between(date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2000-01-01\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ), date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2020-02-02\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ))[] 
+ []
+
+
+Overfull \hbox (910.99097pt too wide) in paragraph at lines 7343--7343
+[]\T1/lmtt/m/n/10 bool var3 <- (date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2016-01-01\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ) between(date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2000-01-01\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ), date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2020-02-02\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ))); // var3 equals true// will return true every new day between these two dates, taking the first one as the starting point every(#day between(date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2000-01-01\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ), date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2020-02-02\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 )))[] 
+ []
+
+[125]
+Overfull \hbox (112.99329pt too wide) in paragraph at lines 7379--7379
+[]\T1/lmtt/m/n/10 map var1 <- betweenness_centrality(graphEpidemio); // var1 equals the betweenness centrality index of the graph[] 
+ []
+
+
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 7406--7406
+[]\T1/lmtt/m/n/10 list<list> var1 <- biggest_cliques_of (my_graph); // var1 equals the list of the biggest cliques as list[] 
+ []
+
+[126] [127]
+Overfull \hbox (23.74355pt too wide) in paragraph at lines 7554--7554
+[]\T1/lmtt/m/n/10 rgb var3 <- blend(#red, #blue, 0.3); // var3 equals to a color between the purple and the blue[] 
+ []
+
+[128]
 Underfull \hbox (badness 10000) in paragraph at lines 7612--7614
 
  []
 
-[131] [132] [133] [134] [135]
+
+Overfull \hbox (112.99329pt too wide) in paragraph at lines 7624--7624
+[]\T1/lmtt/m/n/10 geometry var0 <- box(10, 5 , 5); // var0 equals a geometry as a rectangle with width = 10, height = 5 depth= 5.[] 
+ []
+
+
+Overfull \hbox (123.49326pt too wide) in paragraph at lines 7624--7624
+[]\T1/lmtt/m/n/10 geometry var1 <- box({10, 5 , 5}); // var1 equals a geometry as a rectangle with width = 10, height = 5 depth= 5.[] 
+ []
+
+[129]
+Overfull \hbox (55.24345pt too wide) in paragraph at lines 7662--7662
+[]\T1/lmtt/m/n/10 list<rgb> var0 <- list<rgb> colors <- brewer_colors("OrRd");; // var0 equals a list of 6 blue colors[] 
+ []
+
+
+Overfull \hbox (622.2418pt too wide) in paragraph at lines 7662--7662
+[]\T1/lmtt/m/n/10 list<rgb> var1 <- list<rgb> colors <- brewer_colors("Pastel1", 5);; // var1 equals a list of 5 sequential colors in the palette named \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 Pastel1\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 . The list of palettes can be obtained by calling brewer_palettes[] 
+ []
+
+
+Overfull \hbox (259.99286pt too wide) in paragraph at lines 7700--7700
+[]\T1/lmtt/m/n/10 list<string> var0 <- list<string> palettes <- brewer_palettes(3);; // var0 equals a list of palettes that are composed of a min of 3 colors[] 
+ []
+
+
+Overfull \hbox (396.49246pt too wide) in paragraph at lines 7700--7700
+[]\T1/lmtt/m/n/10 list<string> var1 <- list<string> palettes <- brewer_palettes(5,10);; // var1 equals a list of palettes that are composed of a min of 5 colors and a max of 10 colors[] 
+ []
+
+[130] [131]
+Overfull \hbox (55.24345pt too wide) in paragraph at lines 7804--7804
+[]\T1/lmtt/m/n/10 point var0 <- centroid(world); // var0 equals the centroid of the square, for example : {50.0,50.0}.[] 
+ []
+
+[132]
 Underfull \hbox (badness 10000) in paragraph at lines 7916--7918
 
  []
 
-[136] [137] [138] [139] [140]
+
+Overfull \hbox (223.24297pt too wide) in paragraph at lines 7928--7928
+[]\T1/lmtt/m/n/10 geometry var0 <- circle(10,{80,30}); // var0 equals a geometry as a circle of radius 10, the center will be in the location {80,30}.[] 
+ []
+
+[133]
+Overfull \hbox (291.49277pt too wide) in paragraph at lines 7965--7965
+[]\T1/lmtt/m/n/10 geometry var0 <- clean(self); // var0 equals returns the geometry resulting from the cleaning of the geometry of the agent applying the operator.[] 
+ []
+
+
+Overfull \hbox (994.99072pt too wide) in paragraph at lines 7997--7997
+[]\T1/lmtt/m/n/10 list<geometry> var0 <- clean_network(my_road_shapefile.contents, 1.0, true, false); // var0 equals returns the list of polulines resulting from the cleaning of the geometry of the agent applying the operator with a tolerance of 1m, and splitting the lines at their intersections.[] 
+ []
+
+[134]
+Overfull \hbox (412.24242pt too wide) in paragraph at lines 8026--8026
+[]\T1/lmtt/m/n/10 list<point> var0 <- geom1 closest_points_with(geom2); // var0 equals [pt1, pt2] with pt1 the closest point of geom1 to geom2 and pt1 the closest point of geom2 to geom1[] 
+ []
+
+
+Overfull \hbox (506.74214pt too wide) in paragraph at lines 8069--8069
+[]\T1/lmtt/m/n/10 geometry var0 <- [ag1, ag2, ag3] closest_to(self); // var0 equals return the closest agent among ag1, ag2 and ag3 to the agent applying the operator.(species1 + species2) closest_to self[] 
+ []
+
+
+Overfull \hbox (595.99188pt too wide) in paragraph at lines 8069--8069
+[]\T1/lmtt/m/n/10 list<geometry> var2 <- [ag1, ag2, ag3] closest_to(self, 2); // var2 equals return the 2 closest agents among ag1, ag2 and ag3 to the agent applying the operator.(species1 + species2) closest_to (self, 5)[] 
+ []
+
+[135]
+Overfull \hbox (175.9931pt too wide) in paragraph at lines 8120--8120
+[]\T1/lmtt/m/n/10 list var3 <- (list(node) collect (node(each).location.x * 2); // var3 equals the list of nodes with their x multiplied by 2[] 
+ []
+
+[136]
+Overfull \hbox (275.74281pt too wide) in paragraph at lines 8154--8154
+[]\T1/lmtt/m/n/10 list var0 <- matrix([["el11","el12","el13"],["el21","el22","el23"],["el31","el32","el33"]]) column_at 2; // var0 equals ["el31","el32","el33"][] 
+ []
+
+
+Overfull \hbox (569.74196pt too wide) in paragraph at lines 8186--8186
+[]\T1/lmtt/m/n/10 list<list> var0 <- columns_list(matrix([["el11","el12","el13"],["el21","el22","el23"],["el31","el32","el33"]])); // var0 equals [["el11","el12","el13"],["el21","el22","el23"],["el31","el32","el33"]][] 
+ []
+
+[137]
 Underfull \hbox (badness 10000) in paragraph at lines 8255--8257
 
  []
 
-[141] [142] [143]
+
+Overfull \hbox (86.74336pt too wide) in paragraph at lines 8267--8267
+[]\T1/lmtt/m/n/10 geometry var0 <- cone(0, 45); // var0 equals a geometry as a cone with min angle is 0 and max angle is 45.[] 
+ []
+
+
+Overfull \hbox (97.24333pt too wide) in paragraph at lines 8267--8267
+[]\T1/lmtt/m/n/10 geometry var1 <- cone({0, 45}); // var1 equals a geometry as a cone with min angle is 0 and max angle is 45.[] 
+ []
+
+[138]
+Overfull \hbox (165.49313pt too wide) in paragraph at lines 8315--8315
+[]\T1/lmtt/m/n/10 geometry var0 <- cone3D(10.0,5.0); // var0 equals a geometry as a cone with a base circle of radius 10 and a height of 5.[] 
+ []
+
+[139]
+Overfull \hbox (249.49289pt too wide) in paragraph at lines 8353--8353
+[]\T1/lmtt/m/n/10 list<list> var1 <- connected_components_of (my_graph); // var1 equals the list of all the components as listgraph my_graph2 <- graph([]);[] 
+ []
+
+
+Overfull \hbox (133.99323pt too wide) in paragraph at lines 8353--8353
+[]\T1/lmtt/m/n/10 list<list> var3 <- connected_components_of (my_graph2, true); // var3 equals the list of all the components as list[] 
+ []
+
+
+Overfull \hbox (49.99347pt too wide) in paragraph at lines 8385--8385
+[]\T1/lmtt/m/n/10 float var1 <- connectivity_index(graphEpidemio); // var1 equals the connectivity index of the graph[] 
+ []
+
+[140]
 Underfull \hbox (badness 10000) in paragraph at lines 8447--8449
 
  []
@@ -1577,17 +1823,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 8455--8457
 
  []
 
-[144]
+[141]
 Underfull \hbox (badness 10000) in paragraph at lines 8515--8517
 
  []
 
-[145]
+[142]
 Underfull \hbox (badness 10000) in paragraph at lines 8628--8630
 
  []
 
-[146] [147]
+[143] [144]
+Overfull \hbox (144.4932pt too wide) in paragraph at lines 8733--8733
+[]\T1/lmtt/m/n/10 geometry var0 <- convex_hull(self); // var0 equals the convex hull of the geometry of the agent applying the operator[] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 8781--8783
 
  []
@@ -1597,22 +1848,67 @@ Underfull \hbox (badness 10000) in paragraph at lines 8783--8785
 
  []
 
-[148] [149] [150] [151]
+[145] [146] [147]
+Overfull \hbox (254.74287pt too wide) in paragraph at lines 8977--8977
+[]\T1/lmtt/m/n/10 int var0 <- [1,2,3,4,5,6,7,8] count (each > 3); // var0 equals 5// Number of nodes of graph g2 without any out edge graph g2 <- graph([]);[] 
+ []
+
+
+Overfull \hbox (601.24187pt too wide) in paragraph at lines 8977--8977
+[]\T1/lmtt/m/n/10 int var3 <- g2 count (length(g2 out_edges_of each) = 0  ) ; // var3 equals the total number of out edges// Number of agents node with x > 32 int n <- (list(node) count (round(node(each).location.x) > 32);[] 
+ []
+
+[148]
 Underfull \hbox (badness 10000) in paragraph at lines 9075--9077
 
  []
 
-[152]
+
+Overfull \hbox (34.24352pt too wide) in paragraph at lines 9088--9088
+[]\T1/lmtt/m/n/10 map<int,string> var0 <- create_map([0,1,2],[\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 a\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 b\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 c\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ]); // var0 equals [0::\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 a\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,1::\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 b\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,2::\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 c\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ][] 
+ []
+
+
+Overfull \hbox (128.74324pt too wide) in paragraph at lines 9088--9088
+[]\T1/lmtt/m/n/10 map<string,float> var2 <- create_map([\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 a\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 b\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 c\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 d\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ],[1.0,2.0,3.0]); // var2 equals [\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 a\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::1.0,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 b\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::2.0,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 c\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::3.0][] 
+ []
+
+[149]
+Overfull \hbox (139.24321pt too wide) in paragraph at lines 9121--9121
+[]\T1/lmtt/m/n/10 geometry var1 <- cross(10,2); // var1 equals a geometry as a cross of radius 10, and with a width of 2 for the lines[] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 9155--9157
 
  []
 
-[153] [154] [155]
+
+Overfull \hbox (39.4935pt too wide) in paragraph at lines 9168--9168
+[]\T1/lmtt/m/n/10 bool var0 <- polyline([{10,10},{20,20}]) crosses polyline([{10,20},{20,10}]); // var0 equals true[] 
+ []
+
+
+Overfull \hbox (107.7433pt too wide) in paragraph at lines 9168--9168
+[]\T1/lmtt/m/n/10 bool var2 <- polyline([{0,0},{25,25}]) crosses polygon([{10,10},{10,20},{20,20},{20,10}]); // var2 equals true[] 
+ []
+
+[150]
+Overfull \hbox (301.99274pt too wide) in paragraph at lines 9232--9232
+[]\T1/lmtt/m/n/10 geometry var0 <- shape CRS_transform("EPSG:4326"); // var0 equals a geometry corresponding to the agent geometry transformed into the EPSG:4326 CRS[] 
+ []
+
+
+Overfull \hbox (228.49295pt too wide) in paragraph at lines 9243--9243
+[]\T1/lmtt/m/n/10 geometry var1 <- CRS_transform(shape); // var1 equals a geometry corresponding to the agent geometry transformed into the current CRS[] 
+ []
+
+[151] [152]
 Underfull \hbox (badness 10000) in paragraph at lines 9365--9367
 
  []
 
-[156]
+
 Underfull \hbox (badness 10000) in paragraph at lines 9367--9369
 
  []
@@ -1667,14 +1963,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 9387--9389
 
  []
 
-[157] [158]
+
+Overfull \hbox (359.74257pt too wide) in paragraph at lines 9408--9408
+[]\T1/lmtt/m/n/10 geometry var0 <- curve({0,0},{10,10}, 0.5, 100, 0.8, 90); // var0 equals a cubic Bezier curve geometry composed of 100 points from p0 to p1 at the right side.[] 
+ []
+
+
+Overfull \hbox (249.49289pt too wide) in paragraph at lines 9408--9408
+[]\T1/lmtt/m/n/10 geometry var1 <- curve({0,0}, {0,10}, {10,10}, 20); // var1 equals a quadratic Bezier curve geometry composed of 20 points from p0 to p2.[] 
+ []
+
+[153]
+Overfull \hbox (307.24272pt too wide) in paragraph at lines 9408--9408
+[]\T1/lmtt/m/n/10 geometry var2 <- curve({0,0},{10,10}, 0.5, 90); // var2 equals a cubic Bezier curve geometry composed of 100 points from p0 to p1 at the right side.[] 
+ []
+
+
+Overfull \hbox (349.2426pt too wide) in paragraph at lines 9408--9408
+[]\T1/lmtt/m/n/10 geometry var3 <- curve({0,0},{10,10}, 0.5, false, 100); // var3 equals a cubic Bezier curve geometry composed of 100 points from p0 to p1 at the right side.[] 
+ []
+
+
+Overfull \hbox (228.49295pt too wide) in paragraph at lines 9408--9408
+[]\T1/lmtt/m/n/10 geometry var4 <- curve({0,0}, {0,10}, {10,10}); // var4 equals a quadratic Bezier curve geometry composed of 10 points from p0 to p2.[] 
+ []
+
+
+Overfull \hbox (207.49301pt too wide) in paragraph at lines 9408--9408
+[]\T1/lmtt/m/n/10 geometry var5 <- curve({0,0}, {0,10}, {10,10}); // var5 equals a cubic Bezier curve geometry composed of 10 points from p0 to p3.[] 
+ []
+
+
+Overfull \hbox (333.49265pt too wide) in paragraph at lines 9408--9408
+[]\T1/lmtt/m/n/10 geometry var6 <- curve({0,0},{10,10}, 0.5, 100, 90); // var6 equals a cubic Bezier curve geometry composed of 100 points from p0 to p1 at the right side.[] 
+ []
+
+
+Overfull \hbox (312.4927pt too wide) in paragraph at lines 9408--9408
+[]\T1/lmtt/m/n/10 geometry var7 <- curve({0,0},{10,10}, 0.5, false); // var7 equals a cubic Bezier curve geometry composed of 10 points from p0 to p1 at the left side.[] 
+ []
+
+
+Overfull \hbox (375.49252pt too wide) in paragraph at lines 9408--9408
+[]\T1/lmtt/m/n/10 geometry var8 <- curve({0,0},{10,10}, 0.5, false, 100, 0.8); // var8 equals a cubic Bezier curve geometry composed of 100 points from p0 to p1 at the right side.[] 
+ []
+
+
+Overfull \hbox (186.49307pt too wide) in paragraph at lines 9408--9408
+[]\T1/lmtt/m/n/10 geometry var9 <- curve({0,0},{10,10}, 0.5); // var9 equals a cubic Bezier curve geometry composed of 10 points from p0 to p1.[] 
+ []
+
+
+Overfull \hbox (217.99298pt too wide) in paragraph at lines 9408--9408
+[]\T1/lmtt/m/n/10 geometry var10 <- curve({0,0}, {0,10}, {10,10}); // var10 equals a cubic Bezier curve geometry composed of 10 points from p0 to p3.[] 
+ []
+
+[154]
 Chapter 12.
 
 Underfull \vbox (badness 2809) has occurred while \output is active []
 
- [159
+ [155
 
-] [160]
+] [156]
 Underfull \hbox (badness 1226) in paragraph at lines 9565--9566
 []\T1/lmr/m/n/10 (+20) get_beliefs_op[], []get_beliefs_with_name_op[], []get_current_intention_op[], []get_decay[], []get_desire_op[],
  []
@@ -1694,32 +2045,97 @@ Underfull \hbox (badness 4229) in paragraph at lines 9565--9566
 []\T1/lmr/m/n/10 (+20) get_uncertainty_op[], []get_uncertainty_with_name_op[], []has_belief_op[], []has_belief_with_name_op[],
  []
 
-[161]
+[157]
 Underfull \hbox (badness 6284) in paragraph at lines 9626--9627
 []\T1/lmr/m/n/10 (+20) binomial_coeff[], []bi-no-mial_complemented[], []bi-no-mial_sum[], []chi_square[], []chi_square_complemented[],
  []
 
-[162]
+[158]
 Underfull \hbox (badness 4217) in paragraph at lines 9682--9683
 []\T1/lmr/m/n/10 (+20) add_edge[], []add_node[], []ad-ja-cency[], []agent_from_geometry[], []all_pairs_shortest_path[], []al-pha_index[],
  []
 
-[163] [164]
+[159] [160]
 Underfull \hbox (badness 4608) in paragraph at lines 9787--9788
 []\T1/lmr/m/n/10 (+20) -[], []*[], []+[], []add_point[], []agent_closest_to[], []agent_farthest_to[], []agents_at_distance[], []agents_inside[],
  []
 
-[165]
+[161]
 Underfull \hbox (badness 2020) in paragraph at lines 9822--9823
 []\T1/lmr/m/n/10 (+20) to_GAMA_CRS[], []to_rectangles[], []to_squares[], []to_sub_geometries[], []trans-formed_by[], []trans-lated_by[],
  []
 
-[166] [167] [168] [169] [170] [171]
+[162] [163]
+Overfull \hbox (65.74342pt too wide) in paragraph at lines 9905--9905
+[]\T1/lmtt/m/n/10 date d <- date("1999-january-30", \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 yyyy-MMMM-dd\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 en\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ); date den <- date("1999-12-30", \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 yyyy-MM-dd\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 );[] 
+ []
+
+[164] [165]
+Overfull \hbox (144.4932pt too wide) in paragraph at lines 10042--10042
+[]\T1/lmtt/m/n/10 geometry var0 <- dem(dem); // var0 equals returns a geometry as a rectangle of width and height equal to the texture.[] 
+ []
+
+
+Overfull \hbox (149.74318pt too wide) in paragraph at lines 10042--10042
+[]\T1/lmtt/m/n/10 geometry var1 <- dem(dem,texture); // var1 equals a geometry as a rectangle of weight and height equal to the texture.[] 
+ []
+
+
+Overfull \hbox (154.99316pt too wide) in paragraph at lines 10042--10042
+[]\T1/lmtt/m/n/10 geometry var2 <- dem(dem,z_factor); // var2 equals a geometry as a rectangle of weight and height equal to the texture.[] 
+ []
+
+
+Overfull \hbox (191.74306pt too wide) in paragraph at lines 10042--10042
+[]\T1/lmtt/m/n/10 geometry var3 <- dem(dem,texture,z_factor); // var3 equals a geometry as a rectangle of width and height equal to the texture.[] 
+ []
+
+[166] [167]
+Overfull \hbox (270.49283pt too wide) in paragraph at lines 10176--10176
+[]\T1/lmtt/m/n/10 float var0 <- my_topology direction_between [ag1, ag2]; // var0 equals the direction between ag1 and ag2 considering the topology my_topology[] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 10217--10219
 
  []
 
-[172] [173]
+
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 10232--10232
+[]\T1/lmtt/m/n/10 bool var0 <- polyline([{10,10},{20,20}]) disjoint_from polyline([{15,15},{25,25}]); // var0 equals false[] 
+ []
+
+[168]
+Overfull \hbox (233.74294pt too wide) in paragraph at lines 10232--10232
+[]\T1/lmtt/m/n/10 bool var1 <- polygon([{10,10},{10,20},{20,20},{20,10}]) disjoint_from polygon([{15,15},{15,25},{25,25},{25,15}]); // var1 equals false[] 
+ []
+
+
+Overfull \hbox (49.99347pt too wide) in paragraph at lines 10232--10232
+[]\T1/lmtt/m/n/10 bool var2 <- polygon([{10,10},{10,20},{20,20},{20,10}]) disjoint_from {15,15}; // var2 equals false[] 
+ []
+
+
+Overfull \hbox (44.74348pt too wide) in paragraph at lines 10232--10232
+[]\T1/lmtt/m/n/10 bool var3 <- polygon([{10,10},{10,20},{20,20},{20,10}]) disjoint_from {25,25}; // var3 equals true[] 
+ []
+
+
+Overfull \hbox (228.49295pt too wide) in paragraph at lines 10232--10232
+[]\T1/lmtt/m/n/10 bool var4 <- polygon([{10,10},{10,20},{20,20},{20,10}]) disjoint_from polygon([{35,35},{35,45},{45,45},{45,35}]); // var4 equals true[] 
+ []
+
+
+Overfull \hbox (312.4927pt too wide) in paragraph at lines 10266--10266
+[]\T1/lmtt/m/n/10 float var0 <- my_topology distance_between [ag1, ag2, ag3]; // var0 equals the distance between ag1, ag2 and ag3 considering the topology my_topology[] 
+ []
+
+[169]
+Overfull \hbox (275.74281pt too wide) in paragraph at lines 10304--10304
+[]\T1/lmtt/m/n/10 float var0 <- ag1 distance_to ag2; // var0 equals the distance between ag1 and ag2 considering the topology of the agent applying the operator[] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 10336--10338
 
  []
@@ -1734,37 +2150,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 10340--10342
 
  []
 
-[174]
-Overfull \hbox (327.041pt too wide) in paragraph at lines 10388--10389
-[][][][] 
+[170]
+Overfull \hbox (889.99103pt too wide) in paragraph at lines 10391--10391
+[]\T1/lmtt/m/n/10 map var0 <- distribution_of([1,1,2,12.5],10); // var0 equals map([\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 values\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::[2,1,0,0,0,0,1,0,0,0],\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 legend\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::[\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [0.0:2.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [2.0:4.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [4.0:6.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [6.0:8.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [8.0:10.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [10.0:12.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [12.0:14.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [14.0:16.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [16.0:18.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [18.0:20.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ],\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 parlist\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::[1,0]])[] 
  []
 
 
-Overfull \hbox (327.041pt too wide) in paragraph at lines 10389--10390
-[][][][] 
+Overfull \hbox (874.24107pt too wide) in paragraph at lines 10391--10391
+[]\T1/lmtt/m/n/10 map var1 <- distribution_of([1,1,2,12.5]); // var1 equals map([\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 values\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::[2,1,0,0,0,0,1,0,0,0],\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 legend\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::[\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [0.0:2.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [2.0:4.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [4.0:6.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [6.0:8.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [8.0:10.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [10.0:12.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [12.0:14.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [14.0:16.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [16.0:18.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [18.0:20.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ],\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 parlist\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::[1,0]])[] 
  []
 
 
-Overfull \hbox (327.041pt too wide) in paragraph at lines 10390--10391
-[][][][] 
- []
-
-[175]
-Overfull \hbox (327.041pt too wide) in paragraph at lines 10428--10429
-[][][][] 
+Overfull \hbox (874.24107pt too wide) in paragraph at lines 10391--10391
+[]\T1/lmtt/m/n/10 map var2 <- distribution_of([1,1,2,12.5]); // var2 equals map([\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 values\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::[2,1,0,0,0,0,1,0,0,0],\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 legend\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::[\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [0.0:2.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [2.0:4.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [4.0:6.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [6.0:8.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [8.0:10.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [10.0:12.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [12.0:14.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [14.0:16.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [16.0:18.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [18.0:20.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ],\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 parlist\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::[1,0]])[] 
  []
 
 
-Overfull \hbox (327.041pt too wide) in paragraph at lines 10429--10430
-[][][][] 
+Overfull \hbox (884.74104pt too wide) in paragraph at lines 10431--10431
+[]\T1/lmtt/m/n/10 map var0 <- distribution2d_of([1,1,2,12.5]); // var0 equals map([\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 values\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::[2,1,0,0,0,0,1,0,0,0],\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 legend\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::[\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [0.0:2.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [2.0:4.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [4.0:6.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [6.0:8.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [8.0:10.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [10.0:12.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [12.0:14.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [14.0:16.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [16.0:18.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [18.0:20.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ],\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 parlist\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::[1,0]])[] 
  []
 
 
-Overfull \hbox (327.041pt too wide) in paragraph at lines 10430--10431
-[][][][] 
+Overfull \hbox (889.99103pt too wide) in paragraph at lines 10431--10431
+[]\T1/lmtt/m/n/10 map var1 <- distribution_of([1,1,2,12.5],10); // var1 equals map([\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 values\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::[2,1,0,0,0,0,1,0,0,0],\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 legend\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::[\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [0.0:2.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [2.0:4.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [4.0:6.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [6.0:8.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [8.0:10.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [10.0:12.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [12.0:14.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [14.0:16.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [16.0:18.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [18.0:20.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ],\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 parlist\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::[1,0]])[] 
  []
 
 
+Overfull \hbox (889.99103pt too wide) in paragraph at lines 10431--10431
+[]\T1/lmtt/m/n/10 map var2 <- distribution_of([1,1,2,12.5],10); // var2 equals map([\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 values\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::[2,1,0,0,0,0,1,0,0,0],\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 legend\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::[\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [0.0:2.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [2.0:4.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [4.0:6.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [6.0:8.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [8.0:10.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [10.0:12.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [12.0:14.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [14.0:16.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [16.0:18.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 [18.0:20.0]\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ],\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 parlist\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::[1,0]])[] 
+ []
+
+[171]
 Underfull \hbox (badness 10000) in paragraph at lines 10477--10479
 
  []
@@ -1774,12 +2190,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 10479--10481
 
  []
 
-[176] [177] [178] [179]
+[172] [173]
+Overfull \hbox (49.99347pt too wide) in paragraph at lines 10673--10673
+[]\T1/lmtt/m/n/10 map var1 <- edge_betweenness(graphEpidemio); // var1 equals the edge betweenness index of the graph[] 
+ []
+
+[174]
+Overfull \hbox (123.49326pt too wide) in paragraph at lines 10714--10714
+[]\T1/lmtt/m/n/10 list<float> var0 <- eigenvalues(matrix([[5,-3],[6,-4]])); // var0 equals [2.0000000000000004,-0.9999999999999998][] 
+ []
+
+
 Overfull \hbox (166.27446pt too wide) in paragraph at lines 10727--10728
 []\T1/lmtt/b/n/10 electre_DM \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 msi.gama.util.IList<java.util.List>\T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 msi.gama.util.IList<java.util.Map<java.lang.String,java.lang.Object>>\T1/lmr/m/n/10 (-20) ,
  []
 
-[180] [181]
+[175]
+Overfull \hbox (858.49112pt too wide) in paragraph at lines 10750--10750
+[]\T1/lmtt/m/n/10 int var0 <- electre_DM([[1.0, 7.0],[4.0,2.0],[3.0, 3.0]], [["name"::"utility", "weight" :: 2.0,"p"::0.5, "q"::0.0, "s"::1.0, "maximize" :: true],["name"::"price", "weight" :: 1.0,"p"::0.5, "q"::0.0, "s"::1.0, "maximize" :: false]],0.7); // var0 equals 0[] 
+ []
+
+
+Overfull \hbox (55.24345pt too wide) in paragraph at lines 10798--10798
+[]\T1/lmtt/m/n/10 geometry var0 <- ellipse(10, 10); // var0 equals a geometry as an ellipse of width 10 and height 10.[] 
+ []
+
+[176]
 Underfull \hbox (badness 10000) in paragraph at lines 10856--10858
 
  []
@@ -1809,12 +2245,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 10866--10868
 
  []
 
-[182] [183]
+[177] [178]
 Underfull \hbox (badness 10000) in paragraph at lines 11017--11019
 
  []
 
-
+[179]
 Overfull \hbox (64.55489pt too wide) in paragraph at lines 11046--11048
 []\T1/lmtt/m/n/10 msi.gama.util.GamaDateInterval \T1/lmtt/b/n/10 every \T1/lmtt/m/n/10 any expression \T1/lmr/m/n/10 (-20) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gama.util.GamaDate> 
  []
@@ -1824,7 +2260,12 @@ Overfull \hbox (77.344pt too wide) in paragraph at lines 11048--11050
 []\T1/lmtt/b/n/10 every \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 msi.gama.util.GamaDateInterval \T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 any expression\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gama.util.GamaDate> 
  []
 
-[184]
+
+Overfull \hbox (2349.48679pt too wide) in paragraph at lines 11073--11073
+[]\T1/lmtt/m/n/10 if every(2#cycle) {write "the cycle number is even";}        else {write "the cycle number is odd";} (date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2000-01-01\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ) to date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2010-01-01\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 )) every (#month) // builds an interval between these two dates which contains all the monthly dates starting from the beginning of the interval reflex when: every(2#days) since date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2000-01-01\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ) { .. } state a { transition to: b when: every(2#mn);} state b { transition to: a when: every(30#s);} // This oscillatory behavior will use the starting_date of the model as its starting point in time[] 
+ []
+
+
 Overfull \hbox (200.18648pt too wide) in paragraph at lines 11098--11100
 []\T1/lmtt/m/n/10 msi.gama.util.IList<java.util.List> \T1/lmtt/b/n/10 evidence_theory_DM \T1/lmtt/m/n/10 msi.gama.util.IList<java.util.Map<java.lang.String,java.lang.Object>>
  []
@@ -1839,9 +2280,14 @@ Overfull \hbox (208.27434pt too wide) in paragraph at lines 11102--11103
 []\T1/lmtt/b/n/10 evidence_theory_DM \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 msi.gama.util.IList<java.util.List>\T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 msi.gama.util.IList<java.util.Map<java.lang.String,java.lang.Object>>\T1/lmr/m/n/10 (-20) ,
  []
 
-[185]
+[180]
 Underfull \hbox (badness 10000) in paragraph at lines 11116--11118
 
+ []
+
+
+Overfull \hbox (1173.4902pt too wide) in paragraph at lines 11127--11127
+[]\T1/lmtt/m/n/10 int var0 <- evidence_theory_DM([[1.0, 7.0],[4.0,2.0],[3.0, 3.0]], [["name"::"utility", "s1" :: 0.0,"s2"::1.0, "v1p"::0.0, "v2p"::1.0, "v1c"::0.0, "v2c"::0.0, "maximize" :: true],["name"::"price",  "s1" :: 0.0,"s2"::1.0, "v1p"::0.0, "v2p"::1.0, "v1c"::0.0, "v2c"::0.0, "maximize" :: true]], true); // var0 equals 0[] 
  []
 
 
@@ -1849,7 +2295,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 11161--11163
 
  []
 
-[186] [187] [188] [189]
+[181] [182]
+Overfull \hbox (511.99213pt too wide) in paragraph at lines 11281--11281
+[]\T1/lmtt/m/n/10 geometry var0 <- [ag1, ag2, ag3] closest_to(self); // var0 equals return the farthest agent among ag1, ag2 and ag3 to the agent applying the operator.(species1 + species2) closest_to self[] 
+ []
+
+[183]
+Overfull \hbox (716.74153pt too wide) in paragraph at lines 11331--11331
+[]\T1/lmtt/m/n/10 let fileT type: file value: file("../includes/Stupid_Cell.Data");           // fileT represents the file "../includes/Stupid_Cell.Data"             // fileT.contents here contains a matrix storing all the data of the text file[] 
+ []
+
+[184]
 Underfull \hbox (badness 10000) in paragraph at lines 11412--11414
 
  []
@@ -1884,32 +2340,62 @@ Underfull \hbox (badness 10000) in paragraph at lines 11424--11426
 
  []
 
-[190]
+[185]
 Underfull \hbox (badness 10000) in paragraph at lines 11489--11491
 
  []
 
-[191] [192] [193] [194]
+
+Overfull \hbox (13.24358pt too wide) in paragraph at lines 11498--11498
+[]\T1/lmtt/m/n/10 unknown var5 <- [1::2, 3::4, 5::6].pairs first_with (each.value >= 4); // var5 equals (3::4)[] 
+ []
+
+
+Overfull \hbox (34.24352pt too wide) in paragraph at lines 11508--11508
+[]\T1/lmtt/m/n/10 unknown var3 <- (list(node) first_with (round(node(each).location.x) > 32); // var3 equals node2[] 
+ []
+
+[186] [187]
+Overfull \hbox (506.74214pt too wide) in paragraph at lines 11642--11642
+[]\T1/lmtt/m/n/10 file dirT <- folder("../includes/");                // dirT represents the repository "../includes/"                // dirT.contents here contains the list of the names of included files[] 
+ []
+
+[188]
+Overfull \hbox (181.24309pt too wide) in paragraph at lines 11674--11674
+[]\T1/lmtt/m/n/10 font var0 <- font (\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 Helvetica Neue\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,12, #bold + #italic); // var0 equals a bold and italic face of the Helvetica Neue family[] 
+ []
+
+
+Overfull \hbox (301.99274pt too wide) in paragraph at lines 11703--11703
+[]\T1/lmtt/m/n/10 map var0 <- [ag1, ag2, ag3, ag4] frequency_of each.size; // var0 equals the different sizes as keys and the number of agents of this size as values[] 
+ []
+
+[189]
+Overfull \hbox (506.74214pt too wide) in paragraph at lines 11751--11751
+[]\T1/lmtt/m/n/10 int var0 <- fuzzy_choquet_DM([[1.0, 7.0],[4.0,2.0],[3.0, 3.0]], ["utility", "price", "size"],[["utility"]::0.5,["size"]::0.1,["price"]::0.4,["utility", "price"]::0.55]); // var0 equals 0[] 
+ []
+
+
 Underfull \hbox (badness 1231) in paragraph at lines 11777--11779
 \T1/lmr/m/n/10 (+20) fuzzy kappa in-di-ca-tor for 2 map com-par-isons: fuzzy_kappa(agents_list,list_vals1,list_vals2, out-
  []
 
-[195]
-Overfull \hbox (593.53307pt too wide) in paragraph at lines 11813--11814
-[][] 
+
+Overfull \hbox (1346.7397pt too wide) in paragraph at lines 11785--11785
+[]\T1/lmtt/m/n/10 fuzzy_kappa([ag1, ag2, ag3, ag4, ag5],[cat1,cat1,cat2,cat3,cat2],[cat2,cat1,cat2,cat1,cat2], similarity_per_agents,[cat1,cat2,cat3],[[1,0,0],[0,1,0],[0,0,1]], 2, [1.0,3.0,2.0,2.0,4.0]) fuzzy_kappa([ag1, ag2, ag3, ag4, ag5],[cat1,cat1,cat2,cat3,cat2],[cat2,cat1,cat2,cat1,cat2], similarity_per_agents,[cat1,cat2,cat3],[[1,0,0],[0,1,0],[0,0,1]], 2)[] 
  []
 
-
-Overfull \hbox (593.53307pt too wide) in paragraph at lines 11813--11814
-[][] 
+[190]
+Overfull \hbox (3031.9848pt too wide) in paragraph at lines 11814--11814
+[]\T1/lmtt/m/n/10 fuzzy_kappa_sim([ag1, ag2, ag3, ag4, ag5], [cat1,cat1,cat2,cat3,cat2],[cat2,cat1,cat2,cat1,cat2], similarity_per_agents,[cat1,cat2,cat3],[[1,0,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0,0],[0,0,1,0,0,0,0,0,0],[0,0,0,1,0,0,0,0,0],[0,0,0,0,1,0,0,0,0],[0,0,0,0,0,1,0,0,0],[0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,1,0],[0,0,0,0,0,0,0,0,1]], 2,[1.0,3.0,2.0,2.0,4.0]) fuzzy_kappa_sim([ag1, ag2, ag3, ag4, ag5], [cat1,cat1,cat2,cat3,cat2],[cat2,cat1,cat2,cat1,cat2], similarity_per_agents,[cat1,cat2,cat3],[[1,0,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0,0],[0,0,1,0,0,0,0,0,0],[0,0,0,1,0,0,0,0,0],[0,0,0,0,1,0,0,0,0],[0,0,0,0,0,1,0,0,0],[0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,1,0],[0,0,0,0,0,0,0,0,1]], 2)[] 
  []
 
-[196] [197] [198]
+[191] [192]
 Underfull \hbox (badness 10000) in paragraph at lines 12006--12008
 
  []
 
-[199]
+[193]
 Underfull \hbox (badness 10000) in paragraph at lines 12058--12060
 
  []
@@ -1954,7 +2440,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 12074--12076
 
  []
 
-[200]
+
+Overfull \hbox (1094.74043pt too wide) in paragraph at lines 12084--12084
+[]\T1/lmtt/m/n/10 graph<yourNodeSpecy,yourEdgeSpecy> graphEpidemio <- generate_barabasi_albert(       yourNodeSpecy,      yourEdgeSpecy,      3,      5,      true); graph<yourNodeSpecy,yourEdgeSpecy> graphEpidemio <- generate_barabasi_albert(        yourListOfNodes,        yourEdgeSpecy,      3,      5,      true);[] 
+ []
+
+[194]
 Underfull \hbox (badness 10000) in paragraph at lines 12130--12132
 
  []
@@ -2004,7 +2495,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 12148--12150
 
  []
 
-
+[195]
 Underfull \hbox (badness 10000) in paragraph at lines 12150--12152
 
  []
@@ -2029,17 +2520,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 12158--12160
 
  []
 
-[201]
+
+Overfull \hbox (2564.73616pt too wide) in paragraph at lines 12168--12168
+[]\T1/lmtt/m/n/10 graph<myVertexSpecy,myEdgeSpecy> myGraph <- generate_complete_graph(            myVertexSpecy,          myEdgeSpecy,            10, 25,         true); graph<myVertexSpecy,myEdgeSpecy> myGraph <- generate_complete_graph(             myListOfNodes,          myEdgeSpecy,            25,         true); graph<myVertexSpecy,myEdgeSpecy> myGraph <- generate_complete_graph(             myVertexSpecy,          myEdgeSpecy,            10,         true); graph<myVertexSpecy,myEdgeSpecy> myGraph <- generate_complete_graph(             myListOfNodes,          myEdgeSpecy,        true);[] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 12208--12210
 
  []
 
-
+[196]
 Underfull \hbox (badness 10000) in paragraph at lines 12210--12212
 
  []
 
-[202]
+
 Underfull \hbox (badness 10000) in paragraph at lines 12212--12214
 
  []
@@ -2079,12 +2575,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 12226--12228
 
  []
 
-[203]
+
+Overfull \hbox (1262.73994pt too wide) in paragraph at lines 12236--12236
+[]\T1/lmtt/m/n/10 graph<myVertexSpecy,myEdgeSpecy> myGraph <- generate_watts_strogatz(            myVertexSpecy,          myEdgeSpecy,            2,          0.3,            2,      true); graph<myVertexSpecy,myEdgeSpecy> myGraph <- generate_watts_strogatz(             myListOfNodes,          myEdgeSpecy,            0.3,            2,      true);[] 
+ []
+
+[197]
 Underfull \hbox (badness 10000) in paragraph at lines 12343--12345
 
  []
 
-[204] [205] [206]
+[198]
+Overfull \hbox (249.49289pt too wide) in paragraph at lines 12354--12354
+[]\T1/lmtt/m/n/10 geometry var0 <- geometry_collection([{0,0}, {0,10}, {10,10}, {10,0}]); // var0 equals a geometry composed of the 4 points (multi-point).[] 
+ []
+
+
+Overfull \hbox (375.49252pt too wide) in paragraph at lines 12398--12398
+[]\T1/lmtt/m/n/10 string geom_area <- a_geometry get(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 area\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 );     // reads then \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 area\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 attribute of \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 a_geometry\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 variable then assigns the returned value to the geom_area variable[] 
+ []
+
+
+Overfull \hbox (307.24272pt too wide) in paragraph at lines 12408--12408
+[]\T1/lmtt/m/n/10 string agent_name <- an_agent get(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 name\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 );     // reads then \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 name\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 attribute of an_agent then assigns the returned value to the agent_name variable[] 
+ []
+
+[199] [200]
 Overfull \hbox (64.55489pt too wide) in paragraph at lines 12557--12559
 []\T1/lmtt/m/n/10 agent \T1/lmtt/b/n/10 get_beliefs_op \T1/lmtt/m/n/10 predicate \T1/lmr/m/n/10 (-20) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gaml.architecture.simplebdi.MentalState> 
  []
@@ -2094,7 +2610,7 @@ Overfull \hbox (77.344pt too wide) in paragraph at lines 12559--12560
 []\T1/lmtt/b/n/10 get_beliefs_op \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 agent \T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 predicate\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gaml.architecture.simplebdi.MentalState> 
  []
 
-[207]
+
 Overfull \hbox (101.30478pt too wide) in paragraph at lines 12585--12587
 []\T1/lmtt/m/n/10 agent \T1/lmtt/b/n/10 get_beliefs_with_name_op \T1/lmtt/m/n/10 string \T1/lmr/m/n/10 (-20) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gaml.architecture.simplebdi.MentalState> 
  []
@@ -2104,17 +2620,17 @@ Overfull \hbox (114.09389pt too wide) in paragraph at lines 12587--12588
 []\T1/lmtt/b/n/10 get_beliefs_with_name_op \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 agent \T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 string\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gaml.architecture.simplebdi.MentalState> 
  []
 
-[208]
+[201] [202]
 Overfull \hbox (64.55489pt too wide) in paragraph at lines 12722--12724
 []\T1/lmtt/m/n/10 agent \T1/lmtt/b/n/10 get_desires_op \T1/lmtt/m/n/10 predicate \T1/lmr/m/n/10 (-20) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gaml.architecture.simplebdi.MentalState> 
  []
 
-[209]
+
 Overfull \hbox (77.344pt too wide) in paragraph at lines 12724--12725
 []\T1/lmtt/b/n/10 get_desires_op \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 agent \T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 predicate\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gaml.architecture.simplebdi.MentalState> 
  []
 
-
+[203]
 Overfull \hbox (101.30478pt too wide) in paragraph at lines 12750--12752
 []\T1/lmtt/m/n/10 agent \T1/lmtt/b/n/10 get_desires_with_name_op \T1/lmtt/m/n/10 string \T1/lmr/m/n/10 (-20) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gaml.architecture.simplebdi.MentalState> 
  []
@@ -2124,7 +2640,7 @@ Overfull \hbox (114.09389pt too wide) in paragraph at lines 12752--12753
 []\T1/lmtt/b/n/10 get_desires_with_name_op \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 agent \T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 string\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gaml.architecture.simplebdi.MentalState> 
  []
 
-[210] [211]
+[204]
 Overfull \hbox (59.3049pt too wide) in paragraph at lines 12886--12888
 []\T1/lmtt/m/n/10 agent \T1/lmtt/b/n/10 get_ideals_op \T1/lmtt/m/n/10 predicate \T1/lmr/m/n/10 (-20) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gaml.architecture.simplebdi.MentalState> 
  []
@@ -2134,7 +2650,7 @@ Overfull \hbox (72.09401pt too wide) in paragraph at lines 12888--12889
 []\T1/lmtt/b/n/10 get_ideals_op \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 agent \T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 predicate\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gaml.architecture.simplebdi.MentalState> 
  []
 
-
+[205]
 Overfull \hbox (96.0548pt too wide) in paragraph at lines 12914--12916
 []\T1/lmtt/m/n/10 agent \T1/lmtt/b/n/10 get_ideals_with_name_op \T1/lmtt/m/n/10 string \T1/lmr/m/n/10 (-20) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gaml.architecture.simplebdi.MentalState> 
  []
@@ -2144,7 +2660,7 @@ Overfull \hbox (108.8439pt too wide) in paragraph at lines 12916--12917
 []\T1/lmtt/b/n/10 get_ideals_with_name_op \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 agent \T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 string\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gaml.architecture.simplebdi.MentalState> 
  []
 
-[212] [213]
+[206]
 Overfull \hbox (80.30484pt too wide) in paragraph at lines 13024--13026
 []\T1/lmtt/m/n/10 agent \T1/lmtt/b/n/10 get_intentions_op \T1/lmtt/m/n/10 predicate \T1/lmr/m/n/10 (-20) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gaml.architecture.simplebdi.MentalState> 
  []
@@ -2164,12 +2680,12 @@ Overfull \hbox (129.84384pt too wide) in paragraph at lines 13054--13055
 []\T1/lmtt/b/n/10 get_intentions_with_name_op \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 agent \T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 string\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gaml.architecture.simplebdi.MentalState> 
  []
 
-[214] [215]
+[207] [208]
 Overfull \hbox (85.55482pt too wide) in paragraph at lines 13216--13218
 []\T1/lmtt/m/n/10 agent \T1/lmtt/b/n/10 get_obligations_op \T1/lmtt/m/n/10 predicate \T1/lmr/m/n/10 (-20) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gaml.architecture.simplebdi.MentalState> 
  []
 
-
+[209]
 Overfull \hbox (98.34393pt too wide) in paragraph at lines 13218--13219
 []\T1/lmtt/b/n/10 get_obligations_op \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 agent \T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 predicate\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gaml.architecture.simplebdi.MentalState> 
  []
@@ -2179,12 +2695,12 @@ Overfull \hbox (122.30472pt too wide) in paragraph at lines 13244--13246
 []\T1/lmtt/m/n/10 agent \T1/lmtt/b/n/10 get_obligations_with_name_op \T1/lmtt/m/n/10 string \T1/lmr/m/n/10 (-20) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gaml.architecture.simplebdi.MentalState> 
  []
 
-[216]
+
 Overfull \hbox (135.09383pt too wide) in paragraph at lines 13246--13247
 []\T1/lmtt/b/n/10 get_obligations_with_name_op \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 agent \T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 string\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gaml.architecture.simplebdi.MentalState> 
  []
 
-[217] [218]
+[210] [211]
 Overfull \hbox (96.0548pt too wide) in paragraph at lines 13430--13432
 []\T1/lmtt/m/n/10 agent \T1/lmtt/b/n/10 get_uncertainties_op \T1/lmtt/m/n/10 predicate \T1/lmr/m/n/10 (-20) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gaml.architecture.simplebdi.MentalState> 
  []
@@ -2199,12 +2715,37 @@ Overfull \hbox (132.80469pt too wide) in paragraph at lines 13458--13460
 []\T1/lmtt/m/n/10 agent \T1/lmtt/b/n/10 get_uncertainties_with_name_op \T1/lmtt/m/n/10 string \T1/lmr/m/n/10 (-20) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gaml.architecture.simplebdi.MentalState> 
  []
 
-
+[212]
 Overfull \hbox (145.5938pt too wide) in paragraph at lines 13460--13461
 []\T1/lmtt/b/n/10 get_uncertainties_with_name_op \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 agent \T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 string\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gaml.architecture.simplebdi.MentalState> 
  []
 
-[219] [220] [221] [222] [223] [224] [225] [226] [227] [228]
+[213] [214]
+Overfull \hbox (65.74342pt too wide) in paragraph at lines 13694--13694
+[]\T1/lmtt/m/n/10 agent var0 <- grid_cell grid_at {1,2}; // var0 equals the agent grid_cell with grid_x=1 and grid_y = 2[] 
+ []
+
+[215] [216]
+Overfull \hbox (91.99335pt too wide) in paragraph at lines 13785--13785
+[]\T1/lmtt/m/n/10 map var0 <- [1,2,3,4,5,6,7,8] group_by (each > 3); // var0 equals [false::[1, 2, 3], true::[4, 5, 6, 7, 8]][] 
+ []
+
+
+Overfull \hbox (322.99268pt too wide) in paragraph at lines 13785--13785
+[]\T1/lmtt/m/n/10 map var1 <- g2 group_by (length(g2 out_edges_of each) ); // var1 equals [ 0::[node9, node7, node10, node8, node11], 1::[node6], 2::[node5], 3::[node4]][] 
+ []
+
+
+Overfull \hbox (286.24278pt too wide) in paragraph at lines 13785--13785
+[]\T1/lmtt/m/n/10 map var2 <- (list(node) group_by (round(node(each).location.x)); // var2 equals [32::[node5], 21::[node1], 4::[node0], 66::[node2], 96::[node3]][] 
+ []
+
+
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 13785--13785
+[]\T1/lmtt/m/n/10 map<bool,list> var3 <- [1::2, 3::4, 5::6] group_by (each > 4); // var3 equals [false::[2, 4], true::[6]][] 
+ []
+
+[217] [218] [219] [220] [221]
 Underfull \hbox (badness 10000) in paragraph at lines 14201--14203
 
  []
@@ -2214,19 +2755,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 14203--14205
 
  []
 
-[229] [230]
+
+Overfull \hbox (60.49344pt too wide) in paragraph at lines 14216--14216
+[]\T1/lmtt/m/n/10 geometry var0 <- hexagon(10); // var0 equals a geometry as a hexagon of width of 10 and height of 10.[] 
+ []
+
+
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 14216--14216
+[]\T1/lmtt/m/n/10 geometry var1 <- hexagon({10,5}); // var1 equals a geometry as a hexagon of width of 10 and height of 5.[] 
+ []
+
+
+Overfull \hbox (65.74342pt too wide) in paragraph at lines 14216--14216
+[]\T1/lmtt/m/n/10 geometry var2 <- hexagon(10,5); // var2 equals a geometry as a hexagon of width of 10 and height of 5.[] 
+ []
+
+[222]
+Overfull \hbox (328.24266pt too wide) in paragraph at lines 14255--14255
+[]\T1/lmtt/m/n/10 list var0 <- [ag1, ag2, ag3, ag4, ag5] hierarchical_clustering 20.0; // var0 equals for example, can return [[[ag1],[ag3]], [ag2], [[[ag4],[ag5]],[ag6]][] 
+ []
+
+
 Overfull \hbox (174.95483pt too wide) in paragraph at lines 14273--14274
 []\T1/lmtt/b/n/10 horizontal \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 msi.gama.util.GamaMap<java.lang.Object,java.lang.Integer>\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gama.util.tree.GamaNode<java.lang.String> 
  []
 
-[231] [232]
+[223] [224]
 Chapter 13.
 
 Underfull \vbox (badness 2809) has occurred while \output is active []
 
- [233
+ [225
 
-] [234]
+] [226]
 Underfull \hbox (badness 1226) in paragraph at lines 14456--14457
 []\T1/lmr/m/n/10 (+20) get_beliefs_op[], []get_beliefs_with_name_op[], []get_current_intention_op[], []get_decay[], []get_desire_op[],
  []
@@ -2246,32 +2807,42 @@ Underfull \hbox (badness 4229) in paragraph at lines 14456--14457
 []\T1/lmr/m/n/10 (+20) get_uncertainty_op[], []get_uncertainty_with_name_op[], []has_belief_op[], []has_belief_with_name_op[],
  []
 
-[235]
+[227]
 Underfull \hbox (badness 6284) in paragraph at lines 14517--14518
 []\T1/lmr/m/n/10 (+20) binomial_coeff[], []bi-no-mial_complemented[], []bi-no-mial_sum[], []chi_square[], []chi_square_complemented[],
  []
 
-[236]
+[228]
 Underfull \hbox (badness 4217) in paragraph at lines 14573--14574
 []\T1/lmr/m/n/10 (+20) add_edge[], []add_node[], []ad-ja-cency[], []agent_from_geometry[], []all_pairs_shortest_path[], []al-pha_index[],
  []
 
-[237] [238]
+[229] [230]
 Underfull \hbox (badness 4608) in paragraph at lines 14678--14679
 []\T1/lmr/m/n/10 (+20) -[], []*[], []+[], []add_point[], []agent_closest_to[], []agent_farthest_to[], []agents_at_distance[], []agents_inside[],
  []
 
-[239]
+[231]
 Underfull \hbox (badness 2020) in paragraph at lines 14713--14714
 []\T1/lmr/m/n/10 (+20) to_GAMA_CRS[], []to_rectangles[], []to_squares[], []to_sub_geometries[], []trans-formed_by[], []trans-lated_by[],
  []
 
-[240] [241] [242]
+[232] [233]
+Overfull \hbox (569.74196pt too wide) in paragraph at lines 14792--14792
+[]\T1/lmtt/m/n/10 map<agent,float> var0 <- IDW([ag1, ag2, ag3, ag4, ag5],[{10,10}::25.0, {10,80}::10.0, {100,10}::15.0], 2); // var0 equals for example, can return [ag1::12.0, ag2::23.0,ag3::12.0,ag4::14.0,ag5::17.0][] 
+ []
+
+[234]
 Underfull \hbox (badness 10000) in paragraph at lines 14876--14878
 
  []
 
-[243] [244] [245]
+[235] [236] [237]
+Overfull \hbox (128.74324pt too wide) in paragraph at lines 15084--15084
+[]\T1/lmtt/m/n/10 map var0 <- [1,2,3,4,5,6,7,8] index_by (each - 1); // var0 equals [0::1, 1::2, 2::3, 3::4, 4::5, 5::6, 6::7, 7::8][] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 15135--15137
 
  []
@@ -2281,7 +2852,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 15137--15139
 
  []
 
-[246] [247]
+[238]
+Overfull \hbox (364.99255pt too wide) in paragraph at lines 15211--15211
+[]\T1/lmtt/m/n/10 list<geometry> var0 <- [ag1, ag2, ag3] inside(self); // var0 equals the agents among ag1, ag2 and ag3 that are covered by the shape of the right-hand argument.[] 
+ []
+
+
+Overfull \hbox (469.99225pt too wide) in paragraph at lines 15211--15211
+[]\T1/lmtt/m/n/10 list<geometry> var1 <- (species1 + species2) inside (self); // var1 equals the agents among species species1 and species2 that are covered by the shape of the right-hand argument.[] 
+ []
+
+[239]
 Underfull \hbox (badness 10000) in paragraph at lines 15274--15276
 
  []
@@ -2291,12 +2872,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 15276--15278
 
  []
 
-[248] [249] [250] [251] [252] [253] [254] [255] [256] [257] [258] [259] [260]
+[240]
+Overfull \hbox (359.74257pt too wide) in paragraph at lines 15344--15344
+[]\T1/lmtt/m/n/10 list var1 <- interleave([[\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 e11\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 e12\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 e13\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ],[\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 e21\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 e22\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 e23\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ],[\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 e31\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 e32\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 e33\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ]]); // var1 equals [\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 e11\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 e21\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 e31\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 e12\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 e22\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 e32\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 e13\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 e23\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 e33\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ][] 
+ []
+
+[241] [242]
+Overfull \hbox (55.24345pt too wide) in paragraph at lines 15497--15497
+[]\T1/lmtt/m/n/10 matrix<float> var0 <- inverse(matrix([[4,3],[3,2]])); // var0 equals matrix([[-2.0,3.0],[3.0,-4.0]])[] 
+ []
+
+[243] [244] [245] [246] [247] [248] [249] [250]
+Overfull \hbox (485.7422pt too wide) in paragraph at lines 16121--16121
+[]\T1/lmtt/m/n/10 kappa([cat1,cat1,cat2,cat3,cat2],[cat2,cat1,cat2,cat1,cat2],[cat1,cat2,cat3], [1.0, 2.0, 3.0, 1.0, 5.0]) kappa([cat1,cat1,cat2,cat3,cat2],[cat2,cat1,cat2,cat1,cat2],[cat1,cat2,cat3])[] 
+ []
+
+
+Overfull \hbox (49.99347pt too wide) in paragraph at lines 16121--16121
+[]\T1/lmtt/m/n/10 float var2 <- kappa([1,3,5,1,5],[1,1,1,1,5],[1,3,5]); // var2 equals the similarity between 0 and 1[] 
+ []
+
+[251]
+Overfull \hbox (774.49136pt too wide) in paragraph at lines 16150--16150
+[]\T1/lmtt/m/n/10 kappa([cat1,cat1,cat2,cat2,cat2],[cat2,cat1,cat2,cat1,cat3],[cat2,cat1,cat2,cat3,cat3], [cat1,cat2,cat3]) kappa([cat1,cat1,cat2,cat2,cat2],[cat2,cat1,cat2,cat1,cat3],[cat2,cat1,cat2,cat3,cat3], [cat1,cat2,cat3],[1.0, 2.0, 3.0, 1.0, 5.0])[] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 16182--16184
 
  []
 
-[261]
+[252] [253]
 Underfull \hbox (badness 10000) in paragraph at lines 16310--16312
 
  []
@@ -2326,17 +2932,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 16320--16322
 
  []
 
-[262]
+
 Underfull \hbox (badness 10000) in paragraph at lines 16322--16324
 
  []
 
-
+[254]
 Underfull \hbox (badness 10000) in paragraph at lines 16396--16398
 
  []
 
-[263]
+[255]
 Underfull \hbox (badness 10000) in paragraph at lines 16484--16486
 
  []
@@ -2346,7 +2952,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 16486--16488
 
  []
 
-[264] [265]
+
+Overfull \hbox (7.99359pt too wide) in paragraph at lines 16495--16495
+[]\T1/lmtt/m/n/10 unknown var5 <- [1::2, 3::4, 5::6].pairs last_with (each.value >= 4); // var5 equals (5::6)[] 
+ []
+
+
+Overfull \hbox (28.99353pt too wide) in paragraph at lines 16505--16505
+[]\T1/lmtt/m/n/10 unknown var3 <- (list(node) last_with (round(node(each).location.x) > 32); // var3 equals node3[] 
+ []
+
+[256]
 Underfull \hbox (badness 10000) in paragraph at lines 16569--16571
 
  []
@@ -2356,12 +2972,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 16571--16573
 
  []
 
-
+[257]
 Underfull \hbox (badness 10000) in paragraph at lines 16641--16643
 
  []
 
-[266]
+
 Underfull \hbox (badness 10000) in paragraph at lines 16643--16645
 
  []
@@ -2376,7 +2992,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 16647--16649
 
  []
 
-[267] [268] [269]
+
+Overfull \hbox (186.49307pt too wide) in paragraph at lines 16655--16655
+[]\T1/lmtt/m/n/10 geometry var1 <- polyline([{0,0}, {0,10}, {10,10}, {10,0}],0.2); // var1 equals a polyline geometry composed of the 4 points.[] 
+ []
+
+
+Overfull \hbox (165.49313pt too wide) in paragraph at lines 16663--16663
+[]\T1/lmtt/m/n/10 geometry var0 <- polyline([{0,0}, {0,10}, {10,10}, {10,0}]); // var0 equals a polyline geometry composed of the 4 points.[] 
+ []
+
+[258]
+Overfull \hbox (13.24358pt too wide) in paragraph at lines 16711--16711
+[]\T1/lmtt/m/n/10 geometry var0 <- link (geom1,geom2); // var0 equals a link geometry between geom1 and geom2.[] 
+ []
+
+[259] [260]
 Underfull \hbox (badness 10000) in paragraph at lines 16859--16861
 
  []
@@ -2391,7 +3022,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 16863--16865
 
  []
 
-
+[261]
 Underfull \hbox (badness 10000) in paragraph at lines 16865--16867
 
  []
@@ -2411,16 +3042,65 @@ Underfull \hbox (badness 10000) in paragraph at lines 16871--16873
 
  []
 
-[270]
+
 Underfull \hbox (badness 10000) in paragraph at lines 16873--16875
 
  []
 
-[271] [272] [273] [274]
+
+Overfull \hbox (422.74239pt too wide) in paragraph at lines 16880--16880
+[]\T1/lmtt/m/n/10 graph<myVertexSpecy,myEdgeSpecy> myGraph <- load_graph_from_file(           "pajek",            "./example_of_Pajek_file",          myVertexSpecy,          myEdgeSpecy );[] 
+ []
+
+
+Overfull \hbox (165.49313pt too wide) in paragraph at lines 16890--16890
+[]\T1/lmtt/m/n/10 graph<myVertexSpecy,myEdgeSpecy> myGraph <- load_graph_from_file(           "pajek",            "example_of_Pajek_file");[] 
+ []
+
+
+Overfull \hbox (165.49313pt too wide) in paragraph at lines 16900--16900
+[]\T1/lmtt/m/n/10 graph<myVertexSpecy,myEdgeSpecy> myGraph <- load_graph_from_file(           "pajek",            "example_of_Pajek_file");[] 
+ []
+
+
+Overfull \hbox (165.49313pt too wide) in paragraph at lines 16910--16910
+[]\T1/lmtt/m/n/10 graph<myVertexSpecy,myEdgeSpecy> myGraph <- load_graph_from_file(           "pajek",            "example_of_Pajek_file");[] 
+ []
+
+
+Overfull \hbox (422.74239pt too wide) in paragraph at lines 16920--16920
+[]\T1/lmtt/m/n/10 graph<myVertexSpecy,myEdgeSpecy> myGraph <- load_graph_from_file(           "pajek",            "example_of_Pajek_file",            myVertexSpecy,          myEdgeSpecy );[] 
+ []
+
+
+Overfull \hbox (1357.23967pt too wide) in paragraph at lines 16927--16927
+[]\T1/lmtt/m/n/10 graph<myVertexSpecy,myEdgeSpecy> myGraph <- load_graph_from_file(           "pajek",            "./example_of_Pajek_file",          myVertexSpecy,          myEdgeSpecy); graph<myVertexSpecy,myEdgeSpecy> myGraph <- load_graph_from_file(             "pajek",            "./example_of_Pajek_file",          myVertexSpecy,          myEdgeSpecy , true);[] 
+ []
+
+
+Overfull \hbox (186.49307pt too wide) in paragraph at lines 16956--16956
+[]\T1/lmtt/m/n/10 graph var0 <- load_shortest_paths(shortest_paths_matrix); // var0 equals return my_graph with all the shortest paths computed[] 
+ []
+
+[262] [263]
+Overfull \hbox (254.74287pt too wide) in paragraph at lines 17104--17104
+[]\T1/lmtt/m/n/10 graph var0 <- main_connected_component(my_graph); // var0 equals the sub-graph corresponding to the main connected components of the graph[] 
+ []
+
+[264]
+Overfull \hbox (616.99182pt too wide) in paragraph at lines 17155--17155
+[]\T1/lmtt/m/n/10 geometry var0 <- perception_geom masked_by obstacle_list; // var0 equals the geometry representing the part of perception_geom visible from the agent position considering the list of obstacles obstacle_list.[] 
+ []
+
+
+Overfull \hbox (616.99182pt too wide) in paragraph at lines 17155--17155
+[]\T1/lmtt/m/n/10 geometry var1 <- perception_geom masked_by obstacle_list; // var1 equals the geometry representing the part of perception_geom visible from the agent position considering the list of obstacles obstacle_list.[] 
+ []
+
 
 Package hyperref Warning: Suppressing empty link on input line 17188.
 
-[275]
+[265] [266]
 Underfull \hbox (badness 10000) in paragraph at lines 17289--17291
 
  []
@@ -2455,17 +3135,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 17301--17303
 
  []
 
-[276]
+
 Overfull \hbox (75.03844pt too wide) in paragraph at lines 17338--17339
 []\T1/lmtt/b/n/10 max_flow_between \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 graph\T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 unknown\T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 unknown\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gama.util.GamaMap<java.lang.Object,java.lang.Double> 
  []
 
-
+[267]
 Underfull \hbox (badness 10000) in paragraph at lines 17385--17387
 
  []
 
-[277] [278] [279] [280] [281] [282]
+
+Overfull \hbox (238.99292pt too wide) in paragraph at lines 17403--17403
+[]\T1/lmtt/m/n/10 unknown var0 <- [1,2,4,3,5,7,6,8] max_of (each * 100 ); // var0 equals 800graph g2 <- as_edge_graph([{1,5}::{12,45},{12,45}::{34,56}]);[] 
+ []
+
+[268]
+Overfull \hbox (97.24333pt too wide) in paragraph at lines 17435--17435
+[]\T1/lmtt/m/n/10 list<list> var1 <- maximal_cliques_of (my_graph); // var1 equals the list of all the maximal cliques as list[] 
+ []
+
+[269] [270] [271] [272]
+Overfull \hbox (49.99347pt too wide) in paragraph at lines 17711--17711
+[]\T1/lmtt/m/n/10 float var0 <- milliseconds_between(date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2000-01-01\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ), date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2000-02-01\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 )); // var0 equals 2.6784E9[] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 17743--17745
 
  []
@@ -2505,17 +3200,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 17757--17759
 
  []
 
-[283]
+[273]
 Underfull \hbox (badness 10000) in paragraph at lines 17804--17806
 
  []
 
-[284] [285] [286]
+
+Overfull \hbox (238.99292pt too wide) in paragraph at lines 17822--17822
+[]\T1/lmtt/m/n/10 unknown var0 <- [1,2,4,3,5,7,6,8] min_of (each * 100 ); // var0 equals 100graph g2 <- as_edge_graph([{1,5}::{12,45},{12,45}::{34,56}]);[] 
+ []
+
+[274]
+Overfull \hbox (7.99359pt too wide) in paragraph at lines 17885--17885
+[]\T1/lmtt/m/n/10 date var1 <- date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2000-01-01\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ) minus_hours 15 ; // var1 equals date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 1999-12-31 09:00:00\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 )[] 
+ []
+
+[275]
+Overfull \hbox (13.24358pt too wide) in paragraph at lines 17914--17914
+[]\T1/lmtt/m/n/10 date var1 <- date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2000-01-01\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ) minus_minutes 5 ; // var1 equals date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 1999-12-31 23:55:00\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 )[] 
+ []
+
+
+Overfull \hbox (2.7436pt too wide) in paragraph at lines 17972--17972
+[]\T1/lmtt/m/n/10 date var1 <- date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2000-01-01\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ) minus_ms 1000 ; // var1 equals date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 1999-12-31 23:59:59\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 )[] 
+ []
+
+[276]
 Underfull \hbox (badness 10000) in paragraph at lines 18066--18068
 
  []
 
-[287] [288]
+[277] [278]
+Overfull \hbox (13.24358pt too wide) in paragraph at lines 18160--18160
+[]\T1/lmtt/m/n/10 float var0 <- moran([1.0, 0.5, 2.0], weight_matrix); // var0 equals the Moran index computed[] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 18192--18194
 
  []
@@ -2555,14 +3275,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 18206--18208
 
  []
 
-[289] [290
-
-]
+[279] [280]
 Chapter 14.
 
 Underfull \vbox (badness 2809) has occurred while \output is active []
 
- [291] [292]
+ [281
+
+] [282]
 Underfull \hbox (badness 1226) in paragraph at lines 18323--18324
 []\T1/lmr/m/n/10 (+20) get_beliefs_op[], []get_beliefs_with_name_op[], []get_current_intention_op[], []get_decay[], []get_desire_op[],
  []
@@ -2582,37 +3302,107 @@ Underfull \hbox (badness 4229) in paragraph at lines 18323--18324
 []\T1/lmr/m/n/10 (+20) get_uncertainty_op[], []get_uncertainty_with_name_op[], []has_belief_op[], []has_belief_with_name_op[],
  []
 
-[293]
+[283]
 Underfull \hbox (badness 6284) in paragraph at lines 18384--18385
 []\T1/lmr/m/n/10 (+20) binomial_coeff[], []bi-no-mial_complemented[], []bi-no-mial_sum[], []chi_square[], []chi_square_complemented[],
  []
 
-[294]
+[284]
 Underfull \hbox (badness 4217) in paragraph at lines 18440--18441
 []\T1/lmr/m/n/10 (+20) add_edge[], []add_node[], []ad-ja-cency[], []agent_from_geometry[], []all_pairs_shortest_path[], []al-pha_index[],
  []
 
-[295] [296]
+[285] [286]
 Underfull \hbox (badness 4608) in paragraph at lines 18545--18546
 []\T1/lmr/m/n/10 (+20) -[], []*[], []+[], []add_point[], []agent_closest_to[], []agent_farthest_to[], []agents_at_distance[], []agents_inside[],
  []
 
-[297]
+[287]
 Underfull \hbox (badness 2020) in paragraph at lines 18580--18581
 []\T1/lmr/m/n/10 (+20) to_GAMA_CRS[], []to_rectangles[], []to_squares[], []to_sub_geometries[], []trans-formed_by[], []trans-lated_by[],
  []
 
-[298] [299] [300] [301]
+[288] [289]
+Overfull \hbox (301.99274pt too wide) in paragraph at lines 18698--18698
+[]\T1/lmtt/m/n/10 list var0 <- (self neighbors_at (10)); // var0 equals all the agents located at a distance lower or equal to 10 to the agent applying the operator.[] 
+ []
+
+[290]
+Overfull \hbox (506.74214pt too wide) in paragraph at lines 18744--18744
+[]\T1/lmtt/m/n/10 list var3 <- neighbors_of (topology(self), self,10); // var3 equals all the agents located at a distance lower or equal to 10 to the agent applying the operator considering its topology.[] 
+ []
+
+
+Overfull \hbox (13.24358pt too wide) in paragraph at lines 18754--18754
+[]\T1/lmtt/m/n/10 list var1 <- graphFromMap neighbors_of node({12,45}); // var1 equals [{1.0,5.0},{34.0,56.0}][] 
+ []
+
+
+Overfull \hbox (511.99213pt too wide) in paragraph at lines 18754--18754
+[]\T1/lmtt/m/n/10 list var2 <- topology(self) neighbors_of self; // var2 equals returns all the agents located at a distance lower or equal to 1 to the agent applying the operator considering its topology.[] 
+ []
+
+[291]
+Overfull \hbox (1194.49014pt too wide) in paragraph at lines 18824--18824
+[]\T1/lmtt/m/n/10 emotion("joy",12.3,eatFood,4) emotion("joy",12.3,eatFood,4) emotion("joy",12.3,eatFood,4) emotion("joy",eatFood) emotion("joy",12.3,eatFood,4) emotion("joy",12.3,4) emotion("joy",12.3,eatFood,4) emotion("joy",12.3,eatFood,4) emotion("joy",12.3,eatFood,4) emotion("joy",12.3) emotion("joy") emotion("joy",12.3,eatFood)[] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 18851--18853
 
  []
 
-[302] [303] [304]
+
+Overfull \hbox (532.99207pt too wide) in paragraph at lines 18861--18861
+[]\T1/lmtt/m/n/10 file dirNewT <- new_folder("incl/");    // dirNewT represents the repository "../incl/"                                                             // eventually creates the directory ../incl[] 
+ []
+
+[292]
+Overfull \hbox (2806.23546pt too wide) in paragraph at lines 18970--18970
+[]\T1/lmtt/m/n/10 new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief) new_mental-state(belief)[] 
+ []
+
+[293]
+Overfull \hbox (2333.73683pt too wide) in paragraph at lines 19037--19037
+[]\T1/lmtt/m/n/10 predicate("people to meet", ["time"::10], true, agentA) predicate("people to meet", ["time"::10], true) predicate("people to meet") predicate("people to meet", ["time"::10], 10,true) predicate("hasWater", 10  predicate("people to meet", ["time"::10], 10, true, agentA) predicate("people to meet", ["time"::10], true) predicate("people to meet", ["time"::10], agentA) predicate("people to meet", ["time"::10], true) predicate("people to meet", people1 ) predicate("people to meet", ["time"::10], 10, agentA) predicate("hasWater", true)[] 
+ []
+
+
 Overfull \hbox (38.12186pt too wide) in paragraph at lines 19052--19053
 []\T1/lmtt/b/n/10 new_social_link \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 agent\T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 float\T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 float\T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 float\T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 float\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink 
  []
 
-[305] [306] [307] [308]
+[294] [295] [296]
+Overfull \hbox (223.24297pt too wide) in paragraph at lines 19266--19266
+[]\T1/lmtt/m/n/10 list var2 <- [sous_test(0),sous_test(1),test(2),test(3)] of_generic_species test; // var2 equals [sous_test0,sous_test1,test2,test3][] 
+ []
+
+
+Overfull \hbox (186.49307pt too wide) in paragraph at lines 19266--19266
+[]\T1/lmtt/m/n/10 list var3 <- [sous_test(0),sous_test(1),test(2),test(3)] of_generic_species sous_test; // var3 equals [sous_test0,sous_test1][] 
+ []
+
+
+Overfull \hbox (65.74342pt too wide) in paragraph at lines 19266--19266
+[]\T1/lmtt/m/n/10 list var4 <- [sous_test(0),sous_test(1),test(2),test(3)] of_species test; // var4 equals [test2,test3][] 
+ []
+
+
+Overfull \hbox (144.4932pt too wide) in paragraph at lines 19266--19266
+[]\T1/lmtt/m/n/10 list var5 <- [sous_test(0),sous_test(1),test(2),test(3)] of_species sous_test; // var5 equals [sous_test0,sous_test1][] 
+ []
+
+[297]
+Overfull \hbox (196.99304pt too wide) in paragraph at lines 19310--19310
+[]\T1/lmtt/m/n/10 list var0 <- (self neighbors_at 10) of_species (species (self)); // var0 equals all the neighboring agents of the same species.[] 
+ []
+
+
+Overfull \hbox (13.24358pt too wide) in paragraph at lines 19310--19310
+[]\T1/lmtt/m/n/10 list var1 <- [test(0),test(1),node(1),node(2)] of_species test; // var1 equals [test0,test1][] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 19347--19349
 
  []
@@ -2622,24 +3412,174 @@ Underfull \hbox (badness 10000) in paragraph at lines 19349--19351
 
  []
 
-[309] [310]
+
+Overfull \hbox (422.74239pt too wide) in paragraph at lines 19366--19366
+[]\T1/lmtt/m/n/10 i <- any ([1,2,3]); //i equals 1, 2 or 3string sMat <- one_of(matrix([["c11","c12","c13"],["c21","c22","c23"]]));   // sMat equals "c11","c12","c13", "c21","c22" or "c23"[] 
+ []
+
+[298]
+Overfull \hbox (86.74336pt too wide) in paragraph at lines 19387--19387
+[]\T1/lmtt/m/n/10 bug b <- one_of(bug);   // Given a previously defined species bug, b is one of the created bugs, e.g. bug3[] 
+ []
+
+[299]
 Underfull \hbox (badness 10000) in paragraph at lines 19515--19517
 
  []
 
-[311] [312]
+
+Overfull \hbox (485.7422pt too wide) in paragraph at lines 19525--19525
+[]\T1/lmtt/m/n/10 file myOSMfile2 <- osm_file("../includes/rouen.osm",["highway"::["primary","motorway"]], 0); file myOSMfile <- osm_file("../includes/rouen.osm", ["highway"::["primary","motorway"]]);[] 
+ []
+
+[300] [301]
+Overfull \hbox (632.74178pt too wide) in paragraph at lines 19627--19627
+[]\T1/lmtt/m/n/10 list<geometry> var0 <- [ag1, ag2, ag3] overlapping(self); // var0 equals return the agents among ag1, ag2 and ag3 that overlap the shape of the agent applying the operator.(species1 + species2) overlapping self[] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 19661--19663
 
  []
 
-[313] [314]
+
+Overfull \hbox (44.74348pt too wide) in paragraph at lines 19680--19680
+[]\T1/lmtt/m/n/10 bool var0 <- polyline([{10,10},{20,20}]) overlaps polyline([{15,15},{25,25}]); // var0 equals true[] 
+ []
+
+[302]
+Overfull \hbox (202.24303pt too wide) in paragraph at lines 19680--19680
+[]\T1/lmtt/m/n/10 bool var1 <- polygon([{10,10},{10,20},{20,20},{20,10}]) overlaps polygon([{15,15},{15,25},{25,25},{25,15}]); // var1 equals true[] 
+ []
+
+
+Overfull \hbox (23.74355pt too wide) in paragraph at lines 19680--19680
+[]\T1/lmtt/m/n/10 bool var2 <- polygon([{10,10},{10,20},{20,20},{20,10}]) overlaps {25,25}; // var2 equals false[] 
+ []
+
+
+Overfull \hbox (207.49301pt too wide) in paragraph at lines 19680--19680
+[]\T1/lmtt/m/n/10 bool var3 <- polygon([{10,10},{10,20},{20,20},{20,10}]) overlaps polygon([{35,35},{35,45},{45,45},{45,35}]); // var3 equals false[] 
+ []
+
+
+Overfull \hbox (123.49326pt too wide) in paragraph at lines 19680--19680
+[]\T1/lmtt/m/n/10 bool var4 <- polygon([{10,10},{10,20},{20,20},{20,10}]) overlaps polyline([{10,10},{20,20}]); // var4 equals true[] 
+ []
+
+
+Overfull \hbox (18.49356pt too wide) in paragraph at lines 19680--19680
+[]\T1/lmtt/m/n/10 bool var5 <- polygon([{10,10},{10,20},{20,20},{20,10}]) overlaps {15,15}; // var5 equals true[] 
+ []
+
+
+Overfull \hbox (186.49307pt too wide) in paragraph at lines 19680--19680
+[]\T1/lmtt/m/n/10 bool var6 <- polygon([{10,10},{10,20},{20,20},{20,10}]) overlaps polygon([{0,0},{0,30},{30,30}, {30,0}]); // var6 equals true[] 
+ []
+
+
+Overfull \hbox (202.24303pt too wide) in paragraph at lines 19680--19680
+[]\T1/lmtt/m/n/10 bool var7 <- polygon([{10,10},{10,20},{20,20},{20,10}]) overlaps polygon([{15,15},{15,25},{25,25},{25,15}]); // var7 equals true[] 
+ []
+
+
+Overfull \hbox (202.24303pt too wide) in paragraph at lines 19680--19680
+[]\T1/lmtt/m/n/10 bool var8 <- polygon([{10,10},{10,20},{20,20},{20,10}]) overlaps polygon([{10,20},{20,20},{20,30},{10,30}]); // var8 equals true[] 
+ []
+
+[303]
+Overfull \hbox (97.24333pt too wide) in paragraph at lines 19755--19755
+[]\T1/lmtt/m/n/10 bool var0 <- polyline([{10,10},{20,20}]) partially_overlaps polyline([{15,15},{25,25}]); // var0 equals true[] 
+ []
+
+
+Overfull \hbox (254.74287pt too wide) in paragraph at lines 19755--19755
+[]\T1/lmtt/m/n/10 bool var1 <- polygon([{10,10},{10,20},{20,20},{20,10}]) partially_overlaps polygon([{15,15},{15,25},{25,25},{25,15}]); // var1 equals true[] 
+ []
+
+
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 19755--19755
+[]\T1/lmtt/m/n/10 bool var2 <- polygon([{10,10},{10,20},{20,20},{20,10}]) partially_overlaps {25,25}; // var2 equals false[] 
+ []
+
+
+Overfull \hbox (259.99286pt too wide) in paragraph at lines 19755--19755
+[]\T1/lmtt/m/n/10 bool var3 <- polygon([{10,10},{10,20},{20,20},{20,10}]) partially_overlaps polygon([{35,35},{35,45},{45,45},{45,35}]); // var3 equals false[] 
+ []
+
+
+Overfull \hbox (181.24309pt too wide) in paragraph at lines 19755--19755
+[]\T1/lmtt/m/n/10 bool var4 <- polygon([{10,10},{10,20},{20,20},{20,10}]) partially_overlaps polyline([{10,10},{20,20}]); // var4 equals false[] 
+ []
+
+
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 19755--19755
+[]\T1/lmtt/m/n/10 bool var5 <- polygon([{10,10},{10,20},{20,20},{20,10}]) partially_overlaps {15,15}; // var5 equals false[] 
+ []
+
+
+Overfull \hbox (244.2429pt too wide) in paragraph at lines 19755--19755
+[]\T1/lmtt/m/n/10 bool var6 <- polygon([{10,10},{10,20},{20,20},{20,10}]) partially_overlaps polygon([{0,0},{0,30},{30,30}, {30,0}]); // var6 equals false[] 
+ []
+
+
+Overfull \hbox (254.74287pt too wide) in paragraph at lines 19755--19755
+[]\T1/lmtt/m/n/10 bool var7 <- polygon([{10,10},{10,20},{20,20},{20,10}]) partially_overlaps polygon([{15,15},{15,25},{25,25},{25,15}]); // var7 equals true[] 
+ []
+
+
+Overfull \hbox (259.99286pt too wide) in paragraph at lines 19755--19755
+[]\T1/lmtt/m/n/10 bool var8 <- polygon([{10,10},{10,20},{20,20},{20,10}]) partially_overlaps polygon([{10,20},{20,20},{20,30},{10,30}]); // var8 equals false[] 
+ []
+
+
 Underfull \hbox (badness 3930) in paragraph at lines 19796--19798
 []\T1/lmtt/m/n/10 msi.gama.util.GamaMap<msi.gama.metamodel.agent.IAgent,java.lang.Object> \T1/lmtt/b/n/10 path_between
  []
 
-[315] [316]
+[304]
+Overfull \hbox (7.99359pt too wide) in paragraph at lines 19834--19834
+[]\T1/lmtt/m/n/10 path var0 <- my_topology path_between (ag1, ag2); // var0 equals A path between ag1 and ag2[] 
+ []
+
+
+Overfull \hbox (328.24266pt too wide) in paragraph at lines 19834--19834
+[]\T1/lmtt/m/n/10 path var1 <- path_between (cell_grid where each.is_free, ag1, ag2); // var1 equals A path between ag1 and ag2 passing through the given cell_grid agents[] 
+ []
+
+
+Overfull \hbox (7.99359pt too wide) in paragraph at lines 19834--19834
+[]\T1/lmtt/m/n/10 path var2 <- my_topology path_between [ag1, ag2]; // var2 equals A path between ag1 and ag2[] 
+ []
+
+
+Overfull \hbox (580.24193pt too wide) in paragraph at lines 19834--19834
+[]\T1/lmtt/m/n/10 path var4 <- path_between (cell_grid as_map (each::each.is_obstacle ? 9999.0 : 1.0), ag1, ag2); // var4 equals A path between ag1 and ag2 passing through the given cell_grid agents with a minimal cost[] 
+ []
+
+
+Overfull \hbox (648.49173pt too wide) in paragraph at lines 19834--19834
+[]\T1/lmtt/m/n/10 path var5 <- path_between (cell_grid as_map (each::each.is_obstacle ? 9999.0 : 1.0), [ag1, ag2, ag3]); // var5 equals A path between ag1 and ag2 and ag3 passing through the given cell_grid agents with minimal cost[] 
+ []
+
+
+Overfull \hbox (406.99243pt too wide) in paragraph at lines 19834--19834
+[]\T1/lmtt/m/n/10 path var6 <- path_between (cell_grid where each.is_free, [ag1, ag2, ag3]); // var6 equals A path between ag1 and ag2 and ag3 passing through the given cell_grid agents[] 
+ []
+
+
+Overfull \hbox (228.49295pt too wide) in paragraph at lines 19872--19872
+[]\T1/lmtt/m/n/10 path var0 <- ag1 path_to ag2; // var0 equals the path between ag1 and ag2 considering the topology of the agent applying the operator[] 
+ []
+
+[305]
 Overfull \hbox (17.2886pt too wide) in paragraph at lines 19890--19891
 []\T1/lmtt/b/n/10 paths_between \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 graph\T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 pair\T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 int\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gama.util.IList<msi.gama.util.path.GamaSpatialPath> 
+ []
+
+
+Overfull \hbox (464.74226pt too wide) in paragraph at lines 19904--19904
+[]\T1/lmtt/m/n/10 msi.gama.util.IList<msi.gama.util.path.GamaSpatialPath> var0 <- paths_between(my_graph, ag1:: ag2, 2); // var0 equals the 2 shortest paths (ordered by length) between ag1 and ag2[] 
  []
 
 
@@ -2647,12 +3587,37 @@ Overfull \hbox (37.3837pt too wide) in paragraph at lines 19939--19940
 \T1/lmr/m/n/10 (-20) percent ab-so-lute de-vi-a-tion in-di-ca-tor for 2 se-ries of val-ues: per-cent_absolute_deviation(list_vals_observe,list_vals_sim) 
  []
 
-[317]
+[306]
 Underfull \hbox (badness 10000) in paragraph at lines 20008--20010
 
  []
 
-[318] [319] [320] [321] [322] [323]
+
+Overfull \hbox (280.9928pt too wide) in paragraph at lines 20019--20019
+[]\T1/lmtt/m/n/10 geometry var0 <- polyplan([{0,0}, {0,10}, {10,10}, {10,0}],10); // var0 equals a polyline geometry composed of the 4 points with a depth of 10.[] 
+ []
+
+[307] [308]
+Overfull \hbox (7.99359pt too wide) in paragraph at lines 20111--20111
+[]\T1/lmtt/m/n/10 date var1 <- date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2000-01-01\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ) plus_minutes 5 ; // var1 equals date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2000-01-01 00:05:00\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 )[] 
+ []
+
+[309] [310]
+Overfull \hbox (391.24248pt too wide) in paragraph at lines 20289--20289
+[]\T1/lmtt/m/n/10 list var0 <-  line([{10,10},{80,80}]) points_along ([0.3, 0.5, 0.9]); // var0 equals the list of following points: [{31.0,31.0,0.0},{45.0,45.0,0.0},{73.0,73.0,0.0}][] 
+ []
+
+[311]
+Overfull \hbox (322.99268pt too wide) in paragraph at lines 20323--20323
+[]\T1/lmtt/m/n/10 list<point> var0 <- 3 points_at(20.0); // var0 equals returns [pt1, pt2, pt3] with pt1, pt2 and pt3 located at a distance of 20.0 to the agent location[] 
+ []
+
+
+Overfull \hbox (286.24278pt too wide) in paragraph at lines 20357--20357
+[]\T1/lmtt/m/n/10 list var0 <-  square(5) points_on(2); // var0 equals a list of points belonging to the exterior ring of the square distant from each other of 2.[] 
+ []
+
+[312]
 Underfull \hbox (badness 10000) in paragraph at lines 20426--20428
 
  []
@@ -2662,7 +3627,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 20428--20430
 
  []
 
-[324]
+
+Overfull \hbox (154.99316pt too wide) in paragraph at lines 20439--20439
+[]\T1/lmtt/m/n/10 geometry var0 <- polygon([{0,0}, {0,10}, {10,10}, {10,0}]); // var0 equals a polygon geometry composed of the 4 points.[] 
+ []
+
+[313]
 Underfull \hbox (badness 10000) in paragraph at lines 20473--20475
 
  []
@@ -2672,12 +3642,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 20475--20477
 
  []
 
-[325] [326]
+
+Overfull \hbox (270.49283pt too wide) in paragraph at lines 20486--20486
+[]\T1/lmtt/m/n/10 geometry var0 <- polyhedron([{0,0}, {0,10}, {10,10}, {10,0}],10); // var0 equals a polygon geometry composed of the 4 points and of depth 10.[] 
+ []
+
+[314] [315]
 Overfull \hbox (168.68657pt too wide) in paragraph at lines 20660--20662
 []\T1/lmtt/m/n/10 msi.gama.util.IList<java.util.List> \T1/lmtt/b/n/10 promethee_DM \T1/lmtt/m/n/10 msi.gama.util.IList<java.util.Map<java.lang.String,java.lang.Object>>
  []
 
-[327]
+
 Overfull \hbox (180.30568pt too wide) in paragraph at lines 20662--20663
 []\T1/lmtt/b/n/10 promethee_DM \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 msi.gama.util.IList<java.util.List> \T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 msi.gama.util.IList<java.util.Map<java.lang.String,java.lang.Object>>\T1/lmr/m/n/10 (-20) )
  []
@@ -2702,22 +3677,62 @@ Underfull \hbox (badness 10000) in paragraph at lines 20668--20669
 \T1/lmr/m/n/10 (+19) c & _searchStrId = 1389284642 & _rerunOrigin = google & _acct = C000050221 & _version = 1 & _urlVersion = 0 &
  []
 
-[328] [329] [330] [331]
+[316]
+Overfull \hbox (847.99115pt too wide) in paragraph at lines 20685--20685
+[]\T1/lmtt/m/n/10 int var0 <- promethee_DM([[1.0, 7.0],[4.0,2.0],[3.0, 3.0]], [["name"::"utility", "weight" :: 2.0,"p"::0.5, "q"::0.0, "s"::1.0, "maximize" :: true],["name"::"price", "weight" :: 1.0,"p"::0.5, "q"::0.0, "s"::1.0, "maximize" :: false]]); // var0 equals 1[] 
+ []
+
+[317] [318] [319] [320]
+Overfull \hbox (291.49277pt too wide) in paragraph at lines 20945--20945
+[]\T1/lmtt/m/n/10 agent_name <- read (\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 name\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ); //agent_name equals reads the \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 name\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 variable of agent then assigns the returned value to the \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 agent_name\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 variable.[] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 20985--20987
 
  []
 
-[332]
+
 Underfull \hbox (badness 10000) in paragraph at lines 20987--20989
 
  []
 
-[333] [334]
+
+Overfull \hbox (91.99335pt too wide) in paragraph at lines 21000--21000
+[]\T1/lmtt/m/n/10 geometry var0 <- rectangle(10, 5); // var0 equals a geometry as a rectangle with width = 10 and height = 5.[] 
+ []
+
+
+Overfull \hbox (422.74239pt too wide) in paragraph at lines 21000--21000
+[]\T1/lmtt/m/n/10 geometry var1 <- rectangle({2.0,6.0}, {6.0,20.0}); // var1 equals a geometry as a rectangle with {2.0,6.0} as the upper-left corner, {6.0,20.0} as the lower-right corner.[] 
+ []
+
+
+Overfull \hbox (102.49332pt too wide) in paragraph at lines 21000--21000
+[]\T1/lmtt/m/n/10 geometry var2 <- rectangle({10, 5}); // var2 equals a geometry as a rectangle with width = 10 and height = 5.[] 
+ []
+
+[321]
+Overfull \hbox (23.74355pt too wide) in paragraph at lines 21072--21072
+[]\T1/lmtt/m/n/10 graph var0 <- node(0) remove_node_from graphEpidemio; // var0 equals the graph without node(0)[] 
+ []
+
+[322]
+Overfull \hbox (233.74294pt too wide) in paragraph at lines 21099--21099
+[]\T1/lmtt/m/n/10 string var0 <- replace(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 to be or not to be,that is the question\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 to\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 do\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ); // var0 equals \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 do be or not do be,that is the question\TS1/lmtt/m/n/10 '[] 
+ []
+
+
+Overfull \hbox (2.7436pt too wide) in paragraph at lines 21131--21131
+[]\T1/lmtt/m/n/10 string var0 <- replace_regex("colour, color", "colou?r", "col"); // var0 equals \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 col, col\TS1/lmtt/m/n/10 '[] 
+ []
+
+[323]
 Underfull \hbox (badness 2189) in paragraph at lines 21168--21169
 []\T1/lmtt/b/n/10 restoreSimulationFromFile \T1/lmr/m/n/10 (+20) (\T1/lmtt/m/n/10 ummisco.gama.serializer.gaml.GamaSavedSimulationFile\T1/lmr/m/n/10 (+20) ) --->
  []
 
-[335]
+
 Underfull \hbox (badness 10000) in paragraph at lines 21210--21212
 
  []
@@ -2732,7 +3747,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 21214--21216
 
  []
 
-[336]
+[324]
+Overfull \hbox (112.99329pt too wide) in paragraph at lines 21233--21233
+[]\T1/lmtt/m/n/10 map<int,string> var1 <- reverse ([\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 k1\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::44, \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 k2\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::32, \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 k3\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::12]); // var1 equals [44::\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 k1\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , 32::\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 k2\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , 12::\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 k3\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ][] 
+ []
+
+
+Overfull \hbox (286.24278pt too wide) in paragraph at lines 21244--21244
+[]\T1/lmtt/m/n/10 container var2 <- reverse(matrix([["c11","c12","c13"],["c21","c22","c23"]])); // var2 equals matrix([["c11","c21"],["c12","c22"],["c13","c23"]])[] 
+ []
+
+[325]
 Underfull \hbox (badness 10000) in paragraph at lines 21332--21334
 
  []
@@ -2752,24 +3777,89 @@ Underfull \hbox (badness 10000) in paragraph at lines 21338--21340
 
  []
 
-[337]
+
 Underfull \hbox (badness 10000) in paragraph at lines 21340--21342
 
  []
 
-[338]
+[326]
 Underfull \hbox (badness 10000) in paragraph at lines 21482--21484
 
  []
 
-[339] [340] [341] [342] [343] [344
+[327]
+Overfull \hbox (39.4935pt too wide) in paragraph at lines 21502--21502
+[]\T1/lmtt/m/n/10 float var2 <- rnd (1000) / 1000; // var2 equals a float between 0 and 1 with a precision of 0.001[] 
+ []
+
+
+Overfull \hbox (23.74355pt too wide) in paragraph at lines 21502--21502
+[]\T1/lmtt/m/n/10 float var3 <- rnd (2.0, 4.0, 0.5); // var3 equals a float number between 2.0 and 4.0 every 0.5[] 
+ []
+
+
+Overfull \hbox (238.99292pt too wide) in paragraph at lines 21502--21502
+[]\T1/lmtt/m/n/10 point var4 <- rnd ({2.0, 4.0}, {2.0, 5.0, 10.0}); // var4 equals a point with x = 2.0, y between 2.0 and 4.0 and z between 0.0 and 10.0[] 
+ []
+
+
+Overfull \hbox (49.99347pt too wide) in paragraph at lines 21502--21502
+[]\T1/lmtt/m/n/10 point var6 <- rnd ({2.5,3, 0.0}); // var6 equals {x,y} with x in [0.0,2.0], y in [0.0,3.0], z = 0.0[] 
+ []
+
+
+Overfull \hbox (333.49265pt too wide) in paragraph at lines 21502--21502
+[]\T1/lmtt/m/n/10 point var8 <- rnd ({2.0, 4.0}, {2.0, 5.0, 10.0}, 1); // var8 equals a point with x = 2.0, y equal to 2.0, 3.0 or 4.0 and z between 0.0 and 10.0 every 1.0[] 
+ []
+
+
+Overfull \hbox (212.743pt too wide) in paragraph at lines 21534--21534
+[]\T1/lmtt/m/n/10 int var0 <- rnd_choice([0.2,0.5,0.3]); // var0 equals 2/10 chances to return 0, 5/10 chances to return 1, 3/10 chances to return 2[] 
+ []
+
+[328]
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 21577--21577
+[]\T1/lmtt/m/n/10 rgb var0 <- rnd_color(255); // var0 equals a random color, equivalent to rgb(rnd(255),rnd(255),rnd(255))[] 
+ []
+
+
+Overfull \hbox (181.24309pt too wide) in paragraph at lines 21577--21577
+[]\T1/lmtt/m/n/10 rgb var1 <- rnd_color(100, 200); // var1 equals a random color, equivalent to rgb(rnd(100, 200),rnd(100, 200),rnd(100, 200))[] 
+ []
+
+[329]
+Overfull \hbox (333.49265pt too wide) in paragraph at lines 21624--21624
+[]\T1/lmtt/m/n/10 geometry var0 <- self rotated_by 45; // var0 equals the geometry resulting from a 45 degrees rotation to the geometry of the agent applying the operator.[] 
+ []
+
+
+Overfull \hbox (553.992pt too wide) in paragraph at lines 21624--21624
+[]\T1/lmtt/m/n/10 geometry var1 <- rotated_by(pyramid(10),45, {1,0,0}); // var1 equals the geometry resulting from a 45 degrees rotation along the {1,0,0} vector to the geometry of the agent applying the operator.[] 
+ []
+
+
+Overfull \hbox (139.24321pt too wide) in paragraph at lines 21672--21672
+[]\T1/lmtt/m/n/10 point var3 <- {12345.78943,  12345.78943, 12345.78943} with_precision 2; // var3 equals {12345.79,12345.79,12345.79}[] 
+ []
+
+[330]
+Overfull \hbox (259.99286pt too wide) in paragraph at lines 21706--21706
+[]\T1/lmtt/m/n/10 list var0 <- matrix([["el11","el12","el13"],["el21","el22","el23"],["el31","el32","el33"]]) row_at 2; // var0 equals ["el13","el23","el33"][] 
+ []
+
+
+Overfull \hbox (553.992pt too wide) in paragraph at lines 21738--21738
+[]\T1/lmtt/m/n/10 list<list> var0 <- rows_list(matrix([["el11","el12","el13"],["el21","el22","el23"],["el31","el32","el33"]])); // var0 equals [["el11","el21","el31"],["el12","el22","el32"],["el13","el23","el33"]][] 
+ []
+
+[331] [332
 
 ]
 Chapter 15.
 
 Underfull \vbox (badness 2809) has occurred while \output is active []
 
- [345] [346]
+ [333] [334]
 Underfull \hbox (badness 1226) in paragraph at lines 21847--21848
 []\T1/lmr/m/n/10 (+20) get_beliefs_op[], []get_beliefs_with_name_op[], []get_current_intention_op[], []get_decay[], []get_desire_op[],
  []
@@ -2789,27 +3879,32 @@ Underfull \hbox (badness 4229) in paragraph at lines 21847--21848
 []\T1/lmr/m/n/10 (+20) get_uncertainty_op[], []get_uncertainty_with_name_op[], []has_belief_op[], []has_belief_with_name_op[],
  []
 
-[347]
+[335]
 Underfull \hbox (badness 6284) in paragraph at lines 21908--21909
 []\T1/lmr/m/n/10 (+20) binomial_coeff[], []bi-no-mial_complemented[], []bi-no-mial_sum[], []chi_square[], []chi_square_complemented[],
  []
 
-[348]
+[336]
 Underfull \hbox (badness 4217) in paragraph at lines 21964--21965
 []\T1/lmr/m/n/10 (+20) add_edge[], []add_node[], []ad-ja-cency[], []agent_from_geometry[], []all_pairs_shortest_path[], []al-pha_index[],
  []
 
-[349] [350]
+[337] [338]
 Underfull \hbox (badness 4608) in paragraph at lines 22069--22070
 []\T1/lmr/m/n/10 (+20) -[], []*[], []+[], []add_point[], []agent_closest_to[], []agent_farthest_to[], []agents_at_distance[], []agents_inside[],
  []
 
-[351]
+[339]
 Underfull \hbox (badness 2020) in paragraph at lines 22104--22105
 []\T1/lmr/m/n/10 (+20) to_GAMA_CRS[], []to_rectangles[], []to_squares[], []to_sub_geometries[], []trans-formed_by[], []trans-lated_by[],
  []
 
-[352] [353] [354] [355]
+[340] [341] [342]
+Overfull \hbox (438.49234pt too wide) in paragraph at lines 22297--22297
+[]\T1/lmtt/m/n/10 geometry var0 <- shape scaled_to {10,10}; // var0 equals a geometry corresponding to the geometry of the agent applying the operator scaled so that it fits a square of 10x10[] 
+ []
+
+[343]
 Overfull \hbox (96.0548pt too wide) in paragraph at lines 22378--22380
 []\T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink \T1/lmtt/b/n/10 set_agent \T1/lmtt/m/n/10 agent \T1/lmr/m/n/10 (-20) ---> \T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink 
  []
@@ -2819,7 +3914,7 @@ Overfull \hbox (108.8439pt too wide) in paragraph at lines 22380--22381
 []\T1/lmtt/b/n/10 set_agent \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink \T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 agent\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink 
  []
 
-[356]
+[344]
 Overfull \hbox (117.05473pt too wide) in paragraph at lines 22467--22469
 []\T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink \T1/lmtt/b/n/10 set_dominance \T1/lmtt/m/n/10 float \T1/lmr/m/n/10 (-20) ---> \T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink 
  []
@@ -2829,7 +3924,7 @@ Overfull \hbox (129.84384pt too wide) in paragraph at lines 22469--22470
 []\T1/lmtt/b/n/10 set_dominance \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink \T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 float\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink 
  []
 
-[357]
+[345]
 Overfull \hbox (127.5547pt too wide) in paragraph at lines 22495--22497
 []\T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink \T1/lmtt/b/n/10 set_familiarity \T1/lmtt/m/n/10 float \T1/lmr/m/n/10 (-20) ---> \T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink 
  []
@@ -2839,7 +3934,7 @@ Overfull \hbox (140.34381pt too wide) in paragraph at lines 22497--22498
 []\T1/lmtt/b/n/10 set_familiarity \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink \T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 float\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink 
  []
 
-[358]
+[346]
 Overfull \hbox (101.30478pt too wide) in paragraph at lines 22579--22581
 []\T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink \T1/lmtt/b/n/10 set_liking \T1/lmtt/m/n/10 float \T1/lmr/m/n/10 (-20) ---> \T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink 
  []
@@ -2849,7 +3944,7 @@ Overfull \hbox (114.09389pt too wide) in paragraph at lines 22581--22582
 []\T1/lmtt/b/n/10 set_liking \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink \T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 float\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink 
  []
 
-[359]
+[347]
 Overfull \hbox (122.30472pt too wide) in paragraph at lines 22663--22665
 []\T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink \T1/lmtt/b/n/10 set_solidarity \T1/lmtt/m/n/10 float \T1/lmr/m/n/10 (-20) ---> \T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink 
  []
@@ -2859,17 +3954,82 @@ Overfull \hbox (135.09383pt too wide) in paragraph at lines 22665--22666
 []\T1/lmtt/b/n/10 set_solidarity \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink \T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 float\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink 
  []
 
-[360]
+
 Overfull \hbox (96.0548pt too wide) in paragraph at lines 22719--22721
 []\T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink \T1/lmtt/b/n/10 set_trust \T1/lmtt/m/n/10 float \T1/lmr/m/n/10 (-20) ---> \T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink 
  []
 
-
+[348]
 Overfull \hbox (108.8439pt too wide) in paragraph at lines 22721--22722
 []\T1/lmtt/b/n/10 set_trust \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink \T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 float\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gaml.architecture.simplebdi.SocialLink 
  []
 
-[361] [362] [363] [364] [365] [366] [367] [368] [369] [370]
+
+Overfull \hbox (154.99316pt too wide) in paragraph at lines 22792--22792
+[]\T1/lmtt/m/n/10 loop i from: 0 to: length(shape.points) - 1{set shape <-  set_z (shape, i, 3.0);} shape <- triangle(3) set_z [5,10,14];[] 
+ []
+
+[349]
+Overfull \hbox (338.74263pt too wide) in paragraph at lines 22853--22853
+[]\T1/lmtt/m/n/10 matrix var0 <- shuffle (matrix([["c11","c12","c13"],["c21","c22","c23"]])); // var0 equals matrix([["c12","c21","c11"],["c13","c22","c23"]]) (for example)[] 
+ []
+
+[350]
+Overfull \hbox (343.99261pt too wide) in paragraph at lines 22916--22916
+[]\T1/lmtt/m/n/10 list<list<agent>> var0 <- [ag1, ag2, ag3, ag4, ag5] simpleClusteringByDistance 20.0; // var0 equals for example, can return [[ag1, ag3], [ag2], [ag4, ag5]][] 
+ []
+
+[351]
+Overfull \hbox (669.49167pt too wide) in paragraph at lines 22989--22989
+[]\T1/lmtt/m/n/10 geometry var0 <- self simplification 0.1; // var0 equals the geometry resulting from the application of the Douglas-Peuker algorithm on the geometry of the agent applying the operator with a tolerance distance of 0.1.[] 
+ []
+
+[352] [353]
+Overfull \hbox (727.2415pt too wide) in paragraph at lines 23095--23095
+[]\T1/lmtt/m/n/10 reflex when: since(starting_date) {}    // this reflex will always be run every(2#days) since (starting_date + 1#day) // the computation will return true 1 day after the starting date and every two days after this reference date[] 
+ []
+
+
+Overfull \hbox (375.49252pt too wide) in paragraph at lines 23136--23136
+[]\T1/lmtt/m/n/10 list<geometry> var0 <- skeletonize(self); // var0 equals the list of geometries corresponding to the skeleton of the geometry of the agent applying the operator.[] 
+ []
+
+
+Overfull \hbox (375.49252pt too wide) in paragraph at lines 23136--23136
+[]\T1/lmtt/m/n/10 list<geometry> var1 <- skeletonize(self); // var1 equals the list of geometries corresponding to the skeleton of the geometry of the agent applying the operator.[] 
+ []
+
+
+Overfull \hbox (375.49252pt too wide) in paragraph at lines 23136--23136
+[]\T1/lmtt/m/n/10 list<geometry> var2 <- skeletonize(self); // var2 equals the list of geometries corresponding to the skeleton of the geometry of the agent applying the operator.[] 
+ []
+
+
+Overfull \hbox (375.49252pt too wide) in paragraph at lines 23136--23136
+[]\T1/lmtt/m/n/10 list<geometry> var3 <- skeletonize(self); // var3 equals the list of geometries corresponding to the skeleton of the geometry of the agent applying the operator.[] 
+ []
+
+[354] [355] [356]
+Overfull \hbox (212.743pt too wide) in paragraph at lines 23355--23355
+[]\T1/lmtt/m/n/10 list var2 <- g2 sort_by (length(g2 out_edges_of each) ); // var2 equals [node9, node7, node10, node8, node11, node6, node5, node4][] 
+ []
+
+
+Overfull \hbox (133.99323pt too wide) in paragraph at lines 23355--23355
+[]\T1/lmtt/m/n/10 list var3 <- (list(node) sort_by (round(node(each).location.x)); // var3 equals [node5, node1, node0, node2, node3][] 
+ []
+
+[357]
+Overfull \hbox (133.99323pt too wide) in paragraph at lines 23399--23399
+[]\T1/lmtt/m/n/10 graph graphEpidemio <- generate_barabasi_albert( ["edges_species"::edge,"vertices_specy"::node,"size"::3,"m"::5] );[] 
+ []
+
+
+Overfull \hbox (275.74281pt too wide) in paragraph at lines 23399--23399
+[]\T1/lmtt/m/n/10 unknown var1 <- graphEpidemio source_of(edge(3)); // var1 equals node1graph graphFromMap <-  as_edge_graph([{1,5}::{12,45},{12,45}::{34,56}]);[] 
+ []
+
+[358]
 Underfull \hbox (badness 10000) in paragraph at lines 23455--23457
 
  []
@@ -2879,22 +4039,72 @@ Underfull \hbox (badness 10000) in paragraph at lines 23457--23459
 
  []
 
-[371]
+
 Underfull \hbox (badness 10000) in paragraph at lines 23459--23461
 
  []
 
-[372] [373] [374]
+[359]
+Overfull \hbox (65.74342pt too wide) in paragraph at lines 23521--23521
+[]\T1/lmtt/m/n/10 geometry var0 <- sphere(10); // var0 equals a geometry as a circle of radius 10 but displays a sphere.[] 
+ []
+
+
+Overfull \hbox (286.24278pt too wide) in paragraph at lines 23588--23588
+[]\T1/lmtt/m/n/10 list<geometry> var0 <- polyline([{1,2},{4,6}]) split_at {7,6}; // var0 equals [polyline([{1.0,2.0},{7.0,6.0}]), polyline([{7.0,6.0},{4.0,6.0}])][] 
+ []
+
+[360]
+Overfull \hbox (490.99219pt too wide) in paragraph at lines 23627--23627
+[]\T1/lmtt/m/n/10 list<geometry> var0 <- to_rectangles(self, {10.0, 15.0}); // var0 equals the list of the geometries corresponding to the decomposition of the geometry by rectangles of size 10.0, 15.0[] 
+ []
+
+
+Overfull \hbox (464.74226pt too wide) in paragraph at lines 23627--23627
+[]\T1/lmtt/m/n/10 list<geometry> var1 <- to_rectangles(self, 10,20); // var1 equals the list of the geometries corresponding to the decomposition of the geometry of the agent applying the operator[] 
+ []
+
+
+Overfull \hbox (412.24242pt too wide) in paragraph at lines 23627--23627
+[]\T1/lmtt/m/n/10 list<geometry> var2 <- to_squares(self, 10.0); // var2 equals the list of the geometries corresponding to the decomposition of the geometry by squares of side size 10.0[] 
+ []
+
+[361]
+Overfull \hbox (748.24144pt too wide) in paragraph at lines 23689--23689
+[]\T1/lmtt/m/n/10 list<geometry> var0 <- split_lines([line([{0,10}, {20,10}]), line([{0,10}, {20,10}])]); // var0 equals a list of four polylines: line([{0,10}, {10,10}]), line([{10,10}, {20,10}]), line([{10,0}, {10,10}]) and line([{10,10}, {10,20}])[] 
+ []
+
+
+Overfull \hbox (748.24144pt too wide) in paragraph at lines 23689--23689
+[]\T1/lmtt/m/n/10 list<geometry> var1 <- split_lines([line([{0,10}, {20,10}]), line([{0,10}, {20,10}])]); // var1 equals a list of four polylines: line([{0,10}, {10,10}]), line([{10,10}, {20,10}]), line([{10,0}, {10,10}]) and line([{10,10}, {10,20}])[] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 23706--23707
 []\T1/lmtt/b/n/10 split_using \T1/lmr/m/n/10 (+20) (\T1/lmtt/m/n/10 list\T1/lmr/m/n/10 (+20) , \T1/lmtt/m/n/10 msi.gama.util.IList<? extends java.lang.Comparable>\T1/lmr/m/n/10 (+20) , \T1/lmtt/m/n/10 bool\T1/lmr/m/n/10 (+20) ) --->
  []
 
-[375] [376] [377]
+[362]
+Overfull \hbox (307.24272pt too wide) in paragraph at lines 23756--23756
+[]\T1/lmtt/m/n/10 list var0 <- \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 to be or not to be,that is the question\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 split_with \TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ; // var0 equals [\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 to\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 be\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 or\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 not\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 to\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 be\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 that\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 is\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 the\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 question\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ][] 
+ []
+
+[363] [364]
+Overfull \hbox (55.24345pt too wide) in paragraph at lines 23884--23884
+[]\T1/lmtt/m/n/10 geometry var0 <- squircle(4,4); // var0 equals a geometry as a squircle of side 4 with a power of 4.[] 
+ []
+
+
 Overfull \hbox (48.9552pt too wide) in paragraph at lines 23902--23903
 []\T1/lmtt/b/n/10 stack \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 msi.gama.util.IList<java.lang.Integer>\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gama.util.tree.GamaNode<java.lang.String> 
  []
 
-[378] [379] [380] [381]
+
+Overfull \hbox (2.7436pt too wide) in paragraph at lines 23935--23935
+[]\T1/lmtt/m/n/10 float var0 <- standard_deviation ([4.5, 3.5, 5.5, 7.0]); // var0 equals 1.2930100540985752[] 
+ []
+
+[365] [366] [367] [368]
 Underfull \hbox (badness 10000) in paragraph at lines 24181--24183
 
  []
@@ -2919,7 +4129,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 24189--24191
 
  []
 
-[382]
+
 Underfull \hbox (badness 10000) in paragraph at lines 24191--24193
 
  []
@@ -2929,12 +4139,92 @@ Underfull \hbox (badness 10000) in paragraph at lines 24193--24195
 
  []
 
-[383]
+[369]
+Overfull \hbox (2.7436pt too wide) in paragraph at lines 24212--24212
+[]\T1/lmtt/m/n/10 unknown var1 <- sum([{1.0,3.0},{3.0,5.0},{9.0,1.0},{7.0,8.0}]); // var1 equals {20.0,17.0}[] 
+ []
+
+[370]
 Underfull \hbox (badness 10000) in paragraph at lines 24318--24320
 
  []
 
-[384] [385] [386] [387] [388] [389] [390]
+[371]
+Overfull \hbox (133.99323pt too wide) in paragraph at lines 24428--24428
+[]\T1/lmtt/m/n/10 graph graphEpidemio <- generate_barabasi_albert( ["edges_species"::edge,"vertices_specy"::node,"size"::3,"m"::5] );[] 
+ []
+
+
+Overfull \hbox (275.74281pt too wide) in paragraph at lines 24428--24428
+[]\T1/lmtt/m/n/10 unknown var1 <- graphEpidemio source_of(edge(3)); // var1 equals node1graph graphFromMap <-  as_edge_graph([{1,5}::{12,45},{12,45}::{34,56}]);[] 
+ []
+
+[372]
+Overfull \hbox (65.74342pt too wide) in paragraph at lines 24474--24474
+[]\T1/lmtt/m/n/10 geometry var0 <- teapot(10); // var0 equals a geometry as a circle of radius 10 but displays a teapot.[] 
+ []
+
+[373]
+Overfull \hbox (952.99084pt too wide) in paragraph at lines 24557--24557
+[]\T1/lmtt/m/n/10 date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2000-01-01\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ) to date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2010-01-01\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ) // builds an interval between these two dates (date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2000-01-01\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ) to date(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 2010-01-01\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 )) every (#month) // builds an interval between these two dates which contains all the monthly dates starting from the beginning of the interval[] 
+ []
+
+[374]
+Overfull \hbox (286.24278pt too wide) in paragraph at lines 24594--24594
+[]\T1/lmtt/m/n/10 geometry var0 <- to_GAMA_CRS({121,14}, "EPSG:4326"); // var0 equals a geometry corresponding to the agent geometry transformed into the GAMA CRS[] 
+ []
+
+
+Overfull \hbox (217.99298pt too wide) in paragraph at lines 24605--24605
+[]\T1/lmtt/m/n/10 geometry var1 <- to_GAMA_CRS({121,14}); // var1 equals a geometry corresponding to the agent geometry transformed into the GAMA CRS[] 
+ []
+
+
+Overfull \hbox (65.74342pt too wide) in paragraph at lines 24643--24643
+[]\T1/lmtt/m/n/10 string var8 <- to_gaml([\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 a\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::345, \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 b\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::13, \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 c\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::12]); // var8 equals "map([\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 a\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::345,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 b\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::13,\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 c\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ::12])"[] 
+ []
+
+
+Overfull \hbox (1157.74025pt too wide) in paragraph at lines 24643--24643
+[]\T1/lmtt/m/n/10 string var10 <- to_gaml(a_graph); // var10 equals ([((1 as node)::(3 as node))::(5 as edge),((0 as node)::(3 as node))::(3 as edge),((1 as node)::(2 as node))::(1 as edge),((0 as node)::(2 as node))::(2 as edge),((0 as node)::(1 as node))::(0 as edge),((2 as node)::(3 as node))::(4 as edge)] as map ) as graph[] 
+ []
+
+[375]
+Overfull \hbox (1084.24046pt too wide) in paragraph at lines 24676--24676
+[]\T1/lmtt/m/n/10 list<geometry> var0 <- to_rectangles(self, 5, 20, true); // var0 equals the list of rectangles corresponding to the discretization by a grid of 5 columns and 20 rows into rectangles of the geometry of the agent applying the operator. The rectangles overlapping the border of the geometry are kept[] 
+ []
+
+
+Overfull \hbox (1047.49057pt too wide) in paragraph at lines 24676--24676
+[]\T1/lmtt/m/n/10 list<geometry> var1 <- to_rectangles(self, {10.0, 15.0}, true); // var1 equals the list of rectangles of size {10.0, 15.0} corresponding to the discretization into rectangles of the geometry of the agent applying the operator. The rectangles overlapping the border of the geometry are kept[] 
+ []
+
+
+Overfull \hbox (868.99109pt too wide) in paragraph at lines 24711--24711
+[]\T1/lmtt/m/n/10 list<geometry> var0 <- to_squares(self, 10, true, 0.99); // var0 equals the list of 10 squares corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept[] 
+ []
+
+
+Overfull \hbox (837.49118pt too wide) in paragraph at lines 24711--24711
+[]\T1/lmtt/m/n/10 list<geometry> var1 <- to_squares(self, 10, true); // var1 equals the list of 10 squares corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept[] 
+ []
+
+
+Overfull \hbox (926.74092pt too wide) in paragraph at lines 24711--24711
+[]\T1/lmtt/m/n/10 list<geometry> var2 <- to_squares(self, 10.0, true); // var2 equals the list of squares of side size 10.0 corresponding to the discretization into squares of the geometry of the agent applying the operator. The squares overlapping the border of the geometry are kept[] 
+ []
+
+[376]
+Overfull \hbox (480.49222pt too wide) in paragraph at lines 24744--24744
+[]\T1/lmtt/m/n/10 list<geometry> var0 <- to_sub_geometries(rectangle(10, 50), [0.1, 0.5, 0.4], 1.0); // var0 equals a list of three geometries corresponding to 3 sub-geometries using cubes of 1m size[] 
+ []
+
+
+Overfull \hbox (333.49265pt too wide) in paragraph at lines 24744--24744
+[]\T1/lmtt/m/n/10 list<geometry> var1 <- to_sub_geometries(rectangle(10, 50), [0.1, 0.5, 0.4]); // var1 equals a list of three geometries corresponding to 3 sub-geometries[] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 24785--24787
 
  []
@@ -2944,7 +4234,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 24787--24789
 
  []
 
-
+[377]
 Underfull \hbox (badness 10000) in paragraph at lines 24789--24791
 
  []
@@ -2954,7 +4244,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 24791--24793
 
  []
 
-[391]
+
 Underfull \hbox (badness 10000) in paragraph at lines 24793--24795
 
  []
@@ -2964,7 +4254,92 @@ Underfull \hbox (badness 10000) in paragraph at lines 24795--24797
 
  []
 
-[392] [393] [394] [395] [396]
+
+Overfull \hbox (931.9909pt too wide) in paragraph at lines 24806--24806
+[]\T1/lmtt/m/n/10 topology var0 <- topology(0); // var0 equals niltopology(a_graph)   --: Multiple topology in POLYGON ((24.712119771887785 7.867357373616512, 24.712119771887785 61.283226839310565, 82.4013676510046  7.867357373616512)) at location[53.556743711446195;34.57529210646354][] 
+ []
+
+[378]
+Overfull \hbox (28.99353pt too wide) in paragraph at lines 24883--24883
+[]\T1/lmtt/m/n/10 bool var3 <- polyline([{10,10},{20,20}]) touches polyline([{10,10},{5,5}]); // var3 equals true[] 
+ []
+
+
+Overfull \hbox (34.24352pt too wide) in paragraph at lines 24883--24883
+[]\T1/lmtt/m/n/10 bool var4 <- polyline([{10,10},{20,20}]) touches polyline([{5,5},{15,15}]); // var4 equals false[] 
+ []
+
+
+Overfull \hbox (44.74348pt too wide) in paragraph at lines 24883--24883
+[]\T1/lmtt/m/n/10 bool var5 <- polyline([{10,10},{20,20}]) touches polyline([{15,15},{25,25}]); // var5 equals false[] 
+ []
+
+
+Overfull \hbox (202.24303pt too wide) in paragraph at lines 24883--24883
+[]\T1/lmtt/m/n/10 bool var6 <- polygon([{10,10},{10,20},{20,20},{20,10}]) touches polygon([{15,15},{15,25},{25,25},{25,15}]); // var6 equals false[] 
+ []
+
+
+Overfull \hbox (196.99304pt too wide) in paragraph at lines 24883--24883
+[]\T1/lmtt/m/n/10 bool var7 <- polygon([{10,10},{10,20},{20,20},{20,10}]) touches polygon([{10,20},{20,20},{20,30},{10,30}]); // var7 equals true[] 
+ []
+
+
+Overfull \hbox (175.9931pt too wide) in paragraph at lines 24883--24883
+[]\T1/lmtt/m/n/10 bool var8 <- polygon([{10,10},{10,20},{20,20},{20,10}]) touches polygon([{10,10},{0,10},{0,0},{10,0}]); // var8 equals true[] 
+ []
+
+
+Overfull \hbox (18.49356pt too wide) in paragraph at lines 24883--24883
+[]\T1/lmtt/m/n/10 bool var9 <- polygon([{10,10},{10,20},{20,20},{20,10}]) touches {15,15}; // var9 equals false[] 
+ []
+
+
+Overfull \hbox (23.74355pt too wide) in paragraph at lines 24883--24883
+[]\T1/lmtt/m/n/10 bool var10 <- polygon([{10,10},{10,20},{20,20},{20,10}]) touches {10,15}; // var10 equals true[] 
+ []
+
+
+Overfull \hbox (301.99274pt too wide) in paragraph at lines 24917--24917
+[]\T1/lmtt/m/n/10 float var0 <- ag1 towards ag2; // var0 equals the direction between ag1 and ag2 and ag3 considering the topology of the agent applying the operator[] 
+ []
+
+[379]
+Overfull \hbox (464.74226pt too wide) in paragraph at lines 24978--24978
+[]\T1/lmtt/m/n/10 geometry var0 <- self transformed_by {45, 0.5}; // var0 equals the geometry resulting from 45 degrees rotation and 50% scaling of the geometry of the agent applying the operator.[] 
+ []
+
+[380]
+Overfull \hbox (333.49265pt too wide) in paragraph at lines 25012--25012
+[]\T1/lmtt/m/n/10 geometry var0 <- self translated_by {10,10,10}; // var0 equals the geometry resulting from applying the translation to the left-hand geometry (or agent).[] 
+ []
+
+[381] [382]
+Overfull \hbox (511.99213pt too wide) in paragraph at lines 25142--25142
+[]\T1/lmtt/m/n/10 list<geometry> var0 <- triangulate(self); // var0 equals the list of geometries (triangles) corresponding to the Delaunay triangulation of the geometry of the agent applying the operator.[] 
+ []
+
+
+Overfull \hbox (559.24199pt too wide) in paragraph at lines 25142--25142
+[]\T1/lmtt/m/n/10 list<geometry> var1 <- triangulate(self,0.1, 1.0); // var1 equals the list of geometries (triangles) corresponding to the Delaunay triangulation of the geometry of the agent applying the operator.[] 
+ []
+
+
+Overfull \hbox (538.24205pt too wide) in paragraph at lines 25142--25142
+[]\T1/lmtt/m/n/10 list<geometry> var2 <- triangulate(self, 0.1); // var2 equals the list of geometries (triangles) corresponding to the Delaunay triangulation of the geometry of the agent applying the operator.[] 
+ []
+
+
+Overfull \hbox (748.24144pt too wide) in paragraph at lines 25142--25142
+[]\T1/lmtt/m/n/10 list<geometry> var3 <- triangulate([line([{0,50},{100,50}]), line([{50,0},{50,100}])); // var3 equals the list of geometries (triangles) corresponding to the Delaunay triangulation of the geometry of the agent applying the operator.[] 
+ []
+
+
+Overfull \hbox (559.24199pt too wide) in paragraph at lines 25142--25142
+[]\T1/lmtt/m/n/10 list<geometry> var4 <- triangulate(self,0.1, 1.0); // var4 equals the list of geometries (triangles) corresponding to the Delaunay triangulation of the geometry of the agent applying the operator.[] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 25171--25173
 
  []
@@ -2974,17 +4349,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 25173--25175
 
  []
 
-[397]
+[383]
 Underfull \hbox (badness 10000) in paragraph at lines 25264--25266
 
  []
 
-[398] [399] [400] [401] [402]
+[384]
+Overfull \hbox (191.74306pt too wide) in paragraph at lines 25278--25278
+[]\T1/lmtt/m/n/10 geometry var3 <- union([geom1, geom2, geom3]); // var3 equals a geometry corresponding to union between geom1, geom2 and geom3[] 
+ []
+
+
+Overfull \hbox (112.99329pt too wide) in paragraph at lines 25332--25332
+[]\T1/lmtt/m/n/10 reflex when: until(starting_date) {}    // This reflex will be run only once at the beginning of the simulation[] 
+ []
+
+[385] [386]
+Overfull \hbox (1609.23894pt too wide) in paragraph at lines 25449--25449
+[]\T1/lmtt/m/n/10 map<string,unknown> values <- user_input(["Number" :: 100, "Location" :: {10, 10}]); create bug number: int(values at "Number") with: [location:: (point(values at "Location"))]; map<string,unknown> values2 <- user_input("Enter numer of agents and locations",["Number" :: 100, "Location" :: {10, 10}]); create bug number: int(values2 at "Number") with: [location:: (point(values2 at "Location"))];[] 
+ []
+
+
+Overfull \hbox (354.49258pt too wide) in paragraph at lines 25487--25487
+[]\T1/lmtt/m/n/10 unknown var0 <- (agents closest_to self) using topology(world); // var0 equals the closest agent to self (the caller) in the continuous topology of the world[] 
+ []
+
+[387] [388]
 Overfull \hbox (164.45486pt too wide) in paragraph at lines 25590--25591
 []\T1/lmtt/b/n/10 vertical \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 msi.gama.util.GamaMap<java.lang.Object,java.lang.Integer>\T1/lmr/m/n/10 (-20) ) ---> \T1/lmtt/m/n/10 msi.gama.util.tree.GamaNode<java.lang.String> 
  []
 
-[403]
+
+Overfull \hbox (475.24223pt too wide) in paragraph at lines 25624--25624
+[]\T1/lmtt/m/n/10 list<geometry> var0 <- voronoi([{10,10},{50,50},{90,90},{10,90},{90,10}]); // var0 equals the list of geometries corresponding to the Voronoi Diagram built from the list of points.[] 
+ []
+
+
+Overfull \hbox (753.49142pt too wide) in paragraph at lines 25624--25624
+[]\T1/lmtt/m/n/10 list<geometry> var1 <- voronoi([{10,10},{50,50},{90,90},{10,90},{90,10}], square(300)); // var1 equals the list of geometries corresponding to the Voronoi Diagram built from the list of points with a square of 300m side size as clip.[] 
+ []
+
+[389]
 Underfull \hbox (badness 10000) in paragraph at lines 25658--25660
 
  []
@@ -2994,7 +4399,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 25660--25662
 
  []
 
-[404]
+
 Overfull \hbox (194.9365pt too wide) in paragraph at lines 25684--25686
 []\T1/lmtt/m/n/10 msi.gama.util.IList<java.util.List> \T1/lmtt/b/n/10 weighted_means_DM \T1/lmtt/m/n/10 msi.gama.util.IList<java.util.Map<java.lang.String,java.lang.Object>>
  []
@@ -3004,21 +4409,71 @@ Overfull \hbox (206.5556pt too wide) in paragraph at lines 25686--25687
 []\T1/lmtt/b/n/10 weighted_means_DM \T1/lmr/m/n/10 (-20) (\T1/lmtt/m/n/10 msi.gama.util.IList<java.util.List> \T1/lmr/m/n/10 (-20) , \T1/lmtt/m/n/10 msi.gama.util.IList<java.util.Map<java.lang.String,java.lang.Object>>\T1/lmr/m/n/10 (-20) )
  []
 
-[405]
+
+Overfull \hbox (354.49258pt too wide) in paragraph at lines 25709--25709
+[]\T1/lmtt/m/n/10 int var0 <- weighted_means_DM([[1.0, 7.0],[4.0,2.0],[3.0, 3.0]], [["name"::"utility", "weight" :: 2.0],["name"::"price", "weight" :: 1.0]]); // var0 equals 1[] 
+ []
+
+[390]
 Underfull \hbox (badness 10000) in paragraph at lines 25748--25750
 
  []
 
-[406] [407] [408] [409]
+
+Overfull \hbox (112.99329pt too wide) in paragraph at lines 25766--25766
+[]\T1/lmtt/m/n/10 list var2 <- g2 where (length(g2 out_edges_of each) = 0 ); // var2 equals [node9, node7, node10, node8, node11][] 
+ []
+
+
+Overfull \hbox (39.4935pt too wide) in paragraph at lines 25766--25766
+[]\T1/lmtt/m/n/10 list var3 <- (list(node) where (round(node(each).location.x) > 32); // var3 equals [node2, node3][] 
+ []
+
+[391]
+Overfull \hbox (13.24358pt too wide) in paragraph at lines 25845--25845
+[]\T1/lmtt/m/n/10 unknown var3 <- (list(node) with_max_of (round(node(each).location.x)); // var3 equals node3[] 
+ []
+
+[392]
+Overfull \hbox (13.24358pt too wide) in paragraph at lines 25896--25896
+[]\T1/lmtt/m/n/10 unknown var3 <- (list(node) with_min_of (round(node(each).location.x)); // var3 equals node0[] 
+ []
+
+[393]
+Overfull \hbox (149.74318pt too wide) in paragraph at lines 25981--25981
+[]\T1/lmtt/m/n/10 point var0 <- {12345.78943, 12345.78943, 12345.78943} with_precision 2 ; // var0 equals {12345.79, 12345.79, 12345.79}[] 
+ []
+
+
+Overfull \hbox (296.74275pt too wide) in paragraph at lines 25981--25981
+[]\T1/lmtt/m/n/10 geometry var3 <- self with_precision 2; // var3 equals the geometry resulting from the rounding of points of the geometry with a precision of 0.1.[] 
+ []
+
+[394]
 Underfull \hbox (badness 10000) in paragraph at lines 26052--26054
 
  []
 
-[410] [411] [412]
-Chapter 16.
-[413
 
-] [414]
+Overfull \hbox (97.24333pt too wide) in paragraph at lines 26059--26059
+[]\T1/lmtt/m/n/10 graph_from_edges (list(ant) as_map each::one_of (list(ant))) with_weights (list(ant) as_map each::each.food)[] 
+ []
+
+[395]
+Overfull \hbox (270.49283pt too wide) in paragraph at lines 26086--26086
+[]\T1/lmtt/m/n/10 geometry var0 <- solid(self); // var0 equals the geometry corresponding to the geometry of the agent applying the operator without its holes.[] 
+ []
+
+
+Overfull \hbox (128.74324pt too wide) in paragraph at lines 26120--26120
+[]\T1/lmtt/m/n/10 file var0 <- shape_file("../images/point_eau.shp") writable false; // var0 equals returns a file in read-only mode[] 
+ []
+
+[396] [397] [398
+
+]
+Chapter 16.
+[399] [400]
 Underfull \hbox (badness 1924) in paragraph at lines 26498--26512
 [][]\T1/lmr/m/n/10 (+20) add[], []ask[], []as-sert[], []bench-mark[], []cap-ture[], []con-scious_contagion[], []cre-ate[], []dif-fuse[], []do[], []emo-
  []
@@ -3068,67 +4523,269 @@ Underfull \hbox (badness 1237) in paragraph at lines 26582--26596
 \T1/lmr/m/n/10 (+20) tional_contagion[], []en-force-ment[], []er-ror[], []fo-cus[], []fo-cus_on[], []high-light[], []if[], []in-spect[], []let[], []loop[],
  []
 
-[415] [416] [417] [418] [419] [420] [421] [422] [423] [424]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[401] [402] [403] [404]
+Overfull \hbox (144.4932pt too wide) in paragraph at lines 27152--27152
+[]\T1/lmtt/m/n/10 float t; float S; float I; equation SI {     diff(S,t) = (- 0.3 * S * I / 100);    diff(I,t) = (0.3 * S * I / 100); }[] 
+ []
 
- [425] [426] [427] [428]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[405]
+Overfull \hbox (459.49228pt too wide) in paragraph at lines 27252--27252
+[]\T1/lmtt/m/n/10 species parent_species {    int virtual_action(int i, string s); }  species children parent: parent_species {    int virtual_action(int i, string s) {       return i + i;    } }[] 
+ []
 
- [429]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[406]
+Overfull \hbox (1273.23991pt too wide) in paragraph at lines 27329--27329
+[]\T1/lmtt/m/n/10 list<int> workingList <- []; add 0 at: 0 to: workingList ;//workingList equals [0]add 10 at: 0 to: workingList ;//workingList equals [10,0]add 20 at: 2 to: workingList ;//workingList equals [10,0,20]add 50 to: workingList;//workingList equals [10,0,20,50]add [60,70] all: true to: workingList;//workingList equals [10,0,20,50,60,70][] 
+ []
 
- [430] [431]
-Overfull \hbox (0.60867pt too wide) in paragraph at lines 28037--28040
+
+Overfull \hbox (417.4924pt too wide) in paragraph at lines 27353--27353
+[]\T1/lmtt/m/n/10 add "val2" to: workingMap;//workingMap equals ["x"::"val1", "val2"::"val2"]add "5"::"val4" to: workingMap; //workingMap equals ["x"::"val1", "val2"::"val2", "5"::"val4"][] 
+ []
+
+
+Overfull \hbox (291.49277pt too wide) in paragraph at lines 27376--27376
+[]\T1/lmtt/m/n/10 add ["val4","val5"] all: true at: "x" to: workingMap;//workingMap equals ["x"::"val3", "val2"::"val2", "5"::"val4","val4"::"val4","val5"::"val5"][] 
+ []
+
+[407] [408] [409]
+Overfull \hbox (3850.98242pt too wide) in paragraph at lines 27678--27678
+[]\T1/lmtt/m/n/10 species animal {     float energy <- rnd (1000) min: 0.0 {     reflex when: energy > 500 { // executed when the energy is above the given threshold          list<animal> others <- (animal at_distance 5); // find all the neighboring animals in a radius of 5 meters          float shared_energy  <- (energy - 500) / length (others); // compute the amount of energy to share with each of them          ask others { // no need to cast, since others has already been filtered to only include animals               if (energy < 500) { // refers to the energy of each animal in others                    energy <- energy + myself.shared_energy; // increases the energy of each animal                    myself.energy <- myself.energy - myself.shared_energy; // decreases the energy of the sender               }          }     } }[] 
+ []
+
+[410] [411] [412] [413] [414] [415] [416]
+Overfull \hbox (454.2423pt too wide) in paragraph at lines 28237--28237
+[]\T1/lmtt/m/n/10 conscious_contagion emotion_detected:fear emotion_created:fearConfirmed; conscious_contagion emotion_detected:fear emotion_created:fearConfirmed charisma: 0.5 receptivity: 0.5;[] 
+ []
+
+[417]
+Overfull \hbox (0.60867pt too wide) in paragraph at lines 28301--28304
 []\T1/lmr/m/n/10 (-20) In GAML mod-el-ers can cre-ate agents of species \T1/lmtt/m/n/10 a_species  (with two attributes\T1/lmr/m/n/10 (-20) type\T1/lmtt/m/n/10 and\T1/lmr/m/n/10 (-20) nature\T1/lmtt/m/n/10 with
  []
 
 
-Overfull \hbox (23.29723pt too wide) in paragraph at lines 28037--28040
+Overfull \hbox (23.29723pt too wide) in paragraph at lines 28301--28304
 \T1/lmtt/m/n/10 types corresponding to the types of the shapefile attributes) from a shapefile\T1/lmr/m/n/10 (-20) the_shapefile`
  []
 
-[432] [433]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [434]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (18.49356pt too wide) in paragraph at lines 28308--28308
+[]\T1/lmtt/m/n/10 create a_species from: the_shapefile with: [type:: read(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 TYPE_OCC\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ), nature::read(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 NATURE\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 )];[] 
+ []
 
- [435]
-Underfull \vbox (badness 4254) has occurred while \output is active []
 
- [436]
-Overfull \hbox (8.86115pt too wide) in paragraph at lines 28314--28319
+Overfull \hbox (238.99292pt too wide) in paragraph at lines 28333--28333
+[]\T1/lmtt/m/n/10 create species_of(self) from: [square(4),circle(4)];    // 2 agents have been created, with shapes respectively square(4) and circle(4)[] 
+ []
+
+[418]
+Underfull \hbox (badness 10000) in paragraph at lines 28412--28414
+
+ []
+
+
+Overfull \hbox (22.48322pt too wide) in paragraph at lines 28426--28428
+\T1/lmr/m/n/10 (-20) marker_up_triangle, marker_diamond, marker_hor_rectangle, marker_down_triangle, marker_hor_ellipse,
+ []
+
+[419]
+Underfull \hbox (badness 1635) in paragraph at lines 28481--28483
+[]\T1/lmtt/m/n/10 color \T1/lmr/m/n/10 (+20) (list): list of col-ors, for heatmaps can be a list of [min-Color,maxColor] or [min-
+ []
+
+
+Overfull \hbox (22.48322pt too wide) in paragraph at lines 28489--28491
+\T1/lmr/m/n/10 (-20) marker_up_triangle, marker_diamond, marker_hor_rectangle, marker_down_triangle, marker_hor_ellipse,
+ []
+
+[420]
+Underfull \hbox (badness 10000) in paragraph at lines 28579--28581
+
+ []
+
+[421] [422]
+Overfull \hbox (8.86115pt too wide) in paragraph at lines 28717--28722
 []\T1/lmtt/m/n/10 keystone \T1/lmr/m/n/10 (-20) (con-tainer): Set the po-si-tion of the 4 cor-ners of your screen ([topLeft,topRight,botLeft,botRight]),
  []
 
-[437] [438] [439] [440] [441] [442] [443]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[423] [424]
+Overfull \hbox (7.99359pt too wide) in paragraph at lines 28892--28892
+[]\T1/lmtt/m/n/10 display my_display {    grid ant_grid lines: #black position: { 0.5, 0 } size: {0.5,0.5}; }[] 
+ []
 
- [444] [445] [446] [447] [448] [449] [450] [451] [452] [453] [454] [455] [456] [457] [458] [459] [460] [461] [462]
-Underfull \vbox (badness 3849) has occurred while \output is active []
+[425]
+Overfull \hbox (406.99243pt too wide) in paragraph at lines 29016--29016
+[]\T1/lmtt/m/n/10 display my_display type: opengl{    species agent1 aspect: base ;    species agent2 aspect: base position:{0,0,0.5};    species agent3 aspect: base position:{0,0,1}; }[] 
+ []
 
- [463] [464] [465] [466] [467]
-Underfull \hbox (badness 3601) in paragraph at lines 30441--30446
-[]\T1/lmr/m/n/10 (+20) perceive name_of-perception tar-get: the_agents_you_want_to_perceive in: a_distance when:
+[426]
+Overfull \hbox (86.74336pt too wide) in paragraph at lines 29107--29107
+[]\T1/lmtt/m/n/10 type_returned_by_action result <- self name_of_action_or_primitive [arg1::expression1, arg2::expression2];[] 
+ []
+
+[427] [428]
+Overfull \hbox (895.24101pt too wide) in paragraph at lines 29264--29264
+[]\T1/lmtt/m/n/10 aspect arrowAspect {    draw line([{20, 20}, {40, 40}]) color: #black begin_arrow:5;    draw line([{10, 10},{20, 50}, {40, 70}]) color: #green end_arrow: 2 begin_arrow: 2 empty: true;     draw square(10) at: {80,20} color: #purple begin_arrow: 2 empty: true; }[] 
+ []
+
+[429] [430] [431]
+Overfull \hbox (144.4932pt too wide) in paragraph at lines 29521--29521
+[]\T1/lmtt/m/n/10 float t; float S; float I; equation SI {     diff(S,t) = (- 0.3 * S * I / 100);    diff(I,t) = (0.3 * S * I / 100); }[] 
+ []
+
+[432]
+Underfull \hbox (badness 10000) in paragraph at lines 29614--29616
+
+ []
+
+[433]
+Overfull \hbox (1561.98907pt too wide) in paragraph at lines 29650--29650
+[]\T1/lmtt/m/n/10 global {    // ...     action myAction () {       point loc <- #user_location; // contains the location of the mouse in the world       list<agent> selected_agents <- agents inside (10#m around loc); // contains agents clicked by the event              // code written by modelers    } }  experiment Simple type:gui {    display my_display {       event mouse_up action: myAction;    } }[] 
+ []
+
+[434] [435] [436] [437] [438]
+Overfull \hbox (349.2426pt too wide) in paragraph at lines 30122--30122
+[]\T1/lmtt/m/n/10 display my_display {    graphics "my new layer" {       draw circle(5) at: {10,10} color: #red;       draw "test" at: {10,10} size: 20 color: #black;    } }[] 
+ []
+
+[439] [440]
+Overfull \hbox (49.99347pt too wide) in paragraph at lines 30309--30309
+[]\T1/lmtt/m/n/10 if bool_expr {     [statements] } else if bool_expr2 {     [statements] } else {     [statements] }[] 
+ []
+
+[441]
+Overfull \hbox (443.74232pt too wide) in paragraph at lines 30402--30402
+[]\T1/lmtt/m/n/10 display my_display {   image image1 file:"../images/image1.jpg";   image image2 file:"../images/image2.jpg";   image image3 file:"../images/image3.jpg" position: {0,0,0.5}; }[] 
+ []
+
+[442] [443] [444] [445]
+Overfull \hbox (1477.98932pt too wide) in paragraph at lines 30699--30699
+[]\T1/lmtt/m/n/10 light 1 type:point position:{20,20,20} color:255, linear_attenuation:0.01 quadratic_attenuation:0.0001 draw_light:true update:false light 2 type:spot position:{20,20,20} direction:{0,0,-1} color:255 spot_angle:25 linear_attenuation:0.01 quadratic_attenuation:0.0001 draw_light:true update:false light 3 type:point direction:{1,1,-1} color:255 draw_light:true update:false[] 
+ []
+
+[446] [447]
+Overfull \hbox (286.24278pt too wide) in paragraph at lines 30904--30904
+[]\T1/lmtt/m/n/10 switch 3 {    match_one [0,1,2] {write "Match OK with one of [0,1,2]"; }    match_between [2,3,4,5] {write "Match OK with one of [2,3,4,5]"; } }[] 
  []
 
 
-Underfull \vbox (badness 3601) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 30936--30938
 
- [468] [469] [470] [471] [472] [473] [474] [475] [476] [477] [478] [479] [480] [481] [482] [483] [484] [485] [486] [487] [488] [489] [490] [491] [492] [493]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ []
 
- [494]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[448] [449] [450] [451]
+Overfull \hbox (312.4927pt too wide) in paragraph at lines 31241--31241
+[]\T1/lmtt/m/n/10 overlay "Cycle: " + (cycle) center: "Duration: " + total_duration + "ms" right: "Model time: " + as_date(time,"") color: [#yellow, #orange, #yellow];[] 
+ []
 
- [495]
+[452]
+Overfull \hbox (191.74306pt too wide) in paragraph at lines 31330--31330
+[]\T1/lmtt/m/n/10 parameter \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 Value of toto:\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 var: toto among: [1, 3, 7, 15, 100];  parameter \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 Value of titi:\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 var: titi min: 1 max: 100 step: 2;[] 
+ []
+
+[453]
+Overfull \hbox (448.99231pt too wide) in paragraph at lines 31447--31447
+[]\T1/lmtt/m/n/10 permanent {     display Ants background: rgb(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 white\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ) refresh_every: 1 {        chart "Food Gathered" type: series {            data "Food" value: food_gathered;       }   } }[] 
+ []
+
+[454]
+Overfull \hbox (422.74239pt too wide) in paragraph at lines 31559--31559
+[]\T1/lmtt/m/n/10 putList <- [1,2,3,4,5]; //putList equals [1,2,3,4,5]put -10 at: 1 in: putList;//putList equals [1,-10,3,4,5]put 10 all: true in: putList;//putList equals [10,10,10,10,10][] 
+ []
+
+
+Overfull \hbox (916.24095pt too wide) in paragraph at lines 31587--31587
+[]\T1/lmtt/m/n/10 putMap <- ["x"::4,"y"::7]; //putMap equals ["x"::4,"y"::7]put -10 key: "y" in: putMap;//putMap equals ["x"::4,"y"::-10]put -20 key: "z" in: putMap;//putMap equals ["x"::4,"y"::-10, "z"::-20]put -30 all: true in: putMap;//putMap equals ["x"::-30,"y"::-30, "z"::-30][] 
+ []
+
+[455]
+Overfull \hbox (532.99207pt too wide) in paragraph at lines 31663--31663
+[]\T1/lmtt/m/n/10 method reactive_tabu iter_max: 50 tabu_list_size_init: 5 tabu_list_size_min: 2 tabu_list_size_max: 10 nb_tests_wthout_col_max: 20 cycle_size_min: 2 cycle_size_max: 20 maximize: food_gathered;[] 
+ []
+
+[456] [457]
+Overfull \hbox (70.99341pt too wide) in paragraph at lines 31772--31772
+[]\T1/lmtt/m/n/10 species A { ... } species B { ...    species C parent: A {    ...    }    species D {    ...    } ... }[] 
+ []
+
+[458]
+Overfull \hbox (627.49179pt too wide) in paragraph at lines 31873--31873
+[]\T1/lmtt/m/n/10 list<int> removeList <- [3,2,1,2,3]; remove 2 from: removeList;//removeList equals [3,1,2,3]remove 3 all: true from: removeList;//removeList equals [1,2]remove index: 1 from: removeList;//removeList equals [1][] 
+ []
+
+
+Overfull \hbox (1021.24065pt too wide) in paragraph at lines 31897--31897
+[]\T1/lmtt/m/n/10 map<string,int> removeMapList <- ["x"::5, "y"::7, "z"::7, "t"::5]; remove 7 from: removeMapList;//removeMapList equals ["x"::5, "z"::7, "t"::5]remove [5,7] all: true from: removeMapList;//removeMapList equals ["t"::5]remove index: "t" from: removeMapList;//removeMapList equals map([][] 
+ []
+
+
+Overfull \hbox (695.7416pt too wide) in paragraph at lines 31927--31927
+[]\T1/lmtt/m/n/10 global {    init {       create speciesRemove;       speciesRemove sR <- speciesRemove(0);  // sR.a now equals 100       remove key:"a" from: sR;   // sR.a now equals nil    } }  species speciesRemove {    int a <- 100;  }[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31932--31934
+
+ []
+
+[459]
+Overfull \hbox (611.74184pt too wide) in paragraph at lines 31993--31993
+[]\T1/lmtt/m/n/10 // In Species A: string foo_different {      return "foo_not_same"; } /// .... // In Species B: reflex writing {     string temp <- some_agent_A.foo_different [];  // temp is now equals to "foo_not_same"  }[] 
+ []
+
+[460] [461] [462]
+Overfull \hbox (207.49301pt too wide) in paragraph at lines 32296--32296
+[]\T1/lmtt/m/n/10 save species_of(self) to: "save_shapefile.shp" type: "shp" with: [name::"nameAgent", location::"locationAgent"] crs: "EPSG:4326";[] 
+ []
+
+[463]
+Overfull \hbox (349.2426pt too wide) in paragraph at lines 32409--32409
+[]\T1/lmtt/m/n/10 species Tester {     int val_to_test;      setup {         val_to_test <- 0;     }      test t1 {        // [set of instructions, including asserts]     } }[] 
+ []
+
+[464] [465] [466] [467]
+Overfull \hbox (86.74336pt too wide) in paragraph at lines 32767--32767
+[]\T1/lmtt/m/n/10 grid ant_grid width: gridwidth height: gridheight file: grid_file neighbors: 8 use_regular_agents: false {[] 
+ []
+
+[468]
+Overfull \hbox (1640.73885pt too wide) in paragraph at lines 32858--32858
+[]    \T1/lmtt/m/n/10 state s_init initial: true {        enter { write "Enter in" + state; }             write "Enter in" + state;       }       write state;        transition to: s1 when: (cycle > 2) {           write "transition s_init -> s1";        }       exit {          write "EXIT from "+state;       }   }   state s1 {      enter {write \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 Enter in \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 +state;}    write state;    exit {write \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 EXIT from \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 +state;} }[] 
+ []
+
+[469]
+Overfull \hbox (406.99243pt too wide) in paragraph at lines 32958--32958
+[]\T1/lmtt/m/n/10 switch an_expression {         match value1 {...}         match_one [value1, value2, value3] {...}         match_between [value1, value2] {...}         default {...} }[] 
+ []
+
+[470] [471]
+Overfull \hbox (716.74153pt too wide) in paragraph at lines 33124--33124
+[]\T1/lmtt/m/n/10 species Tester {     // set of attributes that will be used in test      setup {         // [set of instructions... in particular initializations]     }      test t1 {        // [set of instructions, including asserts]     } }[] 
+ []
+
+[472] [473]
+Overfull \hbox (165.49313pt too wide) in paragraph at lines 33328--33328
+[]\T1/lmtt/m/n/10 unconscious_contagion emotion:fearConfirmed;  unconscious_contagion emotion:fearConfirmed charisma: 0.5 receptivity: 0.5;[] 
+ []
+
+[474] [475] [476]
+Overfull \hbox (286.24278pt too wide) in paragraph at lines 33495--33495
+[]\T1/lmtt/m/n/10 user_panel "Advanced Control" {     user_input "Location" returns: loc type: point <- {0,0};    create cells number: 10 with: [location::loc]; }[] 
+ []
+
+[477]
+Overfull \hbox (34.24352pt too wide) in paragraph at lines 33607--33607
+[]\T1/lmtt/m/n/10 float dist <- 0.0; using topology(grid_ant) {   d (self.location distance_to target.location); }[] 
+ []
+
+[478] [479] [480]
 No file GAML-Beginner.ind.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 32357.
-[496]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 32357.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 33898.
+[481]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 33898.
  (./GAML-Beginner.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 32357.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 32357.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 33898.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 33898.
 
 
 Package rerunfilecheck Warning: File `GAML-Beginner.out' has changed.
@@ -3141,101 +4798,19 @@ Package rerunfilecheck Info: Checksums for `GAML-Beginner.out':
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 32357.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 33898.
  ) 
 Here is how much of TeX's memory you used:
- 31784 strings out of 493013
- 478185 string characters out of 6133343
- 809613 words of memory out of 5000000
- 23839 multiletter control sequences out of 15000+600000
- 71181 words of font info for 106 fonts, out of 8000000 for 9000
+ 26128 strings out of 493013
+ 393205 string characters out of 6133343
+ 367719 words of memory out of 5000000
+ 21644 multiletter control sequences out of 15000+600000
+ 67382 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,6n,42p,5667b,3428s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 32i,6n,42p,5667b,3654s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{text} has been referenced but does not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{quadtree} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{warn} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{variable_regular} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{variable_number} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{variable_container} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{user_panel} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{user_command} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{transition} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{status} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{solve} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{simulate} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{rule} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{return} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{remove} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{reflex} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{reactive_tabu} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{put} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{perceive} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{parameter} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{output} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{migrate} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{loop} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{inspect} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{image} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{highlight} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{focus_on} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{exit} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{exhaustive} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{event} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{enter} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{emotional_contagion} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{else} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{do} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{diffuse} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{default} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{datalist} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{data} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{create} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{chart} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{catch} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{aspect} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{add} has been referenced but does not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{=} has been referenced but does not exist, replaced by a fixed one
 
@@ -3243,11 +4818,11 @@ pdfTeX warning (dest): name{3ds-file} has been referenced but does not exist, re
 
 pdfTeX warning (dest): name{types-under-construction} has been referenced but does not exist, replaced by a fixed one
 
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on GAML-Beginner.pdf (496 pages, 1889845 bytes).
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on GAML-Beginner.pdf (481 pages, 1482187 bytes).
 PDF statistics:
- 22670 PDF objects out of 26593 (max. 8388607)
- 21940 compressed objects within 220 object streams
- 11159 named destinations out of 12825 (max. 500000)
- 14337 words of extra memory for PDF output out of 14400 (max. 10000000)
+ 18496 PDF objects out of 22161 (max. 8388607)
+ 17823 compressed objects within 179 object streams
+ 7705 named destinations out of 8907 (max. 500000)
+ 12294 words of extra memory for PDF output out of 14400 (max. 10000000)
 
