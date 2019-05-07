@@ -2,324 +2,6 @@
  	
 
 
-## Definition 
-
-Operators in the GAML language are used to compose complex expressions. An operator performs a function on one, two, or n operands (which are other expressions and thus may be themselves composed of operators) and returns the result of this function. 
-
-Most of them use a classical prefixed functional syntax (i.e. `operator_name(operand1, operand2, operand3)`, see below), with the exception of arithmetic (e.g. `+`, `/`), logical (`and`, `or`), comparison (e.g. `>`, `<`), access (`.`, `[..]`) and pair (`::`) operators, which require an infixed notation (i.e. `operand1 operator_symbol operand1`). 
-
-The ternary functional if-else operator, `? :`, uses a special infixed syntax composed with two symbols (e.g. `operand1 ? operand2 : operand3`). Two unary operators (`-` and `!`) use a traditional prefixed syntax that does not require parentheses unless the operand is itself a complex expression (e.g. ` - 10`, `! (operand1 or operand2)`). 
-
-Finally, special constructor operators (`{...}` for constructing points, `[...]` for constructing lists and maps) will require their operands to be placed between their two symbols (e.g. `{1,2,3}`, `[operand1, operand2, ..., operandn]` or `[key1::value1, key2::value2... keyn::valuen]`).
-
-With the exception of these special cases above, the following rules apply to the syntax of operators:
-* if they only have one operand, the functional prefixed syntax is mandatory (e.g. `operator_name(operand1)`)
-* if they have two arguments, either the functional prefixed syntax (e.g. `operator_name(operand1, operand2)`) or the infixed syntax (e.g. `operand1 operator_name operand2`) can be used.
-* if they have more than two arguments, either the functional prefixed syntax (e.g. `operator_name(operand1, operand2, ..., operand)`) or a special infixed syntax with the first operand on the left-hand side of the operator name (e.g. `operand1 operator_name(operand2, ..., operand)`) can be used.
-
-All of these alternative syntaxes are completely equivalent.
-
-Operators in GAML are purely functional, i.e. they are guaranteed to not have any side effects on their operands. For instance, the `shuffle` operator, which randomizes the positions of elements in a list, does not modify its list operand but returns a new shuffled list.
-
-
-----
-
-## Priority between operators
-
-The priority of operators determines, in the case of complex expressions composed of several operators, which one(s) will be evaluated first.
-
-GAML follows in general the traditional priorities attributed to arithmetic, boolean, comparison operators, with some twists. Namely:
-* the constructor operators, like `::`, used to compose pairs of operands, have the lowest priority of all operators (e.g. `a > b :: b > c` will return a pair of boolean values, which means that the two comparisons are evaluated before the operator applies. Similarly, `[a > 10, b > 5]` will return a list of boolean values.
-* it is followed by the `?:` operator, the functional if-else (e.g. ` a > b ? a + 10 : a - 10` will return the result of the if-else).
-* next are the logical operators, `and` and `or` (e.g. `a > b or b > c` will return the value of the test)
-* next are the comparison operators (i.e. `>`, `<`, `<=`, `>=`, `=`, `!=`)
-* next the arithmetic operators in their logical order (multiplicative operators have a higher priority than additive operators)
-* next the unary operators `-` and `!`
-* next the access operators `.` and `[]` (e.g. `{1,2,3}.x > 20 + {4,5,6}.y` will return the result of the comparison between the x and y ordinates of the two points)
-* and finally the functional operators, which have the highest priority of all.
-
-----
-
-## Using actions as operators
-
-Actions defined in species can be used as operators, provided they are called on the correct agent. The syntax is that of normal functional operators, but the agent that will perform the action must be added as the first operand.
-
-For instance, if the following species is defined:
-
-```
-species spec1 {
-        int min(int x, int y) {
-                return x > y ? x : y;
-        }
-}
-```
-
-Any agent instance of spec1 can use `min` as an operator (if the action conflicts with an existing operator, a warning will be emitted). For instance, in the same model, the following line is perfectly acceptable:
-
-```
-global {
-        init {
-                create spec1;
-                spec1 my_agent <- spec1[0];
-                int the_min <- my_agent min(10,20); // or min(my_agent, 10, 20);
-        }
-}
-```
-
-If the action doesn't have any operands, the syntax to use is `my_agent the_action()`. Finally, if it does not return a value, it might still be used but is considering as returning a value of type `unknown` (e.g. `unknown result <- my_agent the_action(op1, op2);`).
-
-Note that due to the fact that actions are written by modelers, the general functional contract is not respected in that case: actions might perfectly have side effects on their operands (including the agent).
-
-	
-
-----
-
-## Table of Contents
-
-----
-
-## Operators by categories
-	
-
-----
-
-### 3D
-[box](OperatorsBC#box), [cone3D](OperatorsBC#cone3d), [cube](OperatorsBC#cube), [cylinder](OperatorsBC#cylinder), [dem](OperatorsDH#dem), [hexagon](OperatorsDH#hexagon), [pyramid](OperatorsNR#pyramid), [rgb_to_xyz](OperatorsNR#rgb_to_xyz), [set_z](OperatorsSZ#set_z), [sphere](OperatorsSZ#sphere), [teapot](OperatorsSZ#teapot), 
-
-----
-
-### Arithmetic operators
-[-](OperatorsAA#-), [/](OperatorsAA#/), [^](OperatorsAA#^), [*](OperatorsAA#*), [+](OperatorsAA#+), [abs](OperatorsAA#abs), [acos](OperatorsAA#acos), [asin](OperatorsAA#asin), [atan](OperatorsAA#atan), [atan2](OperatorsAA#atan2), [ceil](OperatorsBC#ceil), [cos](OperatorsBC#cos), [cos_rad](OperatorsBC#cos_rad), [div](OperatorsDH#div), [even](OperatorsDH#even), [exp](OperatorsDH#exp), [fact](OperatorsDH#fact), [floor](OperatorsDH#floor), [hypot](OperatorsDH#hypot), [is_finite](OperatorsIM#is_finite), [is_number](OperatorsIM#is_number), [ln](OperatorsIM#ln), [log](OperatorsIM#log), [mod](OperatorsIM#mod), [round](OperatorsNR#round), [signum](OperatorsSZ#signum), [sin](OperatorsSZ#sin), [sin_rad](OperatorsSZ#sin_rad), [sqrt](OperatorsSZ#sqrt), [tan](OperatorsSZ#tan), [tan_rad](OperatorsSZ#tan_rad), [tanh](OperatorsSZ#tanh), [with_precision](OperatorsSZ#with_precision), 
-
-----
-
-### BDI
-[and](OperatorsAA#and), [eval_when](OperatorsDH#eval_when), [get_about](OperatorsDH#get_about), [get_agent](OperatorsDH#get_agent), [get_agent_cause](OperatorsDH#get_agent_cause), [get_belief_op](OperatorsDH#get_belief_op), [get_belief_with_name_op](OperatorsDH#get_belief_with_name_op), [get_beliefs_op](OperatorsDH#get_beliefs_op), [get_beliefs_with_name_op](OperatorsDH#get_beliefs_with_name_op), [get_current_intention_op](OperatorsDH#get_current_intention_op), [get_decay](OperatorsDH#get_decay), [get_desire_op](OperatorsDH#get_desire_op), [get_desire_with_name_op](OperatorsDH#get_desire_with_name_op), [get_desires_op](OperatorsDH#get_desires_op), [get_desires_with_name_op](OperatorsDH#get_desires_with_name_op), [get_dominance](OperatorsDH#get_dominance), [get_familiarity](OperatorsDH#get_familiarity), [get_ideal_op](OperatorsDH#get_ideal_op), [get_ideal_with_name_op](OperatorsDH#get_ideal_with_name_op), [get_ideals_op](OperatorsDH#get_ideals_op), [get_ideals_with_name_op](OperatorsDH#get_ideals_with_name_op), [get_intensity](OperatorsDH#get_intensity), [get_intention_op](OperatorsDH#get_intention_op), [get_intention_with_name_op](OperatorsDH#get_intention_with_name_op), [get_intentions_op](OperatorsDH#get_intentions_op), [get_intentions_with_name_op](OperatorsDH#get_intentions_with_name_op), [get_lifetime](OperatorsDH#get_lifetime), [get_liking](OperatorsDH#get_liking), [get_modality](OperatorsDH#get_modality), [get_obligation_op](OperatorsDH#get_obligation_op), [get_obligation_with_name_op](OperatorsDH#get_obligation_with_name_op), [get_obligations_op](OperatorsDH#get_obligations_op), [get_obligations_with_name_op](OperatorsDH#get_obligations_with_name_op), [get_plan_name](OperatorsDH#get_plan_name), [get_predicate](OperatorsDH#get_predicate), [get_solidarity](OperatorsDH#get_solidarity), [get_strength](OperatorsDH#get_strength), [get_super_intention](OperatorsDH#get_super_intention), [get_trust](OperatorsDH#get_trust), [get_truth](OperatorsDH#get_truth), [get_uncertainties_op](OperatorsDH#get_uncertainties_op), [get_uncertainties_with_name_op](OperatorsDH#get_uncertainties_with_name_op), [get_uncertainty_op](OperatorsDH#get_uncertainty_op), [get_uncertainty_with_name_op](OperatorsDH#get_uncertainty_with_name_op), [has_belief_op](OperatorsDH#has_belief_op), [has_belief_with_name_op](OperatorsDH#has_belief_with_name_op), [has_desire_op](OperatorsDH#has_desire_op), [has_desire_with_name_op](OperatorsDH#has_desire_with_name_op), [has_ideal_op](OperatorsDH#has_ideal_op), [has_ideal_with_name_op](OperatorsDH#has_ideal_with_name_op), [has_intention_op](OperatorsDH#has_intention_op), [has_intention_with_name_op](OperatorsDH#has_intention_with_name_op), [has_obligation_op](OperatorsDH#has_obligation_op), [has_obligation_with_name_op](OperatorsDH#has_obligation_with_name_op), [has_uncertainty_op](OperatorsDH#has_uncertainty_op), [has_uncertainty_with_name_op](OperatorsDH#has_uncertainty_with_name_op), [new_emotion](OperatorsNR#new_emotion), [new_mental_state](OperatorsNR#new_mental_state), [new_predicate](OperatorsNR#new_predicate), [new_social_link](OperatorsNR#new_social_link), [or](OperatorsNR#or), [set_about](OperatorsSZ#set_about), [set_agent](OperatorsSZ#set_agent), [set_agent_cause](OperatorsSZ#set_agent_cause), [set_decay](OperatorsSZ#set_decay), [set_dominance](OperatorsSZ#set_dominance), [set_familiarity](OperatorsSZ#set_familiarity), [set_intensity](OperatorsSZ#set_intensity), [set_lifetime](OperatorsSZ#set_lifetime), [set_liking](OperatorsSZ#set_liking), [set_modality](OperatorsSZ#set_modality), [set_predicate](OperatorsSZ#set_predicate), [set_solidarity](OperatorsSZ#set_solidarity), [set_strength](OperatorsSZ#set_strength), [set_trust](OperatorsSZ#set_trust), [set_truth](OperatorsSZ#set_truth), [with_lifetime](OperatorsSZ#with_lifetime), [with_values](OperatorsSZ#with_values), 
-
-----
-
-### Casting operators
-[as](OperatorsAA#as), [as_int](OperatorsAA#as_int), [as_matrix](OperatorsAA#as_matrix), [font](OperatorsDH#font), [is](OperatorsIM#is), [is_skill](OperatorsIM#is_skill), [list_with](OperatorsIM#list_with), [matrix_with](OperatorsIM#matrix_with), [species](OperatorsSZ#species), [to_gaml](OperatorsSZ#to_gaml), [topology](OperatorsSZ#topology), 
-
-----
-
-### Color-related operators
-[-](OperatorsAA#-), [/](OperatorsAA#/), [*](OperatorsAA#*), [+](OperatorsAA#+), [blend](OperatorsBC#blend), [brewer_colors](OperatorsBC#brewer_colors), [brewer_palettes](OperatorsBC#brewer_palettes), [grayscale](OperatorsDH#grayscale), [hsb](OperatorsDH#hsb), [mean](OperatorsIM#mean), [median](OperatorsIM#median), [rgb](OperatorsNR#rgb), [rnd_color](OperatorsNR#rnd_color), [sum](OperatorsSZ#sum), 
-
-----
-
-### Comparison operators
-[!=](OperatorsAA#!=), [<](OperatorsAA#<), [<=](OperatorsAA#<=), [=](OperatorsAA#=), [>](OperatorsAA#>), [>=](OperatorsAA#>=), [between](OperatorsBC#between), 
-
-----
-
-### Containers-related operators
-[-](OperatorsAA#-), [::](OperatorsAA#::), [+](OperatorsAA#+), [accumulate](OperatorsAA#accumulate), [among](OperatorsAA#among), [at](OperatorsAA#at), [collect](OperatorsBC#collect), [contains](OperatorsBC#contains), [contains_all](OperatorsBC#contains_all), [contains_any](OperatorsBC#contains_any), [count](OperatorsBC#count), [distinct](OperatorsDH#distinct), [empty](OperatorsDH#empty), [every](OperatorsDH#every), [first](OperatorsDH#first), [first_with](OperatorsDH#first_with), [get](OperatorsDH#get), [group_by](OperatorsDH#group_by), [in](OperatorsIM#in), [index_by](OperatorsIM#index_by), [inter](OperatorsIM#inter), [interleave](OperatorsIM#interleave), [internal_at](OperatorsIM#internal_at), [internal_integrated_value](OperatorsIM#internal_integrated_value), [last](OperatorsIM#last), [last_with](OperatorsIM#last_with), [length](OperatorsIM#length), [max](OperatorsIM#max), [max_of](OperatorsIM#max_of), [mean](OperatorsIM#mean), [mean_of](OperatorsIM#mean_of), [median](OperatorsIM#median), [min](OperatorsIM#min), [min_of](OperatorsIM#min_of), [mul](OperatorsIM#mul), [one_of](OperatorsNR#one_of), [product_of](OperatorsNR#product_of), [range](OperatorsNR#range), [reverse](OperatorsNR#reverse), [shuffle](OperatorsSZ#shuffle), [sort_by](OperatorsSZ#sort_by), [split](OperatorsSZ#split), [split_in](OperatorsSZ#split_in), [split_using](OperatorsSZ#split_using), [sum](OperatorsSZ#sum), [sum_of](OperatorsSZ#sum_of), [union](OperatorsSZ#union), [variance_of](OperatorsSZ#variance_of), [where](OperatorsSZ#where), [with_max_of](OperatorsSZ#with_max_of), [with_min_of](OperatorsSZ#with_min_of), 
-
-----
-
-### Date-related operators
-[-](OperatorsAA#-), [!=](OperatorsAA#!=), [+](OperatorsAA#+), [<](OperatorsAA#<), [<=](OperatorsAA#<=), [=](OperatorsAA#=), [>](OperatorsAA#>), [>=](OperatorsAA#>=), [after](OperatorsAA#after), [before](OperatorsBC#before), [between](OperatorsBC#between), [every](OperatorsDH#every), [milliseconds_between](OperatorsIM#milliseconds_between), [minus_days](OperatorsIM#minus_days), [minus_hours](OperatorsIM#minus_hours), [minus_minutes](OperatorsIM#minus_minutes), [minus_months](OperatorsIM#minus_months), [minus_ms](OperatorsIM#minus_ms), [minus_weeks](OperatorsIM#minus_weeks), [minus_years](OperatorsIM#minus_years), [months_between](OperatorsIM#months_between), [plus_days](OperatorsNR#plus_days), [plus_hours](OperatorsNR#plus_hours), [plus_minutes](OperatorsNR#plus_minutes), [plus_months](OperatorsNR#plus_months), [plus_ms](OperatorsNR#plus_ms), [plus_weeks](OperatorsNR#plus_weeks), [plus_years](OperatorsNR#plus_years), [since](OperatorsSZ#since), [to](OperatorsSZ#to), [until](OperatorsSZ#until), [years_between](OperatorsSZ#years_between), 
-
-----
-
-### Dates
-
-
-----
-
-### DescriptiveStatistics
-[auto_correlation](OperatorsAA#auto_correlation), [correlation](OperatorsBC#correlation), [covariance](OperatorsBC#covariance), [durbin_watson](OperatorsDH#durbin_watson), [kurtosis](OperatorsIM#kurtosis), [moment](OperatorsIM#moment), [quantile](OperatorsNR#quantile), [quantile_inverse](OperatorsNR#quantile_inverse), [rank_interpolated](OperatorsNR#rank_interpolated), [rms](OperatorsNR#rms), [skew](OperatorsSZ#skew), [variance](OperatorsSZ#variance), 
-
-----
-
-### Displays
-[horizontal](OperatorsDH#horizontal), [stack](OperatorsSZ#stack), [vertical](OperatorsSZ#vertical), 
-
-----
-
-### Distributions
-[binomial_coeff](OperatorsBC#binomial_coeff), [binomial_complemented](OperatorsBC#binomial_complemented), [binomial_sum](OperatorsBC#binomial_sum), [chi_square](OperatorsBC#chi_square), [chi_square_complemented](OperatorsBC#chi_square_complemented), [gamma_distribution](OperatorsDH#gamma_distribution), [gamma_distribution_complemented](OperatorsDH#gamma_distribution_complemented), [normal_area](OperatorsNR#normal_area), [normal_density](OperatorsNR#normal_density), [normal_inverse](OperatorsNR#normal_inverse), [pValue_for_fStat](OperatorsNR#pvalue_for_fstat), [pValue_for_tStat](OperatorsNR#pvalue_for_tstat), [student_area](OperatorsSZ#student_area), [student_t_inverse](OperatorsSZ#student_t_inverse), 
-
-----
-
-### Driving operators
-[as_driving_graph](OperatorsAA#as_driving_graph), 
-
-----
-
-### edge
-[edge_between](OperatorsDH#edge_between), [strahler](OperatorsSZ#strahler), 
-
-----
-
-### EDP-related operators
-[diff](OperatorsDH#diff), [diff2](OperatorsDH#diff2), [internal_zero_order_equation](OperatorsIM#internal_zero_order_equation), 
-
-----
-
-### Files-related operators
-[crs](OperatorsBC#crs), [evaluate_sub_model](OperatorsDH#evaluate_sub_model), [file](OperatorsDH#file), [file_exists](OperatorsDH#file_exists), [folder](OperatorsDH#folder), [get](OperatorsDH#get), [load_sub_model](OperatorsIM#load_sub_model), [new_folder](OperatorsNR#new_folder), [osm_file](OperatorsNR#osm_file), [read](OperatorsNR#read), [step_sub_model](OperatorsSZ#step_sub_model), [writable](OperatorsSZ#writable), 
-
-----
-
-### FIPA-related operators
-[conversation](OperatorsBC#conversation), [message](OperatorsIM#message), 
-
-----
-
-### GamaMetaType
-[type_of](OperatorsSZ#type_of), 
-
-----
-
-### GammaFunction
-[beta](OperatorsBC#beta), [gamma](OperatorsDH#gamma), [incomplete_beta](OperatorsIM#incomplete_beta), [incomplete_gamma](OperatorsIM#incomplete_gamma), [incomplete_gamma_complement](OperatorsIM#incomplete_gamma_complement), [log_gamma](OperatorsIM#log_gamma), 
-
-----
-
-### Graphs-related operators
-[add_edge](OperatorsAA#add_edge), [add_node](OperatorsAA#add_node), [adjacency](OperatorsAA#adjacency), [agent_from_geometry](OperatorsAA#agent_from_geometry), [all_pairs_shortest_path](OperatorsAA#all_pairs_shortest_path), [alpha_index](OperatorsAA#alpha_index), [as_distance_graph](OperatorsAA#as_distance_graph), [as_edge_graph](OperatorsAA#as_edge_graph), [as_intersection_graph](OperatorsAA#as_intersection_graph), [as_path](OperatorsAA#as_path), [beta_index](OperatorsBC#beta_index), [betweenness_centrality](OperatorsBC#betweenness_centrality), [biggest_cliques_of](OperatorsBC#biggest_cliques_of), [connected_components_of](OperatorsBC#connected_components_of), [connectivity_index](OperatorsBC#connectivity_index), [contains_edge](OperatorsBC#contains_edge), [contains_vertex](OperatorsBC#contains_vertex), [degree_of](OperatorsDH#degree_of), [directed](OperatorsDH#directed), [edge](OperatorsDH#edge), [edge_between](OperatorsDH#edge_between), [edge_betweenness](OperatorsDH#edge_betweenness), [edges](OperatorsDH#edges), [gamma_index](OperatorsDH#gamma_index), [generate_barabasi_albert](OperatorsDH#generate_barabasi_albert), [generate_complete_graph](OperatorsDH#generate_complete_graph), [generate_watts_strogatz](OperatorsDH#generate_watts_strogatz), [grid_cells_to_graph](OperatorsDH#grid_cells_to_graph), [in_degree_of](OperatorsIM#in_degree_of), [in_edges_of](OperatorsIM#in_edges_of), [layout](OperatorsIM#layout), [load_graph_from_file](OperatorsIM#load_graph_from_file), [load_shortest_paths](OperatorsIM#load_shortest_paths), [main_connected_component](OperatorsIM#main_connected_component), [max_flow_between](OperatorsIM#max_flow_between), [maximal_cliques_of](OperatorsIM#maximal_cliques_of), [nb_cycles](OperatorsNR#nb_cycles), [neighbors_of](OperatorsNR#neighbors_of), [node](OperatorsNR#node), [nodes](OperatorsNR#nodes), [out_degree_of](OperatorsNR#out_degree_of), [out_edges_of](OperatorsNR#out_edges_of), [path_between](OperatorsNR#path_between), [paths_between](OperatorsNR#paths_between), [predecessors_of](OperatorsNR#predecessors_of), [remove_node_from](OperatorsNR#remove_node_from), [rewire_n](OperatorsNR#rewire_n), [source_of](OperatorsSZ#source_of), [spatial_graph](OperatorsSZ#spatial_graph), [strahler](OperatorsSZ#strahler), [successors_of](OperatorsSZ#successors_of), [sum](OperatorsSZ#sum), [target_of](OperatorsSZ#target_of), [undirected](OperatorsSZ#undirected), [use_cache](OperatorsSZ#use_cache), [weight_of](OperatorsSZ#weight_of), [with_optimizer_type](OperatorsSZ#with_optimizer_type), [with_weights](OperatorsSZ#with_weights), 
-
-----
-
-### Grid-related operators
-[as_4_grid](OperatorsAA#as_4_grid), [as_grid](OperatorsAA#as_grid), [as_hexagonal_grid](OperatorsAA#as_hexagonal_grid), [grid_at](OperatorsDH#grid_at), [path_between](OperatorsNR#path_between), 
-
-----
-
-### Iterator operators
-[accumulate](OperatorsAA#accumulate), [as_map](OperatorsAA#as_map), [collect](OperatorsBC#collect), [count](OperatorsBC#count), [create_map](OperatorsBC#create_map), [distribution_of](OperatorsDH#distribution_of), [distribution_of](OperatorsDH#distribution_of), [distribution_of](OperatorsDH#distribution_of), [distribution2d_of](OperatorsDH#distribution2d_of), [distribution2d_of](OperatorsDH#distribution2d_of), [distribution2d_of](OperatorsDH#distribution2d_of), [first_with](OperatorsDH#first_with), [frequency_of](OperatorsDH#frequency_of), [group_by](OperatorsDH#group_by), [index_by](OperatorsIM#index_by), [last_with](OperatorsIM#last_with), [max_of](OperatorsIM#max_of), [mean_of](OperatorsIM#mean_of), [min_of](OperatorsIM#min_of), [product_of](OperatorsNR#product_of), [sort_by](OperatorsSZ#sort_by), [sum_of](OperatorsSZ#sum_of), [variance_of](OperatorsSZ#variance_of), [where](OperatorsSZ#where), [with_max_of](OperatorsSZ#with_max_of), [with_min_of](OperatorsSZ#with_min_of), 
-
-----
-
-### List-related operators
-[copy_between](OperatorsBC#copy_between), [index_of](OperatorsIM#index_of), [last_index_of](OperatorsIM#last_index_of), 
-
-----
-
-### Logical operators
-[:](OperatorsAA#:), [!](OperatorsAA#!), [?](OperatorsAA#?), [add_3Dmodel](OperatorsAA#add_3dmodel), [add_geometry](OperatorsAA#add_geometry), [add_icon](OperatorsAA#add_icon), [and](OperatorsAA#and), [or](OperatorsNR#or), [xor](OperatorsSZ#xor), 
-
-----
-
-### Map comparaison operators
-[fuzzy_kappa](OperatorsDH#fuzzy_kappa), [fuzzy_kappa_sim](OperatorsDH#fuzzy_kappa_sim), [kappa](OperatorsIM#kappa), [kappa_sim](OperatorsIM#kappa_sim), [percent_absolute_deviation](OperatorsNR#percent_absolute_deviation), 
-
-----
-
-### Map-related operators
-[as_map](OperatorsAA#as_map), [create_map](OperatorsBC#create_map), [index_of](OperatorsIM#index_of), [last_index_of](OperatorsIM#last_index_of), 
-
-----
-
-### Material
-[material](OperatorsIM#material), 
-
-----
-
-### Matrix-related operators
-[-](OperatorsAA#-), [/](OperatorsAA#/), [.](OperatorsAA#.), [*](OperatorsAA#*), [+](OperatorsAA#+), [append_horizontally](OperatorsAA#append_horizontally), [append_vertically](OperatorsAA#append_vertically), [column_at](OperatorsBC#column_at), [columns_list](OperatorsBC#columns_list), [determinant](OperatorsDH#determinant), [eigenvalues](OperatorsDH#eigenvalues), [index_of](OperatorsIM#index_of), [inverse](OperatorsIM#inverse), [last_index_of](OperatorsIM#last_index_of), [row_at](OperatorsNR#row_at), [rows_list](OperatorsNR#rows_list), [shuffle](OperatorsSZ#shuffle), [trace](OperatorsSZ#trace), [transpose](OperatorsSZ#transpose), 
-
-----
-
-### multicriteria operators
-[electre_DM](OperatorsDH#electre_dm), [evidence_theory_DM](OperatorsDH#evidence_theory_dm), [fuzzy_choquet_DM](OperatorsDH#fuzzy_choquet_dm), [promethee_DM](OperatorsNR#promethee_dm), [weighted_means_DM](OperatorsSZ#weighted_means_dm), 
-
-----
-
-### Path-related operators
-[agent_from_geometry](OperatorsAA#agent_from_geometry), [all_pairs_shortest_path](OperatorsAA#all_pairs_shortest_path), [as_path](OperatorsAA#as_path), [load_shortest_paths](OperatorsIM#load_shortest_paths), [max_flow_between](OperatorsIM#max_flow_between), [path_between](OperatorsNR#path_between), [path_to](OperatorsNR#path_to), [paths_between](OperatorsNR#paths_between), [use_cache](OperatorsSZ#use_cache), 
-
-----
-
-### Points-related operators
-[-](OperatorsAA#-), [/](OperatorsAA#/), [*](OperatorsAA#*), [+](OperatorsAA#+), [<](OperatorsAA#<), [<=](OperatorsAA#<=), [>](OperatorsAA#>), [>=](OperatorsAA#>=), [add_point](OperatorsAA#add_point), [angle_between](OperatorsAA#angle_between), [any_location_in](OperatorsAA#any_location_in), [centroid](OperatorsBC#centroid), [closest_points_with](OperatorsBC#closest_points_with), [farthest_point_to](OperatorsDH#farthest_point_to), [grid_at](OperatorsDH#grid_at), [norm](OperatorsNR#norm), [points_along](OperatorsNR#points_along), [points_at](OperatorsNR#points_at), [points_on](OperatorsNR#points_on), 
-
-----
-
-### Random operators
-[binomial](OperatorsBC#binomial), [flip](OperatorsDH#flip), [gauss](OperatorsDH#gauss), [improved_generator](OperatorsIM#improved_generator), [open_simplex_generator](OperatorsNR#open_simplex_generator), [poisson](OperatorsNR#poisson), [rnd](OperatorsNR#rnd), [rnd_choice](OperatorsNR#rnd_choice), [sample](OperatorsSZ#sample), [shuffle](OperatorsSZ#shuffle), [simplex_generator](OperatorsSZ#simplex_generator), [skew_gauss](OperatorsSZ#skew_gauss), [truncated_gauss](OperatorsSZ#truncated_gauss), 
-
-----
-
-### ReverseOperators
-[restoreSimulation](OperatorsNR#restoresimulation), [restoreSimulationFromFile](OperatorsNR#restoresimulationfromfile), [saveAgent](OperatorsSZ#saveagent), [saveSimulation](OperatorsSZ#savesimulation), [serialize](OperatorsSZ#serialize), [serializeAgent](OperatorsSZ#serializeagent), 
-
-----
-
-### Shape
-[arc](OperatorsAA#arc), [box](OperatorsBC#box), [circle](OperatorsBC#circle), [cone](OperatorsBC#cone), [cone3D](OperatorsBC#cone3d), [cross](OperatorsBC#cross), [cube](OperatorsBC#cube), [curve](OperatorsBC#curve), [cylinder](OperatorsBC#cylinder), [ellipse](OperatorsDH#ellipse), [envelope](OperatorsDH#envelope), [geometry_collection](OperatorsDH#geometry_collection), [hexagon](OperatorsDH#hexagon), [line](OperatorsIM#line), [link](OperatorsIM#link), [plan](OperatorsNR#plan), [polygon](OperatorsNR#polygon), [polyhedron](OperatorsNR#polyhedron), [pyramid](OperatorsNR#pyramid), [rectangle](OperatorsNR#rectangle), [sphere](OperatorsSZ#sphere), [square](OperatorsSZ#square), [squircle](OperatorsSZ#squircle), [teapot](OperatorsSZ#teapot), [triangle](OperatorsSZ#triangle), 
-
-----
-
-### Spatial operators
-[-](OperatorsAA#-), [*](OperatorsAA#*), [+](OperatorsAA#+), [add_point](OperatorsAA#add_point), [agent_closest_to](OperatorsAA#agent_closest_to), [agent_farthest_to](OperatorsAA#agent_farthest_to), [agents_at_distance](OperatorsAA#agents_at_distance), [agents_inside](OperatorsAA#agents_inside), [agents_overlapping](OperatorsAA#agents_overlapping), [angle_between](OperatorsAA#angle_between), [any_location_in](OperatorsAA#any_location_in), [arc](OperatorsAA#arc), [around](OperatorsAA#around), [as_4_grid](OperatorsAA#as_4_grid), [as_grid](OperatorsAA#as_grid), [as_hexagonal_grid](OperatorsAA#as_hexagonal_grid), [at_distance](OperatorsAA#at_distance), [at_location](OperatorsAA#at_location), [box](OperatorsBC#box), [centroid](OperatorsBC#centroid), [circle](OperatorsBC#circle), [clean](OperatorsBC#clean), [clean_network](OperatorsBC#clean_network), [closest_points_with](OperatorsBC#closest_points_with), [closest_to](OperatorsBC#closest_to), [cone](OperatorsBC#cone), [cone3D](OperatorsBC#cone3d), [convex_hull](OperatorsBC#convex_hull), [covers](OperatorsBC#covers), [cross](OperatorsBC#cross), [crosses](OperatorsBC#crosses), [crs](OperatorsBC#crs), [CRS_transform](OperatorsBC#crs_transform), [cube](OperatorsBC#cube), [curve](OperatorsBC#curve), [cylinder](OperatorsBC#cylinder), [dem](OperatorsDH#dem), [direction_between](OperatorsDH#direction_between), [disjoint_from](OperatorsDH#disjoint_from), [distance_between](OperatorsDH#distance_between), [distance_to](OperatorsDH#distance_to), [ellipse](OperatorsDH#ellipse), [envelope](OperatorsDH#envelope), [farthest_point_to](OperatorsDH#farthest_point_to), [farthest_to](OperatorsDH#farthest_to), [geometry_collection](OperatorsDH#geometry_collection), [gini](OperatorsDH#gini), [hexagon](OperatorsDH#hexagon), [hierarchical_clustering](OperatorsDH#hierarchical_clustering), [IDW](OperatorsIM#idw), [inside](OperatorsIM#inside), [inter](OperatorsIM#inter), [intersects](OperatorsIM#intersects), [line](OperatorsIM#line), [link](OperatorsIM#link), [masked_by](OperatorsIM#masked_by), [moran](OperatorsIM#moran), [neighbors_at](OperatorsNR#neighbors_at), [neighbors_of](OperatorsNR#neighbors_of), [overlapping](OperatorsNR#overlapping), [overlaps](OperatorsNR#overlaps), [partially_overlaps](OperatorsNR#partially_overlaps), [path_between](OperatorsNR#path_between), [path_to](OperatorsNR#path_to), [plan](OperatorsNR#plan), [points_along](OperatorsNR#points_along), [points_at](OperatorsNR#points_at), [points_on](OperatorsNR#points_on), [polygon](OperatorsNR#polygon), [polyhedron](OperatorsNR#polyhedron), [pyramid](OperatorsNR#pyramid), [rectangle](OperatorsNR#rectangle), [rgb_to_xyz](OperatorsNR#rgb_to_xyz), [rotated_by](OperatorsNR#rotated_by), [round](OperatorsNR#round), [scaled_to](OperatorsSZ#scaled_to), [set_z](OperatorsSZ#set_z), [simple_clustering_by_distance](OperatorsSZ#simple_clustering_by_distance), [simplification](OperatorsSZ#simplification), [skeletonize](OperatorsSZ#skeletonize), [smooth](OperatorsSZ#smooth), [sphere](OperatorsSZ#sphere), [split_at](OperatorsSZ#split_at), [split_geometry](OperatorsSZ#split_geometry), [split_lines](OperatorsSZ#split_lines), [square](OperatorsSZ#square), [squircle](OperatorsSZ#squircle), [teapot](OperatorsSZ#teapot), [to_GAMA_CRS](OperatorsSZ#to_gama_crs), [to_rectangles](OperatorsSZ#to_rectangles), [to_squares](OperatorsSZ#to_squares), [to_sub_geometries](OperatorsSZ#to_sub_geometries), [touches](OperatorsSZ#touches), [towards](OperatorsSZ#towards), [transformed_by](OperatorsSZ#transformed_by), [translated_by](OperatorsSZ#translated_by), [triangle](OperatorsSZ#triangle), [triangulate](OperatorsSZ#triangulate), [union](OperatorsSZ#union), [using](OperatorsSZ#using), [voronoi](OperatorsSZ#voronoi), [with_precision](OperatorsSZ#with_precision), [without_holes](OperatorsSZ#without_holes), 
-
-----
-
-### Spatial properties operators
-[covers](OperatorsBC#covers), [crosses](OperatorsBC#crosses), [intersects](OperatorsIM#intersects), [partially_overlaps](OperatorsNR#partially_overlaps), [touches](OperatorsSZ#touches), 
-
-----
-
-### Spatial queries operators
-[agent_closest_to](OperatorsAA#agent_closest_to), [agent_farthest_to](OperatorsAA#agent_farthest_to), [agents_at_distance](OperatorsAA#agents_at_distance), [agents_inside](OperatorsAA#agents_inside), [agents_overlapping](OperatorsAA#agents_overlapping), [at_distance](OperatorsAA#at_distance), [closest_to](OperatorsBC#closest_to), [farthest_to](OperatorsDH#farthest_to), [inside](OperatorsIM#inside), [neighbors_at](OperatorsNR#neighbors_at), [neighbors_of](OperatorsNR#neighbors_of), [overlapping](OperatorsNR#overlapping), 
-
-----
-
-### Spatial relations operators
-[direction_between](OperatorsDH#direction_between), [distance_between](OperatorsDH#distance_between), [distance_to](OperatorsDH#distance_to), [path_between](OperatorsNR#path_between), [path_to](OperatorsNR#path_to), [towards](OperatorsSZ#towards), 
-
-----
-
-### Spatial statistical operators
-[hierarchical_clustering](OperatorsDH#hierarchical_clustering), [simple_clustering_by_distance](OperatorsSZ#simple_clustering_by_distance), 
-
-----
-
-### Spatial transformations operators
-[-](OperatorsAA#-), [*](OperatorsAA#*), [+](OperatorsAA#+), [as_4_grid](OperatorsAA#as_4_grid), [as_grid](OperatorsAA#as_grid), [as_hexagonal_grid](OperatorsAA#as_hexagonal_grid), [at_location](OperatorsAA#at_location), [clean](OperatorsBC#clean), [clean_network](OperatorsBC#clean_network), [convex_hull](OperatorsBC#convex_hull), [CRS_transform](OperatorsBC#crs_transform), [rotated_by](OperatorsNR#rotated_by), [scaled_to](OperatorsSZ#scaled_to), [simplification](OperatorsSZ#simplification), [skeletonize](OperatorsSZ#skeletonize), [smooth](OperatorsSZ#smooth), [split_geometry](OperatorsSZ#split_geometry), [split_lines](OperatorsSZ#split_lines), [to_GAMA_CRS](OperatorsSZ#to_gama_crs), [to_rectangles](OperatorsSZ#to_rectangles), [to_squares](OperatorsSZ#to_squares), [to_sub_geometries](OperatorsSZ#to_sub_geometries), [transformed_by](OperatorsSZ#transformed_by), [translated_by](OperatorsSZ#translated_by), [triangulate](OperatorsSZ#triangulate), [voronoi](OperatorsSZ#voronoi), [with_precision](OperatorsSZ#with_precision), [without_holes](OperatorsSZ#without_holes), 
-
-----
-
-### Species-related operators
-[index_of](OperatorsIM#index_of), [last_index_of](OperatorsIM#last_index_of), [of_generic_species](OperatorsNR#of_generic_species), [of_species](OperatorsNR#of_species), 
-
-----
-
-### Statistical operators
-[build](OperatorsBC#build), [corR](OperatorsBC#corr), [dbscan](OperatorsDH#dbscan), [distribution_of](OperatorsDH#distribution_of), [distribution2d_of](OperatorsDH#distribution2d_of), [dtw](OperatorsDH#dtw), [frequency_of](OperatorsDH#frequency_of), [gamma_rnd](OperatorsDH#gamma_rnd), [geometric_mean](OperatorsDH#geometric_mean), [gini](OperatorsDH#gini), [harmonic_mean](OperatorsDH#harmonic_mean), [hierarchical_clustering](OperatorsDH#hierarchical_clustering), [kmeans](OperatorsIM#kmeans), [kurtosis](OperatorsIM#kurtosis), [max](OperatorsIM#max), [mean](OperatorsIM#mean), [mean_deviation](OperatorsIM#mean_deviation), [meanR](OperatorsIM#meanr), [median](OperatorsIM#median), [min](OperatorsIM#min), [moran](OperatorsIM#moran), [mul](OperatorsIM#mul), [predict](OperatorsNR#predict), [simple_clustering_by_distance](OperatorsSZ#simple_clustering_by_distance), [skewness](OperatorsSZ#skewness), [split](OperatorsSZ#split), [split_in](OperatorsSZ#split_in), [split_using](OperatorsSZ#split_using), [standard_deviation](OperatorsSZ#standard_deviation), [sum](OperatorsSZ#sum), [variance](OperatorsSZ#variance), 
-
-----
-
-### Strings-related operators
-[+](OperatorsAA#+), [<](OperatorsAA#<), [<=](OperatorsAA#<=), [>](OperatorsAA#>), [>=](OperatorsAA#>=), [at](OperatorsAA#at), [char](OperatorsBC#char), [contains](OperatorsBC#contains), [contains_all](OperatorsBC#contains_all), [contains_any](OperatorsBC#contains_any), [copy_between](OperatorsBC#copy_between), [date](OperatorsDH#date), [empty](OperatorsDH#empty), [first](OperatorsDH#first), [in](OperatorsIM#in), [indented_by](OperatorsIM#indented_by), [index_of](OperatorsIM#index_of), [is_number](OperatorsIM#is_number), [last](OperatorsIM#last), [last_index_of](OperatorsIM#last_index_of), [length](OperatorsIM#length), [lower_case](OperatorsIM#lower_case), [replace](OperatorsNR#replace), [replace_regex](OperatorsNR#replace_regex), [reverse](OperatorsNR#reverse), [sample](OperatorsSZ#sample), [shuffle](OperatorsSZ#shuffle), [split_with](OperatorsSZ#split_with), [string](OperatorsSZ#string), [upper_case](OperatorsSZ#upper_case), 
-
-----
-
-### System
-[.](OperatorsAA#.), [command](OperatorsBC#command), [copy](OperatorsBC#copy), [dead](OperatorsDH#dead), [eval_gaml](OperatorsDH#eval_gaml), [every](OperatorsDH#every), [is_error](OperatorsIM#is_error), [is_warning](OperatorsIM#is_warning), [user_input](OperatorsSZ#user_input), 
-
-----
-
-### Time-related operators
-[date](OperatorsDH#date), [string](OperatorsSZ#string), 
-
-----
-
-### Types-related operators
-
-
-----
-
-### User control operators
-[user_input](OperatorsSZ#user_input), 
-	
-----
-
-## Operators
-	
     	
 ----
 
@@ -389,7 +71,7 @@ Constructs a file of type saved_simulation. Allowed extensions are limited to gs
 
 [//]: # (keyword|operator_scaled_by)
 ### `scaled_by`
-   Same signification as [*](OperatorsAA#*)
+   Same signification as [*](operators-a-to-a#*)
     	
 ----
 
@@ -415,7 +97,7 @@ geometry var0 <- shape scaled_to {10,10}; // var0 equals a geometry correspondin
 
 [//]: # (keyword|operator_select)
 ### `select`
-   Same signification as [where](OperatorsSZ#where)
+   Same signification as [where](operators-s-to-z#where)
     	
 ----
 
@@ -784,7 +466,7 @@ list var2 <- shuffle ([12, 13, 14]); // var2 equals [14,12,13] (for example)
 
 #### See also: 
 
-[reverse](OperatorsNR#reverse), 
+[reverse](operators-n-to-r#reverse), 
     	
 ----
 
@@ -830,13 +512,13 @@ list<list<agent>> var0 <- [ag1, ag2, ag3, ag4, ag5] simpleClusteringByDistance 2
 
 #### See also: 
 
-[hierarchical_clustering](OperatorsDH#hierarchical_clustering), 
+[hierarchical_clustering](operators-d-to-h#hierarchical_clustering), 
     	
 ----
 
 [//]: # (keyword|operator_simple_clustering_by_envelope_distance)
 ### `simple_clustering_by_envelope_distance`
-   Same signification as [simple_clustering_by_distance](OperatorsSZ#simple_clustering_by_distance)
+   Same signification as [simple_clustering_by_distance](operators-s-to-z#simple_clustering_by_distance)
     	
 ----
 
@@ -907,7 +589,7 @@ float var1 <- sin (0); // var1 equals 0.0
 
 #### See also: 
 
-[cos](OperatorsBC#cos), [tan](OperatorsSZ#tan), 
+[cos](operators-b-to-c#cos), [tan](operators-s-to-z#tan), 
     	
 ----
 
@@ -931,7 +613,7 @@ float var0 <- sin_rad(#pi); // var0 equals 0.0
 
 #### See also: 
 
-[cos_rad](OperatorsBC#cos_rad), [tan_rad](OperatorsSZ#tan_rad), 
+[cos_rad](operators-b-to-c#cos_rad), [tan_rad](operators-s-to-z#tan_rad), 
     	
 ----
 
@@ -1018,7 +700,7 @@ float var0 <- skew_gauss(0.0, 1.0, 0.7,0.1); // var0 equals 0.1729218460343077
 
 #### See also: 
 
-[gauss](OperatorsDH#gauss), [truncated_gauss](OperatorsSZ#truncated_gauss), [poisson](OperatorsNR#poisson), 
+[gauss](operators-d-to-h#gauss), [truncated_gauss](operators-s-to-z#truncated_gauss), [poisson](operators-n-to-r#poisson), 
     	
 ----
 
@@ -1088,13 +770,13 @@ Casts the operand into the type social_link
 
 [//]: # (keyword|operator_solid)
 ### `solid`
-   Same signification as [without_holes](OperatorsSZ#without_holes)
+   Same signification as [without_holes](operators-s-to-z#without_holes)
     	
 ----
 
 [//]: # (keyword|operator_sort)
 ### `sort`
-   Same signification as [sort_by](OperatorsSZ#sort_by)
+   Same signification as [sort_by](operators-s-to-z#sort_by)
     	
 ----
 
@@ -1128,7 +810,7 @@ list var4 <- [1::2, 5::6, 3::4] sort_by (each); // var4 equals [2, 4, 6]
 
 #### See also: 
 
-[group_by](OperatorsDH#group_by), 
+[group_by](operators-d-to-h#group_by), 
     	
 ----
 
@@ -1157,7 +839,7 @@ point var3 <- graphFromMap source_of(link({1,5},{12,45})); // var3 equals {1,5}
 
 #### See also: 
 
-[target_of](OperatorsSZ#target_of), 
+[target_of](operators-s-to-z#target_of), 
     	
 ----
 
@@ -1173,7 +855,7 @@ allows to create a spatial graph from a container of vertices, without trying to
 
 #### See also: 
 
-[graph](OperatorsDH#graph), 
+[graph](operators-d-to-h#graph), 
     	
 ----
 
@@ -1207,7 +889,7 @@ species var3 <- species(node1); // var3 equals node
 
 [//]: # (keyword|operator_species_of)
 ### `species_of`
-   Same signification as [species](OperatorsSZ#species)
+   Same signification as [species](operators-s-to-z#species)
     	
 ----
 
@@ -1237,7 +919,7 @@ geometry var0 <- sphere(10); // var0 equals a geometry as a circle of radius 10 
 
 #### See also: 
 
-[around](OperatorsAA#around), [cone](OperatorsBC#cone), [line](OperatorsIM#line), [link](OperatorsIM#link), [norm](OperatorsNR#norm), [point](OperatorsNR#point), [polygon](OperatorsNR#polygon), [polyline](OperatorsNR#polyline), [rectangle](OperatorsNR#rectangle), [square](OperatorsSZ#square), [triangle](OperatorsSZ#triangle), 
+[around](operators-a-to-a#around), [cone](operators-b-to-c#cone), [line](operators-i-to-m#line), [link](operators-i-to-m#link), [norm](operators-n-to-r#norm), [point](operators-n-to-r#point), [polygon](operators-n-to-r#polygon), [polyline](operators-n-to-r#polyline), [rectangle](operators-n-to-r#rectangle), [square](operators-s-to-z#square), [triangle](operators-s-to-z#triangle), 
     	
 ----
 
@@ -1253,7 +935,7 @@ Splits a list of numbers into n=(1+3.3*log10(elements)) bins. The splitting is s
 
 #### See also: 
 
-[split_in](OperatorsSZ#split_in), [split_using](OperatorsSZ#split_using), 
+[split_in](operators-s-to-z#split_in), [split_using](operators-s-to-z#split_using), 
     	
 ----
 
@@ -1322,7 +1004,7 @@ Splits a list of numbers into n bins defined by n-1 bounds between the minimum a
 
 #### See also: 
 
-[split](OperatorsSZ#split), [split_using](OperatorsSZ#split_using), 
+[split](operators-s-to-z#split), [split_using](operators-s-to-z#split_using), 
     	
 ----
 
@@ -1364,7 +1046,7 @@ Splits a list of numbers into n+1 bins using a set of n bounds passed as the sec
 
 #### See also: 
 
-[split](OperatorsSZ#split), [split_in](OperatorsSZ#split_in), 
+[split](operators-s-to-z#split), [split_in](operators-s-to-z#split_in), 
     	
 ----
 
@@ -1444,7 +1126,7 @@ geometry var0 <- square(10); // var0 equals a geometry as a square of side size 
 
 #### See also: 
 
-[around](OperatorsAA#around), [circle](OperatorsBC#circle), [cone](OperatorsBC#cone), [line](OperatorsIM#line), [link](OperatorsIM#link), [norm](OperatorsNR#norm), [point](OperatorsNR#point), [polygon](OperatorsNR#polygon), [polyline](OperatorsNR#polyline), [rectangle](OperatorsNR#rectangle), [triangle](OperatorsSZ#triangle), 
+[around](operators-a-to-a#around), [circle](operators-b-to-c#circle), [cone](operators-b-to-c#cone), [line](operators-i-to-m#line), [link](operators-i-to-m#link), [norm](operators-n-to-r#norm), [point](operators-n-to-r#point), [polygon](operators-n-to-r#polygon), [polyline](operators-n-to-r#polyline), [rectangle](operators-n-to-r#rectangle), [triangle](operators-s-to-z#triangle), 
     	
 ----
 
@@ -1475,7 +1157,7 @@ geometry var0 <- squircle(4,4); // var0 equals a geometry as a squircle of side 
 
 #### See also: 
 
-[around](OperatorsAA#around), [cone](OperatorsBC#cone), [line](OperatorsIM#line), [link](OperatorsIM#link), [norm](OperatorsNR#norm), [point](OperatorsNR#point), [polygon](OperatorsNR#polygon), [polyline](OperatorsNR#polyline), [super_ellipse](OperatorsSZ#super_ellipse), [rectangle](OperatorsNR#rectangle), [square](OperatorsSZ#square), [circle](OperatorsBC#circle), [ellipse](OperatorsDH#ellipse), [triangle](OperatorsSZ#triangle), 
+[around](operators-a-to-a#around), [cone](operators-b-to-c#cone), [line](operators-i-to-m#line), [link](operators-i-to-m#link), [norm](operators-n-to-r#norm), [point](operators-n-to-r#point), [polygon](operators-n-to-r#polygon), [polyline](operators-n-to-r#polyline), [super_ellipse](operators-s-to-z#super_ellipse), [rectangle](operators-n-to-r#rectangle), [square](operators-s-to-z#square), [circle](operators-b-to-c#circle), [ellipse](operators-d-to-h#ellipse), [triangle](operators-s-to-z#triangle), 
     	
 ----
 
@@ -1510,7 +1192,7 @@ float var0 <- standard_deviation ([4.5, 3.5, 5.5, 7.0]); // var0 equals 1.293010
 
 #### See also: 
 
-[mean](OperatorsIM#mean), [mean_deviation](OperatorsIM#mean_deviation), 
+[mean](operators-i-to-m#mean), [mean_deviation](operators-i-to-m#mean_deviation), 
     	
 ----
 
@@ -1586,49 +1268,49 @@ Returns the value, t, for which the area under the Student-t probability density
 
 [//]: # (keyword|operator_subtract_days)
 ### `subtract_days`
-   Same signification as [minus_days](OperatorsIM#minus_days)
+   Same signification as [minus_days](operators-i-to-m#minus_days)
     	
 ----
 
 [//]: # (keyword|operator_subtract_hours)
 ### `subtract_hours`
-   Same signification as [minus_hours](OperatorsIM#minus_hours)
+   Same signification as [minus_hours](operators-i-to-m#minus_hours)
     	
 ----
 
 [//]: # (keyword|operator_subtract_minutes)
 ### `subtract_minutes`
-   Same signification as [minus_minutes](OperatorsIM#minus_minutes)
+   Same signification as [minus_minutes](operators-i-to-m#minus_minutes)
     	
 ----
 
 [//]: # (keyword|operator_subtract_months)
 ### `subtract_months`
-   Same signification as [minus_months](OperatorsIM#minus_months)
+   Same signification as [minus_months](operators-i-to-m#minus_months)
     	
 ----
 
 [//]: # (keyword|operator_subtract_ms)
 ### `subtract_ms`
-   Same signification as [minus_ms](OperatorsIM#minus_ms)
+   Same signification as [minus_ms](operators-i-to-m#minus_ms)
     	
 ----
 
 [//]: # (keyword|operator_subtract_seconds)
 ### `subtract_seconds`
-   Same signification as [-](OperatorsAA#-)
+   Same signification as [-](operators-a-to-a#-)
     	
 ----
 
 [//]: # (keyword|operator_subtract_weeks)
 ### `subtract_weeks`
-   Same signification as [minus_weeks](OperatorsIM#minus_weeks)
+   Same signification as [minus_weeks](operators-i-to-m#minus_weeks)
     	
 ----
 
 [//]: # (keyword|operator_subtract_years)
 ### `subtract_years`
-   Same signification as [minus_years](OperatorsIM#minus_years)
+   Same signification as [minus_years](operators-i-to-m#minus_years)
     	
 ----
 
@@ -1654,7 +1336,7 @@ list var2 <- graphEpidemio successors_of node({34,56}); // var2 equals []
 
 #### See also: 
 
-[predecessors_of](OperatorsNR#predecessors_of), [neighbors_of](OperatorsNR#neighbors_of), 
+[predecessors_of](operators-n-to-r#predecessors_of), [neighbors_of](operators-n-to-r#neighbors_of), 
     	
 ----
 
@@ -1699,7 +1381,7 @@ unknown var1 <- sum([{1.0,3.0},{3.0,5.0},{9.0,1.0},{7.0,8.0}]); // var1 equals {
 
 #### See also: 
 
-[mul](OperatorsIM#mul), 
+[mul](operators-i-to-m#mul), 
     	
 ----
 
@@ -1737,7 +1419,7 @@ unknown var0 <- [1,2] sum_of (each * 100 ); // var0 equals 300
 
 #### See also: 
 
-[min_of](OperatorsIM#min_of), [max_of](OperatorsIM#max_of), [product_of](OperatorsNR#product_of), [mean_of](OperatorsIM#mean_of), 
+[min_of](operators-i-to-m#min_of), [max_of](operators-i-to-m#max_of), [product_of](operators-n-to-r#product_of), [mean_of](operators-i-to-m#mean_of), 
     	
 ----
 
@@ -1778,7 +1460,7 @@ float var1 <- tan(90); // var1 equals 1.633123935319537E16
 
 #### See also: 
 
-[cos](OperatorsBC#cos), [sin](OperatorsSZ#sin), 
+[cos](operators-b-to-c#cos), [sin](operators-s-to-z#sin), 
     	
 ----
 
@@ -1794,7 +1476,7 @@ Returns the value (in [-1,1]) of the trigonometric tangent of the operand (in ra
 
 #### See also: 
 
-[cos_rad](OperatorsBC#cos_rad), [sin_rad](OperatorsSZ#sin_rad), 
+[cos_rad](operators-b-to-c#cos_rad), [sin_rad](operators-s-to-z#sin_rad), 
     	
 ----
 
@@ -1844,7 +1526,7 @@ unknown var3 <- graphFromMap target_of(link({1,5},{12,45})); // var3 equals {12,
 
 #### See also: 
 
-[source_of](OperatorsSZ#source_of), 
+[source_of](operators-s-to-z#source_of), 
     	
 ----
 
@@ -1874,7 +1556,7 @@ geometry var0 <- teapot(10); // var0 equals a geometry as a circle of radius 10 
 
 #### See also: 
 
-[around](OperatorsAA#around), [cone](OperatorsBC#cone), [line](OperatorsIM#line), [link](OperatorsIM#link), [norm](OperatorsNR#norm), [point](OperatorsNR#point), [polygon](OperatorsNR#polygon), [polyline](OperatorsNR#polyline), [rectangle](OperatorsNR#rectangle), [square](OperatorsSZ#square), [triangle](OperatorsSZ#triangle), 
+[around](operators-a-to-a#around), [cone](operators-b-to-c#cone), [line](operators-i-to-m#line), [link](operators-i-to-m#link), [norm](operators-n-to-r#norm), [point](operators-n-to-r#point), [polygon](operators-n-to-r#polygon), [polyline](operators-n-to-r#polyline), [rectangle](operators-n-to-r#rectangle), [square](operators-s-to-z#square), [triangle](operators-s-to-z#triangle), 
     	
 ----
 
@@ -1891,7 +1573,7 @@ Constructs a file of type text. Allowed extensions are limited to txt, data, tex
 
 [//]: # (keyword|operator_TGauss)
 ### `TGauss`
-   Same signification as [truncated_gauss](OperatorsSZ#truncated_gauss)
+   Same signification as [truncated_gauss](operators-s-to-z#truncated_gauss)
     	
 ----
 
@@ -1929,7 +1611,7 @@ date('2000-01-01') to date('2010-01-01') // builds an interval between these two
 
 #### See also: 
 
-[every](OperatorsDH#every), 
+[every](operators-d-to-h#every), 
     	
 ----
 
@@ -1993,7 +1675,7 @@ string var11 <- to_gaml(node1); // var11 equals  1 as node
 
 [//]: # (keyword|operator_to_rectangles)
 ### `to_rectangles`
-   Same signification as [split_geometry](OperatorsSZ#split_geometry)
+   Same signification as [split_geometry](operators-s-to-z#split_geometry)
 
 #### Possible use: 
   *  **`to_rectangles`** (`geometry`, `point`, `bool`) --->  `list<geometry>`
@@ -2064,13 +1746,13 @@ list<geometry> var1 <- to_sub_geometries(rectangle(10, 50), [0.1, 0.5, 0.4]); //
 
 [//]: # (keyword|operator_to_triangles)
 ### `to_triangles`
-   Same signification as [triangulate](OperatorsSZ#triangulate)
+   Same signification as [triangulate](operators-s-to-z#triangulate)
     	
 ----
 
 [//]: # (keyword|operator_tokenize)
 ### `tokenize`
-   Same signification as [split_with](OperatorsSZ#split_with)
+   Same signification as [split_with](operators-s-to-z#split_with)
     	
 ----
 
@@ -2103,7 +1785,7 @@ topology var0 <- topology(0); // var0 equals niltopology(a_graph)	--: Multiple t
 
 #### See also: 
 
-[geometry](OperatorsDH#geometry), 
+[geometry](operators-d-to-h#geometry), 
     	
 ----
 
@@ -2155,7 +1837,7 @@ bool var10 <- polygon([{10,10},{10,20},{20,20},{20,10}]) touches {10,15}; // var
 
 #### See also: 
 
-[disjoint_from](OperatorsDH#disjoint_from), [crosses](OperatorsBC#crosses), [overlaps](OperatorsNR#overlaps), [partially_overlaps](OperatorsNR#partially_overlaps), [intersects](OperatorsIM#intersects), 
+[disjoint_from](operators-d-to-h#disjoint_from), [crosses](operators-b-to-c#crosses), [overlaps](operators-n-to-r#overlaps), [partially_overlaps](operators-n-to-r#partially_overlaps), [intersects](operators-i-to-m#intersects), 
     	
 ----
 
@@ -2180,7 +1862,7 @@ float var0 <- ag1 towards ag2; // var0 equals the direction between ag1 and ag2 
 
 #### See also: 
 
-[distance_between](OperatorsDH#distance_between), [distance_to](OperatorsDH#distance_to), [direction_between](OperatorsDH#direction_between), [path_between](OperatorsNR#path_between), [path_to](OperatorsNR#path_to), 
+[distance_between](operators-d-to-h#distance_between), [distance_to](operators-d-to-h#distance_to), [direction_between](operators-d-to-h#direction_between), [path_between](operators-n-to-r#path_between), [path_to](operators-n-to-r#path_to), 
     	
 ----
 
@@ -2224,7 +1906,7 @@ geometry var0 <- self transformed_by {45, 0.5}; // var0 equals the geometry resu
 
 #### See also: 
 
-[rotated_by](OperatorsNR#rotated_by), [translated_by](OperatorsSZ#translated_by), 
+[rotated_by](operators-n-to-r#rotated_by), [translated_by](operators-s-to-z#translated_by), 
     	
 ----
 
@@ -2249,13 +1931,13 @@ geometry var0 <- self translated_by {10,10,10}; // var0 equals the geometry resu
 
 #### See also: 
 
-[rotated_by](OperatorsNR#rotated_by), [transformed_by](OperatorsSZ#transformed_by), 
+[rotated_by](operators-n-to-r#rotated_by), [transformed_by](operators-s-to-z#transformed_by), 
     	
 ----
 
 [//]: # (keyword|operator_translated_to)
 ### `translated_to`
-   Same signification as [at_location](OperatorsAA#at_location)
+   Same signification as [at_location](operators-a-to-a#at_location)
     	
 ----
 
@@ -2304,7 +1986,7 @@ geometry var0 <- triangle(5); // var0 equals a geometry as a triangle with side_
 
 #### See also: 
 
-[around](OperatorsAA#around), [circle](OperatorsBC#circle), [cone](OperatorsBC#cone), [line](OperatorsIM#line), [link](OperatorsIM#link), [norm](OperatorsNR#norm), [point](OperatorsNR#point), [polygon](OperatorsNR#polygon), [polyline](OperatorsNR#polyline), [rectangle](OperatorsNR#rectangle), [square](OperatorsSZ#square), 
+[around](operators-a-to-a#around), [circle](operators-b-to-c#circle), [cone](operators-b-to-c#cone), [line](operators-i-to-m#line), [link](operators-i-to-m#link), [norm](operators-n-to-r#norm), [point](operators-n-to-r#point), [polygon](operators-n-to-r#polygon), [polyline](operators-n-to-r#polyline), [rectangle](operators-n-to-r#rectangle), [square](operators-s-to-z#square), 
     	
 ----
 
@@ -2367,7 +2049,7 @@ float var1 <- truncated_gauss ([0.5, 0.0]); // var1 equals 0.5
 
 #### See also: 
 
-[gauss](OperatorsDH#gauss), 
+[gauss](operators-d-to-h#gauss), 
     	
 ----
 
@@ -2394,7 +2076,7 @@ the operator alters the operand graph, it does not create a new one.
 
 #### See also: 
 
-[directed](OperatorsDH#directed), 
+[directed](operators-d-to-h#directed), 
     	
 ----
 
@@ -2427,7 +2109,7 @@ geometry var3 <- union([geom1, geom2, geom3]); // var3 equals a geometry corresp
 
 #### See also: 
 
-[inter](OperatorsIM#inter), [+](OperatorsAA#+), 
+[inter](operators-i-to-m#inter), [+](operators-a-to-a#+), 
     	
 ----
 
@@ -2482,7 +2164,7 @@ string var0 <- upper_case("Abc"); // var0 equals 'ABC'
 
 #### See also: 
 
-[lower_case](OperatorsIM#lower_case), 
+[lower_case](operators-i-to-m#lower_case), 
     	
 ----
 
@@ -2513,7 +2195,7 @@ the operator alters the operand graph, it does not create a new one.
 
 #### See also: 
 
-[path_between](OperatorsNR#path_between), 
+[path_between](operators-n-to-r#path_between), 
     	
 ----
 
@@ -2586,7 +2268,7 @@ float var0 <- variance ([4.5, 3.5, 5.5, 7.0]); // var0 equals 1.671875
 
 #### See also: 
 
-[mean](OperatorsIM#mean), [median](OperatorsIM#median), 
+[mean](operators-i-to-m#mean), [median](operators-i-to-m#median), 
     	
 ----
 
@@ -2619,7 +2301,7 @@ in the right-hand operand, the keyword each can be used to represent, in turn, e
 
 #### See also: 
 
-[min_of](OperatorsIM#min_of), [max_of](OperatorsIM#max_of), [sum_of](OperatorsSZ#sum_of), [product_of](OperatorsNR#product_of), 
+[min_of](operators-i-to-m#min_of), [max_of](operators-i-to-m#max_of), [sum_of](operators-s-to-z#sum_of), [product_of](operators-n-to-r#product_of), 
     	
 ----
 
@@ -2706,7 +2388,7 @@ int var0 <- weighted_means_DM([[1.0, 7.0],[4.0,2.0],[3.0, 3.0]], [["name"::"util
 
 #### See also: 
 
-[promethee_DM](OperatorsNR#promethee_dm), [electre_DM](OperatorsDH#electre_dm), [evidence_theory_DM](OperatorsDH#evidence_theory_dm), 
+[promethee_DM](operators-n-to-r#promethee_dm), [electre_DM](operators-d-to-h#electre_dm), [evidence_theory_DM](operators-d-to-h#evidence_theory_dm), 
     	
 ----
 
@@ -2747,7 +2429,7 @@ list var3 <- (list(node) where (round(node(each).location.x) > 32); // var3 equa
 
 #### See also: 
 
-[first_with](OperatorsDH#first_with), [last_with](OperatorsIM#last_with), [where](OperatorsSZ#where), 
+[first_with](operators-d-to-h#first_with), [last_with](operators-i-to-m#last_with), [where](operators-s-to-z#where), 
     	
 ----
 
@@ -2800,7 +2482,7 @@ unknown var4 <- [1::2, 3::4, 5::6] with_max_of (each); // var4 equals 6
 
 #### See also: 
 
-[where](OperatorsSZ#where), [with_min_of](OperatorsSZ#with_min_of), 
+[where](operators-s-to-z#where), [with_min_of](operators-s-to-z#with_min_of), 
     	
 ----
 
@@ -2834,7 +2516,7 @@ unknown var4 <- [1::2, 3::4, 5::6] with_min_of (each); // var4 equals 2
 
 #### See also: 
 
-[where](OperatorsSZ#where), [with_max_of](OperatorsSZ#with_max_of), 
+[where](operators-s-to-z#where), [with_max_of](operators-s-to-z#with_max_of), 
     	
 ----
 
@@ -2861,7 +2543,7 @@ graphEpidemio <- graphEpidemio with_optimizer_type "static";
 
 #### See also: 
 
-[set_verbose](OperatorsSZ#set_verbose), 
+[set_verbose](operators-s-to-z#set_verbose), 
     	
 ----
 
@@ -2895,7 +2577,7 @@ geometry var3 <- self with_precision 2; // var3 equals the geometry resulting fr
 
 #### See also: 
 
-[round](OperatorsNR#round), 
+[round](operators-n-to-r#round), 
     	
 ----
 
@@ -2988,7 +2670,7 @@ file var0 <- shape_file("../images/point_eau.shp") writable false; // var0 equal
 
 #### See also: 
 
-[file](OperatorsDH#file), 
+[file](operators-d-to-h#file), 
     	
 ----
 
@@ -3019,7 +2701,7 @@ both operands are always casted to bool before applying the operator. Thus, an e
 
 #### See also: 
 
-[or](OperatorsNR#or), [and](OperatorsAA#and), [!](OperatorsAA#!), 
+[or](operators-n-to-r#or), [and](operators-a-to-a#and), [!](operators-a-to-a#!), 
     	
 ----
 
